@@ -1,0 +1,25 @@
+{
+  "state": "hierarchical_controller_interface_parser_qualified",
+  "cases": {
+    "flat": "accepted",
+    "child_after_top": "accepted",
+    "child_before_top": "accepted",
+    "wrong_width_with_valid_child": "rejected",
+    "wrong_direction_with_valid_child": "rejected",
+    "duplicate_controller_module": "rejected",
+    "missing_controller_module": "rejected",
+    "truncated_controller_module": "rejected",
+    "recursive_import_name": "rejected"
+  },
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_hierarchical_adapter155.py": "f8ac7a4c5f22be3985b194c7639f3926edfdba7093113d276d76108f8ca21268",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_hierarchical_controller_adapter155.py": "f5723d8639bfd8dbb2b4b4e8e462a539a7abe8d12c1903aac6e827c41e0e9869",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checked_controller_adapters138.py": "36cf3b9043254d2cbf31fb112919fcaaaf3964b3cc5bba2b1e2a44125363b2f2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_named_controller_adapters137.py": "404adf7f54fcca1d90bf9a4fcea064ddba0a6079058af49f2e65f1939851553f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged.sv": "25462000fa5257125c5e6576a789c217009a0e3401d6b53e148aef279da901dc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/netlist.v": "dc4f9a175c2d3874dcd603be24b60afcf38a9d1c3bdb383facdb1c6750d0b875"
+  },
+  "temporary_build_removed": true,
+  "scope": "Interface parsing and explicit adapter generation only. Native hierarchical gate import and functionality still required.",
+  "full_paper_results_matched": false
+}

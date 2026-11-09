@@ -1,0 +1,35 @@
+{
+  "state": "controller_interface_parser_and_native_reference_swap_probe_qualified",
+  "observed_utc": "2026-11-09T07:12:17.350984+00:00",
+  "interface_cases": {
+    "flat": "accepted",
+    "child_after_top": "accepted",
+    "child_before_top": "accepted",
+    "wrong_width_with_valid_child": "rejected",
+    "wrong_direction_with_valid_child": "rejected",
+    "duplicate_controller_module": "rejected",
+    "missing_controller_module": "rejected",
+    "truncated_controller_module": "rejected",
+    "recursive_import_name": "rejected"
+  },
+  "native_probe_direct_boundary_bits": 13,
+  "native_probe_mapped_xor_cells": 4,
+  "native_probe_clock_and_IO_constraints_unchanged": true,
+  "native_probe_preservation_adds_only_expected_dont_touch": true,
+  "all37_original_hardware_sources_unchanged": true,
+  "current_source_sha256": {
+    "syn/run_tri_oracle_change_link158_probe.py": "cd95088a358249c5fd65b5fc1b7b695a149d64772a66414f7ee78168c654abcf",
+    "records/change_link158_probe_result.json": "9979c455699f9df3728953e34e5d294e17097e0f693bf41d2471124e943aee7e",
+    "records/change_link158_probe_native.log": "c804fc811ccca48da64f4544aeef7e0228566cdd1f1cab099979a4748406933c",
+    "syn/tri_oracle_hierarchical_controller_adapter155.py": "f5723d8639bfd8dbb2b4b4e8e462a539a7abe8d12c1903aac6e827c41e0e9869",
+    "syn/test_tri_oracle_hierarchical_adapter155.py": "f8ac7a4c5f22be3985b194c7639f3926edfdba7093113d276d76108f8ca21268",
+    "records/adapter155_baseline_red.json": "18a92bde07ba4c47bc072ad13e0d5839b439bfd0731ca96068d3a4334e7a7f59",
+    "records/adapter155_interface_validation.json": "f6ce5c68bf9edd02d33d9e4466d1681ecf417320213028a1e83e2f42d2941c6b",
+    "records/change_link157_probe_result.json": "6f43bc4093975d254fe8b464965baeb1f2f769b94e28b76ae9f80d1a468e679f",
+    ".cache/physical/synthesis/tri_oracle_predicted_fabric_registered_reset30/input_revision.json": "24e836c5e31e30af3090eea0d608ab2b8ec1c9b9e56ad396dec8344597a07f27"
+  },
+  "full_parent_integration_verified": false,
+  "gate_controller_mapped_functionality_verified": false,
+  "full_paper_results_matched": false,
+  "scope": "Nine interface parsing/generation controls and a native four-XOR change_link API probe. Full gate-controller mapped simulation154 and real20-core parent relinking/synthesis remain pending."
+}

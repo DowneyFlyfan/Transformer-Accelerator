@@ -1,0 +1,8 @@
+{
+  "state": "existing_flat_adapter_rejects_valid_hierarchical_netlist",
+  "baseline_failure": "Controller interface direction/width mismatch",
+  "mapped_source_sha256": "dc4f9a175c2d3874dcd603be24b60afcf38a9d1c3bdb383facdb1c6750d0b875",
+  "fixture_sha256": "440c92c4f455298d66c759f016983d983682f329b4b5db70f986d676ac781058",
+  "temporary_build_removed_after_exit": true,
+  "scope": "A valid top-level interface is rejected solely because another module declares its own input. This diagnostic does not claim mapped gate-controller or full-parent functionality."
+}

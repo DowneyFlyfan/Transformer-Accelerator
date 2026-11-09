@@ -1,0 +1,227 @@
+TMPDIR is being set to /tmp/genus_temp_634311_a353f4da-64c8-4333-97c3-630a01221ff6_28d970bfe4b5_downeyflyfan_QNybXe
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[07:09:07.014265] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+Options: -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/link156_kf6n95d0/native -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/link156_kf6n95d0/query.tcl 
+Date:    Mon Nov 09 07:09:07 2026
+Host:    28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*1physical cpu*Intel(R) Core(TM) Ultra 7 265K 30720KB) (31692628KB)
+PID:     634311
+OS:      Rocky Linux 8.9 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[07:09:07.106435] Periodic Lic check successful
+[07:09:07.630734] Feature usage summary:
+[07:09:07.630734] Genus_Synthesis  
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/link156_kf6n95d0/query.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/link156_kf6n95d0/query.tcl
+@file(query.tcl) 1: set output $::env(TRI_ORACLE_LINK156_OUTPUT)
+@file(query.tcl) 2: set_db fail_on_error_mesg true
+  Setting attribute of root '/': 'fail_on_error_mesg' = true
+@file(query.tcl) 3: set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(query.tcl) 4: set_db max_cpus_per_server 2
+  Setting attribute of root '/': 'max_cpus_per_server' = 2
+@file(query.tcl) 5: read_libs {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib}
+
+  Message Summary for Library tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib:
+  *********************************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  *********************************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD20BWP12T40P140'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD24BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD20BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD24BWP12T40P140'
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-9'.
+@file(query.tcl) 6: read_hdl -sv $output/source.sv
+@file(query.tcl) 7: elaborate link_probe_top
+  Library has 633 usable logic and 385 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'link_probe_top' from file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/link156_kf6n95d0/source.sv'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'link_probe_top'.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: link_probe_top, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: link_probe_top, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: link_probe_top, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: link_probe_top, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(query.tcl) 8: create_clock -name core_clock -period 1.72414 [get_ports clk]
+@file(query.tcl) 9: set_clock_uncertainty 0.05 [get_clocks core_clock]
+@file(query.tcl) 10: set_input_delay 0.2 -clock core_clock [get_ports {x* y*}]
+@file(query.tcl) 11: set_output_delay 0.2 -clock core_clock [get_ports z*]
+@file(query.tcl) 12: proc snapshot156 ...
+@file(query.tcl) 26: snapshot156 $output/before.tsv
+@file(query.tcl) 27: write_sdc > $output/before.sdc
+Finished SDC export (command execution time mm:ss (real) = 00:01).
+@file(query.tcl) 28: read_hdl -netlist $output/mapped.v
+@file(query.tcl) 29: elaborate link_probe_gate
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating structural top-level block 'link_probe_gate' from file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/link156_kf6n95d0/mapped.v'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating structural top-level block 'link_probe_gate'.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: link_probe_gate, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: link_probe_gate, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: link_probe_gate, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: link_probe_gate, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(query.tcl) 30: current_design link_probe_top
+@file(query.tcl) 31: change_link -instances [get_db hinsts -if {.name == child}] -design_name design:link_probe_gate
+@file(query.tcl) 32: snapshot156 $output/after.tsv
+@file(query.tcl) 33: write_sdc > $output/after.sdc
+Finished SDC export (command execution time mm:ss (real) = 00:00).
+@file(query.tcl) 34: set_db [get_db hinsts -if {.name == child}] .preserve true
+  Setting attribute of hinst 'child': 'preserve' = true
+@file(query.tcl) 35: write_sdc > $output/preserved.sdc
+Finished SDC export (command execution time mm:ss (real) = 00:00).
+@file(query.tcl) 36: if {[check_design -undriven -multiple_driver -cross_hier -status]} {error LINK156_BAD_WIRING}
+@file(query.tcl) 37: set leaves [get_db [get_db designs link_probe_top] .insts]
+@file(query.tcl) 38: puts "LINK156_TOP_LEAF_COUNT [llength $leaves]"
+LINK156_TOP_LEAF_COUNT 4
+@file(query.tcl) 39: foreach leaf $leaves {puts "LINK156_LEAF [get_db $leaf .name] [get_db $leaf .base_cell.name]"}
+LINK156_LEAF child/g0 XOR2D1BWP12T40P140
+LINK156_LEAF child/g1 XOR2D1BWP12T40P140
+LINK156_LEAF child/g2 XOR2D1BWP12T40P140
+LINK156_LEAF child/g3 XOR2D1BWP12T40P140
+@file(query.tcl) 40: write_hdl > $output/after.v
+@file(query.tcl) 41: write_db -design link_probe_top $output/relinked.db
+Finished exporting design database to file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/link156_kf6n95d0/relinked.db' for 'link_probe_top' (command execution time mm:ss cpu = 00:00, real = 00:00).
+@file(query.tcl) 42: puts LINK156_NATIVE_REFERENCE_SWAP_COMPLETED
+LINK156_NATIVE_REFERENCE_SWAP_COMPLETED
+@file(query.tcl) 43: exit
+
+Lic Summary:
+[07:09:24.001408] Cdslmd servers: /opt/cadence/license/cds.lic
+[07:09:24.016560] Feature usage summary:
+[07:09:24.188719]  Genus_Synthesis 
+Normal exit.
