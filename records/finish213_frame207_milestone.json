@@ -1,0 +1,41 @@
+{
+  "state": "prepared_full_parent_synthesis_and_macro_import_completed",
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/finish213_optimized_topology_qualification.json": "f13176604c885f6e71998dc497dd3f8795889aa721e9d94940c645bcd1072ac6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/finish213_audited_wiring.json": "563341a14db64ed371b2827aa989325fc9118ef87f60cbb428ec19e33991e01d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/finish213_area.rpt": "4b410de2ea40cdfae3da2026bffae5d11e2dec64d4a0ec61f0c1e172bbcd0c15",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/finish213_timing.rpt": "32e153dc859f0a130128894a35a4c9e53cb1fe8d6d87f866d1d8bb3b948360da",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/finish213_native.log": "f53333b7495761166f4a4b71a76c0d93d8f8333fd62fd0336de07fdaaeb0a321",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame207_macro_inventory.tsv": "08762f6dc501d045e162791b08e27efc8118b23814c2276f60c5b49f609ec9a4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame207_parent_import_inventory.rpt": "c3e640df7fd52f07429f7fbee78a9b3cb1ef53c719f6de850d56688992c1f725",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame207_reset_summary.rpt": "84074fd390353a336092667436136ebf9189a00c31701aed35ab862e2c8743e5"
+  },
+  "terminal_producer_records_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/finish213_synthesis_result.json": "c0e8cf93072cacf32942515aa298b761741405227c1a59f818bdaf64dadc6eb7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame207_import_result.json": "97b086b776db1680ab8be8a1b3345913a177f09fc5b578630b5a15cf0ac2b096"
+  },
+  "synthesis_parent_leaf_instances_including20core_timing_cells": 673622,
+  "synthesis_library_area_um2": 11008050.196,
+  "rounded_typical_guidance_slack_report_ps": -7,
+  "guidance_model_is_provisional_core80": true,
+  "raw_native_undriven_status": 1,
+  "exact_audited_unused_wrapper_inputs": 32106,
+  "undriven_functional_leaf_or_top_ports": 0,
+  "unresolved_references": 0,
+  "multiple_drivers": 0,
+  "original26_control_cell_inventories_and156712_boundary_identities_preserved": true,
+  "macro_floorplan_core_footprints": 20,
+  "macro_floorplan_aggregate_banks": 40,
+  "full_original_core_models_loaded_into_new_parent": false,
+  "mapped_parent_functional_simulation_passed": false,
+  "full_trained_layer190_hardware_arithmetic_passed": false,
+  "parent_standard_cell_placement_completed": false,
+  "routed_timing_qualified": false,
+  "full_paper_results_matched": false,
+  "next_gates": [
+    "Mapped208 same-source wrong-reference rejection and positive12-case/4420-output run.",
+    "Real-layer190 complete trained arithmetic.",
+    "Full original core68 models, parent placement, all-corner timing, clock tree, power grid and routing."
+  ],
+  "scope": "Prepared20-core prediction/feed-forward subsystem. Synthesis and real macro-floorplan import executed; area is cell/macro library area, not die area. Timing uses provisional core80 guidance and is not routed timing. Exact audited unused wrapper inputs are retained with their raw native warning. No complete processor, paper accuracy, energy or performance match."
+}

@@ -1,0 +1,33 @@
+{
+  "state": "audited_wiring_and_simulation_dependency_controls_passed",
+  "tests": [
+    {
+      "test": "test_tri_oracle_dead_wrapper206.py",
+      "exit_status": 0,
+      "console": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/dead206_controls.log",
+      "console_sha256": "a6707d4eff38012da33ddc34bc6dc076a3b17151cfc9aef223c8790cbe64c3da"
+    },
+    {
+      "test": "test_tri_oracle_audited_wiring213.py",
+      "exit_status": 0,
+      "console": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/audited213_controls.log",
+      "console_sha256": "fe008aab760eb03ccac7578e2b84665b1b50b0d7f855b17a0c7a8d039435b658"
+    },
+    {
+      "test": "test_tri_oracle_mapped208_prerequisite.py",
+      "exit_status": 0,
+      "console": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/mapped208_prerequisite_controls.log",
+      "console_sha256": "33060fd73862c5e1af97335504d5b45211fce6d229657f556d8deceeadc52ce4"
+    }
+  ],
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_dead_wrapper206.py": "287f6338f791602cc285eb10e4778adf8f5fffe0b2afe2ec6796907b4dc4434b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_dead_wrapper206.py": "72cf35942c9ccf9ccdffad56a0122ce1714327a1241a521beb81378e98f735e2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_audited_wiring213.py": "c1eb3e2776e2620da277210447d69de280e3a9e72cbbcbc0504c46cdcd20f197",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_audited_wiring213.py": "a363d4ab2ac87c43f8b465e30c2f874ad28901d2a9b47e02259cb9b8b27a5faa",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_mapped208_prerequisite.py": "058e6549d262a6031b991c00dd1f6400e1f923ab5bee275ead59907f3f99abf1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_mapped208_prerequisite.py": "4fd6a534d74d5a3061a5afeaccc8c4734702fb98f0026383bc9a3887cf4ee4e1"
+  },
+  "full_parent_mapped_function_qualified": false,
+  "scope": "Verifier and dependency protocol tests only; native mapped parent simulation remains separate."
+}

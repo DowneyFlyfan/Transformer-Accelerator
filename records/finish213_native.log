@@ -1,0 +1,340 @@
+TMPDIR is being set to /tmp/genus_temp_664956_d6e278fb-c970-4f6f-a561-5c9075e4e9d2_28d970bfe4b5_downeyflyfan_CMjVPx
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[12:43:42.014209] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+Options: -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_finish213/native -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_finish_postopt213.tcl 
+Date:    Mon Nov 09 12:43:42 2026
+Host:    28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*1physical cpu*Intel(R) Core(TM) Ultra 7 265K 30720KB) (31692628KB)
+PID:     664956
+OS:      Rocky Linux 8.9 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[12:43:43.033576] Periodic Lic check successful
+[12:43:43.033583] Feature usage summary:
+[12:43:43.033583] Genus_Synthesis  
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (12 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_finish_postopt213.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_finish_postopt213.tcl
+@file(tri_oracle_finish_postopt213.tcl) 2: set root {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator}
+@file(tri_oracle_finish_postopt213.tcl) 3: set top tri_oracle_predicted_feedforward_frame
+@file(tri_oracle_finish_postopt213.tcl) 4: set output $::env(TRI_ORACLE_SYNTH_OUTPUT)
+@file(tri_oracle_finish_postopt213.tcl) 5: set previous $root/.cache/physical/synthesis/tri_oracle_predicted_feedforward_rowguard175
+@file(tri_oracle_finish_postopt213.tcl) 6: set candidate $root/.cache/physical/synthesis/tri_oracle_predicted_feedforward_resume199
+@file(tri_oracle_finish_postopt213.tcl) 7: set_db fail_on_error_mesg true
+  Setting attribute of root '/': 'fail_on_error_mesg' = true
+@file(tri_oracle_finish_postopt213.tcl) 8: read_db $candidate/postopt_candidate.db
+Reading database file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_resume199/postopt_candidate.db'.
+
+  Message Summary for Library all 5 libraries:
+  ********************************************
+Warning : Unsupported attribute in the pin group. [LBR-510]
+        : The attribute 'bus_naming_style' defined on line 167 is not supported for 'cell' group. It should be defined at 'library' level. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib)
+  Missing a function attribute in the output pin definition. [LBR-518]: 5
+  Unsupported attribute in the pin group. [LBR-510]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 14
+  ********************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'tcbn28hpcplusbwp12t40p140tt1v25c.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'core_typ.lib'.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD20BWP12T40P140'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD24BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD20BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD24BWP12T40P140'
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL2BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL2BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL3BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL3BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP12MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP12MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP2MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP2MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP3MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP3MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP4MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP4MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAPMCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAPMCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL10MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL10MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL12MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL12MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL2MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL2MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL3MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL3MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL4MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILL4MCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILLMCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GFILLMCOBWP12T30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'OD18DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'OD18DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'OD18DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'OD18DCAP32BWP12T40P140' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '60' reached for message 'LBR-9'.
+==================================
+Stage : incr_opt 
+==================================
+  =================
+   Message Summary
+  =================
+---------------------------------------------------------------------------
+|  Id   |  Sev  |Count|                   Message Text                    |
+---------------------------------------------------------------------------
+|LBR-9  |Warning|  192|Library cell has no output pins defined.           |
+|       |       |     |Add the missing output pin(s)                      |
+|       |       |     | , then reload the library. Else the library cell  |
+|       |       |     | will be marked as timing model i.e. unusable.     |
+|       |       |     | Timing_model means that the cell does not have any|
+|       |       |     | defined function. If there is no output pin, Genus|
+|       |       |     | will mark library cell as unusable i.e. the       |
+|       |       |     | attribute 'usable' will be marked to 'false' on   |
+|       |       |     | the libcell. Therefore, the cell is not used for  |
+|       |       |     | mapping and it will not be picked up from the     |
+|       |       |     | library for synthesis. If you query the attribute |
+|       |       |     | 'unusable_reason' on the libcell; result will be: |
+|       |       |     | 'Library cell has no output pins.'Note: The       |
+|       |       |     | message LBR-9 is only for the logical pins and not|
+|       |       |     | for the power_ground pins. Genus will depend upon |
+|       |       |     | the output function defined in the pin group      |
+|       |       |     | (output pin)                                      |
+|       |       |     | of the cell, to use it for mapping. The pg_pin    |
+|       |       |     | will not have any function defined.               |
+|LBR-40 |Info   |   42|An unsupported construct was detected in this      |
+|       |       |     | library.                                          |
+|       |       |     |Check to see if this construct is really needed for|
+|       |       |     | synthesis. Many liberty constructs are not        |
+|       |       |     | actually required.                                |
+|LBR-41 |Info   | 4059|An output library pin lacks a function attribute.  |
+|       |       |     |If the remainder of this library cell's semantic   |
+|       |       |     | checks are successful, it will be considered as a |
+|       |       |     | timing-model                                      |
+|       |       |     | (because one of its outputs does not have a valid |
+|       |       |     | function.                                         |
+|LBR-101|Warning|   12|Unusable clock gating integrated cell found at the |
+|       |       |     | time of loading libraries. This warning happens   |
+|       |       |     | because a particular library cell is defined as   |
+|       |       |     | 'clock_gating_integrated_cell', but 'dont_use'    |
+|       |       |     | attribute is defined as true in the liberty       |
+|       |       |     | library. To make Genus use this cell for clock    |
+|       |       |     | gating insertion, 'dont_use' attribute should be  |
+|       |       |     | set to false.                                     |
+|       |       |     |To make the cell usable, change the value of       |
+|       |       |     | 'dont_use' attribute to false.                    |
+|LBR-412|Info   |   15|Created nominal operating condition.               |
+|       |       |     |The nominal operating condition is represented,    |
+|       |       |     | either by the nominal PVT values specified in the |
+|       |       |     | library source                                    |
+|       |       |     | (via nom_process,nom_voltage and nom_temperature r|
+|       |       |     | espectively)                                      |
+|       |       |     | , or by the default PVT values (1.0,1.0,1.0).     |
+|LBR-510|Warning|    3|Unsupported attribute in the pin group.            |
+|LBR-518|Info   |   15|Missing a function attribute in the output pin     |
+|       |       |     | definition.                                       |
+---------------------------------------------------------------------------
+Warning : Partition Based Synthesis (PBS) is turned off. Expect very long runtime. [PBS-3]
+Info    : Current directory restored. [DATABASE-120]
+        : Current directory set to 'design:tri_oracle_predicted_feedforward_frame'.
+@file(tri_oracle_finish_postopt213.tcl) 9: current_design $top
+@file(tri_oracle_finish_postopt213.tcl) 10: set_db max_cpus_per_server 20
+  Setting attribute of root '/': 'max_cpus_per_server' = 20
+@file(tri_oracle_finish_postopt213.tcl) 11: source $candidate/retained_inventory_procedures.tcl
+Sourcing '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_resume199/retained_inventory_procedures.tcl' (Mon Nov 09 12:44:01 UTC 2026)...
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_resume199/retained_inventory_procedures.tcl
+@file(retained_inventory_procedures.tcl) 1: proc snapshot_reused_controls131 ...
+@file(retained_inventory_procedures.tcl) 30: proc verify_real_banks ...
+@file(retained_inventory_procedures.tcl) 50: proc gate_snapshot199 ...
+#@ End verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_resume199/retained_inventory_procedures.tcl
+@file(tri_oracle_finish_postopt213.tcl) 12: source $root/syn/tri_oracle_mapped_boundary199.tcl
+Sourcing '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_mapped_boundary199.tcl' (Mon Nov 09 12:44:01 UTC 2026)...
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_mapped_boundary199.tcl
+@file(tri_oracle_mapped_boundary199.tcl) 3: proc tri_oracle_boundary199_prepare ...
+@file(tri_oracle_mapped_boundary199.tcl) 18: proc tri_oracle_boundary199_connection ...
+@file(tri_oracle_mapped_boundary199.tcl) 77: proc tri_oracle_control_boundaries199 ...
+@file(tri_oracle_mapped_boundary199.tcl) 89: proc tri_oracle_boundary199_open ...
+@file(tri_oracle_mapped_boundary199.tcl) 96: proc tri_oracle_boundary199_close ...
+#@ End verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_mapped_boundary199.tcl
+@file(tri_oracle_finish_postopt213.tcl) 13: proc snapshot_leaf213 ...
+@file(tri_oracle_finish_postopt213.tcl) 19: proc snapshot_ports213 ...
+@file(tri_oracle_finish_postopt213.tcl) 26: snapshot_leaf213 $output/all_cells_before.tsv
+@file(tri_oracle_finish_postopt213.tcl) 27: snapshot_ports213 $output/ports_before.tsv
+@file(tri_oracle_finish_postopt213.tcl) 28: set stream [open $output/cleanup_targets.txt r]
+@file(tri_oracle_finish_postopt213.tcl) 29: set names [split [string trim [read $stream]] "\n"];close $stream
+@file(tri_oracle_finish_postopt213.tcl) 30: if {[llength $names]!=32106 || [llength [lsort -unique $names]]!=32106} {error POSTOPT213_WRONG_CLEANUP_COUNT}
+@file(tri_oracle_finish_postopt213.tcl) 31: set targets {}
+@file(tri_oracle_finish_postopt213.tcl) 32: foreach name $names {
+    set pin "hpin:${top}/${name}"
+    if {[get_db $pin .name] ne $name || [get_db $pin .direction] ne "in"} {error POSTOPT213_TARGET_IDENTITY_CHANGED}
+    if {[llength [get_db $pin .net]]!=0 || [llength [get_db $pin .hport.net]]!=0} {error POSTOPT213_TARGET_HAS_FLAT_CONNECTION}
+    if {[string match */implementation/* $name]} {error POSTOPT213_PRESERVED_IMPLEMENTATION_TARGET}
+    lappend targets $pin
+}
+@file(tri_oracle_finish_postopt213.tcl) 39: snapshot_leaf213 $output/all_cells_after.tsv
+@file(tri_oracle_finish_postopt213.tcl) 40: snapshot_ports213 $output/ports_after.tsv
+@file(tri_oracle_finish_postopt213.tcl) 41: if {[catch {exec cmp -s $output/all_cells_before.tsv.sorted $output/all_cells_after.tsv.sorted}]} {error POSTOPT213_LEAF_CELLS_CHANGED}
+@file(tri_oracle_finish_postopt213.tcl) 42: if {[catch {exec cmp -s $output/ports_before.tsv $output/ports_after.tsv}]} {error POSTOPT213_TOP_PORTS_CHANGED}
+@file(tri_oracle_finish_postopt213.tcl) 43: check_design -unresolved > $output/postopt_check.rpt
+
+@file(tri_oracle_finish_postopt213.tcl) 44: check_design -undriven -multiple_driver -cross_hier > $output/postopt_wiring.rpt
+
+@file(tri_oracle_finish_postopt213.tcl) 45: if {[check_design -unresolved -status] || [check_design -multiple_driver -status] || [check_design -cross_hier -status]} {error POSTOPT213_LIVE_WIRING_CHECK_FAILED}
+@file(tri_oracle_finish_postopt213.tcl) 46: set raw_undriven [check_design -undriven -status]
+@file(tri_oracle_finish_postopt213.tcl) 47: if {$raw_undriven!=1} {error POSTOPT213_UNEXPECTED_RAW_UNDRIVEN_STATUS}
+@file(tri_oracle_finish_postopt213.tcl) 48: puts "POSTOPT213_RAW_UNDRIVEN_STATUS $raw_undriven"
+POSTOPT213_RAW_UNDRIVEN_STATUS 1
+@file(tri_oracle_finish_postopt213.tcl) 49: exec python3 -B $root/syn/tri_oracle_audited_wiring213.py $output/postopt_wiring.rpt $output/cleanup_targets.txt $output/audited_wiring.json
+@file(tri_oracle_finish_postopt213.tcl) 50: write_db -design $top $output/audited_candidate.db
+Finished exporting design database to file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_finish213/audited_candidate.db' for 'tri_oracle_predicted_feedforward_frame' (command execution time mm:ss cpu = 00:13, real = 00:14).
+@file(tri_oracle_finish_postopt213.tcl) 51: set down_controls [get_db hinsts -if {.module.name == tri_oracle_down_executor_staged}]
+@file(tri_oracle_finish_postopt213.tcl) 52: set projection_controls [get_db hinsts -if {.module.name == tri_oracle_sparse_weight_dma_pipelined}]
+@file(tri_oracle_finish_postopt213.tcl) 53: if {[llength $down_controls]!=20 || [llength $projection_controls]!=5} {error POSTOPT213_CONTROL_SET_CHANGED}
+@file(tri_oracle_finish_postopt213.tcl) 54: set reused_control_expected [dict create]
+@file(tri_oracle_finish_postopt213.tcl) 55: foreach control $down_controls {dict set reused_control_expected [get_db $control .name] 11049}
+@file(tri_oracle_finish_postopt213.tcl) 56: foreach control $projection_controls {dict set reused_control_expected [get_db $control .name] 2047}
+@file(tri_oracle_finish_postopt213.tcl) 57: verify_real_banks $output/preserved_banks_after.tsv false
+@file(tri_oracle_finish_postopt213.tcl) 58: snapshot_reused_controls131 $output/reused_controls_after.tsv $reused_control_expected
+@file(tri_oracle_finish_postopt213.tcl) 59: tri_oracle_boundary199_open $output/boundary_connections_after.tsv
+@file(tri_oracle_finish_postopt213.tcl) 60: tri_oracle_control_boundaries199 [concat $down_controls $projection_controls] $output/mapped_controller_boundaries_after.tsv
+@file(tri_oracle_finish_postopt213.tcl) 61: gate_snapshot199 $output/gate_cells_after.tsv $output/gate_boundary_after.tsv $output/gate_preservation_after.tsv
+@file(tri_oracle_finish_postopt213.tcl) 62: tri_oracle_boundary199_close
+@file(tri_oracle_finish_postopt213.tcl) 63: write_sdc > $output/postopt_constraints.sdc
+Finished SDC export (command execution time mm:ss (real) = 00:06).
+@file(tri_oracle_finish_postopt213.tcl) 64: exec python3 -B $root/syn/tri_oracle_mapped_restore199.py $previous $output after
+@file(tri_oracle_finish_postopt213.tcl) 65: write_db -design $top $output/optimized.db
+Finished exporting design database to file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_finish213/optimized.db' for 'tri_oracle_predicted_feedforward_frame' (command execution time mm:ss cpu = 00:12, real = 00:12).
+@file(tri_oracle_finish_postopt213.tcl) 66: report_area > $output/area.rpt
+@file(tri_oracle_finish_postopt213.tcl) 67: report_timing -max_paths 20 > $output/timing.rpt
+@file(tri_oracle_finish_postopt213.tcl) 68: write_hdl > $output/netlist.v
+@file(tri_oracle_finish_postopt213.tcl) 69: write_sdc > $output/constraints.sdc
+Finished SDC export (command execution time mm:ss (real) = 00:04).
+@file(tri_oracle_finish_postopt213.tcl) 70: puts TRI_ORACLE_POSTOPT213_AUDITED_FINALIZATION_COMPLETED
+TRI_ORACLE_POSTOPT213_AUDITED_FINALIZATION_COMPLETED
+@file(tri_oracle_finish_postopt213.tcl) 71: exit
+
+Lic Summary:
+[12:45:25.001384] Cdslmd servers: /opt/cadence/license/cds.lic
+[12:45:25.016536] Feature usage summary:
+[12:45:25.188695]  Genus_Synthesis 
+Normal exit.

@@ -1,0 +1,397 @@
+{
+  "state": "native_parent_macro_import_completed_pending_report_review",
+  "started_utc": "2026-11-09T12:45:55.718993+00:00",
+  "supervisor_pid": 665291,
+  "requested_maximum_cpu_workers": 8,
+  "reported_period_ns": 1.72414,
+  "full_paper_results_matched": false,
+  "scope": "Diagnostic native import and macro floorplan of the mapped staged20-core parent. Full core models, exact new parent reset topology, placement, routed timing and paper metrics remain unqualified.",
+  "elapsed_seconds": 40.448474398988765,
+  "static_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_private_frame207_import.py": "a68d74812db63a43891e266b15675d56548d7157b3541577f94c68cdcbe67126",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_initialize_private_frame207.tcl": "34f56785e221ae601b0236ccb5f7a08e205dadd6dd3a568302fbda6d6b388994",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_twenty_core_75_inputs/wrapper.v": "3045dd1306b085b8124482e37ceca3a9498d345b501b2754c4a407b36485a5d6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted_fabric_placement79_result.json": "a55c7e87d6329b8816e6615edc8280c272aa72f76f3d4b05bb20b1a223ff8926",
+    "/opt/cadence/bin/innovus": "3858d1df849d3e6f8bfe41ef755f11ffebb60eb095795272b7246acd0f07f62e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/LEF/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_export_58/core.lef": "7512a1a1f8f3d6a71f833003baa59c8b98b6805f284d51ce358b39f673c1b082",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib": "2f1c8d8810530a75a291d00a91e779da57f43865febdfc0f375309dd83cd7d32",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib": "40f5cf939d4ffbac0a9273b8b6d3cf769fee1b9514bebb548ce83363c4ed8a72",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib": "382947ea1d22a7dacb9111bd2d3cebe35bb6232302d4f0598938a6db12c52d5e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_ssg0p9v125c.lib": "e862ab320bae1d92b32922444fdbb42f20efbab92fc15bd473311ca4a387380c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib": "c23271fe010db935868909e8873c3e9f13c11c14a99fe9275428707165c7c945",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib": "4fe75de30dd7d720e74004776720037dc06daab560b531776d1f9655d967b6ce",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_ffg1p05vm40c.lib": "7e0d83ad9eafe090e70a0a7db5a3a75bdae731f2c6a90e530945492cb3101d84",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib": "4738640b8d478399ddda2e37d1f62530a833e24a89e5751118039402d6292f75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_typical": "9783442472f884a18d75e4e8f72caeaafaa3126412068d78d0541c0db4ad393a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcworst": "afb9f42a87bbb7871ef7a23b0579a3835dcda0706e1c0159f45e625b5692388f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcbest": "f776d0e89f8d651f8f817cb080f4b299c13adb95aa9a63a54712946da3a73f42",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_private_frame207_mmmc.tcl": "a15a7e072b855c17d4fdf4fa80d97a70eb228b36459632cc7d1390c9b08656f5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_staged_frame123_floorplan.tcl": "4ee049ef3937553922fb197782a8b3036c55242a283302976de843f899267041",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_registered_reset_trace102.tcl": "27b27dbfe7586602413a8cfa75a04da01521b3934f5c7eaec974e7d66ab8e14f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_check_registered_reset_fabric.tcl": "9eed47c37cfd4209a943216683b8da6307d3ead867ea065d1f91d1e58bd9e8b8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/registered_reset34_sequential_masters.json": "2caedf6d122e0b897f8bb9c7a8f7dd64c62d9dc5771044456d0986710dd2d378",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/sram_core_hierarchy58_export_validation.json": "5f17b739e88bc280946b222aeb526c6c738f37e3d5b788afe731382e74504041",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_hierarchy_fingerprint.py": "a795aec471812d9dc9c665310b70fdda465c020cfef3fa71cda9c9bff77bab82",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_artifact_fingerprint.py": "148c3a8e04caebf987d99da39936c5f75794a5a50ed01a289cc06214c1cb1d2c"
+  },
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_private_frame207_import.py": "a68d74812db63a43891e266b15675d56548d7157b3541577f94c68cdcbe67126",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_initialize_private_frame207.tcl": "34f56785e221ae601b0236ccb5f7a08e205dadd6dd3a568302fbda6d6b388994",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/finish213_synthesis_result.json": "c0e8cf93072cacf32942515aa298b761741405227c1a59f818bdaf64dadc6eb7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_finish213/netlist.v": "0b814541d1c8a072ad8080c5a1bdbf498b9b244c52c2c9dd6301bdf795a87248",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_finish213/constraints.sdc": "a2f3d65870b5d49eddc16406e79bf021bf3359c2539f2ab56d1730a0b7e469f4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_twenty_core_75_inputs/wrapper.v": "3045dd1306b085b8124482e37ceca3a9498d345b501b2754c4a407b36485a5d6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted_fabric_placement79_result.json": "a55c7e87d6329b8816e6615edc8280c272aa72f76f3d4b05bb20b1a223ff8926",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/LEF/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_export_58/core.lef": "7512a1a1f8f3d6a71f833003baa59c8b98b6805f284d51ce358b39f673c1b082",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib": "2f1c8d8810530a75a291d00a91e779da57f43865febdfc0f375309dd83cd7d32",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib": "40f5cf939d4ffbac0a9273b8b6d3cf769fee1b9514bebb548ce83363c4ed8a72",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib": "382947ea1d22a7dacb9111bd2d3cebe35bb6232302d4f0598938a6db12c52d5e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_ssg0p9v125c.lib": "e862ab320bae1d92b32922444fdbb42f20efbab92fc15bd473311ca4a387380c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib": "c23271fe010db935868909e8873c3e9f13c11c14a99fe9275428707165c7c945",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib": "4fe75de30dd7d720e74004776720037dc06daab560b531776d1f9655d967b6ce",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_ffg1p05vm40c.lib": "7e0d83ad9eafe090e70a0a7db5a3a75bdae731f2c6a90e530945492cb3101d84",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib": "4738640b8d478399ddda2e37d1f62530a833e24a89e5751118039402d6292f75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_typical": "9783442472f884a18d75e4e8f72caeaafaa3126412068d78d0541c0db4ad393a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcworst": "afb9f42a87bbb7871ef7a23b0579a3835dcda0706e1c0159f45e625b5692388f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcbest": "f776d0e89f8d651f8f817cb080f4b299c13adb95aa9a63a54712946da3a73f42",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_private_frame207_mmmc.tcl": "a15a7e072b855c17d4fdf4fa80d97a70eb228b36459632cc7d1390c9b08656f5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_staged_frame123_floorplan.tcl": "4ee049ef3937553922fb197782a8b3036c55242a283302976de843f899267041",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_registered_reset_trace102.tcl": "27b27dbfe7586602413a8cfa75a04da01521b3934f5c7eaec974e7d66ab8e14f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_check_registered_reset_fabric.tcl": "9eed47c37cfd4209a943216683b8da6307d3ead867ea065d1f91d1e58bd9e8b8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/registered_reset34_sequential_masters.json": "2caedf6d122e0b897f8bb9c7a8f7dd64c62d9dc5771044456d0986710dd2d378",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/sram_core_hierarchy58_export_validation.json": "5f17b739e88bc280946b222aeb526c6c738f37e3d5b788afe731382e74504041",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_hierarchy_fingerprint.py": "a795aec471812d9dc9c665310b70fdda465c020cfef3fa71cda9c9bff77bab82",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_artifact_fingerprint.py": "148c3a8e04caebf987d99da39936c5f75794a5a50ed01a289cc06214c1cb1d2c",
+    "/opt/cadence/bin/innovus": "3858d1df849d3e6f8bfe41ef755f11ffebb60eb095795272b7246acd0f07f62e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/parent_import.v": "20f7255d93ccecaaecd6aa041ec2785da384d0f58fdf04e965a0f6bbf42e02f9"
+  },
+  "native_process_group": 665292,
+  "command": [
+    "innovus",
+    "-stylus",
+    "-no_gui",
+    "-batch",
+    "-log",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/native",
+    "-files",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_initialize_private_frame207.tcl"
+  ],
+  "output_directory": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207",
+  "peak_combined_anonymous_bytes": 4224663552,
+  "native_elapsed_seconds": 38.66129986697342,
+  "native_exit_status": 0,
+  "console_sha256": "169b30a51a4c3d95d760e3be554abbe10382e4b5497610cf87e634e04f222de4",
+  "parent_import_sha256": "20f7255d93ccecaaecd6aa041ec2785da384d0f58fdf04e965a0f6bbf42e02f9",
+  "output_database": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/macro_floorplan.db",
+  "output_database_fingerprint": {
+    "type": "directory",
+    "files": {
+      "extraction/extractionBlkData.gz": {
+        "size_bytes": 21205,
+        "sha256": "91202a27f13925918cc67f7bc01a40d4775a86b3e9a3d65d70eab5368a8cbc81"
+      },
+      "extraction/extractionMetaData.gz": {
+        "size_bytes": 299,
+        "sha256": "baf7049c242ba6f3db4a2912d000ecfdfaafb44f10e653ff00cca05d05a6bffd"
+      },
+      "extraction/extractionRCGridDensityData.gz": {
+        "size_bytes": 63682,
+        "sha256": "2b1b99d7bb4a509255b4277fba2b273bce6160afcdb6ade3dfc433310f51d594"
+      },
+      "extraction/extractionSerializerData.bin": {
+        "size_bytes": 449,
+        "sha256": "a86173fae5e6d357ca1986e4f55ada327942a9cc5a62a926a2da7d533036f5bd"
+      },
+      "extraction/extractionUnitRCData_rc_fast.gz": {
+        "size_bytes": 23748,
+        "sha256": "675bdad4122abffbdb2ddb0aa8dd5c2d495040e719ae26dc48dba1251f3b8cbe"
+      },
+      "extraction/extractionUnitRCData_rc_slow.gz": {
+        "size_bytes": 23745,
+        "sha256": "0708a47206b1a2dba2882e7031538d721c092da95673db365da2de09ed9d347b"
+      },
+      "extraction/extractionUnitRCData_rc_typ.gz": {
+        "size_bytes": 23743,
+        "sha256": "92f842bea2b353c1e89f4e6bd64b679598b720c671d647e0387ba6131e9719af"
+      },
+      "flow": {
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "flowstep": {
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "inn.cmd.gz": {
+        "size_bytes": 3417,
+        "sha256": "71de0032cc1cbe763ad2a99d2d4c4fd4608d1bdc22248a3c5696bbf5063a1e8c"
+      },
+      "libs/lef/core.lef": {
+        "size_bytes": 2418595,
+        "sha256": "7512a1a1f8f3d6a71f833003baa59c8b98b6805f284d51ce358b39f673c1b082",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_export_58/core.lef"
+      },
+      "libs/lef/tcbn28hpcplusbwp12t40p140.lef": {
+        "size_bytes": 11768694,
+        "sha256": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef"
+      },
+      "libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": {
+        "size_bytes": 375220,
+        "sha256": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef"
+      },
+      "libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": {
+        "size_bytes": 169804,
+        "sha256": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef"
+      },
+      "libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": {
+        "size_bytes": 264845,
+        "sha256": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/LEF/ts6n28hpcpsvta16x128m2f_130a.lef"
+      },
+      "libs/lef/tsmcn28_10lm5X2Y2ZUTRDL.tlef": {
+        "size_bytes": 166831,
+        "sha256": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef"
+      },
+      "libs/mmmc/constraints.sdc": {
+        "size_bytes": 941888,
+        "sha256": "a2f3d65870b5d49eddc16406e79bf021bf3359c2539f2ab56d1730a0b7e469f4",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_finish213/constraints.sdc"
+      },
+      "libs/mmmc/rc_fast/qrc_rcbest": {
+        "size_bytes": 101176015,
+        "sha256": "f776d0e89f8d651f8f817cb080f4b299c13adb95aa9a63a54712946da3a73f42",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcbest"
+      },
+      "libs/mmmc/rc_slow/qrc_rcworst": {
+        "size_bytes": 98237827,
+        "sha256": "afb9f42a87bbb7871ef7a23b0579a3835dcda0706e1c0159f45e625b5692388f",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcworst"
+      },
+      "libs/mmmc/rc_typ/qrc_typical": {
+        "size_bytes": 99806168,
+        "sha256": "9783442472f884a18d75e4e8f72caeaafaa3126412068d78d0541c0db4ad393a",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_typical"
+      },
+      "libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": {
+        "size_bytes": 107668732,
+        "sha256": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib"
+      },
+      "libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": {
+        "size_bytes": 107232046,
+        "sha256": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib"
+      },
+      "libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": {
+        "size_bytes": 106842492,
+        "sha256": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib": {
+        "size_bytes": 24910,
+        "sha256": "4fe75de30dd7d720e74004776720037dc06daab560b531776d1f9655d967b6ce",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": {
+        "size_bytes": 24909,
+        "sha256": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib": {
+        "size_bytes": 24894,
+        "sha256": "2f1c8d8810530a75a291d00a91e779da57f43865febdfc0f375309dd83cd7d32",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib": {
+        "size_bytes": 22177,
+        "sha256": "4738640b8d478399ddda2e37d1f62530a833e24a89e5751118039402d6292f75",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib": {
+        "size_bytes": 22176,
+        "sha256": "c23271fe010db935868909e8873c3e9f13c11c14a99fe9275428707165c7c945",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib": {
+        "size_bytes": 22161,
+        "sha256": "382947ea1d22a7dacb9111bd2d3cebe35bb6232302d4f0598938a6db12c52d5e",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib"
+      },
+      "libs/mmmc/ts6n28hpcpsvta16x128m2f_130a_ffg1p05vm40c.lib": {
+        "size_bytes": 28662,
+        "sha256": "7e0d83ad9eafe090e70a0a7db5a3a75bdae731f2c6a90e530945492cb3101d84",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_ffg1p05vm40c.lib"
+      },
+      "libs/mmmc/ts6n28hpcpsvta16x128m2f_130a_ssg0p9v125c.lib": {
+        "size_bytes": 28661,
+        "sha256": "e862ab320bae1d92b32922444fdbb42f20efbab92fc15bd473311ca4a387380c",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_ssg0p9v125c.lib"
+      },
+      "libs/mmmc/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib": {
+        "size_bytes": 28646,
+        "sha256": "40f5cf939d4ffbac0a9273b8b6d3cf769fee1b9514bebb548ce83363c4ed8a72",
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib"
+      },
+      "root.init": {
+        "size_bytes": 156676,
+        "sha256": "3740f3c5605b4e4644bcb56213c3d35288979d539de2b2ef23407708ce615ecb"
+      },
+      "root.post": {
+        "size_bytes": 602,
+        "sha256": "94bfc1139640d65b716463249de1b008c10bb0b4eeaf9ba871a6e0b5b8b0e06a"
+      },
+      "tri_oracle_predicted_feedforward_frame.dbinfo": {
+        "size_bytes": 4095,
+        "sha256": "fd898bc9d1cd2c659061d07c339e599b2baa7e388432b17a796f7bca73d4f039"
+      },
+      "tri_oracle_predicted_feedforward_frame.flexmv": {
+        "size_bytes": 26,
+        "sha256": "d8ccc49edcdb033f7daf7669636340a9f8f53b007bf735b9dfdd5de6ab33fa80"
+      },
+      "tri_oracle_predicted_feedforward_frame.fp.gz": {
+        "size_bytes": 132778,
+        "sha256": "91be39e1f2ece840ec926ac085a6a05871d4a44e25bd3f27b9c0b47188915540"
+      },
+      "tri_oracle_predicted_feedforward_frame.fp.spr.gz": {
+        "size_bytes": 375,
+        "sha256": "d15b89501bc0994685a4eb2129bc4bc613f47fb4bd83c05167b413ff0ab73228"
+      },
+      "tri_oracle_predicted_feedforward_frame.globals": {
+        "size_bytes": 159220,
+        "sha256": "c60a99096f0348f5614ce978573f1e6db71134769e510c1565ac2733cd76ccf2"
+      },
+      "tri_oracle_predicted_feedforward_frame.init": {
+        "size_bytes": 49,
+        "sha256": "8d91a8f167645732da74beb69d5ecc5911314506858e93203411f6e067ef94f1"
+      },
+      "tri_oracle_predicted_feedforward_frame.mode": {
+        "size_bytes": 1113,
+        "sha256": "b1f84969eabb12fb7bc83849db079408e1e733b08e6b23385004b6d8fa636257"
+      },
+      "tri_oracle_predicted_feedforward_frame.opconds": {
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tri_oracle_predicted_feedforward_frame.pg.gz": {
+        "size_bytes": 434,
+        "sha256": "9830233759a4cb10e90d83a9e3f08b22082a3001dd0945861741b22fbafa028a"
+      },
+      "tri_oracle_predicted_feedforward_frame.place.gz": {
+        "size_bytes": 2714056,
+        "sha256": "a11e29fae18eab5f06b1b38c3113959f17d9caed7812d95a9787dbe2fd1ca8d6"
+      },
+      "tri_oracle_predicted_feedforward_frame.prop": {
+        "size_bytes": 674989,
+        "sha256": "2266fae6049b841a9b07d1fb7b2bcd0dcd810a6e6755871e24cb2240f33ae1aa"
+      },
+      "tri_oracle_predicted_feedforward_frame.route.congmap.gz": {
+        "size_bytes": 30,
+        "sha256": "eb00b28076db072bb545df8da59b06fd278cd23016337ee44f05e972f67a3883"
+      },
+      "tri_oracle_predicted_feedforward_frame.route.gz": {
+        "size_bytes": 1930307,
+        "sha256": "77aaf8c499e14798c2e0cc5ea5381414bbd1b4e6835f0d0d6e1698016f317884"
+      },
+      "tri_oracle_predicted_feedforward_frame.symtbl.gz": {
+        "size_bytes": 9382508,
+        "sha256": "b696ce7dc2527a7196edacc48e4bec2ebafcf6bd4d865f54368d363aaf487f77"
+      },
+      "tri_oracle_predicted_feedforward_frame.tcz": {
+        "size_bytes": 32864,
+        "sha256": "e3bdcd7c0c92526cb929507a9289218cef84f2535577c829600486f370606609"
+      },
+      "tri_oracle_predicted_feedforward_frame.techData.gz": {
+        "size_bytes": 23759028,
+        "sha256": "a4d8dbe67aa56044911dfaf9934fe1b21a2632a0cf87502263007cce5b788176"
+      },
+      "tri_oracle_predicted_feedforward_frame_power_constraints.tcl": {
+        "size_bytes": 701,
+        "sha256": "34f331d6ccc7de1b34c4d094327abed954eaf498f04bc63c9563658a7a3c4eab"
+      },
+      "um.json.gz": {
+        "size_bytes": 11415,
+        "sha256": "cda6743bea561f0af50710e04c914b221bd424fd387934afbe1b756f97e38d35"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin": {
+        "size_bytes": 3509,
+        "sha256": "404d35aa728723ce228c3320dbb4b8ebad5d6e288d43e3906d0c2c8381f3729d"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_0": {
+        "size_bytes": 4226312,
+        "sha256": "9d7e549caca663c32350d2784f4e5464c5b8971f724a92fb88f0dacfa87c743b"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_1": {
+        "size_bytes": 1593009,
+        "sha256": "b3f0d1462cba77b73a7308c91c0751241b771a1d34c1769668cbaa1a8b0dae43"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_2": {
+        "size_bytes": 1732503,
+        "sha256": "8caa6890a04e3e4bd432647a2d8c25de9a6e77fd8bba5d7149a05a0057ec067c"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_3": {
+        "size_bytes": 1899268,
+        "sha256": "5e458ddfa7f1abefd19b51204e04ceb9c2db573c4511df1f496034c3ba78c5b3"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_4": {
+        "size_bytes": 1977406,
+        "sha256": "7b6a78e6111ed7073539aac2b9d831c91fb3684243bcedafde5d65eff9069e37"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_5": {
+        "size_bytes": 2607158,
+        "sha256": "03124ff1fa74dc190e19ddbf165004796a4340b5b2fa5f76c6a68ee73444df1b"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_6": {
+        "size_bytes": 2380861,
+        "sha256": "9609daf87ff23a5ff4bd7c5e7059edcbf41a442ba2d3f8c34e7bea5a3258daa0"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_7": {
+        "size_bytes": 2526836,
+        "sha256": "0dc590dc557007aaa9fad30f6c03df2047f2ff6fbc55044138dd132fdbdcb495"
+      },
+      "vbin/tri_oracle_predicted_feedforward_frame.v.bin_lib": {
+        "size_bytes": 58055,
+        "sha256": "7e9c625a6d4db026b1c90214902835d74509a1912b2b67de457f6c791d194704"
+      },
+      "viewDefinition.tcl": {
+        "size_bytes": 2996,
+        "sha256": "ec2923c71986f310fd1c982d1625ea1c475f97c43abcddc8998a9b0be6ef3d3a"
+      }
+    }
+  },
+  "native_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/macro_inventory.tsv": "08762f6dc501d045e162791b08e27efc8118b23814c2276f60c5b49f609ec9a4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/registered_reset_roots.tsv": "c60be615ed0ae3e758476c5d3f9cb20d918db61ba0ef018dc2d39db5458ff089",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/registered_reset_roots.tsv.summary.rpt": "84074fd390353a336092667436136ebf9189a00c31701aed35ab862e2c8743e5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/parent_import_inventory.rpt": "c3e640df7fd52f07429f7fbee78a9b3cb1ef53c719f6de850d56688992c1f725",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/macro_floorplan_scope.rpt": "2e9a10c558a12d25cad8763c4dfd2c1e210af9c20d1308a0763c57ffeeaba836",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/macro_floorplan_area.rpt": "f3cd6e28e21dc2165c0d0d6830f92e1e353c13ce56807b91f795755618a1e8c6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_private207/macro_floorplan.def": "a912ac22673fc42ae72052953b563ceddb0336d794c230cdc6760124f4d9845e"
+  },
+  "routed_timing_qualified": false
+}
