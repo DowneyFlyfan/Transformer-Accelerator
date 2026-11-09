@@ -1,0 +1,50 @@
+{
+  "state": "native_uniquification_preserved_graph_and_wiring_constant_faults_rejected",
+  "supervisor_pid": 676979,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_unique215_canary.py": "c958e5d68fc4fef5ac37c43afdb9f3d03facc5ac72593fb3903210f3acff875b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_unique215_snapshot.tcl": "d79af7798e8f76fffd0a98346fd4a216ecdc658aaf476da495ee9c9f8f27277c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_row_guard173_variants.py": "fd18b84b54d4338144cb4123381fcb5add99a709d6393e97f764db08c97af815",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_row_guard175_synthesis.py": "a1bc9fcd21f26ecd50290e4883d66c2709f0d257f4c07d41f5266b6de850d487",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    "/opt/cadence/bin/innovus": "3858d1df849d3e6f8bfe41ef755f11ffebb60eb095795272b7246acd0f07f62e"
+  },
+  "started_utc": "2026-11-09T14:30:55.217513+00:00",
+  "generated_verilog": "module unique215_leaf(input a,b,output y);\nXOR2D1BWP12T40P140 u(.A1(a),.A2(b),.Z(y));\nendmodule\nmodule unique215_canary_top(input [2:0] a,b,output [4:0] y);\nunique215_leaf clone0(.a(a[0]),.b(b[0]),.y(y[0]));\nunique215_leaf clone1(.a(a[1]),.b(b[1]),.y(y[1]));\nXOR2D1BWP12T40P140 probe(.A1(a[0]),.A2(b[0]),.Z(y[2]));\nXOR2D1BWP12T40P140 const0_probe(.A1(1'b0),.A2(a[2]),.Z(y[3]));\nXOR2D1BWP12T40P140 const1_probe(.A1(1'b1),.A2(b[2]),.Z(y[4]));\nendmodule\n",
+  "generated_tcl": "set root $::env(TRI215_ROOT)\nset out $::env(TRI215_OUT)\nset_multi_cpu_usage -local_cpu 1\nset_db init_design_uniquify false\nread_mmmc $out/canary_mmmc.tcl\nread_physical -lefs [list \\\n $root/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef \\\n $root/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef]\nread_netlist $out/canary.v -top unique215_canary_top\ninit_design\nsource $root/syn/tri_oracle_unique215_snapshot.tcl\nif {[check_unique -verbose] != 0} {error TRI215_CANARY_DID_NOT_EXPOSE_CLONES}\nif {[tri215_snapshot $out before] != 5} {error TRI215_CANARY_WRONG_LEAF_COUNT}\nuniquify unique215_canary_top -verbose\nif {[check_unique -verbose] != 1} {error TRI215_CANARY_UNIQUIFY_FAILED}\ntri215_snapshot $out after\ntri215_require_equal $out before after\nconnect_pin -inst probe -pin A1 -net {a[1]}\ntri215_snapshot $out fault\nif {![catch {tri215_require_equal $out before fault} message] ||\n    $message ne \"TRI215_SIGNAL_GRAPH_CHANGED nets\"} {error TRI215_CANARY_WRONG_WIRING_NOT_REJECTED}\nconnect_pin -inst probe -pin A1 -net {a[0]}\ntri215_snapshot $out restored\ntri215_require_equal $out before restored\nset found 0\nforeach instance [get_db insts] {\n if {![regexp {^const([01])_probe$} [get_db $instance .name] -> expected]} {continue}\n foreach pin [get_db $instance .pins] {\n  if {[file tail [get_db $pin .base_pin.name]] ne \"A1\"} {continue}\n  if {[get_db $pin .constant] ne $expected} {error TRI215_DIRECT_CONSTANT_FIXTURE_MISSING}\n  incr found\n }\n}\nif {$found != 2} {error TRI215_CONSTANT_PIN_COUNT}\nputs TRI215_BASE_READY\nexit\n",
+  "generated_fault_tcl": "set root $::env(TRI215_ROOT)\nset out $::env(TRI215_OUT)\nset_multi_cpu_usage -local_cpu 1\nset_db init_design_uniquify false\nread_mmmc $out/canary_mmmc.tcl\nread_physical -lefs [list \\\n $root/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef \\\n $root/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef]\nread_netlist $out/canary.v -top unique215_canary_top\ninit_design\nsource $root/syn/tri_oracle_unique215_snapshot.tcl\nuniquify unique215_canary_top -verbose\nif {[check_unique] != 1} {error TRI215_FAULT_TOP_NOT_UNIQUE}\nset baseline $::env(TRI215_BASELINE)\ntri215_snapshot $baseline constant_fault\nif {![catch {tri215_require_equal $baseline before constant_fault} message] ||\n    $message ni {\"TRI215_SIGNAL_GRAPH_CHANGED nets\" \"TRI215_SIGNAL_GRAPH_CHANGED pins\"}} {\n error TRI215_CANARY_WRONG_CONSTANT_NOT_REJECTED\n}\nputs TRI215_DIFFERENT_CONSTANTS_REJECTED\nexit\n",
+  "generated_mmmc": "set root $::env(TRI215_ROOT)\nset out $::env(TRI215_OUT)\ncreate_library_set -name tiny -timing [list $root/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib]\ncreate_rc_corner -name rc -temperature 25\ncreate_timing_condition -name tc -library_sets {tiny}\ncreate_delay_corner -name dc -timing_condition tc -rc_corner rc\ncreate_constraint_mode -name functional -sdc_files [list $out/canary.sdc]\ncreate_analysis_view -name view -constraint_mode functional -delay_corner dc\nset_analysis_view -setup {view} -hold {view}\n",
+  "full_parent_uniquified": false,
+  "full_paper_results_matched": false,
+  "native_workers": 1,
+  "elapsed_seconds": 36.9368689940311,
+  "phase": "constant_fault",
+  "native_process_group": 677165,
+  "command": [
+    "innovus",
+    "-stylus",
+    "-no_gui",
+    "-batch",
+    "-log",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/unique215_pair_70k_gsya/constant_fault/native",
+    "-files",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/unique215_pair_70k_gsya/constant_fault/canary.tcl"
+  ],
+  "peak_combined_anonymous_bytes": 2617548800,
+  "native_elapsed_seconds": 15.033463609986939,
+  "native_exit_status": 0,
+  "native_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/unique215_canary_complete_baseline_native.log": "132c03bce7aa7faa7d81571a3a70744d18d74b9c37885da8dd6066351375e35f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/unique215_canary_complete_constant_fault_native.log": "2182ccedc51378272bc9d18b1a57abc28d85d44b7ac7c047ddbaa2e54f231578"
+  },
+  "flat_leaf_cells": 5,
+  "positive_graph_preservation": true,
+  "wrong_driver_connection_rejected": true,
+  "constant_driver_swap_rejected": true,
+  "restored_graph_preservation": true,
+  "temporary_build_removed": true
+}
