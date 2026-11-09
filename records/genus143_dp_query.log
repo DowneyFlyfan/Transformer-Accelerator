@@ -1,0 +1,66 @@
+TMPDIR is being set to /tmp/genus_temp_627423_b69097a6-b0fe-4325-ae6d-396bc58cb3d8_28d970bfe4b5_downeyflyfan_7lCRNm
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[05:40:59.014265] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+Options: -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus143_query_0eyuzho_/native -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus143_query_0eyuzho_/query.tcl 
+Date:    Mon Nov 09 05:40:59 2026
+Host:    28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*1physical cpu*Intel(R) Core(TM) Ultra 7 265K 30720KB) (31692628KB)
+PID:     627423
+OS:      Rocky Linux 8.9 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[05:40:59.152090] Periodic Lic check successful
+[05:40:59.676388] Feature usage summary:
+[05:40:59.676389] Genus_Synthesis  
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus143_query_0eyuzho_/query.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus143_query_0eyuzho_/query.tcl
+@file(query.tcl) 1: puts QUERY143_BEGIN
+QUERY143_BEGIN
+@file(query.tcl) 2: puts [get_db * -category dp]
+Object: root:
+  apply_booth_encoding:  auto_bitwidth
+  control_logic_optimization:  basic
+  dp_analytical_opt:     standard
+  dp_area_mode:          false
+  dp_csa:                basic
+  dp_csa_factorize:      basic
+  dp_rewriting:          basic
+  dp_sharing:            advanced
+  dp_speculation:        basic
+  dp_ungroup_during_syn_map:  true
+  dpopt_balanced_csa:    false
+  dpopt_combined_costing:  false
+  dpopt_power_opto:      false
+  dpopt_power_opto_scaling:  1.0
+  dpopt_toggle_skew_threshold_for_booth_encoding:  0
+  one_pass_formal_verification:  false
+
+@file(query.tcl) 3: puts [get_db / .dp_analytical_opt]
+standard
+@file(query.tcl) 4: puts QUERY143_END
+QUERY143_END
+@file(query.tcl) 5: exit
+
+Lic Summary:
+[05:41:12.001336] Cdslmd servers: /opt/cadence/license/cds.lic
+[05:41:12.016488] Feature usage summary:
+[05:41:12.188647]  Genus_Synthesis 
+Normal exit.

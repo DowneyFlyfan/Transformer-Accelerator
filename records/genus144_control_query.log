@@ -1,0 +1,48 @@
+TMPDIR is being set to /tmp/genus_temp_627642_d9ecc894-1fc5-45c1-bc0e-b1ac1d11a479_28d970bfe4b5_downeyflyfan_yEV9MH
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[05:45:37.014273] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+Options: -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus144_query_k6nywp4k/native -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus144_query_k6nywp4k/query.tcl 
+Date:    Mon Nov 09 05:45:37 2026
+Host:    28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*1physical cpu*Intel(R) Core(TM) Ultra 7 265K 30720KB) (31692628KB)
+PID:     627642
+OS:      Rocky Linux 8.9 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[05:45:37.271883] Periodic Lic check successful
+[05:45:37.796182] Feature usage summary:
+[05:45:37.796182] Genus_Synthesis  
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus144_query_k6nywp4k/query.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/genus144_query_k6nywp4k/query.tcl
+@file(query.tcl) 1: set_db control_logic_optimization none
+  Setting attribute of root '/': 'control_logic_optimization' = none
+@file(query.tcl) 2: puts "CONTROL144=[get_db / .control_logic_optimization]"
+CONTROL144=none
+@file(query.tcl) 3: if {[get_db / .control_logic_optimization] ne "none"} {error CONTROL144_NOT_ACCEPTED}
+@file(query.tcl) 4: puts QUERY144_SUPPORTED
+QUERY144_SUPPORTED
+@file(query.tcl) 5: exit
+
+Lic Summary:
+[05:45:50.001384] Cdslmd servers: /opt/cadence/license/cds.lic
+[05:45:50.016536] Feature usage summary:
+[05:45:50.188695]  Genus_Synthesis 
+Normal exit.

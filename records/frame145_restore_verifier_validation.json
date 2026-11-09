@@ -1,0 +1,39 @@
+{
+  "state": "cold_restore_constraint_wiring_and_checkpoint_regressions_passed",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_validate_cold_restore145.py": "970125b3ea0e3af62e65c1847dfe7e2dde3f75b050fa5fd9a9a4f67ff8844c78",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_artifact_fingerprint.py": "148c3a8e04caebf987d99da39936c5f75794a5a50ed01a289cc06214c1cb1d2c"
+  },
+  "cases": {
+    "matching": {
+      "exit_status": 0,
+      "validation_produced": true
+    },
+    "relaxed_clock": {
+      "exit_status": 1,
+      "validation_produced": false
+    },
+    "added_falsepath": {
+      "exit_status": 1,
+      "validation_produced": false
+    },
+    "changed_cell_master": {
+      "exit_status": 1,
+      "validation_produced": false
+    },
+    "changed_wiring": {
+      "exit_status": 1,
+      "validation_produced": false
+    },
+    "changed_checkpoint": {
+      "exit_status": 1,
+      "validation_produced": false
+    },
+    "changed_original": {
+      "exit_status": 1,
+      "validation_produced": false
+    }
+  },
+  "temporary_build_removed": true,
+  "scope": "Synthetic file-level verifier regressions only; actual cold native restore is separately required."
+}

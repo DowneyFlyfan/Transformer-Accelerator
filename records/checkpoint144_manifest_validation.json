@@ -1,0 +1,31 @@
+{
+  "state": "consumed_bundle_checkpoint_manifest_regressions_passed",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checkpoint_manifest144.py": "c0ff46afb8a843635f86aa715a3756ade41dadf068d103a2875c6e9a9965df2e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_artifact_fingerprint.py": "148c3a8e04caebf987d99da39936c5f75794a5a50ed01a289cc06214c1cb1d2c"
+  },
+  "cases": {
+    "matching": {
+      "exit_status": 0,
+      "manifest_produced": true,
+      "stderr": ""
+    },
+    "changed_generated_bundle": {
+      "exit_status": 1,
+      "manifest_produced": false,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checkpoint_manifest144.py\", line 37, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checkpoint_manifest144.py\", line 22, in main\n    assert consumed.read_bytes()==data['compiled_bundle'].encode(),'Consumed source bundle differs from saved revision'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Consumed source bundle differs from saved revision\n"
+    },
+    "wrong_prelaunch_hash": {
+      "exit_status": 1,
+      "manifest_produced": false,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checkpoint_manifest144.py\", line 37, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checkpoint_manifest144.py\", line 24, in main\n    assert consumed_sha256==os.environ['TRI_ORACLE_COMPILED_BUNDLE_SHA256'],'Consumed source bundle differs from pre-launch hash'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Consumed source bundle differs from pre-launch hash\n"
+    },
+    "changed_original_input": {
+      "exit_status": 1,
+      "manifest_produced": false,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checkpoint_manifest144.py\", line 37, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checkpoint_manifest144.py\", line 20, in main\n    assert all(sha(p)==h for p,h in data['source_sha256'].items())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    }
+  },
+  "temporary_build_removed": true,
+  "scope": "Synthetic file-level provenance regressions only; no native database or mapping acceptance."
+}

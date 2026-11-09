@@ -1,0 +1,6 @@
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+@file(tri_oracle_synthesize_hierarchical_frame142.tcl) 8: set_db dp_analytical_opt off
+  Warning: dp_analytical_opt option "off" is obsolete and will be removed in next major release.Automatically reset to option "standard".
+  Setting attribute of root '/': 'dp_analytical_opt' = standard
+@file(tri_oracle_synthesize_hierarchical_frame142.tcl) 136: if {[get_db / .dp_analytical_opt] ne "off" || [get_db / .syn_global_effort] ne "none"} {error FRAME142_UNEXPECTED_OPTIMIZATION_OVERRIDE}
+FRAME142_UNEXPECTED_OPTIMIZATION_OVERRIDE
