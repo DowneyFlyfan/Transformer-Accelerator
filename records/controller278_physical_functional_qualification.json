@@ -1,0 +1,62 @@
+{
+  "state": "control_tree_physical_preservation_and_mapped_functional_pair_qualified",
+  "verified_utc": "2026-11-09T23:01:58.697779+00:00",
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller273_tree_result.json": "9527c14dae298d66ddab5b363600c26dc2ad27a7d3e8b9a999790b8ce0aea6f0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller274_full_result.json": "97b3b527ade122f113b56e862171f33d3a736b2dba781645005696263ced152e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller274_wrong_sum_result.json": "62a588b45d57a36dca0a2652fdf4d3f09b8b08df3f19720f9502995310cfa96c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller266_tree_result.json": "22a64b72678ca5beebb5a261cc77f7fa290230bd7a3efab1e1be7df7c27bd73b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller269_plan_result.json": "adbdfc5db9cf9d40eb8c5414a930f2e7ebf9f6bdf179419213afe7a0302db82e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/qualify_tri_oracle_controller278.py": "d7e1eec47f0dea00c0ecd813d84688dc961aac15927dcfc14a818c319d1b962a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller274_full_native.log": "0848ebf10a1ac48eccd987dc852d011248ad6afa057e5675489d3b24f524a6c6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller274_wrong_sum_native.log": "bbce1ef54f82864cb41fff898ef6c0b7fde3104fd220ead1127e78915508273c"
+  },
+  "verified_evidence_files": 1377,
+  "verified_evidence_inventory_sha256": "ca4bfa0b8ae964443dfeee7bd3b602cc6b64290e60995b713a882b26e01089fb",
+  "actual_cores": 20,
+  "actual_clusters": 5,
+  "actual_compiled_memories": 600,
+  "original_core_cells": 1889420,
+  "original_parent_physical_leaves_including_macros": 930840,
+  "added_noninverting_buffers": 2212,
+  "protected_signal_branches": 61,
+  "original_loads": 50832,
+  "buffered_local_loads": 50831,
+  "retained_external_loads": 1,
+  "cases_passed": 12,
+  "exact_hidden_outputs_checked": 4420,
+  "success_backpressure_stalls": 122,
+  "error_backpressure_stalls": 67,
+  "wrong_integer_sum_reference_rejected": true,
+  "positive_and_negative_consumed_same_hardware": true,
+  "requested_simulation_workers": 8,
+  "positive_native_elapsed_seconds": 1442.1349097850034,
+  "negative_native_elapsed_seconds": 330.72343440004624,
+  "corner_diagnostics": {
+    "setup_slow": {
+      "slack_ns": -53.757862,
+      "startpoint": "numeric/engine/backend/is_down_reg/CP",
+      "endpoint": "numeric/engine/gated/implementation/gate_values_reg[1806]/E"
+    },
+    "setup_typ": {
+      "slack_ns": -40.258564,
+      "startpoint": "numeric/engine/backend/is_down_reg/CP",
+      "endpoint": "numeric/engine/gated/implementation/gate_values_reg[1806]/E"
+    },
+    "hold_fast": {
+      "slack_ns": -0.089328,
+      "startpoint": "numeric/engine/backend/clusters[1].control/controller_reset_n_reg/CP",
+      "endpoint": "numeric/engine/backend/clusters[1].control/projection/transfer/implementation/row_index_reg[3]/CDN"
+    }
+  },
+  "physical_checkpoint_cold_preserved": true,
+  "original_constraints_preserved": true,
+  "fast_reset_removal_regressed_from_ns": -0.088138,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "signal_interference_analysis_qualified": false,
+  "trained_full_layer_execution_qualified": false,
+  "whole_model_accuracy_qualified": false,
+  "full_paper_results_matched": false,
+  "scope": "2212 transparent noninverting buffers on61 protected local signal branches:50831 selected loads of50832,one external load retained on its original net. Native ledgers and cold reload preserve original geometry, other logic and constants, protection policies including accepted-to-import hierarchy,full cores,memorymodels and all3originalconstraints. Twelve analytic mapped cases without delay annotation,paired wrong-sum rejection. Three process corners still fail. No routed-parent, trained accuracy,power or paper-performance qualification."
+}

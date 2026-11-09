@@ -1,0 +1,29 @@
+{
+  "state": "accepted_to_initial_import_hierarchy_policies_verified",
+  "verified_utc": "2026-11-09T22:33:03.622947+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/qualify_tri_oracle_hierarchy277_imports.py": "3e243b4383d5e62773b37839a6c9123239bd8ffc2475f19d625d98090e52d23f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller260_tree_result.json": "57a223da6485362cb59175051943e601bbc717d8194e231a18c93b3c319d17a6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller266_tree_result.json": "22a64b72678ca5beebb5a261cc77f7fa290230bd7a3efab1e1be7df7c27bd73b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller260_tree/cold/cold_hierarchy.tsv": "8527734c84630f5f0aa2e10bf312245211a62009aa40472595de9e4046155e85",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller266_tree/warm/before_hierarchy.tsv": "8527734c84630f5f0aa2e10bf312245211a62009aa40472595de9e4046155e85",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller273_tree_result.json": "9527c14dae298d66ddab5b363600c26dc2ad27a7d3e8b9a999790b8ce0aea6f0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller266_tree/cold/cold_hierarchy.tsv": "8527734c84630f5f0aa2e10bf312245211a62009aa40472595de9e4046155e85",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller273_tree/warm/before_hierarchy.tsv": "8527734c84630f5f0aa2e10bf312245211a62009aa40472595de9e4046155e85"
+  },
+  "comparisons": [
+    {
+      "accepted": 260,
+      "imported": 266,
+      "hierarchy_rows": 86,
+      "all_six_fields_identical": true
+    },
+    {
+      "accepted": 266,
+      "imported": 273,
+      "hierarchy_rows": 86,
+      "all_six_fields_identical": true
+    }
+  ],
+  "scope": "Exact physical-view hierarchy/module binding,dont_touch andbothdont_touch_hports values match across260to266and266to273 initialimports. This fills an earlier comparison omission using original native ledgers; no saved source or receipt is changed. No new timing,functional or routing result."
+}

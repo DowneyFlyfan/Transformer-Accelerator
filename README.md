@@ -1,15 +1,15 @@
 # Tri-Oracle reproduction in progress
 
-Latest mapped functional milestone (controller260): the repaired prepared prediction/feed-forward
+Latest mapped functional milestone (controller273): the repaired prepared prediction/feed-forward
 parent passes all twelve functional cases on twenty compute cores and 600
 compiled static random-access memory (SRAM) models. The test checks 4,420 exact
 hidden outputs, successful and erroneous backpressure, memory faults and reset
 recovery. A separate run rejects a deliberately wrong integer sum using the same
 hardware, simulator, memory inputs and observer bench. The passing eight-worker
-Xcelium run took 1,460.57 seconds. See
-`records/controller261_physical_functional_qualification.json` and its bound
-`controller259` native logs. This supersedes the earlier mapped208 functional
-milestone for the current physical parent.
+Xcelium run took 1,442.13 seconds. See
+`records/controller278_physical_functional_qualification.json` and its bound
+`controller274` native logs. This supersedes the controller260/261 mapped
+functional milestone for the current physical parent.
 
 This fixture supplies prepared normalized/sign inputs and analytically saturated
 numeric operands. It establishes mapped functional behavior without delay
@@ -28,31 +28,32 @@ whole-model accuracy or the paper's latency and energy. See
 `records/real190_full_functional_qualification.json`.
 
 The prepared parent has legal geometric placement in a 3.6-by-3.6-millimeter die.
-After the earlier 43-buffer tree, a second batch adds 1,989 noninverting buffers
-to 114 protected enable nets with 47,503 original loads. All 928,851 pre-batch
-physical parent leaves, including sixty fixed macros, retain their names,
-masters, positions, orientations and protection flags. The remaining signal
-graph, direct constants, input/output pin poses, placement halos, registered-reset
-ancestry and hierarchy/module protection policies also remain exact. An
-independent cold reload retains all 1,889,420 original core cells, 600 memory
-models, 86 preservation targets and all three original timing-constraint sets.
-This candidate has physical preservation evidence; its post-change mapped
-functional simulation remains pending.
+A new batch adds 2,212 noninverting buffers on 61 protected local signal branches,
+covering 50,831 of 50,832 original loads. One external load remains on its original
+net. All 930,840 pre-batch physical parent leaves, including sixty fixed macros,
+retain their names, masters, positions, orientations and protection flags.
+The remaining signal graph, direct constants, input/output pin poses, placement
+halos, registered-reset ancestry and hierarchy/module protection policies remain
+exact. An independent cold reload retains all 1,889,420 original core cells,
+600 memory models, 86 preservation targets and all three original timing-constraint
+sets. The later paired mapped simulation qualifies this physical candidate;
+the original native receipt is retained unchanged.
 
 At the unchanged 1.72414-nanosecond period, all three full-model timing diagnostics
-still fail: slow setup -84.404640 nanoseconds, typical setup -61.087677 nanoseconds,
-and fast reset removal -0.088138 nanoseconds. Before this batch they were
--95.267113, -63.815323 and -0.089345 respectively. The old down-enable endpoint
-improves from -95.267113 to -19.501957 nanoseconds at slow. The new worst path
-runs from the gated controller's error register to an output-data register;
-two high-fanout net arcs contribute 80.534492 nanoseconds of its reported
-86.035294-nanosecond data path. These are pre-clock-tree, pre-route estimates
-with signal interference analysis disabled. Clock distribution, power delivery,
-parent routing, timing closure and paper-performance matching remain unfinished.
-See `records/controller268_physical_qualification.json` and the published
-`controller266` split-delay reports. The complete native metadata receipt is
-losslessly compressed in `records/controller266_tree_result.json.gz`; it contains
-hashes and results, not library or checkpoint data.
+still fail: slow setup -53.757862 nanoseconds, typical setup -40.258564 nanoseconds,
+and fast reset removal -0.089328 nanoseconds. Before this batch they were
+-84.404640, -61.087677 and -0.088138 respectively. The previous worst error-to-output
+endpoint improves from -84.404640 to -15.847886 nanoseconds at slow. The new worst
+path runs from the backend mode register to a gated activation-value register.
+These are pre-clock-tree, pre-route estimates with signal interference analysis
+disabled. Clock distribution, power delivery, parent routing, timing closure and
+paper-performance matching remain unfinished. See
+`records/controller278_physical_functional_qualification.json` and the published
+`controller273` split-delay reports. The complete native metadata receipt is
+losslessly compressed in `records/controller273_tree_result.json.gz`; it contains
+hashes and results, not library or checkpoint data. The accepted-to-imported
+hierarchy protection policy is also checked explicitly across the earlier260/266
+and266/273 imports; see `records/hierarchy277_initial_import_validation.json`.
 
 A native diagnostic also exposed indexed-name serialization differences in 65 of 114
 physical driver lists. The name-list comparison preserves multiplicity and rejects
