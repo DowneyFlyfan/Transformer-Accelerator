@@ -1,0 +1,37 @@
+{
+  "state": "five_buffxd_identity_masters_all_corner_and_verilog_qualified",
+  "observed_utc": "2026-11-09T01:43:26.131337+00:00",
+  "accepted_additional_masters": [
+    "BUFFXD12BWP12T40P140",
+    "BUFFXD16BWP12T40P140",
+    "BUFFXD3BWP12T40P140",
+    "BUFFXD6BWP12T40P140",
+    "BUFFXD8BWP12T40P140"
+  ],
+  "corners": [
+    "tt1v25c",
+    "ssg0p9v125c",
+    "ffg1p05vm40c"
+  ],
+  "input_pin": "I",
+  "output_pin": "Z",
+  "function": "I",
+  "stateless": true,
+  "tristate": false,
+  "native99_rejection": "BUFFXD3BWP12T40P140",
+  "old_checker_rejected4_new_sizes": true,
+  "new_checker_tests_passed": 5,
+  "source_and_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_registered_reset_trace102.tcl": "27b27dbfe7586602413a8cfa75a04da01521b3934f5c7eaec974e7d66ab8e14f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_registered_reset102.py": "a4dca5e189a42e10726be02df52eb5444b23b7cb91a8fdc6523253e6438233a4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/reset102_checker_red.log": "b47e788bd0927289d1b8ba14b9344717bc7681f54a130c50053811b626ef3cd9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/reset102_checker_green.log": "4e4ded478961a94c662674314a83053824c86344a842cd920c0047f1b2db078d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e"
+  },
+  "unknown_masters_and_logic_gates_rejected": true,
+  "full_parent_native_revalidation_still_required": true,
+  "scope": "Only library-proven buffer identities are added. No parent acceptance, inversion-parity or recovery/removal timing claim."
+}

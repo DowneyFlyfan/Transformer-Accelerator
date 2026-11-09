@@ -33,7 +33,14 @@ The routed single-core checkpoint has independent timing and geometry evidence.
 The twenty-core prediction parent has legal placement, but whole-chip routed
 timing is not closed. Current parent optimization uses compact core models only
 for guidance and requires restoration of the original complete core models for
-timing diagnostics. The latest physical retry is not yet qualified.
+timing diagnostics. The repaired candidate preserves all 1,889,420 original
+core cells, all 981 registered-reset ancestor trees, and all sixty macro poses
+against the accepted placement inventory. Separate full-model diagnostics still
+fail: slow setup -13.394268 ns, typical setup -10.458878 ns, fast hold
+-0.058541 ns. The worst setup path traverses the weight-address generator.
+These are pre-clock, pre-route diagnostics with signal-interference analysis
+disabled by the native engine. See
+`records/recovered104_physical_diagnostic_qualification.json`.
 
 This is an independently implemented reproduction, not the authors' design.
 The available Taiwan Semiconductor Manufacturing Company (TSMC) 28-nanometer

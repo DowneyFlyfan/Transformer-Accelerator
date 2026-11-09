@@ -1,0 +1,59 @@
+test_accepts_exact_all60_macro_poses (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_accepts_exact_all60_macro_poses) ... FAIL
+test_rejects_bank_pose_drift_even_when_candidate_and_sidecar_agree (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_rejects_bank_pose_drift_even_when_candidate_and_sidecar_agree) ... FAIL
+test_rejects_joint_inventory_and_sidecar_drift (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_rejects_joint_inventory_and_sidecar_drift) ... FAIL
+test_rejects_missing_macro_and_changed_fixed_status (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_rejects_missing_macro_and_changed_fixed_status) ... FAIL
+
+======================================================================
+FAIL: test_accepts_exact_all60_macro_poses (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_accepts_exact_all60_macro_poses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_accepted_macro104.py", line 39, in test_accepts_exact_all60_macro_poses
+    self.assertEqual(self.check()['accepted_macros'],60)
+                     ^^^^^^^^^^^^
+  File "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_accepted_macro104.py", line 33, in check
+    self.assertTrue(HELPER.is_file(),'Accepted-inventory macro checker is missing')
+AssertionError: False is not true : Accepted-inventory macro checker is missing
+
+======================================================================
+FAIL: test_rejects_bank_pose_drift_even_when_candidate_and_sidecar_agree (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_rejects_bank_pose_drift_even_when_candidate_and_sidecar_agree)
+----------------------------------------------------------------------
+AssertionError: False is not true : Accepted-inventory macro checker is missing
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_accepted_macro104.py", line 44, in test_rejects_bank_pose_drift_even_when_candidate_and_sidecar_agree
+    with self.assertRaisesRegex(AssertionError,'macro geometry'):self.check()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "macro geometry" does not match "False is not true : Accepted-inventory macro checker is missing"
+
+======================================================================
+FAIL: test_rejects_joint_inventory_and_sidecar_drift (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_rejects_joint_inventory_and_sidecar_drift)
+----------------------------------------------------------------------
+AssertionError: False is not true : Accepted-inventory macro checker is missing
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_accepted_macro104.py", line 48, in test_rejects_joint_inventory_and_sidecar_drift
+    with self.assertRaisesRegex(AssertionError,'accepted inventory digest'):self.check()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "accepted inventory digest" does not match "False is not true : Accepted-inventory macro checker is missing"
+
+======================================================================
+FAIL: test_rejects_missing_macro_and_changed_fixed_status (test_tri_oracle_accepted_macro104.AcceptedMacro104Tests.test_rejects_missing_macro_and_changed_fixed_status)
+----------------------------------------------------------------------
+AssertionError: False is not true : Accepted-inventory macro checker is missing
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_accepted_macro104.py", line 52, in test_rejects_missing_macro_and_changed_fixed_status
+    with self.assertRaisesRegex(AssertionError,'macro count'):self.check()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "macro count" does not match "False is not true : Accepted-inventory macro checker is missing"
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=4)
