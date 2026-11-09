@@ -1,0 +1,1543 @@
+TMPDIR is being set to /tmp/genus_temp_630349_edd04c49-a179-4e3d-9a86-1f79ddf52a5f_28d970bfe4b5_downeyflyfan_ymxpKN
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[06:23:38.014257] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+Options: -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/diagnostics/genus148_scope/native -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/diagnostics/genus148_scope/query.tcl 
+Date:    Mon Nov 09 06:23:38 2026
+Host:    28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*1physical cpu*Intel(R) Core(TM) Ultra 7 265K 30720KB) (31692628KB)
+PID:     630349
+OS:      Rocky Linux 8.9 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[06:23:38.278216] Periodic Lic check successful
+[06:23:38.802511] Feature usage summary:
+[06:23:38.802511] Genus_Synthesis  
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/diagnostics/genus148_scope/query.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/diagnostics/genus148_scope/query.tcl
+@file(query.tcl) 1: set_db fail_on_error_mesg true
+  Setting attribute of root '/': 'fail_on_error_mesg' = true
+@file(query.tcl) 2: read_db {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical144/elaborated.db}
+Reading database file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical144/elaborated.db'.
+
+  Message Summary for Library all 5 libraries:
+  ********************************************
+Warning : Unsupported attribute in the pin group. [LBR-510]
+        : The attribute 'bus_naming_style' defined on line 167 is not supported for 'cell' group. It should be defined at 'library' level. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib)
+  Missing a function attribute in the output pin definition. [LBR-518]: 5
+  Unsupported attribute in the pin group. [LBR-510]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 14
+  ********************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'tcbn28hpcplusbwp12t40p140tt1v25c.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'core_typ.lib'.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD20BWP12T40P140'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD24BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD20BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD24BWP12T40P140'
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-9'.
+Warning : Partition Based Synthesis (PBS) is turned off. Expect very long runtime. [PBS-3]
+@file(query.tcl) 3: foreach phase {restored root_none all_scopes_none} {
+    if {$phase eq "root_none"} {set_db / .control_logic_optimization none}
+    if {$phase eq "all_scopes_none"} {
+        set_db [get_db designs] .control_logic_optimization none
+        set_db [get_db modules] .control_logic_optimization none
+    }
+    puts "QUERY148_PHASE $phase ROOT [get_db / .control_logic_optimization]"
+    foreach design [get_db designs] {puts "QUERY148_DESIGN [get_db $design .name] [get_db $design .control_logic_optimization]"}
+    foreach module [get_db modules] {puts "QUERY148_MODULE [get_db $module .name] [get_db $module .control_logic_optimization]"}
+}
+QUERY148_PHASE restored ROOT basic
+QUERY148_DESIGN tri_oracle_predicted_feedforward_frame inherited
+QUERY148_MODULE tri_oracle_strip_predictor inherited
+QUERY148_MODULE and_op_365 inherited
+QUERY148_MODULE lt_unsigned inherited
+QUERY148_MODULE nequal_unsigned inherited
+QUERY148_MODULE leq_signed inherited
+QUERY148_MODULE geq_signed inherited
+QUERY148_MODULE gt_signed inherited
+QUERY148_MODULE add_unsigned inherited
+QUERY148_MODULE add_unsigned_218 inherited
+QUERY148_MODULE sub_signed inherited
+QUERY148_MODULE lt_signed inherited
+QUERY148_MODULE sub_signed_2393 inherited
+QUERY148_MODULE bmux inherited
+QUERY148_MODULE bmux_2430 inherited
+QUERY148_MODULE bmux_2438 inherited
+QUERY148_MODULE bmux_3600 inherited
+QUERY148_MODULE bmux_3667 inherited
+QUERY148_MODULE tri_oracle_channel_compactor inherited
+QUERY148_MODULE or_op inherited
+QUERY148_MODULE and_op_1023 inherited
+QUERY148_MODULE not_op inherited
+QUERY148_MODULE not_op_1070 inherited
+QUERY148_MODULE and_op_1071 inherited
+QUERY148_MODULE Decoder_5_31_0 inherited
+QUERY148_MODULE geq_unsigned inherited
+QUERY148_MODULE lt_unsigned_3737 inherited
+QUERY148_MODULE lt_unsigned_3739 inherited
+QUERY148_MODULE shift_left_vlog_unsigned inherited
+QUERY148_MODULE add_unsigned_3742 inherited
+QUERY148_MODULE add_unsigned_3744 inherited
+QUERY148_MODULE sub_unsigned inherited
+QUERY148_MODULE sub_unsigned_3746 inherited
+QUERY148_MODULE equal_unsigned_3748 inherited
+QUERY148_MODULE leq_unsigned inherited
+QUERY148_MODULE lt_signed_3754 inherited
+QUERY148_MODULE lt_signed_3802 inherited
+QUERY148_MODULE lt_signed_3826 inherited
+QUERY148_MODULE lt_signed_3838 inherited
+QUERY148_MODULE lt_signed_3844 inherited
+QUERY148_MODULE lt_signed_3847 inherited
+QUERY148_MODULE sub_unsigned_3851 inherited
+QUERY148_MODULE case_box inherited
+QUERY148_MODULE mux inherited
+QUERY148_MODULE bmux_3855 inherited
+QUERY148_MODULE bmux_3858 inherited
+QUERY148_MODULE bmux_3922 inherited
+QUERY148_MODULE bmux_3923 inherited
+QUERY148_MODULE bmux_3955 inherited
+QUERY148_MODULE bmux_4029 inherited
+QUERY148_MODULE tri_oracle_predicted_dispatch inherited
+QUERY148_MODULE tri_oracle_prediction_packet_stream inherited
+QUERY148_MODULE equal_unsigned_4042 inherited
+QUERY148_MODULE gt_unsigned inherited
+QUERY148_MODULE lt_unsigned_4046 inherited
+QUERY148_MODULE gt_unsigned_4049 inherited
+QUERY148_MODULE equal_unsigned_4059 inherited
+QUERY148_MODULE nequal_unsigned_4061 inherited
+QUERY148_MODULE equal_unsigned_4065 inherited
+QUERY148_MODULE nequal_unsigned_4067 inherited
+QUERY148_MODULE add_unsigned_4071 inherited
+QUERY148_MODULE leq_unsigned_4074 inherited
+QUERY148_MODULE geq_unsigned_4080 inherited
+QUERY148_MODULE gt_unsigned_4269 inherited
+QUERY148_MODULE geq_unsigned_4272 inherited
+QUERY148_MODULE gt_unsigned_4277 inherited
+QUERY148_MODULE add_unsigned_4279 inherited
+QUERY148_MODULE add_unsigned_4281 inherited
+QUERY148_MODULE add_unsigned_4283 inherited
+QUERY148_MODULE case_box_1154 inherited
+QUERY148_MODULE mux_4299 inherited
+QUERY148_MODULE bmux_4305 inherited
+QUERY148_MODULE bmux_4307 inherited
+QUERY148_MODULE case_box_1155 inherited
+QUERY148_MODULE mux_4309 inherited
+QUERY148_MODULE mux_4316 inherited
+QUERY148_MODULE bmux_4317 inherited
+QUERY148_MODULE mux_4321 inherited
+QUERY148_MODULE bmux_4331 inherited
+QUERY148_MODULE mux_4335 inherited
+QUERY148_MODULE mux_4338 inherited
+QUERY148_MODULE mux_4341 inherited
+QUERY148_MODULE mux_4345 inherited
+QUERY148_MODULE mux_4347 inherited
+QUERY148_MODULE bmux_4349 inherited
+QUERY148_MODULE gt_signed_4353 inherited
+QUERY148_MODULE lt_signed_4356 inherited
+QUERY148_MODULE lt_signed_4359 inherited
+QUERY148_MODULE sub_signed_4361 inherited
+QUERY148_MODULE add_signed inherited
+QUERY148_MODULE sub_signed_4363 inherited
+QUERY148_MODULE bmux_4364 inherited
+QUERY148_MODULE bmux_4367 inherited
+QUERY148_MODULE leq_signed_4370 inherited
+QUERY148_MODULE geq_signed_4373 inherited
+QUERY148_MODULE mult_signed inherited
+QUERY148_MODULE add_signed_4434 inherited
+QUERY148_MODULE lt_signed_4437 inherited
+QUERY148_MODULE sub_unsigned_4439 inherited
+QUERY148_MODULE sub_signed_4502 inherited
+QUERY148_MODULE add_signed_4504 inherited
+QUERY148_MODULE add_signed_4506 inherited
+QUERY148_MODULE add_unsigned_4508 inherited
+QUERY148_MODULE sub_signed_4510 inherited
+QUERY148_MODULE tri_oracle_silu_gate inherited
+QUERY148_MODULE mult_signed_4618 inherited
+QUERY148_MODULE gt_signed_4631 inherited
+QUERY148_MODULE lt_signed_4634 inherited
+QUERY148_MODULE lt_signed_4642 inherited
+QUERY148_MODULE sub_signed_4644 inherited
+QUERY148_MODULE arith_shift_right_vlog_signed inherited
+QUERY148_MODULE sub_signed_4850 inherited
+QUERY148_MODULE add_signed_4852 inherited
+QUERY148_MODULE sub_unsigned_5060 inherited
+QUERY148_MODULE shift_left_vlog_unsigned_5062 inherited
+QUERY148_MODULE bmux_5063 inherited
+QUERY148_MODULE bmux_5067 inherited
+QUERY148_MODULE tri_oracle_fabric_gated_executor inherited
+QUERY148_MODULE lt_unsigned_5077 inherited
+QUERY148_MODULE lt_signed_5082 inherited
+QUERY148_MODULE add_unsigned_5084 inherited
+QUERY148_MODULE sub_unsigned_5086 inherited
+QUERY148_MODULE gt_unsigned_5089 inherited
+QUERY148_MODULE add_unsigned_5091 inherited
+QUERY148_MODULE mult_unsigned inherited
+QUERY148_MODULE lt_signed_19768 inherited
+QUERY148_MODULE lt_signed_49144 inherited
+QUERY148_MODULE gt_unsigned_78520 inherited
+QUERY148_MODULE nequal_unsigned_78542 inherited
+QUERY148_MODULE nequal_unsigned_78546 inherited
+QUERY148_MODULE add_unsigned_78554 inherited
+QUERY148_MODULE case_box_1523 inherited
+QUERY148_MODULE mux_78572 inherited
+QUERY148_MODULE bmux_78581 inherited
+QUERY148_MODULE bmux_78582 inherited
+QUERY148_MODULE case_box_1524 inherited
+QUERY148_MODULE mux_78587 inherited
+QUERY148_MODULE mux_78591 inherited
+QUERY148_MODULE bmux_78755 inherited
+QUERY148_MODULE mux_78766 inherited
+QUERY148_MODULE tri_oracle_sparse_weight_dma_pipelined inherited
+QUERY148_MODULE tri_oracle_sparse_weight_dma inherited
+QUERY148_MODULE tri_oracle_cluster_projection_executor inherited
+QUERY148_MODULE add_unsigned_78790 inherited
+QUERY148_MODULE mult_unsigned_79116 inherited
+QUERY148_MODULE add_unsigned_79118 inherited
+QUERY148_MODULE lt_unsigned_82457 inherited
+QUERY148_MODULE geq_unsigned_82460 inherited
+QUERY148_MODULE mult_unsigned_82472 inherited
+QUERY148_MODULE add_unsigned_82474 inherited
+QUERY148_MODULE geq_unsigned_82477 inherited
+QUERY148_MODULE sub_unsigned_82479 inherited
+QUERY148_MODULE lt_unsigned_82482 inherited
+QUERY148_MODULE sub_unsigned_82484 inherited
+QUERY148_MODULE gt_unsigned_82487 inherited
+QUERY148_MODULE add_unsigned_82494 inherited
+QUERY148_MODULE equal_unsigned_82500 inherited
+QUERY148_MODULE add_unsigned_82502 inherited
+QUERY148_MODULE add_unsigned_82504 inherited
+QUERY148_MODULE add_unsigned_82506 inherited
+QUERY148_MODULE add_unsigned_82508 inherited
+QUERY148_MODULE add_unsigned_82514 inherited
+QUERY148_MODULE add_unsigned_82538 inherited
+QUERY148_MODULE nequal_unsigned_82638 inherited
+QUERY148_MODULE add_unsigned_82642 inherited
+QUERY148_MODULE case_box_1623 inherited
+QUERY148_MODULE bmux_82646 inherited
+QUERY148_MODULE case_box_1624 inherited
+QUERY148_MODULE mux_82648 inherited
+QUERY148_MODULE case_box_1627 inherited
+QUERY148_MODULE mux_82657 inherited
+QUERY148_MODULE mux_82658 inherited
+QUERY148_MODULE mux_82659 inherited
+QUERY148_MODULE case_box_1636 inherited
+QUERY148_MODULE mux_82661 inherited
+QUERY148_MODULE bmux_82665 inherited
+QUERY148_MODULE bmux_82666 inherited
+QUERY148_MODULE mux_82667 inherited
+QUERY148_MODULE mux_82672 inherited
+QUERY148_MODULE case_box_1639 inherited
+QUERY148_MODULE mux_82710 inherited
+QUERY148_MODULE mux_82743 inherited
+QUERY148_MODULE case_box_1645 inherited
+QUERY148_MODULE mux_82745 inherited
+QUERY148_MODULE case_box_1648 inherited
+QUERY148_MODULE mux_82746 inherited
+QUERY148_MODULE case_box_1651 inherited
+QUERY148_MODULE mux_82759 inherited
+QUERY148_MODULE mux_82762 inherited
+QUERY148_MODULE bmux_82770 inherited
+QUERY148_MODULE tri_oracle_down_executor_staged inherited
+QUERY148_MODULE tri_oracle_down_executor inherited
+QUERY148_MODULE tri_oracle_cluster_down_executor inherited
+QUERY148_MODULE and_op_1664 inherited
+QUERY148_MODULE and_op_1669 inherited
+QUERY148_MODULE and_op_1690 inherited
+QUERY148_MODULE and_op_1697 inherited
+QUERY148_MODULE or_op_1698 inherited
+QUERY148_MODULE Decoder_2_3_0 inherited
+QUERY148_MODULE Decoder_2_3_0_1734 inherited
+QUERY148_MODULE bmux_82781 inherited
+QUERY148_MODULE Decoder_2_3_0_1743 inherited
+QUERY148_MODULE or_op_1762 inherited
+QUERY148_MODULE and_op_1764 inherited
+QUERY148_MODULE leq_unsigned_82798 inherited
+QUERY148_MODULE nequal_unsigned_82810 inherited
+QUERY148_MODULE nequal_unsigned_82816 inherited
+QUERY148_MODULE nequal_unsigned_82856 inherited
+QUERY148_MODULE add_unsigned_82898 inherited
+QUERY148_MODULE add_unsigned_82902 inherited
+QUERY148_MODULE add_signed_82904 inherited
+QUERY148_MODULE add_signed_82906 inherited
+QUERY148_MODULE case_box_1805 inherited
+QUERY148_MODULE case_box_1806 inherited
+QUERY148_MODULE mux_83094 inherited
+QUERY148_MODULE case_box_1809 inherited
+QUERY148_MODULE bmux_83105 inherited
+QUERY148_MODULE bmux_83108 inherited
+QUERY148_MODULE case_box_1812 inherited
+QUERY148_MODULE mux_83112 inherited
+QUERY148_MODULE bmux_83117 inherited
+QUERY148_MODULE bmux_83118 inherited
+QUERY148_MODULE bmux_83119 inherited
+QUERY148_MODULE bmux_83120 inherited
+QUERY148_MODULE tri_oracle_shared_cluster_executor inherited
+QUERY148_MODULE case_box_1852 inherited
+QUERY148_MODULE mux_83180 inherited
+QUERY148_MODULE mux_83182 inherited
+QUERY148_MODULE mux_83186 inherited
+QUERY148_MODULE mux_83188 inherited
+QUERY148_MODULE bmux_83213 inherited
+QUERY148_MODULE gt_signed_83237 inherited
+QUERY148_MODULE add_signed_83245 inherited
+QUERY148_MODULE add_signed_83247 inherited
+QUERY148_MODULE add_signed_83249 inherited
+QUERY148_MODULE tri_oracle_sram_compute_cluster inherited
+QUERY148_MODULE or_op_1854 inherited
+QUERY148_MODULE and_op inherited
+QUERY148_MODULE bmux_83254 inherited
+QUERY148_MODULE and_op_1862 inherited
+QUERY148_MODULE and_op_1866 inherited
+QUERY148_MODULE Decoder_4_15_0 inherited
+QUERY148_MODULE Decoder_4_15_0_1887 inherited
+QUERY148_MODULE Decoder_4_15_0_1890 inherited
+QUERY148_MODULE sub_unsigned_83321 inherited
+QUERY148_MODULE sub_unsigned_83352 inherited
+QUERY148_MODULE bmux_83363 inherited
+QUERY148_MODULE case_box_1931 inherited
+QUERY148_MODULE case_box_1932 inherited
+QUERY148_MODULE tri_oracle_shared_fabric inherited
+QUERY148_MODULE and_op_2244 inherited
+QUERY148_MODULE Decoder_3_4_0 inherited
+QUERY148_MODULE Decoder_3_4_0_2297 inherited
+QUERY148_MODULE bmux_83415 inherited
+QUERY148_MODULE Decoder_4_15_0_2320 inherited
+QUERY148_MODULE and_op_2323 inherited
+QUERY148_MODULE or_op_2324 inherited
+QUERY148_MODULE not_op_2325 inherited
+QUERY148_MODULE or_op_2326 inherited
+QUERY148_MODULE or_op_2327 inherited
+QUERY148_MODULE and_op_2331 inherited
+QUERY148_MODULE and_op_2332 inherited
+QUERY148_MODULE or_op_2333 inherited
+QUERY148_MODULE and_op_2341 inherited
+QUERY148_MODULE Decoder_4_15_0_2345 inherited
+QUERY148_MODULE gt_signed_83459 inherited
+QUERY148_MODULE gt_signed_83462 inherited
+QUERY148_MODULE gt_signed_83468 inherited
+QUERY148_MODULE gt_signed_83471 inherited
+QUERY148_MODULE sub_unsigned_83488 inherited
+QUERY148_MODULE gt_signed_83491 inherited
+QUERY148_MODULE sub_signed_83493 inherited
+QUERY148_MODULE add_unsigned_83502 inherited
+QUERY148_MODULE sub_unsigned_83510 inherited
+QUERY148_MODULE sub_signed_83515 inherited
+QUERY148_MODULE add_unsigned_83524 inherited
+QUERY148_MODULE sub_unsigned_83526 inherited
+QUERY148_MODULE sub_signed_83531 inherited
+QUERY148_MODULE add_unsigned_83540 inherited
+QUERY148_MODULE nequal_unsigned_83568 inherited
+QUERY148_MODULE add_unsigned_83640 inherited
+QUERY148_MODULE geq_unsigned_83643 inherited
+QUERY148_MODULE sub_signed_83645 inherited
+QUERY148_MODULE add_unsigned_83647 inherited
+QUERY148_MODULE geq_signed_83655 inherited
+QUERY148_MODULE add_unsigned_83659 inherited
+QUERY148_MODULE add_unsigned_83675 inherited
+QUERY148_MODULE geq_unsigned_156003 inherited
+QUERY148_MODULE gt_unsigned_156192 inherited
+QUERY148_MODULE lt_unsigned_156202 inherited
+QUERY148_MODULE add_unsigned_156209 inherited
+QUERY148_MODULE case_box_2419 inherited
+QUERY148_MODULE case_box_2420 inherited
+QUERY148_MODULE bmux_156348 inherited
+QUERY148_MODULE bmux_156349 inherited
+QUERY148_MODULE bmux_156350 inherited
+QUERY148_MODULE case_box_2423 inherited
+QUERY148_MODULE case_box_2426 inherited
+QUERY148_MODULE mux_156352 inherited
+QUERY148_MODULE mux_156355 inherited
+QUERY148_MODULE bmux_156356 inherited
+QUERY148_MODULE mux_156364 inherited
+QUERY148_MODULE bmux_156370 inherited
+QUERY148_MODULE bmux_156372 inherited
+QUERY148_MODULE mux_156397 inherited
+QUERY148_MODULE mux_156404 inherited
+QUERY148_MODULE case_box_2429 inherited
+QUERY148_MODULE tri_oracle_gated_down_fabric inherited
+QUERY148_MODULE case_box_2481 inherited
+QUERY148_MODULE tri_oracle_feedforward_frame inherited
+QUERY148_MODULE nequal_unsigned_156531 inherited
+QUERY148_MODULE nequal_unsigned_156535 inherited
+QUERY148_MODULE mult_unsigned_156549 inherited
+QUERY148_MODULE sub_unsigned_156551 inherited
+QUERY148_MODULE gt_unsigned_156554 inherited
+QUERY148_MODULE leq_unsigned_156557 inherited
+QUERY148_MODULE equal_unsigned_156586 inherited
+QUERY148_MODULE gt_unsigned_156589 inherited
+QUERY148_MODULE add_unsigned_157500 inherited
+QUERY148_MODULE mult_unsigned_157640 inherited
+QUERY148_MODULE add_unsigned_158607 inherited
+QUERY148_MODULE gt_unsigned_158610 inherited
+QUERY148_MODULE nequal_unsigned_158620 inherited
+QUERY148_MODULE sub_unsigned_158632 inherited
+QUERY148_MODULE case_box_2710 inherited
+QUERY148_MODULE bmux_158637 inherited
+QUERY148_MODULE bmux_158639 inherited
+QUERY148_MODULE case_box_2711 inherited
+QUERY148_MODULE mux_158660 inherited
+QUERY148_MODULE mux_158668 inherited
+QUERY148_MODULE mux_158674 inherited
+QUERY148_MODULE mux_158678 inherited
+QUERY148_MODULE mux_158695 inherited
+QUERY148_MODULE bmux_2733 inherited
+QUERY148_MODULE bmux_2734 inherited
+QUERY148_MODULE bmux_2735 inherited
+QUERY148_MODULE bmux_2736 inherited
+QUERY148_MODULE bmux_2737 inherited
+QUERY148_MODULE bmux_2738 inherited
+QUERY148_MODULE bmux_2739 inherited
+QUERY148_MODULE bmux_2740 inherited
+QUERY148_MODULE bmux_2741 inherited
+QUERY148_MODULE bmux_2742 inherited
+QUERY148_MODULE bmux_2743 inherited
+QUERY148_MODULE bmux_2744 inherited
+QUERY148_MODULE bmux_2745 inherited
+QUERY148_MODULE bmux_2746 inherited
+QUERY148_MODULE bmux_2747 inherited
+QUERY148_MODULE bmux_2748 inherited
+QUERY148_MODULE bmux_2749 inherited
+QUERY148_MODULE shift_left_vlog_unsigned_2753 inherited
+QUERY148_MODULE shift_left_vlog_unsigned_2755 inherited
+  Setting attribute of root '/': 'control_logic_optimization' = none
+QUERY148_PHASE root_none ROOT none
+QUERY148_DESIGN tri_oracle_predicted_feedforward_frame inherited
+QUERY148_MODULE tri_oracle_strip_predictor inherited
+QUERY148_MODULE and_op_365 inherited
+QUERY148_MODULE lt_unsigned inherited
+QUERY148_MODULE nequal_unsigned inherited
+QUERY148_MODULE leq_signed inherited
+QUERY148_MODULE geq_signed inherited
+QUERY148_MODULE gt_signed inherited
+QUERY148_MODULE add_unsigned inherited
+QUERY148_MODULE add_unsigned_218 inherited
+QUERY148_MODULE sub_signed inherited
+QUERY148_MODULE lt_signed inherited
+QUERY148_MODULE sub_signed_2393 inherited
+QUERY148_MODULE bmux inherited
+QUERY148_MODULE bmux_2430 inherited
+QUERY148_MODULE bmux_2438 inherited
+QUERY148_MODULE bmux_3600 inherited
+QUERY148_MODULE bmux_3667 inherited
+QUERY148_MODULE tri_oracle_channel_compactor inherited
+QUERY148_MODULE or_op inherited
+QUERY148_MODULE and_op_1023 inherited
+QUERY148_MODULE not_op inherited
+QUERY148_MODULE not_op_1070 inherited
+QUERY148_MODULE and_op_1071 inherited
+QUERY148_MODULE Decoder_5_31_0 inherited
+QUERY148_MODULE geq_unsigned inherited
+QUERY148_MODULE lt_unsigned_3737 inherited
+QUERY148_MODULE lt_unsigned_3739 inherited
+QUERY148_MODULE shift_left_vlog_unsigned inherited
+QUERY148_MODULE add_unsigned_3742 inherited
+QUERY148_MODULE add_unsigned_3744 inherited
+QUERY148_MODULE sub_unsigned inherited
+QUERY148_MODULE sub_unsigned_3746 inherited
+QUERY148_MODULE equal_unsigned_3748 inherited
+QUERY148_MODULE leq_unsigned inherited
+QUERY148_MODULE lt_signed_3754 inherited
+QUERY148_MODULE lt_signed_3802 inherited
+QUERY148_MODULE lt_signed_3826 inherited
+QUERY148_MODULE lt_signed_3838 inherited
+QUERY148_MODULE lt_signed_3844 inherited
+QUERY148_MODULE lt_signed_3847 inherited
+QUERY148_MODULE sub_unsigned_3851 inherited
+QUERY148_MODULE case_box inherited
+QUERY148_MODULE mux inherited
+QUERY148_MODULE bmux_3855 inherited
+QUERY148_MODULE bmux_3858 inherited
+QUERY148_MODULE bmux_3922 inherited
+QUERY148_MODULE bmux_3923 inherited
+QUERY148_MODULE bmux_3955 inherited
+QUERY148_MODULE bmux_4029 inherited
+QUERY148_MODULE tri_oracle_predicted_dispatch inherited
+QUERY148_MODULE tri_oracle_prediction_packet_stream inherited
+QUERY148_MODULE equal_unsigned_4042 inherited
+QUERY148_MODULE gt_unsigned inherited
+QUERY148_MODULE lt_unsigned_4046 inherited
+QUERY148_MODULE gt_unsigned_4049 inherited
+QUERY148_MODULE equal_unsigned_4059 inherited
+QUERY148_MODULE nequal_unsigned_4061 inherited
+QUERY148_MODULE equal_unsigned_4065 inherited
+QUERY148_MODULE nequal_unsigned_4067 inherited
+QUERY148_MODULE add_unsigned_4071 inherited
+QUERY148_MODULE leq_unsigned_4074 inherited
+QUERY148_MODULE geq_unsigned_4080 inherited
+QUERY148_MODULE gt_unsigned_4269 inherited
+QUERY148_MODULE geq_unsigned_4272 inherited
+QUERY148_MODULE gt_unsigned_4277 inherited
+QUERY148_MODULE add_unsigned_4279 inherited
+QUERY148_MODULE add_unsigned_4281 inherited
+QUERY148_MODULE add_unsigned_4283 inherited
+QUERY148_MODULE case_box_1154 inherited
+QUERY148_MODULE mux_4299 inherited
+QUERY148_MODULE bmux_4305 inherited
+QUERY148_MODULE bmux_4307 inherited
+QUERY148_MODULE case_box_1155 inherited
+QUERY148_MODULE mux_4309 inherited
+QUERY148_MODULE mux_4316 inherited
+QUERY148_MODULE bmux_4317 inherited
+QUERY148_MODULE mux_4321 inherited
+QUERY148_MODULE bmux_4331 inherited
+QUERY148_MODULE mux_4335 inherited
+QUERY148_MODULE mux_4338 inherited
+QUERY148_MODULE mux_4341 inherited
+QUERY148_MODULE mux_4345 inherited
+QUERY148_MODULE mux_4347 inherited
+QUERY148_MODULE bmux_4349 inherited
+QUERY148_MODULE gt_signed_4353 inherited
+QUERY148_MODULE lt_signed_4356 inherited
+QUERY148_MODULE lt_signed_4359 inherited
+QUERY148_MODULE sub_signed_4361 inherited
+QUERY148_MODULE add_signed inherited
+QUERY148_MODULE sub_signed_4363 inherited
+QUERY148_MODULE bmux_4364 inherited
+QUERY148_MODULE bmux_4367 inherited
+QUERY148_MODULE leq_signed_4370 inherited
+QUERY148_MODULE geq_signed_4373 inherited
+QUERY148_MODULE mult_signed inherited
+QUERY148_MODULE add_signed_4434 inherited
+QUERY148_MODULE lt_signed_4437 inherited
+QUERY148_MODULE sub_unsigned_4439 inherited
+QUERY148_MODULE sub_signed_4502 inherited
+QUERY148_MODULE add_signed_4504 inherited
+QUERY148_MODULE add_signed_4506 inherited
+QUERY148_MODULE add_unsigned_4508 inherited
+QUERY148_MODULE sub_signed_4510 inherited
+QUERY148_MODULE tri_oracle_silu_gate inherited
+QUERY148_MODULE mult_signed_4618 inherited
+QUERY148_MODULE gt_signed_4631 inherited
+QUERY148_MODULE lt_signed_4634 inherited
+QUERY148_MODULE lt_signed_4642 inherited
+QUERY148_MODULE sub_signed_4644 inherited
+QUERY148_MODULE arith_shift_right_vlog_signed inherited
+QUERY148_MODULE sub_signed_4850 inherited
+QUERY148_MODULE add_signed_4852 inherited
+QUERY148_MODULE sub_unsigned_5060 inherited
+QUERY148_MODULE shift_left_vlog_unsigned_5062 inherited
+QUERY148_MODULE bmux_5063 inherited
+QUERY148_MODULE bmux_5067 inherited
+QUERY148_MODULE tri_oracle_fabric_gated_executor inherited
+QUERY148_MODULE lt_unsigned_5077 inherited
+QUERY148_MODULE lt_signed_5082 inherited
+QUERY148_MODULE add_unsigned_5084 inherited
+QUERY148_MODULE sub_unsigned_5086 inherited
+QUERY148_MODULE gt_unsigned_5089 inherited
+QUERY148_MODULE add_unsigned_5091 inherited
+QUERY148_MODULE mult_unsigned inherited
+QUERY148_MODULE lt_signed_19768 inherited
+QUERY148_MODULE lt_signed_49144 inherited
+QUERY148_MODULE gt_unsigned_78520 inherited
+QUERY148_MODULE nequal_unsigned_78542 inherited
+QUERY148_MODULE nequal_unsigned_78546 inherited
+QUERY148_MODULE add_unsigned_78554 inherited
+QUERY148_MODULE case_box_1523 inherited
+QUERY148_MODULE mux_78572 inherited
+QUERY148_MODULE bmux_78581 inherited
+QUERY148_MODULE bmux_78582 inherited
+QUERY148_MODULE case_box_1524 inherited
+QUERY148_MODULE mux_78587 inherited
+QUERY148_MODULE mux_78591 inherited
+QUERY148_MODULE bmux_78755 inherited
+QUERY148_MODULE mux_78766 inherited
+QUERY148_MODULE tri_oracle_sparse_weight_dma_pipelined inherited
+QUERY148_MODULE tri_oracle_sparse_weight_dma inherited
+QUERY148_MODULE tri_oracle_cluster_projection_executor inherited
+QUERY148_MODULE add_unsigned_78790 inherited
+QUERY148_MODULE mult_unsigned_79116 inherited
+QUERY148_MODULE add_unsigned_79118 inherited
+QUERY148_MODULE lt_unsigned_82457 inherited
+QUERY148_MODULE geq_unsigned_82460 inherited
+QUERY148_MODULE mult_unsigned_82472 inherited
+QUERY148_MODULE add_unsigned_82474 inherited
+QUERY148_MODULE geq_unsigned_82477 inherited
+QUERY148_MODULE sub_unsigned_82479 inherited
+QUERY148_MODULE lt_unsigned_82482 inherited
+QUERY148_MODULE sub_unsigned_82484 inherited
+QUERY148_MODULE gt_unsigned_82487 inherited
+QUERY148_MODULE add_unsigned_82494 inherited
+QUERY148_MODULE equal_unsigned_82500 inherited
+QUERY148_MODULE add_unsigned_82502 inherited
+QUERY148_MODULE add_unsigned_82504 inherited
+QUERY148_MODULE add_unsigned_82506 inherited
+QUERY148_MODULE add_unsigned_82508 inherited
+QUERY148_MODULE add_unsigned_82514 inherited
+QUERY148_MODULE add_unsigned_82538 inherited
+QUERY148_MODULE nequal_unsigned_82638 inherited
+QUERY148_MODULE add_unsigned_82642 inherited
+QUERY148_MODULE case_box_1623 inherited
+QUERY148_MODULE bmux_82646 inherited
+QUERY148_MODULE case_box_1624 inherited
+QUERY148_MODULE mux_82648 inherited
+QUERY148_MODULE case_box_1627 inherited
+QUERY148_MODULE mux_82657 inherited
+QUERY148_MODULE mux_82658 inherited
+QUERY148_MODULE mux_82659 inherited
+QUERY148_MODULE case_box_1636 inherited
+QUERY148_MODULE mux_82661 inherited
+QUERY148_MODULE bmux_82665 inherited
+QUERY148_MODULE bmux_82666 inherited
+QUERY148_MODULE mux_82667 inherited
+QUERY148_MODULE mux_82672 inherited
+QUERY148_MODULE case_box_1639 inherited
+QUERY148_MODULE mux_82710 inherited
+QUERY148_MODULE mux_82743 inherited
+QUERY148_MODULE case_box_1645 inherited
+QUERY148_MODULE mux_82745 inherited
+QUERY148_MODULE case_box_1648 inherited
+QUERY148_MODULE mux_82746 inherited
+QUERY148_MODULE case_box_1651 inherited
+QUERY148_MODULE mux_82759 inherited
+QUERY148_MODULE mux_82762 inherited
+QUERY148_MODULE bmux_82770 inherited
+QUERY148_MODULE tri_oracle_down_executor_staged inherited
+QUERY148_MODULE tri_oracle_down_executor inherited
+QUERY148_MODULE tri_oracle_cluster_down_executor inherited
+QUERY148_MODULE and_op_1664 inherited
+QUERY148_MODULE and_op_1669 inherited
+QUERY148_MODULE and_op_1690 inherited
+QUERY148_MODULE and_op_1697 inherited
+QUERY148_MODULE or_op_1698 inherited
+QUERY148_MODULE Decoder_2_3_0 inherited
+QUERY148_MODULE Decoder_2_3_0_1734 inherited
+QUERY148_MODULE bmux_82781 inherited
+QUERY148_MODULE Decoder_2_3_0_1743 inherited
+QUERY148_MODULE or_op_1762 inherited
+QUERY148_MODULE and_op_1764 inherited
+QUERY148_MODULE leq_unsigned_82798 inherited
+QUERY148_MODULE nequal_unsigned_82810 inherited
+QUERY148_MODULE nequal_unsigned_82816 inherited
+QUERY148_MODULE nequal_unsigned_82856 inherited
+QUERY148_MODULE add_unsigned_82898 inherited
+QUERY148_MODULE add_unsigned_82902 inherited
+QUERY148_MODULE add_signed_82904 inherited
+QUERY148_MODULE add_signed_82906 inherited
+QUERY148_MODULE case_box_1805 inherited
+QUERY148_MODULE case_box_1806 inherited
+QUERY148_MODULE mux_83094 inherited
+QUERY148_MODULE case_box_1809 inherited
+QUERY148_MODULE bmux_83105 inherited
+QUERY148_MODULE bmux_83108 inherited
+QUERY148_MODULE case_box_1812 inherited
+QUERY148_MODULE mux_83112 inherited
+QUERY148_MODULE bmux_83117 inherited
+QUERY148_MODULE bmux_83118 inherited
+QUERY148_MODULE bmux_83119 inherited
+QUERY148_MODULE bmux_83120 inherited
+QUERY148_MODULE tri_oracle_shared_cluster_executor inherited
+QUERY148_MODULE case_box_1852 inherited
+QUERY148_MODULE mux_83180 inherited
+QUERY148_MODULE mux_83182 inherited
+QUERY148_MODULE mux_83186 inherited
+QUERY148_MODULE mux_83188 inherited
+QUERY148_MODULE bmux_83213 inherited
+QUERY148_MODULE gt_signed_83237 inherited
+QUERY148_MODULE add_signed_83245 inherited
+QUERY148_MODULE add_signed_83247 inherited
+QUERY148_MODULE add_signed_83249 inherited
+QUERY148_MODULE tri_oracle_sram_compute_cluster inherited
+QUERY148_MODULE or_op_1854 inherited
+QUERY148_MODULE and_op inherited
+QUERY148_MODULE bmux_83254 inherited
+QUERY148_MODULE and_op_1862 inherited
+QUERY148_MODULE and_op_1866 inherited
+QUERY148_MODULE Decoder_4_15_0 inherited
+QUERY148_MODULE Decoder_4_15_0_1887 inherited
+QUERY148_MODULE Decoder_4_15_0_1890 inherited
+QUERY148_MODULE sub_unsigned_83321 inherited
+QUERY148_MODULE sub_unsigned_83352 inherited
+QUERY148_MODULE bmux_83363 inherited
+QUERY148_MODULE case_box_1931 inherited
+QUERY148_MODULE case_box_1932 inherited
+QUERY148_MODULE tri_oracle_shared_fabric inherited
+QUERY148_MODULE and_op_2244 inherited
+QUERY148_MODULE Decoder_3_4_0 inherited
+QUERY148_MODULE Decoder_3_4_0_2297 inherited
+QUERY148_MODULE bmux_83415 inherited
+QUERY148_MODULE Decoder_4_15_0_2320 inherited
+QUERY148_MODULE and_op_2323 inherited
+QUERY148_MODULE or_op_2324 inherited
+QUERY148_MODULE not_op_2325 inherited
+QUERY148_MODULE or_op_2326 inherited
+QUERY148_MODULE or_op_2327 inherited
+QUERY148_MODULE and_op_2331 inherited
+QUERY148_MODULE and_op_2332 inherited
+QUERY148_MODULE or_op_2333 inherited
+QUERY148_MODULE and_op_2341 inherited
+QUERY148_MODULE Decoder_4_15_0_2345 inherited
+QUERY148_MODULE gt_signed_83459 inherited
+QUERY148_MODULE gt_signed_83462 inherited
+QUERY148_MODULE gt_signed_83468 inherited
+QUERY148_MODULE gt_signed_83471 inherited
+QUERY148_MODULE sub_unsigned_83488 inherited
+QUERY148_MODULE gt_signed_83491 inherited
+QUERY148_MODULE sub_signed_83493 inherited
+QUERY148_MODULE add_unsigned_83502 inherited
+QUERY148_MODULE sub_unsigned_83510 inherited
+QUERY148_MODULE sub_signed_83515 inherited
+QUERY148_MODULE add_unsigned_83524 inherited
+QUERY148_MODULE sub_unsigned_83526 inherited
+QUERY148_MODULE sub_signed_83531 inherited
+QUERY148_MODULE add_unsigned_83540 inherited
+QUERY148_MODULE nequal_unsigned_83568 inherited
+QUERY148_MODULE add_unsigned_83640 inherited
+QUERY148_MODULE geq_unsigned_83643 inherited
+QUERY148_MODULE sub_signed_83645 inherited
+QUERY148_MODULE add_unsigned_83647 inherited
+QUERY148_MODULE geq_signed_83655 inherited
+QUERY148_MODULE add_unsigned_83659 inherited
+QUERY148_MODULE add_unsigned_83675 inherited
+QUERY148_MODULE geq_unsigned_156003 inherited
+QUERY148_MODULE gt_unsigned_156192 inherited
+QUERY148_MODULE lt_unsigned_156202 inherited
+QUERY148_MODULE add_unsigned_156209 inherited
+QUERY148_MODULE case_box_2419 inherited
+QUERY148_MODULE case_box_2420 inherited
+QUERY148_MODULE bmux_156348 inherited
+QUERY148_MODULE bmux_156349 inherited
+QUERY148_MODULE bmux_156350 inherited
+QUERY148_MODULE case_box_2423 inherited
+QUERY148_MODULE case_box_2426 inherited
+QUERY148_MODULE mux_156352 inherited
+QUERY148_MODULE mux_156355 inherited
+QUERY148_MODULE bmux_156356 inherited
+QUERY148_MODULE mux_156364 inherited
+QUERY148_MODULE bmux_156370 inherited
+QUERY148_MODULE bmux_156372 inherited
+QUERY148_MODULE mux_156397 inherited
+QUERY148_MODULE mux_156404 inherited
+QUERY148_MODULE case_box_2429 inherited
+QUERY148_MODULE tri_oracle_gated_down_fabric inherited
+QUERY148_MODULE case_box_2481 inherited
+QUERY148_MODULE tri_oracle_feedforward_frame inherited
+QUERY148_MODULE nequal_unsigned_156531 inherited
+QUERY148_MODULE nequal_unsigned_156535 inherited
+QUERY148_MODULE mult_unsigned_156549 inherited
+QUERY148_MODULE sub_unsigned_156551 inherited
+QUERY148_MODULE gt_unsigned_156554 inherited
+QUERY148_MODULE leq_unsigned_156557 inherited
+QUERY148_MODULE equal_unsigned_156586 inherited
+QUERY148_MODULE gt_unsigned_156589 inherited
+QUERY148_MODULE add_unsigned_157500 inherited
+QUERY148_MODULE mult_unsigned_157640 inherited
+QUERY148_MODULE add_unsigned_158607 inherited
+QUERY148_MODULE gt_unsigned_158610 inherited
+QUERY148_MODULE nequal_unsigned_158620 inherited
+QUERY148_MODULE sub_unsigned_158632 inherited
+QUERY148_MODULE case_box_2710 inherited
+QUERY148_MODULE bmux_158637 inherited
+QUERY148_MODULE bmux_158639 inherited
+QUERY148_MODULE case_box_2711 inherited
+QUERY148_MODULE mux_158660 inherited
+QUERY148_MODULE mux_158668 inherited
+QUERY148_MODULE mux_158674 inherited
+QUERY148_MODULE mux_158678 inherited
+QUERY148_MODULE mux_158695 inherited
+QUERY148_MODULE bmux_2733 inherited
+QUERY148_MODULE bmux_2734 inherited
+QUERY148_MODULE bmux_2735 inherited
+QUERY148_MODULE bmux_2736 inherited
+QUERY148_MODULE bmux_2737 inherited
+QUERY148_MODULE bmux_2738 inherited
+QUERY148_MODULE bmux_2739 inherited
+QUERY148_MODULE bmux_2740 inherited
+QUERY148_MODULE bmux_2741 inherited
+QUERY148_MODULE bmux_2742 inherited
+QUERY148_MODULE bmux_2743 inherited
+QUERY148_MODULE bmux_2744 inherited
+QUERY148_MODULE bmux_2745 inherited
+QUERY148_MODULE bmux_2746 inherited
+QUERY148_MODULE bmux_2747 inherited
+QUERY148_MODULE bmux_2748 inherited
+QUERY148_MODULE bmux_2749 inherited
+QUERY148_MODULE shift_left_vlog_unsigned_2753 inherited
+QUERY148_MODULE shift_left_vlog_unsigned_2755 inherited
+  Setting attribute of design 'tri_oracle_predicted_feedforward_frame': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_strip_predictor': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_365': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'leq_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_218': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_2393': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2430': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2438': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_3600': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_3667': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_channel_compactor': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1023': 'control_logic_optimization' = none
+  Setting attribute of module 'not_op': 'control_logic_optimization' = none
+  Setting attribute of module 'not_op_1070': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1071': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_5_31_0': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned_3737': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned_3739': 'control_logic_optimization' = none
+  Setting attribute of module 'shift_left_vlog_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_3742': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_3744': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_3746': 'control_logic_optimization' = none
+  Setting attribute of module 'equal_unsigned_3748': 'control_logic_optimization' = none
+  Setting attribute of module 'leq_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_3754': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_3802': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_3826': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_3838': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_3844': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_3847': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_3851': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box': 'control_logic_optimization' = none
+  Setting attribute of module 'mux': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_3855': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_3858': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_3922': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_3923': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_3955': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4029': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_predicted_dispatch': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_prediction_packet_stream': 'control_logic_optimization' = none
+  Setting attribute of module 'equal_unsigned_4042': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned_4046': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_4049': 'control_logic_optimization' = none
+  Setting attribute of module 'equal_unsigned_4059': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_4061': 'control_logic_optimization' = none
+  Setting attribute of module 'equal_unsigned_4065': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_4067': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_4071': 'control_logic_optimization' = none
+  Setting attribute of module 'leq_unsigned_4074': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_unsigned_4080': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_4269': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_unsigned_4272': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_4277': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_4279': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_4281': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_4283': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1154': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4299': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4305': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4307': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1155': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4309': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4316': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4317': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4321': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4331': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4335': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4338': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4341': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4345': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_4347': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4349': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_4353': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_4356': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_4359': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_4361': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_4363': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4364': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_4367': 'control_logic_optimization' = none
+  Setting attribute of module 'leq_signed_4370': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_signed_4373': 'control_logic_optimization' = none
+  Setting attribute of module 'mult_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_4434': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_4437': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_4439': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_4502': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_4504': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_4506': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_4508': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_4510': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_silu_gate': 'control_logic_optimization' = none
+  Setting attribute of module 'mult_signed_4618': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_4631': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_4634': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_4642': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_4644': 'control_logic_optimization' = none
+  Setting attribute of module 'arith_shift_right_vlog_signed': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_4850': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_4852': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_5060': 'control_logic_optimization' = none
+  Setting attribute of module 'shift_left_vlog_unsigned_5062': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_5063': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_5067': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_fabric_gated_executor': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned_5077': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_5082': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_5084': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_5086': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_5089': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_5091': 'control_logic_optimization' = none
+  Setting attribute of module 'mult_unsigned': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_19768': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_signed_49144': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_78520': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_78542': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_78546': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_78554': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1523': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_78572': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_78581': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_78582': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1524': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_78587': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_78591': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_78755': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_78766': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_sparse_weight_dma_pipelined': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_sparse_weight_dma': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_cluster_projection_executor': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_78790': 'control_logic_optimization' = none
+  Setting attribute of module 'mult_unsigned_79116': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_79118': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned_82457': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_unsigned_82460': 'control_logic_optimization' = none
+  Setting attribute of module 'mult_unsigned_82472': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82474': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_unsigned_82477': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_82479': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned_82482': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_82484': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_82487': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82494': 'control_logic_optimization' = none
+  Setting attribute of module 'equal_unsigned_82500': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82502': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82504': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82506': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82508': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82514': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82538': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_82638': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82642': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1623': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_82646': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1624': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82648': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1627': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82657': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82658': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82659': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1636': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82661': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_82665': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_82666': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82667': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82672': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1639': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82710': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82743': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1645': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82745': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1648': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82746': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1651': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82759': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_82762': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_82770': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_down_executor_staged': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_down_executor': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_cluster_down_executor': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1664': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1669': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1690': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1697': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op_1698': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_2_3_0': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_2_3_0_1734': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_82781': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_2_3_0_1743': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op_1762': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1764': 'control_logic_optimization' = none
+  Setting attribute of module 'leq_unsigned_82798': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_82810': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_82816': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_82856': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82898': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_82902': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_82904': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_82906': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1805': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1806': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_83094': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1809': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83105': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83108': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1812': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_83112': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83117': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83118': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83119': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83120': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_shared_cluster_executor': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1852': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_83180': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_83182': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_83186': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_83188': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83213': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_83237': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_83245': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_83247': 'control_logic_optimization' = none
+  Setting attribute of module 'add_signed_83249': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_sram_compute_cluster': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op_1854': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83254': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1862': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_1866': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_4_15_0': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_4_15_0_1887': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_4_15_0_1890': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_83321': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_83352': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83363': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1931': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_1932': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_shared_fabric': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_2244': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_3_4_0': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_3_4_0_2297': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_83415': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_4_15_0_2320': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_2323': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op_2324': 'control_logic_optimization' = none
+  Setting attribute of module 'not_op_2325': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op_2326': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op_2327': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_2331': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_2332': 'control_logic_optimization' = none
+  Setting attribute of module 'or_op_2333': 'control_logic_optimization' = none
+  Setting attribute of module 'and_op_2341': 'control_logic_optimization' = none
+  Setting attribute of module 'Decoder_4_15_0_2345': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_83459': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_83462': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_83468': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_83471': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_83488': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_signed_83491': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_83493': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_83502': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_83510': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_83515': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_83524': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_83526': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_83531': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_83540': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_83568': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_83640': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_unsigned_83643': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_signed_83645': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_83647': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_signed_83655': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_83659': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_83675': 'control_logic_optimization' = none
+  Setting attribute of module 'geq_unsigned_156003': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_156192': 'control_logic_optimization' = none
+  Setting attribute of module 'lt_unsigned_156202': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_156209': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2419': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2420': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_156348': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_156349': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_156350': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2423': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2426': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_156352': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_156355': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_156356': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_156364': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_156370': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_156372': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_156397': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_156404': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2429': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_gated_down_fabric': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2481': 'control_logic_optimization' = none
+  Setting attribute of module 'tri_oracle_feedforward_frame': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_156531': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_156535': 'control_logic_optimization' = none
+  Setting attribute of module 'mult_unsigned_156549': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_156551': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_156554': 'control_logic_optimization' = none
+  Setting attribute of module 'leq_unsigned_156557': 'control_logic_optimization' = none
+  Setting attribute of module 'equal_unsigned_156586': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_156589': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_157500': 'control_logic_optimization' = none
+  Setting attribute of module 'mult_unsigned_157640': 'control_logic_optimization' = none
+  Setting attribute of module 'add_unsigned_158607': 'control_logic_optimization' = none
+  Setting attribute of module 'gt_unsigned_158610': 'control_logic_optimization' = none
+  Setting attribute of module 'nequal_unsigned_158620': 'control_logic_optimization' = none
+  Setting attribute of module 'sub_unsigned_158632': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2710': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_158637': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_158639': 'control_logic_optimization' = none
+  Setting attribute of module 'case_box_2711': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_158660': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_158668': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_158674': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_158678': 'control_logic_optimization' = none
+  Setting attribute of module 'mux_158695': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2733': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2734': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2735': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2736': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2737': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2738': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2739': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2740': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2741': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2742': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2743': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2744': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2745': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2746': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2747': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2748': 'control_logic_optimization' = none
+  Setting attribute of module 'bmux_2749': 'control_logic_optimization' = none
+  Setting attribute of module 'shift_left_vlog_unsigned_2753': 'control_logic_optimization' = none
+  Setting attribute of module 'shift_left_vlog_unsigned_2755': 'control_logic_optimization' = none
+QUERY148_PHASE all_scopes_none ROOT none
+QUERY148_DESIGN tri_oracle_predicted_feedforward_frame none
+QUERY148_MODULE tri_oracle_strip_predictor none
+QUERY148_MODULE and_op_365 none
+QUERY148_MODULE lt_unsigned none
+QUERY148_MODULE nequal_unsigned none
+QUERY148_MODULE leq_signed none
+QUERY148_MODULE geq_signed none
+QUERY148_MODULE gt_signed none
+QUERY148_MODULE add_unsigned none
+QUERY148_MODULE add_unsigned_218 none
+QUERY148_MODULE sub_signed none
+QUERY148_MODULE lt_signed none
+QUERY148_MODULE sub_signed_2393 none
+QUERY148_MODULE bmux none
+QUERY148_MODULE bmux_2430 none
+QUERY148_MODULE bmux_2438 none
+QUERY148_MODULE bmux_3600 none
+QUERY148_MODULE bmux_3667 none
+QUERY148_MODULE tri_oracle_channel_compactor none
+QUERY148_MODULE or_op none
+QUERY148_MODULE and_op_1023 none
+QUERY148_MODULE not_op none
+QUERY148_MODULE not_op_1070 none
+QUERY148_MODULE and_op_1071 none
+QUERY148_MODULE Decoder_5_31_0 none
+QUERY148_MODULE geq_unsigned none
+QUERY148_MODULE lt_unsigned_3737 none
+QUERY148_MODULE lt_unsigned_3739 none
+QUERY148_MODULE shift_left_vlog_unsigned none
+QUERY148_MODULE add_unsigned_3742 none
+QUERY148_MODULE add_unsigned_3744 none
+QUERY148_MODULE sub_unsigned none
+QUERY148_MODULE sub_unsigned_3746 none
+QUERY148_MODULE equal_unsigned_3748 none
+QUERY148_MODULE leq_unsigned none
+QUERY148_MODULE lt_signed_3754 none
+QUERY148_MODULE lt_signed_3802 none
+QUERY148_MODULE lt_signed_3826 none
+QUERY148_MODULE lt_signed_3838 none
+QUERY148_MODULE lt_signed_3844 none
+QUERY148_MODULE lt_signed_3847 none
+QUERY148_MODULE sub_unsigned_3851 none
+QUERY148_MODULE case_box none
+QUERY148_MODULE mux none
+QUERY148_MODULE bmux_3855 none
+QUERY148_MODULE bmux_3858 none
+QUERY148_MODULE bmux_3922 none
+QUERY148_MODULE bmux_3923 none
+QUERY148_MODULE bmux_3955 none
+QUERY148_MODULE bmux_4029 none
+QUERY148_MODULE tri_oracle_predicted_dispatch none
+QUERY148_MODULE tri_oracle_prediction_packet_stream none
+QUERY148_MODULE equal_unsigned_4042 none
+QUERY148_MODULE gt_unsigned none
+QUERY148_MODULE lt_unsigned_4046 none
+QUERY148_MODULE gt_unsigned_4049 none
+QUERY148_MODULE equal_unsigned_4059 none
+QUERY148_MODULE nequal_unsigned_4061 none
+QUERY148_MODULE equal_unsigned_4065 none
+QUERY148_MODULE nequal_unsigned_4067 none
+QUERY148_MODULE add_unsigned_4071 none
+QUERY148_MODULE leq_unsigned_4074 none
+QUERY148_MODULE geq_unsigned_4080 none
+QUERY148_MODULE gt_unsigned_4269 none
+QUERY148_MODULE geq_unsigned_4272 none
+QUERY148_MODULE gt_unsigned_4277 none
+QUERY148_MODULE add_unsigned_4279 none
+QUERY148_MODULE add_unsigned_4281 none
+QUERY148_MODULE add_unsigned_4283 none
+QUERY148_MODULE case_box_1154 none
+QUERY148_MODULE mux_4299 none
+QUERY148_MODULE bmux_4305 none
+QUERY148_MODULE bmux_4307 none
+QUERY148_MODULE case_box_1155 none
+QUERY148_MODULE mux_4309 none
+QUERY148_MODULE mux_4316 none
+QUERY148_MODULE bmux_4317 none
+QUERY148_MODULE mux_4321 none
+QUERY148_MODULE bmux_4331 none
+QUERY148_MODULE mux_4335 none
+QUERY148_MODULE mux_4338 none
+QUERY148_MODULE mux_4341 none
+QUERY148_MODULE mux_4345 none
+QUERY148_MODULE mux_4347 none
+QUERY148_MODULE bmux_4349 none
+QUERY148_MODULE gt_signed_4353 none
+QUERY148_MODULE lt_signed_4356 none
+QUERY148_MODULE lt_signed_4359 none
+QUERY148_MODULE sub_signed_4361 none
+QUERY148_MODULE add_signed none
+QUERY148_MODULE sub_signed_4363 none
+QUERY148_MODULE bmux_4364 none
+QUERY148_MODULE bmux_4367 none
+QUERY148_MODULE leq_signed_4370 none
+QUERY148_MODULE geq_signed_4373 none
+QUERY148_MODULE mult_signed none
+QUERY148_MODULE add_signed_4434 none
+QUERY148_MODULE lt_signed_4437 none
+QUERY148_MODULE sub_unsigned_4439 none
+QUERY148_MODULE sub_signed_4502 none
+QUERY148_MODULE add_signed_4504 none
+QUERY148_MODULE add_signed_4506 none
+QUERY148_MODULE add_unsigned_4508 none
+QUERY148_MODULE sub_signed_4510 none
+QUERY148_MODULE tri_oracle_silu_gate none
+QUERY148_MODULE mult_signed_4618 none
+QUERY148_MODULE gt_signed_4631 none
+QUERY148_MODULE lt_signed_4634 none
+QUERY148_MODULE lt_signed_4642 none
+QUERY148_MODULE sub_signed_4644 none
+QUERY148_MODULE arith_shift_right_vlog_signed none
+QUERY148_MODULE sub_signed_4850 none
+QUERY148_MODULE add_signed_4852 none
+QUERY148_MODULE sub_unsigned_5060 none
+QUERY148_MODULE shift_left_vlog_unsigned_5062 none
+QUERY148_MODULE bmux_5063 none
+QUERY148_MODULE bmux_5067 none
+QUERY148_MODULE tri_oracle_fabric_gated_executor none
+QUERY148_MODULE lt_unsigned_5077 none
+QUERY148_MODULE lt_signed_5082 none
+QUERY148_MODULE add_unsigned_5084 none
+QUERY148_MODULE sub_unsigned_5086 none
+QUERY148_MODULE gt_unsigned_5089 none
+QUERY148_MODULE add_unsigned_5091 none
+QUERY148_MODULE mult_unsigned none
+QUERY148_MODULE lt_signed_19768 none
+QUERY148_MODULE lt_signed_49144 none
+QUERY148_MODULE gt_unsigned_78520 none
+QUERY148_MODULE nequal_unsigned_78542 none
+QUERY148_MODULE nequal_unsigned_78546 none
+QUERY148_MODULE add_unsigned_78554 none
+QUERY148_MODULE case_box_1523 none
+QUERY148_MODULE mux_78572 none
+QUERY148_MODULE bmux_78581 none
+QUERY148_MODULE bmux_78582 none
+QUERY148_MODULE case_box_1524 none
+QUERY148_MODULE mux_78587 none
+QUERY148_MODULE mux_78591 none
+QUERY148_MODULE bmux_78755 none
+QUERY148_MODULE mux_78766 none
+QUERY148_MODULE tri_oracle_sparse_weight_dma_pipelined none
+QUERY148_MODULE tri_oracle_sparse_weight_dma none
+QUERY148_MODULE tri_oracle_cluster_projection_executor none
+QUERY148_MODULE add_unsigned_78790 none
+QUERY148_MODULE mult_unsigned_79116 none
+QUERY148_MODULE add_unsigned_79118 none
+QUERY148_MODULE lt_unsigned_82457 none
+QUERY148_MODULE geq_unsigned_82460 none
+QUERY148_MODULE mult_unsigned_82472 none
+QUERY148_MODULE add_unsigned_82474 none
+QUERY148_MODULE geq_unsigned_82477 none
+QUERY148_MODULE sub_unsigned_82479 none
+QUERY148_MODULE lt_unsigned_82482 none
+QUERY148_MODULE sub_unsigned_82484 none
+QUERY148_MODULE gt_unsigned_82487 none
+QUERY148_MODULE add_unsigned_82494 none
+QUERY148_MODULE equal_unsigned_82500 none
+QUERY148_MODULE add_unsigned_82502 none
+QUERY148_MODULE add_unsigned_82504 none
+QUERY148_MODULE add_unsigned_82506 none
+QUERY148_MODULE add_unsigned_82508 none
+QUERY148_MODULE add_unsigned_82514 none
+QUERY148_MODULE add_unsigned_82538 none
+QUERY148_MODULE nequal_unsigned_82638 none
+QUERY148_MODULE add_unsigned_82642 none
+QUERY148_MODULE case_box_1623 none
+QUERY148_MODULE bmux_82646 none
+QUERY148_MODULE case_box_1624 none
+QUERY148_MODULE mux_82648 none
+QUERY148_MODULE case_box_1627 none
+QUERY148_MODULE mux_82657 none
+QUERY148_MODULE mux_82658 none
+QUERY148_MODULE mux_82659 none
+QUERY148_MODULE case_box_1636 none
+QUERY148_MODULE mux_82661 none
+QUERY148_MODULE bmux_82665 none
+QUERY148_MODULE bmux_82666 none
+QUERY148_MODULE mux_82667 none
+QUERY148_MODULE mux_82672 none
+QUERY148_MODULE case_box_1639 none
+QUERY148_MODULE mux_82710 none
+QUERY148_MODULE mux_82743 none
+QUERY148_MODULE case_box_1645 none
+QUERY148_MODULE mux_82745 none
+QUERY148_MODULE case_box_1648 none
+QUERY148_MODULE mux_82746 none
+QUERY148_MODULE case_box_1651 none
+QUERY148_MODULE mux_82759 none
+QUERY148_MODULE mux_82762 none
+QUERY148_MODULE bmux_82770 none
+QUERY148_MODULE tri_oracle_down_executor_staged none
+QUERY148_MODULE tri_oracle_down_executor none
+QUERY148_MODULE tri_oracle_cluster_down_executor none
+QUERY148_MODULE and_op_1664 none
+QUERY148_MODULE and_op_1669 none
+QUERY148_MODULE and_op_1690 none
+QUERY148_MODULE and_op_1697 none
+QUERY148_MODULE or_op_1698 none
+QUERY148_MODULE Decoder_2_3_0 none
+QUERY148_MODULE Decoder_2_3_0_1734 none
+QUERY148_MODULE bmux_82781 none
+QUERY148_MODULE Decoder_2_3_0_1743 none
+QUERY148_MODULE or_op_1762 none
+QUERY148_MODULE and_op_1764 none
+QUERY148_MODULE leq_unsigned_82798 none
+QUERY148_MODULE nequal_unsigned_82810 none
+QUERY148_MODULE nequal_unsigned_82816 none
+QUERY148_MODULE nequal_unsigned_82856 none
+QUERY148_MODULE add_unsigned_82898 none
+QUERY148_MODULE add_unsigned_82902 none
+QUERY148_MODULE add_signed_82904 none
+QUERY148_MODULE add_signed_82906 none
+QUERY148_MODULE case_box_1805 none
+QUERY148_MODULE case_box_1806 none
+QUERY148_MODULE mux_83094 none
+QUERY148_MODULE case_box_1809 none
+QUERY148_MODULE bmux_83105 none
+QUERY148_MODULE bmux_83108 none
+QUERY148_MODULE case_box_1812 none
+QUERY148_MODULE mux_83112 none
+QUERY148_MODULE bmux_83117 none
+QUERY148_MODULE bmux_83118 none
+QUERY148_MODULE bmux_83119 none
+QUERY148_MODULE bmux_83120 none
+QUERY148_MODULE tri_oracle_shared_cluster_executor none
+QUERY148_MODULE case_box_1852 none
+QUERY148_MODULE mux_83180 none
+QUERY148_MODULE mux_83182 none
+QUERY148_MODULE mux_83186 none
+QUERY148_MODULE mux_83188 none
+QUERY148_MODULE bmux_83213 none
+QUERY148_MODULE gt_signed_83237 none
+QUERY148_MODULE add_signed_83245 none
+QUERY148_MODULE add_signed_83247 none
+QUERY148_MODULE add_signed_83249 none
+QUERY148_MODULE tri_oracle_sram_compute_cluster none
+QUERY148_MODULE or_op_1854 none
+QUERY148_MODULE and_op none
+QUERY148_MODULE bmux_83254 none
+QUERY148_MODULE and_op_1862 none
+QUERY148_MODULE and_op_1866 none
+QUERY148_MODULE Decoder_4_15_0 none
+QUERY148_MODULE Decoder_4_15_0_1887 none
+QUERY148_MODULE Decoder_4_15_0_1890 none
+QUERY148_MODULE sub_unsigned_83321 none
+QUERY148_MODULE sub_unsigned_83352 none
+QUERY148_MODULE bmux_83363 none
+QUERY148_MODULE case_box_1931 none
+QUERY148_MODULE case_box_1932 none
+QUERY148_MODULE tri_oracle_shared_fabric none
+QUERY148_MODULE and_op_2244 none
+QUERY148_MODULE Decoder_3_4_0 none
+QUERY148_MODULE Decoder_3_4_0_2297 none
+QUERY148_MODULE bmux_83415 none
+QUERY148_MODULE Decoder_4_15_0_2320 none
+QUERY148_MODULE and_op_2323 none
+QUERY148_MODULE or_op_2324 none
+QUERY148_MODULE not_op_2325 none
+QUERY148_MODULE or_op_2326 none
+QUERY148_MODULE or_op_2327 none
+QUERY148_MODULE and_op_2331 none
+QUERY148_MODULE and_op_2332 none
+QUERY148_MODULE or_op_2333 none
+QUERY148_MODULE and_op_2341 none
+QUERY148_MODULE Decoder_4_15_0_2345 none
+QUERY148_MODULE gt_signed_83459 none
+QUERY148_MODULE gt_signed_83462 none
+QUERY148_MODULE gt_signed_83468 none
+QUERY148_MODULE gt_signed_83471 none
+QUERY148_MODULE sub_unsigned_83488 none
+QUERY148_MODULE gt_signed_83491 none
+QUERY148_MODULE sub_signed_83493 none
+QUERY148_MODULE add_unsigned_83502 none
+QUERY148_MODULE sub_unsigned_83510 none
+QUERY148_MODULE sub_signed_83515 none
+QUERY148_MODULE add_unsigned_83524 none
+QUERY148_MODULE sub_unsigned_83526 none
+QUERY148_MODULE sub_signed_83531 none
+QUERY148_MODULE add_unsigned_83540 none
+QUERY148_MODULE nequal_unsigned_83568 none
+QUERY148_MODULE add_unsigned_83640 none
+QUERY148_MODULE geq_unsigned_83643 none
+QUERY148_MODULE sub_signed_83645 none
+QUERY148_MODULE add_unsigned_83647 none
+QUERY148_MODULE geq_signed_83655 none
+QUERY148_MODULE add_unsigned_83659 none
+QUERY148_MODULE add_unsigned_83675 none
+QUERY148_MODULE geq_unsigned_156003 none
+QUERY148_MODULE gt_unsigned_156192 none
+QUERY148_MODULE lt_unsigned_156202 none
+QUERY148_MODULE add_unsigned_156209 none
+QUERY148_MODULE case_box_2419 none
+QUERY148_MODULE case_box_2420 none
+QUERY148_MODULE bmux_156348 none
+QUERY148_MODULE bmux_156349 none
+QUERY148_MODULE bmux_156350 none
+QUERY148_MODULE case_box_2423 none
+QUERY148_MODULE case_box_2426 none
+QUERY148_MODULE mux_156352 none
+QUERY148_MODULE mux_156355 none
+QUERY148_MODULE bmux_156356 none
+QUERY148_MODULE mux_156364 none
+QUERY148_MODULE bmux_156370 none
+QUERY148_MODULE bmux_156372 none
+QUERY148_MODULE mux_156397 none
+QUERY148_MODULE mux_156404 none
+QUERY148_MODULE case_box_2429 none
+QUERY148_MODULE tri_oracle_gated_down_fabric none
+QUERY148_MODULE case_box_2481 none
+QUERY148_MODULE tri_oracle_feedforward_frame none
+QUERY148_MODULE nequal_unsigned_156531 none
+QUERY148_MODULE nequal_unsigned_156535 none
+QUERY148_MODULE mult_unsigned_156549 none
+QUERY148_MODULE sub_unsigned_156551 none
+QUERY148_MODULE gt_unsigned_156554 none
+QUERY148_MODULE leq_unsigned_156557 none
+QUERY148_MODULE equal_unsigned_156586 none
+QUERY148_MODULE gt_unsigned_156589 none
+QUERY148_MODULE add_unsigned_157500 none
+QUERY148_MODULE mult_unsigned_157640 none
+QUERY148_MODULE add_unsigned_158607 none
+QUERY148_MODULE gt_unsigned_158610 none
+QUERY148_MODULE nequal_unsigned_158620 none
+QUERY148_MODULE sub_unsigned_158632 none
+QUERY148_MODULE case_box_2710 none
+QUERY148_MODULE bmux_158637 none
+QUERY148_MODULE bmux_158639 none
+QUERY148_MODULE case_box_2711 none
+QUERY148_MODULE mux_158660 none
+QUERY148_MODULE mux_158668 none
+QUERY148_MODULE mux_158674 none
+QUERY148_MODULE mux_158678 none
+QUERY148_MODULE mux_158695 none
+QUERY148_MODULE bmux_2733 none
+QUERY148_MODULE bmux_2734 none
+QUERY148_MODULE bmux_2735 none
+QUERY148_MODULE bmux_2736 none
+QUERY148_MODULE bmux_2737 none
+QUERY148_MODULE bmux_2738 none
+QUERY148_MODULE bmux_2739 none
+QUERY148_MODULE bmux_2740 none
+QUERY148_MODULE bmux_2741 none
+QUERY148_MODULE bmux_2742 none
+QUERY148_MODULE bmux_2743 none
+QUERY148_MODULE bmux_2744 none
+QUERY148_MODULE bmux_2745 none
+QUERY148_MODULE bmux_2746 none
+QUERY148_MODULE bmux_2747 none
+QUERY148_MODULE bmux_2748 none
+QUERY148_MODULE bmux_2749 none
+QUERY148_MODULE shift_left_vlog_unsigned_2753 none
+QUERY148_MODULE shift_left_vlog_unsigned_2755 none
+@file(query.tcl) 13: puts QUERY148_COMPLETED
+QUERY148_COMPLETED
+@file(query.tcl) 14: exit
+
+Lic Summary:
+[06:24:01.001336] Cdslmd servers: /opt/cadence/license/cds.lic
+[06:24:01.016488] Feature usage summary:
+[06:24:01.188647]  Genus_Synthesis 
+Normal exit.
