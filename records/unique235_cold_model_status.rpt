@@ -1,0 +1,33 @@
+=======================================================================
+Current design: tri_oracle_predicted_feedforward_frame
+Current view is ILM (after flatten_ilm)
+Current ILM data is for si mode.
+=======================================================================
+
+Cell                             Model-Type   Use-Type   Stage      Instance Name                                        
+                         -----------------------------------------------------------------------                         
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[0].cluster/cores[0]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[0].cluster/cores[1]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[0].cluster/cores[2]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[0].cluster/cores[3]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[1].cluster/cores[0]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[1].cluster/cores[1]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[1].cluster/cores[2]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[1].cluster/cores[3]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[2].cluster/cores[0]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[2].cluster/cores[1]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[2].cluster/cores[2]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[2].cluster/cores[3]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[3].cluster/cores[0]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[3].cluster/cores[1]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[3].cluster/cores[2]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[3].cluster/cores[3]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[4].cluster/cores[0]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[4].cluster/cores[1]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[4].cluster/cores[2]  
+tri_oracle_sram_memory_compute   All          ILM        post-cts   numeric/engine/backend/clusters[4].cluster/cores[3]  
+
+ILM/flexILM Data Location :
+-----------------------------------------------------------------------
+tri_oracle_sram_memory_compute  :  /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_predicted_feedforward_unique235/warm/unique.db/libs/ilm/ilm
+=======================================================================

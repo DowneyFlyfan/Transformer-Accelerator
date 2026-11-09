@@ -33,9 +33,15 @@ Three fresh full-model process-corner diagnostics fail at the unchanged
 -171.942947 nanoseconds, and fast removal -0.082619 nanoseconds. Removal checks
 whether reset deassertion is sufficiently separated from a clock edge. The setup
 path traverses overloaded backend control nets; the native logs also warn that
-repeated controller modules prevent optimization. Making their definitions unique
-and repairing electrical violations remain pending. Clock-tree construction,
-power-grid construction and parent routing have not run. The native pre-route
+repeated controller modules prevent optimization. Native uniquification now passes
+with a fresh full-model reload: all 673,622 parent cells, 1,889,420 original core
+cells, 600 memories, 3,656 reset endpoint chains and 86 physical preservation
+targets are retained. Parent geometry, wiring and direct constants remain exact;
+all three constraint views match a fresh evaluation of the original source.
+This preparation took 614.19 seconds and performs no electrical optimization.
+See `records/unique235_preparation_qualification.json`. Electrical repair,
+clock-tree construction, power-grid construction and parent routing remain
+pending. The native pre-route
 engine reports signal-interference analysis disabled. See
 `records/frame202_physical_milestone.json`, its bound reports and
 `records/frame202_placement_result.json`.
