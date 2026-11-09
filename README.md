@@ -44,8 +44,17 @@ Eighteen source and mapped-netlist cases and seven address-stage reset cases
 pass. Isolated mapping at the slow 0.9-volt, 125-degree-Celsius corner reports
 577 picoseconds of setup margin at a 1.72414-nanosecond period, with 2,047 cells
 and 4,503.912 square
-micrometers of library cell area. This does not establish full-parent or routed
-timing closure, and this candidate is not yet part of the joined controller.
+micrometers of library cell area. The explicit legacy-interface adapter in
+`syn/run_tri_oracle_pipelined_predicted_frame109_validation.py` then joins the
+candidate to the complete twenty-core hierarchy. All twelve actual-memory
+cases pass, checking the same 4,420 final outputs. The complete test suite uses
+10,110 additional clock periods; this is not a per-token latency measurement.
+See `records/predicted109_functional_qualification.json`.
+
+The existing sparse down controller maps to 11,031 cells at the slow corner,
+but reports only a rounded zero-picosecond setup margin with estimated wiring.
+That leaves timing work before whole-parent mapping and routing. None of the
+isolated reports establishes complete-chip timing closure.
 
 The same full-shape regression also passes with the simulator's four-worker
 mode, but that run took 1,016 seconds versus 588 seconds with one worker.
