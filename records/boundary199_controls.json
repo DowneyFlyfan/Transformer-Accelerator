@@ -1,0 +1,30 @@
+{
+  "state": "mapped_boundary_and_constraint_controls_passed",
+  "checks": [
+    "internal_driver_flat_output",
+    "hierarchical_link",
+    "constant_input",
+    "constant_one_output_without_net",
+    "constant_zero_internal_net",
+    "input_feedthrough",
+    "top_output_sink",
+    "missing_flat_net",
+    "multiple_hierarchical_nets",
+    "two_flat_drivers",
+    "undriven_flat_net",
+    "internal_load_only",
+    "external_driver_without_feedthrough",
+    "unknown_input",
+    "conflicting_constants",
+    "preservation_subset_reorder_accepted",
+    "duplicate_missing_changed_and_reordered_constraints_rejected",
+    "removed_renamed_duplicate_postopt_pins_rejected"
+  ],
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_mapped_boundary199.py": "5857d593b57637652620455c16ab8a0ee33980385e212ab9401874e4ff13a888",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_mapped_boundary199.tcl": "b1b9068b828708c8a22375314806e38fd8f54fee84fa5bb697d494a611aba0a2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_mapped_restore199.py": "9a01d029c027f2c9438fab3d89451483beb41b5e23d4044db73257b62f4e8bb8"
+  },
+  "native_hardware_executed": false,
+  "scope": "Synthetic Tcl API peer and independent constraint controls only."
+}

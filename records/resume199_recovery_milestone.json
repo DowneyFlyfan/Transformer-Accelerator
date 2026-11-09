@@ -1,0 +1,34 @@
+{
+  "state": "full_parent_mapping_cold_restore_qualified_optimization_pending",
+  "cold_restore_record_sha256": "e0099978fd6a25e929bd84bb895eb03a36ae1db38a5d8d9c36af760338d1ac75",
+  "original_synthesis_runtime_limit_seconds": 7200,
+  "original_generic_synthesis_completed": true,
+  "original_technology_mapping_completed": true,
+  "optimization_resumed_from_mapped_database": true,
+  "generic_synthesis_repeated": false,
+  "technology_mapping_repeated": false,
+  "native_optimization_process_group": 662150,
+  "native_optimization_confirmed_live_at_snapshot": true,
+  "synthetic_boundary_constraint_controls": 18,
+  "mapped_boundary_connection_kinds": {
+    "hierarchical": 110955,
+    "constant_output": 760,
+    "flat_output": 34752,
+    "constant_input": 5,
+    "feedthrough_output": 10240
+  },
+  "source_hardware_changed": false,
+  "full_mapped_function_qualified": false,
+  "optimization_completed": false,
+  "full_real_trained_layer_hardware_arithmetic_passed": false,
+  "routed_timing_qualified": false,
+  "full_paper_results_matched": false,
+  "diagnosis": "The193 restore checker required a local hierarchical hnet on every pin. Native mapping represents some connected output aliases and input feedthroughs only by flat nets, and some constants without a net.199 verifies native constants or a uniquely driven flat net with external leaf/top-output loads, including direct-input feedthrough provenance. Original pin sets are enforced before and after optimization. Only the independent set_dont_touch command subset is compared as a multiset; other constraint command order remains exact.",
+  "next_gates": [
+    "Complete native optimization and post-optimization topology/constraint qualification.",
+    "Native physical import200 with original twenty-core footprints and forty aggregate banks.",
+    "Mapped201 wrong-reference rejection, then positive full20-core/600-memory twelve-case functional simulation.",
+    "Complete trained-layer190 source arithmetic, full-core physical timing and placement/routing."
+  ],
+  "scope": "Prepared prediction/feed-forward subsystem only. Provisional core80 synthesis timing guidance. No complete accelerator, paper accuracy, physical timing or energy match."
+}
