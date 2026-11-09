@@ -1,0 +1,28 @@
+{
+  "state": "full_mapped_prepared_parent_functional_pair_qualified",
+  "verified_utc": "2026-11-09T13:44:40.627086+00:00",
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/mapped208_full_result.json": "57f9a5bd768e7c9c519604726ef902f234d4824272ea5e609d3ba48091f90e4b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/mapped208_wrong_sum_result.json": "ee5fbf2b4ce7446085c4c01b6195ae477b071843a8c0e5b213e7554fc0190cb0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/mapped208_full_native.log": "02a65fd3637ffa2ac4c1010f61227ecb447bbb67b97806ab9ea8d0c752f4ea60",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/mapped208_wrong_sum_native.log": "fdc2d8025afccc3505b1a70eb678a7559bfa95fb88fd282dcccb69f1cdd54a80"
+  },
+  "shared_source_identities_checked": 20,
+  "actual_cores": 20,
+  "actual_clusters": 5,
+  "actual_compiled_memories": 600,
+  "cases_passed": 12,
+  "exact_hidden_outputs_checked": 4420,
+  "success_backpressure_stalls": 122,
+  "error_backpressure_stalls": 67,
+  "wrong_integer_sum_reference_rejected": true,
+  "positive_and_negative_consumed_same_hardware": true,
+  "requested_simulation_workers": 8,
+  "positive_native_elapsed_seconds": 1427.695987300016,
+  "negative_native_elapsed_seconds": 305.6228737740312,
+  "scope": "Prepared prediction/feed-forward parent mapped by Genus213 with20 original core44 routed functional netlists and600 compiled memory models. Twelve analytic saturated cases. No delay annotation.",
+  "trained_full_layer_execution_qualified": false,
+  "whole_model_accuracy_qualified": false,
+  "routed_parent_timing_qualified": false,
+  "full_paper_results_matched": false
+}
