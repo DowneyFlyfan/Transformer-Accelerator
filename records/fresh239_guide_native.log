@@ -1,0 +1,461 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v25.10-p002_1, built Wed Apr 23 12:43:30 PDT 2025
+Options:	-stylus -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/native -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_fresh_boundary239.tcl 
+Date:		Mon Nov  9 16:52:09 2026
+Host:		28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*Intel(R) Core(TM) Ultra 7 265K 30720KB)
+OS:		Rocky Linux 8.9 (Green Obsidian)
+
+License:
+		[16:52:09.014265] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+		invs	Innovus Implementation System	25.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/innovus_temp_706569_3eb389a7-4ce6-4a1d-b207-8e1d65a8b62f_28d970bfe4b5_downeyflyfan_JkjX5H.
+
+Change the soft stacksize limit to 0.2%RAM (61 mbytes). Set global soft_stack_size_limit to change the value.
+Info: Process UID = 706569 / 3eb389a7-4ce6-4a1d-b207-8e1d65a8b62f / dAhbm6hHWD
+Loading attribute definitions from mini dummy db...
+Info: Defined 24273 Synthesis attributes
+Info: Skipped defining 1018 Synthesis attributes already defined in Innovus
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+@innovus 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_fresh_boundary239.tcl
+#@ Begin verbose source (pre): source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_fresh_boundary239.tcl
+@file 1: # Start guidance in a new design; never reset/swap a live full ILM context.
+@file 2: set root {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator}
+@file 3: set out $::env(TRI239_OUT)
+@file 4: set parent $::env(TRI239_PARENT)
+@file 5: set mode $::env(TRI239_MODE)
+@file 6: set component tri_oracle_sram_memory_compute
+@file 7: set base $root/.cache/physical/pnr/$component
+@@file 8: set_multi_cpu_usage -local_cpu 2
+@file 9: source $root/syn/tri_oracle_unique215_snapshot.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_unique215_snapshot.tcl (pre)
+@file 1: # Signal-net names may change; endpoint roles and leaf identities may not.
+@file 2: proc tri215_snapshot {directory tag} {
+    set cells [open $directory/[set tag]_cells.tsv w]
+    puts $cells "instance\tmaster\tlocation\torientation\tstatus\tdont_touch"
+    set count 0
+    foreach instance [get_db insts] {
+        puts $cells [join [list [get_db $instance .name] [get_db $instance .base_cell.name] \
+            [get_db $instance .location] [get_db $instance .orient] \
+            [get_db $instance .place_status] [get_db $instance .dont_touch]] "\t"]
+        incr count
+    }
+    close $cells
+    set ports [open $directory/[set tag]_ports.tsv w]
+    puts $ports "port\tdirection"
+    foreach port [get_db ports] {
+        if {[get_db $port .direction] eq "out" && [llength [get_db $port .net]] != 1} {
+            error "TRI215_UNSUPPORTED_OUTPUT_WITHOUT_NET [get_db $port .name]"
+        }
+        puts $ports "[get_db $port .name]\t[get_db $port .direction]"
+    }
+    close $ports
+    set nets [open $directory/[set tag]_nets.tsv w]
+    puts $nets "constant\tpower\tground\tdriver_pins\tdriver_ports\tload_pins\tload_ports"
+    foreach net [get_db nets] {
+        puts $nets [join [list [get_db $net .constant] [get_db $net .is_power] [get_db $net .is_ground] \
+            [lsort [get_db $net .driver_pins.name]] \
+            [lsort [get_db $net .driver_ports.name]] \
+            [lsort [get_db $net .load_pins.name]] \
+            [lsort [get_db $net .load_ports.name]]] "\t"]
+    }
+    close $nets
+    set pins [open $directory/[set tag]_pins.tsv w]
+    puts $pins "pin\tdirect_constant"
+    foreach pin [get_db pins -if {.constant != no_constant}] {
+        puts $pins "[get_db $pin .name]\t[get_db $pin .constant]"
+    }
+    close $pins
+    return $count
+}
+@file 40: proc tri215_require_equal {directory reference candidate} {
+    foreach kind {cells ports nets pins} {
+        foreach tag [list $reference $candidate] {
+            set filename $directory/[set tag]_[set kind].tsv
+            exec env LC_ALL=C sort -S 64M -T $directory -o $filename.sorted $filename
+        }
+        if {[catch {exec cmp -s $directory/[set reference]_[set kind].tsv.sorted \
+                $directory/[set candidate]_[set kind].tsv.sorted}]} {
+            error "TRI215_SIGNAL_GRAPH_CHANGED $kind"
+        }
+    }
+}
+#@ End verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_unique215_snapshot.tcl
+@file 10: proc tri239_dump_pins {filename} {
+    set block [get_db insts core0]
+    if {[llength $block]!=1 || [get_db $block .base_cell.name] ne "tri_oracle_sram_memory_compute"} {error TRI239_CORE_NOT_FOUND}
+    set stream [open $filename w]
+    puts $stream "pin\tdirection\tnet\tconstant"
+    foreach pin [get_db $block .pins] {puts $stream "[get_db $pin .name]\t[get_db $pin .direction]\t[get_db $pin .net.name]\t[get_db $pin .constant]"}
+    close $stream
+}
+@file 18: if {$mode eq "export"} {...}
+@file 48: if {$mode ne "guide"} {...}
+@@file 49: set_db init_design_uniquify false
+@@file 50: set_db init_power_nets {VDD}
+@@file 51: set_db init_ground_nets {VSS}
+@@file 52: read_mmmc $parent/guide_mmmc.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide_mmmc.tcl (pre)
+@file 1: set parent $::env(TRI239_PARENT)
+@@file 2: create_library_set -name ls_typ -timing [list {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib} {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib} {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib} {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib} {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_timing_model_80/core_typ.lib}]
+@@file 3: create_rc_corner -name rc_typ -qrc_tech {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_typical} -temperature 25
+@@file 4: create_timing_condition -name tc_typ -library_sets {ls_typ}
+@@file 5: create_delay_corner -name dc_typ -timing_condition tc_typ -rc_corner rc_typ
+@@file 6: create_constraint_mode -name functional -sdc_files [list $parent/export/setup_typ.sdc]
+@@file 7: create_analysis_view -name setup_typ -constraint_mode functional -delay_corner dc_typ
+@@file 8: set_analysis_view -setup {setup_typ} -hold {setup_typ}
+#@ End verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide_mmmc.tcl
+Starting library reading in 'Multi-threaded flow' (with '2' threads)
+Reading ls_typ timing library /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib.
+**WARN: (TECHLIB-302):	No function defined for cell 'TAPCELLBWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'OD18DCAP64BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'OD18DCAP32BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'OD18DCAP16BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'FILL8BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'FILL64BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'FILL4BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'FILL3BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'FILL32BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'FILL2BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'FILL16BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DCAPBWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DCAP8BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DCAP64BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DCAP4BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DCAP32BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DCAP16BWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'BOUNDARY_RIGHTBWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'BOUNDARY_LEFTBWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNABWP12T40P140'. The cell will only be used for analysis. (File /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib)
+Read 1142 cells in library tcbn28hpcplusbwp12t40p140tt1v25c.
+Reading ls_typ timing library /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib.
+Read 1 cells in library ts5n28hpcpsvta32x128m2fw_tt1v25c.
+Reading ls_typ timing library /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib.
+Read 1 cells in library ts6n28hpcpsvta16x128m2f_tt1v25c.
+Reading ls_typ timing library /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib.
+Read 1 cells in library ts5n28hpcpsvta512x64m4f_tt1v25c.
+Reading ls_typ timing library /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_timing_model_80/core_typ.lib.
+Read 1 cells in library tri_oracle_core44_typ.
+Library reading multithread flow ended.
+@@file 53: read_physical -lefs [list \
+ $root/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef \
+ $root/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef \
+ $root/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef \
+ $root/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/LEF/ts6n28hpcpsvta16x128m2f_130a.lef \
+ $root/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef \
+ $base/hierarchy_export_58/core.lef]
+
+Loading LEF file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef ...
+
+Loading LEF file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef ...
+Set DBUPerIGU to M1 pitch 270.
+WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef at line 333393.
+
+Loading LEF file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef ...
+WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef at line 12864.
+
+Loading LEF file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/LEF/ts6n28hpcpsvta16x128m2f_130a.lef ...
+
+Loading LEF file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef ...
+WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef at line 6080.
+
+Loading LEF file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_export_58/core.lef ...
+**WARN: (IMPLF-200):	Pin 'I' in macro 'ANTENNABWP12T40P140' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+@@file 60: read_netlist $parent/parent_import.v -top tri_oracle_preserved_placement_probe21
+#% Begin Load netlist data ... (date=11/09 16:52:21, mem=1901.4M)
+*** Begin netlist parsing (mem=1901.4M) ***
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'tri_oracle_sram_memory_compute' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'tri_oracle_sram_memory_compute' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+Created 1146 new cells from 5 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/parent_import.v'
+
+*** Memory Usage v#1 (Current mem = 1966.602M, initial mem = 897.090M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1966.6M) ***
+#% End Load netlist data ... (date=11/09 16:52:21, total cpu=0:00:00.1, real=0:00:00.0, peak res=1966.6M, current mem=1966.6M)
+Set top cell to tri_oracle_preserved_placement_probe21.
+Hooked 1146 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell tri_oracle_preserved_placement_probe21 ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+Set DBUPerIGU to techSite core12T width 280.
+** info: there are 1191 modules.
+** info: there are 111 stdCell insts.
+** info: there are 111 stdCell insts with at least one signal pin.
+** info: there are 1 macros.
+
+*** Memory Usage v#1 (Current mem = 2034.082M, initial mem = 897.090M) ***
+@@file 61: init_design
+**WARN: (IMPFP-3961):	The techSite 'gacore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'bcore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'core' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+Extraction setup Started for TopCell tri_oracle_preserved_placement_probe21 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For post_route extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+Generating auto layer map file.
+Importing multi-corner technology file(s) for preRoute extraction...
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_typical
+Generating auto layer map file.
+Completed (cpu: 0:00:01.4 real: 0:00:03.0)
+Set Shrink Factor to 0.90000 (from technology file)
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_typ
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_typical'
+Updating RC Grid density data for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+Default value for post_route extraction mode's extract_rc_effort_level (extract_rc_effort_level option of set_db) changed to 'medium'.
+*Info: initialize multi-corner CTS.
+**WARN: (IMPMSMV-1809):	Internal pg_pin VDD at 1v of cell tri_oracle_sram_memory_compute does not have external pg_pin with matching voltage in library /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_timing_model_80/core_typ.lib.  Cannot determine the voltage source of this internal power pin.  The signal pin related to it might have incorrect voltage.
+Type 'man IMPMSMV-1809' for more detail.
+Total number of combinational cells: 691
+Total number of sequential cells: 413
+Total number of tristate cells: 7
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 31
+List of usable buffers: CKBD1BWP12T40P140 CKBD0BWP12T40P140 BUFFD1BWP12T40P140 BUFFD0BWP12T40P140 DEL025D1BWP12T40P140 CKBD2BWP12T40P140 BUFFD2BWP12T40P140 CKBD3BWP12T40P140 BUFFD3BWP12T40P140 BUFFXD3BWP12T40P140 CKBD4BWP12T40P140 BUFFD4BWP12T40P140 CKBD6BWP12T40P140 BUFFD6BWP12T40P140 BUFFXD6BWP12T40P140 CKBD8BWP12T40P140 BUFFD8BWP12T40P140 BUFFXD8BWP12T40P140 DCCKBD4BWP12T40P140 CKBD12BWP12T40P140 BUFFD12BWP12T40P140 BUFFXD12BWP12T40P140 CKBD16BWP12T40P140 BUFFD16BWP12T40P140 DCCKBD8BWP12T40P140 BUFFXD16BWP12T40P140 DCCKBD12BWP12T40P140 DCCKBD16BWP12T40P140
+Total number of usable buffers: 28
+List of unusable buffers: GBUFFMCOD3BWP12T30P140 GBUFFMCOD2BWP12T30P140 GBUFFMCOD1BWP12T30P140 GBUFFMCOD4BWP12T30P140 GBUFFMCOD8BWP12T30P140 CKBD20BWP12T40P140 BUFFD20BWP12T40P140 CKBD24BWP12T40P140 BUFFD24BWP12T40P140 CKBD32BWP12T40P140 DCCKBD20BWP12T40P140
+Total number of unusable buffers: 11
+List of usable inverters: INVD1BWP12T40P140 INVD0BWP12T40P140 CKND1BWP12T40P140 CKND0BWP12T40P140 INVD2BWP12T40P140 INVD1P75BWP12T40P140 INVD1P25BWP12T40P140 CKND2BWP12T40P140 INVD3BWP12T40P140 INVD2P3BWP12T40P140 CKND3BWP12T40P140 INVD4BWP12T40P140 CKND4BWP12T40P140 INVD6BWP12T40P140 CKND6BWP12T40P140 INVD8BWP12T40P140 CKND8BWP12T40P140 INVD9BWP12T40P140 DCCKND4BWP12T40P140 INVD12BWP12T40P140 CKND12BWP12T40P140 INVD15BWP12T40P140 INVD16BWP12T40P140 CKND16BWP12T40P140 DCCKND8BWP12T40P140 INVD18BWP12T40P140 DCCKND12BWP12T40P140 DCCKND16BWP12T40P140
+Total number of usable inverters: 28
+List of unusable inverters: GINVMCOD1BWP12T30P140 GINVMCOD4BWP12T30P140 GINVMCOD3BWP12T30P140 GINVMCOD2BWP12T30P140 GINVMCOD8BWP12T30P140 INVD20BWP12T40P140 CKND20BWP12T40P140 INVD21BWP12T40P140 INVD24BWP12T40P140 CKND24BWP12T40P140 INVD32BWP12T40P140 CKND32BWP12T40P140 DCCKND20BWP12T40P140
+Total number of unusable inverters: 13
+List of identified usable delay cells: DEL050D1BWP12T40P140 DEL075D1BWP12T40P140 DEL100D1BWP12T40P140 DEL150D1BWP12T40P140 DEL200D1BWP12T40P140 DEL250D1BWP12T40P140
+Total number of identified usable delay cells: 6
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+Multithreaded Timing Analysis is initialized with 2 threads
+
+Reading timing constraints file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/export/setup_typ.sdc' ...
+Current (total cpu=0:00:23.5, real=0:00:16.0, peak res=2548.4M, current mem=2548.4M)
+tri_oracle_preserved_placement_probe21
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2584.3M, current mem=2584.3M)
+Current (total cpu=0:00:23.6, real=0:00:16.0, peak res=2584.3M, current mem=2584.3M)
+@@file 62: read_def $parent/export/parent.def
+Reading DEF file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/export/parent.def', current time is Mon Nov  9 16:52:25 2026 ...
+--- DIVIDERCHAR '/'
+--- UnitsPerDBU = 1.0000
+**WARN: (IMPFP-3961):	The techSite 'gacore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'bcore' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'core' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+--- DIEAREA (0 0) (1599910 1500000)
+defIn read 10000 lines...
+DEF file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/export/parent.def' is parsed, current time is Mon Nov  9 16:52:25 2026.
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+Updating the floorplan ...
+@file 63: # DEF does not promise optimization attributes. Transfer each exact leaf flag
+@file 64: # explicitly from the accepted reference, before strict graph/property checks.
+@file 65: set input [open $parent/export/original_cells.tsv r]
+@file 66: gets $input header
+@file 67: set count 0
+@file 68: while {[gets $input line]>=0} {
+    lassign [split $line "\t"] name master location orientation status protected
+    # dont_touch is an enum: retain the exact unset/false/true value.
+    if {$protected ni {none false true}} {error TRI239_UNSUPPORTED_REFERENCE_FLAG}
+    set instance [get_db insts $name]
+    if {[llength $instance]!=1 || [get_db $instance .name] ne $name || [get_db $instance .base_cell.name] ne $master} {error "TRI239_METADATA_TARGET_CHANGED $name"}
+    set_db $instance .dont_touch $protected
+    incr count
+}
+@file 77: close $input
+@file 78: if {$count!=[llength [get_db insts]]} {...}
+@file 79: tri215_snapshot $out guidance
+@file 80: tri239_dump_pins $out/guidance_core_pins.tsv
+@@file 81: write_sdc -view setup_typ $out/guidance_setup_typ.sdc
+@@file 82: report_timing -view setup_typ -check_type setup -max_paths 1 -max_slack 100 > $out/guidance_path.rpt
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2618.113281 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: tri_oracle_preserved_placement_probe21
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+[NR-eGR] Started Early Global Route ( Curr Mem: 2.53 MB )
+[NR-eGR] Started Early Global Route kernel ( Curr Mem: 2.53 MB )
+[NR-eGR] Read 3269 nets ( ignored 0 )
+[NR-eGR] Layer group 1: route 3269 net(s) in layer range [2, 11]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.12% H + 0.09% V. EstWL: 1.901748e+05um
+[NR-eGR] Overflow after Early Global Route 0.06% H + 0.05% V
+[NR-eGR] Total eGR-routed clock nets wire length: 0um, number of vias: 0
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR]              Length (um)  Vias 
+[NR-eGR] -------------------------------
+[NR-eGR]  M1   (1V)             0   221 
+[NR-eGR]  M2   (2H)          4913   547 
+[NR-eGR]  M3   (3V)         22714  1863 
+[NR-eGR]  M4   (4H)         75861  3538 
+[NR-eGR]  M5   (5V)         71364  1890 
+[NR-eGR]  M6   (6H)         14292   162 
+[NR-eGR]  M7   (7V)          2336    94 
+[NR-eGR]  M8   (8H)          1513     0 
+[NR-eGR]  M9   (9V)             0     0 
+[NR-eGR]  M10  (10H)            0     0 
+[NR-eGR]  AP   (11V)            0     0 
+[NR-eGR] -------------------------------
+[NR-eGR]       Total       192992  8315 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 192916um
+[NR-eGR] Total length: 192992um, number of vias: 8315
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Finished Early Global Route kernel ( CPU: 0.79 sec, Real: 0.73 sec, Curr Mem: 2.60 MB )
+[NR-eGR] Finished Early Global Route ( CPU: 0.80 sec, Real: 0.74 sec, Curr Mem: 2.48 MB )
+Extraction called for design 'tri_oracle_preserved_placement_probe21' of instances=112 and nets=3271 using extraction engine 'pre_route' .
+**WARN: (IMPEXT-3530):	The process node is not set. Use the command set_design_mode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+Type 'man IMPEXT-3530' for more detail.
+pre_route RC Extraction called for design tri_oracle_preserved_placement_probe21.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 0.90000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using Quantus QRC technology file ...
+Updating RC Grid density data for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.4  Real Time: 0:00:00.0  MEM: 2668.289M)
+**WARN: (IMPCTE-337):	An unsupported Liberty attribute: max_clock_tree_path - was found on pin clk of cell: tri_oracle_sram_memory_compute in library: tri_oracle_core44_typ. This attribute is not supported by timing analysis and will be ignored. Type 'man IMPCTE-337' for more detailed information.
+Type 'man IMPCTE-337' for more detail.
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (2 T). (MEM=2674.36)
+siFlow : Timing analysis mode is single, using late cdB files
+Total number of fetched objects 3270
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+End delay calculation. (MEM=2682.23 CPU=0:00:00.2 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2620.57 CPU=0:00:00.5 REAL=0:00:00.0)
+@@file 83: report_ilm_status > $out/model_status.rpt
+@@file 84: write_netlist $out/guidance_parent.v -exclude_leaf_cells
+Writing Netlist "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance_parent.v" ...
+@@file 85: write_def $out/guidance_parent.def
+Writing DEF file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance_parent.def', current time is Mon Nov  9 16:52:27 2026 ...
+unitPerMicron=2000, dbgMicronPerDBU=0.000500, unitPerDBU=1.000000
+DEF file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance_parent.def' is written, current time is Mon Nov  9 16:52:27 2026 ...
+@@file 86: write_db $out/guidance.db
+#% Begin save design ... (date=11/09 16:52:27, mem=2653.6M)
+% Begin Save ccopt configuration ... (date=11/09 16:52:27, mem=2653.6M)
+% End Save ccopt configuration ... (date=11/09 16:52:27, total cpu=0:00:00.0, real=0:00:00.0, peak res=2658.1M, current mem=2658.1M)
+% Begin Save netlist data ... (date=11/09 16:52:27, mem=2658.1M)
+Writing Binary DB to /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance.db/vbin/tri_oracle_preserved_placement_probe21.v.bin in multi-threaded mode...
+% End Save netlist data ... (date=11/09 16:52:27, total cpu=0:00:00.0, real=0:00:00.0, peak res=2658.6M, current mem=2658.6M)
+Saving symbol-table file ...
+Saving congestion map file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance.db/tri_oracle_preserved_placement_probe21.route.congmap.gz ...
+% Begin Save AAE data ... (date=11/09 16:52:27, mem=2659.0M)
+Saving AAE Data ...
+% End Save AAE data ... (date=11/09 16:52:28, total cpu=0:00:00.0, real=0:00:00.0, peak res=2660.1M, current mem=2660.1M)
+Saving mode setting ...
+Saving root attributes to be loaded post write_db ...
+**WARN: (IMPMF-5054):	fill_setting_save command is obsolete and should not be used any more. It still works in this release but will be removed in future release. Recommend to use Pegasus metal fill flow which is the replacement.
+Saving global file ...
+Saving root attributes to be loaded previous write_db ...
+% Begin Save floorplan data ... (date=11/09 16:52:28, mem=2724.3M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=11/09 16:52:28, total cpu=0:00:00.0, real=0:00:00.0, peak res=2726.4M, current mem=2726.4M)
+*info - save blackBox cells to lef file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance.db/tri_oracle_preserved_placement_probe21.bbox.lef
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=11/09 16:52:28, mem=2726.8M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruning View Names to Binary file
+% End Save placement data ... (date=11/09 16:52:28, total cpu=0:00:00.0, real=0:00:00.0, peak res=2726.9M, current mem=2726.9M)
+% Begin Save routing data ... (date=11/09 16:52:28, mem=2727.0M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:00.0 mem=2728.1M) ***
+% End Save routing data ... (date=11/09 16:52:28, total cpu=0:00:00.1, real=0:00:00.0, peak res=2727.1M, current mem=2727.1M)
+Saving property file /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance.db/tri_oracle_preserved_placement_probe21.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=2731.0M) ***
+Saving preRoute extracted patterns in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance.db/tri_oracle_preserved_placement_probe21.techData.gz' ...
+Saving preRoute extraction data in directory '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_fresh_boundary239/guide/guidance.db/extraction/' ...
+% Begin Save power constraints data ... (date=11/09 16:52:28, mem=2731.5M)
+% End Save power constraints data ... (date=11/09 16:52:28, total cpu=0:00:00.0, real=0:00:00.0, peak res=2731.9M, current mem=2731.9M)
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_mmmc_mode' has become obsolete. It will be removed in the next release.
+**WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_mmmc_mode' has become obsolete. It will be removed in the next release.
+Generated self-contained design guidance.db
+#% End save design ... (date=11/09 16:52:29, total cpu=0:00:01.2, real=0:00:02.0, peak res=2733.1M, current mem=2733.1M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPMF-5054           1  fill_setting_save command is obsolete an...
+*** Message Summary: 1 warning(s), 0 error(s)
+
+@file 87: puts TRI_ORACLE_FRESH239_GUIDANCE_IMPORTED
+TRI_ORACLE_FRESH239_GUIDANCE_IMPORTED
+@file 88: exit
+
+*** Memory Usage v#1 (Current mem = 2732.137M, initial mem = 897.090M) ***
+*** Message Summary: 37 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:27.3, real=0:00:20.0, mem=2732.1M) ---
+
+Cannot cancel licRecheckThread.
+Lic Summary:
+[16:52:32.001384] Cdslmd servers: /opt/cadence/license/cds.lic
+[16:52:32.016536] Feature usage summary:
+[16:52:32.053943]  Innovus_Impl_System 
+

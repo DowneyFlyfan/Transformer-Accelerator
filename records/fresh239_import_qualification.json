@@ -1,0 +1,42 @@
+{
+  "state": "fresh_one_core_guidance_import_qualified_pending_cold_and_full_restore",
+  "verified_utc": "2026-11-09T16:59:40.892431+00:00",
+  "producer_result": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_probe_result.json",
+  "producer_result_sha256": "99e74f88c586a9c01bb78500430060dd79684d7f548a87684bc79bbb87fc30f8",
+  "public_native_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_export_native.log": "afe2cc0fc08e587b283f7ac16abbaa5df10cc846c8416498ed67897813931452",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_export_original_cells.tsv": "964bb4e860f1ddb9a18e547e4a4d0edf631e4342d768c0a05de31497590989a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_export_original_pins.tsv": "d183fe5928673fdfe5ad54b0e58e757d86e4126e9a6b8ca41e4febf8fbdd653e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_export_original_core_pins.tsv": "1c25fa70dfbe5814bfaf4d63a69e34619fd2038795500ac86bf2d8cc43ebab58",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_guide_native.log": "6ea813ce7afa91c2ac2ea5dda7d00fa885c9be51f1f37d3f8803eb3a36c35f67",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_guide_guidance_cells.tsv": "964bb4e860f1ddb9a18e547e4a4d0edf631e4342d768c0a05de31497590989a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_guide_guidance_pins.tsv": "d183fe5928673fdfe5ad54b0e58e757d86e4126e9a6b8ca41e4febf8fbdd653e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh239_guide_guidance_core_pins.tsv": "3ef98366e85f5da0a0fdf393c2fac71a2566d784f1c0abaea7c48ff75ba82516"
+  },
+  "total_elapsed_seconds": 60.820117869996466,
+  "original_full_core_cells_verified": 94471,
+  "parent_leaf_cells": 112,
+  "exact_external_pin_rows_preserved": 3158,
+  "only_extra_pin": {
+    "name": "core0/_INT_clk_src_data_check_clk",
+    "direction": "internal",
+    "net": "",
+    "constant": "no_constant"
+  },
+  "source_constraint_reference_sha256": {
+    "setup_slow": "84346badbb74a038a5048dec210fcc6f3806cdce0cdeecdf3b7bec90122fe01f",
+    "setup_typ": "8d171d87d06b4d3c3a1e794c7e4d37bcbc6ae5abd45b06b1d73c9e960c92b476",
+    "hold_fast": "d24765b01fff49453607b60a458fb59420f6edaf95550d091ea23dd5d93712d1"
+  },
+  "original_typical_constraint_commands": 7358,
+  "parent_signal_graph_constants_geometry_and_leaf_flags_preserved": true,
+  "source_metadata_enum_values_copied_without_normalization": true,
+  "guidance_model_timing_equivalent": false,
+  "cold_guidance_qualified": false,
+  "full_model_restoration_qualified": false,
+  "parent_optimization_completed": false,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "scope": "Fresh one-core timing-guidance import from accepted84 netlist/DEF, with independently retained per-corner references. Exact112physicalleaf identities/poses/status/protection flags,canonicalgraph/directconstants,3158externalpinrows and7358typical-corner timing commands preserved. The known timing-model80 approximation is not final timing. Fresh full/cold restoration and20-core scale remain required."
+}

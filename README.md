@@ -56,6 +56,17 @@ control, and rejects five invalid selectors. Temporary control files were
 removed. See `records/physical233_preservation_qualification.json`. This audit
 does not qualify module uniquification, timing repair or routing.
 
+A one-core fresh-import protocol now passes guidance reload and restoration to
+all 94,471 original routed cells and 28 memory macros, followed by a separate
+full-model reload. All 3,158 physical pin rows, parent wiring/constants, geometry
+and exact leaf protection values are retained. Each process corner keeps its
+own clock-source latency and matches its original exported constraints; the
+complete restoration excludes the approximate boundary library. The round trip
+took 90.64 seconds. Scaling this protocol to twenty cores and performing parent
+electrical optimization remain pending. The boundary model is guidance only,
+with no timing-equivalence claim. See `records/fresh239_import_qualification.json`
+and `records/fresh241_roundtrip_qualification.json`.
+
 Earlier backend milestone: one shared backend executes projection, gate/up
 nonlinearity and sparse down accumulation using exactly twenty compute cores
 and 600 compiled static random-access memory (SRAM) instances. The joint

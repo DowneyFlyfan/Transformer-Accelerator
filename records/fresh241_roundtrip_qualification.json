@@ -1,0 +1,91 @@
+{
+  "state": "one_core_cold_guidance_and_fresh_cold_full_restore_qualified",
+  "verified_utc": "2026-11-09T17:08:27.120377+00:00",
+  "producer_result": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_roundtrip_result.json",
+  "producer_result_sha256": "7d4f54ae64295d6ad9594342aa6cfe46496d381f36e9c42c7521c24d62ef25d8",
+  "guide_qualification_sha256": "d1a112dbb56f9ae34ef9dc2a7535b32283e867fa9888338c345bbff183d337dd",
+  "public_native_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_cold_guide_cold_guide_pins.tsv": "d183fe5928673fdfe5ad54b0e58e757d86e4126e9a6b8ca41e4febf8fbdd653e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_cold_guide_native.log": "bcccf0c71b7136365fd72b268160c2b9a71f6882908301e70a40bb6fe21192d8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_cold_guide_cold_guide_cells.tsv": "964bb4e860f1ddb9a18e547e4a4d0edf631e4342d768c0a05de31497590989a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_fresh_full_before_full_cells.tsv": "964bb4e860f1ddb9a18e547e4a4d0edf631e4342d768c0a05de31497590989a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_fresh_full_model_status.rpt": "6543b359e7cecf601e54cdf5643021d98b224c1ed712c413dc271825e640b6ae",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_fresh_full_native.log": "b6b9d6622945587afdcfce0ea52d7559d0dba5284f860846633d7c4bcf4c2572",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_fresh_full_before_full_pins.tsv": "d183fe5928673fdfe5ad54b0e58e757d86e4126e9a6b8ca41e4febf8fbdd653e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_fresh_full_restored_parent_cells.tsv": "964bb4e860f1ddb9a18e547e4a4d0edf631e4342d768c0a05de31497590989a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_fresh_full_restored_parent_pins.tsv": "d183fe5928673fdfe5ad54b0e58e757d86e4126e9a6b8ca41e4febf8fbdd653e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_cold_full_model_status.rpt": "363b29db8b9a534e6356ab9d4c4eea698ac45251fb5a27854803e0df5b37005d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_cold_full_native.log": "a414c0e59ae78b5b499ec042fa69fb6920c2fc4f96432842154caee5b52a0c35",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_cold_full_restored_parent_cells.tsv": "964bb4e860f1ddb9a18e547e4a4d0edf631e4342d768c0a05de31497590989a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_cold_full_restored_parent_pins.tsv": "d183fe5928673fdfe5ad54b0e58e757d86e4126e9a6b8ca41e4febf8fbdd653e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fresh241_full_mmmc.tcl": "42493e947d4ee6132f732640f9e939c719a1185c67eb24f1e3eff97bae26560f"
+  },
+  "total_elapsed_seconds": 90.63654934003716,
+  "original_core_cells": 94471,
+  "original_memory_macros": 28,
+  "original_physical_pins": 3158,
+  "parent_physical_leaf_cells": 112,
+  "corner_constraints": {
+    "setup_slow": {
+      "reference_sha256": "84346badbb74a038a5048dec210fcc6f3806cdce0cdeecdf3b7bec90122fe01f",
+      "clock_period_ns": 1.72414,
+      "source_clock_latency_commands": [
+        "set_clock_latency -source -early -min -rise  -0.330852 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -min -fall  -0.329867 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -max -rise  -0.330852 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -max -fall  -0.329867 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -min -rise  -0.330852 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -min -fall  -0.329867 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -max -rise  -0.330852 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -max -fall  -0.329867 [get_ports {clk}] -clock core_clock"
+      ],
+      "fresh_full_sha256": "2c4b1c906f6e34ef7d3b69cea31ca78f3bdcb9315748e05483c8a4eb2b5c2742",
+      "cold_full_sha256": "bc18409cc7c47c0f4065681c276779b953428077800f30f0cc3d93f1fba42c74"
+    },
+    "setup_typ": {
+      "reference_sha256": "8d171d87d06b4d3c3a1e794c7e4d37bcbc6ae5abd45b06b1d73c9e960c92b476",
+      "clock_period_ns": 1.72414,
+      "source_clock_latency_commands": [
+        "set_clock_latency -source -early -min -rise  -0.250436 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -min -fall  -0.25041 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -max -rise  -0.250436 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -max -fall  -0.25041 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -min -rise  -0.250436 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -min -fall  -0.25041 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -max -rise  -0.250436 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -max -fall  -0.25041 [get_ports {clk}] -clock core_clock"
+      ],
+      "fresh_full_sha256": "3940b3e64bb86a4a6d12ae5b1276049be226447546a7794c14530363f9785a98",
+      "cold_full_sha256": "25326d9a2b18b77beab53c4c1d315759a0cca86752520c38e12547aaa120bb41"
+    },
+    "hold_fast": {
+      "reference_sha256": "d24765b01fff49453607b60a458fb59420f6edaf95550d091ea23dd5d93712d1",
+      "clock_period_ns": 1.72414,
+      "source_clock_latency_commands": [
+        "set_clock_latency -source -early -min -rise  -0.205864 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -min -fall  -0.20658 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -max -rise  -0.205864 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -early -max -fall  -0.20658 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -min -rise  -0.205864 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -min -fall  -0.20658 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -max -rise  -0.205864 [get_ports {clk}] -clock core_clock",
+        "set_clock_latency -source -late -max -fall  -0.20658 [get_ports {clk}] -clock core_clock"
+      ],
+      "fresh_full_sha256": "360d3eba1d47d234719e4e28fd79f20031b1df3acb24704f6273e1bbeac9363a",
+      "cold_full_sha256": "6ac826c65700cd78417b705d79136a9bca203418abc1bd56c1a1ec717aed988a"
+    }
+  },
+  "cold_guidance_typical_constraints_preserved": true,
+  "fresh_and_cold_full_constraints_preserved_per_corner": true,
+  "full_import_excludes_boundary_library80": true,
+  "full_routed_model68_restored_with_exact_cell_master_location_orientation": true,
+  "parent_graph_constants_geometry_and_leaf_flags_exact": true,
+  "full_checkpoint_closed_fingerprint_verified": true,
+  "guidance_model_timing_equivalent": false,
+  "twenty_core_scale_qualified": false,
+  "parent_electrical_repair_completed": false,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "scope": "One-core protocol qualification: cold guide, separate fresh import of all original full68 models with each corner own source constraints, then independent cold full reload. No in-place model swap, optimization, timing closure or paper-performance claim. Normal and ILM contexts both use each matching original constraint reference."
+}
