@@ -1,0 +1,61 @@
+{
+  "state": "channel_conservation_monitor_positive_and_eight_mutants_passed",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_channel190_monitor_validation.py": "08e15c2059458649a21f62f343ed365177e8f67d75a50e37b429c7d576fc6e49",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv": "38843f51b11646e753db5e8e622cce1d056832a995816925f19f3f53e9628570",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor_tb.sv": "da0b740aae0ae1d177f7959cf537d1e70761e3c27444e0a6894f35acaafca0c0",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_fixture190_integrity.py": "1c43b191d1c81b14f3bb5fe2afeb2d3a595a531f8265725de6937c9a7e65b641",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "steps": [
+    {
+      "mode": 0,
+      "native_exit_status": 0,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:10 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nfile: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv\n\tmodule worklib.tri_oracle_real_channel_sequence190_monitor:sv\n\t\terrors: 0, warnings: 0\nfile: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor_tb.sv\n\tmodule worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv\n\t\terrors: 0, warnings: 0\n\tElaborating the design hierarchy:\n\t\tCaching library 'worklib' ....... Done\n\tTop level design units:\n\t\ttri_oracle_real_channel_sequence190_monitor_tb\n\tBuilding instance overlay tables: .................... Done\n\tGenerating native compiled code:\n\t\tworklib.tri_oracle_real_channel_sequence190_monitor:sv <0x215d09a8>\n\t\t\tstreams:   5, words:  7257\n\t\tworklib.tri_oracle_real_channel_sequence190_monitor_tb:sv <0x3572420b>\n\t\t\tstreams:  27, words: 18764\n\tBuilding instance specific data structures.\n\tLoading native compiled code:     .................... Done\n\tDesign hierarchy summary:\n\t\t                 Instances  Unique\n\t\tModules:                 2       2\n\t\tRegisters:              22      22\n\t\tScalar wires:            9       -\n\t\tVectored wires:          7       -\n\t\tAlways blocks:           2       2\n\t\tInitial blocks:         17      17\n\t\tPseudo assignments:     13       -\n\t\tProcess Clocks:          1       1\n\t\tSimulation timescale:  1ps\n\tWriting initial simulation snapshot: worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv\ndmesg: read kernel buffer failed: Operation not permitted\ndmesg: read kernel buffer failed: Operation not permitted\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nREAL_CHANNEL_MONITOR_PASS channels=5632 packets=36\nSimulation complete via $finish(1) at time 1470 NS + 0\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor_tb.sv:33     $display(\"REAL_CHANNEL_MONITOR_PASS channels=%0d packets=%0d\",channels_seen,packets_seen);$finish;\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:11 UTC  (total: 00:00:01)\n"
+    },
+    {
+      "mode": 1,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:11 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,33): (time 65 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor.unmblk1\nREAL_CHANNEL_SEQUENCE_ID expected=0 got=1\nSimulation terminated via $fatal(1) at time 65 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:33             $fatal(1,\"REAL_CHANNEL_SEQUENCE_ID expected=%0d got=%0d\",channels_seen+row,packet_channels[row*16+:16]);\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:11 UTC  (total: 00:00:00)\n"
+    },
+    {
+      "mode": 2,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:12 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,33): (time 105 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor.unmblk1\nREAL_CHANNEL_SEQUENCE_ID expected=160 got=0\nSimulation terminated via $fatal(1) at time 105 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:33             $fatal(1,\"REAL_CHANNEL_SEQUENCE_ID expected=%0d got=%0d\",channels_seen+row,packet_channels[row*16+:16]);\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:12 UTC  (total: 00:00:00)\n"
+    },
+    {
+      "mode": 3,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:12 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,28): (time 65 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor\nREAL_CHANNEL_SEQUENCE_COUNT\nSimulation terminated via $fatal(1) at time 65 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:28           $fatal(1,\"REAL_CHANNEL_SEQUENCE_COUNT\");\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:12 UTC  (total: 00:00:00)\n"
+    },
+    {
+      "mode": 4,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:12 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,30): (time 65 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor\nREAL_CHANNEL_SEQUENCE_LAST\nSimulation terminated via $fatal(1) at time 65 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:30           $fatal(1,\"REAL_CHANNEL_SEQUENCE_LAST\");\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:13 UTC  (total: 00:00:01)\n"
+    },
+    {
+      "mode": 5,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:13 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,26): (time 65 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor\nREAL_CHANNEL_SEQUENCE_METADATA\nSimulation terminated via $fatal(1) at time 65 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:26           $fatal(1,\"REAL_CHANNEL_SEQUENCE_METADATA\");\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:13 UTC  (total: 00:00:00)\n"
+    },
+    {
+      "mode": 6,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:13 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,20): (time 55 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor\nREAL_CHANNEL_SEQUENCE_STALLED_PACKET_CHANGED\nSimulation terminated via $fatal(1) at time 55 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:20         $fatal(1,\"REAL_CHANNEL_SEQUENCE_STALLED_PACKET_CHANGED\");\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:13 UTC  (total: 00:00:00)\n"
+    },
+    {
+      "mode": 7,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:14 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,24): (time 1485 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor\nREAL_CHANNEL_SEQUENCE_EXTRA\nSimulation terminated via $fatal(1) at time 1485 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:24         if(done) $fatal(1,\"REAL_CHANNEL_SEQUENCE_EXTRA\");\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:14 UTC  (total: 00:00:00)\n"
+    },
+    {
+      "mode": 8,
+      "native_exit_status": 2,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 10:21:14 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nLoading snapshot worklib.tri_oracle_real_channel_sequence190_monitor_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nxmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv,17): (time 45 NS).\ntri_oracle_real_channel_sequence190_monitor_tb.monitor\nREAL_CHANNEL_SEQUENCE_UNKNOWN\nSimulation terminated via $fatal(1) at time 45 NS + 1\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv:17       if($isunknown({packet_valid,packet_ready})) $fatal(1,\"REAL_CHANNEL_SEQUENCE_UNKNOWN\");\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 10:21:14 UTC  (total: 00:00:00)\n"
+    }
+  ],
+  "elapsed_seconds": 5.053368239023257,
+  "temporary_build_removed": true,
+  "scope": "Test-observer verification only: one5632-channel stream and eight protocol/identity mutants. Not full-layer arithmetic, chip functionality, timing or paper-result evidence."
+}

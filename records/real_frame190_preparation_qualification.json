@@ -1,0 +1,40 @@
+{
+  "state": "real_layer_bench_compiled_and_observers_verified_full_execution_pending",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_feedforward_frame190_tb.sv": "196b2efd76b6f3253992f987a27802f7410e1741acbfe893a6da210e62da11ea",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor.sv": "38843f51b11646e753db5e8e622cce1d056832a995816925f19f3f53e9628570",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_real_channel_sequence190_monitor_tb.sv": "da0b740aae0ae1d177f7959cf537d1e70761e3c27444e0a6894f35acaafca0c0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_real_frame190_source.py": "a8a68790aa61b3c1d644c33a7f148977beb7b99dbf2fb757ddeadc92919354a4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_fixture190_integrity.py": "1c43b191d1c81b14f3bb5fe2afeb2d3a595a531f8265725de6937c9a7e65b641",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_fixture190_integrity.py": "720ecc053f41199262869df040645a13ec1d4d821a68535c0e227faa5d157506",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_channel190_monitor_validation.py": "08e15c2059458649a21f62f343ed365177e8f67d75a50e37b429c7d576fc6e49"
+  },
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/fixture190_integrity_controls.json": "edef034be2f5e134741885fc02304d7076534fe4517ac26b7d70780a2502f916",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/channel190_monitor_validation.json": "bb515fc13feb02009cb4128fc25c2f5bc6aaf4ec35aec4ccc76d80b07168d7c3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real_frame190_parser_final_result.json": "09bad713c481aec7790148717e3f2361cb5f6098ee80b809b2a81d74abf80ddb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real_frame190_parser_final_native.log": "4b029c6c153c17fe1503f4b4a501013591988359181b97b46d6ecbcf85be011f"
+  },
+  "archived_manifest_sha256": "bdfb9e7cd40757758ebdd565981bdeae46e62299367bef81ee48f9b24e731842",
+  "planned_input_features": 2048,
+  "planned_intermediate_channels": 5632,
+  "planned_output_words": 2048,
+  "planned_actual_core_instances": 20,
+  "planned_actual_compiled_memory_models": 600,
+  "planned_prediction_packets": 36,
+  "planned_input_groups": 176,
+  "planned_input_strips": 45056,
+  "parsed_modules": 3,
+  "parser_warnings": 0,
+  "fixture_integrity_controls_passed": 7,
+  "channel_monitor_positive_stream_channels": 5632,
+  "channel_monitor_positive_stream_packets": 36,
+  "channel_monitor_negative_controls_rejected": 8,
+  "zero_contribution_channels_also_required_at_prediction_numeric_handshake": true,
+  "native_full_real_layer_arithmetic_executed": false,
+  "native_full_real_layer_arithmetic_passed": false,
+  "full_mapped_function_qualified": false,
+  "routed_timing_qualified": false,
+  "full_paper_results_matched": false,
+  "scope": "Verification preparation only. Syntax compilation, observer tests and anchored-fixture integrity checks do not establish full-layer hardware arithmetic. The pending run targets a complete archived trained first-language-layer fixture on the unchanged20-core source; prepared normalized strips remain externally supplied."
+}
