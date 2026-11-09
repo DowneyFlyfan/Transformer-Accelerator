@@ -1,18 +1,20 @@
 # Tri-Oracle reproduction in progress
 
-Current verified milestone: the Genus-mapped prepared prediction/feed-forward
+Current verified milestone: the physically repaired prepared prediction/feed-forward
 parent passes all twelve functional cases on twenty compute cores and 600
 compiled static random-access memory (SRAM) models. The test checks 4,420 exact
-hidden-output values, successful and erroneous backpressure, memory faults and
-reset recovery. A separate run rejects a deliberately wrong integer sum using
-the same hardware, simulator and memory inputs. The passing eight-worker
-Xcelium run took 1,427.70 seconds. See
-`records/mapped208_functional_qualification.json` and its bound native logs.
+hidden outputs, successful and erroneous backpressure, memory faults and reset
+recovery. A separate run rejects a deliberately wrong integer sum using the same
+hardware, simulator, memory inputs and observer bench. The passing eight-worker
+Xcelium run took 1,460.57 seconds. See
+`records/controller261_physical_functional_qualification.json` and its bound
+`controller259` native logs. This supersedes the earlier mapped208 functional
+milestone for the current physical parent.
 
 This fixture supplies prepared normalized/sign inputs and analytically saturated
-numeric operands. It establishes mapped functional behavior for this parent;
-full standard-cell mapped trained-layer execution, whole-model accuracy, routed
-parent timing and the paper's measured results remain unverified.
+numeric operands. It establishes mapped functional behavior without delay
+annotation. Full standard-cell mapped trained-layer execution, whole-model
+accuracy, routed parent timing and the paper's measured results remain unverified.
 
 One complete archived trained first-language-layer fixture now passes on the
 source integration with staged controllers: 2,048 input features, all 5,632
@@ -25,59 +27,37 @@ externally supplied. This is one archived fixture; it does not establish
 whole-model accuracy or the paper's latency and energy. See
 `records/real190_full_functional_qualification.json`.
 
-The prepared parent also has legal geometric placement in a 3.6-by-3.6-millimeter
-die. All 1,889,420 original core cells, 382,490 previously mapped controller cells,
-sixty fixed macro poses and 3,656 registered-reset endpoint chains are preserved.
-Three fresh full-model process-corner diagnostics fail at the unchanged
-1.72414-nanosecond period: slow setup -240.876907 nanoseconds, typical setup
--171.942947 nanoseconds, and fast removal -0.082619 nanoseconds. Removal checks
-whether reset deassertion is sufficiently separated from a clock edge. The setup
-path traverses overloaded backend control nets; the native logs also warn that
-repeated controller modules prevent optimization. Native uniquification now passes
-with a fresh full-model reload: all 673,622 parent cells, 1,889,420 original core
-cells, 600 memories, 3,656 reset endpoint chains and 86 physical preservation
-targets are retained. Parent geometry, wiring and direct constants remain exact;
-all three constraint views match a fresh evaluation of the original source.
-This preparation took 614.19 seconds and performs no electrical optimization.
-See `records/unique235_preparation_qualification.json`. Electrical repair,
-clock-tree construction, power-grid construction and parent routing remain
-pending. The native pre-route
-engine reports signal-interference analysis disabled. See
-`records/frame202_physical_milestone.json`, its bound reports and
-`records/frame202_placement_result.json`.
+The prepared parent has legal geometric placement in a 3.6-by-3.6-millimeter die.
+Generic electrical optimization and a targeted noninverting control tree now
+preserve all 1,889,420 original core cells and 600 memory models through a fresh
+full-model reload and an independent cold reload. The tree adds 43 buffers to
+one protected enable with 998 original loads. All 928,808 pre-tree physical parent
+leaves, including sixty fixed macros, retain their names, masters, placement,
+orientation and protection flags. Input/output pin poses, placement halos,
+registered-reset ancestry, hierarchy/module protection policies and all 86 direct
+preservation targets remain exact. The complete other signal graph, direct
+constants and all three original timing-constraint sets also remain exact.
 
-A separate native audit verifies all 86 original preservation targets in the
-physical placement view: sixty macros and 26 mapped-controller hierarchies.
-All resolve to exact names with active protection. The expanded core hierarchies
-in the timing view are distinct database objects and are not used for that proof.
-A small native fault control rejects a deliberately cleared hierarchical flag
-before and after timing-mode reload, explicitly restores it only inside the
-control, and rejects five invalid selectors. Temporary control files were
-removed. See `records/physical233_preservation_qualification.json`. This audit
-does not qualify module uniquification, timing repair or routing.
+At the unchanged 1.72414-nanosecond period, fresh full-model diagnostics still
+fail: slow setup -95.267113 nanoseconds, typical setup -63.815323 nanoseconds and
+fast reset removal -0.089345 nanoseconds. Before the targeted tree, these were
+-129.035797, -86.037094 and -0.032697 nanoseconds respectively. The former worst
+enable endpoint improves to -12.889022 nanoseconds at slow and -9.600838 at
+typical; another overloaded control net becomes the worst path. Fast reset
+removal worsens. These are pre-clock-tree, pre-route diagnostics with signal
+interference analysis disabled. Timing closure, clock distribution, power-grid
+construction and parent routing remain unfinished. No power or paper-performance
+matching follows from this milestone. See
+`records/controller261_physical_functional_qualification.json`, the published
+`controller260` timing reports and `records/controller261_publication.json`.
 
-A one-core fresh-import protocol now passes guidance reload and restoration to
-all 94,471 original routed cells and 28 memory macros, followed by a separate
-full-model reload. All 3,158 physical pin rows, parent wiring/constants, geometry
-and exact leaf protection values are retained. Each process corner keeps its
-own clock-source latency and matches its original exported constraints; the
-complete restoration excludes the approximate boundary library. The round trip
-took 90.64 seconds. Twenty-core full-model restoration after optimization and parent
-electrical repair remain pending. The boundary model is guidance only,
-with no timing-equivalence claim. See `records/fresh239_import_qualification.json`
-and `records/fresh241_roundtrip_qualification.json`.
-
-The twenty-core guidance import and its independent reload now pass in 191.59
-seconds: all 673,622 parent leaves, 63,160 external core pin rows, original wiring
-and direct constants, design/hierarchy/module protection flags, sixty macro
-poses and placement halos, input/output pin poses and registered-reset ancestry
-are retained. The typical-corner constraints remain exact. A separate native
-fault control rejects loss of inherited design protection while all previously
-captured leaf and graph data remain unchanged, then restores the exact flag;
-its temporary build is removed. Guidance contains twenty abstract cores and
-forty aggregate memory macros. Restoration of all 600 full memory models,
-all original timing corners and post-optimization function remains required.
-See `records/frame242_guidance_qualification.json` and
+Earlier preparation independently verified module uniquification and guidance
+model import while retaining the original physical interfaces and protection
+policies. The boundary timing model is guidance only; the latest three-corner
+analyses restore all original core models and exclude that approximation.
+The native inherited-protection fault control still rejects loss of the design
+flag. See `records/unique235_preparation_qualification.json`,
+`records/frame242_guidance_qualification.json` and
 `records/design243_native_control.json`.
 
 Earlier backend milestone: one shared backend executes projection, gate/up

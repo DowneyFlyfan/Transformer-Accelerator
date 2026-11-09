@@ -1,0 +1,48 @@
+{
+  "state": "source_bound_protected_enable_fanout_bottleneck_identified",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_controller253_diagnosis.py": "a2dadd9d6aa05a0e89e2c60bb26e60e9c448eb88bbd17e47dd8767c363b9b97c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame251_electrical_result.json": "80c149ee4eda60b9b4bbef12bff29a543993b906f431f51cc5056fdfabd45c74",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_repair_frame251/after_worst_path.rpt": "d88182e96e285c922ed6f73dd6911a5e5fac896958979c5ec6d6f81b8968c161",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_repair_frame251/after_timing/after.tran.gz": "3e5763c58d54749e8418e09515aecc8eb9afd1227300e3ba7946d5a39b3d5de3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_repair_frame251/after_preservation.tsv": "f862d5e0ae5d06ad73619d6139d5f6584e26d6fe6b97a379161bde79870f1a78",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_repair_frame251/before_controller_cells.tsv": "a799d5e7310e4fa5fe13fced89b83deef3e264dae43d135dcc15c84044b46d9e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_repair_frame251/after_controller_cells.tsv": "a799d5e7310e4fa5fe13fced89b83deef3e264dae43d135dcc15c84044b46d9e",
+    "/opt/cadence/INNOVUS251/doc/TCRcom/report_timing.html": "422ad901b4ad205e8fdd0a7aa79e2aa7cb62e78abb1e27da73bacd88234c246b"
+  },
+  "supersedes_private_diagnosis_sha256": "1d13d6324b26125b897427be9a7c248455471a3f8e7d4decbb7c9c540ce41d69",
+  "delay_convention": "Unsplit report_timing rows: gate and wire effects are lumped into reported driver-stage delays; no intrinsic-cell-only attribution.",
+  "controller": "numeric/engine/gated/implementation",
+  "controller_dont_touch": "true",
+  "enable_net": "numeric/engine/gated/implementation/n_96",
+  "reported_control_net_load_pins": 998,
+  "reported_sink_pin_kinds": {
+    "E": 960,
+    "A2": 36,
+    "A3": 1,
+    "I": 1
+  },
+  "selected_protected_driver_rows": {
+    "numeric/engine/gated/implementation/g434460/ZN": {
+      "master": "ND2D1BWP12T40P140",
+      "fanout": 17,
+      "transition_ns": 0.0294,
+      "reported_lumped_stage_delay_ns": 3.977799
+    },
+    "numeric/engine/gated/implementation/g434445/ZN": {
+      "master": "INVD18BWP12T40P140",
+      "fanout": 998,
+      "transition_ns": 7.7767,
+      "reported_lumped_stage_delay_ns": 59.129601
+    }
+  },
+  "guidance_worst_setup_slack_ns": -86.209808,
+  "guidance_data_path_delay_ns": 67.388702,
+  "last_two_protected_driver_stages_lumped_delay_ns": 63.1074,
+  "protected_driver_stages_fraction_of_data_delay": 0.9364685492829348,
+  "fraction_formula": "sum(reported_lumped_driver_stage_delay_ns) / reported_data_path_delay_ns",
+  "original_selected_controller_names_and_masters_retained": true,
+  "full_corner_timing_qualified": false,
+  "remedy_executed": false,
+  "scope": "Diagnosis from accepted251 guidance-model reports only. The998 reported control-net loads and retained protected driver explain a concrete remaining bottleneck. This is not a full-corner result, a repair, or functional verification. A targeted non-inverting buffer-tree experiment is an unexecuted hypothesis for offloading this control net while preserving original gates; it requires independent connectivity, timing and functional checks."
+}

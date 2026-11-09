@@ -1,0 +1,70 @@
+{
+  "observed_utc": "2026-11-08T08:26:28.658197+00:00",
+  "native_comparison_completed": true,
+  "all_checks_passed": false,
+  "checks": {
+    "setup": [
+      "Worst-Slacks        6337           0(0/0)         0              6337",
+      "Trans-Times         3120           38             0              3158",
+      "Capacitances        3158           0              0              3158",
+      "Design-Rules        3158           0              0              3158"
+    ],
+    "hold": [
+      "Worst-Slacks        6332           0(0/0)         0              6332",
+      "Trans-Times         3132           26             0              3158",
+      "Capacitances        3158           0              0              3158",
+      "Design-Rules        3158           0              0              3158"
+    ]
+  },
+  "maximum_failed_transition_absolute_difference_ns": {
+    "setup": 0.0013999999999999846,
+    "hold": 0.0033999999999999586
+  },
+  "source_core_unchanged": true,
+  "same_summary_as_original_model79": true,
+  "refining_extraction_did_not_resolve_transition_mismatch": true,
+  "output_artifact_fingerprint": {
+    "type": "directory",
+    "files": {
+      "hold.pre_vs_post.cmp": {
+        "size_bytes": 2047099,
+        "sha256": "c4821c0b19ce3e622f357954500fedf90d02080f74b8744f20dd7d228e55d32d"
+      },
+      "model_inventory.rpt": {
+        "size_bytes": 195,
+        "sha256": "9fea96b2adeca439e0326b01e14fc4a797a6be26f43951bdaa4e1e61132b1772"
+      },
+      "post_etm_hold.setup_typ.rpt": {
+        "size_bytes": 2174460,
+        "sha256": "bf7b5631acae10169fb81ee464735c40f02d4664a82b2f98f6a2e12edff42359"
+      },
+      "post_etm_hold_wmt.log": {
+        "size_bytes": 1810,
+        "sha256": "e06efe6c854b03c826beb871d7f10946dd55c8877f157d37c8aba8a94f966731"
+      },
+      "post_etm_setup.setup_typ.rpt": {
+        "size_bytes": 2175366,
+        "sha256": "c40196c9e19b71f3f24067bf2b5d089827175b6c62469cca143fb8fcbb8cc3ff"
+      },
+      "post_etm_setup_wmt.log": {
+        "size_bytes": 2490,
+        "sha256": "e325acb9b4d4058345867a41ea937985f4596843669213562e08b6c99030934e"
+      },
+      "pre_etm_hold.setup_typ.rpt": {
+        "size_bytes": 2174509,
+        "sha256": "8f862eb0ee82d29ebd603fbdf71f076aa4d24c83bea9ebf58cbd72ef6edb3a87"
+      },
+      "pre_etm_setup.setup_typ.rpt": {
+        "size_bytes": 2175415,
+        "sha256": "e5d0ff37642ed545ae230d2b206cfa1f0b39bbf72b3964e4d35c84812d20dd1c"
+      },
+      "setup.pre_vs_post.cmp": {
+        "size_bytes": 2047667,
+        "sha256": "1338fc352bbbd2e35971609293e239b6ebd303561cc16ab845b28aa587815e61"
+      }
+    }
+  },
+  "completed_helper_source": "\"\"\"Validate actual extracted model using the supported MMMC import path.\"\"\"\nfrom pathlib import Path\nimport datetime\nimport hashlib\nimport json\nimport os\nimport sys\n\nsys.dont_write_bytecode = True\nsys.path.insert(0, 'syn')\nfrom tri_oracle_artifact_fingerprint import artifact_fingerprint\n\n\ndef sha(path):\n    with Path(path).open('rb') as stream:\n        return hashlib.file_digest(stream, 'sha256').hexdigest()\n\n\nbase = Path('.cache/physical/pnr/tri_oracle_sram_memory_compute')\nqpath = Path('records/sram_core_timing_model80_export_validation.json')\nq = json.loads(qpath.read_text())\nassert artifact_fingerprint(base/'hierarchy_timing_model_80') == q['output_artifact_fingerprint']\nsource = json.loads(Path('records/sram_core_checkpoint44_qualification.json').read_text())\nassert artifact_fingerprint(source['output_database']) == source['output_database_fingerprint']\navailable = int(next(line.split()[1] for line in Path('/proc/meminfo').read_text().splitlines()\n                     if line.startswith('MemAvailable:')))*1024\nassert available > 12*1024**3\npaths = [qpath, Path('syn/tri_oracle_validate_sram_core_timing_model_refined.tcl'), Path(__file__),\n         base/'hierarchy_timing_model_81_inputs/mmmc.tcl',\n         base/'hierarchy_timing_model_81_inputs/validation_driver.tcl']\nrecord = Path('records/sram_core_timing_model81_launch.json')\nassert not record.exists()\nrecord.write_text(json.dumps({\n    'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),\n    'source_sha256': {str(path): sha(path) for path in paths},\n    'model_numeric_limits_unchanged': True,\n    'scope': 'Native supported-import comparison; generation completion alone does not establish timing equivalence.'\n}, indent=2)+'\\n')\nos.environ.update(TRI_ORACLE_TOP='tri_oracle_sram_memory_compute',\n                  TRI_ORACLE_PHYSICAL_STAGE='hierarchy_timing_model_validation_81',\n                  TRI_ORACLE_PHYSICAL_ENTRY='syn/tri_oracle_validate_sram_core_timing_model_refined.tcl',\n                  TRI_ORACLE_PHYSICAL_MARKER='TRI_ORACLE_CORE_TIMING_MODEL81_COMPARED',\n                  TRI_ORACLE_PHYSICAL_OUTPUT=str(base/'hierarchy_timing_model_validation_81'),\n                  TRI_ORACLE_PHYSICAL_ANON_GIB='14', TRI_ORACLE_PHYSICAL_SECONDS='1800')\nprint('Validated original extracted model; launching supported MMMC comparison', flush=True)\nos.execvpe('bash', ['bash', 'syn/run_tri_oracle_guarded_physical.sh'], os.environ)\n",
+  "completed_helper_sha256": "5eb676b02d196d6d9607a7ce0838eaf49059e086f6169f06c6ec5cfeb0b1a183",
+  "scope": "All worst-slack, capacitance and design-rule comparisons pass. 38 setup and 26 hold transition checks still fail unchanged 1ps / 0.1% limits. Model is not fully qualified for synthesis."
+}

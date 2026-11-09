@@ -1,0 +1,134 @@
+{
+  "observed_utc": "2026-11-08T08:24:19.835998+00:00",
+  "native_export_completed": true,
+  "source_core_unchanged": true,
+  "source_netlist_body_unchanged": true,
+  "icarus_frozen_inputs_unchanged": true,
+  "liberty_pins_including_internal_node": 3159,
+  "liberty_cells": [
+    "tri_oracle_sram_memory_compute"
+  ],
+  "model_sha256": "a5e2e97bc1f7bfd888bfc20d0c1530001df24aa0849bfc0a520cea355a226fc6",
+  "extraction_tolerance_percent": 0.01,
+  "extraction_resolution_ns": 1e-05,
+  "comparison_absolute_tolerance_ns": 0.001,
+  "comparison_percentage_tolerance": 0.1,
+  "timing_equivalence_qualified": false,
+  "native_automatic_import_unsupported": true,
+  "output_artifact_fingerprint": {
+    "type": "directory",
+    "files": {
+      "core_typ.asrt.setup_typ": {
+        "size_bytes": 549561,
+        "sha256": "360d98a12b2a15a0f44356029786fc8427f76088d895cca20ccdf475317e6368"
+      },
+      "core_typ.asrt.setup_typ.latchInferredMCP": {
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "core_typ.lib": {
+        "size_bytes": 18021295,
+        "sha256": "a5e2e97bc1f7bfd888bfc20d0c1530001df24aa0849bfc0a520cea355a226fc6"
+      },
+      "dc_typ.derate_model.asrt": {
+        "size_bytes": 118,
+        "sha256": "f2a8df172721df6624340122d990f5b2c4f25fcfa2fdad8c67231e3f02c74561"
+      },
+      "extraction_scope.rpt": {
+        "size_bytes": 401,
+        "sha256": "1490389df8f6019840c0390228a1cf751ae03cbdd3842ade16d843ada5471418"
+      },
+      "model_shell.v": {
+        "size_bytes": 1688,
+        "sha256": "c751a23921fa444837273ec7ad9ea83e7968ee240a03d2cf072ce10c1c1159c7"
+      },
+      "native_validation/.var.tcl": {
+        "size_bytes": 3036,
+        "sha256": "9a009ff03f13fcd81af7d01b683579251dc7296b2a5633f3bcae86982e8b5fdb"
+      },
+      "native_validation/postETM.cmd": {
+        "size_bytes": 2641,
+        "sha256": "44469661f2dd4acea03e4d967dab8c346305d290dabfbaca3edef58ba67b091c"
+      },
+      "native_validation/postETM.log": {
+        "size_bytes": 4374,
+        "sha256": "ea5e70af60d85461b4474d27c5a1662aa59c2ecb0a0a2e3ff55e6a5b9af52435"
+      },
+      "native_validation/postETM.logv": {
+        "size_bytes": 7846,
+        "sha256": "8762729a42866e9b294b912829fccec0e6cc16f6c4e49adb28eed791581d57bf"
+      },
+      "native_validation/postETM.tcl": {
+        "size_bytes": 8989,
+        "sha256": "f90c351e63c08b2d4d6ea3480a7a3aea24f1364d5e7948e44446118fb40b55b2"
+      },
+      "native_validation/pre_etm_hold.setup_typ.rpt": {
+        "size_bytes": 2174509,
+        "sha256": "8f862eb0ee82d29ebd603fbdf71f076aa4d24c83bea9ebf58cbd72ef6edb3a87"
+      },
+      "native_validation/pre_etm_hold_wmt.log": {
+        "size_bytes": 858,
+        "sha256": "04f7d67733e8b0997db657c15e0b0716f36b6bb5f79019ca2c7d2d71377ed2da"
+      },
+      "native_validation/pre_etm_setup.setup_typ.rpt": {
+        "size_bytes": 2175415,
+        "sha256": "e5d0ff37642ed545ae230d2b206cfa1f0b39bbf72b3964e4d35c84812d20dd1c"
+      },
+      "native_validation/pre_etm_setup_wmt.log": {
+        "size_bytes": 932,
+        "sha256": "a28beeea288a63be215f2e4d8c2a2deb817e22bc4278bbf23b4b156370542098"
+      },
+      "native_validation/summary.rpt": {
+        "size_bytes": 29,
+        "sha256": "0216802c4a8abc122a6f087d9a7b76cde54f1251ecb44ee57143643dd6794ccd"
+      },
+      "source_hold_coverage.rpt": {
+        "size_bytes": 643019,
+        "sha256": "db12d9644f44bb6fe9fa72693154f389f34ec83d33720ec0597c10ebfd82eb2f"
+      },
+      "source_netlist_after.v": {
+        "size_bytes": 17291315,
+        "sha256": "e22ae1479449ca97e72e6136897070f3641bc696609d6d231215ef78d5fca150"
+      },
+      "source_netlist_before.v": {
+        "size_bytes": 17291316,
+        "sha256": "e37ab0e43e4cc796586e71c8dc64fa2334884105a49a9ea0990e20a441a41c5a"
+      },
+      "source_setup_coverage.rpt": {
+        "size_bytes": 643020,
+        "sha256": "9a64d605dc254dce46a8b31554b2e94f6472ea7d7f2bfbaa60dd44f774b3c6c8"
+      },
+      "source_si/source_si.SI_Glitches.rpt.gz": {
+        "size_bytes": 90,
+        "sha256": "a7a4a1c8b2bc698af4ac7a9cdf3ee85252d71ed8aa14c5bcf10fe5bfde9e876c"
+      },
+      "source_si/source_si.cap.gz": {
+        "size_bytes": 406,
+        "sha256": "284f68e7946cc1309da48b4c72216eae2f527e65a08d9230c9f296e79d51028f"
+      },
+      "source_si/source_si.fanout.gz": {
+        "size_bytes": 413,
+        "sha256": "32c4b4fbc433a3daa0b4f63edd337d9adf77aafb5fb58e3a846c67f82c29ccca"
+      },
+      "source_si/source_si.length.gz": {
+        "size_bytes": 327,
+        "sha256": "7af2a37395d9140408edefcf3eed3214216297f83a17279abccb4b10f89d586e"
+      },
+      "source_si/source_si.summary.gz": {
+        "size_bytes": 666,
+        "sha256": "00513e8480dd55936222e0649f27d19c8ab2e19511de3699cacf36cc3385f23f"
+      },
+      "source_si/source_si.tran.gz": {
+        "size_bytes": 585,
+        "sha256": "02551de71055be99ff8e451d217e4c80e3e4dfd5514600ea124fa772f6fcac29"
+      },
+      "top_model.asrt.setup_typ": {
+        "size_bytes": 1723,
+        "sha256": "da80479e7ed421d86d5901f27fad804b30bdd0e80b4454cce52008a99ab70994"
+      }
+    }
+  },
+  "completed_helper_source": "\"\"\"Extract and natively compare a boundary model of the original routed core.\"\"\"\nfrom pathlib import Path\nimport datetime\nimport hashlib\nimport json\nimport os\nimport sys\n\nsys.dont_write_bytecode = True\nsys.path.insert(0, 'syn')\nfrom tri_oracle_artifact_fingerprint import artifact_fingerprint\n\n\ndef sha(path):\n    with Path(path).open('rb') as stream:\n        return hashlib.file_digest(stream, 'sha256').hexdigest()\n\n\nsource_path = Path('records/sram_core_checkpoint44_qualification.json')\nsource = json.loads(source_path.read_text())\nassert artifact_fingerprint(source['output_database']) == source['output_database_fingerprint']\nlive = json.loads(Path('records/sram_fabric_tt1v25c_allmemory02_result.json').read_text())\nfor path, expected in live['source_sha256'].items():\n    assert sha(path) == expected, path\navailable = int(next(line.split()[1] for line in Path('/proc/meminfo').read_text().splitlines()\n                     if line.startswith('MemAvailable:')))*1024\nassert available > 16*1024**3\nassert Path('/sys/fs/cgroup/memory.max').read_text().strip() == str(24*1024**3)\npaths = [source_path, Path('syn/tri_oracle_export_sram_core_timing_model_refined.tcl'), Path(__file__)]\nrecord = Path('records/sram_core_timing_model80_launch.json')\nassert not record.exists()\nrecord.write_text(json.dumps({\n    'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),\n    'purpose': 'Repeat actual core44 extraction with 10x tighter accuracy and delay resolution; unchanged 1ps comparison tolerances.',\n    'view': 'setup_typ used for early and late; original three-view production qualification unchanged',\n    'workers': 19, 'combined_anonymous_guard_gib': 14, 'minimum_host_available_gib': 4,\n    'runtime_limit_seconds': 3600,\n    'source_sha256': {str(path): sha(path) for path in paths},\n    'scope': 'Native extraction and validation experiment only. Model equivalence and synthesis usability remain unproven.'\n}, indent=2)+'\\n')\nos.environ.update(TRI_ORACLE_TOP='tri_oracle_sram_memory_compute',\n                  TRI_ORACLE_PHYSICAL_STAGE='hierarchy_timing_model_80',\n                  TRI_ORACLE_PHYSICAL_ENTRY='syn/tri_oracle_export_sram_core_timing_model_refined.tcl',\n                  TRI_ORACLE_PHYSICAL_MARKER='TRI_ORACLE_CORE_TIMING_MODEL80_EXPORTED',\n                  TRI_ORACLE_PHYSICAL_OUTPUT='.cache/physical/pnr/tri_oracle_sram_memory_compute/hierarchy_timing_model_80/core_typ.lib',\n                  TRI_ORACLE_PHYSICAL_ANON_GIB='14', TRI_ORACLE_PHYSICAL_SECONDS='3600')\nprint('Validated routed core44 and frozen simulation inputs; starting native timing-model extraction', flush=True)\nos.execvpe('bash', ['bash', 'syn/run_tri_oracle_guarded_physical.sh'], os.environ)\n",
+  "completed_helper_sha256": "5893b221711d58b6b88ba119e5f4661d24d4143e09d526b9eb95286437bcbcab",
+  "scope": "Refined model export only. Supported MMMC comparison required before synthesis use."
+}
