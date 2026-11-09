@@ -1,0 +1,85 @@
+{
+  "repository": "bczhou/tiny-llava-v1-hf",
+  "revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "config_url": "https://huggingface.co/bczhou/tiny-llava-v1-hf/resolve/70f28eb22f0265a8a41858f6aebc1928cedd53eb/config.json",
+  "config_sha256": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249",
+  "architecture": [
+    "LlavaForConditionalGeneration"
+  ],
+  "text_config": {
+    "_name_or_path": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "architectures": [
+      "LlamaForCausalLM"
+    ],
+    "hidden_size": 2048,
+    "intermediate_size": 5632,
+    "model_type": "llama",
+    "num_hidden_layers": 22,
+    "num_key_value_heads": 4,
+    "rms_norm_eps": 1e-05,
+    "torch_dtype": "bfloat16",
+    "vocab_size": 32064
+  },
+  "vision_config": {
+    "hidden_size": 1024,
+    "image_size": 336,
+    "intermediate_size": 4096,
+    "model_type": "clip_vision_model",
+    "num_attention_heads": 16,
+    "num_hidden_layers": 24,
+    "patch_size": 14,
+    "projection_dim": 768,
+    "vocab_size": 32000
+  },
+  "weight_files": [
+    {
+      "file": "model-00001-of-00002.safetensors",
+      "bytes": 4979346680,
+      "lfs_sha256": "5757b71668b0f69d61185ff018ada04d490dac417f998bbd6455ec8a84fa1c72"
+    },
+    {
+      "file": "model-00002-of-00002.safetensors",
+      "bytes": 661187448,
+      "lfs_sha256": "c163e6bae7ffadf52ebc7ccae0763f43055e62cadd6dd78c408d6b2f840021ce"
+    }
+  ],
+  "total_weight_bytes": 5640534128,
+  "scope": "public candidate matching the paper model family/architecture; exact paper checkpoint and preprocessing not verified",
+  "weights_downloaded": true,
+  "model_executed": true,
+  "full_paper_accuracy_matched": false,
+  "download_status": {
+    "state": "complete; pinned weight sizes and hashes verified",
+    "previous_attempt": "container exited137 before weights; Docker OOMKilled=false; cause not established",
+    "container": "cadence-ddi",
+    "memory_limit_bytes": 2147483648,
+    "swap_limit_bytes": 2147483648,
+    "cpu_quota": 2,
+    "exit_status": 0
+  },
+  "verified_weights": [
+    {
+      "path": ".cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors",
+      "bytes": 4979346680,
+      "sha256": "5757b71668b0f69d61185ff018ada04d490dac417f998bbd6455ec8a84fa1c72"
+    },
+    {
+      "path": ".cache/model_reference/tiny_llava_v1/model-00002-of-00002.safetensors",
+      "bytes": 661187448,
+      "sha256": "c163e6bae7ffadf52ebc7ccae0763f43055e62cadd6dd78c408d6b2f840021ce"
+    }
+  ],
+  "partial_model_reference_executed": true,
+  "complete_vision_language_model_executed": false,
+  "model_executed_scope": "complete inference not run; partial block reference is recorded separately",
+  "validation_record": "records/model_reference_validation.json",
+  "validation_records": [
+    "records/model_reference_validation.json",
+    "records/model_reference_pruning_validation.json"
+  ],
+  "execution_evidence": {
+    "record": "records/calibrated_integer_model_qualification.json",
+    "sha256": "e28797710a62a8ebbcc48818f016d122ae8e6c3446e45980bceeda360f9fc5ea",
+    "scope": "Candidate floating baseline and all22-layer integer feed-forward checks executed. Exact paper checkpoint/preprocessing, dataset accuracy and whole-model hardware execution remain unverified."
+  }
+}

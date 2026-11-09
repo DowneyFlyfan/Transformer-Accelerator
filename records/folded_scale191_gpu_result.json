@@ -1,0 +1,192 @@
+{
+  "state": "paired_folded_scale_diagnostic_completed",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_folded_scale191_gpu.py": "1d804d48da1e49a4d37acca461b8451d62d49360606666df444fcfd186d2a150",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/model_reference_candidate.json": "d462cb1574fc26edea3b17e06e1f3567c395f579f06d5cc087443e475167e9d5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model.safetensors.index.json": "e50f2b3f29f9b4fadf25d427e30d96c2d3aa402eb66ba9e07a0842afe75d4a3b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/config.json": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_model_reference.py": "21d0bb53840fdc07273aa54fc3b7bde5ee82a2d76df4f15af9d50ba25d363e75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/full_layer_fixture/prediction_source.json": "69c991e033c3a12fc13fa05bd5b95411242925f1831d82e794024f3d81445286",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/feedforward_pruning_fixture/prediction_source.json": "291c9c4658f3e882b8aca63111929672f005763c3a6d229c0d27c28015241fbd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/full_layer_fixture/manifest.json": "bdfb9e7cd40757758ebdd565981bdeae46e62299367bef81ee48f9b24e731842",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/feedforward_pruning_fixture/manifest.json": "04d8432076142381908611de7ee552b2d017e8a7118d6842297dfcaae84f4098",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/full_layer_fixture/expected.hex": "a3ab7476ad2d2005e55012e1aed0089490a0fd01144e4e28f8c856652d839f74",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors": "5757b71668b0f69d61185ff018ada04d490dac417f998bbd6455ec8a84fa1c72",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00002-of-00002.safetensors": "c163e6bae7ffadf52ebc7ccae0763f43055e62cadd6dd78c408d6b2f840021ce"
+  },
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "token_positions": [
+    11,
+    0
+  ],
+  "token_count": 2,
+  "layer_index": 0,
+  "floating_reconstruction_relative_l2": [
+    4.3039418961709356e-08,
+    4.1751214788449233e-08
+  ],
+  "floating_identity_relative_l2": [
+    2.2372913872449408e-08,
+    2.8889387495501273e-08
+  ],
+  "cases": [
+    {
+      "policy": "original",
+      "prune": false,
+      "relative_l2_per_token": [
+        0.07702937611928602,
+        0.09258311589450634
+      ],
+      "gate_shift": [
+        6,
+        6
+      ],
+      "up_shift": [
+        0,
+        0
+      ],
+      "down_shift": [
+        6,
+        6
+      ],
+      "predicted_skips": [
+        0,
+        1709
+      ],
+      "outliers": [
+        9,
+        2
+      ],
+      "up_endpoint_codes": [
+        0,
+        0
+      ],
+      "gated_endpoint_codes": [
+        0,
+        0
+      ],
+      "original_archived_2048_output_words_match": true
+    },
+    {
+      "policy": "original",
+      "prune": true,
+      "relative_l2_per_token": [
+        0.07702937611928602,
+        0.3630606280177125
+      ],
+      "gate_shift": [
+        6,
+        6
+      ],
+      "up_shift": [
+        0,
+        0
+      ],
+      "down_shift": [
+        6,
+        6
+      ],
+      "predicted_skips": [
+        0,
+        1709
+      ],
+      "outliers": [
+        9,
+        2
+      ],
+      "up_endpoint_codes": [
+        0,
+        0
+      ],
+      "gated_endpoint_codes": [
+        0,
+        0
+      ],
+      "original_archived_2048_output_words_match": null
+    },
+    {
+      "policy": "folded_learned_scale",
+      "prune": false,
+      "relative_l2_per_token": [
+        0.10708236021802492,
+        0.12808768705163232
+      ],
+      "gate_shift": [
+        3,
+        5
+      ],
+      "up_shift": [
+        0,
+        0
+      ],
+      "down_shift": [
+        3,
+        5
+      ],
+      "predicted_skips": [
+        0,
+        1572
+      ],
+      "outliers": [
+        9,
+        2
+      ],
+      "up_endpoint_codes": [
+        0,
+        0
+      ],
+      "gated_endpoint_codes": [
+        0,
+        0
+      ],
+      "original_archived_2048_output_words_match": null
+    },
+    {
+      "policy": "folded_learned_scale",
+      "prune": true,
+      "relative_l2_per_token": [
+        0.10708236021802492,
+        0.37187551732556506
+      ],
+      "gate_shift": [
+        3,
+        5
+      ],
+      "up_shift": [
+        0,
+        0
+      ],
+      "down_shift": [
+        3,
+        5
+      ],
+      "predicted_skips": [
+        0,
+        1572
+      ],
+      "outliers": [
+        9,
+        2
+      ],
+      "up_endpoint_codes": [
+        0,
+        0
+      ],
+      "gated_endpoint_codes": [
+        0,
+        0
+      ],
+      "original_archived_2048_output_words_match": null
+    }
+  ],
+  "elapsed_seconds": 6.214870144031011,
+  "gpu_name": "NVIDIA GeForce RTX 5070 Ti",
+  "graphics_peak_allocated_bytes": 691184128,
+  "graphics_peak_reserved_bytes": 857735168,
+  "policy": "Same fixed gain cap7 and down-offset-1; only learned-scale placement changes. Local builder policy, not recovered paper parameters.",
+  "source_hardware_changed": false,
+  "full_model_accuracy_qualified": false,
+  "paper_results_matched": false,
+  "scope": "Paired learned-scale folding diagnostic; no hardware or dataset-accuracy claim.\n\nM=2 archived tokens, H=2048 hidden features, K=5632 intermediate channels,\nO=2048 outputs. The original trained first layer remains frozen. This is\ninference only; no training loss or optimizer is used.\n"
+}

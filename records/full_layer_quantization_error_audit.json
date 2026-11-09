@@ -1,0 +1,119 @@
+{
+  "scope": "Exploratory complete first-layer unpruned arithmetic for two previously used text tokens, not calibration or model/task accuracy; ordered ablations can have cancellation and are not additive errors",
+  "repository": "bczhou/tiny-llava-v1-hf",
+  "revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "baseline_hardware_fixture_2048_integer_outputs_reproduced": true,
+  "fixed_linear_up_gain_bits": 7,
+  "fixed_down_shift": 6,
+  "static_weight_scale_groups": true,
+  "activation_scale_from_input_vector": true,
+  "cases": [
+    {
+      "token": "token11",
+      "fixture": ".cache/model_reference/full_layer_fixture",
+      "source_sha256": "69c991e033c3a12fc13fa05bd5b95411242925f1831d82e794024f3d81445286",
+      "activation_exponent": -6,
+      "ordered_ablations": {
+        "activation_only": 0.019186766821806908,
+        "activation_gate_up_weights": 0.022082109787774744,
+        "plus_gate_up_integer_silu_and_16bit_product": 0.02402254921372136,
+        "plus_8bit_down_input_float_down_weights": 0.05310798019488762
+      },
+      "down_weight_groups": [
+        {
+          "down_scale_group_rows": 2048,
+          "relative_l2_error": 0.07702937611928602,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.055740081739900485,
+          "down_weight_exponent_range": [
+            -7,
+            -7
+          ]
+        },
+        {
+          "down_scale_group_rows": 128,
+          "relative_l2_error": 0.05841972428629761,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.024035658681798473,
+          "down_weight_exponent_range": [
+            -10,
+            -7
+          ]
+        },
+        {
+          "down_scale_group_rows": 32,
+          "relative_l2_error": 0.055404438087031584,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.01610962076285586,
+          "down_weight_exponent_range": [
+            -10,
+            -7
+          ]
+        },
+        {
+          "down_scale_group_rows": 1,
+          "relative_l2_error": 0.05350837905595544,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.006879388811236849,
+          "down_weight_exponent_range": [
+            -11,
+            -7
+          ]
+        }
+      ]
+    },
+    {
+      "token": "token0",
+      "fixture": ".cache/model_reference/feedforward_pruning_fixture",
+      "source_sha256": "291c9c4658f3e882b8aca63111929672f005763c3a6d229c0d27c28015241fbd",
+      "activation_exponent": -6,
+      "ordered_ablations": {
+        "activation_only": 0.024195558895993535,
+        "activation_gate_up_weights": 0.03229105854169381,
+        "plus_gate_up_integer_silu_and_16bit_product": 0.03396447015851796,
+        "plus_8bit_down_input_float_down_weights": 0.05266336991158946
+      },
+      "down_weight_groups": [
+        {
+          "down_scale_group_rows": 2048,
+          "relative_l2_error": 0.09258311589450632,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.07426423839324842,
+          "down_weight_exponent_range": [
+            -7,
+            -7
+          ]
+        },
+        {
+          "down_scale_group_rows": 128,
+          "relative_l2_error": 0.062182677911877746,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.032053952197945185,
+          "down_weight_exponent_range": [
+            -10,
+            -7
+          ]
+        },
+        {
+          "down_scale_group_rows": 32,
+          "relative_l2_error": 0.056826487207382245,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.021159063609566903,
+          "down_weight_exponent_range": [
+            -10,
+            -7
+          ]
+        },
+        {
+          "down_scale_group_rows": 1,
+          "relative_l2_error": 0.053028149161053376,
+          "down_weight_quantization_perturbation_relative_to_float_baseline": 0.00885176378441845,
+          "down_weight_exponent_range": [
+            -11,
+            -7
+          ]
+        }
+      ]
+    }
+  ],
+  "hardware_scope": "Raw signed8 down weights and signed32 core sums allow any static row quantization. Row-specific dequantization was applied in software here; no new RTL or hardware validation claim.",
+  "elapsed_seconds": 1.3933047060017998,
+  "peak_resident_set_kib": 532252,
+  "log": "records/tri_oracle_quantization_error_audit.log",
+  "log_sha256": "6bd5fa438e1b2e1230f198b521d853490327d90221fc09bd7d54abfc03a53512",
+  "baseline_fixture_manifest_sha256": "bdfb9e7cd40757758ebdd565981bdeae46e62299367bef81ee48f9b24e731842",
+  "weight_index_sha256": "e50f2b3f29f9b4fadf25d427e30d96c2d3aa402eb66ba9e07a0842afe75d4a3b"
+}

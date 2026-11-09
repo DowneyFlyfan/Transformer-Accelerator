@@ -1,0 +1,71 @@
+{
+  "state": "completed191_run_independently_attested",
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/full_layer_quantization_error_audit.json": "97e6b3383a2e15fa0a03c8b90782f851204a7d31952395720414c49c320fea75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/model_reference_pruning_validation.json": "fdfdd7cbeb5a86c0df41b51a5aa06d3b9fc8d1f82ad3781556e138ccf06f0ae6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/model_reference_candidate.json": "d462cb1574fc26edea3b17e06e1f3567c395f579f06d5cc087443e475167e9d5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real_frame190_preparation_qualification.json": "c13f4d8a43754d8de905fd4a7fe6f22bee224d1aca026e542d6e2d301289d096",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/folded_scale191_guard.json": "1e15a665a977fe329bc51683d584b379b3bf978bc502ea78491933ef547fec2c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/folded_scale191_gpu_result.json": "f3dbaa4dc4433c2bbef47eb1282fe3606e0994cbd8c40913f8d2c357c42601ad",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_folded_scale191_gpu.py": "1d804d48da1e49a4d37acca461b8451d62d49360606666df444fcfd186d2a150",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model.safetensors.index.json": "e50f2b3f29f9b4fadf25d427e30d96c2d3aa402eb66ba9e07a0842afe75d4a3b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/config.json": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_model_reference.py": "21d0bb53840fdc07273aa54fc3b7bde5ee82a2d76df4f15af9d50ba25d363e75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/full_layer_fixture/prediction_source.json": "69c991e033c3a12fc13fa05bd5b95411242925f1831d82e794024f3d81445286",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/feedforward_pruning_fixture/prediction_source.json": "291c9c4658f3e882b8aca63111929672f005763c3a6d229c0d27c28015241fbd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/full_layer_fixture/manifest.json": "bdfb9e7cd40757758ebdd565981bdeae46e62299367bef81ee48f9b24e731842",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/feedforward_pruning_fixture/manifest.json": "04d8432076142381908611de7ee552b2d017e8a7118d6842297dfcaae84f4098",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/full_layer_fixture/expected.hex": "a3ab7476ad2d2005e55012e1aed0089490a0fd01144e4e28f8c856652d839f74",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors": "5757b71668b0f69d61185ff018ada04d490dac417f998bbd6455ec8a84fa1c72",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00002-of-00002.safetensors": "c163e6bae7ffadf52ebc7ccae0763f43055e62cadd6dd78c408d6b2f840021ce",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_folded_scale191_gpu.py": "d2f25aee1f06bd98e63bcad9c05cba4daf5266a750df60e876c78c7effa179b2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/folded_scale191_gpu_native.log": "1e01fb73cb40a4163fb7e38d4159dee5f43b4a1fc8856a2fc4a7e860946949dd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/folded_scale191_reference_flow.pdf": "165150eef707cd72ffe9d0249897dff1d05e5c4aaea2eb420417c3585c29fadf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_folded_scale191_attestation.py": "71629da26f3b5a56765776b9df8026eeafbd242980d6905bd5586db35b5c28f6"
+  },
+  "loaded_shards": {
+    "language_model.model.layers.0.mlp.gate_proj.weight": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors",
+    "language_model.model.layers.0.mlp.up_proj.weight": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors",
+    "language_model.model.layers.0.mlp.down_proj.weight": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors",
+    "language_model.model.layers.0.post_attention_layernorm.weight": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors"
+  },
+  "local_relative_l2": {
+    "dense": {
+      "original": [
+        0.07702937611928602,
+        0.09258311589450634
+      ],
+      "folded": [
+        0.10708236021802492,
+        0.12808768705163232
+      ]
+    },
+    "predicted": {
+      "original": [
+        0.07702937611928602,
+        0.3630606280177125
+      ],
+      "folded": [
+        0.10708236021802492,
+        0.37187551732556506
+      ]
+    }
+  },
+  "archived_original_integer_words_matched": 2048,
+  "decision": "Retain original learned-scale representation; folding worsened both tested dense errors.",
+  "raw191_result_requires_this_attestation": true,
+  "future_fresh_runs_require_prelaunch_historical_anchors_and_shard_membership": true,
+  "diagram_source_checks": [
+    "Quantizer, dot alignment and ties-away saturation checked against integer reference.",
+    "Gate/up shifts, gain, SiLU interpolation, product/down rounding and prediction mask checked against reference.",
+    "Original/folded input and weight wiring, floating identity and four recorded cases checked against diagnostic."
+  ],
+  "diagram_visually_inspected": true,
+  "source_hardware_changed": false,
+  "full_model_accuracy_qualified": false,
+  "routed_timing_qualified": false,
+  "paper_results_matched": false,
+  "scope": "Independent attestation of this exact completed software diagnostic, two archived tokens and one trained layer only. Historical sources and original expected outputs are independently anchored; every actually loaded shard belongs to the pinned verified candidate. No fresh execution, hardware arithmetic or task accuracy is qualified."
+}
