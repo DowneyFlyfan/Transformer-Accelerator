@@ -1,6 +1,35 @@
 # Tri-Oracle reproduction in progress
 
-Current verified milestone: one shared backend executes projection, gate/up
+Current verified milestone: the Genus-mapped prepared prediction/feed-forward
+parent passes all twelve functional cases on twenty compute cores and 600
+compiled static random-access memory (SRAM) models. The test checks 4,420 exact
+hidden-output values, successful and erroneous backpressure, memory faults and
+reset recovery. A separate run rejects a deliberately wrong integer sum using
+the same hardware, simulator and memory inputs. The passing eight-worker
+Xcelium run took 1,427.70 seconds. See
+`records/mapped208_functional_qualification.json` and its bound native logs.
+
+This fixture supplies prepared normalized/sign inputs and analytically saturated
+numeric operands. It establishes mapped functional behavior for this parent;
+trained full-layer execution, whole-model accuracy, routed parent timing and the
+paper's measured results remain unverified.
+
+The prepared parent also has legal geometric placement in a 3.6-by-3.6-millimeter
+die. All 1,889,420 original core cells, 382,490 previously mapped controller cells,
+sixty fixed macro poses and 3,656 registered-reset endpoint chains are preserved.
+Three fresh full-model process-corner diagnostics fail at the unchanged
+1.72414-nanosecond period: slow setup -240.876907 nanoseconds, typical setup
+-171.942947 nanoseconds, and fast removal -0.082619 nanoseconds. Removal checks
+whether reset deassertion is sufficiently separated from a clock edge. The setup
+path traverses overloaded backend control nets; the native logs also warn that
+repeated controller modules prevent optimization. Making their definitions unique
+and repairing electrical violations remain pending. Clock-tree construction,
+power-grid construction and parent routing have not run. The native pre-route
+engine reports signal-interference analysis disabled. See
+`records/frame202_physical_milestone.json`, its bound reports and
+`records/frame202_placement_result.json`.
+
+Earlier backend milestone: one shared backend executes projection, gate/up
 nonlinearity and sparse down accumulation using exactly twenty compute cores
 and 600 compiled static random-access memory (SRAM) instances. The joint
 70-case test checks 463 exact raw dot products, 230 bounded nonlinear codes
@@ -63,8 +92,8 @@ this regression; no general hardware or simulator performance ranking follows
 from this one comparison. See
 `records/predicted108_multicore_comparison_qualification.json`.
 
-The routed single-core checkpoint has independent timing and geometry evidence.
-The twenty-core prediction parent has legal placement, but whole-chip routed
+The earlier routed single-core checkpoint has independent timing and geometry evidence.
+The earlier twenty-core prediction parent has legal placement, but whole-chip routed
 timing is not closed. Current parent optimization uses compact core models only
 for guidance and requires restoration of the original complete core models for
 timing diagnostics. The repaired candidate preserves all 1,889,420 original
