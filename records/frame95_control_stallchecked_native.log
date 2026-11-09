@@ -1,0 +1,88 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 01:21:27 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame.sv
+	module worklib.tri_oracle_feedforward_frame:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv
+	module worklib.tri_oracle_feedforward_frame_control_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_feedforward_frame_control_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_feedforward_frame:sv <0x73c166df>
+			streams:  53, words: 43986
+		worklib.tri_oracle_feedforward_frame_control_tb:sv <0x47418efa>
+			streams: 108, words: 82421
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 3       3
+		Registers:             185     185
+		Scalar wires:           44       -
+		Vectored wires:         51       -
+		Always blocks:          10      10
+		Initial blocks:         49      49
+		Pseudo assignments:     53       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_feedforward_frame_control_tb:sv
+Loading snapshot worklib.tri_oracle_feedforward_frame_control_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=160
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=320
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=480
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=640
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=800
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=960
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=1120
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=1280
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=1440
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=1600
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=1760
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=1920
+FRAME_CONTROL_PACKET tag=95000000 error=0 seen=2048
+FRAME_CONTROL_PACKET tag=95000001 error=0 seen=160
+FRAME_CONTROL_PACKET tag=95000001 error=0 seen=161
+FRAME_CONTROL_PACKET tag=95000002 error=0 seen=1
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=160
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=320
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=480
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=640
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=800
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=960
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=1120
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=1280
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=1440
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=1600
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=1760
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=1920
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=2080
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=2240
+FRAME_CONTROL_PACKET tag=95000003 error=0 seen=2400
+FRAME_CONTROL_PACKET tag=95000004 error=0 seen=160
+FRAME_CONTROL_PACKET tag=95000004 error=0 seen=320
+FRAME_CONTROL_PACKET tag=95000005 error=1 seen=0
+FRAME_CONTROL_PACKET tag=95000006 error=1 seen=0
+FRAME_CONTROL_PACKET tag=95000007 error=1 seen=0
+FRAME_CONTROL_PACKET tag=95000008 error=1 seen=0
+FRAME_CONTROL_PACKET tag=95000009 error=1 seen=0
+FRAME_CONTROL_PACKET tag=9500000a error=1 seen=0
+FRAME_CONTROL_PACKET tag=9500000b error=1 seen=0
+FRAME_CONTROL_PACKET tag=9500000c error=1 seen=0
+FRAME_CONTROL_PACKET tag=9500000d error=1 seen=0
+FRAME_CONTROL_PACKET tag=9500000e error=0 seen=160
+FRAME_CONTROL_PACKET tag=9500000e error=1 seen=160
+FRAME_CONTROL_PACKET tag=9500000f error=0 seen=129
+FRAME_CONTROL_STALLS success=85 error=50
+FRAME_CONTROL_PASS cases=16 mock_arithmetic_only=1
+Simulation complete via $finish(1) at time 11310 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv:152     $display("FRAME_CONTROL_PASS cases=%0d mock_arithmetic_only=1",completed);$finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 01:21:27 UTC  (total: 00:00:00)

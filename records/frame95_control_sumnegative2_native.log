@@ -1,0 +1,44 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 01:21:29 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame.sv
+	module worklib.tri_oracle_feedforward_frame:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv
+	module worklib.tri_oracle_feedforward_frame_control_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_feedforward_frame_control_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_feedforward_frame:sv <0x73c166df>
+			streams:  53, words: 43986
+		worklib.tri_oracle_feedforward_frame_control_tb:sv <0x47418efa>
+			streams: 108, words: 82421
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 3       3
+		Registers:             185     185
+		Scalar wires:           44       -
+		Vectored wires:         51       -
+		Always blocks:          10      10
+		Initial blocks:         49      49
+		Pseudo assignments:     53       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_feedforward_frame_control_tb:sv
+Loading snapshot worklib.tri_oracle_feedforward_frame_control_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv,73): (time 4935 NS).
+tri_oracle_feedforward_frame_control_tb.scoreboard.unmblk1
+FRAME_CONTROL_SUM row=0
+Simulation terminated via $fatal(1) at time 4935 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv:73           if(out_data[row*32+:32]!==32'(value)) $fatal(1,"FRAME_CONTROL_SUM row=%0d",seen+row);
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 01:21:29 UTC  (total: 00:00:00)

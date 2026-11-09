@@ -1,0 +1,219 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 00:37:29 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/owned_gated94_resume_litv5oam/canonical_sources.sv
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_activation_cache:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_activation_cache:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_cluster_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_fabric_projection:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_silu_gate:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_fabric_gated_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_strip_predictor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_channel_compactor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_dispatch:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_gated_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_gated_fabric_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_gated_instance_count:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x3e6117e0
+		tri_oracle_predicted_gated_fabric_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_predicted_gated_instance_count:sv <0x5d70eef8>
+			streams:   1, words:   102
+		worklib.tri_oracle_predicted_gated_instance_count:sv <0x5cc513e5>
+			streams:   1, words:   102
+		worklib.tri_oracle_predicted_gated_instance_count:sv <0x5a12e791>
+			streams:   1, words:   102
+		worklib.tri_oracle_predicted_gated_instance_count:sv <0x6ffda450>
+			streams:   1, words:   102
+		worklib.tri_oracle_predicted_gated_instance_count:sv <0x6e48594d>
+			streams:   1, words:   102
+		worklib.tri_oracle_down_executor:sv <0x27a0af6d>
+			streams:  58, words: 74769
+		worklib.tri_oracle_cluster_down_executor:sv <0x3bafcfb8>
+			streams:  58, words: 53649
+		worklib.tri_oracle_sparse_weight_dma:sv <0x3e994bbb>
+			streams:  22, words: 13642
+		worklib.tri_oracle_cluster_projection_executor:sv <0x3c2d259f>
+			streams:  39, words: 37525
+		worklib.tri_oracle_shared_cluster_executor:sv <0x02b101d7>
+			streams:  72, words: 38396
+		worklib.tri_oracle_silu_gate:sv <0x313fd618>
+			streams:  13, words: 11997
+		worklib.tri_oracle_fabric_gated_executor:sv <0x16188bb2>
+			streams:  24, words: 31886
+		worklib.tri_oracle_channel_compactor:sv <0x4446746d>
+			streams:  18, words: 11982
+		worklib.tri_oracle_strip_predictor:sv <0x03e2e3e4>
+			streams:  12, words: 31824
+		worklib.tri_oracle_predicted_dispatch:sv <0x3f94f45c>
+			streams:   5, words:  1927
+		worklib.tri_oracle_predicted_gated_fabric:sv <0x088e5eb5>
+			streams:  58, words: 40357
+		worklib.tri_oracle_shared_fabric:sv <0x30ce7113>
+			streams: 113, words: 82762
+		worklib.tri_oracle_predicted_gated_fabric_tb:sv <0x570e48f9>
+			streams: 143, words: 143884
+		worklib.tri_oracle_pe_array:sv <0x24d50211>
+			streams:  13, words: 10603
+		worklib.tri_oracle_sram_memory_compute:sv <0x56b340fb>
+			streams:  40, words: 33126
+		worklib.tri_oracle_sram_compute_cluster:sv <0x477c01ba>
+			streams:  28, words: 22904
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x39f076d3>
+			streams:  22, words: 1472957
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x3b44cd0e>
+			streams:  22, words: 1489096
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x63f8ed85>
+			streams:  21, words: 466844
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x234114f2>
+			streams: 444, words: 1981032
+		worklib.tri_oracle_gated_down_fabric:sv <0x45445985>
+			streams:  63, words: 29467
+		worklib.tri_oracle_gated_fabric:sv <0x776d20fb>
+			streams:  14, words:  6072
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x230cdbf5>
+			streams:  11, words: 25088
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                 1,520      23
+		Primitives:            200,720       2
+		Registers:             105,994   1,436
+		Scalar wires:            5,412       -
+		Expanded wires:        478,980   2,230
+		Vectored wires:          3,539       -
+		Always blocks:          96,003     479
+		Initial blocks:          1,490      70
+		Parallel blocks:             3       3
+		Cont. assignments:       4,528      97
+		Pseudo assignments:      2,735       -
+		Compilation units:           1       1
+		Process Clocks:         10,494     241
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_predicted_gated_fabric_tb:sv
+Loading snapshot worklib.tri_oracle_predicted_gated_fabric_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+dmesg: read kernel buffer failed: Operation not permitted
+dmesg: read kernel buffer failed: Operation not permitted
+PREDICTED_GATED_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600
+PREDICTED_GATED_FABRIC_CASE_PASS seed=0 selected=192 packets=2 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=1 selected=352 packets=3 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=2 selected=39 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=3 selected=0 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=4 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=5 selected=31 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=6 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=7 selected=33 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=8 selected=159 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=9 selected=160 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=10 selected=161 packets=2 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=11 selected=0 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=12 selected=1 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=13 selected=1 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=14 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=15 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=16 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=17 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=18 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=19 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=20 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=21 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=22 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=23 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=26 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=24 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=27 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=25 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=28 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=29 selected=192 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=32 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=30 selected=192 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=33 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=31 selected=192 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=34 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS reset=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=36 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS reset=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=38 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS reset=2
+PREDICTED_GATED_FABRIC_CASE_PASS seed=40 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=41 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=42 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=43 selected=64 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=44 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=45 selected=192 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=46 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=47 selected=352 packets=2 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=48 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=49 selected=352 packets=2 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=50 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=51 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=52 selected=32 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=53 selected=32 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=54 selected=5632 packets=36 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=55 selected=1 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=56 selected=192 packets=1 error=1
+PREDICTED_GATED_FABRIC_CASE_PASS seed=57 selected=7 packets=1 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=58 selected=192 packets=2 error=0
+PREDICTED_GATED_FABRIC_CASE_PASS seed=59 selected=192 packets=2 error=0
+PREDICTED_GATED_EXACT_DOTS_PASS values=16092
+PREDICTED_GATED_FABRIC_PASS cases=60
+Simulation complete via $finish(1) at time 6992350 NS + 0
+./shared_backend_bench.sv:586     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 00:40:32 UTC  (total: 00:03:03)

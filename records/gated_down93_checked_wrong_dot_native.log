@@ -1,0 +1,129 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 00:37:29 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/gated_down93_checked_wrong_dot_gm2g4e7s/canonical_sources.sv
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_cluster_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_silu_gate:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_fabric_gated_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_instance_count:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x3e6117e0
+		tri_oracle_gated_down_fabric_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_gated_down_instance_count:sv <0x478f924f>
+			streams:   1, words:   102
+		worklib.tri_oracle_gated_down_instance_count:sv <0x463a6f52>
+			streams:   1, words:   102
+		worklib.tri_oracle_gated_down_instance_count:sv <0x40ed9b26>
+			streams:   1, words:   102
+		worklib.tri_oracle_gated_down_instance_count:sv <0x7502d8e7>
+			streams:   1, words:   102
+		worklib.tri_oracle_gated_down_instance_count:sv <0x74b725fa>
+			streams:   1, words:   102
+		worklib.tri_oracle_down_executor:sv <0x4d2d493a>
+			streams:  58, words: 74769
+		worklib.tri_oracle_cluster_down_executor:sv <0x4016d93f>
+			streams:  58, words: 53649
+		worklib.tri_oracle_sparse_weight_dma:sv <0x6f042410>
+			streams:  22, words: 13642
+		worklib.tri_oracle_cluster_projection_executor:sv <0x7616b78d>
+			streams:  39, words: 37525
+		worklib.tri_oracle_shared_cluster_executor:sv <0x02c9b7e9>
+			streams:  72, words: 38396
+		worklib.tri_oracle_silu_gate:sv <0x20c12e8d>
+			streams:  13, words: 11997
+		worklib.tri_oracle_fabric_gated_executor:sv <0x10d28f13>
+			streams:  24, words: 31886
+		worklib.tri_oracle_shared_fabric:sv <0x6c89b65a>
+			streams: 113, words: 82762
+		worklib.tri_oracle_gated_down_fabric_tb:sv <0x091f7363>
+			streams: 120, words: 118954
+		worklib.tri_oracle_pe_array:sv <0x7c8e456f>
+			streams:  13, words: 10603
+		worklib.tri_oracle_sram_memory_compute:sv <0x69643a59>
+			streams:  40, words: 33126
+		worklib.tri_oracle_sram_compute_cluster:sv <0x2df72ec4>
+			streams:  28, words: 22904
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x50785961>
+			streams:  22, words: 1472957
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x46cb9f8c>
+			streams:  22, words: 1489096
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x1da0f9b6>
+			streams:  21, words: 466844
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x0f1f9232>
+			streams: 444, words: 1981032
+		worklib.tri_oracle_gated_down_fabric:sv <0x7f1a0325>
+			streams:  64, words: 30671
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x0272c683>
+			streams:  11, words: 25074
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                 1,515      18
+		Primitives:            200,720       2
+		Registers:             105,844   1,286
+		Scalar wires:            5,348       -
+		Expanded wires:        478,980   2,230
+		Vectored wires:          3,492       -
+		Always blocks:          95,992     468
+		Initial blocks:          1,491      71
+		Cont. assignments:       4,523      89
+		Pseudo assignments:      2,676       -
+		Compilation units:           1       1
+		Process Clocks:         10,490     239
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_gated_down_fabric_tb:sv
+Loading snapshot worklib.tri_oracle_gated_down_fabric_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+GATED_DOWN_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600
+xmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_gated_down_fabric_tb.sv,97): (time 1575 NS).
+tri_oracle_gated_down_fabric_tb.exact_projection_reference.unmblk1
+GATED_DOWN_EXACT_DOT_MISMATCH phase=0 row=0
+Simulation terminated via $fatal(1) at time 1575 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_gated_down_fabric_tb.sv:97           $fatal(1,"GATED_DOWN_EXACT_DOT_MISMATCH phase=%0d row=%0d",current_phase,row);
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 00:37:38 UTC  (total: 00:00:09)

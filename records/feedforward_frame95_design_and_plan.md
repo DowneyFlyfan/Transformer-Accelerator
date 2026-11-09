@@ -1,0 +1,20 @@
+# Production feedforward output-round scheduler implementation plan
+
+Goal: move the subgroup/output-round loops proven by testbench93 into production hardware. Accept one configured frame of selected-channel packets, run gate/up nonlinear work and every sparse down contribution through exactly one gated_down_fabric93, and stream all final hidden outputs. Prediction/sign-stream frontend integration follows this numeric scheduler proof; no testbench loop may be presented as production hardware.
+
+Interface: cfg_valid/ready with frame tag, activation/gate/up/down memory bases, feature strips, dense down dimension, hidden output count and three quantization shifts. A ready/valid selected-packet stream supplies count0..160, original IDs, fallback and final flags. Output packets carry tag, start/count,32-bit sums, fallback, final and error flags. One existing64-bit memory transaction port serves all work. Configuration and packet fields are captured before the producer can change them.
+
+Architecture: instantiate exactly one qualified owner93. For each accepted packet, launch nonlinear execution, capture its at-most160 values and IDs, then iterate groups of at-most32 selected values. For each subgroup iterate output rounds of at-most160 rows, using slots1..15. Paper shape2048 outputs requires13 rounds; supported output count1..2400 uses at most15. First subgroup of the first packet overwrites each context; every later contribution appends. Finalize only on the final subgroup of the final packet. Empty packets execute one empty subgroup, allowing an empty frame to produce zero outputs or an empty final packet to finalize retained contexts.
+
+Emit output data only for final contributions; discard intermediate partial-result packets after their completion. Last marks the final output round. A dedicated registered reset clears the owner before a new frame and after fatal input/child errors. Capture terminal error state only at an idle/drained child boundary; hold the terminal packet under backpressure. A terminal error invalidates any earlier output prefix from that frame, consistent with the existing transactional frame protocol.
+
+Storage: one bounded160-value/ID packet and small configuration/counters. No5632-value hidden-tensor cache and no additional compute core or compiled memory. Accumulation remains in existing per-core/aggregate SRAM slots. The packet producer may stall while all rounds run.
+
+Validation: actual600-memory native tests must compute a full2048-output frame from multiple nonlinear packets, cover160-value five-subgroup splitting, first/append/final flag correctness, empty frames/finalizers, partial output groups, maximum15-slot bounds, invalid configuration/IDs/counts, output backpressure, late memory failure after an output prefix, global invalidation/recovery and external reset. The scalar oracle must sum all selected contributions independently of scheduler counters. Verify exact raw dots and bound nonlinear approximation separately before using produced codes in the down reference. Wrong-reference controls remain mandatory.
+
+- [ ] Write the independent actual-memory frame bench and observe native missing-production-module failure.
+- [ ] Implement production configuration/packet/subgroup/round sequencing and bounded result flow around owner93; run scalar-reference and failure-control cases.
+- [ ] Review and qualify the complete numeric frame controller, then connect the unchanged prediction batching/sign-stream method without duplicating twenty-core hardware.
+- [ ] Synthesize and route that integrated controller, qualify actual routed timing and power, and validate full model accuracy/energy/latency against the paper. These requirements remain pending.
+
+Original37 physical-flow source files and accepted core44/models68 stay frozen until a separately identified integrated physical revision is prepared. Local interfaces/quantization remain explicit replication choices; passing numeric frames does not establish the paper's measured results.

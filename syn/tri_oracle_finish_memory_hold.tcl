@@ -1,0 +1,7 @@
+source syn/tri_oracle_memory_physical_config.tcl
+set_multi_cpu_usage -local_cpu 20
+read_db $out/routed_before_optimization.db
+tri_oracle_require_memory_design
+source syn/tri_oracle_memory_postroute_settings.tcl
+source syn/tri_oracle_memory_hold_body.tcl
+exit

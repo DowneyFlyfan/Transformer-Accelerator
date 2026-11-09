@@ -1,0 +1,37 @@
+{
+  "state": "all_corner_identity_buffer_and_reset_walker_regression_qualified",
+  "created_utc": "2026-11-09T01:20:24.740096+00:00",
+  "accepted_additional_master": "BUFFXD16BWP12T40P140",
+  "liberty_corners": [
+    "tt1v25c",
+    "ssg0p9v125c",
+    "ffg1p05vm40c"
+  ],
+  "input_pin": "I",
+  "output_pin": "Z",
+  "function": "I",
+  "stateless": true,
+  "tristate": false,
+  "native_failure_preceded_change": "records/guided_parent97_drv_result.json",
+  "old_checker_red_log_sha256": "6e148b08d9da28e24658a8454ae14fb098a35b5ad7ad6ac759d5c151f17dae6d",
+  "new_checker_green_log_sha256": "554754a9767d630aea8f782d354675f00ded79bbf98bf3080d1e2b065b223395",
+  "tests_passed": 5,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_registered_reset_trace98.tcl": "6d1baf14e63b59e98c267d99b9d912c25b6ff253a3c67a960f2098e3ee1102ab",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_registered_reset98.py": "7c78d738af04793a0722ffeacb88812aee84144d146c74c4731b79d28959a11b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_registered_reset_trace.tcl": "47c916826116ceb9b92a6faddeca3ae280547a03d3bbd9ddef63e2560409b807",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg0p88v0p88v0c_ccs.lib": "41cc590e2fc82d43e6f69a43f49bcee11661c6eb5d3900aa0a2de60171906d21",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05v125c_ccs.lib": "8aa2be43a6fdd04335d99321aa48fe7ba52bb857d74dff8b8265382b35b9eba4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v0p9vm40c_ccs.lib": "2ca85bc9ef42b872b9d5b885fdbdfabb527dd7ac65866aa1e974c9a08551eb86",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v0p9v125c_ccs.lib": "5b2c7bd95e92e1ee167b8c4f0c91e4604ca1fc9c4dcc4b6a8332d68ae91b6568",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d"
+  },
+  "unknown_buffer_and_logic_gate_rejected": true,
+  "wrong_buffer_output_and_missing_input_rejected": true,
+  "original_checker_unchanged": true,
+  "full_parent_native_revalidation_still_required": true,
+  "scope": "Adds only a library-proven buffer to ancestry traversal. Does not establish inversion parity, reset recovery/removal timing, optimized parent acceptance or final timing."
+}

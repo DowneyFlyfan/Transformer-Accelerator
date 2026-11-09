@@ -1,0 +1,38 @@
+{
+  "state": "expected_wrong_control_reference_rejected",
+  "started_utc": "2026-11-09T01:21:28.935065+00:00",
+  "supervisor_pid": 581126,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_frame_control_validation.py": "b6e9a1a831cd9cdb388e71665df741546bf96811b012b93348e6d80edf51205a",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame.sv": "eb95334e907603a2ee1083a289c9609cdec27a7cb553d91ef17ff5d4ac4697bc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv": "832092caf476cbca6a54f35813af3fa24028bbc20d1bdec00d9407fa570b07e9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "mock_arithmetic_only": true,
+  "actual_compiled_core_instances": 0,
+  "actual_compiled_memory_instances": 0,
+  "full_paper_results_matched": false,
+  "scope": "Scheduler control-contract tests with a deterministic arithmetic peer. No actual-core/memory, integrated functional, physical or paper qualification.",
+  "elapsed_seconds": 0.6241210820153356,
+  "native_process_group": 581168,
+  "command": [
+    "/opt/cadence/bin/xrun",
+    "-64bit",
+    "-sv",
+    "-top",
+    "tri_oracle_feedforward_frame_control_tb",
+    "-xmlibdirname",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/frame95_control_sumnegative2_86_hzvjy/xcelium.d",
+    "-l",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/frame95_control_sumnegative2_86_hzvjy/xrun.log",
+    "-history_file",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/frame95_control_sumnegative2_86_hzvjy/history",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame.sv",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv",
+    "+CORRUPT_FRAME_REFERENCE"
+  ],
+  "native_exit_status": 2,
+  "native_console_sha256": "0f9cef9e60d2b1019e272ec5701ba23c0df8654c8238c273a1a10e2777867c85",
+  "temporary_build_removed": true
+}

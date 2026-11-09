@@ -1,0 +1,117 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 00:08:34 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared_fabric90_final_wrong_down_vuo5llwm/canonical_sources.sv
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_cluster_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric_instance_count:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x3e6117e0
+		tri_oracle_shared_fabric_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_shared_fabric_instance_count:sv <0x573d0bf8>
+			streams:   1, words:   102
+		worklib.tri_oracle_shared_fabric_instance_count:sv <0x5688f6e5>
+			streams:   1, words:   102
+		worklib.tri_oracle_shared_fabric_instance_count:sv <0x505f0291>
+			streams:   1, words:   102
+		worklib.tri_oracle_shared_fabric_instance_count:sv <0x65b04150>
+			streams:   1, words:   102
+		worklib.tri_oracle_shared_fabric_instance_count:sv <0x6405bc4d>
+			streams:   1, words:   102
+		worklib.tri_oracle_down_executor:sv <0x277bc8af>
+			streams:  58, words: 74769
+		worklib.tri_oracle_cluster_down_executor:sv <0x6bde4a55>
+			streams:  58, words: 53649
+		worklib.tri_oracle_sparse_weight_dma:sv <0x029d0777>
+			streams:  22, words: 13642
+		worklib.tri_oracle_cluster_projection_executor:sv <0x1d0ed9df>
+			streams:  39, words: 37525
+		worklib.tri_oracle_shared_cluster_executor:sv <0x15c2bbd1>
+			streams:  72, words: 38396
+		worklib.tri_oracle_shared_fabric_tb:sv <0x5a37ab15>
+			streams: 135, words: 155051
+		worklib.tri_oracle_shared_fabric:sv <0x55b6d463>
+			streams: 113, words: 83187
+		worklib.tri_oracle_pe_array:sv <0x28cac4aa>
+			streams:  13, words: 10603
+		worklib.tri_oracle_sram_memory_compute:sv <0x7d8c83d5>
+			streams:  40, words: 33100
+		worklib.tri_oracle_sram_compute_cluster:sv <0x1af5d33f>
+			streams:  28, words: 22904
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x4d1e1ddb>
+			streams:  22, words: 1472957
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x5baddb36>
+			streams:  22, words: 1489096
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x546d02ec>
+			streams:  21, words: 466844
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x6aaf99bd>
+			streams: 444, words: 1981032
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x7b6fcfa0>
+			streams:  11, words: 25074
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                 1,512      15
+		Primitives:            200,720       2
+		Registers:             105,718   1,160
+		Scalar wires:            5,299       -
+		Expanded wires:        478,980   2,230
+		Vectored wires:          3,444       -
+		Always blocks:          95,970     461
+		Initial blocks:          1,490      70
+		Cont. assignments:       4,520      84
+		Pseudo assignments:      2,631       -
+		Compilation units:           1       1
+		Process Clocks:         10,487     238
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_shared_fabric_tb:sv
+Loading snapshot worklib.tri_oracle_shared_fabric_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+SHARED_FABRIC_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600
+xmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric_tb.sv,401): (time 307580 NS).
+tri_oracle_shared_fabric_tb.run_down.unmblk5
+DOWN_FABRIC_REFERENCE_MISMATCH row=2 got=11098 expected=11099
+Simulation terminated via $fatal(1) at time 307580 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric_tb.sv:401           $fatal(1,"DOWN_FABRIC_REFERENCE_MISMATCH row=%0d got=%0d expected=%0d",row,$signed(out_data[row*32+:32]),expected_value);
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 00:08:48 UTC  (total: 00:00:14)

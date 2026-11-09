@@ -1,0 +1,27 @@
+test_actual_library_views_prove_stateless_identity (test_tri_oracle_registered_reset98.RegisteredReset98Tests.test_actual_library_views_prove_stateless_identity) ... ok
+test_existing_inverter_path_remains_supported (test_tri_oracle_registered_reset98.RegisteredReset98Tests.test_existing_inverter_path_remains_supported) ... ok
+test_unverified_buffer_and_logic_gate_remain_rejected (test_tri_oracle_registered_reset98.RegisteredReset98Tests.test_unverified_buffer_and_logic_gate_remain_rejected) ... ok
+test_verified_buffer_requires_actual_output_and_input (test_tri_oracle_registered_reset98.RegisteredReset98Tests.test_verified_buffer_requires_actual_output_and_input) ... FAIL
+test_verified_optimizer_buffer_preserves_registered_ancestor (test_tri_oracle_registered_reset98.RegisteredReset98Tests.test_verified_optimizer_buffer_preserves_registered_ancestor) ... FAIL
+
+======================================================================
+FAIL: test_verified_buffer_requires_actual_output_and_input (test_tri_oracle_registered_reset98.RegisteredReset98Tests.test_verified_buffer_requires_actual_output_and_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_registered_reset98.py", line 69, in test_verified_buffer_requires_actual_output_and_input
+    self.assertIn('UNSUPPORTED_BUFFER_OUTPUT', result.stderr)
+AssertionError: 'UNSUPPORTED_BUFFER_OUTPUT' not found in 'REGISTERED_RESET34_COMBINATIONAL_DRIVER: buffered BUFFXD16BWP12T40P140 buffer/OUT\n'
+
+======================================================================
+FAIL: test_verified_optimizer_buffer_preserves_registered_ancestor (test_tri_oracle_registered_reset98.RegisteredReset98Tests.test_verified_optimizer_buffer_preserves_registered_ancestor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_registered_reset98.py", line 51, in test_verified_optimizer_buffer_preserves_registered_ancestor
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 1 != 0 : REGISTERED_RESET34_COMBINATIONAL_DRIVER: buffered BUFFXD16BWP12T40P140 buffer/OUT
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.527s
+
+FAILED (failures=2)

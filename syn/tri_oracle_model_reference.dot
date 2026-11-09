@@ -1,0 +1,26 @@
+digraph Reference {
+ graph [rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.4", ranksep="0.45", label="Tri-Oracle: model-derived arithmetic paths\nPinned TinyLLaVA-v1, first language attention block and feed-forward computation", labelloc=t, fontname="Helvetica", fontsize=20];
+ node [shape=box, style="rounded,filled", fillcolor="#eef4fb", color="#70869c", fontname="Helvetica", fontsize=12, margin="0.16,0.10"];
+ edge [color="#526478",fontname="Helvetica",fontsize=10];
+ tokens [label="Fixed text -> tokenizer\nToken identifiers [1,T]; trained embeddings [1,T,2048]"];
+ attention [label="Trained input normalization and causal self attention\n32 query heads,4 key/value heads,64 features/head\nRotary position embedding; add embedding residual\nSelect one prompt token: raw residual [2048]"];
+ rms [label="Root-mean-square normalization BEFORE learned scale\nx / sqrt(mean(x*x) + checkpoint epsilon)\nPre-scale normalized vector [2048]\nPaper Fig.31.6.5 places prediction at this point"];
+ gamma [label="Multiply by trained normalization weights [2048]\nActual model feed-forward activation [2048]"];
+ quant [label="Local power-of-two signed8 quantization\nActivation [2048]; gate/up weights [K,2048]\nK=64: groups52/175; O=35: rows2013..2047\nK=5632: all176 groups; O=2048: all output rows\nDown weights [O,5632]",fillcolor="#fff5e4"];
+ encoding [label="Software prediction input encoding\nPre-scale normalized vector [2048]\nRound/saturate to signed16 codes/256",fillcolor="#fff5e4"];
+ predictor [label="Hardware outlier and sign-count predictor\nMagnitude >768 in signed codes/256\nCompare activation and supplied weight sign bits\nGate count margin <=local threshold0\nUp count margin within local interval[0,0]\nAND branch decisions -> skip mask[K]",fillcolor="#eaf6ef"];
+ driver [label="Software testbench output-range driver\nHardware retains up to480 output rows\nComplete2048-output case uses5 transactions:\n480 +480 +480 +480 +128 rows\nGate/up groups replayed for each transaction"];
+ dots [label="Compact kept channels; preserve original identifiers\nFetch kept gate/up rows; signed32 sums [up toK]\nShift, round ties away, saturate to signed16 codes/256\nLinear up gain is compensated in output interpretation",fillcolor="#eaf6ef"];
+ gated [label="Sigmoid linear unit: sampled/interpolated values\nMultiply by up projection; round/saturate [up toK]\nRequantize retained inputs to signed8",fillcolor="#eaf6ef"];
+ down [label="Gather original columns from5632-byte rows\nSigned8 down weights [O,5632]\nAccumulate signed32 sums; assemble output [O]\nOutput is feed-forward vector before decoder residual",fillcolor="#eaf6ef"];
+ compare [label="Independent Python integer sums vs Icarus Verilog\nExisting single-core gate/up/down hardware path\nMemory/output stalls; compare all O output words\nFull case also has independent streaming scalar oracle",fillcolor="#eaf6ef"];
+ limit [shape=note,fillcolor="#fff1ef",label="Scope and provenance\nBlue: software activation source and range scheduling\nYellow: reference preparation; green: integer hardware path under test\nSlice or complete first-layer feed-forward tensor, one selected token\nNormalization and weight-sign delivery are provided by software\nQuantization and prediction thresholds remain uncalibrated\nImage encoder, later blocks and task accuracy remain outside these checks\nMethod sources: Tri-Oracle Fig.31.6.5 and installed Transformers5.7.0"];
+ tokens -> attention -> rms -> gamma -> quant -> dots -> gated -> down -> compare;
+ rms -> encoding -> predictor -> dots;
+ quant -> predictor [style=dashed,label="weight sign bits",constraint=false];
+ driver -> dots [style=dashed,label="configuration",constraint=false];
+ compare -> limit [style=dashed];
+ {rank=same;gamma;encoding;}
+ {rank=same;quant;predictor;}
+ {rank=same;dots;driver;}
+}

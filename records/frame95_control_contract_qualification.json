@@ -1,0 +1,24 @@
+{
+  "state": "production_scheduler_mock_control_contract_qualified",
+  "created_utc": "2026-11-09T01:25:12.718844+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_frame_control_validation.py": "b6e9a1a831cd9cdb388e71665df741546bf96811b012b93348e6d80edf51205a",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame.sv": "eb95334e907603a2ee1083a289c9609cdec27a7cb553d91ef17ff5d4ac4697bc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_feedforward_frame_control_tb.sv": "832092caf476cbca6a54f35813af3fa24028bbc20d1bdec00d9407fa570b07e9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "evidence": {
+    "frame95_control_stallchecked": "e544ba8cb6d3f7de524ae5f0fed8616cb28f94b831450b950459f6c05ed030d3",
+    "frame95_control_stallnegative": "492d3ff22bfe157bdb8429527c24b3ca5204d2264e375f3f6bef80d09bf972c5",
+    "frame95_control_sumnegative2": "38acb105471eaabe6f7606f860d2b7c8ac98aa3771ca016216adc98fb31ac12c"
+  },
+  "cases": 16,
+  "successful_and_error_packets_multicycle_stall_checked": true,
+  "wrong_arithmetic_and_held_packet_controls_rejected": true,
+  "actual_compiled_core_instances": 0,
+  "actual_compiled_memory_instances": 0,
+  "actual_memory_integration_still_required": true,
+  "full_paper_results_matched": false,
+  "scope": "Production scheduler sequencing and output stability with a deterministic arithmetic peer only. No actual-memory, physical or paper qualification."
+}
