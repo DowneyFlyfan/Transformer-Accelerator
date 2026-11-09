@@ -11,8 +11,19 @@ Xcelium run took 1,427.70 seconds. See
 
 This fixture supplies prepared normalized/sign inputs and analytically saturated
 numeric operands. It establishes mapped functional behavior for this parent;
-trained full-layer execution, whole-model accuracy, routed parent timing and the
-paper's measured results remain unverified.
+full standard-cell mapped trained-layer execution, whole-model accuracy, routed
+parent timing and the paper's measured results remain unverified.
+
+One complete archived trained first-language-layer fixture now passes on the
+source integration with staged controllers: 2,048 input features, all 5,632
+intermediate channels and 2,048 exact final integer outputs. The run used twenty
+cores and 600 compiled memory models, checked all channel identifiers, and
+completed 176 groups, 45,056 strips, 36 prediction packets and thirteen output
+packets. It handled 1,580,544 memory requests and 56 output backpressure stalls in
+4,103.06 seconds of simulator wall time. Prepared normalized inputs remain
+externally supplied. This is one archived fixture; it does not establish
+whole-model accuracy or the paper's latency and energy. See
+`records/real190_full_functional_qualification.json`.
 
 The prepared parent also has legal geometric placement in a 3.6-by-3.6-millimeter
 die. All 1,889,420 original core cells, 382,490 previously mapped controller cells,

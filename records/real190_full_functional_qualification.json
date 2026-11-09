@@ -1,0 +1,32 @@
+{
+  "state": "complete_archived_trained_layer_source_integration_functional_qualified",
+  "verified_utc": "2026-11-09T15:30:51.851975+00:00",
+  "native_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real190_full_result.json": "48762c2a4fa1dcfaf625d2624a311b75e2fb78bcfed7117f46a05533906c1d4e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real190_full_native.log": "b8fefb5516f82146062207a8ff2297aa08bd312c444022a0d1276b214a713f01",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real190_full_progress.log": "af2d0d0a7aaf9d9f249618e50ad5597455afe4442c9cab7b2c1d95aa9150998d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/full_layer_quantization_error_audit.json": "97e6b3383a2e15fa0a03c8b90782f851204a7d31952395720414c49c320fea75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real_frame190_preparation_qualification.json": "c13f4d8a43754d8de905fd4a7fe6f22bee224d1aca026e542d6e2d301289d096"
+  },
+  "source_input_identities_checked": 67,
+  "fixture_manifest_sha256": "bdfb9e7cd40757758ebdd565981bdeae46e62299367bef81ee48f9b24e731842",
+  "actual_core_instances": 20,
+  "actual_compiled_memory_models": 600,
+  "input_features": 2048,
+  "intermediate_channels": 5632,
+  "exact_integer_outputs_checked": 2048,
+  "groups_sent": 176,
+  "strips_sent": 45056,
+  "prediction_packets": 36,
+  "output_packets": 13,
+  "memory_requests": 1580544,
+  "successful_backpressure_stalls": 56,
+  "native_elapsed_seconds": 4103.064096555987,
+  "native_exit_status": 0,
+  "temporary_build_removed": true,
+  "scope": "One complete archived first-language-layer trained fixture:2048 inputs,5632 intermediate channels, 2048 exact integer outputs on20 source cores/600 actual memory models. Prepared normalized strips remain externally supplied. Not whole-model accuracy, hardware normalization, physical timing or paper metrics.",
+  "full_standard_cell_mapped_parent_execution_qualified": false,
+  "whole_model_accuracy_qualified": false,
+  "parent_routed_timing_qualified": false,
+  "full_paper_results_matched": false
+}
