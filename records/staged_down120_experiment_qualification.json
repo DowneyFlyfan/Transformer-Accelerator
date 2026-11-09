@@ -1,0 +1,40 @@
+{
+  "state": "staged_down_source_and_mapped_block_verified",
+  "observed_utc": "2026-11-09T03:53:55.129009+00:00",
+  "qualification_records": {
+    "records/down111_functional_qualification.json": "28b56f1faa93ea72fe4d5d12dd4b03a40c727764e163db0e787a018f51bba01d",
+    "records/cluster113_functional_qualification.json": "78d568c56d21c554f35bdf03d76c84bf8522055a594187ee1c63f03243aa11e1",
+    "records/down115_functional_qualification.json": "9b108c3749c72d9fb9406e8aed0a199203b70891cb9351b68961ce7b936bb480",
+    "records/cluster117_functional_qualification.json": "0cdf2da01d6e6759885ecb487b17e5dbca7b5cbfe2f5c6345cff5404cd653553",
+    "records/down116_mapping_qualification.json": "9d7e5c2903b34cc15eb21da94435557362b151c529c1e98b2f6d895615bb770d",
+    "records/down120_mapped_functional_qualification.json": "25478a2d2fbced10732cb6b1ada9be597ebb48e7db81eb00b4910cd571530974"
+  },
+  "current_production_sha256": {
+    "verilog/tri_oracle_down_executor_pipelined.sv": "df7508c575a3762eea38084bd6929f49813f2998cf99dbc26982513f335b575c",
+    "verilog/tri_oracle_down_executor_staged.sv": "25462000fa5257125c5e6576a789c217009a0e3401d6b53e148aef279da901dc"
+  },
+  "functional_evidence": {
+    "staged_address_reference_cases": 25,
+    "staged_address_actual_cluster_cases": 46,
+    "fully_staged_reference_cases": 34,
+    "fully_staged_actual_cluster_cases": 46,
+    "fully_staged_mapped_reference_cases": 34,
+    "actual_cluster_scalar_values": 1472
+  },
+  "reviewer": "review_gated_fabric62",
+  "review_outcome": "No Critical/Important staged production arithmetic or control defects; index31/four-strip coverage gap closed with distinct32-entry packet, independently rechecked.",
+  "negative_controls": "Wrong scalar reference and omitted lane-carry mutation rejected for source; wrong scalar reference rejected for mapped netlist.",
+  "mapping_corner": "ssg0p9v125c",
+  "reported_clock_period_ns": 1.72414,
+  "estimated_rounded_setup_margin_ps": 365,
+  "cell_count": 11049,
+  "cell_area_um2": 21631.344,
+  "public_native_report_excerpt": {
+    "path": "records/down116_native_report_excerpt.txt",
+    "sha256": "bad724975d83a0d81e837fbce638e328b98c1c05de359f5606cbdc572beb4ba3",
+    "trailing_whitespace_removed": true
+  },
+  "whole_frame_note": "Do not use staged114 as down-pipeline integration evidence: its adapter was overwritten by the old implementation. See staged114_118_composition_diagnosis.json. Corrected full119 run is in progress.",
+  "full_paper_results_matched": false,
+  "routed_timing_qualified": false
+}

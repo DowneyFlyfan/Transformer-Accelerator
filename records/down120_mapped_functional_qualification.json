@@ -1,0 +1,31 @@
+{
+  "state": "staged_down_mapped_functional_qualified",
+  "observed_utc": "2026-11-09T03:51:09.185640+00:00",
+  "current_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_down120_mapped_simulation.py": "d13224ba70077530916be3ed2a7720d4aefec3db8c5b1612d7455ecf1bf9f38c",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_word_bank.sv": "a9661b4ea3bba7a0657273b9776da152fa660bd9e4a7fdc42819de062f8d966e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_memory_compute.sv": "b216d0b1c5650d6aea96e82aeed0a3d72f011985ef33f650df4a89c441b2ab44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/netlist.v": "dc4f9a175c2d3874dcd603be24b60afcf38a9d1c3bdb383facdb1c6750d0b875",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged_tb.sv": "1075a6d5b5927486c5be7a466c08e120a3cd2321a6f2fa57c7bf0f1d64069b92",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "evidence_sha256": {
+    "records/down120_mapped_result.json": "3507ade1edb0334669e8f55c3a81a84015f7cf0cdf92ea13a2e966f8ba579799",
+    "records/down120_mapped_native.log": "ca2b1eeaa6483fe0e6c9560036010260f0e3553a7aa02058766dfac55eb4e6ad",
+    "records/down120_wrong_reference_result.json": "26c6c1fd664bf89877cdb951f55a96414c6d4a26cbd2ecfd2687aba085b730ad",
+    "records/down120_wrong_reference_native.log": "693c400712f7fa9e8a39f21ea17fea4136d60c049f0ec10301f994af7e5afba8",
+    "records/down116_mapping_qualification.json": "9d7e5c2903b34cc15eb21da94435557362b151c529c1e98b2f6d895615bb770d"
+  },
+  "cases_passed": 34,
+  "wrong_reference_rejected": true,
+  "clock_period_ns": 10,
+  "sequential_udp_nonblocking_scheduling": true,
+  "actual_compiled_memory_instances": 0,
+  "delay_annotation": false,
+  "routed_timing_qualified": false,
+  "full_paper_results_matched": false,
+  "scope": "Mapped standard cells with native functional models, inferred-memory compute reference and independent scalar scoreboard. Timing evidence is separate zero-wireload synthesis; no delay-annotated/full-chip simulation."
+}

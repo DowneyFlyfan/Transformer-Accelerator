@@ -1,0 +1,37 @@
+{
+  "state": "staged_down_slow_corner_mapping_reviewed",
+  "observed_utc": "2026-11-09T03:51:09.180301+00:00",
+  "current_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_down116_synthesis.py": "4c3742d957791dba187e75e80783b4064003e11341dd333019f20f752bfa1656",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_down116.tcl": "401b266c72d01a109218ff2f7112dab68a74b705ff86a4e368ce91e724f7ad0c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_functional_qualification.json": "9b108c3749c72d9fb9406e8aed0a199203b70891cb9351b68961ce7b936bb480",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged.sv": "25462000fa5257125c5e6576a789c217009a0e3401d6b53e148aef279da901dc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "evidence_sha256": {
+    "records/down116_synthesis_result.json": "17f1a68a2cf1a8dd1b904ed39862bd1fd4dc18b014b8d7bfc9bb9f7310e7c794",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/timing.rpt": "c0ed1ef71ae8d992b407be673e56891508593477616eaa3b16f06765fc4296a6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/area.rpt": "e3676826d1c2767aae5482c8fd41ffaa73a1731589ae69d98a7ba45ef811e84e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/constraints.sdc": "2b86b83a535981bedd131e2475a42ccd6ec29618e34f7dcd68accae9d87209b5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/timing_intent.rpt": "7881abe8c4e75782d7d0bc5f3b5370c68329c5de6dfffb9b855c83bbdf19826b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/mapped_check.rpt": "66938f818fee91b00a8ae01803cb116534da559dee3702352954e18e00643891"
+  },
+  "optimization_period_ns": 1.5,
+  "reported_period_ns": 1.72414,
+  "clock_uncertainty_ns": 0.05,
+  "input_output_delays_ns": 0.2,
+  "rounded_worst_setup_slack_ps": 365,
+  "cell_count": 11049,
+  "cell_area_um2": 21631.344,
+  "worst_path": "shift_reg[0]/CP -> quant_rounded_reg[31]/D",
+  "corner": "ssg0p9v125c",
+  "wire_model": "ZeroWireload",
+  "zero_unclocked_sequential_pins_or_unconstrained_outputs": true,
+  "reset_external_false_path_only": true,
+  "limitations": "Estimated isolated block mapping only. Reset recovery/removal, post-placement wiring, full-parent integration and routed timing remain unqualified. Optimization uses1.5ns to reserve wiring headroom, then the original1.72414ns clock and other target constraints are restored.",
+  "output_netlist_sha256": "dc4f9a175c2d3874dcd603be24b60afcf38a9d1c3bdb383facdb1c6750d0b875",
+  "routed_timing_qualified": false,
+  "full_paper_results_matched": false
+}

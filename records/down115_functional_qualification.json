@@ -1,0 +1,42 @@
+{
+  "state": "fully_staged_down_controller_source_functional_qualified",
+  "observed_utc": "2026-11-09T03:41:09.187126+00:00",
+  "current_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_staged_down115_validation.py": "6fd42d08b141d027e69dfa13c8a78c2b3f0189072c2c7817c0e40e23b3319538",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_word_bank.sv": "a9661b4ea3bba7a0657273b9776da152fa660bd9e4a7fdc42819de062f8d966e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_memory_compute.sv": "b216d0b1c5650d6aea96e82aeed0a3d72f011985ef33f650df4a89c441b2ab44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged.sv": "25462000fa5257125c5e6576a789c217009a0e3401d6b53e148aef279da901dc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged_tb.sv": "1075a6d5b5927486c5be7a466c08e120a3cd2321a6f2fa57c7bf0f1d64069b92",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_index_checked_result.json": "7a9faa536115b5f5a9859a9a72128b46643b8a64525315d1e6a28e21a0a3f782",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_index_checked_native.log": "068e8ff07bf5b6ceaf36463cd41ab42eb7ab2f968941975a5f4a8fc2a60786ca",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_index_wrong_reference_result.json": "2327f83aed0a15e2d1393edb7fad60b033e22c31f25a623a7fda14318605834c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_index_wrong_reference_native.log": "22160b44d3e57d2587d88db02828bce5ae8665ca78229dbfb3d5b2e4d10d7974",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_index_missing_carry_result.json": "72138901605f07ca5e2992cb3c57f3a3dc429ec5281549e855ae8d595d4190a2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_index_missing_carry_native.log": "d0e07fdafac91e9bfbc11ce9412e5f1f76a3eba44abe833d07f361833814c9c8"
+  },
+  "cases_passed": 34,
+  "signed32_minimum_maximum_and_threshold_values_checked": true,
+  "quantization_shifts_checked": [
+    0,
+    1,
+    7,
+    8,
+    31,
+    32,
+    33,
+    63
+  ],
+  "distinct32_entry_packet_and_all_four_compute_strips_checked": true,
+  "arithmetic_bound": "abs(raw)<=2^31, bias<=2^31, sum<=2^32; unsigned34 stages preserve exact magnitude before shift and signed8 saturation.",
+  "lane_carry_and_zero_value_overflow_checked": true,
+  "wrong_scalar_and_missing_carry_controls_rejected": true,
+  "actual_compiled_memory_instances": 0,
+  "mapped_and_routed_timing_unqualified": true,
+  "full_paper_results_matched": false,
+  "scope": "Registered row/address/cache and quantization stages with inferred-memory compute reference. Scalar-reference, slot, protocol and reset proof only; actual SRAM integration and physical timing remain pending."
+}

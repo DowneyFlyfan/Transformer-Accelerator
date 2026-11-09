@@ -1,0 +1,37 @@
+{
+  "state": "native_small_block_mapping_completed_pending_report_review",
+  "started_utc": "2026-11-09T03:41:09.291883+00:00",
+  "supervisor_pid": 609724,
+  "requested_maximum_cpu_workers": 18,
+  "optimization_period_ns": 1.5,
+  "reported_period_ns": 1.72414,
+  "full_paper_results_matched": false,
+  "scope": "Staged sparse down controller mapped against slow0.9V125C standard cells. No compiled-memory/full-parent integration, routed parasitics or routed timing acceptance.",
+  "elapsed_seconds": 241.5485441669589,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_down116_synthesis.py": "4c3742d957791dba187e75e80783b4064003e11341dd333019f20f752bfa1656",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_down116.tcl": "401b266c72d01a109218ff2f7112dab68a74b705ff86a4e368ce91e724f7ad0c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down115_functional_qualification.json": "9b108c3749c72d9fb9406e8aed0a199203b70891cb9351b68961ce7b936bb480",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged.sv": "25462000fa5257125c5e6576a789c217009a0e3401d6b53e148aef279da901dc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "native_process_group": 609760,
+  "command": [
+    "genus",
+    "-no_gui",
+    "-batch",
+    "-log",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/native",
+    "-files",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_down116.tcl"
+  ],
+  "output_directory": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116",
+  "peak_combined_anonymous_bytes": 1716989952,
+  "native_elapsed_seconds": 241.50966893398436,
+  "native_exit_status": 0,
+  "console_sha256": "49b44dca96cb9c00d4606bb4cd05100f0945a3dc40664cb8fee355e7e3257edc",
+  "output_netlist_sha256": "dc4f9a175c2d3874dcd603be24b60afcf38a9d1c3bdb383facdb1c6750d0b875",
+  "routed_timing_qualified": false
+}

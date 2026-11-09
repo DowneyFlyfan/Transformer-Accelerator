@@ -1,0 +1,61 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 03:39:51 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_word_bank.sv
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_memory_compute.sv
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged.sv
+	module worklib.tri_oracle_down_executor_staged:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged_tb.sv
+	module worklib.tri_oracle_down_executor_staged_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_down_executor_staged_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_word_bank:sv <0x4acaf868>
+			streams:   4, words:  1677
+		worklib.tri_oracle_word_bank:sv <0x5630737e>
+			streams:   3, words:  1396
+		worklib.tri_oracle_word_bank:sv <0x277447b5>
+			streams:   3, words:  1782
+		worklib.tri_oracle_down_executor_staged:sv <0x05e071fc>
+			streams:  66, words: 50717
+		worklib.tri_oracle_down_executor_staged_tb:sv <0x62c2c8ef>
+			streams:  85, words: 92805
+		worklib.tri_oracle_pe_array:sv <0x54e9e48e>
+			streams:  13, words: 10603
+		worklib.tri_oracle_memory_compute:sv <0x776cf426>
+			streams:  28, words: 14230
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 104       5
+		Registers:               735     158
+		Scalar wires:            107       -
+		Expanded wires:        9,312     200
+		Vectored wires:          399       -
+		Always blocks:           586      10
+		Initial blocks:           44      44
+		Cont. assignments:       220      48
+		Pseudo assignments:      293       -
+		Process Clocks:          583       3
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_down_executor_staged_tb:sv
+Loading snapshot worklib.tri_oracle_down_executor_staged_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+STAGED_DOWN_PASS cases=34
+Simulation complete via $finish(1) at time 74460 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged_tb.sv:271         $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 03:39:52 UTC  (total: 00:00:01)

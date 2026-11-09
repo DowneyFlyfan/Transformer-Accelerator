@@ -1,0 +1,30 @@
+{
+  "state": "prior_full_frame_staged_down_composition_claim_invalidated",
+  "observed_utc": "2026-11-09T03:48:35.241392+00:00",
+  "affected_records": [
+    "records/staged114_functional_qualification.json",
+    "records/staged114_fullshape_result.json",
+    "records/staged118_wrong_sum_result.json"
+  ],
+  "root_cause": "Full-frame runner included the original down_executor module after its generated replacement adapter and omitted the staged production body. Xcelium RECOME recompilation replaced the adapter with the original implementation.",
+  "native_evidence": {
+    "records/staged114_fullshape_result.json": {
+      "result_sha256": "f4dd1ad2d8c18659c11f9777d63f6f5848db78f034fe56f7a968a616645e6380",
+      "native_log_sha256": "6a16b893c7a125b954ce9997e7a38e27fa87ae477c31d903cee763896470ee7c",
+      "recompilation_lines": [
+        "xmvlog: *W,RECOME (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor.sv,12|30): recompiling design unit worklib.tri_oracle_down_executor:sv."
+      ]
+    },
+    "records/staged118_wrong_sum_result.json": {
+      "result_sha256": "07a36d23276e9988a58533ee142d402897ea9c41ffb34179e249a7d4274473b8",
+      "native_log_sha256": "b758816f2e21558dec3d95a3e6bc90af56d55b93441e443f819ae1920d39bc3d",
+      "recompilation_lines": [
+        "xmvlog: *W,RECOME (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor.sv,12|30): recompiling design unit worklib.tri_oracle_down_executor:sv."
+      ]
+    }
+  },
+  "valid_scope": "staged114 verified the projection address pipeline plus original down controller on 20 cores/600 real memories, not the new sparse down pipeline.",
+  "independent_cluster113_and_cluster117_unaffected": "Their source lists explicitly include the new production bodies and omit the original down implementation.",
+  "superseded_qualification_retained_as_historical_record": true,
+  "correction": "A separately named runner119 will include only the new production bodies, elevate RECOME to an error, and require native instantiated-adapter markers."
+}

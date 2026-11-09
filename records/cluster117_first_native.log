@@ -1,0 +1,153 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 03:41:09 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/cluster117_first_9cdvfjh3/canonical_sources.sv
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor_staged:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_instance_count:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x39dfa363
+		tri_oracle_cluster_down_executor_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_cluster_down_instance_count:sv <0x03c57094>
+			streams:   1, words:   108
+		worklib.tri_oracle_cluster_down_instance_count:sv <0x02708d89>
+			streams:   1, words:   108
+		worklib.tri_oracle_cluster_down_instance_count:sv <0x04a779fd>
+			streams:   1, words:   108
+		worklib.tri_oracle_cluster_down_instance_count:sv <0x31483a3c>
+			streams:   1, words:   108
+		worklib.tri_oracle_cluster_down_instance_count:sv <0x30fdc721>
+			streams:   1, words:   108
+		worklib.tri_oracle_down_executor:sv <0x548678c6>
+			streams:   0, words:     0
+		worklib.tri_oracle_pe_array:sv <0x3f72b472>
+			streams:  13, words: 10603
+		worklib.tri_oracle_sram_memory_compute:sv <0x2b0763eb>
+			streams:  40, words: 33100
+		worklib.tri_oracle_sram_compute_cluster:sv <0x2fdc0126>
+			streams:  28, words: 22904
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x17422c2b>
+			streams:  22, words: 1472957
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x15f697f6>
+			streams:  22, words: 1489096
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x3e459441>
+			streams:  21, words: 466844
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x12dad8d7>
+			streams: 444, words: 1981032
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x249a545d>
+			streams:  11, words: 25074
+		worklib.tri_oracle_cluster_down_executor_tb:sv <0x392af361>
+			streams:  96, words: 115109
+		worklib.tri_oracle_down_executor_staged:sv <0x4f80a8d2>
+			streams:  68, words: 81277
+		worklib.tri_oracle_cluster_down_executor:sv <0x621fc01f>
+			streams:  68, words: 58756
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                    Instances  Unique
+		Modules:                  304      12
+		Primitives:            40,144       2
+		Registers:             21,061     823
+		Scalar wires:             952       -
+		Expanded wires:        95,796     446
+		Vectored wires:           573       -
+		Always blocks:         19,187     446
+		Initial blocks:           340      60
+		Cont. assignments:        895      71
+		Pseudo assignments:       393       -
+		Compilation units:          1       1
+		Process Clocks:         2,094      48
+		Simulation timescale:     1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_cluster_down_executor_tb:sv
+Loading snapshot worklib.tri_oracle_cluster_down_executor_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+dmesg: read kernel buffer failed: Operation not permitted
+dmesg: read kernel buffer failed: Operation not permitted
+CLUSTER_DOWN_ACTUAL_HIERARCHY cores=4 clusters=1 compiled_memories=120
+CLUSTER_DOWN_CASE_PASS index=1 error=0 requests=15 commands=1
+CLUSTER_DOWN_CASE_PASS index=2 error=0 requests=9 commands=1
+CLUSTER_DOWN_CASE_PASS index=3 error=0 requests=0 commands=1
+CLUSTER_DOWN_CASE_PASS index=4 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=5 error=0 requests=1 commands=1
+CLUSTER_DOWN_CASE_PASS index=6 error=0 requests=0 commands=1
+CLUSTER_DOWN_CASE_PASS index=7 error=0 requests=32 commands=1
+CLUSTER_DOWN_CASE_PASS index=8 error=1 requests=11 commands=0
+CLUSTER_DOWN_CASE_PASS index=9 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=10 error=0 requests=15 commands=1
+CLUSTER_DOWN_CASE_PASS index=11 error=1 requests=2 commands=0
+CLUSTER_DOWN_CASE_PASS index=12 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=13 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=14 error=0 requests=1 commands=1
+CLUSTER_DOWN_CASE_PASS index=15 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=16 error=0 requests=0 commands=1
+CLUSTER_DOWN_CASE_PASS index=17 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=18 error=0 requests=15 commands=1
+CLUSTER_DOWN_CASE_PASS index=19 error=0 requests=1024 commands=1
+CLUSTER_DOWN_CASE_PASS index=20 error=0 requests=1024 commands=1
+CLUSTER_DOWN_CASE_PASS index=21 error=0 requests=0 commands=1
+CLUSTER_DOWN_CASE_PASS index=22 error=0 requests=3 commands=1
+CLUSTER_DOWN_CASE_PASS index=23 error=0 requests=35 commands=1
+CLUSTER_DOWN_CASE_PASS index=24 error=0 requests=15 commands=1
+CLUSTER_DOWN_CASE_PASS index=25 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=26 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=27 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=28 error=0 requests=7 commands=1
+CLUSTER_DOWN_CASE_PASS index=29 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=30 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=31 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=32 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=33 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=34 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=35 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=36 error=0 requests=3 commands=1
+CLUSTER_DOWN_CASE_PASS index=37 error=0 requests=0 commands=1
+CLUSTER_DOWN_CASE_PASS index=38 error=0 requests=0 commands=1
+CLUSTER_DOWN_CASE_PASS index=39 error=0 requests=0 commands=1
+CLUSTER_DOWN_CASE_PASS index=40 error=1 requests=0 commands=0
+CLUSTER_DOWN_CASE_PASS index=41 error=1 requests=1 commands=0
+CLUSTER_DOWN_CASE_PASS index=42 error=0 requests=3 commands=1
+CLUSTER_DOWN_CASE_PASS index=43 error=1 requests=3 commands=1
+CLUSTER_DOWN_CASE_PASS index=44 error=0 requests=3 commands=1
+CLUSTER_DOWN_CASE_PASS index=45 error=1 requests=3 commands=1
+CLUSTER_DOWN_CASE_PASS index=46 error=0 requests=3 commands=1
+CLUSTER_DOWN_PHYSICAL_BOUNDARY_FAULTS_PASS cases=3 recoveries=3
+CLUSTER_DOWN_PASS cases=46 exact_values=1472
+PASS: sparse down projection, original-ID column gathers, byte cache, signed requantization, 5632/11008/65536 strides, accumulated packets, reserved slots, empty finalize, zero inputs, faults/framing/address overflow, stalls, reset
+Simulation complete via $finish(1) at time 187630 NS + 0
+./observer_adjusted_bench.sv:292         $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 03:41:12 UTC  (total: 00:00:03)

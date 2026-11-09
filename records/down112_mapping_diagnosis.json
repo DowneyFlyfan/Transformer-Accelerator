@@ -1,0 +1,27 @@
+{
+  "state": "staged_down_address_mapping_bottleneck_diagnosed",
+  "observed_utc": "2026-11-09T03:44:02.767507+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_down112_synthesis.py": "16d1f54c0223b49427824a40f532d74deb12944a2c9e58bd30744d3938d5ab91",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_down112.tcl": "58e42525d74f32b2adff06766059989608d77f49825093a4fe9b4c9db3fd6d2e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down111_functional_qualification.json": "28b56f1faa93ea72fe4d5d12dd4b03a40c727764e163db0e787a018f51bba01d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_pipelined.sv": "df7508c575a3762eea38084bd6929f49813f2998cf99dbc26982513f335b575c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/down112_synthesis_result.json": "78d2462868c7861f10a63318a42372610dcf6cf7f428cec16087949a854ac00e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_pipelined112/timing.rpt": "1391d35a494b88d0662264e191c0061fc35f809b6e431c0b75c2725d69d911f2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_pipelined112/area.rpt": "2023302dd088baafdbabc9268b4dadde2355f55c8d3e07e862d31a0175266bc9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_pipelined112/mapped_check.rpt": "133259572f6674f12717609c2d1d105ffd6ddc2c209b8737b6b3f9025f84b443",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_pipelined112/timing_intent.rpt": "f7cde8c49986e1abad69b5f24d85225d18642b1e85ae4d1b123a6f8e40fe63df",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_pipelined112/constraints.sdc": "6f94e3d9d1133a3868be7c9ea37b2c5d6db13f857adcea206eb959de6b2816c7"
+  },
+  "rounded_setup_slack_ps": 1,
+  "usable_wiring_margin_not_demonstrated": true,
+  "critical_startpoint": "quant_index_reg[1]/CP",
+  "critical_endpoint": "values_reg[254]/D",
+  "scope": "Address/cache staging moves the isolated slow-corner bottleneck to requantization. No routed or whole-parent timing acceptance.",
+  "full_paper_results_matched": false
+}
