@@ -1,0 +1,31 @@
+{
+  "state": "full20core_parent_and_all26mapped_controllers_native_cold_restore_qualified",
+  "observed_utc": "2026-11-09T08:40:26.349804+00:00",
+  "original_mapped_control_cells": 231215,
+  "private_gate_mapped_cells": 151275,
+  "mapped_control_boundary_bits": 156712,
+  "compute_core_macros": 20,
+  "aggregate_memory_banks": 40,
+  "all_preservation_flags_verified_without_reapplication": true,
+  "original_clock_IO_constraints_and_boundary_connections_restored": true,
+  "restored_source_checkpoint_fingerprint": {
+    "type": "file",
+    "size_bytes": 13268503,
+    "sha256": "c224e94f9e1fa04c1b77ec1765cae1100c6e7783c762922e2c065de85b7ed3d0"
+  },
+  "current_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame169_legacy_cold_restore_validation.json": "005ecdb62b5bda4ed274c5d5a9a845ef4c038be328b0533bac7fb6addc5653dc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame169_private_cold_restore_validation.json": "61d048f5ae7b9457c82e7431ce69230ff93b8cdc73b74e1c025ef488b0e186b2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame168_checkpoint_manifest.json": "54cc6d569553b3e276f2b848f1a75e1ad73ec3d0baf52c3f751cdb5bfea2f32a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/gate164_frame168_qualification.json": "6171443ad8bdca23118c9c633224ad173b7bc454db040b73b022f1f65c66840a"
+  },
+  "current_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_private_frame169_synthesis.py": "19b0ca7f2d475e34dcb6a1981686797c22bf26733e1cf6161353d39e970dffc0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_private_frame169.tcl": "81612aefa52c2eba39365241b778de0d697af9573d68d5df8e6762a183673f03",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_private_restore169.py": "1a83be8aaba84a4070e9ee9763ef0b98b314db220caa96e2445607c0e6617f2f"
+  },
+  "full_parent_mapping_pending": true,
+  "full_paper_results_matched": false,
+  "routed_timing_qualified": false,
+  "scope": "Cold native restore of the actual connected prepared prediction/feed-forward parent,20core timing abstractions,40aggregatebanks,25oldmapped controllers and the151275-cell privately qualified gate. Generic optimization is now running; no mapped full-parent function or physical signoff claim."
+}

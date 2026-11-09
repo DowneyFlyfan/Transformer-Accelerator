@@ -1,0 +1,320 @@
+{
+  "state": "private_gate_import_and_mapped_functional_qualified",
+  "supervisor_pid": 640033,
+  "static_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_private_gate164_qualification.py": "bf591f7f73e5b2a61fc14c02b3a6d9521f2b424debfbeed5e98a834bff9381c2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_import_private_gate164.tcl": "f7f1f42d9c95c8968d80f1fc65c616263a2a52f20ab63ff9063579fe209c68e6",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/opt/cadence/bin/genus": "3858d1df849d3e6f8bfe41ef755f11ffebb60eb095795272b7246acd0f07f62e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_fabric_gated_executor_tb.sv": "287b183fce4c50b13df0448888f7cfae313bc96dca7e549943f896f31de3eb30",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_fabric_gated_executor.sv": "12e8efde382112b019c1a5f3f8129dcf0c885f89319a902cfc041affe691bdd0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_hierarchical_controller_adapter155.py": "f5723d8639bfd8dbb2b4b4e8e462a539a7abe8d12c1903aac6e827c41e0e9869",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_namespace_mapped160.py": "73eb0ec129e45022cc098c8cbcf350f1d441d63fa6ace957e129182f2b761060",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_compact_tag164.py": "4642721ee44057a96f7b1f502799f16c79dc840c678adf8c49bd8ceae754e7eb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/compact164_tag_validation.json": "bc2f13de68e5d5e97df465cdac64118266598af0c2801c395f1fe751eaa9a643",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_named_controller_adapters137.py": "404adf7f54fcca1d90bf9a4fcea064ddba0a6079058af49f2e65f1939851553f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checked_controller_adapters138.py": "36cf3b9043254d2cbf31fb112919fcaaaf3964b3cc5bba2b1e2a44125363b2f2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/namespace160_validation.json": "58ea75571984dd603620c37fe1c32002b5695efdf1754634cafcbd22e88da4b9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/adapter155_link158_qualification.json": "85cfb05fa14877302c336702acda0822737e81600743cfc14a573550e4c49362",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7"
+  },
+  "started_utc": "2026-11-09T08:16:34.691730+00:00",
+  "full_paper_results_matched": false,
+  "routed_timing_qualified": false,
+  "scope": "All mapped gate-controller modules receive private names, then undergo isolated native import and the unchanged31-case peer test. The resulting netlist/cell ledger are inputs for later full-parent relinking; no full20-core integration or physical timing claim.",
+  "elapsed_seconds": 61.52680340502411,
+  "tag_normalization": {
+    "mode": "remove_only_unimplemented_upper_tag_interface_bits",
+    "original_tag_width_bits": 16,
+    "implemented_tag_width_bits": 8,
+    "removed_floating_tag_nets": [
+      "UNCONNECTED_HIER_Z",
+      "UNCONNECTED_HIER_Z0",
+      "UNCONNECTED_HIER_Z1",
+      "UNCONNECTED_HIER_Z2",
+      "UNCONNECTED_HIER_Z3",
+      "UNCONNECTED_HIER_Z4",
+      "UNCONNECTED_HIER_Z5",
+      "UNCONNECTED_HIER_Z6"
+    ],
+    "mapped_cell_statements": 151275,
+    "mapped_cell_statements_sha256": "290fc936003195eaf0abe8e4dea38aea9b2531b893372064b58da36d02f7e570",
+    "all_mapped_cell_statements_unchanged": true,
+    "child_input_output_and_parent_tag_uses_exactly_low_eight_bits": true
+  },
+  "phase": "positive",
+  "native_process_group": 640338,
+  "command": [
+    "/opt/cadence/bin/xrun",
+    "-64bit",
+    "-sv",
+    "-xmerror",
+    "RECOME",
+    "-sequdp_nba_delay",
+    "-top",
+    "tri_oracle_fabric_gated_executor_tb",
+    "-xmlibdirname",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/gate160_positive_z0glem1k/xcelium.d",
+    "-l",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/gate160_positive_z0glem1k/xrun.log",
+    "-history_file",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/gate160_positive_z0glem1k/history",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/qualified_import.v",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/private_bench.sv"
+  ],
+  "peak_combined_anonymous_bytes": 1252986880,
+  "current_host_available_bytes": 24536985600,
+  "current_combined_anonymous_bytes": 291229696,
+  "native_phase_elapsed_seconds": 10.033543550991453,
+  "attempts": {
+    "isolated_import": {
+      "native_exit_status": 0,
+      "elapsed_seconds": 30.43101055099396,
+      "console_sha256": "ee2ffbc80fc67ca715c317453d30ff95625e11dfe2ae83f033e494576747c5c4"
+    },
+    "wrong_reference": {
+      "native_exit_status": 2,
+      "elapsed_seconds": 13.35494887799723,
+      "console_sha256": "7731160fb9c711275536c46f76370f5fa84b415795966974db90189a03c90ff7",
+      "temporary_build_removed": true
+    },
+    "positive": {
+      "native_exit_status": 0,
+      "elapsed_seconds": 12.149575906980317,
+      "console_sha256": "107ee0f9c38fb09aa73fe774791bf9800fa5ad748f905c0438f5ac3617f5a992",
+      "temporary_build_removed": true
+    }
+  },
+  "exact_quantization_checks": 525,
+  "known_activation_input_checks": 525,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_gated153_synthesis.py": "43128d37ee6c00c85ab9e6bc69600282c306096386a045949c35fa9e296a6aa0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_gated153.tcl": "0e010d3b8d6a82c81e7c947712363c49ea7120513ac7ce951184d32658e65bda",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/staged119_121_functional_qualification.json": "ec99980af86d738eae205a68d51baac59e8226f79fcee52abc6e5cc219c8ce2f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_fabric_gated_executor.sv": "12e8efde382112b019c1a5f3f8129dcf0c885f89319a902cfc041affe691bdd0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_silu_gate.sv": "6b9ef0cc9828d5537533047d129aba1be3c2e7c3dd909aec7465486fdca3431d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame149_capacity152_diagnosis.json": "d76087f550bc49564a3564de13aa3224a31028fd905ec7039419ae625755c501",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_gated154_mapped_simulation.py": "5b6de9f7f7c613e6bfebd84588150960ee4bfd038567c39ba255261f2b08c024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/gated153_synthesis_result.json": "9776fcf2bac23b68d45a49806950928634c31e1a7a6ea6231be389269d44a367",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_fabric_gated_executor153/netlist.v": "ea970979f1f5b62b57d63de5e56af0e8c0b6d9c0526fe06a2092da6cf7886669",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_fabric_gated_executor_tb.sv": "287b183fce4c50b13df0448888f7cfae313bc96dca7e549943f896f31de3eb30",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/gated154_mapped_result.json": "745f6d769696465adaa888185280cbc002b501f62b6d2360ef12082e3dd63c3a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_private_gate164_qualification.py": "bf591f7f73e5b2a61fc14c02b3a6d9521f2b424debfbeed5e98a834bff9381c2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_import_private_gate164.tcl": "f7f1f42d9c95c8968d80f1fc65c616263a2a52f20ab63ff9063579fe209c68e6",
+    "/opt/cadence/bin/genus": "3858d1df849d3e6f8bfe41ef755f11ffebb60eb095795272b7246acd0f07f62e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_hierarchical_controller_adapter155.py": "f5723d8639bfd8dbb2b4b4e8e462a539a7abe8d12c1903aac6e827c41e0e9869",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_namespace_mapped160.py": "73eb0ec129e45022cc098c8cbcf350f1d441d63fa6ace957e129182f2b761060",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_compact_tag164.py": "4642721ee44057a96f7b1f502799f16c79dc840c678adf8c49bd8ceae754e7eb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/compact164_tag_validation.json": "bc2f13de68e5d5e97df465cdac64118266598af0c2801c395f1fe751eaa9a643",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_named_controller_adapters137.py": "404adf7f54fcca1d90bf9a4fcea064ddba0a6079058af49f2e65f1939851553f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checked_controller_adapters138.py": "36cf3b9043254d2cbf31fb112919fcaaaf3964b3cc5bba2b1e2a44125363b2f2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/namespace160_validation.json": "58ea75571984dd603620c37fe1c32002b5695efdf1754634cafcbd22e88da4b9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/adapter155_link158_qualification.json": "85cfb05fa14877302c336702acda0822737e81600743cfc14a573550e4c49362",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/tag_normalization.json": "c0269c11c43b9fdb6e1c67e6c0cb08680d2ad2ba68e6c26a09fd5c80460774eb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/private_candidate.v": "0bbcec849211f638a2c934ade8d3b01d98db3f7231900ef2b956d92d7f93783b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/qualified_import.v": "114b395451a3780e78c2954646910507beabaa18d038e2caf16f60e5cd9f880e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/isolated_cells.tsv": "1b8eb5435a394c673b706eaa9f2c80d8fe14c1ba825ece2877f9b51ece86a23f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/isolated_hierarchy.tsv": "969ad71063cb010fbe09706609f4e91264a442bbba452a89b43ac08d088a0dbd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/isolated_wiring.rpt": "6cec939fbe0615206a7fcfaff2dfb1b3d47e1eb20d5e8ac38f9eccde84a50ac3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164/private_bench.sv": "35719f05bdc386bf9ca448bf531eacc5618ecf58b97f4d8a5041df5e9096ee0d"
+  },
+  "output_directory": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_private_gate164",
+  "qualified_import_sha256": "114b395451a3780e78c2954646910507beabaa18d038e2caf16f60e5cd9f880e",
+  "isolated_cell_inventory_sha256": "1b8eb5435a394c673b706eaa9f2c80d8fe14c1ba825ece2877f9b51ece86a23f",
+  "mapped_gate_standard_cells": 151275,
+  "module_aliases": {
+    "tri_oracle_silu_gate": "tri_oracle_gated160_tri_oracle_silu_gate",
+    "tri_oracle_fabric_gated_executor": "tri_oracle_fabric_gated_executor_mapped153"
+  },
+  "exported_module_names": [
+    "tri_oracle_gated160_tri_oracle_silu_gate",
+    "tri_oracle_fabric_gated_executor_mapped153"
+  ],
+  "interface": {
+    "clk": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "rst_n": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "in_valid": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "in_ready": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "in_last": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "in_fallback": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "in_tag": {
+      "direction": "input",
+      "width_bits": 32
+    },
+    "in_channels": {
+      "direction": "input",
+      "width_bits": 2560
+    },
+    "in_count": {
+      "direction": "input",
+      "width_bits": 8
+    },
+    "in_activation_base": {
+      "direction": "input",
+      "width_bits": 64
+    },
+    "in_weight_base": {
+      "direction": "input",
+      "width_bits": 64
+    },
+    "in_up_weight_base": {
+      "direction": "input",
+      "width_bits": 64
+    },
+    "in_features": {
+      "direction": "input",
+      "width_bits": 10
+    },
+    "in_gate_shift": {
+      "direction": "input",
+      "width_bits": 6
+    },
+    "in_up_shift": {
+      "direction": "input",
+      "width_bits": 6
+    },
+    "out_valid": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "out_ready": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "out_last": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "out_fallback": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "out_error": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "out_tag": {
+      "direction": "output",
+      "width_bits": 32
+    },
+    "out_count": {
+      "direction": "output",
+      "width_bits": 8
+    },
+    "out_channels": {
+      "direction": "output",
+      "width_bits": 2560
+    },
+    "out_data": {
+      "direction": "output",
+      "width_bits": 5120
+    },
+    "projection_in_valid": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "projection_in_ready": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "projection_in_last": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "projection_in_fallback": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "projection_in_tag": {
+      "direction": "output",
+      "width_bits": 32
+    },
+    "projection_in_channels": {
+      "direction": "output",
+      "width_bits": 2560
+    },
+    "projection_in_count": {
+      "direction": "output",
+      "width_bits": 8
+    },
+    "projection_in_activation_base": {
+      "direction": "output",
+      "width_bits": 64
+    },
+    "projection_in_weight_base": {
+      "direction": "output",
+      "width_bits": 64
+    },
+    "projection_in_features": {
+      "direction": "output",
+      "width_bits": 10
+    },
+    "projection_out_valid": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "projection_out_ready": {
+      "direction": "output",
+      "width_bits": 1
+    },
+    "projection_out_last": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "projection_out_fallback": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "projection_out_error": {
+      "direction": "input",
+      "width_bits": 1
+    },
+    "projection_out_tag": {
+      "direction": "input",
+      "width_bits": 32
+    },
+    "projection_out_channels": {
+      "direction": "input",
+      "width_bits": 2560
+    },
+    "projection_out_count": {
+      "direction": "input",
+      "width_bits": 8
+    },
+    "projection_out_data": {
+      "direction": "input",
+      "width_bits": 5120
+    }
+  },
+  "cases_passed": 31,
+  "projection_requests": 38,
+  "wrong_mathematical_reference_rejected": true
+}

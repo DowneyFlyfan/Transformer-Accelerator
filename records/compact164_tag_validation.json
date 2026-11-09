@@ -1,0 +1,36 @@
+{
+  "state": "unused_tag_interface_compaction_controls_passed",
+  "cases": {
+    "matching_qualified_netlist": "accepted",
+    "live_high_input_bit": "rejected",
+    "live_high_output_bit": "rejected",
+    "parent_uses_high_tag_bit": "rejected",
+    "additional_floating_net_consumer": "rejected"
+  },
+  "report": {
+    "mode": "remove_only_unimplemented_upper_tag_interface_bits",
+    "original_tag_width_bits": 16,
+    "implemented_tag_width_bits": 8,
+    "removed_floating_tag_nets": [
+      "UNCONNECTED_HIER_Z",
+      "UNCONNECTED_HIER_Z0",
+      "UNCONNECTED_HIER_Z1",
+      "UNCONNECTED_HIER_Z2",
+      "UNCONNECTED_HIER_Z3",
+      "UNCONNECTED_HIER_Z4",
+      "UNCONNECTED_HIER_Z5",
+      "UNCONNECTED_HIER_Z6"
+    ],
+    "mapped_cell_statements": 151275,
+    "mapped_cell_statements_sha256": "290fc936003195eaf0abe8e4dea38aea9b2531b893372064b58da36d02f7e570",
+    "all_mapped_cell_statements_unchanged": true,
+    "child_input_output_and_parent_tag_uses_exactly_low_eight_bits": true
+  },
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_compact_tag164.py": "1fe94dcf426dbbbbfd5be5eeec9d1952cac37cec6ea7631196e46de56e226e00",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_compact_tag164.py": "4642721ee44057a96f7b1f502799f16c79dc840c678adf8c49bd8ceae754e7eb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_namespace_mapped160.py": "73eb0ec129e45022cc098c8cbcf350f1d441d63fa6ace957e129182f2b761060",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_fabric_gated_executor153/netlist.v": "ea970979f1f5b62b57d63de5e56af0e8c0b6d9c0526fe06a2092da6cf7886669"
+  },
+  "scope": "Static cone and cell-statement checks on the real mapped gate; native reimport/function remain pending."
+}

@@ -1,0 +1,58 @@
+{
+  "state": "original_gate_controller_mapped_functional_qualified",
+  "supervisor_pid": 633254,
+  "started_utc": "2026-11-09T06:47:38.125352+00:00",
+  "full_paper_results_matched": false,
+  "routed_timing_qualified": false,
+  "scope": "Original gate/up controller and activation unit mapped to standard cells, with the unchanged independent projection peer bench. Raw-clock functional checks only; no full20-core integration, delay annotation or physical timing proof.",
+  "elapsed_seconds": 4094.2368398389663,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_gated154_mapped_simulation.py": "5b6de9f7f7c613e6bfebd84588150960ee4bfd038567c39ba255261f2b08c024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/gated153_synthesis_result.json": "9776fcf2bac23b68d45a49806950928634c31e1a7a6ea6231be389269d44a367",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_fabric_gated_executor153/netlist.v": "ea970979f1f5b62b57d63de5e56af0e8c0b6d9c0526fe06a2092da6cf7886669",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_fabric_gated_executor_tb.sv": "287b183fce4c50b13df0448888f7cfae313bc96dca7e549943f896f31de3eb30",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "phase": "positive",
+  "native_process_group": 639561,
+  "command": [
+    "/opt/cadence/bin/xrun",
+    "-64bit",
+    "-sv",
+    "-xmerror",
+    "RECOME",
+    "-sequdp_nba_delay",
+    "-top",
+    "tri_oracle_fabric_gated_executor_tb",
+    "-xmlibdirname",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/gated154_positive_pogkp30a/xcelium.d",
+    "-l",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/gated154_positive_pogkp30a/xrun.log",
+    "-history_file",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/gated154_positive_pogkp30a/history",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_fabric_gated_executor153/netlist.v",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_fabric_gated_executor_tb.sv"
+  ],
+  "attempts": {
+    "wrong_reference": {
+      "native_exit_status": 2,
+      "native_elapsed_seconds": 15.276576877979096,
+      "console_sha256": "121f41832a0b85f532d13cdb1e59e0ef8a06e1ec9630302ac84e36bf0444ee43",
+      "temporary_build_removed": true
+    },
+    "positive": {
+      "native_exit_status": 0,
+      "native_elapsed_seconds": 14.572399279975798,
+      "console_sha256": "59e7947d2090259b6f5c297e95ffc8e69cb38caca7ea1e3fb4f5e5115f80697a",
+      "temporary_build_removed": true
+    }
+  },
+  "exact_quantization_checks": 525,
+  "cases_passed": 31,
+  "projection_requests": 38,
+  "wrong_mathematical_reference_rejected": true
+}

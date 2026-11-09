@@ -1,0 +1,39 @@
+{
+  "state": "native_small_block_mapping_completed_pending_report_review",
+  "started_utc": "2026-11-09T06:45:53.376992+00:00",
+  "supervisor_pid": 632908,
+  "requested_maximum_cpu_workers": 20,
+  "optimization_period_ns": 1.5,
+  "reported_period_ns": 1.72414,
+  "full_paper_results_matched": false,
+  "scope": "Original gate/up sequencing controller and activation pipeline mapped against slow0.9V125C standard cells. No compiled-memory/full-parent integration, routed parasitics or routed timing acceptance.",
+  "elapsed_seconds": 4167.8591954020085,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_gated153_synthesis.py": "43128d37ee6c00c85ab9e6bc69600282c306096386a045949c35fa9e296a6aa0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_gated153.tcl": "0e010d3b8d6a82c81e7c947712363c49ea7120513ac7ce951184d32658e65bda",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/staged119_121_functional_qualification.json": "ec99980af86d738eae205a68d51baac59e8226f79fcee52abc6e5cc219c8ce2f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_fabric_gated_executor.sv": "12e8efde382112b019c1a5f3f8129dcf0c885f89319a902cfc041affe691bdd0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_silu_gate.sv": "6b9ef0cc9828d5537533047d129aba1be3c2e7c3dd909aec7465486fdca3431d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame149_capacity152_diagnosis.json": "d76087f550bc49564a3564de13aa3224a31028fd905ec7039419ae625755c501",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "native_process_group": 632950,
+  "command": [
+    "genus",
+    "-no_gui",
+    "-batch",
+    "-log",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_fabric_gated_executor153/native",
+    "-files",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_gated153.tcl"
+  ],
+  "output_directory": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_fabric_gated_executor153",
+  "peak_combined_anonymous_bytes": 11389276160,
+  "native_elapsed_seconds": 4167.772860101017,
+  "native_exit_status": 0,
+  "console_sha256": "b3e010c9b3541f62ff8808fdacb73c64dfcd8513090d417c828f54584effc168",
+  "output_netlist_sha256": "ea970979f1f5b62b57d63de5e56af0e8c0b6d9c0526fe06a2092da6cf7886669",
+  "routed_timing_qualified": false
+}
