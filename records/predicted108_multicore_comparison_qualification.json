@@ -1,0 +1,26 @@
+{
+  "state": "full_shape_multicore_functional_comparison_completed",
+  "observed_utc": "2026-11-09T02:43:33.197286+00:00",
+  "cases_passed_in_each_mode": 12,
+  "actual_cores": 20,
+  "actual_memories": 600,
+  "checked_hidden_outputs_each_mode": 4420,
+  "serial_seconds": 587.8197651049704,
+  "four_worker_seconds": 1015.833096886985,
+  "multicore_to_serial_elapsed_ratio": 1.7281370195260135,
+  "complete_native_case_results_identical": true,
+  "multicore_wrong_reference_rejected": true,
+  "selected_future_default": "serial",
+  "multicore_memory_binding_warnings": true,
+  "hardware_cpu_quality_not_inferred": true,
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted101_fullshape_result.json": "f08475904ade07df3a569fb490dd973c866a0f08b406682eeedeff8254135a1d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted101_fullshape_native.log": "e9c495b99578e445d6556e43d32694787d7c286b6ddbbfac37b4d39b1f53b775",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted108_mce4_fullshape_result.json": "b316a40fa54c32390f807c68a673fb96cb656662bb7373fce671325fca5f4ee0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted108_mce4_fullshape_native.log": "5ae872c56d0a73cff6c230506bcb8ceaca6dcbc55771990a72ccde37572abc42",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted108_mce4_wrong_sum_result.json": "bb33547b0624be8d22f8d9e6efa814b7f2df3cd102014251698a5ddcad956b42",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/predicted108_mce4_wrong_sum_native.log": "15b819e09154d811c8ad3d3e74e8f92bcc9b9afb53f192ab66e4802ece8fd67b"
+  },
+  "scope": "Observed wall times for identical design/fixtures and simulator version on this host. Run order/background conditions were not randomized. Four workers were slower; no general simulator or CPU ranking is inferred.",
+  "full_paper_results_matched": false
+}

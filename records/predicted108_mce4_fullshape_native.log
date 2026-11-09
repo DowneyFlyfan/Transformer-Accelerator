@@ -1,0 +1,247 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 02:23:43 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/predicted108_mce4_fullshape_udxype2p/canonical_sources.sv
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_cluster_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_silu_gate:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_fabric_gated_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_strip_predictor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_channel_compactor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_dispatch:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_prediction_packet_stream:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_joined_instance_count:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy for Multi Core Simulation:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x3e6117e0
+		tri_oracle_predicted_feedforward_frame_tb
+	Building instance overlay tables: ..........
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sram_compute_cluster.sv,55|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sram_compute_cluster.sv,55|12): -DELAY_TRIGGER option ignored on @* with memory.
+.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,104|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,104|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,104|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+  always_comb begin
+            |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_shared_fabric.sv,127|12): -DELAY_TRIGGER option ignored on @* with memory.
+    always @* begin
+           |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_strip_predictor.sv,49|11): -DELAY_TRIGGER option ignored on @* with memory.
+    always @* begin
+           |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_strip_predictor.sv,49|11): -DELAY_TRIGGER option ignored on @* with memory.
+    always @* begin
+           |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_strip_predictor.sv,49|11): -DELAY_TRIGGER option ignored on @* with memory.
+    always @* begin
+           |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_strip_predictor.sv,49|11): -DELAY_TRIGGER option ignored on @* with memory.
+    always @* begin
+           |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor.sv,113|11): -DELAY_TRIGGER option ignored on @* with memory.
+    always @* begin
+           |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor.sv,113|11): -DELAY_TRIGGER option ignored on @* with memory.
+    always @* begin
+           |
+xmelab: *N,DTSTAR (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor.sv,113|11): -DELAY_TRIGGER option ignored on @* with memory.
+......... Done
+	Generating native compiled code:
+		worklib.tri_oracle_joined_instance_count:sv <0x3527f781>
+			streams:   1, words:   110
+		worklib.tri_oracle_joined_instance_count:sv <0x34920a9c>
+			streams:   1, words:   110
+		worklib.tri_oracle_joined_instance_count:sv <0x3245fee8>
+			streams:   1, words:   110
+		worklib.tri_oracle_joined_instance_count:sv <0x07aabd29>
+			streams:   1, words:   110
+		worklib.tri_oracle_joined_instance_count:sv <0x061f4034>
+			streams:   1, words:   110
+		worklib.tri_oracle_down_executor:sv <0x087aac27>
+			streams:  67, words: 85764
+		worklib.tri_oracle_cluster_down_executor:sv <0x1dc43931>
+			streams:  58, words: 60551
+		worklib.tri_oracle_sparse_weight_dma:sv <0x432ec2ee>
+			streams:  24, words: 16517
+		worklib.tri_oracle_cluster_projection_executor:sv <0x49d6d692>
+			streams:  40, words: 48535
+		worklib.tri_oracle_shared_cluster_executor:sv <0x3debcdc2>
+			streams:  77, words: 56189
+		worklib.tri_oracle_silu_gate:sv <0x214c07ff>
+			streams:  13, words: 13472
+		worklib.tri_oracle_fabric_gated_executor:sv <0x2047a516>
+			streams:  26, words: 41262
+		worklib.tri_oracle_gated_down_fabric:sv <0x3464b7b5>
+			streams:  69, words: 39741
+		worklib.tri_oracle_channel_compactor:sv <0x2f4a813e>
+			streams:  21, words: 17240
+		worklib.tri_oracle_strip_predictor:sv <0x4283f286>
+			streams:  12, words: 32254
+		worklib.tri_oracle_predicted_dispatch:sv <0x323910c9>
+			streams:   8, words:  2642
+		worklib.tri_oracle_prediction_packet_stream:sv <0x04db1610>
+			streams:  32, words: 30316
+		worklib.tri_oracle_predicted_feedforward_frame:sv <0x655e9bf0>
+			streams:  36, words: 13221
+		worklib.tri_oracle_shared_fabric:sv <0x7b5d5f32>
+			streams: 417, words: 171105
+		worklib.tri_oracle_pe_array:sv <0x16548665>
+			streams: 996, words: 296602
+		worklib.tri_oracle_sram_memory_compute:sv <0x193bd21c>
+			streams:  40, words: 30995
+		worklib.tri_oracle_sram_compute_cluster:sv <0x1c258382>
+			streams:  28, words: 22875
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x1dc67531>
+			streams:  27, words: 1674877
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x53c5cc80>
+			streams:  27, words: 1698666
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x6cc5633f>
+			streams:  26, words: 530399
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x5e0a3b45>
+			streams: 447, words: 1911735
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x407cf5d2>
+			streams:  11, words: 25089
+		worklib.tri_oracle_predicted_feedforward_frame_tb:sv <0x0dff7b4c>
+			streams: 104, words: 74866
+		worklib.tri_oracle_feedforward_frame:sv <0x27d2a41c>
+			streams:  56, words: 49408
+mcgfe_cg(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+	Building instance specific data structures.
+	MC build: splitting started at Nov 09, 2026 at 02:23:56 UTC
+	MC build: splitting finished at Nov 09, 2026 at 02:23:57 UTC after 1 seconds with 1 splits
+	MC build: generate and save splits started (total of 1 splits, using thread count of 4) at Nov 09, 2026 at 02:23:57 UTC
+	MC build: generate and save splits finished at Nov 09, 2026 at 02:23:58 UTC after 1 seconds
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                 1,521      24
+		Primitives:            200,720       2
+		Registers:             105,970   1,412
+		Scalar wires:            5,427       -
+		Expanded wires:        478,980   2,230
+		Vectored wires:          3,548       -
+		Always blocks:          95,986     481
+		Initial blocks:          1,483      63
+		Cont. assignments:       4,281      99
+		Pseudo assignments:      4,124       -
+		Compilation units:           1       1
+		Process Clocks:          5,359     439
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+	MC build: split processing started (total of 1 splits, using thread count of 4) at Nov 09, 2026 at 02:23:59 UTC
+	MC build: split processing finished at Nov 09, 2026 at 02:24:05 UTC after 6 seconds
+	MC build: splits linking started at Nov 09, 2026 at 02:24:05 UTC
+	MC build: splits linking finished at Nov 09, 2026 at 02:24:06 UTC after 1 seconds
+Loading snapshot worklib.tri_oracle_predicted_feedforward_frame_tb:sv .................... Done
+xmsim: *N,MC: Initializing Multi Core Simulation
+xmsim: *N,MC: MCE_HOME = /opt/cadence/XCELIUM2503/tools.lnx86/mce
+xmsim: *W,MC: NUMA error - Failed to allocate memory on requested node. This may result in performance degradation. (mbind failed) (Operation not permitted)
+	Node: 0
+	Node size (MB): 30949, of them free (MB): 13670
+xmsim: *W,MC: NUMA error - Failed to allocate memory on requested node. This may result in performance degradation. (mbind failed) (Operation not permitted)
+	Node: 0
+	Node size (MB): 30949, of them free (MB): 13670
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+dmesg: read kernel buffer failed: Operation not permitted
+dmesg: read kernel buffer failed: Operation not permitted
+JOINED_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600
+JOINED_CASE_PASS case=1 outputs=129 error=0 requests=1230
+JOINED_CASE_PASS case=2 outputs=161 error=0 requests=5052
+JOINED_CASE_PASS case=3 outputs=2048 error=0 requests=16582
+JOINED_CASE_PASS case=4 outputs=2048 error=0 requests=405856
+JOINED_CASE_PASS case=5 outputs=1 error=0 requests=0
+JOINED_CASE_PASS case=6 outputs=0 error=1 requests=0
+JOINED_CASE_PASS case=7 outputs=0 error=1 requests=0
+JOINED_CASE_PASS case=8 outputs=0 error=1 requests=0
+JOINED_CASE_PASS case=9 outputs=0 error=1 requests=0
+JOINED_CASE_PASS case=10 outputs=0 error=1 requests=4210
+JOINED_CASE_PASS case=11 outputs=0 error=1 requests=101
+JOINED_CASE_PASS case=12 outputs=33 error=0 requests=660
+JOINED_PASS cases=12 hidden_outputs=4420 success_stalls=136 error_stalls=64
+Simulation complete via $finish(1) at time 24640960 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_predicted_feedforward_frame_tb.sv:182     $display("JOINED_PASS cases=%0d hidden_outputs=%0d success_stalls=%0d error_stalls=%0d",completed,hidden_checked,success_stalls,error_stalls);$finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 02:40:38 UTC  (total: 00:16:55)

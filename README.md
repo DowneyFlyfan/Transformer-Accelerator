@@ -30,8 +30,8 @@ The wrong-identifier reference is rejected. See
 
 `tri_oracle_predicted_feedforward_frame.sv` joins that stream to the numeric
 controller with exactly one shared backend. Its twelve actual-memory cases pass
-in588 seconds, checking4,420 final hidden-output lanes. The full5632-channel,
-2048-input-feature,2048-output fixture retains196 channels. Coverage includes
+in 588 seconds, checking 4,420 final hidden-output lanes. The full 5,632-channel,
+2,048-input-feature, 2,048-output fixture retains 196 channels. Coverage includes
 configuration rejection by either child, a prediction fault during committed
 numeric memory work, memory faults and reset recovery. This test uses prepared
 normalized/sign inputs and analytically saturated numeric operands; raw frontend
@@ -40,11 +40,19 @@ integration and model accuracy remain pending. See
 
 The separately named `tri_oracle_sparse_weight_dma_pipelined.sv` addresses the
 long selector/multiply/add/overflow path without changing the original source.
-Eighteen source cases and seven address-stage reset cases pass. Isolated mapping
-at the slow0.9-volt125-degree-Celsius corner reports577 picoseconds of setup
-margin at a1.72414-nanosecond period, with2047 cells and4503.912 square
+Eighteen source and mapped-netlist cases and seven address-stage reset cases
+pass. Isolated mapping at the slow 0.9-volt, 125-degree-Celsius corner reports
+577 picoseconds of setup margin at a 1.72414-nanosecond period, with 2,047 cells
+and 4,503.912 square
 micrometers of library cell area. This does not establish full-parent or routed
 timing closure, and this candidate is not yet part of the joined controller.
+
+The same full-shape regression also passes with the simulator's four-worker
+mode, but that run took 1,016 seconds versus 588 seconds with one worker.
+Both runs checked identical case outputs. One worker remains the default for
+this regression; no general hardware or simulator performance ranking follows
+from this one comparison. See
+`records/predicted108_multicore_comparison_qualification.json`.
 
 The routed single-core checkpoint has independent timing and geometry evidence.
 The twenty-core prediction parent has legal placement, but whole-chip routed
