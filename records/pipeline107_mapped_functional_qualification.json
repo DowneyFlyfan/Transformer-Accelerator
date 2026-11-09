@@ -1,0 +1,33 @@
+{
+  "state": "mapped_staged_address_generator_functional_qualified",
+  "observed_utc": "2026-11-09T02:23:42.946915+00:00",
+  "current_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_pipeline107_mapped_simulation.py": "085d59f954778cdeaea21c51a16c406611b9b5173fc60ea453bea4d3c972ccec",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_word_bank.sv": "a9661b4ea3bba7a0657273b9776da152fa660bd9e4a7fdc42819de062f8d966e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_memory_compute.sv": "b216d0b1c5650d6aea96e82aeed0a3d72f011985ef33f650df4a89c441b2ab44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/netlist.v": "5a860035d7880c77ec96429ba67ebce60048f426ed25e2b11c8a767fa7ba6eca",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma_pipelined_tb.sv": "b986a249d15ff6892bce9fadb84c38378815e1fb3bb1056f84e0987f6985cc4e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/pipeline107_mapped_result.json": "f15211f041151bea45228c1d18fbdd44796a20ca3f633f50294775a395eef50f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/pipeline107_mapped_native.log": "9192984b3682e6eed83e9f9d8a513f5c138e66402e37d8be660e05d49a536f68",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/pipeline107_mapped_wrong_address_result.json": "6acb8a9f33cfd494887adc43f30f830ffd252235f9b16fa8da8ca689e0e0e4a6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/pipeline107_mapped_wrong_address_native.log": "3e3b6ee1f0de829bd15a8d86686301b9b90f5234e709f2416c63f69e65fa626e"
+  },
+  "mapping_qualification_sha256": "8410c8f857207f5efb2fc6613c8d40c611fb10c0264c6f66c50b27a62f36d1b9",
+  "cases_passed": 18,
+  "reset_address_stages_checked": 7,
+  "mapped_netlist_sha256": "5a860035d7880c77ec96429ba67ebce60048f426ed25e2b11c8a767fa7ba6eca",
+  "native_primitive_nonblocking_scheduling": true,
+  "testbench_clock_period_ns": 10.0,
+  "delay_annotation_used": false,
+  "wrong_address_control_rejected": true,
+  "actual_compiled_memory_instances": 0,
+  "routed_timing_qualified": false,
+  "scope": "Mapped standard-cell functional DMA test with the common library Verilog model and inferred-memory compute reference. No SDF timing, compiled-memory integration or full-parent timing qualification.",
+  "full_paper_results_matched": false
+}

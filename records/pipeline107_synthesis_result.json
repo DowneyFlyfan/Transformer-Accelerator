@@ -1,0 +1,35 @@
+{
+  "state": "native_small_block_mapping_completed_pending_report_review",
+  "started_utc": "2026-11-09T02:17:24.848438+00:00",
+  "supervisor_pid": 593418,
+  "requested_maximum_cpu_workers": 18,
+  "full_paper_results_matched": false,
+  "scope": "Single staged-address block mapped against slow0.9V125C standard cells. No compiled-memory/full-parent integration, routed parasitics or routed timing acceptance.",
+  "elapsed_seconds": 49.053316519013606,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_pipeline107_synthesis.py": "37995c2f5690260f99d5ec2245a7a887c937b43ce2a2c6891ed7f1a20bc59665",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_pipelined_dma107.tcl": "2056d9deeb8fe0126b66dc96ab0fddbebed0f40aa0cd1cd0a8f2f85382d64026",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/pipeline105_functional_qualification.json": "e4202bb63f5edac7f06c31191d841b39469e40c893235f77a0dcf2ef7f085f43",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma_pipelined.sv": "47b81227e4dfcf9e54dce23492eb4e18608de95888d161dc7f9302ecbf632be6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "native_process_group": 593419,
+  "command": [
+    "genus",
+    "-no_gui",
+    "-batch",
+    "-log",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/native",
+    "-files",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_pipelined_dma107.tcl"
+  ],
+  "output_directory": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107",
+  "peak_combined_anonymous_bytes": 1279139840,
+  "native_elapsed_seconds": 49.01354419399286,
+  "native_exit_status": 0,
+  "console_sha256": "a94f3ed60362df3e4eabb29ddb9af18f28a1e07b606b9bb444fb30cec7bae1b7",
+  "output_netlist_sha256": "5a860035d7880c77ec96429ba67ebce60048f426ed25e2b11c8a767fa7ba6eca",
+  "routed_timing_qualified": false
+}

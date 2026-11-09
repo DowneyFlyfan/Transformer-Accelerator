@@ -1,0 +1,39 @@
+{
+  "state": "staged_address_slow_corner_mapping_report_qualified",
+  "observed_utc": "2026-11-09T02:21:22.180457+00:00",
+  "source_and_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/pipeline107_synthesis_result.json": "5769a74054af1bc7ae76305b0aceed69b62be832f1cb1f45d29c40bff14fb063",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/timing.rpt": "377b613fbf9d64fad63341cdfb13573957395be8f80b441f9fbbf36e2db1fde0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/area.rpt": "174eb4f69a440666099bb0ea386e405dbf73e5ae05386698cc04eab79dbda467",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/mapped_check.rpt": "b15762170478ed3f41910137f7466d261b59e2672021fae1320296a9b5c5ff02",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/timing_intent.rpt": "c67be4bbe4095a0f464e470142b21456f917d67e366616be4b5dccaffd6d7ea9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/netlist.v": "5a860035d7880c77ec96429ba67ebce60048f426ed25e2b11c8a767fa7ba6eca",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/constraints.sdc": "67d238275de36deba390c0b8a42e550ddc80cc764d304f24ea18719469629392"
+  },
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_pipeline107_synthesis.py": "37995c2f5690260f99d5ec2245a7a887c937b43ce2a2c6891ed7f1a20bc59665",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_pipelined_dma107.tcl": "2056d9deeb8fe0126b66dc96ab0fddbebed0f40aa0cd1cd0a8f2f85382d64026",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/pipeline105_functional_qualification.json": "e4202bb63f5edac7f06c31191d841b39469e40c893235f77a0dcf2ef7f085f43",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma_pipelined.sv": "47b81227e4dfcf9e54dce23492eb4e18608de95888d161dc7f9302ecbf632be6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "corner": "ssg0p9v125c",
+  "clock_period_ns": 1.72414,
+  "clock_uncertainty_ns": 0.05,
+  "input_output_delay_ns": 0.2,
+  "worst_reported_setup_slack_ns": 0.577,
+  "reported_paths_met": 10,
+  "mapped_cell_count": 2047,
+  "mapped_library_cell_area_um2": 4503.912,
+  "unconstrained_or_undriven_primary_input_exceptions": [
+    "rst_n"
+  ],
+  "reset_recovery_removal_timing_not_qualified": true,
+  "source_functional_qualification": "records/pipeline105_functional_qualification.json",
+  "mapped_netlist_functional_simulation_pending": true,
+  "physical_routing_and_whole_parent_timing_unqualified": true,
+  "full_paper_results_matched": false,
+  "scope": "Isolated small-block synthesis at slow standard-cell corner with estimated wire loading. These numbers are not comparable to whole-parent placed timing and do not establish routed or whole-chip closure."
+}

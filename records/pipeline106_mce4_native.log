@@ -1,0 +1,80 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 02:10:09 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_word_bank.sv
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_memory_compute.sv
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma_pipelined.sv
+	module worklib.tri_oracle_sparse_weight_dma_pipelined:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma_pipelined_tb.sv
+	module worklib.tri_oracle_sparse_weight_dma_pipelined_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy for Multi Core Simulation:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_sparse_weight_dma_pipelined_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_word_bank:sv <0x33d55fdf>
+			streams:   4, words:  2024
+		worklib.tri_oracle_word_bank:sv <0x2f2fd4c9>
+			streams:   3, words:  1746
+		worklib.tri_oracle_word_bank:sv <0x5e6be002>
+			streams:   3, words:  2132
+		worklib.tri_oracle_sparse_weight_dma_pipelined:sv <0x2b2c9744>
+			streams:  30, words: 21113
+		worklib.tri_oracle_sparse_weight_dma_pipelined_tb:sv <0x0977646f>
+			streams:  90, words: 68727
+		worklib.tri_oracle_pe_array:sv <0x383e06e4>
+			streams: 996, words: 296602
+		worklib.tri_oracle_memory_compute:sv <0x6bdad89f>
+			streams: 317, words: 71753
+mcgfe_cg(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+	Building instance specific data structures.
+	MC build: splitting started at Nov 09, 2026 at 02:10:11 UTC
+	MC build: splitting finished at Nov 09, 2026 at 02:10:12 UTC after 1 seconds with 1 splits
+	MC build: generate and save splits started (total of 1 splits, using thread count of 4) at Nov 09, 2026 at 02:10:12 UTC
+	MC build: generate and save splits finished at Nov 09, 2026 at 02:10:12 UTC after 0 seconds
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 104       5
+		Registers:               682     105
+		Scalar wires:            102       -
+		Expanded wires:        9,312     200
+		Vectored wires:          388       -
+		Always blocks:           585       9
+		Initial blocks:           42      42
+		Cont. assignments:       164      30
+		Pseudo assignments:      530       -
+		Process Clocks:          326       2
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_sparse_weight_dma_pipelined_tb:sv
+	MC build: split processing started (total of 1 splits, using thread count of 4) at Nov 09, 2026 at 02:10:12 UTC
+	MC build: split processing finished at Nov 09, 2026 at 02:10:13 UTC after 1 seconds
+	MC build: splits linking started at Nov 09, 2026 at 02:10:13 UTC
+	MC build: splits linking finished at Nov 09, 2026 at 02:10:13 UTC after 0 seconds
+Loading snapshot worklib.tri_oracle_sparse_weight_dma_pipelined_tb:sv .................... Done
+xmsim: *N,MC: Initializing Multi Core Simulation
+xmsim: *N,MC: MCE_HOME = /opt/cadence/XCELIUM2503/tools.lnx86/mce
+dmesg: read kernel buffer failed: Operation not permitted
+dmesg: read kernel buffer failed: Operation not permitted
+xmsim: *W,MC: NUMA error - Failed to allocate memory on requested node. This may result in performance degradation. (mbind failed) (Operation not permitted)
+	Node: 0
+	Node size (MB): 30949, of them free (MB): 15433
+xmsim: *W,MC: NUMA error - Failed to allocate memory on requested node. This may result in performance degradation. (mbind failed) (Operation not permitted)
+	Node: 0
+	Node size (MB): 30949, of them free (MB): 15433
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+PIPELINED_DMA_PASS cases=18 reset_stages=7
+Simulation complete via $finish(1) at time 25100 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma_pipelined_tb.sv:206         $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 02:10:15 UTC  (total: 00:00:06)

@@ -1,0 +1,155 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 01:59:19 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/predicted101_fullshape_wrong_sum_ds5orhe8/canonical_sources.sv
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_cluster_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_silu_gate:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_fabric_gated_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_strip_predictor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_channel_compactor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_dispatch:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_prediction_packet_stream:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_joined_instance_count:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x3e6117e0
+		tri_oracle_predicted_feedforward_frame_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_joined_instance_count:sv <0x26c9be14>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x277c4309>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x21abb77d>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x1444f4bc>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x15f109a1>
+			streams:   1, words:   102
+		worklib.tri_oracle_down_executor:sv <0x5b20931e>
+			streams:  58, words: 74769
+		worklib.tri_oracle_cluster_down_executor:sv <0x3c0ed416>
+			streams:  58, words: 53649
+		worklib.tri_oracle_sparse_weight_dma:sv <0x62e0205b>
+			streams:  22, words: 13642
+		worklib.tri_oracle_cluster_projection_executor:sv <0x3f6c2a5d>
+			streams:  39, words: 37525
+		worklib.tri_oracle_shared_cluster_executor:sv <0x6ca388c1>
+			streams:  72, words: 38396
+		worklib.tri_oracle_silu_gate:sv <0x1cf68a76>
+			streams:  13, words: 11997
+		worklib.tri_oracle_fabric_gated_executor:sv <0x2c0c28a9>
+			streams:  24, words: 31886
+		worklib.tri_oracle_gated_down_fabric:sv <0x1c5d2dca>
+			streams:  61, words: 29570
+		worklib.tri_oracle_channel_compactor:sv <0x6f151f8a>
+			streams:  18, words: 11982
+		worklib.tri_oracle_strip_predictor:sv <0x0d468024>
+			streams:  12, words: 31824
+		worklib.tri_oracle_predicted_dispatch:sv <0x60d1e20d>
+			streams:   5, words:  1927
+		worklib.tri_oracle_prediction_packet_stream:sv <0x32714d73>
+			streams:  35, words: 21743
+		worklib.tri_oracle_predicted_feedforward_frame:sv <0x0f06e3a4>
+			streams:  33, words: 11880
+		worklib.tri_oracle_shared_fabric:sv <0x23c319f8>
+			streams: 113, words: 82762
+		worklib.tri_oracle_pe_array:sv <0x55b4f5e0>
+			streams:  13, words: 10603
+		worklib.tri_oracle_sram_memory_compute:sv <0x487b9dbd>
+			streams:  40, words: 33100
+		worklib.tri_oracle_sram_compute_cluster:sv <0x1f6ac657>
+			streams:  28, words: 22904
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x427f0f0d>
+			streams:  22, words: 1472957
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x54ccc9e0>
+			streams:  22, words: 1489096
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x73477ba1>
+			streams:  21, words: 466844
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x2428195e>
+			streams: 444, words: 1981032
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x7e1849c0>
+			streams:  11, words: 25074
+		worklib.tri_oracle_predicted_feedforward_frame_tb:sv <0x35b2db94>
+			streams: 105, words: 76129
+		worklib.tri_oracle_feedforward_frame:sv <0x6f3971c9>
+			streams:  53, words: 43996
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                 1,521      24
+		Primitives:            200,720       2
+		Registers:             105,970   1,412
+		Scalar wires:            5,427       -
+		Expanded wires:        478,980   2,230
+		Vectored wires:          3,548       -
+		Always blocks:          95,986     481
+		Initial blocks:          1,483      63
+		Cont. assignments:       4,530      99
+		Pseudo assignments:      2,739       -
+		Compilation units:           1       1
+		Process Clocks:         10,496     242
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+Loading snapshot worklib.tri_oracle_predicted_feedforward_frame_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+dmesg: read kernel buffer failed: Operation not permitted
+dmesg: read kernel buffer failed: Operation not permitted
+JOINED_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600
+xmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_predicted_feedforward_frame_tb.sv,102): (time 63585 NS).
+tri_oracle_predicted_feedforward_frame_tb.scoreboard.unmblk1
+JOINED_HIDDEN_SUM row=0 got=16256 expected=16257
+Simulation terminated via $fatal(1) at time 63585 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_predicted_feedforward_frame_tb.sv:102           if(out_data[row*32+:32]!==32'(value)) $fatal(1,"JOINED_HIDDEN_SUM row=%0d got=%0d expected=%0d",seen+row,$signed(out_data[row*32+:32]),value);
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 01:59:28 UTC  (total: 00:00:09)
