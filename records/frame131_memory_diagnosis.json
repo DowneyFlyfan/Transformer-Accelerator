@@ -1,0 +1,18 @@
+{
+  "state": "hierarchical_generic_redundancy_pass_hit_allocation_ceiling",
+  "observed_utc": "2026-11-09T04:50:29.033138+00:00",
+  "evidence_sha256": {
+    "records/frame131_synthesis_result.json": "d14b699966d0d2652fb32dd7f492b49da4d545c06aef83613f481615ab2e066e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical131/console.log": "db32807b78c98b89c1c44d696b226468d8d8dad12592eb50c3271268d5b3e21b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical131/reused_controls_before.tsv.sorted": "9b3d00770da4d37f16b8bf39acfd471a9d9ec208b5e25dd1f75a09ae44fd5fb1",
+    "/opt/cadence/GENUS251/doc/genus_attref/syn_generic_effort.html": "f4515879640d64e74bf711ecd95d9151e38d8d2b9ef65848b0faffe600cb0501",
+    "/opt/cadence/GENUS251/doc/genus_user/Setting_Effort_Levels.html": "28cb4f101ca9e4fc0a673a703701951b45dfcf803d0463aea9027953569f6162"
+  },
+  "last_native_stage": "pre_rtlopt word-level redundancy removal, HLO_RR=2",
+  "initial25_mapped_control_inventories_verified": true,
+  "native_process_group_absent": true,
+  "no_generic_or_mapped_checkpoint": true,
+  "no_new_kernel_out_of_memory_events": true,
+  "next_action": "Supported syn_generic_effort low limits expensive initial RTL redundancy optimization. Keep syn_map_effort and syn_opt_effort medium, exact same hardware, libraries,580MHz clock and interface constraints. Lower generic optimization is a compile resource tradeoff, not a relaxation of final area/timing/functional acceptance.",
+  "full_paper_results_matched": false
+}

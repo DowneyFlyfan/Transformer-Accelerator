@@ -1,0 +1,46 @@
+{
+  "state": "hierarchical_wildcard_adapters_disconnected_in_mixed_genus_import",
+  "observed_utc": "2026-11-09T05:08:25.952169+00:00",
+  "affected_candidates": [
+    "frame131",
+    "frame134"
+  ],
+  "affected_initial_inventory_record": "records/frame131_initial_import_qualification.json",
+  "initial_cell_inventory_claim_remains_true_but_proves_no_functional_connection": true,
+  "root_cause": "Genus read_hdl-netlist child interfaces are left unconnected by the generated wildcard legacy-adapter instantiations in this mixed reader flow. Native ELABUTL124/123 messages were missed by the unresolved-reference-only gate.",
+  "corrective_action": "Explicit named connections, exactformal width/direction validation, fatal disconnected-port messages, cross-hierarchy undriven/multidriver checks and a complete mapped-controller boundary-bit ledger before any generic optimization.",
+  "evidence": {
+    "records/frame131_synthesis_result.json": {
+      "sha256": "d14b699966d0d2652fb32dd7f492b49da4d545c06aef83613f481615ab2e066e",
+      "console_sha256": "db32807b78c98b89c1c44d696b226468d8d8dad12592eb50c3271268d5b3e21b",
+      "disconnected_clock_and_reset_examples": [
+        "        : Unconnected input port 'clk' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical131/compiled_cluster_sources.sv' on line 27, column 59, hid = 0.",
+        "        : Unconnected input port 'rst_n' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical131/compiled_cluster_sources.sv' on line 27, column 59, hid = 0.",
+        "        : Unconnected input port 'clk' of instance 'implementation' of module 'tri_oracle_down_executor_staged' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical131/compiled_cluster_sources.sv' on line 73, column 52, hid = 0.",
+        "        : Unconnected input port 'rst_n' of instance 'implementation' of module 'tri_oracle_down_executor_staged' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical131/compiled_cluster_sources.sv' on line 73, column 52, hid = 0."
+      ]
+    },
+    "records/frame134_synthesis_result.json": {
+      "sha256": "1cc6b34c8150b2b4fc80375b4714ad9197f333e471189b2dae8bc479cf9b626b",
+      "console_sha256": "8ba99f451d56b8d9c14da4da20155907fb63131d4d3036369656381469a8e613",
+      "disconnected_clock_and_reset_examples": [
+        "        : Unconnected input port 'clk' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical134/compiled_cluster_sources.sv' on line 27, column 59, hid = 0.",
+        "        : Unconnected input port 'rst_n' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical134/compiled_cluster_sources.sv' on line 27, column 59, hid = 0.",
+        "        : Unconnected input port 'clk' of instance 'implementation' of module 'tri_oracle_down_executor_staged' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical134/compiled_cluster_sources.sv' on line 73, column 52, hid = 0.",
+        "        : Unconnected input port 'rst_n' of instance 'implementation' of module 'tri_oracle_down_executor_staged' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_hierarchical134/compiled_cluster_sources.sv' on line 73, column 52, hid = 0."
+      ]
+    },
+    "records/adapter137_binding_validation.json": {
+      "sha256": "e27580cc5a8c31d4183f8c25acb0f5c6c0cd1bfbc0d42da9782cf6342e7581a5"
+    },
+    "records/adapter138_binding_validation.json": {
+      "sha256": "53d9cf6835fd8a2174296cd086c80a9fb0b1fc370b35f9e6c2599dc224398f0a"
+    },
+    "records/adapter138_interface_negative_validation.json": {
+      "sha256": "bafaf23b5eff4dcec286c4dcdc753ace490d85f5546f1ae72ae3994175370cd7"
+    }
+  },
+  "source119_functional_proof_unaffected": true,
+  "no_successful_whole_parent_mapping_or_physical_import_claimed": true,
+  "full_paper_results_matched": false
+}

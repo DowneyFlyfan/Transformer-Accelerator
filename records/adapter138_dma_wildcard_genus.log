@@ -1,0 +1,223 @@
+TMPDIR is being set to /tmp/genus_temp_624441_eaaa46cc-c0e0-4fd1-aa20-7c5cfc59ef72_28d970bfe4b5_downeyflyfan_wAYbVT
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[05:03:04.014177] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+Options: -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/genus -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/import.tcl 
+Date:    Mon Nov 09 05:03:04 2026
+Host:    28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*1physical cpu*Intel(R) Core(TM) Ultra 7 265K 30720KB) (31692628KB)
+PID:     624441
+OS:      Rocky Linux 8.9 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[05:03:04.518640] Periodic Lic check successful
+[05:03:04.518654] Feature usage summary:
+[05:03:04.518654] Genus_Synthesis  
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/import.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/import.tcl
+@file(import.tcl) 1: set_db max_cpus_per_server 8
+  Setting attribute of root '/': 'max_cpus_per_server' = 8
+@file(import.tcl) 2: set_db fail_on_error_mesg true
+  Setting attribute of root '/': 'fail_on_error_mesg' = true
+@file(import.tcl) 3: set_db message:ELABUTL/ELABUTL-124 .severity Error
+  Setting attribute of message 'ELABUTL-124': 'severity' = Error
+@file(import.tcl) 4: set_db message:ELABUTL/ELABUTL-123 .severity Error
+  Setting attribute of message 'ELABUTL-123': 'severity' = Error
+@file(import.tcl) 5: read_libs {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib}
+
+  Message Summary for Library tcbn28hpcplusbwp12t40p140tt1v25c.lib:
+  *****************************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  *****************************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'tcbn28hpcplusbwp12t40p140tt1v25c.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD20BWP12T40P140'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD24BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD20BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD24BWP12T40P140'
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-9'.
+@file(import.tcl) 6: read_hdl -netlist {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/netlist.v}
+  Library has 633 usable logic and 385 usable sequential lib-cells.
+@file(import.tcl) 7: read_hdl -sv {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv}
+@file(import.tcl) 8: elaborate tri_oracle_sparse_weight_dma
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'tri_oracle_sparse_weight_dma' from file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'clk' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+        : Run check_design to check 'Undriven Port(s)/Pin(s)' section for all unconnected instance input ports. It is better to double confirm with designer these unconnected instance input port are expected. During syn_gen the unconnected instance input ports are controlled by attribute 'hdl_unconnected_value', the default value is 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'rst_n' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_valid' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_bank' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'done_ready' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_channels' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_count' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_base' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_features' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_start' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'in_length' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'req_ready' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'rsp_valid' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'rsp_last' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'rsp_error' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'rsp_data' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-124' default severity is 'Warning'
+Error   : Unconnected instance input port detected. [ELABUTL-124] [elaborate]
+        : Unconnected input port 'load_ready' of instance 'implementation' of module 'tri_oracle_sparse_weight_dma_pipelined' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 26, column 59, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-123' default severity is 'Warning'
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'in_ready' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 10, column 25, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-123' default severity is 'Warning'
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'done_valid' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 10, column 36, hid = 0.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'ELABUTL-123' default severity is 'Warning'
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'done_error' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 11, column 26, hid = 0.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'MESG-7'.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'req_valid' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 12, column 26, hid = 0.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'req_address' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 14, column 34, hid = 0.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'req_length' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 15, column 33, hid = 0.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'rsp_ready' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 17, column 26, hid = 0.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'load_valid' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 19, column 27, hid = 0.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'load_address' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 21, column 35, hid = 0.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'load_row_enable' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 22, column 39, hid = 0.
+Error   : Undriven module output port. [ELABUTL-123] [elaborate]
+        : Undriven bits of output port 'load_data' in module 'tri_oracle_sparse_weight_dma' in file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/adapter.sv' on line 23, column 34, hid = 0.
+Info    : Unable to elaborate the design. [ELAB-4]
+        : Module 'tri_oracle_sparse_weight_dma' contains errors and cannot be elaborated.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+#@ End verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/import.tcl
+1
+Encountered problems processing file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/dma_wildcard/import.tcl
+
+Lic Summary:
+[05:03:19.001376] Cdslmd servers: /opt/cadence/license/cds.lic
+[05:03:19.016528] Feature usage summary:
+[05:03:19.188687]  Genus_Synthesis 
+Normal exit.

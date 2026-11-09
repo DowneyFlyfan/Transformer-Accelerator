@@ -1,0 +1,488 @@
+{
+  "state": "guarded_explicit_named_gate_import_adapters_qualified",
+  "started_utc": "2026-11-09T05:02:18.941625+00:00",
+  "supervisor_pid": 624030,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_adapter138_validation.py": "b25b641b42d0f9f1c8a8fc6d033435c2ca0decbd708bb044474f0fca6366e135",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_named_controller_adapters137.py": "404adf7f54fcca1d90bf9a4fcea064ddba0a6079058af49f2e65f1939851553f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_checked_controller_adapters138.py": "36cf3b9043254d2cbf31fb112919fcaaaf3964b3cc5bba2b1e2a44125363b2f2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor.sv": "75cbdbe4301ce153a62dae41f9bd0e294d300b0916404598b762d424c04ee780",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_down_executor_staged_tb.sv": "1075a6d5b5927486c5be7a466c08e120a3cd2321a6f2fa57c7bf0f1d64069b92",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/netlist.v": "dc4f9a175c2d3874dcd603be24b60afcf38a9d1c3bdb383facdb1c6750d0b875",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma.sv": "495a5ad3e1a2f374ede38248df4fd2b13e35f4c6fac6c0309547924df7b33e52",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sparse_weight_dma_pipelined_tb.sv": "b986a249d15ff6892bce9fadb84c38378815e1fb3bb1056f84e0987f6985cc4e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_sparse_weight_dma_pipelined107/netlist.v": "5a860035d7880c77ec96429ba67ebce60048f426ed25e2b11c8a767fa7ba6eca",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_word_bank.sv": "a9661b4ea3bba7a0657273b9776da152fa660bd9e4a7fdc42819de062f8d966e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_memory_compute.sv": "b216d0b1c5650d6aea96e82aeed0a3d72f011985ef33f650df4a89c441b2ab44"
+  },
+  "steps": {
+    "down_wildcard": {
+      "state": "wildcard_disconnection_fatal_before_export",
+      "native_genus_exit_status": 0,
+      "genus_log_sha256": "90067810d8ceb9de36c7f4165e7281e91a20daa18bf9c5cee008acbc7501ef22",
+      "adapter_sha256": "997a497c8046a66f429d91192e8282f345dc932c190c5b4811a31355cdfb14ea"
+    },
+    "down_named": {
+      "native_genus_exit_status": 0,
+      "exported_netlist_sha256": "10aa9263014ab100413d924eb84710ec8903c8d3572045d728ceb97fdfa09b6c",
+      "adapter_sha256": "4e408f1449d936cc739f41258a3290453f9ac8817d3cf34278a64a493a35fafe",
+      "formal_port_names": [
+        "clk",
+        "rst_n",
+        "in_valid",
+        "in_last",
+        "in_accumulate",
+        "out_ready",
+        "in_tag",
+        "in_count",
+        "in_output_count",
+        "in_shift",
+        "in_channels",
+        "in_data",
+        "in_weight_base",
+        "in_dense_features",
+        "in_output_start",
+        "in_slot",
+        "in_ready",
+        "out_valid",
+        "out_last",
+        "out_error",
+        "out_tag",
+        "out_count",
+        "out_start",
+        "out_slot",
+        "out_data",
+        "req_valid",
+        "req_ready",
+        "req_address",
+        "req_length",
+        "rsp_valid",
+        "rsp_last",
+        "rsp_error",
+        "rsp_ready",
+        "rsp_data",
+        "core_load_valid",
+        "core_load_ready",
+        "core_load_error",
+        "core_load_kind",
+        "core_load_address",
+        "core_load_data",
+        "core_load_rows",
+        "core_cmd_valid",
+        "core_cmd_ready",
+        "core_cmd_weight",
+        "core_cmd_mask",
+        "core_cmd_activation",
+        "core_cmd_output",
+        "core_cmd_accumulate",
+        "core_done_valid",
+        "core_done_output",
+        "core_read_valid",
+        "core_read_output",
+        "core_result_valid",
+        "core_result_data"
+      ],
+      "formal_port_shapes": {
+        "clk": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rst_n": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "in_valid": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "in_last": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "in_accumulate": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "out_ready": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "in_tag": {
+          "direction": "input",
+          "width_bits": 32
+        },
+        "in_count": {
+          "direction": "input",
+          "width_bits": 6
+        },
+        "in_output_count": {
+          "direction": "input",
+          "width_bits": 6
+        },
+        "in_shift": {
+          "direction": "input",
+          "width_bits": 6
+        },
+        "in_channels": {
+          "direction": "input",
+          "width_bits": 512
+        },
+        "in_data": {
+          "direction": "input",
+          "width_bits": 1024
+        },
+        "in_weight_base": {
+          "direction": "input",
+          "width_bits": 64
+        },
+        "in_dense_features": {
+          "direction": "input",
+          "width_bits": 17
+        },
+        "in_output_start": {
+          "direction": "input",
+          "width_bits": 16
+        },
+        "in_slot": {
+          "direction": "input",
+          "width_bits": 4
+        },
+        "in_ready": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "out_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "out_last": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "out_error": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "out_tag": {
+          "direction": "output",
+          "width_bits": 32
+        },
+        "out_count": {
+          "direction": "output",
+          "width_bits": 6
+        },
+        "out_start": {
+          "direction": "output",
+          "width_bits": 16
+        },
+        "out_slot": {
+          "direction": "output",
+          "width_bits": 4
+        },
+        "out_data": {
+          "direction": "output",
+          "width_bits": 1024
+        },
+        "req_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "req_ready": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "req_address": {
+          "direction": "output",
+          "width_bits": 64
+        },
+        "req_length": {
+          "direction": "output",
+          "width_bits": 5
+        },
+        "rsp_valid": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rsp_last": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rsp_error": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rsp_ready": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "rsp_data": {
+          "direction": "input",
+          "width_bits": 64
+        },
+        "core_load_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "core_load_ready": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "core_load_error": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "core_load_kind": {
+          "direction": "output",
+          "width_bits": 2
+        },
+        "core_load_address": {
+          "direction": "output",
+          "width_bits": 10
+        },
+        "core_load_data": {
+          "direction": "output",
+          "width_bits": 2048
+        },
+        "core_load_rows": {
+          "direction": "output",
+          "width_bits": 32
+        },
+        "core_cmd_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "core_cmd_ready": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "core_cmd_weight": {
+          "direction": "output",
+          "width_bits": 5
+        },
+        "core_cmd_mask": {
+          "direction": "output",
+          "width_bits": 5
+        },
+        "core_cmd_activation": {
+          "direction": "output",
+          "width_bits": 10
+        },
+        "core_cmd_output": {
+          "direction": "output",
+          "width_bits": 4
+        },
+        "core_cmd_accumulate": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "core_done_valid": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "core_done_output": {
+          "direction": "input",
+          "width_bits": 4
+        },
+        "core_read_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "core_read_output": {
+          "direction": "output",
+          "width_bits": 4
+        },
+        "core_result_valid": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "core_result_data": {
+          "direction": "input",
+          "width_bits": 1024
+        }
+      },
+      "generated_adapter": "`timescale 1ns/1ps\nmodule tri_oracle_down_executor (\n    input wire clk,rst_n,in_valid,in_last,in_accumulate,out_ready,\n    input wire [31:0] in_tag,\n    input wire [5:0] in_count,in_output_count,in_shift,\n    input wire [511:0] in_channels,\n    input wire [1023:0] in_data,\n    input wire [63:0] in_weight_base,\n    input wire [16:0] in_dense_features,\n    input wire [15:0] in_output_start,\n    input wire [3:0] in_slot,\n    output wire in_ready,out_valid,out_last,out_error,\n    output wire [31:0] out_tag,\n    output wire [5:0] out_count,\n    output wire [15:0] out_start,\n    output wire [3:0] out_slot,\n    output wire [1023:0] out_data,\n    output wire req_valid,\n    input wire req_ready,\n    output wire [63:0] req_address,\n    output wire [4:0] req_length,\n    input wire rsp_valid,rsp_last,rsp_error,\n    output wire rsp_ready,\n    input wire [63:0] rsp_data,\n    output wire core_load_valid,\n    input wire core_load_ready,core_load_error,\n    output wire [1:0] core_load_kind,\n    output wire [9:0] core_load_address,\n    output wire [2047:0] core_load_data,\n    output wire [31:0] core_load_rows,\n    output wire core_cmd_valid,\n    input wire core_cmd_ready,\n    output wire [4:0] core_cmd_weight,core_cmd_mask,\n    output wire [9:0] core_cmd_activation,\n    output wire [3:0] core_cmd_output,\n    output wire core_cmd_accumulate,\n    input wire core_done_valid,\n    input wire [3:0] core_done_output,\n    output wire core_read_valid,\n    output wire [3:0] core_read_output,\n    input wire core_result_valid,\n    input wire [1023:0] core_result_data\n);\n\n    tri_oracle_down_executor_staged implementation (\n        .clk(clk),\n        .rst_n(rst_n),\n        .in_valid(in_valid),\n        .in_last(in_last),\n        .in_accumulate(in_accumulate),\n        .out_ready(out_ready),\n        .in_tag(in_tag),\n        .in_count(in_count),\n        .in_output_count(in_output_count),\n        .in_shift(in_shift),\n        .in_channels(in_channels),\n        .in_data(in_data),\n        .in_weight_base(in_weight_base),\n        .in_dense_features(in_dense_features),\n        .in_output_start(in_output_start),\n        .in_slot(in_slot),\n        .in_ready(in_ready),\n        .out_valid(out_valid),\n        .out_last(out_last),\n        .out_error(out_error),\n        .out_tag(out_tag),\n        .out_count(out_count),\n        .out_start(out_start),\n        .out_slot(out_slot),\n        .out_data(out_data),\n        .req_valid(req_valid),\n        .req_ready(req_ready),\n        .req_address(req_address),\n        .req_length(req_length),\n        .rsp_valid(rsp_valid),\n        .rsp_last(rsp_last),\n        .rsp_error(rsp_error),\n        .rsp_ready(rsp_ready),\n        .rsp_data(rsp_data),\n        .core_load_valid(core_load_valid),\n        .core_load_ready(core_load_ready),\n        .core_load_error(core_load_error),\n        .core_load_kind(core_load_kind),\n        .core_load_address(core_load_address),\n        .core_load_data(core_load_data),\n        .core_load_rows(core_load_rows),\n        .core_cmd_valid(core_cmd_valid),\n        .core_cmd_ready(core_cmd_ready),\n        .core_cmd_weight(core_cmd_weight),\n        .core_cmd_mask(core_cmd_mask),\n        .core_cmd_activation(core_cmd_activation),\n        .core_cmd_output(core_cmd_output),\n        .core_cmd_accumulate(core_cmd_accumulate),\n        .core_done_valid(core_done_valid),\n        .core_done_output(core_done_output),\n        .core_read_valid(core_read_valid),\n        .core_read_output(core_read_output),\n        .core_result_valid(core_result_valid),\n        .core_result_data(core_result_data)\n    );\nendmodule\n",
+      "generated_bench_sha256": "87dc4c2c61fe537d9d2dc3a23e369a562f0d4d6dee411b515b932f35ca6b2587",
+      "genus_log_sha256": "8283f4bee8ff5c9c8e17ceebc00d639fa81914ec229a596d66d939b73cf27d1e",
+      "boundary_ledger_sha256": "d74d274953512615308d2e18d19565a980c9a5a26ca59152cc559478b5c23e00",
+      "connected_boundary_bits": 6075,
+      "expected_disconnected_diagnostic": false,
+      "native_simulation_exit_status": 0,
+      "native_simulation_log_sha256": "328361ba24318b300ce0e170ad520fcf62cd68533a0545e7829f2a1ad10ea649",
+      "state": "explicit_exported_wrapper_functionally_passed"
+    },
+    "dma_wildcard": {
+      "state": "wildcard_disconnection_fatal_before_export",
+      "native_genus_exit_status": 0,
+      "genus_log_sha256": "facdb49bba5bcdb3cc7be874607a5e27a91dee7d78288a0236793bb31921aeec",
+      "adapter_sha256": "b5baddcf474f21605d9cd67aeacbdfc6955a96fe9f50351227aac9840a90b6ed"
+    },
+    "dma_named": {
+      "native_genus_exit_status": 0,
+      "exported_netlist_sha256": "82cb17683e8e136205beead30e9c88a39a6175c1d847b62ec10e8c52a41b3a16",
+      "adapter_sha256": "08ac5bb1f0fbe90f3d96f65a8c781dc4a188468d03bc43cb2c40150d308e33df",
+      "formal_port_names": [
+        "clk",
+        "rst_n",
+        "in_valid",
+        "in_bank",
+        "done_ready",
+        "in_channels",
+        "in_count",
+        "in_base",
+        "in_features",
+        "in_start",
+        "in_length",
+        "in_ready",
+        "done_valid",
+        "done_error",
+        "req_valid",
+        "req_ready",
+        "req_address",
+        "req_length",
+        "rsp_valid",
+        "rsp_last",
+        "rsp_error",
+        "rsp_ready",
+        "rsp_data",
+        "load_valid",
+        "load_ready",
+        "load_address",
+        "load_row_enable",
+        "load_data"
+      ],
+      "formal_port_shapes": {
+        "clk": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rst_n": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "in_valid": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "in_bank": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "done_ready": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "in_channels": {
+          "direction": "input",
+          "width_bits": 512
+        },
+        "in_count": {
+          "direction": "input",
+          "width_bits": 6
+        },
+        "in_base": {
+          "direction": "input",
+          "width_bits": 64
+        },
+        "in_features": {
+          "direction": "input",
+          "width_bits": 10
+        },
+        "in_start": {
+          "direction": "input",
+          "width_bits": 9
+        },
+        "in_length": {
+          "direction": "input",
+          "width_bits": 5
+        },
+        "in_ready": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "done_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "done_error": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "req_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "req_ready": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "req_address": {
+          "direction": "output",
+          "width_bits": 64
+        },
+        "req_length": {
+          "direction": "output",
+          "width_bits": 5
+        },
+        "rsp_valid": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rsp_last": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rsp_error": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "rsp_ready": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "rsp_data": {
+          "direction": "input",
+          "width_bits": 64
+        },
+        "load_valid": {
+          "direction": "output",
+          "width_bits": 1
+        },
+        "load_ready": {
+          "direction": "input",
+          "width_bits": 1
+        },
+        "load_address": {
+          "direction": "output",
+          "width_bits": 5
+        },
+        "load_row_enable": {
+          "direction": "output",
+          "width_bits": 32
+        },
+        "load_data": {
+          "direction": "output",
+          "width_bits": 2048
+        }
+      },
+      "generated_adapter": "`timescale 1ns/1ps\nmodule tri_oracle_sparse_weight_dma (\n    input wire clk,rst_n,in_valid,in_bank,done_ready,\n    input wire [511:0] in_channels,\n    input wire [5:0] in_count,\n    input wire [63:0] in_base,\n    input wire [9:0] in_features,\n    input wire [8:0] in_start,\n    input wire [4:0] in_length,\n    output wire in_ready,done_valid,\n    output reg done_error,\n    output wire req_valid,\n    input wire req_ready,\n    output reg [63:0] req_address,\n    output wire [4:0] req_length,\n    input wire rsp_valid,rsp_last,rsp_error,\n    output wire rsp_ready,\n    input wire [63:0] rsp_data,\n    output wire load_valid,\n    input wire load_ready,\n    output wire [4:0] load_address,\n    output wire [31:0] load_row_enable,\n    output wire [2047:0] load_data\n);\n\n    tri_oracle_sparse_weight_dma_pipelined implementation (\n        .clk(clk),\n        .rst_n(rst_n),\n        .in_valid(in_valid),\n        .in_bank(in_bank),\n        .done_ready(done_ready),\n        .in_channels(in_channels),\n        .in_count(in_count),\n        .in_base(in_base),\n        .in_features(in_features),\n        .in_start(in_start),\n        .in_length(in_length),\n        .in_ready(in_ready),\n        .done_valid(done_valid),\n        .done_error(done_error),\n        .req_valid(req_valid),\n        .req_ready(req_ready),\n        .req_address(req_address),\n        .req_length(req_length),\n        .rsp_valid(rsp_valid),\n        .rsp_last(rsp_last),\n        .rsp_error(rsp_error),\n        .rsp_ready(rsp_ready),\n        .rsp_data(rsp_data),\n        .load_valid(load_valid),\n        .load_ready(load_ready),\n        .load_address(load_address),\n        .load_row_enable(load_row_enable),\n        .load_data(load_data)\n    );\nendmodule\n",
+      "generated_bench_sha256": "8aa0c574f43bad690d31f357605d1dde5cca22e879b5b428b04546cb0d8f1ea6",
+      "genus_log_sha256": "50f9bde79e75c2c0acbdd8abe5a77d0151f90e01aa075da87ab3a9d3dd68d733",
+      "boundary_ledger_sha256": "66d4b7c9b984b4e8d38e42e40b84a3be8d80c0271dc8582dba641725850b6da9",
+      "connected_boundary_bits": 2840,
+      "expected_disconnected_diagnostic": false,
+      "native_simulation_exit_status": 0,
+      "native_simulation_log_sha256": "4568e23de373445187e41654711ad637e16d5200e78eabad2e0086841320ac6d",
+      "state": "explicit_exported_wrapper_functionally_passed"
+    }
+  },
+  "full_paper_results_matched": false,
+  "scope": "Genus read_hdl-netlist mixed with a legacy SystemVerilog adapter, then Xcelium simulates the Genus-exported wrapper against the unchanged34/18-case controller scoreboards. Individual inferred-memory compute references; no full-system or physical-timing acceptance.",
+  "elapsed_seconds": 83.73428591998527,
+  "native_export_and_functional_positive_cases": 52,
+  "wildcard_negatives_rejected_before_export": 2,
+  "temporary_build_removed": true
+}

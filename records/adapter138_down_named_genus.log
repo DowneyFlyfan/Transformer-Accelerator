@@ -1,0 +1,176 @@
+TMPDIR is being set to /tmp/genus_temp_624216_c05f93a4-b462-410c-823e-a97a72de724a_28d970bfe4b5_downeyflyfan_hJFvLO
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[05:02:42.014185] Configured Lic search path (25.01-s002): /opt/cadence/license/cds.lic
+
+Version: 25.10-p002_1, built Thu Apr 17 08:35:38 PDT 2025
+Options: -no_gui -batch -log /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/genus -files /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/import.tcl 
+Date:    Mon Nov 09 05:02:42 2026
+Host:    28d970bfe4b5 (x86_64 w/Linux 7.0.0-42-generic) (20cores*20cpus*1physical cpu*Intel(R) Core(TM) Ultra 7 265K 30720KB) (31692628KB)
+PID:     624216
+OS:      Rocky Linux 8.9 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[05:02:42.054138] Periodic Lic check successful
+[05:02:42.578437] Feature usage summary:
+[05:02:42.578437] Genus_Synthesis  
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (2 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/import.tcl
+#@ Begin verbose source /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/import.tcl
+@file(import.tcl) 1: set_db max_cpus_per_server 8
+  Setting attribute of root '/': 'max_cpus_per_server' = 8
+@file(import.tcl) 2: set_db fail_on_error_mesg true
+  Setting attribute of root '/': 'fail_on_error_mesg' = true
+@file(import.tcl) 3: set_db message:ELABUTL/ELABUTL-124 .severity Error
+  Setting attribute of message 'ELABUTL-124': 'severity' = Error
+@file(import.tcl) 4: set_db message:ELABUTL/ELABUTL-123 .severity Error
+  Setting attribute of message 'ELABUTL-123': 'severity' = Error
+@file(import.tcl) 5: read_libs {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib}
+
+  Message Summary for Library tcbn28hpcplusbwp12t40p140tt1v25c.lib:
+  *****************************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  *****************************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'tcbn28hpcplusbwp12t40p140tt1v25c.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP12T40P140' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD20BWP12T40P140'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD24BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD20BWP12T40P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD24BWP12T40P140'
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAPBWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP12T40P140' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-9'.
+@file(import.tcl) 6: read_hdl -netlist {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_down_executor_staged116/netlist.v}
+  Library has 633 usable logic and 385 usable sequential lib-cells.
+@file(import.tcl) 7: read_hdl -sv {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/adapter.sv}
+@file(import.tcl) 8: elaborate tri_oracle_down_executor
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'tri_oracle_down_executor' from file '/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/adapter.sv'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'tri_oracle_down_executor'.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: tri_oracle_down_executor, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: tri_oracle_down_executor, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: tri_oracle_down_executor, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: tri_oracle_down_executor, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(import.tcl) 9: set units [get_db hinsts -if {.module.name == tri_oracle_down_executor_staged}]
+@file(import.tcl) 10: if {[llength $units]!=1} {error BAD_ADAPTER_IMPORT}
+@file(import.tcl) 11: set_db $units .preserve true
+  Setting attribute of hinst 'implementation': 'preserve' = true
+@file(import.tcl) 12: check_design -unresolved > {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/unresolved.rpt}
+
+@file(import.tcl) 13: if {[check_design -undriven -cross_hier -status]} {error ADAPTER_UNDRIVEN}
+@file(import.tcl) 14: if {[check_design -multiple_driver -cross_hier -status]} {error ADAPTER_MULTIDRIVER}
+@file(import.tcl) 15: set bits [get_db $units .hpins]
+@file(import.tcl) 16: if {[llength $bits]!=6075} {error ADAPTER_WIDTH}
+@file(import.tcl) 17: set ledger [open {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/boundary.tsv} w]
+@file(import.tcl) 18: foreach pin $bits {
+    set net [get_db $pin .hnet]
+    if {[llength $net]!=1} {error ADAPTER_DISCONNECTED_HPIN}
+    puts $ledger "[get_db $pin .name]\t[get_db $net .name]"
+}
+@file(import.tcl) 23: close $ledger
+@file(import.tcl) 24: write_hdl > {/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/adapter138_xpt1tgv9/down_named/exported.v}
+@file(import.tcl) 25: puts ADAPTER138_EXPORT_FINISHED
+ADAPTER138_EXPORT_FINISHED
+@file(import.tcl) 26: exit
+
+Lic Summary:
+[05:02:58.001392] Cdslmd servers: /opt/cadence/license/cds.lic
+[05:02:58.016544] Feature usage summary:
+[05:02:58.188703]  Genus_Synthesis 
+Normal exit.
