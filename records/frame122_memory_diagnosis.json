@@ -1,0 +1,24 @@
+{
+  "state": "controlled_synthesis_allocation_ceiling_reached",
+  "observed_utc": "2026-11-09T04:06:36.328716+00:00",
+  "producer_result_sha256": "aa438db43a00e7d361b07dbf9b10cb0fc9fcb12d16a95d262472408abe23f116",
+  "producer_console_sha256": "a200dbedf7f5bbaa0d02b31ba3d002f87e2d5827f083dc615d0ab0ab967c59d9",
+  "native_process_group_absent": true,
+  "last_recorded_combined_anonymous_bytes": 12861534208,
+  "trigger": "MemoryPressurePolicy hard anonymous allocation ceiling12GiB; SIGTERM cleanup returned-15.",
+  "kernel_out_of_memory_events_unchanged_since_accepted79": true,
+  "current_kernel_memory_events": {
+    "low": 0,
+    "high": 0,
+    "max": 693,
+    "oom": 1,
+    "oom_kill": 1,
+    "oom_group_kill": 0,
+    "sock_throttled": 17
+  },
+  "staged_control_count_before_generic": 25,
+  "preserved_macro_count_before_generic": 60,
+  "no_generic_or_mapped_checkpoint_available": true,
+  "retry": "Separately identified124 run, identical HDL/TCL/libs/target constraints,16GiB combined anonymous ceiling,5GiB host reserve,24GiB Docker hard limit. No other heavy native jobs are running.",
+  "full_paper_results_matched": false
+}

@@ -1,0 +1,30 @@
+{
+  "state": "current_frame_floorplan_helper_hierarchy_controls_passed",
+  "observed_utc": "2026-11-09T04:00:22.888895+00:00",
+  "helper_sha256": "4ee049ef3937553922fb197782a8b3036c55242a283302976de843f899267041",
+  "test_source": "\nset mode [lindex $argv 0]\nset output [lindex $argv 1]\nset helper [lindex $argv 2]\nset cores {};set banks {};set locations [dict create]\nfor {set cluster 0} {$cluster<5} {incr cluster} {\n    for {set core 0} {$core<4} {incr core} {\n        lappend cores [format {numeric/engine/backend/clusters[%d].cluster/cores[%d]} $cluster $core]\n    }\n    for {set bank 0} {$bank<8} {incr bank} {\n        lappend banks [format {numeric/engine/backend/clusters[%d].cluster/aggregate_memory[%d]} $cluster $bank]\n    }\n}\nproc get_db {object args} {\n    global cores banks locations mode\n    if {$object eq \"insts\"} {\n        if {[string first tri_oracle_sram_memory_compute [lindex $args 1]]>=0} {return $cores}\n        if {[string first TS6N28HPCPSVTA16X128M2F [lindex $args 1]]>=0} {return $banks}\n        error UNKNOWN_FILTER\n    }\n    set core [expr {[lsearch -exact $cores $object]>=0}]\n    switch -- [lindex $args 0] {\n        .name {\n            if {$mode eq \"old_hierarchy\"} {return [string map {\".cluster/\" \".unit/cluster/implementation/\"} $object]}\n            if {$mode eq \"duplicate\" && $object eq [lindex $cores end]} {return [lindex $cores 0]}\n            return $object\n        }\n        .pins {\n            if {$mode eq \"bad_interface\" && $object eq [lindex $cores 0]} {return [lrepeat 3157 pin]}\n            return [lrepeat [expr {$core?3158:268}] pin]\n        }\n        .base_cell.name {return [expr {$core?\"tri_oracle_sram_memory_compute\":\"TS6N28HPCPSVTA16X128M2F\"}]}\n        .location {return [dict get $locations $object]}\n        .orient {return r0}\n        .place_status {return fixed}\n        default {error UNKNOWN_PROPERTY}\n    }\n}\nproc place_inst {instance x y orientation fixed} {\n    global locations\n    if {$orientation ne \"r0\" || $fixed ne \"-fixed\" || [dict exists $locations $instance]} {error BAD_PLACEMENT}\n    dict set locations $instance [list $x $y]\n}\nsource $helper\nif {[catch {tri_oracle_place_staged_frame123_macros $output} detail]} {\n    puts stderr $detail\n    exit 1\n}\nif {[dict size $locations]!=60} {error INCOMPLETE_PLACEMENT}\nputs FRAME123_HIERARCHY_ACCEPTED_60_MACROS\n",
+  "results": {
+    "current": {
+      "exit_status": 0,
+      "stdout": "FRAME123_HIERARCHY_ACCEPTED_60_MACROS\n",
+      "stderr": ""
+    },
+    "old_hierarchy": {
+      "exit_status": 1,
+      "stdout": "",
+      "stderr": "PREDICTED_FLOORPLAN_INVENTORY: unexpected core interface or instance: numeric/engine/backend/clusters[0].unit/cluster/implementation/cores[0]\n"
+    },
+    "duplicate": {
+      "exit_status": 1,
+      "stdout": "",
+      "stderr": "PREDICTED_FLOORPLAN_INVENTORY: duplicated cluster/core index: numeric/engine/backend/clusters[0].cluster/cores[0]\n"
+    },
+    "bad_interface": {
+      "exit_status": 1,
+      "stdout": "",
+      "stderr": "PREDICTED_FLOORPLAN_INVENTORY: unexpected core interface or instance: numeric/engine/backend/clusters[0].cluster/cores[0]\n"
+    }
+  },
+  "temporary_build_removed": true,
+  "scope": "Tcl command-mock checks current60 path indices/interfaces and fixed placement inventory; stale hierarchy, duplicate index and malformed interface are rejected. Actual native Innovus import remains pending."
+}
