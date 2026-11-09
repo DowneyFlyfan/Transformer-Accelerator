@@ -1,0 +1,63 @@
+{
+  "state": "maximum_active_row_guard_equivalence_simulations_passed",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_row_guard177_validation.py": "99b2b2dc14c6c0dc863626c1b94335133e25e472623508d6123f527c7fb31355",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard.sv": "6901762bbc836f5040166850525e31a30af680a624e418c2ffeea59d34c23bec",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard_tb.sv": "daf97f8d23ecdd9a5f192254c6b143ef182b81135968e42a30854514f3ad126c",
+    "/usr/local/bin/iverilog": "174ca679a5949e5ba756696de6b6c49dcdf48b2e10b091fc1cdce405b5de3301",
+    "/usr/local/bin/vvp": "f3aff39fc7d1f6602aa91fedf5eebd325307e40a01f9bc22e3b0253272505b31",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "elapsed_seconds": 23.2268764229957,
+  "steps": [
+    {
+      "label": "icarus_positive",
+      "rows": 1,
+      "native_exit_status": 0,
+      "checks": 19258,
+      "console": "ROW_GUARD_PASS rows=1 checks=19258\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard_tb.sv:100: $finish called at 19258000 (1ps)\n"
+    },
+    {
+      "label": "icarus_positive",
+      "rows": 32,
+      "native_exit_status": 0,
+      "checks": 20932,
+      "console": "ROW_GUARD_PASS rows=32 checks=20932\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard_tb.sv:100: $finish called at 20932000 (1ps)\n"
+    },
+    {
+      "label": "icarus_positive",
+      "rows": 160,
+      "native_exit_status": 0,
+      "checks": 26116,
+      "console": "ROW_GUARD_PASS rows=160 checks=26116\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard_tb.sv:100: $finish called at 26116000 (1ps)\n"
+    },
+    {
+      "label": "wrong_first_row_rejected",
+      "rows": 160,
+      "native_exit_status": 1,
+      "checks": null,
+      "console": "FATAL: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard_tb.sv:39: ROW_GUARD_MISMATCH rows=160 count=2 features=1 base=ffffffffffffffd9 got=0 expected=1 independent=1 check=49\n       Time: 50000  Scope: tri_oracle_row_address_guard_tb.check\n"
+    },
+    {
+      "label": "xcelium_positive",
+      "rows": 160,
+      "native_exit_status": 0,
+      "checks": 26116,
+      "console": "TOOL:\txrun(64)\t25.03-s001: Started on Nov 09, 2026 at 09:20:40 UTC\nxrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.\nfile: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard.sv\n\tmodule worklib.tri_oracle_row_address_guard:sv\n\t\terrors: 0, warnings: 0\nfile: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard_tb.sv\n\tmodule worklib.tri_oracle_row_address_guard_tb:sv\n\t\terrors: 0, warnings: 0\n\tElaborating the design hierarchy:\n\t\tCaching library 'worklib' ....... Done\n\tTop level design units:\n\t\ttri_oracle_row_address_guard_tb\n\tBuilding instance overlay tables: .................... Done\n\tGenerating native compiled code:\n\t\tworklib.tri_oracle_row_address_guard:sv <0x698ed76a>\n\t\t\tstreams:   1, words:  2505\n\t\tworklib.tri_oracle_row_address_guard_tb:sv <0x1c74b969>\n\t\t\tstreams:   9, words: 18967\n\tBuilding instance specific data structures.\n\tLoading native compiled code:     .................... Done\n\tDesign hierarchy summary:\n\t\t                 Instances  Unique\n\t\tModules:                 2       2\n\t\tRegisters:              29      29\n\t\tScalar wires:            2       -\n\t\tVectored wires:          4       -\n\t\tAlways blocks:           1       1\n\t\tInitial blocks:          3       3\n\t\tPseudo assignments:      5       -\n\t\tSimulation timescale:  1ps\n\tWriting initial simulation snapshot: worklib.tri_oracle_row_address_guard_tb:sv\nLoading snapshot worklib.tri_oracle_row_address_guard_tb:sv .................... Done\nxcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc\nxcelium> run\nROW_GUARD_PASS rows=160 checks=26116\nSimulation complete via $finish(1) at time 26116 NS + 0\n/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_row_address_guard_tb.sv:100     $finish;\nxcelium> exit\nTOOL:\txrun(64)\t25.03-s001: Exiting on Nov 09, 2026 at 09:20:41 UTC  (total: 00:00:01)\n"
+    }
+  ],
+  "total_positive_checks": 92422,
+  "scope": "Known binary packet inputs; original row-wise 65-bit guard and an independent distance-to-limit calculation. All representable count values, all feature values, overflow thresholds, inactive IDs, zero stride, empty count, and deterministic randomized full-width IDs. Not a formal proof.",
+  "mathematical_argument": [
+    "For 10-bit features, p=8*features lies between0 and8184.",
+    "For unsigned16-bit row ID r, (r+1)*p is less than2^29.",
+    "The 64-bit base plus this product fits65 bits; positive p therefore has no pre-subtraction wrap.",
+    "For p>0, base+(r+1)*p-1 is monotone in r, so its maximum is at the largest active ID.",
+    "For p=0, every active row produces the same65-bit value, including base0 underflow.",
+    "Count0 suppresses the maximum check exactly as the original guarded loop.",
+    "IDs outside the represented active rows are masked to0; out-of-range counts retain all original loop rows."
+  ],
+  "temporary_build_removed": true,
+  "full_paper_results_matched": false
+}

@@ -1,0 +1,16 @@
+{
+  "state": "console_progress_not_a_reliable_live_cycle_measure",
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/rowguard188_progress_probe.json": "4fcfd3244055205bdbae40f965d085c10bc87b7986bd2e7a231002d45b1bba68",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/rowguard188_progress_native.log": "459cd7273c9413842b1c03218f2a77728725c4a8e5ca0dc9b1ad0354941e0ed1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/rowguard182_full_frame_result.json": "0c271e71ce0077e5119fd22bd3df5e57473c2de4d11c83753a130471437ed968",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/rowguard182_positive_native.log": "40bee4ac109fe8a460077385691ba05d33b7b76c72f558541cbdfdd6f4ef52e8"
+  },
+  "native_interrupt_time_ns": 487120,
+  "case_passes_flushed_on_interrupt": 2,
+  "full_observed_run_cases_passed": 12,
+  "full_observed_run_outputs_checked": 4420,
+  "interpretation": "Missing and partially written console messages were treated as a stall too early. An interrupt probe flushed two original case passes and showed advancing simulated time; the full observed run subsequently passed. Earlier174/178 runs were intentionally stopped and are not functional-failure evidence. No hardware loop or simulator compiler defect was established.",
+  "fixed_point_oracle_unchanged": true,
+  "full_paper_results_matched": false
+}

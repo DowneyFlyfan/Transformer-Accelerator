@@ -1,0 +1,459 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 09:31:58 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rowguard182_s9rjykb3/canonical_sources.sv
+	module worklib.tri_oracle_row_address_guard:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor_staged:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma_pipelined:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_cluster_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_silu_gate:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_fabric_gated_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_strip_predictor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_channel_compactor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_dispatch:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_prediction_packet_stream:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_joined_instance_count:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_guard182_observer:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x34f8f3bd
+		tri_oracle_predicted_feedforward_frame_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_guard182_observer:sv <0x1c60d01a>
+			streams:   4, words:  3925
+		worklib.tri_oracle_joined_instance_count:sv <0x0513180f>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x04a6e512>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x02711166>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x379e52a7>
+			streams:   1, words:   102
+		worklib.tri_oracle_joined_instance_count:sv <0x362bafba>
+			streams:   1, words:   102
+		worklib.tri_oracle_down_executor_staged:sv <0x140c7f47>
+			streams:  68, words: 81183
+		worklib.tri_oracle_down_executor:sv <0x37d16179>
+			streams:   1, words:   575
+		worklib.tri_oracle_cluster_down_executor:sv <0x536b2dbe>
+			streams:  68, words: 57073
+		worklib.tri_oracle_sparse_weight_dma_pipelined:sv <0x57ba0c72>
+			streams:  25, words: 14928
+		worklib.tri_oracle_sparse_weight_dma:sv <0x0f52a95c>
+			streams:   3, words:  1403
+		worklib.tri_oracle_row_address_guard:sv <0x16f19e46>
+			streams:   1, words:  2403
+		worklib.tri_oracle_cluster_projection_executor:sv <0x2b30f3e4>
+			streams:  41, words: 38515
+		worklib.tri_oracle_shared_cluster_executor:sv <0x6abe6a8c>
+			streams:  72, words: 38491
+		worklib.tri_oracle_row_address_guard:sv <0x74d14cba>
+			streams:   1, words:  2505
+		worklib.tri_oracle_silu_gate:sv <0x44d9a8aa>
+			streams:  13, words: 11997
+		worklib.tri_oracle_fabric_gated_executor:sv <0x327c04cc>
+			streams:  24, words: 31886
+		worklib.tri_oracle_gated_down_fabric:sv <0x0ab9bc15>
+			streams:  61, words: 29570
+		worklib.tri_oracle_channel_compactor:sv <0x1c250d87>
+			streams:  18, words: 11982
+		worklib.tri_oracle_strip_predictor:sv <0x4c6e8f1f>
+			streams:  12, words: 31824
+		worklib.tri_oracle_predicted_dispatch:sv <0x655c8a39>
+			streams:   5, words:  1927
+		worklib.tri_oracle_prediction_packet_stream:sv <0x20c45dba>
+			streams:  35, words: 21743
+		worklib.tri_oracle_predicted_feedforward_frame:sv <0x4d773a16>
+			streams:  33, words: 11880
+		worklib.tri_oracle_shared_fabric:sv <0x506669bd>
+			streams: 114, words: 81763
+		worklib.tri_oracle_pe_array:sv <0x3335f4d7>
+			streams:  13, words: 10603
+		worklib.tri_oracle_sram_memory_compute:sv <0x085c3040>
+			streams:  40, words: 33100
+		worklib.tri_oracle_sram_compute_cluster:sv <0x734263fe>
+			streams:  28, words: 22904
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x72566748>
+			streams:  22, words: 1472957
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x64e5a1a5>
+			streams:  22, words: 1489096
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x5e655b62>
+			streams:  21, words: 466844
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x14d81c5c>
+			streams: 444, words: 1981032
+		worklib.tri_oracle_predicted_feedforward_frame_tb:sv <0x00bea0b3>
+			streams: 105, words: 76072
+		worklib.tri_oracle_feedforward_frame:sv <0x7fac8149>
+			streams:  53, words: 43996
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x51629c33>
+			streams:  11, words: 25074
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                 1,553      28
+		Primitives:            200,720       2
+		Registers:             106,309   1,443
+		Scalar wires:            5,444       -
+		Expanded wires:        478,980   2,230
+		Vectored wires:          3,548       -
+		Always blocks:          95,993     483
+		Initial blocks:          1,511      68
+		Cont. assignments:       4,515      96
+		Pseudo assignments:      2,810       -
+		Compilation units:           1       1
+		Process Clocks:         10,496     247
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+Loading snapshot worklib.tri_oracle_predicted_feedforward_frame_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+dmesg: read kernel buffer failed: Operation not permitted
+dmesg: read kernel buffer failed: Operation not permitted
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[0]
+JOINED_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600
+GUARD182_TIME time=10000.00 ns cycle=997 completed=0 seen=0
+GUARD182_TIME time=20000.00 ns cycle=1997 completed=0 seen=0
+GUARD182_TIME time=30000.00 ns cycle=2997 completed=0 seen=0
+GUARD182_TIME time=40000.00 ns cycle=3997 completed=0 seen=0
+GUARD182_TIME time=50000.00 ns cycle=4997 completed=0 seen=0
+GUARD182_TIME time=60000.00 ns cycle=5997 completed=0 seen=0
+GUARD182_TIME time=70000.00 ns cycle=6997 completed=0 seen=0
+GUARD182_OUTPUT time=75910.00 ns ready=0 last=1 count=129
+GUARD182_OUTPUT time=75920.00 ns ready=0 last=1 count=129
+GUARD182_OUTPUT time=75930.00 ns ready=1 last=1 count=129
+JOINED_CASE_PASS case=1 outputs=129 error=0 requests=1230
+GUARD182_TIME time=80000.00 ns cycle=7997 completed=1 seen=0
+GUARD182_TIME time=90000.00 ns cycle=8997 completed=1 seen=0
+GUARD182_TIME time=100000.00 ns cycle=9997 completed=1 seen=0
+GUARD182_TIME time=110000.00 ns cycle=10997 completed=1 seen=0
+GUARD182_TIME time=120000.00 ns cycle=11997 completed=1 seen=0
+GUARD182_TIME time=130000.00 ns cycle=12997 completed=1 seen=0
+GUARD182_TIME time=140000.00 ns cycle=13997 completed=1 seen=0
+GUARD182_TIME time=150000.00 ns cycle=14997 completed=1 seen=0
+GUARD182_TIME time=160000.00 ns cycle=15997 completed=1 seen=0
+GUARD182_TIME time=170000.00 ns cycle=16997 completed=1 seen=0
+GUARD182_TIME time=180000.00 ns cycle=17997 completed=1 seen=0
+GUARD182_TIME time=190000.00 ns cycle=18997 completed=1 seen=0
+GUARD182_TIME time=200000.00 ns cycle=19997 completed=1 seen=0
+GUARD182_OUTPUT time=349520.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=349530.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=350760.00 ns ready=1 last=1 count=1
+JOINED_CASE_PASS case=2 outputs=161 error=0 requests=5052
+GUARD182_TIME time=360000.00 ns cycle=35997 completed=2 seen=0
+GUARD182_OUTPUT time=438520.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=500840.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=563150.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=625450.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=687760.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=750080.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=812390.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=874690.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=937000.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=937010.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=999320.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=999330.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=1061650.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=1123960.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=1123970.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=1174000.00 ns ready=1 last=1 count=128
+JOINED_CASE_PASS case=3 outputs=2048 error=0 requests=16582
+GUARD182_TIME time=1180000.00 ns cycle=117997 completed=3 seen=0
+GUARD182_OUTPUT time=24240880.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24240890.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24265120.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265130.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265140.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265150.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265160.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265170.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265180.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265190.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265200.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24265210.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24290200.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290210.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290220.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290230.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290240.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290250.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290260.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290270.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290280.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24290290.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24315280.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315290.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315300.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315310.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315320.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315330.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315340.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315350.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315360.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24315370.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24340360.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340370.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340380.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340390.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340400.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340410.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340420.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340430.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340440.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24340450.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24365440.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365450.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365460.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365470.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365480.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365490.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365500.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365510.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365520.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24365530.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24390520.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390530.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390540.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390550.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390560.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390570.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390580.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390590.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390600.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24390610.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24415600.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415610.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415620.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415630.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415640.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415650.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415660.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415670.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415680.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24415690.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24440680.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440690.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440700.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440710.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440720.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440730.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440740.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440750.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440760.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24440770.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24465760.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465770.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465780.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465790.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465800.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465810.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465820.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465830.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465840.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24465850.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24490840.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490850.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490860.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490870.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490880.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490890.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490900.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490910.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490920.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24490930.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24515920.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24515930.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24515940.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24515950.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24515960.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24515970.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24515980.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24515990.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24516000.00 ns ready=0 last=0 count=160
+GUARD182_OUTPUT time=24516010.00 ns ready=1 last=0 count=160
+GUARD182_OUTPUT time=24537270.00 ns ready=0 last=1 count=128
+GUARD182_OUTPUT time=24537280.00 ns ready=0 last=1 count=128
+GUARD182_OUTPUT time=24537290.00 ns ready=1 last=1 count=128
+JOINED_CASE_PASS case=4 outputs=2048 error=0 requests=405856
+GUARD182_OUTPUT time=24538570.00 ns ready=0 last=1 count=1
+GUARD182_OUTPUT time=24538580.00 ns ready=0 last=1 count=1
+GUARD182_OUTPUT time=24538590.00 ns ready=0 last=1 count=1
+GUARD182_OUTPUT time=24538600.00 ns ready=0 last=1 count=1
+GUARD182_OUTPUT time=24538610.00 ns ready=0 last=1 count=1
+GUARD182_OUTPUT time=24538620.00 ns ready=1 last=1 count=1
+JOINED_CASE_PASS case=5 outputs=1 error=0 requests=0
+GUARD182_OUTPUT time=24538670.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538680.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538690.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538700.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538710.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538720.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538730.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538740.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538750.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538760.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538770.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538780.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538790.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538800.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538810.00 ns ready=1 last=1 count=0
+JOINED_CASE_PASS case=6 outputs=0 error=1 requests=0
+GUARD182_OUTPUT time=24538940.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538950.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538960.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538970.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538980.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24538990.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539000.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539010.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539020.00 ns ready=0 last=1 count=0
+JOINED_CASE_PASS case=7 outputs=0 error=1 requests=0
+GUARD182_OUTPUT time=24539070.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539080.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539090.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539100.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539110.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539120.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539130.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539140.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539150.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539160.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539170.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539180.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539190.00 ns ready=1 last=1 count=0
+JOINED_CASE_PASS case=8 outputs=0 error=1 requests=0
+GUARD182_OUTPUT time=24539340.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539350.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539360.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539370.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539380.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539390.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539400.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539410.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24539420.00 ns ready=0 last=1 count=0
+JOINED_CASE_PASS case=9 outputs=0 error=1 requests=0
+GUARD182_TIME time=24540000.00 ns cycle=2453997 completed=9 seen=0
+GUARD182_OUTPUT time=24756330.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756340.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756350.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756360.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756370.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756380.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756390.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756400.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24756410.00 ns ready=0 last=1 count=0
+JOINED_CASE_PASS case=10 outputs=0 error=1 requests=4210
+GUARD182_TIME time=24760000.00 ns cycle=2475997 completed=10 seen=0
+GUARD182_OUTPUT time=24769680.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769690.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769700.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769710.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769720.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769730.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769740.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769750.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769760.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769770.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769780.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769790.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769800.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769810.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769820.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769830.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769840.00 ns ready=0 last=1 count=0
+GUARD182_OUTPUT time=24769850.00 ns ready=1 last=1 count=0
+JOINED_CASE_PASS case=11 outputs=0 error=1 requests=101
+GUARD182_TIME time=24770000.00 ns cycle=2476997 completed=11 seen=0
+GUARD182_OUTPUT time=24828410.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828420.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828430.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828440.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828450.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828460.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828470.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828480.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828490.00 ns ready=0 last=1 count=33
+GUARD182_OUTPUT time=24828500.00 ns ready=1 last=1 count=33
+JOINED_CASE_PASS case=12 outputs=33 error=0 requests=660
+JOINED_PASS cases=12 hidden_outputs=4420 success_stalls=122 error_stalls=67
+Simulation complete via $finish(1) at time 24828510 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_predicted_feedforward_frame_tb.sv:182     $display("JOINED_PASS cases=%0d hidden_outputs=%0d success_stalls=%0d error_stalls=%0d",completed,hidden_checked,success_stalls,error_stalls);$finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 09:41:31 UTC  (total: 00:09:33)

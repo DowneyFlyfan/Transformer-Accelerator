@@ -1,0 +1,189 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 09:42:18 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rowguard188_b73nfvqc/canonical_sources.sv
+	module worklib.tri_oracle_row_address_guard:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_pe_array:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_memory_compute:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sram_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_compute_cluster:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_down_executor_staged:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_down_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_cluster_projection_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_sparse_weight_dma_pipelined:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_cluster_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_word_bank:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_shared_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_silu_gate:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_fabric_gated_executor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_gated_down_fabric:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_strip_predictor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_channel_compactor:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_dispatch:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_prediction_packet_stream:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame:sv
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA32X128M2FW:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F:v
+		errors: 0, warnings: 0
+	module worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X64M4F:v
+		errors: 0, warnings: 0
+	module worklib.TS5N28HPCPSVTA512X16M4F:v
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+		errors: 0, warnings: 0
+	module worklib.tri_oracle_joined_instance_count:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		$unit_0x34f8f3bd
+		tri_oracle_predicted_feedforward_frame_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_joined_instance_count:sv <0x0dc1a9e9>
+			streams:   1, words:   157
+		worklib.tri_oracle_joined_instance_count:sv <0x0c7454f4>
+			streams:   1, words:   157
+		worklib.tri_oracle_joined_instance_count:sv <0x0aa3a080>
+			streams:   1, words:   157
+		worklib.tri_oracle_joined_instance_count:sv <0x3f4ce341>
+			streams:   1, words:   157
+		worklib.tri_oracle_joined_instance_count:sv <0x3ef91e5c>
+			streams:   1, words:   157
+		worklib.tri_oracle_down_executor_staged:sv <0x008e8306>
+			streams:  68, words: 87746
+		worklib.tri_oracle_down_executor:sv <0x45066fb3>
+			streams:   1, words:   575
+		worklib.tri_oracle_cluster_down_executor:sv <0x5c4a4475>
+			streams:  68, words: 65320
+		worklib.tri_oracle_sparse_weight_dma_pipelined:sv <0x0d566860>
+			streams:  25, words: 16948
+		worklib.tri_oracle_sparse_weight_dma:sv <0x1535213e>
+			streams:   3, words:  1506
+		worklib.tri_oracle_row_address_guard:sv <0x1d8655a8>
+			streams:   1, words:  3042
+		worklib.tri_oracle_cluster_projection_executor:sv <0x4aa51251>
+			streams:  41, words: 42817
+		worklib.tri_oracle_shared_cluster_executor:sv <0x2628276f>
+			streams:  72, words: 44189
+		worklib.tri_oracle_row_address_guard:sv <0x7fa68754>
+			streams:   1, words:  3222
+		worklib.tri_oracle_silu_gate:sv <0x3f697d59>
+			streams:  13, words: 12611
+		worklib.tri_oracle_fabric_gated_executor:sv <0x6fa8c4c1>
+			streams:  24, words: 35019
+		worklib.tri_oracle_gated_down_fabric:sv <0x17542546>
+			streams:  61, words: 33038
+		worklib.tri_oracle_channel_compactor:sv <0x7ff2f983>
+			streams:  18, words: 14748
+		worklib.tri_oracle_strip_predictor:sv <0x7f9370ab>
+			streams:  12, words: 55112
+		worklib.tri_oracle_predicted_dispatch:sv <0x741391ab>
+			streams:   5, words:  2215
+		worklib.tri_oracle_prediction_packet_stream:sv <0x6fa15586>
+			streams:  36, words: 24861
+		worklib.tri_oracle_predicted_feedforward_frame:sv <0x04ba0403>
+			streams:  33, words: 13061
+		worklib.tri_oracle_shared_fabric:sv <0x78a21ca0>
+			streams: 114, words: 91866
+		worklib.tri_oracle_pe_array:sv <0x5cdfacd9>
+			streams:  13, words: 10783
+		worklib.tri_oracle_sram_memory_compute:sv <0x09c93023>
+			streams:  40, words: 38507
+		worklib.tri_oracle_sram_compute_cluster:sv <0x472994cc>
+			streams:  28, words: 24686
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x55372c4a>
+			streams:  26, words: 1527158
+		worklib.TS5N28HPCPSVTA32X128M2FW:v <0x4384eaa7>
+			streams:  26, words: 1543297
+		worklib.TS5N28HPCPSVTA512X64M4F:v <0x424f96f1>
+			streams:  24, words: 501105
+		worklib.TS6N28HPCPSVTA16X128M2F:v <0x5dec834d>
+			streams: 447, words: 2083658
+		worklib.TS6N28HPCPSVTA16X128M2F_Int_Array:v <0x78364b5d>
+			streams:  11, words: 31726
+		worklib.tri_oracle_predicted_feedforward_frame_tb:sv <0x4b9290b5>
+			streams: 105, words: 82700
+		worklib.tri_oracle_feedforward_frame:sv <0x361ec222>
+			streams:  53, words: 48659
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                 1,552      27
+		Primitives:            200,720       2
+		Registers:             107,107   1,441
+		Scalar wires:            5,845       -
+		Expanded wires:        478,980   2,230
+		Vectored wires:          3,552       -
+		Always blocks:          95,992     482
+		Initial blocks:          1,508      65
+		Cont. assignments:       5,875      96
+		Pseudo assignments:      3,211       -
+		Compilation units:           1       1
+		Process Clocks:         10,896     248
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_predicted_feedforward_frame_tb:sv
+Loading snapshot worklib.tri_oracle_predicted_feedforward_frame_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[0].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[1].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[2].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[3].control.down.engines[0]
+JOINED_STAGED_DMA_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.projection.transfer
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[3]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[2]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[1]
+JOINED_STAGED_DOWN_BOUND tri_oracle_predicted_feedforward_frame_tb.dut.numeric.engine.backend.clusters[4].control.down.engines[0]
+JOINED_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600
+JOINED_CASE_PASS case=1 outputs=129 error=0 requests=1230
+JOINED_CASE_PASS case=2 outputs=161 error=0 requests=5052
+Simulation interrupted at 487120 NS + 1
+xcelium> TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 09:42:37 UTC  (total: 00:00:19)
