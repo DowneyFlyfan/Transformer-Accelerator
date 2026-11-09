@@ -1,0 +1,27 @@
+{
+  "state": "native_physical_view_preservation_audit_and_fault_rejection_qualified",
+  "verified_utc": "2026-11-09T16:31:34.076096+00:00",
+  "source_records_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/preservation232_diagnosis_result.json": "f379305197e2a4951646e4d6b37b382082d57bcd9ab20192637a04691ed6f76d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/preservation234_native_control.json": "5d6f1134c636502053c174202af5972344872d257b2179311d8a82291fff0474",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/native233_error_controls.json": "4e1e9fcd73f405c89936b00225c9fb5c43daae40e10114a1ca645ed9bb13d3ae"
+  },
+  "public_native_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/physical233_native_preservation.tsv": "a6d0cdf5d6349b6db9382d6119cb8a7ca53e67cfa0befefb41d5529bb80e343e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/physical233_native_audit.log": "c1e156b97fc06dd66915f87767725dfe61b306f7d36232526509d0da9d7b5fc1"
+  },
+  "original_targets": 86,
+  "physical_macros": 60,
+  "mapped_controller_hierarchies": 26,
+  "all_targets_exact_and_protected": true,
+  "wrong_hierarchical_flag_rejected_before_and_after_timing_mode_reload": true,
+  "explicit_restore_confined_to_tiny_control": true,
+  "selector_negative_controls": 5,
+  "native_error_classifier_clean_positive_logs": 2,
+  "native_error_classifier_actual_failure_logs": 3,
+  "temporary_control_build_removed": true,
+  "full_parent_uniquification_qualified": false,
+  "timing_closed": false,
+  "full_paper_results_matched": false,
+  "scope": "Read-only physical-view audit of the accepted202 placed database plus native tiny hierarchical negative controls. Timing-view projected core hierarchies are not used as physical protection proof. This qualification does not establish native uniqueness, optimization, routing or paper metrics."
+}

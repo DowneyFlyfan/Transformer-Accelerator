@@ -40,6 +40,16 @@ engine reports signal-interference analysis disabled. See
 `records/frame202_physical_milestone.json`, its bound reports and
 `records/frame202_placement_result.json`.
 
+A separate native audit verifies all 86 original preservation targets in the
+physical placement view: sixty macros and 26 mapped-controller hierarchies.
+All resolve to exact names with active protection. The expanded core hierarchies
+in the timing view are distinct database objects and are not used for that proof.
+A small native fault control rejects a deliberately cleared hierarchical flag
+before and after timing-mode reload, explicitly restores it only inside the
+control, and rejects five invalid selectors. Temporary control files were
+removed. See `records/physical233_preservation_qualification.json`. This audit
+does not qualify module uniquification, timing repair or routing.
+
 Earlier backend milestone: one shared backend executes projection, gate/up
 nonlinearity and sparse down accumulation using exactly twenty compute cores
 and 600 compiled static random-access memory (SRAM) instances. The joint

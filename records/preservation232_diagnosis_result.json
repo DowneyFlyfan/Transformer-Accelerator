@@ -1,0 +1,43 @@
+{
+  "state": "full_model_preservation_properties_collected",
+  "supervisor_pid": 695651,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/frame202_placement_result.json": "fc12820b0304543921287cdae1568351c7f5af54b40b60abc73f9c9d3d004fbf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_preservation232_diagnosis.py": "57c09e86cc2a414a3f86b034cfdbbb17fe813e7191080262f65d7ddc0d0a914c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_preservation232_diagnosis.tcl": "051ff6f5f5e13398e3b3984739567834f696de3a7c3ac4037396c2504778a686",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_row_guard173_variants.py": "fd18b84b54d4338144cb4123381fcb5add99a709d6393e97f764db08c97af815",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_row_guard175_synthesis.py": "a1bc9fcd21f26ecd50290e4883d66c2709f0d257f4c07d41f5266b6de850d487",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_hierarchy_fingerprint.py": "a795aec471812d9dc9c665310b70fdda465c020cfef3fa71cda9c9bff77bab82",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_artifact_fingerprint.py": "148c3a8e04caebf987d99da39936c5f75794a5a50ed01a289cc06214c1cb1d2c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_memory_pressure_guard.py": "53bdf681b65dc3d20d0b36c3e314eac2e4a4ecd717fd2d11549f096d787461f9",
+    "/opt/cadence/bin/innovus": "3858d1df849d3e6f8bfe41ef755f11ffebb60eb095795272b7246acd0f07f62e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/tri_oracle_predicted_feedforward_finish213/constraints.sdc": "a2f3d65870b5d49eddc16406e79bf021bf3359c2539f2ab56d1730a0b7e469f4"
+  },
+  "started_utc": "2026-11-09T16:26:19.867106+00:00",
+  "scope": "Read-only full-model preservation property diagnosis; no optimization or parent/paper qualification.",
+  "parent_timing_closed": false,
+  "full_paper_results_matched": false,
+  "elapsed_seconds": 54.415769059967715,
+  "native_process_group": 695652,
+  "output_directory": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_preservation232_diagnosis",
+  "command": [
+    "innovus",
+    "-stylus",
+    "-no_gui",
+    "-batch",
+    "-log",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_preservation232_diagnosis/native",
+    "-files",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_preservation232_diagnosis.tcl"
+  ],
+  "peak_combined_anonymous_bytes": 5295091712,
+  "native_elapsed_seconds": 50.09651779400883,
+  "native_exit_status": 0,
+  "native_error_diagnostics": [],
+  "native_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_preservation232_diagnosis/console.log": "c1e156b97fc06dd66915f87767725dfe61b306f7d36232526509d0da9d7b5fc1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_preservation232_diagnosis/raw_preservation.tsv": "a6d0cdf5d6349b6db9382d6119cb8a7ca53e67cfa0befefb41d5529bb80e343e"
+  },
+  "source_database_unchanged": true
+}
