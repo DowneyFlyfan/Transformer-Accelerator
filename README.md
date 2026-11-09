@@ -62,10 +62,23 @@ full-model reload. All 3,158 physical pin rows, parent wiring/constants, geometr
 and exact leaf protection values are retained. Each process corner keeps its
 own clock-source latency and matches its original exported constraints; the
 complete restoration excludes the approximate boundary library. The round trip
-took 90.64 seconds. Scaling this protocol to twenty cores and performing parent
-electrical optimization remain pending. The boundary model is guidance only,
+took 90.64 seconds. Twenty-core full-model restoration after optimization and parent
+electrical repair remain pending. The boundary model is guidance only,
 with no timing-equivalence claim. See `records/fresh239_import_qualification.json`
 and `records/fresh241_roundtrip_qualification.json`.
+
+The twenty-core guidance import and its independent reload now pass in 191.59
+seconds: all 673,622 parent leaves, 63,160 external core pin rows, original wiring
+and direct constants, design/hierarchy/module protection flags, sixty macro
+poses and placement halos, input/output pin poses and registered-reset ancestry
+are retained. The typical-corner constraints remain exact. A separate native
+fault control rejects loss of inherited design protection while all previously
+captured leaf and graph data remain unchanged, then restores the exact flag;
+its temporary build is removed. Guidance contains twenty abstract cores and
+forty aggregate memory macros. Restoration of all 600 full memory models,
+all original timing corners and post-optimization function remains required.
+See `records/frame242_guidance_qualification.json` and
+`records/design243_native_control.json`.
 
 Earlier backend milestone: one shared backend executes projection, gate/up
 nonlinearity and sparse down accumulation using exactly twenty compute cores
