@@ -1,0 +1,15 @@
+{
+  "state": "native_point_geometry_decoding_and_replay_passed",
+  "verified_utc": "2026-11-09T22:00:33.228414+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_point272.tcl": "3ae55cd722ecc3767ee8dc32e7e1025a139e60afdee707df91b1ea6a03ca45e4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_point272.tcl": "7c8195674cf4c41fbdb67d980f9885961a88377a9addbd9cc1ac2f12b4b65e51",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller272_driver_coordinates.tsv": "fd8fec7338cc0d90b99000b641564b2842ec678df02c6f4c0691d800f0b9b3d6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller269_plan_result.json": "adbdfc5db9cf9d40eb8c5414a930f2e7ebf9f6bdf179419213afe7a0302db82e"
+  },
+  "cases_passed": 72,
+  "native_driver_coordinates_replayed": 61,
+  "red_unmodified_point_list_failed_cases": 71,
+  "stdout": "POINT_TESTS_PASS cases=72 native=61\n",
+  "scope": "Decode the actual one-point native-list representation before arithmetic; accept finite flat or one-point nested geometry and reject missing,extra,multiple,nonnumeric or nonfinite coordinates. No circuit or timing claim."
+}

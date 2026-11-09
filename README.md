@@ -1,6 +1,6 @@
 # Tri-Oracle reproduction in progress
 
-Current verified milestone: the physically repaired prepared prediction/feed-forward
+Latest mapped functional milestone (controller260): the repaired prepared prediction/feed-forward
 parent passes all twelve functional cases on twenty compute cores and 600
 compiled static random-access memory (SRAM) models. The test checks 4,420 exact
 hidden outputs, successful and erroneous backpressure, memory faults and reset
@@ -28,28 +28,40 @@ whole-model accuracy or the paper's latency and energy. See
 `records/real190_full_functional_qualification.json`.
 
 The prepared parent has legal geometric placement in a 3.6-by-3.6-millimeter die.
-Generic electrical optimization and a targeted noninverting control tree now
-preserve all 1,889,420 original core cells and 600 memory models through a fresh
-full-model reload and an independent cold reload. The tree adds 43 buffers to
-one protected enable with 998 original loads. All 928,808 pre-tree physical parent
-leaves, including sixty fixed macros, retain their names, masters, placement,
-orientation and protection flags. Input/output pin poses, placement halos,
-registered-reset ancestry, hierarchy/module protection policies and all 86 direct
-preservation targets remain exact. The complete other signal graph, direct
-constants and all three original timing-constraint sets also remain exact.
+After the earlier 43-buffer tree, a second batch adds 1,989 noninverting buffers
+to 114 protected enable nets with 47,503 original loads. All 928,851 pre-batch
+physical parent leaves, including sixty fixed macros, retain their names,
+masters, positions, orientations and protection flags. The remaining signal
+graph, direct constants, input/output pin poses, placement halos, registered-reset
+ancestry and hierarchy/module protection policies also remain exact. An
+independent cold reload retains all 1,889,420 original core cells, 600 memory
+models, 86 preservation targets and all three original timing-constraint sets.
+This candidate has physical preservation evidence; its post-change mapped
+functional simulation remains pending.
 
-At the unchanged 1.72414-nanosecond period, fresh full-model diagnostics still
-fail: slow setup -95.267113 nanoseconds, typical setup -63.815323 nanoseconds and
-fast reset removal -0.089345 nanoseconds. Before the targeted tree, these were
--129.035797, -86.037094 and -0.032697 nanoseconds respectively. The former worst
-enable endpoint improves to -12.889022 nanoseconds at slow and -9.600838 at
-typical; another overloaded control net becomes the worst path. Fast reset
-removal worsens. These are pre-clock-tree, pre-route diagnostics with signal
-interference analysis disabled. Timing closure, clock distribution, power-grid
-construction and parent routing remain unfinished. No power or paper-performance
-matching follows from this milestone. See
-`records/controller261_physical_functional_qualification.json`, the published
-`controller260` timing reports and `records/controller261_publication.json`.
+At the unchanged 1.72414-nanosecond period, all three full-model timing diagnostics
+still fail: slow setup -84.404640 nanoseconds, typical setup -61.087677 nanoseconds,
+and fast reset removal -0.088138 nanoseconds. Before this batch they were
+-95.267113, -63.815323 and -0.089345 respectively. The old down-enable endpoint
+improves from -95.267113 to -19.501957 nanoseconds at slow. The new worst path
+runs from the gated controller's error register to an output-data register;
+two high-fanout net arcs contribute 80.534492 nanoseconds of its reported
+86.035294-nanosecond data path. These are pre-clock-tree, pre-route estimates
+with signal interference analysis disabled. Clock distribution, power delivery,
+parent routing, timing closure and paper-performance matching remain unfinished.
+See `records/controller268_physical_qualification.json` and the published
+`controller266` split-delay reports. The complete native metadata receipt is
+losslessly compressed in `records/controller266_tree_result.json.gz`; it contains
+hashes and results, not library or checkpoint data.
+
+A native diagnostic also exposed indexed-name serialization differences in 65 of 114
+physical driver lists. The name-list comparison preserves multiplicity and rejects
+changed, extra and missing names. Eight literal cases and 114 native pair replays
+pass. A separate geometry decoder passes 72 cases, including 61 actual native
+coordinates. It handles the one-point list returned by the physical database
+before coordinate arithmetic. Both fixes retain the original connection and
+preservation gates. See `records/controller265_names_validation.json` and
+`records/controller272_points_validation.json`.
 
 Earlier preparation independently verified module uniquification and guidance
 model import while retaining the original physical interfaces and protection

@@ -1,0 +1,17 @@
+{
+  "state": "indexed_name_comparison_regression_and_native_replay_passed",
+  "verified_utc": "2026-11-09T21:18:24.873781+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_name265_lists.tcl": "328004a968d712a520000f5a481f8bd6349ad5a5e55b5b5879d6ee91d991ce21",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_name265_lists.tcl": "6f34cb8b47e05efa0850b9e1efbc58dd08257321778c84da9c50b4c05121ce47",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller264_probe/name_observations.tsv": "cbe6cb42b750d9d90568a087d5e19811f49332b0f99b79694eea8c1beecd8ad3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller264_probe_result.json": "193e69cad00cea66215122ebbb04c0ff3e0ecedb1afe69b5f8a5c5171c82eb3f"
+  },
+  "unit_cases": 8,
+  "native_pairs": 114,
+  "raw_serialization_mismatches": 65,
+  "red_raw_string_comparison_failed_cases": 3,
+  "unit_stdout": "NAME_LIST_TESTS_PASS cases=8\n",
+  "native_replay_stdout": "NATIVE_NAME_CASES_PASS cases=114 raw_mismatches=65\n",
+  "scope": "Compare sorted name lists while preserving multiplicity. Different index, extra/duplicate/missing names remain rejected. All114 observed native driver lists retained;65 had different raw serialization. No circuit change or timing/function qualification."
+}

@@ -1,0 +1,124 @@
+{
+  "state": "control_enable_batch_physical_preservation_and_three_corners_qualified",
+  "verified_utc": "2026-11-09T21:55:43.140205+00:00",
+  "verification_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/qualify_tri_oracle_controller268_physical.py": "e5625f00a2453ca39c9b81529f41d8db843f89de39351d873a95f9cf00c9cae2"
+  },
+  "original_native_record_sha256": "22a64b72678ca5beebb5a261cc77f7fa290230bd7a3efab1e1be7df7c27bd73b",
+  "published_lossless_record": "records/controller266_tree_result.json.gz",
+  "published_lossless_record_sha256": "2e6069bc39331f2f4fc702c4b1e74352b9e49e9df5ea6a0014dc1cb5a8d46e10",
+  "decompressed_bytes_identical": true,
+  "source_and_native_evidence_hashes_checked": 1200,
+  "native_runs": {
+    "warm": {
+      "native_exit_status": 0,
+      "elapsed_seconds": 318.36045999400085,
+      "console_sha256": "3bbd18b9f40f925128d80848996249f483d69e45326c499f79a39d2bb76b3fb9"
+    },
+    "cold": {
+      "native_exit_status": 0,
+      "elapsed_seconds": 188.0400509329629,
+      "console_sha256": "3ab5de6eba5d3a1007fc47026e9489d585fa335ab849516400bd60f0445e33b7"
+    },
+    "corner_setup_slow": {
+      "native_exit_status": 0,
+      "elapsed_seconds": 301.5138291079784,
+      "console_sha256": "0cfde98a72482921eccf062525fed07c2440a5d9cf0c817cde614d46e4162d64"
+    },
+    "corner_setup_typ": {
+      "native_exit_status": 0,
+      "elapsed_seconds": 296.68568921799306,
+      "console_sha256": "2ca4f09adcc7b056d187b7715d44e1ce81907b4ad993bea283062a03299cfaed"
+    },
+    "corner_hold_fast": {
+      "native_exit_status": 0,
+      "elapsed_seconds": 366.06545610399917,
+      "console_sha256": "f0b15cebe25a6849c17ddb8070276b4f1caaa01c9889547ba22965e7413303a4"
+    }
+  },
+  "actual_cores": 20,
+  "actual_compiled_memories": 600,
+  "original_core_cells": 1889420,
+  "added_noninverting_buffers": 1989,
+  "original_enable_loads_buffered": 47503,
+  "parent_geometry_connections_flags_and_constraints_preserved": true,
+  "cold_reload_verified": true,
+  "corner_diagnostics": {
+    "setup_slow": {
+      "worst": {
+        "slack_ns": -84.40464,
+        "startpoint": "numeric/engine/gated/implementation/result_error_reg/CP",
+        "endpoint": "numeric/engine/out_data_reg[2975]/D"
+      },
+      "original_parent_worst": {
+        "slack_ns": -95.267113,
+        "startpoint": "numeric/engine/backend/is_down_reg/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/source_data_reg[177]/E"
+      },
+      "native_run": {
+        "native_exit_status": 0,
+        "elapsed_seconds": 301.5138291079784,
+        "console_sha256": "0cfde98a72482921eccf062525fed07c2440a5d9cf0c817cde614d46e4162d64"
+      },
+      "original_enable_endpoint": {
+        "slack_ns": -12.914234,
+        "startpoint": "numeric/state_reg[2]/CP",
+        "endpoint": "numeric/engine/gated/implementation/channels_reg[686]/E"
+      },
+      "original_down_enable_endpoint": {
+        "slack_ns": -19.501957,
+        "startpoint": "numeric/engine/backend/is_down_reg/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/source_data_reg[177]/E"
+      }
+    },
+    "setup_typ": {
+      "worst": {
+        "slack_ns": -61.087677,
+        "startpoint": "numeric/engine/gated/implementation/result_error_reg/CP",
+        "endpoint": "numeric/engine/out_data_reg[2975]/D"
+      },
+      "original_parent_worst": {
+        "slack_ns": -63.815323,
+        "startpoint": "numeric/engine/backend/is_down_reg/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/source_data_reg[177]/E"
+      },
+      "native_run": {
+        "native_exit_status": 0,
+        "elapsed_seconds": 296.68568921799306,
+        "console_sha256": "2ca4f09adcc7b056d187b7715d44e1ce81907b4ad993bea283062a03299cfaed"
+      },
+      "original_enable_endpoint": {
+        "slack_ns": -9.632104,
+        "startpoint": "numeric/state_reg[2]/CP",
+        "endpoint": "numeric/engine/gated/implementation/channels_reg[686]/E"
+      },
+      "original_down_enable_endpoint": {
+        "slack_ns": -14.893899,
+        "startpoint": "numeric/engine/backend/is_down_reg/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/source_data_reg[177]/E"
+      }
+    },
+    "hold_fast": {
+      "worst": {
+        "slack_ns": -0.088138,
+        "startpoint": "numeric/engine/backend/clusters[1].control/controller_reset_n_reg/CP",
+        "endpoint": "numeric/engine/backend/clusters[1].control/projection/transfer/implementation/row_index_reg[1]/CDN"
+      },
+      "original_parent_worst": {
+        "slack_ns": -0.089345,
+        "startpoint": "numeric/engine/backend/clusters[1].control/controller_reset_n_reg/CP",
+        "endpoint": "numeric/engine/backend/clusters[1].control/projection/transfer/implementation/row_index_reg[1]/CDN"
+      },
+      "native_run": {
+        "native_exit_status": 0,
+        "elapsed_seconds": 366.06545610399917,
+        "console_sha256": "f0b15cebe25a6849c17ddb8070276b4f1caaa01c9889547ba22965e7413303a4"
+      }
+    }
+  },
+  "post_change_mapped_functional_simulation_qualified": false,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "scope": "Completed266buffer-tree experiment. Original physical parent, fullcore models, memory catalog and3timingconstraints retained. All3corners stillfail. The latest mapped12casepass remains260/261 ancestor; no new functional simulation is claimed. The compressed metadata receipt reproduces every original native JSON byte, includes no libraries or checkpoints, and leaves the original local receipt unchanged."
+}

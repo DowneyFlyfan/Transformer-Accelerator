@@ -1,0 +1,1444 @@
+{
+  "state": "protected_enable_batch_plan_prepared_native_execution_pending",
+  "prepared_utc": "2026-11-09T21:00:53.073769+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller260_tree/warm/after_nets.tsv": "0ecb7b926b43cb93cf8e599c72cf5f084733203ce56c0d91f0bd62103816ef06",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller260_tree/warm/after_cells.tsv": "031de7beef6ac8588e631ad57758f4dbe5c35992a1022fcd404fcdc23c46e9c7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller260_tree/warm/after_preservation.tsv": "f862d5e0ae5d06ad73619d6139d5f6584e26d6fe6b97a379161bde79870f1a78",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/controller260_tree_result.json": "57a223da6485362cb59175051943e601bbc717d8194e231a18c93b3c319d17a6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_controller262_plan.py": "cd196af803daae0540a1782e19be727112992a914beec920020c2e3cbb7df415",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_controller262_plan.py": "b784777cf9465eba810dc5cad749250c30679b8320e775c52c4aecf78858b724",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_controller255_tree.py": "4eb657a42f5e9265a44a889076e7563831a153d85e12eb02d6bae356ac92735a"
+  },
+  "generated_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller262_plan/plan.tsv": "cbfb63c1d1436927c5edbbc8ab87d44df1015e01e202bc160b89ceb8374b9cff",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller262_plan/trees.tsv": "84e3592ab58ff8df5877da4f094ab9949d9cffba6eb9904d95c62003fd9fdad3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller262_plan/sinks.tsv": "1d45f4f8e45dfe55889569dacd215dd4de189650941e8037cddd5c7df04df8b9"
+  },
+  "output_directory": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_controller262_plan",
+  "total_trees": 114,
+  "total_buffers": 1989,
+  "total_original_loads": 47503,
+  "trees": [
+    {
+      "tree": 0,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[0]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 1,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[0]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 2,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[0]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 3,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[1]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 4,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[1]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 5,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[1]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 6,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[2]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 7,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[2]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 8,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[2]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 9,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[3]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 10,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[3]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 11,
+      "controller": "numeric/engine/backend/clusters[0].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/down/engines[3]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 12,
+      "controller": "numeric/engine/backend/clusters[0].control/projection/transfer/implementation",
+      "driver": "numeric/engine/backend/clusters[0].control/projection/transfer/implementation/hi_fo_buf10643/ZN",
+      "driver_master": "INVD12BWP12T40P140",
+      "loads": 577,
+      "buffers": 27,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 576,
+        "A2": 1
+      }
+    },
+    {
+      "tree": 13,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[0]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 14,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[0]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 15,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[0]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 16,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[1]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 17,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[1]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 18,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[1]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 19,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[2]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 20,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[2]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 21,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[2]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 22,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[3]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 23,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[3]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 24,
+      "controller": "numeric/engine/backend/clusters[1].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/down/engines[3]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 25,
+      "controller": "numeric/engine/backend/clusters[1].control/projection/transfer/implementation",
+      "driver": "numeric/engine/backend/clusters[1].control/projection/transfer/implementation/hi_fo_buf10643/ZN",
+      "driver_master": "INVD12BWP12T40P140",
+      "loads": 577,
+      "buffers": 27,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 576,
+        "A2": 1
+      }
+    },
+    {
+      "tree": 26,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[0]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 27,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[0]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 28,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[0]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 29,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[1]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 30,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[1]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 31,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[1]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 32,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 33,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 34,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 35,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 36,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 37,
+      "controller": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 38,
+      "controller": "numeric/engine/backend/clusters[2].control/projection/transfer/implementation",
+      "driver": "numeric/engine/backend/clusters[2].control/projection/transfer/implementation/hi_fo_buf10643/ZN",
+      "driver_master": "INVD12BWP12T40P140",
+      "loads": 577,
+      "buffers": 27,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 576,
+        "A2": 1
+      }
+    },
+    {
+      "tree": 39,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[0]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 40,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[0]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 41,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[0]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 42,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 43,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 44,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 45,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[2]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 46,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[2]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 47,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[2]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 48,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[3]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 49,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[3]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 50,
+      "controller": "numeric/engine/backend/clusters[3].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[3]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 51,
+      "controller": "numeric/engine/backend/clusters[3].control/projection/transfer/implementation",
+      "driver": "numeric/engine/backend/clusters[3].control/projection/transfer/implementation/hi_fo_buf10643/ZN",
+      "driver_master": "INVD12BWP12T40P140",
+      "loads": 577,
+      "buffers": 27,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 576,
+        "A2": 1
+      }
+    },
+    {
+      "tree": 52,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[0]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 53,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[0]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 54,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[0]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[0]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 55,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[1]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 56,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[1]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 57,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[1]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[1]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 58,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[2]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 59,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[2]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 60,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[2]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[2]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 61,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[3]/implementation/g217507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 62,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[3]/implementation/g217530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 63,
+      "controller": "numeric/engine/backend/clusters[4].control/down/engines[3]/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/down/engines[3]/implementation/g217554/ZN",
+      "driver_master": "INVD18BWP12T40P140",
+      "loads": 983,
+      "buffers": 42,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 977,
+        "A2": 2,
+        "A1": 4
+      }
+    },
+    {
+      "tree": 64,
+      "controller": "numeric/engine/backend/clusters[4].control/projection/transfer/implementation",
+      "driver": "numeric/engine/backend/clusters[4].control/projection/transfer/implementation/hi_fo_buf10643/ZN",
+      "driver_master": "INVD12BWP12T40P140",
+      "loads": 577,
+      "buffers": 27,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 576,
+        "A2": 1
+      }
+    },
+    {
+      "tree": 65,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416197/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 66,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416214/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 67,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416231/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 68,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416248/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 69,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416265/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 70,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416282/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 71,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416299/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 72,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416316/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 73,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416333/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 74,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416350/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 75,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416367/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 76,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416384/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 77,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416401/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 78,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416418/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 79,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416435/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 80,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416452/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 81,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416522/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 82,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416539/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 83,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416556/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 84,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416573/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 85,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416590/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 86,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416607/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 87,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416624/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 88,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416641/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 89,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416658/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 90,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416675/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 91,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416692/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 92,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416709/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 93,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416726/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 94,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416743/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 95,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416760/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 96,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/g416777/ZN",
+      "driver_master": "INVD3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 97,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518196/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 98,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518207/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 99,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518230/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 100,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518253/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 101,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518288/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 102,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518299/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 103,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518334/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 104,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518345/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 105,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518368/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 106,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518391/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 107,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518426/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 108,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518437/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 109,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518500/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 128,
+      "buffers": 5,
+      "stages": 2,
+      "pin_kinds": {
+        "E": 128
+      }
+    },
+    {
+      "tree": 110,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518507/ZN",
+      "driver_master": "CKND3BWP12T40P140",
+      "loads": 192,
+      "buffers": 9,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 128,
+        "A2": 64
+      }
+    },
+    {
+      "tree": 111,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518519/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    },
+    {
+      "tree": 112,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf518530/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 574,
+      "buffers": 26,
+      "stages": 4,
+      "pin_kinds": {
+        "E": 571,
+        "A1": 3
+      }
+    },
+    {
+      "tree": 113,
+      "controller": "numeric/engine/gated/implementation",
+      "driver": "numeric/engine/gated/implementation/hi_fo_buf521862/ZN",
+      "driver_master": "CKND12BWP12T40P140",
+      "loads": 512,
+      "buffers": 21,
+      "stages": 3,
+      "pin_kinds": {
+        "E": 512
+      }
+    }
+  ],
+  "placement_executed": false,
+  "timing_executed": false,
+  "functional_verification_executed": false,
+  "native_driver_library_eligibility_pending": true,
+  "scope": "Read-only geometry plan from exact physical260 inventories. Single-driver internal enables with at least128 loads including64 E pins. Ports, constants, power, ground, asynchronous and clock pin names, and hierarchy-crossing loads excluded. No native edit or repair is inferred."
+}
