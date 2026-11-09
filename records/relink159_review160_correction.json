@@ -1,0 +1,18 @@
+{
+  "state": "queued_unsafe_relink_stopped_before_native_and_isolation_flow_prepared",
+  "stopped_queue_result_sha256": "bfa191b8a0045df0e09b522164f775e33ff03d753cffa5f3661a2ff3af458885",
+  "native_parent_relink159_never_started": true,
+  "review_findings": [
+    "Top-only renaming permits child-module collisions with the restored parent.",
+    "Hashing imported helper code after a long wait can misidentify the code already loaded by the supervisor.",
+    "Unresolved imports require fatal checks in addition to wiring checks."
+  ],
+  "corrections_implemented_in160": [
+    "All imported module declarations and instance type references receive private names; ambiguous constructs fail closed.",
+    "Static helper/script/Tcl/library/bench hashes are frozen before waiting, then checked before launch and after every native phase.",
+    "Isolated native import explicitly rejects unresolved references and bad wiring before export; the isolated export must pass both arithmetic-reference controls."
+  ],
+  "full_parent_followup_required": "Consume the exact160qualified_import.v, reject any imported module name already loaded in the parent, and compare post-import source/parent cells to160independent isolated cell inventory. Do not resume the superseded159source unchanged.",
+  "full_parent_integration_verified": false,
+  "full_paper_results_matched": false
+}
