@@ -19,8 +19,15 @@ memory failure. The full 2,048-output, 5,632-channel frame uses two selected
 packets and 91 internally scheduled down calls. Empty finalizers, all fifteen
 accumulation slots, partial outputs, sustained stalls, memory faults and reset
 recovery pass, and both wrong-reference controls are rejected. See
-`records/frame95_actual_functional_qualification.json`. Prediction batching
-still needs connection to this complete-frame controller.
+`records/frame95_actual_functional_qualification.json`.
+
+`tri_oracle_prediction_packet_stream.sv` extracts the prediction/framing/batching
+control without a compute fabric or memory. Its nine-case native test checks
+the full 5,632-channel/2,048-feature prediction shape, full and partial packets,
+stalls, reset, and malformed input after an accepted 160-identifier prefix.
+The wrong-identifier reference is rejected. See
+`records/prediction100_functional_qualification.json`. Connecting this stream
+to the numeric frame controller remains pending.
 
 The routed single-core checkpoint has independent timing and geometry evidence.
 The twenty-core prediction parent has legal placement, but whole-chip routed

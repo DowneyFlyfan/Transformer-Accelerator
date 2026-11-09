@@ -1,0 +1,65 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 09, 2026 at 01:40:20 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_strip_predictor.sv
+	module worklib.tri_oracle_strip_predictor:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_channel_compactor.sv
+	module worklib.tri_oracle_channel_compactor:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_predicted_dispatch.sv
+	module worklib.tri_oracle_predicted_dispatch:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_prediction_packet_stream.sv
+	module worklib.tri_oracle_prediction_packet_stream:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_prediction_packet_stream_tb.sv
+	module worklib.tri_oracle_prediction_packet_stream_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_prediction_packet_stream_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_channel_compactor:sv <0x256f16fc>
+			streams:  18, words: 11982
+		worklib.tri_oracle_strip_predictor:sv <0x0dc9a5bb>
+			streams:  12, words: 31824
+		worklib.tri_oracle_predicted_dispatch:sv <0x2cc514c4>
+			streams:   5, words:  1927
+		worklib.tri_oracle_prediction_packet_stream:sv <0x3b3be029>
+			streams:  35, words: 21743
+		worklib.tri_oracle_prediction_packet_stream_tb:sv <0x64dd881e>
+			streams:  52, words: 42213
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 5       5
+		Registers:             141     141
+		Scalar wires:           34       -
+		Vectored wires:         17       -
+		Always blocks:           9       9
+		Initial blocks:         30      30
+		Cont. assignments:       7      10
+		Pseudo assignments:     21       -
+		Process Clocks:          4       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_prediction_packet_stream_tb:sv
+Loading snapshot worklib.tri_oracle_prediction_packet_stream_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+PREDICTION_PACKET_CASE_PASS case=1 rows=5632 selected=2816 error=0
+PREDICTION_PACKET_CASE_PASS case=2 rows=320 selected=320 error=0
+PREDICTION_PACKET_CASE_PASS case=3 rows=64 selected=2 error=0
+PREDICTION_PACKET_CASE_PASS case=4 rows=32 selected=0 error=0
+PREDICTION_PACKET_CASE_PASS case=5 rows=31 selected=0 error=1
+PREDICTION_PACKET_CASE_PASS case=6 rows=32 selected=0 error=1
+PREDICTION_PACKET_CASE_PASS case=7 rows=64 selected=0 error=1
+PREDICTION_PACKET_CASE_PASS case=8 rows=320 selected=160 error=1
+PREDICTION_PACKET_CASE_PASS case=9 rows=64 selected=2 error=0
+PREDICTION_PACKET_PASS cases=9 success_stalls=179 error_stalls=61
+Simulation complete via $finish(1) at time 910460 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_prediction_packet_stream_tb.sv:118     $display("PREDICTION_PACKET_PASS cases=%0d success_stalls=%0d error_stalls=%0d",completed,good_stalls,error_stalls);$finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 09, 2026 at 01:40:20 UTC  (total: 00:00:00)
