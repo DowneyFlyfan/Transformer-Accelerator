@@ -1,0 +1,26 @@
+{
+  "state": "increasing_anonymous_ceiling_does_not_fit_full_parent_redundancy_pass",
+  "observed_utc": "2026-11-09T06:45:17.579035+00:00",
+  "synthesis_result_sha256": "91874ab5a44d51fb8e4d682ae4a756e7d9fe39e048bbbe65cb2d7699537e96e5",
+  "native_log_sha256": "65d18e540080d795ed4a67214d247ee3f630dc82896dca6f3edbef34855155f7",
+  "same_original_sources_checkpoint_and_optimizer_settings": true,
+  "configured_anonymous_limit_bytes": 21474836480,
+  "last_observed_anonymous_bytes": 20562690048,
+  "last_observed_host_available_bytes": 3166941184,
+  "host_pressure_pause_events": [
+    {
+      "action": "pause",
+      "groups": [
+        630692
+      ],
+      "available": 5320142848,
+      "anon": 20549074944
+    }
+  ],
+  "terminal_exception": "MemoryError('Host emergency memory reserve exhausted')",
+  "owned_native_process_absent": true,
+  "generic_checkpoint_absent": true,
+  "kernel_oom_kills_unchanged": true,
+  "next_action": "Map the original gate/up sequencing controller and activation unit separately, verify mapped functionality with the original independent peer bench, then reuse the mapped controller in the complete20-core parent. Keep original RTL, target constraints and core count. No further memory-limit increase.",
+  "full_paper_results_matched": false
+}
