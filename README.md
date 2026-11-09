@@ -11,11 +11,16 @@ Deliberately wrong references are rejected. See
 `records/owned_gated94_functional_qualification.json`.
 
 `tri_oracle_feedforward_frame.sv` moves packet subgroup and output-round
-scheduling into production hardware. Its 16 control-contract cases pass,
-including sustained output stalls and negative controls. The actual twenty-core,
-600-memory frame integration is currently being tested; control-peer results
-alone do not establish its arithmetic integration. Prediction batching still
-needs connection to this complete-frame controller.
+scheduling into production hardware. Its actual twenty-core, 600-memory
+integration passes 18 cases in 352 seconds: 655 exact raw dot products, 326
+bounded nonlinear codes, and 5,220 checked output lanes. Of those lanes, 5,060
+belong to successful frames; 160 form a prefix canceled by a deliberate late
+memory failure. The full 2,048-output, 5,632-channel frame uses two selected
+packets and 91 internally scheduled down calls. Empty finalizers, all fifteen
+accumulation slots, partial outputs, sustained stalls, memory faults and reset
+recovery pass, and both wrong-reference controls are rejected. See
+`records/frame95_actual_functional_qualification.json`. Prediction batching
+still needs connection to this complete-frame controller.
 
 The routed single-core checkpoint has independent timing and geometry evidence.
 The twenty-core prediction parent has legal placement, but whole-chip routed

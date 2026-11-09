@@ -12,9 +12,10 @@ Storage: one bounded160-value/ID packet and small configuration/counters. No5632
 
 Validation: actual600-memory native tests must compute a full2048-output frame from multiple nonlinear packets, cover160-value five-subgroup splitting, first/append/final flag correctness, empty frames/finalizers, partial output groups, maximum15-slot bounds, invalid configuration/IDs/counts, output backpressure, late memory failure after an output prefix, global invalidation/recovery and external reset. The scalar oracle must sum all selected contributions independently of scheduler counters. Verify exact raw dots and bound nonlinear approximation separately before using produced codes in the down reference. Wrong-reference controls remain mandatory.
 
-- [ ] Write the independent actual-memory frame bench and observe native missing-production-module failure.
-- [ ] Implement production configuration/packet/subgroup/round sequencing and bounded result flow around owner93; run scalar-reference and failure-control cases.
-- [ ] Review and qualify the complete numeric frame controller, then connect the unchanged prediction batching/sign-stream method without duplicating twenty-core hardware.
+- [x] Observe the missing production module in the initial control-contract test; implement the independent actual-memory frame bench without a producer round loop.
+- [x] Implement production configuration/packet/subgroup/round sequencing and bounded result flow around owner93; pass18 actual-memory scalar-reference/fault/reset cases and reject both wrong-reference controls.
+- [x] Independently review and qualify the complete numeric frame controller. Evidence: frame95_actual_functional_qualification.json;655 exact dots,326 bounded nonlinear codes,5060 successful-frame output lanes plus160 canceled late-error prefix lanes.
+- [ ] Connect the unchanged prediction batching/sign-stream method without duplicating twenty-core hardware.
 - [ ] Synthesize and route that integrated controller, qualify actual routed timing and power, and validate full model accuracy/energy/latency against the paper. These requirements remain pending.
 
 Original37 physical-flow source files and accepted core44/models68 stay frozen until a separately identified integrated physical revision is prepared. Local interfaces/quantization remain explicit replication choices; passing numeric frames does not establish the paper's measured results.
