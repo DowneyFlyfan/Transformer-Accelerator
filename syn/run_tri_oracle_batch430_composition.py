@@ -1,4 +1,4 @@
-"""Feed complete natively projected head caches into the shared attention engine."""
+"""Feed natively projected head caches into attention, or replay with disabled restore held high."""
 
 from concurrent.futures import ThreadPoolExecutor
 import gzip
@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 import time
 
@@ -27,6 +28,8 @@ SHARDS=25
 
 def main():
     check_memory(15*GIB)
+    assert sys.argv[1:] in ([],["--replay-held-restore"])
+    replay=bool(sys.argv[1:])
     records=ROOT/"records"
     capture=ROOT/".cache/model_reference/batch430"
     input_path=capture/"reference.json"
@@ -57,9 +60,18 @@ def main():
     for path in (input_path,prior,context_path,Path(__file__),ROOT/"syn/tri_oracle_process_guard.py"):
         digests[str(path)]=sha256(path)
     digests.update({str(capture/name):digest for name,digest in reference["fixture_sha256"].items()})
+    original_path=records/"batch430_attention_composition_result.json"
+    original=None
+    if replay:
+        original=json.loads(original_path.read_text())
+        assert original["state"]=="trained_projection_cache_consumed_by_native_attention"
+        assert original["runs"]["projection_to_attention"]["status"]==0
+        assert all(original["runs"][f"shard_{index:02}"]["status"]==0 for index in range(SHARDS))
+        digests[str(original_path)]=sha256(original_path)
     assert all(sha256(Path(path))==digest for path,digest in digests.items())
-    output=records/"batch430_attention_composition_result.json"
-    archive=records/"batch430_attention_composition_logs.json.gz"
+    stem="batch430_attention_replay" if replay else "batch430_attention_composition"
+    output=records/f"{stem}_result.json"
+    archive=records/f"{stem}_logs.json.gz"
     assert not output.exists() and not archive.exists()
     cpus=sorted(os.sched_getaffinity(0))
     assert cpus
@@ -83,7 +95,9 @@ def main():
         dump=folder/"dump.hex"
         command=["taskset","-c",str(cpu),"/opt/cadence/bin/xrun","-64bit","-sv","-xmerror","RECOME","-notimingchecks",
                  "-top",TOP,"-top","tri_oracle_batch357_hierarchy","-defparam",f"{TOP}.SHARD={shard}",
-                 "-defparam",f"{TOP}.INTEGRATE={int(integrated)}",str(bundle),f"+FIXTURE={fixture}",f"+DUMP={dump}"]
+                 "-defparam",f"{TOP}.INTEGRATE={int(integrated)}",
+                 "-defparam",f"{TOP}.HOLD_DISABLED_RESTORE={int(replay)}",
+                 str(bundle),f"+FIXTURE={fixture}",f"+DUMP={dump}"]
         native_log=folder/"console.log"
         start=time.monotonic()
         with native_log.open("x") as stream:
@@ -140,30 +154,36 @@ def main():
                 stream.write(f"{row['rank']} {row['position']} {row['visible']} {packed(row['output'],32)}\n")
         fixture_digests={path.name:sha256(path) for path in fixture.iterdir()}
 
-        with ThreadPoolExecutor(max_workers=min(len(cpus),SHARDS+1)) as pool:
-            pending=[pool.submit(run,work,fixture,f"shard_{shard:02}",shard,False,cpus[shard%len(cpus)])
-                     for shard in range(SHARDS)]
-            mutation=pool.submit(run,work,fixture,"wrong_write_slot",0,False,cpus[SHARDS%len(cpus)],True)
-            completed=[future.result() for future in pending]
-            completed.append(mutation.result())
-
         expected=(fixture/"expected.hex").read_text().splitlines()
-        exported=[[] for _ in HEADS]
-        for shard,(name,evidence,_,dump) in enumerate(completed[:SHARDS]):
-            assert name==f"shard_{shard:02}" and sha256(dump)==evidence["dump_sha256"]
-            lines=dump.read_text().splitlines()
-            assert len(lines)==3*16
-            for group in range(3):
-                start=group*SLOTS+shard*16
-                segment=lines[group*16:(group+1)*16]
-                assert segment==expected[start:start+16]
-                exported[group].extend(segment)
+        if replay:
+            # Recreate byte-identical seeds using the verified native dump digests.
+            completed=[]
+            exported=[expected[group*SLOTS:group*SLOTS+SEED_SLOTS] for group in range(3)]
+        else:
+            with ThreadPoolExecutor(max_workers=min(len(cpus),SHARDS+1)) as pool:
+                pending=[pool.submit(run,work,fixture,f"shard_{shard:02}",shard,False,cpus[shard%len(cpus)])
+                         for shard in range(SHARDS)]
+                mutation=pool.submit(run,work,fixture,"wrong_write_slot",0,False,cpus[SHARDS%len(cpus)],True)
+                completed=[future.result() for future in pending]
+                completed.append(mutation.result())
+            exported=[[] for _ in HEADS]
+            for shard,(name,evidence,_,dump) in enumerate(completed[:SHARDS]):
+                assert name==f"shard_{shard:02}" and sha256(dump)==evidence["dump_sha256"]
+                lines=dump.read_text().splitlines()
+                assert len(lines)==3*16
+                for group in range(3):
+                    start=group*SLOTS+shard*16
+                    segment=lines[group*16:(group+1)*16]
+                    assert segment==expected[start:start+16]
+                    exported[group].extend(segment)
         seed_digests={}
         for group,lines in enumerate(exported):
             assert len(lines)==SEED_SLOTS
             path=fixture/f"seed_{group}.hex"
             path.write_text("\n".join(lines)+"\n")
             seed_digests[path.name]=sha256(path)
+        if replay:
+            assert seed_digests==original["native_seed_sha256"]
         completed.append(run(work,fixture,"projection_to_attention",0,True,cpus[0]))
         assert all(sha256(fixture/name)==digest for name,digest in (fixture_digests|seed_digests).items())
 
@@ -172,7 +192,8 @@ def main():
     with archive.open("xb") as stream:
         stream.write(gzip.compress(json.dumps(logs,sort_keys=True).encode(),mtime=0))
     assert json.loads(gzip.decompress(archive.read_bytes()))==logs
-    result=dict(state="trained_projection_cache_consumed_by_native_attention",question=reference["question"],
+    state="trained_projection_attention_replayed_with_restore_held" if replay else "trained_projection_cache_consumed_by_native_attention"
+    result=dict(state=state,question=reference["question"],
                 trained_layer=0,query_head=0,key_value_group=0,prompt_slots=408,decode_slots=1,
                 native_shard_cache_vectors=3*SEED_SLOTS,live_projection_vectors=27,
                 projected_operand_bytes=3*SLOTS*64,attention_output_components=4*64,
@@ -180,6 +201,7 @@ def main():
                 head_prediction_recent=reference["head_recent"],head_streaming=reference["head_streaming"],
                 rows=[{"original_position":row["position"],"visible_keys":row["visible"]} for row in reference["rows"]],
                 projection_and_attention_share_tensor_owner=True,failed_write_retry_verified=True,
+                disabled_restore_held=replay,seed_reconstructed_from_verified_native_digest=replay,
                 normalized_activations_and_rotary_angles_supplied=True,paper_results_matched=False,
                 inputs_sha256=digests,fixture_sha256=fixture_digests,native_seed_sha256=seed_digests,
                 native_logs_sha256=sha256(archive),runs={name:entry for name,entry,_,_ in completed})

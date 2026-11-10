@@ -125,7 +125,7 @@ module tri_oracle_attention_pipeline430 #(parameter bit PERSIST_LAYER_CONTEXT=0)
                              projection_cache_base<=64'hffffffffffffffff-64'd2621439 &&
                              11'(projection_slot)+11'(projection_tokens)<=1024;
     assign projection_ready = !projection_busy && native_frame_ready && qkv_ready && store_ready &&
-                              !frame_valid && !restore_valid && !head_valid && !row_valid;
+                              !frame_valid && !(PERSIST_LAYER_CONTEXT && restore_valid) && !head_valid && !row_valid;
     assign projection_start = projection_valid && projection_ready && cache_bounds_ok;
     assign projection_done_valid = projection_busy && (rejected_projection || stored_valid);
     assign projection_done_error = rejected_projection || stored_error;

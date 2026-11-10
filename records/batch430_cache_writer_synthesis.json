@@ -1,11 +1,11 @@
 {
-  "state": "isolated_cache_writer_mapped",
+  "state": "isolated_cache_writer_mapped_and_functionally_verified",
   "target_clock_megahertz": 580,
   "slow_corner": "0.9 V, 125 C",
   "estimated_preplacement_setup_slack_ps": 426,
   "netlist_cells": 1108,
   "library_cell_area_square_micrometers": 3087.336,
-  "mapped_functional_simulation": false,
+  "mapped_functional_simulation": true,
   "paper_results_matched": false,
   "inputs_sha256": {
     "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/qkv_store430/console.log": "aea1bcdc99a2823740d8cfedfe3a883dca872873a03ca4ff4315a585fd48593e",
@@ -15,6 +15,13 @@
     "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/qkv_store430/netlist.v": "f4db626b9c659b09b0049243da2c06cea6113b811c2fa3e90f1c77d9154697b2",
     "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_qkv_store430.sv": "4cdba3cc5de4ecf2d443983cee340463ebb18c0152a9523395b13f5564c4c930",
     "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_synthesize_qkv_store430.tcl": "632e98c978e1b29596433b3b04dbc6474958e5aa4c5da30b3a584894e42e8cf0",
-    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75"
-  }
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/synthesis/qkv_store430/mapped_composition.log": "86f5bf730cf3f7fe727d7194eb2cc7359604ecd93354b8ed1639c9eea1385980",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch430_attention_replay_result.json": "d20685f8dbd9a54d61edc18f425e3e50f6cf87179cce16e26407473d8d6ee9fe"
+  },
+  "mapped_simulation_scope": "cache writer only",
+  "delay_annotation": false,
+  "mapped_attention_replay_marker": "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=54",
+  "mapped_attention_replay_log_sha256": "86f5bf730cf3f7fe727d7194eb2cc7359604ecd93354b8ed1639c9eea1385980"
 }

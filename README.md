@@ -501,6 +501,13 @@ decision and all 256 weighted attention components across four rows. It also
 rejected an incorrect cache address and recovered from an injected write
 failure. See `records/batch430_attention_composition_result.json`.
 
+With restore disabled, a held restore request no longer blocks projection.
+The corrected pipeline replayed the trained case with that request asserted.
+The same replay passed with the cache writer replaced by its Genus netlist.
+Genus estimated 426 picoseconds of setup margin for the isolated writer at
+580 megahertz before placement. See `records/batch430_attention_replay_result.json`
+and `records/batch430_cache_writer_synthesis.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

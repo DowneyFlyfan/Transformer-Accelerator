@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module tri_oracle_attention430_tb #(parameter int SHARD=0, INTEGRATE=0);
+module tri_oracle_attention430_tb #(parameter int SHARD=0, INTEGRATE=0, HOLD_DISABLED_RESTORE=0);
     localparam int SLOTS=409, WORDS=256, PROMPT=408;
     localparam logic [63:0] ACTIVATION_BASE=64'h10000, WEIGHT_BASE=64'h10000000, CACHE_BASE=64'h2000000;
     logic clk=0,rst_n=0;
@@ -30,7 +30,7 @@ module tri_oracle_attention430_tb #(parameter int SHARD=0, INTEGRATE=0);
     wire frame_ready,sign_ready,map_valid,map_last,frame_done_valid,frame_done_error;
     wire [9:0] map_index,map_origin;
     wire map_ready=1;
-    wire restore_valid=0,restore_done_ready=0;
+    wire restore_valid=HOLD_DISABLED_RESTORE!=0,restore_done_ready=0;
     wire [4:0] restore_layer=0;
     wire restore_ready,restore_done_valid,restore_done_error;
 
