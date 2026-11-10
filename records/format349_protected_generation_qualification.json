@@ -1,0 +1,49 @@
+{
+  "state": "protected_generation_verified_with_accuracy_tradeoff",
+  "verified_utc": "2026-11-10T06:46:15.956642+00:00",
+  "official_scoring_sha256": "4058babfdfac37391cb8b6ddffc9446d70c3237ccea2e611f82a4d2fc1c902f2",
+  "inference_sha256": "db79963ae56cbfd8d7426ff0dca5f9a6e39d90619289de00f9ac2f5d9972c716",
+  "guard_sha256": "15bc9a52bf345e023efb48d6136011bedf5bbb75ec68248f2e10bfb0b2ca7213",
+  "recipe_sha256": "e5e35577e70126e40d844147d82f206258d80088194dc8ca9ec80c4cfc510109",
+  "all229_scoring_input_paths_rehashed_unchanged": true,
+  "actual_scoring_input_path_count": 229,
+  "all320_cases_completed": true,
+  "all192_baseline_answers_and_per_question_scores_reproduced": true,
+  "all22_layer_global_offsets_and_protected_row_traces_verified": true,
+  "generation_decode_calls_by_mode": {
+    "extended_integer_dense": 2332,
+    "extended_integer_predicted": 2332,
+    "integer_dense": 2288,
+    "integer_predicted": 2222
+  },
+  "incremental_decode_exercised_in_both_protected_modes": true,
+  "scores_percent_on64": {
+    "floating": 74.69,
+    "extended_integer_dense": 67.81,
+    "extended_integer_predicted": 63.44,
+    "integer_dense": 66.72,
+    "integer_predicted": 67.81
+  },
+  "changes_percentage_points": {
+    "dense_vs_retained_dense": -1.09,
+    "prediction_vs_retained_prediction": 4.37
+  },
+  "retained_dense_reference": "format322",
+  "protected_prediction_remains_software_candidate": true,
+  "compressed_inference_sha256": "c31fc83aba11f24e5ce456c4685adff39e3e3bf369dcd7ab284c27f32cc92fb6",
+  "compressed_inference_lossless_verified": true,
+  "helper_control_cases": 5,
+  "helper_control_input_features": 2048,
+  "whole_model_integer": false,
+  "hardware_programming_verified": false,
+  "full_paper_results_matched": false,
+  "physical_advancement_authorized": false,
+  "unresolved": [
+    "64reusedquestions,notfull214354-questionbenchmarkorrecoveredpaperprotocol",
+    "Only22languagefeed-forwardoutputsuseintegerarithmetic",
+    "Tokenpositionprecisioncontrolislocalreconstructionchoice",
+    "Programmingtherecipeintothecurrent20-corehardwarestillneedsnativeverification",
+    "Whole-chiparchitecture,memoryaccounting,routing,timing,area,energyandspeedremainunqualified"
+  ],
+  "reviewer_result": "NoCriticalorImportantblocker;independentinitial/decodeoffsetandbaselinecontrolschecked.Docstringreferencecorrectedbeforelaunch."
+}

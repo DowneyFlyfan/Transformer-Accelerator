@@ -1,6 +1,28 @@
 # Tri-Oracle reproduction in progress
 
-A later input-exponent calibration candidate was **rejected** by full-model
+First-token protection now passes complete answer-generation and incremental
+decode checks on the fixed 64-question pilot. The protected prediction mode
+scores 67.81%, versus 63.44% for the earlier prediction mode. Protected dense
+execution scores 66.72%, versus 67.81% for the retained dense reference; this is
+an accuracy tradeoff. The floating model remains at 74.69%. All 192 archived
+baseline answer sequences and per-question scores reproduce exactly. See
+`records/format348_official_scoring.json` and
+`records/format349_protected_generation_qualification.json`.
+
+The new dispatcher retains the earlier format only for global token zero and
+keeps a positive token offset during incremental decoding. Five real graphics
+processor controls use the full 2,048-feature input width. The full model test
+records and independently checks every layer's token-offset and protection
+sequence, including 2,288 dense and 2,222 prediction-enabled layer decode calls.
+All 320 inference cases completed. Complete inference metadata is losslessly
+compressed in `records/format346_vqav2_inference.json.gz`. The integer arithmetic
+and model weights are unchanged. This position-based precision control is a
+local reconstruction choice; hardware programming and full paper accuracy remain
+unverified. Only the 22 language feed-forward sublayers use integer arithmetic.
+Re-running requires the local model assets and historical receipts named by the
+source-hash manifests.
+
+The earlier input-exponent calibration candidate was **rejected** by full-model
 execution. Its local mean per-token error improved from 0.229679 to 0.167708,
 but both new dense and prediction-enabled variants scored 0% on the fixed
 64-question pilot. All 192 archived floating/dense/predicted answer sequences
