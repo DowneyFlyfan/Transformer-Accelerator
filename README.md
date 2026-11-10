@@ -164,6 +164,12 @@ The caller supplies quantized activation operands and both residual passes.
 Trained joined execution, timing, and the paper benchmarks remain to be
 verified. See `records/batch400_predictive_result.json`.
 
+The coordinator now expresses each handshake dependency separately. Both
+coordinator feedback warnings disappeared in the same Verilator setup,
+and all twelve Xcelium cases reproduced their exact output, byte, and bus
+inventories. Backend warnings remain. See `records/batch401_lint_result.json`
+and `records/batch401_predictive_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.

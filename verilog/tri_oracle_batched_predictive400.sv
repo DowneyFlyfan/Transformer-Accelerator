@@ -125,44 +125,44 @@ module tri_oracle_batched_predictive400 (
             overlaps_scratch(cfg_up_base, up_end) || overlaps_scratch(cfg_down_base, down_end) ||
             overlaps_scratch(cfg_gate_sign_base, gate_sign_end) || overlaps_scratch(cfg_up_sign_base, up_sign_end);
 
-        cfg_ready = state == Idle && predict_ready && packet_ready && compute_ready;
-        take_cfg = cfg_valid && cfg_ready && !config_bad;
-        predict_failed = predict_done && predict_error;
-        packet_failed = packet_done && packet_error;
-        compute_failed = compute_done && compute_error;
-        // Launch only after normalization and the first complete packet. On a
-        // compute failure, the predictor can drain without more residual input.
-        launch_compute = state == Active && !compute_started && compute_ready &&
-            packet_mask_valid && !predict_failed && !packet_failed;
-        cancel_packet = compute_failed || (!compute_started && predict_failed);
-        drop_predictions = packet_done || compute_failed;
-        prediction_ready = drop_predictions || packet_in_ready;
-        packet_mask_ready = compute_started && compute_mask_ready;
-
-        // Keep any already offered valid packet stable. Once it transfers,
-        // a zero-count packet tells the compute frame to reject its next tile.
-        abort_mask = compute_started && !compute_done && !packet_mask_valid &&
-            (predict_failed || packet_failed);
-        compute_mask_valid = compute_started && (packet_mask_valid || abort_mask);
-        compute_mask_count = abort_mask ? 7'd0 : packet_mask_count;
-        done_valid = state == Reject ||
-            (state == Active && predict_done && packet_done && (!compute_started || compute_done) &&
-             read_state == PickRead);
-        done_error = state == Reject || predict_failed || packet_failed || compute_failed;
-        done_tag = tag;
-        retire = done_valid && done_ready && state == Active;
     end
 
-    always_comb begin
-        req_valid = read_state == OfferRead && (owner_compute ? compute_req_valid : predict_req_valid);
-        req_address = owner_compute ? compute_req_address : predict_req_address;
-        req_length = owner_compute ? compute_req_length : predict_req_length;
-        compute_req_ready = read_state == OfferRead && owner_compute && req_ready;
-        predict_req_ready = read_state == OfferRead && !owner_compute && req_ready;
-        compute_rsp_valid = read_state == WaitRead && owner_compute && rsp_valid;
-        predict_rsp_valid = read_state == WaitRead && !owner_compute && rsp_valid;
-        rsp_ready = read_state == WaitRead && (owner_compute ? compute_rsp_ready : predict_rsp_ready);
-    end
+    assign cfg_ready = state == Idle && predict_ready && packet_ready && compute_ready;
+    assign take_cfg = cfg_valid && cfg_ready && !config_bad;
+    assign predict_failed = predict_done && predict_error;
+    assign packet_failed = packet_done && packet_error;
+    assign compute_failed = compute_done && compute_error;
+
+    // Launch only after normalization and the first complete packet. On a
+    // compute failure, the predictor can drain without more residual input.
+    assign launch_compute = state == Active && !compute_started && compute_ready &&
+        packet_mask_valid && !predict_failed && !packet_failed;
+    assign cancel_packet = compute_failed || (!compute_started && predict_failed);
+    assign drop_predictions = packet_done || compute_failed;
+    assign prediction_ready = drop_predictions || packet_in_ready;
+    assign packet_mask_ready = compute_started && compute_mask_ready;
+
+    // Keep any already offered valid packet stable. Once it transfers,
+    // a zero-count packet tells the compute frame to reject its next tile.
+    assign abort_mask = compute_started && !compute_done && !packet_mask_valid &&
+        (predict_failed || packet_failed);
+    assign compute_mask_valid = compute_started && (packet_mask_valid || abort_mask);
+    assign compute_mask_count = abort_mask ? 7'd0 : packet_mask_count;
+    assign done_valid = state == Reject ||
+        (state == Active && predict_done && packet_done && (!compute_started || compute_done) &&
+         read_state == PickRead);
+    assign done_error = state == Reject || predict_failed || packet_failed || compute_failed;
+    assign done_tag = tag;
+    assign retire = done_valid && done_ready && state == Active;
+
+    assign req_valid = read_state == OfferRead && (owner_compute ? compute_req_valid : predict_req_valid);
+    assign req_address = owner_compute ? compute_req_address : predict_req_address;
+    assign req_length = owner_compute ? compute_req_length : predict_req_length;
+    assign compute_req_ready = read_state == OfferRead && owner_compute && req_ready;
+    assign predict_req_ready = read_state == OfferRead && !owner_compute && req_ready;
+    assign compute_rsp_valid = read_state == WaitRead && owner_compute && rsp_valid;
+    assign predict_rsp_valid = read_state == WaitRead && !owner_compute && rsp_valid;
+    assign rsp_ready = read_state == WaitRead && (owner_compute ? compute_rsp_ready : predict_rsp_ready);
 
     tri_oracle_batched_outliers398 predictor (
         .clk(clk), .rst_n(rst_n), .cfg_valid(take_cfg), .cfg_ready(predict_ready),

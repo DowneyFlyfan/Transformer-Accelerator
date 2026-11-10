@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import signal
 import subprocess
+import sys
 import tempfile
 import time
 
@@ -21,7 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 TOP = "tri_oracle_batched400_predictive_tb"
 
 
-def main():
+def main(batch="400"):
+    assert batch in ("400", "401")
     backend_path = ROOT / "records/batch393_literal_result.json"
     frontend_path = ROOT / "records/batch399_mask_packet_result.json"
     backend = json.loads(backend_path.read_text())
@@ -43,9 +45,9 @@ def main():
     hashes = {str(path): sha256(path) for path in tracked}
     assert all(prior_sources[path] == digest for path, digest in hashes.items() if path in prior_sources)
     check_memory(14 * GIB)
-    directory = ROOT / ".cache/physical/simulation/batch400_predictive"
-    output = ROOT / "records/batch400_predictive_result.json"
-    archive = ROOT / "records/batch400_native_logs.json.gz"
+    directory = ROOT / f".cache/physical/simulation/batch{batch}_predictive"
+    output = ROOT / f"records/batch{batch}_predictive_result.json"
+    archive = ROOT / f"records/batch{batch}_native_logs.json.gz"
     assert not directory.exists() and not output.exists() and not archive.exists()
     directory.mkdir()
     bench_text, hierarchy_text = integrated_bench(), hierarchy_bench()
@@ -129,6 +131,7 @@ def main():
     assert json.loads(gzip.decompress(archive.read_bytes())) == logs
     report = {
         "state": "raw_residual_to_feedforward_source_and_recovery_verified",
+        "batch": int(batch),
         "scope": __doc__,
         "elapsed_seconds": time.monotonic() - began,
         "supervisor_pid": os.getpid(),
@@ -151,4 +154,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(*sys.argv[1:])

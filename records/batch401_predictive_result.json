@@ -1,0 +1,361 @@
+{
+  "state": "raw_residual_to_feedforward_source_and_recovery_verified",
+  "batch": 401,
+  "scope": "Qualify the joined raw-residual predictor and compute fabric in Xcelium.",
+  "elapsed_seconds": 91.65761970798485,
+  "supervisor_pid": 810090,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched393_tb.sv": "a2e05af23360733b3bc01d34274f0ddbb0d7d785d31ac7b0fcd6735599a4662b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batch357_hierarchy.sv": "7a82478fcc36d8aac94e88a23b15b40afc39275209b745174bad6b7114dcd9bb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_batch400_bench.py": "b0a643f4cdd86d568f94fad928acd22a669338d881c6f760b9703a3db1ebb53f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch396_masks.py": "a4195039addebbb8e9a5ec185e6aae032a44e571ac81a2b8419a55a10a90fbf4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch393_literal_result.json": "0a301ba929fb95132f91417350e248bffdf095b96bce605c296ea742a6eebfed",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch399_mask_packet_result.json": "70f5fb42a5480788e21f3dbfa0a700505fe570bccfa73129c8502678ee31b88f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch400_predictive_frame.py": "27bec083a8e821ba0cd8cd84b4bd3249997a11c937df8c4426be160d9284c1cd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sram_memory_compute.sv": "435bfdf1db3758ce1f927836307721a27133402cb26f529c6a63c8a6df659f39",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sram_compute_cluster.sv": "ceaeda635bedb64d1f67ede869e4fd8fa210f67b4ec85c2a422719a05bca27d6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_compute_fabric.sv": "2331a7c82305d04bab9a6ad915a1dc6d657dff9b1394cb9c2469f1bb5a57645f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_projection356.sv": "06ded16e6a328a4a86a0a4161742fed467de7668c55c3ccc47dc7e3cf68cc5e4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_silu_gate.sv": "6b9ef0cc9828d5537533047d129aba1be3c2e7c3dd909aec7465486fdca3431d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_tensor390.sv": "05092d9d9e6658ec671031ad77baa519e09bdc64c26301e1744d248818647835",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_nonlinear391.sv": "4a341ad14a87a421c0140d060e6a14d99b420e5930b7eacb0ebb421bdd14f545",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_shared392.sv": "b01786430ef09eaef52c65527e184caca1cd30af026bfb1945df4208ad27a010",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_frame393.sv": "9f8d6bd5e138288fd6db5e5ecbdfd99a1b54f2907855a39c7dd56ed4905dd070",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_rmsnorm.sv": "750394cbed15e27691147b7284bd527369dbf281ffc72ab68a05304fbb786c45",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sign_fetch.sv": "a87a29deacb5677c5338a113da3e44830c2e9c7f7094f96a628824725ca552f1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_strip_predictor.sv": "259ae612d7a243a7d53f1703eb598f8c0efc6518e79a245ac4508fd173292741",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_outliers398.sv": "df0d9a88519aa78dbc109182ef551dd60736cae0f436a1e39125c3e9725d46f5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_mask_packet399.sv": "351c8402f82d92454bfa9e55cebb31de9b6a421f5f619af76f531498d65175fd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_predictive400.sv": "e5ad61dac007b6146c49e1126729578ba484769bd2586fa4226e85e39c4db230"
+  },
+  "bench_sha256": "80c0b7085414dbcc1e80e5fa4279b7793eb5a739a73d752029679f7db68d4ad1",
+  "hierarchy_bench_sha256": "f9dc779c767c7fcc5985ed698fff0ba902d3c0df7008cd81aae6b45ac6a9782c",
+  "actual_cores": 20,
+  "actual_clusters": 5,
+  "actual_vendor_memory_models": 602,
+  "exact_outputs": 6228,
+  "intermediate_bytes_checked": 4608,
+  "runs": [
+    {
+      "fault": 0,
+      "native_exit_status": 0,
+      "process_group": 810099,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 0,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 30.05353880894836,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault0.log",
+      "log_sha256": "460322f276f0c0ae73f53996654b8342b55fd872935c9c5716fc2959fb4f1acd"
+    },
+    {
+      "fault": 1,
+      "native_exit_status": 0,
+      "process_group": 810100,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 192,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 576,
+        "output_packets": 6,
+        "read_requests": 2352,
+        "read_bytes": 59968,
+        "fault": 1,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 72,
+        "valid_masks": 3,
+        "contended_cycles": 3
+      },
+      "elapsed_seconds": 45.064954339992255,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault1.log",
+      "log_sha256": "7074adf39130d97d0951a412db6976133d9559bb5109a3246f29cbcfa16fcb76"
+    },
+    {
+      "fault": 2,
+      "native_exit_status": 0,
+      "process_group": 810098,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 2,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 39.56139956699917,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault2.log",
+      "log_sha256": "1608bd43495e6c247bcd515646c328431b4b1597b6607cc9b3708a21c0fbf2b0"
+    },
+    {
+      "fault": 3,
+      "native_exit_status": 0,
+      "process_group": 810102,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 3,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 44.56399286695523,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault3.log",
+      "log_sha256": "57873a0b2d8d1a1b45cfaaccdf259b066aff040ac82b290dfb4257c51aaef245"
+    },
+    {
+      "fault": 4,
+      "native_exit_status": 0,
+      "process_group": 810101,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 4,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 20.54566094704205,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault4.log",
+      "log_sha256": "7cb6cc2150156cb22a6116f70884255827eaac427da52245bc461c1d8d2c4a57"
+    },
+    {
+      "fault": 5,
+      "native_exit_status": 0,
+      "process_group": 810398,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 192,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 576,
+        "output_packets": 6,
+        "read_requests": 2352,
+        "read_bytes": 59968,
+        "fault": 5,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 72,
+        "valid_masks": 3,
+        "contended_cycles": 3
+      },
+      "elapsed_seconds": 28.54951851000078,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault5.log",
+      "log_sha256": "bb1e128e43bf9f70c31a7121038452786c794bb5103def7e6f0b5efa1fad98ca"
+    },
+    {
+      "fault": 6,
+      "native_exit_status": 0,
+      "process_group": 810441,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 6,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 23.54516264202539,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault6.log",
+      "log_sha256": "9402bc8062f58eb1c1b6b5a056c23d2e0d6e130ac314e25bb15710dd871fe393"
+    },
+    {
+      "fault": 7,
+      "native_exit_status": 0,
+      "process_group": 810502,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 192,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 576,
+        "output_packets": 6,
+        "read_requests": 2352,
+        "read_bytes": 59968,
+        "fault": 7,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 72,
+        "valid_masks": 3,
+        "contended_cycles": 3
+      },
+      "elapsed_seconds": 30.552926290023606,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault7.log",
+      "log_sha256": "7ba63a7934179d73ae727a65da05e96ff51bedd564b25609d618764364d7595d"
+    },
+    {
+      "fault": 8,
+      "native_exit_status": 0,
+      "process_group": 810554,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 8,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 28.05372313299449,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault8.log",
+      "log_sha256": "028350858e8a5b4e7b15dc7ce9ac56b181da5f9a57de79b12f8db431b66d69ee"
+    },
+    {
+      "fault": 9,
+      "native_exit_status": 0,
+      "process_group": 810587,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 9,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 28.051628032990266,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault9.log",
+      "log_sha256": "cc74c28743e497154e23ad5b1d78a5a325af92be596afa2d502857e067828400"
+    },
+    {
+      "fault": 10,
+      "native_exit_status": 0,
+      "process_group": 810631,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 10,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 36,
+        "valid_masks": 2,
+        "contended_cycles": 0
+      },
+      "elapsed_seconds": 28.04839652602095,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault10.log",
+      "log_sha256": "77472c625111bb7e6d301d61eb165f64b4e3f9ee60cfb9298e8651dfe6320f2b"
+    },
+    {
+      "fault": 11,
+      "native_exit_status": 0,
+      "process_group": 810701,
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 192,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 576,
+        "output_packets": 6,
+        "read_requests": 2352,
+        "read_bytes": 59968,
+        "fault": 11,
+        "trained": 0
+      },
+      "shared_bus": {
+        "sign_requests": 72,
+        "valid_masks": 3,
+        "contended_cycles": 3
+      },
+      "elapsed_seconds": 38.055219491012394,
+      "log": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/simulation/batch401_predictive/fault11.log",
+      "log_sha256": "22cd7df97b6cc839764355b9101c1ea84209baee4285d464836ada3787ad0d43"
+    }
+  ],
+  "logs_archive_sha256": "f8a7bb23cfe203e51824becd794afc1bcdb00529a99c649a1dea0b2b376e74e6",
+  "temporary_builds_removed": true,
+  "trained_joined_frame_verified": false,
+  "full_paper_results_matched": false
+}

@@ -1,0 +1,27 @@
+{
+  "state": "coordinator_dependency_warnings_removed_with_identical_native_inventories",
+  "baseline_commit": "f145d89638d0d507fd3c48bb247863a3cde101c7",
+  "coordinator_sha256": "e5ad61dac007b6146c49e1126729578ba484769bd2586fa4226e85e39c4db230",
+  "verilator_version": "Verilator 4.028 2020-02-06 rev v4.026-92-g890cecc1",
+  "lint_check_sha256": "78f129123a50f3b35ace5b5d5476b709dcd0d33d075025b51077380f51285daa",
+  "native_regression_sha256": "961ade307ef69a0162191e77bd4cbc5e6b1d54bfcce304637e0d210c3f6f7fac",
+  "native_cases": 12,
+  "exact_output_comparisons": 6228,
+  "native_bus_and_output_inventories_unchanged": true,
+  "baseline_total_warnings": 12,
+  "candidate_total_warnings": 9,
+  "baseline_coordinator_warnings": 2,
+  "candidate_coordinator_warnings": 0,
+  "remaining_warning_locations": [
+    "verilog/tri_oracle_sram_compute_cluster.sv:141: Filename 'tri_oracle_sram_compute_cluster' does not match MODULE name: 'tri_oracle_compute_cluster'",
+    "verilog/tri_oracle_batched_tensor390.sv:223: Operator SUB expects 8 bits on the LHS, but LHS's VARREF 'tile_words' generates 6 bits.",
+    "verilog/tri_oracle_batched_tensor390.sv:225: Operator MODDIV expects 65 bits on the LHS, but LHS's VARREF 'weight_core' generates 5 bits.",
+    "verilog/tri_oracle_batched_tensor390.sv:68: Bits of signal are not used: 'activation_end'[63:0]",
+    "verilog/tri_oracle_batched_tensor390.sv:68: Bits of signal are not used: 'weight_end'[63:0]",
+    "verilog/tri_oracle_batched_tensor390.sv:68: Bits of signal are not used: 'up_end'[63:0]",
+    "verilog/tri_oracle_sram_memory_compute.sv:16",
+    "verilog/tri_oracle_sram_compute_cluster.sv:152",
+    "verilog/tri_oracle_batched_tensor390.sv:76"
+  ],
+  "scope": "Lint uses behavioral memory stand-ins. Xcelium uses compiled vendor models. No mapped timing or physical result is claimed."
+}
