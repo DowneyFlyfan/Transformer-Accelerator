@@ -1,0 +1,32 @@
+{
+  "state": "active_frontier_lookup_verified",
+  "source_sha256": "7001e5886cd9faaf06f18c6059a1e9a217bccd9978f33256b73c8fd8977ff42e",
+  "earlier_source_sha256": "b9336829cd07dd560687a1a86fa1bedb1b9aface31e41a301a4d7cccae0c4bc2",
+  "earlier_reverse_table_entries": 576,
+  "active_bank_slots": 24,
+  "logical_reverse_table_bits_removed": 2880,
+  "compiled_cycles": 45368,
+  "inferred_cycles": 29785,
+  "compiled_word_reads": 18877,
+  "compiled_word_writes": 15028,
+  "trained_maps": 25344,
+  "trained_causal_sizes": 4380542,
+  "inherited_gpu_comparisons": 9783,
+  "parameter_shapes": 5,
+  "integrated_markers": [
+    "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+    "SHARED437_ATTENTION_OWNERSHIP_PASS",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+  ],
+  "stale_root_control": "BATCH423_UNEXPECTED_DONE mode=0 layer=1 maps=231",
+  "standard_elaboration_seconds": 35.10377257701475,
+  "standard_elaboration_reverse_table_muxes": 0,
+  "archive": {
+    "path": "records/merger444_frontier_evidence.json.gz",
+    "sha256": "e054f91c729dba424b88548d4eee233fe00b40cc46770364f66af0a0ab335bfa"
+  },
+  "physical_timing_verified": false,
+  "full_paper_results_matched": false,
+  "clock_distribution_or_routing_allowed": false,
+  "scope": "Exact trained source replays and standard Genus elaboration of the full-size merger. The surviving-sign bank remains centralized."
+}

@@ -679,6 +679,14 @@ reached the configured time limit before exporting a generic checkpoint. Genus
 reset the requested datapath optimization setting to its standard mode. See
 the standalone trial in `records/shared443_compiled_capacity_result.json`.
 
+The merger now finds an inherited root in the existing 24 live sign slots.
+Genus confirmed removal of the 576-entry reverse lookup under its standard
+settings. Xcelium matched the earlier trained and integrated replays, including
+their cycle counts. The graphics-processor audit found exactly one visible
+slot for each of the 9,783 inherited lookups in the trained traces. A stale
+root failed at position 231 in the second layer. See
+`records/merger444_frontier_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

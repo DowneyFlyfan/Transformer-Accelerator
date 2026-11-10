@@ -34,13 +34,13 @@ module tri_oracle_cumulative_token_merger423 #(
     state_t state;
     logic [INDEX_W-1:0] cursor, previous_root, inherited_root, selected_root;
     logic [INDEX_W-1:0] origins[TOKENS], bank_root[IMAGE_WIDTH];
-    logic [SLOT_W-1:0] frontier[IMAGE_WIDTH], root_slot[TOKENS];
+    logic [SLOT_W-1:0] frontier[IMAGE_WIDTH];
     logic [SLOT_W-1:0] column, upper_slot, left_slot, inherited_slot, free_slot, selected_slot;
     logic [FEATURES-1:0] left_sign, bank_read_sign;
     logic [HIT_W-1:0] threshold;
     logic [IMAGE_WIDTH-1:0] used, visible;
     logic new_image, has_map, has_upper, has_left, old_alias, advance, space;
-    logic upper_match, left_match, free_found, store_sign, valid_step;
+    logic upper_match, left_match, free_found, inherited_found, store_sign, valid_step;
     wire [SLOT_W-1:0] bank_read_slot = old_alias ? inherited_slot : upper_slot;
     logic read_available, write_sign, reuse_left_sign;
 
@@ -50,7 +50,6 @@ module tri_oracle_cumulative_token_merger423 #(
     assign previous_root = new_image ? cursor : origins[cursor];
     assign old_alias = previous_root!=cursor;
     assign inherited_root = origins[previous_root];
-    assign inherited_slot = root_slot[inherited_root];
     assign upper_slot = frontier[column];
     assign has_left = column!=0;
     assign left_slot = has_left ? frontier[column-1'b1] : '0;
@@ -128,18 +127,28 @@ module tri_oracle_cumulative_token_merger423 #(
         end
         free_slot='0;
         free_found=0;
+        inherited_slot='0;
+        inherited_found=0;
         for (int slot=0;slot<IMAGE_WIDTH;slot++) begin
             if (!used[slot] && !free_found) begin
                 free_found=1;
                 free_slot=SLOT_W'(slot);
             end
+            // Each root is created once, so at most one visible slot matches.
+            if (visible[slot] && bank_root[slot]==inherited_root) begin
+                inherited_found=1;
+                inherited_slot=inherited_slot | SLOT_W'(slot);
+            end
         end
+    end
+
+    always_comb begin
         store_sign=0;
         valid_step=1;
         if (old_alias) begin
             selected_slot=inherited_slot;
             selected_root=inherited_root;
-            valid_step=visible[inherited_slot] && bank_root[inherited_slot]==inherited_root;
+            valid_step=inherited_found;
         end else if (upper_match) begin
             selected_slot=upper_slot;
             selected_root=bank_root[upper_slot];
@@ -188,7 +197,6 @@ module tri_oracle_cumulative_token_merger423 #(
                         state<=Result;
                     end else begin
                         if (store_sign) begin
-                            root_slot[cursor]<=selected_slot;
                             bank_root[selected_slot]<=cursor;
                             left_sign<=sign_data;
                         end else if ((old_alias || upper_match) && !reuse_left_sign) begin
