@@ -1,0 +1,57 @@
+{
+  "state": "cumulative_merger_and_causal_prefixes_verified_on_compact_traces",
+  "scope": "Verify cumulative native token merging on both compact-decoder traces.",
+  "sign_bank_slots": 24,
+  "sign_features": 2048,
+  "inventory": {
+    "modes": 2,
+    "layers": 44,
+    "maps": 25344,
+    "signs": 15561,
+    "rows": 25432,
+    "sizes": 4380542,
+    "cfg_errors": 3,
+    "map_stalls": 4353,
+    "done_stalls": 235
+  },
+  "source_and_fixture_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch422/map_0.hex": "0246af8d542c62c9e682e99890f252cb5890f7de9b18f624ae4edfc9ea67b8e5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch422/map_1.hex": "8779ceafbf036eb058ceec3cf8c9d5557e9398dd7d6a45f7ee96f8bf50e7b09b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch422/signs_0.hex": "b9bc5b2c903d3a05d7ea0abc28f11ea16e6195cc8730891c285c580fec007b7e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch422/signs_1.hex": "36e1d96104e975d665b1990d06b0380863d11fb1850487a4da42298ecb154641",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch422_compact_decoder_result.json": "ca17f5877a80f01dc9027d57a2b924534ef36eb7e8cfeca733d8ba53c2ace734",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_cumulative_token_merger423.sv": "9c6fbf4e1de62363b838a5a6caf45980495ee9e6c7681fb9d05b60296949ffdc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv": "93bc8bccd2809f4c672d65504522286bcd5077bd4e5e160cd5eeb373d0cb56a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_cumulative423_tb.sv": "028aeaf2b43f6281fee40993f641eb86f001da4f5496e1de6bbfe987eda1d7f3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch423_cumulative_merger.py": "95ee7eda884219d45473d1375a862694e4e3b40849968c969015d81037bbb23c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch396_masks.py": "a4195039addebbb8e9a5ec185e6aae032a44e571ac81a2b8419a55a10a90fbf4"
+  },
+  "runs": {
+    "trained_traces": {
+      "status": 0,
+      "inventory": {
+        "modes": 2,
+        "layers": 44,
+        "maps": 25344,
+        "signs": 15561,
+        "rows": 25432,
+        "sizes": 4380542,
+        "cfg_errors": 3,
+        "map_stalls": 4353,
+        "done_stalls": 235
+      },
+      "log_sha256": "72bcbb96f3e7cc1691faecb8c97a42620a0c494c7e4366bcd5f8c63b60f1cda9"
+    },
+    "stale_inheritance_control": {
+      "status": 2,
+      "inventory": {
+        "layer": 1,
+        "position": 231
+      },
+      "log_sha256": "d33745b19669edd06593e336fcff6a9d0cb0926f48710a94fa430a2a7c2ebad7"
+    }
+  },
+  "native_logs_sha256": "972be0e1ec465e2aff82d0fcd5ab496e49d8f1578dccbc9f7547c93e0120254c",
+  "full_paper_results_matched": false
+}

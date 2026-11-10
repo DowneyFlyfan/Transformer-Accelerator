@@ -363,6 +363,25 @@ original query and cache slots. Expanded-representative comparisons verify
 the causal bias on trained rows, and decode controls check both Boolean and
 additive masks. See `records/batch421_merge_aware_attention_result.json`.
 
+The cumulative decoder removes merged image queries, residual rows, and
+feedforward inputs before each layer. Its key and value caches hold only
+the surviving keys for that layer and retain original rotary positions.
+The 64-question pilot used 46.2 percent fewer prefill cache slots across
+layers and scored 71.09 percent with compaction. Adding the local 8:1
+streaming policy scored 69.06 percent. The dense control reproduced all
+archived answers and scored 74.69 percent. Cached decoding matched a fresh
+teacher replay on the anchor question in all three modes. The local merge
+rule keeps existing groups intact and uses original upper and left neighbors.
+See `records/batch422_compact_decoder_result.json`.
+
+The cumulative hardware merger consumes signs only for prior surviving roots
+and holds a single 24-slot image-row sign bank. Xcelium replayed both live
+traces for the anchor image, matching 25,344 map entries and 4,380,542 causal
+sizes over 44 layer frames. Only 15,561 input sign vectors were accepted.
+The stale-representative control failed at its expected cell. The test also
+checks invalid configuration recovery and delays completion until the final
+map transfer. See `records/batch423_cumulative_merger_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
