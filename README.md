@@ -34,8 +34,19 @@ mapped handshake logic confirm removal of the backend-ready dependency from
 gate/up capture. Xcelium checked all 512 input combinations on both mapped
 handshake variants. The revised source passes all 70 owner cases and the 12
 production-frame cases with 4,420 exact outputs on the 20-core fabric. See
-`records/owner434_ready_isolation.json`. Full physical timing for this
-revision remains unverified.
+`records/owner434_ready_isolation.json`.
+
+A three-cell change applied the same capture logic to the placed design.
+The cold reload preserved the original cell positions, core models and timing
+constraints, with exactly two pin reconnections. Xcelium checked all 64
+input combinations on the exact edited cells and rejected a missing mode
+guard. Innovus reports zero paths through the old backend-ready connection to
+the targeted capture pin. The path through the new capture gate to that pin has
+-60.788376 nanoseconds of setup slack. Worst slow setup slack improved by
+0.444542 nanoseconds to -74.946434 nanoseconds. The new worst path ends at a
+gate-value register enable, with 14.877899 nanoseconds of estimated delay on
+its final 32-load connection. This trial measured slow setup with ideal clocks
+and estimated interconnect. See `records/placement435_ready_trial.json`.
 
 The 20 fixed core outlines occupy 9.647397 of the placed die's 12.96 square
 millimeters. In four clusters, the down-projection engines alone need more

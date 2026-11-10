@@ -1,0 +1,75 @@
+{
+  "state": "exact_placed_ready_isolation_measured_at_slow_setup",
+  "verified_utc": "2026-11-10T16:49:15.289367+00:00",
+  "timing_target_megahertz": 580,
+  "source_placement_fingerprint_sha256": "e7cbb81dc74d48e7a6f0df92dd3c3a22dae889458897f47b1342f5e3133b9a2a",
+  "trial_checkpoint": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_ready435/warm/branch_full.db",
+  "trial_fingerprint_sha256": "03618a3338e8944efa62ba42779e34aac7f4a804db113131620b8faef96e898d",
+  "original_parent_leaves_preserved": 933326,
+  "original_core_leaves_preserved": 1889420,
+  "original_compiled_memory_instances": 600,
+  "die_area_square_millimeters": 12.96,
+  "added_standard_cells": 3,
+  "original_sinks_reconnected": [
+    "numeric/engine/g194492/A1",
+    "numeric/engine/FE_OFC205483_engine_ready/I"
+  ],
+  "concrete_standard_cell_truth_vectors": 64,
+  "concrete_standard_cell_expected_changed_vectors": 1,
+  "missing_mode_guard_mutant_rejected": true,
+  "prior_worst_setup_slack_ns": -75.390976,
+  "trial_worst_setup": {
+    "slack_ns": -74.946434,
+    "startpoint": "numeric/engine/backend/result_error_reg/CP",
+    "endpoint": "numeric/engine/gated/implementation/gate_values_reg[1887]/E"
+  },
+  "next_limiting_net": {
+    "rank": 1,
+    "slack_ns": -74.946434,
+    "data_path_ns": 69.837196,
+    "reported_wire_delay_ns": 49.887196,
+    "maximum_wire_delay_ns": 14.877899,
+    "driver": "numeric/engine/gated/implementation/TRI266_T75_BUFFER_3/Z",
+    "receiver": "numeric/engine/gated/implementation/gate_values_reg[1887]/E",
+    "startpoint": "numeric/engine/backend/result_error_reg/CP",
+    "endpoint": "numeric/engine/gated/implementation/gate_values_reg[1887]/E",
+    "native_load_pins": 32,
+    "native_load_ports": 0,
+    "driver_master": "BUFFD4BWP12T40P140",
+    "receiver_master": "EDFCNQD1BWP12T40P140",
+    "driver_placement_um": [
+      1011.76,
+      1893.2
+    ],
+    "receiver_placement_um": [
+      2575.0,
+      3230.0
+    ],
+    "manhattan_cell_origin_distance_um": 2900.04
+  },
+  "change_vs_previous_placement_ns": 0.444542,
+  "old_ready_capture_path_probe": {
+    "view": "setup_slow",
+    "launch": "numeric/engine/backend/clusters[3].control/projection/state_reg[3]/CP",
+    "through": "numeric/engine/backend/FE_OFC202597_backend_ready/Z",
+    "capture": "numeric/engine/gated/implementation/activation_base_reg[13]/E",
+    "paths": "0"
+  },
+  "replacement_capture_setup_slack_ns": -60.788376,
+  "trial_early_estimate_overflow_percent": {
+    "horizontal": 11.14,
+    "vertical": 24.28
+  },
+  "native_final_warning_count": 6410,
+  "native_final_error_count": 0,
+  "incomplete_port_parasitics_warning": true,
+  "placement_gate_allows_advancement": false,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "path": "records/placement435_ready_evidence.json.gz",
+    "sha256": "e88789276d45108dff7f7d79cb46ad648b08202d4bcfbd5d1a2415866f4c7030"
+  },
+  "scope": "Three-cell pre-route placement experiment with unchanged original constraints, core models and cell locations. Exact edited cone simulation plus cold connectivity audit. Only slow setup was measured on this candidate with ideal clocks and estimated interconnect. Signal interference analysis is disabled."
+}
