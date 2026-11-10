@@ -1,0 +1,51 @@
+{
+  "state": "gate_capture_ready_isolation_verified_at_source_and_mapped_handshake_cone",
+  "verified_utc": "2026-11-10T16:31:39.667723+00:00",
+  "original_owner_sha256": "488fbc2257966c54157b764cc34ee6c96e633c1fcf5c7e3b6b369230d1db2a48",
+  "revised_owner_sha256": "e53a543f42b8ca40212d1a95e6d1fc75be62abfc4ee21edf0352b370e1d94fe0",
+  "focused_cases": 2,
+  "owner_cases": 70,
+  "owner_exact_projection_dots": 463,
+  "owner_bounded_nonlinear_outputs": 230,
+  "owner_exact_hidden_outputs": 2048,
+  "production_staged_cases": 12,
+  "production_exact_hidden_outputs": 4420,
+  "compiled_core_instances": 20,
+  "compiled_memory_instances": 600,
+  "negative_controls": {
+    "red": {
+      "failure_marker": "OWNER_GATE_READY_DEPENDS_ON_BACKEND",
+      "exit_status": 2,
+      "console_sha256": "06ede1b586923ee0b4cf6f16d27840713f7491646cc82971e6c7c273dc2828df",
+      "source_sha256": "488fbc2257966c54157b764cc34ee6c96e633c1fcf5c7e3b6b369230d1db2a48",
+      "compiled_bundle_sha256": "6c31ed81e1fa62051937bc815dfba875768518af47e67e45f82a499e15e6698c"
+    },
+    "idle_mutant": {
+      "failure_marker": "OWNER_IDLE_READY_IGNORES_BACKEND",
+      "exit_status": 2,
+      "console_sha256": "43a265ff237f67d12005ee996ccc82d108209f58d2acb71ba29a7b9bf05eaacd",
+      "source_sha256": "867563a46b1044430a29b381818e7ace09ed15bdbc0df7c5270e92a219caff08",
+      "compiled_bundle_sha256": "3b5237469611eb7b9ee1363c5a62422834460b269be987a6690f5b23113b658b"
+    },
+    "production_wrong_reference": {
+      "failure_marker": "JOINED_HIDDEN_SUM",
+      "exit_status": 2,
+      "console_sha256": "0203848e9dcb033817cb1e0379539a6ce2897cb50b00b6ecc797684ee5a49984",
+      "source_sha256": "e53a543f42b8ca40212d1a95e6d1fc75be62abfc4ee21edf0352b370e1d94fe0"
+    }
+  },
+  "previous_backend_ready_feeds_gate_capture": true,
+  "revised_backend_ready_feeds_gate_capture": false,
+  "revised_backend_ready_feeds_down_acceptance_and_projection_launch": true,
+  "mapped_simulator_vectors_per_design": 512,
+  "mapped_implementations": 2,
+  "expected_changed_vectors": 2,
+  "full_owner_elaboration_verified_with_peer_blackboxes": true,
+  "mapped_handshake_scope": "Actual assignments extracted from the two owner revisions and mapped as a combinational boundary. No whole-owner or whole-chip timing or area inference is made.",
+  "placement_gate_allows_advancement": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "path": "records/owner434_ready_evidence.json.gz",
+    "sha256": "cc83be8129be1f77fdb81f3fd2b02e261d1dd13b93873d278599ef4b42f73b9c"
+  }
+}

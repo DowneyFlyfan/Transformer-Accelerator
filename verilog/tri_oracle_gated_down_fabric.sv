@@ -32,6 +32,7 @@ module tri_oracle_gated_down_fabric (
   typedef enum logic [2:0] {IDLE,GATED,DOWN,FLUSH,RESULT} state_t;
   state_t state;
   logic controller_reset_n,flush_second_cycle;
+  logic owner_idle;
   logic gated_ready,gated_valid,gated_last,gated_fallback,gated_error;
   logic [31:0] gated_tag;
   logic [7:0] gated_count;
@@ -58,7 +59,10 @@ module tri_oracle_gated_down_fabric (
   logic [3:0] backend_slot;
 
   always_comb begin
-    in_ready=state==IDLE && controller_reset_n && gated_ready && backend_ready;
+    // The gated executor holds an accepted command until its projection can
+    // start. Keep idle readiness while only a valid gate command can bypass it.
+    owner_idle=state==IDLE && controller_reset_n && gated_ready;
+    in_ready=owner_idle && (backend_ready || (in_valid && !in_is_down));
     out_valid=state==RESULT;
   end
 
@@ -74,7 +78,7 @@ module tri_oracle_gated_down_fabric (
   end
 
   tri_oracle_fabric_gated_executor gated (
-      .clk(clk),.rst_n(controller_reset_n),.in_valid(in_valid && in_ready && !in_is_down),
+      .clk(clk),.rst_n(controller_reset_n),.in_valid(in_valid && owner_idle && !in_is_down),
       .in_ready(gated_ready),.in_last(in_last),.in_fallback(in_fallback),.in_tag(in_tag),
       .in_channels(in_channels),.in_count(in_count),.in_activation_base(in_activation_base),
       .in_weight_base(in_weight_base),.in_up_weight_base(in_up_weight_base),.in_features(in_features),

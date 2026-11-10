@@ -171,7 +171,8 @@ module tri_oracle_gated_down_fabric_tb;
     end
   endtask
 
-  task automatic gated_launch(input int n,features,case_salt,input bit last=0,bad_up=0,memory_error=0);
+  task automatic gated_launch(input int n,features,case_salt,input bit last=0,bad_up=0,memory_error=0,
+                              input bit stall_projection=0);
     begin
       @(negedge clk);while(!in_ready) @(negedge clk);
       model_is_down=0;strips=features;rows=n;salt=case_salt;requests=0;inject_error=memory_error;error_fired=0;current_phase=0;
@@ -188,8 +189,29 @@ module tri_oracle_gated_down_fabric_tb;
       in_is_down=0;in_count=8'(n);in_features=10'(features);in_channels=expected_channels;
       in_tag=expected_tag;in_last=last;in_fallback=expected_fallback;in_activation_base=ActBase;
       in_weight_base=GateBase;in_up_weight_base=bad_up?UpBase+1:UpBase;in_gate_shift=7;in_up_shift=7;
-      in_valid=1;@(posedge clk);if(!in_ready) $fatal(1,"OWNER_GATED_NOT_ACCEPTED");
+      if(stall_projection) begin
+        force dut.backend.child_rst_n=1'b0;
+        #1;
+        if(in_valid || in_ready) $fatal(1,"OWNER_IDLE_READY_IGNORES_BACKEND");
+      end
+      in_valid=1;@(posedge clk);
+      if(!in_ready) begin
+        if(stall_projection) $fatal(1,"OWNER_GATE_READY_DEPENDS_ON_BACKEND");
+        else $fatal(1,"OWNER_GATED_NOT_ACCEPTED");
+      end
       @(negedge clk);in_valid=0;in_is_down=1;in_tag='1;in_channels='1;in_count=0;in_up_weight_base=0;
+      if(stall_projection) begin
+        in_activation_base=0;in_weight_base=0;in_features=0;
+        repeat(3) begin
+          @(negedge clk);
+          if(in_ready || req_valid || out_valid || !dut.projection_in_valid || dut.projection_in_ready ||
+             dut.projection_in_tag!==expected_tag || dut.projection_in_activation_base!==ActBase ||
+             dut.projection_in_weight_base!==GateBase || dut.projection_in_features!==10'(features) ||
+             dut.projection_in_channels!==expected_channels || dut.projection_in_count!==8'(n))
+            $fatal(1,"OWNER_STALLED_PROJECTION_PACKET_CHANGED");
+        end
+        release dut.backend.child_rst_n;
+      end
     end
   endtask
 
@@ -225,7 +247,8 @@ module tri_oracle_gated_down_fabric_tb;
   endtask
 
   task automatic down_case(input int n,outputs,start,slot,input bit append,last,
-                           input logic [31:0] tag,input bit use_latest=1,error_expected=0,input int subgroup=0);
+                           input logic [31:0] tag,input bit use_latest=1,error_expected=0,input int subgroup=0,
+                           input bit stall_backend=0);
     int timeout,value;
     begin
       @(negedge clk);while(!in_ready) @(negedge clk);
@@ -245,7 +268,23 @@ module tri_oracle_gated_down_fabric_tb;
       in_is_down=1;in_accumulate=append;in_last=last;in_fallback=1;in_tag=tag;in_count=8'(n);
       in_output_count=8'(outputs);in_output_start=16'(start);in_slot=4'(slot);in_shift=6'(down_shift);
       in_dense_features=5632;in_channels={2048'b0,selected_ids};in_data=selected_codes;in_weight_base=DownBase;
-      in_valid=1;@(posedge clk);if(!in_ready) $fatal(1,"OWNER_DOWN_NOT_ACCEPTED");
+      in_valid=1;
+      if(stall_backend) begin
+        force dut.backend.child_rst_n=1'b0;
+        repeat(3) begin
+          @(posedge clk);
+          if(in_ready || dut.backend_in_valid || req_valid || out_valid)
+            $fatal(1,"OWNER_DOWN_ACCEPTED_WITHOUT_BACKEND_READY");
+        end
+        @(negedge clk);release dut.backend.child_rst_n;
+        timeout=0;
+        do begin
+          @(posedge clk);timeout++;
+          if(timeout>10) $fatal(1,"OWNER_BACKEND_DID_NOT_RECOVER");
+        end while(!in_ready);
+      end else begin
+        @(posedge clk);if(!in_ready) $fatal(1,"OWNER_DOWN_NOT_ACCEPTED");
+      end
       @(negedge clk);in_valid=0;in_is_down=0;in_tag='1;in_channels='1;in_data='1;in_slot=0;
       timeout=0;while(!out_valid && timeout<2000000) begin @(negedge clk);timeout++;end
       if(!out_valid || out_is_down!==1 || out_error!==error_expected || out_tag!==tag ||
@@ -268,6 +307,15 @@ module tri_oracle_gated_down_fabric_tb;
       $fatal(1,"GATED_DOWN_ACTUAL_HIERARCHY_MISMATCH");
     $display("GATED_DOWN_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600");
     rst_n=1;
+    if($test$plusargs("OWNER_READY_ISOLATION")) begin
+      gated_launch(3,5,200,1,0,0,1);
+      gated_result();
+      down_case(0,7,0,1,0,1,32'h93434,0,0,0,1);
+      if(cases_checked!=2 || exact_dots!=6 || nonlinear_codes!=3)
+        $fatal(1,"OWNER_READY_ISOLATION_CASE_INVENTORY");
+      $display("OWNER_READY_ISOLATION_PASS cases=2 exact_dots=6 nonlinear_codes=3 down_outputs=7");
+      $finish;
+    end
     if($test$plusargs("DOT_SMOKE")) begin gated_case(3,5,200);$fatal(1,"Wrong dot reference accepted");end
     if($test$plusargs("DOWN_SMOKE")) begin down_case(32,160,0,1,0,1,32'h9310,0);$fatal(1,"Wrong down reference accepted");end
     for(int round=0;round<13;round++) down_case(0,round==12?128:160,round*160,round+1,0,0,32'h9300,0);

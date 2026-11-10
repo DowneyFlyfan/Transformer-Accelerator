@@ -33,10 +33,12 @@ def main():
     parser.add_argument('--negative-reference', action='store_true')
     parser.add_argument('--negative-dot-reference', action='store_true')
     parser.add_argument('--expect-missing', action='store_true')
+    parser.add_argument('--ready-isolation', action='store_true')
     args = parser.parse_args()
     assert args.label and all(c.isalnum() or c in '_-' for c in args.label)
     assert 30 <= args.seconds <= 3600
     assert not (args.negative_reference and args.negative_dot_reference)
+    assert not args.ready_isolation or not (args.negative_reference or args.negative_dot_reference or args.expect_missing)
     root = Path(__file__).resolve().parents[1]
     result = root/'records'/(args.label+'_result.json')
     assert not result.exists()
@@ -65,8 +67,16 @@ def main():
               'state': 'prepared', 'supervisor_pid': __import__('os').getpid(),
               'negative_reference': args.negative_reference,
               'negative_dot_reference': args.negative_dot_reference,
+              'ready_isolation': args.ready_isolation,
               'source_sha256': identities, 'cases_seen': 0,
-              'scope': 'One nonlinear/down owner shares exactly20 actual cores and600 compiled memories. Testbench retains13 contexts for2048 rows across nonlinear packets and checks all returned sums,160-value subgroup use, faults and reset. Production full-frame scheduling, integrated physical and paper metrics remain pending.',
+              'scope': (
+                  'Two cases on 20 actual cores and 600 compiled memories. Check idle readiness, '
+                  'a stalled three-row gate/up command, and a stalled seven-output empty down command.'
+                  if args.ready_isolation else
+                  'One nonlinear/down owner shares 20 actual cores and 600 compiled memories. '
+                  'Check 13 retained contexts for 2,048 rows, 160-value subgroup use, faults and reset. '
+                  'Production full-frame scheduling, integrated physical and paper metrics remain pending.'
+              ),
               'expected_missing_production_module': args.expect_missing,
               'full_paper_results_matched': False}
     started = time.monotonic()
@@ -108,6 +118,8 @@ def main():
                 command.extend(['+CORRUPT_DOWN_REFERENCE', '+DOWN_SMOKE'])
             if args.negative_dot_reference:
                 command.extend(['+CORRUPT_DOT_REFERENCE', '+DOT_SMOKE'])
+            if args.ready_isolation:
+                command.append('+OWNER_READY_ISOLATION')
             native_started = time.monotonic()
             with log.open('w') as output:
                 child = subprocess.Popen(command, cwd=folder_path, stdin=subprocess.DEVNULL,
@@ -159,6 +171,15 @@ def main():
                 return
             assert child.returncode == 0, content[-5000:]
             assert 'GATED_DOWN_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=600' in content
+            if args.ready_isolation:
+                assert 'OWNER_READY_ISOLATION_PASS cases=2 exact_dots=6 nonlinear_codes=3 down_outputs=7' in content
+                assert all(digest(p) == expected for p, expected in identities.items())
+                save(state='ready_isolation_verified', cases_seen=2, native_exit_status=child.returncode,
+                     native_elapsed_seconds=time.monotonic()-native_started, native_console_sha256=digest(log),
+                     actual_compiled_core_instances=20, actual_compiled_memory_instances=600,
+                     exact_raw_projection_dots_checked=6, bounded_nonlinear_outputs_checked=3,
+                     returned_hidden_outputs_checked=7, original_sources_and_models_unchanged=True)
+                return
             match = __import__('re').search(r'GATED_DOWN_PASS cases=70 hidden_outputs=2048 exact_dots=(\d+) nonlinear_codes=(\d+)',content)
             assert match and int(match.group(1))>=448 and int(match.group(2))>=224
             assert content.count('GATED_DOWN_GATED_CASE_PASS ')+content.count('GATED_DOWN_DOWN_CASE_PASS ')==70

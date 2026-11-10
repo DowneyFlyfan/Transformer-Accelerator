@@ -27,6 +27,16 @@ projection-to-activation control path. The early estimate reports 11.15
 percent horizontal and 24.29 percent vertical congestion overflow. See
 `records/placement433_bus_trial.json`.
 
+The shared controller now accepts a valid gate/up command into its existing
+registers while the projection backend is stalled. Idle readiness and down
+acceptance retain their backend-ready checks. Genus elaboration and the
+mapped handshake logic confirm removal of the backend-ready dependency from
+gate/up capture. Xcelium checked all 512 input combinations on both mapped
+handshake variants. The revised source passes all 70 owner cases and the 12
+production-frame cases with 4,420 exact outputs on the 20-core fabric. See
+`records/owner434_ready_isolation.json`. Full physical timing for this
+revision remains unverified.
+
 The 20 fixed core outlines occupy 9.647397 of the placed die's 12.96 square
 millimeters. In four clusters, the down-projection engines alone need more
 area than the legal sites inside their four-core bounding rectangle after
