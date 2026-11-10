@@ -427,6 +427,25 @@ head type. Value memory uses an ordered vector response interface. Scratch
 mapping, whole-model scheduling and physical timing remain open. See
 `records/batch426_attention_row_result.json`.
 
+The attention layer controller now supplies the row engine with the live output
+of cumulative token merging and the cached result of native head prediction.
+Prediction and attention rows share the same twenty-core tensor owner. The
+emitted merge map is transferred to both the caller and the causal-size unit.
+The caller commits the map only on successful frame completion. Failed merge
+frames drain before completion, and a rejected new image cannot reuse the
+previous image's map. Each accepted frame invalidates its predecessor's cached
+head types.
+
+Xcelium checked all 12,672 entries in 22 distinct trained merge frames. Five
+heads from layers 0, 10 and 21 matched independent integer prediction totals
+with the local 8:1 ratio, including two streaming heads. Those decisions drove
+25 trained prompt and decode rows that matched 3,235 scores and 1,600 weighted
+value components with 600 vendor memory models. The caller still provides
+signs and compact query, key and value operands. The controller retains the
+active layer's map and head decisions. Whole-model decode still needs to
+restore the corresponding state when it returns to an earlier layer. See
+`records/batch427_attention_layer_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
