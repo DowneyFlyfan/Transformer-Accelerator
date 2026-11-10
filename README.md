@@ -487,6 +487,25 @@ to 5.11 percent and key error rose from 2.46 to 3.40 percent. This experiment
 uses the same output scales. The native run above uses the baseline operands.
 See `records/batch429_qkv_equalization.json`.
 
+The attention pipeline now shares one tensor owner between projection and
+attention. Projection writes 64-byte vectors into head-major slots and keeps
+ownership through the tagged completion. The caller publishes only slots from
+successful jobs. Failed writes drain, and a retry rewrites the provisional
+slots before the caller makes them visible to attention.
+
+The layer-zero replay used 408 compact prompt positions and the first decode
+position for one trained query head and its key/value group. The first 400
+positions came from checked native projection dumps. The final nine positions
+were projected and consumed by the same simulation. Xcelium matched the head
+decision and all 256 weighted attention components across four rows. It also
+rejected an incorrect cache address and recovered from an injected write
+failure. See `records/batch430_attention_composition_result.json`.
+
+Scaling only the values in a separate graphics processor experiment reduced
+relative error against floating-point attention to about 6–7 percent on the
+three later positions. The first position still had 41.6 percent error. The
+native integration used the baseline format. See `records/batch430_attention_error.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
