@@ -77,6 +77,28 @@ physical implementation of the new batched path remain unfinished. Numeric
 formats and row pairing are local reconstruction choices; no paper accuracy,
 latency, energy or whole-chip timing claim follows from these tests.
 
+A streamed down-projection operator now covers all 5,632 intermediate features
+for sixteen tokens on the unchanged twenty-core, 600-memory source hierarchy.
+Six feature tiles retain native partial sums while each input tile uses at most
+512 words per core. Each activation word is read once; each required weight
+word is shared across the token batch. A 128-bit tile summary suppresses reads
+of weight words whose eight input bytes are zero for every token. Those words
+are cleared locally so fresh memory contents cannot enter the arithmetic.
+
+The fixture reconstructs all 2,048 canonical layer outputs before selecting
+160 original output rows spread from 0 through 2047. It preserves the previous
+paired gated/down-input subset exactly. Native decode, eight-token tail,
+sixteen-token, zero-input and late-fault recovery cases pass 4,960 output
+comparisons over the full 5,632-feature width. The late fault follows two
+retained partial tiles; recovery completes without external reset. Disabling
+local weight clearing makes the fresh-memory zero-input case fail on unknown
+data. See `records/batch388_stream_qualification.json` and its lossless logs.
+
+These are prepared-input operator tests. The paired and down paths still need
+a common controller and end-to-end feed-forward verification. Complete model
+execution, mapping of this new path, whole-chip routing/timing and the paper's
+measured accuracy, latency and energy remain unqualified.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.

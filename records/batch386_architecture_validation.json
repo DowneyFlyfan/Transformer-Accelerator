@@ -1,0 +1,25 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch386_architecture.pdf",
+  "pdf_sha256": "3eeb35fec5eddc20d4459efa7f1a78a0e7f3d3a9e0e50bb49a7649fcd3779eaf",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_batch386_fixture.py": "66a9c99136540ba3f7b29bee0d77fc8a2db5b55423aa48a85472cecb98e74d93",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_format345_first_token.py": "ce74dd67dc43b2d98c7acfa80955487594fe2e61c7dff9441a04da8a60a2dbfc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_format335_policy.py": "8da88a07d4416bb6176d4188fd49c5878bc73067c97b96bed1896a48de5f3e83",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_format331_fixtures.py": "5220b77466c83e9fb0ad3231bb5973f3dec969fdc3eb04de7a1cc9765f98d5f4"
+  },
+  "pages": 2,
+  "source_audits_completed": 3,
+  "audits": [
+    "Full original gate/up/down weights and captured model inputs traced through canonical reference; full matrix quantization before row selection.",
+    "Protected per-token shifts, normalization/sign prediction, integer gate/up/SiLU/down conversion checked against unchanged helpers and complete canonical raw reconstruction.",
+    "All tensor axes, original output IDs0/2047, prior379 subset equality,5632-term CPU sums and selected/full CUDA output equality traced."
+  ],
+  "inherited_model_page_pixel_identical": true,
+  "render_visually_verified": true,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch386_architecture_page2.png": "7b2f6a32f998383fba22671f6ae8e50db0eb8773edc3db0d01e0011bd6a7a638"
+  },
+  "visual_result": "Reopened saved PDF inspected: eight operation boxes, arrows, full shapes and scope labels readable; original model page unchanged.",
+  "scope": "Prepared complete-width down-input fixture; source hardware and complete model qualification remain separate."
+}
