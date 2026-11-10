@@ -1,0 +1,34 @@
+{
+  "state": "shared_merge_table_token_sizes_verified_in_native_simulation",
+  "paper_figure": "31.6.3",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "candidate_parent": "e785dfd7ec8feb20d309e44de1f236cf81b104eb",
+  "method": "Compute causal token sizes by reading the active origin table shared with token merging.",
+  "verification": {
+    "trained_frames": 44,
+    "query_rows": 25432,
+    "independently_compared_origin_count_pairs": 4380542,
+    "compiled_table_word_reads": 9152,
+    "corrupt_origin_rejected": true,
+    "same_sum_wrong_distribution_rejected": true,
+    "integrated_cores": 20,
+    "integrated_compiled_memories": 623,
+    "integrated_origin_reads": 72,
+    "compatibility_saved_layer_restores": 26,
+    "native_attention_port_bits": 21283,
+    "native_attention_duplicate_origin_registers": 0,
+    "graphics_processor": "NVIDIA GeForce RTX 5070 Ti"
+  },
+  "scope": {
+    "trained_prefixes": "Standalone merger and token-size cursor using the production compiled banks.",
+    "integrated_replay": "Bounded 20-core functional test with shared-table access enabled.",
+    "saved_layer_replay": "Separate compatibility configuration using the local restore path.",
+    "native_synthesis_evidence": "Elaboration only for this attention candidate.",
+    "paper_results_matched": false
+  },
+  "archive": {
+    "file": "records/otsu458_shared_merge_table_evidence.json.gz",
+    "bytes": 78771,
+    "sha256": "46b529e6eb564ac767f7bb03858facd1dfbeb389e0847900a3ab088b085083e4"
+  }
+}
