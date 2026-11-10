@@ -406,10 +406,26 @@ The trained rows use compact query and key tensors from the archived answer,
 independently checked integer dot products, and causal sizes recomputed from
 the archived merge maps. The largest absolute error from real proportional
 softmax at the same quantized scores was 0.000171 on the trained rows. The tests
-reject unit sizes, a masked maximum, and premature exponent truncation. The
-isolated engine accepts captured scores and sizes. Integration with the mapped
-score, causal-size and value paths, scratch-memory mapping, and timing remain
-open. See `records/batch425_proportional_softmax_result.json`.
+reject unit sizes, a masked maximum, and premature exponent truncation. See
+`records/batch425_proportional_softmax_result.json`.
+
+The compact attention row controller connects the twenty-core score fabric to
+the causal-size unit, proportional softmax, and a signed 64-feature value
+accumulator. It loads the image merge map, derives the visible compact prefix,
+and omits both key and value reads outside the sink and recent windows for a
+streaming row. Retrieval rows run in batches of up to 160 keys. Each score
+batch must report successful completion before its scores can enter softmax.
+
+Xcelium matched 3,235 signed dot products and 1,600 exact value components on
+25 trained prompt and decode rows with 600 vendor memory models. The largest
+weighted-value error against real softmax on the same quantized operands was
+0.01054 value-code units. Three additional boundary rows cover a 1,024-key
+cache, a long original sequence, and an incomplete mixed-image prefix. The
+test also rejects early frame abandonment, omitted group sizes, and an
+unselected streaming key read. The caller still supplies the merge map and
+head type. Value memory uses an ordered vector response interface. Scratch
+mapping, whole-model scheduling and physical timing remain open. See
+`records/batch426_attention_row_result.json`.
 
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
