@@ -1,0 +1,22 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format324_architecture.pdf",
+  "pdf_sha256": "bf9e63328b82ceacc83a6b6a31dc060910a5faa5c4457ca9d94f76f968556df8",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/evaluate_tri_oracle_format324_vqav2.py": "84a5df08decd6e316a41c410948955072d62e53f8a80cabface214d2ba31cd8b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a"
+  },
+  "source_audits_completed": 3,
+  "audits": [
+    "Original model topology and hook position checked against pinned configuration and prior executed pilot",
+    "Unchanged before-norm/after-MLP arithmetic verified by syntax-tree equality to qualified source; only fixed-policy selection changes",
+    "Four-mode256case order,oldanswercontrols,22layer call shapes,cohort/loader/policy pinning and no-task-score boundary checked"
+  ],
+  "render_visually_verified": true,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format324_architecture_page1.png": "ddd8b3a0c6ac0bf0ec75cf16cdaa18a9fc7ba5c960bb338da64bed304423cca5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format324_architecture_page2.png": "564a6550424415117a66d0054d6acd45371ca6cda7756f00522b3e3f6ea5cfcd"
+  },
+  "pages": 2,
+  "scope": "Actual floating-model architecture with integer feed-forward output hooks; attention/vision remain floating.64samplepilot only.",
+  "visual_result": "Both saved-PDF page renders inspected; all boxes,arrows and text visible. Temporary images removed."
+}

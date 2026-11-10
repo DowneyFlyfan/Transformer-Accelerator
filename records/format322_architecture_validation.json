@@ -1,0 +1,23 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format322_architecture.pdf",
+  "pdf_sha256": "f6f7214a94f6e77ded2f0dbce1e208b5beaafcd5faf6c43dc5c4135cc5715b85",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/calibrate_tri_oracle_format322_extended.py": "35f7ba85d15583adff43335c611eb2fbd1324b13a248bcc2552e092e2bba7329",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/audit_tri_oracle_format320_ranges.py": "eff6c5fa1a9f5594b6012109640ef422c8881980efbd062a6f810f47bae9496c"
+  },
+  "source_audits_completed": 3,
+  "audits": [
+    "Pinned320 tuple/weight provenance,selected rows and direct safetensor matrix shapes checked",
+    "Unchanged integer arithmetic and applied-shift equations checked;170pairs includeall50priorpairs;minimum uses fitting rows only",
+    "All tensor shapes,baseline-reproduction guard,held-set reuse wording and policy-only output boundaries checked"
+  ],
+  "render_visually_verified": true,
+  "unchanged_model_pages_pixel_identical": true,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format322_architecture_verified_page3.png": "bc69845c74dd9d8af120ce93976483d9c8edbd28358578b1c423529d5c3fd4f0"
+  },
+  "inherited_original_model_architecture_sha256": "442afddd42f60066df32d6d7a903ea23c7e1b5912f56239bbad2f1d35c9b2067",
+  "scope": "Original-model diagrams onpages1/2 document the qualified source of frozen captures;page3 shows current offline calibration only.",
+  "visual_result": "Saved PDF reopened and rendered; all ten operation boxes and text verified visible. Unchanged first two model pages previously pixel-compared; temporary images removed."
+}

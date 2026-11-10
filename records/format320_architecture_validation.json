@@ -1,0 +1,31 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format318_architecture.pdf",
+  "pdf_sha256": "9a1124eaca026ebcbfd678b2402f16a6c9278f7b1e6cc90f088da86bb760caf5",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/audit_tri_oracle_format320_ranges.py": "eff6c5fa1a9f5594b6012109640ef422c8881980efbd062a6f810f47bae9496c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/config.json": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249"
+  },
+  "source_audits_completed": 3,
+  "audits": [
+    "Unchanged original model topology and all numerical/capture blocks confirmed against318viaASTequality",
+    "All new provenance checks inspected: pinnedloader metadata,rootfileinventory,shardmembershipreceipt,283policy,285generatedinputsand64imageevaluationanchors",
+    "Original diagram operations and tensor shapes rechecked against320; all changes are input-integrity guards, not numerical operations"
+  ],
+  "installed_forward_source_sha256": {
+    "LlamaDecoderLayer": "75d1d62e173e8c574b8a61338d1fa5052774d13b848eecd282cde88cd6690b8e",
+    "LlamaMLP": "03df2d7685cf8446594448cbd33ef676a2b088779d99d9803abe3bed2ec7ad9b",
+    "LlavaMultiModalProjector": "d2988043370d3ab3240dcd0cda155ac54e5c838d0f5ab0a0192111acebfcaef4"
+  },
+  "pages": 3,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format318_architecture_page1.png": "722f2c9af23d44ac1236d60fa9db67cfe92edb12c1e3254a2ba8a163c6c80432",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format318_architecture_page2.png": "4569abab295f9eefd10cfc351c6135fcafd3ee15e6e9bfd369423d000b00c5f1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format318_architecture_page3.png": "23ecaa702bd8711f10eb122a6ed3721673edfa9b9abf04f8b97478036e907626"
+  },
+  "render_visually_verified": true,
+  "scope": "Original floating model plus offline calibration/range diagnostic; no task accuracy or hardware matching claim.",
+  "visual_result": "All three rendered pages inspected: every operation box, arrow and text line visible; no clipping or overlap. Temporary page images removed.",
+  "reused_diagram_record_sha256": "f57a8dacd6c4aed4e729e2596084e0ac51bf0e9fe1c6a0d4f889a0a5aba12917",
+  "diagram_reuse_note": "Diagram footer318 names the unchanged numerical template.320 strengthens file/cohort bindings only; numerical and capture source trees remain identical."
+}

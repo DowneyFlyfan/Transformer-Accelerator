@@ -1,5 +1,28 @@
 # Tri-Oracle reproduction in progress
 
+Latest software accuracy diagnostic: extending the legal per-layer format search
+improves official Visual Question Answering version 2 (VQAv2) scoring on the same
+fixed 64-question pilot. Dense integer feed-forward execution rises from 64.84%
+to 67.81%; prediction-enabled execution rises from 62.34% to 63.44%. The unchanged
+floating-point model scores 74.69%. All 64 floating and legacy dense answer token
+sequences and per-question scores reproduce exactly. See
+`records/format326_official_scoring.json` and its scoring controls.
+
+The extended settings were fitted on eight separate, unlabeled diagram images.
+On eight reused diagnostic images, mean layer output relative error falls from
+0.223269 to 0.182272. A previously poor layer improves from 0.867216 to 0.026957
+by attenuating the up branch with a larger nonnegative right shift. The measured
+problem is gated-product range clipping; gate-input range overflow was absent.
+No weights or integer arithmetic changed. The 256-case graphics-processor run
+completed in 111.75 seconds. Only the 22 language feed-forward sublayers use
+integer arithmetic; attention, vision, normalization, residual additions and the
+vocabulary head remain floating. The 64 reused validation questions are a local
+diagnostic, not the full benchmark or recovered paper protocol. Applying these
+settings to the hardware configuration remains unverified. The complete extended
+search metadata is losslessly compressed in
+`records/format322_extended_calibration.json.gz`; no model weights or image data
+are included.
+
 Latest paper-method milestone: `verilog/tri_oracle_causal_token_size.sv`
 implements causal, row-wise token sizes using the token-merge table, an origin
 location table and an iterative cursor from Figure 31.6.3. It supports forward

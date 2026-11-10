@@ -1,0 +1,49 @@
+{
+  "state": "software_format_improvement_qualified_not_paper_matching",
+  "verified_utc": "2026-11-10T04:38:57.544961+00:00",
+  "verified_scoring_input_paths": 201,
+  "all_scoring_inputs_rehashed_unchanged": true,
+  "source_receipts": {
+    "format320_multi_image_range_audit.json": {
+      "result_sha256": "f7040e04f3af6776ae0495343d7ef8b06667d3f46c99eb5ad1c53ded45dba36f",
+      "guard_sha256": "549b3e92b56fc4f213fb004d7423e3773ca50b0cf160f7146024a22f66fd95a3",
+      "native_log_sha256": "925fb8a9960ae24679e5359c920529221e61a24f7b7cae80822d498c5ef385ed",
+      "state": "multi_image_fixed_format_and_range_diagnostic_completed"
+    },
+    "format322_extended_calibration.json": {
+      "result_sha256": "4e7c7bbe0fc24980f4228bd9de74679fbf8264f72e7daaed13badaaccbb24d24",
+      "guard_sha256": "13e0c73e1987f0218427a27229852706b06b9824063a465a7f964ed9f693f342",
+      "native_log_sha256": "60cd10b57736cc92fe95e123ea5ff12392e00a3dce9f5ec3d6945e30a1d1ae45",
+      "state": "extended_legal_format_search_completed_baseline_reproduced"
+    },
+    "format324_vqav2_inference.json": {
+      "result_sha256": "357565db2a2a594cf90041b5026a8e584928b3467d030766f2368539f419999b",
+      "guard_sha256": "5c22d31c674332d949a2335f8f9aab519fa640229dd1c6b46c1c13bd3b9fe189",
+      "native_log_sha256": "bc59555e19266e1b253c85a329f2ef48314bc0896cf8bd161ef5cc374d5508ea",
+      "state": "completed"
+    }
+  },
+  "scoring_sha256": "5304173ab40e8739f0e113d105ef5cf316975b2ce5806f8ff439d3c43ef833eb",
+  "published_policy_sha256": "96fe589b73b8b4f420f544f75dcce619bf0de4c32637fd2c3f92e9f88f73fc12",
+  "lossless_extended_search_metadata_verified": true,
+  "scores_percent_on64": {
+    "floating": 74.69,
+    "legacy_integer_dense": 64.84,
+    "integer_dense": 67.81,
+    "integer_predicted": 63.44
+  },
+  "changes_percentage_points": {
+    "dense_vs_prior_dense": 2.97,
+    "predicted_vs_prior_predicted": 1.1
+  },
+  "reviewer_result": "No Critical or Important defects; small-file and per-question means verified independently. Large input assets rehashed by scoring and this qualification, not by reviewer.",
+  "unresolved": [
+    "64 reused questions, not full214354-question benchmark",
+    "Paper checkpoint/preprocessing and accuracy protocol unrecovered",
+    "Attention,vision,normalization,residuals,vocabulary head remain floating",
+    "New per-layer hardware configuration mapping unverified",
+    "Whole-chip clock distribution,routing,timing and paper area/energy/speed unqualified"
+  ],
+  "physical_advancement_authorized": false,
+  "full_paper_results_matched": false
+}
