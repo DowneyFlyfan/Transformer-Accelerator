@@ -57,6 +57,15 @@ cases, with 4,420 exact outputs on 20 cores and 600 vendor memory models.
 The proposed two-pin placement change passed the vendor cell truth table.
 See `records/capture436_gate_up_isolation.json` for the verified source result.
 
+The two pin changes survived a cold reload with all original cell locations,
+core models, and timing constraints preserved. Neither bank's probed enable
+has a setup path through the old fault signal. The replacement paths have
+-43.668289 nanoseconds of slack for gate and -27.056335 for up. Worst slow
+setup slack improved by 2.858726 nanoseconds to -72.087708. The ten worst
+reported paths now share a 72-load down-projection enable. Its slowest reported
+wire segment adds 23.761299 nanoseconds to the worst path. This comparison uses
+ideal clocks and estimated interconnect. See `records/placement436_capture_trial.json`.
+
 The 20 fixed core outlines occupy 9.647397 of the placed die's 12.96 square
 millimeters. In four clusters, the down-projection engines alone need more
 area than the legal sites inside their four-core bounding rectangle after

@@ -1,0 +1,76 @@
+{
+  "state": "two_pin_capture_rewire_measured_at_slow_setup",
+  "verified_utc": "2026-11-10T17:16:21.315977+00:00",
+  "trial_checkpoint": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/capture436/warm/capture_full.db",
+  "trial_fingerprint_sha256": "0bd69a8ed88036a8d80e4ca748c02a329d92f25debde786cfea592b674ffadd2",
+  "timing_target_megahertz": 580,
+  "prior_worst_setup_slack_ns": -74.946434,
+  "trial_worst_setup": {
+    "slack_ns": -72.087708,
+    "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+    "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/source_data_reg[34]/E"
+  },
+  "change_vs_previous_placement_ns": 2.858726,
+  "capture_paths": [
+    {
+      "bank": "gate",
+      "fault_pin": "numeric/engine/gated/implementation/g416832/ZN",
+      "new_driver": "numeric/engine/gated/implementation/g434188/ZN",
+      "capture": "numeric/engine/gated/implementation/gate_values_reg[1887]/E",
+      "old_paths": "0",
+      "new_paths": "1",
+      "new_slack_ns": "-43.668289"
+    },
+    {
+      "bank": "up",
+      "fault_pin": "numeric/engine/gated/implementation/g416832/ZN",
+      "new_driver": "numeric/engine/gated/implementation/g434187/ZN",
+      "capture": "numeric/engine/gated/implementation/up_values_reg[1887]/E",
+      "old_paths": "0",
+      "new_paths": "1",
+      "new_slack_ns": "-27.056335"
+    }
+  ],
+  "trial_early_estimate_overflow_percent": {
+    "horizontal": 11.14,
+    "vertical": 24.28
+  },
+  "original_sinks_reconnected": {
+    "numeric/engine/gated/implementation/g416505/A1": "numeric/engine/gated/implementation/g434188/ZN",
+    "numeric/engine/gated/implementation/g416830/A1": "numeric/engine/gated/implementation/g434187/ZN"
+  },
+  "added_standard_cells": 0,
+  "full_paper_results_matched": false,
+  "parent_routing_completed": false,
+  "parent_timing_closed": false,
+  "placement_gate_allows_advancement": false,
+  "archive": {
+    "path": "records/placement436_capture_evidence.json.gz",
+    "sha256": "9c6893ed6eacad1bd3c625fe2ea10122dcb61ccf649c7cd42b85fe623e5c104b"
+  },
+  "scope": "Paired slow setup with estimated pre-route interconnect and ideal clocks. Incomplete port parasitics remain.",
+  "next_limiting_net": {
+    "rank": 1,
+    "slack_ns": -72.087708,
+    "data_path_ns": 63.795902,
+    "reported_wire_delay_ns": 48.226092,
+    "maximum_wire_delay_ns": 23.761299,
+    "driver": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/g217445/ZN",
+    "receiver": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/source_data_reg[34]/E",
+    "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+    "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[3]/implementation/source_data_reg[34]/E",
+    "native_load_pins": 72,
+    "native_load_ports": 0,
+    "driver_master": "INVD1P75BWP12T40P140",
+    "receiver_master": "EDFCNQD1BWP12T40P140",
+    "driver_placement_um": [
+      141.1,
+      395.6
+    ],
+    "receiver_placement_um": [
+      2592.08,
+      1703.6
+    ],
+    "manhattan_cell_origin_distance_um": 3758.98
+  }
+}
