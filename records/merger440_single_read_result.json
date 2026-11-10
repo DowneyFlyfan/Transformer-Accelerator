@@ -1,0 +1,80 @@
+{
+  "state": "full_size_single_read_sign_bank_source_verified",
+  "top": "tri_oracle_cumulative_token_merger423",
+  "source_sha256": "d2a926c3a0f60d88e04774a6dd56dd3524fc18756e84f77a392e4a7c0d2ff949",
+  "baseline_source_sha256": "5d7112b78aa916cd53c3d798fd1328dcd88fb2337f6f824b26a87e2ed2561e98",
+  "image_width": 24,
+  "image_height": 24,
+  "sign_features": 2048,
+  "native_sign_bank_read_muxes": 1,
+  "native_baseline_sign_bank_read_muxes": 2,
+  "elaboration_seconds": 36.071652698970865,
+  "elaboration_peak_anonymous_bytes": 1597210624,
+  "trained_trace_inventory": {
+    "modes": 2,
+    "layers": 44,
+    "maps": 25344,
+    "signs": 15561,
+    "rows": 25432,
+    "sizes": 4380542,
+    "cfg_errors": 3,
+    "map_stalls": 4353,
+    "done_stalls": 235
+  },
+  "failed_control": "BATCH423_WRONG_MAP mode=0 layer=1 token=126 got=52 expected=126",
+  "parameter_shapes": [
+    {
+      "width": 7,
+      "height": 5,
+      "features": 15,
+      "maps": 4103,
+      "frames": 116,
+      "blocked": 1314
+    },
+    {
+      "width": 3,
+      "height": 3,
+      "features": 9,
+      "maps": 3300,
+      "frames": 366,
+      "blocked": 1115
+    },
+    {
+      "width": 5,
+      "height": 1,
+      "features": 7,
+      "maps": 2771,
+      "frames": 553,
+      "blocked": 937
+    },
+    {
+      "width": 1,
+      "height": 5,
+      "features": 3,
+      "maps": 2766,
+      "frames": 552,
+      "blocked": 945
+    },
+    {
+      "width": 1,
+      "height": 1,
+      "features": 1,
+      "maps": 1060,
+      "frames": 1059,
+      "blocked": 522
+    }
+  ],
+  "integrated_native_markers": [
+    "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=602",
+    "SHARED437_ATTENTION_OWNERSHIP_PASS",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+  ],
+  "persistent_attention_context_enabled": false,
+  "full_paper_results_matched": false,
+  "placement_gate_allows_advancement": false,
+  "scope": "One asynchronous sign-bank read in the existing cumulative merger. The previous-column sign vector is retained in a register. The elaborated array is still inferred storage.",
+  "archive": {
+    "path": "records/merger440_single_read_evidence.json.gz",
+    "sha256": "2d9f8d8321f428e250cf7b4dd161603805a48c7fd1b2f8ac6a4a85b6d29ed307"
+  }
+}

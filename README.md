@@ -620,6 +620,14 @@ The full-size standalone merger elaborated under the same license and then
 reached the 16-gibibyte memory guard during generic synthesis, before Genus
 could save a generic checkpoint or report mapped area and timing.
 
+The cumulative merger now retains the previous column's selected sign vector
+in a register. Genus found one inferred sign-bank read multiplexer. Xcelium
+matched all 25,344 trained merge decisions, 4,380,542 causal-size values, and
+the original stall counts. The integrated 20-core attention replay and
+five parameter-shape comparisons passed. Skipping the sign refresh after an
+inherited merge failed at token 126 in the second layer. See
+`records/merger440_single_read_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

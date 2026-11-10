@@ -36,12 +36,13 @@ module tri_oracle_cumulative_token_merger423 #(
     logic [SLOT_W-1:0] frontier[IMAGE_WIDTH], root_slot[TOKENS];
     logic [SLOT_W-1:0] column, upper_slot, left_slot, inherited_slot, free_slot, selected_slot;
     logic [FEATURES-1:0] bank_sign[IMAGE_WIDTH];
-    wire [FEATURES-1:0] upper_sign = bank_sign[upper_slot];
-    wire [FEATURES-1:0] left_sign = bank_sign[left_slot];
+    logic [FEATURES-1:0] left_sign;
     logic [HIT_W-1:0] threshold;
     logic [IMAGE_WIDTH-1:0] used, visible;
     logic new_image, has_map, has_upper, has_left, old_alias, advance, space;
     logic upper_match, left_match, free_found, store_sign, valid_step;
+    wire [SLOT_W-1:0] bank_read_slot = old_alias ? inherited_slot : upper_slot;
+    wire [FEATURES-1:0] bank_read_sign = bank_sign[bank_read_slot];
 
     assign cfg_ready = state==Idle;
     assign done_valid = state==Result;
@@ -66,7 +67,7 @@ module tri_oracle_cumulative_token_merger423 #(
                 assign upper[node]=reduction[level-1].upper[2*node]+reduction[level-1].upper[2*node+1];
                 assign left[node]=reduction[level-1].left[2*node]+reduction[level-1].left[2*node+1];
             end else if (node<FEATURES) begin : compare
-                assign upper[node]=HIT_W'(sign_data[node]==upper_sign[node]);
+                assign upper[node]=HIT_W'(sign_data[node]==bank_read_sign[node]);
                 assign left[node]=HIT_W'(sign_data[node]==left_sign[node]);
             end else begin : padding
                 assign upper[node]='0;
@@ -149,7 +150,12 @@ module tri_oracle_cumulative_token_merger423 #(
                             root_slot[cursor]<=selected_slot;
                             bank_sign[selected_slot]<=sign_data;
                             bank_root[selected_slot]<=cursor;
+                            left_sign<=sign_data;
+                        end else if (old_alias || upper_match) begin
+                            left_sign<=bank_read_sign;
                         end
+                        // The next column sees this step's chosen sign as its left
+                        // neighbor. A left match keeps the prior cached sign.
                         frontier[column]<=selected_slot;
                         origins[cursor]<=selected_root;
                         map_valid<=1;
