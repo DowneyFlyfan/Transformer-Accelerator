@@ -126,10 +126,21 @@ checked all 90,112 skip decisions, both branch decisions for each channel, and
 every address in the 55,616 sign reads. The predictor flagged 5,231
 token/channel pairs to skip. A signed 16-bit residual with 13 fractional bits
 preserved the reference outlier decisions for this fixture. The standalone
-predictor still repeats normalization for each 32-channel group and has yet
-to supply these masks to the batched controller. The observed sign traffic
-does not include the rest of the feedforward frame. See
+baseline repeats normalization for each 32-channel group. See
 `records/batch396_mask_fixture.json` and `records/batch396_native_masks.json`.
+
+The reuse controller keeps only the outlier flags and signs, packed four
+strips per word in two compiled 512-by-64 memories. Xcelium counted 16
+normalizer starts for the entire batch, compared with 2,816 group-by-token
+normalizations in the baseline. All 90,112 skip decisions, both branch masks
+and all 55,616 external sign reads matched the same trained fixture. The
+five native cases cover early and late sign failures, mismatched replay,
+cancellation of both held residual offers, same-tag recovery and a
+shorter frame crossing the two banks. The cache adds 8,192 bytes to this
+frontend. The group outputs still need to be assembled into the batched
+controller's 80-channel packets, and the extra memory remains to be
+accounted for in the whole-chip design. See
+`records/batch398_outlier_result.json`.
 
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
