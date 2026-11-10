@@ -9,6 +9,15 @@ for fast hold. The two worst setup paths in both setup corners share the same
 Innovus also reports incomplete port parasitics on some connections. See
 `records/placement431_diagnostics.json`.
 
+A controlled placement trial added 21 noninverting buffers to two data
+connections. Exact site placement and a cold reload preserved the original
+cells, core models, constraints, and logical endpoints. At the slow setup
+corner, the two edited paths gained 30.226688 and 18.203468 nanoseconds of
+slack. The whole-placement worst slack gained 1.006904 nanoseconds and
+remained at -85.432854 nanoseconds. A neighboring feature-width bit became
+the worst path. Estimated congestion stayed at the same reported values.
+See `records/placement432_branch_trial.json`.
+
 The 20 fixed core outlines occupy 9.647397 of the placed die's 12.96 square
 millimeters. In four clusters, the down-projection engines alone need more
 area than the legal sites inside their four-core bounding rectangle after

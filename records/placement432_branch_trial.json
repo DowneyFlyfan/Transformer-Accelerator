@@ -1,0 +1,136 @@
+{
+  "state": "placed_noninverting_buffer_trial_measured_at_slow_setup",
+  "verified_utc": "2026-11-10T15:53:17.130211+00:00",
+  "timing_target_megahertz": 580,
+  "baseline_fingerprint_sha256": "439064231adce3ecded204d3d247cbf411b4e867dfa4ba4d7757c822658bb0f5",
+  "trial_checkpoint": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_branch432/warm/branch_full.db",
+  "trial_fingerprint_sha256": "9929b3b802bcc1b30e5ca6a08578c5d64ea2b581e63788c5bc09db9f227efbc6",
+  "original_parent_leaves_preserved": 933052,
+  "original_core_leaves_preserved": 1889420,
+  "original_compiled_memory_instances": 600,
+  "die_area_square_millimeters": 12.96,
+  "added_noninverting_buffers": 21,
+  "measured_original_sink_counts": [
+    38,
+    72
+  ],
+  "wrong_sink_control_rejected": true,
+  "max_buffer_distance_from_requested_um": 21.85,
+  "original_automatic_legalizer_geometry": {
+    "placement_sha256": "b7a076f5ed60e0bb736a211013e885a58cff71edd4a28824e015567020c246ed",
+    "trees": [
+      {
+        "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+        "driver_to_root_um": 389.74,
+        "max_root_to_branch_um": 2554.2,
+        "max_branch_to_sink_um": 1581.98,
+        "max_original_driver_to_sink_um": 4093.92
+      },
+      {
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "driver_to_root_um": 1427.62,
+        "max_root_to_branch_um": 2896.62,
+        "max_branch_to_sink_um": 2122.06,
+        "max_original_driver_to_sink_um": 5596.48
+      }
+    ],
+    "scope": "Distances are Manhattan distances between placed cell origins. Timing requires native parasitic estimates."
+  },
+  "baseline_worst_setup_slack_ns": -86.439758,
+  "trial_worst_setup": {
+    "slack_ns": -85.432854,
+    "startpoint": "numeric/engine/backend/dense_features_reg[10]/CP",
+    "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D"
+  },
+  "worst_setup_slack_change_ns": 1.006904,
+  "targeted_paths": {
+    "1": {
+      "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+      "launch": "numeric/engine/backend/dense_features_reg[12]/CP",
+      "capture": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+      "baseline_slack_ns": -86.439758,
+      "trial_slack_ns": -56.21307,
+      "change_ns": 30.226688
+    },
+    "3": {
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+      "launch": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+      "capture": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[3]/E",
+      "baseline_slack_ns": -84.439758,
+      "trial_slack_ns": -66.23629,
+      "change_ns": 18.203468
+    }
+  },
+  "trial_early_estimate_overflow_percent": {
+    "horizontal": 11.14,
+    "vertical": 24.23
+  },
+  "native_final_warning_count": 6409,
+  "native_final_error_count": 0,
+  "incomplete_port_parasitics_warning": true,
+  "placement_gate_allows_advancement": false,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "path": "records/placement432_branch_evidence.json.gz",
+    "sha256": "d63796c91e9bf37d5462068928cd69b65c417e68276af5314f829bb3c4886c1e"
+  },
+  "scope": "A paired slow-setup diagnostic with original full core models, constraints and exact buffer sites. The test uses estimated pre-route interconnect and ideal clocks, with signal interference analysis disabled. Typical setup and fast hold were not measured for this trial.",
+  "new_largest_wire_segments": [
+    {
+      "rank": 1,
+      "slack_ns": -85.432854,
+      "data_path_ns": 87.079086,
+      "reported_wire_delay_ns": 47.307287,
+      "maximum_wire_delay_ns": 33.220699,
+      "driver": "numeric/engine/backend/FE_OFC60563_dense_features_10/Z",
+      "receiver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g218289/I",
+      "startpoint": "numeric/engine/backend/dense_features_reg[10]/CP",
+      "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+      "native_load_pins": 38,
+      "native_load_ports": 0,
+      "driver_master": "BUFFD16BWP12T40P140",
+      "receiver_master": "CKND1BWP12T40P140",
+      "driver_placement_um": [
+        2648.92,
+        1676.0
+      ],
+      "receiver_placement_um": [
+        1834.82,
+        498.8
+      ],
+      "manhattan_cell_origin_distance_um": 1991.3
+    },
+    {
+      "rank": 3,
+      "slack_ns": -77.749863,
+      "data_path_ns": 74.019196,
+      "reported_wire_delay_ns": 54.957596,
+      "maximum_wire_delay_ns": 15.6796,
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/TRI266_T42_BUFFER_4/Z",
+      "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/TRI266_T42_BUFFER_1/I",
+      "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+      "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/channels_reg[79]/E",
+      "native_load_pins": 4,
+      "native_load_ports": 0,
+      "driver_master": "BUFFD16BWP12T40P140",
+      "receiver_master": "BUFFD4BWP12T40P140",
+      "driver_placement_um": [
+        3331.0,
+        746.0
+      ],
+      "receiver_placement_um": [
+        1840.7,
+        2742.8
+      ],
+      "manhattan_cell_origin_distance_um": 3487.1
+    }
+  ],
+  "new_critical_trace_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_branch432/cold/measured_nets.tsv": "3a206f4c6337a897684a6812cab826d33bd42eaca399bfc0df615ac9e2dd3848",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_branch432/cold/measured_cells.tsv": "514042f062abfa49b464c217aaae7747c123f86ea912ee64c0198fcd6841c54d",
+    ".cache/physical/pnr/tri_oracle_branch432/setup_slow/worst_ten_paths_split.rpt": "5e0b4962e755312edd33e418f9bd2bace24c0456c9b91f38bd6a8a80215e0315",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_branch432/cold/receipt.json": "c8c1bd2f3f5833de5b208ea6c3a0398675a8bd433fe0d04c2737d154f110a51c"
+  }
+}
