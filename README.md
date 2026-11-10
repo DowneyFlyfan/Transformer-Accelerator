@@ -198,8 +198,22 @@ and recovered on the same tag. A 17-strip case checks the final one-beat
 burst and the next token's stride. An independent one-strip control also
 reproduces the stale-address failure when the old metadata write-enable
 ordering is restored. The generated activation allocation has yet to be
-consumed by the joined compute frame. See
+consumed in a complete trained compute run. See
 `records/batch405_normalize_result.json`.
+
+The learned frame connects the generated activation allocation to the
+twenty-core feedforward fabric. The frontend owns the shared write port
+until its final activation acknowledgment. Only then can a complete
+prediction packet start compute, which takes ownership for intermediate
+writes. The twelve small-frame Xcelium cases matched 3,168 generated
+activation bytes, 4,320 intermediate bytes and 6,228 output values.
+They cover first and final activation-write failures, invalid writable
+overlaps, malformed replay, and errors during compute or prediction.
+The full trained reference independently matches all 90,112 intermediate
+bytes and 32,768 output words in central and graphics processor
+arithmetic. Full trained hardware execution and paper benchmarks remain
+separate qualifications. See `records/batch406_learned_result.json`
+and `records/batch407_learned_fixture.json`.
 
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
