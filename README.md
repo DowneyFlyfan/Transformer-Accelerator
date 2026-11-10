@@ -266,6 +266,17 @@ floating point agree on all 32 head types for this image and layer. The
 receipt records the 32 batches per head for testing key reuse on hardware.
 See `records/batch412_tiled_attention_fixture.json`.
 
+The tile adapter now submits up to sixteen query rows together, with a
+causal mask for each row. In the 30-row Xcelium check, the shared fabric
+matched 2,385 live scores and all 495 masked positions. It read each
+selected key word once per batch, for 1,392 key words across the two
+batches. The same rows would require 19,080 key words if issued one at a
+time under the existing read policy. Five fault cases cover invalid and
+overlapping tile descriptors, an interrupted read, a malformed output
+after a valid row, and a wrong completion tag. A separate control that
+allows a future key into an earlier query fails at that exact score.
+See `records/batch413_canary_tile_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
