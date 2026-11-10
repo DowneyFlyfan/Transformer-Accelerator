@@ -352,6 +352,17 @@ Changing the inclusive threshold to a strict comparison failed at the
 expected token. See `records/batch419_trained_merger_fixture.json` and
 `records/batch420_trained_merger_result.json`.
 
+The validation pilot now applies the causal sizes as logarithmic bias in
+floating-point attention and passes compact key and value tensors to the
+attention kernel. Merging alone removed 43.8 percent of image key slots and
+scored 70.62 percent. Combining merging with live head prediction scored
+68.44 percent. The identity control reproduced the dense 74.69 percent score.
+The combined mode reuses the 8:1 ratio from unmerged calibration and counts
+its sink and recent windows in surviving representatives. The model retains
+original query and cache slots. Expanded-representative comparisons verify
+the causal bias on trained rows, and decode controls check both Boolean and
+additive masks. See `records/batch421_merge_aware_attention_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
