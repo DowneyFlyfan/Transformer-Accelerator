@@ -465,6 +465,28 @@ pre-placement setup slack was 1.132 ns at the 580-megahertz target and the
 `records/batch428_attention_context_result.json` and
 `records/batch428_context_synthesis_result.json`.
 
+The query, key, and value projection controller produces the 40 attention
+heads from 2,048 normalized input features on the shared twenty-core tensor
+engine. It uses up to two heads per weight tile, one activation scale per
+token, and one output scale per head. It applies fixed-point rotary position
+encoding to queries and keys and emits values directly after requantization.
+Vectors can stream before the terminal status, so the consumer commits them
+only after successful completion.
+
+On four trained positions, including the first decode token, Xcelium matched
+10,240 dot products and 10,240 operand bytes. The tests reject malformed
+angles, transport and tag failures, and an inverted rotary sign. The caller
+supplies normalized activations and rotary coefficients. The generated vectors
+have yet to feed the attention controller in a joint simulation. See
+`records/batch429_qkv_result.json`.
+
+An independent graphics processor experiment chose power-of-two input-channel
+scaling on four separate prompts. On the held-out trace, aggregate relative
+value error fell from 25.47 to 8.65 percent, while query error rose from 4.17
+to 5.11 percent and key error rose from 2.46 to 3.40 percent. This experiment
+uses the same output scales. The native run above uses the baseline operands.
+See `records/batch429_qkv_equalization.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
