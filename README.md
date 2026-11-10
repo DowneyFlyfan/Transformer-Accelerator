@@ -120,6 +120,17 @@ Complete model execution, mapping of the new batched path, whole-chip routing
 and timing, and the paper's measured accuracy, latency and energy remain
 unqualified.
 
+The existing weight predictor now reproduces every mask for the same sixteen
+trained tokens when given raw residual codes and packed weight signs. Xcelium
+checked all 90,112 skip decisions, both branch decisions for each channel, and
+every address in the 55,616 sign reads. The predictor flagged 5,231
+token/channel pairs to skip. A signed 16-bit residual with 13 fractional bits
+preserved the reference outlier decisions for this fixture. The standalone
+predictor still repeats normalization for each 32-channel group and has yet
+to supply these masks to the batched controller. The observed sign traffic
+does not include the rest of the feedforward frame. See
+`records/batch396_mask_fixture.json` and `records/batch396_native_masks.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
