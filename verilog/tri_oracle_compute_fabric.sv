@@ -3,7 +3,8 @@
 // this is a compute/memory fabric, not a complete vision-language processor.
 module tri_oracle_compute_fabric #(
   parameter bit AGGREGATOR_SIGN_BANK=0,
-  parameter bit CORE_STRIP_PREDICTOR=0
+  parameter bit CORE_STRIP_PREDICTOR=0,
+  parameter bit CORE_HEAD_PREDICTOR=0
 ) (
     input wire clk,rst_n,load_valid,
     input wire [4:0] load_core,
@@ -28,11 +29,17 @@ module tri_oracle_compute_fabric #(
     output wire [119:0] merge_sign_counts,
     input wire strip_rst_n,
     input wire [533:0] strip_request,
-    output wire [111:0] strip_response
+    output wire [111:0] strip_response,
+    input logic [399:0] head_request,
+    output logic [72:0] head_response
 );
     wire [4:0] cluster_ready,load_errors;
     wire [2:0] strip_cluster=strip_request[533:531];
     wire [111:0] cluster_strip_responses[5];
+    wire [2:0] head_cluster=head_request[399:397];
+    wire [72:0] cluster_head_responses[5];
+    assign head_response = CORE_HEAD_PREDICTOR && head_cluster<5 ?
+        cluster_head_responses[head_cluster] : '0;
     assign strip_response = CORE_STRIP_PREDICTOR && strip_cluster<5 ?
         cluster_strip_responses[strip_cluster] : '0;
     assign cmd_ready=(|cmd_clusters) && ((cluster_ready & cmd_clusters)==cmd_clusters);
@@ -42,8 +49,13 @@ module tri_oracle_compute_fabric #(
         localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES;
         localparam int SIGN_START=cluster==0 ? 0 : 512+(cluster-1)*384;
         tri_oracle_compute_cluster #(
-            .MERGE_FEATURES(MERGE_FEATURES), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)
+            .MERGE_FEATURES(MERGE_FEATURES), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
+            .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
         ) unit (
+            .head_request({head_request[396:395],
+                CORE_HEAD_PREDICTOR && head_cluster==3'(cluster) ? head_request[394:392] : 3'b0,
+                head_request[391:0]}),
+            .head_response(cluster_head_responses[cluster]),
             .strip_rst_n,
             .strip_request(CORE_STRIP_PREDICTOR && strip_cluster==3'(cluster) ? strip_request[530:0] : 531'b0),
             .strip_response(cluster_strip_responses[cluster]),

@@ -6,7 +6,8 @@
 module tri_oracle_attention_layer427 #(
     parameter bit PERSIST_LAYER_CONTEXT=0,
     parameter bit COMPILED_SIGN_BANK=0,
-    parameter bit AGGREGATOR_SIGN_BANK=0
+    parameter bit AGGREGATOR_SIGN_BANK=0,
+    parameter bit CORE_HEAD_PREDICTOR=0
 ) (
     input logic clk, rst_n,
     input logic frame_valid, frame_new_image,
@@ -78,7 +79,9 @@ module tri_oracle_attention_layer427 #(
     output logic value_rsp_ready,
     input logic [511:0] value_rsp_data,
     output logic [12:0] merge_sign_control,
-    input logic [119:0] merge_sign_counts
+    input logic [119:0] merge_sign_counts,
+    output logic [399:0] head_request,
+    input logic [72:0] head_response
 );
     localparam logic [9:0] IMAGE_TOKENS=10'd576;
     typedef enum logic [3:0] {
@@ -190,7 +193,8 @@ module tri_oracle_attention_layer427 #(
         .map_ready(state==Merge && row_map_ready && map_ready && store_save_ready),
         .map_index, .map_origin, .map_last, .done_valid(merge_done_valid), .done_error(merge_done_error), .done_ready(state==Merge)
     );
-    tri_oracle_attention_head_predictor415 predictor (
+    tri_oracle_attention_head_predictor415 #(.CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)) predictor (
+        .cfg_head_id(head_id), .head_request, .head_response,
         .clk, .rst_n, .cfg_valid(head_valid && head_ready && use_predictor), .cfg_ready(predictor_ready),
         .cfg_tag(head_tag), .cfg_alpha(head_alpha), .cfg_tokens(13'(head_tokens)),
         .cfg_ratio_num(head_ratio_num), .cfg_ratio_den(head_ratio_den),

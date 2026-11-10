@@ -3,7 +3,9 @@
 // Query memory starts at position 96, while key memory starts at position 0.
 // The caller selects the key head and supplies the score scale as integer alpha.
 // The configured ratio and 32-key tile geometry are local reconstruction choices.
-module tri_oracle_attention_head_predictor415 (
+module tri_oracle_attention_head_predictor415 #(
+    parameter bit CORE_HEAD_PREDICTOR=0
+) (
     input logic clk, rst_n,
     input logic cfg_valid,
     output logic cfg_ready,
@@ -31,12 +33,16 @@ module tri_oracle_attention_head_predictor415 (
     input logic [3071:0] tensor_out_data,
     input logic tensor_done_valid, tensor_done_error,
     output logic tensor_done_ready,
-    input logic [31:0] tensor_done_tag
+    input logic [31:0] tensor_done_tag,
+    input logic [4:0] cfg_head_id,
+    output logic [399:0] head_request,
+    input logic [72:0] head_response
 );
     localparam logic [12:0] FIRST_QUERY = 96;
     typedef enum logic [2:0] {Idle, Configure, OfferBatch, WaitBatch, Result, Invalid} state_t;
     state_t state;
     logic [31:0] tag, alpha;
+    logic [4:0] classifier_owner;
     logic [12:0] tokens, query_position, next_query, remaining;
     logic [63:0] query_addr, key_base;
     logic [7:0] ratio_num, ratio_den;
@@ -88,26 +94,38 @@ module tri_oracle_attention_head_predictor415 (
     assign batch_tile_start = {recent_start, inner_start, 16'd0};
 
     tri_oracle_attention_tile_batch413 tile (.*);
-    tri_oracle_attention_head_classifier410 classifier (
-        .clk, .rst_n, .cfg_valid(state == Configure), .cfg_ready(classifier_cfg_ready),
-        .cfg_tag(tag), .cfg_alpha(alpha), .cfg_rows(tokens-FIRST_QUERY),
-        .cfg_ratio_num(ratio_num), .cfg_ratio_den(ratio_den),
-        .in_valid(score_valid), .in_ready(score_ready), .in_last(score_last), .in_tag(score_tag),
-        .in_region(score_region), .in_lanes(score_lanes), .in_scores(score_data),
-        .out_valid(classifier_valid), .out_ready(state == Result && out_ready), .out_tag(classifier_tag),
-        .out_error(classifier_error), .out_streaming(classifier_streaming),
-        .out_inner(classifier_inner), .out_outer(classifier_outer)
-    );
+    if (CORE_HEAD_PREDICTOR) begin : distributed_classification
+        // The owner is held from configuration until result retirement.
+        assign head_request = {classifier_owner, state == Configure, score_valid,
+                               state == Result && out_ready, tag, alpha, 13'(tokens-FIRST_QUERY),
+                               ratio_num, ratio_den, score_last, score_tag,
+                               score_tag==tag ? score_region : 2'd3, score_lanes, score_data};
+        assign {classifier_cfg_ready, score_ready, classifier_valid, classifier_error,
+                classifier_streaming, classifier_tag, classifier_inner, classifier_outer} = head_response;
+    end else begin : local_classification
+        assign head_request = '0;
+        tri_oracle_attention_head_classifier410 classifier (
+            .clk, .rst_n, .cfg_valid(state == Configure), .cfg_ready(classifier_cfg_ready),
+            .cfg_tag(tag), .cfg_alpha(alpha), .cfg_rows(tokens-FIRST_QUERY),
+            .cfg_ratio_num(ratio_num), .cfg_ratio_den(ratio_den),
+            .in_valid(score_valid), .in_ready(score_ready), .in_last(score_last), .in_tag(score_tag),
+            .in_region(score_region), .in_lanes(score_lanes), .in_scores(score_data),
+            .out_valid(classifier_valid), .out_ready(state == Result && out_ready), .out_tag(classifier_tag),
+            .out_error(classifier_error), .out_streaming(classifier_streaming),
+            .out_inner(classifier_inner), .out_outer(classifier_outer)
+        );
+    end
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= Idle;
-            tag <= 0; alpha <= 0; tokens <= 0;
+            tag <= 0; alpha <= 0; tokens <= 0; classifier_owner <= 0;
             query_addr <= 0; key_base <= 0; query_position <= FIRST_QUERY;
             ratio_num <= 0; ratio_den <= 0; batch_failed <= 0;
         end else case (state)
             Idle: if (cfg_valid) begin
                 tag <= cfg_tag; alpha <= cfg_alpha; tokens <= cfg_tokens;
+                classifier_owner <= cfg_head_id>=5'd20 ? cfg_head_id-5'd20 : cfg_head_id;
                 query_addr <= cfg_query_base; key_base <= cfg_key_base;
                 ratio_num <= cfg_ratio_num; ratio_den <= cfg_ratio_den;
                 query_position <= FIRST_QUERY;

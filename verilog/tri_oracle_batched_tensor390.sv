@@ -7,7 +7,8 @@
 // retain ownership through accepted LAST; reset must also reset the peer.
 module tri_oracle_batched_tensor390 #(
   parameter bit AGGREGATOR_SIGN_BANK=0,
-  parameter bit CORE_STRIP_PREDICTOR=AGGREGATOR_SIGN_BANK
+  parameter bit CORE_STRIP_PREDICTOR=AGGREGATOR_SIGN_BANK,
+  parameter bit CORE_HEAD_PREDICTOR=CORE_STRIP_PREDICTOR
 ) (
   input logic clk,rst_n,cfg_valid,cfg_paired,
   output logic cfg_ready,
@@ -43,7 +44,9 @@ module tri_oracle_batched_tensor390 #(
   input logic [12:0] merge_sign_control,
   output logic [119:0] merge_sign_counts,
   input logic [533:0] strip_request,
-  output logic [111:0] strip_response
+  output logic [111:0] strip_response,
+  input logic [399:0] head_request,
+  output logic [72:0] head_response
 );
   typedef enum logic [4:0] {
     IDLE,VALIDATE,LOAD_MASK,ACT_PREPARE,WEIGHT_SELECT,ADDRESS_OFFSET,
@@ -108,8 +111,10 @@ module tri_oracle_batched_tensor390 #(
     .backend_out_ready(backend_out_ready),.backend_out_output(backend_out_output),
     .backend_out_data(backend_out_data));
   tri_oracle_compute_fabric #(
-    .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)
+    .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
+    .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
   ) fabric (
+    .head_request,.head_response,
     .strip_rst_n(rst_n),.strip_request,.strip_response,
     .merge_sign_data,.merge_sign_control,.merge_sign_counts,
     .clk(clk),.rst_n(backend_rst_n),.load_valid(load_valid),.load_core(load_core),

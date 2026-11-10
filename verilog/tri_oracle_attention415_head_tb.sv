@@ -39,7 +39,7 @@ module tri_oracle_attention415_head_tb;
     int configured_tokens, next_position, prefill_batches=0, head_case;
     string fixture;
 
-    tri_oracle_attention_head_predictor415 dut (.*);
+    tri_oracle_attention_head_predictor415 dut (.cfg_head_id(5'd0), .head_request(), .head_response('0), .*);
     tri_oracle_batched_tensor390 tensor (
         .clk, .rst_n, .cfg_valid(tensor_cfg_valid), .cfg_ready(tensor_cfg_ready),
         .cfg_paired(1'b0), .cfg_tag(tensor_cfg_tag), .cfg_tokens(tensor_cfg_tokens), .cfg_feature_words(10'd8),
@@ -90,8 +90,8 @@ module tri_oracle_attention415_head_tb;
                 for (int row=0; row<16; row++) begin
                     inner_prefix+=int'(counts[row*2]); recent_prefix+=int'(counts[row*2+1]);
                 end
-                if (accepted_batches!=2 || dut.classifier.total_inner!==18'(inner_prefix) ||
-                    dut.classifier.total_outer!==18'(recent_prefix))
+                if (accepted_batches!=2 || dut.local_classification.classifier.total_inner!==18'(inner_prefix) ||
+                    dut.local_classification.classifier.total_outer!==18'(recent_prefix))
                     $fatal(1,"BATCH415_ERROR_WITHOUT_CHECKED_PREFIX");
             end
             inject_request<=fault_armed && second_query_batch;

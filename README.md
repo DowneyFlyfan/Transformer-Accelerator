@@ -725,6 +725,14 @@ The compact sign-only estimator let Genus elaborate the partition with all
 20 predictors under the existing instance limit.
 See `records/strip449_core_prediction_result.json`.
 
+Each of the 20 compute cores now contains an attention head classifier. The
+shared scheduler sends each head's complete score stream to one core and holds
+its configuration until the result is accepted. The local ratio comparison adds
+seven cycles after the last score beat. Xcelium exercised all 20 classifiers,
+and an independent graphics processor check matched the 543 query rows. Both
+Genus partitions elaborated within the existing instance limit and agreed on
+all 473 new interface bits. See `records/head453_core_classification_result.json`.
+
 Genus mapped the earlier standalone merger to 44,219 cells. The synthesis
 report shows zero picoseconds of setup slack at 580 megahertz before placement.
 The mapped netlist passed the 44-frame functional replay in Xcelium.

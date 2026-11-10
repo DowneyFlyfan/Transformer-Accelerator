@@ -7,6 +7,7 @@
 module tri_oracle_compute_cluster #(
   parameter int MERGE_FEATURES=0,
   parameter bit CORE_STRIP_PREDICTOR=0,
+  parameter bit CORE_HEAD_PREDICTOR=0,
   localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
 ) (
     input wire clk,rst_n,load_valid,
@@ -31,8 +32,22 @@ module tri_oracle_compute_cluster #(
     output wire [23:0] merge_sign_counts,
     input logic strip_rst_n,
     input logic [530:0] strip_request,
-    output logic [111:0] strip_response
+    output logic [111:0] strip_response,
+    input logic [396:0] head_request,
+    output logic [72:0] head_response
 );
+    wire [1579:0] core_head_requests;
+    wire [291:0] core_head_responses;
+    if (CORE_HEAD_PREDICTOR) begin : head_route
+      tri_oracle_cluster_head450 route (
+        .request(head_request), .response(head_response),
+        .core_requests(core_head_requests), .core_responses(core_head_responses)
+      );
+    end else begin : no_head_route
+      assign core_head_requests='0;
+      assign head_response='0;
+    end
+
     wire [587:0] core_strip_requests;
     wire [159:0] core_strip_responses;
     if (CORE_STRIP_PREDICTOR) begin : strip_group
@@ -90,7 +105,8 @@ module tri_oracle_compute_cluster #(
         end
     endfunction
     for(genvar core=0;core<4;core=core+1)begin: cores
-        tri_oracle_inferred_strip_core448 #(.CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)) unit (
+        tri_oracle_inferred_strip_core448 #(.CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR), .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)) unit (
+      .head_request(core_head_requests[395*core+:395]), .head_response(core_head_responses[73*core+:73]),
         .strip_rst_n, .strip_request(core_strip_requests[147*core+:147]),
             .strip_response(core_strip_responses[40*core+:40]),
             .clk(clk),.rst_n(rst_n),.load_valid(load_valid && load_core==2'(core)),
@@ -138,7 +154,8 @@ endmodule
 
 /* verilator lint_off DECLFILENAME */
 module tri_oracle_inferred_strip_core448 #(
-    parameter bit CORE_STRIP_PREDICTOR=0
+    parameter bit CORE_STRIP_PREDICTOR=0,
+    parameter bit CORE_HEAD_PREDICTOR=0
 ) (
     input wire clk,
     input wire rst_n,
@@ -163,9 +180,18 @@ module tri_oracle_inferred_strip_core448 #(
     output wire [1023:0] result_data,
     input logic strip_rst_n,
     input logic [146:0] strip_request,
-    output logic [39:0] strip_response
+    output logic [39:0] strip_response,
+    input logic [394:0] head_request,
+    output logic [72:0] head_response
 );
     tri_oracle_memory_compute compute (.*);
+    if (CORE_HEAD_PREDICTOR) begin : head
+        tri_oracle_core_head450 predict (
+            .clk, .rst_n(strip_rst_n), .request(head_request), .response(head_response)
+        );
+    end else begin : no_head
+        assign head_response='0;
+    end
     if (CORE_STRIP_PREDICTOR) begin : strip
         tri_oracle_core_strip448 predict (
             .clk, .rst_n(strip_rst_n), .request(strip_request), .response(strip_response)
