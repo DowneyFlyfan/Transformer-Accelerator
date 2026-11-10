@@ -189,21 +189,22 @@ module tri_oracle_fabric_gated_executor (
         end
         GateLaunch: if (projection_in_ready) state <= GateWait;
         GateWait: if (projection_out_valid) begin
+          // Capture on the handshake. Only validated sums can reach activation.
+          gate_values <= projection_out_data;
           if (projection_fault) begin
             result_error <= 1;
             state <= Result;
           end else begin
-            gate_values <= projection_out_data;
             state <= UpLaunch;
           end
         end
         UpLaunch: if (projection_in_ready) state <= UpWait;
         UpWait: if (projection_out_valid) begin
+          up_values <= projection_out_data;
           if (projection_fault) begin
             result_error <= 1;
             state <= Result;
           end else begin
-            up_values <= projection_out_data;
             state <= Activate;
           end
         end

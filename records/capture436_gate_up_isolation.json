@@ -1,0 +1,28 @@
+{
+  "state": "capture_fault_isolation_verified_at_source_and_mapped_cone",
+  "verified_utc": "2026-11-10T17:02:22.907282+00:00",
+  "previous_executor_sha256": "12e8efde382112b019c1a5f3f8129dcf0c885f89319a902cfc041affe691bdd0",
+  "revised_executor_sha256": "998ef02d1111e02f93645fec03957e0594507732f85ad469773a63ee22ff6ba7",
+  "testbench_sha256": "e4ee7490b49fe389dc22af51def7f61cb62f2a37b0fefcca3bdf96a0a34c9125",
+  "exact_capture_handshakes": 38,
+  "controller_cases": 31,
+  "exact_requantization_inputs": 525,
+  "original_fault_gated_capture_rejected": true,
+  "mapped_vectors_per_version": 2048,
+  "expected_mapped_payload_deltas": 16,
+  "checked_actual_placed_cone_vectors": 32,
+  "production_cases": 12,
+  "production_exact_hidden_outputs": 4420,
+  "production_cores": 20,
+  "production_memory_models": 600,
+  "proposed_physical_pin_reconnections": 2,
+  "proposed_physical_cell_additions": 0,
+  "physical_timing_result_measured": false,
+  "placement_gate_allows_advancement": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "path": "records/capture436_gate_up_evidence.json.gz",
+    "sha256": "ea9c88b5ca168e974939c1209f3447c763d73f2b612503a4bcd69ff87d50140b"
+  },
+  "scope": "Full-width source controller and staged production regression. Genus maps the extracted one-bit next-state cone. The proposed pin reconnections are checked against actual cell models and saved placement connectivity."
+}

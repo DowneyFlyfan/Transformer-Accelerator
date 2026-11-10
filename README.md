@@ -48,6 +48,15 @@ gate-value register enable, with 14.877899 nanoseconds of estimated delay on
 its final 32-load connection. This trial measured slow setup with ideal clocks
 and estimated interconnect. See `records/placement435_ready_trial.json`.
 
+The gated executor now captures gate and up payloads on the projection
+handshake. The existing validation still rejects malformed responses before
+activation. This removes the projection fault from the write enables for both
+5,120-bit banks without adding a protocol cycle. Genus verified the mapped
+capture cones. Xcelium passed 31 controller cases and all 12 staged production
+cases, with 4,420 exact outputs on 20 cores and 600 vendor memory models.
+The proposed two-pin placement change passed the vendor cell truth table.
+See `records/capture436_gate_up_isolation.json` for the verified source result.
+
 The 20 fixed core outlines occupy 9.647397 of the placed die's 12.96 square
 millimeters. In four clusters, the down-projection engines alone need more
 area than the legal sites inside their four-core bounding rectangle after

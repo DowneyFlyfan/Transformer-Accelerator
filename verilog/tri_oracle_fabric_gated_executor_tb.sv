@@ -163,6 +163,12 @@ module tri_oracle_fabric_gated_executor_tb;
     @(posedge clk);
     while (!projection_out_ready) @(posedge clk);
     @(negedge clk);
+`ifdef TRI_ORACLE_VERIFY_PROJECTION_CAPTURE
+    if ((phase == 0 ? dut.gate_values : dut.up_values) !== projection_out_data)
+      $fatal(1, "PROJECTION_CAPTURE_MISMATCH phase=%0d fault=%0d", phase, fault);
+    if (fault != 0 && dut.activation_unit.in_valid)
+      $fatal(1, "failed projection reached activation phase=%0d fault=%0d", phase, fault);
+`endif
     projection_out_valid = 0;
     projection_out_error = 0;
   endtask
@@ -263,6 +269,9 @@ module tri_oracle_fabric_gated_executor_tb;
     check_result(0);
     if (exact_input_checks < 500) $fatal(1, "exact quantization checks did not execute");
     $display("FABRIC_GATED_EXACT_QUANTIZATION_PASS checks=%0d", exact_input_checks);
+`ifdef TRI_ORACLE_VERIFY_PROJECTION_CAPTURE
+    $display("FABRIC_GATED_LOCAL_CAPTURE_PASS packets=%0d", requests);
+`endif
     $display("FABRIC_GATED_CONTROLLER_PASS cases=%0d projection_requests=%0d", cases, requests);
     $finish;
   end
