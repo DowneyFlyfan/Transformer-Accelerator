@@ -1,0 +1,529 @@
+{
+  "state": "row_balanced_exponent_bucket_policy",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "minimum_bucket_fit_rows": 8,
+  "layers": [
+    {
+      "layer": 0,
+      "fallback": {
+        "maximum_up_gain_bits": 2,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 81,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": -6
+        },
+        {
+          "activation_exponent": -6,
+          "fit_rows": 47,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 1,
+      "fallback": {
+        "maximum_up_gain_bits": 2,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -8,
+          "fit_rows": 21,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": -6
+        },
+        {
+          "activation_exponent": -7,
+          "fit_rows": 107,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 2,
+      "fallback": {
+        "maximum_up_gain_bits": 2,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 120,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": -8,
+          "down_shift_offset": 9
+        }
+      ]
+    },
+    {
+      "layer": 3,
+      "fallback": {
+        "maximum_up_gain_bits": 7,
+        "down_shift_offset": -1
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 120,
+          "maximum_up_gain_bits": 7,
+          "down_shift_offset": -1
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 4,
+      "fallback": {
+        "maximum_up_gain_bits": 2,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 120,
+          "maximum_up_gain_bits": 7,
+          "down_shift_offset": -1
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 5,
+      "fallback": {
+        "maximum_up_gain_bits": 7,
+        "down_shift_offset": -1
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 119,
+          "maximum_up_gain_bits": 7,
+          "down_shift_offset": -1
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 6,
+      "fallback": {
+        "maximum_up_gain_bits": 7,
+        "down_shift_offset": -1
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 118,
+          "maximum_up_gain_bits": 7,
+          "down_shift_offset": -1
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 7,
+      "fallback": {
+        "maximum_up_gain_bits": 6,
+        "down_shift_offset": 0
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 110,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": -1
+        },
+        {
+          "activation_exponent": -6,
+          "fit_rows": 10,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": -1,
+          "down_shift_offset": 3
+        }
+      ]
+    },
+    {
+      "layer": 8,
+      "fallback": {
+        "maximum_up_gain_bits": 0,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 89,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -6,
+          "fit_rows": 31,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 9,
+      "fallback": {
+        "maximum_up_gain_bits": 6,
+        "down_shift_offset": 0
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 36,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -6,
+          "fit_rows": 84,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": -1
+        }
+      ]
+    },
+    {
+      "layer": 10,
+      "fallback": {
+        "maximum_up_gain_bits": 0,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -7,
+          "fit_rows": 14,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -6,
+          "fit_rows": 106,
+          "maximum_up_gain_bits": 0,
+          "down_shift_offset": -6
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 11,
+      "fallback": {
+        "maximum_up_gain_bits": 0,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 116,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 12,
+      "fallback": {
+        "maximum_up_gain_bits": -1,
+        "down_shift_offset": -6
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 117,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 13,
+      "fallback": {
+        "maximum_up_gain_bits": 4,
+        "down_shift_offset": 1
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 117,
+          "maximum_up_gain_bits": -1,
+          "down_shift_offset": -6
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 0,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 14,
+      "fallback": {
+        "maximum_up_gain_bits": 4,
+        "down_shift_offset": 1
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 107,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 13,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "fallback": {
+        "maximum_up_gain_bits": 6,
+        "down_shift_offset": 1
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 93,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 27,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 16,
+      "fallback": {
+        "maximum_up_gain_bits": 6,
+        "down_shift_offset": 2
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 69,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 51,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 17,
+      "fallback": {
+        "maximum_up_gain_bits": 6,
+        "down_shift_offset": 2
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 40,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 80,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 18,
+      "fallback": {
+        "maximum_up_gain_bits": 6,
+        "down_shift_offset": 2
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 50,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 70,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": -1
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "fallback": {
+        "maximum_up_gain_bits": 4,
+        "down_shift_offset": 2
+      },
+      "buckets": [
+        {
+          "activation_exponent": -6,
+          "fit_rows": 55,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 1
+        },
+        {
+          "activation_exponent": -5,
+          "fit_rows": 65,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -4,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": -1,
+          "down_shift_offset": -6
+        }
+      ]
+    },
+    {
+      "layer": 20,
+      "fallback": {
+        "maximum_up_gain_bits": 4,
+        "down_shift_offset": 2
+      },
+      "buckets": [
+        {
+          "activation_exponent": -5,
+          "fit_rows": 119,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 3
+        },
+        {
+          "activation_exponent": -3,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": -1,
+          "down_shift_offset": 2
+        }
+      ]
+    },
+    {
+      "layer": 21,
+      "fallback": {
+        "maximum_up_gain_bits": 4,
+        "down_shift_offset": 3
+      },
+      "buckets": [
+        {
+          "activation_exponent": -5,
+          "fit_rows": 120,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 3
+        },
+        {
+          "activation_exponent": -3,
+          "fit_rows": 8,
+          "maximum_up_gain_bits": -6,
+          "down_shift_offset": 7
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,35 @@
 # Tri-Oracle reproduction in progress
 
-Latest software accuracy diagnostic: extending the legal per-layer format search
+A later input-exponent calibration candidate was **rejected** by full-model
+execution. Its local mean per-token error improved from 0.229679 to 0.167708,
+but both new dense and prediction-enabled variants scored 0% on the fixed
+64-question pilot. All 192 archived floating/dense/predicted answer sequences
+and per-question scores reproduced first. See
+`records/format339_official_scoring.json` and
+`records/format340_candidate_rejection.json`. The full 320-case inference
+metadata is losslessly compressed in `records/format337_vqav2_inference.json.gz`.
+The earlier fixed-format profile remains the retained comparison below.
+
+A one-fitting-image propagation trace isolates a first-token failure: its
+layer-2 scale exponent changes from -5 in the floating capture to -6 after
+earlier integer layers. The new table contains -5 and -7, so it selects an
+ordinary-token fallback and reduces the layer output norm from about 288 to
+1.2. Changing only layer 2 still reproduces that first-token collapse in the
+prefill diagnostic. Better isolated-layer
+error therefore does not establish end-to-end model correctness.
+
+In a separate prefill-only counterfactual, retaining the earlier first-token
+format preserves its normalized input and integer output bit for bit at all
+22 layers. Final-logit relative error on that one fitting input falls from
+0.886125 for the rejected candidate to 0.188320; the retained fixed policy
+gives 0.226035. This is diagnostic evidence, not answer-generation accuracy,
+incremental-decode support or hardware qualification. See
+`records/format343_propagation_audit.json`. Its `fallback_rows` counts input
+coverage before the first-token override; the explicit first-token fields
+describe the effective override. No clock distribution or whole-chip routing
+is authorized by these software experiments.
+
+Latest accepted software accuracy diagnostic: extending the legal per-layer format search
 improves official Visual Question Answering version 2 (VQAv2) scoring on the same
 fixed 64-question pilot. Dense integer feed-forward execution rises from 64.84%
 to 67.81%; prediction-enabled execution rises from 62.34% to 63.44%. The unchanged

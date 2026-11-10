@@ -1,0 +1,29 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format337_architecture.pdf",
+  "pdf_sha256": "22dce1d46ba0e7bff4ef6edd49078c1f9be2d872727db26474e34d7c5d62bb2f",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/evaluate_tri_oracle_format337_vqav2.py": "c6da6de5d9dce8cff49bec97abaa12f9aada089e9edf94694437f6f4599c098a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_format335_policy.py": "8da88a07d4416bb6176d4188fd49c5878bc73067c97b96bed1896a48de5f3e83",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_model_reference.py": "21d0bb53840fdc07273aa54fc3b7bde5ee82a2d76df4f15af9d50ba25d363e75"
+  },
+  "source_audits_completed": 3,
+  "audits": [
+    "Original topology and before_norm hook source-tree equality checked;only feed-forward output policy dispatch changes",
+    "All335 policy/336guard/324prior/325guard bindings,three baseline modes and320-case order checked",
+    "All tensor axes,original-row restoration,22-layer hook accounting,frozen data and mixed-floating/no-score scope checked"
+  ],
+  "pages": 2,
+  "inherited_model_page_pixel_identical": true,
+  "render_visually_verified": true,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format337_architecture_page2.png": "7ebcbe6b29f3a37c06d011992b1b0f04284eeab495086bf1099e358c52bd5d66"
+  },
+  "scope": "Actual original floating-model architecture with input-exponent-calibrated integer feed-forward hooks;64 reused questions only.",
+  "shape_aliases": {
+    "B": "Original model image/question batch,1",
+    "T": "Prefill/decode token rows",
+    "R": "Rows gathered for one exponent group; namedB locally in policy helper documentation"
+  },
+  "visual_result": "Final saved page reopened/rendered: all10 boxes,arrows and text visible. Model batchB and group-rowR distinguished explicitly. Original model page unchanged. Temporary render removed."
+}

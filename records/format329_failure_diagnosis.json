@@ -1,0 +1,40 @@
+{
+  "state": "cuda_width_alignment_failure_isolated",
+  "observed_utc": "2026-11-10T04:52:11.805471+00:00",
+  "torch_version": "2.11.0+cu130",
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "left_shape": [
+    32,
+    64
+  ],
+  "input_codes": "All ones signed8; every exact signed32 output must equal64",
+  "controls": [
+    {
+      "width": 32,
+      "state": "exact_integer_result_passed",
+      "expected_value": 64,
+      "checked_values": 1024
+    },
+    {
+      "width": 40,
+      "state": "native_operation_rejected",
+      "error": "CUDA error: CUBLAS_STATUS_NOT_SUPPORTED when calling cublasLtMatmul with transpose_mat1 1 transpose_mat2 0 m 40 n 32 k 64 mat1_ld 64 mat2_ld 64 result_ld 40 abType 3 cType 10 computeType 72 scaleType 10"
+    },
+    {
+      "width": 48,
+      "state": "exact_integer_result_passed",
+      "expected_value": 64,
+      "checked_values": 1536
+    },
+    {
+      "width": 64,
+      "state": "exact_integer_result_passed",
+      "expected_value": 64,
+      "checked_values": 2048
+    }
+  ],
+  "failed_guard": "records/format329_gpu_guard_result.json",
+  "failed_summary": "records/format328_fixture_preparation.json",
+  "correction": "Pad35 output rows to64 rather than40 for this native CUDA operation; discard29 zero rows. Production integer reference and Verilog unchanged.",
+  "full_paper_results_matched": false
+}

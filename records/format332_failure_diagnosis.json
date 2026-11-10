@@ -1,0 +1,21 @@
+{
+  "state": "fixed_channel_slice_has_no_shift_sensitivity",
+  "observed_utc": "2026-11-10T04:56:45.085253+00:00",
+  "failed_guard": "records/format332_gpu_guard_result.json",
+  "configuration": [
+    5,
+    15,
+    1,
+    2013,
+    35
+  ],
+  "nonzero_expected_outputs": 0,
+  "skipped_channels": 7,
+  "existing_fixed_groups": [
+    0,
+    175
+  ],
+  "failure": "Generator correctly refuses a negative control whose changed shift produces identical35 expected sums.",
+  "next_action": "Select groups by largest retained gated-code magnitude on the same fixed unlabeled captured row. Preserve original channel IDs/full down stride; do not change policy,arithmetic,input row or hardware.",
+  "full_paper_results_matched": false
+}

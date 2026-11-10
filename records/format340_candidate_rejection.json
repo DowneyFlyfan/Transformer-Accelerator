@@ -1,0 +1,72 @@
+{
+  "state": "row_balanced_candidate_rejected_accuracy_and_first_token_failure_isolated",
+  "verified_utc": "2026-11-10T05:37:33.600785+00:00",
+  "source_receipts": {
+    "format335_rowbalanced_calibration.json": {
+      "result_sha256": "bbf97fecdbec5040bb57e44aadc0e717c6e6c5bb0bf8464b512d21cdca57bc04",
+      "guard_sha256": "849f25751c8e8f3aa1e3f3083fb09a0c2f5bc1b7dedc4fd2f80f22389507bd51",
+      "state": "row_balanced_input_exponent_policies_fitted"
+    },
+    "format337_vqav2_inference.json": {
+      "result_sha256": "f47d709e339c618ef987b2360da42ae08abe39c02719cb2844c370c3d0e74596",
+      "guard_sha256": "d7019afada926fd1f4ee0e084000e1603ae9bb5b260e9901d4e6fe52cf51017d",
+      "state": "completed"
+    },
+    "format341_propagation_audit.json": {
+      "result_sha256": "93be592c733241d91a165bd29d27c79142cf0349bc4d820e5004f386587034c9",
+      "guard_sha256": "f6a37fb1cd21e512e180b8574b6673faa4e581a386c650562acdd501287de737",
+      "state": "one_fit_image_propagation_diagnostics_completed"
+    },
+    "format343_propagation_audit.json": {
+      "result_sha256": "123701acb4d28fe69ad0573b6899534dea4c68371b4350888d217460486a9ea1",
+      "guard_sha256": "1f6d913d663d11984a9e1f60f3939c72f003fc0f4add6bb3f95afbe7f4d6b6b4",
+      "state": "one_fit_image_first_token_protection_diagnostics_completed"
+    }
+  },
+  "official_scoring_sha256": "4f695300992185746a87ead05424f3aa40063e318dae1ddb3e69561531a77b81",
+  "all_official_scoring_inputs_rehashed_unchanged": true,
+  "all_protection_probe_inputs_rehashed_unchanged": true,
+  "scores_percent_on64": {
+    "floating": 74.69,
+    "extended_integer_dense": 67.81,
+    "extended_integer_predicted": 63.44,
+    "integer_dense": 0.0,
+    "integer_predicted": 0.0
+  },
+  "retained_fixed_policy_profile": "format322",
+  "candidate335_adopted": false,
+  "rejected_policy_sha256": "f0fc80f6dd133a9a1e03aaffe509356bd53dbd5989df76bf85bf54fe997f876b",
+  "compressed_inference_sha256": "5ca0ddf28ca2266c457e4a977f970bbbcdae4518b63230e2ce7401fecfe25d8c",
+  "compressed_inference_lossless_verified": true,
+  "demonstrated_layer2_failure": {
+    "floating_capture_exponent": -5,
+    "quantized_prefix_exponent": -6,
+    "trained_exponents": [
+      -7,
+      -5
+    ],
+    "wrong_fallback_gain_cap": 2,
+    "wrong_fallback_down_offset": -6,
+    "first_token_float_output_norm": 288.3443908691406,
+    "first_token_wrong_integer_output_norm": 1.2105025053024292,
+    "first_token_wrong_relative_error": 0.9965011477470398
+  },
+  "first_token_protection_prefill_diagnostic": {
+    "image_count": 1,
+    "all22_normalized_inputs_and_integer_outputs_bitwise_preserved": true,
+    "retained_policy_logit_relative_error": 0.22603493928909302,
+    "rejected_policy_logit_relative_error": 0.886124849319458,
+    "protected_logit_relative_error": 0.1883196234703064,
+    "answer_generation_accuracy_verified": false,
+    "incremental_decode_scheduling_implemented": false
+  },
+  "reviewer_result": "No Critical or Important blockers.343 fallback_rows is pre-override335 coverage; explicit first-token fields identify effective322 override.",
+  "unresolved": [
+    "335 candidate fails full-model task accuracy despite improved local diagnostics",
+    "Protected candidate has only one-fit-image prefill evidence; no generation or decode proof",
+    "Pilot remains64reusedquestions andmixedfloating,notpaperprotocol",
+    "Full-chip architecture,memoryaccounting,trainedmappedexecution,routedtiming andpaperarea/energy/speed remain unqualified"
+  ],
+  "physical_advancement_authorized": false,
+  "full_paper_results_matched": false
+}
