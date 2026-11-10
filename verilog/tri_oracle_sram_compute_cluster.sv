@@ -4,6 +4,7 @@
 // completed output at retirement; forward a simultaneous same-address write.
 module tri_oracle_sram_compute_cluster #(
   parameter int MERGE_FEATURES=0,
+  parameter bit CORE_STRIP_PREDICTOR=0,
   localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
 ) (
   input logic clk,
@@ -29,8 +30,23 @@ module tri_oracle_sram_compute_cluster #(
   output logic [1023:0] out_data,
   input logic [SIGN_WIDTH-1:0] merge_sign_data,
   input logic [12:0] merge_sign_control,
-  output logic [23:0] merge_sign_counts
+  output logic [23:0] merge_sign_counts,
+  input logic strip_rst_n,
+  input logic [530:0] strip_request,
+  output logic [111:0] strip_response
 );
+  wire [587:0] core_strip_requests;
+  wire [159:0] core_strip_responses;
+  if (CORE_STRIP_PREDICTOR) begin : strip_group
+    tri_oracle_cluster_strip448 route (
+      .request(strip_request), .response(strip_response),
+      .core_requests(core_strip_requests), .core_responses(core_strip_responses)
+    );
+  end else begin : no_strip_group
+    assign core_strip_requests='0;
+    assign strip_response='0;
+  end
+
   if (MERGE_FEATURES!=0) begin : aggregator_sign
     tri_oracle_aggregator_sign447 #(
       .FEATURES(MERGE_FEATURES), .COMPILED_SIGN_BANK(1'b1)
@@ -95,7 +111,8 @@ module tri_oracle_sram_compute_cluster #(
     out_data = output_forward ? forwarded_words : aggregate_q;
   end
 
-  tri_oracle_sram_memory_compute cores[3:0] (
+  tri_oracle_sram_strip_core448 #(.CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)) cores[3:0] (
+    .strip_rst_n, .strip_request(core_strip_requests), .strip_response(core_strip_responses),
     .clk(clk), .rst_n(rst_n), .load_valid(core_load), .load_kind(load_kind),
     .load_addr(load_addr), .load_data(load_data), .load_row_enable(load_row_enable),
     .load_error(load_errors), .cmd_valid(issue), .cmd_ready(ready),
@@ -156,6 +173,7 @@ endmodule
 `ifdef TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC
 module tri_oracle_compute_cluster #(
   parameter int MERGE_FEATURES=0,
+  parameter bit CORE_STRIP_PREDICTOR=0,
   localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
 ) (
   input logic clk,
@@ -181,8 +199,51 @@ module tri_oracle_compute_cluster #(
   output logic [1023:0] out_data,
   input logic [SIGN_WIDTH-1:0] merge_sign_data,
   input logic [12:0] merge_sign_control,
-  output logic [23:0] merge_sign_counts
+  output logic [23:0] merge_sign_counts,
+  input logic strip_rst_n,
+  input logic [530:0] strip_request,
+  output logic [111:0] strip_response
 );
-  tri_oracle_sram_compute_cluster #(.MERGE_FEATURES(MERGE_FEATURES)) implementation (.*);
+  tri_oracle_sram_compute_cluster #(.MERGE_FEATURES(MERGE_FEATURES), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)) implementation (.*);
 endmodule
 `endif
+
+/* verilator lint_off DECLFILENAME */
+module tri_oracle_sram_strip_core448 #(
+    parameter bit CORE_STRIP_PREDICTOR=0
+) (
+  input logic clk,
+  input logic rst_n,
+  input logic load_valid,
+  input logic [1:0] load_kind,
+  input logic [9:0] load_addr,
+  input logic [2047:0] load_data,
+  input logic [31:0] load_row_enable,
+  output logic load_error,
+  input logic cmd_valid,
+  output logic cmd_ready,
+  input logic [4:0] cmd_weight,
+  input logic [9:0] cmd_activation,
+  input logic [4:0] cmd_mask,
+  input logic [3:0] cmd_output,
+  input logic cmd_accumulate,
+  output logic done_valid,
+  output logic [3:0] done_output,
+  input logic read_valid,
+  input logic [3:0] read_output,
+  output logic result_valid,
+  output logic [1023:0] result_data,
+    input logic strip_rst_n,
+    input logic [146:0] strip_request,
+    output logic [39:0] strip_response
+);
+    tri_oracle_sram_memory_compute compute (.*);
+    if (CORE_STRIP_PREDICTOR) begin : strip
+        tri_oracle_core_strip448 predict (
+            .clk, .rst_n(strip_rst_n), .request(strip_request), .response(strip_response)
+        );
+    end else begin : no_strip
+        assign strip_response='0;
+    end
+endmodule
+/* verilator lint_on DECLFILENAME */

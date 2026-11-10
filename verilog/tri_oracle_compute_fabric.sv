@@ -2,7 +2,8 @@
 // Five clusters x four cores. Command routing and ports are local choices;
 // this is a compute/memory fabric, not a complete vision-language processor.
 module tri_oracle_compute_fabric #(
-  parameter bit AGGREGATOR_SIGN_BANK=0
+  parameter bit AGGREGATOR_SIGN_BANK=0,
+  parameter bit CORE_STRIP_PREDICTOR=0
 ) (
     input wire clk,rst_n,load_valid,
     input wire [4:0] load_core,
@@ -24,16 +25,28 @@ module tri_oracle_compute_fabric #(
     output wire [5119:0] out_data,
     input wire [2047:0] merge_sign_data,
     input wire [12:0] merge_sign_control,
-    output wire [119:0] merge_sign_counts
+    output wire [119:0] merge_sign_counts,
+    input wire strip_rst_n,
+    input wire [533:0] strip_request,
+    output wire [111:0] strip_response
 );
     wire [4:0] cluster_ready,load_errors;
+    wire [2:0] strip_cluster=strip_request[533:531];
+    wire [111:0] cluster_strip_responses[5];
+    assign strip_response = CORE_STRIP_PREDICTOR && strip_cluster<5 ?
+        cluster_strip_responses[strip_cluster] : '0;
     assign cmd_ready=(|cmd_clusters) && ((cluster_ready & cmd_clusters)==cmd_clusters);
     assign load_error=(|load_errors) || (load_valid && load_core>=20);
     for(genvar cluster=0;cluster<5;cluster=cluster+1)begin: clusters
         localparam int MERGE_FEATURES=AGGREGATOR_SIGN_BANK ? (cluster==0 ? 512 : 384) : 0;
         localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES;
         localparam int SIGN_START=cluster==0 ? 0 : 512+(cluster-1)*384;
-        tri_oracle_compute_cluster #(.MERGE_FEATURES(MERGE_FEATURES)) unit (
+        tri_oracle_compute_cluster #(
+            .MERGE_FEATURES(MERGE_FEATURES), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)
+        ) unit (
+            .strip_rst_n,
+            .strip_request(CORE_STRIP_PREDICTOR && strip_cluster==3'(cluster) ? strip_request[530:0] : 531'b0),
+            .strip_response(cluster_strip_responses[cluster]),
             .merge_sign_data(merge_sign_data[SIGN_START+:SIGN_WIDTH]),
             .merge_sign_control(merge_sign_control),
             .merge_sign_counts(merge_sign_counts[cluster*24+:24]),

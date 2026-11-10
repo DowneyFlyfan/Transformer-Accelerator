@@ -2,7 +2,9 @@
 // Store the flags and signs from a shared normalization pass, then replay
 // them across original 32-channel groups. Commit requires acknowledged
 // activation writes. An abort during fill or commit invalidates the table.
-module tri_oracle_batched_outlier_replay404 (
+module tri_oracle_batched_outlier_replay404 #(
+    parameter bit CORE_STRIP_PREDICTOR=0
+) (
     input logic clk, rst_n,
     input logic cfg_valid,
     output logic cfg_ready,
@@ -38,7 +40,9 @@ module tri_oracle_batched_outlier_replay404 (
     input logic rsp_valid,
     output logic rsp_ready,
     input logic rsp_last, rsp_error,
-    input logic [63:0] rsp_data
+    input logic [63:0] rsp_data,
+    output logic [533:0] strip_request,
+    input logic [111:0] strip_response
 );
     typedef enum logic [3:0] {
         Idle, Fill, Commit, ReadWord, SelectStrip, OfferStrip,
@@ -50,6 +54,7 @@ module tri_oracle_batched_outlier_replay404 (
     logic [9:0] strips;
     logic [7:0] groups, group_index, strip_index;
     logic [3:0] token_index;
+    logic [2:0] strip_cluster;
     logic [63:0] gate_base, up_base;
     logic [64:0] sign_span, unused_cfg_gate_end, unused_cfg_up_end;
     logic invalid_config, last_token, last_group, last_strip;
@@ -135,13 +140,26 @@ module tri_oracle_batched_outlier_replay404 (
         .rsp_last(rsp_last), .rsp_error(rsp_error), .rsp_data(rsp_data)
     );
 
-    tri_oracle_strip_predictor predictor (
-        .clk(clk), .rst_n(rst_n), .in_valid(state == WaitFetch && fetch_valid),
-        .in_ready(pred_in_ready), .in_last(fetch_last), .out_ready(pred_ready),
-        .norm_activations(fetch_data), .gate_weight_signs(gate_signs), .up_weight_signs(up_signs),
-        .out_valid(pred_valid), .out_error(pred_error), .gate_nearzero_mask(gate_nearzero_mask),
-        .up_nearzero_mask(up_nearzero_mask), .skip_mask(skip_mask), .outlier_count(outlier_count)
-    );
+    if (CORE_STRIP_PREDICTOR) begin : distributed_prediction
+        wire [15:0] outlier_signs;
+        for (genvar lane=0; lane<8; lane++) begin : flags
+            assign outlier_signs[lane] = fetch_data[16*lane+:16] != 16'd0;
+            assign outlier_signs[8+lane] = fetch_data[16*lane+15];
+        end
+        assign strip_request = {strip_cluster, state == WaitFetch && fetch_valid,
+                                fetch_last, pred_ready, outlier_signs, gate_signs, up_signs};
+        assign {pred_in_ready, pred_valid, pred_error, gate_nearzero_mask,
+                up_nearzero_mask, skip_mask, outlier_count} = strip_response;
+    end else begin : local_prediction
+        assign strip_request = '0;
+        tri_oracle_strip_predictor predictor (
+            .clk(clk), .rst_n(rst_n), .in_valid(state == WaitFetch && fetch_valid),
+            .in_ready(pred_in_ready), .in_last(fetch_last), .out_ready(pred_ready),
+            .norm_activations(fetch_data), .gate_weight_signs(gate_signs), .up_weight_signs(up_signs),
+            .out_valid(pred_valid), .out_error(pred_error), .gate_nearzero_mask(gate_nearzero_mask),
+            .up_nearzero_mask(up_nearzero_mask), .skip_mask(skip_mask), .outlier_count(outlier_count)
+        );
+    end
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -150,6 +168,7 @@ module tri_oracle_batched_outlier_replay404 (
             tokens <= '0; strips <= '0; groups <= '0;
             gate_base <= '0; up_base <= '0;
             token_index <= '0; group_index <= '0; strip_index <= '0;
+            strip_cluster <= '0;
             packed_word <= '0;
             sign_fault <= 0;
             done_error <= 0;
@@ -159,6 +178,7 @@ module tri_oracle_batched_outlier_replay404 (
                 tokens <= cfg_tokens; strips <= cfg_strips; groups <= cfg_groups;
                 gate_base <= cfg_gate_sign_base; up_base <= cfg_up_sign_base;
                 token_index <= '0; group_index <= '0; strip_index <= '0;
+                strip_cluster <= '0;
                 sign_fault <= 0;
                 done_error <= invalid_config;
                 if (invalid_config) state <= Done;
@@ -216,6 +236,7 @@ module tri_oracle_batched_outlier_replay404 (
                 if (last_token) begin
                     token_index <= '0;
                     group_index <= group_index + 8'd1;
+                    strip_cluster <= strip_cluster == 3'd4 ? 3'd0 : strip_cluster + 3'd1;
                 end else token_index <= token_index + 4'd1;
                 state <= last_token && last_group ? Done : ReadWord;
             end

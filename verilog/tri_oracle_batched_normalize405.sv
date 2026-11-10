@@ -5,7 +5,9 @@
 // An error invalidates the caller-owned activation allocation. The producer
 // finishes a token that has already started, then withdraws any unaccepted
 // residual offers before acknowledging terminal error. Reset resets both peers.
-module tri_oracle_batched_normalize405 (
+module tri_oracle_batched_normalize405 #(
+    parameter bit CORE_STRIP_PREDICTOR=0
+) (
     input logic clk, rst_n, cfg_valid,
     output logic cfg_ready,
     input logic [31:0] cfg_tag,
@@ -52,7 +54,9 @@ module tri_oracle_batched_normalize405 (
     output logic [7:0] wr_strobe,
     output logic wr_data_last,
     input logic wr_rsp_valid, wr_rsp_error,
-    output logic wr_rsp_ready
+    output logic wr_rsp_ready,
+    output logic [533:0] strip_request,
+    input logic [111:0] strip_response
 );
     typedef enum logic [3:0] {
         Idle, LaunchToken, Collect, WriteRequest, WriteData, WriteResponse,
@@ -141,7 +145,8 @@ module tri_oracle_batched_normalize405 (
         .out_outlier_mask(norm_outliers), .out_activation(activation_data)
     );
 
-    tri_oracle_batched_outlier_replay404 replay_table (
+    tri_oracle_batched_outlier_replay404 #(.CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)) replay_table (
+        .strip_request, .strip_response,
         .clk(clk), .rst_n(rst_n), .cfg_valid(take_cfg), .cfg_ready(replay_cfg_ready),
         .cfg_tag(cfg_tag), .cfg_tokens(cfg_tokens), .cfg_strips(cfg_strips), .cfg_groups(cfg_groups),
         .cfg_gate_sign_base(cfg_gate_sign_base), .cfg_up_sign_base(cfg_up_sign_base),

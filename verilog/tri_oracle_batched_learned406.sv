@@ -66,7 +66,8 @@ module tri_oracle_batched_learned406 (
 endmodule
 
 module tri_oracle_batched_learned437 #(
-  parameter bit AGGREGATOR_SIGN_BANK=0
+  parameter bit AGGREGATOR_SIGN_BANK=0,
+  parameter bit CORE_STRIP_PREDICTOR=AGGREGATOR_SIGN_BANK
 ) (
     input logic clk, rst_n, cfg_valid,
     output logic cfg_ready,
@@ -254,7 +255,10 @@ module tri_oracle_batched_learned437 #(
     assign wr_data_last = compute_started ? compute_wr_data_last : predict_wr_data_last;
     assign wr_rsp_ready = compute_started ? compute_wr_rsp_ready : predict_wr_rsp_ready;
 
-    tri_oracle_batched_normalize405 predictor (
+    logic [533:0] strip_request;
+    logic [111:0] strip_response;
+    tri_oracle_batched_normalize405 #(.CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)) predictor (
+        .strip_request, .strip_response,
         .clk(clk), .rst_n(rst_n), .cfg_valid(take_cfg), .cfg_ready(predict_ready),
         .cfg_tag(cfg_tag), .cfg_tokens(cfg_tokens), .cfg_strips(cfg_input_features[12:3]),
         .cfg_groups(cfg_intermediate_features[12:5]), .cfg_epsilon_q16(cfg_epsilon_q16),
@@ -291,7 +295,10 @@ module tri_oracle_batched_learned437 #(
         .done_valid(packet_done), .done_ready(retire), .done_error(packet_error), .done_tag(unused_packet_done_tag)
     );
 
-    tri_oracle_batched_frame437 #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) compute (
+    tri_oracle_batched_frame437 #(
+      .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)
+    ) compute (
+      .strip_request,.strip_response,
       .merge_sign_data,.merge_sign_control,.merge_sign_counts,
         .clk(clk), .rst_n(rst_n), .cfg_valid(launch_compute), .cfg_ready(compute_ready),
         .attention, .attention_enable(state == Idle && read_state == PickRead && !cfg_valid),

@@ -5,7 +5,8 @@
 module tri_oracle_shared_layer437 #(
     parameter bit PERSIST_LAYER_CONTEXT = 0,
     parameter bit COMPILED_SIGN_BANK = 0,
-    parameter bit AGGREGATOR_SIGN_BANK = COMPILED_SIGN_BANK
+    parameter bit AGGREGATOR_SIGN_BANK = COMPILED_SIGN_BANK,
+    parameter bit CORE_STRIP_PREDICTOR = AGGREGATOR_SIGN_BANK
 ) (
     input logic clk, rst_n, cfg_valid,
     output logic cfg_ready,
@@ -139,7 +140,9 @@ module tri_oracle_shared_layer437 #(
         initial $fatal(1, "Aggregator sign banks require the compiled read schedule");
     end
 
-    tri_oracle_batched_learned437 #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) feedforward (
+    tri_oracle_batched_learned437 #(
+        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)
+    ) feedforward (
         .attention, .merge_sign_data(sign_data), .merge_sign_control, .merge_sign_counts, .*
     );
     tri_oracle_attention_pipeline430 #(

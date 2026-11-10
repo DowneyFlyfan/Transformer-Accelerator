@@ -89,11 +89,12 @@ module tri_oracle_batched_frame393 (
           unused_attention.cfg_count, unused_attention.cfg_channels, unused_attention.cfg_keep,
           unused_attention.cfg_activation_base, unused_attention.cfg_weight_base,
           unused_attention.out_ready, unused_attention.done_ready} = '0;
-  tri_oracle_batched_frame437 implementation (.attention(unused_attention), .attention_enable(1'b0), .merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .*);
+  tri_oracle_batched_frame437 implementation (.attention(unused_attention), .attention_enable(1'b0), .merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .strip_request('0), .strip_response(), .*);
 endmodule
 
 module tri_oracle_batched_frame437 #(
-  parameter bit AGGREGATOR_SIGN_BANK=0
+  parameter bit AGGREGATOR_SIGN_BANK=0,
+  parameter bit CORE_STRIP_PREDICTOR=AGGREGATOR_SIGN_BANK
 ) (
   input logic clk,rst_n,cfg_valid,
   output logic cfg_ready,
@@ -145,7 +146,9 @@ module tri_oracle_batched_frame437 #(
   tri_oracle_attention_tensor437.server attention,
   input logic [2047:0] merge_sign_data,
   input logic [12:0] merge_sign_control,
-  output logic [119:0] merge_sign_counts
+  output logic [119:0] merge_sign_counts,
+  input logic [533:0] strip_request,
+  output logic [111:0] strip_response
 );
   typedef enum logic [3:0] {IDLE,MASK_WAIT,GATE_LAUNCH,GATE_WAIT,WRITE_LOW,WRITE_HIGH,
     WRITE_REQUEST,WRITE_DATA,WRITE_RESPONSE,DOWN_LAUNCH,DOWN_WAIT,ERROR_DRAIN,DONE} state_t;
@@ -255,7 +258,10 @@ module tri_oracle_batched_frame437 #(
     wr_data_last=write_beat+5'd1==wr_length;wr_strobe=8'hff;
   end
 
-  tri_oracle_batched_shared392 #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) compute (
+  tri_oracle_batched_shared392 #(
+    .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)
+  ) compute (
+    .strip_request,.strip_response,
     .merge_sign_data,.merge_sign_control,.merge_sign_counts,
     .clk(clk),.rst_n(rst_n),
     .cfg_valid(attention_selected ? attention_window && attention.cfg_valid : state==GATE_LAUNCH || state==DOWN_LAUNCH),

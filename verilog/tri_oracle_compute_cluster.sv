@@ -6,6 +6,7 @@
 // remain separate. Inferred storage still requires physical memory mapping.
 module tri_oracle_compute_cluster #(
   parameter int MERGE_FEATURES=0,
+  parameter bit CORE_STRIP_PREDICTOR=0,
   localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
 ) (
     input wire clk,rst_n,load_valid,
@@ -27,8 +28,23 @@ module tri_oracle_compute_cluster #(
     output wire [1023:0] out_data,
     input wire [SIGN_WIDTH-1:0] merge_sign_data,
     input wire [12:0] merge_sign_control,
-    output wire [23:0] merge_sign_counts
+    output wire [23:0] merge_sign_counts,
+    input logic strip_rst_n,
+    input logic [530:0] strip_request,
+    output logic [111:0] strip_response
 );
+    wire [587:0] core_strip_requests;
+    wire [159:0] core_strip_responses;
+    if (CORE_STRIP_PREDICTOR) begin : strip_group
+      tri_oracle_cluster_strip448 route (
+        .request(strip_request), .response(strip_response),
+        .core_requests(core_strip_requests), .core_responses(core_strip_responses)
+      );
+    end else begin : no_strip_group
+      assign core_strip_requests='0;
+      assign strip_response='0;
+    end
+
     if (MERGE_FEATURES!=0) begin : aggregator_sign
       tri_oracle_aggregator_sign447 #(
         .FEATURES(MERGE_FEATURES), .COMPILED_SIGN_BANK(1'b0)
@@ -74,7 +90,9 @@ module tri_oracle_compute_cluster #(
         end
     endfunction
     for(genvar core=0;core<4;core=core+1)begin: cores
-        tri_oracle_memory_compute unit (
+        tri_oracle_inferred_strip_core448 #(.CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR)) unit (
+        .strip_rst_n, .strip_request(core_strip_requests[147*core+:147]),
+            .strip_response(core_strip_responses[40*core+:40]),
             .clk(clk),.rst_n(rst_n),.load_valid(load_valid && load_core==2'(core)),
             .load_kind(load_kind),.load_addr(load_addr),.load_data(load_data),
             .load_row_enable(load_row_enable),
@@ -117,3 +135,43 @@ module tri_oracle_compute_cluster #(
         end
     end
 endmodule
+
+/* verilator lint_off DECLFILENAME */
+module tri_oracle_inferred_strip_core448 #(
+    parameter bit CORE_STRIP_PREDICTOR=0
+) (
+    input wire clk,
+    input wire rst_n,
+    input wire load_valid,
+    input wire [1:0] load_kind, // 0=weights, 1=activation, 2=mask
+    input wire [9:0] load_addr,
+    input wire [2047:0] load_data,
+    input wire [31:0] load_row_enable, // Weight-only 64-bit row write enables.
+    output wire load_error,
+    input wire cmd_valid,
+    output wire cmd_ready,
+    input wire [4:0] cmd_weight,
+    input wire [9:0] cmd_activation,
+    input wire [4:0] cmd_mask,
+    input wire [3:0] cmd_output,
+    input wire cmd_accumulate,
+    output wire done_valid,
+    output wire [3:0] done_output,
+    input wire read_valid,
+    input wire [3:0] read_output,
+    output wire result_valid,
+    output wire [1023:0] result_data,
+    input logic strip_rst_n,
+    input logic [146:0] strip_request,
+    output logic [39:0] strip_response
+);
+    tri_oracle_memory_compute compute (.*);
+    if (CORE_STRIP_PREDICTOR) begin : strip
+        tri_oracle_core_strip448 predict (
+            .clk, .rst_n(strip_rst_n), .request(strip_request), .response(strip_response)
+        );
+    end else begin : no_strip
+        assign strip_response='0;
+    end
+endmodule
+/* verilator lint_on DECLFILENAME */

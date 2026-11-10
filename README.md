@@ -716,6 +716,15 @@ maps through the cluster connections, and the graphics processor verified all
 on the 133 new control and score bits and the original 13,116 tensor bits.
 See `records/aggregator447_cluster_sign_banks_result.json`.
 
+Each compiled compute core now has an eight-channel strip predictor. The
+four cores in the selected cluster handle one 32-channel group, and groups
+rotate across the five clusters. Xcelium reproduced 90,112 trained channel
+decisions, and the graphics processor independently checked the gate, up
+and skip masks. Prediction also passed during compute-only resets.
+The compact sign-only estimator let Genus elaborate the partition with all
+20 predictors under the existing instance limit.
+See `records/strip449_core_prediction_result.json`.
+
 Genus mapped the earlier standalone merger to 44,219 cells. The synthesis
 report shows zero picoseconds of setup slack at 580 megahertz before placement.
 The mapped netlist passed the 44-frame functional replay in Xcelium.

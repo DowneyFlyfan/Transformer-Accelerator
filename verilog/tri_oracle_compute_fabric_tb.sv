@@ -18,7 +18,7 @@ module tri_oracle_compute_fabric_tb;
     reg held[0:4];
     reg [1023:0] held_data[0:4];
     reg [3:0] held_tag[0:4];
-    tri_oracle_compute_fabric dut(.merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .*);
+    tri_oracle_compute_fabric dut(.merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .strip_rst_n(1'b0), .strip_request('0), .strip_response(), .*);
     task automatic load(input [1:0] kind,input [2047:0] data);
         begin
             @(negedge clk);load_valid=1;load_kind=kind;load_data=data;

@@ -11,7 +11,10 @@ MEMORY_GEOMETRIES = {
     "sram_16x128": (16, 128, 0),
 }
 REDUNDANCY_ROLES = ("token_merger", "head_predictor", "strip_predictor", "causal_token_size")
-INVENTORY_ROLES = {"cluster", "core", "pe", "similarity_shard", *REDUNDANCY_ROLES, *MEMORY_GEOMETRIES}
+INVENTORY_ROLES = {
+    "cluster", "core", "pe", "similarity_shard", "weight_attention_core",
+    *REDUNDANCY_ROLES, *MEMORY_GEOMETRIES,
+}
 
 
 def read_inventory(path: Path, dut: str):
@@ -71,6 +74,23 @@ def audit(instances):
     pe_owner = {pe: _parent(pe, cores) for pe in instances["pe"]}
     if None in core_owner.values() or None in pe_owner.values():
         raise ValueError("Detached compute core or processing-element array")
+    work_cores = instances.get("weight_attention_core", {})
+    compute_by_work_core = {}
+    if work_cores:
+        for core in cores:
+            owner = _parent(core, work_cores)
+            if owner is None or owner in compute_by_work_core or _parent(owner, clusters) != core_owner[core]:
+                raise ValueError(f"Invalid weight-attention core ownership: {core}")
+            compute_by_work_core[owner] = core
+        if set(compute_by_work_core) != set(work_cores):
+            raise ValueError("Weight-attention core without a compute block")
+
+    def predictor_owner(unit):
+        compute = _parent(unit, cores)
+        if compute is not None:
+            return compute
+        return compute_by_work_core.get(_parent(unit, work_cores))
+
     shards_by_merger = defaultdict(list)
     shard_aggregators = {}
     shared_mergers = [merger for merger in mergers if _parent(merger, clusters) is None]
@@ -90,8 +110,8 @@ def audit(instances):
     core_counts = Counter(core_owner.values())
     pe_counts = Counter(pe_owner.values())
     per_cluster_mergers = Counter(_parent(merger, clusters) for merger in mergers)
-    per_core_heads = Counter(_parent(unit, cores) for unit in instances["head_predictor"])
-    per_core_strips = Counter(_parent(unit, cores) for unit in instances["strip_predictor"])
+    per_core_heads = Counter(predictor_owner(unit) for unit in instances["head_predictor"])
+    per_core_strips = Counter(predictor_owner(unit) for unit in instances["strip_predictor"])
 
     memory_counts = Counter()
     memory_bytes = Counter()
@@ -118,6 +138,7 @@ def audit(instances):
         "cluster_count": len(clusters),
         "core_count": len(cores),
         "core_counts_by_cluster": sorted(core_counts[cluster] for cluster in clusters),
+        "weight_attention_core_count": len(work_cores),
         "array_count": len(pe_owner),
         "array_shapes": sorted(set(instances["pe"].values())),
         "native_similarity_shards": [

@@ -64,7 +64,7 @@ module tri_oracle_batched405_normalize_tb;
     logic [PAIRS-1:0] outlier_pairs [TOKENS];
     string input_dir, activation_dir;
 
-    tri_oracle_batched_normalize405 dut (.rsp_last(rsp_valid), .rsp_error(1'b0), .*);
+    tri_oracle_batched_normalize405 dut (.rsp_last(rsp_valid), .rsp_error(1'b0), .strip_request(), .strip_response('0), .*);
 
     always @(posedge clk) if (rst_n) begin : memory_peer
         int index, left_in_token;
