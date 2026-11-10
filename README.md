@@ -26,11 +26,31 @@ See `records/batch360_source_qualification.json` and its lossless native logs.
 The controller retains a tagged partial-sum context across feature tiles and
 rejects appends with a different token count, mask base or activation stride.
 Invalid continuations, stale appends and wrong result slots flush ownership;
-stalled successful recovery is tested. Operands and prediction masks are
-preloaded by the testbench. Memory-transfer control, integration with gated
-feed-forward execution and complete model scheduling remain unfinished. The
-sixteen-token resident reuse is not a measured external-memory, system-latency
-or paper-performance result. No physical design advancement is authorized.
+stalled successful recovery is tested. The resident tests preload operands and
+prediction masks. Directed output stalls now also pass for 1, 3, 8 and 16 tokens,
+with 4,480 exact output comparisons and unchanged production hardware. The
+original short tests had correct arithmetic but exercised zero stalls. See
+`records/batch370_tail_qualification.json`.
+
+A separate direct-memory-access (DMA) owner now fetches operands itself on the
+same twenty-core, 600-memory source hierarchy. It loads each activation word
+once and each weight word retained by any token once per descriptor, then
+reuses the weights across the batch. The sixteen-token, 2,048-feature,
+160-output trained tile transfers 360,448 bytes in 2,816 native bus requests.
+Per-word read histograms check every operand; these are simulated traffic
+measurements, not system latency or energy measurements.
+
+The corrected owner passes 6,560 trained output comparisons, including eight
+fault/recovery cases without external reset. Another 525 literal comparisons
+cover short bursts, 35 selected outputs, padded lanes, original channel IDs
+0 and 65,535, and invalid address/alignment/capacity descriptors. Two directed
+counterfactuals expose unfinished-burst and cancelled-request faults in the
+earlier owner. Stopping the reusable native supervisor also terminates its
+owned simulator groups. See `records/batch377_dma_qualification.json` and its
+17 losslessly archived native logs. Prediction masks are still prepared inputs;
+integration with gated feed-forward execution, full-model scheduling, synthesis
+of this new owner and routed timing remain unfinished. The paper gate stays on
+hold, and no physical design advancement is authorized.
 
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
