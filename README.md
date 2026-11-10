@@ -1,5 +1,23 @@
 # Tri-Oracle reproduction in progress
 
+A resident batched-projection sequencer now reuses each loaded weight tile
+across sixteen token rows on the unchanged twenty-core fabric. Two feature
+tiles cover all 2,048 input features and 160 output rows. Literal and trained
+first-layer cases each pass all 2,560 integer outputs in Icarus Verilog and
+Cadence Xcelium; the latter uses all 600 actual vendor memory models. The
+trained case preserves full-matrix quantization and 145 token/channel skips.
+Six native arithmetic mutations are rejected at independently predicted words.
+See `records/batch360_source_qualification.json` and its lossless native logs.
+
+The controller retains a tagged partial-sum context across feature tiles and
+rejects appends with a different token count, mask base or activation stride.
+Invalid continuations, stale appends and wrong result slots flush ownership;
+stalled successful recovery is tested. Operands and prediction masks are
+preloaded by the testbench. Memory-transfer control, integration with gated
+feed-forward execution and complete model scheduling remain unfinished. The
+sixteen-token resident reuse is not a measured external-memory, system-latency
+or paper-performance result. No physical design advancement is authorized.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.

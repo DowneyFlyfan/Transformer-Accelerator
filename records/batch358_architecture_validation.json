@@ -1,0 +1,23 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch358_architecture.pdf",
+  "pdf_sha256": "09cd28c0ff2f88dd97143caf221c36b463dba62f278745760f3cb26d2da61e17",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_batch358_fixture.py": "dda9414434e55eb1f20f858dd832acb9aed999183b4e157b2b83ec0256c98fc8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_format331_fixtures.py": "5220b77466c83e9fb0ad3231bb5973f3dec969fdc3eb04de7a1cc9765f98d5f4"
+  },
+  "pages": 2,
+  "source_audits_completed": 3,
+  "audits": [
+    "Full original matrices quantized before slice;16 captured image0 rows/positions and original160 row identities traced",
+    "Exact canonical quantization and pre-learned-scale RMS/sign-margin mask matched to frozen integer reference",
+    "All tensor shapes,independent scalar2048-term sums/masks,finite inputs,and raw-affine-only scope checked"
+  ],
+  "inherited_model_page_pixel_identical": true,
+  "render_visually_verified": true,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch358_architecture_page2.png": "2e6fc08f3f9597110ff0f82dd106e62c309933a20a954c44a538bac05272769b"
+  },
+  "visual_result": "Reopened saved page inspected: all10 boxes,arrows and scope text legible; original model page pixel identical",
+  "scope": "Trained raw affine fixture preparation only; actual hardware test remains separate"
+}

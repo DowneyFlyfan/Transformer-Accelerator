@@ -1,0 +1,69 @@
+{
+  "state": "resident_batched_affine_literal_and_trained_source_qualified",
+  "verified_utc": "2026-11-10T08:09:28.392917+00:00",
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch357_source_result.json": "36c855ce1ee94438558c5780105e89d90a4a91034bcba7b59685c42bb8ef98e6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch359_source_result.json": "29da9596c3f1e13a0b46d7184d8237a59e5d14ecf4ef4df81a407af6d867912a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch358_fixture_preparation.json": "6004063c2391b1f4bec320f58be8aef30dd4d61dd26dfc442a822c9a499c6af6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch358_gpu_guard_result.json": "62a89bec194b9de924c77f17cb92dbdeb7075d9324744d39b638ff560a28bfbc"
+  },
+  "all_source_input_hashes_rechecked_unchanged": true,
+  "unique_source_inputs_rehashed": 258,
+  "all_owned_native_workers_terminal": true,
+  "temporary_builds_removed": true,
+  "logs_archive_sha256": "0eb347ca30151320f742eb456711a1ce09decb679b7f46afe949d6bb8e09220e",
+  "native_logs": 16,
+  "logs_archive_lossless_verified": true,
+  "results": {
+    "batch357": {
+      "elapsed_seconds": 207.92922776500927,
+      "case_counts": {
+        "terminal": 2,
+        "functional_passed": 3,
+        "exact_mutation_rejected": 3
+      }
+    },
+    "batch359": {
+      "elapsed_seconds": 205.2632344730082,
+      "case_counts": {
+        "terminal": 2,
+        "functional_passed": 3,
+        "exact_mutation_rejected": 3
+      }
+    }
+  },
+  "tokens_per_batch": 16,
+  "full_hidden_features": 2048,
+  "output_rows": 160,
+  "feature_tiles": 2,
+  "actual_cores": 20,
+  "actual_vendor_memory_models": 600,
+  "unique_exact_output_words": 5120,
+  "arithmetic_output_comparisons_across_two_simulators": 10240,
+  "token_specific_masks_verified": true,
+  "trained_skipped_pairs": 145,
+  "exact_native_counterfactuals": 6,
+  "boundary_recovery": [
+    "invalid live continuation flush",
+    "stale append rejected after reset",
+    "wrong return slot flush",
+    "stalled successful recovery"
+  ],
+  "partial_context_guards": [
+    "tag",
+    "token count",
+    "mask base",
+    "activation stride"
+  ],
+  "weight_tile_reuse_tokens": 16,
+  "initial_unqualified_run": "Initial Icarus bench failed stall check before peer cycle counter was made nonblocking. Review also found missing invalid-descriptor flush and stale append ownership; separate tests failed before their fixes. Final source tests above use corrected controller/peer.",
+  "scope": "Resident raw affine kernel only. Core/cluster arithmetic and memory capacities unchanged. Literal plus original TinyLLaVA-v1 first-layer codes with full-matrix quantization before160row slice. Caller preloads resident operands and prepared token masks; transfers and prediction are not integrated into this controller.",
+  "external_memory_transfer_reduction_verified": false,
+  "complete_gated_feedforward_verified": false,
+  "whole_model_execution_verified": false,
+  "current_mapped_candidate_verified": false,
+  "routed_timing_qualified": false,
+  "paper300_release_authorized": false,
+  "full_paper_results_matched": false,
+  "review": "NoCriticalorImportantdefectsremainingafterlive-contextcorrection;trainedfixture/signedcodes/two-tilelayout/threecounterfactualsreviewed"
+}

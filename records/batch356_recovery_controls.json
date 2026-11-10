@@ -1,0 +1,26 @@
+{
+  "initial_inferred_run": {
+    "state": "initial_behavioral_run_failed_stall_check",
+    "native_pid": 795057,
+    "native_exit_status": null,
+    "launcher_did_not_collect_child_status": true,
+    "log_sha256": "379b64735ffe13a491cf23b7a6b5c964446f06b7acdeb3e5c1a721aa93758ff6",
+    "binary_sha256": "f11d900eda5d29d68f5797c3adf482d1ad5ee712a03fa77862012edf90c1bda9",
+    "source_sha256": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_projection356.sv": "cd598cb9da44335696ae2fb9d2b25798fb1a2c44b5c53e2ab5d2831beb83fa22",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched356_tb.sv": "c23a3d63243494c89aa95efc1128e517d006d9bca0a9d65aa9e5eec2050fb12e"
+    },
+    "owned_worker_terminal": true
+  },
+  "controls": {
+    "invalid_continuation_red": "FATAL: verilog/tri_oracle_batched356_boundary_tb.sv:49: BATCH356_INVALID_CONTINUATION_DID_NOT_FLUSH\n       Time: 130000  Scope: tri_oracle_batched356_boundary_tb\n",
+    "stale_append_red": "FATAL: verilog/tri_oracle_batched356_boundary_tb.sv:51: BATCH356_STALE_APPEND_ACCEPTED\n       Time: 160000  Scope: tri_oracle_batched356_boundary_tb\n",
+    "final_recovery_green": "BATCH356_BOUNDARY_PASS invalid_live_continuation=1 stale_append_rejected=1 wrong_result_slot=1 recovered_stalled_result=1 backend_flushes=3\nverilog/tri_oracle_batched356_boundary_tb.sv:65: $finish called at 360000 (1ps)\n"
+  },
+  "final_source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_projection356.sv": "06ded16e6a328a4a86a0a4161742fed467de7668c55c3ccc47dc7e3cf68cc5e4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched356_boundary_tb.sv": "621ae4653792a29bc641f7d00fd7938ec96dd4dfd259f4a235e975d799ad012a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched356_tb.sv": "801ca8c76e63919dd80b70407d106761029507e374ad1f3df0bec4b6ed1f0ca4"
+  },
+  "scope": "Initial unqualified stall failure and test-first recovery evidence; final full arithmetic proof is in batch357/batch359 records. Initial launcher did not collect native exit status; no successful functional claim is attached to that run."
+}
