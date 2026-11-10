@@ -99,8 +99,11 @@ projection and the down projection. It waits for every intermediate-memory
 write acknowledgement before issuing down-projection reads. The small-frame
 Xcelium tests passed with 519 exact outputs and 288 checked intermediate bytes
 per successful frame, including six fault and recovery cases. The complete
-sixteen-token trained-layer run is a separate qualification. Prediction masks
-and normalization still come from outside this controller. See
+sixteen-token trained-layer run matched all 32,768 outputs and 90,112
+intermediate bytes, with 208 output packets and all original feature and
+channel dimensions. It used prepared activations and masks on 20 cores with
+600 compiled memory models. Xcelium took 56 minutes and 26 seconds. See
+`records/batch393_trained_qualification.json` and
 `records/batch393_literal_result.json`.
 
 A producer may offer a mask before `mask_ready`. It must hold the tag, start,

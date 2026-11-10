@@ -1,0 +1,26 @@
+{
+  "state": "complete_trained_feedforward_with_prepared_masks_verified",
+  "native_result_sha256": "aa1d4a48bcf72ca31af2f1f46c75a53557d9b8e812f2792865337b71ef282767",
+  "native_log_archive_sha256": "e5891f748ebb101e9878ae210c0a77bdedf210acc07d02b0efd373a46cfecb4b",
+  "elapsed_seconds": 3386.066209164972,
+  "inventory": {
+    "tokens": 16,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "outputs": 2048,
+    "exact_outputs": 32768,
+    "intermediate_bytes": 90112,
+    "output_packets": 208,
+    "read_requests": 297664,
+    "read_bytes": 38100992,
+    "fault": 0,
+    "trained": 1
+  },
+  "gate_groups": 71,
+  "down_groups": 13,
+  "actual_cores": 20,
+  "actual_compiled_memory_models": 600,
+  "prepared_activation_and_masks": true,
+  "mapped_timing_verified": false,
+  "full_paper_results_matched": false
+}
