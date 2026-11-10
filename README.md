@@ -215,6 +215,13 @@ arithmetic. Full trained hardware execution and paper benchmarks remain
 separate qualifications. See `records/batch406_learned_result.json`
 and `records/batch407_learned_fixture.json`.
 
+The trained feedforward run with hardware-generated masks completed all 71
+gate groups and 13 output groups on the twenty-core fabric. Xcelium matched
+32,768 output words, 90,112 intermediate bytes, and all 55,616 sign-read
+addresses. The one-hour run used prepared activation codes and 602 compiled
+memory models. The lossless log and its digest are recorded alongside
+`records/batch402_trained_predictive_result.json`.
+
 The attention fixture captures the actual rotary query and key vectors from
 the first language layer of the pinned model. Reconstructing dense causal
 attention on the selected rows matches the model's attention output to
