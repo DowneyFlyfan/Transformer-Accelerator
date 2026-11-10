@@ -1,0 +1,28 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format350_architecture.pdf",
+  "pdf_sha256": "abebe604a2a763b77fb251b8e0d7c6f76df158f9b143bf9b5a0e012a62efc00c",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_format350_fixtures.py": "cac33cbe759723f0574aa6960cfcfd558240c1050d68e8e779468a73b7da91d1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_format350_coverage.py": "ed2f64ae0fe6dfcccae13fca72c8887509e310b47cc9e9f35884815100b8fa22",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/evaluate_tri_oracle_format346_vqav2.py": "d0fceef1446f5dd2e56d5a945cd359f11ef8e6a39a312d026cdaeccd14be4274",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_format345_first_token.py": "ce74dd67dc43b2d98c7acfa80955487594fe2e61c7dff9441a04da8a60a2dbfc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_format335_policy.py": "8da88a07d4416bb6176d4188fd49c5878bc73067c97b96bed1896a48de5f3e83",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_format331_fixtures.py": "5220b77466c83e9fb0ad3231bb5973f3dec969fdc3eb04de7a1cc9765f98d5f4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_cached_feedforward_model_validation.py": "f7abbc1fe7c275ace3cb271b649c00dfce22f6f42ae14db1bef6a1020dc5e78f"
+  },
+  "source_audits_completed": 3,
+  "audits": [
+    "Actual protected346 prefix,globalpositions,all22layer hooks and row-wise bitwise equality reviewed",
+    "Shapes H2048/D5632,original group/output identities,full quantization before selection,48-row CUDA padding reviewed",
+    "Independent scalar prediction/SiLU,full raw reconstruction,negative sensitivity,immutable349 provenance and no-paper/hardware scope reviewed"
+  ],
+  "pages": 2,
+  "inherited_model_page_pixel_identical": true,
+  "render_visually_verified": true,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/format350_architecture_page2.png": "0d9ada9dead03adc06c266f7e23a115a3e6a44b314d92cf3e3defb6b1f8b894c"
+  },
+  "visual_result": "Reopened saved page inspected:10 boxes, arrows and scope text legible; unchanged first model page pixel identical",
+  "scope": "Unchanged original model architecture; trained selected-contribution fixtures for next native20-core precision programming test"
+}

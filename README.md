@@ -1,5 +1,28 @@
 # Tri-Oracle reproduction in progress
 
+Protected-format programming now passes 22 paired first/ordinary-token tests
+on the production twenty-core source with 600 actual vendor memory models.
+All 1,540 selected-contribution integer outputs match independent scalar sums.
+Four native wrong-shift/reference controls fail at their exact expected words;
+second-token controls first require the initial token to pass. Original channel
+identities, weight addresses, captured configuration, stalled outputs and two
+frames without an external reset are checked. See
+`records/format354_source_qualification.json`.
+
+Each token fixture preserves all 2,048 input features and the original 5,632-byte
+down-matrix stride, while selecting two original 32-channel groups and 35 output
+rows for informative coverage. Actual protected model-prefix inputs and full
+matrix quantization are retained. Complete native logs and fixture metadata are
+losslessly compressed. This qualifies selected-contribution source programming;
+complete-layer hardware programming, the current mapped candidate, normalization
+hardware, whole-model execution and paper results remain unverified.
+
+An independent capacity audit binds the preserved placed candidate's native
+inventories to vendor module dimensions: 600 memory instances contain 399,360
+bytes, or 390 kibibytes. The paper's 405KB label matches neither decimal nor
+binary interpretation of that total. No uninstantiated storage is added, and
+the paper gate remains on hold. See `records/memory355_candidate_capacity.json`.
+
 First-token protection now passes complete answer-generation and incremental
 decode checks on the fixed 64-question pilot. The protected prediction mode
 scores 67.81%, versus 63.44% for the earlier prediction mode. Protected dense

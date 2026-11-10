@@ -1,0 +1,64 @@
+{
+  "state": "observed_native_memory_capacity_unreconciled",
+  "verified_utc": "2026-11-10T07:21:39.514354+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/audit_tri_oracle_memory355_accounting.py": "119a44db6019d6fbda3490d82cb011365ac68441b75208345df811450c2eb21b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/test_tri_oracle_memory355_accounting.py": "d1d88f0be6d92c2827fb9b1ae3df4a4a81617f5dfb1700a6f5e8654c744b13a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/restore304_preservation_qualification.json": "a4d36534b07e759830a5b7391662dbae64cfa31b9a7314b04f43332487d9f191",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/restore295_full_result.json": "40ef5adc5b7293c102f1332fbc302756427c0f500008ef55c417644edc316d44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/core_cells.tsv": "62609f2b19feae79601fe0d6bf316fa339796770d5e613b5a28cee773cc3a0c0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_cells.tsv": "769614fc2afd9f4c8421031aec28c21217c878b727b089344450b9d7385735b6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_parent.v": "4c4a00a6828bf7e6621e2c408c425592a5218cfb8b27b2344d6866341d38845f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/real190_full_result.json": "48762c2a4fa1dcfaf625d2624a311b75e2fb78bcfed7117f46a05533906c1d4e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x16m4f_130a/VERILOG/ts5n28hpcpsvta512x16m4f_130a_tt1v25c.v": "09819256a20b1d931657cef5097edafd4ac6294c15d8b6479dad26c745f230b8"
+  },
+  "restored_checkpoint": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db",
+  "restored_checkpoint_fingerprint_sha256": "439064231adce3ecded204d3d247cbf411b4e867dfa4ba4d7757c822658bb0f5",
+  "native_instances": 600,
+  "by_master": {
+    "TS5N28HPCPSVTA32X128M2FW": {
+      "instances": 360,
+      "bytes_per_instance": 512,
+      "total_bytes": 184320,
+      "vendor_model": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v"
+    },
+    "TS5N28HPCPSVTA512X64M4F": {
+      "instances": 40,
+      "bytes_per_instance": 4096,
+      "total_bytes": 163840,
+      "vendor_model": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v"
+    },
+    "TS6N28HPCPSVTA16X128M2F": {
+      "instances": 200,
+      "bytes_per_instance": 256,
+      "total_bytes": 51200,
+      "vendor_model": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v"
+    }
+  },
+  "total_bytes": 399360,
+  "total_binary_KiB": 390.0,
+  "paper_figure": "31.6.7",
+  "paper_published_label": "405KB",
+  "paper_byte_convention_confirmed": false,
+  "comparisons": {
+    "decimal_KB": {
+      "published_bytes": 405000,
+      "shortfall_bytes": 5640,
+      "exact_match": false
+    },
+    "binary_KiB": {
+      "published_bytes": 414720,
+      "shortfall_bytes": 15360,
+      "exact_match": false
+    }
+  },
+  "capacity_matches_any_proposed_convention": false,
+  "memory_capacity_reconciled": false,
+  "uninstantiated_storage_added": false,
+  "paper300_release_authorized": false,
+  "scope": "Inventory-bound capacity audit of the preserved placed candidate.\n\nCount actual native cold-export instances and derive capacity from vendor\nmodule parameters, not part-number spellings. The paper's405KB label does not\nspecify its byte convention here: compare both405000 and414720bytes. Never add\nuninstantiated memories to make a total fit. This diagnoses capacity only; it\ndoes not release the paper300 hold or claim current physical/functional signoff.\n"
+}
