@@ -215,6 +215,19 @@ arithmetic. Full trained hardware execution and paper benchmarks remain
 separate qualifications. See `records/batch406_learned_result.json`
 and `records/batch407_learned_fixture.json`.
 
+The attention fixture captures the actual rotary query and key vectors from
+the first language layer of the pinned model. Reconstructing dense causal
+attention on the selected rows matches the model's attention output to
+about one ten-millionth in absolute value. Central and graphics processor
+integer calculations agree on all 290,880 query-key scores. The fixture
+preserves 46,080 scores from sink, inner, and recent tiles and converts the
+paper's cutoff of four scaled score units into each head's integer scale.
+The local 32-key tiles and ratio threshold of one classify four of the
+32 heads as streaming for this image and layer. This diagnostic provides
+trained inputs for the head predictor. Head classification across the
+model, hardware scheduling, and the paper's attention speedup remain
+unverified. See `records/batch409_attention_fixture.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
