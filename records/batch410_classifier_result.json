@@ -1,0 +1,33 @@
+{
+  "state": "trained_attention_classification_from_precomputed_scores_verified",
+  "scope": "Qualify the attention-head classifier on frozen trained scores and boundaries.",
+  "trained_heads": 32,
+  "trained_rows": 480,
+  "compared_input_scores": 46080,
+  "streaming_heads": 4,
+  "maximum_rows_tested": 4096,
+  "fault_controls": 3,
+  "cutoff_controls": 4,
+  "exit_status_by_run": {
+    "trained_and_directed": 0,
+    "inclusive_cutoff": 2,
+    "inclusive_ratio": 2,
+    "unweighted_ratio": 2,
+    "verilator": 0
+  },
+  "source_and_fixture_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/scores.hex": "1fcd367bd5d9d5aa1b130bc4b64a903bfed9e7843560b6fd8f76556ed85942a5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/alpha.hex": "9032dede1ef20a6d1996f0bf6a7ab02e4c8d24accbbc0bd244d46144a27f0c44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/counts.hex": "496c03c674dc5d8555e3c5b6d94adefcc36f979aa806c44b031c0b6d7531945e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/streaming.hex": "06c16b3b43f08a9705e4ebd6f1de3639d38d6d5a764a80b5ecc0d86ecc4393d3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_attention_head_classifier410.sv": "d4331b81cf441df11ff0275c9904ba9e41c8eb1bdfbbb0dfc8f7e16b85c5005f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_attention410_classifier_tb.sv": "dc10a5415c5089f71d5e245e4fa3f36b02ccd1330d272ff27937d2620867323d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch409_attention_fixture.json": "0fef39da2190f90ec030598f459bf931dc638a71e33af257973b8b728fbfa6a7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch410_classifier.py": "35e44e09c911d1ee5d6cfca1ab95db86da4fc5c865665dc2385056139b601b17",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch396_masks.py": "a4195039addebbb8e9a5ec185e6aae032a44e571ac81a2b8419a55a10a90fbf4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "native_logs_sha256": "7e69287bef0eb5a8c37c525b47f8e28965324e8fe6eb38356409cc4077d8f621",
+  "hardware_score_generation_verified": false,
+  "full_paper_results_matched": false
+}

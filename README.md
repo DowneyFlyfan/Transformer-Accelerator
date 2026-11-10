@@ -228,6 +228,15 @@ trained inputs for the head predictor. Head classification across the
 model, hardware scheduling, and the paper's attention speedup remain
 unverified. See `records/batch409_attention_fixture.json`.
 
+The hardware head classifier now matches the inner and recent intensity
+counts for all 480 trained rows and the final type of all 32 heads in
+Xcelium. Directed cases verify the strict sink cutoff, causal lane masks,
+exact ratio ties, the 4,096-row accumulator limit, and error recovery.
+Three deliberately incorrect comparisons fail at the expected boundary.
+The test supplies precomputed scores. The next integration step connects
+the query-key multiply and accumulation path to the classifier. See
+`records/batch410_classifier_result.json` and its native log archive.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
