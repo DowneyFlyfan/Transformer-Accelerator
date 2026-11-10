@@ -277,6 +277,15 @@ after a valid row, and a wrong completion tag. A separate control that
 allows a future key into an earlier query fails at that exact score.
 See `records/batch413_canary_tile_result.json`.
 
+The frozen attention policy was also evaluated across 22 language layers on
+each of 16 diagram images. It classified 9,145 of 11,264 heads as streaming
+in fixed point and 9,140 in floating point. Only 23 individual decisions
+changed with quantization. Independent processor calculations matched
+28,881,600 selected scores on the first image across all layers. The fixed
+point rate of 81.2 percent exceeds the paper's 50 to 75 percent observation.
+This experiment uses the local ratio of one, the pinned checkpoint, and
+unmerged prefill inputs. See `records/batch414_head_policy_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
