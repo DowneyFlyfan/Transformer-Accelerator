@@ -2,7 +2,10 @@
 // Attention and learned feed-forward share one tensor fabric and one read bus.
 // Attention cache writes and value reads retain their native vector interface.
 // At a tensor command boundary, a pending feed-forward frame takes priority.
-module tri_oracle_shared_layer437 #(parameter bit PERSIST_LAYER_CONTEXT = 0) (
+module tri_oracle_shared_layer437 #(
+    parameter bit PERSIST_LAYER_CONTEXT = 0,
+    parameter bit COMPILED_SIGN_BANK = 0
+) (
     input logic clk, rst_n, cfg_valid,
     output logic cfg_ready,
     input logic [31:0] cfg_tag,
@@ -129,7 +132,9 @@ module tri_oracle_shared_layer437 #(parameter bit PERSIST_LAYER_CONTEXT = 0) (
     tri_oracle_attention_tensor437 attention();
 
     tri_oracle_batched_learned437 feedforward (.attention, .*);
-    tri_oracle_attention_pipeline430 #(.PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT)) attention_pipeline (
+    tri_oracle_attention_pipeline430 #(
+        .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+    ) attention_pipeline (
         .tensor_cfg_feature_words(attention.cfg_feature_words),
         .tensor_cfg_activation_stride(attention.cfg_activation_stride),
         .tensor_cfg_valid(attention.cfg_valid),

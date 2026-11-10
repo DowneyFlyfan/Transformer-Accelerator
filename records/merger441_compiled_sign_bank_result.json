@@ -1,0 +1,76 @@
+{
+  "state": "compiled_sign_bank_source_and_integrated_replays_verified",
+  "source_sha256": "bb7b92df327469e15c75031d74eecbd05371613504ab6275c6b9ea9925a156ae",
+  "required_parameter": "COMPILED_SIGN_BANK=1",
+  "memory_geometry": {
+    "slices": 16,
+    "rows_per_slice": 32,
+    "bits_per_slice_word": 128,
+    "logical_slots": 24,
+    "bits_per_token": 2048,
+    "physical_bytes": 8192,
+    "used_slot_capacity_bytes": 6144
+  },
+  "vendor_macro_footprint_sum_square_micrometers": 76386.968,
+  "trained_inferred_inventory": {
+    "modes": 2,
+    "layers": 44,
+    "maps": 25344,
+    "signs": 15561,
+    "rows": 25432,
+    "sizes": 4380542,
+    "cfg_errors": 3,
+    "map_stalls": 4353,
+    "done_stalls": 235
+  },
+  "trained_compiled_inventory": {
+    "modes": 2,
+    "layers": 44,
+    "maps": 25344,
+    "signs": 15561,
+    "rows": 25432,
+    "sizes": 4380542,
+    "cfg_errors": 3,
+    "map_stalls": 8317,
+    "done_stalls": 235
+  },
+  "frame_cycles": {
+    "inferred": {
+      "frames": 44,
+      "cycles": 29785
+    },
+    "compiled": {
+      "frames": 44,
+      "cycles": 58205
+    }
+  },
+  "frame_cycle_increase_percent": 95.417,
+  "compiled_word_reads": 24456,
+  "compiled_word_writes": 15028,
+  "directed_idle_hold": {
+    "input_gap_cycles": 8,
+    "output_stall_cycles": 5,
+    "exact_maps": 4
+  },
+  "wrong_read_address_rejected_at": {
+    "mode": 0,
+    "layer": 0,
+    "token": 24
+  },
+  "integrated_native_markers": [
+    "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+    "SHARED437_ATTENTION_OWNERSHIP_PASS",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=63"
+  ],
+  "integrated_compiled_memories": 618,
+  "integrated_compiled_memory_capacity_bytes": 415744,
+  "binary_405_kibibyte_candidate_minus_paper_bytes": 1024,
+  "memory_capacity_reconciled": false,
+  "full_paper_results_matched": false,
+  "clock_distribution_or_routing_allowed": false,
+  "scope": "One compiled sign bank in the shared 20-core layer. Source replay with vendor memory models and no timing checks. The macro footprint sum comes from library geometry before placement. The paper places a sign bank in each aggregator.",
+  "archive": {
+    "path": "records/merger441_compiled_sign_bank_evidence.json.gz",
+    "sha256": "07b1271860c7b9eb6c4cc5dfe96daff50c7bf9048e611759afa9b7555204d2e5"
+  }
+}

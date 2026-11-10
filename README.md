@@ -630,6 +630,16 @@ inherited merge failed at token 126 in the second layer. See
 The paired 580-megahertz synthesis trial reached the 7-gibibyte host-memory
 reserve after 249 seconds, before Genus could save a generic checkpoint.
 
+With `COMPILED_SIGN_BANK=1`, the merger uses sixteen 32-by-128 compiled
+memory slices. It preserves all trained merge decisions and causal sizes,
+including the integrated attention replay with 618 compiled memories. Across
+44 trained frames, merge completion took 58,205 cycles with this controller
+and 29,785 cycles with the inferred bank. The compiled mode passed a directed
+idle-output hold test and rejected an incorrect memory read address. Its
+centralized bank and 406-kibibyte compiled-memory inventory leave the paper's
+per-aggregator organization and 405-kilobyte total unqualified. See
+`records/merger441_compiled_sign_bank_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

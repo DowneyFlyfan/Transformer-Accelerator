@@ -3,7 +3,10 @@
 // the same ordinary tensor owner with eight 64-bit words per operand vector.
 // Prediction query memory starts at compact position 96. The caller compacts
 // tensors according to the emitted map and retains them across decode rows.
-module tri_oracle_attention_layer427 #(parameter bit PERSIST_LAYER_CONTEXT=0) (
+module tri_oracle_attention_layer427 #(
+    parameter bit PERSIST_LAYER_CONTEXT=0,
+    parameter bit COMPILED_SIGN_BANK=0
+) (
     input logic clk, rst_n,
     input logic frame_valid, frame_new_image,
     input logic [4:0] frame_layer,
@@ -174,7 +177,7 @@ module tri_oracle_attention_layer427 #(parameter bit PERSIST_LAYER_CONTEXT=0) (
         assign store_restore_origin = 0;
     end
 
-    tri_oracle_cumulative_token_merger423 merger (
+    tri_oracle_cumulative_token_merger423 #(.COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)) merger (
         .clk, .rst_n, .cfg_valid(frame_start), .cfg_new_image(frame_new_image),
         .cfg_ready(merge_cfg_ready), .cfg_minimum_matches(merge_threshold),
         .sign_valid, .sign_ready, .sign_data, .map_valid(merge_map_valid),

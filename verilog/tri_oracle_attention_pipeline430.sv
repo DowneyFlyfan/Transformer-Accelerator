@@ -1,7 +1,10 @@
 `timescale 1ns/1ps
 // One tensor owner serves projection and attention. Projection slots become
 // visible to the caller only when the tagged projection completion succeeds.
-module tri_oracle_attention_pipeline430 #(parameter bit PERSIST_LAYER_CONTEXT=0) (
+module tri_oracle_attention_pipeline430 #(
+    parameter bit PERSIST_LAYER_CONTEXT=0,
+    parameter bit COMPILED_SIGN_BANK=0
+) (
     input logic clk, rst_n,
     input logic projection_valid,
     output logic projection_ready,
@@ -178,7 +181,9 @@ module tri_oracle_attention_pipeline430 #(parameter bit PERSIST_LAYER_CONTEXT=0)
         .done_ready(projection_done_ready && projection_busy && !rejected_projection),.done_tag(stored_tag)
     );
 
-    tri_oracle_attention_layer427 #(.PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT)) attention (
+    tri_oracle_attention_layer427 #(
+        .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+    ) attention (
         .clk,.rst_n,.frame_valid(frame_valid && !projection_busy),.frame_ready(native_frame_ready),
         .frame_new_image,.frame_layer,.frame_minimum_matches,.frame_image_start,
         .sign_valid,.sign_ready,.sign_data,.map_valid,.map_last,.map_ready,.map_index,.map_origin,

@@ -8,6 +8,7 @@ module tri_oracle_cumulative_token_merger423 #(
     parameter int IMAGE_WIDTH=24,
     parameter int IMAGE_HEIGHT=24,
     parameter int FEATURES=2048,
+    parameter bit COMPILED_SIGN_BANK=0,
     localparam int TOKENS=IMAGE_WIDTH*IMAGE_HEIGHT,
     localparam int INDEX_W=TOKENS>1 ? $clog2(TOKENS) : 1,
     localparam int SLOT_W=IMAGE_WIDTH>1 ? $clog2(IMAGE_WIDTH) : 1,
@@ -35,14 +36,13 @@ module tri_oracle_cumulative_token_merger423 #(
     logic [INDEX_W-1:0] origins[TOKENS], bank_root[IMAGE_WIDTH];
     logic [SLOT_W-1:0] frontier[IMAGE_WIDTH], root_slot[TOKENS];
     logic [SLOT_W-1:0] column, upper_slot, left_slot, inherited_slot, free_slot, selected_slot;
-    logic [FEATURES-1:0] bank_sign[IMAGE_WIDTH];
-    logic [FEATURES-1:0] left_sign;
+    logic [FEATURES-1:0] left_sign, bank_read_sign;
     logic [HIT_W-1:0] threshold;
     logic [IMAGE_WIDTH-1:0] used, visible;
     logic new_image, has_map, has_upper, has_left, old_alias, advance, space;
     logic upper_match, left_match, free_found, store_sign, valid_step;
     wire [SLOT_W-1:0] bank_read_slot = old_alias ? inherited_slot : upper_slot;
-    wire [FEATURES-1:0] bank_read_sign = bank_sign[bank_read_slot];
+    logic read_available, write_sign;
 
     assign cfg_ready = state==Idle;
     assign done_valid = state==Result;
@@ -56,8 +56,47 @@ module tri_oracle_cumulative_token_merger423 #(
     assign left_slot = has_left ? frontier[column-1'b1] : '0;
     assign upper_match = has_upper && reduction[LEVELS].upper[0]>=threshold;
     assign left_match = has_left && reduction[LEVELS].left[0]>=threshold;
-    assign sign_ready = state==Run && space && !old_alias;
-    assign advance = state==Run && space && (old_alias || sign_valid);
+    assign sign_ready = state==Run && space && read_available && !old_alias;
+    assign advance = state==Run && space && read_available && (old_alias || sign_valid);
+    assign write_sign = rst_n && advance && valid_step && store_sign;
+
+    if (COMPILED_SIGN_BANK) begin : compiled_signs
+        localparam int BANKS = (FEATURES+127)/128;
+        localparam int DATA_W = 128*BANKS;
+        logic read_valid;
+        logic [DATA_W-1:0] read_data;
+        wire needs_read = old_alias || has_upper;
+        wire issue_read = rst_n && state==Run && space && needs_read && !read_valid;
+        wire [4:0] address = write_sign ? 5'(selected_slot) : 5'(bank_read_slot);
+
+        if (IMAGE_WIDTH > 32) begin : invalid_depth
+            initial $fatal(1, "Compiled sign bank supports at most 32 columns");
+        end
+
+        // The memory holds its read output while disabled. Until this cursor
+        // advances, its prefetched word remains valid through any input stall.
+        assign read_available = !needs_read || read_valid;
+        assign bank_read_sign = read_data[FEATURES-1:0];
+        always_ff @(posedge clk or negedge rst_n) begin
+            if (!rst_n) read_valid <= 0;
+            else if (advance) read_valid <= 0;
+            else if (issue_read) read_valid <= 1;
+        end
+
+        /* verilator lint_off DECLFILENAME */
+        TS5N28HPCPSVTA32X128M2FW slices[BANKS-1:0] (
+            .CLK(clk), .CEB(!(issue_read || write_sign)), .WEB(!write_sign),
+            .A(address), .D(DATA_W'(sign_data)), .BWEB(128'b0), .Q(read_data)
+        );
+        /* verilator lint_on DECLFILENAME */
+    end else begin : inferred_signs
+        logic [FEATURES-1:0] bank_sign[IMAGE_WIDTH];
+        assign read_available = 1;
+        assign bank_read_sign = bank_sign[bank_read_slot];
+        always_ff @(posedge clk) begin
+            if (write_sign) bank_sign[selected_slot] <= sign_data;
+        end
+    end
 
     for (genvar level=0;level<=LEVELS;level++) begin : reduction
         localparam int NODES=LEAVES>>level;
@@ -148,7 +187,6 @@ module tri_oracle_cumulative_token_merger423 #(
                     end else begin
                         if (store_sign) begin
                             root_slot[cursor]<=selected_slot;
-                            bank_sign[selected_slot]<=sign_data;
                             bank_root[selected_slot]<=cursor;
                             left_sign<=sign_data;
                         end else if (old_alias || upper_match) begin
