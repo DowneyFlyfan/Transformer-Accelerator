@@ -294,6 +294,14 @@ point rate of 81.2 percent exceeds the paper's 50 to 75 percent observation.
 This experiment uses the local ratio of one, the pinned checkpoint, and
 unmerged prefill inputs. See `records/batch414_head_policy_result.json`.
 
+A head descriptor now drives the complete local tile schedule in hardware.
+Xcelium checked all 32 batch descriptors and the final intensity counts
+for 510 trained query rows, including the 14-row tail. Six invalid
+configurations caused no reads. An injected read failure in the second
+batch invalidated the verified first-batch prefix and allowed a retry with
+the same tag. Holding the query address fixed failed at the second
+descriptor. See `records/batch415_head_schedule_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
