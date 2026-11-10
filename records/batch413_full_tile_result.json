@@ -1,0 +1,349 @@
+{
+  "state": "trained_tile_batch_qualified",
+  "scope": "Verify batched trained head prediction and exact key reuse in Xcelium.",
+  "mode": "full",
+  "elapsed_seconds": 505.486615590984,
+  "actual_cores": 20,
+  "compiled_memory_models": 600,
+  "inventory": {
+    "heads": 32,
+    "rows": 16320,
+    "live": 1312800,
+    "masked": 253920,
+    "streaming": 2,
+    "errors": 5,
+    "requests": 426033,
+    "words": 852066,
+    "batched_key_words": 720384,
+    "unbatched_key_words_same_rows": 10496846
+  },
+  "runs": {
+    "heads_00": {
+      "native_status": 0,
+      "inventory": {
+        "first": 0,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 5,
+        "requests": 27153,
+        "words": 54306,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "fb1aabf74dac15b7568631db6bd82094b966f52dce6021cf272079b0a7eaf110",
+      "elapsed_seconds": 238.23749064502772
+    },
+    "heads_02": {
+      "native_status": 0,
+      "inventory": {
+        "first": 2,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 652315
+      },
+      "log_sha256": "691e3ca6b24db3a3e57990e05814dea6f1914c3e7219098776be83139749ef98",
+      "elapsed_seconds": 242.23321338999085
+    },
+    "heads_04": {
+      "native_status": 0,
+      "inventory": {
+        "first": 4,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656305
+      },
+      "log_sha256": "c7f9e06dd5ad4b7a166cdbd6bf6348013d6d0388a7b79a90ecc94630671ed916",
+      "elapsed_seconds": 235.23762701597298
+    },
+    "heads_06": {
+      "native_status": 0,
+      "inventory": {
+        "first": 6,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 655899
+      },
+      "log_sha256": "d117fce18255573934bab92912f4c44924b8a4f7ad96b79464e780e67f522a55",
+      "elapsed_seconds": 239.2378452810226
+    },
+    "heads_08": {
+      "native_status": 0,
+      "inventory": {
+        "first": 8,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 655527
+      },
+      "log_sha256": "6d21b69e1a852194b5134fa3e79647013681087ae67ae3a994e68421388e79cc",
+      "elapsed_seconds": 493.40703485696577
+    },
+    "heads_10": {
+      "native_status": 0,
+      "inventory": {
+        "first": 10,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "d2409fa320b4fb3cae6864c6153f0364b0db27139349ae00019430a83b26c33c",
+      "elapsed_seconds": 490.4055940399994
+    },
+    "heads_12": {
+      "native_status": 0,
+      "inventory": {
+        "first": 12,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "525dccaa240749057d54ec33a711c3735d2e966f923652fc00b8e8a45d8cfda1",
+      "elapsed_seconds": 495.52271620498504
+    },
+    "heads_14": {
+      "native_status": 0,
+      "inventory": {
+        "first": 14,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "a8d603493a18c0f17846e4a779bdd16d99241cb4e9463d446aa1fe3d0a673557",
+      "elapsed_seconds": 495.51505241100676
+    },
+    "heads_16": {
+      "native_status": 0,
+      "inventory": {
+        "first": 16,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "17a5beb959b25056714c1ddb92e64121a89ff418c93b99dae01c062a8070c3d3",
+      "elapsed_seconds": 502.51610389200505
+    },
+    "heads_18": {
+      "native_status": 0,
+      "inventory": {
+        "first": 18,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "044263157caad9494e515288aa8586f71a13651d7b2739d6eabe8a60483ff574",
+      "elapsed_seconds": 499.40497532399604
+    },
+    "heads_20": {
+      "native_status": 0,
+      "inventory": {
+        "first": 20,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 1,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "e4d7e5c4dea201fff80fc127e30ede722b7abc59d6016421c92468d3e536cc01",
+      "elapsed_seconds": 502.49985900800675
+    },
+    "heads_22": {
+      "native_status": 0,
+      "inventory": {
+        "first": 22,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 1,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "81f7d30130aef34d15d7955b8bae5ed97a467e3fae592c002d60d741073a3650",
+      "elapsed_seconds": 495.51367310399655
+    },
+    "heads_24": {
+      "native_status": 0,
+      "inventory": {
+        "first": 24,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "321c9838617531348b3b5b2940dd6bf9ef17cc1f6dd2fefc0213375d568c6195",
+      "elapsed_seconds": 503.4034645499778
+    },
+    "heads_26": {
+      "native_status": 0,
+      "inventory": {
+        "first": 26,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "b344c50e67c9b50d2ff58b4fdd65a4df40788f95ca2e2e9cf4932c4601e50769",
+      "elapsed_seconds": 505.4035421949811
+    },
+    "heads_28": {
+      "native_status": 0,
+      "inventory": {
+        "first": 28,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "8fe63f94e5a4abcb1b6c172f322437292e6a1e1af5f928b95162d46ebca0e317",
+      "elapsed_seconds": 502.5030924390303
+    },
+    "heads_30": {
+      "native_status": 0,
+      "inventory": {
+        "first": 30,
+        "heads": 2,
+        "rows": 1020,
+        "live": 82050,
+        "masked": 15870,
+        "streaming": 0,
+        "errors": 0,
+        "requests": 26592,
+        "words": 53184,
+        "batched_key_words": 45024,
+        "unbatched_key_words_same_rows": 656400
+      },
+      "log_sha256": "d33b311395de3fb62da161e140b07972509917c14c275a62274f421b6ee01abd",
+      "elapsed_seconds": 501.4025521170115
+    },
+    "future_key_control": {
+      "native_status": 2,
+      "inventory": {
+        "rejected_future_key": 97,
+        "query": 96,
+        "unexpected_score": -942
+      },
+      "log_sha256": "cb692f88d24ef6e772375d67d1cf8d96e56f0640cf41475ce3644654dda68044",
+      "elapsed_seconds": 11.030881087004673
+    }
+  },
+  "source_and_fixture_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/alpha.hex": "9032dede1ef20a6d1996f0bf6a7ab02e4c8d24accbbc0bd244d46144a27f0c44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/counts.hex": "ea341898454ff09a5ad4dcc11fbebed2da9c7458a00d0c3d0afb0f782b7ead42",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/key.hex": "8a6eb4b5003795b2acdf3568d7646298f48fa8d759d89c174c15dbba56e5690d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/query.hex": "61064348a82eebfcfa1df6a09c0b92890ead72f7a105b9a8b0850fa77278a756",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/scores.hex": "6cc52dec839b8659ed764c359cb2615b8b759d12f586f4985cd735be06d8aea9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/streaming.hex": "e3d8192a375cc7f59b86a191b9f46a3045aaa79e7f4bbdea84426439ae6073dd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sram_memory_compute.sv": "435bfdf1db3758ce1f927836307721a27133402cb26f529c6a63c8a6df659f39",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sram_compute_cluster.sv": "ceaeda635bedb64d1f67ede869e4fd8fa210f67b4ec85c2a422719a05bca27d6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_compute_fabric.sv": "2331a7c82305d04bab9a6ad915a1dc6d657dff9b1394cb9c2469f1bb5a57645f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_projection356.sv": "06ded16e6a328a4a86a0a4161742fed467de7668c55c3ccc47dc7e3cf68cc5e4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_tensor390.sv": "05092d9d9e6658ec671031ad77baa519e09bdc64c26301e1744d248818647835",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batch357_hierarchy.sv": "7a82478fcc36d8aac94e88a23b15b40afc39275209b745174bad6b7114dcd9bb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_attention_head_classifier410.sv": "d4331b81cf441df11ff0275c9904ba9e41c8eb1bdfbbb0dfc8f7e16b85c5005f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_attention_tile_batch413.sv": "9b4536133d5834da10aea59747ff1413c7339dbf91c0a7b28e6dae640128601e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_attention413_tile_tb.sv": "bb005538dd249470daad17631d27494600d66a6e4880eaa9d4cf831b58434541",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch412_tiled_attention_fixture.json": "515ed0d42641d372667debe7bed9c8a7906681ec6d8555818b2b3bfff0981874",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch393_literal_result.json": "0a301ba929fb95132f91417350e248bffdf095b96bce605c296ea742a6eebfed",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch410_classifier_result.json": "85d274808cba27184340eef66df2a1a982fd2f820cb5c15b31d3b89cd71566db",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch413_tile_batches.py": "9ed4663e20e2b3c164ecdab81640961ab28dcb6918b414948327513c78db09d1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch396_masks.py": "a4195039addebbb8e9a5ec185e6aae032a44e571ac81a2b8419a55a10a90fbf4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "native_logs_sha256": "a87e3a282c205f3266e4003856040e544897dc8f1d8c68a6e135892ffdd546ad",
+  "full_paper_results_matched": false
+}

@@ -277,6 +277,14 @@ after a valid row, and a wrong completion tag. A separate control that
 allows a future key into an earlier query fails at that exact score.
 See `records/batch413_canary_tile_result.json`.
 
+The full Xcelium sweep now passes all 32 heads and 16,320 query rows on the
+shared twenty-core fabric with 600 compiled memory models. It checked
+1,312,800 valid scores, 253,920 masked slots, and every head decision.
+The hardware read 720,384 key words. The independent traffic calculation
+for the same rows issued one at a time gives 10,496,846 key words. This
+measures the prediction workload's key reads for this fixture. See
+`records/batch413_full_tile_result.json` and its native log archive.
+
 The frozen attention policy was also evaluated across 22 language layers on
 each of 16 diagram images. It classified 9,145 of 11,264 heads as streaming
 in fixed point and 9,140 in floating point. Only 23 individual decisions
