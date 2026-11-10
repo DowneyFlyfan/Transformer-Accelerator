@@ -237,6 +237,18 @@ The test supplies precomputed scores. The next integration step connects
 the query-key multiply and accumulation path to the classifier. See
 `records/batch410_classifier_result.json` and its native log archive.
 
+The shared tensor fabric now generates those scores from trained query and
+key bytes and feeds the classifier directly. Xcelium matched all 46,080
+scores, both intensity counts for each of the 480 rows, and all 32 head
+decisions. Every operand read was checked against the selected keys. The
+same path verified 58 scores from partial tiles, stalled output stability,
+and recovery from invalid ranges, a future key, an unaligned query, and a
+read error. A corrupted score failed at the first changed lane. The fabric
+uses its existing twenty cores and 600 compiled memory models. The fixture
+selects one query row per tile position for one image and layer. Tile
+scheduling across complete heads and layers and the paper's workload and
+timing results remain unqualified. See `records/batch411_attention_score_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
