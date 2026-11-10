@@ -222,6 +222,15 @@ addresses. The one-hour run used prepared activation codes and 602 compiled
 memory models. The lossless log and its digest are recorded alongside
 `records/batch402_trained_predictive_result.json`.
 
+The complete trained layer also passes with hardware-generated activations.
+Xcelium checked 32,768 activation bytes from 16 normalization starts, all
+55,616 sign-read addresses, 90,112 intermediate bytes, and 32,768 output
+words. The twenty-core run retired 208 packets using 602 compiled memory
+models and the fixed-point reference for the locally generated activations.
+The result binds the terminal log and the separate progress log, which
+records all 71 mask groups and 13 output tiles. See
+`records/batch408_trained_learned_result.json`.
+
 The attention fixture captures the actual rotary query and key vectors from
 the first language layer of the pinned model. Reconstructing dense causal
 attention on the selected rows matches the model's attention output to
