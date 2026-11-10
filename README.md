@@ -627,6 +627,8 @@ the original stall counts. The integrated 20-core attention replay and
 five parameter-shape comparisons passed. Skipping the sign refresh after an
 inherited merge failed at token 126 in the second layer. See
 `records/merger440_single_read_result.json`.
+The paired 580-megahertz synthesis trial reached the 7-gibibyte host-memory
+reserve after 249 seconds, before Genus could save a generic checkpoint.
 
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
