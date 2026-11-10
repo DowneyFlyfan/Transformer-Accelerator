@@ -592,8 +592,15 @@ completed a feed-forward frame and a queued attention projection on the same
 fabric without a reset. A mutation that allowed a competing feed-forward
 frame to enter during attention failed the ownership check.
 
-The full Genus elaboration stopped at a 16-gibibyte memory guard. The shared
-layer has source simulation evidence. See `records/shared437_layer_result.json`.
+The original integrated Genus run reached a 16-gibibyte memory guard in the
+token merger. Sharing the two sign-bank vector reads let the full-size merger
+elaborate in 34 seconds at 1.43 gibibytes. The two trained traces matched all
+25,344 merge entries and 4,380,542 causal-size values. The integrated attention
+replay also matched its reference. The integrated Genus retry passed hardware
+description language elaboration at 8.32 gibibytes, then stopped at the license
+check, which counted 5,401,540 unmapped instances against a 200,000-instance
+allowance. See `records/shared437_layer_result.json` and
+`records/merger438_shared_reads_result.json`.
 
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
