@@ -52,6 +52,31 @@ integration with gated feed-forward execution, full-model scheduling, synthesis
 of this new owner and routed timing remain unfinished. The paper gate stays on
 hold, and no physical design advancement is authorized.
 
+The paired gated path now computes gate and up together for 80 original
+channels on the same twenty-core, 600-memory source hierarchy. Each cluster's
+32 physical rows hold sixteen gate/up pairs. Only one completed raw packet is
+retained while the existing result queues hold later token packets. Captured
+gate/up/down shifts vary independently by token, preserving the frozen
+first-token protection and ordinary-token precision policies.
+
+The trained fixture retains all 2,048 input features and quantizes the complete
+5,632-channel matrices before selecting original channels 0, 71, ..., 5609.
+Independent scalar and graphics-processor calculations agree on every mask,
+gate/up sum, signed16 nonlinear result and signed8 down input. Native source
+simulation passes 10,240 value comparisons, including all-masked execution,
+up-read errors, invalid up addresses, and queued metadata/activation-tag faults
+followed by recovery without external reset. A separate arithmetic-only test
+checks 2,324 extrema/rounding/saturation cases across all 64 shift settings.
+Removing either wrapper fault guard makes its directed regression fail. See
+`records/batch384_gated_qualification.json` and its lossless native logs.
+
+This qualifies a gated intermediate tile with prepared prediction masks.
+It does not include multiplication by the down matrix or a complete feed-forward
+layer. Shared scheduling of all three projections, full-model execution and
+physical implementation of the new batched path remain unfinished. Numeric
+formats and row pairing are local reconstruction choices; no paper accuracy,
+latency, energy or whole-chip timing claim follows from these tests.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
