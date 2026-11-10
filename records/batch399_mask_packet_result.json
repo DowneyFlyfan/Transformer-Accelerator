@@ -1,0 +1,73 @@
+{
+  "state": "trained_predictor_to_keep_packets_verified",
+  "scope": "Verify packet boundaries and join the adapter to the trained predictor.",
+  "elapsed_seconds": 2.0451371680246666,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch396/branch_masks.hex": "b62f99a1054dc13a8e8df38603e2cd147ad08c246d96f0ae485aab0becf204f0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch396/gate_sign.hex": "44929c996d5f35e9162dee5dc183b7b91b09159b843dbc2fd1767b34576d6b4d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch396/outlier_counts.hex": "fd3dff8468bfbc398e2dbb4a9599ce86b07799c817d57889f60710bd1ecd9310",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch396/outlier_pairs.hex": "48fd8addc51eba91dbdd7c9e3f6091823f99e8b0e5d9ad972f1af35cc7b01359",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch396/raw.hex": "017b945457841b49cb47f5f6f82ece6f95f5e2d75622aebc53b43e6697933c83",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch396/up_sign.hex": "f07ca7ca0867a2037781b59a7388827bc52a7540db730df89db48d77a865572b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch396_mask_fixture.json": "a7cdd3265f67d7bd6ace480653beeccc0e9f8933b09f1390eff0514b5e57a556",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch398_outlier_result.json": "032b78a236d738ea4532ed4a3c1b75b255d99cc9094d3f5d89f2bac5d696407c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_rmsnorm.sv": "750394cbed15e27691147b7284bd527369dbf281ffc72ab68a05304fbb786c45",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_sign_fetch.sv": "a87a29deacb5677c5338a113da3e44830c2e9c7f7094f96a628824725ca552f1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_strip_predictor.sv": "259ae612d7a243a7d53f1703eb598f8c0efc6518e79a245ac4508fd173292741",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_outliers398.sv": "df0d9a88519aa78dbc109182ef551dd60736cae0f436a1e39125c3e9725d46f5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched_mask_packet399.sv": "351c8402f82d92454bfa9e55cebb31de9b6a421f5f619af76f531498d65175fd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched399_mask_packet_tb.sv": "d90517c6b63e94fa824d6c09041f857de2d0409351c548a246d1f8efe469276b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch399_mask_packets.py": "e6b16ca9f46d819fec35cbc04d8ec8f2ee42f4c9e782a2eba243f6fb4cf29930",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch396_masks.py": "a4195039addebbb8e9a5ec185e6aae032a44e571ac81a2b8419a55a10a90fbf4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "native_process_group": 808450,
+  "native_exit_status": 0,
+  "trained_packets": 71,
+  "trained_mask_bits": 90112,
+  "trained_padding_bits": 768,
+  "trained_sign_reads": 55616,
+  "literal_cases": [
+    [
+      1,
+      32
+    ],
+    [
+      2,
+      64
+    ],
+    [
+      3,
+      96
+    ],
+    [
+      9,
+      128
+    ],
+    [
+      16,
+      160
+    ],
+    [
+      3,
+      192
+    ],
+    [
+      16,
+      8160
+    ],
+    [
+      3,
+      96
+    ]
+  ],
+  "literal_packets": 115,
+  "literal_mask_bits": 135584,
+  "held_packet_cancellation_verified": true,
+  "missing_carry_counterfactual_rejected": true,
+  "logs_archive_sha256": "babd3f388608f37d10e3501e49e9dc635200bac178a2e8af8ac365eef05255f9",
+  "temporary_builds_removed": true,
+  "shared_compute_frame_verified": false,
+  "full_paper_results_matched": false
+}

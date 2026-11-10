@@ -137,10 +137,20 @@ and all 55,616 external sign reads matched the same trained fixture. The
 five native cases cover early and late sign failures, mismatched replay,
 cancellation of both held residual offers, same-tag recovery and a
 shorter frame crossing the two banks. The cache adds 8,192 bytes to this
-frontend. The group outputs still need to be assembled into the batched
-controller's 80-channel packets, and the extra memory remains to be
-accounted for in the whole-chip design. See
+frontend, which remains to be accounted for in the whole-chip design. See
 `records/batch398_outlier_result.json`.
+
+The mask adapter converts original 32-channel skip groups to token-major
+80-channel keep packets, retaining sixteen bits per token when a group
+crosses a packet boundary. A Xcelium run with the actual predictor matched
+all 71 trained packets, 90,112 keep bits and 768 padding bits. Literal
+controls cover both boundary alignments, the maximum 8,160-channel frame,
+and cancellation of a stalled packet. An unrelated tag leaves the packet
+held. The coordinator must clear a cancelled offer and its cancellation
+before reusing that tag. Removing the carry causes the 16-channel tail
+test to fail. This run checks the adapter with the trained predictor.
+The feedforward controller is the next consumer to connect. See
+`records/batch399_mask_packet_result.json`.
 
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
