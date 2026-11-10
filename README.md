@@ -1,5 +1,19 @@
 # Tri-Oracle reproduction in progress
 
+The preserved current placed candidate now passes the complete archived trained
+feed-forward layer: 2,048 inputs, 5,632 intermediate channels and 2,048 exact
+integer outputs on twenty mapped cores with 600 actual vendor memory models.
+A wrong first-word reference is rejected using the same compiled image. The
+independent qualification binds the current parent, unchanged fixture, native
+logs, thirteen output packets and preserved database fingerprint across 421
+input/evidence files. See `records/real362_mapped_functional_qualification.json`.
+
+This is functional verification with prepared normalization/sign inputs and
+ideal clocking; delay annotation and native timing checks are disabled. The
+fixture skips zero channels, so it demonstrates no pruning benefit. Complete
+architecture, model accuracy, memory reconciliation and routed timing remain
+unqualified, and the paper gate remains on hold.
+
 A resident batched-projection sequencer now reuses each loaded weight tile
 across sixteen token rows on the unchanged twenty-core fabric. Two feature
 tiles cover all 2,048 input features and 160 output rows. Literal and trained
