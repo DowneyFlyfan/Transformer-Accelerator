@@ -653,6 +653,13 @@ limit stopped generic synthesis before checkpoint export. Peak anonymous
 memory was 8.98 gibibytes. See the synthesis trial in
 `records/merger441_compiled_sign_bank_result.json`.
 
+With the optimized compiled bank and the extracted models for all twenty
+compute cores, Genus reported 1,442,029 unmapped instances against the
+1,200,000-instance limit. The earlier inferred-bank revision reported
+1,491,140. An independent graphics-processor audit reproduced all 25,344
+trained map decisions and checked 29,398 neighbor comparisons against an
+integer reference. See `records/shared443_compiled_capacity_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

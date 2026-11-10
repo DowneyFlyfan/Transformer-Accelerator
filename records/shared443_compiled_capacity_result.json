@@ -1,0 +1,33 @@
+{
+  "state": "compiled_sign_bank_full_parent_capacity_measured",
+  "verified_utc": "2026-11-10T18:29:45.481780+00:00",
+  "source_commit": "2f815b1672a8dabd46a885bc8a69415eb6f2ecc0",
+  "full_design": "tri_oracle_shared_layer437",
+  "top_parameter": "COMPILED_SIGN_BANK=1",
+  "used_extracted_core_models": true,
+  "instance_class": "unmapped",
+  "observed_instances": 1442029,
+  "observed_license_limit": 1200000,
+  "instances_over_limit": 242029,
+  "earlier_inferred_source_observed_instances": 1491140,
+  "count_difference": 49111,
+  "elapsed_seconds": 124.69677627802594,
+  "native_exit_status": 243,
+  "peak_anonymous_bytes": 4661063680,
+  "gpu_fixture_audit": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "frames": 44,
+    "aliases": 9783,
+    "popcounts": 29398,
+    "selected_roots": 15561,
+    "total_maps": 25344
+  },
+  "parent_database_written": false,
+  "full_mapping_completed": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "path": "records/shared443_compiled_capacity_evidence.json.gz",
+    "sha256": "a9c97150958280c8cad1f47cc061b50a29bce00e522091829f02153c47d6bfa7"
+  },
+  "scope": "Full parent diagnostic with extracted compute-core models. The earlier inferred-bank trial used an older source revision. The graphics-processor audit checks frozen token decisions independently of the hardware simulation."
+}
