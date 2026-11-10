@@ -602,6 +602,21 @@ check, which counted 5,401,540 unmapped instances against a 200,000-instance
 allowance. See `records/shared437_layer_result.json` and
 `records/merger438_shared_reads_result.json`.
 
+An instance-by-instance Xcelium audit of the shared layer measured 407,552
+bytes (398 kibibytes) across 602 compiled memories. The core and aggregator
+banks account for 390 kibibytes. The other eight kibibytes store feed-forward
+prediction metadata. Figures 31.6.2 and 31.6.3 place an image-width sign bank
+in each aggregator but give no fixed byte capacity for it. The current
+merger has one inferred sign array. The published 405-kilobyte total and
+its storage organization remain unqualified. See
+`records/shared439_memory_inventory_result.json`.
+
+Genus checked out two extended synthesis licenses and the capacity option.
+The shared layer with imported mapped cores exceeded the 300,000 mapped-instance
+limit at 1,293,402. Using the extracted core timing model left 1,491,140
+unmapped instances against the 1,200,000 limit. Both runs stopped before a
+parent database was saved. See `records/shared439_synthesis_capacity_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

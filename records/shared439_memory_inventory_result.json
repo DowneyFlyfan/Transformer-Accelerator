@@ -1,0 +1,60 @@
+{
+  "by_role": {
+    "aggregator_io": {
+      "instances": 40,
+      "bytes": 10240
+    },
+    "inputs": {
+      "instances": 40,
+      "bytes": 163840
+    },
+    "masks": {
+      "instances": 40,
+      "bytes": 20480
+    },
+    "outputs": {
+      "instances": 160,
+      "bytes": 40960
+    },
+    "prediction_metadata": {
+      "instances": 2,
+      "bytes": 8192
+    },
+    "weights": {
+      "instances": 320,
+      "bytes": 163840
+    }
+  },
+  "by_master": {
+    "TS5N28HPCPSVTA32X128M2FW": 360,
+    "TS5N28HPCPSVTA512X64M4F": 42,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "total_bytes": 407552,
+  "state": "source_simulated_memory_inventory_verified_paper_total_unreconciled",
+  "top": "tri_oracle_shared_layer437",
+  "native_compiled_memories": 602,
+  "source_replay": "merger438_shared_reads_result.json",
+  "source_merger_sha256": "5d7112b78aa916cd53c3d798fd1328dcd88fb2337f6f824b26a87e2ed2561e98",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "figures": [
+    "31.6.2",
+    "31.6.3",
+    "31.6.7"
+  ],
+  "figure_31_6_2_labeled_banks_bytes": 399360,
+  "paper_chip_label": "405KB",
+  "decimal_label_candidate_minus_paper_bytes": 2552,
+  "binary_label_candidate_minus_paper_bytes": -7168,
+  "architecture_scope": "One shared fabric with all 20 compute cores. Persistent attention context disabled.",
+  "scope": "Compiled memory on the elaborated source candidate. Inferred register arrays and an unmapped or unplaced chip are outside this inventory.",
+  "memory_capacity_reconciled": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "path": "records/shared439_memory_inventory_evidence.json.gz",
+    "sha256": "3072cd6c58cf031d609edf01ca8675b5352b31221d724b459f8027e732e7d14e"
+  },
+  "paper_sign_bank_observation": "Figure 31.6.2 places a surviving-sign bank in each aggregator. Figure 31.6.3 sizes its depth to image width and its word to the sign-vector width. Neither labels a fixed 3 KB capacity.",
+  "candidate_sign_bank_observation": "The shared layer uses one 24-entry by 2048-bit source sign array in the cumulative token merger. The 602-entry native compiled-memory ledger excludes that array.",
+  "rationale": "The five core/aggregator groups match the labeled capacity subtotal when interpreted in binary units. The current shared design has separate feed-forward prediction metadata banks. The paper does not resolve the fixed byte allocation of the surviving-sign banks or the unit convention."
+}
