@@ -1,0 +1,26 @@
+{
+  "state": "native_feedforward_core_replacement_bindings_verified",
+  "native_compute_core_signal_pins": 3158,
+  "verified_feedforward_core_instances": 20,
+  "verified_total_core_signal_pins": 63160,
+  "raw_routed_core_unchanged": true,
+  "raw_core_xcelium_commands": 1024,
+  "exact_gpu_referenced_output_sums": 512,
+  "corrupted_reference_rejected_in_same_snapshot": true,
+  "core_static_random_access_memory_instances": 28,
+  "functional_options": [
+    "UNIT_DELAY",
+    "-nospecify",
+    "-notimingchecks"
+  ],
+  "failed_configuration": "TETRAMAX with specify blocks enabled returned a mismatch.",
+  "feedforward_elaborated_leaf_objects": 1197767,
+  "whole_chip_mapped": false,
+  "whole_chip_timing_verified": false,
+  "scope": "Boundary and single-core functional qualification. The current feed-forward and attention partitions require mapped replay.",
+  "archive": {
+    "path": "records/merge457_core_replacement_evidence.json.gz",
+    "bytes": 14991,
+    "sha256": "590c5097c8b742f98144ec784f0cc22755adb3b05082e8542b79b2d444c797aa"
+  }
+}
