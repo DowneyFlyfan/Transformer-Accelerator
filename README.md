@@ -148,9 +148,21 @@ controls cover both boundary alignments, the maximum 8,160-channel frame,
 and cancellation of a stalled packet. An unrelated tag leaves the packet
 held. The coordinator must clear a cancelled offer and its cancellation
 before reusing that tag. Removing the carry causes the 16-channel tail
-test to fail. This run checks the adapter with the trained predictor.
-The feedforward controller is the next consumer to connect. See
+test to fail. This run checks the adapter with the trained predictor. See
 `records/batch399_mask_packet_result.json`.
+
+The joined predictive frame now generates masks from raw residuals and
+packed weight signs, then runs the existing feedforward controller on the
+same twenty cores. A read arbiter holds the selected owner from the stalled
+request through the accepted last response beat. Twelve Xcelium cases
+matched 6,228 output values and 4,608 intermediate bytes. They cover
+contending sign and operand reads, a stalled real mask that transfers
+unchanged before the abort marker, invalid descriptors rejected before any
+traffic, and same-tag recovery. The native hierarchy has 602 memory models
+including the two outlier stores. This is a small-frame functional check.
+The caller supplies quantized activation operands and both residual passes.
+Trained joined execution, timing, and the paper benchmarks remain to be
+verified. See `records/batch400_predictive_result.json`.
 
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
