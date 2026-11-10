@@ -1,0 +1,352 @@
+{
+  "state": "causal_prefix_method_and_stalled_output_functionally_verified",
+  "started_utc": "2026-11-10T03:18:23.066203+00:00",
+  "supervisor_pid": 791676,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_causal314_validation.py": "d93d4f27cffae88214db243b592ab24a41e3ede700e34b17b67d307afdb4dc61",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/causal313_baseline_regression.json": "7964aacfaac9f5f97539519d08af7b9f0eeba954471f5e870bc038d9a3a328fb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/causal313_baseline_native.log": "1099221055015b0f63f3c7a0f2ebc336e09e81532ba47fc238ac492b3d5e89a2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/paper312_causal_size_gap.json": "2cdbd17d91c7fa7b2f6b6dc6d38475616e964b052513d333113b5dedb883a2d0",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/causal313_functional_validation.json": "0682d42302c8b56e3d50811998f0b853be49307e978b5acd45bc16fb30ddbb67",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_causal313_validation.py": "3e9f03a35d73b444afb0ff2773f5ae7829e29cba51a9bf1b3900e8b94d1c2e3d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_row_guard175_synthesis.py": "a1bc9fcd21f26ecd50290e4883d66c2709f0d257f4c07d41f5266b6de850d487",
+    "/opt/cadence/bin/xrun": "a3fa247130cace223fe15396c0059f50c7793bf3de088fdbc8c93ec4e13b8024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv": "41f487a485d905f64b6bf39a568435321f4518ae4f31020ec21cb73b9aa7109f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger_random_tb.sv": "aafcc374189bf792851279f0f78133a2cf650f50d61e5cbdd6f7373f975d7bc7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv": "5c1c463425ed82b547eb6eb3aa1679c4859264421be0ed1abef2df23fa747ad8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer_tb.sv": "f0fd0c83e4d87f299db170468c2f0544cd48b2665dea72815e9c8bedbfdb6b87",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv": "93bc8bccd2809f4c672d65504522286bcd5077bd4e5e160cd5eeb373d0cb56a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv": "b949874394c81faa18b14fec0765094a7ec05fc99297596ed44f9e0aa19d5fdd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv": "e48cdd5787d64c327dbf5793129b1ccf831ca75519c1a05271d4ed64e4ffe020"
+  },
+  "native_runs": {
+    "size_1": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=1",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_dyndl8no/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_dyndl8no/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_dyndl8no/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6344396809581667,
+      "native_log_sha256": "9bb12eee1ae4a94d0ae331fca46f618c98aae733a86b0d66273f5db36df745d4"
+    },
+    "size_2": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=2",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_ymgdvf07/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_ymgdvf07/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_ymgdvf07/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6346889809938148,
+      "native_log_sha256": "8850b7bafed1d5269e66ae80a8b57550f0e88e0be74ccd90e6c12560c37444d6"
+    },
+    "size_3": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=3",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_jmp8axn6/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_jmp8axn6/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_jmp8axn6/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6404944640235044,
+      "native_log_sha256": "e2f90b78db4d6c3ac4a75064501ec0901ae93b458f50b3024edc341fe95d2890"
+    },
+    "size_4": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=4",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_uiorm0i2/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_uiorm0i2/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_uiorm0i2/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.8410322380368598,
+      "native_log_sha256": "491060b350929d9e33621cbc144c9aabddad0a77e48c6bb1b107f145ab10f20e"
+    },
+    "size_17": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=17",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_ljfj63a3/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_ljfj63a3/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_ljfj63a3/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.7562438729801215,
+      "native_log_sha256": "f98a540716b414deed3edc0b2eb5ec12da4a9210e4b4e2461a72150152fee12a"
+    },
+    "size_32": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=32",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_2uir6ztq/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_2uir6ztq/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_2uir6ztq/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6344895329675637,
+      "native_log_sha256": "06c35692060eee922e177242770121493bfdc653ceb9550f3e614c058f2fdd36"
+    },
+    "size_33": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=33",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_i9vrceog/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_i9vrceog/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_i9vrceog/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.5339855449856259,
+      "native_log_sha256": "44d0292442ecafc424b10fc4637351e8fa7608a220d7318de79dbe5c4578fc3a"
+    },
+    "size_576": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=576",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_2bx2ycrg/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_2bx2ycrg/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_2bx2ycrg/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6344835569616407,
+      "native_log_sha256": "d83d43739bd79fa7ebcc4e454117298200f421a257f32a36546a274d4d6c513b"
+    },
+    "integration": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_integration_tb",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_09g252co/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_09g252co/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_09g252co/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6344748809933662,
+      "native_log_sha256": "cb875906b88ba4bc7c6f6246054e83b44d5d79ccebeb851e84fa55e29034b47c"
+    },
+    "legacy_merger": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_token_merger_random_tb",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_oja9pn1l/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_oja9pn1l/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_oja9pn1l/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger_random_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6342925170320086,
+      "native_log_sha256": "6515be2b09bc57a7f9ccc6f7627fba2c5c200c7d4f28fc277ca0090e2d3aa722"
+    },
+    "legacy_normalizer": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_proportional_normalizer_tb",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_82d29rsm/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_82d29rsm/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_82d29rsm/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "elapsed_seconds": 0.6368804600206204,
+      "native_log_sha256": "2e4731c206999172f6a092598a54a1691b4b20f4560d4924d83d4f3387a184b6"
+    },
+    "missing_decrement_mutant": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_tb",
+        "-defparam",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=4",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_8tq46miu/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_8tq46miu/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_8tq46miu/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal314_8tq46miu/mutant.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "native_exit_status": 2,
+      "elapsed_seconds": 0.6352647999883629,
+      "native_log_sha256": "cd582efaf0d6573c02b09b802d93de3b4496334862b2439f213faf991e950c52"
+    }
+  },
+  "scope": "Standalone causal-prefix token-size method from Figure31.6.3 verified in native Xcelium, plus real merger/normalizer integration test. Local interfaces, backward-query extension and table realization are reconstruction choices. No compiled SRAM mapping, full-chip integration, timing, accuracy, power or paper headline match claim.",
+  "peak_combined_anonymous_bytes": 1810145280,
+  "minimum_host_available_bytes": 19320262656,
+  "parent_placement_candidate_changed": false,
+  "parent_timing_qualified": false,
+  "full_chip_integrated": false,
+  "full_paper_results_matched": false,
+  "elapsed_seconds": 7.872029741003644,
+  "superseded_validation": "causal313_functional_validation.json",
+  "superseded_failure": "313 rejected the expected FATSEV mutation after11 successful positive cases;314 distinguishes expected from unexpected native diagnostics.",
+  "parameter_cases": {
+    "1": {
+      "max_tokens": 1,
+      "rows": 21,
+      "words": 21,
+      "stalled_cycles": 16
+    },
+    "2": {
+      "max_tokens": 2,
+      "rows": 27,
+      "words": 31,
+      "stalled_cycles": 7
+    },
+    "3": {
+      "max_tokens": 3,
+      "rows": 35,
+      "words": 45,
+      "stalled_cycles": 8
+    },
+    "4": {
+      "max_tokens": 4,
+      "rows": 41,
+      "words": 59,
+      "stalled_cycles": 12
+    },
+    "17": {
+      "max_tokens": 17,
+      "rows": 133,
+      "words": 495,
+      "stalled_cycles": 200
+    },
+    "32": {
+      "max_tokens": 32,
+      "rows": 237,
+      "words": 1519,
+      "stalled_cycles": 759
+    },
+    "33": {
+      "max_tokens": 33,
+      "rows": 245,
+      "words": 1611,
+      "stalled_cycles": 812
+    },
+    "576": {
+      "max_tokens": 576,
+      "rows": 149,
+      "words": 14303,
+      "stalled_cycles": 9407
+    }
+  },
+  "independent_prefix_rows_checked": 888,
+  "independent_origin_count_words_checked": 18084,
+  "real_merger_normalizer_integration_rows": 5,
+  "existing_related_tests_passed": true,
+  "baseline_global_count_counterexample_verified": true,
+  "missing_decrement_mutation_rejected": true,
+  "temporary_builds_removed": true
+}

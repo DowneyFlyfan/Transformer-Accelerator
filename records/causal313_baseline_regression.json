@@ -1,0 +1,33 @@
+{
+  "state": "existing_global_size_stream_fails_causal_prefix_regression",
+  "verified_utc": "2026-11-10T03:11:53.420326+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv": "41f487a485d905f64b6bf39a568435321f4518ae4f31020ec21cb73b9aa7109f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv": "5c1c463425ed82b547eb6eb3aa1679c4859264421be0ed1abef2df23fa747ad8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv": "e48cdd5787d64c327dbf5793129b1ccf831ca75519c1a05271d4ed64e4ffe020"
+  },
+  "command": [
+    "/opt/cadence/bin/xrun",
+    "-64bit",
+    "-sv",
+    "-top",
+    "tri_oracle_causal_token_integration_tb",
+    "+define+BASELINE_GLOBAL",
+    "-xmlibdirname",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal313_red_gkffdfme/xcelium.d",
+    "-l",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal313_red_gkffdfme/xrun.log",
+    "-history_file",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal313_red_gkffdfme/history",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv"
+  ],
+  "native_exit_status": 2,
+  "native_elapsed_seconds": 0.562297300028149,
+  "native_log_sha256": "1099221055015b0f63f3c7a0f2ebc336e09e81532ba47fc238ac492b3d5e89a2",
+  "observed_probabilities_hex": "000055aa",
+  "required_probabilities_hex": "00008080",
+  "scope": "Actual unchanged merger plus normalizer on four literal tokens. Expected failure demonstrates future merged token incorrectly reweights a prior causal row when final-frame counts are supplied. No new causal-size implementation has been written.",
+  "temporary_build_removed": true
+}

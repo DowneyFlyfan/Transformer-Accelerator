@@ -1,0 +1,63 @@
+{
+  "state": "paper_causal_prefix_size_generation_missing",
+  "verified_utc": "2026-11-10T03:03:52.023382+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv": "41f487a485d905f64b6bf39a568435321f4518ae4f31020ec21cb73b9aa7109f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv": "5c1c463425ed82b547eb6eb3aa1679c4859264421be0ed1abef2df23fa747ad8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_predicted_feedforward_frame.sv": "beecd620245b6ec4e1b2a3de604e2a66555b2704809cbf2596929fa0805d59c2"
+  },
+  "paper_evidence": {
+    "page_one_based": 3,
+    "figure": "31.6.3",
+    "method": "On-the-fly Token Size Unit computes causal-mask-aware row-wise token sizes by iterative cursor movement over the Token Merge Table and a location table."
+  },
+  "counterexample": {
+    "token_origins": [
+      0,
+      1,
+      0,
+      3
+    ],
+    "query_original_position": 1,
+    "visible_origins": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "required_prefix_sizes": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "current_final_frame_sizes": [
+      2,
+      1,
+      0,
+      1
+    ],
+    "equal_exponentials_correct_probabilities": [
+      "1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "equal_exponentials_using_final_sizes": [
+      "2/3",
+      "1/3",
+      "0",
+      "0"
+    ]
+  },
+  "source_evidence": {
+    "merger": "COUNT_SCAN counts every token after the complete frame, then SIZE_EMIT sends one final size per origin. No query position or causal prefix input exists.",
+    "normalizer": "The supplied causal_mask gates surviving origins; it cannot remove future tokens already included in a visible origin final size.",
+    "integration": "The current placed predicted-feedforward top has neither token-merger nor causal-size-generator instances."
+  },
+  "scope": "Paper-method audit and exact rational counterexample, not an executed hardware simulation or repaired implementation. Existing standalone final-frame merger and normalization tests retain their narrower scope.",
+  "next_required_work": "Implement a cursor/location-table causal-prefix size generator; verify prefix-vs-global counterexamples, output backpressure and the paper row-wise method before integration.",
+  "candidate_paper_architecture_qualified": false,
+  "full_paper_results_matched": false
+}

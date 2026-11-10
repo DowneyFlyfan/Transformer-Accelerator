@@ -1,0 +1,41 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 10, 2026 at 03:17:35 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv
+	module worklib.tri_oracle_token_merger:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger_random_tb.sv
+	module worklib.tri_oracle_token_merger_random_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_token_merger_random_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_token_merger:sv <0x4bf83725>
+			streams:  22, words: 30796
+		worklib.tri_oracle_token_merger_random_tb:sv <0x221db35d>
+			streams:  14, words: 17446
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              50      50
+		Scalar wires:            9       -
+		Vectored wires:          6       -
+		Always blocks:           3       3
+		Initial blocks:          7       7
+		Cont. assignments:       4       5
+		Pseudo assignments:      6       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_token_merger_random_tb:sv
+Loading snapshot worklib.tri_oracle_token_merger_random_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+PASS: 30 token decisions, all sizes, deterministic stalls
+Simulation complete via $finish(1) at time 1215 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger_random_tb.sv:84         $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 10, 2026 at 03:17:36 UTC  (total: 00:00:01)

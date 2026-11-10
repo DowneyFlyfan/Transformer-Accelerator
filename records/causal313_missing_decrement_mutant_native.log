@@ -1,0 +1,42 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 10, 2026 at 03:17:36 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal313_9m2ow_16/mutant.sv
+	module worklib.tri_oracle_causal_token_size:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv
+	module worklib.tri_oracle_causal_token_size_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_causal_token_size_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_causal_token_size:sv <0x14d273e0>
+			streams:  19, words: 12706
+		worklib.tri_oracle_causal_token_size_tb:sv <0x24648ce8>
+			streams:  29, words: 34659
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              58      58
+		Scalar wires:           13       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:         14      14
+		Pseudo assignments:      9       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_causal_token_size_tb:sv
+Loading snapshot worklib.tri_oracle_causal_token_size_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv,66): (time 795 NS).
+tri_oracle_causal_token_size_tb.check_prefix
+CAUSAL_SIZE_WORD prefix=3 word=1 got=1:2:0 expected=1:1:0
+Simulation terminated via $fatal(1) at time 795 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv:66           $fatal(1,"CAUSAL_SIZE_WORD prefix=%0d word=%0d got=%0d:%0d:%0d expected=%0d:%0d:%0d",
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 10, 2026 at 03:17:37 UTC  (total: 00:00:01)

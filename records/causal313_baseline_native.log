@@ -1,0 +1,48 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 10, 2026 at 03:11:53 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv
+	module worklib.tri_oracle_token_merger:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv
+	module worklib.tri_oracle_proportional_normalizer:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv
+	module worklib.tri_oracle_causal_token_integration_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_causal_token_integration_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_proportional_normalizer:sv <0x46276b96>
+			streams:   4, words:  2098
+		worklib.tri_oracle_token_merger:sv <0x667071fb>
+			streams:  22, words: 17765
+		worklib.tri_oracle_causal_token_integration_tb:sv <0x3294661f>
+			streams:  19, words: 13802
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 3       3
+		Registers:              54      54
+		Scalar wires:           16       -
+		Vectored wires:          9       -
+		Always blocks:           7       7
+		Initial blocks:         11      11
+		Cont. assignments:       5       7
+		Pseudo assignments:      2       -
+		Process Clocks:          2       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_causal_token_integration_tb:sv
+Loading snapshot worklib.tri_oracle_causal_token_integration_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *F,FATSEV (/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv,95): (time 206 NS).
+tri_oracle_causal_token_integration_tb.check_row
+CAUSAL_PREFIX_REQUIRED query=1 got=000055aa expected=00008080
+Simulation terminated via $fatal(1) at time 206 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv:95         $fatal(1,"CAUSAL_PREFIX_REQUIRED query=%0d got=%h expected=%h",position,probabilities,expected);
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 10, 2026 at 03:11:53 UTC  (total: 00:00:00)

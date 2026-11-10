@@ -1,5 +1,36 @@
 # Tri-Oracle reproduction in progress
 
+Latest paper-method milestone: `verilog/tri_oracle_causal_token_size.sv`
+implements causal, row-wise token sizes using the token-merge table, an origin
+location table and an iterative cursor from Figure 31.6.3. It supports forward
+and backward queries, holds output under backpressure, and reuses tables across
+frames without a table-wide reset. Interfaces, backward-query support and the
+current register-table realization are local reconstruction choices.
+
+The unchanged final-frame merger/normalizer combination fails a concrete causal
+regression: token origins `[0,1,0,3]` at query position 1 must weight the two visible
+origins equally. Final-frame counts incorrectly produce eight-bit codes 170/85;
+the causal counts produce 128/128. The new real merger-to-size-to-normalizer test
+passes that case and four further rows. Native Xcelium tests also check 888 prefix
+rows and 18,084 origin/count words at capacities 1, 2, 3, 4, 17, 32, 33 and 576. Existing
+related tests pass, and a deliberately omitted backward decrement is rejected.
+See `records/causal314_functional_validation.json` and the source testbenches.
+This is a standalone method qualification. Compiled memory mapping, full-chip
+integration and physical implementation of this block remain unfinished.
+The same source also passes Icarus Verilog at capacities 17 and 576 and in the
+merger/normalizer integration. Both simulators check a full table without a final
+marker, reset during partial loading and exclusive frame/query acceptance. See
+`records/causal315_icarus_validation.json` and `records/causal316_boundary_validation.json`.
+
+To run the independent prefix reference test inside the configured container:
+
+```sh
+iverilog -g2012 -s tri_oracle_causal_token_size_tb -o .cache/causal_size_test.vvp \
+  verilog/tri_oracle_causal_token_size.sv verilog/tri_oracle_causal_token_size_tb.sv
+vvp .cache/causal_size_test.vvp
+rm .cache/causal_size_test.vvp
+```
+
 Latest mapped functional milestone (controller273): the repaired prepared prediction/feed-forward
 parent passes all twelve functional cases on twenty compute cores and 600
 compiled static random-access memory (SRAM) models. The test checks 4,420 exact
@@ -39,15 +70,17 @@ exact. An independent cold reload retains all 1,889,420 original core cells,
 sets. The later paired mapped simulation qualifies this physical candidate;
 the original native receipt is retained unchanged.
 
-At the unchanged 1.72414-nanosecond period, all three full-model timing diagnostics
-still fail: slow setup -53.757862 nanoseconds, typical setup -40.258564 nanoseconds,
-and fast reset removal -0.089328 nanoseconds. Before this batch they were
--84.404640, -61.087677 and -0.088138 respectively. The previous worst error-to-output
-endpoint improves from -84.404640 to -15.847886 nanoseconds at slow. The new worst
-path runs from the backend mode register to a gated activation-value register.
-These are pre-clock-tree, pre-route estimates with signal interference analysis
-disabled. Clock distribution, power delivery, parent routing, timing closure and
+Historical full-model reports at the unchanged 1.72414-nanosecond period recorded
+slow setup -53.757862 nanoseconds, typical setup -40.258564 nanoseconds and fast
+reset removal -0.089328 nanoseconds. Subsequent controls exposed dependence on
+the high-fanout calculation cutoff, separately from default-delay annotation.
+These historical values and comparisons remain unqualified; they establish no
+timing improvement or closure. Reanalysis must first prove that every net is
+below the calculation cutoff and that unused delay defaults do not affect the
+result. These are pre-clock-tree, pre-route estimates with signal interference
+analysis disabled. Clock distribution, power delivery, parent routing, timing closure and
 paper-performance matching remain unfinished. See
+`records/direct305_timing_control_diagnosis.json` for the failed cutoff control,
 `records/controller278_physical_functional_qualification.json` and the published
 `controller273` split-delay reports. The complete native metadata receipt is
 losslessly compressed in `records/controller273_tree_result.json.gz`; it contains

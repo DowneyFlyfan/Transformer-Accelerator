@@ -1,0 +1,82 @@
+{
+  "state": "same_causal_size_rtl_iverilog_crosscheck_passed",
+  "verified_utc": "2026-11-10T03:23:07.620714+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv": "93bc8bccd2809f4c672d65504522286bcd5077bd4e5e160cd5eeb373d0cb56a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv": "b949874394c81faa18b14fec0765094a7ec05fc99297596ed44f9e0aa19d5fdd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv": "41f487a485d905f64b6bf39a568435321f4518ae4f31020ec21cb73b9aa7109f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv": "5c1c463425ed82b547eb6eb3aa1679c4859264421be0ed1abef2df23fa747ad8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv": "e48cdd5787d64c327dbf5793129b1ccf831ca75519c1a05271d4ed64e4ffe020"
+  },
+  "native_runs": {
+    "unit17": {
+      "compile_command": [
+        "/usr/local/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tri_oracle_causal_token_size_tb",
+        "-o",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal315_kkjbfah8/test.vvp",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "simulation_command": [
+        "/usr/local/bin/vvp",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal315_kkjbfah8/test.vvp"
+      ],
+      "compile_exit_status": 0,
+      "simulation_exit_status": 0,
+      "native_log_sha256": "00f3178cabe12a7f8cdbbe86c2e09202c87516b90a1a90bf2b9a7ef3bf11d22e",
+      "marker": "CAUSAL_SIZE_PASS max_tokens=17 rows=133 words=495"
+    },
+    "unit576": {
+      "compile_command": [
+        "/usr/local/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tri_oracle_causal_token_size_tb",
+        "-P",
+        "tri_oracle_causal_token_size_tb.MAX_TOKENS=576",
+        "-o",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal315_ywzluzxg/test.vvp",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_tb.sv"
+      ],
+      "simulation_command": [
+        "/usr/local/bin/vvp",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal315_ywzluzxg/test.vvp"
+      ],
+      "compile_exit_status": 0,
+      "simulation_exit_status": 0,
+      "native_log_sha256": "d8c7a5f3b960b77b698d2ee5718b0306fc970d93a36676b3fd3117d5b051dd74",
+      "marker": "CAUSAL_SIZE_PASS max_tokens=576 rows=149 words=14303"
+    },
+    "integration": {
+      "compile_command": [
+        "/usr/local/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tri_oracle_causal_token_integration_tb",
+        "-o",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal315__imm1adh/test.vvp",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv"
+      ],
+      "simulation_command": [
+        "/usr/local/bin/vvp",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal315__imm1adh/test.vvp"
+      ],
+      "compile_exit_status": 0,
+      "simulation_exit_status": 0,
+      "native_log_sha256": "3bfc1706c9bcf149b49b61f43b72cb6b1a36b460cebed62b7ed0cbaff7cea8e6",
+      "marker": "CAUSAL_INTEGRATION_PASS mappings=4 rows=5 backward_queries=2"
+    }
+  },
+  "elapsed_seconds": 0.2719159990083426,
+  "temporary_builds_removed": true,
+  "full_chip_integrated": false,
+  "full_paper_results_matched": false,
+  "scope": "Unmodified SystemVerilog independently compiled by Icarus Verilog and executed by vvp, including576-token table, backwardqueries,stalls,frameerrorsandreset. Existing realmerger/newcausal-size/normalizer integration also passes. This supports standalone functional behavior, not physical or whole-model results."
+}

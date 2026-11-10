@@ -1,0 +1,51 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 10, 2026 at 03:17:35 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_token_merger.sv
+	module worklib.tri_oracle_token_merger:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv
+	module worklib.tri_oracle_proportional_normalizer:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv
+	module worklib.tri_oracle_causal_token_size:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv
+	module worklib.tri_oracle_causal_token_integration_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_causal_token_integration_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_causal_token_size:sv <0x25282f32>
+			streams:  20, words: 13443
+		worklib.tri_oracle_proportional_normalizer:sv <0x46276b96>
+			streams:   4, words:  2098
+		worklib.tri_oracle_token_merger:sv <0x287dfc3d>
+			streams:  21, words: 16779
+		worklib.tri_oracle_causal_token_integration_tb:sv <0x6931d645>
+			streams:  23, words: 19334
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 4       4
+		Registers:              84      84
+		Scalar wires:           28       -
+		Vectored wires:         13       -
+		Always blocks:           8       8
+		Initial blocks:         15      15
+		Cont. assignments:       3       7
+		Pseudo assignments:      4       -
+		Process Clocks:          3       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_causal_token_integration_tb:sv
+Loading snapshot worklib.tri_oracle_causal_token_integration_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+CAUSAL_INTEGRATION_PASS mappings=4 rows=5 backward_queries=2
+Simulation complete via $finish(1) at time 720 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_integration_tb.sv:119     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 10, 2026 at 03:17:35 UTC  (total: 00:00:00)

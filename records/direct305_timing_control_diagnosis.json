@@ -1,0 +1,67 @@
+{
+  "state": "disabled_flag_alone_did_not_establish_default_invariance",
+  "verified_utc": "2026-11-10T02:43:06.112320+00:00",
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/direct305_timing_control_result.json": "e1e9932e9b7a8ea71e59ef419228831d6fa19b753a1295feeea5ab82ca57d1da",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_direct305_timing/console.log": "29656200f062b33bec1fb723a919c3777ba9517c36d030328b2ad7e86ae870fe",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_direct305_timing/control_baseline_slack.tsv": "0513e032d478df9ba68be0f0f352ade9a7f9819987472963de644793a3c8b003",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_direct305_timing/control_false_large_defaults_slack.tsv": "e754ba44d7e962c71cc340edd5ef539ec3891f9333fa7ac04b466cafa4f7c615",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_direct305_timing/before_delay_settings.tsv": "44df042957265207a103b45586ade0fdf2e264f9bad01f0c84fa0c16f7ca2dd3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_direct305_timing/control_false_large_defaults_delay_settings.tsv": "acc1ffb39172b93e1e1add8a7be7900cb74c10a5adc8464b2649f8cd323f1f54"
+  },
+  "paths": {
+    "control_baseline": {
+      "slack_ns": -86.439758,
+      "startpoint": "numeric/engine/backend/dense_features_reg[12]/CP",
+      "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D"
+    },
+    "control_false_large_defaults": {
+      "slack_ns": -45.720573,
+      "startpoint": "numeric/engine/backend/clusters[4].cluster/cores[2]/load_error_reg/CP",
+      "endpoint": "numeric/engine/backend/clusters[4].cluster/cores[3]/weights[3]/D[125]"
+    }
+  },
+  "settings": {
+    "before": {
+      "delaycal_enable_high_fanout": "false",
+      "delaycal_use_default_delay_limit": "1000",
+      "delaycal_default_net_delay": "1000ps",
+      "delaycal_default_net_load": "0.5pf",
+      "delaycal_input_transition_delay": "0ps"
+    },
+    "control_false_large_defaults": {
+      "delaycal_enable_high_fanout": "false",
+      "delaycal_use_default_delay_limit": "1",
+      "delaycal_default_net_delay": "1000000ps",
+      "delaycal_default_net_load": "0.5pf",
+      "delaycal_input_transition_delay": "0ps"
+    }
+  },
+  "source_hashes_rechecked": 370,
+  "source_checkpoint_unchanged": true,
+  "native_handles_terminal": true,
+  "native_elapsed_seconds": 378.40455102699343,
+  "peak_combined_anonymous_bytes": 16763514880,
+  "minimum_host_available_bytes": 4933529600,
+  "memory_pressure_events": [
+    {
+      "action": "pause",
+      "groups": [
+        786490,
+        786591
+      ]
+    },
+    {
+      "action": "resume",
+      "groups": [
+        786490,
+        786591
+      ]
+    }
+  ],
+  "timing_results_qualified": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "scope": "305 failed the first meaningful counterfactual and stopped before enabled/recovery controls. Neither slack is accepted as qualified timing. Original295 checkpoint remains exact.302 functional simulation proceeds independently on preservation-qualified candidate; no physical advancement.",
+  "next_hypothesis": "The pin-count calculation threshold may operate independently of the default-annotation flag. Prove an above-all-net-pin bound and test default invariance at that bound; not yet verified."
+}

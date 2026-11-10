@@ -1,0 +1,49 @@
+{
+  "state": "causal_size_frame_and_partial_load_reset_boundaries_verified",
+  "verified_utc": "2026-11-10T03:23:57.974005+00:00",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv": "93bc8bccd2809f4c672d65504522286bcd5077bd4e5e160cd5eeb373d0cb56a3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_boundary_tb.sv": "44d42dccad374505f1e8af78d1cb4677e7ca4ff7a02af584a726bf701162cb7c"
+  },
+  "native_runs": {
+    "xcelium": {
+      "command": [
+        "/opt/cadence/bin/xrun",
+        "-64bit",
+        "-sv",
+        "-top",
+        "tri_oracle_causal_token_size_boundary_tb",
+        "-xmlibdirname",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal316_nl8pgs4b/xcelium.d",
+        "-l",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal316_nl8pgs4b/xrun.log",
+        "-history_file",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal316_nl8pgs4b/history",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_boundary_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "native_log_sha256": "bd206ce51086eb55cba6e32175a5a75a4214a4fda905df08ee9bbc6087623df5",
+      "marker": "CAUSAL_BOUNDARY_PASS missing_last=1 reset_partial_load=1 exclusive_frame_query=1 recovery_rows=3"
+    },
+    "icarus": {
+      "command": [
+        "/usr/local/bin/iverilog",
+        "-g2012",
+        "-s",
+        "tri_oracle_causal_token_size_boundary_tb",
+        "-o",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/causal316_e6npla3u/test.vvp",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size.sv",
+        "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_causal_token_size_boundary_tb.sv"
+      ],
+      "native_exit_status": 0,
+      "native_log_sha256": "d100e38614a229eb57e679870e92d3d793051bd144e8f2d244496afff83f2dfa",
+      "marker": "CAUSAL_BOUNDARY_PASS missing_last=1 reset_partial_load=1 exclusive_frame_query=1 recovery_rows=3"
+    }
+  },
+  "temporary_builds_removed": true,
+  "scope": "Both simulators verify full-table missing final marker rejection, partial-load reset cancellation, simultaneous frame/query priority and three clean recovery rows on unchanged causal-size RTL. Standalone functional boundary coverage only.",
+  "full_chip_integrated": false,
+  "full_paper_results_matched": false
+}

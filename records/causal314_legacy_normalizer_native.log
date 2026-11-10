@@ -1,0 +1,41 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 10, 2026 at 03:18:29 UTC
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer.sv
+	module worklib.tri_oracle_proportional_normalizer:sv
+		errors: 0, warnings: 0
+file: /home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer_tb.sv
+	module worklib.tri_oracle_proportional_normalizer_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tri_oracle_proportional_normalizer_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tri_oracle_proportional_normalizer:sv <0x3f518278>
+			streams:   4, words:  3186
+		worklib.tri_oracle_proportional_normalizer_tb:sv <0x3df60691>
+			streams:  14, words: 12202
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              17      17
+		Scalar wires:            6       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:          5       5
+		Cont. assignments:       0       1
+		Pseudo assignments:      7       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tri_oracle_proportional_normalizer_tb:sv
+Loading snapshot worklib.tri_oracle_proportional_normalizer_tb:sv .................... Done
+xcelium> source /opt/cadence/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+PASS: token-size weighting, causal mask, zero denominator, backpressure
+Simulation complete via $finish(1) at time 106 NS + 0
+/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_proportional_normalizer_tb.sv:43         $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 10, 2026 at 03:18:30 UTC  (total: 00:00:01)
