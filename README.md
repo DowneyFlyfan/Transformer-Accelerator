@@ -687,6 +687,12 @@ slot for each of the 9,783 inherited lookups in the trained traces. A stale
 root failed at position 231 in the second layer. See
 `records/merger444_frontier_result.json`.
 
+Genus implemented both remaining origin-table reads as decoded multiplexers.
+The resulting synthesis trial had zero large binary multiplexers and reached
+post-generic Boolean optimization at the 15-minute cutoff. Peak anonymous
+memory was 5.09 gibibytes. The elaboration database was saved before synthesis.
+See `records/merger444_decoded_synthesis_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The
