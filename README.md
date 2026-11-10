@@ -94,10 +94,31 @@ retained partial tiles; recovery completes without external reset. Disabling
 local weight clearing makes the fresh-memory zero-input case fail on unknown
 data. See `records/batch388_stream_qualification.json` and its lossless logs.
 
-These are prepared-input operator tests. The paired and down paths still need
-a common controller and end-to-end feed-forward verification. Complete model
-execution, mapping of this new path, whole-chip routing/timing and the paper's
-measured accuracy, latency and energy remain unqualified.
+The joined batched controller uses one fabric for the paired gate/up
+projection and the down projection. It waits for every intermediate-memory
+write acknowledgement before issuing down-projection reads. The small-frame
+Xcelium tests passed with 519 exact outputs and 288 checked intermediate bytes
+per successful frame, including six fault and recovery cases. The complete
+sixteen-token trained-layer run is a separate qualification. Prediction masks
+and normalization still come from outside this controller. See
+`records/batch393_literal_result.json`.
+
+A producer may offer a mask before `mask_ready`. It must hold the tag, start,
+count, last flag and payload stable until acceptance, unless `done_valid` and
+`done_error` report a terminal error for that tag. In that case the producer
+must withdraw the outstanding unaccepted mask before asserting `done_ready`
+or reusing the tag and interface. The caller must discard any earlier writes
+or output packets from the failed frame. If reset is used, it must also reset
+both memory peers. The mask-control tests verified cancellation of a held
+mask after a scratch write error, recovery with the same tag without reset,
+and rejection of the stale mask when the producer ignored cancellation. The
+combined qualification binds nine successful simulations, the stale-mask
+control, eleven native logs, and the separately verified trained software
+fixture. See `records/batch395_frame_qualification.json`.
+
+Complete model execution, mapping of the new batched path, whole-chip routing
+and timing, and the paper's measured accuracy, latency and energy remain
+unqualified.
 
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.

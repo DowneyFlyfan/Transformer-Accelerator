@@ -1,0 +1,26 @@
+{
+  "pdf": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch389_architecture.pdf",
+  "pdf_sha256": "35a70c7f934d881ec66f83b87f7e14fad09da9eb2b9945205ff49ded9b6b503d",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_batch389_fixture.py": "b4e28ea314150d77b64090d02b8a250f15a1e99d2fc9d5b656640092328cb083",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_format345_first_token.py": "ce74dd67dc43b2d98c7acfa80955487594fe2e61c7dff9441a04da8a60a2dbfc",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_format335_policy.py": "8da88a07d4416bb6176d4188fd49c5878bc73067c97b96bed1896a48de5f3e83",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_model_reference.py": "21d0bb53840fdc07273aa54fc3b7bde5ee82a2d76df4f15af9d50ba25d363e75",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_format331_fixtures.py": "5220b77466c83e9fb0ad3231bb5973f3dec969fdc3eb04de7a1cc9765f98d5f4"
+  },
+  "pages": 2,
+  "source_audits_completed": 3,
+  "audits": [
+    "Pinned original full gate/up/down tensors and captured input axes, exact full-matrix quantization and protected policy traced.",
+    "Complete normalized sign masks, branch sums, sampled SiLU, per-token shifts and down sums checked against unchanged canonical helpers.",
+    "Independent scalar all-channel/row loops, prior379/386 subset equality and row-major complete-fixture export traced end to end."
+  ],
+  "inherited_model_page_pixel_identical": true,
+  "render_visually_verified": true,
+  "render_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch389_architecture_page2.png": "4b8f605d584cdd8d0932075b25d017383dc70fa1e088e5de1d07777b01276452"
+  },
+  "visual_result": "Reopened saved PDF: all eight operation boxes, shape text, arrows and scope legible; original model page pixel identical.",
+  "scope": "Complete trained first-language-layer fixture only. No hardware, whole-model accuracy or physical qualification."
+}
