@@ -302,6 +302,14 @@ batch invalidated the verified first-batch prefix and allowed a retry with
 the same tag. Holding the query address fixed failed at the second
 descriptor. See `records/batch415_head_schedule_result.json`.
 
+On the 64-question Visual Question Answering v2 validation pilot, the same
+policy classified 36,834 of 45,056 head decisions as streaming in fixed
+point, or 81.8 percent. Figure 31.6.4 reports 62 percent for the paper's
+workload. Floating point classified 36,833 as streaming, with 101 individual
+decisions changing between numeric formats. The pilot uses the local ratio
+of one and unmerged prefill inputs. It measures head classification before
+sparse attention or answer generation. See `records/batch416_vqa_head_policy_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.

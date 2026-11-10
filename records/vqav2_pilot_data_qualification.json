@@ -1,0 +1,531 @@
+{
+  "qualified_utc": "2026-11-07T22:17:58.995219+00:00",
+  "dataset_preparation_passed": true,
+  "sample_count": 64,
+  "unique_images": 64,
+  "official_source": "https://visualqa.org/download.html",
+  "selection": "64 evenly spaced question identifiers after sorting all214354 validation questions; answer-independent and fixed before inference.",
+  "manifest": ".cache/model_reference/vqav2_pilot/manifest.json",
+  "manifest_sha256": "ff233e53e895059573127ea461ab3b12f0cabe27e8134bb450927563496e9fa9",
+  "download_result_sha256": "f22bc17c1bc29c490aef29b993a02bacd6dbfae226baf9705a9e23cefc16b1ae",
+  "verified_images": [
+    {
+      "image_id": 42,
+      "sha256": "9da8dbb3f415b0549a2c7ef8930e245af324191cc4c4465a7d75f05d96b0781d",
+      "size": [
+        640,
+        478
+      ]
+    },
+    {
+      "image_id": 9041,
+      "sha256": "dd157426c4cc63d3d266b14329f7e67c24bebbfdc91419498c8387c09d0f32d0",
+      "size": [
+        640,
+        361
+      ]
+    },
+    {
+      "image_id": 18193,
+      "sha256": "ee9037876bab7f2b504cd4be49144bbde27f32ddc05361cd6f3c843c947dd911",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 27371,
+      "sha256": "3fd0794491e77a79ce38b7cedb89e1ae249879514137dde11dc5b23737a1a299",
+      "size": [
+        499,
+        640
+      ]
+    },
+    {
+      "image_id": 35326,
+      "sha256": "585b9ab944861e297b49d352117de3ab59a5c3bd55f3a298bdf91b7a3a544678",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 44732,
+      "sha256": "ee8dc6d4321a2095acb451a87984a9270c19667525d4b3c1919d580cb4c9c4dc",
+      "size": [
+        640,
+        429
+      ]
+    },
+    {
+      "image_id": 53788,
+      "sha256": "7a6d53d96a9e16166b03f4583309f787c1cfbac4f0daebc2ec4123c09c80d230",
+      "size": [
+        444,
+        640
+      ]
+    },
+    {
+      "image_id": 63953,
+      "sha256": "b2a196934a9ea3afcf07e37a5044c0cde40902cb9ed18b46e3a6082515e034ca",
+      "size": [
+        500,
+        332
+      ]
+    },
+    {
+      "image_id": 73731,
+      "sha256": "aa01d972bd2dab759abba253b2f756c90007da227c278b0162fbd3072c0f722d",
+      "size": [
+        480,
+        640
+      ]
+    },
+    {
+      "image_id": 83036,
+      "sha256": "79990aa095508c4ecc0da073b7c4ae566eafc109c15abb8b8d20d2478d21cfe0",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 92338,
+      "sha256": "74dd419fe32f25266c6e108de104643e641b72d9406e40b95cd8f7a05cec5580",
+      "size": [
+        640,
+        425
+      ]
+    },
+    {
+      "image_id": 101919,
+      "sha256": "de71a0e2c9b3a2a870eedd0383d32133b7a8806db5d18a064d0600a3ab6746b7",
+      "size": [
+        612,
+        612
+      ]
+    },
+    {
+      "image_id": 110618,
+      "sha256": "35f4ab7d7a2e74e8b3665919dde7921fff73be1584baf75499620bec2eaf96bb",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 119476,
+      "sha256": "bbb84506200f1ef130f516d2c65067f50e542b15a6af5d31c66b71f7e37a44c0",
+      "size": [
+        640,
+        425
+      ]
+    },
+    {
+      "image_id": 128059,
+      "sha256": "3059eab7760567c3f61ac7cb01bbec685dc42e611dc41daf06a38ab32ff15a6d",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 136820,
+      "sha256": "0b95a2b367bf906c75c0132b57f6759ce375040fc22cbe58f1083555320f0564",
+      "size": [
+        428,
+        640
+      ]
+    },
+    {
+      "image_id": 145318,
+      "sha256": "f656857e81a14ebdfef54c0a7b39ad4bfff236ef9d7f7a4086bb274136acbfa5",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 154324,
+      "sha256": "54054aabf5ffdf710101d0386b1fa893e46b0c5c6c078f1883a13eee7e31604c",
+      "size": [
+        478,
+        640
+      ]
+    },
+    {
+      "image_id": 162855,
+      "sha256": "664b1cdb553e41bd566f852eda9c4509911e1a2c4c3233b32a4af4bc93f89173",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 172702,
+      "sha256": "ce36ff6252b336494fde47e440c6fbd68207ca2dfba148ae53d03b65e7a92649",
+      "size": [
+        640,
+        360
+      ]
+    },
+    {
+      "image_id": 182348,
+      "sha256": "4bb0313312f05963fc84690e560be5a0670d5d3ebc26b8d71120917f4cc62bef",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 190734,
+      "sha256": "655aae74404b4c090772003d7e580e23f009d9177fab6d00dcb62a416139f47a",
+      "size": [
+        640,
+        428
+      ]
+    },
+    {
+      "image_id": 199940,
+      "sha256": "2c0ac02fdf41eff574970666a1f138b740b4ce0b10ce56e4d395b49af6225359",
+      "size": [
+        500,
+        375
+      ]
+    },
+    {
+      "image_id": 209007,
+      "sha256": "f81507e5328d964b6760982e8523385b349bc177106dee50358d46e9ee42ebb3",
+      "size": [
+        500,
+        375
+      ]
+    },
+    {
+      "image_id": 217521,
+      "sha256": "19fb8d40cfa10380f06fcb670d567bf94eecd980de09fbf8be2064e4d42d739d",
+      "size": [
+        375,
+        500
+      ]
+    },
+    {
+      "image_id": 226161,
+      "sha256": "eee744f541bc23df1d41e990f9938909a2b1643c8b65804ba84f3a747d470e2b",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 234691,
+      "sha256": "356484398f1e8133ab8a6cd55f08560f68fae0d0868012bd1a637ec18d85cfb5",
+      "size": [
+        427,
+        640
+      ]
+    },
+    {
+      "image_id": 243694,
+      "sha256": "347555992061ac5454d4bbe0df612b77ffe7e937b0662438bea24b637c0df9aa",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 252940,
+      "sha256": "9791b214fdcbb7c3e4f94363c05ba81779e0c0c1dcb4778d8b2b9c7ca25d5417",
+      "size": [
+        640,
+        425
+      ]
+    },
+    {
+      "image_id": 262003,
+      "sha256": "b87e5eea829c70ccc824f4a7d7144ed3bc7d3c3a9273f5b7f3c7437e0594cc9f",
+      "size": [
+        500,
+        375
+      ]
+    },
+    {
+      "image_id": 271266,
+      "sha256": "b19a6cbaefd5afdf1ba0f2d702d9941c0a7e7cdc5f365d99dfa00d88969ad1d0",
+      "size": [
+        640,
+        400
+      ]
+    },
+    {
+      "image_id": 280424,
+      "sha256": "14ab06378467b5410783f7dae81abf17a72517c2559f290029e4d4a2d5d316f6",
+      "size": [
+        500,
+        333
+      ]
+    },
+    {
+      "image_id": 288890,
+      "sha256": "1da71cb319b739327cc2f83d1ea8952ce9edf806e056c6401cc1354cf4d16c80",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 297956,
+      "sha256": "a6e458ccec425d150aae57ae44d2d6bb69e3ad9f8a6b5a1c5f05f396fb9f666c",
+      "size": [
+        480,
+        360
+      ]
+    },
+    {
+      "image_id": 306477,
+      "sha256": "d46fbdf882cc7f860e47bc2f45cde0f0087981e7ee5f741c1785fa12bd0876ac",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 315450,
+      "sha256": "bfe43280710dcd0e48252d914153699c46c31dcb4b5114ffc8d6d5febc8ef953",
+      "size": [
+        640,
+        428
+      ]
+    },
+    {
+      "image_id": 324776,
+      "sha256": "a0b9c68381afdd4f382d040d0501e3545e76105c202d113f314f8a8dd71c564d",
+      "size": [
+        640,
+        424
+      ]
+    },
+    {
+      "image_id": 334125,
+      "sha256": "e95e04daacfec786ab5925f5d90c1cda3651309e7ca7263c61120ea4541bcbcf",
+      "size": [
+        640,
+        411
+      ]
+    },
+    {
+      "image_id": 344013,
+      "sha256": "3c13733c199e252265f1f3b1257f1fdcfd56e8cbbe1b127e2ee59dad61a194c7",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 353108,
+      "sha256": "0c8c060fc1a394c3e1575b9b44207195120bad9117e59c5e1219782f02d3d5dc",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 361885,
+      "sha256": "0beeb1855ef8cbb66d7ac97dba6073f8e125787a81a4330dc8c80353ed095ac1",
+      "size": [
+        320,
+        240
+      ]
+    },
+    {
+      "image_id": 371135,
+      "sha256": "b5d53ef925cce8f6a91ed5661212dd01c503c6d3bfca32a4ce7f1d71a972d030",
+      "size": [
+        512,
+        640
+      ]
+    },
+    {
+      "image_id": 380754,
+      "sha256": "057ca492bc5437150e0f6cb98681bce320de7955d1580ec3cd84331e72e6c872",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 389316,
+      "sha256": "e0698bd441fd548598c1bca2fed5489ffeb5772a62b35292bd0f3749bc1a51e3",
+      "size": [
+        640,
+        361
+      ]
+    },
+    {
+      "image_id": 398604,
+      "sha256": "eccfbab2008b40b48e754ad99745973e726da408c3d0bdcdc2c1306503e15de6",
+      "size": [
+        640,
+        447
+      ]
+    },
+    {
+      "image_id": 407457,
+      "sha256": "5f14028edf7514b7c29899c2641d7c31ae1b7db898868835658d2794649113ed",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 416596,
+      "sha256": "a7fca75176b2c585b257b6fab564f3dcfa51e12f5085f1078ce7542f79d17487",
+      "size": [
+        640,
+        512
+      ]
+    },
+    {
+      "image_id": 426253,
+      "sha256": "fe5caefe53627a713211ee5ca0552c09e11f833a4f49f5f43a4cf6ce4004a436",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 435034,
+      "sha256": "2793e6614ff6315ca6bc35a991f7dc02b26daf2b98db0da4cccdd6f5654a3a50",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 444236,
+      "sha256": "57fbe52df3924b5b9b1dc8f17540011f3fd14f9aa3788b28064f6a3e711128cc",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 453162,
+      "sha256": "6fa5b3580230b149ce254b696fec65a9830b62a92a6011d1519ad113ba4b2134",
+      "size": [
+        640,
+        461
+      ]
+    },
+    {
+      "image_id": 463084,
+      "sha256": "651215ba32e9a22ef1d73a7eb7bb9ee99c7c6a5d69704351b68d7f16d2785d56",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 472375,
+      "sha256": "928f89bb03d6c06a883ba1b4eadeeea8db2764134445a3c70c5d1c33cf13ed39",
+      "size": [
+        612,
+        612
+      ]
+    },
+    {
+      "image_id": 480470,
+      "sha256": "87318e0dc2e20797ef6894efe955bcc3ddc8d55d7be414f4bccb7637b18142ad",
+      "size": [
+        480,
+        640
+      ]
+    },
+    {
+      "image_id": 489944,
+      "sha256": "03dc41e4ff8b7c5e3fbb312b9f50f2370b618c9c4f59f65dc3334ad7fb5ddaef",
+      "size": [
+        640,
+        424
+      ]
+    },
+    {
+      "image_id": 499200,
+      "sha256": "c51968db964aa780cd3e85bf0ecfbaf63a821eaf0d41922f8d41a0429e8dc3ea",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 508041,
+      "sha256": "30b53c5493aa35e1584288a387f563921520eecf4c584f44ed54c82442950fca",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 517596,
+      "sha256": "2ac68a423820509f4e1e51764527b490befa0f9972bb80aa693c51859a397b24",
+      "size": [
+        640,
+        427
+      ]
+    },
+    {
+      "image_id": 526804,
+      "sha256": "276c7a3e4dce83b9e93ae8557c0fa6d62da2c6570ee4254049bd9770f585a521",
+      "size": [
+        480,
+        640
+      ]
+    },
+    {
+      "image_id": 535902,
+      "sha256": "1507bc1d1e26b1f71ec7bc0fbb60efd4da0f78da453a3956f2d577f73244a5a2",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "image_id": 546164,
+      "sha256": "08d5d02ddd5b94a8370a2762277d8c43cc678557fa154eae15f81eb13cb9e0d1",
+      "size": [
+        640,
+        478
+      ]
+    },
+    {
+      "image_id": 555035,
+      "sha256": "4b5a10080c0436efebc91abf15198c013e4b14fbc0bf466d31f19cc75895c0f0",
+      "size": [
+        480,
+        640
+      ]
+    },
+    {
+      "image_id": 564120,
+      "sha256": "aa374e6c13f7ece5cd50f631b2c49ed5c8bbb6ce0657d1466f5cb31783007d90",
+      "size": [
+        640,
+        425
+      ]
+    },
+    {
+      "image_id": 573008,
+      "sha256": "9adced12610f672d921e9301cc45c5de26f57e78871ae7ef990562d1019602a6",
+      "size": [
+        640,
+        480
+      ]
+    }
+  ],
+  "completed_helper_sha256": "8c930f578a0c64272c1fc122b6567d641d894c8905657ea7c2ca2c7ac53ec152",
+  "completed_helper_source": "\"\"\"Prepare an answer-independent official validation pilot; no inference claim.\"\"\"\nfrom pathlib import Path\nfrom urllib.request import Request, urlopen\nimport concurrent.futures\nimport datetime\nimport hashlib\nimport json\nimport os\nimport resource\nimport time\nimport zipfile\n\nroot = Path('.cache/model_reference/vqav2_pilot')\nroot.mkdir(exist_ok=True)\nresult_path = Path('records/vqav2_pilot_download_result.json')\nassert not result_path.exists()\nrecord = {'state': 'running', 'supervisor_pid': os.getpid(),\n          'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),\n          'downloaded_images': 0, 'paper_accuracy_verified': False}\n\n\ndef status():\n    temporary = result_path.with_suffix('.tmp')\n    temporary.write_text(json.dumps(record, indent=2) + '\\n')\n    temporary.replace(result_path)\n\n\ndef sha(path):\n    with Path(path).open('rb') as stream:\n        return hashlib.file_digest(stream, 'sha256').hexdigest()\n\n\ndef download(url, path, limit):\n    assert not path.exists(), str(path)\n    temporary = path.with_suffix(path.suffix + '.part')\n    try:\n        request = Request(url, headers={'User-Agent': 'downeyflyfan-research'})\n        with urlopen(request, timeout=30) as source, temporary.open('wb') as target:\n            length = int(source.headers.get('Content-Length', '0'))\n            assert length <= limit\n            total = 0\n            while chunk := source.read(1024 * 1024):\n                total += len(chunk)\n                assert total <= limit\n                target.write(chunk)\n        assert total > 0 and (not length or total == length)\n        temporary.replace(path)\n    finally:\n        temporary.unlink(missing_ok=True)\n    return {'url': url, 'path': str(path), 'bytes': path.stat().st_size,\n            'sha256': sha(path)}\n\n\nstarted = time.monotonic()\nstatus()\ntry:\n    available = int(next(line.split()[1] for line in\n                         Path('/proc/meminfo').read_text().splitlines()\n                         if line.startswith('MemAvailable:'))) * 1024\n    anonymous = int(dict(line.split() for line in\n                         Path('/sys/fs/cgroup/memory.stat').read_text().splitlines())['anon'])\n    assert available > 8 * 1024**3 and anonymous < 12 * 1024**3\n    resource.setrlimit(resource.RLIMIT_AS, (2 * 1024**3, 2 * 1024**3))\n    urls = json.loads(Path('records/vqav2_pilot_source_selection.json').read_text())['metadata_urls']\n    archives = [download(url, root / url.rsplit('/', 1)[1], 16 * 1024**2)\n                for url in urls]\n    record['metadata_archives'] = archives\n    status()\n    question_zip = next(Path(item['path']) for item in archives if 'Questions' in item['url'])\n    annotation_zip = next(Path(item['path']) for item in archives if 'Annotations' in item['url'])\n    with zipfile.ZipFile(question_zip) as archive:\n        assert archive.testzip() is None\n        names = [name for name in archive.namelist() if name.endswith('.json')]\n        assert len(names) == 1\n        questions = json.load(archive.open(names[0]))['questions']\n    assert len(questions) == 214354\n    questions.sort(key=lambda item: item['question_id'])\n    selected = [questions[index * len(questions) // 64] for index in range(64)]\n    del questions\n    identifiers = {question['question_id'] for question in selected}\n    assert len(identifiers) == 64\n    with zipfile.ZipFile(annotation_zip) as archive:\n        assert archive.testzip() is None\n        names = [name for name in archive.namelist() if name.endswith('.json')]\n        assert len(names) == 1\n        annotations = json.load(archive.open(names[0]))['annotations']\n    assert len(annotations) == 214354\n    wanted = {item['question_id']: item for item in annotations\n              if item['question_id'] in identifiers}\n    del annotations\n    assert set(wanted) == identifiers\n    samples = []\n    for question in selected:\n        annotation = wanted[question['question_id']]\n        assert annotation['image_id'] == question['image_id'] and len(annotation['answers']) == 10\n        samples.append({'question_id': question['question_id'],\n                        'image_id': question['image_id'], 'question': question['question'],\n                        'answers': annotation['answers'],\n                        'answer_type': annotation['answer_type'],\n                        'question_type': annotation['question_type']})\n    image_ids = sorted({sample['image_id'] for sample in samples})\n\n    def fetch(image_id):\n        filename = f'COCO_val2014_{image_id:012d}.jpg'\n        url = 'https://s3.amazonaws.com/images.cocodataset.org/val2014/' + filename\n        return image_id, download(url, root / filename, 4 * 1024**2)\n\n    image_files = {}\n    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:\n        for image_id, metadata in pool.map(fetch, image_ids):\n            image_files[str(image_id)] = metadata\n            record['downloaded_images'] = len(image_files)\n            status()\n    for sample in samples:\n        sample['image'] = image_files[str(sample['image_id'])]['path']\n    manifest = {\n        'created_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),\n        'official_source': 'https://visualqa.org/download.html',\n        'selection': '64 evenly spaced question identifiers after sorting all214354 validation questions; answer-independent and fixed before inference.',\n        'samples': samples, 'images': image_files, 'archives': archives,\n        'scope': 'Small validation pilot; not the full benchmark or a matched paper result.'}\n    manifest_path = root / 'manifest.json'\n    manifest_path.write_text(json.dumps(manifest, indent=2) + '\\n')\n    record.update(state='finished', exit_status=0, sample_count=len(samples),\n                  unique_images=len(image_ids), manifest=str(manifest_path),\n                  manifest_sha256=sha(manifest_path))\nexcept BaseException as error:\n    record.update(state='failed', exit_status=1, exception=repr(error))\n    raise\nfinally:\n    record.update(elapsed_seconds=time.monotonic() - started, helper_sha256=sha(__file__),\n                  maximum_resident_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)\n    status()\n",
+  "model_inference_executed": false,
+  "official_scoring_executed": false,
+  "paper_accuracy_verified": false,
+  "scope": "64 fixed validation samples, selected without answers and separate from the ai2d-demo calibration image. Data admission only, not an accuracy result."
+}
