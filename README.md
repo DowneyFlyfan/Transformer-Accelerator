@@ -187,6 +187,20 @@ still separate from the compute frame, and this sensitivity check gives
 no model-accuracy result. See `records/batch403_activation_precision.json`
 and `records/batch403_native_activation.json`.
 
+The shared normalization frontend now uses each normalized strip both to
+write its learned-scale activation and to store its pre-scale outlier
+metadata. It buffers one 128-byte burst and waits for all activation write
+acknowledgments before reading weight signs. On the full trained fixture
+Xcelium checked 32,768 activation bytes in 256 bursts, 90,112 mask bits,
+and every one of 55,616 sign reads with sixteen normalizer starts. Early
+and final write errors and a malformed replay produced no sign traffic
+and recovered on the same tag. A 17-strip case checks the final one-beat
+burst and the next token's stride. An independent one-strip control also
+reproduces the stale-address failure when the old metadata write-enable
+ordering is restored. The generated activation allocation has yet to be
+consumed by the joined compute frame. See
+`records/batch405_normalize_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
