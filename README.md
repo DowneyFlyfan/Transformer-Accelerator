@@ -170,6 +170,20 @@ and all twelve Xcelium cases reproduced their exact output, byte, and bus
 inventories. Backend warnings remain. See `records/batch401_lint_result.json`
 and `records/batch401_predictive_result.json`.
 
+The existing learned-scale normalization hardware now has a full trained
+activation check. Xcelium matched all 32,768 normalized codes and all
+32,768 activation codes against independent integer and graphics-processor
+references for the same sixteen tokens. The local format uses a signed
+16-bit residual with 13 fractional bits, eight fractional bits after
+normalization, and 15 fractional bits for the learned coefficients.
+It preserved all outlier decisions. Relative to the prepared activations,
+318 codes changed by one step. Replaying the trained feedforward arithmetic
+in software changed 32,452 output codes and moved the output vector by
+3.83 percent relative Euclidean norm. The hardware activation path is
+still separate from the compute frame, and this sensitivity check gives
+no model-accuracy result. See `records/batch403_activation_precision.json`
+and `records/batch403_native_activation.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.

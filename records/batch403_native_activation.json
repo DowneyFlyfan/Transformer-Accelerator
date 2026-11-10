@@ -1,0 +1,33 @@
+{
+  "state": "trained_native_learned_activation_matches_fixed_point_reference",
+  "scope": "Check all trained learned-normalization codes with the existing Xcelium RTL.",
+  "native_exit_status": 0,
+  "native_process_group": 811092,
+  "elapsed_seconds": 0.7013109599938616,
+  "tokens": 16,
+  "exact_activation_codes": 32768,
+  "exact_normalized_codes": 32768,
+  "outliers": 159,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch403/activation.hex": "bb4bb6890bbf22a1dfe152db46a2abe52d3f31a2c87d251fc2ffb647324f42d5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch403/expected.hex": "2784e5457ce13dcfb6b074a479477364bb97d2bed73e908a1981d39404cedbe8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch403/gamma.hex": "d736618d7410897b21186fc2de3bdd75f410eee742e477226618bcd2029b0711",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch403/norm.hex": "bdddc34bb97eae4b27b43a121698b0be4f5b9b96827546cbbe43fd6c9898ce0f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch403/shifts.hex": "5336683b9ab3ffcf52a9ebfa570f50d25aef4830240e46d383f43b099313b3ac",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch396/raw.hex": "017b945457841b49cb47f5f6f82ece6f95f5e2d75622aebc53b43e6697933c83",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch403_activation_precision.json": "8e3bed3df859e8c3141d3279d0bbef5ed92a9d2e372136881879a74081550b59",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch396_mask_fixture.json": "a7cdd3265f67d7bd6ace480653beeccc0e9f8933b09f1390eff0514b5e57a556",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch403_activation.py": "bb5d8984432908c5fba2f48e0edbac23ba6b4acf1a18383adbaa382f40939ecf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_rmsnorm.sv": "750394cbed15e27691147b7284bd527369dbf281ffc72ab68a05304fbb786c45",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_affine_quantizer.sv": "41181d013bca2c5802935a98154164c5893c170551d0853e787c5fd3b2698356",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_rms_activation.sv": "38b33b02165bd45845597757c62042665d0582d64f1b4478966d0d0057c02494",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_batched403_activation_tb.sv": "9b09baae5f5d5c18cfee176214220bb1dc46eb57daec3e0f009d882c0c8a6a06",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch396_masks.py": "a4195039addebbb8e9a5ec185e6aae032a44e571ac81a2b8419a55a10a90fbf4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6"
+  },
+  "log_sha256": "a78d3e15230bff533c63111ca045396c792a5277dac9f6cabcda926369bdc93e",
+  "log_archive_sha256": "f675af4823b62353d4bf12bf74f564df470733363546a64553b9ee61997afe87",
+  "temporary_build_removed": true,
+  "joined_compute_frame_verified": false,
+  "full_paper_results_matched": false
+}
