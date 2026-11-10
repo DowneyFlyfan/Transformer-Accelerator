@@ -394,6 +394,23 @@ The stale-representative control failed at its expected cell. The test also
 checks invalid configuration recovery and delays completion until the final
 map transfer. See `records/batch423_cumulative_merger_result.json`.
 
+The proportional softmax now accepts signed fixed-point attention scores and
+causal token sizes for up to 1,024 keys. It computes a stable exponential,
+multiplies by group size before truncation, and shares one approximate
+reciprocal across the row. A size of zero masks a key. The current implementation
+reuses a single-port scratch array for scores and weights.
+
+Cadence Xcelium and Icarus Verilog each matched 12,915 probability codes on
+39 rows, including 25 trained prompt and decode rows from layers 0, 10 and 21.
+The trained rows use compact query and key tensors from the archived answer,
+independently checked integer dot products, and causal sizes recomputed from
+the archived merge maps. The largest absolute error from real proportional
+softmax at the same quantized scores was 0.000171 on the trained rows. The tests
+reject unit sizes, a masked maximum, and premature exponent truncation. The
+isolated engine accepts captured scores and sizes. Integration with the mapped
+score, causal-size and value paths, scratch-memory mapping, and timing remain
+open. See `records/batch425_proportional_softmax_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
