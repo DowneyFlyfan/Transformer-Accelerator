@@ -1,0 +1,33 @@
+{
+  "state": "attention_partition_saved_and_independently_reopened",
+  "top": "tri_oracle_attention_pipeline430_COMPILED_SIGN_BANK1",
+  "current_parent": "tri_oracle_shared_layer437",
+  "source_replay": "records/merger442_sign_schedule_result.json",
+  "warm_elaboration_seconds": 73.11661670799367,
+  "cold_reload_seconds": 25.049444074044004,
+  "matched_port_bits": 20575,
+  "native_port_bits_by_direction": {
+    "in": 12405,
+    "out": 8170
+  },
+  "logical_ports": 116,
+  "tensor_bindings_verified": 24,
+  "compiled_sign_slices": 16,
+  "wrong_tensor_binding_rejected": true,
+  "design_database": ".cache/physical/shared437/attention_partition443/attention_elab.db",
+  "database_sha256": "e4578a836a92dbc52eb39b3d747ddfee801c54064fa22868a8c251d36bc40f5d",
+  "source_sha256": {
+    "verilog/tri_oracle_attention_pipeline430.sv": "0ba31e63fbace357227e1a5c6338f6cd46907bbd871af71c8aaac06d186208e0",
+    "verilog/tri_oracle_shared_layer437.sv": "70e79af0067591a93a540f5d194531a0eeda5c3f9c62242c35559edc27ede11c",
+    "verilog/tri_oracle_batched_frame393.sv": "9fabfb420bb772d64b13328579305b04f2667e6e30ad1d17849fe2c93b881831",
+    "verilog/tri_oracle_batched_learned406.sv": "3a28302c893aab5bcd55f6e426b99ccb6882492cdf645753e670ceb7ce519f11"
+  },
+  "archive": {
+    "path": "records/shared443_attention_partition_evidence.json.gz",
+    "sha256": "3319a9394588433a50b7cdffae1e9303a88e64708140c96f4f54f3fbab603141"
+  },
+  "technology_mapping_completed": false,
+  "physical_timing_verified": false,
+  "full_paper_results_matched": false,
+  "scope": "Native attention partition elaboration and cold read with the complete production sign bank. Parent tensor ports verified against the current source. The parent still requires block mapping and assembly."
+}

@@ -660,6 +660,14 @@ compute cores, Genus reported 1,442,029 unmapped instances against the
 trained map decisions and checked 29,398 neighbor comparisons against an
 integer reference. See `records/shared443_compiled_capacity_result.json`.
 
+Genus elaborated the full-size attention pipeline as a separate partition in
+73 seconds and reopened its database in 25 seconds. The native reports and
+source declarations agree on all 20,575 port bits, and the parent connects
+all 24 tensor signals with the expected widths and directions. The database
+retains sixteen compiled sign-memory slices. A deliberately wrong tensor
+binding failed the interface check. See
+`records/shared443_attention_partition_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The
