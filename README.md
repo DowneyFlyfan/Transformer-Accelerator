@@ -693,6 +693,13 @@ post-generic Boolean optimization at the 15-minute cutoff. Peak anonymous
 memory was 5.09 gibibytes. The elaboration database was saved before synthesis.
 See `records/merger444_decoded_synthesis_result.json`.
 
+The native hierarchy audit confirms five clusters with four cores each and
+one 32-by-8 eight-bit processing array in every core. It finds one shared
+token merger, one shared attention head predictor and one shared strip
+predictor. The paper places those units in each aggregator and each core,
+respectively. The active compiled-memory inventory is 618 macros and
+415,744 bytes. See `records/paper445_native_architecture_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

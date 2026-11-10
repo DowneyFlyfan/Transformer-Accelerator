@@ -1,0 +1,105 @@
+{
+  "state": "candidate_native_topology_matches_compute_scale_and_exposes_redundancy_placement_gaps",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "paper_figures": [
+    "31.6.2",
+    "31.6.3",
+    "31.6.7"
+  ],
+  "cluster_count": 5,
+  "core_count": 20,
+  "core_counts_by_cluster": [
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "array_count": 20,
+  "array_shapes": [
+    [
+      32,
+      8,
+      8
+    ]
+  ],
+  "compiled_memory_instances": 618,
+  "compiled_memory_bytes": 415744,
+  "compiled_memory_roles": {
+    "aggregator_io": {
+      "instances": 40,
+      "bytes": 10240
+    },
+    "core_inputs": {
+      "instances": 40,
+      "bytes": 163840
+    },
+    "core_masks": {
+      "instances": 40,
+      "bytes": 20480
+    },
+    "core_outputs": {
+      "instances": 160,
+      "bytes": 40960
+    },
+    "core_weights": {
+      "instances": 320,
+      "bytes": 163840
+    },
+    "prediction_metadata": {
+      "instances": 2,
+      "bytes": 8192
+    },
+    "surviving_sign_bank": {
+      "instances": 16,
+      "bytes": 8192
+    }
+  },
+  "native_redundancy_units": {
+    "token_merger": [
+      "tri_oracle_attention430_tb.dut.attention_pipeline.attention.merger"
+    ],
+    "head_predictor": [
+      "tri_oracle_attention430_tb.dut.attention_pipeline.attention.predictor"
+    ],
+    "strip_predictor": [
+      "tri_oracle_attention430_tb.dut.feedforward.predictor.replay_table.predictor"
+    ],
+    "causal_token_size": [
+      "tri_oracle_attention430_tb.dut.attention_pipeline.attention.attention.sizes"
+    ]
+  },
+  "paper_topology_checks": {
+    "five_clusters_with_four_cores_each": true,
+    "one_32_by_8_eight_bit_array_per_core": true,
+    "one_token_merger_per_cluster": false,
+    "attention_head_predictor_in_each_core": false,
+    "strip_predictor_in_each_core": false
+  },
+  "paper_token_mergers_in_aggregators": 5,
+  "paper_per_core_attention_head_predictors": 20,
+  "paper_per_core_strip_predictors": 20,
+  "paper_reported_memory_label": "405KB",
+  "candidate_minus_decimal_paper_bytes": 10744,
+  "candidate_minus_binary_paper_bytes": 1024,
+  "negative_controls_rejected": [
+    "invalid_memory_geometry",
+    "detached_processing_array",
+    "duplicate_native_path"
+  ],
+  "integrated_replay_markers": [
+    "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+    "SHARED437_ATTENTION_OWNERSHIP_PASS",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+  ],
+  "inventory_sha256": "83898924f3f1d8e4b0d2a98ced22e38f021da9c88bdd4e41247ccb1a1cb52c9c",
+  "native_architecture_verifier_sha256": "33808a167e1284feb22314fd5692ff3e04637043681d59238a070070e026337c",
+  "full_paper_architecture_matched": false,
+  "memory_capacity_reconciled": false,
+  "clock_distribution_or_routing_allowed": false,
+  "scope": "Native source hierarchy for the trained 20-core shared layer. The paper places the token-merging unit in each aggregator. Compiled memory is measured from native macro parameters. Mapped hardware, register storage, and physical timing require separate evidence.",
+  "archive": {
+    "path": "records/paper445_native_architecture_evidence.json.gz",
+    "sha256": "33ed50443d1f4e787a730b7931eba514a500f09382f6be51808e414ea2883e5e"
+  }
+}

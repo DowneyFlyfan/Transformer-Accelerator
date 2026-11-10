@@ -1,0 +1,117 @@
+"""Audit a native instance inventory against the disclosed Tri-Oracle topology."""
+
+from collections import Counter, defaultdict
+from pathlib import Path
+import re
+
+
+MEMORY_GEOMETRIES = {
+    "sram_32x128": (32, 128, 0),
+    "sram_512x64": (512, 64, 0),
+    "sram_16x128": (16, 128, 0),
+}
+REDUNDANCY_ROLES = ("token_merger", "head_predictor", "strip_predictor", "causal_token_size")
+INVENTORY_ROLES = {"cluster", "core", "pe", *REDUNDANCY_ROLES, *MEMORY_GEOMETRIES}
+
+
+def read_inventory(path: Path, dut: str):
+    """Return unique instance paths and native parameters within the selected design."""
+    instances = defaultdict(dict)
+    seen = set()
+    for line in path.read_text().splitlines():
+        role, instance, rows, columns, width = line.split()
+        if role not in INVENTORY_ROLES:
+            raise ValueError(f"Unknown native role: {role}")
+        if not instance.startswith(dut + ".") or not instance.endswith(".inventory445"):
+            raise ValueError(f"Inventory entry outside the selected design: {instance}")
+        instance = instance.removesuffix(".inventory445")
+        if instance in seen:
+            raise ValueError(f"Duplicate native instance: {instance}")
+        seen.add(instance)
+        instances[role][instance] = (int(rows), int(columns), int(width))
+    return instances
+
+
+def _parent(instance, owners):
+    enclosing = [owner for owner in owners if instance.startswith(owner + ".")]
+    if len(enclosing) > 1:
+        raise ValueError(f"Ambiguous ownership of {instance}")
+    return enclosing[0] if enclosing else None
+
+
+def _memory_role(instance, cores, clusters, mergers):
+    core = _parent(instance, cores)
+    if core is not None:
+        leaf = instance.removeprefix(core + ".")
+        bank = re.fullmatch(r"(weights|inputs|outputs|masks)\[\d+\]", leaf)
+        if bank:
+            return f"core_{bank[1]}"
+    cluster = _parent(instance, clusters)
+    if cluster is not None and re.fullmatch(
+        r"aggregate_memory\[\d+\]", instance.removeprefix(cluster + ".")
+    ):
+        return "aggregator_io"
+    if _parent(instance, mergers) is not None and re.search(r"\.compiled_signs\.slices\[\d+\]$", instance):
+        return "surviving_sign_bank"
+    if instance.endswith((".replay_table.lower_metadata", ".replay_table.upper_metadata")):
+        return "prediction_metadata"
+    raise ValueError(f"Unrecognized compiled-memory role: {instance}")
+
+
+def audit(instances):
+    """Measure the paper-facing topology dimensions visible in the native source hierarchy."""
+    clusters = instances["cluster"]
+    cores = instances["core"]
+    mergers = instances["token_merger"]
+    core_owner = {core: _parent(core, clusters) for core in cores}
+    pe_owner = {pe: _parent(pe, cores) for pe in instances["pe"]}
+    if None in core_owner.values() or None in pe_owner.values():
+        raise ValueError("Detached compute core or processing-element array")
+
+    core_counts = Counter(core_owner.values())
+    pe_counts = Counter(pe_owner.values())
+    per_cluster_mergers = Counter(_parent(merger, clusters) for merger in mergers)
+    per_core_heads = Counter(_parent(unit, cores) for unit in instances["head_predictor"])
+    per_core_strips = Counter(_parent(unit, cores) for unit in instances["strip_predictor"])
+
+    memory_counts = Counter()
+    memory_bytes = Counter()
+    for master, geometry in MEMORY_GEOMETRIES.items():
+        for instance, parameters in instances[master].items():
+            if parameters != geometry:
+                raise ValueError(f"Unexpected compiled-memory geometry: {instance} {parameters}")
+            role = _memory_role(instance, cores, clusters, mergers)
+            memory_counts[role] += 1
+            memory_bytes[role] += geometry[0] * geometry[1] // 8
+
+    return {
+        "cluster_count": len(clusters),
+        "core_count": len(cores),
+        "core_counts_by_cluster": sorted(core_counts[cluster] for cluster in clusters),
+        "array_count": len(pe_owner),
+        "array_shapes": sorted(set(instances["pe"].values())),
+        "compiled_memory_instances": sum(memory_counts.values()),
+        "compiled_memory_bytes": sum(memory_bytes.values()),
+        "compiled_memory_roles": {
+            role: {"instances": memory_counts[role], "bytes": memory_bytes[role]}
+            for role in sorted(memory_counts)
+        },
+        "native_redundancy_units": {
+            role: sorted(instances[role])
+            for role in REDUNDANCY_ROLES
+        },
+        "paper_topology_checks": {
+            "five_clusters_with_four_cores_each": len(clusters) == 5 and all(
+                core_counts[cluster] == 4 for cluster in clusters
+            ),
+            "one_32_by_8_eight_bit_array_per_core": len(cores) == 20
+            and all(pe_counts[core] == 1 for core in cores)
+            and all(shape == (32, 8, 8) for shape in instances["pe"].values()),
+            "one_token_merger_per_cluster": len(mergers) == 5 and len(clusters) == 5
+            and all(per_cluster_mergers[cluster] == 1 for cluster in clusters),
+            "attention_head_predictor_in_each_core": len(instances["head_predictor"]) == 20
+            and len(cores) == 20 and all(per_core_heads[core] == 1 for core in cores),
+            "strip_predictor_in_each_core": len(instances["strip_predictor"]) == 20
+            and len(cores) == 20 and all(per_core_strips[core] == 1 for core in cores),
+        },
+    }
