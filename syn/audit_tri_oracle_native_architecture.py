@@ -11,7 +11,7 @@ MEMORY_GEOMETRIES = {
     "sram_16x128": (16, 128, 0),
 }
 REDUNDANCY_ROLES = ("token_merger", "head_predictor", "strip_predictor", "causal_token_size")
-INVENTORY_ROLES = {"cluster", "core", "pe", *REDUNDANCY_ROLES, *MEMORY_GEOMETRIES}
+INVENTORY_ROLES = {"cluster", "core", "pe", "similarity_shard", *REDUNDANCY_ROLES, *MEMORY_GEOMETRIES}
 
 
 def read_inventory(path: Path, dut: str):
@@ -39,7 +39,7 @@ def _parent(instance, owners):
     return enclosing[0] if enclosing else None
 
 
-def _memory_role(instance, cores, clusters, mergers):
+def _memory_role(instance, cores, clusters, mergers, shards):
     core = _parent(instance, cores)
     if core is not None:
         leaf = instance.removeprefix(core + ".")
@@ -53,6 +53,9 @@ def _memory_role(instance, cores, clusters, mergers):
         return "aggregator_io"
     if _parent(instance, mergers) is not None and re.search(r"\.compiled_signs\.slices\[\d+\]$", instance):
         return "surviving_sign_bank"
+    shard = _parent(instance, shards)
+    if shard is not None and re.fullmatch(r"compiled\.slices\[\d+\]", instance.removeprefix(shard + ".")):
+        return "surviving_sign_bank"
     if instance.endswith((".replay_table.lower_metadata", ".replay_table.upper_metadata")):
         return "prediction_metadata"
     raise ValueError(f"Unrecognized compiled-memory role: {instance}")
@@ -63,10 +66,20 @@ def audit(instances):
     clusters = instances["cluster"]
     cores = instances["core"]
     mergers = instances["token_merger"]
+    shards = instances.get("similarity_shard", {})
     core_owner = {core: _parent(core, clusters) for core in cores}
     pe_owner = {pe: _parent(pe, cores) for pe in instances["pe"]}
     if None in core_owner.values() or None in pe_owner.values():
         raise ValueError("Detached compute core or processing-element array")
+    shards_by_merger = defaultdict(list)
+    for shard, (features, rows, unused) in shards.items():
+        merger = _parent(shard, mergers)
+        if merger is None or rows != mergers[merger][0] or features <= 0 or unused != 0:
+            raise ValueError(f"Invalid token-similarity shard: {shard}")
+        shards_by_merger[merger].append(shard)
+    for merger, children in shards_by_merger.items():
+        if sum(shards[shard][0] for shard in children) != mergers[merger][2]:
+            raise ValueError(f"Token-similarity shards do not cover all features: {merger}")
 
     core_counts = Counter(core_owner.values())
     pe_counts = Counter(pe_owner.values())
@@ -76,13 +89,24 @@ def audit(instances):
 
     memory_counts = Counter()
     memory_bytes = Counter()
+    shard_banks = Counter()
     for master, geometry in MEMORY_GEOMETRIES.items():
         for instance, parameters in instances[master].items():
             if parameters != geometry:
                 raise ValueError(f"Unexpected compiled-memory geometry: {instance} {parameters}")
-            role = _memory_role(instance, cores, clusters, mergers)
+            role = _memory_role(instance, cores, clusters, mergers, shards)
             memory_counts[role] += 1
             memory_bytes[role] += geometry[0] * geometry[1] // 8
+            shard = _parent(instance, shards)
+            if shard is not None:
+                if master != "sram_32x128":
+                    raise ValueError(f"Unexpected compiled sign-memory master: {instance}")
+                shard_banks[shard] += 1
+    for children in shards_by_merger.values():
+        if any(shard_banks[shard] for shard in children):
+            for shard in children:
+                if shard_banks[shard] != (shards[shard][0] + 127) // 128:
+                    raise ValueError(f"Wrong compiled sign-memory slice count: {shard}")
 
     return {
         "cluster_count": len(clusters),
@@ -90,6 +114,14 @@ def audit(instances):
         "core_counts_by_cluster": sorted(core_counts[cluster] for cluster in clusters),
         "array_count": len(pe_owner),
         "array_shapes": sorted(set(instances["pe"].values())),
+        "native_similarity_shards": [
+            {
+                "instance": shard,
+                "features": shards[shard][0],
+                "compiled_memory_slices": shard_banks[shard],
+            }
+            for shard in sorted(shards)
+        ],
         "compiled_memory_instances": sum(memory_counts.values()),
         "compiled_memory_bytes": sum(memory_bytes.values()),
         "compiled_memory_roles": {

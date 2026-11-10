@@ -28,21 +28,25 @@ module tri_oracle_cumulative_token_merger423 #(
     output logic done_valid, done_error,
     input logic done_ready
 );
-    localparam int LEVELS=$clog2(FEATURES);
-    localparam int LEAVES=1<<LEVELS;
+    localparam int BANK_W=128;
+    localparam int BANKS=(FEATURES+BANK_W-1)/BANK_W;
+    localparam int SHARDS=BANKS<5 ? BANKS : 5;
+    localparam int BASE_BANKS=BANKS/SHARDS, EXTRA_BANKS=BANKS%SHARDS;
+    localparam int SUM_LEVELS=$clog2(SHARDS), SUM_LEAVES=1<<SUM_LEVELS;
     typedef enum logic [1:0] {Idle, Run, Finish, Result} state_t;
     state_t state;
     logic [INDEX_W-1:0] cursor, previous_root, inherited_root, selected_root;
     logic [INDEX_W-1:0] origins[TOKENS], bank_root[IMAGE_WIDTH];
     logic [SLOT_W-1:0] frontier[IMAGE_WIDTH];
     logic [SLOT_W-1:0] column, upper_slot, left_slot, inherited_slot, free_slot, selected_slot;
-    logic [FEATURES-1:0] left_sign, bank_read_sign;
     logic [HIT_W-1:0] threshold;
     logic [IMAGE_WIDTH-1:0] used, visible;
     logic new_image, has_map, has_upper, has_left, old_alias, advance, space;
     logic upper_match, left_match, free_found, inherited_found, store_sign, valid_step;
     wire [SLOT_W-1:0] bank_read_slot = old_alias ? inherited_slot : upper_slot;
-    logic read_available, write_sign, reuse_left_sign;
+    logic read_available, issue_read, write_sign, reuse_left_sign;
+    logic load_left_from_memory;
+    wire [HIT_W-1:0] upper_partial[SHARDS], left_partial[SHARDS];
 
     assign cfg_ready = state==Idle;
     assign done_valid = state==Result;
@@ -53,20 +57,18 @@ module tri_oracle_cumulative_token_merger423 #(
     assign upper_slot = frontier[column];
     assign has_left = column!=0;
     assign left_slot = has_left ? frontier[column-1'b1] : '0;
-    assign upper_match = has_upper && (reuse_left_sign ? left_match : reduction[LEVELS].upper[0]>=threshold);
-    assign left_match = has_left && reduction[LEVELS].left[0]>=threshold;
+    assign upper_match = has_upper && (reuse_left_sign ? left_match : sum_shards[SUM_LEVELS].upper[0]>=threshold);
+    assign left_match = has_left && sum_shards[SUM_LEVELS].left[0]>=threshold;
     assign sign_ready = state==Run && space && read_available && !old_alias;
     assign advance = state==Run && space && read_available && (old_alias || sign_valid);
     assign write_sign = rst_n && advance && valid_step && store_sign;
+    assign load_left_from_memory = rst_n && advance && valid_step && !store_sign &&
+                                   (old_alias || upper_match) && !reuse_left_sign;
 
     if (COMPILED_SIGN_BANK) begin : compiled_signs
-        localparam int BANKS = (FEATURES+127)/128;
-        localparam int DATA_W = 128*BANKS;
         logic read_valid;
-        logic [DATA_W-1:0] read_data;
         wire needs_read = (old_alias || has_upper) && !reuse_left_sign;
-        wire issue_read = rst_n && state==Run && needs_read && !read_valid;
-        wire [4:0] address = write_sign ? 5'(selected_slot) : 5'(bank_read_slot);
+        assign issue_read = rst_n && state==Run && needs_read && !read_valid;
 
         if (IMAGE_WIDTH > 32) begin : invalid_depth
             initial $fatal(1, "Compiled sign bank supports at most 32 columns");
@@ -76,39 +78,49 @@ module tri_oracle_cumulative_token_merger423 #(
         // advances, its prefetched word remains valid through any input stall.
         assign reuse_left_sign = has_left && bank_read_slot==left_slot;
         assign read_available = !needs_read || read_valid;
-        assign bank_read_sign = read_data[FEATURES-1:0];
         always_ff @(posedge clk or negedge rst_n) begin
             if (!rst_n) read_valid <= 0;
             else if (advance) read_valid <= 0;
             else if (issue_read) read_valid <= 1;
         end
 
-        /* verilator lint_off DECLFILENAME */
-        TS5N28HPCPSVTA32X128M2FW slices[BANKS-1:0] (
-            .CLK(clk), .CEB(!(issue_read || write_sign)), .WEB(!write_sign),
-            .A(address), .D(DATA_W'(sign_data)), .BWEB(128'b0), .Q(read_data)
-        );
-        /* verilator lint_on DECLFILENAME */
     end else begin : inferred_signs
-        logic [FEATURES-1:0] bank_sign[IMAGE_WIDTH];
+        assign issue_read = 0;
         assign reuse_left_sign = 0;
         assign read_available = 1;
-        assign bank_read_sign = bank_sign[bank_read_slot];
-        always_ff @(posedge clk) begin
-            if (write_sign) bank_sign[selected_slot] <= sign_data;
-        end
     end
 
-    for (genvar level=0;level<=LEVELS;level++) begin : reduction
-        localparam int NODES=LEAVES>>level;
+    // For the full 2048-feature path the sixteen physical slices are grouped
+    // as four, three, three, three, three. No padding bits enter the score.
+    for (genvar group=0;group<SHARDS;group++) begin : similarity_shards
+        localparam int BANK_START=group*BASE_BANKS+(group<EXTRA_BANKS ? group : EXTRA_BANKS);
+        localparam int GROUP_BANKS=BASE_BANKS+(group<EXTRA_BANKS ? 1 : 0);
+        localparam int FIRST=BANK_START*BANK_W;
+        localparam int WIDTH=(FIRST+GROUP_BANKS*BANK_W>FEATURES) ? FEATURES-FIRST : GROUP_BANKS*BANK_W;
+        localparam int LOCAL_HIT_W=$clog2(WIDTH+1);
+        wire [LOCAL_HIT_W-1:0] upper_hits, left_hits;
+        tri_oracle_token_similarity_shard446 #(
+            .FEATURES(WIDTH), .IMAGE_WIDTH(IMAGE_WIDTH), .SLOT_W(SLOT_W),
+            .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+        ) shard (
+            .clk, .sign_data(sign_data[FIRST+:WIDTH]), .read_slot(bank_read_slot),
+            .write_slot(selected_slot), .read_enable(issue_read), .write_enable(write_sign),
+            .load_left_from_memory, .upper_hits, .left_hits
+        );
+        assign upper_partial[group]=HIT_W'(upper_hits);
+        assign left_partial[group]=HIT_W'(left_hits);
+    end
+
+    for (genvar level=0;level<=SUM_LEVELS;level++) begin : sum_shards
+        localparam int NODES=SUM_LEAVES>>level;
         wire [HIT_W-1:0] upper[NODES], left[NODES];
         for (genvar node=0;node<NODES;node++) begin : counts
             if (level!=0) begin : sum
-                assign upper[node]=reduction[level-1].upper[2*node]+reduction[level-1].upper[2*node+1];
-                assign left[node]=reduction[level-1].left[2*node]+reduction[level-1].left[2*node+1];
-            end else if (node<FEATURES) begin : compare
-                assign upper[node]=HIT_W'(sign_data[node]==bank_read_sign[node]);
-                assign left[node]=HIT_W'(sign_data[node]==left_sign[node]);
+                assign upper[node]=sum_shards[level-1].upper[2*node]+sum_shards[level-1].upper[2*node+1];
+                assign left[node]=sum_shards[level-1].left[2*node]+sum_shards[level-1].left[2*node+1];
+            end else if (node<SHARDS) begin : partial
+                assign upper[node]=upper_partial[node];
+                assign left[node]=left_partial[node];
             end else begin : padding
                 assign upper[node]='0;
                 assign left[node]='0;
@@ -196,12 +208,7 @@ module tri_oracle_cumulative_token_merger423 #(
                         has_map<=0;
                         state<=Result;
                     end else begin
-                        if (store_sign) begin
-                            bank_root[selected_slot]<=cursor;
-                            left_sign<=sign_data;
-                        end else if ((old_alias || upper_match) && !reuse_left_sign) begin
-                            left_sign<=bank_read_sign;
-                        end
+                        if (store_sign) bank_root[selected_slot]<=cursor;
                         // The next column sees this step's chosen sign as its left
                         // neighbor. A left match keeps the prior cached sign.
                         frontier[column]<=selected_slot;
@@ -234,3 +241,68 @@ module tri_oracle_cumulative_token_merger423 #(
         end
     end
 endmodule
+
+/* verilator lint_off DECLFILENAME */
+// Each shard keeps its surviving signs and both comparisons local. Only the
+// match counts cross the shard boundary.
+module tri_oracle_token_similarity_shard446 #(
+    parameter int FEATURES=512,
+    parameter int IMAGE_WIDTH=24,
+    parameter int SLOT_W=5,
+    parameter bit COMPILED_SIGN_BANK=0,
+    localparam int HIT_W=$clog2(FEATURES+1)
+) (
+    input logic clk,
+    input logic [FEATURES-1:0] sign_data,
+    input logic [SLOT_W-1:0] read_slot, write_slot,
+    input logic read_enable, write_enable, load_left_from_memory,
+    output logic [HIT_W-1:0] upper_hits, left_hits
+);
+    localparam int LEVELS=$clog2(FEATURES);
+    localparam int LEAVES=1<<LEVELS;
+    logic [FEATURES-1:0] memory_sign, left_sign;
+
+    if (COMPILED_SIGN_BANK) begin : compiled
+        localparam int BANKS=(FEATURES+127)/128;
+        localparam int DATA_W=128*BANKS;
+        wire [4:0] address = write_enable ? 5'(write_slot) : 5'(read_slot);
+        wire [DATA_W-1:0] read_data;
+        TS5N28HPCPSVTA32X128M2FW slices[BANKS-1:0] (
+            .CLK(clk), .CEB(!(read_enable || write_enable)), .WEB(!write_enable),
+            .A(address), .D(DATA_W'(sign_data)), .BWEB(128'b0), .Q(read_data)
+        );
+        assign memory_sign = read_data[FEATURES-1:0];
+    end else begin : inferred
+        logic [FEATURES-1:0] bank_sign[IMAGE_WIDTH];
+        assign memory_sign = bank_sign[read_slot];
+        always_ff @(posedge clk) if (write_enable) bank_sign[write_slot] <= sign_data;
+    end
+
+    always_ff @(posedge clk) begin
+        if (write_enable) left_sign <= sign_data;
+        else if (load_left_from_memory) left_sign <= memory_sign;
+    end
+
+    for (genvar level=0;level<=LEVELS;level++) begin : reduction
+        localparam int NODES=LEAVES>>level;
+        localparam int COUNT_W=level+1;
+        wire [COUNT_W-1:0] upper[NODES], left[NODES];
+        for (genvar node=0;node<NODES;node++) begin : counts
+            if (level!=0) begin : sum
+                assign upper[node]=COUNT_W'(reduction[level-1].upper[2*node])+
+                                   COUNT_W'(reduction[level-1].upper[2*node+1]);
+                assign left[node]=COUNT_W'(reduction[level-1].left[2*node])+
+                                  COUNT_W'(reduction[level-1].left[2*node+1]);
+            end else if (node<FEATURES) begin : compare
+                assign upper[node]=sign_data[node]==memory_sign[node];
+                assign left[node]=sign_data[node]==left_sign[node];
+            end else begin : padding
+                assign upper[node]='0;
+                assign left[node]='0;
+            end
+        end
+    end
+    assign upper_hits=HIT_W'(reduction[LEVELS].upper[0]);
+    assign left_hits=HIT_W'(reduction[LEVELS].left[0]);
+endmodule
+/* verilator lint_on DECLFILENAME */

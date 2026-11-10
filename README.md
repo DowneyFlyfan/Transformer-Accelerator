@@ -700,6 +700,14 @@ predictor. The paper places those units in each aggregator and each core,
 respectively. The active compiled-memory inventory is 618 macros and
 415,744 bytes. See `records/paper445_native_architecture_result.json`.
 
+The merger now groups its 16 compiled sign-memory slices into five feature
+shards. Each shard owns its cached left sign and both neighbor comparisons.
+The shared controller sums their partial scores. Xcelium matched all 25,344
+trained merge decisions and 4,380,542 causal token-size values in both memory
+modes, with unchanged frame cycles and compiled-memory traffic. The 20-core
+source replay passed with 618 compiled memories. The origin table and raster
+controller remain shared. See `records/merger446_sharded_similarity_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

@@ -1,0 +1,104 @@
+{
+  "state": "five_native_sign_memory_shards_and_trained_replay_verified",
+  "source_sha256": "3a506eabf9b8f858147247a80e60e0ad2f4893e0cc49c3951fe9ce1982a96530",
+  "baseline_sha256": "7001e5886cd9faaf06f18c6059a1e9a217bccd9978f33256b73c8fd8977ff42e",
+  "audit_source_sha256": "3c8445b33a2afcce6520fba9a221ae28d425427554e8a8dd2c737a3462fe0df3",
+  "inventory_sha256": "fd138de5a48a825f74ea417d79e25b06a13fd7cf30049b702a91c1f14041fe88",
+  "sign_memory_slices_by_shard": {
+    "0": 4,
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 3
+  },
+  "sign_similarity_feature_widths": [
+    512,
+    384,
+    384,
+    384,
+    384
+  ],
+  "trained_neighbor_comparisons_gpu": 29398,
+  "parameter_cases": [
+    "SHARD446_SHAPE_PASS features=1 width=1 height=4 compiled=0 maps=12",
+    "SHARD446_SHAPE_PASS features=127 width=3 height=2 compiled=0 maps=18",
+    "SHARD446_SHAPE_PASS features=129 width=3 height=2 compiled=1 maps=18",
+    "SHARD446_SHAPE_PASS features=128 width=3 height=2 compiled=1 maps=18",
+    "SHARD446_SHAPE_PASS features=7 width=2 height=3 compiled=1 maps=18",
+    "SHARD446_SHAPE_PASS features=513 width=4 height=2 compiled=1 maps=24",
+    "SHARD446_SHAPE_PASS features=257 width=3 height=3 compiled=0 maps=27",
+    "SHARD446_SHAPE_PASS features=2049 width=4 height=3 compiled=1 maps=36"
+  ],
+  "unchanged_boundary_markers": [
+    "BOUNDARY445_CASE threshold=2048 maps=576 signs=576 map_stalls=85 last_stalls=3 done_stalls=5",
+    "BOUNDARY445_CASE threshold=1536 maps=576 signs=576 map_stalls=142 last_stalls=3 done_stalls=5",
+    "BOUNDARY445_CASE threshold=0 maps=576 signs=576 map_stalls=80 last_stalls=3 done_stalls=5",
+    "BOUNDARY445_PASS maps=1728"
+  ],
+  "native_replays": {
+    "compiled": {
+      "native_pid": 897829,
+      "native_exit_status": 0,
+      "elapsed_seconds": 7.0434394889744,
+      "markers": [
+        "MERGER441_BANKS_PASS macros=16 bytes=8192",
+        "BATCH423_PASS modes=2 layers=44 maps=25344 signs=15561 rows=25432 sizes=4380542 cfg_errors=3 map_stalls=3710 done_stalls=235",
+        "MERGER441_LATENCY frames=44 cycles=45368"
+      ],
+      "log_sha256": "49212bb28b85e8aee3334f1cf398221fef15bc1bea0cc6b48ff84881bada7862",
+      "bundle_sha256": "d0a809adea434c8fb85bec116150b44958937f49e037cc38f622eaf51add7af9",
+      "word_reads_per_slice": 18877,
+      "word_writes_per_slice": 15028
+    },
+    "inferred": {
+      "native_pid": 897831,
+      "native_exit_status": 0,
+      "elapsed_seconds": 5.541440824046731,
+      "markers": [
+        "BATCH423_PASS modes=2 layers=44 maps=25344 signs=15561 rows=25432 sizes=4380542 cfg_errors=3 map_stalls=4353 done_stalls=235",
+        "MERGER441_LATENCY frames=44 cycles=29785"
+      ],
+      "log_sha256": "760fbc37064c63768e212ef726abdfc1ccd0648702ec30aff45a3072c5e83f57",
+      "bundle_sha256": "4953f90d1cb6dcb78d05015c5d06efb3a00bd89035f3614ae9921f146cfab6d4"
+    },
+    "integrated": {
+      "native_pid": 897830,
+      "native_exit_status": 0,
+      "elapsed_seconds": 141.6438897739863,
+      "markers": [
+        "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+        "SHARED437_ATTENTION_OWNERSHIP_PASS",
+        "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+      ],
+      "log_sha256": "b95311c7fa5875e318c86b07641c32cd648899a4552e44894f4b6035a43e8dfb",
+      "bundle_sha256": "0103b533db469b6bedde88cd7b39a22068286116c6abf8a1dea6754f3e945be4",
+      "similarity_shard_features": {
+        "0": 512,
+        "1": 384,
+        "2": 384,
+        "3": 384,
+        "4": 384
+      }
+    }
+  },
+  "compiled_memory_instances": 618,
+  "compiled_memory_bytes": 415744,
+  "paper_topology_checks": {
+    "five_clusters_with_four_cores_each": true,
+    "one_32_by_8_eight_bit_array_per_core": true,
+    "one_token_merger_per_cluster": false,
+    "attention_head_predictor_in_each_core": false,
+    "strip_predictor_in_each_core": false
+  },
+  "missing_score_mutation_rejected_at_token": 24,
+  "missing_shard_inventory_rejected": true,
+  "original_single_bank_group_rejected": true,
+  "full_paper_results_matched": false,
+  "clock_distribution_or_routing_allowed": false,
+  "scope": "Native register-transfer-level reconstruction of five feature-local sign memories and similarity scorers under the shared raster merger. No whole-chip mapped result or paper metric is inferred.",
+  "archive": {
+    "path": "records/merger446_sharded_similarity_evidence.json.gz",
+    "bytes": 21794,
+    "sha256": "74453387fcb18f908d75221616b6e43bcdd052c9af574c561395d63599622fb0"
+  }
+}
