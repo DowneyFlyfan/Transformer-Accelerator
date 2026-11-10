@@ -6,6 +6,7 @@ module tri_oracle_shared_layer437 #(
     parameter bit PERSIST_LAYER_CONTEXT = 0,
     parameter bit COMPILED_SIGN_BANK = 0,
     parameter bit AGGREGATOR_SIGN_BANK = COMPILED_SIGN_BANK,
+    parameter bit AGGREGATOR_MERGE_TABLE = AGGREGATOR_SIGN_BANK,
     parameter bit CORE_STRIP_PREDICTOR = AGGREGATOR_SIGN_BANK,
     parameter bit CORE_HEAD_PREDICTOR = CORE_STRIP_PREDICTOR
 ) (
@@ -136,6 +137,8 @@ module tri_oracle_shared_layer437 #(
 
     logic [12:0] merge_sign_control;
     logic [119:0] merge_sign_counts;
+    logic [21:0] merge_table_request;
+    logic [79:0] merge_table_word;
     logic [399:0] head_request;
     logic [72:0] head_response;
 
@@ -144,18 +147,20 @@ module tri_oracle_shared_layer437 #(
     end
 
     tri_oracle_batched_learned437 #(
-        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
+        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK),
+        .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
         .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
     ) feedforward (
         .head_request, .head_response,
-        .attention, .merge_sign_data(sign_data), .merge_sign_control, .merge_sign_counts, .*
+        .attention, .merge_sign_data(sign_data), .merge_sign_control, .merge_sign_counts, .merge_table_request, .merge_table_word, .*
     );
     tri_oracle_attention_pipeline430 #(
         .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK),
-        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
+        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK),
+        .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE), .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
     ) attention_pipeline (
         .head_request, .head_response,
-        .merge_sign_control, .merge_sign_counts,
+        .merge_sign_control, .merge_sign_counts, .merge_table_request, .merge_table_word,
         .tensor_cfg_feature_words(attention.cfg_feature_words),
         .tensor_cfg_activation_stride(attention.cfg_activation_stride),
         .tensor_cfg_valid(attention.cfg_valid),

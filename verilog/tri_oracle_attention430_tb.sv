@@ -128,7 +128,7 @@ module tri_oracle_attention430_tb #(parameter int SHARD=0, INTEGRATE=0, HOLD_DIS
     wire value_rsp_valid=value_pending;
     wire [511:0] value_rsp_data=cache[2*SLOTS+value_rank];
 
-    tri_oracle_attention_pipeline430 dut (.merge_sign_control(), .merge_sign_counts('0), .head_request(), .head_response('0), .*);
+    tri_oracle_attention_pipeline430 dut (.merge_sign_control(), .merge_sign_counts('0), .merge_table_request(), .merge_table_word('0), .head_request(), .head_response('0), .*);
     tri_oracle_batched_tensor390 tensor (
         .clk,.rst_n,.cfg_valid(tensor_cfg_valid),.cfg_ready(tensor_cfg_ready),.cfg_paired(1'b0),
         .cfg_tag(tensor_cfg_tag),.cfg_tokens(tensor_cfg_tokens),.cfg_feature_words(tensor_cfg_feature_words),

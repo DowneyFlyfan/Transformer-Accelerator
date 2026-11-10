@@ -3,6 +3,7 @@
 // this is a compute/memory fabric, not a complete vision-language processor.
 module tri_oracle_compute_fabric #(
   parameter bit AGGREGATOR_SIGN_BANK=0,
+  parameter bit AGGREGATOR_MERGE_TABLE=0,
   parameter bit CORE_STRIP_PREDICTOR=0,
   parameter bit CORE_HEAD_PREDICTOR=0
 ) (
@@ -27,6 +28,8 @@ module tri_oracle_compute_fabric #(
     input wire [2047:0] merge_sign_data,
     input wire [12:0] merge_sign_control,
     output wire [119:0] merge_sign_counts,
+    input wire [21:0] merge_table_request,
+    output wire [79:0] merge_table_word,
     input wire strip_rst_n,
     input wire [533:0] strip_request,
     output wire [111:0] strip_response,
@@ -34,6 +37,17 @@ module tri_oracle_compute_fabric #(
     output logic [72:0] head_response
 );
     wire [4:0] cluster_ready,load_errors;
+    wire [2:0] table_owner = merge_table_request[19:17];
+    logic [2:0] read_table_owner;
+    wire [79:0] table_words[5];
+    if (AGGREGATOR_MERGE_TABLE) begin : route_merge_table
+        always_ff @(posedge clk) begin
+            if (merge_table_request[21] && !merge_table_request[20]) read_table_owner <= table_owner;
+        end
+        assign merge_table_word = read_table_owner<5 ? table_words[read_table_owner] : '0;
+    end else begin : no_merge_table
+        assign merge_table_word = '0;
+    end
     wire [2:0] strip_cluster=strip_request[533:531];
     wire [111:0] cluster_strip_responses[5];
     wire [2:0] head_cluster=head_request[399:397];
@@ -49,7 +63,9 @@ module tri_oracle_compute_fabric #(
         localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES;
         localparam int SIGN_START=cluster==0 ? 0 : 512+(cluster-1)*384;
         tri_oracle_compute_cluster #(
-            .MERGE_FEATURES(MERGE_FEATURES), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
+            .MERGE_FEATURES(MERGE_FEATURES), .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE),
+            .MERGE_TABLE_ENTRIES(cluster==4 ? 64 : 128),
+            .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
             .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
         ) unit (
             .head_request({head_request[396:395],
@@ -62,6 +78,9 @@ module tri_oracle_compute_fabric #(
             .merge_sign_data(merge_sign_data[SIGN_START+:SIGN_WIDTH]),
             .merge_sign_control(merge_sign_control),
             .merge_sign_counts(merge_sign_counts[cluster*24+:24]),
+            .merge_table_request({merge_table_request[21] && table_owner==3'(cluster),
+                                  merge_table_request[20], merge_table_request[16:0]}),
+            .merge_table_word(table_words[cluster]),
             .clk(clk),.rst_n(rst_n),
             .load_valid(load_valid && load_core[4:2]==3'(cluster)),
             .load_core(load_core[1:0]),.load_kind(load_kind),

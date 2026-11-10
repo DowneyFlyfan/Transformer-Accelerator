@@ -1,0 +1,42 @@
+{
+  "state": "mapped_merger_timing_improved_and_training_frame_cycles_preserved",
+  "clock_mhz": 580,
+  "timing_corner": "slow process, 0.90 volts, 125 degrees Celsius",
+  "trained_frames": 44,
+  "trained_merge_cycles": 60728,
+  "compiled_memories": 21,
+  "native_setup_slack_ps": {
+    "baseline": -910,
+    "size": -230,
+    "logic": 0,
+    "margin": 70
+  },
+  "cell_area": {
+    "baseline": {
+      "cells": 16352,
+      "cell_area_square_micrometers": "115691.629"
+    },
+    "size": {
+      "cells": 16381,
+      "cell_area_square_micrometers": "127553.773"
+    },
+    "logic": {
+      "cells": 19307,
+      "cell_area_square_micrometers": "118013.725"
+    },
+    "margin": {
+      "cells": 21375,
+      "cell_area_square_micrometers": "119599.645"
+    }
+  },
+  "cold_setup_slack_ps": "70.000000",
+  "latest_variant": "margin",
+  "scope": "Preplacement setup for the mapped token merger. The trained replay checked functional output and cycle counts separately.",
+  "full_chip_mapped": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "file": "records/merger460_preplacement_timing_evidence.json.gz",
+    "bytes": 18922,
+    "sha256": "2ee78c06fc308ab3727a4b8e8efc1e1a9dfc2952650063c3fe2db83b290b0a85"
+  }
+}

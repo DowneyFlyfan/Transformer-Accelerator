@@ -89,11 +89,12 @@ module tri_oracle_batched_frame393 (
           unused_attention.cfg_count, unused_attention.cfg_channels, unused_attention.cfg_keep,
           unused_attention.cfg_activation_base, unused_attention.cfg_weight_base,
           unused_attention.out_ready, unused_attention.done_ready} = '0;
-  tri_oracle_batched_frame437 implementation (.attention(unused_attention), .attention_enable(1'b0), .merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .strip_request('0), .strip_response(), .head_request('0), .head_response(), .*);
+  tri_oracle_batched_frame437 implementation (.attention(unused_attention), .attention_enable(1'b0), .merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .merge_table_request('0), .merge_table_word(), .strip_request('0), .strip_response(), .head_request('0), .head_response(), .*);
 endmodule
 
 module tri_oracle_batched_frame437 #(
   parameter bit AGGREGATOR_SIGN_BANK=0,
+  parameter bit AGGREGATOR_MERGE_TABLE=0,
   parameter bit CORE_STRIP_PREDICTOR=AGGREGATOR_SIGN_BANK,
   parameter bit CORE_HEAD_PREDICTOR=CORE_STRIP_PREDICTOR
 ) (
@@ -148,6 +149,8 @@ module tri_oracle_batched_frame437 #(
   input logic [2047:0] merge_sign_data,
   input logic [12:0] merge_sign_control,
   output logic [119:0] merge_sign_counts,
+  input logic [21:0] merge_table_request,
+  output logic [79:0] merge_table_word,
   input logic [533:0] strip_request,
   output logic [111:0] strip_response,
   input logic [399:0] head_request,
@@ -262,12 +265,13 @@ module tri_oracle_batched_frame437 #(
   end
 
   tri_oracle_batched_shared392 #(
-    .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
+    .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE),
+    .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
     .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
   ) compute (
     .head_request,.head_response,
     .strip_request,.strip_response,
-    .merge_sign_data,.merge_sign_control,.merge_sign_counts,
+    .merge_sign_data,.merge_sign_control,.merge_sign_counts,.merge_table_request,.merge_table_word,
     .clk(clk),.rst_n(rst_n),
     .cfg_valid(attention_selected ? attention_window && attention.cfg_valid : state==GATE_LAUNCH || state==DOWN_LAUNCH),
     .cfg_ready(compute_ready),.cfg_paired(!attention_selected && launch_paired),

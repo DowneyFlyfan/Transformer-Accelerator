@@ -4,6 +4,7 @@
 // the same core memories and accumulator slots directly. Mode is captured.
 module tri_oracle_batched_shared392 #(
   parameter bit AGGREGATOR_SIGN_BANK=0,
+  parameter bit AGGREGATOR_MERGE_TABLE=0,
   parameter bit CORE_STRIP_PREDICTOR=AGGREGATOR_SIGN_BANK,
   parameter bit CORE_HEAD_PREDICTOR=CORE_STRIP_PREDICTOR
 ) (
@@ -42,6 +43,8 @@ module tri_oracle_batched_shared392 #(
   input logic [2047:0] merge_sign_data,
   input logic [12:0] merge_sign_control,
   output logic [119:0] merge_sign_counts,
+  input logic [21:0] merge_table_request,
+  output logic [79:0] merge_table_word,
   input logic [533:0] strip_request,
   output logic [111:0] strip_response,
   input logic [399:0] head_request,
@@ -90,12 +93,13 @@ module tri_oracle_batched_shared392 #(
   end
 
   tri_oracle_batched_tensor390 #(
-    .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
+    .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE),
+    .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR),
     .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
   ) tensor (
     .head_request,.head_response,
     .strip_request,.strip_response,
-    .merge_sign_data,.merge_sign_control,.merge_sign_counts,
+    .merge_sign_data,.merge_sign_control,.merge_sign_counts,.merge_table_request,.merge_table_word,
     .clk(clk),.rst_n(rst_n),.cfg_valid(accept),.cfg_ready(raw_ready),.cfg_paired(cfg_paired),
     .cfg_tag(cfg_tag),.cfg_tokens(cfg_tokens),.cfg_feature_words(cfg_feature_words),
     .cfg_dense_rows(cfg_dense_rows),.cfg_count(cfg_count),.cfg_channels(cfg_channels),.cfg_keep(cfg_keep),

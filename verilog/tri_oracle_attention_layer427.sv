@@ -7,6 +7,7 @@ module tri_oracle_attention_layer427 #(
     parameter bit PERSIST_LAYER_CONTEXT=0,
     parameter bit COMPILED_SIGN_BANK=0,
     parameter bit AGGREGATOR_SIGN_BANK=0,
+    parameter bit AGGREGATOR_MERGE_TABLE=0,
     parameter bit CORE_HEAD_PREDICTOR=0
 ) (
     input logic clk, rst_n,
@@ -80,6 +81,8 @@ module tri_oracle_attention_layer427 #(
     input logic [511:0] value_rsp_data,
     output logic [12:0] merge_sign_control,
     input logic [119:0] merge_sign_counts,
+    output logic [21:0] merge_table_request,
+    input logic [79:0] merge_table_word,
     output logic [399:0] head_request,
     input logic [72:0] head_response
 );
@@ -184,9 +187,10 @@ module tri_oracle_attention_layer427 #(
     end
 
     tri_oracle_cumulative_merge447 #(
-        .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK), .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)
+        .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK), .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK),
+        .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE)
     ) merger (
-        .merge_sign_control, .merge_sign_counts,
+        .merge_sign_control, .merge_sign_counts, .merge_table_request, .merge_table_word,
         .clk, .rst_n, .cfg_valid(frame_start), .cfg_new_image(frame_new_image),
         .cfg_ready(merge_cfg_ready), .cfg_minimum_matches(merge_threshold),
         .sign_valid, .sign_ready, .sign_data, .map_valid(merge_map_valid),

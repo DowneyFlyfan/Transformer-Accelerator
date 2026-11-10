@@ -7,12 +7,16 @@ import re
 
 MEMORY_GEOMETRIES = {
     "sram_32x128": (32, 128, 0),
+    "sram_24x128": (24, 128, 0),
+    "sram_32x80": (32, 80, 0),
+    "sram_16x80": (16, 80, 0),
+    "sram_8x80": (8, 80, 0),
     "sram_512x64": (512, 64, 0),
     "sram_16x128": (16, 128, 0),
 }
 REDUNDANCY_ROLES = ("token_merger", "head_predictor", "strip_predictor", "causal_token_size")
 INVENTORY_ROLES = {
-    "cluster", "core", "pe", "similarity_shard", "weight_attention_core",
+    "cluster", "core", "pe", "similarity_shard", "weight_attention_core", "token_merge_table",
     *REDUNDANCY_ROLES, *MEMORY_GEOMETRIES,
 }
 
@@ -42,7 +46,7 @@ def _parent(instance, owners):
     return enclosing[0] if enclosing else None
 
 
-def _memory_role(instance, cores, clusters, mergers, shards):
+def _memory_role(instance, cores, clusters, mergers, shards, tables):
     core = _parent(instance, cores)
     if core is not None:
         leaf = instance.removeprefix(core + ".")
@@ -57,8 +61,11 @@ def _memory_role(instance, cores, clusters, mergers, shards):
     if _parent(instance, mergers) is not None and re.search(r"\.compiled_signs\.slices\[\d+\]$", instance):
         return "surviving_sign_bank"
     shard = _parent(instance, shards)
-    if shard is not None and re.fullmatch(r"compiled\.slices\[\d+\]", instance.removeprefix(shard + ".")):
+    if shard is not None and re.fullmatch(r"compiled(?:\.(?:standard|compact))?\.slices\[\d+\]", instance.removeprefix(shard + ".")):
         return "surviving_sign_bank"
+    table = _parent(instance, tables)
+    if table is not None and re.fullmatch(r"compiled(?:\.(?:full|tail))?\.entries", instance.removeprefix(table + ".")):
+        return "token_merge_table"
     if instance.endswith((".replay_table.lower_metadata", ".replay_table.upper_metadata")):
         return "prediction_metadata"
     raise ValueError(f"Unrecognized compiled-memory role: {instance}")
@@ -70,6 +77,11 @@ def audit(instances):
     cores = instances["core"]
     mergers = instances["token_merger"]
     shards = instances.get("similarity_shard", {})
+    tables = instances.get("token_merge_table", {})
+    table_owners = {table: _parent(table, clusters) for table in tables}
+    for table, (entries, width, compiled) in tables.items():
+        if table_owners[table] is None or entries not in (64, 128) or width != 10 or compiled not in (0, 1):
+            raise ValueError(f"Invalid token merge table or ownership: {table}")
     core_owner = {core: _parent(core, clusters) for core in cores}
     pe_owner = {pe: _parent(pe, cores) for pe in instances["pe"]}
     if None in core_owner.values() or None in pe_owner.values():
@@ -116,18 +128,28 @@ def audit(instances):
     memory_counts = Counter()
     memory_bytes = Counter()
     shard_banks = Counter()
+    table_banks = Counter()
     for master, geometry in MEMORY_GEOMETRIES.items():
         for instance, parameters in instances[master].items():
             if parameters != geometry:
                 raise ValueError(f"Unexpected compiled-memory geometry: {instance} {parameters}")
-            role = _memory_role(instance, cores, clusters, mergers, shards)
+            role = _memory_role(instance, cores, clusters, mergers, shards, tables)
             memory_counts[role] += 1
             memory_bytes[role] += geometry[0] * geometry[1] // 8
+            if role == "token_merge_table":
+                table = _parent(instance, tables)
+                allowed = {"sram_16x80", "sram_32x80", "sram_32x128"} if tables[table][0] == 128 else {"sram_8x80", "sram_16x80"}
+                if master not in allowed:
+                    raise ValueError(f"Unexpected compiled token merge table master: {instance}")
+                table_banks[table] += 1
             shard = _parent(instance, shards)
             if shard is not None:
-                if master != "sram_32x128":
+                if master not in ("sram_32x128", "sram_24x128"):
                     raise ValueError(f"Unexpected compiled sign-memory master: {instance}")
                 shard_banks[shard] += 1
+    for table, (_, _, compiled) in tables.items():
+        if table_banks[table] != compiled:
+            raise ValueError(f"Wrong compiled token merge table memory count: {table}")
     for children in shards_by_merger.values():
         if any(shard_banks[shard] for shard in children):
             for shard in children:
@@ -150,6 +172,16 @@ def audit(instances):
             }
             for shard in sorted(shards)
         ],
+        "native_token_merge_tables": [
+            {
+                "instance": table,
+                "entries": tables[table][0],
+                "origin_bits": tables[table][1],
+                "compiled_memory_instances": table_banks[table],
+                "aggregator": table_owners[table],
+            }
+            for table in sorted(tables)
+        ],
         "compiled_memory_instances": sum(memory_counts.values()),
         "compiled_memory_bytes": sum(memory_bytes.values()),
         "compiled_memory_roles": {
@@ -169,6 +201,8 @@ def audit(instances):
             and all(shape == (32, 8, 8) for shape in instances["pe"].values()),
             "one_token_merger_per_cluster": len(mergers) == 5 and len(clusters) == 5
             and all(per_cluster_mergers[cluster] == 1 for cluster in clusters),
+            "one_token_merge_table_per_cluster": len(tables) == len(clusters) == 5
+            and len(set(table_owners.values())) == len(clusters),
             "attention_head_predictor_in_each_core": len(instances["head_predictor"]) == 20
             and len(cores) == 20 and all(per_core_heads[core] == 1 for core in cores),
             "strip_predictor_in_each_core": len(instances["strip_predictor"]) == 20

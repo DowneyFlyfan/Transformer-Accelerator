@@ -1,0 +1,164 @@
+{
+  "state": "inplace_aggregator_origin_tables_functionally_verified_and_native_partitions_elaborated",
+  "source_sha256": {
+    "verilog/tri_oracle_attention427_layer_tb.sv": "0fd6202e50eb1c96131be6e60ef319688ee3b18421be8cadee805f26792c6dd0",
+    "verilog/tri_oracle_attention430_tb.sv": "86894b8fbda825780b85c34d35226bc07b627e191215d7378937e59c70e4ee64",
+    "verilog/tri_oracle_attention_layer427.sv": "574aba3d9ef0e160bedfc57a1e86617f77b6e1576d1f1d3672f744ee54bc9e06",
+    "verilog/tri_oracle_attention_pipeline430.sv": "6ced2edb116c582eee072558ec4f8f6e6bd1dbd9cb36fa2643575285e3395ce2",
+    "verilog/tri_oracle_batched_frame393.sv": "bb3393a10309539bc2ef7a17520ef1f7e5ae3fcc109d523941b0c730e856dcc4",
+    "verilog/tri_oracle_batched_learned406.sv": "6ac688a9236ac2c5e6cdf1661ba7a7ad46c47729d0eb58e628311339d4877f62",
+    "verilog/tri_oracle_batched_shared392.sv": "63458fb73718820327b7972a6238cc879d9368914e3c0c5f7c6a30a671e9dfaf",
+    "verilog/tri_oracle_batched_tensor390.sv": "38c24567337e405455677bc62bd8139f78666f8c0223c36d4ac9cef1c3d448ef",
+    "verilog/tri_oracle_compute_cluster.sv": "cd6f728154966736eb5df3b48e3f800258b1be2796bbab5cbe020a97db48f195",
+    "verilog/tri_oracle_compute_fabric.sv": "d64ad3253cd74fa87b9ede129a986884207ffc25cc25ad5d4a5625b3d982dc13",
+    "verilog/tri_oracle_compute_fabric_tb.sv": "dea867141a7eacb2f137cbefcfcaa0a4ebf527c379910c9fea47833e2f3ce791",
+    "verilog/tri_oracle_cumulative_token_merger423.sv": "2eb884b5d6b8c587623d0762c55f06ae39a810a0aaeddba166be4d2d88c7d46d",
+    "verilog/tri_oracle_fabric_stream_tb.sv": "dae99ba698a2d8c6922694471bf390f3c6a926ec4448eaab78496062b7f192b1",
+    "verilog/tri_oracle_shared_layer437.sv": "b68fc9d79be4c3fbf19d382b59d2a416ac4208456b085f95cd16b5072e9b42a4",
+    "verilog/tri_oracle_sram_cluster_tb.sv": "2a5fd3731b42d448a720c2d40bb19e66f1ba095ec08f08a6ed05ac07c26936fd",
+    "verilog/tri_oracle_sram_compute_cluster.sv": "8e89d8ff2e8f9a5edabf7e630ff29095dbd4ea217cd4a15a6c5971ac48ceccaa",
+    "syn/audit_tri_oracle_native_architecture.py": "d4685d131fb439ba69e3cc1f62070e8230f774f575530380ff945c94ba8bfc05"
+  },
+  "compiled_capacity": {
+    "state": "candidate_native_compiled_capacity_measured",
+    "native_instances": 623,
+    "bytes": 414416,
+    "binary_kibibytes": 404.703125,
+    "by_vendor_master": {
+      "TS5N28HPCPSVTA24X128M2FW": {
+        "bytes_per_macro": 384,
+        "vendor_model_sha256": "35ea57a9268155751bd00d7087fd068fb1d5d9c575e2e52f61780c725a7acd54",
+        "instances": 16,
+        "total_bytes": 6144
+      },
+      "TS5N28HPCPSVTA8X80M2FW": {
+        "bytes_per_macro": 80,
+        "vendor_model_sha256": "f23baa3b8e4b7e078a89899ff0e2194dd9022dc0dc7d6fbed71c8c98f21b5e41",
+        "instances": 1,
+        "total_bytes": 80
+      },
+      "TS5N28HPCPSVTA16X80M2FW": {
+        "bytes_per_macro": 160,
+        "vendor_model_sha256": "ccf723afb843be99519a3cb5fe2cf8c5d46ebce84a62dd1246f0f7bf397237a7",
+        "instances": 4,
+        "total_bytes": 640
+      },
+      "TS5N28HPCPSVTA512X64M4F": {
+        "bytes_per_macro": 4096,
+        "vendor_model_sha256": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+        "instances": 42,
+        "total_bytes": 172032
+      },
+      "TS6N28HPCPSVTA16X128M2F": {
+        "bytes_per_macro": 256,
+        "vendor_model_sha256": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+        "instances": 200,
+        "total_bytes": 51200
+      },
+      "TS5N28HPCPSVTA32X128M2FW": {
+        "bytes_per_macro": 512,
+        "vendor_model_sha256": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+        "instances": 360,
+        "total_bytes": 184320
+      }
+    },
+    "paper_figure": "31.6.7",
+    "paper_label": "405 KB",
+    "paper_label_unit_or_rounding_confirmed": false,
+    "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "delta_from_binary_nominal_bytes": -304,
+    "delta_from_decimal_nominal_bytes": 9416,
+    "rounds_to_405_kibibytes": true,
+    "paper_memory_capacity_reconciled": false,
+    "physical_candidate_qualified": false,
+    "native_inventory_sha256": "2d45f30dd87c7f43edf78ba5fc9fa195683d816840c18bfdd8d8e09ad3e89da1",
+    "candidate_receipt_sha256": "ac6de4655de125fe644fe1a07f47c7a92a1d3339a2d4303d376da1d910154e31",
+    "verification_scope": "Compiled static random-access memory only, using all six native macro model capacities."
+  },
+  "trained_table_transactions": {
+    "state": "inplace_aggregator_merge_table_matches_both_trained_references",
+    "transactions": 33060,
+    "writes": 25344,
+    "prior_word_reads": 3024,
+    "inherited_reads": 4692,
+    "inherited_cache_hits": 5091,
+    "cross_aggregator_inherited_reads": 1275,
+    "traffic_per_aggregator": [
+      {
+        "write": 5632,
+        "read_prior_words": 672,
+        "read_inherited": 1250
+      },
+      {
+        "write": 5632,
+        "read_prior_words": 672,
+        "read_inherited": 1127
+      },
+      {
+        "write": 5632,
+        "read_prior_words": 672,
+        "read_inherited": 859
+      },
+      {
+        "write": 5632,
+        "read_prior_words": 672,
+        "read_inherited": 1162
+      },
+      {
+        "write": 2816,
+        "read_prior_words": 336,
+        "read_inherited": 294
+      }
+    ],
+    "same_transactions_as_double_snapshot_after_removing_snapshot_select": true,
+    "merge_cycles": 60714,
+    "table_trace_sha256": "e96f540e0cf73a7253b2f9b4ad6412810433d547ef40bd3e4a1fa125df602fa5",
+    "causal_receipt_sha256": "f1f2944bf45955038dff5c19619f1507304c4980ca81b022413d1ecb7ab2ea7e",
+    "negative_root_rejected": true,
+    "negative_expected_read": [
+      "R",
+      0,
+      1,
+      3,
+      3
+    ],
+    "negative_attempted_address": 27,
+    "negative_log_sha256": "f14551c79a812a4c3f1a6c9df5288af1dbdaae31c65132a455b4812b94234496",
+    "source_sha256": "254a6f411e25555579ca3b5025149fbb9a05b310d55edcce3c1db848ba0fbf53"
+  },
+  "gpu": {
+    "state": "every_native_cluster_count_checked_against_gpu_reference",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "measured_cluster_counts": 144185,
+    "native_neighbor_comparisons": 28837,
+    "reused_upper_comparisons": 561,
+    "captured_signs": 15561,
+    "full_trained_maps": 25344,
+    "sum_preserving_cluster_swap_rejected": true,
+    "gpu_peak_bytes": 6414848,
+    "source_sha256": "5557f66c78247d86e7807da8d00fe961b6ad1e51a70e923055db75a05c059c0d",
+    "trace_sha256": "5ed898a00c4ce4e5a7bc57eda897b2ff6491d032b14c95efef84e50ae875fcf0"
+  },
+  "native_partition_port_bits": {
+    "attention": 21283,
+    "feedforward": 22758
+  },
+  "private_interface_bits": 13824,
+  "native_xcelium_markers": [
+    "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=623",
+    "SHARED437_ATTENTION_OWNERSHIP_PASS",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+  ],
+  "mapped_adapter_entries": [
+    64,
+    128
+  ],
+  "full_chip_mapped": false,
+  "full_paper_results_matched": false,
+  "scope": "Five aggregator-owned origin tables. The shared controller still makes the raster decisions.",
+  "archive": {
+    "path": "records/merge457_inplace_aggregator_table_evidence.json.gz",
+    "bytes": 27374,
+    "sha256": "f0f2ef0f68d0ce449991232fe2cf497ae5fd95142cb0b49dfe7a2e4cd06f97b4"
+  }
+}

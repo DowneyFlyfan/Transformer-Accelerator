@@ -81,7 +81,7 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0, paramete
 
     tri_oracle_attention_layer427 #(.PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT)) dut (
         .head_query_base(QUERY_ADDR), .head_key_base(KEY_ADDR),
-        .row_query_addr(QUERY_ADDR), .row_key_base(KEY_ADDR), .value_rsp_error(1'b0), .*
+        .merge_table_request(), .merge_table_word('0), .row_query_addr(QUERY_ADDR), .row_key_base(KEY_ADDR), .value_rsp_error(1'b0), .*
     );
     tri_oracle_batched_tensor390 tensor (
         .clk, .rst_n, .cfg_valid(tensor_cfg_valid), .cfg_ready(tensor_cfg_ready),

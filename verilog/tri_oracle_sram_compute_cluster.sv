@@ -4,6 +4,8 @@
 // completed output at retirement; forward a simultaneous same-address write.
 module tri_oracle_sram_compute_cluster #(
   parameter int MERGE_FEATURES=0,
+  parameter bit AGGREGATOR_MERGE_TABLE=0,
+  parameter int MERGE_TABLE_ENTRIES=128,
   parameter bit CORE_STRIP_PREDICTOR=0,
   parameter bit CORE_HEAD_PREDICTOR=0,
   localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
@@ -32,12 +34,22 @@ module tri_oracle_sram_compute_cluster #(
   input logic [SIGN_WIDTH-1:0] merge_sign_data,
   input logic [12:0] merge_sign_control,
   output logic [23:0] merge_sign_counts,
+  input logic [18:0] merge_table_request,
+  output logic [79:0] merge_table_word,
   input logic strip_rst_n,
   input logic [530:0] strip_request,
   output logic [111:0] strip_response,
   input logic [396:0] head_request,
   output logic [72:0] head_response
 );
+  if (AGGREGATOR_MERGE_TABLE) begin : aggregator_merge_table
+    tri_oracle_token_merge_table454 #(.ENTRIES(MERGE_TABLE_ENTRIES)) table_bank (
+      .clk, .request(merge_table_request), .word(merge_table_word)
+    );
+  end else begin : no_merge_table
+    assign merge_table_word='0;
+  end
+
   wire [1579:0] core_head_requests;
   wire [291:0] core_head_responses;
   if (CORE_HEAD_PREDICTOR) begin : head_route
@@ -64,7 +76,8 @@ module tri_oracle_sram_compute_cluster #(
 
   if (MERGE_FEATURES!=0) begin : aggregator_sign
     tri_oracle_aggregator_sign447 #(
-      .FEATURES(MERGE_FEATURES), .COMPILED_SIGN_BANK(1'b1)
+      .FEATURES(MERGE_FEATURES), .COMPILED_SIGN_BANK(1'b1),
+      .COMPACT_SIGN_DEPTH(AGGREGATOR_MERGE_TABLE)
     ) similarity (
       .clk, .sign_data(merge_sign_data), .control(merge_sign_control), .counts(merge_sign_counts)
     );
@@ -189,6 +202,8 @@ endmodule
 `ifdef TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC
 module tri_oracle_compute_cluster #(
   parameter int MERGE_FEATURES=0,
+  parameter bit AGGREGATOR_MERGE_TABLE=0,
+  parameter int MERGE_TABLE_ENTRIES=128,
   parameter bit CORE_STRIP_PREDICTOR=0,
   parameter bit CORE_HEAD_PREDICTOR=0,
   localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
@@ -217,13 +232,15 @@ module tri_oracle_compute_cluster #(
   input logic [SIGN_WIDTH-1:0] merge_sign_data,
   input logic [12:0] merge_sign_control,
   output logic [23:0] merge_sign_counts,
+  input logic [18:0] merge_table_request,
+  output logic [79:0] merge_table_word,
   input logic strip_rst_n,
   input logic [530:0] strip_request,
   output logic [111:0] strip_response,
   input logic [396:0] head_request,
   output logic [72:0] head_response
 );
-  tri_oracle_sram_compute_cluster #(.MERGE_FEATURES(MERGE_FEATURES), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR), .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)) implementation (.*);
+  tri_oracle_sram_compute_cluster #(.MERGE_FEATURES(MERGE_FEATURES), .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE), .MERGE_TABLE_ENTRIES(MERGE_TABLE_ENTRIES), .CORE_STRIP_PREDICTOR(CORE_STRIP_PREDICTOR), .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)) implementation (.*);
 endmodule
 `endif
 

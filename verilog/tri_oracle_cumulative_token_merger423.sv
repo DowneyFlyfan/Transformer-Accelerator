@@ -31,7 +31,7 @@ module tri_oracle_cumulative_token_merger423 #(
     tri_oracle_cumulative_merge447 #(
         .IMAGE_WIDTH(IMAGE_WIDTH), .IMAGE_HEIGHT(IMAGE_HEIGHT), .FEATURES(FEATURES),
         .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
-    ) implementation (.merge_sign_control(), .merge_sign_counts('0), .*);
+    ) implementation (.merge_sign_control(), .merge_sign_counts('0), .merge_table_request(), .merge_table_word('0), .*);
 endmodule
 
 /* verilator lint_off DECLFILENAME */
@@ -41,6 +41,7 @@ module tri_oracle_cumulative_merge447 #(
     parameter int FEATURES=2048,
     parameter bit COMPILED_SIGN_BANK=0,
     parameter bit AGGREGATOR_SIGN_BANK=0,
+    parameter bit AGGREGATOR_MERGE_TABLE=0,
     localparam int TOKENS=IMAGE_WIDTH*IMAGE_HEIGHT,
     localparam int INDEX_W=TOKENS>1 ? $clog2(TOKENS) : 1,
     localparam int SLOT_W=IMAGE_WIDTH>1 ? $clog2(IMAGE_WIDTH) : 1,
@@ -63,14 +64,16 @@ module tri_oracle_cumulative_merge447 #(
     output logic done_valid, done_error,
     input logic done_ready,
     output logic [2*SLOT_W+2:0] merge_sign_control,
-    input logic [2*SHARDS*HIT_W-1:0] merge_sign_counts
+    input logic [2*SHARDS*HIT_W-1:0] merge_sign_counts,
+    output logic [21:0] merge_table_request,
+    input logic [79:0] merge_table_word
 );
     localparam int BASE_BANKS=BANKS/SHARDS, EXTRA_BANKS=BANKS%SHARDS;
     localparam int SUM_LEVELS=$clog2(SHARDS), SUM_LEAVES=1<<SUM_LEVELS;
     typedef enum logic [1:0] {Idle, Run, Finish, Result} state_t;
     state_t state;
     logic [INDEX_W-1:0] cursor, previous_root, inherited_root, selected_root;
-    logic [INDEX_W-1:0] origins[TOKENS], bank_root[IMAGE_WIDTH];
+    logic [INDEX_W-1:0] bank_root[IMAGE_WIDTH];
     logic [SLOT_W-1:0] frontier[IMAGE_WIDTH];
     logic [SLOT_W-1:0] column, upper_slot, left_slot, inherited_slot, free_slot, selected_slot;
     logic [HIT_W-1:0] threshold;
@@ -79,22 +82,93 @@ module tri_oracle_cumulative_merge447 #(
     logic upper_match, left_match, free_found, inherited_found, store_sign, valid_step;
     wire [SLOT_W-1:0] bank_read_slot = old_alias ? inherited_slot : upper_slot;
     logic read_available, issue_read, write_sign, reuse_left_sign;
-    logic load_left_from_memory;
+    logic load_left_from_memory, table_ready;
     wire [HIT_W-1:0] upper_partial[SHARDS], left_partial[SHARDS];
 
     assign cfg_ready = state==Idle;
     assign done_valid = state==Result;
     assign space = !map_valid || map_ready;
-    assign previous_root = new_image ? cursor : origins[cursor];
     assign old_alias = previous_root!=cursor;
-    assign inherited_root = origins[previous_root];
+    if (AGGREGATOR_MERGE_TABLE) begin : remote_table
+        typedef enum logic [1:0] {ReadPrevious, CapturePrevious, Resolve, CaptureInherited} table_state_t;
+        table_state_t table_state;
+        logic root_valid, alias_valid;
+        logic [79:0] previous_word;
+        logic [INDEX_W-1:0] last_root_index, last_root_origin, last_alias_index, last_alias_origin;
+        wire [2:0] cursor_field = 3'(cursor);
+        wire [2:0] parent_field = 3'(previous_root);
+        wire root_hit = root_valid && previous_root==last_root_index;
+        wire alias_hit = alias_valid && previous_root==last_alias_index;
+        wire read_previous = rst_n && state==Run && table_state==ReadPrevious;
+        wire read_inherited = rst_n && state==Run && table_state==Resolve && old_alias && !root_hit && !alias_hit;
+        wire write_entry = rst_n && advance && valid_step;
+        wire [INDEX_W-1:0] table_index = read_inherited ? previous_root : cursor;
+        // Prefetch the whole prior-layer word before replacing its first
+        // entry. Inherited reads address earlier entries already updated by
+        // this layer, so the same bank stores both portions of the raster map.
+        assign merge_table_request = {read_previous || read_inherited || write_entry,
+            write_entry, 10'(table_index), 10'(selected_root)};
+        assign previous_root = new_image ? cursor : INDEX_W'(previous_word[10*cursor_field+:10]);
+        assign inherited_root = root_hit ? last_root_origin : last_alias_origin;
+        assign table_ready = table_state==Resolve && (!old_alias || root_hit || alias_hit);
+
+        if (TOKENS > 640) begin : invalid_capacity
+            initial $fatal(1, "Aggregator merge tables support at most 640 tokens");
+        end
+        always_ff @(posedge clk or negedge rst_n) begin
+            if (!rst_n) begin
+                table_state <= ReadPrevious;
+                root_valid <= 0; alias_valid <= 0;
+                previous_word <= '0;
+                last_root_index <= '0; last_root_origin <= '0;
+                last_alias_index <= '0; last_alias_origin <= '0;
+            end else if (state==Idle && cfg_valid && cfg_minimum_matches<=HIT_W'(FEATURES) &&
+                         (cfg_new_image || has_map)) begin
+                table_state <= cfg_new_image ? Resolve : ReadPrevious;
+                root_valid <= 0; alias_valid <= 0;
+            end else if (state==Run) begin
+                case (table_state)
+                    ReadPrevious: table_state <= CapturePrevious;
+                    CapturePrevious: begin
+                        previous_word <= merge_table_word;
+                        table_state <= Resolve;
+                    end
+                    Resolve: begin
+                        if (read_inherited) table_state <= CaptureInherited;
+                        if (advance && valid_step) begin
+                            if (!old_alias) begin
+                                root_valid <= 1;
+                                last_root_index <= cursor;
+                                last_root_origin <= selected_root;
+                            end
+                            if (!new_image && cursor_field==7) table_state <= ReadPrevious;
+                        end
+                    end
+                    CaptureInherited: begin
+                        alias_valid <= 1;
+                        last_alias_index <= previous_root;
+                        last_alias_origin <= INDEX_W'(merge_table_word[10*parent_field+:10]);
+                        table_state <= Resolve;
+                    end
+                    default: table_state <= ReadPrevious;
+                endcase
+            end
+        end
+    end else begin : local_table
+        logic [INDEX_W-1:0] origins[TOKENS];
+        assign previous_root = new_image ? cursor : origins[cursor];
+        assign inherited_root = origins[previous_root];
+        assign merge_table_request = '0;
+        assign table_ready = 1;
+        always_ff @(posedge clk) if (rst_n && advance && valid_step) origins[cursor] <= selected_root;
+    end
     assign upper_slot = frontier[column];
     assign has_left = column!=0;
     assign left_slot = has_left ? frontier[column-1'b1] : '0;
     assign upper_match = has_upper && (reuse_left_sign ? left_match : sum_shards[SUM_LEVELS].upper[0]>=threshold);
     assign left_match = has_left && sum_shards[SUM_LEVELS].left[0]>=threshold;
-    assign sign_ready = state==Run && space && read_available && !old_alias;
-    assign advance = state==Run && space && read_available && (old_alias || sign_valid);
+    assign sign_ready = state==Run && space && table_ready && read_available && !old_alias;
+    assign advance = state==Run && space && table_ready && read_available && (old_alias || sign_valid);
     assign write_sign = rst_n && advance && valid_step && store_sign;
     assign load_left_from_memory = rst_n && advance && valid_step && !store_sign &&
                                    (old_alias || upper_match) && !reuse_left_sign;
@@ -102,7 +176,7 @@ module tri_oracle_cumulative_merge447 #(
     if (COMPILED_SIGN_BANK) begin : compiled_signs
         logic read_valid;
         wire needs_read = (old_alias || has_upper) && !reuse_left_sign;
-        assign issue_read = rst_n && state==Run && needs_read && !read_valid;
+        assign issue_read = rst_n && state==Run && table_ready && needs_read && !read_valid;
 
         if (IMAGE_WIDTH > 32) begin : invalid_depth
             initial $fatal(1, "Compiled sign bank supports at most 32 columns");
@@ -255,7 +329,6 @@ module tri_oracle_cumulative_merge447 #(
                         // The next column sees this step's chosen sign as its left
                         // neighbor. A left match keeps the prior cached sign.
                         frontier[column]<=selected_slot;
-                        origins[cursor]<=selected_root;
                         map_valid<=1;
                         map_index<=cursor;
                         map_origin<=selected_root;
@@ -292,6 +365,7 @@ module tri_oracle_token_similarity_shard446 #(
     parameter int IMAGE_WIDTH=24,
     parameter int SLOT_W=5,
     parameter bit COMPILED_SIGN_BANK=0,
+    parameter bit COMPACT_SIGN_DEPTH=0,
     localparam int HIT_W=$clog2(FEATURES+1)
 ) (
     input logic clk,
@@ -309,10 +383,20 @@ module tri_oracle_token_similarity_shard446 #(
         localparam int DATA_W=128*BANKS;
         wire [4:0] address = write_enable ? 5'(write_slot) : 5'(read_slot);
         wire [DATA_W-1:0] read_data;
-        TS5N28HPCPSVTA32X128M2FW slices[BANKS-1:0] (
-            .CLK(clk), .CEB(!(read_enable || write_enable)), .WEB(!write_enable),
-            .A(address), .D(DATA_W'(sign_data)), .BWEB(128'b0), .Q(read_data)
-        );
+        if (COMPACT_SIGN_DEPTH) begin : compact
+            if (IMAGE_WIDTH!=24) begin : invalid_geometry
+                initial $fatal(1, "Compact sign storage requires a 24-column image");
+            end
+            TS5N28HPCPSVTA24X128M2FW slices[BANKS-1:0] (
+                .CLK(clk), .CEB(!(read_enable || write_enable)), .WEB(!write_enable),
+                .A(address), .D(DATA_W'(sign_data)), .BWEB(128'b0), .Q(read_data)
+            );
+        end else begin : standard
+            TS5N28HPCPSVTA32X128M2FW slices[BANKS-1:0] (
+                .CLK(clk), .CEB(!(read_enable || write_enable)), .WEB(!write_enable),
+                .A(address), .D(DATA_W'(sign_data)), .BWEB(128'b0), .Q(read_data)
+            );
+        end
         assign memory_sign = read_data[FEATURES-1:0];
     end else begin : inferred
         logic [FEATURES-1:0] bank_sign[IMAGE_WIDTH];
@@ -348,10 +432,56 @@ module tri_oracle_token_similarity_shard446 #(
     assign left_hits=HIT_W'(reduction[LEVELS].left[0]);
 endmodule
 
+// Four clusters own 128 entries and the final cluster owns the
+// remaining 64. Each compiled word holds eight origins.
+module tri_oracle_token_merge_table454 #(
+    parameter bit COMPILED=1,
+    parameter int ENTRIES=128,
+    localparam int ADDRESS_W=$clog2(ENTRIES)
+) (
+    input logic clk,
+    input logic [18:0] request,
+    output logic [79:0] word
+);
+    wire active, write_entry;
+    wire [6:0] address;
+    wire [9:0] value;
+    assign {active, write_entry, address, value} = request;
+    if (ENTRIES!=128 && ENTRIES!=64) begin : invalid_geometry
+        initial $fatal(1, "Origin tables support 64 or 128 entries");
+    end
+    if (COMPILED) begin : compiled
+        wire [79:0] mask;
+        for (genvar field=0;field<8;field++) begin : fields
+            assign mask[10*field+:10]={10{address[2:0]!=3'(field)}};
+        end
+        if (ENTRIES==128) begin : full
+            TS5N28HPCPSVTA16X80M2FW entries (
+                .CLK(clk), .CEB(!active), .WEB(!write_entry), .A(address[6:3]),
+                .D({8{value}}), .BWEB(mask), .Q(word)
+            );
+        end else begin : tail
+            TS5N28HPCPSVTA8X80M2FW entries (
+                .CLK(clk), .CEB(!active), .WEB(!write_entry), .A(address[5:3]),
+                .D({8{value}}), .BWEB(mask), .Q(word)
+            );
+        end
+    end else begin : inferred
+        logic [9:0] entries[ENTRIES];
+        always_ff @(posedge clk) if (active) begin
+            if (write_entry) entries[ADDRESS_W'(address)] <= value;
+            else for (int field=0;field<8;field++) begin
+                word[10*field+:10] <= entries[{address[ADDRESS_W-1:3],3'(field)}];
+            end
+        end
+    end
+endmodule
+
 // Cluster-side adapter for a 24-column surviving-sign bank.
 module tri_oracle_aggregator_sign447 #(
     parameter int FEATURES=512,
     parameter bit COMPILED_SIGN_BANK=1,
+    parameter bit COMPACT_SIGN_DEPTH=0,
     localparam int HIT_W=$clog2(FEATURES+1)
 ) (
     input logic clk,
@@ -362,7 +492,7 @@ module tri_oracle_aggregator_sign447 #(
     wire [HIT_W-1:0] upper_hits, left_hits;
     tri_oracle_token_similarity_shard446 #(
         .FEATURES(FEATURES), .IMAGE_WIDTH(24), .SLOT_W(5),
-        .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+        .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK), .COMPACT_SIGN_DEPTH(COMPACT_SIGN_DEPTH)
     ) shard (
         .clk, .sign_data, .read_slot(control[12:8]), .write_slot(control[7:3]),
         .read_enable(control[2]), .write_enable(control[1]), .load_left_from_memory(control[0]),

@@ -5,6 +5,7 @@ module tri_oracle_attention_pipeline430 #(
     parameter bit PERSIST_LAYER_CONTEXT=0,
     parameter bit COMPILED_SIGN_BANK=0,
     parameter bit AGGREGATOR_SIGN_BANK=0,
+    parameter bit AGGREGATOR_MERGE_TABLE=0,
     parameter bit CORE_HEAD_PREDICTOR=0
 ) (
     input logic clk, rst_n,
@@ -103,6 +104,8 @@ module tri_oracle_attention_pipeline430 #(
     input logic [511:0] value_rsp_data,
     output logic [12:0] merge_sign_control,
     input logic [119:0] merge_sign_counts,
+    output logic [21:0] merge_table_request,
+    input logic [79:0] merge_table_word,
     output logic [399:0] head_request,
     input logic [72:0] head_response
 );
@@ -189,10 +192,11 @@ module tri_oracle_attention_pipeline430 #(
 
     tri_oracle_attention_layer427 #(
         .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK),
-        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK), .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
+        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK),
+        .AGGREGATOR_MERGE_TABLE(AGGREGATOR_MERGE_TABLE), .CORE_HEAD_PREDICTOR(CORE_HEAD_PREDICTOR)
     ) attention (
         .head_request, .head_response,
-        .merge_sign_control, .merge_sign_counts,
+        .merge_sign_control, .merge_sign_counts, .merge_table_request, .merge_table_word,
         .clk,.rst_n,.frame_valid(frame_valid && !projection_busy),.frame_ready(native_frame_ready),
         .frame_new_image,.frame_layer,.frame_minimum_matches,.frame_image_start,
         .sign_valid,.sign_ready,.sign_data,.map_valid,.map_last,.map_ready,.map_index,.map_origin,
