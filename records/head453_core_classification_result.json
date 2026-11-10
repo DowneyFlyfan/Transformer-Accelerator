@@ -424,7 +424,67 @@
   "scope": "The shared scheduler keeps configuration stable and sends each complete head to one of twenty cores. The core classifies its own score stream.",
   "archive": {
     "path": "records/head453_core_classification_evidence.json.gz",
-    "bytes": 29219,
-    "sha256": "5b22e46ccc0e66b57feb54919e511d45a4aa9d6046d0a58ea705fc80fada781f"
+    "bytes": 38636,
+    "sha256": "8cffd594f36c5e90e7373ef769a48691d1500ba8194aed335119f3d5af18f004"
+  },
+  "source_rejoin": {
+    "state": "rejoined_partition_sources_native_replay_matched",
+    "public_ports": 155,
+    "cut_ports": 28,
+    "cut_bits": {
+      "head_request": 400,
+      "head_response": 73,
+      "merge_sign_control": 13,
+      "merge_sign_counts": 120,
+      "tensor_cfg_activation_base": 64,
+      "tensor_cfg_activation_stride": 32,
+      "tensor_cfg_channels": 2560,
+      "tensor_cfg_count": 8,
+      "tensor_cfg_dense_rows": 17,
+      "tensor_cfg_feature_words": 10,
+      "tensor_cfg_keep": 2560,
+      "tensor_cfg_ready": 1,
+      "tensor_cfg_tag": 32,
+      "tensor_cfg_tokens": 5,
+      "tensor_cfg_valid": 1,
+      "tensor_cfg_weight_base": 64,
+      "tensor_done_error": 1,
+      "tensor_done_ready": 1,
+      "tensor_done_tag": 32,
+      "tensor_done_valid": 1,
+      "tensor_out_channels": 2560,
+      "tensor_out_count": 8,
+      "tensor_out_data": 5120,
+      "tensor_out_last": 1,
+      "tensor_out_ready": 1,
+      "tensor_out_tag": 32,
+      "tensor_out_token": 4,
+      "tensor_out_valid": 1
+    },
+    "total_cut_bits": 13722,
+    "source_sha256": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/head453/rejoined/joined.sv": "a608c5251036cfa0087ad7f8ce3a4aab8b0617c444bc7a7e9a939704dd198eb8",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/head453/genus/feedforward/feedforward_wrapper.sv": "cd87535d3e1cdebba7009d9782ca961cd408d02fff9cb3e22ae4c68b6bd09436",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/head453/rejoined/bundle.sv": "90b282eecd6ff993a8d150381a6953c0b32b017018228fb3981e1c4d0977894b",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/head453/rejoined/attention_tb.sv": "6b9535b9bdf12791489dfcb47128649795e33a6a294871cab95415c22ba4cdda"
+    },
+    "markers": [
+      "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+      "SHARED437_ATTENTION_OWNERSHIP_PASS",
+      "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+    ],
+    "original_log_sha256": "f5ac10bffb029144c4fc9537baac0ca5bfa38ece261980d51ff0aba9682c7462",
+    "rejoined_log_sha256": "6e7f66f02ea890679bb870a12c757dfa85e46162e39f9c41d42ba2ec0a931e5e",
+    "inventory_sha256": "413016f8d223d7f237dc96fd620aa92c5e5ba1e83faee1d15fe65aa410a520c9",
+    "verifier_sha256": "c691e77f7682d90d389cf6ee43dad6f0f950bf9a036105293a1fef98b9e14f72",
+    "gate_level_simulation": false
+  },
+  "native_generic_count": {
+    "stage": "generic_synthesis_before_partition_optimization",
+    "generic_instances": 1197655,
+    "licensed_unmapped_instances": 1200000,
+    "margin": 2345,
+    "workers": 1,
+    "technology_mapping_result_in_this_record": false
   }
 }
