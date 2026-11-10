@@ -338,6 +338,20 @@ the local ratio of one. This leaves a 5.31-point loss from the pilot's dense
 control. The local window and unmerged input policy remain explicit in
 `records/batch418_ratio_calibration.json` and `records/batch418_vqa_ratio_result.json`.
 
+On dense prefill activations from 64 validation images, the sign-based merger
+was evaluated at six thresholds across all 22 language layers. The local
+75 percent threshold merged 44.5 percent of image tokens, compared with the
+44 percent shown in Figure 31.6.3 for the paper's visual question answering
+workload. The probe uses the 2,048 signs entering attention on a 24 by 24
+image grid and gives the upper representative priority on a tie.
+
+Xcelium matched all 76,032 merge decisions for one trained image across the
+six thresholds and 22 layers. The causal size unit matched 15,007,077
+values across 76,692 prefix queries, including out-of-order revisits.
+Changing the inclusive threshold to a strict comparison failed at the
+expected token. See `records/batch419_trained_merger_fixture.json` and
+`records/batch420_trained_merger_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
