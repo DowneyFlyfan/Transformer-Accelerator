@@ -1,0 +1,269 @@
+{
+  "state": "bus_wide_exact_site_trial_measured_at_slow_setup",
+  "verified_utc": "2026-11-10T16:11:46.249754+00:00",
+  "timing_target_megahertz": 580,
+  "baseline_fingerprint_sha256": "439064231adce3ecded204d3d247cbf411b4e867dfa4ba4d7757c822658bb0f5",
+  "previous_trial_fingerprint_sha256": "9929b3b802bcc1b30e5ca6a08578c5d64ea2b581e63788c5bc09db9f227efbc6",
+  "trial_checkpoint": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_bus433/warm/branch_full.db",
+  "trial_fingerprint_sha256": "e7cbb81dc74d48e7a6f0df92dd3c3a22dae889458897f47b1342f5e3133b9a2a",
+  "original_parent_leaves_preserved": 933052,
+  "original_core_leaves_preserved": 1889420,
+  "original_compiled_memory_instances": 600,
+  "die_area_square_millimeters": 12.96,
+  "added_noninverting_buffers": 274,
+  "verified_trees": 14,
+  "selected_feature_bits": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    14
+  ],
+  "original_sinks_preserved": 297,
+  "wrong_sink_control_rejected": true,
+  "geometry": {
+    "net_geometry": [
+      {
+        "driver": "numeric/engine/backend/FE_OFC60782_dense_features_3/Z",
+        "bit": 3,
+        "original_loads": 37,
+        "new_buffers": 30,
+        "old_max_leg_um": 5270.24,
+        "new_max_leg_um": 1250.56,
+        "new_median_leg_um": 96.12,
+        "driver_to_root_um": 15.44
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60737_dense_features_4/Z",
+        "bit": 4,
+        "original_loads": 11,
+        "new_buffers": 15,
+        "old_max_leg_um": 4529.9,
+        "new_max_leg_um": 1126.94,
+        "new_median_leg_um": 474.07,
+        "driver_to_root_um": 54.96
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60700_dense_features_5/Z",
+        "bit": 5,
+        "original_loads": 8,
+        "new_buffers": 10,
+        "old_max_leg_um": 4338.74,
+        "new_max_leg_um": 1136.08,
+        "new_median_leg_um": 80.57,
+        "driver_to_root_um": 67.84
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60703_dense_features_5/Z",
+        "bit": 5,
+        "original_loads": 8,
+        "new_buffers": 7,
+        "old_max_leg_um": 2096.88,
+        "new_max_leg_um": 874.72,
+        "new_median_leg_um": 12.14,
+        "driver_to_root_um": 10.72
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60677_dense_features_6/Z",
+        "bit": 6,
+        "original_loads": 10,
+        "new_buffers": 8,
+        "old_max_leg_um": 2745.5,
+        "new_max_leg_um": 1065.34,
+        "new_median_leg_um": 29.150000000000002,
+        "driver_to_root_um": 43.06
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60679_dense_features_6/Z",
+        "bit": 6,
+        "original_loads": 19,
+        "new_buffers": 8,
+        "old_max_leg_um": 2367.88,
+        "new_max_leg_um": 922.38,
+        "new_median_leg_um": 13.9,
+        "driver_to_root_um": 1.2
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60610_dense_features_7/Z",
+        "bit": 7,
+        "original_loads": 10,
+        "new_buffers": 18,
+        "old_max_leg_um": 4562.0,
+        "new_max_leg_um": 1327.86,
+        "new_median_leg_um": 541.28,
+        "driver_to_root_um": 21.86
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60574_dense_features_9/Z",
+        "bit": 9,
+        "original_loads": 25,
+        "new_buffers": 29,
+        "old_max_leg_um": 5266.08,
+        "new_max_leg_um": 1163.98,
+        "new_median_leg_um": 343.62,
+        "driver_to_root_um": 11.44
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60563_dense_features_10/Z",
+        "bit": 10,
+        "original_loads": 38,
+        "new_buffers": 39,
+        "old_max_leg_um": 4112.26,
+        "new_max_leg_um": 1329.8,
+        "new_median_leg_um": 279.48,
+        "driver_to_root_um": 3.08
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60523_dense_features_11/Z",
+        "bit": 11,
+        "original_loads": 10,
+        "new_buffers": 18,
+        "old_max_leg_um": 4589.08,
+        "new_max_leg_um": 1351.72,
+        "new_median_leg_um": 493.5,
+        "driver_to_root_um": 13.3
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+        "bit": 12,
+        "original_loads": 38,
+        "new_buffers": 33,
+        "old_max_leg_um": 4093.92,
+        "new_max_leg_um": 1001.0,
+        "new_median_leg_um": 93.46,
+        "driver_to_root_um": 5.62
+      },
+      {
+        "driver": "numeric/engine/backend/FE_OFC60465_dense_features_14/Z",
+        "bit": 14,
+        "original_loads": 7,
+        "new_buffers": 10,
+        "old_max_leg_um": 3818.7,
+        "new_max_leg_um": 953.36,
+        "new_median_leg_um": 30.24,
+        "driver_to_root_um": 5.2
+      },
+      {
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/TRI266_T42_BUFFER_4/Z",
+        "bit": null,
+        "original_loads": 4,
+        "new_buffers": 11,
+        "old_max_leg_um": 4595.44,
+        "new_max_leg_um": 1264.42,
+        "new_median_leg_um": 688.98,
+        "driver_to_root_um": 4.7
+      },
+      {
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "bit": null,
+        "original_loads": 72,
+        "new_buffers": 38,
+        "old_max_leg_um": 5596.48,
+        "new_max_leg_um": 1233.84,
+        "new_median_leg_um": 64.85,
+        "driver_to_root_um": 7.34
+      }
+    ],
+    "max_original_leg_um": 5596.48,
+    "max_new_leg_um": 1351.72,
+    "scope": "Manhattan distance between cell origins. Site coordinates are checked against the cold placement before use as measured candidate evidence."
+  },
+  "baseline_worst_setup_slack_ns": -86.439758,
+  "previous_trial_worst_setup_slack_ns": -85.432854,
+  "trial_worst_setup": {
+    "slack_ns": -75.390976,
+    "startpoint": "numeric/engine/backend/clusters[3].control/projection/state_reg[3]/CP",
+    "endpoint": "numeric/engine/gated/implementation/activation_base_reg[13]/E"
+  },
+  "change_vs_baseline_ns": 11.048782,
+  "change_vs_previous_trial_ns": 10.041878,
+  "targeted_paths": {
+    "width12": {
+      "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+      "launch": "numeric/engine/backend/dense_features_reg[12]/CP",
+      "capture": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+      "previous_slack_ns": -56.21307,
+      "trial_slack_ns": -21.461187,
+      "change_ns": 34.751883
+    },
+    "width10": {
+      "driver": "numeric/engine/backend/FE_OFC60563_dense_features_10/Z",
+      "launch": "numeric/engine/backend/dense_features_reg[10]/CP",
+      "capture": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+      "previous_slack_ns": -85.432854,
+      "trial_slack_ns": -21.883986,
+      "change_ns": 63.548868
+    },
+    "enable": {
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+      "launch": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+      "capture": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[3]/E",
+      "previous_slack_ns": -66.23629,
+      "trial_slack_ns": -47.363392,
+      "change_ns": 18.872898
+    },
+    "enable_trunk": {
+      "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/TRI266_T42_BUFFER_4/Z",
+      "launch": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+      "capture": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/channels_reg[79]/E",
+      "previous_slack_ns": -77.749863,
+      "trial_slack_ns": -62.780277,
+      "change_ns": 14.969586
+    }
+  },
+  "trial_early_estimate_overflow_percent": {
+    "horizontal": 11.15,
+    "vertical": 24.29
+  },
+  "native_final_warning_count": 6409,
+  "native_final_error_count": 0,
+  "incomplete_port_parasitics_warning": true,
+  "placement_gate_allows_advancement": false,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "archive": {
+    "path": "records/placement433_bus_evidence.json.gz",
+    "sha256": "d6754880beb33e0dfbc88e24b0eb3425eee8cea5606d797b761b6a7d8567ce56"
+  },
+  "scope": "Paired slow-setup diagnostic using full original core models, original constraints, ideal clocks and estimated pre-route interconnect. Signal interference analysis is disabled. Typical setup and fast hold were not measured for this trial.",
+  "next_limiting_net": {
+    "driver": "numeric/engine/gated/implementation/TRI266_T111_BUFFER_0/Z",
+    "paths_with_same_largest_wire_segment": 10,
+    "path": {
+      "rank": 1,
+      "slack_ns": -75.390976,
+      "data_path_ns": 68.018692,
+      "reported_wire_delay_ns": 55.650599,
+      "maximum_wire_delay_ns": 21.908199,
+      "driver": "numeric/engine/gated/implementation/TRI266_T111_BUFFER_0/Z",
+      "receiver": "numeric/engine/gated/implementation/activation_base_reg[13]/E",
+      "startpoint": "numeric/engine/backend/clusters[3].control/projection/state_reg[3]/CP",
+      "endpoint": "numeric/engine/gated/implementation/activation_base_reg[13]/E",
+      "native_load_pins": 32,
+      "native_load_ports": 0,
+      "driver_master": "BUFFD4BWP12T40P140",
+      "receiver_master": "EDFCNQD1BWP12T40P140",
+      "driver_placement_um": [
+        3402.82,
+        1160.0
+      ],
+      "receiver_placement_um": [
+        90.98,
+        741.2
+      ],
+      "manhattan_cell_origin_distance_um": 3730.64
+    },
+    "evidence_sha256": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_bus433/cold/measured_nets.tsv": "e30003304493c8452a6feea94797fb1a46fb7cce2e1dcb41c101104f4ea7a605",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_bus433/cold/measured_cells.tsv": "93b22863212a53333a4e47bd9709b1bfe491625701abac6d6f4fc85729249898",
+      ".cache/physical/pnr/tri_oracle_bus433/setup_slow/worst_ten_paths_split.rpt": "4a4f509b635ee8f17db003bbfb42ee66db049d4ff434d75e07d5eacc065a5e24",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_bus433/cold/receipt.json": "02d0d63ba7deba07cce47eeb608853d1249d075d957a8115a587f73c323899cf"
+    }
+  }
+}

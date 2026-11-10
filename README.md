@@ -18,6 +18,15 @@ remained at -85.432854 nanoseconds. A neighboring feature-width bit became
 the worst path. Estimated congestion stayed at the same reported values.
 See `records/placement432_branch_trial.json`.
 
+A wider placement trial added 274 noninverting buffers across 14 signal
+trees, including long feature-width connections on ten bits. The cold
+reload preserved 297 original loads and all original cell positions. The
+previous limiting width path improved from -85.432854 to -21.883986
+nanoseconds. Worst slow setup slack is now -75.390976 nanoseconds on a
+projection-to-activation control path. The early estimate reports 11.15
+percent horizontal and 24.29 percent vertical congestion overflow. See
+`records/placement433_bus_trial.json`.
+
 The 20 fixed core outlines occupy 9.647397 of the placed die's 12.96 square
 millimeters. In four clusters, the down-projection engines alone need more
 area than the legal sites inside their four-core bounding rectangle after
