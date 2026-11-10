@@ -1,5 +1,22 @@
 # Tri-Oracle reproduction in progress
 
+The restored 20-core placement misses the 580-megahertz target in all three
+pre-route timing views. The worst slack is -86.439758 nanoseconds for slow
+setup, -64.007019 nanoseconds for typical setup, and -0.031937 nanoseconds
+for fast hold. The two worst setup paths in both setup corners share the same
+38-load connection. The remaining eight paths in each report share a
+72-load enable driver. Timing uses ideal clocks and estimated interconnect.
+Innovus also reports incomplete port parasitics on some connections. See
+`records/placement431_diagnostics.json`.
+
+The 20 fixed core outlines occupy 9.647397 of the placed die's 12.96 square
+millimeters. In four clusters, the down-projection engines alone need more
+area than the legal sites inside their four-core bounding rectangle after
+macro keep-outs. A separate owner-by-owner audit matches the bank capacities
+labeled in Figure 31.6.2. They total 390 kibibytes across 600 compiled memory
+instances. Figure 31.6.7's 405-kilobyte chip total remains unreconciled. The
+placement gate still blocks clock distribution and whole-chip routing.
+
 The preserved current placed candidate now passes the complete archived trained
 feed-forward layer: 2,048 inputs, 5,632 intermediate channels and 2,048 exact
 integer outputs on twenty mapped cores with 600 actual vendor memory models.

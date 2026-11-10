@@ -1,0 +1,886 @@
+{
+  "state": "three_corner_diagnostics_and_physical_locality_verified",
+  "verified_utc": "2026-11-10T15:23:26.019161+00:00",
+  "placement_checkpoint": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db",
+  "placement_checkpoint_fingerprint_sha256": "439064231adce3ecded204d3d247cbf411b4e867dfa4ba4d7757c822658bb0f5",
+  "target_clock_megahertz": 580,
+  "design_stage": "placed pre-clock",
+  "clock_mode": "ideal",
+  "signal_interference_analysis_enabled": false,
+  "local_process": "Taiwan Semiconductor Manufacturing Company 28 nanometers",
+  "paper_process": "Samsung 28 nanometers fully depleted silicon-on-insulator",
+  "views": {
+    "setup_slow": {
+      "slack_ns": -86.439758,
+      "startpoint": "numeric/engine/backend/dense_features_reg[12]/CP",
+      "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+      "native_console_sha256": "94f98e9eecb4b913ac723ea0af989f179a6442f3bde332474afd3cd85b6cc0a8",
+      "early_estimate_overflow_percent": {
+        "horizontal": 11.14,
+        "vertical": 24.23
+      },
+      "native_final_warning_count": 6407,
+      "native_final_error_count": 0,
+      "parasitic_missing_port_fallback_reported": true
+    },
+    "setup_typ": {
+      "slack_ns": -64.007019,
+      "startpoint": "numeric/engine/backend/dense_features_reg[12]/CP",
+      "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+      "native_console_sha256": "dac5f557316284632fbbfde200c1289d9ff9d32a7f13d4a8d39433f16d1c6cd3",
+      "early_estimate_overflow_percent": {
+        "horizontal": 11.14,
+        "vertical": 24.23
+      },
+      "native_final_warning_count": 6406,
+      "native_final_error_count": 0,
+      "parasitic_missing_port_fallback_reported": true
+    },
+    "hold_fast": {
+      "slack_ns": -0.031937,
+      "startpoint": "numeric/engine/gated/implementation/activation_unit/silu_data_reg[15]/CP",
+      "endpoint": "numeric/engine/gated/implementation/activation_unit/silu_data_reg[15]/D",
+      "native_console_sha256": "b73b0e0b35eff645773f59b79da72152c6fa1e7ff711b97afb41354a33789fd4",
+      "early_estimate_overflow_percent": {
+        "horizontal": 11.14,
+        "vertical": 24.23
+      },
+      "native_final_warning_count": 6406,
+      "native_final_error_count": 0,
+      "parasitic_missing_port_fallback_reported": true
+    }
+  },
+  "slow_setup_paths": {
+    "paths": [
+      {
+        "rank": 1,
+        "slack_ns": -86.439758,
+        "data_path_ns": 88.085716,
+        "reported_wire_delay_ns": 48.360499,
+        "maximum_wire_delay_ns": 34.4524,
+        "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+        "receiver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g218286/I",
+        "startpoint": "numeric/engine/backend/dense_features_reg[12]/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+        "native_load_pins": 38,
+        "native_load_ports": 0,
+        "driver_master": "INVD18BWP12T40P140",
+        "receiver_master": "CKND1BWP12T40P140",
+        "driver_placement_um": [
+          2609.44,
+          1673.6
+        ],
+        "receiver_placement_um": [
+          1840.0,
+          504.8
+        ],
+        "manhattan_cell_origin_distance_um": 1938.24
+      },
+      {
+        "rank": 2,
+        "slack_ns": -86.162926,
+        "data_path_ns": 87.804108,
+        "reported_wire_delay_ns": 48.360698,
+        "maximum_wire_delay_ns": 34.4524,
+        "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+        "receiver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g218286/I",
+        "startpoint": "numeric/engine/backend/dense_features_reg[12]/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[2]/D",
+        "native_load_pins": 38,
+        "native_load_ports": 0,
+        "driver_master": "INVD18BWP12T40P140",
+        "receiver_master": "CKND1BWP12T40P140",
+        "driver_placement_um": [
+          2609.44,
+          1673.6
+        ],
+        "receiver_placement_um": [
+          1840.0,
+          504.8
+        ],
+        "manhattan_cell_origin_distance_um": 1938.24
+      },
+      {
+        "rank": 3,
+        "slack_ns": -84.439758,
+        "data_path_ns": 73.486603,
+        "reported_wire_delay_ns": 56.231297,
+        "maximum_wire_delay_ns": 28.961704,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[3]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[3]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          873.72,
+          3574.4
+        ],
+        "manhattan_cell_origin_distance_um": 5596.48
+      },
+      {
+        "rank": 4,
+        "slack_ns": -84.439453,
+        "data_path_ns": 73.486298,
+        "reported_wire_delay_ns": 56.230992,
+        "maximum_wire_delay_ns": 28.961399,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[2]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[2]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          879.18,
+          3569.6
+        ],
+        "manhattan_cell_origin_distance_um": 5586.22
+      },
+      {
+        "rank": 5,
+        "slack_ns": -84.439255,
+        "data_path_ns": 73.486099,
+        "reported_wire_delay_ns": 56.230794,
+        "maximum_wire_delay_ns": 28.961201,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[768]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[768]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          890.66,
+          3569.6
+        ],
+        "manhattan_cell_origin_distance_um": 5574.74
+      },
+      {
+        "rank": 6,
+        "slack_ns": -84.439148,
+        "data_path_ns": 73.485992,
+        "reported_wire_delay_ns": 56.230695,
+        "maximum_wire_delay_ns": 28.961102,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[0]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[0]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          885.34,
+          3567.2
+        ],
+        "manhattan_cell_origin_distance_um": 5577.66
+      },
+      {
+        "rank": 7,
+        "slack_ns": -84.438644,
+        "data_path_ns": 73.485489,
+        "reported_wire_delay_ns": 56.230191,
+        "maximum_wire_delay_ns": 28.960598,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[1]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[1]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          885.76,
+          3573.2
+        ],
+        "manhattan_cell_origin_distance_um": 5583.24
+      },
+      {
+        "rank": 8,
+        "slack_ns": -84.435455,
+        "data_path_ns": 73.4823,
+        "reported_wire_delay_ns": 56.226994,
+        "maximum_wire_delay_ns": 28.957401,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[900]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[900]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          905.5,
+          3573.2
+        ],
+        "manhattan_cell_origin_distance_um": 5563.5
+      },
+      {
+        "rank": 9,
+        "slack_ns": -84.430847,
+        "data_path_ns": 73.477692,
+        "reported_wire_delay_ns": 56.222394,
+        "maximum_wire_delay_ns": 28.952801,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[939]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[939]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          922.02,
+          3572.0
+        ],
+        "manhattan_cell_origin_distance_um": 5545.78
+      },
+      {
+        "rank": 10,
+        "slack_ns": -84.42807,
+        "data_path_ns": 73.474899,
+        "reported_wire_delay_ns": 56.219594,
+        "maximum_wire_delay_ns": 28.950001,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[843]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[843]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          927.48,
+          3570.8
+        ],
+        "manhattan_cell_origin_distance_um": 5539.12
+      }
+    ],
+    "evidence_sha256": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_nets.tsv": "8d15feac031497ad02cd4a101c0c3f4fd7829c3f84b727a1ac3fcf6426a8511b",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_cells.tsv": "769614fc2afd9f4c8421031aec28c21217c878b727b089344450b9d7385735b6",
+      ".cache/physical/pnr/tri_oracle_direct367_fresh_timing/worst_ten_paths_split.rpt": "1c5d058a6979e2ffecb37faeddacb49b43f00981e336098197770095ac851c32",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/restore295_full_result.json": "40ef5adc5b7293c102f1332fbc302756427c0f500008ef55c417644edc316d44"
+    }
+  },
+  "typical_setup_paths": {
+    "paths": [
+      {
+        "rank": 1,
+        "slack_ns": -64.007019,
+        "data_path_ns": 65.662598,
+        "reported_wire_delay_ns": 36.625098,
+        "maximum_wire_delay_ns": 25.9394,
+        "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+        "receiver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g218286/I",
+        "startpoint": "numeric/engine/backend/dense_features_reg[12]/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[3]/D",
+        "native_load_pins": 38,
+        "native_load_ports": 0,
+        "driver_master": "INVD18BWP12T40P140",
+        "receiver_master": "CKND1BWP12T40P140",
+        "driver_placement_um": [
+          2609.44,
+          1673.6
+        ],
+        "receiver_placement_um": [
+          1840.0,
+          504.8
+        ],
+        "manhattan_cell_origin_distance_um": 1938.24
+      },
+      {
+        "rank": 2,
+        "slack_ns": -63.811134,
+        "data_path_ns": 65.463699,
+        "reported_wire_delay_ns": 36.625197,
+        "maximum_wire_delay_ns": 25.9394,
+        "driver": "numeric/engine/backend/FE_OFC60514_dense_features_12/ZN",
+        "receiver": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/g218286/I",
+        "startpoint": "numeric/engine/backend/dense_features_reg[12]/CP",
+        "endpoint": "numeric/engine/backend/clusters[2].control/down/engines[2]/implementation/state_reg[2]/D",
+        "native_load_pins": 38,
+        "native_load_ports": 0,
+        "driver_master": "INVD18BWP12T40P140",
+        "receiver_master": "CKND1BWP12T40P140",
+        "driver_placement_um": [
+          2609.44,
+          1673.6
+        ],
+        "receiver_placement_um": [
+          1840.0,
+          504.8
+        ],
+        "manhattan_cell_origin_distance_um": 1938.24
+      },
+      {
+        "rank": 3,
+        "slack_ns": -62.438126,
+        "data_path_ns": 56.222485,
+        "reported_wire_delay_ns": 42.871788,
+        "maximum_wire_delay_ns": 21.7351,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[3]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[3]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          873.72,
+          3574.4
+        ],
+        "manhattan_cell_origin_distance_um": 5596.48
+      },
+      {
+        "rank": 4,
+        "slack_ns": -62.437923,
+        "data_path_ns": 56.222282,
+        "reported_wire_delay_ns": 42.871586,
+        "maximum_wire_delay_ns": 21.734898,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[2]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[2]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          879.18,
+          3569.6
+        ],
+        "manhattan_cell_origin_distance_um": 5586.22
+      },
+      {
+        "rank": 5,
+        "slack_ns": -62.437725,
+        "data_path_ns": 56.222084,
+        "reported_wire_delay_ns": 42.871387,
+        "maximum_wire_delay_ns": 21.734699,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[0]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[0]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          885.34,
+          3567.2
+        ],
+        "manhattan_cell_origin_distance_um": 5577.66
+      },
+      {
+        "rank": 6,
+        "slack_ns": -62.437725,
+        "data_path_ns": 56.222084,
+        "reported_wire_delay_ns": 42.871387,
+        "maximum_wire_delay_ns": 21.734699,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[768]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[768]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          890.66,
+          3569.6
+        ],
+        "manhattan_cell_origin_distance_um": 5574.74
+      },
+      {
+        "rank": 7,
+        "slack_ns": -62.437428,
+        "data_path_ns": 56.221786,
+        "reported_wire_delay_ns": 42.87109,
+        "maximum_wire_delay_ns": 21.734402,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[1]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/shift_reg[1]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCND1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          885.76,
+          3573.2
+        ],
+        "manhattan_cell_origin_distance_um": 5583.24
+      },
+      {
+        "rank": 8,
+        "slack_ns": -62.435226,
+        "data_path_ns": 56.219585,
+        "reported_wire_delay_ns": 42.868889,
+        "maximum_wire_delay_ns": 21.732201,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[900]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[900]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          905.5,
+          3573.2
+        ],
+        "manhattan_cell_origin_distance_um": 5563.5
+      },
+      {
+        "rank": 9,
+        "slack_ns": -62.431946,
+        "data_path_ns": 56.216286,
+        "reported_wire_delay_ns": 42.865589,
+        "maximum_wire_delay_ns": 21.728901,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[939]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[939]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          922.02,
+          3572.0
+        ],
+        "manhattan_cell_origin_distance_um": 5545.78
+      },
+      {
+        "rank": 10,
+        "slack_ns": -62.430244,
+        "data_path_ns": 56.214584,
+        "reported_wire_delay_ns": 42.863888,
+        "maximum_wire_delay_ns": 21.7272,
+        "driver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/g217445/ZN",
+        "receiver": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[843]/E",
+        "startpoint": "numeric/engine/backend/clusters[2].control/out_tag_reg[29]/CP",
+        "endpoint": "numeric/engine/backend/clusters[3].control/down/engines[1]/implementation/source_data_reg[843]/E",
+        "native_load_pins": 72,
+        "native_load_ports": 0,
+        "driver_master": "INVD1P75BWP12T40P140",
+        "receiver_master": "EDFCNQD1BWP12T40P140",
+        "driver_placement_um": [
+          3440.2,
+          544.4
+        ],
+        "receiver_placement_um": [
+          927.48,
+          3570.8
+        ],
+        "manhattan_cell_origin_distance_um": 5539.12
+      }
+    ],
+    "evidence_sha256": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_nets.tsv": "8d15feac031497ad02cd4a101c0c3f4fd7829c3f84b727a1ac3fcf6426a8511b",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_cells.tsv": "769614fc2afd9f4c8421031aec28c21217c878b727b089344450b9d7385735b6",
+      ".cache/physical/pnr/tri_oracle_timing431_corners/setup_typ/worst_ten_paths_split.rpt": "23cafed46413cfe1360b7fc68bf0a5f9aaf748c2f1336e6dee717400f11aabc2",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/restore295_full_result.json": "40ef5adc5b7293c102f1332fbc302756427c0f500008ef55c417644edc316d44"
+    }
+  },
+  "fixed_core_placement": {
+    "state": "fixed_core_footprint_and_down_engine_dispersion_measured",
+    "die_mm2": 12.96,
+    "core_macro_count": 20,
+    "one_core_macro_size_um": [
+      719.955,
+      670.0
+    ],
+    "combined_fixed_core_macro_footprint_mm2": 9.647397,
+    "fixed_core_macro_fraction": 0.7443979166666667,
+    "engine_data": [
+      {
+        "cluster": 0,
+        "down_engine": 0,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11206,
+        "x_span_um": 3425.1,
+        "y_span_um": 1105.2
+      },
+      {
+        "cluster": 0,
+        "down_engine": 1,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11202,
+        "x_span_um": 3394.3,
+        "y_span_um": 987.6
+      },
+      {
+        "cluster": 0,
+        "down_engine": 2,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11205,
+        "x_span_um": 3388.0,
+        "y_span_um": 2787.6
+      },
+      {
+        "cluster": 0,
+        "down_engine": 3,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11199,
+        "x_span_um": 3412.64,
+        "y_span_um": 1741.2
+      },
+      {
+        "cluster": 1,
+        "down_engine": 0,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10860,
+        "x_span_um": 3393.32,
+        "y_span_um": 1519.2
+      },
+      {
+        "cluster": 1,
+        "down_engine": 1,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10873,
+        "x_span_um": 1948.1,
+        "y_span_um": 1522.8
+      },
+      {
+        "cluster": 1,
+        "down_engine": 2,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10886,
+        "x_span_um": 1812.58,
+        "y_span_um": 2769.6
+      },
+      {
+        "cluster": 1,
+        "down_engine": 3,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10886,
+        "x_span_um": 1797.88,
+        "y_span_um": 1830.0
+      },
+      {
+        "cluster": 2,
+        "down_engine": 0,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11069,
+        "x_span_um": 3400.04,
+        "y_span_um": 2528.4
+      },
+      {
+        "cluster": 2,
+        "down_engine": 1,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11071,
+        "x_span_um": 3421.18,
+        "y_span_um": 3468.0
+      },
+      {
+        "cluster": 2,
+        "down_engine": 2,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11071,
+        "x_span_um": 3420.9,
+        "y_span_um": 1212.0
+      },
+      {
+        "cluster": 2,
+        "down_engine": 3,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11051,
+        "x_span_um": 3455.34,
+        "y_span_um": 1723.2
+      },
+      {
+        "cluster": 3,
+        "down_engine": 0,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10959,
+        "x_span_um": 2579.36,
+        "y_span_um": 2090.4
+      },
+      {
+        "cluster": 3,
+        "down_engine": 1,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10978,
+        "x_span_um": 2934.96,
+        "y_span_um": 3499.2
+      },
+      {
+        "cluster": 3,
+        "down_engine": 2,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10963,
+        "x_span_um": 1839.74,
+        "y_span_um": 1618.8
+      },
+      {
+        "cluster": 3,
+        "down_engine": 3,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10986,
+        "x_span_um": 1822.38,
+        "y_span_um": 1669.2
+      },
+      {
+        "cluster": 4,
+        "down_engine": 0,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11206,
+        "x_span_um": 3408.44,
+        "y_span_um": 1834.8
+      },
+      {
+        "cluster": 4,
+        "down_engine": 1,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11204,
+        "x_span_um": 3389.12,
+        "y_span_um": 2618.4
+      },
+      {
+        "cluster": 4,
+        "down_engine": 2,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 11206,
+        "x_span_um": 3429.44,
+        "y_span_um": 1909.2
+      },
+      {
+        "cluster": 4,
+        "down_engine": 3,
+        "leaves": 11206,
+        "outside_own_cluster_core_envelope": 10785,
+        "x_span_um": 3387.3,
+        "y_span_um": 2523.6
+      }
+    ],
+    "inputs": {
+      "native_parent_cells": {
+        "path": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_cells.tsv",
+        "sha256": "769614fc2afd9f4c8421031aec28c21217c878b727b089344450b9d7385735b6"
+      },
+      "native_parent_halos": {
+        "path": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_halos.tsv",
+        "sha256": "e3dfb3ee40af8b337f0da3d4e4883f28c0c4370593e1ca5a0d2eaf029f603d8e"
+      },
+      "native_placement": {
+        "path": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_placement.rpt",
+        "sha256": "b97cf2fe8ffc8476189f8b5e6385061bc4a6015f0b8745543da4944626c17bdf"
+      },
+      "native_die": {
+        "path": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_parent.def",
+        "sha256": "f29de0135821d97c1e31eb3e5ee69723f6e5e4efd017fa660a12f7e4073ee023"
+      },
+      "core_abstract": {
+        "path": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db/libs/lef/core.lef",
+        "sha256": "7512a1a1f8f3d6a71f833003baa59c8b98b6805f284d51ce358b39f673c1b082"
+      }
+    },
+    "scope": "Core abstracts are nonoverlapping on the placed die. The envelope spans the four fixed core macro bodies only. Cell origin positions do not measure wire length or imply a placement violation."
+  },
+  "regional_area_budget": {
+    "state": "area_bounds_from_candidate_geometry_and_cell_abstracts",
+    "clusters": [
+      {
+        "cluster": 0,
+        "combined_noncore_leaf_area_um2": 211805.0576,
+        "down_engine_leaf_area_um2": 87507.84,
+        "envelope_free_area_before_halos_and_blockages_um2": 195596.4,
+        "all_cluster_noncore_area_exceeds_envelope_free_upper_bound": true,
+        "available_sites_after_60_macro_halos": 485330,
+        "area_um2": 81535.44,
+        "down_engines_exceed_available_site_area": true
+      },
+      {
+        "cluster": 1,
+        "combined_noncore_leaf_area_um2": 212687.8976,
+        "down_engine_leaf_area_um2": 87489.696,
+        "envelope_free_area_before_halos_and_blockages_um2": 195596.4,
+        "all_cluster_noncore_area_exceeds_envelope_free_upper_bound": true,
+        "available_sites_after_60_macro_halos": 483133,
+        "area_um2": 81166.344,
+        "down_engines_exceed_available_site_area": true
+      },
+      {
+        "cluster": 2,
+        "combined_noncore_leaf_area_um2": 211714.8416,
+        "down_engine_leaf_area_um2": 87577.56,
+        "envelope_free_area_before_halos_and_blockages_um2": 195596.4,
+        "all_cluster_noncore_area_exceeds_envelope_free_upper_bound": true,
+        "available_sites_after_60_macro_halos": 485330,
+        "area_um2": 81535.44,
+        "down_engines_exceed_available_site_area": true
+      },
+      {
+        "cluster": 3,
+        "combined_noncore_leaf_area_um2": 212283.1856,
+        "down_engine_leaf_area_um2": 87478.776,
+        "envelope_free_area_before_halos_and_blockages_um2": 195596.4,
+        "all_cluster_noncore_area_exceeds_envelope_free_upper_bound": true,
+        "available_sites_after_60_macro_halos": 483133,
+        "area_um2": 81166.344,
+        "down_engines_exceed_available_site_area": true
+      },
+      {
+        "cluster": 4,
+        "combined_noncore_leaf_area_um2": 212882.2736,
+        "down_engine_leaf_area_um2": 87532.704,
+        "envelope_free_area_before_halos_and_blockages_um2": 201000.0,
+        "all_cluster_noncore_area_exceeds_envelope_free_upper_bound": true,
+        "available_sites_after_60_macro_halos": 1072225,
+        "area_um2": 180133.8,
+        "down_engines_exceed_available_site_area": false
+      }
+    ],
+    "inputs": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_cells.tsv": "769614fc2afd9f4c8421031aec28c21217c878b727b089344450b9d7385735b6",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_halos.tsv": "e3dfb3ee40af8b337f0da3d4e4883f28c0c4370593e1ca5a0d2eaf029f603d8e",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db/libs/lef/core.lef": "7512a1a1f8f3d6a71f833003baa59c8b98b6805f284d51ce358b39f673c1b082",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269"
+    },
+    "scope": "A geometric lower bound on leaf area and optimistic upper bound on usable area. Does not reserve sites, guarantee routability or evaluate a new placement.",
+    "site_capacity_inputs": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_parent.def": "f29de0135821d97c1e31eb3e5ee69723f6e5e4efd017fa660a12f7e4073ee023",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_halos.tsv": "e3dfb3ee40af8b337f0da3d4e4883f28c0c4370593e1ca5a0d2eaf029f603d8e",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db/libs/lef/core.lef": "7512a1a1f8f3d6a71f833003baa59c8b98b6805f284d51ce358b39f673c1b082",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/full/restored_full.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269"
+    },
+    "whole_die_site_area_um2": 2307156.768,
+    "native_site_area_whole_um2_truncated": 2307156,
+    "site_capacity_scope": "Candidate placement-row grid less sixty fixed macro rectangles and halos. Ignores all other consumers of legal sites, including existing logic, reservations and further route-driven constraints."
+  },
+  "labeled_memory_capacity": {
+    "state": "labeled_bank_capacity_matches_by_owner_chip_total_unreconciled",
+    "paper_figure_bank_labels": "31.6.2",
+    "paper_figure_total": "31.6.7",
+    "bank_roles": {
+      "inputs": {
+        "paper_label": "IMEM",
+        "owners": 20,
+        "macros_per_owner": 2,
+        "bytes_per_owner": 8192,
+        "total_bytes": 163840
+      },
+      "weights": {
+        "paper_label": "WMEM",
+        "owners": 20,
+        "macros_per_owner": 16,
+        "bytes_per_owner": 8192,
+        "total_bytes": 163840
+      },
+      "outputs": {
+        "paper_label": "OMEM",
+        "owners": 20,
+        "macros_per_owner": 8,
+        "bytes_per_owner": 2048,
+        "total_bytes": 40960
+      },
+      "masks": {
+        "paper_label": "SMEM",
+        "owners": 20,
+        "macros_per_owner": 2,
+        "bytes_per_owner": 1024,
+        "total_bytes": 20480
+      },
+      "aggregate_memory": {
+        "paper_label": "IOMEM",
+        "owners": 5,
+        "macros_per_owner": 8,
+        "bytes_per_owner": 2048,
+        "total_bytes": 10240
+      }
+    },
+    "paper_total_label": "405 KB",
+    "native_total_bytes": 399360,
+    "same_count_wrong_owner_rejected": true,
+    "chip_total_reconciled": false,
+    "paper300_release_authorized": false,
+    "evidence_sha256": {
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/core_cells.tsv": "62609f2b19feae79601fe0d6bf316fa339796770d5e613b5a28cee773cc3a0c0",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/pnr/tri_oracle_restore295_full/cold/restored_cells.tsv": "769614fc2afd9f4c8421031aec28c21217c878b727b089344450b9d7385735b6",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/memory355_candidate_capacity.json": "02bc8a6696c2b93588d6441b771619070e56491e0a4ac9cf643c5aa890054f83",
+      "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/restore295_full_result.json": "40ef5adc5b7293c102f1332fbc302756427c0f500008ef55c417644edc316d44"
+    },
+    "scope": "Checks the capacity and owning instance of each labeled bank under the binary convention. Does not qualify identical memory behavior or assign the undisclosed total-chip residual."
+  },
+  "native_archive": {
+    "path": "records/placement431_native_evidence.json.gz",
+    "sha256": "423f2d60a0f05e8e8ba0c7b71d8b874debb5989db1d350b3a9d16059c67afc73"
+  },
+  "placement_gate_allows_advancement": false,
+  "parent_timing_closed": false,
+  "parent_routing_completed": false,
+  "full_paper_results_matched": false,
+  "scope": "Same restored twenty-core placement with original three constraint views and unchanged geometry. Estimated interconnect and ideal clocking are used for pre-route timing. The bounding rectangles and macro abstracts quantify physical dispersion and area, not routed wire length or manufacturability.",
+  "parasitic_annotation_scope": "Innovus reported incomplete Standard Parasitic Exchange Format port annotation and assigned low resistance-capacitance values to affected connections. Timing on those connections is unqualified. These estimates identify corrective placement work."
+}
