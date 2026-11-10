@@ -89,10 +89,12 @@ module tri_oracle_batched_frame393 (
           unused_attention.cfg_count, unused_attention.cfg_channels, unused_attention.cfg_keep,
           unused_attention.cfg_activation_base, unused_attention.cfg_weight_base,
           unused_attention.out_ready, unused_attention.done_ready} = '0;
-  tri_oracle_batched_frame437 implementation (.attention(unused_attention), .attention_enable(1'b0), .*);
+  tri_oracle_batched_frame437 implementation (.attention(unused_attention), .attention_enable(1'b0), .merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .*);
 endmodule
 
-module tri_oracle_batched_frame437 (
+module tri_oracle_batched_frame437 #(
+  parameter bit AGGREGATOR_SIGN_BANK=0
+) (
   input logic clk,rst_n,cfg_valid,
   output logic cfg_ready,
   input logic [31:0] cfg_tag,
@@ -140,7 +142,10 @@ module tri_oracle_batched_frame437 (
   input logic wr_rsp_valid,wr_rsp_error,
   output logic wr_rsp_ready,
   input logic attention_enable,
-  tri_oracle_attention_tensor437.server attention
+  tri_oracle_attention_tensor437.server attention,
+  input logic [2047:0] merge_sign_data,
+  input logic [12:0] merge_sign_control,
+  output logic [119:0] merge_sign_counts
 );
   typedef enum logic [3:0] {IDLE,MASK_WAIT,GATE_LAUNCH,GATE_WAIT,WRITE_LOW,WRITE_HIGH,
     WRITE_REQUEST,WRITE_DATA,WRITE_RESPONSE,DOWN_LAUNCH,DOWN_WAIT,ERROR_DRAIN,DONE} state_t;
@@ -250,7 +255,8 @@ module tri_oracle_batched_frame437 (
     wr_data_last=write_beat+5'd1==wr_length;wr_strobe=8'hff;
   end
 
-  tri_oracle_batched_shared392 compute (
+  tri_oracle_batched_shared392 #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) compute (
+    .merge_sign_data,.merge_sign_control,.merge_sign_counts,
     .clk(clk),.rst_n(rst_n),
     .cfg_valid(attention_selected ? attention_window && attention.cfg_valid : state==GATE_LAUNCH || state==DOWN_LAUNCH),
     .cfg_ready(compute_ready),.cfg_paired(!attention_selected && launch_paired),

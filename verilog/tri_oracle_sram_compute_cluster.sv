@@ -2,7 +2,10 @@
 // Four actual compiled-memory cores and a 2KB compiled aggregate result store.
 // Ordered queue ownership matches the inferred cluster. Prefetch the next
 // completed output at retirement; forward a simultaneous same-address write.
-module tri_oracle_sram_compute_cluster (
+module tri_oracle_sram_compute_cluster #(
+  parameter int MERGE_FEATURES=0,
+  localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
+) (
   input logic clk,
   input logic rst_n,
   input logic load_valid,
@@ -23,8 +26,21 @@ module tri_oracle_sram_compute_cluster (
   output logic out_valid,
   input logic out_ready,
   output logic [3:0] out_output,
-  output logic [1023:0] out_data
+  output logic [1023:0] out_data,
+  input logic [SIGN_WIDTH-1:0] merge_sign_data,
+  input logic [12:0] merge_sign_control,
+  output logic [23:0] merge_sign_counts
 );
+  if (MERGE_FEATURES!=0) begin : aggregator_sign
+    tri_oracle_aggregator_sign447 #(
+      .FEATURES(MERGE_FEATURES), .COMPILED_SIGN_BANK(1'b1)
+    ) similarity (
+      .clk, .sign_data(merge_sign_data), .control(merge_sign_control), .counts(merge_sign_counts)
+    );
+  end else begin : no_sign_bank
+    assign merge_sign_counts='0;
+  end
+
   logic [3:0] ready, done, result_valid, load_errors, core_load;
   logic [15:0] done_slots;
   logic [4095:0] result_words;
@@ -138,7 +154,10 @@ module tri_oracle_sram_compute_cluster (
 endmodule
 
 `ifdef TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC
-module tri_oracle_compute_cluster (
+module tri_oracle_compute_cluster #(
+  parameter int MERGE_FEATURES=0,
+  localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
+) (
   input logic clk,
   input logic rst_n,
   input logic load_valid,
@@ -159,8 +178,11 @@ module tri_oracle_compute_cluster (
   output logic out_valid,
   input logic out_ready,
   output logic [3:0] out_output,
-  output logic [1023:0] out_data
+  output logic [1023:0] out_data,
+  input logic [SIGN_WIDTH-1:0] merge_sign_data,
+  input logic [12:0] merge_sign_control,
+  output logic [23:0] merge_sign_counts
 );
-  tri_oracle_sram_compute_cluster implementation (.*);
+  tri_oracle_sram_compute_cluster #(.MERGE_FEATURES(MERGE_FEATURES)) implementation (.*);
 endmodule
 `endif

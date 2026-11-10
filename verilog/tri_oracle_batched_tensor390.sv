@@ -5,7 +5,9 @@
 // Both modes stream32-word feature tiles and retain native partial sums.
 // Logical keep masks have a fixed160-column stride in both modes. Requests
 // retain ownership through accepted LAST; reset must also reset the peer.
-module tri_oracle_batched_tensor390 (
+module tri_oracle_batched_tensor390 #(
+  parameter bit AGGREGATOR_SIGN_BANK=0
+) (
   input logic clk,rst_n,cfg_valid,cfg_paired,
   output logic cfg_ready,
   input logic [31:0] cfg_tag,
@@ -35,7 +37,10 @@ module tri_oracle_batched_tensor390 (
   input logic rsp_valid,
   output logic rsp_ready,
   input logic rsp_last,rsp_error,
-  input logic [63:0] rsp_data
+  input logic [63:0] rsp_data,
+  input logic [2047:0] merge_sign_data,
+  input logic [12:0] merge_sign_control,
+  output logic [119:0] merge_sign_counts
 );
   typedef enum logic [4:0] {
     IDLE,VALIDATE,LOAD_MASK,ACT_PREPARE,WEIGHT_SELECT,ADDRESS_OFFSET,
@@ -99,7 +104,8 @@ module tri_oracle_batched_tensor390 (
     .backend_cmd_accumulate(backend_cmd_accumulate),.backend_out_valid(backend_out_valid),
     .backend_out_ready(backend_out_ready),.backend_out_output(backend_out_output),
     .backend_out_data(backend_out_data));
-  tri_oracle_compute_fabric fabric (
+  tri_oracle_compute_fabric #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) fabric (
+    .merge_sign_data,.merge_sign_control,.merge_sign_counts,
     .clk(clk),.rst_n(backend_rst_n),.load_valid(load_valid),.load_core(load_core),
     .load_kind(load_kind),.load_addr(load_addr),.load_data(load_data),
     .load_row_enable(load_row_enable),.load_error(load_error),

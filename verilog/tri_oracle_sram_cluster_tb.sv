@@ -18,7 +18,7 @@ module tri_oracle_compute_cluster_tb;
   logic held = 0, require_full_rate = 0;
   logic [1023:0] held_data;
   logic [3:0] held_tag;
-  tri_oracle_compute_cluster dut (.*);
+  tri_oracle_compute_cluster dut (.merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .*);
 
   always @(out_valid or out_output or out_data)
     if (rst_n && held && !out_ready
@@ -64,7 +64,7 @@ module tri_oracle_compute_cluster_tb;
 
   always @(posedge clk) begin : scoreboard
     integer phase;
-    cycle++;
+    cycle <= cycle + 1;
     if (!rst_n) begin
       accepted = retired;
       held = 0;

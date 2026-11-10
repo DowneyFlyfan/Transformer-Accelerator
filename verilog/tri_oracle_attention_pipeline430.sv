@@ -3,7 +3,8 @@
 // visible to the caller only when the tagged projection completion succeeds.
 module tri_oracle_attention_pipeline430 #(
     parameter bit PERSIST_LAYER_CONTEXT=0,
-    parameter bit COMPILED_SIGN_BANK=0
+    parameter bit COMPILED_SIGN_BANK=0,
+    parameter bit AGGREGATOR_SIGN_BANK=0
 ) (
     input logic clk, rst_n,
     input logic projection_valid,
@@ -98,7 +99,9 @@ module tri_oracle_attention_pipeline430 #(
     output logic [9:0] value_req_rank,
     input logic value_rsp_valid, value_rsp_error,
     output logic value_rsp_ready,
-    input logic [511:0] value_rsp_data
+    input logic [511:0] value_rsp_data,
+    output logic [12:0] merge_sign_control,
+    input logic [119:0] merge_sign_counts
 );
     typedef struct packed {
         logic valid;
@@ -182,8 +185,10 @@ module tri_oracle_attention_pipeline430 #(
     );
 
     tri_oracle_attention_layer427 #(
-        .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+        .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK),
+        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)
     ) attention (
+        .merge_sign_control, .merge_sign_counts,
         .clk,.rst_n,.frame_valid(frame_valid && !projection_busy),.frame_ready(native_frame_ready),
         .frame_new_image,.frame_layer,.frame_minimum_matches,.frame_image_start,
         .sign_valid,.sign_ready,.sign_data,.map_valid,.map_last,.map_ready,.map_index,.map_origin,

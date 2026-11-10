@@ -2,7 +2,9 @@
 // One descriptor owns one tensor fabric through its terminal acknowledgement.
 // Paired descriptors pass through nonlinear conversion; down descriptors use
 // the same core memories and accumulator slots directly. Mode is captured.
-module tri_oracle_batched_shared392 (
+module tri_oracle_batched_shared392 #(
+  parameter bit AGGREGATOR_SIGN_BANK=0
+) (
   input logic clk,rst_n,cfg_valid,cfg_paired,
   output logic cfg_ready,
   input logic [31:0] cfg_tag,
@@ -34,7 +36,10 @@ module tri_oracle_batched_shared392 (
   input logic rsp_valid,
   output logic rsp_ready,
   input logic rsp_last,rsp_error,
-  input logic [63:0] rsp_data
+  input logic [63:0] rsp_data,
+  input logic [2047:0] merge_sign_data,
+  input logic [12:0] merge_sign_control,
+  output logic [119:0] merge_sign_counts
 );
   logic busy,paired,accept;
   logic raw_ready,raw_valid,raw_out_ready,raw_last,raw_done_valid,raw_done_ready,raw_done_error;
@@ -78,7 +83,8 @@ module tri_oracle_batched_shared392 (
     else if(done_valid && done_ready)busy<=0;
   end
 
-  tri_oracle_batched_tensor390 tensor (
+  tri_oracle_batched_tensor390 #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) tensor (
+    .merge_sign_data,.merge_sign_control,.merge_sign_counts,
     .clk(clk),.rst_n(rst_n),.cfg_valid(accept),.cfg_ready(raw_ready),.cfg_paired(cfg_paired),
     .cfg_tag(cfg_tag),.cfg_tokens(cfg_tokens),.cfg_feature_words(cfg_feature_words),
     .cfg_dense_rows(cfg_dense_rows),.cfg_count(cfg_count),.cfg_channels(cfg_channels),.cfg_keep(cfg_keep),

@@ -22,7 +22,7 @@ module tri_oracle_fabric_stream_tb;
     integer received[0:4],first_result[0:4],last_result[0:4];
     integer reference[0:31][0:4][0:31];
     localparam integer COMMANDS=256;
-    tri_oracle_compute_fabric dut(.*);
+    tri_oracle_compute_fabric dut(.merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .*);
     task automatic load(input [1:0] kind,input [9:0] address,input [2047:0] data);
         @(negedge clk);load_valid=1;load_kind=kind;load_addr=address;load_data=data;
         @(posedge clk);#1;

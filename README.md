@@ -708,6 +708,18 @@ modes, with unchanged frame cycles and compiled-memory traffic. The 20-core
 source replay passed with 618 compiled memories. The origin table and raster
 controller remain shared. See `records/merger446_sharded_similarity_result.json`.
 
+The compiled integrated design now puts one of those sign banks and similarity
+calculators inside each of the five compute clusters. The controller still
+owns raster order and the origin table. Xcelium reproduced all 25,344 trained
+maps through the cluster connections, and the graphics processor verified all
+144,185 returned partial scores. Both Genus partitions elaborated and agreed
+on the 133 new control and score bits and the original 13,116 tensor bits.
+See `records/aggregator447_cluster_sign_banks_result.json`.
+
+Genus mapped the earlier standalone merger to 44,219 cells. The synthesis
+report shows zero picoseconds of setup slack at 580 megahertz before placement.
+The mapped netlist passed the 44-frame functional replay in Xcelium.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

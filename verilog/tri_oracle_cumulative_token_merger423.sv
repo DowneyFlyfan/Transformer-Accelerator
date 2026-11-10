@@ -28,9 +28,43 @@ module tri_oracle_cumulative_token_merger423 #(
     output logic done_valid, done_error,
     input logic done_ready
 );
-    localparam int BANK_W=128;
-    localparam int BANKS=(FEATURES+BANK_W-1)/BANK_W;
-    localparam int SHARDS=BANKS<5 ? BANKS : 5;
+    tri_oracle_cumulative_merge447 #(
+        .IMAGE_WIDTH(IMAGE_WIDTH), .IMAGE_HEIGHT(IMAGE_HEIGHT), .FEATURES(FEATURES),
+        .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+    ) implementation (.merge_sign_control(), .merge_sign_counts('0), .*);
+endmodule
+
+/* verilator lint_off DECLFILENAME */
+module tri_oracle_cumulative_merge447 #(
+    parameter int IMAGE_WIDTH=24,
+    parameter int IMAGE_HEIGHT=24,
+    parameter int FEATURES=2048,
+    parameter bit COMPILED_SIGN_BANK=0,
+    parameter bit AGGREGATOR_SIGN_BANK=0,
+    localparam int TOKENS=IMAGE_WIDTH*IMAGE_HEIGHT,
+    localparam int INDEX_W=TOKENS>1 ? $clog2(TOKENS) : 1,
+    localparam int SLOT_W=IMAGE_WIDTH>1 ? $clog2(IMAGE_WIDTH) : 1,
+    localparam int HIT_W=$clog2(FEATURES+1),
+    localparam int BANK_W=128,
+    localparam int BANKS=(FEATURES+BANK_W-1)/BANK_W,
+    localparam int SHARDS=BANKS<5 ? BANKS : 5
+) (
+    input logic clk, rst_n,
+    input logic cfg_valid, cfg_new_image,
+    output logic cfg_ready,
+    input logic [HIT_W-1:0] cfg_minimum_matches,
+    input logic sign_valid,
+    output logic sign_ready,
+    input logic [FEATURES-1:0] sign_data,
+    output logic map_valid,
+    input logic map_ready,
+    output logic [INDEX_W-1:0] map_index, map_origin,
+    output logic map_last,
+    output logic done_valid, done_error,
+    input logic done_ready,
+    output logic [2*SLOT_W+2:0] merge_sign_control,
+    input logic [2*SHARDS*HIT_W-1:0] merge_sign_counts
+);
     localparam int BASE_BANKS=BANKS/SHARDS, EXTRA_BANKS=BANKS%SHARDS;
     localparam int SUM_LEVELS=$clog2(SHARDS), SUM_LEAVES=1<<SUM_LEVELS;
     typedef enum logic [1:0] {Idle, Run, Finish, Result} state_t;
@@ -90,6 +124,11 @@ module tri_oracle_cumulative_token_merger423 #(
         assign read_available = 1;
     end
 
+    // Control packs the read and write addresses followed by the read, write,
+    // and left-cache-update enables. Scores return as {upper, left} per shard.
+    assign merge_sign_control = AGGREGATOR_SIGN_BANK ?
+        {bank_read_slot, selected_slot, issue_read, write_sign, load_left_from_memory} : '0;
+
     // For the full 2048-feature path the sixteen physical slices are grouped
     // as four, three, three, three, three. No padding bits enter the score.
     for (genvar group=0;group<SHARDS;group++) begin : similarity_shards
@@ -99,16 +138,20 @@ module tri_oracle_cumulative_token_merger423 #(
         localparam int WIDTH=(FIRST+GROUP_BANKS*BANK_W>FEATURES) ? FEATURES-FIRST : GROUP_BANKS*BANK_W;
         localparam int LOCAL_HIT_W=$clog2(WIDTH+1);
         wire [LOCAL_HIT_W-1:0] upper_hits, left_hits;
-        tri_oracle_token_similarity_shard446 #(
-            .FEATURES(WIDTH), .IMAGE_WIDTH(IMAGE_WIDTH), .SLOT_W(SLOT_W),
-            .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
-        ) shard (
-            .clk, .sign_data(sign_data[FIRST+:WIDTH]), .read_slot(bank_read_slot),
-            .write_slot(selected_slot), .read_enable(issue_read), .write_enable(write_sign),
-            .load_left_from_memory, .upper_hits, .left_hits
-        );
-        assign upper_partial[group]=HIT_W'(upper_hits);
-        assign left_partial[group]=HIT_W'(left_hits);
+        if (AGGREGATOR_SIGN_BANK) begin : remote_bank
+            assign {upper_partial[group], left_partial[group]} = merge_sign_counts[group*2*HIT_W+:2*HIT_W];
+        end else begin : local_bank
+            tri_oracle_token_similarity_shard446 #(
+                .FEATURES(WIDTH), .IMAGE_WIDTH(IMAGE_WIDTH), .SLOT_W(SLOT_W),
+                .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+            ) shard (
+                .clk, .sign_data(sign_data[FIRST+:WIDTH]), .read_slot(bank_read_slot),
+                .write_slot(selected_slot), .read_enable(issue_read), .write_enable(write_sign),
+                .load_left_from_memory, .upper_hits, .left_hits
+            );
+            assign upper_partial[group]=HIT_W'(upper_hits);
+            assign left_partial[group]=HIT_W'(left_hits);
+        end
     end
 
     for (genvar level=0;level<=SUM_LEVELS;level++) begin : sum_shards
@@ -242,7 +285,6 @@ module tri_oracle_cumulative_token_merger423 #(
     end
 endmodule
 
-/* verilator lint_off DECLFILENAME */
 // Each shard keeps its surviving signs and both comparisons local. Only the
 // match counts cross the shard boundary.
 module tri_oracle_token_similarity_shard446 #(
@@ -304,5 +346,28 @@ module tri_oracle_token_similarity_shard446 #(
     end
     assign upper_hits=HIT_W'(reduction[LEVELS].upper[0]);
     assign left_hits=HIT_W'(reduction[LEVELS].left[0]);
+endmodule
+
+// Cluster-side adapter for a 24-column surviving-sign bank.
+module tri_oracle_aggregator_sign447 #(
+    parameter int FEATURES=512,
+    parameter bit COMPILED_SIGN_BANK=1,
+    localparam int HIT_W=$clog2(FEATURES+1)
+) (
+    input logic clk,
+    input logic [FEATURES-1:0] sign_data,
+    input logic [12:0] control,
+    output logic [23:0] counts
+);
+    wire [HIT_W-1:0] upper_hits, left_hits;
+    tri_oracle_token_similarity_shard446 #(
+        .FEATURES(FEATURES), .IMAGE_WIDTH(24), .SLOT_W(5),
+        .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+    ) shard (
+        .clk, .sign_data, .read_slot(control[12:8]), .write_slot(control[7:3]),
+        .read_enable(control[2]), .write_enable(control[1]), .load_left_from_memory(control[0]),
+        .upper_hits, .left_hits
+    );
+    assign counts = {12'(upper_hits), 12'(left_hits)};
 endmodule
 /* verilator lint_on DECLFILENAME */

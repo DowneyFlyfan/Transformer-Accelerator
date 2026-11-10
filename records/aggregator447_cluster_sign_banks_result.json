@@ -1,0 +1,281 @@
+{
+  "state": "five_aggregator_sign_banks_replayed_and_native_partition_interfaces_verified",
+  "native_architecture": {
+    "cluster_count": 5,
+    "core_count": 20,
+    "core_counts_by_cluster": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "array_count": 20,
+    "array_shapes": [
+      [
+        32,
+        8,
+        8
+      ]
+    ],
+    "native_similarity_shards": [
+      {
+        "instance": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[0].unit.implementation.aggregator_sign.similarity.shard",
+        "features": 512,
+        "compiled_memory_slices": 4,
+        "aggregator": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[0].unit.implementation"
+      },
+      {
+        "instance": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[1].unit.implementation.aggregator_sign.similarity.shard",
+        "features": 384,
+        "compiled_memory_slices": 3,
+        "aggregator": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[1].unit.implementation"
+      },
+      {
+        "instance": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[2].unit.implementation.aggregator_sign.similarity.shard",
+        "features": 384,
+        "compiled_memory_slices": 3,
+        "aggregator": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[2].unit.implementation"
+      },
+      {
+        "instance": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[3].unit.implementation.aggregator_sign.similarity.shard",
+        "features": 384,
+        "compiled_memory_slices": 3,
+        "aggregator": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[3].unit.implementation"
+      },
+      {
+        "instance": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[4].unit.implementation.aggregator_sign.similarity.shard",
+        "features": 384,
+        "compiled_memory_slices": 3,
+        "aggregator": "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[4].unit.implementation"
+      }
+    ],
+    "compiled_memory_instances": 618,
+    "compiled_memory_bytes": 415744,
+    "compiled_memory_roles": {
+      "aggregator_io": {
+        "instances": 40,
+        "bytes": 10240
+      },
+      "core_inputs": {
+        "instances": 40,
+        "bytes": 163840
+      },
+      "core_masks": {
+        "instances": 40,
+        "bytes": 20480
+      },
+      "core_outputs": {
+        "instances": 160,
+        "bytes": 40960
+      },
+      "core_weights": {
+        "instances": 320,
+        "bytes": 163840
+      },
+      "prediction_metadata": {
+        "instances": 2,
+        "bytes": 8192
+      },
+      "surviving_sign_bank": {
+        "instances": 16,
+        "bytes": 8192
+      }
+    },
+    "native_redundancy_units": {
+      "token_merger": [
+        "tri_oracle_attention430_tb.dut.attention_pipeline.attention.merger"
+      ],
+      "head_predictor": [
+        "tri_oracle_attention430_tb.dut.attention_pipeline.attention.predictor"
+      ],
+      "strip_predictor": [
+        "tri_oracle_attention430_tb.dut.feedforward.predictor.replay_table.predictor"
+      ],
+      "causal_token_size": [
+        "tri_oracle_attention430_tb.dut.attention_pipeline.attention.attention.sizes"
+      ]
+    },
+    "paper_topology_checks": {
+      "five_clusters_with_four_cores_each": true,
+      "one_32_by_8_eight_bit_array_per_core": true,
+      "one_token_merger_per_cluster": false,
+      "attention_head_predictor_in_each_core": false,
+      "strip_predictor_in_each_core": false
+    }
+  },
+  "source_sha256": {
+    "verilog/tri_oracle_cumulative_token_merger423.sv": "2f3072bc0e948edd0774bc15525ec624b08523cfde01c3b8fd7ecea0f453c5d2",
+    "verilog/tri_oracle_causal_token_size.sv": "93bc8bccd2809f4c672d65504522286bcd5077bd4e5e160cd5eeb373d0cb56a3",
+    "verilog/tri_oracle_cumulative423_tb.sv": "028aeaf2b43f6281fee40993f641eb86f001da4f5496e1de6bbfe987eda1d7f3",
+    "verilog/tri_oracle_batched_frame393.sv": "28468f227b0c647d29ee90a0655bf84483fd6f483acd2ca7bcf6269fcdd0042e",
+    "verilog/tri_oracle_affine_quantizer.sv": "41181d013bca2c5802935a98154164c5893c170551d0853e787c5fd3b2698356",
+    "verilog/tri_oracle_attention_context428.sv": "7ad5a0fdc2eab5ed20d05f048241793d757b264870c657a14e49611ce57a8690",
+    "verilog/tri_oracle_attention_head_classifier410.sv": "d4331b81cf441df11ff0275c9904ba9e41c8eb1bdfbbb0dfc8f7e16b85c5005f",
+    "verilog/tri_oracle_attention_head_predictor415.sv": "f84ca0ca193af402b41404f4a5dd380bdce18c937e7a082920c7c4e77c0f7b95",
+    "verilog/tri_oracle_attention_layer427.sv": "dce5fd93bcd1d8bded7e0ea9cabfb37ff156862bfa0362838cbb1fc709f35afe",
+    "verilog/tri_oracle_attention_pipeline430.sv": "8a3104d87dbfa3b5bc548c72de79ad97079553a979f4bf6ddcea65b82db50ea3",
+    "verilog/tri_oracle_attention_row426.sv": "1f5a3ca2ad4448d1190d83c1b62379ab575f7561c98147bed15e77827d9781b4",
+    "verilog/tri_oracle_attention_tile_batch413.sv": "9b4536133d5834da10aea59747ff1413c7339dbf91c0a7b28e6dae640128601e",
+    "verilog/tri_oracle_batched_learned406.sv": "fcdfab886d0237c6302776d165e4314a27f49fe6cfe906d2fe16e24e69340379",
+    "verilog/tri_oracle_batched_mask_packet399.sv": "351c8402f82d92454bfa9e55cebb31de9b6a421f5f619af76f531498d65175fd",
+    "verilog/tri_oracle_batched_nonlinear391.sv": "4a341ad14a87a421c0140d060e6a14d99b420e5930b7eacb0ebb421bdd14f545",
+    "verilog/tri_oracle_batched_normalize405.sv": "3f103394f6fffd097b5ffae5f55359ad4bcc1d1ae65a7c217c8224c235d028ef",
+    "verilog/tri_oracle_batched_outlier_replay404.sv": "e43463011a860694335af7e5803092bcfad826149df90f1b1a6791193165e073",
+    "verilog/tri_oracle_batched_projection356.sv": "06ded16e6a328a4a86a0a4161742fed467de7668c55c3ccc47dc7e3cf68cc5e4",
+    "verilog/tri_oracle_batched_shared392.sv": "1ab88572f7fdf9c68afbcd22c1d9ad4f71322c01933ba02a60b59d467769ebc3",
+    "verilog/tri_oracle_batched_tensor390.sv": "c6ef7c6386c15785cdb8a7c75130105cb3e39d1b2dd75a5212a3ac05bba5ce9d",
+    "verilog/tri_oracle_compute_fabric.sv": "f3cf18f8a4d0663749f95021f9387fe5f19dfccc271c8aa927d18137d31adb88",
+    "verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "verilog/tri_oracle_proportional_softmax.sv": "38a380cb1431e7ad27e062e37d4f503a7efc1af66cac8dd4c21f9063caf1f687",
+    "verilog/tri_oracle_qkv429.sv": "a8dfb7cb2cdcdfd14b44201d3df403eced382c60bab96c36940af1bd71367a03",
+    "verilog/tri_oracle_qkv_store430.sv": "4cdba3cc5de4ecf2d443983cee340463ebb18c0152a9523395b13f5564c4c930",
+    "verilog/tri_oracle_rms_activation.sv": "38b33b02165bd45845597757c62042665d0582d64f1b4478966d0d0057c02494",
+    "verilog/tri_oracle_rmsnorm.sv": "750394cbed15e27691147b7284bd527369dbf281ffc72ab68a05304fbb786c45",
+    "verilog/tri_oracle_sign_fetch.sv": "a87a29deacb5677c5338a113da3e44830c2e9c7f7094f96a628824725ca552f1",
+    "verilog/tri_oracle_silu_gate.sv": "6b9ef0cc9828d5537533047d129aba1be3c2e7c3dd909aec7465486fdca3431d",
+    "verilog/tri_oracle_sram_compute_cluster.sv": "b2ea8e081563c752f27621c0e527f0c6a617baa4a188127281a847ec770d05ac",
+    "verilog/tri_oracle_sram_memory_compute.sv": "435bfdf1db3758ce1f927836307721a27133402cb26f529c6a63c8a6df659f39",
+    "verilog/tri_oracle_strip_predictor.sv": "259ae612d7a243a7d53f1703eb598f8c0efc6518e79a245ac4508fd173292741",
+    "verilog/tri_oracle_token_merger.sv": "41f487a485d905f64b6bf39a568435321f4518ae4f31020ec21cb73b9aa7109f",
+    "verilog/tri_oracle_shared_layer437.sv": "1e57ddc557947d4ece4c5d04542a93b8ac5e7cb73be48e33815ba087a0262a90",
+    "verilog/tri_oracle_fabric_stream_tb.sv": "7c8af59bde9a095445e90f4408d4d4a3b0db495b936ba6bdc58a7ca23677527a",
+    "verilog/tri_oracle_compute_fabric_tb.sv": "7bf8e47a5f50612c4d5c7e1ea34074a5c8d1c1eef50b5d2723234963cf23a904",
+    "verilog/tri_oracle_compute_cluster.sv": "37e73b55303bc99fa86d92fc8be3d5b2bac757a3350291059c02e2f21758c555",
+    "verilog/tri_oracle_attention430_tb.sv": "13a6e1922b04fd2c597eab604831e41bc982979f84a7c47185ca1d8d44030770"
+  },
+  "native_xcelium_replays": {
+    "distributed": {
+      "native_pid": 898533,
+      "native_exit_status": 0,
+      "elapsed_seconds": 147.71125356201082,
+      "native_log_sha256": "1cee35d79949e8efd837024a3b100aab3f5f468af3da634f0060f0a2626bbb76",
+      "bundle_sha256": "4ebcbace46181b7b7043c866db9b3a09bcbfd5f3c43bee8450122ee39e1a70d5",
+      "markers": [
+        "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+        "SHARED437_ATTENTION_OWNERSHIP_PASS",
+        "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+      ],
+      "native_cluster_shards": {
+        "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[0].unit.implementation": [
+          512,
+          4
+        ],
+        "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[1].unit.implementation": [
+          384,
+          3
+        ],
+        "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[2].unit.implementation": [
+          384,
+          3
+        ],
+        "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[3].unit.implementation": [
+          384,
+          3
+        ],
+        "tri_oracle_attention430_tb.dut.feedforward.compute.compute.tensor.fabric.clusters[4].unit.implementation": [
+          384,
+          3
+        ]
+      },
+      "inventory_sha256": "1094af1495b210d28ce529ca960926a24db40e7ab6106431113aab955466e290"
+    },
+    "local": {
+      "native_pid": 898537,
+      "native_exit_status": 0,
+      "elapsed_seconds": 147.70365864399355,
+      "native_log_sha256": "16300ecf4191b7f11af48dfe7b7e6ececb3a49db1f667202b97d3d65a8311ed0",
+      "bundle_sha256": "a7bec6a6fa02c8d60d2153df0f8604d3acdef2e083b4fe079d8d6e5d51c4bdcb",
+      "markers": [
+        "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+        "SHARED437_ATTENTION_OWNERSHIP_PASS",
+        "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+      ],
+      "local_topology_rejected": true,
+      "inventory_sha256": "baa3f785728b0b0c6a5a57b56b63db50617b2fe99e30d05133ce40ae757061d2"
+    },
+    "compiled": {
+      "native_pid": 898536,
+      "native_exit_status": 0,
+      "elapsed_seconds": 7.0441606669919565,
+      "native_log_sha256": "d60aba936cf11b7aecfef7d7bd4b1895e4b31a7dcec5baa2bc45fb4b5dcf290b",
+      "bundle_sha256": "b7e0afdfb51f0ace07577c12c9d744807eeccf327af1763efca82354acf468b5",
+      "markers": [
+        "MERGER441_BANKS_PASS macros=16 bytes=8192",
+        "BATCH423_PASS modes=2 layers=44 maps=25344 signs=15561 rows=25432 sizes=4380542 cfg_errors=3 map_stalls=3710 done_stalls=235",
+        "MERGER441_LATENCY frames=44 cycles=45368"
+      ]
+    },
+    "inferred": {
+      "native_pid": 898538,
+      "native_exit_status": 0,
+      "elapsed_seconds": 6.042683468025643,
+      "native_log_sha256": "e11609d57977e5885833157b1b7bc454cbe3bc423b8f36bc29cad51452d2e41e",
+      "bundle_sha256": "d9a5ae5f8e19ebed8a1fcf9068b9f628de6d7bf16543f070bb7785b63ee06ebf",
+      "markers": [
+        "BATCH423_PASS modes=2 layers=44 maps=25344 signs=15561 rows=25432 sizes=4380542 cfg_errors=3 map_stalls=4353 done_stalls=235",
+        "MERGER441_LATENCY frames=44 cycles=29785"
+      ]
+    }
+  },
+  "native_cluster_score_verification": {
+    "state": "every_native_cluster_count_checked_against_gpu_reference",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "measured_cluster_counts": 144185,
+    "native_neighbor_comparisons": 28837,
+    "reused_upper_comparisons": 561,
+    "captured_signs": 15561,
+    "full_trained_maps": 25344,
+    "sum_preserving_cluster_swap_rejected": true,
+    "gpu_peak_bytes": 6414848,
+    "source_sha256": "5557f66c78247d86e7807da8d00fe961b6ad1e51a70e923055db75a05c059c0d",
+    "trace_sha256": "5ed898a00c4ce4e5a7bc57eda897b2ff6491d032b14c95efef84e50ae875fcf0"
+  },
+  "compatibility_testbench_sha256": "27fc938d3ba6ab1c8521a3598ad9e63ef578aa8dd71ff4dd7cabea529be9a789",
+  "independent_compiled_cluster_checks": 2,
+  "independent_inferred_compute_fabric_values": 1536,
+  "native_genus_partitions": {
+    "feedforward": {
+      "port_bits": 22183,
+      "database_sha256": "da198ffee9032d6ea31c694f5b905083a09bddd250dd3b81a4553f687121a539",
+      "sign_banks": [
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "native_exit_status": 0
+    },
+    "attention": {
+      "port_bits": 20708,
+      "database_sha256": "8febbdc1e3520fe319b0ff5281fb5ec96b12b2be1564cd4ec3ba1179440bcc2f",
+      "sign_banks": [],
+      "native_exit_status": 0
+    }
+  },
+  "reciprocal_tensor_bits": 13116,
+  "reciprocal_sign_control_and_score_bits": 133,
+  "shared_top_sign_input_bits": 2048,
+  "earlier_standalone_mapped_baseline": {
+    "cells": 44219,
+    "cell_area_square_micrometers": 137727.465,
+    "preplacement_worst_setup_slack_reported_ps": 0,
+    "clock_target_mhz": 580,
+    "mapped_netlist_sha256": "21babce4dd6cae9342be1d5497b24aa263d44988b8f1e715a7c43bae31df75f5",
+    "native_markers": [
+      "MERGER441_BANKS_PASS macros=16 bytes=8192",
+      "BATCH423_PASS modes=2 layers=44 maps=25344 signs=15561 rows=25432 sizes=4380542 cfg_errors=3 map_stalls=3710 done_stalls=235"
+    ]
+  },
+  "full_chip_mapped": false,
+  "complete_token_merger_per_aggregator": false,
+  "full_paper_results_matched": false,
+  "clock_distribution_or_routing_allowed": false,
+  "scope": "Five aggregator-resident sign banks and similarity calculators. Raster sequencing and origin table remain shared.",
+  "archive": {
+    "path": "records/aggregator447_cluster_sign_banks_evidence.json.gz",
+    "bytes": 35971,
+    "sha256": "642d423011b98eba8a838e9802465050a200dc72ea4675e8feb036439a0da8f7"
+  }
+}

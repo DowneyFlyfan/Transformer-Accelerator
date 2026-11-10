@@ -5,7 +5,8 @@
 // tensors according to the emitted map and retains them across decode rows.
 module tri_oracle_attention_layer427 #(
     parameter bit PERSIST_LAYER_CONTEXT=0,
-    parameter bit COMPILED_SIGN_BANK=0
+    parameter bit COMPILED_SIGN_BANK=0,
+    parameter bit AGGREGATOR_SIGN_BANK=0
 ) (
     input logic clk, rst_n,
     input logic frame_valid, frame_new_image,
@@ -75,7 +76,9 @@ module tri_oracle_attention_layer427 #(
     output logic [9:0] value_req_rank,
     input logic value_rsp_valid, value_rsp_error,
     output logic value_rsp_ready,
-    input logic [511:0] value_rsp_data
+    input logic [511:0] value_rsp_data,
+    output logic [12:0] merge_sign_control,
+    input logic [119:0] merge_sign_counts
 );
     localparam logic [9:0] IMAGE_TOKENS=10'd576;
     typedef enum logic [3:0] {
@@ -177,7 +180,10 @@ module tri_oracle_attention_layer427 #(
         assign store_restore_origin = 0;
     end
 
-    tri_oracle_cumulative_token_merger423 #(.COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)) merger (
+    tri_oracle_cumulative_merge447 #(
+        .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK), .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)
+    ) merger (
+        .merge_sign_control, .merge_sign_counts,
         .clk, .rst_n, .cfg_valid(frame_start), .cfg_new_image(frame_new_image),
         .cfg_ready(merge_cfg_ready), .cfg_minimum_matches(merge_threshold),
         .sign_valid, .sign_ready, .sign_data, .map_valid(merge_map_valid),

@@ -62,10 +62,12 @@ module tri_oracle_batched_learned406 (
           unused_attention.cfg_count, unused_attention.cfg_channels, unused_attention.cfg_keep,
           unused_attention.cfg_activation_base, unused_attention.cfg_weight_base,
           unused_attention.out_ready, unused_attention.done_ready} = '0;
-  tri_oracle_batched_learned437 implementation (.attention(unused_attention), .*);
+  tri_oracle_batched_learned437 implementation (.attention(unused_attention), .merge_sign_data('0), .merge_sign_control('0), .merge_sign_counts(), .*);
 endmodule
 
-module tri_oracle_batched_learned437 (
+module tri_oracle_batched_learned437 #(
+  parameter bit AGGREGATOR_SIGN_BANK=0
+) (
     input logic clk, rst_n, cfg_valid,
     output logic cfg_ready,
     input logic [31:0] cfg_tag,
@@ -115,7 +117,10 @@ module tri_oracle_batched_learned437 (
     output logic wr_data_last,
     input logic wr_rsp_valid, wr_rsp_error,
     output logic wr_rsp_ready,
-    tri_oracle_attention_tensor437.server attention
+    tri_oracle_attention_tensor437.server attention,
+    input logic [2047:0] merge_sign_data,
+    input logic [12:0] merge_sign_control,
+    output logic [119:0] merge_sign_counts
 );
     typedef enum logic [1:0] {Idle, Active, Reject} frame_state_t;
     typedef enum logic [1:0] {PickRead, OfferRead, WaitRead} read_state_t;
@@ -286,7 +291,8 @@ module tri_oracle_batched_learned437 (
         .done_valid(packet_done), .done_ready(retire), .done_error(packet_error), .done_tag(unused_packet_done_tag)
     );
 
-    tri_oracle_batched_frame437 compute (
+    tri_oracle_batched_frame437 #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) compute (
+      .merge_sign_data,.merge_sign_control,.merge_sign_counts,
         .clk(clk), .rst_n(rst_n), .cfg_valid(launch_compute), .cfg_ready(compute_ready),
         .attention, .attention_enable(state == Idle && read_state == PickRead && !cfg_valid),
         .cfg_tag(tag), .cfg_tokens(saved.tokens), .cfg_input_features(saved.input_features),

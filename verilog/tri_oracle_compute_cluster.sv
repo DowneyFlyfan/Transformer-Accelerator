@@ -4,7 +4,10 @@
 // 2KB aggregate bank, 32-bit wrapping sums, arithmetic-shift mean rounding.
 // This is not the complete paper cluster: prediction and instruction control
 // remain separate. Inferred storage still requires physical memory mapping.
-module tri_oracle_compute_cluster (
+module tri_oracle_compute_cluster #(
+  parameter int MERGE_FEATURES=0,
+  localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES
+) (
     input wire clk,rst_n,load_valid,
     input wire [1:0] load_core,load_kind,
     input wire [9:0] load_addr,
@@ -21,8 +24,21 @@ module tri_oracle_compute_cluster (
     output wire out_valid,
     input wire out_ready,
     output wire [3:0] out_output,
-    output wire [1023:0] out_data
+    output wire [1023:0] out_data,
+    input wire [SIGN_WIDTH-1:0] merge_sign_data,
+    input wire [12:0] merge_sign_control,
+    output wire [23:0] merge_sign_counts
 );
+    if (MERGE_FEATURES!=0) begin : aggregator_sign
+      tri_oracle_aggregator_sign447 #(
+        .FEATURES(MERGE_FEATURES), .COMPILED_SIGN_BANK(1'b0)
+      ) similarity (
+        .clk, .sign_data(merge_sign_data), .control(merge_sign_control), .counts(merge_sign_counts)
+      );
+    end else begin : no_sign_bank
+      assign merge_sign_counts='0;
+    end
+
     wire [3:0] ready,done,result_valid,load_errors;
     wire [15:0] done_slots;
     wire [4095:0] result_words;

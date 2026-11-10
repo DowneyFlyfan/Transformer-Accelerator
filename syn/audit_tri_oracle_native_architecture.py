@@ -72,11 +72,17 @@ def audit(instances):
     if None in core_owner.values() or None in pe_owner.values():
         raise ValueError("Detached compute core or processing-element array")
     shards_by_merger = defaultdict(list)
+    shard_aggregators = {}
+    shared_mergers = [merger for merger in mergers if _parent(merger, clusters) is None]
     for shard, (features, rows, unused) in shards.items():
         merger = _parent(shard, mergers)
+        aggregator = _parent(shard, clusters)
+        if merger is None and aggregator is not None and len(shared_mergers) == 1:
+            merger = shared_mergers[0]
         if merger is None or rows != mergers[merger][0] or features <= 0 or unused != 0:
             raise ValueError(f"Invalid token-similarity shard: {shard}")
         shards_by_merger[merger].append(shard)
+        shard_aggregators[shard] = aggregator
     for merger, children in shards_by_merger.items():
         if sum(shards[shard][0] for shard in children) != mergers[merger][2]:
             raise ValueError(f"Token-similarity shards do not cover all features: {merger}")
@@ -119,6 +125,7 @@ def audit(instances):
                 "instance": shard,
                 "features": shards[shard][0],
                 "compiled_memory_slices": shard_banks[shard],
+                "aggregator": shard_aggregators[shard],
             }
             for shard in sorted(shards)
         ],

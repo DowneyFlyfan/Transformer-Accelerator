@@ -1,7 +1,9 @@
 `timescale 1ns/1ps
 // Five clusters x four cores. Command routing and ports are local choices;
 // this is a compute/memory fabric, not a complete vision-language processor.
-module tri_oracle_compute_fabric (
+module tri_oracle_compute_fabric #(
+  parameter bit AGGREGATOR_SIGN_BANK=0
+) (
     input wire clk,rst_n,load_valid,
     input wire [4:0] load_core,
     input wire [1:0] load_kind,
@@ -19,13 +21,22 @@ module tri_oracle_compute_fabric (
     output wire [4:0] out_valid,
     input wire [4:0] out_ready,
     output wire [19:0] out_output,
-    output wire [5119:0] out_data
+    output wire [5119:0] out_data,
+    input wire [2047:0] merge_sign_data,
+    input wire [12:0] merge_sign_control,
+    output wire [119:0] merge_sign_counts
 );
     wire [4:0] cluster_ready,load_errors;
     assign cmd_ready=(|cmd_clusters) && ((cluster_ready & cmd_clusters)==cmd_clusters);
     assign load_error=(|load_errors) || (load_valid && load_core>=20);
     for(genvar cluster=0;cluster<5;cluster=cluster+1)begin: clusters
-        tri_oracle_compute_cluster unit (
+        localparam int MERGE_FEATURES=AGGREGATOR_SIGN_BANK ? (cluster==0 ? 512 : 384) : 0;
+        localparam int SIGN_WIDTH=MERGE_FEATURES==0 ? 1 : MERGE_FEATURES;
+        localparam int SIGN_START=cluster==0 ? 0 : 512+(cluster-1)*384;
+        tri_oracle_compute_cluster #(.MERGE_FEATURES(MERGE_FEATURES)) unit (
+            .merge_sign_data(merge_sign_data[SIGN_START+:SIGN_WIDTH]),
+            .merge_sign_control(merge_sign_control),
+            .merge_sign_counts(merge_sign_counts[cluster*24+:24]),
             .clk(clk),.rst_n(rst_n),
             .load_valid(load_valid && load_core[4:2]==3'(cluster)),
             .load_core(load_core[1:0]),.load_kind(load_kind),

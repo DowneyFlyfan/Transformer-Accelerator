@@ -4,7 +4,8 @@
 // At a tensor command boundary, a pending feed-forward frame takes priority.
 module tri_oracle_shared_layer437 #(
     parameter bit PERSIST_LAYER_CONTEXT = 0,
-    parameter bit COMPILED_SIGN_BANK = 0
+    parameter bit COMPILED_SIGN_BANK = 0,
+    parameter bit AGGREGATOR_SIGN_BANK = COMPILED_SIGN_BANK
 ) (
     input logic clk, rst_n, cfg_valid,
     output logic cfg_ready,
@@ -131,10 +132,21 @@ module tri_oracle_shared_layer437 #(
 );
     tri_oracle_attention_tensor437 attention();
 
-    tri_oracle_batched_learned437 feedforward (.attention, .*);
+    logic [12:0] merge_sign_control;
+    logic [119:0] merge_sign_counts;
+
+    if (AGGREGATOR_SIGN_BANK && !COMPILED_SIGN_BANK) begin : invalid_sign_bank
+        initial $fatal(1, "Aggregator sign banks require the compiled read schedule");
+    end
+
+    tri_oracle_batched_learned437 #(.AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)) feedforward (
+        .attention, .merge_sign_data(sign_data), .merge_sign_control, .merge_sign_counts, .*
+    );
     tri_oracle_attention_pipeline430 #(
-        .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK)
+        .PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT), .COMPILED_SIGN_BANK(COMPILED_SIGN_BANK),
+        .AGGREGATOR_SIGN_BANK(AGGREGATOR_SIGN_BANK)
     ) attention_pipeline (
+        .merge_sign_control, .merge_sign_counts,
         .tensor_cfg_feature_words(attention.cfg_feature_words),
         .tensor_cfg_activation_stride(attention.cfg_activation_stride),
         .tensor_cfg_valid(attention.cfg_valid),
