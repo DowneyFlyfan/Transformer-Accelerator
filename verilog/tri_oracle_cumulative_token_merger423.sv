@@ -42,7 +42,7 @@ module tri_oracle_cumulative_token_merger423 #(
     logic new_image, has_map, has_upper, has_left, old_alias, advance, space;
     logic upper_match, left_match, free_found, store_sign, valid_step;
     wire [SLOT_W-1:0] bank_read_slot = old_alias ? inherited_slot : upper_slot;
-    logic read_available, write_sign;
+    logic read_available, write_sign, reuse_left_sign;
 
     assign cfg_ready = state==Idle;
     assign done_valid = state==Result;
@@ -54,7 +54,7 @@ module tri_oracle_cumulative_token_merger423 #(
     assign upper_slot = frontier[column];
     assign has_left = column!=0;
     assign left_slot = has_left ? frontier[column-1'b1] : '0;
-    assign upper_match = has_upper && reduction[LEVELS].upper[0]>=threshold;
+    assign upper_match = has_upper && (reuse_left_sign ? left_match : reduction[LEVELS].upper[0]>=threshold);
     assign left_match = has_left && reduction[LEVELS].left[0]>=threshold;
     assign sign_ready = state==Run && space && read_available && !old_alias;
     assign advance = state==Run && space && read_available && (old_alias || sign_valid);
@@ -65,8 +65,8 @@ module tri_oracle_cumulative_token_merger423 #(
         localparam int DATA_W = 128*BANKS;
         logic read_valid;
         logic [DATA_W-1:0] read_data;
-        wire needs_read = old_alias || has_upper;
-        wire issue_read = rst_n && state==Run && space && needs_read && !read_valid;
+        wire needs_read = (old_alias || has_upper) && !reuse_left_sign;
+        wire issue_read = rst_n && state==Run && needs_read && !read_valid;
         wire [4:0] address = write_sign ? 5'(selected_slot) : 5'(bank_read_slot);
 
         if (IMAGE_WIDTH > 32) begin : invalid_depth
@@ -75,6 +75,7 @@ module tri_oracle_cumulative_token_merger423 #(
 
         // The memory holds its read output while disabled. Until this cursor
         // advances, its prefetched word remains valid through any input stall.
+        assign reuse_left_sign = has_left && bank_read_slot==left_slot;
         assign read_available = !needs_read || read_valid;
         assign bank_read_sign = read_data[FEATURES-1:0];
         always_ff @(posedge clk or negedge rst_n) begin
@@ -91,6 +92,7 @@ module tri_oracle_cumulative_token_merger423 #(
         /* verilator lint_on DECLFILENAME */
     end else begin : inferred_signs
         logic [FEATURES-1:0] bank_sign[IMAGE_WIDTH];
+        assign reuse_left_sign = 0;
         assign read_available = 1;
         assign bank_read_sign = bank_sign[bank_read_slot];
         always_ff @(posedge clk) begin
@@ -189,7 +191,7 @@ module tri_oracle_cumulative_token_merger423 #(
                             root_slot[cursor]<=selected_slot;
                             bank_root[selected_slot]<=cursor;
                             left_sign<=sign_data;
-                        end else if (old_alias || upper_match) begin
+                        end else if ((old_alias || upper_match) && !reuse_left_sign) begin
                             left_sign<=bank_read_sign;
                         end
                         // The next column sees this step's chosen sign as its left

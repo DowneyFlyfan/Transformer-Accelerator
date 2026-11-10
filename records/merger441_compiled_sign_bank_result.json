@@ -72,5 +72,32 @@
   "archive": {
     "path": "records/merger441_compiled_sign_bank_evidence.json.gz",
     "sha256": "07b1271860c7b9eb6c4cc5dfe96daff50c7bf9048e611759afa9b7555204d2e5"
+  },
+  "genus_compiled_bank_trial": {
+    "state": "wall_limit_during_generic_synthesis",
+    "clock_constraint_megahertz": 580,
+    "compiled_macros_elaborated": 16,
+    "elapsed_seconds": 600.6717713809921,
+    "native_exit_status": -15,
+    "anonymous_peak_bytes": 9637810176,
+    "available_min_bytes": 12284239872,
+    "last_reported_stage": "post_rtlopt",
+    "native_log": ".cache/physical/shared437/merger_mapping441/console.log",
+    "native_log_sha256": "fead95484c00d8302711d612afc5302f2aabaf6e16552a65f0c9f050c6585cc0",
+    "generic_checkpoint_written": false,
+    "mapping_completed": false,
+    "timing_verified": false,
+    "input_sha256": {
+      ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+      ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+      "verilog/tri_oracle_cumulative_token_merger423.sv": "bb7b92df327469e15c75031d74eecbd05371613504ab6275c6b9ea9925a156ae",
+      ".cache/physical/shared437/merger_mapping441/elaborate.tcl": "d0a33c8518f234e5806b4df3bda3e7d3172a0d4ab9ae27a361ad425dd901b248",
+      ".cache/physical/shared437/compiled_sign441/inferred/receipt.json": "d9d4f78be36af83b5b17aff1cf243d1b113ecbee1e00857e40e24eba429a6a8a",
+      ".cache/physical/shared437/compiled_sign441/compiled/receipt.json": "5662b42f61669be3dc391d4505a33d398ab704ff32684949c91db7379fd9f3a9",
+      ".cache/physical/shared437/compiled_sign441/wrong_read_address/receipt.json": "f7c46d75acb08add8c105b8d921c3da3bac83f87e7c21a17cae8c0eee60e877a",
+      "syn/tri_oracle_synthesize_sram_memory_compute.tcl": "cf0b97b0db562536c2fd2393fc35b105b9c1e27402953fced42d45e5ac5f8ea6",
+      ".cache/physical/shared437/merger_probe/factored_reads/elaborate.tcl": "4e8d5a5d937bb42a4dd9df1c02c60b5e5e08e55fce6cb470e195310768fed95b",
+      ".cache/physical/shared437/run_merger_mapping441.py": "44ee3a24e5632a44b8920f3b58a25695fd72a3d20b91bf95f73a16b11709ca62"
+    }
   }
 }

@@ -1,0 +1,49 @@
+{
+  "state": "compiled_bank_scheduler_verified_in_trained_and_shared_layer_replays",
+  "baseline_source_sha256": "bb7b92df327469e15c75031d74eecbd05371613504ab6275c6b9ea9925a156ae",
+  "candidate_source_sha256": "b9336829cd07dd560687a1a86fa1bedb1b9aface31e41a301a4d7cccae0c4bc2",
+  "baseline_frame_cycles": 58205,
+  "candidate_frame_cycles": 45368,
+  "frame_cycle_reduction_percent": 22.055,
+  "inferred_bank_frame_cycles": 29785,
+  "baseline_word_reads": 24456,
+  "candidate_word_reads": 18877,
+  "word_reads_saved": 5579,
+  "word_writes": 15028,
+  "single_change_measurements": {
+    "prefetch_during_output_stall": {
+      "cycles": 50160,
+      "word_reads": 24456
+    },
+    "reuse_left_word": {
+      "cycles": 48986,
+      "word_reads": 18877
+    }
+  },
+  "trained_candidate_inventory": {
+    "modes": 2,
+    "layers": 44,
+    "maps": 25344,
+    "signs": 15561,
+    "rows": 25432,
+    "sizes": 4380542,
+    "cfg_errors": 3,
+    "map_stalls": 3710,
+    "done_stalls": 235
+  },
+  "wrong_cache_slot_rejection": "BATCH423_WRONG_MAP mode=0 layer=0 token=27 got=27 expected=3",
+  "integrated_markers": [
+    "BATCH357_ACTUAL_HIERARCHY cores=20 clusters=5 compiled_memories=618",
+    "SHARED437_ATTENTION_OWNERSHIP_PASS",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=60"
+  ],
+  "directed_hold_passed": true,
+  "inferred_baseline_cycle_identity_verified": true,
+  "archive": {
+    "path": "records/merger442_sign_schedule_evidence.json.gz",
+    "sha256": "faf8325b48f6c274b97933338992d0d28f7909c338f9ac7b216489acc014eb4c"
+  },
+  "full_paper_results_matched": false,
+  "clock_distribution_or_routing_allowed": false,
+  "scope": "Native source verification of the compiled sign bank. Prefetch can overlap output backpressure and a matching slot can use the cached previous-column sign. Timed mapping and paper performance remain unqualified."
+}

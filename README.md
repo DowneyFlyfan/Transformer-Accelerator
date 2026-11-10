@@ -640,6 +640,19 @@ centralized bank and 406-kibibyte compiled-memory inventory leave the paper's
 per-aggregator organization and 405-kilobyte total unqualified. See
 `records/merger441_compiled_sign_bank_result.json`.
 
+The compiled bank now prefetches while a previous map entry is stalled and
+reuses the preceding column's sign when the requested slot matches. The two
+changes together cut trained frame cycles from 58,205 to 45,368 and word reads
+from 24,456 to 18,877. The original inferred mode, integrated 20-core replay,
+and directed hold case passed. A wrong cache slot failed at token 27 in the
+first layer. See `records/merger442_sign_schedule_result.json`.
+
+At the 580-megahertz target, Genus bound sixteen macros in the earlier
+compiled-bank version and finished datapath optimization. The ten-minute
+limit stopped generic synthesis before checkpoint export. Peak anonymous
+memory was 8.98 gibibytes. See the synthesis trial in
+`records/merger441_compiled_sign_bank_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The
