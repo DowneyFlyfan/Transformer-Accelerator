@@ -1,15 +1,19 @@
 `timescale 1ns/1ps
-module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
+module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0, parameter bit PERSIST_LAYER_CONTEXT=0);
     localparam logic [63:0] QUERY_ADDR = 64'h1000, KEY_ADDR = 64'h20000;
     logic clk=0, rst_n=0;
     always #5 clk=~clk;
 
     logic frame_valid=0, frame_new_image, frame_done_ready=0, sign_valid=0;
+    logic [4:0] frame_layer;
     logic [11:0] frame_minimum_matches;
     logic [9:0] frame_image_start;
     logic [2047:0] sign_data;
     wire frame_ready, frame_done_valid, frame_done_error, sign_ready, map_valid, map_last;
     wire [9:0] map_index, map_origin;
+    logic restore_valid=0, restore_done_ready=0, checking_restore=0;
+    logic [4:0] restore_layer;
+    wire restore_ready, restore_done_valid, restore_done_error;
 
     logic head_valid=0, head_done_ready=0;
     logic [4:0] head_id;
@@ -54,6 +58,7 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
     int cycles=0, active_layer, frame_maps, sign_words=0, total_maps=0, frames=0, frame_errors=0;
     int checked_heads=0, streaming_heads=0, head_errors=0, checked_rows=0, row_errors=0, score_words=0;
     int selected_count, accepted_values, accepted_scores, query_count, key_count, row_id;
+    int restored_words, restored_maps=0, restore_errors=0;
     bit predicting=0, rejecting=0;
     logic [511:0] queries[1024], keys[1024], values[1024];
     logic [9:0] golden[22*576], ranks[1024];
@@ -74,7 +79,7 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
     wire value_rsp_valid = value_pending;
     wire [511:0] value_rsp_data = values[value_rank];
 
-    tri_oracle_attention_layer427 dut (
+    tri_oracle_attention_layer427 #(.PERSIST_LAYER_CONTEXT(PERSIST_LAYER_CONTEXT)) dut (
         .head_query_base(QUERY_ADDR), .head_key_base(KEY_ADDR),
         .row_query_addr(QUERY_ADDR), .row_key_base(KEY_ADDR), .value_rsp_error(1'b0), .*
     );
@@ -102,6 +107,15 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
             total_maps++;
         end
         if (sign_valid && sign_ready) sign_words++;
+        if (checking_restore) begin
+            if (sign_ready || map_valid || tensor_cfg_valid || value_req_valid)
+                $fatal(1,"CTX428_RESTORE_SIDE_EFFECT layer=%0d",restore_layer);
+            if (dut.row_map_valid && dut.row_map_ready) begin
+                if (restored_words>=576 || dut.row_map_origin!==golden[int'(restore_layer)*576+restored_words])
+                    $fatal(1,"CTX428_RESTORED_MAP layer=%0d index=%0d",restore_layer,restored_words);
+                restored_words++;
+            end
+        end
         if (req_valid && req_ready) begin
             if (rejecting || req_length==0 || req_address[2:0]!=0) $fatal(1,"LAYER427_UNEXPECTED_READ");
             for (int word=0;word<int'(req_length);word++) begin
@@ -142,7 +156,7 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
         int previous_signs, expected_signs;
         @(negedge clk);
         active_layer=layer; frame_maps=0; rejecting=invalid; previous_signs=sign_words; expected_signs=0;
-        frame_new_image=layer==0;
+        frame_new_image=layer==0; frame_layer=5'(layer);
         frame_minimum_matches=(invalid && !reject_continuation) ? 12'd4095 : 12'd1536;
         frame_image_start=10'd5; frame_valid=1;
         @(posedge clk);
@@ -175,6 +189,27 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
         @(negedge clk);
         frame_done_ready=0;
         frames+=int'(!invalid); frame_errors+=int'(invalid);
+    endtask
+
+    task automatic restore_frame(input int layer, input bit invalid);
+        @(negedge clk);
+        rejecting=1; checking_restore=1; restored_words=0; active_layer=layer;
+        restore_layer=5'(layer); restore_valid=1;
+        @(posedge clk);
+        if (!restore_ready) $fatal(1,"CTX428_RESTORE_NOT_READY");
+        @(negedge clk);
+        restore_valid=0;
+        while (!restore_done_valid) @(negedge clk);
+        repeat (2) begin
+            if (!restore_done_valid || restore_done_error!==invalid ||
+                restored_words!=(invalid ? 0 : 576) || frame_ready || head_ready || row_ready)
+                $fatal(1,"CTX428_RESTORE_RESULT layer=%0d error=%b words=%0d",layer,restore_done_error,restored_words);
+            @(negedge clk);
+        end
+        restore_done_ready=1;
+        @(negedge clk);
+        restore_done_ready=0; checking_restore=0;
+        restored_maps+=int'(!invalid); restore_errors+=int'(invalid);
     endtask
 
     task automatic predict_head(input int id, alpha, inner, recent, input bit expected_streaming, invalid);
@@ -230,27 +265,27 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
         checked_rows+=int'(!invalid); row_errors+=int'(invalid); score_words+=accepted_scores;
     endtask
 
-    initial begin
-        int heads_file, rows_file, id, alpha, inner, recent, stream, position, shift;
-        if (!$value$plusargs("FIXTURE=%s",fixture)) $fatal(1,"LAYER427_FIXTURE");
-        $readmemh({fixture,"/map.hex"},golden);
-        $readmemh({fixture,"/signs.hex"},signs);
-        heads_file=$fopen({fixture,"/heads.txt"},"r");
-        rows_file=$fopen({fixture,"/rows.txt"},"r");
-        if (!heads_file || !rows_file) $fatal(1,"LAYER427_FIXTURE_OPEN");
-        repeat (3) @(negedge clk);
-        rst_n=1;
-        if (TARGET_LAYER==0) load_frame(0,1,0);
-        for (int layer=0;layer<=TARGET_LAYER;layer++) load_frame(layer,0,0);
+    task automatic run_heads(input string filename, input bit inject_error);
+        int heads_file, id, alpha, inner, recent, stream;
+        heads_file=$fopen(filename,"r");
+        if (!heads_file) $fatal(1,"LAYER427_FIXTURE_OPEN");
         while ($fscanf(heads_file,"%d %d %d %d %d %d",id,key_count,alpha,inner,recent,stream)==6) begin
             query_count=key_count-96;
             for (int row=0;row<query_count;row++)
                 if ($fscanf(heads_file,"%h",queries[row])!=1) $fatal(1,"LAYER427_HEAD_QUERY");
             for (int key=0;key<key_count;key++)
                 if ($fscanf(heads_file,"%h",keys[key])!=1) $fatal(1,"LAYER427_HEAD_KEY");
-            if (TARGET_LAYER==0) predict_head(id,alpha,inner,recent,stream!=0,1);
+            if (inject_error) predict_head(id,alpha,inner,recent,stream!=0,1);
             predict_head(id,alpha,inner,recent,stream!=0,0);
         end
+        if (!$feof(heads_file)) $fatal(1,"LAYER427_HEAD_FILE");
+        $fclose(heads_file);
+    endtask
+
+    task automatic run_rows(input string filename);
+        int rows_file, id, position, shift;
+        rows_file=$fopen(filename,"r");
+        if (!rows_file) $fatal(1,"LAYER427_FIXTURE_OPEN");
         while ($fscanf(rows_file,"%d %d %d %d %d %d",row_id,id,key_count,position,shift,selected_count)==6) begin
             if ($fscanf(rows_file,"%h %h",queries[0],expected_result)!=2) $fatal(1,"LAYER427_ROW_HEADER");
             for (int key=0;key<key_count;key++) begin
@@ -263,18 +298,58 @@ module tri_oracle_attention427_layer_tb #(parameter int TARGET_LAYER=0);
             end
             execute_row(id,position,shift,0);
         end
-        if (TARGET_LAYER==0) begin
-            load_frame(1,1,0);
-            load_frame(1,0,0);
+        if (!$feof(rows_file)) $fatal(1,"LAYER427_ROW_FILE");
+        $fclose(rows_file);
+    endtask
+
+    initial begin
+        if (!$value$plusargs("FIXTURE=%s",fixture)) $fatal(1,"LAYER427_FIXTURE");
+        $readmemh({fixture,"/map.hex"},golden);
+        $readmemh({fixture,"/signs.hex"},signs);
+        repeat (3) @(negedge clk);
+        rst_n=1;
+        if (PERSIST_LAYER_CONTEXT) begin
+            restore_frame(21,1);
+            for (int layer=0;layer<22;layer++) begin
+                load_frame(layer,0,0);
+                run_heads($sformatf("%s/heads_%0d.txt",fixture,layer),0);
+                run_rows($sformatf("%s/prefill_%0d.txt",fixture,layer));
+                if (layer==0) load_frame(2,1,1);
+                if (layer==10) restore_frame(0,0);
+            end
+            for (int layer=0;layer<22;layer++) begin
+                restore_frame(layer,0);
+                run_rows($sformatf("%s/decode_%0d.txt",fixture,layer));
+            end
+            execute_row(31,0,-1,1);
+            predict_head(0,0,0,0,0,1);
+            restore_frame(10,0);
+            restore_frame(21,0);
             execute_row(0,0,-1,1);
+            restore_frame(31,1);
+            execute_row(1,0,-1,1);
+            restore_frame(0,0);
             load_frame(0,1,0);
-            load_frame(1,1,1);
+            restore_frame(21,1);
+            $display("CTX428_ATTENTION_PASS frames=%0d maps=%0d signs=%0d restores=%0d heads=%0d streaming=%0d rows=%0d scores=%0d frame_errors=%0d restore_errors=%0d head_errors=%0d row_errors=%0d",
+                     frames,total_maps,sign_words,restored_maps,checked_heads,streaming_heads,checked_rows,score_words,
+                     frame_errors,restore_errors,head_errors,row_errors);
+        end else begin
+            if (TARGET_LAYER==0) load_frame(0,1,0);
+            for (int layer=0;layer<=TARGET_LAYER;layer++) load_frame(layer,0,0);
+            run_heads({fixture,"/heads.txt"},TARGET_LAYER==0);
+            run_rows({fixture,"/rows.txt"});
+            if (TARGET_LAYER==0) begin
+                load_frame(1,1,0);
+                load_frame(1,0,0);
+                execute_row(0,0,-1,1);
+                load_frame(0,1,0);
+                load_frame(1,1,1);
+            end
+            $display("LAYER427_PASS frames=%0d maps=%0d signs=%0d heads=%0d streaming=%0d rows=%0d scores=%0d frame_errors=%0d head_errors=%0d row_errors=%0d",
+                     frames,total_maps,sign_words,checked_heads,streaming_heads,checked_rows,score_words,frame_errors,head_errors,row_errors);
         end
-        if (!$feof(heads_file) || !$feof(rows_file) || checked_heads==0 || checked_rows==0)
-            $fatal(1,"LAYER427_FIXTURE_END");
-        $fclose(heads_file); $fclose(rows_file);
-        $display("LAYER427_PASS frames=%0d maps=%0d signs=%0d heads=%0d streaming=%0d rows=%0d scores=%0d frame_errors=%0d head_errors=%0d row_errors=%0d",
-                 frames,total_maps,sign_words,checked_heads,streaming_heads,checked_rows,score_words,frame_errors,head_errors,row_errors);
+        if (checked_heads==0 || checked_rows==0) $fatal(1,"LAYER427_FIXTURE_END");
         $finish;
     end
 

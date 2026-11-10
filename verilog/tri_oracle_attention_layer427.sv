@@ -3,9 +3,10 @@
 // the same ordinary tensor owner with eight 64-bit words per operand vector.
 // Prediction query memory starts at compact position 96. The caller compacts
 // tensors according to the emitted map and retains them across decode rows.
-module tri_oracle_attention_layer427 (
+module tri_oracle_attention_layer427 #(parameter bit PERSIST_LAYER_CONTEXT=0) (
     input logic clk, rst_n,
     input logic frame_valid, frame_new_image,
+    input logic [4:0] frame_layer,
     output logic frame_ready,
     input logic [11:0] frame_minimum_matches,
     input logic [9:0] frame_image_start,
@@ -17,6 +18,10 @@ module tri_oracle_attention_layer427 (
     output logic [9:0] map_index, map_origin,
     output logic frame_done_valid, frame_done_error,
     input logic frame_done_ready,
+    input logic restore_valid,
+    input logic [4:0] restore_layer,
+    output logic restore_ready, restore_done_valid, restore_done_error,
+    input logic restore_done_ready,
 
     input logic head_valid,
     output logic head_ready,
@@ -71,7 +76,8 @@ module tri_oracle_attention_layer427 (
 );
     localparam logic [9:0] IMAGE_TOKENS=10'd576;
     typedef enum logic [3:0] {
-        Idle, Merge, PadFrame, WaitFrame, FrameResult, RunHead, HeadResult, RunRow, RejectRow
+        Idle, Merge, PadFrame, WaitFrame, FrameResult, RunHead, HeadResult, RunRow, RejectRow,
+        RestoreMap, WaitRestore, RestoreResult
     } state_t;
     typedef struct packed {
         logic valid;
@@ -100,27 +106,44 @@ module tri_oracle_attention_layer427 (
     logic [31:0] native_result_tag, rejected_row_tag;
     logic [2047:0] native_result_values;
     logic head_tensor_out_ready, head_tensor_done_ready, row_tensor_out_ready, row_tensor_done_ready;
+    logic [21:0] stored_valid;
+    logic [31:0] stored_known[22], stored_types[22];
+    logic [9:0] stored_image_start[22], stored_roots[22];
+    logic [4:0] resident_layer, next_merge_layer;
+    logic frame_descriptor_ok, restore_allowed, frame_start, restore_start;
+    logic store_idle, store_save_ready, store_restore_valid, store_restore_last;
+    logic [9:0] store_restore_origin;
 
-    assign frame_ready = state==Idle && merge_cfg_ready && row_frame_ready;
+    assign frame_ready = state==Idle && merge_cfg_ready && row_frame_ready && store_idle;
+    assign frame_descriptor_ok = !PERSIST_LAYER_CONTEXT || (frame_layer<22 &&
+                                  (frame_new_image ? frame_layer==0 : frame_layer==next_merge_layer));
+    assign frame_start = frame_valid && frame_ready && frame_descriptor_ok;
     assign frame_done_valid = state==FrameResult;
     assign frame_done_error = frame_failed;
+    assign restore_ready = PERSIST_LAYER_CONTEXT && state==Idle && !frame_valid && store_idle && row_frame_ready;
+    assign restore_allowed = restore_layer<22 && stored_valid[restore_layer];
+    assign restore_start = restore_valid && restore_ready && restore_allowed;
+    assign restore_done_valid = state==RestoreResult;
     // A rejected fresh image must not expose the previous image's merger state.
     assign merge_threshold = frame_new_image || merge_sequence_valid ? frame_minimum_matches : 12'hfff;
     // The internal and external consumers accept each real map word together.
-    assign map_valid = state==Merge && merge_map_valid && row_map_ready;
+    assign map_valid = state==Merge && merge_map_valid && row_map_ready && store_save_ready;
     assign map_transfer = map_valid && map_ready;
-    assign row_map_valid = (state==Merge && merge_map_valid && map_ready) || state==PadFrame;
+    assign row_map_valid = (state==Merge && merge_map_valid && map_ready && store_save_ready) ||
+                           state==PadFrame || (state==RestoreMap && store_restore_valid);
     // If merging terminates early, an invalid origin forces the row loader to
     // drain its fixed-length frame. Padding is internal to the failed frame.
-    assign row_map_origin = state==PadFrame ? 10'h3ff : map_origin;
+    assign row_map_origin = state==PadFrame ? 10'h3ff : state==RestoreMap ? store_restore_origin : map_origin;
 
     assign head_descriptor_ok = layer_loaded && head_tokens>=11'(image_start)+11'(roots) &&
                                 head_tokens<=1024 && head_ratio_den!=0;
     assign use_predictor = head_descriptor_ok && head_tokens>96;
-    assign head_ready = state==Idle && !frame_valid && (!use_predictor || predictor_ready);
+    assign head_ready = state==Idle && !frame_valid && !(PERSIST_LAYER_CONTEXT && restore_valid) &&
+                        (!use_predictor || predictor_ready);
     assign head_done_valid = state==HeadResult;
     assign row_allowed = layer_loaded && known_heads[row_head];
-    assign row_ready = state==Idle && !frame_valid && !head_valid && (!row_allowed || native_row_ready);
+    assign row_ready = state==Idle && !frame_valid && !(PERSIST_LAYER_CONTEXT && restore_valid) && !head_valid &&
+                       (!row_allowed || native_row_ready);
 
     assign result_valid = state==RejectRow || (state==RunRow && native_result_valid);
     assign result_error = state==RejectRow || (state==RunRow && native_result_error);
@@ -135,10 +158,27 @@ module tri_oracle_attention_layer427 (
     assign tensor_out_ready = (state==RunHead && head_tensor_out_ready) || (state==RunRow && row_tensor_out_ready);
     assign tensor_done_ready = (state==RunHead && head_tensor_done_ready) || (state==RunRow && row_tensor_done_ready);
 
+    if (PERSIST_LAYER_CONTEXT) begin : contexts
+        tri_oracle_attention_context428 store (
+            .clk, .rst_n, .idle(store_idle), .layer(restore_start ? restore_layer : frame_layer),
+            .save_start(frame_start), .save_cancel(state==Merge && merge_done_valid && map_count!=IMAGE_TOKENS),
+            .save_valid(map_transfer), .save_ready(store_save_ready), .save_origin(map_origin),
+            .restore_start, .restore_ready(state==RestoreMap && row_map_ready),
+            .restore_valid(store_restore_valid), .restore_last(store_restore_last), .restore_origin(store_restore_origin)
+        );
+    end else begin : no_contexts
+        assign store_idle = 1;
+        assign store_save_ready = 1;
+        assign store_restore_valid = 0;
+        assign store_restore_last = 0;
+        assign store_restore_origin = 0;
+    end
+
     tri_oracle_cumulative_token_merger423 merger (
-        .clk, .rst_n, .cfg_valid(frame_valid && frame_ready), .cfg_new_image(frame_new_image),
+        .clk, .rst_n, .cfg_valid(frame_start), .cfg_new_image(frame_new_image),
         .cfg_ready(merge_cfg_ready), .cfg_minimum_matches(merge_threshold),
-        .sign_valid, .sign_ready, .sign_data, .map_valid(merge_map_valid), .map_ready(state==Merge && row_map_ready && map_ready),
+        .sign_valid, .sign_ready, .sign_data, .map_valid(merge_map_valid),
+        .map_ready(state==Merge && row_map_ready && map_ready && store_save_ready),
         .map_index, .map_origin, .map_last, .done_valid(merge_done_valid), .done_error(merge_done_error), .done_ready(state==Merge)
     );
     tri_oracle_attention_head_predictor415 predictor (
@@ -158,8 +198,9 @@ module tri_oracle_attention_layer427 (
         .tensor_done_ready(head_tensor_done_ready), .tensor_done_tag
     );
     tri_oracle_attention_row426 attention (
-        .clk, .rst_n, .frame_valid(frame_valid && frame_ready), .frame_ready(row_frame_ready),
-        .frame_error(row_frame_error), .frame_image_start, .map_valid(row_map_valid), .map_ready(row_map_ready), .map_origin(row_map_origin),
+        .clk, .rst_n, .frame_valid(frame_start || restore_start), .frame_ready(row_frame_ready),
+        .frame_error(row_frame_error), .frame_image_start(restore_start ? stored_image_start[restore_layer] : frame_image_start),
+        .map_valid(row_map_valid), .map_ready(row_map_ready), .map_origin(row_map_origin),
         .row_valid(row_valid && row_ready && row_allowed), .row_ready(native_row_ready),
         .row_tag, .row_position, .row_key_count, .row_streaming(head_types[row_head]),
         .row_score_shift, .row_query_addr, .row_key_base,
@@ -194,20 +235,42 @@ module tri_oracle_attention_layer427 (
             head_done_inner <= 0;
             head_done_recent <= 0;
             rejected_row_tag <= 0;
+            stored_valid <= 0;
+            resident_layer <= 0;
+            next_merge_layer <= 0;
+            restore_done_error <= 0;
         end else case (state)
             Idle: begin
                 if (frame_valid && frame_ready) begin
                     layer_loaded <= 0;
-                    frame_failed <= 0;
+                    frame_failed <= !frame_descriptor_ok;
                     known_heads <= 0;
                     // Only an invalid-threshold continuation preserves the prior
                     // committed origins. Any transaction that can modify them
                     // must finish successfully before another continuation.
-                    if (frame_new_image || merge_threshold<=12'd2048) merge_sequence_valid <= 0;
+                    if (frame_new_image || (frame_descriptor_ok && merge_threshold<=12'd2048)) merge_sequence_valid <= 0;
                     map_count <= 0;
                     roots <= 0;
                     image_start <= frame_image_start;
-                    state <= Merge;
+                    if (PERSIST_LAYER_CONTEXT) begin
+                        if (frame_new_image) begin
+                            stored_valid <= 0;
+                            next_merge_layer <= 0;
+                        end else if (frame_descriptor_ok) stored_valid[frame_layer] <= 0;
+                        resident_layer <= frame_layer;
+                    end
+                    if (frame_descriptor_ok) state <= Merge;
+                    else state <= FrameResult;
+                end else if (restore_valid && restore_ready) begin
+                    layer_loaded <= 0;
+                    known_heads <= 0;
+                    restore_done_error <= !restore_allowed;
+                    if (restore_allowed) begin
+                        resident_layer <= restore_layer;
+                        image_start <= stored_image_start[restore_layer];
+                        roots <= stored_roots[restore_layer];
+                        state <= RestoreMap;
+                    end else state <= RestoreResult;
                 end else if (head_valid && head_ready) begin
                     head_done_id <= head_id;
                     head_done_tag <= head_tag;
@@ -217,6 +280,10 @@ module tri_oracle_attention_layer427 (
                     head_done_recent <= 0;
                     known_heads[head_id] <= head_descriptor_ok && !use_predictor;
                     head_types[head_id] <= 0;
+                    if (PERSIST_LAYER_CONTEXT && layer_loaded) begin
+                        stored_known[resident_layer][head_id] <= head_descriptor_ok && !use_predictor;
+                        stored_types[resident_layer][head_id] <= 0;
+                    end
                     if (use_predictor) state <= RunHead;
                     else state <= HeadResult;
                 end else if (row_valid && row_ready) begin
@@ -241,18 +308,44 @@ module tri_oracle_attention_layer427 (
                 map_count <= map_count+1'b1;
                 if (map_count==IMAGE_TOKENS-1'b1) state <= WaitFrame;
             end
-            WaitFrame: if (row_frame_ready) begin
+            WaitFrame: if (row_frame_ready && store_idle) begin
                 frame_failed <= frame_failed || row_frame_error;
                 layer_loaded <= !frame_failed && !row_frame_error;
-                if (!frame_failed && !row_frame_error) merge_sequence_valid <= 1;
+                if (!frame_failed && !row_frame_error) begin
+                    merge_sequence_valid <= 1;
+                    if (PERSIST_LAYER_CONTEXT) begin
+                        stored_valid[resident_layer] <= 1;
+                        stored_known[resident_layer] <= 0;
+                        stored_types[resident_layer] <= 0;
+                        stored_image_start[resident_layer] <= image_start;
+                        stored_roots[resident_layer] <= roots;
+                        next_merge_layer <= resident_layer+1'b1;
+                    end
+                end
                 state <= FrameResult;
             end
             FrameResult: if (frame_done_ready) state <= Idle;
+            RestoreMap: if (store_restore_valid && row_map_ready && store_restore_last) state <= WaitRestore;
+            WaitRestore: if (row_frame_ready && store_idle) begin
+                restore_done_error <= row_frame_error;
+                layer_loaded <= !row_frame_error;
+                if (row_frame_error) stored_valid[resident_layer] <= 0;
+                else begin
+                    known_heads <= stored_known[resident_layer];
+                    head_types <= stored_types[resident_layer];
+                end
+                state <= RestoreResult;
+            end
+            RestoreResult: if (restore_done_ready) state <= Idle;
             RunHead: if (predictor_valid) begin
                 head_done_error <= predictor_error || predictor_tag!=head_done_tag;
                 if (!predictor_error && predictor_tag==head_done_tag) begin
                     known_heads[head_done_id] <= 1;
                     head_types[head_done_id] <= predictor_streaming;
+                    if (PERSIST_LAYER_CONTEXT) begin
+                        stored_known[resident_layer][head_done_id] <= 1;
+                        stored_types[resident_layer][head_done_id] <= predictor_streaming;
+                    end
                     head_done_streaming <= predictor_streaming;
                     head_done_inner <= predictor_inner;
                     head_done_recent <= predictor_recent;

@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 TOP = "tri_oracle_attention427_layer_tb"
 LAYER = "tri_oracle_attention_layer427"
 PEERS = ("cumulative_token_merger423", "attention_head_predictor415", "attention_tile_batch413",
-         "attention_head_classifier410", "attention_row426", "causal_token_size", "proportional_softmax")
+         "attention_head_classifier410", "attention_row426", "causal_token_size", "proportional_softmax",
+         "attention_context428")
 
 
 def prepare_vectors(folder, heads, rows):
@@ -87,8 +88,8 @@ def main():
     mutants={
         "ignore_head_type": (10, ".row_streaming(head_types[row_head])",
                              ".row_streaming(1'b0)", "LAYER427_KEY_READ row=10 address=0000000000020800"),
-        "stale_head_cache": (0, "frame_failed <= 0;\n                    known_heads <= 0;",
-                             "frame_failed <= 0;", "LAYER427_UNEXPECTED_READ"),
+        "stale_head_cache": (0, "frame_failed <= !frame_descriptor_ok;\n                    known_heads <= 0;",
+                             "frame_failed <= !frame_descriptor_ok;", "LAYER427_UNEXPECTED_READ"),
         "stale_image_map": (0, "frame_new_image || merge_sequence_valid ? frame_minimum_matches : 12'hfff",
                             "frame_minimum_matches", "LAYER427_REJECTED_FRAME_REQUESTED_SIGN layer=1"),
     }

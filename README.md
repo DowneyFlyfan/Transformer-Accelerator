@@ -446,6 +446,25 @@ active layer's map and head decisions. Whole-model decode still needs to
 restore the corresponding state when it returns to an earlier layer. See
 `records/batch427_attention_layer_result.json`.
 
+The context-enabled attention controller keeps all 22 layer maps in four
+compiled 512-by-64 static random-access memories. Each map uses 90 words, for
+1,980 occupied words and 15,840 payload bytes in 16,384 installed bytes.
+Head decisions, their validity bits, and frame geometry use separate registers.
+Layer restoration reloads the causal-size unit without replaying signs or
+rerunning head prediction. It leaves the cumulative merger's prompt sequence
+intact so prompt processing can also resume after an intervening restore.
+
+Xcelium checked the chronological prompt and decode schedule on 22 trained
+maps with 26 successful restores. It reproduced 1,600 exact value components
+across 20 prompt and five decode rows. The tests reject stale layer maps,
+missing restored head decisions, and rows that use invalidated heads. The
+isolated map store also mapped in Genus with all four memories retained and
+passed 12,672 restore comparisons on the mapped netlist. Its estimated
+pre-placement setup slack was 1.132 ns at the 580-megahertz target and the
+0.9-volt, 125-degree Celsius library corner. See
+`records/batch428_attention_context_result.json` and
+`records/batch428_context_synthesis_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
