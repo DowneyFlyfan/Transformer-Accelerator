@@ -616,6 +616,9 @@ The shared layer with imported mapped cores exceeded the 300,000 mapped-instance
 limit at 1,293,402. Using the extracted core timing model left 1,491,140
 unmapped instances against the 1,200,000 limit. Both runs stopped before a
 parent database was saved. See `records/shared439_synthesis_capacity_result.json`.
+The full-size standalone merger elaborated under the same license and then
+reached the 16-gibibyte memory guard during generic synthesis, before Genus
+could save a generic checkpoint or report mapped area and timing.
 
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the

@@ -128,5 +128,36 @@
   "full_mapping_completed": false,
   "whole_chip_route_authorized": false,
   "full_paper_results_matched": false,
-  "scope": "Two native post-elaboration license failures. The extracted timing model represents the core interface for synthesis diagnosis. Native mapped and unmapped counts are separate limits."
+  "scope": "Two integrated post-elaboration license failures and a separate full-size merger generic synthesis memory-guard stop. The extracted timing model represents the core interface for synthesis diagnosis. Native mapped and unmapped counts are separate limits.",
+  "isolated_merger_generic_synthesis": {
+    "state": "stopped_by_anonymous_memory_guard_in_generic_synthesis",
+    "native_exit_status": -15,
+    "elapsed_seconds": 263.7925816969946,
+    "design": "tri_oracle_cumulative_token_merger423",
+    "workload_shape": {
+      "sign_slots": 24,
+      "sign_features": 2048,
+      "image_tokens": 576
+    },
+    "requested_clock_megahertz": 580,
+    "native_log": ".cache/physical/shared437/merger_mapping439/console.log",
+    "native_log_sha256": "5d590c1db743c996e5851c7d3bc266d44bbc6b651d811437d3289cb55a116fe6",
+    "anonymous_guard_bytes": 17179869184,
+    "observed_anonymous_bytes": 17263321088,
+    "lowest_host_available_bytes": 7389192192,
+    "last_reported_stage": "post_hlo_rtlopt",
+    "generic_checkpoint_written": false,
+    "mapping_completed": false,
+    "timing_verified": false,
+    "input_sha256": {
+      ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+      "verilog/tri_oracle_cumulative_token_merger423.sv": "5d7112b78aa916cd53c3d798fd1328dcd88fb2337f6f824b26a87e2ed2561e98",
+      ".cache/physical/shared437/merger_mapping439/elaborate.tcl": "848a9d69898db1578cc3085a9381016005e5a8558bbd1d6d832d45d0c3cc52f0",
+      "records/merger438_shared_reads_result.json": "ca1fdb8762a899cdffd239b8b878014478d86d86cf27990f426a45934a01745a",
+      "records/merger438_shared_reads_evidence.json.gz": "87983489549e53de698a4a3e6f705c630709dd891b88152570444fe940681b0b",
+      "syn/tri_oracle_synthesize_sram_memory_compute.tcl": "cf0b97b0db562536c2fd2393fc35b105b9c1e27402953fced42d45e5ac5f8ea6",
+      ".cache/physical/shared437/merger_probe/factored_reads/elaborate.tcl": "4e8d5a5d937bb42a4dd9df1c02c60b5e5e08e55fce6cb470e195310768fed95b",
+      ".cache/physical/shared437/run_merger_mapping439.py": "ea1142250cb253551728432c8674c83852bafe98951823658a6dc4c55dc85d0c"
+    }
+  }
 }
