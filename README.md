@@ -374,6 +374,18 @@ teacher replay on the anchor question in all three modes. The local merge
 rule keeps existing groups intact and uses original upper and left neighbors.
 See `records/batch422_compact_decoder_result.json`.
 
+The joint software pilot applies the fixed-point feed-forward reference across
+all 22 language layers while physically compacting model tensors and selecting
+streaming attention heads. On the same 64 questions, the combined mode scored
+61.88 percent, compared with 57.97 percent with weight skipping disabled,
+69.06 percent with floating-point feed-forward, and 74.69 percent for the dense
+floating-point control. The combined mode removed 45.70 percent of prefill
+cache slots and skipped 8.43 percent of feed-forward channels across its retained
+prefill rows. Independent rescoring checked all 320 answers and matched all 192
+archived control answers. Attention and normalization inputs still use floating
+point. These are model-reference scores and mask counts, with no measured chip
+timing, traffic, or energy. See `records/batch424_joint_pilot_result.json`.
+
 The cumulative hardware merger consumes signs only for prior surviving roots
 and holds a single 24-slot image-row sign bank. Xcelium replayed both live
 traces for the anchor image, matching 25,344 map entries and 4,380,542 causal
