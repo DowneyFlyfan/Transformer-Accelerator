@@ -29,5 +29,32 @@
     "path": "records/shared443_compiled_capacity_evidence.json.gz",
     "sha256": "a9c97150958280c8cad1f47cc061b50a29bce00e522091829f02153c47d6bfa7"
   },
-  "scope": "Full parent diagnostic with extracted compute-core models. The earlier inferred-bank trial used an older source revision. The graphics-processor audit checks frozen token decisions independently of the hardware simulation."
+  "scope": "Full parent diagnostic with extracted compute-core models. The earlier inferred-bank trial used an older source revision. The graphics-processor audit checks frozen token decisions independently of the hardware simulation.",
+  "standalone_merger_synthesis_trial": {
+    "state": "wall_limit_during_generic_synthesis",
+    "elapsed_seconds": 900.6148550310172,
+    "native_exit_status": -15,
+    "clock_constraint_megahertz": 580,
+    "requested_datapath_analytical_effort": "off",
+    "actual_datapath_analytical_effort": "standard",
+    "compiled_macros_elaborated": 16,
+    "peak_anonymous_bytes": 9667407872,
+    "last_native_stage": "Working on Hinst: CDN_PAS_SKIP_MUX_0i",
+    "native_log": ".cache/physical/shared437/merger_mapping443_low_dp/console.log",
+    "native_log_sha256": "ffc92957e66de64a820039d54cfa6c9a752d3969aa39b4f08b592df7afc32b5c",
+    "generic_checkpoint_written": false,
+    "technology_mapping_completed": false,
+    "input_sha256": {
+      ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+      ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+      "verilog/tri_oracle_cumulative_token_merger423.sv": "b9336829cd07dd560687a1a86fa1bedb1b9aface31e41a301a4d7cccae0c4bc2",
+      ".cache/physical/shared437/merger_mapping443_low_dp/elaborate.tcl": "ba82bcc9b6d33bd95f6ef83da105d5416f2e8959664fb7b25b412591fc139f04",
+      "records/merger442_sign_schedule_result.json": "7abe41806835c973fe1bd6bcd95a5bb2715f684813876201d329ca4767383a32",
+      "records/merger442_sign_schedule_evidence.json.gz": "faf8325b48f6c274b97933338992d0d28f7909c338f9ac7b216489acc014eb4c",
+      ".cache/physical/shared437/compiled_sign441/schedule_proof/receipt.json": "7d3cf855eed6eb718b6bc2dda6ea3654f979d9dfb576b848a1b2ee53dedbc570",
+      "syn/tri_oracle_synthesize_sram_memory_compute.tcl": "cf0b97b0db562536c2fd2393fc35b105b9c1e27402953fced42d45e5ac5f8ea6",
+      ".cache/physical/shared437/merger_probe/factored_reads/elaborate.tcl": "4e8d5a5d937bb42a4dd9df1c02c60b5e5e08e55fce6cb470e195310768fed95b",
+      ".cache/physical/shared437/run_merger_mapping443.py": "570c7d7d9158da81220519282205758218eda768309f1544e904f6e9551110ec"
+    }
+  }
 }

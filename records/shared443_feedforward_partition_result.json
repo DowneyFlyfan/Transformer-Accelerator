@@ -1,0 +1,27 @@
+{
+  "state": "feedforward_partition_saved_and_complementary_interface_verified",
+  "top": "tri_oracle_feedforward_partition443",
+  "paired_attention": "records/shared443_attention_partition_result.json",
+  "warm_elaboration_seconds": 107.2140761599876,
+  "cold_reload_seconds": 27.06664487096714,
+  "matched_port_bits": 20002,
+  "matched_tensor_signals": 24,
+  "complementary_tensor_bits": 13116,
+  "partition_port_directions": {
+    "in": 6802,
+    "out": 13200
+  },
+  "extracted_core_boundaries": 20,
+  "clusters": 5,
+  "cores_per_cluster": 4,
+  "database": ".cache/physical/shared437/feedforward_partition443/feedforward_elab.db",
+  "database_sha256": "6c51ee8562f9cdb4e4944474382bfe15f267e45007460368d92d8c6145a6b242",
+  "archive": {
+    "path": "records/shared443_feedforward_partition_evidence.json.gz",
+    "sha256": "2769853af4f924846a946ac5e65d44cfeccb6ea43d44bc2bd8ea13a7e6e82292"
+  },
+  "technology_mapping_completed": false,
+  "full_parent_reassembled": false,
+  "full_paper_results_matched": false,
+  "scope": "Elaborated feed-forward source with the original shared tensor interface and 20 extracted core boundaries. Both partition checkpoints preserve the full interface for future mapping and assembly."
+}

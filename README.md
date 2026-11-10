@@ -668,6 +668,17 @@ retains sixteen compiled sign-memory slices. A deliberately wrong tensor
 binding failed the interface check. See
 `records/shared443_attention_partition_result.json`.
 
+Genus also saved the feed-forward partition under the current license, with
+all twenty extracted core boundaries. Its 20,002 port bits survived cold
+reload. All 13,116 tensor-interface bits agree with the attention partition
+in name and width and have complementary directions. See
+`records/shared443_feedforward_partition_result.json`.
+
+The optimized merger ran for 15 minutes at the 580-megahertz constraint and
+reached the configured time limit before exporting a generic checkpoint. Genus
+reset the requested datapath optimization setting to its standard mode. See
+the standalone trial in `records/shared443_compiled_capacity_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The
