@@ -1,0 +1,35 @@
+{
+  "state": "attention_and_learned_feedforward_one_fabric_source_qualified",
+  "verified_utc": "2026-11-10T17:31:43.859345+00:00",
+  "top": "tri_oracle_shared_layer437",
+  "clusters": 5,
+  "cores": 20,
+  "compiled_memory_models": 602,
+  "learned_feedforward_cases": 12,
+  "learned_feedforward_exact_outputs": 6228,
+  "trained_attention_merge_entries": 576,
+  "trained_attention_live_projection_vectors": 27,
+  "trained_attention_failed_write_retry": true,
+  "trained_attention_rows": 4,
+  "trained_attention_exact_weighted_components": 256,
+  "trained_attention_value_reads": 1023,
+  "feedforward_admission_during_attention_mutant_rejected": true,
+  "no_reset_handoff": {
+    "feedforward_outputs": 519,
+    "exact_value_components": 64,
+    "operand_read_words": 16640,
+    "write_stall_cycles": 2
+  },
+  "legacy_learned_wrapper_passed": true,
+  "persistent_attention_context_enabled_in_native_runs": false,
+  "genus_full_elaboration_finished": false,
+  "genus_anonymous_memory_guard_bytes": 17179869184,
+  "genus_anonymous_bytes_at_stop": 17215934464,
+  "full_paper_results_matched": false,
+  "placement_gate_allows_advancement": false,
+  "archive": {
+    "path": "records/shared437_layer_evidence.json.gz",
+    "sha256": "17b6c792de22dec793d7d216ceece6c5742890efc70cb09da681303d5603479f"
+  },
+  "scope": "Native source simulation of one compiled-memory tensor fabric shared between attention and learned feed-forward. The caller provides layer scheduling and attention inputs. Genus checked a small interface probe; the integrated elaboration was interrupted at the memory guard."
+}

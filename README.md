@@ -582,6 +582,19 @@ Genus estimated 426 picoseconds of setup margin for the isolated writer at
 580 megahertz before placement. See `records/batch430_attention_replay_result.json`
 and `records/batch430_cache_writer_synthesis.json`.
 
+The shared layer sends both attention and learned feed-forward commands to
+one twenty-core tensor fabric. A command retains its result channels until
+its tagged completion transfers. Xcelium counted 602 compiled memories,
+including the two normalization memories. The trained attention replay
+checked 576 merge entries, 27 projected vectors, and 256 weighted output
+components. The twelve feed-forward cases matched 6,228 outputs. Another run
+completed a feed-forward frame and a queued attention projection on the same
+fabric without a reset. A mutation that allowed a competing feed-forward
+frame to enter during attention failed the ownership check.
+
+The full Genus elaboration stopped at a 16-gibibyte memory guard. The shared
+layer has source simulation evidence. See `records/shared437_layer_result.json`.
+
 Scaling only the values in a separate graphics processor experiment reduced
 relative error against floating-point attention to about 6–7 percent on the
 three later positions. The first position still had 41.6 percent error. The

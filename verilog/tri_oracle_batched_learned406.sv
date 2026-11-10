@@ -56,6 +56,67 @@ module tri_oracle_batched_learned406 (
     input logic wr_rsp_valid, wr_rsp_error,
     output logic wr_rsp_ready
 );
+  tri_oracle_attention_tensor437 unused_attention();
+  assign {unused_attention.cfg_valid, unused_attention.cfg_tag, unused_attention.cfg_activation_stride,
+          unused_attention.cfg_tokens, unused_attention.cfg_feature_words, unused_attention.cfg_dense_rows,
+          unused_attention.cfg_count, unused_attention.cfg_channels, unused_attention.cfg_keep,
+          unused_attention.cfg_activation_base, unused_attention.cfg_weight_base,
+          unused_attention.out_ready, unused_attention.done_ready} = '0;
+  tri_oracle_batched_learned437 implementation (.attention(unused_attention), .*);
+endmodule
+
+module tri_oracle_batched_learned437 (
+    input logic clk, rst_n, cfg_valid,
+    output logic cfg_ready,
+    input logic [31:0] cfg_tag,
+    input logic [4:0] cfg_tokens,
+    input logic [15:0] cfg_input_features, cfg_intermediate_features,
+    input logic [16:0] cfg_output_features,
+    input logic [63:0] cfg_activation_base, cfg_gate_base, cfg_up_base, cfg_down_base, cfg_intermediate_base,
+    input logic [31:0] cfg_activation_stride,
+    input logic [95:0] cfg_gate_shifts, cfg_up_shifts, cfg_down_shifts, cfg_activation_shifts,
+    input logic [63:0] cfg_gate_sign_base, cfg_up_sign_base,
+    input logic [31:0] cfg_epsilon_q16,
+    output logic [3:0] residual_token,
+    input logic stats_valid, stats_last,
+    output logic stats_ready,
+    input logic [127:0] stats_data,
+    input logic replay_valid, replay_last,
+    output logic replay_ready,
+    input logic [127:0] replay_data, replay_gamma,
+    output logic out_valid,
+    input logic out_ready,
+    output logic [31:0] out_tag,
+    output logic [3:0] out_token,
+    output logic [15:0] out_start,
+    output logic [7:0] out_count,
+    output logic out_last,
+    output logic [5119:0] out_data,
+    output logic done_valid,
+    input logic done_ready,
+    output logic done_error,
+    output logic [31:0] done_tag,
+    output logic req_valid,
+    input logic req_ready,
+    output logic [63:0] req_address,
+    output logic [4:0] req_length,
+    input logic rsp_valid,
+    output logic rsp_ready,
+    input logic rsp_last, rsp_error,
+    input logic [63:0] rsp_data,
+    output logic wr_req_valid,
+    input logic wr_req_ready,
+    output logic [63:0] wr_address,
+    output logic [4:0] wr_length,
+    output logic wr_data_valid,
+    input logic wr_data_ready,
+    output logic [63:0] wr_data,
+    output logic [7:0] wr_strobe,
+    output logic wr_data_last,
+    input logic wr_rsp_valid, wr_rsp_error,
+    output logic wr_rsp_ready,
+    tri_oracle_attention_tensor437.server attention
+);
     typedef enum logic [1:0] {Idle, Active, Reject} frame_state_t;
     typedef enum logic [1:0] {PickRead, OfferRead, WaitRead} read_state_t;
     typedef struct packed {
@@ -225,8 +286,9 @@ module tri_oracle_batched_learned406 (
         .done_valid(packet_done), .done_ready(retire), .done_error(packet_error), .done_tag(unused_packet_done_tag)
     );
 
-    tri_oracle_batched_frame393 compute (
+    tri_oracle_batched_frame437 compute (
         .clk(clk), .rst_n(rst_n), .cfg_valid(launch_compute), .cfg_ready(compute_ready),
+        .attention, .attention_enable(state == Idle && read_state == PickRead && !cfg_valid),
         .cfg_tag(tag), .cfg_tokens(saved.tokens), .cfg_input_features(saved.input_features),
         .cfg_intermediate_features(saved.intermediate_features), .cfg_output_features(saved.output_features),
         .cfg_activation_base(saved.activation_base), .cfg_gate_base(saved.gate_base), .cfg_up_base(saved.up_base),

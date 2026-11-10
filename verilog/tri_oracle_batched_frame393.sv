@@ -5,6 +5,36 @@
 // allocation. Every write response is accepted before that region is read.
 // Output groups have up to160 original rows; terminal error invalidates every
 // earlier output packet of this frame. Reset also resets both memory peers.
+// A raw tensor command uses the existing ordinary (non-paired) mode.
+// The requester holds valid and its descriptor until accepted, and keeps
+// ownership of the packet and terminal channels through the terminal transfer.
+interface tri_oracle_attention_tensor437;
+  logic cfg_valid, cfg_ready;
+  logic [31:0] cfg_tag, cfg_activation_stride;
+  logic [4:0] cfg_tokens;
+  logic [9:0] cfg_feature_words;
+  logic [16:0] cfg_dense_rows;
+  logic [7:0] cfg_count;
+  logic [2559:0] cfg_channels, cfg_keep;
+  logic [63:0] cfg_activation_base, cfg_weight_base;
+  logic out_valid, out_ready, out_last;
+  logic [31:0] out_tag;
+  logic [3:0] out_token;
+  logic [7:0] out_count;
+  logic [2559:0] out_channels;
+  logic [5119:0] out_data;
+  logic done_valid, done_ready, done_error;
+  logic [31:0] done_tag;
+
+  modport server (
+    input cfg_valid, cfg_tag, cfg_activation_stride, cfg_tokens, cfg_feature_words,
+          cfg_dense_rows, cfg_count, cfg_channels, cfg_keep, cfg_activation_base,
+          cfg_weight_base, out_ready, done_ready,
+    output cfg_ready, out_valid, out_last, out_tag, out_token, out_count, out_channels,
+           out_data, done_valid, done_error, done_tag
+  );
+endinterface
+
 module tri_oracle_batched_frame393 (
   input logic clk,rst_n,cfg_valid,
   output logic cfg_ready,
@@ -53,6 +83,65 @@ module tri_oracle_batched_frame393 (
   input logic wr_rsp_valid,wr_rsp_error,
   output logic wr_rsp_ready
 );
+  tri_oracle_attention_tensor437 unused_attention();
+  assign {unused_attention.cfg_valid, unused_attention.cfg_tag, unused_attention.cfg_activation_stride,
+          unused_attention.cfg_tokens, unused_attention.cfg_feature_words, unused_attention.cfg_dense_rows,
+          unused_attention.cfg_count, unused_attention.cfg_channels, unused_attention.cfg_keep,
+          unused_attention.cfg_activation_base, unused_attention.cfg_weight_base,
+          unused_attention.out_ready, unused_attention.done_ready} = '0;
+  tri_oracle_batched_frame437 implementation (.attention(unused_attention), .attention_enable(1'b0), .*);
+endmodule
+
+module tri_oracle_batched_frame437 (
+  input logic clk,rst_n,cfg_valid,
+  output logic cfg_ready,
+  input logic [31:0] cfg_tag,
+  input logic [4:0] cfg_tokens,
+  input logic [15:0] cfg_input_features,cfg_intermediate_features,
+  input logic [16:0] cfg_output_features,
+  input logic [63:0] cfg_activation_base,cfg_gate_base,cfg_up_base,cfg_down_base,cfg_intermediate_base,
+  input logic [31:0] cfg_activation_stride,
+  input logic [95:0] cfg_gate_shifts,cfg_up_shifts,cfg_down_shifts,
+  input logic mask_valid,mask_last,
+  output logic mask_ready,
+  input logic [31:0] mask_tag,
+  input logic [15:0] mask_start,
+  input logic [6:0] mask_count,
+  input logic [1279:0] mask_bits,
+  output logic out_valid,
+  input logic out_ready,
+  output logic [31:0] out_tag,
+  output logic [3:0] out_token,
+  output logic [15:0] out_start,
+  output logic [7:0] out_count,
+  output logic out_last,
+  output logic [5119:0] out_data,
+  output logic done_valid,
+  input logic done_ready,
+  output logic done_error,
+  output logic [31:0] done_tag,
+  output logic req_valid,
+  input logic req_ready,
+  output logic [63:0] req_address,
+  output logic [4:0] req_length,
+  input logic rsp_valid,
+  output logic rsp_ready,
+  input logic rsp_last,rsp_error,
+  input logic [63:0] rsp_data,
+  output logic wr_req_valid,
+  input logic wr_req_ready,
+  output logic [63:0] wr_address,
+  output logic [4:0] wr_length,
+  output logic wr_data_valid,
+  input logic wr_data_ready,
+  output logic [63:0] wr_data,
+  output logic [7:0] wr_strobe,
+  output logic wr_data_last,
+  input logic wr_rsp_valid,wr_rsp_error,
+  output logic wr_rsp_ready,
+  input logic attention_enable,
+  tri_oracle_attention_tensor437.server attention
+);
   typedef enum logic [3:0] {IDLE,MASK_WAIT,GATE_LAUNCH,GATE_WAIT,WRITE_LOW,WRITE_HIGH,
     WRITE_REQUEST,WRITE_DATA,WRITE_RESPONSE,DOWN_LAUNCH,DOWN_WAIT,ERROR_DRAIN,DONE} state_t;
   state_t state;
@@ -82,6 +171,29 @@ module tri_oracle_batched_frame393 (
   logic [2559:0] compute_channels;
   logic [5119:0] compute_data;
   logic [639:0] compute_down;
+  logic attention_owned, attention_window, attention_selected;
+
+  // Frame scheduling owns every command outside Idle. An admitted attention
+  // command holds its packet and terminal channels even if its request changes.
+  assign attention_window = attention_enable && state == IDLE && !attention_owned;
+  assign attention_selected = attention_owned || (attention_window && attention.cfg_valid);
+  assign attention.cfg_ready = attention_window && compute_ready;
+  assign attention.out_valid = attention_owned && compute_out_valid;
+  assign attention.out_tag = compute_tag;
+  assign attention.out_token = compute_token;
+  assign attention.out_last = compute_last;
+  assign attention.out_count = compute_count;
+  assign attention.out_channels = compute_channels;
+  assign attention.out_data = compute_data;
+  assign attention.done_valid = attention_owned && compute_done_valid;
+  assign attention.done_error = compute_done_error;
+  assign attention.done_tag = compute_done_tag;
+
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) attention_owned <= 0;
+    else if (attention.cfg_valid && attention.cfg_ready) attention_owned <= 1;
+    else if (attention.done_valid && attention.done_ready) attention_owned <= 0;
+  end
 
   function automatic logic overlaps(input logic [64:0] first_base,first_end,second_base,second_end);
     return first_base<=second_end && second_base<=first_end;
@@ -126,7 +238,7 @@ module tri_oracle_batched_frame393 (
     down_fault=compute_tag!=tag || compute_count!=down_count || compute_channels!=down_channels ||
       compute_token!=4'(completed_tokens) || completed_tokens>=tokens || compute_last!=(completed_tokens+5'd1==tokens);
     write_high_sum={1'b0,intermediate_base[63:32]}+33'(write_low_sum[32]);
-    cfg_ready=state==IDLE && compute_ready;mask_ready=state==MASK_WAIT;
+    cfg_ready=state==IDLE && !attention_selected && compute_ready;mask_ready=state==MASK_WAIT;
     compute_out_ready=state==GATE_WAIT || state==ERROR_DRAIN || (state==DOWN_WAIT && (down_fault || out_ready));
     compute_done_ready=state==GATE_WAIT || state==DOWN_WAIT || state==ERROR_DRAIN;
     out_valid=state==DOWN_WAIT && compute_out_valid && !down_fault;
@@ -139,16 +251,25 @@ module tri_oracle_batched_frame393 (
   end
 
   tri_oracle_batched_shared392 compute (
-    .clk(clk),.rst_n(rst_n),.cfg_valid(state==GATE_LAUNCH || state==DOWN_LAUNCH),.cfg_ready(compute_ready),.cfg_paired(launch_paired),
-    .cfg_tag(tag),.cfg_tokens(tokens),.cfg_feature_words(10'((launch_paired ? input_features : intermediate_features)>>3)),
-    .cfg_dense_rows(launch_paired ? 17'(intermediate_features) : output_features),.cfg_count(launch_paired ? 8'(gate_count) : down_count),
-    .cfg_channels(launch_paired ? gate_channels : down_channels),.cfg_keep(compute_keep),
-    .cfg_activation_base(launch_paired ? activation_base : intermediate_base),.cfg_weight_base(launch_paired ? gate_base : down_base),
-    .cfg_up_weight_base(up_base),.cfg_activation_stride(launch_paired ? activation_stride : 32'(intermediate_features)),
+    .clk(clk),.rst_n(rst_n),
+    .cfg_valid(attention_selected ? attention_window && attention.cfg_valid : state==GATE_LAUNCH || state==DOWN_LAUNCH),
+    .cfg_ready(compute_ready),.cfg_paired(!attention_selected && launch_paired),
+    .cfg_tag(attention_selected ? attention.cfg_tag : tag),
+    .cfg_tokens(attention_selected ? attention.cfg_tokens : tokens),
+    .cfg_feature_words(attention_selected ? attention.cfg_feature_words : 10'((launch_paired ? input_features : intermediate_features)>>3)),
+    .cfg_dense_rows(attention_selected ? attention.cfg_dense_rows : (launch_paired ? 17'(intermediate_features) : output_features)),
+    .cfg_count(attention_selected ? attention.cfg_count : (launch_paired ? 8'(gate_count) : down_count)),
+    .cfg_channels(attention_selected ? attention.cfg_channels : (launch_paired ? gate_channels : down_channels)),
+    .cfg_keep(attention_selected ? attention.cfg_keep : compute_keep),
+    .cfg_activation_base(attention_selected ? attention.cfg_activation_base : (launch_paired ? activation_base : intermediate_base)),
+    .cfg_weight_base(attention_selected ? attention.cfg_weight_base : (launch_paired ? gate_base : down_base)),
+    .cfg_up_weight_base(up_base),
+    .cfg_activation_stride(attention_selected ? attention.cfg_activation_stride : (launch_paired ? activation_stride : 32'(intermediate_features))),
     .cfg_gate_shifts(gate_shifts),.cfg_up_shifts(up_shifts),.cfg_down_shifts(down_shifts),
-    .out_valid(compute_out_valid),.out_ready(compute_out_ready),.out_tag(compute_tag),.out_token(compute_token),
+    .out_valid(compute_out_valid),.out_ready(attention_owned ? attention.out_ready : compute_out_ready),.out_tag(compute_tag),.out_token(compute_token),
     .out_last(compute_last),.out_count(compute_count),.out_channels(compute_channels),.out_data(compute_data),.out_down_input(compute_down),
-    .done_valid(compute_done_valid),.done_ready(compute_done_ready),.done_error(compute_done_error),.done_tag(compute_done_tag),
+    .done_valid(compute_done_valid),.done_ready(attention_owned ? attention.done_ready : compute_done_ready),
+    .done_error(compute_done_error),.done_tag(compute_done_tag),
     .req_valid(req_valid),.req_ready(req_ready),.req_address(req_address),.req_length(req_length),
     .rsp_valid(rsp_valid),.rsp_ready(rsp_ready),.rsp_last(rsp_last),.rsp_error(rsp_error),.rsp_data(rsp_data));
 
