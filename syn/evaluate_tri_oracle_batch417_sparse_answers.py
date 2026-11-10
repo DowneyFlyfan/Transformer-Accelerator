@@ -21,6 +21,12 @@ RECENT_TOKENS = 32
 MODES = ("dense", "explicit_dense_mask", "frozen_streaming", "live_streaming")
 
 
+def merge_input_digests(target, additions):
+    for filename, digest in additions.items():
+        assert filename not in target or target[filename] == digest, f"Input digest changed: {filename}"
+        target[filename] = digest
+
+
 def streaming_mask(query_positions, key_positions, streaming):
     """Absolute positions [query] and [key] and Boolean selection [head].
 
@@ -156,9 +162,10 @@ def main():
     software = (Path(inspect.getsourcefile(LlamaAttention)), Path(inspect.getsourcefile(original)))
     paths = (Path(__file__), policy_path, manifest_path, baseline_path, guard_path, scoring_path,
              ROOT / "syn/score_tri_oracle_format326_vqav2.py", *software)
-    hashes = policy["source_sha256"] | evaluator_digests | {
-        str(path): sha256(path) for path in paths
-    } | {str(details_path): policy["local_details_sha256"]}
+    hashes = policy["source_sha256"].copy()
+    merge_input_digests(hashes, evaluator_digests)
+    merge_input_digests(hashes, {str(path): sha256(path) for path in paths})
+    merge_input_digests(hashes, {str(details_path): policy["local_details_sha256"]})
     assert all(sha256(Path(path)) == digest for path, digest in hashes.items())
     output = records / "batch417_sparse_answers_result.json"
     assert not output.exists()

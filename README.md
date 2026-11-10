@@ -320,6 +320,15 @@ Freezing the decisions from the dense pass scored 58.28 percent and changed
 The graphics processor applies the mask to dense attention tensors, so that
 pair count is an arithmetic projection. See `records/batch417_sparse_answers_result.json`.
 
+A separate set of 16 diagram questions selected an 8:1 intensity ratio.
+It preserved all 16 dense answer sequences and kept the fewest eligible
+prefill pairs among the qualifying ratios. The ratio was frozen before
+scoring the 64-question validation pilot. It classified 49.9 percent of
+heads as streaming and scored 69.38 percent, the same consensus score as
+the local ratio of one. This leaves a 5.31-point loss from the pilot's dense
+control. The local window and unmerged input policy remain explicit in
+`records/batch418_ratio_calibration.json` and `records/batch418_vqa_ratio_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
