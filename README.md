@@ -310,6 +310,16 @@ decisions changing between numeric formats. The pilot uses the local ratio
 of one and unmerged prefill inputs. It measures head classification before
 sparse attention or answer generation. See `records/batch416_vqa_head_policy_result.json`.
 
+The same pilot now includes generated answers under the local streaming mask,
+which keeps the first 32 keys and most recent 32 causal keys for streaming
+heads. The dense control and the explicit causal mask both reproduced all
+64 archived answers and the official 74.69 percent consensus score. Live
+head prediction scored 69.38 percent and changed nine answer sequences.
+Freezing the decisions from the dense pass scored 58.28 percent and changed
+18 sequences. The live policy kept 37.4 percent of eligible prefill pairs.
+The graphics processor applies the mask to dense attention tensors, so that
+pair count is an arithmetic projection. See `records/batch417_sparse_answers_result.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.
