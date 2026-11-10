@@ -256,6 +256,16 @@ selects one query row per tile position for one image and layer. Tile
 scheduling across complete heads and layers and the paper's workload and
 timing results remain unqualified. See `records/batch411_attention_score_result.json`.
 
+The expanded reference covers all 510 causal query rows per head from the
+first three distinct tile positions through the final partial tile. Central
+and graphics processors agree on 1,312,800 selected scores and all 32,640
+intensity counts. All 46,080 previously sampled scores reproduce exactly.
+Using every row classifies two heads as streaming at the local ratio
+threshold, compared with four when using only the sampled rows. Fixed and
+floating point agree on all 32 head types for this image and layer. The
+receipt records the 32 batches per head for testing key reuse on hardware.
+See `records/batch412_tiled_attention_fixture.json`.
+
 Protected-format programming now passes 22 paired first/ordinary-token tests
 on the production twenty-core source with 600 actual vendor memory models.
 All 1,540 selected-contribution integer outputs match independent scalar sums.

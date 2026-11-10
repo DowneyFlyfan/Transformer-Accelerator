@@ -1,0 +1,420 @@
+{
+  "state": "trained_causal_tile_rows_cpu_cuda_equal",
+  "scope": "Build a causal reference for all rows of the selected head-prediction tiles.",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "sequence_tokens": 606,
+  "query_heads": 32,
+  "key_value_heads": 4,
+  "head_features": 64,
+  "first_query_position": 96,
+  "queries_per_head": 510,
+  "tile_keys": 32,
+  "batches": [
+    {
+      "query_first": 96,
+      "queries": 16,
+      "key_starts": [
+        0,
+        32,
+        96
+      ]
+    },
+    {
+      "query_first": 112,
+      "queries": 16,
+      "key_starts": [
+        0,
+        32,
+        96
+      ]
+    },
+    {
+      "query_first": 128,
+      "queries": 16,
+      "key_starts": [
+        0,
+        64,
+        128
+      ]
+    },
+    {
+      "query_first": 144,
+      "queries": 16,
+      "key_starts": [
+        0,
+        64,
+        128
+      ]
+    },
+    {
+      "query_first": 160,
+      "queries": 16,
+      "key_starts": [
+        0,
+        96,
+        160
+      ]
+    },
+    {
+      "query_first": 176,
+      "queries": 16,
+      "key_starts": [
+        0,
+        96,
+        160
+      ]
+    },
+    {
+      "query_first": 192,
+      "queries": 16,
+      "key_starts": [
+        0,
+        128,
+        192
+      ]
+    },
+    {
+      "query_first": 208,
+      "queries": 16,
+      "key_starts": [
+        0,
+        128,
+        192
+      ]
+    },
+    {
+      "query_first": 224,
+      "queries": 16,
+      "key_starts": [
+        0,
+        160,
+        224
+      ]
+    },
+    {
+      "query_first": 240,
+      "queries": 16,
+      "key_starts": [
+        0,
+        160,
+        224
+      ]
+    },
+    {
+      "query_first": 256,
+      "queries": 16,
+      "key_starts": [
+        0,
+        192,
+        256
+      ]
+    },
+    {
+      "query_first": 272,
+      "queries": 16,
+      "key_starts": [
+        0,
+        192,
+        256
+      ]
+    },
+    {
+      "query_first": 288,
+      "queries": 16,
+      "key_starts": [
+        0,
+        224,
+        288
+      ]
+    },
+    {
+      "query_first": 304,
+      "queries": 16,
+      "key_starts": [
+        0,
+        224,
+        288
+      ]
+    },
+    {
+      "query_first": 320,
+      "queries": 16,
+      "key_starts": [
+        0,
+        256,
+        320
+      ]
+    },
+    {
+      "query_first": 336,
+      "queries": 16,
+      "key_starts": [
+        0,
+        256,
+        320
+      ]
+    },
+    {
+      "query_first": 352,
+      "queries": 16,
+      "key_starts": [
+        0,
+        288,
+        352
+      ]
+    },
+    {
+      "query_first": 368,
+      "queries": 16,
+      "key_starts": [
+        0,
+        288,
+        352
+      ]
+    },
+    {
+      "query_first": 384,
+      "queries": 16,
+      "key_starts": [
+        0,
+        320,
+        384
+      ]
+    },
+    {
+      "query_first": 400,
+      "queries": 16,
+      "key_starts": [
+        0,
+        320,
+        384
+      ]
+    },
+    {
+      "query_first": 416,
+      "queries": 16,
+      "key_starts": [
+        0,
+        352,
+        416
+      ]
+    },
+    {
+      "query_first": 432,
+      "queries": 16,
+      "key_starts": [
+        0,
+        352,
+        416
+      ]
+    },
+    {
+      "query_first": 448,
+      "queries": 16,
+      "key_starts": [
+        0,
+        384,
+        448
+      ]
+    },
+    {
+      "query_first": 464,
+      "queries": 16,
+      "key_starts": [
+        0,
+        384,
+        448
+      ]
+    },
+    {
+      "query_first": 480,
+      "queries": 16,
+      "key_starts": [
+        0,
+        416,
+        480
+      ]
+    },
+    {
+      "query_first": 496,
+      "queries": 16,
+      "key_starts": [
+        0,
+        416,
+        480
+      ]
+    },
+    {
+      "query_first": 512,
+      "queries": 16,
+      "key_starts": [
+        0,
+        448,
+        512
+      ]
+    },
+    {
+      "query_first": 528,
+      "queries": 16,
+      "key_starts": [
+        0,
+        448,
+        512
+      ]
+    },
+    {
+      "query_first": 544,
+      "queries": 16,
+      "key_starts": [
+        0,
+        480,
+        544
+      ]
+    },
+    {
+      "query_first": 560,
+      "queries": 16,
+      "key_starts": [
+        0,
+        480,
+        544
+      ]
+    },
+    {
+      "query_first": 576,
+      "queries": 16,
+      "key_starts": [
+        0,
+        512,
+        576
+      ]
+    },
+    {
+      "query_first": 592,
+      "queries": 14,
+      "key_starts": [
+        0,
+        512,
+        576
+      ]
+    }
+  ],
+  "local_ratio_threshold": 1,
+  "alpha_scaled_score_units": 4,
+  "cpu_cuda_dense_score_comparisons": 9889920,
+  "selected_causal_scores": 1312800,
+  "masked_score_slots": 253920,
+  "intensity_comparisons": 32640,
+  "frozen_sampled_scores_reproduced": 46080,
+  "fixed_streaming_heads": 2,
+  "float_streaming_heads": 2,
+  "head_class_changes_after_quantization": 0,
+  "fixed_types_by_head": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "float_types_by_head": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "peak_gpu_bytes": 5805527040,
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/model_reference_candidate.json": "d462cb1574fc26edea3b17e06e1f3567c395f579f06d5cc087443e475167e9d5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/inputs.json": "e9e998bceee5d04c0e1ebcb88a21cf0ab7bdca76395aa078a363c0dfbb5382e3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_00.png": "fa39f41abaf6e93af189346d48f3e48dfeec9211b29475f4b0d5b76eaddb9681",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_batch409_attention_fixture.py": "26e2dd2f48a6d96c488b773c719957f7660fb53f3311f7eda3c6c968afcf926f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/run_tri_oracle_batch396_masks.py": "a4195039addebbb8e9a5ec185e6aae032a44e571ac81a2b8419a55a10a90fbf4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/.gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/README.md": "dbaff915deacaa4bdc71de5fabe6f22e9692b1b79cb0ea0a61c1ff2815896b0c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/config.json": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/generation_config.json": "a59ddfb05df98a9c18f4fd9b436028d6993f15071479a7b876c86469e7b2f4b9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model.safetensors.index.json": "e50f2b3f29f9b4fadf25d427e30d96c2d3aa402eb66ba9e07a0842afe75d4a3b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/preprocessor_config.json": "9127b9a82cdbd05d3b901065f63632e626fcba2617e7f87d85cc3ee05a713350",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/special_tokens_map.json": "358c249e2fb29060c6b73157d428853b0c48710deffc8ee670ab1013880946c9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/tokenizer_config.json": "80b86cf09bd3b1b636115cef6ddb18df319eb8c8121e9908795853fda5aadf7c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors": "5757b71668b0f69d61185ff018ada04d490dac417f998bbd6455ec8a84fa1c72",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/model-00002-of-00002.safetensors": "c163e6bae7ffadf52ebc7ccae0763f43055e62cadd6dd78c408d6b2f840021ce",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/alpha.hex": "9032dede1ef20a6d1996f0bf6a7ab02e4c8d24accbbc0bd244d46144a27f0c44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/counts.hex": "496c03c674dc5d8555e3c5b6d94adefcc36f979aa806c44b031c0b6d7531945e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/key.hex": "8a6eb4b5003795b2acdf3568d7646298f48fa8d759d89c174c15dbba56e5690d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/query.hex": "f586ab7d25772f024682177dfbf5bc794e657b87001bc13151b43c75ca8afc6a",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/scores.hex": "1fcd367bd5d9d5aa1b130bc4b64a903bfed9e7843560b6fd8f76556ed85942a5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch409/streaming.hex": "06c16b3b43f08a9705e4ebd6f1de3639d38d6d5a764a80b5ecc0d86ecc4393d3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/batch409_attention_fixture.json": "0fef39da2190f90ec030598f459bf931dc638a71e33af257973b8b728fbfa6a7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/prepare_tri_oracle_batch412_tiled_attention.py": "293cfd5355f5209b3dbf3fd58688f3955ceb6e88e637241ebeb598c6a3565ed5"
+  },
+  "fixture": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412",
+  "files_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/alpha.hex": "9032dede1ef20a6d1996f0bf6a7ab02e4c8d24accbbc0bd244d46144a27f0c44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/counts.hex": "ea341898454ff09a5ad4dcc11fbebed2da9c7458a00d0c3d0afb0f782b7ead42",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/key.hex": "8a6eb4b5003795b2acdf3568d7646298f48fa8d759d89c174c15dbba56e5690d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/query.hex": "61064348a82eebfcfa1df6a09c0b92890ead72f7a105b9a8b0850fa77278a756",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/scores.hex": "6cc52dec839b8659ed764c359cb2615b8b759d12f586f4985cd735be06d8aea9",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/batch412/streaming.hex": "e3d8192a375cc7f59b86a191b9f46a3045aaa79e7f4bbdea84426439ae6073dd"
+  },
+  "hardware_tiled_attention_verified": false,
+  "full_paper_results_matched": false
+}
