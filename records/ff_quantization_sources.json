@@ -1,0 +1,32 @@
+{
+  "state": "feedforward_quantization_sources_measured_on_archived_rows",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "diagnostic_images": 8,
+  "layers": 22,
+  "later_prefill_rows_per_layer": 120,
+  "mean_row_relative_error": {
+    "floating_reconstruction": 6.604903713962732e-07,
+    "activation_only": 0.018788106419102616,
+    "gate_weight_only": 0.0627498289698404,
+    "up_weight_only": 0.049658558683078106,
+    "down_weight_only": 0.11905926815265146,
+    "all_weights_only": 0.14794495662755228,
+    "quantized_operands": 0.14946352550186556,
+    "operands_and_fixed_gate_up": 0.1503740503407632,
+    "full_fixed_point": 0.1661051666502959,
+    "full_fixed_point_channel_scaled_down": 0.11125037298777188
+  },
+  "layers_with_largest_isolated_weight_error_in_down_projection": 20,
+  "layers_improved_by_output_channel_down_scales": 22,
+  "observed_channel_scale_exponent_range": [-11, -6],
+  "native_elapsed_seconds": 6.0060092940111645,
+  "graphics_peak_allocated_bytes": 572080640,
+  "scope": "Same archived later activation rows and floating targets for every mode. The channel-scale variant preserves signed8 weights and inputs with signed32 dot products, and applies one power-of-two scale per down-projection output channel. Model accuracy and hardware cost were not measured.",
+  "evidence_sha256": {
+    "syn/audit_tri_oracle_ff_quantization_sources.py": "66678940fbca8d587f8c479fe2ca540b03889811d06d00f53fe42c312139ed79",
+    ".cache/model_reference/ff_quantization_sources_channel_scaled/console.log": "b40a700e44a1067548c6874214ffd4e6827fe845a1fc023e1bc377faea14203d",
+    ".cache/model_reference/ff_quantization_sources_channel_scaled/run_guard.py": "da67a4d3932fb9c0552b98e1a17704a7509a985dff19e0ab45519a9779734bcf",
+    ".cache/model_reference/ff_quantization_sources_channel_scaled/receipt.json": "8ecc0b4274d5418e9871c7892a149e3f76c3964b884c143ad223c6dad596e09d",
+    ".cache/model_reference/ff_quantization_sources_channel_scaled/native_receipt.json": "d536c12ec54f709275ecf202b42907639bf058efa0c8a9fd9bb61e3da6bd162c"
+  }
+}
