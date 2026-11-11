@@ -1,0 +1,34 @@
+{
+  "state": "mapped_clusters_passed_integrated_attention_fixture",
+  "simulator": "Cadence Xcelium",
+  "mapped_cluster_indices": [
+    0,
+    1
+  ],
+  "mapped_compute_cores": 8,
+  "source_compute_cores": 12,
+  "compiled_memory_instances": 623,
+  "namespace_control_tokens": 6448491,
+  "measured": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 24768,
+    "stalls": 63
+  },
+  "xcelium_elapsed_seconds": {
+    "elaboration": 146.739,
+    "replay": 46.107
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/receipt.json": "bb85853c15a3ad980cbfe99e102a30ea4298d22916065b9e5cae1302584cbba9",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/xcelium/receipt.json": "8965236a70f81ed2f3c39ce71b66e35f711be700fbb3e990c29a2964c741ef48",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/xcelium/elaborate/console.log": "eff38eb0a5294979735c64c1c74402e32fea4df117cce5af471c51dbe8a149f2",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/xcelium/positive/console.log": "700322f04b8b154515be3ffd81e2dcba3ea09debdf53c78e3e34c46e14abde97",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/cluster1.v": "f014591964f3af055176ab3a092a0d3f960556eca849551c925550068f7e47c7",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/bundle.sv": "9684c06bdec55d7937606270596f6b4a7404f49cfa26c1355ece5a801a1e7fd7"
+  },
+  "scope": "Integrated functional comparison of two mapped clusters, three source clusters, and the source parent. The native hierarchy was counted by cluster and memory master."
+}
