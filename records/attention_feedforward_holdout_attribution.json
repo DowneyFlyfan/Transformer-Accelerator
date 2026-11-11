@@ -1,0 +1,53 @@
+{
+  "state": "attention_and_feedforward_holdout_independently_scored",
+  "questions": 256,
+  "reproduced_pilot_cases": 192,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "scores_percent": {
+    "identity": 70.98,
+    "compact": 70.98,
+    "compact_and_streaming": 70.94,
+    "scalar": 59.34,
+    "group32": 59.88
+  },
+  "score_changes_percentage_points": {
+    "identity_to_compact": 0.0,
+    "compact_to_compact_and_streaming": -0.04,
+    "compact_and_streaming_to_scalar": -11.6,
+    "scalar_to_group32": 0.54
+  },
+  "paired_changes": {
+    "identity_to_compact": {
+      "improved": 10,
+      "declined": 9,
+      "unchanged": 237
+    },
+    "compact_to_compact_and_streaming": {
+      "improved": 11,
+      "declined": 12,
+      "unchanged": 233
+    },
+    "compact_and_streaming_to_scalar": {
+      "improved": 19,
+      "declined": 57,
+      "unchanged": 180
+    },
+    "scalar_to_group32": {
+      "improved": 28,
+      "declined": 27,
+      "unchanged": 201
+    }
+  },
+  "wall_seconds": 150.609,
+  "peak_graphics_bytes": 5833542656,
+  "minimum_available_host_bytes": 17398235136,
+  "evidence_sha256": {
+    ".cache/model_reference/attention_precision_holdout/receipt.json": "2850533e7b965e5e1c53e5ff246a8c593c1ac76a64fa00d4769b53717300b0bb",
+    ".cache/model_reference/attention_precision_holdout/native_receipt.json": "ed8ff7603c29aea09d8fc28e286053a3d0c2ebdd204fa949d967932acb2abeac",
+    ".cache/model_reference/attention_precision_holdout/console.log": "9c72a5c0d56771a95352e9bd2ed6e50f7906911fdd0043204cc904c7d5084feb",
+    ".cache/model_reference/attention_precision_holdout/verify_holdout.py": "9352a6b9a0933ef9e9e2d2de27eeedaf732929dee34915a0f7676a16477cd0e9"
+  },
+  "scope": "Software-only comparison on the same validation questions. Token merging and head streaming change floating-point execution. Integer feed-forward also changes downstream states and later predictions.",
+  "holdout_manifest_sha256": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9",
+  "holdout_source": "https://visualqa.org/download.html"
+}
