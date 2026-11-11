@@ -1,0 +1,44 @@
+{
+  "state": "single_core_and_cluster_score_execution_replayed",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "paper_figure": "31.6.4",
+  "local_capacity_keys": 32,
+  "integrated": {
+    "single_core_tiles": 1,
+    "single_core_keys": 1,
+    "single_core_commands": 8,
+    "cluster_tiles": 33,
+    "cluster_commands": 66,
+    "compared": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24968,
+      "stalls": 63
+    },
+    "replay_seconds": 222.35878744500224
+  },
+  "directed": {
+    "physical_clusters": 5,
+    "different_core_positions": 4,
+    "exact_signed_dot_products": 42,
+    "single_core_matrix_commands": 40,
+    "maximum_keys": 32,
+    "wrong_result_core_rejected": true
+  },
+  "scope": "Source replay of local-fit score assignment using the local 32-key tile capacity. Dynamic offloading, mapped layer execution, routed timing and paper chip metrics remain unverified.",
+  "evidence_sha256": {
+    ".cache/physical/wac_core_local_scores_verified/xcelium/core_local_score_qualification.json": "f8bf34613387ccc37ed0124331e430dec2fcd4c85799d065a944ad0711bd9e38",
+    ".cache/physical/wac_core_local_scores_verified/receipt.json": "003a6512f5e58ab624a2e07e7449577e523696db19afd40b976ed61701719a7b",
+    ".cache/physical/wac_core_local_scores_verified/xcelium/positive/console.log": "555c58452c774780e22b0e7b9912cabd14f09af4155e96563549063684685ec9",
+    ".cache/physical/wac_core_local_scores_verified/xcelium/positive/native_receipt.json": "3e92e9dfbe325f0e1bed1edec562375b4562cf8689da48ccca09c8c4b89db860",
+    ".cache/physical/wac_core_local_scores_verified/core_directed_final.log": "cdd19b0e752cd7abfbdf3185f1b49290b96dfc598fe1b97c5d6612b1d3cc567e",
+    ".cache/physical/wac_core_local_scores_verified/core_directed_wrong_result.log": "1ae1b163df8aade4eccfab06ccdc054012470c38b555bfc0d486158f0a76f5b8",
+    "syn/prepare_tri_oracle_core_local_scores.py": "ca901b1fea7653c67203ed6b95710eedfab97dfd2faadf84348a115223a426c1",
+    "syn/run_tri_oracle_core_local_scores.py": "12949e6b693223c3f644777084b66478d55b78bef7140a7ebfb7b13214b8225a",
+    "syn/test_tri_oracle_core_local_scores.py": "71ace2ceada5fe1d8de17bd68514714cc57219d36be3a6e2468a60dc8835330f",
+    "verilog/tri_oracle_cluster_local_tensor_tb.sv": "0a66ba9a5d6f051aa03f3ce219daaf9f41d224429fefa96e306f254cbb58a110"
+  }
+}

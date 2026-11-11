@@ -502,9 +502,13 @@ the actual twenty-core hierarchy. Score computation now also stays in the
 head's assigned cluster. The same four rows produce the reference outputs
 using 34 local score tiles, and a directed replay verifies arithmetic on all
 five clusters. The narrower tiles add 200 eight-byte query reads on this
-fixture. Dynamic offloading and physical timing remain open. See
+fixture. Rows with up to 32 selected keys now execute their score tile in
+the assigned core. Longer rows use the assigned cluster. Xcelium checked both
+paths on the four archived rows and checked 42 single-core dot products
+across the five clusters. The 32-key cutoff is the local score tile capacity.
+Dynamic offloading and physical timing remain open. See
 `records/wac_layer_softmax_integration_result.json` and
-`records/cluster_local_score_execution_result.json`.
+`records/core_local_score_execution_result.json`.
 
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value
