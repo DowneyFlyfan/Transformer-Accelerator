@@ -1,0 +1,25 @@
+{
+  "state": "twenty_core_head_owned_softmax_native_census_verified",
+  "paper_figure": "31.6.2",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "clusters": 5,
+  "weight_attention_cores": 20,
+  "core_local_softmax_instances": 20,
+  "compiled_memory_instances": 623,
+  "vendor_memory_model_types": 6,
+  "assigned_fixture_head": 19,
+  "expected_fixture_owner": {
+    "cluster": 4,
+    "core": 3
+  },
+  "scope": "The complete source hierarchy elaborated and executed its one-nanosecond instance census. This preflight ended before functional stimulus. The row replay and mapped timing require separate evidence.",
+  "evidence_sha256": {
+    "syn/prepare_tri_oracle_wac_softmax_layer.py": "87e3ff31dfa744bdec2218a3d10e00a25186485863ee787c258d37318b7178ee",
+    "syn/verify_tri_oracle_wac_softmax_layer.py": "54e8ffa4f2eee58f27ab1d0e8c83dff59fba1ef16e1acc6e40878a619e7cc89a",
+    ".cache/physical/wac_layer_owned19/receipt.json": "b52095cbc0974ebbe8fb4fa3819ca15c0fbb6cea9c7df862d140a82b38540566",
+    ".cache/physical/wac_layer_owned19/bundle.sv": "9e34e685d136b6e43912714f4e04ef50c9edf3532942831b42f828d34e875a9b",
+    ".cache/physical/wac_layer_owned19/native_census_preflight.log": "8d069f3fd3ae9bd289df0576d5ccb815c4092cca231e8dfcae6946d6a5454667",
+    ".cache/physical/wac_layer_owned19/native_preflight.log": "de7293789f6a1de4ac4a9245db18e8726a318eaf67ec4b48359134fc4e50a5e3",
+    ".cache/physical/wac_layer_owned19/xcelium/hierarchy.sv": "6b9049db4ddf652a907688130539286f508f1f7574f24f506a7e0b129b48a972"
+  }
+}
