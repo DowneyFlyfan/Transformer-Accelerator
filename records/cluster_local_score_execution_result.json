@@ -1,0 +1,48 @@
+{
+  "state": "cluster_local_score_execution_replayed_with_core_local_softmax",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "paper_figure": "31.6.4",
+  "integrated": {
+    "selected_cluster_zero_based": 4,
+    "score_tiles": 34,
+    "score_keys": 1023,
+    "local_commands": 68,
+    "compared": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24968,
+      "stalls": 63
+    },
+    "replay_seconds": 222.62417616299354
+  },
+  "attention_read_beats": {
+    "before": 24768,
+    "after": 24968,
+    "added_query_beats": 200,
+    "bytes_per_beat": 8
+  },
+  "directed": {
+    "physical_clusters": 5,
+    "exact_signed_dot_products": 42,
+    "isolated_matrix_commands": 10,
+    "changed_cluster_mask_mid_accumulation_rejected": true,
+    "all_cluster_projection_checked": true
+  },
+  "scope": "Cluster-local score execution with the existing head assignment and core-local softmax. Single-core score placement, dynamic workload offloading, mapped execution and routed timing remain unverified.",
+  "evidence_sha256": {
+    ".cache/physical/wac_cluster_local_scores/xcelium/cluster_local_score_qualification.json": "b9cfb99b989282ba310ea9ef24eb2d9f42b330cc08c0e272f15f9f090dbdf708",
+    ".cache/physical/wac_cluster_local_scores/receipt.json": "6f9fbe869236fb957425b3e0b656e0a6044cb53990be593ff8b741fb99f50a26",
+    ".cache/physical/wac_cluster_local_scores/xcelium/positive/console.log": "62ed667bde023cce60dd7e341aa0f8062697a3140e58f76cd223b3ddb33738ea",
+    ".cache/physical/wac_cluster_local_scores/xcelium/positive/native_receipt.json": "3b53472f5c43833b212bfc6cbbb2a9bcde934faff113348d4faa6f6a2604eaa9",
+    ".cache/physical/wac_cluster_local_scores/tensor_all_clusters.log": "3e407f23895ddef731b80fc5e94b5083983a76108f177b55a97547c27002571b",
+    ".cache/physical/wac_cluster_local_scores/projection_positive.log": "115b29bf7c41ec2fce413d89c561aef3b9576dca61968f0337f398936ae89b7c",
+    ".cache/physical/wac_cluster_local_scores/projection_negative.log": "4c70ca9e927ef2cc8839bd4544e0f82d317d77c9d1b85986b98d058693439f1a",
+    "syn/prepare_tri_oracle_cluster_local_scores.py": "602babcaa6cab648b23246541557275f475ffd71021e5c841095f5716a36458d",
+    "syn/run_tri_oracle_cluster_local_scores.py": "bc0a06a74b4b677c3e7b76a98dfedb5d5300db6bd280cbc2bae337fa9a7a16c0",
+    "verilog/tri_oracle_cluster_local_projection_tb.sv": "29002fd8d298bc51ecc60e31ff417389978083987a32a57eb16662eed0a4039d",
+    "verilog/tri_oracle_cluster_local_tensor_tb.sv": "0a66ba9a5d6f051aa03f3ce219daaf9f41d224429fefa96e306f254cbb58a110"
+  }
+}

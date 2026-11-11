@@ -498,9 +498,13 @@ memories in the core. The integrated Xcelium replay now routes four archived
 attention rows to their assigned core and preserves all 1,023 score and
 probability transfers, token-size results, and the reference attention
 outputs. A separate replay checks all 32 logical head assignments against
-the actual twenty-core hierarchy. The paper's dynamic workload balancing and
-physical timing remain open. See `records/wac_shared_imem_result.json` and
-`records/wac_layer_softmax_integration_result.json`.
+the actual twenty-core hierarchy. Score computation now also stays in the
+head's assigned cluster. The same four rows produce the reference outputs
+using 34 local score tiles, and a directed replay verifies arithmetic on all
+five clusters. The narrower tiles add 200 eight-byte query reads on this
+fixture. Dynamic offloading and physical timing remain open. See
+`records/wac_layer_softmax_integration_result.json` and
+`records/cluster_local_score_execution_result.json`.
 
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value
