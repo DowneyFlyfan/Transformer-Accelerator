@@ -1,0 +1,43 @@
+{
+  "state": "third_cluster_generic_synthesis_and_parent_link_preflight_verified",
+  "third_cluster_generic": {
+    "elapsed_seconds": 1929.859,
+    "verified_core_port_bits": 6316,
+    "direct_memory_instances": 68,
+    "independently_compiled_core_memory_instances": 56
+  },
+  "structural_link_preflight": {
+    "phase": "elaborated",
+    "checked_parent_cluster_bits": 30043,
+    "mapped_cluster_banks": [
+      0,
+      1
+    ],
+    "linked_clusters": 5,
+    "verified_vendor_model_files": 6
+  },
+  "xcelium_negative_preflight": {
+    "rank": 0,
+    "exit_status": 2,
+    "mapped_cluster_banks": [
+      0,
+      1
+    ],
+    "parent": "source"
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/generic_bank2_split2/receipt.json": "520760af3a22b4c2c1ef1c1504f597188a1ec86971220e7cc82b656b1dc84c76",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/generic_bank2_split2/console.log": "5237679ee41501bd0d1b4ca094759ed9ccfff2cca72c292815242f3f986563e7",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/generic_bank2_split2/core_boundary.tsv": "bd51632e19211e9a40fa50a8785b3cc3bae47fc6567be9b57aada804569a1167",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_export_elaborated/receipt.json": "35ffa51150d557646d37105c604c18b83d578202f70f55efcff6c69909c69f39",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_link_preflight/receipt.json": "3f660abfadbc57805d71e9c4330af6d0055ebe8a78598d76eb9ddd55ebb0b042",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_link_preflight/linked_parent.v": "311e55f76b23e998abf6d72fc21bd2627f26901485b408ad3f57e48420ee8f01",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_link_preflight/attention_tb.sv": "6432a848a5c523de8fff02d86a31b994089ae925e852880c20a11d48d600e09a",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_negative_preflight/receipt.json": "82e84bd13145100b147d16451490b9cd76d134bed5d67ef6b45d32e19c3606da",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_negative_preflight/console.log": "557bcfb1446e4cf6082c46a950727f17eb91e29780eb723f68fa4aaf24624aaf",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/prepare_mapped_parent_replay.py": "168bc14fc04931d84d4a7cc7197d8985e1f0dd38930bb0f0bae45c45b14be361",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/run_mapped_parent_replay.py": "0ede722e715d341cc2e7dd75584acd9038cec18edfe19e01f7b831e6682ba357",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/run_parent_replay_after_synthesis.sh": "8d3114688a58f8f2e04d40ebf7c2b7798adb5324847e1673601321fafeec6f8f"
+  },
+  "scope": "Cluster 3 generic synthesis, structural linking of the elaborated parent to two mapped and three source clusters, and a separate negative-control replay on the source parent. All-mapped replay with compact and vendor memories remains queued."
+}
