@@ -543,6 +543,12 @@ kibibytes and rounds to the paper's 405 label under a binary interpretation.
 The paper gives the label in kilobytes without specifying the convention. See
 `records/wac_twenty_mapped_cores_result.json`.
 
+Genus mapped cluster 2 with all four compute netlists and 124 compiled
+memory instances preserved. The native slow-corner report shows 324,950 cells,
+1.262728 mm² of library cell area and 0 ps of reported setup slack at
+580 megahertz. The exported cell inventory agrees with the physical abstracts
+and all three local timing corners. See `records/wac_cluster2_synthesis_result.json`.
+
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value
 accumulator. It loads the image merge map, derives the visible compact prefix,
