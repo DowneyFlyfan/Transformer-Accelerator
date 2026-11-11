@@ -1,0 +1,89 @@
+{
+  "state": "parent_replay_bank_probes_and_elaborated_export_verified",
+  "xcelium_source_parent": {
+    "mapped_cluster_banks": [
+      0,
+      1
+    ],
+    "matched_previous_replay": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24768,
+      "stalls": 63
+    },
+    "bank_activity": {
+      "expected_reads": [
+        [
+          0,
+          16
+        ],
+        [
+          128,
+          16
+        ],
+        [
+          256,
+          16
+        ],
+        [
+          384,
+          16
+        ],
+        [
+          512,
+          8
+        ]
+      ],
+      "expected_map_handshakes": [
+        [
+          0,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          256,
+          128
+        ],
+        [
+          384,
+          128
+        ],
+        [
+          512,
+          64
+        ]
+      ]
+    },
+    "simulator_seconds": 46.345
+  },
+  "genus_parent_export": {
+    "phase": "elaborated",
+    "verified_cluster_signal_bits": 30043,
+    "cluster_abstracts": 5,
+    "swapped_packed_bits_rejected": true,
+    "ownership_probe_paths": {
+      "ownership": "dut.feedforward.compute.attention_owned",
+      "readiness": "dut.attention_cfg_ready"
+    }
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/xcelium/receipt.json": "8965236a70f81ed2f3c39ce71b66e35f711be700fbb3e990c29a2964c741ef48",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_probe_preflight/xcelium/receipt.json": "40de36325093a7658c1d9a64ebb6793fa5d7f7336ad0fcd6f07dc4b4c7d806a1",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_probe_preflight/xcelium/positive/console.log": "bb5bede9cd35e4b9d3a68e9ad01f1c5a0f654409778a5c2f0aecb90c4ee1fd78",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_probe_preflight/bank_probe.sv": "7a8618d7d1fe5786b053c65014bb0e012d4e83f7733cfc919023fb3ec11caa0d",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_probe_preflight/attention_tb.sv": "4bb78d746938852393c0e5188971fac8325a0bcca687ba38d6b5ae892a2bc682",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_export_elaborated/receipt.json": "35ffa51150d557646d37105c604c18b83d578202f70f55efcff6c69909c69f39",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_export_elaborated/export.tcl": "e528aa6522db64bb4bd164a53446d2acb61ba8c719bdada377c8c4d7f13db9d5",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_export_elaborated/parent.v": "46a92beeb413623e143ce59c689787301514a3a13006a197b040f5e1b900bacb",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/parent_replay_export_elaborated/console.log": "a9151942ce65c533c4d93ecea2d0090d9927230063b2f5137ad639b91f285786",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/prepare_parent_boundary_probe.py": "78e737ea0e4035477d5fec3e67dd78f5754eb9e3ff93600400b6cb47ac9b1448",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/export_parent_replay_hdl.py": "ad9d37d240936a9b7bbf3c6ef4a19b827ce98e5ef63af5046d22b45cb59be5bb"
+  },
+  "scope": "Functional testbench probe migration on the source parent with two mapped clusters, plus a static link audit on the native elaborated parent export. Mapped-parent replay awaits parent synthesis."
+}
