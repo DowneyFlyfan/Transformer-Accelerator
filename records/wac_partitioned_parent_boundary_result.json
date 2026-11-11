@@ -1,0 +1,30 @@
+{
+  "state": "parent_sources_prepared_and_one_native_cluster_cut_verified",
+  "parent": "tri_oracle_shared_layer437",
+  "cluster_signal_bits_by_bank": {
+    "0": 6329,
+    "1": 6201,
+    "2": 6201,
+    "3": 6201,
+    "4": 6201
+  },
+  "total_cluster_signal_bits": 31133,
+  "flattened_ports_per_cluster": 59,
+  "native_preflight": {
+    "tool": "Cadence Genus",
+    "bank": 2,
+    "exit_status": 0,
+    "pin_bits_compared": 6201,
+    "direction_mismatches": 0,
+    "net_mismatches": 0,
+    "unresolved_references": 0
+  },
+  "scope": "The five cluster declarations are prepared from the source used in the twenty-core Xcelium replay. Bank 2 was compared with the exported cluster port declarations and elaborated in an isolated Genus connectivity probe. Layer-parent elaboration and linkage to five timing-qualified cluster netlists remain pending.",
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/receipt.json": "7f0a05e755cbe44359797ab1c60cd38bdb36b8dfe393dfa1bec3ac75fbd7f598",
+    ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/receipt.json": "fb727418ec589c0619f0ddf7d3f6b04a0026acc953cfb5714f86e73d81686aca",
+    ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/pins.tsv": "bfa054c72e7979bf2919fe2378f55fc0385af3c7e4d0a278d61f9b63074f1fd0",
+    ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/unresolved.rpt": "a3a6e873f0822ba036e65bd35d4d8886c8cc471b2a2a7965b1e446553f6c4d2c",
+    "syn/prepare_tri_oracle_softmax_partitioned_parent.py": "93909e0912a44f7c4291043690ee99ea7e0207e5f0b10b3973bfdb846f0e81e3"
+  }
+}
