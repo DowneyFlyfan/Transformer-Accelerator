@@ -1,5 +1,5 @@
 {
-  "state": "core_softmax_output_budget_mapped_and_gate_replayed",
+  "state": "core_and_bank_2_met_setup_target_and_passed_xcelium",
   "clock_target_megahertz": 580,
   "clock_period_ns": 1.72414,
   "slow_corner": "ssg0p9v125c",
@@ -67,7 +67,24 @@
     "worst_reported_setup_slack_ps": 0,
     "previous_bank_2_worst_reported_setup_slack_ps": -30
   },
-  "scope": "Preplacement timing for the core and bank 2 using the local library. The core and source-controller layer passed the recorded functional replays. The new mapped bank 2 export requires its own functional replay and physical timing.",
+  "xcelium_bank_2_replay": {
+    "fully_mapped_banks": [2],
+    "mapped_compute_cores": 20,
+    "compiled_memories_in_layer": 623,
+    "native_elaboration_exit_status": 0,
+    "native_replay_exit_status": 0,
+    "replay_seconds": 361.2937315350282,
+    "archived_attention": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 57992,
+      "stalls": 63
+    }
+  },
+  "scope": "Preplacement timing for the core and bank 2 using the local library. The mapped bank 2 and twenty mapped compute cores passed the integrated archived attention replay with four source cluster controllers. Full-chip integration and physical timing remain pending.",
   "evidence_sha256": {
     ".cache/physical/wac_core_softmax_budget/receipt.json": "cfe4d797e020e12069c4c483fd929d6f11dd4a3d1d5159e7bc5ee73127e5590f",
     ".cache/physical/wac_core_softmax_budget/clock.sdc": "58502b83f3d83a11cb76699390abc5f1effe67573cea78178d91e94659f8bffe",
@@ -87,6 +104,9 @@
     ".cache/physical/wac_cluster2_budgeted_mapping/timing.rpt": "0162ff882ad8fb06eb5110bf2959297ae4e1a0f8583a3ba3939b29d9194682a2",
     ".cache/physical/wac_cluster2_budgeted_mapping/clock.sdc": "b8da0ca5b6bb7e0b0b74dc92919a4735f75f8dba5a0b706b2d334ff3f932d1a4",
     ".cache/physical/wac_cluster2_budgeted_mapping/netlist.v": "fa6a27f1e2205045bad51dbd007e763ca7e0f3a9fe6bacb500b9c67605366799",
+    ".cache/physical/wac_cluster2_budgeted_replay/xcelium/mapped_cluster_qualification.json": "056f78d2ea108aca67a3898e9faff2c003288d8024c82b5d303822bd2cf585a2",
+    ".cache/physical/wac_cluster2_budgeted_replay/xcelium/receipt.json": "57bfb0225b7ce8db74d302c810b501323bdbb7bdafe47908d6ceb82b9086fa02",
+    ".cache/physical/wac_cluster2_budgeted_replay/xcelium/positive/console.log": "0b9702b6b92e22e36cbe57c0a0e3bb622b7dbde0500bcdeecea72cabb3fad8e9",
     "syn/audit_tri_oracle_wac_memory_capacity.py": "4d627e8f8d9b898a2189be2ee470c227076a99327d47d8ce9111c8149668ab0a",
     "syn/run_tri_oracle_wac_core_softmax_budget.py": "fb4e8ab52995859dadb0958b22469cf408ad308761af4586e4b022023c14eb46"
   }
