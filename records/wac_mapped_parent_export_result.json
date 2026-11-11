@@ -1,0 +1,52 @@
+{
+  "state": "mapped_parent_export_rechecked_against_original_boundaries",
+  "top": "tri_oracle_shared_layer437_COMPILED_SIGN_BANK1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_budgeted_parent",
+  "top_signal_bits": 14343,
+  "cluster_signal_bits": {
+    "0": 6329,
+    "1": 6201,
+    "2": 6201,
+    "3": 6201,
+    "4": 6201
+  },
+  "detached_signal_bits": {
+    "feedforward/predictor": 2144,
+    "attention_pipeline": 21581
+  },
+  "intentionally_empty_interfaces": [
+    "tri_oracle_native_cluster0",
+    "tri_oracle_native_cluster1",
+    "tri_oracle_native_cluster2",
+    "tri_oracle_native_cluster3",
+    "tri_oracle_native_cluster4",
+    "tri_oracle_parent_attention_pipeline_cut",
+    "tri_oracle_parent_predictor_cut"
+  ],
+  "mapped_leaf_cells": 111131,
+  "parent_library_cell_area_square_micrometers": 151139.688,
+  "timing": {
+    "clock_period_ns": 1.72414,
+    "clock_target_megahertz": 580,
+    "corner": "ssg0p9v125c",
+    "reported_paths": 15,
+    "violating_paths": 0,
+    "worst_path": {
+      "slack_ps": 0.0,
+      "status": "MET",
+      "startpoint": "feedforward/saved_reg[intermediate_features][1]/CP",
+      "endpoint": "feedforward/compute/state_reg[0]/D"
+    },
+    "all_reported_paths_met": true
+  },
+  "native_elapsed_seconds": 4072.259756544954,
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/opaque_parent_mapped_export_audit.json": "a744faf49fcc26d85ce049691deff0cb92cf8c8f5753001852f8d9c8470a0272",
+    ".cache/physical/wac_budgeted_parent_boundary/opaque_parent_mapping_serial/mapped/receipt.json": "20071841a482d70c14919463e69998a3e1da39320c608352921141758225a062",
+    ".cache/physical/wac_budgeted_parent_boundary/opaque_parent_mapping_serial/mapped/native_receipt.json": "1a236b4b16b5882da8e63009d557dd9b7fc137b225877fce78b182497d5c3573",
+    ".cache/physical/wac_budgeted_parent_boundary/opaque_parent_mapping_serial/mapped/parent.v": "0e5f59c955906a885a53ee4f5a42b00c56b82d17dc6953edf7625669ec5deb44",
+    ".cache/physical/wac_budgeted_parent_boundary/opaque_parent_mapping_serial/mapped/timing.rpt": "cacde55d76d1e6c19a3302c7d86794091aa9f963463f5914a467b8d1ea24569e",
+    ".cache/physical/wac_budgeted_parent_boundary/opaque_parent_mapping_serial/mapped/clock.sdc": "3330b55895e2edcb4ac2767c05db8eafe88596fb924bce8247865a44929d9553",
+    ".cache/physical/wac_budgeted_parent_boundary/opaque_parent_mapping_serial/mapped/unresolved.rpt": "ce2fe21546b50647e3ab302372ae1d38d199e42bb9ae20ca5d6f345808aa9eaf"
+  },
+  "scope": "Mapped parent around five cluster interfaces and two separately synthesized logic interfaces. Setup is estimated at the 0.9-volt, 125-degree-Celsius library corner using the displayed precision. Integrated layer and physical timing remain pending."
+}

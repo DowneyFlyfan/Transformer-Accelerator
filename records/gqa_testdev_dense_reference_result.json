@@ -1,0 +1,30 @@
+{
+  "state": "dense_tinyllava_gqa_testdev_exact_match_independently_verified",
+  "model": "bczhou/tiny-llava-v1-hf",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "labeled_split": "Stanford GQA balanced Test-Dev",
+  "questions": 12578,
+  "exact_matches": 7163,
+  "accuracy_percent": 56.948640483383684,
+  "displayed_accuracy_percent": "56.95",
+  "scorer": "Independently decode saved token IDs with the pinned tokenizer and count normalized exact label matches.",
+  "historical_model_card_url": "https://huggingface.co/bczhou/tiny-llava-v1-hf/resolve/543bb428c138cdc299297b37df3eba9dd5fc2276/README.md",
+  "historical_model_card_accuracy_percent": "57.54",
+  "delta_vs_model_card_percentage_points": "-0.59",
+  "paper_reported_pruned_accuracy_percent": "55.04",
+  "paper_reported_accuracy_loss_percentage_points": "1.67",
+  "paper_inferred_dense_accuracy_percent": "56.71",
+  "delta_vs_paper_implied_dense_percentage_points": "0.24",
+  "last_invocation_peak_graphics_memory_bytes": 3034247680,
+  "scope": "Dense software reference on the selected public split and prompt. The exact protocol used by Tri-Oracle and its pruned hardware accuracy remain unverified.",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    ".cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/gqa_testdev/dataset_verification.json": "e317feafc07e5a78dfb6394765b9a19282519a54e5df6f8e07352fdb26fbfc62",
+    ".cache/model_reference/gqa_testdev/checkpoint_card_provenance.json": "4a3e618589e3052e2d0603522d0e850555729aa88f6f3c76c30a2ed258edd5e5",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd"
+  }
+}
