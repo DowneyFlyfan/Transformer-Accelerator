@@ -51,7 +51,23 @@
     "exported_core_master_counts_match_each_import": true,
     "generic_checkpoint_written": true
   },
-  "scope": "Core-level preplacement timing with the stronger output budget and gate-level compute, memory handoff, softmax and outlier replay. The complete cluster still requires its own timing and functional checks.",
+  "genus_bank_2_mapping": {
+    "native_exit_status": 0,
+    "elapsed_seconds": 2312.954048532003,
+    "mapped_cells": 348586,
+    "distinct_cell_masters": 296,
+    "preserved_compiled_memories": 124,
+    "mapped_cell_area_square_micrometers": 1290286.353,
+    "abstract_cell_area_square_micrometers": 1290286.3568,
+    "clock_target_megahertz": 580,
+    "local_corner_supply_volts": 0.9,
+    "local_corner_degrees_celsius": 125,
+    "reported_setup_paths": 10,
+    "reported_setup_violations": 0,
+    "worst_reported_setup_slack_ps": 0,
+    "previous_bank_2_worst_reported_setup_slack_ps": -30
+  },
+  "scope": "Preplacement timing for the core and bank 2 using the local library. The core and source-controller layer passed the recorded functional replays. The new mapped bank 2 export requires its own functional replay and physical timing.",
   "evidence_sha256": {
     ".cache/physical/wac_core_softmax_budget/receipt.json": "cfe4d797e020e12069c4c483fd929d6f11dd4a3d1d5159e7bc5ee73127e5590f",
     ".cache/physical/wac_core_softmax_budget/clock.sdc": "58502b83f3d83a11cb76699390abc5f1effe67573cea78178d91e94659f8bffe",
@@ -66,6 +82,11 @@
     ".cache/physical/wac_cluster2_budgeted_mapping/core_boundary.tsv": "de581dd9dad36487308eef2dedb65d7ac86aab56688432bd510ee094c14436a0",
     ".cache/physical/wac_cluster2_budgeted_mapping/before.cores.tsv": "9e0531e540e295f1b1b3d0629de70e88eaeb63b4674dd5954d6bc8965a2ac01f",
     ".cache/physical/wac_cluster2_budgeted_mapping/generic.db": "ab49dd6b2cad61b4472f918f33bc36fe32d125f18598dfa7b7074a938fdf7aac",
+    ".cache/physical/wac_cluster2_budgeted_mapping/receipt.json": "9cc4ac2dfa4d8b0c7eee6f616d92bdc638eb88d64fd6e7a9cb18085019a41662",
+    ".cache/physical/wac_cluster2_budgeted_mapping/physical_views.json": "bd49491dbc01b4beee3e91c7b2451d41ee4b5ae373bbe67b9cb7027c3e8875c4",
+    ".cache/physical/wac_cluster2_budgeted_mapping/timing.rpt": "0162ff882ad8fb06eb5110bf2959297ae4e1a0f8583a3ba3939b29d9194682a2",
+    ".cache/physical/wac_cluster2_budgeted_mapping/clock.sdc": "b8da0ca5b6bb7e0b0b74dc92919a4735f75f8dba5a0b706b2d334ff3f932d1a4",
+    ".cache/physical/wac_cluster2_budgeted_mapping/netlist.v": "fa6a27f1e2205045bad51dbd007e763ca7e0f3a9fe6bacb500b9c67605366799",
     "syn/audit_tri_oracle_wac_memory_capacity.py": "4d627e8f8d9b898a2189be2ee470c227076a99327d47d8ce9111c8149668ab0a",
     "syn/run_tri_oracle_wac_core_softmax_budget.py": "fb4e8ab52995859dadb0958b22469cf408ad308761af4586e4b022023c14eb46"
   }
