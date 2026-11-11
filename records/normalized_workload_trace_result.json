@@ -1,0 +1,48 @@
+{
+  "state": "normalized_workload_trace_independently_counted",
+  "prefill_tokens": 600,
+  "decode_steps": 60,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "layers": 22,
+  "totals": {
+    "identity_dense": {
+      "prefill_pairs": 126931200,
+      "decode_pairs": 26632320,
+      "prefill_rows": 13200,
+      "decode_rows": 1320,
+      "prefill_skipped": 0,
+      "decode_skipped": 0,
+      "last_layer_image_roots": 576
+    },
+    "compact_streaming_dense": {
+      "prefill_pairs": 24615283,
+      "decode_pairs": 8236260,
+      "prefill_rows": 7247,
+      "decode_rows": 1320,
+      "prefill_skipped": 0,
+      "decode_skipped": 0,
+      "last_layer_image_roots": 281
+    },
+    "compact_streaming_pruned": {
+      "prefill_pairs": 24721656,
+      "decode_pairs": 8263710,
+      "prefill_rows": 7263,
+      "decode_rows": 1320,
+      "prefill_skipped": 3336722,
+      "decode_skipped": 492230,
+      "last_layer_image_roots": 288
+    }
+  },
+  "channels_per_row": 5632,
+  "evidence_sha256": {
+    "syn/verify_tri_oracle_normalized_workload_trace.py": "8b7d024aab38e73396f92700936db67ac1c4e2fc13988e820e90a97d7817fd77",
+    "syn/run_tri_oracle_normalized_workload_trace.py": "bfce9cad3ec0681d54f5461ef14faf306e8d597497c99f8db21d18b7ad9f1b28",
+    ".cache/model_reference/normalized_workload_trace/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/model_reference/normalized_workload_trace/native_receipt.json": "eecb667fc686f5356f20ef7bd90b6a10d446bc4d78117c9f11c8a6df3679cace",
+    ".cache/model_reference/normalized_workload_trace/console.log": "39ef5b1fd9122d3d81df10af272008229d25c3492dd6c42e8798deab2ea17b2a",
+    ".cache/model_reference/normalized_workload_trace/run_guard.py": "09e5d480e6bdc31f27026afe4eaa8ecc3da35aaecf0374fe4f639d30ceb7538b",
+    "records/all_layer_integer_model_validation.json": "226ee4f7d88aed5973058992ac940a21e9bba6d4e6a9b496324332942e70d748",
+    "syn/evaluate_tri_oracle_batch417_sparse_answers.py": "76df0c6d63b919ce3327dddd88864e313c6c10ef38f6c723b86d925782d08161"
+  },
+  "scope": "One archived input and fixed continuation. Counts are logical model work opportunities."
+}
