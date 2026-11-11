@@ -1,0 +1,51 @@
+{
+  "state": "linked_tsmc_mapped_layer_passed_directed_attention",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "top": "tri_oracle_shared_layer437_COMPILED_SIGN_BANK1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_budgeted_parent",
+  "clock_target_megahertz": 580,
+  "linked_netlist_sha256": "30b1c7b14af6a3dae0108bbce2827937fef76e715c938f726a4ff460b1a5b6c4",
+  "verified_top_port_bits": 14343,
+  "verified_cluster_port_bits_by_bank": {
+    "0": 6329,
+    "1": 6201,
+    "2": 6201,
+    "3": 6201,
+    "4": 6201
+  },
+  "mapped_compute_cores": 20,
+  "mapped_leaf_instances": 2120458,
+  "compiled_memory_macros": 623,
+  "mapped_area_mm2": {
+    "standard_cells": "3.2850392213",
+    "memory_macros": "3.7404893447",
+    "total": "7.025528566"
+  },
+  "gate_level_replay": {
+    "elaboration_seconds": 339.0630962270079,
+    "simulation_seconds": 352.2885506930179,
+    "native_exit_status": 0,
+    "matched_fixture": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "attention_reads": 57992,
+      "stalls": 63,
+      "value_reads": 1023
+    },
+    "native_completion_markers": [
+      "SHARED437_ATTENTION_OWNERSHIP_PASS",
+      "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=57992 stalls=63",
+      "Simulation complete via $finish(1) at time 7143030 NS + 0"
+    ]
+  },
+  "scope": "Directed attention on the fully linked gate netlist with functional memory models. Area sums mapped cells and compiled memory footprints. Trained raw-residual replay, linked timing and physical implementation are pending.",
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/attention/receipt.json": "0563566b40dc57d16171b43c69ece8a91564bbe7d5018b64e864a1c580bc71ba",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/linked/receipt.json": "2ca46070d01111f47fd8b317fac99b09c2e020659eb6ec07c54c65ede15ec146",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/attention/positive/xrun.log": "33aa768767f3c1f6ecb8506f901d1a91c9aeb76e66dd85afa79c7bb1c957e960",
+    ".cache/physical/wac_budgeted_parent_boundary/linked_tsmc_layer_synthesized_area.json": "b36959529168671dcbe60b33941da49205731f067139663947354ca11af751f8",
+    ".cache/physical/wac_budgeted_parent_boundary/linked_tsmc_layer_floorplan_capacity.json": "89636f48bced474417de945d2a234ff4241d90f5b6b75668ab8e1b3b7524c910"
+  }
+}
