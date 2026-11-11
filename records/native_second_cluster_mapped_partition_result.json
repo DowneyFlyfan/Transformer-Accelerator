@@ -1,0 +1,26 @@
+{
+  "state": "second_cluster_native_mapping_and_compute_pin_nets_verified",
+  "cluster_index": 1,
+  "native_elapsed_seconds": 1694.341,
+  "mapped_library_instances": 190178,
+  "verified_compute_pin_bits": 6316,
+  "direct_compiled_memories": {
+    "TS5N28HPCPSVTA24X128M2FW": 3,
+    "TS5N28HPCPSVTA16X80M2FW": 1,
+    "TS5N28HPCPSVTA512X64M4F": 4,
+    "TS5N28HPCPSVTA32X128M2FW": 36,
+    "TS6N28HPCPSVTA16X128M2F": 24
+  },
+  "separately_compiled_compute_cores": 2,
+  "local_synthesis_clock_period_ns": 1.72414,
+  "local_wireload_setup_slack_ps": 5,
+  "local_synthesis_corner": "ssg0p9v125c",
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank1_split2/receipt.json": "d34c9dcf9c2a46a8fab0f37f35f2249ff65e7cdf8dccae1a741fd34dbda43bb3",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank1_split2/verified_compute_boundary_nets.json": "b87b619c4a948ab968f5587b4f6d6bfe50201d2c31eca772c87dea3fea4ce929",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank1_split2/netlist.v": "4dfce152b09924232c21713926454a498cde4f9c578445207a9db571a2604815",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank1_split2/mapped.db": "129bd6f78d2d090c7a6e003475bf7d558e36c38e54ab3250d08e8a53750ec75e",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank1_split2/timing.rpt": "765b88cb141311630a4da76627b8d932b9622dfc0ad8d72a77f91999d7d7dde9"
+  },
+  "scope": "Native mapped cluster partition with exact boundary-pin identities and two separately compiled core interfaces. Integrated replay is pending."
+}
