@@ -1,0 +1,59 @@
+{
+  "state": "five_bank_softmax_passed_trained_vectors_and_integrated_replay",
+  "standalone": {
+    "rows": 39,
+    "trained_rows": 25,
+    "output_probability_codes": 12915,
+    "output_stall_cycles": 1857,
+    "per_bank_input_weight_output_counts_verified": true,
+    "full_length_key_count": 1024,
+    "full_length_rows": 3,
+    "cycles_last_input_to_first_output": {
+      "five_banks": 463,
+      "original_single_bank": 2099
+    }
+  },
+  "architecture": {
+    "bank_entries": [
+      205,
+      205,
+      205,
+      205,
+      204
+    ],
+    "bits_per_entry": 30,
+    "logical_scratch_bits": 30720,
+    "shared_maximum_sum_and_reciprocal": true
+  },
+  "integrated": {
+    "mapped_banks": [
+      0,
+      1
+    ],
+    "source_parent": true,
+    "memory_models": "compact",
+    "counters": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24768,
+      "stalls": 63
+    },
+    "replay_seconds": 45.104,
+    "diagnostic_interleaving_resolved_with_native_xrun_log": true
+  },
+  "local_evidence_sha256": {
+    "syn/run_tri_oracle_aggregator_softmax.py": "f6493c784cfdc36d665de1ff564e2a9bb4cd417b1744d13e7a17da154f749ccb",
+    "verilog/tri_oracle_aggregator_softmax.sv": "c91d29e4bd6ea64d8a86814edbb69b88117b8321fd9a38f5c21e731377da1f0d",
+    "verilog/tri_oracle_softmax_bank.sv": "e2b5a4eeba085452bc63a5f6dbde0dd56d8cb1e3107cb420eb641508c6d33956",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/aggregator_softmax_legacy_latency.json": "360ee50cb15ecacc096377ff76e23f2745adf94e5ac2d4f7df77cc4ddaf8c734",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_probe_preflight/xcelium/receipt.json": "40de36325093a7658c1d9a64ebb6793fa5d7f7336ad0fcd6f07dc4b4c7d806a1",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/aggregator_softmax_replay/xcelium/receipt.json": "f01021e40d1770d4f5049e02a42f176007a57e1b383bceca02d9314ee7c52bf2",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/verify_aggregator_softmax_replay.py": "e9bc3f53c9fbce4d9d7887d0d8691bc0b1907e9ba263f14ff2791593c6c30064",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/aggregator_softmax_replay/xcelium/positive/xrun.log": "861d889f942406229347e2718e5424709d0a27f71554ecc0cd2ca181d8966d9d",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/aggregator_softmax_replay/xcelium/positive/console.log": "2c2d59e5eeddca203f4a673270d5154a08581430b5dc82680dada66579029391"
+  },
+  "scope": "Functional prototype with five local datapaths instantiated under the attention row. Placement of these datapaths inside the existing compute clusters, mapped storage cost, and routed timing remain open."
+}
