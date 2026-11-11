@@ -1,0 +1,96 @@
+{
+  "state": "cluster_resident_softmax_source_replay_and_first_genus_boundary_verified",
+  "architecture": {
+    "local_banks": 5,
+    "local_capacity_entries": [
+      205,
+      205,
+      205,
+      205,
+      204
+    ],
+    "shared_row_reduction_and_division": true,
+    "actual_bank_activity": {
+      "4": {
+        "rows": 4,
+        "scores": 203,
+        "scratch_reads": 406,
+        "weights": 203
+      },
+      "3": {
+        "rows": 4,
+        "scores": 204,
+        "scratch_reads": 408,
+        "weights": 204
+      },
+      "2": {
+        "rows": 4,
+        "scores": 205,
+        "scratch_reads": 410,
+        "weights": 205
+      },
+      "1": {
+        "rows": 4,
+        "scores": 205,
+        "scratch_reads": 410,
+        "weights": 205
+      },
+      "0": {
+        "rows": 4,
+        "scores": 206,
+        "scratch_reads": 412,
+        "weights": 206
+      }
+    }
+  },
+  "xcelium": {
+    "hierarchy": {
+      "memory": 623,
+      "source_core": 20,
+      "cluster": 5
+    },
+    "row_lengths": [
+      1,
+      205,
+      408,
+      409
+    ],
+    "counters": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24768,
+      "stalls": 63
+    },
+    "wrong_bank_ownership_rejected": true,
+    "elaboration_seconds": 14.046,
+    "replay_seconds": 30.817
+  },
+  "genus_elaboration": {
+    "cluster_index": 0,
+    "cluster_port_bits": 6264,
+    "added_softmax_bits": 153,
+    "bank_pin_connections": 155,
+    "elapsed_seconds": 52.85
+  },
+  "prior_isolated_mapping": {
+    "exit_status": -15,
+    "tool_diagnostic": "ST-113",
+    "mapped_area_verified": false
+  },
+  "local_evidence_sha256": {
+    "syn/prepare_tri_oracle_cluster_resident_softmax.py": "1b742b9678028522b911524c3b3bcaf86bb670afa5edc0380d20eee0e099c03b",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_replay_complete_probe/receipt.json": "be4ba407f88de4a41c6b3bcc7bfa1a9ca0320c0142b72da0634bd97c9bad2c87",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_replay_complete_probe/xcelium/cluster_bank_qualification.json": "24d43d059b47f8e0d7b2459ef8de76d4935c4f31ee426ed4d665f4fba8ecb504",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_replay_complete_probe/xcelium/positive/xrun.log": "e1dcbbc8b960daeb3ce365fb62845f4fda1168e5f373c15da3b136510b8301f0",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_genus_bank0/receipt.json": "a0978e1914c52c01c8fb3cd9ae6c71013a55a76eedcd6731f8b9b5ea6bdbfe83",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_genus_bank0/ports.tsv": "f657cf4ac0599549ffff6db3e041fafdab0daa69081a022a4304b776e6f883c6",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_genus_bank0/softmax_pins.tsv": "fbe570597c0ac568d383427d2405460a271e3658725ca2bcb287539ab2e4ba92",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_genus_bank0/console.log": "854cc0898dd188e19b79b963a23211e468993251762fb93b363b17fb312a7940",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/aggregator_softmax_synthesis/native_receipt.json": "eb4e40a827aae7d0a63b2a617737751ae207f9d781158986d6404ba8c3c6a392",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/aggregator_softmax_synthesis/console.log": "d69865c73d56cbfe8f42edfe88e4cc94f0c83cbefc88ef05ac25be4b6f97580d"
+  },
+  "scope": "Source-level integrated cluster-resident softmax with compact memory models. Genus elaboration checks the first cluster boundary. Mapped softmax area, timing, and placement remain open."
+}
