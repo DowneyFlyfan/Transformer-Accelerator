@@ -494,8 +494,13 @@ input-memory arbiter now passes with four stalled compute commands, retained
 results and an explicit activation reload before compute resumes. Xcelium
 replayed all 39 archived rows through this core. Genus verified 128 data-bit
 connections from the two reused input banks and counted all 28 compiled
-memories in the core. Head scheduling and physical timing remain open. See
-`records/wac_softmax_imem_result.json` and `records/wac_shared_imem_result.json`.
+memories in the core. The integrated Xcelium replay now routes four archived
+attention rows to their assigned core and preserves all 1,023 score and
+probability transfers, token-size results, and the reference attention
+outputs. A separate replay checks all 32 logical head assignments against
+the actual twenty-core hierarchy. The paper's dynamic workload balancing and
+physical timing remain open. See `records/wac_shared_imem_result.json` and
+`records/wac_layer_softmax_integration_result.json`.
 
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value

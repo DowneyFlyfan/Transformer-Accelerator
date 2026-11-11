@@ -1,0 +1,61 @@
+{
+  "state": "twenty_core_layer_replayed_with_head_owned_softmax",
+  "paper_figures": [
+    "31.6.2",
+    "31.6.4"
+  ],
+  "simulator": "Cadence Xcelium",
+  "integrated": {
+    "exercised_head_label": 19,
+    "softmax_owner_zero_based": {
+      "cluster": 4,
+      "core": 3
+    },
+    "source_core_count": 20,
+    "compiled_memory_instances": 623,
+    "compiled_memory_bytes": 414416,
+    "measured": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24768,
+      "stalls": 63
+    },
+    "score_transfers_at_owner": 1023,
+    "probability_transfers_at_owner": 1023,
+    "replay_seconds": 222.35909482598072
+  },
+  "all_head_routes": {
+    "logical_heads": 32,
+    "physical_cores": 20,
+    "exact_probability_codes": 528,
+    "invalid_destinations_rejected": 12,
+    "wrong_owner_transfers_detected": 32
+  },
+  "gpu_archived_reference": {
+    "state": "cuda_probability_reference_reproduced",
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "rows": 39,
+    "probability_codes": 12915,
+    "trained_max_absolute_error": 0.0001706458290161028,
+    "all_rows_max_absolute_error": 0.0002975347838354847,
+    "fixture_sha256": "147a66b54baf90afa4f9a74d16fa0660464dffd81a4897e806cba55aaac702a9",
+    "precision": "float64",
+    "scope": "Independent real softmax reference for the archived quantized score and causal-size vectors."
+  },
+  "scope": "Source-layer replay with actual unit-delay vendor memory models and the existing classifier head assignment. The paper's dynamic cluster/core workload balancing, mapped layer execution, routed timing and full-chip metrics remain unverified.",
+  "evidence_sha256": {
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    ".cache/physical/wac_layer_owned19/xcelium/wac_layer_qualification.json": "21e9c737c06cc72ab2657a28aa806b300227c8c7bc02f3da4cada3edb2cff1df",
+    ".cache/physical/wac_layer_owned19/receipt.json": "b52095cbc0974ebbe8fb4fa3819ca15c0fbb6cea9c7df862d140a82b38540566",
+    ".cache/physical/wac_layer_owned19/xcelium/positive/console.log": "28068d1efef72aece48475d2a1b7818201ba1b275f1c962814c78195bf0befed",
+    ".cache/physical/wac_layer_owned19/routes.log": "70e24ea8e66d9e1d6d9b897040efb9eb6999c5ffae249e2504926c2abe6d4468",
+    ".cache/physical/wac_layer_owned19/routes_wrong_owner.log": "04fd786b15f6ed9a9c3bbb57e5c815863cb7a665b81906ddcdb97f9b93c39c27",
+    ".cache/physical/wac_layer_owned19/cuda_probability_reference.json": "ce997894411485c391cd4ad58a0a5b7ac286f32dc24c188fea4fd8afa252995b",
+    "syn/run_tri_oracle_wac_softmax_routes.py": "fae1091afd916b2f5cb46ad7080ccf74e4e441ce5afb396bac78da20e01ad156",
+    "syn/verify_tri_oracle_wac_softmax_layer.py": "54e8ffa4f2eee58f27ab1d0e8c83dff59fba1ef16e1acc6e40878a619e7cc89a",
+    "verilog/tri_oracle_wac_softmax_routes_tb.sv": "d8e42969c0a3a5ff732a0b5446a9781650bbb28b46d5f697d561fbe8a7538a30"
+  }
+}
