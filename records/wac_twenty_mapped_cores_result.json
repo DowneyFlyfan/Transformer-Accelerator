@@ -1,0 +1,47 @@
+{
+  "state": "twenty_mapped_compute_cores_replayed_archived_attention",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "mapped_compute_cores": 20,
+  "source_cluster_controllers": 5,
+  "reassigned_logical_head": 0,
+  "reassigned_physical_core": 8,
+  "archived_attention": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 57992,
+    "stalls": 63
+  },
+  "compiled_memory_instances": 623,
+  "total_memory_bytes": 414416,
+  "memory_comparison": {
+    "decimal_kilobytes": {
+      "capacity": 414.416,
+      "difference_bytes": 9416,
+      "rounds_to_paper_label": false
+    },
+    "binary_kibibytes": {
+      "capacity": 404.703125,
+      "difference_bytes": -304,
+      "rounds_to_paper_label": true
+    }
+  },
+  "paper_unit_convention_confirmed": false,
+  "native_elapsed_seconds": {
+    "elaboration": 206.10555177298374,
+    "replay": 359.0450394609943
+  },
+  "scope": "Functional gate-level compute cores with source cluster controllers and vendor unit-delay memories. Full chip physical timing, energy and paper accuracy remain unverified.",
+  "evidence_sha256": {
+    ".cache/physical/wac_twenty_mapped_cores/xcelium/mapped_wac_qualification.json": "c642ea20d865efaea02de6ee7671d508fa06cc8ac6ad5ed4a7856891caebcf43",
+    ".cache/physical/wac_twenty_mapped_cores/xcelium/receipt.json": "9f6c327e760b2ff3638764e91ba179ba97601510cf29a47b1f355cfc7d6e418e",
+    ".cache/physical/wac_twenty_mapped_cores/memory_capacity.json": "8163b7da5811ee97b3a1ba6c6feb3c64c95ae4578cee7734e5feb369386a0bf7",
+    ".cache/physical/wac_twenty_mapped_cores/xcelium/positive/console.log": "07cfffaf9caec7a9f6e36c6aff7b664ff6408b242560fc7c85b8613d0e1c550d",
+    ".cache/physical/wac_twenty_mapped_cores/receipt.json": "d1ecc086e7b6a874d18db849794bebab78f6efa9727155756d8211c6cfaa9cab",
+    "syn/prepare_tri_oracle_mapped_wac_layer.py": "c1813425f357306597a40d5a105a054a7dcd1d4ccbcd78dd88783852dbc4f9c1",
+    "syn/run_tri_oracle_mapped_wac_layer.py": "53d8cef16333e44bcf52078e5e5faa8ec96873c6b44266af3f87a78e8c187400",
+    "syn/audit_tri_oracle_wac_memory_capacity.py": "45dd818fbba6dfc7fb22b23a5168e6b6021b1239a58705c3643f3682c95676ff"
+  }
+}

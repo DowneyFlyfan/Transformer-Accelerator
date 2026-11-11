@@ -535,6 +535,14 @@ compiled memories. The slow-corner synthesis report gives 73,422 cells,
 softmax and outlier detection on the mapped netlist. Placement and extracted
 timing for this core are still pending. See `records/wac_mapped_core_result.json`.
 
+The twenty-core Xcelium replay reproduced all four archived attention
+outputs using mapped compute cores and source cluster controllers. It verified
+1,023 score and probability transfers and the reassignment of head 0 to core 8.
+The 623 compiled memory instances total 414,416 bytes. That is 404.703125
+kibibytes and rounds to the paper's 405 label under a binary interpretation.
+The paper gives the label in kilobytes without specifying the convention. See
+`records/wac_twenty_mapped_cores_result.json`.
+
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value
 accumulator. It loads the image merge map, derives the visible compact prefix,
