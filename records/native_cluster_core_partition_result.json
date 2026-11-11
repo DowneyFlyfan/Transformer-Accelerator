@@ -1,0 +1,34 @@
+{
+  "state": "native_two_core_partition_checkpoint_cold_reload_verified",
+  "repository_base": "238df73e3e6251bc5789b67e678c898cc9c07751",
+  "cluster": 0,
+  "total_cluster_cores": 4,
+  "separate_compute_cores": 2,
+  "verified_compute_port_bits": 6316,
+  "original_elaborated_leaf_instances": 925219,
+  "partition_elaborated_leaf_instances": 534123,
+  "partition_memory_macros": 69,
+  "separate_core_memory_macros": 56,
+  "original_checkpoint_export_exit": 245,
+  "independent_checkpoint_reload_exit": 0,
+  "reload_wall_seconds": 24.544,
+  "parent_wiring": {
+    "cluster_interface_bits": 30043,
+    "packed_port_bits": 4960,
+    "swapped_packed_bits_rejected": true
+  },
+  "memory_view_inventory": {
+    "macro_types": 6,
+    "instances": 623,
+    "local_timing_corners": 4
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/native_bank0_split2/receipt.json": "44458e65aa9f8afb246b8de204740ab8fc38a0c84e879334af1575711df1e968",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/native_bank0_split2/split_elaborated.db": "545f7a714e1cd7f1afefe7d83846caa17b7f9b23c471e991e2c293b21ad1f728",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/native_bank0_split2_cold/console.log": "6d0ced7317d3fe445f03996878a15f1e28ec8b945b5ba7148114763138c8e550",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/native_bank0_split2_cold/core_boundary.tsv": "49ccc01c571b55f0aa74828b7b68ff8e81bd6b795284c77ed16b34b78bd8bada",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/native_boundary_net_aliases.json": "89ca9dae848a79ba264380ba9a825993f456e5308d3b6048d05d030e40c24841",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/memory_physical_view_interfaces.json": "796bc96c89c7ebcb627c9a22658e279f13f966f91acab2326fe0798a601fbe10"
+  },
+  "scope": "Independent native checkpoint reload, exact core and parent interface wiring, and compatible memory views for hierarchical synthesis."
+}
