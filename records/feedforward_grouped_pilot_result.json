@@ -1,0 +1,52 @@
+{
+  "state": "grouped_feedforward_pilot_scored",
+  "questions": 64,
+  "decoder_layers": 22,
+  "group_width": 32,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "score_percent": {
+    "scalar": 61.88,
+    "group32": 66.41
+  },
+  "score_difference_percentage_points": 4.53,
+  "paired_question_scores": {
+    "improved": 8,
+    "declined": 3,
+    "unchanged": 53
+  },
+  "workload": {
+    "scalar": {
+      "prefill_pairs": 1559984733,
+      "prefill_rows": 464162,
+      "prefill_skipped": 220250807,
+      "decode_rows": 2332,
+      "decode_skipped": 905625,
+      "prefill_predicted_skip_fraction": 0.0842529817022887
+    },
+    "group32": {
+      "prefill_pairs": 1568088000,
+      "prefill_rows": 464169,
+      "prefill_skipped": 221446672,
+      "decode_rows": 2420,
+      "decode_skipped": 969152,
+      "prefill_predicted_skip_fraction": 0.08470916083855821
+    }
+  },
+  "all_scalar_cases_reproduced": true,
+  "grouped_fixed_width_arithmetic_reproduced": true,
+  "dependencies": {
+    "accelerate": "1.15.0",
+    "psutil": "7.2.2",
+    "transformers": "5.7.0",
+    "torch": "2.11.0+cu130"
+  },
+  "elapsed_seconds": 57.13,
+  "peak_graphics_bytes": 8496472576,
+  "host_anonymous_peak_bytes": 1548865536,
+  "scope": "The same 64-question Visual Question Answering v2 pilot. Floating-point attention and integer feed-forward are evaluated in software. Workload counters are reference counts. Full-benchmark and native hardware validation remain open.",
+  "archive": {
+    "path": "records/feedforward_grouped_pilot_evidence.json.gz",
+    "bytes": 24469,
+    "sha256": "9358bb66995fde0cb8b4895e1b9fae5e94462ecbcbb0ba1da7c959ab71431818"
+  }
+}
