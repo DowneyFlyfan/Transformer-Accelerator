@@ -1,0 +1,39 @@
+{
+  "state": "mapped_banks_0_and_1_replayed_through_exported_parent_cuts",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "banks": {
+    "0": {
+      "mapped_compute_cores": 4,
+      "compiled_memories": 125,
+      "checked_parent_signal_bits": 6329,
+      "exact_integer_results": 96,
+      "aggregate_modes": 3,
+      "elapsed_seconds": 27.419701643986627,
+      "minimum_host_available_bytes": 13706903552,
+      "peak_container_anonymous_bytes": 3459997696
+    },
+    "1": {
+      "mapped_compute_cores": 4,
+      "compiled_memories": 124,
+      "checked_parent_signal_bits": 6201,
+      "exact_integer_results": 96,
+      "aggregate_modes": 3,
+      "elapsed_seconds": 27.401380494993646,
+      "minimum_host_available_bytes": 13950156800,
+      "peak_container_anonymous_bytes": 3326222336
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/replay_new_parent_cuts.py": "2cab511a4c009f7593c1ded3f88f89d339dbd83bf39d63a82de7143fecac8892",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/receipt.json": "ec936354421b70fe7d472045878bc094243c67433c8c881543a94523b1bbcd87",
+    ".cache/physical/wac_budgeted_parent_boundary/bank0_xcelium_link/receipt.json": "593a7920c2df62e28dc3060b3596a7c165eea530748a35138dc8a573e2c492dd",
+    ".cache/physical/wac_budgeted_parent_boundary/bank0_xcelium_link/console.log": "d23ccc455298fb6e64d0367bf28f2890ad423bcecd1d3a375f60060608a595ff",
+    ".cache/physical/wac_budgeted_parent_boundary/bank0_xcelium_link/linked_bank.v": "c26364ebd0040a85121a7b8053db950263e4ab81deae0c42a9ac8d9eb17f8cc8",
+    ".cache/physical/wac_budgeted_parent_boundary/bank0_xcelium_link/bench.sv": "186d20cc58d39128f8aeeeeff69f14e237b0acf83dc16c557b235b6b6bd1233f",
+    ".cache/physical/wac_budgeted_parent_boundary/bank1_xcelium_link/receipt.json": "6630d9562c75ba828d8c73d88dc1b997a863bd8a33237d1a3a88cd827f34b3d4",
+    ".cache/physical/wac_budgeted_parent_boundary/bank1_xcelium_link/console.log": "3f10b2d802a4a0f595eed31da5d22e665c82ea3d35f5b3122629d4a72c240310",
+    ".cache/physical/wac_budgeted_parent_boundary/bank1_xcelium_link/linked_bank.v": "14336b8478c01f184d0ffea4685922b398531c46d00846d209206c5f830b8fdf",
+    ".cache/physical/wac_budgeted_parent_boundary/bank1_xcelium_link/bench.sv": "06b36ee8855fc8af85debb2265a43d49cbf7b438d849cc4a52538aa9e07702b0"
+  },
+  "scope": "Directed functional checks of sum, maximum, average, and the activation-reload interlock on each mapped bank through its exported parent adapter. Integrated layer replay and physical timing are pending."
+}
