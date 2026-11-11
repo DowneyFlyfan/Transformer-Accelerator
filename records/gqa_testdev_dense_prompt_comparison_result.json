@@ -1,0 +1,31 @@
+{
+  "state": "same_checkpoint_dense_gqa_prompt_comparison_independently_verified",
+  "questions": 12578,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "pinned_model_card_prompt": "USER: <image>\n{question}\nAnswer the question using a single word or phrase.\nASSISTANT:",
+  "bundled_tokenizer_prompt": "<|user|>\n<image>\n{question}\nAnswer the question using a single word or phrase.</s>\n<|assistant|>\n",
+  "baseline_exact_matches": 7163,
+  "bundled_prompt_exact_matches": 6085,
+  "baseline_accuracy_percent": "56.95",
+  "bundled_prompt_accuracy_percent": "48.38",
+  "bundled_prompt_delta_percentage_points": "-8.57",
+  "both_correct": 5138,
+  "baseline_only_correct": 2025,
+  "bundled_only_correct": 947,
+  "both_incorrect": 4468,
+  "changed_answers": 4567,
+  "scope": "Prompt comparison for the dense software checkpoint on the same labeled split. The paper’s pruning settings and exact evaluation protocol remain unverified.",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    ".cache/model_reference/gqa_testdev/checkpoint_template_reference/inputs.json": "b20d306a6dacfc0ce5cd7a1d9f1a0a215ee35972a1cdd87e997a06be8728978c",
+    ".cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    ".cache/model_reference/gqa_testdev/checkpoint_template_reference/receipt.json": "3cf07fd9f5835ca569fe20999ead001ffd3429ebd18662496a5490cc3ecfcf49",
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/checkpoint_template_reference/predictions.jsonl": "523bb611e3d54be1bda473c7c7777542d7059c58d81d5f559bf418ab86875bf4",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/gqa_testdev/dataset_verification.json": "e317feafc07e5a78dfb6394765b9a19282519a54e5df6f8e07352fdb26fbfc62",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    ".cache/model_reference/tiny_llava_v1/tokenizer_config.json": "80b86cf09bd3b1b636115cef6ddb18df319eb8c8121e9908795853fda5aadf7c",
+    "records/gqa_testdev_dense_reference_result.json": "947105e40edb5dc10581a85c7e56aba17c1e048fdcdba3642a71ef6ef37b1e88"
+  }
+}
