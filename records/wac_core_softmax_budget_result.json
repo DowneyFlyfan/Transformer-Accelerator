@@ -41,6 +41,16 @@
     "paper_unit_convention_confirmed": false,
     "genus_bank_2_elaborated_macros": 124
   },
+  "genus_bank_2_elaboration": {
+    "mapped_compute_instances": 4,
+    "connected_named_compute_pin_bits": 13468,
+    "compute_leaf_instances_per_core": 73521,
+    "compute_leaf_instances_total": 294084,
+    "distinct_compute_leaf_masters": 271,
+    "core_local_instance_name_and_master_maps_equal": true,
+    "exported_core_master_counts_match_each_import": true,
+    "generic_checkpoint_written": true
+  },
   "scope": "Core-level preplacement timing with the stronger output budget and gate-level compute, memory handoff, softmax and outlier replay. The complete cluster still requires its own timing and functional checks.",
   "evidence_sha256": {
     ".cache/physical/wac_core_softmax_budget/receipt.json": "cfe4d797e020e12069c4c483fd929d6f11dd4a3d1d5159e7bc5ee73127e5590f",
@@ -53,6 +63,9 @@
     ".cache/physical/wac_twenty_budgeted_cores/xcelium/positive/console.log": "aae47fe93e672701b9e9b6cac35076419e9dfe1afa5bcc34cb047c36f1fd59a9",
     ".cache/physical/wac_twenty_budgeted_cores/role_capacity.json": "0c71cfc5c92cb10909bb04668dd3bb3a60ac7d06f127709d355f1231d83cf4a3",
     ".cache/physical/wac_cluster2_budgeted_mapping/before.memory.tsv": "5df987372698d8be86383ee5a6b15ad895bbbcd5d261ebaf11713063802d389e",
+    ".cache/physical/wac_cluster2_budgeted_mapping/core_boundary.tsv": "de581dd9dad36487308eef2dedb65d7ac86aab56688432bd510ee094c14436a0",
+    ".cache/physical/wac_cluster2_budgeted_mapping/before.cores.tsv": "9e0531e540e295f1b1b3d0629de70e88eaeb63b4674dd5954d6bc8965a2ac01f",
+    ".cache/physical/wac_cluster2_budgeted_mapping/generic.db": "ab49dd6b2cad61b4472f918f33bc36fe32d125f18598dfa7b7074a938fdf7aac",
     "syn/audit_tri_oracle_wac_memory_capacity.py": "4d627e8f8d9b898a2189be2ee470c227076a99327d47d8ce9111c8149668ab0a",
     "syn/run_tri_oracle_wac_core_softmax_budget.py": "fb4e8ab52995859dadb0958b22469cf408ad308761af4586e4b022023c14eb46"
   }
