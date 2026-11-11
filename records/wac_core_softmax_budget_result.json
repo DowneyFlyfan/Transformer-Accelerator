@@ -14,6 +14,20 @@
   "preserved_compiled_memories": 28,
   "synthesis_cell_area_square_micrometers": 287506.761,
   "synthesis_elapsed_seconds": 522.1491244260105,
+  "twenty_core_attention_replay": {
+    "mapped_compute_cores": 20,
+    "cluster_controllers": "source",
+    "elapsed_seconds": 358.2947658029734,
+    "archived_attention": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 57992,
+      "stalls": 63
+    }
+  },
   "scope": "Core-level preplacement timing with the stronger output budget and gate-level compute, memory handoff, softmax and outlier replay. The complete cluster still requires its own timing and functional checks.",
   "evidence_sha256": {
     ".cache/physical/wac_core_softmax_budget/receipt.json": "cfe4d797e020e12069c4c483fd929d6f11dd4a3d1d5159e7bc5ee73127e5590f",
@@ -21,6 +35,9 @@
     ".cache/physical/wac_core_softmax_budget/timing.rpt": "6ff3b8a3d8f89e45d00b7570208b13566bcd6cc7a0ed739cd4a97ae2e723f0f2",
     ".cache/physical/wac_core_softmax_budget_gate/receipt.json": "66fc60448f9a8c26941a8325efcc5561b94f8b100f23faeea4742208db611354",
     ".cache/physical/wac_core_softmax_budget_gate/console.log": "d2851df80fe195aacfce33b185c45a6cb3fb97732b52193e680f7f379a348748",
+    ".cache/physical/wac_twenty_budgeted_cores/xcelium/mapped_wac_qualification.json": "1015a4a7ac99b6c2a25e4ab1a3ec5e8b5fa7ecbc669e693deffc4e48fbf1940b",
+    ".cache/physical/wac_twenty_budgeted_cores/xcelium/receipt.json": "e1b2edfd5fd76fb7e9c1daad419e1eaa70847fd96ece444a1416ac34f6168dbb",
+    ".cache/physical/wac_twenty_budgeted_cores/xcelium/positive/console.log": "aae47fe93e672701b9e9b6cac35076419e9dfe1afa5bcc34cb047c36f1fd59a9",
     "syn/run_tri_oracle_wac_core_softmax_budget.py": "fb4e8ab52995859dadb0958b22469cf408ad308761af4586e4b022023c14eb46"
   }
 }
