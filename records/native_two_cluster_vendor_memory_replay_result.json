@@ -1,0 +1,107 @@
+{
+  "state": "two_mapped_clusters_passed_vendor_memory_replay_and_topology_audit",
+  "xcelium": {
+    "mapped_banks": [
+      0,
+      1
+    ],
+    "source_banks": [
+      2,
+      3,
+      4
+    ],
+    "source_parent": true,
+    "vendor_memory_types": 6,
+    "vendor_memory_instances": 623,
+    "identical_compact_model_results": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24768,
+      "stalls": 63
+    },
+    "elapsed_seconds": {
+      "elaboration": 153.514,
+      "replay": 232.37
+    },
+    "peak_combined_anonymous_bytes": 6425501696
+  },
+  "topology": {
+    "mapped_banks": [
+      0,
+      1
+    ],
+    "per_cluster": {
+      "0": {
+        "cores": [
+          "source_cluster/implementation/cores[0]",
+          "source_cluster/implementation/cores[1]",
+          "source_cluster/implementation/cores[2]",
+          "source_cluster/implementation/cores[3]"
+        ],
+        "head_classifiers": [
+          "source_cluster/implementation/cores[0]/head.predict/classifier",
+          "source_cluster/implementation/cores[1]/head.predict/classifier",
+          "source_cluster/implementation/cores[2]/head.predict/classifier",
+          "source_cluster/implementation/cores[3]/head.predict/classifier"
+        ],
+        "strip_predictors": [
+          "source_cluster/implementation/cores[0]/strip.predict",
+          "source_cluster/implementation/cores[1]/strip.predict",
+          "source_cluster/implementation/cores[2]/strip.predict",
+          "source_cluster/implementation/cores[3]/strip.predict"
+        ],
+        "token_merger": "source_cluster/implementation/local_merge.token_merge",
+        "token_merge_table": "source_cluster/implementation/local_merge.token_merge/sizes/local_sizes/table_bank",
+        "entries": 128,
+        "sign_features": 512
+      },
+      "1": {
+        "cores": [
+          "source_cluster/implementation/cores[0]",
+          "source_cluster/implementation/cores[1]",
+          "source_cluster/implementation/cores[2]",
+          "source_cluster/implementation/cores[3]"
+        ],
+        "head_classifiers": [
+          "source_cluster/implementation/cores[0]/head.predict/classifier",
+          "source_cluster/implementation/cores[1]/head.predict/classifier",
+          "source_cluster/implementation/cores[2]/head.predict/classifier",
+          "source_cluster/implementation/cores[3]/head.predict/classifier"
+        ],
+        "strip_predictors": [
+          "source_cluster/implementation/cores[0]/strip.predict",
+          "source_cluster/implementation/cores[1]/strip.predict",
+          "source_cluster/implementation/cores[2]/strip.predict",
+          "source_cluster/implementation/cores[3]/strip.predict"
+        ],
+        "token_merger": "source_cluster/implementation/local_merge.token_merge",
+        "token_merge_table": "source_cluster/implementation/local_merge.token_merge/sizes/local_sizes/table_bank",
+        "entries": 128,
+        "sign_features": 384
+      }
+    },
+    "shared_parent_normalization": {
+      "feedforward/predictor/activation_path/normalizer": "tri_oracle_rmsnorm_parent_replay"
+    },
+    "shared_parent_softmax": {
+      "attention_pipeline/attention/attention/normalize": "tri_oracle_proportional_softmax_parent_replay"
+    },
+    "wrong_head_predictor_owner_rejected": true,
+    "paper_difference": "The paper places normalization and softmax in the aggregator single-instruction, multiple-data unit. The audited parent implements one shared module for each operation."
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_vendor_preflight/receipt.json": "1cfeb861307e0334ae93d2332c3a27c975c9c875cecf00edd3abd035948d877b",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_vendor_preflight/bundle.sv": "a7cf9759f58184fe90ffd27d096e51eabe6310b19980ad1a533ba35ffbaf76d3",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_vendor_preflight/xcelium/receipt.json": "1b0dc62889c5f1380fd337a48ecd9e29eabcbc1d63f241c3cea83f4a0d76edf5",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_probe_preflight/xcelium/receipt.json": "40de36325093a7658c1d9a64ebb6793fa5d7f7336ad0fcd6f07dc4b4c7d806a1",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_vendor_preflight/xcelium/elaborate/console.log": "e09f41b7018a41a608ee6643c077030ecaa43ff84d7879ebd1099c8002b6e671",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_vendor_preflight/xcelium/positive/console.log": "3d42e08642b7dee5cdda208a2f20029465a35a9bbcc151edeef111607bbb8f8e",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_boundary_vendor_preflight/xcelium/positive/mcesim.run/cpu_utilization.log": "8e9f7dc12725c7e3a7acace5d6372e811e45a00dde1f7bbf2800ebae9c879981",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/paper_topology_preflight.json": "9ad8d50527b9c687b5e7df32d96f13e3325cb5caf6fad9e19ec00ff4f3f28081",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/audit_partitioned_paper_topology.py": "9107b2270efee23d45c1e14dafa36c0a7222eb56e6e66ed21b406a836faa2426"
+  },
+  "scope": "Functional replay with compiled vendor memory models in unit-delay mode, two mapped clusters, three source clusters, and the source parent. Topology audited separately in the mapped cluster netlists and elaborated parent. Full mapped replay and physical qualification remain pending."
+}
