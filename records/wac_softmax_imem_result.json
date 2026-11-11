@@ -1,0 +1,63 @@
+{
+  "state": "core_local_softmax_compiled_input_memory_functionally_verified",
+  "paper_figures": [
+    "31.6.2",
+    "31.6.5"
+  ],
+  "paper_ownership": {
+    "weight_attention_core": [
+      "softmax",
+      "outlier detection",
+      "sign extraction"
+    ],
+    "aggregator": [
+      "addition",
+      "averaging",
+      "maximum",
+      "aggregate sum",
+      "token merging"
+    ]
+  },
+  "core_local_prototype": {
+    "simulator": "Cadence Xcelium 25.03-s001",
+    "vendor_memory": "TS5N28HPCPSVTA512X64M4F",
+    "memory_instances": 2,
+    "words_per_memory": 512,
+    "word_bits": 64,
+    "bits_per_key_slot": 32,
+    "compared_rows": 39,
+    "compared_probability_codes": 12915,
+    "longest_row_keys": 1024,
+    "score_and_weight_bank_transaction_counts_checked": true,
+    "omitted_tail_rejected": "SOFTMAX_MISMATCH row=0 key=0 observed=x expected=16384 last=0"
+  },
+  "aggregator_experiment": {
+    "mapped_banks": 5,
+    "scope": "Mapped softmax banks integrated into source clusters with unit-delay compiled memories.",
+    "compiled_memory_bytes": 414416,
+    "measured": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24768,
+      "stalls": 63
+    },
+    "replay_seconds": 224.10828313196544,
+    "paper_ownership_matched": false
+  },
+  "scope": "Standalone core-local softmax with vendor unit-delay input memory models. Compute arbitration, multi-core scheduling, outlier detection placement, mapped core-local timing and full-chip paper metrics remain unverified.",
+  "evidence_sha256": {
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/shared_softmax_iomem_mapped_integrated/xcelium/mapped_softmax_qualification.json": "084508ebef4dfd6f36ea617797d9f6388eb3b9f172a32585798a47ffd3230983",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/shared_softmax_iomem_mapped_integrated/xcelium/positive/console.log": "4fe6a9a8726b29c541640a1811e53a7f997b9e0dc1ae489bc3a60bbf4945c069",
+    "syn/run_tri_oracle_integrated_mapped_softmax.py": "453f6a0be2e69581a2e4c0ef8ddf781ca8a57620d2228f1ec0d4a1383fa4503d",
+    "syn/run_tri_oracle_wac_softmax_imem.py": "a61890b1ea9e930e4b121186c517d5ed9c21be51385ed7c275dea6feeb54f0ea",
+    "verilog/tri_oracle_wac_softmax_imem.sv": "0986db9b51308973eb23ff274f07063182656dab8b763098c3b7062099a97fa0",
+    "verilog/tri_oracle_proportional_softmax.sv": "38a380cb1431e7ad27e062e37d4f503a7efc1af66cac8dd4c21f9063caf1f687",
+    "verilog/tri_oracle_proportional_softmax_tb.sv": "745bd8d1b951ddb4eaa697fec5bbb805f941a0a021b9c7526547fbe9803b6a2d",
+    "records/batch425_proportional_softmax_evidence.json.gz": "8e4f2c743d8110f7d54e1a5afe14bb74924e5cdf820b70e5146799accba5aa5c"
+  }
+}

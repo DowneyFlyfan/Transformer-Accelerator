@@ -483,6 +483,16 @@ softmax at the same quantized scores was 0.000171 on the trained rows. The tests
 reject unit sizes, a masked maximum, and premature exponent truncation. See
 `records/batch425_proportional_softmax_result.json`.
 
+Figure 31.6.2 places softmax, outlier detection, and sign extraction in the
+weight-attention core's single-instruction, multiple-data unit. The aggregator
+has a separate vector unit for reductions. The five-bank aggregator experiment
+passed the integrated Xcelium replay but differs from this ownership. A
+core-local softmax prototype instead packs scores and weights in two compiled
+512-word by 64-bit input memories. Xcelium matched all 12,915 reference codes
+and rejected an unwritten odd-length tail. Integration with the compute core's
+input-memory arbitration and head scheduling remains open. See
+`records/wac_softmax_imem_result.json`.
+
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value
 accumulator. It loads the image merge map, derives the visible compact prefix,
