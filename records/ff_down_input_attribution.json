@@ -1,0 +1,32 @@
+{
+  "state": "down_input_clipping_and_rounding_attributed_on_archived_rows",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "diagnostic_images": 8,
+  "layers": 22,
+  "later_prefill_rows_per_layer": 120,
+  "baseline_integer_output_rows_reproduced_exactly": 2640,
+  "mean_row_relative_error": {
+    "baseline": 0.1661051666502959,
+    "no_clip": 0.16001245059978217,
+    "no_clip_or_round": 0.15301449352872187
+  },
+  "layers_improved_vs_baseline": {
+    "no_clip": 22,
+    "no_clip_or_round": 22
+  },
+  "down_input_codes": {
+    "total": 14868480,
+    "would_exceed_signed8_before_clipping": 1138,
+    "nonzero_gated_codes_rounded_to_zero": 2198913
+  },
+  "native_elapsed_seconds": 7.507484650996048,
+  "graphics_peak_allocated_bytes": 418843136,
+  "scope": "Counterfactual arithmetic on fixed later prefill activations with trained weights and the frozen per-row controls. The intermediate signed16 product limit is retained. Relative error compares layer outputs with the archived floating targets. The experiment measures no model accuracy or hardware cost.",
+  "evidence_sha256": {
+    ".cache/model_reference/ff_down_input_attribution/receipt.json": "e18fce3f841d8129be7c9b973b72372cbd2607604c7b0188069e7425dbef6fc0",
+    ".cache/model_reference/ff_down_input_attribution/native_receipt.json": "58a1ca5f20b5b78ea5d3fdc87ef314661e479f35784097be5a780cc3ebb6b6ae",
+    ".cache/model_reference/ff_down_input_attribution/console.log": "f9a2523a56c1b538091fa2f2242f4ee0730fc4a8eb43dfa6871a4e7242b35678",
+    ".cache/model_reference/ff_down_input_attribution/run_guard.py": "6a44368b4e22f423ee68ae67a37c186c4c267f02fc1e3c3d6612f5a46fb77f2c",
+    "syn/audit_tri_oracle_ff_down_input.py": "56df0ef740758261a6505c664b27599a10a88bc99c37f03a593263ed547065f9"
+  }
+}
