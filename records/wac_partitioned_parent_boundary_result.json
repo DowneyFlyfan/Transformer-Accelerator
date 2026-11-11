@@ -1,5 +1,5 @@
 {
-  "state": "parent_sources_prepared_and_five_fabric_cluster_cuts_verified",
+  "state": "layer_parent_elaborated_and_cold_reloaded_with_five_verified_cluster_interfaces",
   "parent": "tri_oracle_shared_layer437",
   "cluster_signal_bits_by_bank": {
     "0": 6329,
@@ -31,7 +31,21 @@
     "packed_bit_swap_rejected": true,
     "missing_pin_rejected": true
   },
-  "scope": "The five cluster declarations are prepared from the source used in the twenty-core Xcelium replay. The real compute-fabric hierarchy was elaborated around the five cluster declarations. Every local cluster adapter pin was checked against its expected bit, direction and net. Layer-parent elaboration and linkage to five timing-qualified cluster netlists remain pending.",
+  "native_layer_parent": {
+    "tool": "Cadence Genus",
+    "elaboration_exit_status": 0,
+    "cold_reload_exit_status": 0,
+    "top_port_bits": 14343,
+    "verified_cluster_signal_bits": 31133,
+    "direct_parent_memory_macros": 2,
+    "unresolved_references": 0,
+    "declared_clock_period_ns": 1.72414,
+    "elapsed_seconds": {
+      "elaboration": 119.21401574497577,
+      "cold_reload": 38.09714187600184
+    }
+  },
+  "scope": "The complete layer parent was elaborated and independently reloaded with five cluster interfaces. Exact top ports, cluster pin connections and parent memory instances were checked after reload. Linkage to five timing-qualified cluster netlists and integrated timing remain pending.",
   "evidence_sha256": {
     ".cache/physical/wac_budgeted_parent_boundary/receipt.json": "7f0a05e755cbe44359797ab1c60cd38bdb36b8dfe393dfa1bec3ac75fbd7f598",
     ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/receipt.json": "fb727418ec589c0619f0ddf7d3f6b04a0026acc953cfb5714f86e73d81686aca",
@@ -41,7 +55,11 @@
     ".cache/physical/wac_budgeted_parent_boundary/native_fabric_boundary_v2/audit.tcl": "1a7ff9fb629207cf6f8140a75b5408eb8a0d7baea22b2c3cdb0d0635ed88a625",
     ".cache/physical/wac_budgeted_parent_boundary/native_fabric_boundary_v2/block_pins.tsv": "c40140de9fd02c4e03d93dc7fb52af861c1e150d3b69f3bc39b9c451c3a982c5",
     ".cache/physical/wac_budgeted_parent_boundary/native_fabric_boundary_v2/unresolved.rpt": "eb174cf9f150049cfa67a76e76b7290b4fea3b3c8ea7996927ad2f2e8848d1a2",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_during_bank2_replay/receipt.json": "611cfe6214b1d2cf00bbb481e6c73719d011b9c1d02a967c86f5baf6aab25bd4",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_during_bank2_replay/elaborated.db": "be9841d25a3a642f9459970a4dff09a65c8438651a99d1e6b0553371faeb3211",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_cold/receipt.json": "e0e9f761e488a6bd2806fab84f39f0840b693da8b8ccc19a19419de537445e0e",
     "syn/prepare_tri_oracle_softmax_partitioned_parent.py": "93909e0912a44f7c4291043690ee99ea7e0207e5f0b10b3973bfdb846f0e81e3",
-    "syn/audit_tri_oracle_wac_fabric_boundary.py": "137b2353eee7da17dd64a25782aa0688f1655f642668cd075ab2d82e264b16e8"
+    "syn/audit_tri_oracle_wac_fabric_boundary.py": "137b2353eee7da17dd64a25782aa0688f1655f642668cd075ab2d82e264b16e8",
+    "syn/run_tri_oracle_wac_layer_parent.py": "7ddfe4023e12585cbc2fb9fadaf9b95bba9a0af9333611b7460cb4c659915632"
   }
 }
