@@ -1,0 +1,46 @@
+{
+  "state": "bank_0_mapping_and_slow_corner_preplacement_setup_verified",
+  "bank": 0,
+  "native_elapsed_seconds": 2367.4092353619635,
+  "mapped_compute_cores": 4,
+  "mapped_leaf_instances": 348685,
+  "distinct_cell_masters": 298,
+  "mapped_cell_area_square_micrometers": 1295562.893,
+  "exact_core_pin_bindings_verified": 13468,
+  "memory_instance_paths_equal_to_archived_xcelium_census": 125,
+  "compiled_memories_by_master": {
+    "TS5N28HPCPSVTA512X64M4F": 8,
+    "TS5N28HPCPSVTA32X128M2FW": 72,
+    "TS6N28HPCPSVTA16X128M2F": 40,
+    "TS5N28HPCPSVTA24X128M2FW": 4,
+    "TS5N28HPCPSVTA16X80M2FW": 1
+  },
+  "preplacement_setup": {
+    "clock_period_ns": 1.72414,
+    "clock_target_megahertz": 580,
+    "corner": "ssg0p9v125c",
+    "reported_paths": 10,
+    "violating_paths": 0,
+    "worst_path": {
+      "slack_ps": 0.0,
+      "status": "MET",
+      "startpoint": "head_request[218]",
+      "endpoint": "source_cluster/implementation/cores[0]/head.predict/classifier/cutoff_reg[32]/D"
+    },
+    "all_reported_paths_met": true
+  },
+  "scope": "Bank 0 netlist and preplacement setup under the local 28-nanometer library. The archived Xcelium census supplies the reference for the static memory comparison. The integrated replay of the new mapped bank and full-layer physical timing are pending.",
+  "evidence_sha256": {
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/receipt.json": "1f5b8d7074e635304502bf8a18d8437c9626548abce42184b3eea539777ca49d",
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/physical_views.json": "24dbe2d59d3b1b518acb936e2f8b16d36363c408aa101e8ac9d9117beb24c662",
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/timing.rpt": "38e45ed9a07853185e7c8dd228f5b32e30e8059b966eba1a7f50a38e94b83b49",
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/clock.sdc": "2a35e4391a0fb761acc27da81d2b585716da0a1307b5583afd9eebd6e30d9fe1",
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/core_boundary.tsv": "de581dd9dad36487308eef2dedb65d7ac86aab56688432bd510ee094c14436a0",
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/netlist.v": "fb2a20fbcbc588477234ca02d323211cb31a703c4207ba419497b8a79b0fd882",
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/mapped.db": "b502d8a49e0f12c10f9cc8516a256c539d5302f6db35a11626ba87488cfc558c",
+    ".cache/physical/wac_cluster0_budgeted_mapping_resume/console.log": "e7ae065e70d15da0109207d989a31cab9a69cc599aeb113920c63257b7fc6e1c",
+    ".cache/physical/wac_budgeted_parent_boundary/audit_linked_layer_memory.py": "da2a7b43132222d848fb9fe8741b6bb0a0197f645df1914a753725cd6590b943",
+    ".cache/physical/wac_twenty_budgeted_cores/xcelium/mapped_wac_qualification.json": "1015a4a7ac99b6c2a25e4ab1a3ec5e8b5fa7ecbc669e693deffc4e48fbf1940b",
+    ".cache/physical/wac_twenty_budgeted_cores/xcelium/positive/console.log": "aae47fe93e672701b9e9b6cac35076419e9dfe1afa5bcc34cb047c36f1fd59a9"
+  }
+}
