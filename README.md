@@ -540,14 +540,26 @@ outputs using mapped compute cores and source cluster controllers. It verified
 1,023 score and probability transfers and the reassignment of head 0 to core 8.
 The 623 compiled memory instances total 414,416 bytes. That is 404.703125
 kibibytes and rounds to the paper's 405 label under a binary interpretation.
-The paper gives the label in kilobytes without specifying the convention. See
-`records/wac_twenty_mapped_cores_result.json`.
+The role audit verifies the four labeled core banks and the aggregator
+input/output bank separately for every owner. Those banks account for 390
+kibibytes. Survived-sign banks add 6,144 bytes, token merge tables add 720
+bytes, and feed-forward prediction metadata adds 8,192 bytes. The paper
+gives the chip total in kilobytes without specifying the convention or a
+complete per-bank capacity breakdown. See `records/wac_twenty_mapped_cores_result.json`.
 
-Genus mapped cluster 2 with all four compute netlists and 124 compiled
-memory instances preserved. The native slow-corner report shows 324,950 cells,
-1.262728 mm² of library cell area and 0 ps of reported setup slack at
-580 megahertz. The exported cell inventory agrees with the physical abstracts
-and all three local timing corners. See `records/wac_cluster2_synthesis_result.json`.
+The first Genus export of cluster 2 preserved the four compute netlists and
+124 compiled memory instances. Xcelium rejected that export on the first
+projection. Genus had left wildcard-connected ports of the imported compute
+netlists disconnected and tied the cluster's command-ready output low. The
+area and timing figures describe the rejected export. The corrected synthesis
+flow names those port connections and checks them during elaboration. The
+corrected export has 349,961 cells and preserves 124 compiled memories. Its
+slow-corner synthesis report has two violations at 580 megahertz, with a
+worst slack of -30 picoseconds on a softmax probability output. Xcelium
+replayed the complete archived attention workload with this cluster mapped,
+including the expected two writes before the injected error, four attention
+rows, and 1,023 score and probability transfers. See
+`records/wac_cluster2_synthesis_result.json`.
 
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value

@@ -15,6 +15,7 @@ CELL = re.compile(r'^\s*cell\s*\(\s*"?(\w+)"?\s*\)')
 INSTANCE = re.compile(r"(?m)^[ \t]+(\w+)\s+(?:\\\S+|\w+)\s*\(")
 MACRO = re.compile(r"^\s*MACRO\s+(\w+)\s*$")
 SIZE = re.compile(r"^\s*SIZE\s+(\d+(?:\.\d+)?)\s+BY\s+(\d+(?:\.\d+)?)\s*;")
+SETUP_PATH = re.compile(r"(?m)^Path (\d+): (MET|VIOLATED) \((-?\d+(?:\.\d+)?) ps\) (.+)$")
 CORNERS = ("ssg0p9v125c", "tt1v25c", "ffg1p05vm40c")
 PHYSICAL = ROOT / ".cache/physical"
 
@@ -63,6 +64,35 @@ def abstract_areas(path):
     return areas
 
 
+def setup_report(report, constraints, top, target_megahertz):
+    text = report.read_text()
+    assert re.findall(r"(?m)^  Module:\s+(\w+)\s*$", text) == [top]
+    assert re.findall(r"(?m)^  Operating conditions:\s+(\w+)\s+\(", text) == [CORNERS[0]]
+    matches = list(SETUP_PATH.finditer(text))
+    assert matches and [int(item[1]) for item in matches] == list(range(1, len(matches) + 1))
+    assert len(matches) == len(re.findall(r"(?m)^Path \d+:", text)), "Unparsed timing path"
+    paths = []
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+        body = text[match.end():end]
+        assert re.findall(r"(?m)^\s*Group:\s+(\w+)", body) == ["core_clock"]
+        assert match[4].startswith(("Setup Check", "Late External Delay Assertion")), match[4]
+        body_slack, = re.findall(r"(?m)^\s*Slack:=\s+(-?\d+(?:\.\d+)?)\s*$", body)
+        slack = Decimal(match[3])
+        assert slack == Decimal(body_slack)
+        start, = re.findall(r"(?m)^\s*Startpoint:\s+\([RF]\)\s+(.+?)\s*$", body)
+        stop, = re.findall(r"(?m)^\s*Endpoint:\s+\([RF]\)\s+(.+?)\s*$", body)
+        paths.append(dict(slack_ps=float(slack), status=match[2], startpoint=start, endpoint=stop))
+    sdc = constraints.read_text()
+    assert re.findall(r"(?m)^set_units -time (\w+)$", sdc) == ["1000ps"]
+    period, = re.findall(r'(?m)^create_clock -name "?core_clock"? -period (\d+(?:\.\d+)?)\b', sdc)
+    assert abs(Decimal(period) - 1000 / Decimal(target_megahertz)) <= Decimal("0.00001")
+    violations = sum(path["status"] == "VIOLATED" or path["slack_ps"] < 0 for path in paths)
+    return dict(clock_period_ns=float(period), clock_target_megahertz=target_megahertz, corner=CORNERS[0],
+                reported_paths=len(paths), violating_paths=violations, worst_path=min(paths, key=lambda path: path["slack_ps"]),
+                all_reported_paths_met=violations == 0)
+
+
 def audit(mapping):
     receipt_path = mapping / "receipt.json"
     result = read(receipt_path)
@@ -84,13 +114,17 @@ def audit(mapping):
     area_report = (mapping / "area.rpt").read_text()
     area_line = re.search(rf"(?m)^{re.escape(top)}\s+NA\s+(\d+)\s+(\d+(?:\.\d+)?)", area_report)
     assert area_line and sum(masters.values()) == int(area_line[1]), (sum(masters.values()), area_line)
+    paper_targets = ROOT / "records/paper_result_targets.json"
+    assert all(name in result["output_sha256"] for name in ("timing.rpt", "clock.sdc"))
+    target_megahertz = read(paper_targets)["peak"]["clock_megahertz"]
+    setup = setup_report(mapping / "timing.rpt", mapping / "clock.sdc", top, target_megahertz)
 
     corner_path = STAGE / "paper_operating_view_inventory.json"
     view_path = STAGE / "memory_physical_view_interfaces.json"
     assert all(pins[str(path)] == sha(path) for path in (corner_path, view_path))
     corners = read(corner_path)["common_corners"]
     views = read(view_path)["macros"]
-    physical_inputs = [Path(__file__), receipt_path, mapping / "console.log"]
+    physical_inputs = [Path(__file__), receipt_path, mapping / "console.log", paper_targets]
     standard = PHYSICAL / "library/tcbn28hpcplusbwp12t40p140.lef"
     areas = abstract_areas(standard)
     physical_inputs.append(standard)
@@ -125,7 +159,7 @@ def audit(mapping):
     return dict(state="mapped_cluster_physical_and_timing_views_verified", bank=result["bank"], top=top,
         leaf_instances=sum(masters.values()), distinct_masters=len(masters), compiled_memories=memory,
         summed_abstract_area_square_micrometers=float(area), genus_cell_area_square_micrometers=float(area_line[2]),
-        timing_view_corners=list(CORNERS), input_sha256=pins,
+        timing_view_corners=list(CORNERS), preplacement_setup=setup, input_sha256=pins,
         scope="Native netlist leaf coverage and installed cell dimensions. This check precedes placement and extracted timing.")
 
 

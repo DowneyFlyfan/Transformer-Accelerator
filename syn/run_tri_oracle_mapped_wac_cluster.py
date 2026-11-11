@@ -16,6 +16,22 @@ UNITS = (
     "tri_oracle_causal_token_size.sv", "tri_oracle_cumulative_token_merger423.sv",
     "tri_oracle_sram_compute_cluster.sv", "tri_oracle_strip_predictor.sv", "tri_oracle_token_merger.sv", "wrappers.sv",
 )
+CORE_PORTS = (
+    "clk", "rst_n", "load_valid", "activation_reloaded", "load_kind", "load_addr",
+    "load_data", "load_row_enable", "load_error", "load_ready", "cmd_valid", "cmd_ready",
+    "cmd_weight", "cmd_activation", "cmd_mask", "cmd_output", "cmd_accumulate", "done_valid",
+    "done_output", "read_valid", "read_output", "result_valid", "result_data",
+)
+
+
+def bind_mapped_core(source):
+    start = "    tri_oracle_sram_memory_compute compute (\n"
+    end = "        .activation_reload_required(), .*\n    );"
+    before, found, tail = source.partition(start)
+    fields, wildcard, after = tail.partition(end)
+    assert found and wildcard and "    );" not in fields, "Unexpected compute instance boundary"
+    connections = ",\n".join(f"        .{port}({port})" for port in CORE_PORTS)
+    return before + start + fields + "        .activation_reload_required(),\n" + connections + "\n    );" + after
 
 
 def recipe(source, netlist, libraries, top, expected_memory, core_cells):
@@ -27,13 +43,27 @@ set_db super_thread_servers {{}}
 set_db partition_based_synthesis false
 set_db auto_partition false
 set_db fail_on_error_mesg true
+set_db message:ELABUTL/ELABUTL-123 .severity Error
+set_db message:ELABUTL/ELABUTL-124 .severity Error
 read_libs [list {lib_list}]
 read_hdl -netlist {{{netlist}}}
 read_hdl -sv {{{source}}}
 elaborate {top}
 set cores [get_db hinsts -if {{.module.name == tri_oracle_sram_memory_compute}}]
 if {{[llength $cores] != 4}} {{error "Expected four imported compute cores"}}
-foreach core $cores {{set_db $core .preserve true}}
+set binding [open core_boundary.tsv w]
+foreach core $cores {{
+    set_db $core .preserve true
+    foreach pin [get_db $core .hpins] {{
+        set name [get_db $pin .name]
+        if {{[string match "*/activation_reload_required" $name]}} {{continue}}
+        set net [get_db $pin .hnet]
+        if {{[llength $net] != 1}} {{error "Unconnected mapped core pin: $name"}}
+        puts $binding "$name\t[get_db $net .name]"
+    }}
+}}
+close $binding
+puts MAPPED_WAC_CLUSTER_BOUNDARY_CONNECTED
 foreach memory [get_db insts -if {{.base_cell.name =~ TS*N28HPCPSVTA*}}] {{set_db $memory .preserve true}}
 proc census {{stage}} {{
     set cores [list]
@@ -113,12 +143,16 @@ def prepare(case, bank, output):
     expected = read(inventory_path)[str(bank)]["macros"]
     top = f"tri_oracle_native_cluster{bank}"
     output.mkdir()
+    cluster, = (path for path in sources if path.name == "tri_oracle_sram_compute_cluster.sv")
+    named_cluster = output / cluster.name
+    named_cluster.write_text(bind_mapped_core(cluster.read_text()))
     source = output / "sources.sv"
     source.write_text("`define TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC\n" +
-                      "".join(f'`include "{path}"\n' for path in sources))
+                      "".join(f'`include "{named_cluster if path == cluster else path}"\n' for path in sources))
     script = output / "map.tcl"
     script.write_text(recipe(source, netlist, library_paths, top, sum(expected.values()), int(area_row[1])))
-    inputs.update({str(path): sha(path) for path in (Path(__file__), setup_path, views_path, source, script, *library_paths)})
+    inputs.update({str(path): sha(path) for path in (
+        Path(__file__), setup_path, views_path, named_cluster, source, script, *library_paths)})
     verify(inputs)
     return inputs, script, top, expected
 
@@ -140,14 +174,16 @@ def run(case, bank, output):
         "/usr/bin/prlimit", "--as=7516192768", "--", "/opt/cadence/bin/genus", "-batch",
         "-log", str(output / "genus"), "-files", str(script),
     ], 2700, 0)
-    assert (output / "console.log").read_text().splitlines().count("MAPPED_WAC_CLUSTER_COMPLETE") == 1
+    markers = (output / "console.log").read_text().splitlines()
+    for marker in ("MAPPED_WAC_CLUSTER_BOUNDARY_CONNECTED", "MAPPED_WAC_CLUSTER_COMPLETE"):
+        assert markers.count(marker) == 1, marker
     for name in ("cores", "memory"):
         assert sha(output / f"before.{name}.tsv") == sha(output / f"after.{name}.tsv")
     after = (output / "after.memory.tsv").read_text().splitlines()
     assert Counter(line.split()[1] for line in after) == expected
     assert "No unresolved references" in (output / "unresolved_after.rpt").read_text()
     verify(inputs)
-    exports = {name: sha(output / name) for name in ("after.cores.tsv", "after.memory.tsv", "netlist.v",
+    exports = {name: sha(output / name) for name in ("core_boundary.tsv", "after.cores.tsv", "after.memory.tsv", "netlist.v",
                "mapped.db", "clock.sdc", "area.rpt", "timing.rpt", "unresolved_after.rpt")}
     receipt = dict(state="cluster_mapped_around_four_verified_cores", bank=bank, top=top, compiled_memories=expected,
                    native=native, input_sha256=inputs, output_sha256=exports)

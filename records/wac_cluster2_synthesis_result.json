@@ -1,5 +1,5 @@
 {
-  "state": "mapped_cluster2_preservation_and_physical_views_verified",
+  "state": "cluster2_wildcard_import_failed_functional_replay",
   "bank_zero_based": 2,
   "synthesis_tool": "Cadence Genus 25.10-p002_1",
   "cells": 324950,
@@ -16,7 +16,65 @@
   "synthesis_setup_slack_ps": 0,
   "clock_period_ns": 1.72414,
   "native_elapsed_seconds": 1880.0477892540512,
-  "scope": "One fully mapped cluster with pre-placement timing and verified installed physical views.",
+  "scope": "Historical cell inventory, library views and pre-placement reports from the rejected export.",
+  "functional_failure": {
+    "simulator": "Cadence Xcelium",
+    "native_exit_status": 2,
+    "first_divergence_ns": 12645,
+    "local_core": 0,
+    "global_core": 8,
+    "load_kind": 2,
+    "load_address": 0,
+    "mapped_load_error": 1,
+    "source_load_error": 0,
+    "expected_projection_writes": 2,
+    "observed_projection_writes": 0,
+    "cause": "Genus left wildcard-connected mapped core inputs unconnected and wrapper outputs undriven. The exported cluster tied cmd_ready and out_valid low and assigned load_error to load_valid."
+  },
+  "corrected_export": {
+    "native_elapsed_seconds": 2327.221171946032,
+    "connected_compute_boundary_bits": 13468,
+    "cells": 349961,
+    "distinct_cell_masters": 294,
+    "compiled_memories": 124,
+    "synthesis_cell_area_square_micrometers": 1290252.417,
+    "physical_abstract_area_square_micrometers": 1290252.4208,
+    "clock_period_ns": 1.72414,
+    "slow_corner_reported_setup_violations": 2,
+    "worst_setup_slack_ps": -30,
+    "worst_setup_startpoint": "source_cluster/implementation/cores[1]/compute/inputs[0]/CLK",
+    "worst_setup_endpoint": "softmax_response[probability][15]",
+    "worst_path_arrival_before_cluster_mux_ps": 1469,
+    "worst_path_arrival_after_cluster_mux_ps": 1504,
+    "required_arrival_ps": 1474,
+    "functional_replay": {
+      "simulator": "Cadence Xcelium",
+      "mapped_cluster_banks": [2],
+      "mapped_compute_cores": 20,
+      "compiled_memories_in_layer": 623,
+      "native_exit_status": 0,
+      "elapsed_seconds": 359.08554458001163,
+      "measured": {
+        "maps": 576,
+        "writes": 27,
+        "failed_writes": 2,
+        "rows": 4,
+        "values": 1023,
+        "attention_reads": 57992,
+        "stalls": 63
+      }
+    },
+    "evidence_sha256": {
+      ".cache/physical/wac_cluster2_named_mapping_v3/receipt.json": "394407c9ec928f5fc1cd58829ab3d9de4d40f5a787b5a47cc5768850b48f38c0",
+      ".cache/physical/wac_cluster2_named_mapping_v3/early_physical_views.json": "d0d6f0ba931f1b913e682442b2ecd449bdb5ae18a2c8b5161cb5634f201f28a3",
+      ".cache/physical/wac_cluster2_named_mapping_v3/timing.rpt": "17932f70aa11370d8838f379ffccc8beb5fc0a2d6a37ba7d8fc26a44c09875ce",
+      ".cache/physical/wac_cluster2_named_mapping_v3/native_receipt.json": "24997ded2a1b45214a7f90429359a35c870debbe98bf3403091bc0f0bf55059d",
+      ".cache/physical/wac_cluster2_named_replay/xcelium/mapped_cluster_qualification.json": "3ec44be9eb25c3cb156c7006270a7efe2c77937e14165503dda43e63e3636fec",
+      ".cache/physical/wac_cluster2_named_replay/xcelium/receipt.json": "8ab2aaf263ac944eae3a74e1663657e68d751753be1007b76878df67aa3abcca",
+      ".cache/physical/wac_cluster2_named_replay/xcelium/positive/console.log": "e5bb4a1b5ec93970bdbb5b7cf6e20f8ab02edb3df482faf06136b4ce612fe66c",
+      ".cache/physical/wac_cluster2_named_replay/xcelium/positive/native_receipt.json": "1461f883f32b78e80d3f7edd4cc48ade7a5a9dcbedd12d6249775a9b55d1008d"
+    }
+  },
   "evidence_sha256": {
     ".cache/physical/wac_cluster2_mapped_cores/receipt.json": "526118d29a20f3a99e06be803d4b5b44fab184ee19c068c0c205bdbd4ead2fa3",
     ".cache/physical/wac_cluster2_mapped_cores/physical_views.json": "2f1bb0f8b916a44a2b262b2b27191f362674c40b2d7df64211de8a1beb9beb11",
@@ -30,6 +88,10 @@
     ".cache/physical/wac_cluster2_mapped_cores/area.rpt": "14a85ba50efa63949da2139d34db5b29022def75dfa72a160fa3535d58601f5a",
     ".cache/physical/wac_cluster2_mapped_cores/timing.rpt": "26e14f5736edcaf12dff6bd5183dea4621f9a7c49625a101f6855ed71d7f6b64",
     ".cache/physical/wac_cluster2_mapped_cores/unresolved_after.rpt": "e825098e5d9b3ef8fe4b6c9aa3042e3d8461266949da8f6c4ba77d4c7a3edeb2",
+    ".cache/physical/wac_cluster2_integrated_replay/xcelium/positive/console.log": "61ba01a53b49a0c9b80c9d4a01cc9ca3ec735dc8e32255f6227f3471bcd91bd9",
+    ".cache/physical/wac_cluster2_integrated_replay/xcelium/positive/native_receipt.json": "c8dc8e0f9d43df4dc7e75059dec55527ef7aaecbddffc80615e22a21cd5188f7",
+    ".cache/physical/wac_cluster2_projection_debug/console.log": "adf4c34e1456d09b3449261de86b2904a7beaebf218e057969323ae46e49d0a0",
+    ".cache/physical/wac_cluster2_projection_debug/native_receipt.json": "4bf85b23d60d655d2719dccb04013d935e4cbe4b0667f82e3544285403c4dc61",
     "syn/run_tri_oracle_mapped_wac_cluster.py": "83f065202fc72652c3bc5b1619a8d90d31d423ec5f14148e1841aee2e2ee1559",
     "syn/audit_tri_oracle_mapped_wac_physical_views.py": "c81b267073b2fc98e3f424ceca96acf0848c8041e5dc3674af07c108613ebcab"
   }
