@@ -1,0 +1,28 @@
+{
+  "state": "five_aggregator_threshold_endpoints_and_reset_recovery_verified",
+  "thresholds": [
+    0,
+    1,
+    1536,
+    2047,
+    2048
+  ],
+  "frames": 20,
+  "exact_maps": 11520,
+  "consumed_sign_vectors": 6478,
+  "causal_queries": 280,
+  "exact_causal_sizes": 9199,
+  "reset_during_second_aggregator": true,
+  "stale_previous_context_rejected_after_reset": true,
+  "active_aggregators": 5,
+  "gpu_checked_similarity_returns": 44615,
+  "equal_width_return_swap_rejected": true,
+  "native_seconds": 15.05,
+  "peak_gpu_allocated_bytes": 108294656,
+  "scope": "Deterministic threshold-endpoint and reset-recovery regressions for the five merge and token-size units. Full-chip mapping, routed timing and paper benchmark results remain unqualified.",
+  "archive": {
+    "path": "records/aggregator_merge_boundaries_evidence.json.gz",
+    "bytes": 10723,
+    "sha256": "006f335d4543b5f7dbb8e4735f914fb92436035034d89d063aec59c870cd5e99"
+  }
+}
