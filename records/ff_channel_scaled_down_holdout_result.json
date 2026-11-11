@@ -1,0 +1,30 @@
+{
+  "state": "channel_scaled_down_projection_benchmark_independently_scored",
+  "questions": 256,
+  "decoder_layers": 22,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "reproduced_dense_integer_cases": 256,
+  "scores_percent": {
+    "dense_integer": 58.87,
+    "channel_scaled_down": 62.34
+  },
+  "change_percentage_points": 3.47,
+  "paired_question_scores": {
+    "improved": 16,
+    "declined": 6,
+    "unchanged": 234
+  },
+  "graphics_peak_allocated_bytes": 7485402624,
+  "wall_seconds": 200.94287285697646,
+  "minimum_host_available_bytes": 17262399488,
+  "evidence_sha256": {
+    "syn/verify_tri_oracle_channel_scaled_down.py": "199e59d394d84749f28dfe89cc13bb7c342ec2294d57d89bf2c44a64ba60eb5d",
+    "syn/evaluate_tri_oracle_channel_scaled_down.py": "ff943d85c1673e37b61c8d73fef1a8486670e80f44f0d2977b4fad44003b0a5e",
+    ".cache/model_reference/ff_channel_scaled_down_holdout/native_receipt.json": "e8530767ac7c4c5e695510f5e7d5d9e3bb709206c6c1a4fb938972eb36f622fc",
+    ".cache/model_reference/ff_channel_scaled_down_holdout/receipt.json": "50742e4991f7641dfa2560a203bd3698b3737acaed86e992101aec4cff687b5e",
+    ".cache/model_reference/ff_channel_scaled_down_holdout/console.log": "53db5184ee6fa3686a9d101f4385e024e0007e683020cf8c10f6451b5f768937",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9",
+    ".cache/model_reference/ff_channel_scaled_down_holdout/run_guard.py": "a8d29633aa5cf6786f3df5e391b16e71d32ba515e7cfce8616547633a8787150"
+  },
+  "scope": "Fixed local benchmark. Only later-row down weights and their output scaling differ between modes."
+}
