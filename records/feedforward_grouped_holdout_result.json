@@ -1,0 +1,32 @@
+{
+  "state": "grouped_feedforward_validation_holdout_independently_scored",
+  "questions": 256,
+  "control_questions": 64,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "score_percent": {
+    "scalar": 59.34,
+    "group32": 59.88
+  },
+  "paired_question_scores": {
+    "improved": 28,
+    "declined": 27,
+    "unchanged": 201
+  },
+  "wall_seconds": 249.063,
+  "peak_graphics_bytes": 8512784384,
+  "minimum_available_host_bytes": 16474275840,
+  "evidence_sha256": {
+    ".cache/model_reference/grouped_precision_holdout/console.log": "a9f5af1249ab6cb6f5013dc855c2bcc4dc817815d6a79f2132b38dbc016ef417",
+    ".cache/model_reference/grouped_precision_holdout/receipt.json": "6878b50e3c3169636ccc044f4bec089dcf8e7797584d8d64281f76434eabfbc5",
+    ".cache/model_reference/grouped_precision_holdout/native_receipt.json": "361023086ccf25b06235769c0240c56426354389fc8400d08da081458297b580",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9",
+    ".cache/model_reference/grouped_precision_holdout/verify_holdout.py": "1956fa7570257eae71ab8654bef36827f997f1b3642159dd3c504839224570e9"
+  },
+  "scope": "Software comparison of two feed-forward scale configurations on a fixed labeled validation subset. Vision and attention use floating point.",
+  "holdout_source": "https://visualqa.org/download.html",
+  "holdout_selection": "256 Common Objects in Context validation images disjoint from the 64-question pilot, with one question per image fixed before inference.",
+  "score_difference_percentage_points": 0.54,
+  "previous_pilot_score_difference_percentage_points": 4.53,
+  "matched_pilot_controls": 128,
+  "local_verification_record_sha256": "bc0045a765eb3d6022b586b64197aac4f6b0e30d15013609ad083327b414e325"
+}
