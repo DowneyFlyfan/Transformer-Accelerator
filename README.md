@@ -490,8 +490,12 @@ passed the integrated Xcelium replay but differs from this ownership. A
 core-local softmax prototype instead packs scores and weights in two compiled
 512-word by 64-bit input memories. Xcelium matched all 12,915 reference codes
 and rejected an unwritten odd-length tail. Integration with the compute core's
-input-memory arbitration and head scheduling remains open. See
-`records/wac_softmax_imem_result.json`.
+input-memory arbiter now passes with four stalled compute commands, retained
+results and an explicit activation reload before compute resumes. Xcelium
+replayed all 39 archived rows through this core. Genus verified 128 data-bit
+connections from the two reused input banks and counted all 28 compiled
+memories in the core. Head scheduling and physical timing remain open. See
+`records/wac_softmax_imem_result.json` and `records/wac_shared_imem_result.json`.
 
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value

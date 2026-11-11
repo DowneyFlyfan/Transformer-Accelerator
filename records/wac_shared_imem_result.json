@@ -1,0 +1,67 @@
+{
+  "state": "core_local_softmax_shares_weight_attention_core_input_memories",
+  "paper_figure": "31.6.2",
+  "functional": {
+    "simulator": "Cadence Xcelium 25.03-s001",
+    "memory_mode": "UNIT_DELAY",
+    "vendor_memory_corners_checked": [
+      "tt1v25c",
+      "ssg0p9v125c",
+      "ffg1p05vm40c"
+    ],
+    "handoff_pass_marker": "WAC_IMEM_HANDOFF_PASS drained=4 retained_results=4 softmax_outputs=3 resumed_results=2",
+    "archived_softmax_rows": 39,
+    "archived_softmax_probability_codes": 12915,
+    "matrix_regression_issued_commands": 135,
+    "matrix_regression_checked_reads": 181,
+    "faults_rejected": [
+      "grant before compute drains",
+      "compute before tile reload",
+      "reset exposed stale scratch"
+    ]
+  },
+  "native_elaboration": {
+    "state": "genus_core_local_softmax_memory_connections_verified",
+    "compiled_memories": 28,
+    "input_memory_bytes": 8192,
+    "input_memory_pins": 280,
+    "softmax_input_data_bits": 128,
+    "constraint_mhz": 580
+  },
+  "native_evidence_sha256": {
+    ".cache/physical/wac_shared_imem_elaboration/inputs.json": "c9b884d19b0c4b45c270503709223c1d7b96613afd8f444c64624e955b6f32a3",
+    ".cache/physical/wac_shared_imem_elaboration/console.log": "449821108166df06331a6607308b932000e62b616ea4137df700933e7840bf8f",
+    ".cache/physical/wac_shared_imem_elaboration/unresolved.rpt": "8959cd70a86e39c2031803f5b33f8fe91851db097fb88a63bba60c1794169e38",
+    ".cache/physical/wac_shared_imem_elaboration/memories.tsv": "fbb9ece64493487ac53f2fffa7a0bf730b9e740f521d4a30b7fd6042c4aabe3e",
+    ".cache/physical/wac_shared_imem_elaboration/input_pins.tsv": "78aa8cf5c0952a58056819aa4a4813a654a6c1c86d9d7356835b4b032117e105",
+    ".cache/physical/wac_shared_imem_elaboration/simd_pins.tsv": "e6b398a75fef6188e732f43a6a500ddfae9ad0572d5ae5638824afd900a0b47e",
+    ".cache/physical/wac_shared_imem_elaboration/clock.sdc": "4a761b91c66f8bd295393facff39e77072f601ddca54381c145eea2155945842",
+    ".cache/physical/wac_shared_imem_elaboration/elaborated.db": "48218b1b1c873a2580e4f74d65e950900bd296e00039bc4e4ef9d731bd40ffa5"
+  },
+  "source_evidence_sha256": {
+    "syn/prepare_tri_oracle_wac_shared_imem.py": "bc2480666e6e9a1a535e4bd33cee9c538eedc989e3ad5a6f26696b23adc80c1c",
+    "syn/run_tri_oracle_wac_shared_imem.py": "026127658d5de67518cb7a13969a82a541038c035cc0d3ec91fbe1afee9b3c9a",
+    "syn/verify_tri_oracle_wac_shared_imem_native.py": "072324d70e5c93344a1ca9fafb6a76d536a0d6ef98164b5a307ff2b520ddc6b8",
+    "syn/run_tri_oracle_wac_softmax_imem.py": "a61890b1ea9e930e4b121186c517d5ed9c21be51385ed7c275dea6feeb54f0ea",
+    "verilog/tri_oracle_wac_shared_imem_tb.sv": "04cd7b2e58f68525dcf166a6268e234f78fbcf2bd1da9def8a18464e33c5ed39",
+    "verilog/tri_oracle_sram_memory_hazards_tb.sv": "0b860211628960f50a3119c041f598c6f8fb509f63f14b06f3c0680fee5e3d40",
+    "verilog/tri_oracle_wac_imem_owner.sv": "4099968eb5c3a4bbf4a5046647d743c81c442d82aa0fd48c76483ed9279311b3",
+    "verilog/tri_oracle_wac_softmax_imem.sv": "0986db9b51308973eb23ff274f07063182656dab8b763098c3b7062099a97fa0",
+    "verilog/tri_oracle_sram_memory_compute.sv": "435bfdf1db3758ce1f927836307721a27133402cb26f529c6a63c8a6df659f39",
+    "verilog/tri_oracle_proportional_softmax.sv": "38a380cb1431e7ad27e062e37d4f503a7efc1af66cac8dd4c21f9063caf1f687",
+    "verilog/tri_oracle_proportional_softmax_tb.sv": "745bd8d1b951ddb4eaa697fec5bbb805f941a0a021b9c7526547fbe9803b6a2d",
+    "records/batch425_proportional_softmax_evidence.json.gz": "8e4f2c743d8110f7d54e1a5afe14bb74924e5cdf820b70e5146799accba5aa5c",
+    "records/sram_core_bank_views.json": "c56ad0594f95263d32239ba3c07d77d3edc1297547027713bb7edc726a6bae9d",
+    "records/sram_activation_cache_bank_views.json": "2bb0387ca4ee5aa431945a00d35600ae3e1d2adb756ee04be0c3a047733d09cb",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.v": "899d9fc175509df34d32e84df004a2dd2b59360dfd2cc18a9564c8d23b3e71e5",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_ssg0p9v125c.v": "96f12d5a8d0aa0867940ee5b2e8429438961947168de64d0889291dfd0c10a8e",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.v": "a259b839988408befc7daf328fea805d86ba0a3d482b8732754066e42b84241e",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.v": "da2ddafa85eb12433bf23932d928e68ee1127f49248e5cf757fa8a07a8362a95",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_ffg1p05vm40c.v": "9b110d48fe331557eaff47dfb564978a60d106bd1be205025adac4fa8d22f489",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.v": "0a8942e3611d8594ef520037aaf62f775f92d801972b9ad92ddc2623eac6e53b"
+  },
+  "scope": "One integrated weight-attention core with exclusive input-memory ownership and an explicit scheduler tile-reload acknowledgment. The full-chip head scheduler, outlier detection, physical timing and paper metrics remain unverified."
+}
