@@ -1,0 +1,80 @@
+{
+  "state": "fixed_width_group_scales_measured",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "decoder_layers": 22,
+  "held_images": 8,
+  "captured_rows_per_layer": 128,
+  "scalar_baseline_bit_exact": true,
+  "fixed_width_mean_relative_error_by_group": {
+    "scalar": {
+      "mean": 0.1726464961062778,
+      "improved_layers": 0,
+      "first": 0.27076640115542844,
+      "ordinary": 0.16610517488284546
+    },
+    "128": {
+      "mean": 0.10381805117834698,
+      "improved_layers": 22,
+      "first": 0.2475548745556311,
+      "ordinary": 0.09423560242761266
+    },
+    "32": {
+      "mean": 0.09025905992497098,
+      "improved_layers": 22,
+      "first": 0.24413961730897427,
+      "ordinary": 0.08000036041167649
+    },
+    "8": {
+      "mean": 0.08356899327852509,
+      "improved_layers": 22,
+      "first": 0.24367774531922556,
+      "ordinary": 0.07289508035914465
+    },
+    "1": {
+      "mean": 0.08027125624093143,
+      "improved_layers": 22,
+      "first": 0.2424602064473385,
+      "ordinary": 0.06945866498757493
+    }
+  },
+  "ideal_intermediate_error": {
+    "float_rebuilt": {
+      "mean": 6.466368295770569e-07,
+      "first": 4.38833761369621e-07,
+      "ordinary": 6.604904053181765e-07
+    },
+    "input_rounding_only": {
+      "mean": 0.025124447885900736,
+      "first": 0.12016956860448276,
+      "ordinary": 0.018788107289848
+    },
+    "int8_gate_up_only": {
+      "mean": 0.08942521803758362,
+      "first": 0.15240665247917853,
+      "ordinary": 0.08522646146064455
+    },
+    "scalar_weights_dynamic_down": {
+      "mean": 0.16185871714895422,
+      "first": 0.19658088548616928,
+      "ordinary": 0.15954391996968875
+    },
+    "per_output_weights_dynamic_down": {
+      "mean": 0.06343667175282132,
+      "first": 0.14234622817655856,
+      "ordinary": 0.05817603794011203
+    },
+    "current_protected_integer": {
+      "mean": 0.1726464961062778,
+      "first": 0.27076640115542844,
+      "ordinary": 0.16610517488284546
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "graphics_peak_bytes": 422516224,
+  "scope": "Decoder feed-forward arithmetic on frozen diagnostic captures. Group scales are evaluated in software with eight-bit integer dot products and the current sixteen-bit intermediates. End-to-end benchmark and native hardware validation remain pending.",
+  "archive": {
+    "path": "records/feedforward_grouped_precision_evidence.json.gz",
+    "bytes": 16188,
+    "sha256": "0d52d2bbff579b60967eacf0c1c196b5cebe2be5ba712968482b17c85434ce86"
+  }
+}
