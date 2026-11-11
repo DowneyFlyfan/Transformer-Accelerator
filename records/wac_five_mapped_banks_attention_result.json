@@ -1,0 +1,53 @@
+{
+  "state": "five_mapped_banks_verified_archived_attention_and_memory_inventory",
+  "simulator": "Cadence Xcelium 25.03",
+  "mapped_banks": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "mapped_compute_cores": 20,
+  "compiled_memories": 623,
+  "exact_compute_pin_connections_by_bank": {
+    "0": 13468,
+    "1": 13468,
+    "2": 13468,
+    "3": 13468,
+    "4": 13468
+  },
+  "measured": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 57992,
+    "stalls": 63
+  },
+  "elaboration_seconds": 291.23042058298597,
+  "replay_seconds": 357.07203458301956,
+  "compiled_bytes_per_bank": [
+    81568,
+    81184,
+    81184,
+    81184,
+    81104
+  ],
+  "predictor_compiled_bytes": 8192,
+  "compiled_memory_total_bytes": 414416,
+  "paper_capacity_label": "405KB",
+  "paper_capacity_unit_confirmed": false,
+  "difference_from_binary_target_bytes": -304,
+  "verification_scope": "Archived directed attention with five mapped clusters and the source layer parent. Xcelium's own log supplies the exact markers because two kernel diagnostics interrupted one line in the captured console. The raw console and native exit receipt are retained. Trained feed-forward replay and full-parent synthesis are in progress.",
+  "evidence_sha256": {
+    ".cache/physical/wac_five_budgeted_mapped_clusters/xcelium/receipt.json": "7e46d73e569c70f69800962bd8bb93a9be9e7640f21c437cfff0b745e6e06779",
+    ".cache/physical/wac_five_budgeted_mapped_clusters/xcelium/mapped_cluster_qualification.json": "8293cbb11edcdd75eb7e20b09654b3ab3353226b72c0ae26be6db60b5a4689ff",
+    ".cache/physical/wac_budgeted_cluster_continuation/five_bank_capacity_audit.json": "e53f2d6ba00555eb659095739bc4b477115d36ad886f17554de366595fe16f61",
+    ".cache/physical/wac_twenty_budgeted_cores/xcelium/mapped_wac_qualification.json": "1015a4a7ac99b6c2a25e4ab1a3ec5e8b5fa7ecbc669e693deffc4e48fbf1940b",
+    ".cache/physical/wac_five_budgeted_mapped_clusters/xcelium_interleaved_stdout/positive/native_receipt.json": "df5987098ccb23bfa58e4432b71be16697d823d5c202dddaeacee782ec121ab1",
+    ".cache/physical/wac_five_budgeted_mapped_clusters/xcelium_interleaved_stdout/positive/console.log": "e6349e84abf2e80a1d0201d985922437ea1b3b2843982e00ce389b0867b7b1fe",
+    ".cache/physical/wac_five_budgeted_mapped_clusters/xcelium_interleaved_stdout/positive/xrun.log": "f5cc6ad4073687ae1ff356f5bcdd127656f952232c697d5c4146ff8e09c37ce4"
+  }
+}
