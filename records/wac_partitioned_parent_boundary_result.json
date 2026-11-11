@@ -45,7 +45,16 @@
       "cold_reload": 38.09714187600184
     }
   },
-  "scope": "The complete layer parent was elaborated and independently reloaded with five cluster interfaces. Exact top ports, cluster pin connections and parent memory instances were checked after reload. Linkage to five timing-qualified cluster netlists and integrated timing remain pending.",
+  "native_parent_verilog_export": {
+    "exit_status": 0,
+    "elapsed_seconds": 41.92,
+    "top_port_bits_checked": 14343,
+    "named_cluster_signal_bits_checked": 31133,
+    "bank_2_ports_match_the_mapped_cluster": true,
+    "swapped_softmax_request_wires_rejected": true,
+    "duplicate_generic_primitive_names": 32
+  },
+  "scope": "The complete layer parent was elaborated and independently reloaded with five cluster interfaces. Its Verilog export preserved the top ports and exact cluster connections. The export includes generic synthesis primitives. Parent mapping, linkage to five timing-qualified cluster netlists and integrated timing remain pending.",
   "evidence_sha256": {
     ".cache/physical/wac_budgeted_parent_boundary/receipt.json": "7f0a05e755cbe44359797ab1c60cd38bdb36b8dfe393dfa1bec3ac75fbd7f598",
     ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/receipt.json": "fb727418ec589c0619f0ddf7d3f6b04a0026acc953cfb5714f86e73d81686aca",
@@ -58,8 +67,12 @@
     ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_during_bank2_replay/receipt.json": "611cfe6214b1d2cf00bbb481e6c73719d011b9c1d02a967c86f5baf6aab25bd4",
     ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_during_bank2_replay/elaborated.db": "be9841d25a3a642f9459970a4dff09a65c8438651a99d1e6b0553371faeb3211",
     ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_cold/receipt.json": "e0e9f761e488a6bd2806fab84f39f0840b693da8b8ccc19a19419de537445e0e",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/receipt.json": "ec936354421b70fe7d472045878bc094243c67433c8c881543a94523b1bbcd87",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/native_receipt.json": "354b6932cd09f8c1730ab099673aa5283b63e423a82bd789c4b934b041fb48be",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/parent.v": "a1dba19a82b55ceb1def888c97ad597e2c47e1a9273dfa94306399945418f64b",
     "syn/prepare_tri_oracle_softmax_partitioned_parent.py": "93909e0912a44f7c4291043690ee99ea7e0207e5f0b10b3973bfdb846f0e81e3",
     "syn/audit_tri_oracle_wac_fabric_boundary.py": "137b2353eee7da17dd64a25782aa0688f1655f642668cd075ab2d82e264b16e8",
-    "syn/run_tri_oracle_wac_layer_parent.py": "7ddfe4023e12585cbc2fb9fadaf9b95bba9a0af9333611b7460cb4c659915632"
+    "syn/run_tri_oracle_wac_layer_parent.py": "7ddfe4023e12585cbc2fb9fadaf9b95bba9a0af9333611b7460cb4c659915632",
+    "syn/audit_tri_oracle_wac_parent_hdl_export.py": "78a9d71398062ac88b086fb6f30e7f00f1d37cc2898ae7674900091c23cbd4a2"
   }
 }
