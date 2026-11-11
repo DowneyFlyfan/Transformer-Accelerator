@@ -16,6 +16,24 @@
   },
   "compiled_memory_instances": 623,
   "total_memory_bytes": 414416,
+  "memory_bytes_by_role": {
+    "weight": 163840,
+    "input": 163840,
+    "output": 40960,
+    "skip_mask": 20480,
+    "aggregator_input_output": 10240,
+    "survived_sign": 6144,
+    "token_merge_table": 720,
+    "feedforward_prediction_metadata": 8192
+  },
+  "paper_figure_31_6_2_labeled_KB": {
+    "weight_per_core": 8,
+    "input_per_core": 8,
+    "output_per_core": 2,
+    "SMEM_per_core": 1,
+    "input_output_per_aggregator": 2,
+    "total": 390
+  },
   "memory_comparison": {
     "decimal_kilobytes": {
       "capacity": 414.416,
@@ -38,10 +56,11 @@
     ".cache/physical/wac_twenty_mapped_cores/xcelium/mapped_wac_qualification.json": "c642ea20d865efaea02de6ee7671d508fa06cc8ac6ad5ed4a7856891caebcf43",
     ".cache/physical/wac_twenty_mapped_cores/xcelium/receipt.json": "9f6c327e760b2ff3638764e91ba179ba97601510cf29a47b1f355cfc7d6e418e",
     ".cache/physical/wac_twenty_mapped_cores/memory_capacity.json": "8163b7da5811ee97b3a1ba6c6feb3c64c95ae4578cee7734e5feb369386a0bf7",
+    ".cache/physical/wac_twenty_mapped_cores/role_capacity.json": "fba271d9ad29a6b130e95f35b75d6510340afdea630a025405bc4c913183e6d0",
     ".cache/physical/wac_twenty_mapped_cores/xcelium/positive/console.log": "07cfffaf9caec7a9f6e36c6aff7b664ff6408b242560fc7c85b8613d0e1c550d",
     ".cache/physical/wac_twenty_mapped_cores/receipt.json": "d1ecc086e7b6a874d18db849794bebab78f6efa9727155756d8211c6cfaa9cab",
     "syn/prepare_tri_oracle_mapped_wac_layer.py": "c1813425f357306597a40d5a105a054a7dcd1d4ccbcd78dd88783852dbc4f9c1",
     "syn/run_tri_oracle_mapped_wac_layer.py": "53d8cef16333e44bcf52078e5e5faa8ec96873c6b44266af3f87a78e8c187400",
-    "syn/audit_tri_oracle_wac_memory_capacity.py": "45dd818fbba6dfc7fb22b23a5168e6b6021b1239a58705c3643f3682c95676ff"
+    "syn/audit_tri_oracle_wac_memory_capacity.py": "4d627e8f8d9b898a2189be2ee470c227076a99327d47d8ce9111c8149668ab0a"
   }
 }

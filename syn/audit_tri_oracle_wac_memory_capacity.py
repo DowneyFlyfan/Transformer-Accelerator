@@ -16,6 +16,10 @@ FABRIC = f"{BENCH}.dut.feedforward.compute.compute.tensor.fabric"
 CLUSTER = re.compile(rf"{re.escape(FABRIC)}\.clusters\[([0-4])\]\.unit\.selected_bank\1\.block_instance\.")
 CORE = re.compile(r"source_cluster\.implementation\.cores\[([0-3])\]\.compute\.(.+)")
 MODEL = re.compile(r"\bmodule\s+(TS[56]N28\w+)\b")
+CORE_ROLES = {"weights": "weight", "inputs": "input", "outputs": "output", "masks": "skip_mask"}
+LABELED_CORE_KB = {"weight": 8, "input": 8, "output": 2, "skip_mask": 1}
+AGGREGATE = "source_cluster.implementation.aggregate_memory"
+MERGE = "source_cluster.implementation.local_merge.token_merge"
 
 
 def memory_inventory(lines, expected):
@@ -34,22 +38,44 @@ def memory_inventory(lines, expected):
 
 def capacities_by_owner(memory, mapped_inventory, geometries):
     core_memory = {(cluster, core): {} for cluster in range(5) for core in range(4)}
+    core_bytes = {owner: Counter() for owner in core_memory}
+    roles = Counter()
+    cluster_roles = [Counter() for _ in range(5)]
     cluster_bytes = [0] * 5
     parent = {}
     for instance, master in memory.items():
+        size = geometries[master]
         cluster = CLUSTER.match(instance)
         if cluster is None:
             parent[instance] = master
             continue
         bank = int(cluster[1])
-        cluster_bytes[bank] += geometries[master]
-        core = CORE.fullmatch(instance[cluster.end():])
+        cluster_bytes[bank] += size
+        member = instance[cluster.end():]
+        core = CORE.fullmatch(member)
         if core:
-            core_memory[bank, int(core[1])][core[2]] = master
+            owner = (bank, int(core[1]))
+            core_memory[owner][core[2]] = master
+            role = CORE_ROLES[core[2].split("[", 1)[0]]
+            core_bytes[owner][role] += size
+        elif re.fullmatch(rf"{re.escape(AGGREGATE)}\[\d+\]", member):
+            role = "aggregator_input_output"
+        elif re.fullmatch(rf"{re.escape(MERGE)}\.similarity\.shard\.compiled\.compact\.slices\[\d+\]", member):
+            role = "survived_sign"
+        elif re.fullmatch(rf"{re.escape(MERGE)}\.sizes\.local_sizes\.table_bank\.compiled\.(full|tail)\.entries", member):
+            role = "token_merge_table"
+        else:
+            raise ValueError(f"Unclassified cluster memory: {instance}")
+        cluster_roles[bank][role] += size
+        roles[role] += size
     assert all(masters == mapped_inventory for masters in core_memory.values())
+    assert all(totals == {role: kb * 1024 for role, kb in LABELED_CORE_KB.items()} for totals in core_bytes.values())
+    assert all(totals["aggregator_input_output"] == 2 * 1024 for totals in cluster_roles)
     assert parent == {f"{BENCH}.dut.feedforward.predictor.replay_table.{side}_metadata": "TS5N28HPCPSVTA512X64M4F"
                       for side in ("lower", "upper")}
-    return cluster_bytes, sum(geometries[master] for master in parent.values())
+    parent_bytes = sum(geometries[master] for master in parent.values())
+    roles["feedforward_prediction_metadata"] = parent_bytes
+    return cluster_bytes, parent_bytes, roles, cluster_roles
 
 
 def audit(case, mapping):
@@ -107,9 +133,9 @@ def audit(case, mapping):
         geometries[master] = capacity_bytes(source, master)
     assert geometries.keys() == expected.keys()
 
-    cluster_bytes, parent_bytes = capacities_by_owner(memory, mapped_inventory, geometries)
+    cluster_bytes, parent_bytes, roles, cluster_roles = capacities_by_owner(memory, mapped_inventory, geometries)
     total = sum(cluster_bytes) + parent_bytes
-    assert total == sum(geometries[master] * count for master, count in expected.items())
+    assert total == sum(roles.values()) == sum(geometries[master] * count for master, count in expected.items())
     paper = ROOT / PAPER_RELATIVE
     paper_targets = ROOT / "records/paper_result_targets.json"
     assert sha(paper) == PAPER_SHA256 and read(paper_targets)["source"] == PAPER_RELATIVE
@@ -126,6 +152,10 @@ def audit(case, mapping):
     return dict(state="replayed_layer_memory_capacity_measured", mapped_compute_cores=setup.get("mapped_compute_leaf_count", 0),
                 compiled_memory_instances=len(memory), per_core_instances=len(mapped_inventory), total_bytes=total,
                 cluster_bytes=cluster_bytes, parent_bytes=parent_bytes, paper_capacity_label=published,
+                bytes_by_role=dict(roles), cluster_bytes_by_role=[dict(item) for item in cluster_roles],
+                paper_labeled_memory=dict(architecture_figure="31.6.2", chip_summary_figure="31.6.7",
+                                          core_KB=LABELED_CORE_KB, aggregator_input_output_KB=2,
+                                          labeled_total_KB=20 * sum(LABELED_CORE_KB.values()) + 5 * 2),
                 comparisons=comparison, paper_unit_convention_confirmed=False, input_sha256=pins)
 
 
