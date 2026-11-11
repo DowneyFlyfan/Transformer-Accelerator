@@ -1,0 +1,46 @@
+{
+  "state": "mapped_second_cluster_innovus_structural_import_verified",
+  "cluster_index": 1,
+  "native_elapsed_seconds": 22.54,
+  "port_bits": 5983,
+  "imported_routed_core_blocks": 2,
+  "signal_pin_bits_per_core": 3158,
+  "direct_compiled_memories": {
+    "TS5N28HPCPSVTA16X80M2FW": 1,
+    "TS5N28HPCPSVTA24X128M2FW": 3,
+    "TS5N28HPCPSVTA32X128M2FW": 36,
+    "TS5N28HPCPSVTA512X64M4F": 4,
+    "TS6N28HPCPSVTA16X128M2F": 24
+  },
+  "warning_count": 27,
+  "error_count": 0,
+  "warning_relevant_to_physical_signoff": "Library macro ANTENNABWP12T40P140 lacks ANTENNAGATEAREA for input I.",
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/receipt.json": "d8e67e5f3233a8e0903450bc9a9446f255ea477d6096fc7baac5a26a64c71f0d",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/native_receipt.json": "160e93312d955ae2dd40aa6d194c0703dd233dd07a3646d271c213e863ebeb47",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/import.tcl": "fe9a28a95232146f9f863619a3b30f8d5e7f1c4a3e648c07674f92bb0205ed43",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/cluster_import.v": "26bb6320dc12b201d32704b1c101da6a87dae1398f69a7c3f7a10dec1f6637a1",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/native_inventory.tsv": "bb703a05c0bb165d55f3e607b68d759d4f41e9f19ae0277c9069a2a85a1a09df",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/top_pins.tsv": "1856ad3c7a552fcf49940f1b66059b5176c4da6433fccfa2c33960cc2819242d",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/core_pins.tsv": "13b1e3cd5bffdb3d114ae75f84da5e44ac526a25a4ce9da5ea4d20c38dc3c719",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/direct_memories.tsv": "01e4fc341538cc3cbdd1f277b7426581a225b42768580f60ef475e760158ac73",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_connectivity/console.log": "99a63d7c621f7d4347c913825293a91a9f53ea4b17aae3189e6a304d6659cc34",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank1_split2/receipt.json": "d34c9dcf9c2a46a8fab0f37f35f2249ff65e7cdf8dccae1a741fd34dbda43bb3",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank1_split2/memories.tsv": "c60c63839a93bc843415545f332e6c306eb318f688e703349327453f04a2aab7",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/xcelium/receipt.json": "8965236a70f81ed2f3c39ce71b66e35f711be700fbb3e990c29a2964c741ef48",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_cluster_fixture_01/cluster1_namespaced.v": "9c5cb00f8dce980a76545997cca24656838e25e6e65a356587a48ef7c0d5d131",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_core_pin_nets/receipt.json": "906b441df464a11b91dc0d0f53a8b8dfcf49eb10a1fb4e1fc36ec194a69ac190",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_core_pin_nets/export.tcl": "620f1ed34e403503947b33e8aea195914245526a41b588a466f5d13e453ee8a1",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_core_pin_nets/core_pin_nets.tsv": "5a2ee1f1da13e669f9782842f9e49d01044444333bd352950d985e811e9efbea",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_core_pin_nets/console.log": "718dd89e376aaacd759574e0244fb2770a21347fa1202d687cdf83b056d34d06",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster1_innovus_core_pin_nets/native_receipt.json": "80eede0c8b5e3cdc2d3da5890da0b3579059efa2d4659f79224dcc02bfe5aa14",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/audit_second_cluster_innovus_nets.py": "547141f739e8671e46a9fc4805bd0709570f110f71685fc1a2e4e4d5856c0c58"
+  },
+  "scope": "Innovus design initialization with exact names and directions for cluster ports and hard-core pins, exact direct memory instance paths and masters, and hard-core pin-to-net equivalence through named Verilog hierarchy bindings. The input cluster previously passed the two-cluster Xcelium fixture. Placement, routed timing and physical signoff remain unverified.",
+  "hard_core_connectivity": {
+    "signal_pin_nets_verified": 6316,
+    "swapped_load_data_bits_rejected": true,
+    "native_elapsed_seconds": 21.042,
+    "minimum_host_available_bytes": 15876108288
+  }
+}
