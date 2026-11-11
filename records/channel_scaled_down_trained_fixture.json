@@ -10,12 +10,23 @@
   "changed_raw_outputs": 30702,
   "channel_scale_exponents": 2048,
   "exponent_range": [-11, -7],
+  "xcelium_compile_preflight": {
+    "exit_status": 0,
+    "errors": 0,
+    "warnings": 0,
+    "testbench": "tri_oracle_batched393_tb",
+    "input_layer": "wac_twenty_budgeted_cores",
+    "scope": "Compilation of the trained bench and current layer bundle with the timing-budgeted compute core netlist and source cluster controllers. Simulation on five mapped clusters remains pending."
+  },
   "scope": "Prepared activation and skip masks from the archived trained fixture. The processor and graphics implementations agree on every new signed8 weight code, scale exponent and raw down-projection output. The fixture keeps scale metadata separate from the signed32 output words.",
   "evidence_sha256": {
     ".cache/model_reference/channel_scaled_down_trained/fixture/receipt.json": "2b93877fa74dc86a980f0b5b473c94b582a5a27da70b59afd69c0fee042fd35d",
     ".cache/model_reference/channel_scaled_down_trained/native_receipt.json": "f0c3f1f12a48b72617bea9b91cacb6282955112349eecb49dee3381ec754a829",
     ".cache/model_reference/channel_scaled_down_trained/console.log": "0e1e1b3157e172c65eeea5ed7d04953a5e008b8c5657bdf4e93cdd4b4a725a76",
     ".cache/model_reference/channel_scaled_down_trained/run_guard.py": "f3eba9c52a2bb665f63cadef2e4beff7bd26b27baa191e9139f798b87cf2b7ab",
-    "syn/prepare_tri_oracle_channel_scaled_down_fixture.py": "1493e7e0bc6a234c8a38161e9ec643abe710f6c932f02d2e26c699669e3b8687"
+    "syn/prepare_tri_oracle_channel_scaled_down_fixture.py": "1493e7e0bc6a234c8a38161e9ec643abe710f6c932f02d2e26c699669e3b8687",
+    ".cache/physical/wac_budgeted_trained_compile/receipt.json": "67964a5aed6e8c06356ef0cd28203f0521f3481f3e693b02dccca97be9c3d3d9",
+    ".cache/physical/wac_budgeted_trained_compile/console.log": "7058c0f52bd80c118e17b804ae76b420392e140bd8bb0a6bf9d4dbdde7335f93",
+    "syn/run_tri_oracle_channel_scaled_down_replay.py": "5a69eaf1cc0bed52376ff9d73b5bfc67c89a1a9ef391b5b4d1a9b4bc1ec19111"
   }
 }
