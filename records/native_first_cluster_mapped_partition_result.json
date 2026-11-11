@@ -1,0 +1,26 @@
+{
+  "state": "native_first_cluster_partition_mapped_and_linked_inventory_verified",
+  "repository_base": "00b237a6a3de3090aab2053e43e33d4652e1dae3",
+  "cluster": 0,
+  "native_mapped_partition_instances": 189891,
+  "verified_partition_interface_bits": 6316,
+  "mapped_compute_cores_in_partition": 2,
+  "separately_compiled_compute_cores": 2,
+  "partition_memory_macros": 69,
+  "linked_cluster_memory_macros": 125,
+  "mapping_wall_seconds": 1737.371,
+  "mapped_partition_clock_constraint_ns": 1.72414,
+  "mapped_partition_wireload_timing": {
+    "corner": "ssg0p9v125c",
+    "reported_setup_slack_ps": 1
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank0_split2/receipt.json": "6034e7027fafb976cb2deb7205bb001ca84621c5d2d0f7e0270d44e2c95fedf8",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank0_split2/mapped.db": "4fba7d9972b24c39e7d39d8d6c03da2c10ca518c44b8a12224e79f087f901ed6",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank0_split2/netlist.v": "a3c49d84f76a9f9375e9fd8f8943ad5f9127e1ef90ab5d6d64bf6e2992fca743",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/separately_compiled_core/mapped_bank0_split2/timing.rpt": "607597491ac4c700db65594a5916a4001b22e844e01720542b65f3be4b6ea4f8",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/linked_inventory.json": "3759e9b71b9738715dbafdbda7be48283d5ed91abc62622a5ef22b50aff05835",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/cluster_with_compute_core.v": "e634499944e9ef234eee4d8284932f5dbcbdde13e8fc0c371c13db97558c6e1e"
+  },
+  "scope": "Native mapped partition, static linked cluster inventory, and synthesis wireload timing for two in-partition cores and two core abstracts."
+}
