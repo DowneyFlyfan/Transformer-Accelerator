@@ -1,0 +1,92 @@
+{
+  "state": "five_cluster_softmax_reuses_existing_vendor_result_memories",
+  "standalone": {
+    "rows": 39,
+    "exact_probability_codes": 12915,
+    "maximum_row_length": 1024,
+    "first_output_cycles_after_last_input": 463,
+    "unwritten_tail_rejected": true
+  },
+  "directed_contention": {
+    "queued_compute_results_drained": 16,
+    "reference_compute_results": 36,
+    "held_result_cycles": 70,
+    "shared_macro_probability": 65535,
+    "early_grant_rejected": true
+  },
+  "integrated": {
+    "counters": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 24768,
+      "stalls": 63
+    },
+    "compiled_memory_instances": 623,
+    "compiled_memory_bytes": 414416,
+    "vendor_model_types": 6,
+    "added_compiled_memory_instances": 0,
+    "softmax_memory_writes": 1289,
+    "softmax_memory_reads": 2046,
+    "per_cluster": {
+      "4": {
+        "softmax_grant_cycles": 4708,
+        "pending_cycles": 0,
+        "compute_result_writes": 2882,
+        "compute_refill_events": 2882,
+        "softmax_memory_writes": 256,
+        "softmax_memory_reads": 406
+      },
+      "3": {
+        "softmax_grant_cycles": 4708,
+        "pending_cycles": 0,
+        "compute_result_writes": 2882,
+        "compute_refill_events": 2882,
+        "softmax_memory_writes": 257,
+        "softmax_memory_reads": 408
+      },
+      "2": {
+        "softmax_grant_cycles": 4708,
+        "pending_cycles": 0,
+        "compute_result_writes": 2882,
+        "compute_refill_events": 2882,
+        "softmax_memory_writes": 258,
+        "softmax_memory_reads": 410
+      },
+      "1": {
+        "softmax_grant_cycles": 4708,
+        "pending_cycles": 0,
+        "compute_result_writes": 2882,
+        "compute_refill_events": 2882,
+        "softmax_memory_writes": 258,
+        "softmax_memory_reads": 410
+      },
+      "0": {
+        "softmax_grant_cycles": 4708,
+        "pending_cycles": 0,
+        "compute_result_writes": 2882,
+        "compute_refill_events": 2882,
+        "softmax_memory_writes": 260,
+        "softmax_memory_reads": 412
+      }
+    },
+    "elaboration_seconds": 28.327,
+    "replay_seconds": 222.36
+  },
+  "local_evidence_sha256": {
+    "syn/run_tri_oracle_softmax_iomem.py": "d8533daa2a408a5123efa1d7be213310731e49467c8bb3ea9ea55d0a26ebd2f2",
+    "syn/test_tri_oracle_shared_softmax_iomem.py": "c6ce4b9238e234b356a8c03c15b4bd2a906a9701816bf7bc31dd7266e6daf9e5",
+    "syn/prepare_tri_oracle_shared_softmax_iomem.py": "cd7239bf8c26a7d63bc5a8aefd7d65096c05d2c58ac14724533ed3817a17d359",
+    "verilog/tri_oracle_softmax_iomem.sv": "3801df7f403d45474430a79f0813e430e426918b560d742baebcc290c632ae7e",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/shared_softmax_iomem_replay_ready/xcelium/shared_iomem_qualification.json": "d4601f025969ada74bfd5c65ff7b1a7b3fd239a2f897248adfe912c8cadec41d",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/cluster_resident_softmax_replay_complete_probe/xcelium/cluster_bank_qualification.json": "24d43d059b47f8e0d7b2459ef8de76d4935c4f31ee426ed4d665f4fba8ecb504",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/shared_softmax_iomem_replay_ready/receipt.json": "58daf7f0a5eeae7704e3b9faa75506d80dd36b3e405cfb1b858a98bee33a164e",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/shared_softmax_iomem_replay_ready/bundle.sv": "a511f77a97853b50543f86cd8fd026c80270f978315db7bd694c713dc982e71e",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/shared_softmax_iomem_replay_ready/tri_oracle_sram_compute_cluster.sv": "7301748f2a926a5037853edaccbaa32cca862b400b224234041ebfa01884bf21",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/shared_softmax_iomem_replay_ready/xcelium/positive/xrun.log": "725bdf97591c1ab087fda00c4c77a0c4a3e616dbb7ad319dd4e4429d97a077f0",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/verify_shared_softmax_iomem.py": "7b444b738e6b5c7a757669d11807d91e3d169d408b892c8078893c00b0b8d2d4"
+  },
+  "scope": "Source-level integration and unit-delay vendor memory models. The same eight result macros per cluster remain instantiated. The revised bank's mapped cost and routed timing remain open."
+}
