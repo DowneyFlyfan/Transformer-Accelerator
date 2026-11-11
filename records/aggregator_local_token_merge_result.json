@@ -1,0 +1,31 @@
+{
+  "state": "five_local_merge_units_and_local_sizes_match_every_trained_causal_row",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "paper_architecture_figure": "31.6.2",
+  "verified_local_merge_controllers": 5,
+  "verified_local_token_size_units": 5,
+  "owned_raster_entries": [
+    128,
+    128,
+    128,
+    128,
+    64
+  ],
+  "compiled_merge_table_banks": 5,
+  "compiled_surviving_sign_banks": 16,
+  "trained_frames": 44,
+  "exact_map_entries": 25344,
+  "exact_causal_queries": 25432,
+  "exact_causal_sizes": 4380542,
+  "independently_verified_similarity_counts": 144185,
+  "valid_cross_aggregator_root_reads": 1317,
+  "faulty_handoff_rejected_at_token": 128,
+  "full_twenty_core_layer_status": "replay_queued_after_native_memory_guards",
+  "physical_results_verified": false,
+  "scope": "Icarus Verilog verifies all five merge and token-size units together with the actual compiled merge-table and surviving-sign memories. The 20-core integration is a separate pending replay.",
+  "archive": {
+    "path": "records/aggregator_local_token_merge_evidence.json.gz",
+    "bytes": 36590,
+    "sha256": "3d800b438d3fd40e6cff0506fbc0323c932e730b52c914273305d69a40a41759"
+  }
+}
