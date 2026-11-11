@@ -1,0 +1,56 @@
+{
+  "state": "all_five_native_cluster_synthesis_boundaries_verified",
+  "evidence_file": "records/native_cluster_elaboration_evidence.json.gz",
+  "evidence_sha256": "6eb4da2268a8c17431c8cda83eaa68fe5d0b9f1670643d17a4a31e78b435e122",
+  "evidence_bytes": 17110,
+  "source_revision": "155cc58cf6e53c5dec4b1fd926250bf1f5074f45",
+  "clusters": 5,
+  "compute_arrays_per_cluster": 4,
+  "processing_element_shape": [
+    32,
+    8
+  ],
+  "processing_element_bits": 8,
+  "native_port_bits": [
+    6111,
+    5983,
+    5983,
+    5983,
+    5983
+  ],
+  "compiled_macros_within_clusters": 621,
+  "compiled_bytes_within_clusters": 406224,
+  "shared_prediction_metadata_macros": 2,
+  "shared_prediction_metadata_bytes": 8192,
+  "total_compiled_memory_bytes": 414416,
+  "equal_capacity_misplaced_memory_rejected_in_each_cluster": true,
+  "target_clock_mhz": 580,
+  "native_elaboration_seconds": [
+    55.075,
+    55.079,
+    55.074,
+    54.08,
+    54.07
+  ],
+  "all_six_macro_physical_and_timing_footprints_agree": true,
+  "bare_macro_area_mm2": "3.7404893447",
+  "paper_die_area_mm2": "12.96",
+  "recovered_attempts": [
+    {
+      "cluster": 2,
+      "initial_exit_status": 245,
+      "observed_diagnostic": "LMF-03002 invalid license file syntax",
+      "verified_retry_exit_status": 0
+    },
+    {
+      "cluster": 4,
+      "initial_and_retry": "memory_guard",
+      "successful_reserve_gib": 11.75,
+      "verified_bounded_exit_status": 0
+    }
+  ],
+  "scope": "Native elaboration and exact cluster interfaces, compute arrays and memory ownership. Full-layer replay has an unresolved stall-count difference. Technology mapping, physical timing, power and paper model accuracy remain open.",
+  "paper_process": "Samsung 28 nm FD-SOI",
+  "installed_physical_process": "TSMC 28 nm HPC",
+  "paper_memory_unit_confirmed": false
+}
