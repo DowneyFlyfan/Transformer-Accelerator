@@ -1366,8 +1366,12 @@ establish whole-chip performance or equivalence to the paper's Samsung process.
 Reports and checkpoints are under `.cache/physical/pnr/tri_oracle_pe_array/`;
 the persistent evidence record is `records/pe_array_synthesis_result.json`.
 
-Run the complete Cadence Xcelium regression inside the project Docker container.
-It includes strict Verilator lint and the compute array's continuous-throughput check.
+Use Cadence Xcelium for all new Tri-Oracle simulations. From the project
+directory inside the Cadence Docker container, run the standard regression
+with the command below. It includes strict Verilator lint and the compute
+array's continuous-throughput check. For targeted source and vendor-memory
+profiles, use `python3 -B syn/run_tri_oracle_xcelium.py --help`. Earlier
+Icarus Verilog results in this document record the tool used for those runs.
 
 ```sh
 bash syn/run_tri_oracle_simulation.sh

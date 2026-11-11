@@ -1,0 +1,38 @@
+{
+  "state": "packed_softmax_mapped_bank_and_vendor_memories_verified",
+  "synthesis": {
+    "tool": "Cadence Genus 25.10-p002_1",
+    "technology": "TSMC 28 nm HPC+",
+    "operating_corner": "ssg0p9v125c",
+    "target_frequency_mhz": 580,
+    "standard_cell_instances_per_bank": 7114,
+    "standard_cell_area_um2_per_bank": 8224.104,
+    "reported_late_slack_ps": 0,
+    "worst_reported_path": {
+      "from": "memory_q[1][62]",
+      "to": "write_data[4]"
+    },
+    "wireload": "ZeroWireload",
+    "elapsed_seconds": 192.57993842998985
+  },
+  "simulation": {
+    "simulator": "Cadence Xcelium",
+    "simulator_version": "25.03-s001",
+    "mapped_banks": 5,
+    "compiled_memories": 20,
+    "checked_bank_signal_bits": 810,
+    "rows": 39,
+    "compared_probability_codes": 12915,
+    "first_output_cycles": 463
+  },
+  "scope": "One bank implementation reused five times with a source-level row coordinator and unit-delay compiled memory models. Area excludes memory. Physical timing and full-chip paper metrics remain unverified.",
+  "evidence_sha256": {
+    "syn/verify_tri_oracle_packed_softmax_mapping.py": "d509d61a1a0b6a9ac830979117432da22d8bf004fc3951f6adea04fac982e9ba",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/packed_softmax_bank_synthesis/receipt.json": "3496f33fce68e7980d6a82a711d6659fa39442fcf5ba291e0c38c2346c1280c7",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/packed_softmax_bank_synthesis/area.rpt": "f0cb504df35b75f5b87dfa58e9aff2abe8a5cb7ce471f60bd3947ed709b6d0b0",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/packed_softmax_bank_synthesis/timing.rpt": "f3dd0cf195ae19953afb2b3555337b9e84244cdf5b0d7b9b37feea2ab164fe74",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/packed_softmax_bank_synthesis/netlist.v": "245396eadff6e7d584f1f6ee10976ca714b46f3905c2f6706f40fbe9ecf51fb4",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/packed_softmax_bank_xcelium_verified/receipt.json": "2f4d8eca21d183d309cf4ebb323b2dfbd18b36ded3b284912d19a833bd0c631f",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/packed_softmax_bank_xcelium_verified/xrun.log": "8fbb4eb9c9ed99eae1062ea86ad70e6e8c716edb8b28296ca160cfdbfb3c4470"
+  }
+}
