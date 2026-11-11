@@ -1,0 +1,23 @@
+{
+  "state": "aggregator_local_causal_token_sizes_verified",
+  "verified_iverilog_queries": 25432,
+  "exact_iverilog_causal_counts": 4380542,
+  "trained_frames": 44,
+  "cross_bank_aliases_in_trained_maps": 1928,
+  "corrupt_future_origin_rejected_after_cached_read": true,
+  "integrated_xcelium_attention_rows": 4,
+  "integrated_aggregator_local_units": 5,
+  "integrated_local_reads": 72,
+  "integrated_iverilog_compiled_cores": 20,
+  "integrated_iverilog_compiled_memories": 623,
+  "integrated_iverilog_runtime_status_at_publication": "started",
+  "shared_token_merging_controllers": 1,
+  "paper_aggregator_token_merging_controllers": 5,
+  "full_chip_timing_or_paper_metrics_verified": false,
+  "scope": "Icarus Verilog verifies the token-size hardware with compiled memory models. The source-level five-cluster attention replay in Xcelium also verifies instance ownership of the five cursor instances. Integrated Icarus Verilog execution is pending.",
+  "archive": {
+    "path": "records/aggregator_local_token_sizes_evidence.json.gz",
+    "bytes": 27187,
+    "sha256": "ad43ac8029f2391baac2f4e2a727fb86493780da6b277305b7cad26fc1b21896"
+  }
+}
