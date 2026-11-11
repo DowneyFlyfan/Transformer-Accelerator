@@ -1,0 +1,32 @@
+{
+  "state": "source_layer_array_geometry_and_macro_ownership_verified",
+  "clusters": 5,
+  "compute_cores": 20,
+  "arrays": 20,
+  "array_shape": [
+    32,
+    8,
+    8
+  ],
+  "compiled_memory_instances": 623,
+  "compiled_memory_bytes": 414416,
+  "memory_bytes_by_role": {
+    "aggregator_io": 10240,
+    "core_inputs": 163840,
+    "core_masks": 20480,
+    "core_outputs": 40960,
+    "core_weights": 163840,
+    "surviving_sign_bank": 6144,
+    "token_merge_table": 720,
+    "prediction_metadata": 8192
+  },
+  "equal_capacity_wrong_core_rejected": true,
+  "source_compile_seconds": 26.56,
+  "paper_memory_kilobyte_convention_confirmed": false,
+  "scope": "Elaborated source layer. This confirms array dimensions and compiled-memory ownership and capacity. Whole-layer functional replay, mapped timing and paper-level results are separate checks.",
+  "archive": {
+    "path": "records/aggregator_layer_geometry_evidence.json.gz",
+    "bytes": 13020,
+    "sha256": "9d3adec482f29042f0dfe87aeaabc35db166831a1ac25f753b16920c2652477d"
+  }
+}
