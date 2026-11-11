@@ -1,0 +1,40 @@
+{
+  "state": "dense_integer_feedforward_holdout_independently_scored",
+  "questions": 256,
+  "reproduced_pilot_cases": 64,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "scores_percent": {
+    "floating": 70.94,
+    "dense_integer": 58.87,
+    "pruned_integer": 59.34
+  },
+  "score_changes_percentage_points": {
+    "floating_to_dense_integer": -12.07,
+    "dense_integer_to_pruned_integer": 0.47
+  },
+  "paired_changes": {
+    "floating_to_dense_integer": {
+      "improved": 12,
+      "declined": 53,
+      "unchanged": 191
+    },
+    "dense_integer_to_pruned_integer": {
+      "improved": 18,
+      "declined": 16,
+      "unchanged": 222
+    }
+  },
+  "dense_integer_channels_skipped": 0,
+  "wall_seconds": 131.705,
+  "peak_graphics_bytes": 7232722944,
+  "minimum_available_host_bytes": 17331597312,
+  "evidence_sha256": {
+    ".cache/model_reference/dense_integer_holdout/receipt.json": "3b5f6bd5befe5258fee61126c982074334c8be9c929f2485e25269218502f97d",
+    ".cache/model_reference/dense_integer_holdout/native_receipt.json": "fa87e5e756f59753fbf9426bcc918845f4c2ff582a7e78a152c9697c80d9e234",
+    ".cache/model_reference/dense_integer_holdout/console.log": "8aa5982a7ec8bc0850e59e4eadb6d19da1f3f6716ce44d83255de25bd7529bc2",
+    ".cache/model_reference/dense_integer_holdout/verify_holdout.py": "b294195c4bebf4a98cb02abee9427c0d140e1c638a9ded8d10f149af869f5b1a",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9"
+  },
+  "scope": "Matched software holdout. All three modes use the local token-merging and attention-head policy. The integer modes use the same scalar scale policy, with channel skipping disabled or enabled.",
+  "holdout_source": "https://visualqa.org/download.html"
+}
