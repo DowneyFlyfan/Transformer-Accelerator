@@ -1,0 +1,23 @@
+{
+  "state": "pruning_threshold_grid_scored_on_archived_trained_rows",
+  "tested_threshold_pairs": 48,
+  "pairs_with_at_least_baseline_fit_skip_count": 32,
+  "archived_rows_per_split": 2640,
+  "channel_opportunities_per_split": 14868480,
+  "selected_gate_threshold": 0,
+  "selected_up_window": 0,
+  "baseline_and_selected_match": true,
+  "held_skipped_channels": 1200124,
+  "held_skipped_fraction": 0.08071598441804408,
+  "held_nonzero_skipped_channels": 966671,
+  "held_nonzero_fraction_of_skips": 0.8054759341534709,
+  "held_mean_relative_pruning_error": 0.16158661833015212,
+  "scope": "Selection used calibration rows only and minimized error relative to dense fixed-point output at or above the existing skip count. The held rows are archived diagnostics with per-channel down scales. No model-accuracy result or hardware threshold change is implied.",
+  "evidence_sha256": {
+    "syn/audit_tri_oracle_pruning_thresholds.py": "8c9560b442e995fdb3d030eda2e70faf360ede51f94fcf793653a98f6c1b6172",
+    ".cache/model_reference/ff_pruning_threshold_grid/console.log": "96390b4757cd629ec87a3a3c0dae6e0ce7c0fc2bfa4efc79ab43aedb10d0abbe",
+    ".cache/model_reference/ff_pruning_threshold_grid/run_guard.py": "bfa8b3e5ce297dee2ba77a00e9d4b1370dd70bb02539c0903aeb6b6b7cb75b88",
+    ".cache/model_reference/ff_pruning_threshold_grid/receipt.json": "119b5d782bf635d3504833bc328eef0c78fb263da91ae7f4db2416cc78781116",
+    ".cache/model_reference/ff_pruning_threshold_grid/native_receipt.json": "9a0bbcad08405880c4b82b338dee5cf90566bf2482e0cbcecb58de7a5a830580"
+  }
+}
