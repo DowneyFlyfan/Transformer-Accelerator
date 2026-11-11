@@ -1,0 +1,39 @@
+{
+  "state": "native_partitioned_parent_export_and_reload_verified",
+  "repository_base": "026ad36af3801726d578496902a3dc8ffb800acc",
+  "parent": {
+    "top_port_bits": 14343,
+    "cluster_abstracts": 5,
+    "cluster_signal_bits": 30043,
+    "direct_parent_memory_macros": 2
+  },
+  "signal_bits_by_cluster": {
+    "tri_oracle_native_cluster0": 6111,
+    "tri_oracle_native_cluster1": 5983,
+    "tri_oracle_native_cluster2": 5983,
+    "tri_oracle_native_cluster3": 5983,
+    "tri_oracle_native_cluster4": 5983
+  },
+  "clock_constraint_ns": 1.72414,
+  "parent_elaboration_seconds": 126.593,
+  "parent_reload_seconds": 41.034,
+  "first_cluster_core_reuse": {
+    "cluster_port_bits": 6111,
+    "compute_signal_bits": 12632,
+    "external_macros": 13,
+    "macro_instances_after_reuse": 125
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_link_audit_first/receipt.json": "6b3b2669a63f7704a3b79a870caddb7c34203fe79291aaf074f837c45df501a4",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_audited_cold/receipt.json": "9a6dcc5c3005e2ca390ae14ac89501cfc0b7da971382647b55d9ea79216b6cfa",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster_core_abstracts/native_0/receipt.json": "49e61dcd0f5ecd89fdf851d9a8ce18db6e09e3c6f66f9b5abe2077ae35619fcb",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_link_audit_first/elaborated.db": "3c7ae211bc5a2e86f31e1304382dfc773023dcb501fdbfa6035ccef23f3851af",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_audited_cold/block_pins.tsv": "501e8c0895bbe3a535df514506d01bb451e22a6dcf5989edb4d7228b891f6526",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_audited_cold/ports.tsv": "39ebc2f3ea49be7c5ac66367769a150c834fd608cb4e3e618e378f86d30166ed",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_audited_cold/memories.tsv": "b98bec91b37f9ebde2c87d8969e79a7eac006032e501ee865f505c9e1ab2f066",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_audited_cold/unresolved.rpt": "8f8b74403672683ad8ccfaa2fcdb4a47454deb626585d0625515930366c03dee",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/native_parent_audited_cold/clock.sdc": "90895ed3e9cf2e622883cadb45a4af633b181239245cdb70e426f293756c85b3",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_parent/area_after_fixed_blocks.json": "770ed704e053befc2dea427dee9edf1376bbc92e97e2262d3b4ef425512fcb34"
+  },
+  "scope": "Full-layer parent elaboration with five cluster abstracts and two parent memory macros. Timing, complete mapped function, placement, and routing require linked cluster implementations."
+}
