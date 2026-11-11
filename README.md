@@ -864,10 +864,11 @@ marker, reset during partial loading and exclusive frame/query acceptance. See
 To run the independent prefix reference test inside the configured container:
 
 ```sh
-iverilog -g2012 -s tri_oracle_causal_token_size_tb -o .cache/causal_size_test.vvp \
+mkdir -p .cache
+/opt/cadence/bin/xrun -64bit -sv -top tri_oracle_causal_token_size_tb \
+  -timescale 1ns/1ps -xmlibdirname .cache/causal_size_xcelium \
+  -l .cache/causal_size_xcelium.log -history_file .cache/causal_size_xcelium.history \
   verilog/tri_oracle_causal_token_size.sv verilog/tri_oracle_causal_token_size_tb.sv
-vvp .cache/causal_size_test.vvp
-rm .cache/causal_size_test.vvp
 ```
 
 Latest mapped functional milestone (controller273): the repaired prepared prediction/feed-forward
@@ -1365,25 +1366,11 @@ establish whole-chip performance or equivalence to the paper's Samsung process.
 Reports and checkpoints are under `.cache/physical/pnr/tri_oracle_pe_array/`;
 the persistent evidence record is `records/pe_array_synthesis_result.json`.
 
-Run each test in the project Docker container with Icarus Verilog:
-
-The complete regression, including strict Verilator lint and the compute
-array's continuous-throughput check, is `bash syn/run_tri_oracle_simulation.sh`.
+Run the complete Cadence Xcelium regression inside the project Docker container.
+It includes strict Verilator lint and the compute array's continuous-throughput check.
 
 ```sh
-mkdir -p .cache
-for unit in token_merger head_predictor snzv_predictor proportional_normalizer; do
-  iverilog -g2012 -s tri_oracle_${unit}_tb -o .cache/tri_oracle_${unit}.vvp \
-    verilog/tri_oracle_${unit}.sv verilog/tri_oracle_${unit}_tb.sv
-  vvp .cache/tri_oracle_${unit}.vvp
-  rm -f .cache/tri_oracle_${unit}.vvp
-done
-iverilog -g2012 -s tri_oracle_token_merger_random_tb \
-  -o .cache/tri_oracle_token_merger_random.vvp \
-  verilog/tri_oracle_token_merger.sv \
-  verilog/tri_oracle_token_merger_random_tb.sv
-vvp .cache/tri_oracle_token_merger_random.vvp
-rm -f .cache/tri_oracle_token_merger_random.vvp
+bash syn/run_tri_oracle_simulation.sh
 ```
 
 `try/` and the older generic modules in `verilog/` originate from a separate

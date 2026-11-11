@@ -1,0 +1,94 @@
+{
+  "state": "mapped_first_cluster_replayed_against_integrated_attention_reference",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "mapped_cluster": 0,
+  "source_clusters": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "mapped_compute_cores": 4,
+  "source_compute_cores": 16,
+  "separately_compiled_compute_cores": 2,
+  "linked_mapped_cluster_memory_macros": {
+    "TS5N28HPCPSVTA512X64M4F": 8,
+    "TS5N28HPCPSVTA32X128M2FW": 72,
+    "TS6N28HPCPSVTA16X128M2F": 40,
+    "TS5N28HPCPSVTA24X128M2FW": 4,
+    "TS5N28HPCPSVTA16X80M2FW": 1
+  },
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "paper_architecture_reference": "Figure 31.6.2",
+  "test_markers": [
+    "SHARED437_ATTENTION_OWNERSHIP_PASS",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=24768 stalls=63"
+  ],
+  "fixture_counters": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 24768,
+    "stalls": 63
+  },
+  "local_size_reads_by_bank_start": [
+    [
+      0,
+      16
+    ],
+    [
+      128,
+      16
+    ],
+    [
+      256,
+      16
+    ],
+    [
+      384,
+      16
+    ],
+    [
+      512,
+      8
+    ]
+  ],
+  "local_merge_maps_by_bank_start": [
+    [
+      0,
+      128
+    ],
+    [
+      128,
+      128
+    ],
+    [
+      256,
+      128
+    ],
+    [
+      384,
+      128
+    ],
+    [
+      512,
+      64
+    ]
+  ],
+  "xcelium_elapsed_seconds": {
+    "elaboration": 108.109,
+    "replay": 38.554
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/receipt.json": "f6c0a85543aeec9001925f6ae0ddc3b900c2ca64d136c53a1ce81d7c14779808",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/elaborate/console.log": "00cf75dd32232f75de8ff14acbffa4d91144e25df7c391663274d71ad31310e4",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/positive/console.log": "321c4f9c7f80db867e87e21d14d10c888fda3a50e1321296fbe2b75e57dae1fb",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/cluster_core_abstracts/boundary_replay/preparation.json": "b565a4ab9f87af81a64999c5a2e9582b9f7fa163afa2e3604d2703703efaa497",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/linked_inventory.json": "3759e9b71b9738715dbafdbda7be48283d5ed91abc62622a5ef22b50aff05835",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/bundle.sv": "757c64a225499a1f3a5fd591d2553613998e4ffaea94ae32743fce2608cb0042",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/cluster_with_compute_core.v": "e634499944e9ef234eee4d8284932f5dbcbdde13e8fc0c371c13db97558c6e1e"
+  },
+  "scope": "Functional comparison of one mapped cluster and four source clusters against the integrated attention fixture. Timing checks were disabled for this run."
+}
