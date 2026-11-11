@@ -1,0 +1,46 @@
+{
+  "state": "scaled_down_and_pruned_local_benchmark_independently_scored",
+  "questions": 256,
+  "reproduced_control_cases": 256,
+  "decoder_layers": 22,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "scores_percent": {
+    "channel_scaled_down": 62.34,
+    "channel_scaled_down_pruned": 58.24
+  },
+  "change_percentage_points": -4.1,
+  "paired_question_scores": {
+    "improved": 11,
+    "declined": 22,
+    "unchanged": 223
+  },
+  "work": {
+    "prefill": {
+      "rows": 1850922,
+      "skipped_channels": 875752684,
+      "channel_opportunities": 10424392704
+    },
+    "decode": {
+      "rows": 8888,
+      "skipped_channels": 3619456,
+      "channel_opportunities": 50057216
+    }
+  },
+  "skipped_fraction": {
+    "prefill": 0.0840099475208719,
+    "decode": 0.07230637836510924
+  },
+  "wall_seconds": 201.63867986795958,
+  "graphics_peak_bytes": 7492319744,
+  "minimum_host_available_bytes": 19113996288,
+  "evidence_sha256": {
+    "syn/verify_tri_oracle_channel_scaled_pruning.py": "cbf34e9e17baaff30f637466825b6f2119c01c6a2c61d480ee4d290ba33bd4f8",
+    "syn/evaluate_tri_oracle_channel_scaled_pruning.py": "9b32433b3ebbb7477bbf4f6993053afdb27fb4121b541a99da78800c8dd4d930",
+    ".cache/model_reference/ff_channel_scaled_pruned/receipt.json": "63c1f0a55df550b0dbcab39ac85d01e31d6540c86326b0ef220cb961f7f00ff3",
+    ".cache/model_reference/ff_channel_scaled_pruned/native_receipt.json": "159d764e9d7a2d9762dc892458c9db28c41b747aab5d068d34c74f24fb0b24b8",
+    ".cache/model_reference/ff_channel_scaled_pruned/console.log": "387d7fd3aee41c82aa5327cbfa04e37773bbc0e81f81f1d5b4cc60a7c55355e9",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9",
+    ".cache/model_reference/ff_channel_scaled_pruned/run_guard.py": "e7e29f224c947f3e0311c64a26a5cf59dc72b2056fc60108385c3e5c1ad07bbc"
+  },
+  "scope": "Fixed local benchmark with cumulative token merging, streaming heads and prepared weight-skip prediction."
+}
