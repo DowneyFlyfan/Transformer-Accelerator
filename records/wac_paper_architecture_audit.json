@@ -1,0 +1,31 @@
+{
+  "state": "native_layer_architecture_verified_chip_integration_unqualified",
+  "paper_architecture_figure": "31.6.2",
+  "simulated_device_root": "tri_oracle_shared_layer437",
+  "fully_mapped_cluster_banks": [2],
+  "clusters": 5,
+  "cores_per_cluster": 4,
+  "mapped_compute_cores": 20,
+  "processing_element_geometry": [32, 8],
+  "signed_operand_bits": 8,
+  "compiled_memories": 623,
+  "token_merge_entries_replayed": 576,
+  "attention_rows_replayed": 4,
+  "score_and_probability_transfers_replayed": 1023,
+  "services_at_the_simulated_device_boundary": [
+    "clock and reset",
+    "layer and attention command dispatch",
+    "normalization and learned-scale streams",
+    "memory reads, writes and responses"
+  ],
+  "paper_chip_services_pending": [
+    "top controller",
+    "all-digital phase-locked loop",
+    "chip-level network and external memory integration"
+  ],
+  "whole_chip_architecture_verified": false,
+  "evidence_sha256": {
+    ".cache/physical/wac_cluster2_named_replay/paper_architecture.json": "af29ace1744b8fff14d7abf2f7c365e28e85f5c34b6425c86cbdb125508e3539",
+    "syn/audit_tri_oracle_paper_architecture.py": "fdc8f55d6b74f3f248246b13e837880ec170db119a61bf2779ea9ea0888d85fd"
+  }
+}
