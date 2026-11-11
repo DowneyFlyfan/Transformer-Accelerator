@@ -1,0 +1,26 @@
+{
+  "state": "core_softmax_output_budget_mapped_and_gate_replayed",
+  "clock_target_megahertz": 580,
+  "clock_period_ns": 1.72414,
+  "slow_corner": "ssg0p9v125c",
+  "softmax_probability_output_bits": 16,
+  "softmax_probability_output_delay_ns": 0.26,
+  "other_output_delay_ns": 0.2,
+  "worst_reported_setup_slack_ps": 0,
+  "reported_setup_violations": 0,
+  "reported_setup_paths": 10,
+  "mapped_cells": 73521,
+  "preserved_processing_array_cells": 54580,
+  "preserved_compiled_memories": 28,
+  "synthesis_cell_area_square_micrometers": 287506.761,
+  "synthesis_elapsed_seconds": 522.1491244260105,
+  "scope": "Core-level preplacement timing with the stronger output budget and gate-level compute, memory handoff, softmax and outlier replay. The complete cluster still requires its own timing and functional checks.",
+  "evidence_sha256": {
+    ".cache/physical/wac_core_softmax_budget/receipt.json": "cfe4d797e020e12069c4c483fd929d6f11dd4a3d1d5159e7bc5ee73127e5590f",
+    ".cache/physical/wac_core_softmax_budget/clock.sdc": "58502b83f3d83a11cb76699390abc5f1effe67573cea78178d91e94659f8bffe",
+    ".cache/physical/wac_core_softmax_budget/timing.rpt": "6ff3b8a3d8f89e45d00b7570208b13566bcd6cc7a0ed739cd4a97ae2e723f0f2",
+    ".cache/physical/wac_core_softmax_budget_gate/receipt.json": "66fc60448f9a8c26941a8325efcc5561b94f8b100f23faeea4742208db611354",
+    ".cache/physical/wac_core_softmax_budget_gate/console.log": "d2851df80fe195aacfce33b185c45a6cb3fb97732b52193e680f7f379a348748",
+    "syn/run_tri_oracle_wac_core_softmax_budget.py": "fb4e8ab52995859dadb0958b22469cf408ad308761af4586e4b022023c14eb46"
+  }
+}
