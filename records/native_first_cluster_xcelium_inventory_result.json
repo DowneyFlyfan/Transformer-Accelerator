@@ -1,0 +1,82 @@
+{
+  "state": "saved_xcelium_snapshot_native_hierarchy_verified",
+  "compute_cores": 20,
+  "cluster_count": 5,
+  "memory_instances": 623,
+  "mapped_cores": 4,
+  "source_cores": 16,
+  "separately_compiled_mapped_cores": 2,
+  "memory_instances_per_core": 28,
+  "direct_parent_memories": 2,
+  "clusters": {
+    "0": {
+      "compute_cores": 4,
+      "memory_instances": 125,
+      "memory_by_master": {
+        "TS6N28HPCPSVTA16X128M2F": 40,
+        "TS5N28HPCPSVTA32X128M2FW": 72,
+        "TS5N28HPCPSVTA512X64M4F": 8,
+        "TS5N28HPCPSVTA24X128M2FW": 4,
+        "TS5N28HPCPSVTA16X80M2FW": 1
+      }
+    },
+    "1": {
+      "compute_cores": 4,
+      "memory_instances": 124,
+      "memory_by_master": {
+        "TS6N28HPCPSVTA16X128M2F": 40,
+        "TS5N28HPCPSVTA24X128M2FW": 3,
+        "TS5N28HPCPSVTA16X80M2FW": 1,
+        "TS5N28HPCPSVTA32X128M2FW": 72,
+        "TS5N28HPCPSVTA512X64M4F": 8
+      }
+    },
+    "2": {
+      "compute_cores": 4,
+      "memory_instances": 124,
+      "memory_by_master": {
+        "TS6N28HPCPSVTA16X128M2F": 40,
+        "TS5N28HPCPSVTA24X128M2FW": 3,
+        "TS5N28HPCPSVTA16X80M2FW": 1,
+        "TS5N28HPCPSVTA32X128M2FW": 72,
+        "TS5N28HPCPSVTA512X64M4F": 8
+      }
+    },
+    "3": {
+      "compute_cores": 4,
+      "memory_instances": 124,
+      "memory_by_master": {
+        "TS6N28HPCPSVTA16X128M2F": 40,
+        "TS5N28HPCPSVTA24X128M2FW": 3,
+        "TS5N28HPCPSVTA16X80M2FW": 1,
+        "TS5N28HPCPSVTA32X128M2FW": 72,
+        "TS5N28HPCPSVTA512X64M4F": 8
+      }
+    },
+    "4": {
+      "compute_cores": 4,
+      "memory_instances": 124,
+      "memory_by_master": {
+        "TS6N28HPCPSVTA16X128M2F": 40,
+        "TS5N28HPCPSVTA24X128M2FW": 3,
+        "TS5N28HPCPSVTA8X80M2FW": 1,
+        "TS5N28HPCPSVTA32X128M2FW": 72,
+        "TS5N28HPCPSVTA512X64M4F": 8
+      }
+    }
+  },
+  "snapshot_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/xcelium.d/worklib/xm.lnx8664.079.pak": "92e9e3f29dec36790afc3d4395d890aec72b47a22c3dd84bdd8cd1ab729861a1"
+  },
+  "audit_wall_seconds": 17.53773140098201,
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/snapshot_inventory_checked/read_inventory.tcl": "cb02d870a146f49d152ff1ed78c010dfa93e820bbfc2acf39d7391913095a2ee",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/snapshot_inventory_checked/instances.tsv": "16575b58937beedc5c6295732ca0c3b8df3e492e78e6ab4d4a88afe9922cf93b",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/snapshot_inventory_checked/console.log": "e4ddf0dea8f8587268b484d68cb58fa0aaa7c20de788d08eac9e5581c3a6b381",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/snapshot_inventory_checked/native_receipt.json": "978ec46f056371d0acb9557995d16c7ac2bf57dfb0af2885bacfe534328338ef",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/receipt.json": "f6c0a85543aeec9001925f6ae0ddc3b900c2ca64d136c53a1ce81d7c14779808",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/positive/console.log": "321c4f9c7f80db867e87e21d14d10c888fda3a50e1321296fbe2b75e57dae1fb",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/inventory.json": "e91a9a7cf44badbe6d23f8383de138ca7b13b6bf63b45e561c82066796d901c6"
+  },
+  "scope": "Native instance enumeration of the functional Xcelium snapshot with one mapped cluster, four source clusters, and source parent."
+}
