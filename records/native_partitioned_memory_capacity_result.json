@@ -1,0 +1,75 @@
+{
+  "state": "partitioned_memory_capacity_measured",
+  "evidence_scope": "Native elaboration for all clusters with a linked mapped netlist for cluster zero and a cold-reloaded parent.",
+  "mapped_cluster_banks": [
+    0
+  ],
+  "compiled_instances": 623,
+  "total_bytes": 414416,
+  "cluster_bytes": [
+    81568,
+    81184,
+    81184,
+    81184,
+    81104
+  ],
+  "parent_bytes": 8192,
+  "capacity_by_vendor_master": {
+    "TS5N28HPCPSVTA16X80M2FW": {
+      "instances": 4,
+      "bytes_per_instance": 160,
+      "total_bytes": 640
+    },
+    "TS5N28HPCPSVTA24X128M2FW": {
+      "instances": 16,
+      "bytes_per_instance": 384,
+      "total_bytes": 6144
+    },
+    "TS5N28HPCPSVTA32X128M2FW": {
+      "instances": 360,
+      "bytes_per_instance": 512,
+      "total_bytes": 184320
+    },
+    "TS5N28HPCPSVTA512X64M4F": {
+      "instances": 42,
+      "bytes_per_instance": 4096,
+      "total_bytes": 172032
+    },
+    "TS5N28HPCPSVTA8X80M2FW": {
+      "instances": 1,
+      "bytes_per_instance": 80,
+      "total_bytes": 80
+    },
+    "TS6N28HPCPSVTA16X128M2F": {
+      "instances": 200,
+      "bytes_per_instance": 256,
+      "total_bytes": 51200
+    }
+  },
+  "paper_figure": "31.6.7",
+  "comparisons": {
+    "decimal_kilobytes": {
+      "actual": 414.416,
+      "published_label_value": 405,
+      "difference_bytes": 9416,
+      "exact": false,
+      "matches_if_rounded_to_whole_unit": false
+    },
+    "binary_kibibytes": {
+      "actual": 404.703125,
+      "published_label_value": 405,
+      "difference_bytes": -304,
+      "exact": false,
+      "matches_if_rounded_to_whole_unit": true
+    }
+  },
+  "paper_unit_convention_confirmed": false,
+  "archived_placed_candidate": {
+    "compiled_instances": 600,
+    "total_bytes": 399360,
+    "record_sha256": "02bc8a6696c2b93588d6441b771619070e56491e0a4ac9cf643c5aa890054f83"
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/partitioned_memory_capacity.json": "7ca920b328e3b1e9565278f9c558d06cd466adf3833dbb7582328d4d84a4c9cb"
+  }
+}
