@@ -1,5 +1,5 @@
 {
-  "state": "parent_sources_prepared_and_one_native_cluster_cut_verified",
+  "state": "parent_sources_prepared_and_five_fabric_cluster_cuts_verified",
   "parent": "tri_oracle_shared_layer437",
   "cluster_signal_bits_by_bank": {
     "0": 6329,
@@ -19,12 +19,29 @@
     "net_mismatches": 0,
     "unresolved_references": 0
   },
-  "scope": "The five cluster declarations are prepared from the source used in the twenty-core Xcelium replay. Bank 2 was compared with the exported cluster port declarations and elaborated in an isolated Genus connectivity probe. Layer-parent elaboration and linkage to five timing-qualified cluster netlists remain pending.",
+  "native_compute_fabric": {
+    "tool": "Cadence Genus",
+    "root": "tri_oracle_compute_fabric",
+    "exit_status": 0,
+    "clusters": 5,
+    "pin_bits_compared": 31133,
+    "direction_mismatches": 0,
+    "net_mismatches": 0,
+    "unresolved_references": 0,
+    "packed_bit_swap_rejected": true,
+    "missing_pin_rejected": true
+  },
+  "scope": "The five cluster declarations are prepared from the source used in the twenty-core Xcelium replay. The real compute-fabric hierarchy was elaborated around the five cluster declarations. Every local cluster adapter pin was checked against its expected bit, direction and net. Layer-parent elaboration and linkage to five timing-qualified cluster netlists remain pending.",
   "evidence_sha256": {
     ".cache/physical/wac_budgeted_parent_boundary/receipt.json": "7f0a05e755cbe44359797ab1c60cd38bdb36b8dfe393dfa1bec3ac75fbd7f598",
     ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/receipt.json": "fb727418ec589c0619f0ddf7d3f6b04a0026acc953cfb5714f86e73d81686aca",
     ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/pins.tsv": "bfa054c72e7979bf2919fe2378f55fc0385af3c7e4d0a278d61f9b63074f1fd0",
     ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/unresolved.rpt": "a3a6e873f0822ba036e65bd35d4d8886c8cc471b2a2a7965b1e446553f6c4d2c",
-    "syn/prepare_tri_oracle_softmax_partitioned_parent.py": "93909e0912a44f7c4291043690ee99ea7e0207e5f0b10b3973bfdb846f0e81e3"
+    ".cache/physical/wac_budgeted_parent_boundary/native_fabric_boundary_v2/receipt.json": "8bf4506bf49e210959619f58bdbcad29d159195802e081d618a66ac92d8c9048",
+    ".cache/physical/wac_budgeted_parent_boundary/native_fabric_boundary_v2/audit.tcl": "1a7ff9fb629207cf6f8140a75b5408eb8a0d7baea22b2c3cdb0d0635ed88a625",
+    ".cache/physical/wac_budgeted_parent_boundary/native_fabric_boundary_v2/block_pins.tsv": "c40140de9fd02c4e03d93dc7fb52af861c1e150d3b69f3bc39b9c451c3a982c5",
+    ".cache/physical/wac_budgeted_parent_boundary/native_fabric_boundary_v2/unresolved.rpt": "eb174cf9f150049cfa67a76e76b7290b4fea3b3c8ea7996927ad2f2e8848d1a2",
+    "syn/prepare_tri_oracle_softmax_partitioned_parent.py": "93909e0912a44f7c4291043690ee99ea7e0207e5f0b10b3973bfdb846f0e81e3",
+    "syn/audit_tri_oracle_wac_fabric_boundary.py": "137b2353eee7da17dd64a25782aa0688f1655f642668cd075ab2d82e264b16e8"
   }
 }
