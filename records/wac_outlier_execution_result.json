@@ -1,0 +1,49 @@
+{
+  "state": "core_simd_outlier_and_sign_execution_verified",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "paper_figures": [
+    "31.6.2",
+    "31.6.5"
+  ],
+  "scope": "Pre-affine three-sigma detection and sign extraction in the weight-attention core vector unit. Shared frontend normalization and a local round-robin strip assignment are used. Trained metadata was verified at the vector-unit interface and physical destination selection was exercised on the twenty-core source fabric.",
+  "trained": {
+    "tokens": 16,
+    "strips": 4096,
+    "normalization_codes": 32768,
+    "activation_bytes": 32768,
+    "skip_mask_bits": 90112,
+    "sign_read_addresses": 55616,
+    "positive_cases": 5,
+    "corrupt_metadata_rejected": true
+  },
+  "directed": {
+    "lane_codes": 524288,
+    "incorrect_threshold_rejected": true,
+    "physical_cores": 20,
+    "invalid_destinations": 12,
+    "wrong_destination_detected": true
+  },
+  "integrated_attention": {
+    "rows": 4,
+    "score_and_probability_transfers": 1023,
+    "reassigned_core": 8,
+    "replay_seconds": 340.5221235000063
+  },
+  "evidence_sha256": {
+    ".cache/physical/wac_core_local_outlier_v2/trained_metadata/receipt.json": "9e588a30152e759ecbfb3ff4f38d1ad9af41858163c18d8d3b832ccc8eb4185e",
+    ".cache/physical/wac_core_local_outlier_v2/outlier_routes/receipt.json": "a2dc72cf1fcd5ff2544a59bd1995a3e2e80a337b8f36e0daa0aa41df4d3cfc02",
+    ".cache/physical/wac_core_local_outlier_v2/xcelium/head_offload_qualification.json": "30f8204788a746a4836ba09dcb840fb9f024e8f24360d9798c42827b8eecc275",
+    ".cache/physical/wac_core_local_outlier_v2/receipt.json": "800c5a077bca95f3a0977be5d0b4e72b1024d03bbd33a1f52b153412cbc2f796",
+    ".cache/physical/wac_core_local_outlier_v2/xcelium/positive/console.log": "17f7a98869cad4eabaf177b65b657eef46fef3ad2500377af3d029b27252dc42",
+    ".cache/physical/wac_core_local_outlier_v2/trained_metadata/trained/console.log": "39bef7445f9f270b08264a7e6cc22df086deeb0f09252c186b97433d97b6ac49",
+    ".cache/physical/wac_core_local_outlier_v2/trained_metadata/write_fault/console.log": "9282100e85872dd7b3558aefb99441700a345a2e2828eec22b4d6ff52cc8cf52",
+    ".cache/physical/wac_core_local_outlier_v2/trained_metadata/last_write_fault/console.log": "1b584628447fbc4c89e32cb79ca54ce09fa9b825ffefec0e0f2368674408e60a",
+    ".cache/physical/wac_core_local_outlier_v2/trained_metadata/bad_replay/console.log": "f25da1924ea2a2eba3a2f83f705e9f9ff3667aa548afd4af86949a65285cb257",
+    ".cache/physical/wac_core_local_outlier_v2/trained_metadata/short/console.log": "6669e5462930310d954854b704b1a4d211d7157ce5d05ba73960bcc00ee25b48",
+    ".cache/physical/wac_core_local_outlier_v2/trained_metadata/mutant/console.log": "67797e9ee2c2b52543d024fe8008c40f329d80bb21beead18eb6ad0686fe08a4",
+    ".cache/physical/wac_core_local_outlier_v2/outlier_routes/positive/console.log": "df3d96071b367091d868d7b38411267dea06a48d46e8123daa21ab812792aca0",
+    ".cache/physical/wac_core_local_outlier_v2/outlier_routes/wrong_owner/console.log": "4a1c832752112c0057f3a0bb66bf285d1bb62ab941bbe2036abc148c2dc8d0b1",
+    ".cache/physical/wac_core_local_outlier_v2/unit/positive.log": "529c1aff7b7e13272edf8636aa92cd7cb6f4c5eec3a2f8e25002bfcc15be26fd",
+    ".cache/physical/wac_core_local_outlier_v2/unit/inclusive_threshold.log": "f3e9b4349be7dc5c66992cd975cb2a2dbea3a6d33119aa5235302f1ae07e3ed5"
+  }
+}

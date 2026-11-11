@@ -519,6 +519,15 @@ utilization or latency improvements. See
 `records/core_local_score_execution_result.json`, and
 `records/head_offload_execution_result.json`.
 
+The weight-attention core's vector unit now detects outliers and extracts
+signs before learned scaling. The shared normalization frontend sends eight
+normalized values at a time over the same addressed link as softmax, rotating
+strips across the twenty cores. Xcelium checked the physical destination of
+each core, rejected an incorrect destination, and matched all 32,768 trained
+normalization codes, 90,112 skip-mask bits, and 55,616 sign-read addresses.
+The integrated attention replay also reproduced all four archived outputs
+with the expanded vector link. See `records/wac_outlier_execution_result.json`.
+
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value
 accumulator. It loads the image merge map, derives the visible compact prefix,
