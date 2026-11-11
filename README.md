@@ -834,6 +834,14 @@ baseline answer sequences and per-question scores reproduce exactly. See
 `records/format348_official_scoring.json` and
 `records/format349_protected_generation_qualification.json`.
 
+On the fixed 256-question Visual Question Answering version 2 holdout, the
+dense integer feed-forward control scored 58.87%. Restoring floating-point
+feed-forward at the first token raised it to 58.95%. Restoring the later
+prompt and decode tokens raised it to 71.17%, with a 70.94% floating-point
+reference. All 256 dense control answers reproduced exactly. This software
+experiment localizes the accuracy loss to the later-token path. See
+`records/ff_position_holdout_attribution.json`.
+
 The new dispatcher retains the earlier format only for global token zero and
 keeps a positive token offset during incremental decoding. Five real graphics
 processor controls use the full 2,048-feature input width. The full model test

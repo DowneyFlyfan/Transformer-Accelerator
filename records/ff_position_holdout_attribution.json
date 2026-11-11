@@ -1,0 +1,43 @@
+{
+  "state": "feedforward_position_counterfactuals_independently_scored",
+  "questions": 256,
+  "decoder_layers": 22,
+  "reproduced_dense_integer_cases": 256,
+  "scores_percent": {
+    "dense_integer": 58.87,
+    "float_first_token": 58.95,
+    "float_later_tokens": 71.17,
+    "floating_reference": 70.94
+  },
+  "change_from_dense_percentage_points": {
+    "float_first_token": 0.08,
+    "float_later_tokens": 12.3
+  },
+  "paired_changes": {
+    "float_first_token": {
+      "improved": 8,
+      "declined": 7,
+      "unchanged": 241
+    },
+    "float_later_tokens": {
+      "improved": 52,
+      "declined": 13,
+      "unchanged": 191
+    }
+  },
+  "peak_graphics_bytes": 7232722944,
+  "minimum_host_available_bytes": 16943456256,
+  "wall_seconds": 315.12760893197265,
+  "evidence_sha256": {
+    "syn/verify_tri_oracle_ff_position_attribution.py": "32c0f70ffa04f1b6fd6d12d3d5c0423c3df031e9001fb4c0d16a446d5d94d8b9",
+    ".cache/model_reference/ff_position_holdout/native_receipt.json": "469f514b5ac40c33e903c456658d78d70a05bf1cb466ded58a0b5631e6faeb46",
+    ".cache/model_reference/ff_position_holdout/receipt.json": "951b1865d50f5090454a71ec45754ce52ed8be0ecac3fce73ffadc3ca64f6a23",
+    ".cache/model_reference/ff_position_holdout/console.log": "7fe2bc85a1f78ef3b25e255eaef28980cfd01896cdf30642924797cbf2f0e7dd",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9",
+    ".cache/model_reference/ff_position_holdout/verified.json": "f26a4270167d4048f9dbb4c3b5bb9e204f00bb40bf9d39055c92a799b5ad2420",
+    "syn/evaluate_tri_oracle_ff_position_attribution.py": "f729bead71cb740c3b9950ae9a57beb99ef9f5d7ee43f9fc677653b9b2b0bc9b",
+    ".cache/model_reference/ff_position_holdout/run_guard.py": "2aa32a6f273f3bb41a26b9dcefd0d310a41bdf67ef9889b9052379b3195e53b5"
+  },
+  "scope": "Matched software counterfactuals. Floating overrides identify numerical loss by token position.",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb"
+}
