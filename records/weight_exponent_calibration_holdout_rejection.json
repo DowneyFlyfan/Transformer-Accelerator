@@ -1,0 +1,147 @@
+{
+  "state": "weight_exponent_validation_holdout_independently_scored",
+  "questions": 256,
+  "reproduced_pilot_cases": 64,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "scores_percent": {
+    "floating": 70.94,
+    "original_integer": 59.34,
+    "calibrated_integer": 58.32
+  },
+  "gain_percentage_points": -1.02,
+  "paired_changes": {
+    "improved": 26,
+    "declined": 27,
+    "unchanged": 203
+  },
+  "projection_offsets": [
+    [
+      -1,
+      -1,
+      -2
+    ],
+    [
+      -2,
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -1,
+      -1
+    ],
+    [
+      -2,
+      -2,
+      -1
+    ],
+    [
+      -2,
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -2,
+      -1
+    ],
+    [
+      -1,
+      -2,
+      -2
+    ],
+    [
+      -1,
+      -1,
+      -2
+    ],
+    [
+      -2,
+      -2,
+      -1
+    ],
+    [
+      -2,
+      -2,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -2
+    ],
+    [
+      -2,
+      -1,
+      -2
+    ],
+    [
+      -2,
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -1,
+      -2
+    ],
+    [
+      -2,
+      -2,
+      -2
+    ],
+    [
+      -1,
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -2,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -2,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1
+    ]
+  ],
+  "independent_calibration_row_error": [
+    0.1726464961062778,
+    0.10607943480665033
+  ],
+  "wall_seconds": 133.923,
+  "peak_graphics_bytes": 7237816832,
+  "minimum_available_host_bytes": 17000230912,
+  "evidence_sha256": {
+    ".cache/model_reference/weight_exponent_holdout/receipt.json": "a5f9fdacd5deb174ae8703bf7821b2eafef87077c40e15132118da9ea9b92092",
+    ".cache/model_reference/weight_exponent_holdout/native_receipt.json": "9e834079faef1bbed77cf28c409fcca4d0a2d1e2733ed4d2ba7eff6536093125",
+    ".cache/model_reference/weight_exponent_holdout/console.log": "ee15fe39dd4c29c573a2dcba80ebaac27c5dfa311835a25699435dae8a33b949",
+    ".cache/model_reference/weight_exponent_calibration/receipt.json": "9f4f944f0117eb6afa4d8af1d089053707634baf1f1874b8eaf7f0e5f4dad45f",
+    ".cache/model_reference/weight_exponent_holdout/verify_holdout.py": "96bf8d22a6c09fcd239efca3f0a61dc7339cf997633f6f9b2fd5e1b3cb62742e",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9"
+  },
+  "scope": "Frozen per-projection exponents and regenerated signed eight-bit weights and sign banks evaluated in software. The candidate has not been programmed into the mapped hardware.",
+  "candidate_disposition": "rejected_by_end_to_end_validation",
+  "holdout_source": "https://visualqa.org/download.html"
+}
