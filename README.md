@@ -528,6 +528,13 @@ normalization codes, 90,112 skip-mask bits, and 55,616 sign-read addresses.
 The integrated attention replay also reproduced all four archived outputs
 with the expanded vector link. See `records/wac_outlier_execution_result.json`.
 
+Genus mapped the revised core with its preserved processing array and all 28
+compiled memories. The slow-corner synthesis report gives 73,422 cells,
+0.287381 mm² of library cell area, and 0 ps of reported setup slack at
+580 megahertz. Cadence Xcelium replayed compute, shared input-memory handoff,
+softmax and outlier detection on the mapped netlist. Placement and extracted
+timing for this core are still pending. See `records/wac_mapped_core_result.json`.
+
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value
 accumulator. It loads the image merge map, derives the visible compact prefix,
