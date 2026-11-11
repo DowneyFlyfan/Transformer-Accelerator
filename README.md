@@ -842,6 +842,12 @@ reference. All 256 dense control answers reproduced exactly. This software
 experiment localizes the accuracy loss to the later-token path. See
 `records/ff_position_holdout_attribution.json`.
 
+Widening the intermediate gated product for later tokens preserved every
+answer on the same 256 questions. The replay observed 40,858 intermediate
+codes beyond the signed 16-bit range. The frozen formats use at most an
+eight-bit down shift, where those values already reach the signed 8-bit
+endpoints. See `records/ff_gated_clip_holdout_result.json`.
+
 The new dispatcher retains the earlier format only for global token zero and
 keeps a positive token offset during incremental decoding. Five real graphics
 processor controls use the full 2,048-feature input width. The full model test

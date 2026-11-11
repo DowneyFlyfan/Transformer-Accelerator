@@ -1,0 +1,34 @@
+{
+  "state": "gated_product_clip_redundant_for_verified_formats",
+  "questions": 256,
+  "decoder_layers": 22,
+  "score_percent": 58.87,
+  "identical_cases": 256,
+  "formerly_clipped_codes": 40858,
+  "wide_gated_rows": 1840936,
+  "policy_bounds": {
+    "format322": {
+      "settings": 22,
+      "down_shift_upper_bound": 8
+    },
+    "format335": {
+      "settings": 76,
+      "down_shift_upper_bound": 8
+    }
+  },
+  "counterexample_at_shift_nine": true,
+  "elapsed_seconds": 205.2655930360197,
+  "evidence_sha256": {
+    "syn/verify_tri_oracle_ff_gated_clip.py": "934e5011147e3be0c92e03759775846c25f341e2b5d8356574db01b1b7e819d0",
+    ".cache/model_reference/ff_gated_clip_holdout/receipt.json": "5576c5123570ada0c6f7479228a6b495406298b5415f0ef83d98ee0a20eff63f",
+    ".cache/model_reference/ff_gated_clip_holdout/native_receipt.json": "8755afbac33aa0a8f4e2463d9dc3abdc37484d0e1ad8752edffd9d0a1f12892d",
+    ".cache/model_reference/ff_gated_clip_holdout/console.log": "56ac4168a81d33138e5134c0ae1a073f52542e1e6ae38eef6d8903ae56cb5ba4",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9",
+    ".cache/model_reference/format322/layer_policy.json": "96fe589b73b8b4f420f544f75dcce619bf0de4c32637fd2c3f92e9f88f73fc12",
+    ".cache/model_reference/format335/layer_policy.json": "f0fc80f6dd133a9a1e03aaffe509356bd53dbd5989df76bf85bf54fe997f876b",
+    ".cache/model_reference/ff_gated_clip_holdout/verified.json": "f67d63ef410e1ba03157efcc363c5f9cb7f25228275e2f2bb88908b3e1fb4edf",
+    "syn/evaluate_tri_oracle_ff_gated_clip.py": "acae9a3afd999c10265daf1993a2e8c7c45ff1e9fafc08ebf0365c173b811830",
+    ".cache/model_reference/ff_gated_clip_holdout/run_guard.py": "f414b474413be8d5859d9f6804f6415de8ddfbff75891eca1665df488c920d7c"
+  },
+  "scope": "The intermediate clip cannot change signed 8-bit down inputs under the verified shifts. This does not test wider shift policies."
+}
