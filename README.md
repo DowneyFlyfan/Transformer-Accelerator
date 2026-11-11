@@ -506,9 +506,18 @@ fixture. Rows with up to 32 selected keys now execute their score tile in
 the assigned core. Longer rows use the assigned cluster. Xcelium checked both
 paths on the four archived rows and checked 42 single-core dot products
 across the five clusters. The 32-key cutoff is the local score tile capacity.
-Dynamic offloading and physical timing remain open. See
-`records/wac_layer_softmax_integration_result.json` and
-`records/core_local_score_execution_result.json`.
+The workload balancer implements the retrieval/streaming head swaps in
+Figure 31.6.4 with a local policy based on retrieval-head counts. In the
+twenty-core Xcelium replay, two retrieval classifications and one streaming
+classification moved logical head 0 from physical core 0 to physical core 8.
+All four archived attention outputs matched. The short row issued eight
+single-core score commands, the other three issued 66 cluster score commands,
+and all 1,023 score and probability transfers used the reassigned core's
+softmax. The sequential replay does not measure the paper's parallel
+utilization or latency improvements. See
+`records/wac_layer_softmax_integration_result.json`,
+`records/core_local_score_execution_result.json`, and
+`records/head_offload_execution_result.json`.
 
 The compact attention row controller connects the twenty-core score fabric to
 the causal-size unit, proportional softmax, and a signed 64-feature value

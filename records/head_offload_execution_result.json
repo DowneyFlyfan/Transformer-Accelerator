@@ -1,0 +1,72 @@
+{
+  "state": "dynamic_head_offload_replayed_on_twenty_core_layer",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "paper_figure": "31.6.4",
+  "directed": {
+    "configurations": 3,
+    "cluster_retrieval_squared_load_before_after": [
+      [
+        1,
+        1
+      ],
+      [
+        64,
+        14
+      ],
+      [
+        64,
+        32
+      ]
+    ],
+    "core_retrieval_squared_load_before_after": [
+      [
+        1,
+        1
+      ],
+      [
+        16,
+        8
+      ],
+      [
+        16,
+        8
+      ]
+    ],
+    "disabled_swaps_rejected": true
+  },
+  "integrated": {
+    "logical_head": 0,
+    "initial_core_zero_based": 0,
+    "reassigned_core_zero_based": 8,
+    "reassigned_cluster_zero_based": 2,
+    "retrieval_heads": 2,
+    "streaming_heads": 1,
+    "single_core_score_commands": 8,
+    "cluster_score_commands": 66,
+    "compiled_memory_instances": 623,
+    "compared": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 57992,
+      "stalls": 63
+    },
+    "additional_classification_read_beats": 33024,
+    "replay_seconds": 342.51982197299367
+  },
+  "scope": "Source-layer replay with vendor unit-delay models and a local retrieval-head count policy. Parallel utilization, routed timing and the paper chip metrics remain unverified.",
+  "evidence_sha256": {
+    ".cache/physical/wac_head_offload_layer/xcelium/head_offload_qualification.json": "1247834b63aff6b0167662c6537a91ffeb6b665a21c4251ff8d3e097c0dbfd12",
+    ".cache/physical/wac_head_offload_layer/xcelium/receipt.json": "ee659ec617b6083339315433d0d929fa2d97e78e90a028e3cf45a1b020786877",
+    ".cache/physical/wac_head_offload_layer/receipt.json": "2618e81dde06b8d0596b5e1f5c2bae69e28caf6c34adabde27482b96d2f7041c",
+    ".cache/physical/wac_head_offload_layer/xcelium/positive/console.log": "003256bc8f68eeb28d2ca0d3da9da3a8f1cbbdd1d91a43bb221bdd4622df2011",
+    ".cache/physical/wac_core_local_scores_verified/offload_unit_checked.log": "e127c20ed4dad02cb587202ca359baae1e368978fadc3f8083ce06322973fb2b",
+    ".cache/physical/wac_core_local_scores_verified/offload_mutation_checked.log": "7c8042bff546e916fe3541532584a2f16d644d38885a11777f8a6c2c0ff4d181",
+    "verilog/tri_oracle_head_offload.sv": "283ac2cced890fd86afc762c9441c4a4c729fd0689d5ddee16e29673e75094fc",
+    "verilog/tri_oracle_head_offload_tb.sv": "cea2ddf115df3eae3b66bab1de9ff9f8de6eef528dfd302f24063a086689595c",
+    "syn/prepare_tri_oracle_head_offload_layer.py": "fac9939cc340ffe7d4d10c5e4bf53580f02d932e6aa64895d1c2b00c90215bc5",
+    "syn/run_tri_oracle_head_offload_layer.py": "082773fb8fa6e8abf8fdbf41b120a3ab0ca2117facc717e5d79aaa54961dc8b3"
+  }
+}
