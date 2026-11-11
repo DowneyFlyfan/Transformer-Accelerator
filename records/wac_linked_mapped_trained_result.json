@@ -1,0 +1,40 @@
+{
+  "state": "linked_tsmc_mapped_layer_passed_attention_and_trained_raw_residual_replays",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "linked_netlist_sha256": "30b1c7b14af6a3dae0108bbce2827937fef76e715c938f726a4ff460b1a5b6c4",
+  "clock_target_megahertz": 580,
+  "mapped_compute_cores": 20,
+  "compiled_memory_macros": 623,
+  "reference_counters": {
+    "tokens": 16,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "outputs": 2048,
+    "exact_outputs": 32768,
+    "intermediate_bytes": 90112,
+    "output_packets": 208,
+    "read_requests": 353280,
+    "read_bytes": 38545920,
+    "fault": 0,
+    "trained": 1
+  },
+  "verified_sign_read_addresses": 55616,
+  "verified_mask_packets": 71,
+  "verified_output_tiles": 13,
+  "last_output_tile_cycle": 10964192,
+  "cycle_log_exactly_matches_archived_reference": true,
+  "native_elapsed_seconds": 6976.152716291021,
+  "native_exit_status": 0,
+  "scope": "Functional gate-level replays of directed attention and the trained raw-residual workload. Native timing and full-design placement and routing are pending.",
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/receipt.json": "38f86d254811b10231a149396193e52e87465b568bb953544f169499fbb85ccc",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/linked/receipt.json": "2ca46070d01111f47fd8b317fac99b09c2e020659eb6ec07c54c65ede15ec146",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/attention/receipt.json": "0563566b40dc57d16171b43c69ece8a91564bbe7d5018b64e864a1c580bc71ba",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/trained/receipt.json": "23d44246421404b560efc04cdbebea278502f154c8974a7c6d0c9ecd37d6806a",
+    "records/batch408_trained_learned_result.json": "69cb0cdef0c741ed958355b172502062a1728ae7cde3dcbd57007b79f6430827",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/trained/progress.log": "3395cfda007b7868ce71750c6594e8011592fc71494267e5195a7c83353690ba",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/trained/xrun.log": "fdb20182b4cd2bb7e3bdd33665d4c2e65bad2ca38a1494dd9c3542d01041670f",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/trained/native_receipt.json": "f2bdd1e00f7e6d9b6b222ff7cd4875e0bf0c3c4065b083ec09b85861a860d7b2"
+  }
+}
