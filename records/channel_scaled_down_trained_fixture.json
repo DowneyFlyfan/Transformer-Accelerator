@@ -1,0 +1,21 @@
+{
+  "state": "trained_channel_scaled_down_fixture_cpu_and_gpu_equal",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "layer": 0,
+  "hidden_features": 2048,
+  "intermediate_features": 5632,
+  "later_tokens": 15,
+  "original_token_positions": [40, 81, 121, 161, 202, 242, 282, 323, 363, 403, 444, 484, 524, 565, 605],
+  "exact_integer_outputs": 30720,
+  "changed_raw_outputs": 30702,
+  "channel_scale_exponents": 2048,
+  "exponent_range": [-11, -7],
+  "scope": "Prepared activation and skip masks from the archived trained fixture. The processor and graphics implementations agree on every new signed8 weight code, scale exponent and raw down-projection output. The fixture keeps scale metadata separate from the signed32 output words.",
+  "evidence_sha256": {
+    ".cache/model_reference/channel_scaled_down_trained/fixture/receipt.json": "2b93877fa74dc86a980f0b5b473c94b582a5a27da70b59afd69c0fee042fd35d",
+    ".cache/model_reference/channel_scaled_down_trained/native_receipt.json": "f0c3f1f12a48b72617bea9b91cacb6282955112349eecb49dee3381ec754a829",
+    ".cache/model_reference/channel_scaled_down_trained/console.log": "0e1e1b3157e172c65eeea5ed7d04953a5e008b8c5657bdf4e93cdd4b4a725a76",
+    ".cache/model_reference/channel_scaled_down_trained/run_guard.py": "f3eba9c52a2bb665f63cadef2e4beff7bd26b27baa191e9139f798b87cf2b7ab",
+    "syn/prepare_tri_oracle_channel_scaled_down_fixture.py": "1493e7e0bc6a234c8a38161e9ec643abe710f6c932f02d2e26c699669e3b8687"
+  }
+}
