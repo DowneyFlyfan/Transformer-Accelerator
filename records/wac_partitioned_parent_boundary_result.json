@@ -54,7 +54,19 @@
     "swapped_softmax_request_wires_rejected": true,
     "duplicate_generic_primitive_names": 32
   },
-  "scope": "The complete layer parent was elaborated and independently reloaded with five cluster interfaces. Its Verilog export preserved the top ports and exact cluster connections. The export includes generic synthesis primitives. Parent mapping, linkage to five timing-qualified cluster netlists and integrated timing remain pending.",
+  "bank_2_exported_interface_replay": {
+    "simulator": "Cadence Xcelium",
+    "native_exit_status": 0,
+    "native_seconds": 25.89,
+    "core_instances": 4,
+    "compiled_memory_instances": 124,
+    "interface_signal_bits": 6201,
+    "aggregate_modes": ["sum", "maximum", "average"],
+    "expected_value_by_mode": [80, 32, 20],
+    "exact_aggregate_results": 96,
+    "commands_blocked_before_activation_reload_acknowledgement": true
+  },
+  "scope": "The complete layer parent was elaborated and independently reloaded with five cluster interfaces. Its Verilog export preserved the top ports and exact cluster connections. The exported bank 2 adapter drove the real mapped bank in Xcelium. Parent mapping, linkage to all five timing-qualified cluster netlists and integrated timing remain pending.",
   "evidence_sha256": {
     ".cache/physical/wac_budgeted_parent_boundary/receipt.json": "7f0a05e755cbe44359797ab1c60cd38bdb36b8dfe393dfa1bec3ac75fbd7f598",
     ".cache/physical/wac_budgeted_parent_boundary/native_pin_preflight/receipt.json": "fb727418ec589c0619f0ddf7d3f6b04a0026acc953cfb5714f86e73d81686aca",
@@ -70,6 +82,10 @@
     ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/receipt.json": "ec936354421b70fe7d472045878bc094243c67433c8c881543a94523b1bbcd87",
     ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/native_receipt.json": "354b6932cd09f8c1730ab099673aa5283b63e423a82bd789c4b934b041fb48be",
     ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/parent.v": "a1dba19a82b55ceb1def888c97ad597e2c47e1a9273dfa94306399945418f64b",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/bank2_xcelium_link_v2/receipt.json": "37fa65918ea6e5aaca60739d6b480cc7a785040d3177fbfd36c81a7935032a1f",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/bank2_xcelium_link_v2/console.log": "8faecacc825716ed55532df0c25664f09e4d47eec6529c082082b9f0afa32a6a",
+    ".cache/physical/wac_budgeted_parent_boundary/native_layer_parent_hdl_export/bank2_xcelium_link/console.log": "b4ad8b2b08d2a742c393628a8e160a977710fdce6b06aa5cb423cc27dae67ea3",
+    ".cache/physical/wac_budgeted_parent_boundary/run_bank2_parent_cut.py": "3a3ccdcd7f6c2981fdc03a590f173729c5fc68f89c2d7d968f7c7343d2afb0f8",
     "syn/prepare_tri_oracle_softmax_partitioned_parent.py": "93909e0912a44f7c4291043690ee99ea7e0207e5f0b10b3973bfdb846f0e81e3",
     "syn/audit_tri_oracle_wac_fabric_boundary.py": "137b2353eee7da17dd64a25782aa0688f1655f642668cd075ab2d82e264b16e8",
     "syn/run_tri_oracle_wac_layer_parent.py": "7ddfe4023e12585cbc2fb9fadaf9b95bba9a0af9333611b7460cb4c659915632",
