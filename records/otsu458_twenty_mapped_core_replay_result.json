@@ -1,0 +1,49 @@
+{
+  "state": "raw_mapped_compute_cores_and_rejoined_source_partitions_verified",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "paper_architecture_figure": "31.6.2",
+  "clusters": 5,
+  "mapped_compute_cores": 20,
+  "cores_per_cluster": 4,
+  "command_accepts_per_core": 2882,
+  "read_responses_per_core": 2882,
+  "private_partition_signals": 30,
+  "private_partition_bits": 13824,
+  "shared_origin_table_reads": 72,
+  "attention_rows": 4,
+  "attention_read_transactions": 24768,
+  "independent_reference": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "projected_bytes": 78528,
+    "attention_components": 256
+  },
+  "positive_xcelium_seconds": 264.23,
+  "unchanged_compiled_snapshot_payload_files": 68,
+  "single_final_row_reference_bit_flip_rejected": true,
+  "static_random_access_memory": {
+    "compiled_instances": 623,
+    "compiled_bytes": 414416,
+    "paper_reported_capacity": "405 KB",
+    "paper_capacity_reconciled": false
+  },
+  "paper_topology_gap": {
+    "merge_tables": 5,
+    "shared_token_mergers": 1,
+    "shared_on_the_fly_token_size_units": 1,
+    "expected_token_mergers_in_aggregators": 5,
+    "expected_on_the_fly_token_size_units_in_aggregators": 5
+  },
+  "process": {
+    "candidate": "Taiwan Semiconductor Manufacturing Company 28-nanometer library",
+    "paper": "Samsung 28-nanometer fully depleted silicon-on-insulator"
+  },
+  "outer_partitions_mapped_in_replay": false,
+  "whole_chip_routed": false,
+  "paper_results_matched": false,
+  "scope": "Full mapped compute-core netlist in twenty locations. The two surrounding partitions use source-level register-transfer logic.",
+  "archive": {
+    "path": "records/otsu458_twenty_mapped_core_replay_evidence.json.gz",
+    "bytes": 29039,
+    "sha256": "01a6b8eaee7fd012173bc57e2848a98bdd7e74e767255efd682176bdd2339f04"
+  }
+}
