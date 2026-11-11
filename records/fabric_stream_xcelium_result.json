@@ -1,0 +1,25 @@
+{
+  "state": "resident_operand_compute_rate_verified_in_xcelium",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "cores": 20,
+  "clusters": 5,
+  "consecutive_commands": 256,
+  "commands_per_cycle": 1,
+  "results_per_cycle_per_cluster": 1,
+  "first_result_latency_cycles": 8,
+  "exact_aggregate_values": 40960,
+  "destination_slot_wraps": 16,
+  "nominal_arithmetic_operations_per_cycle": 10240,
+  "nominal_trillion_operations_per_second_at_580_megahertz": 5.9392,
+  "forced_ready_low": {
+    "exit_status": 2,
+    "rejected_command": 0
+  },
+  "scope": "Behavioral compute fabric with operands loaded before measurement. The 580 megahertz rate is conditional on achieving that frequency in the physical implementation.",
+  "evidence_sha256": {
+    ".cache/physical/fabric_stream_xcelium/receipt.json": "8a523314693bcc5be8fc252c2c53c67c2752785b31a909365aca0fab3f3b9d06",
+    ".cache/physical/fabric_stream_xcelium/launcher.log": "33d9b225baa4473cec6b1c336a8d8fd8281c99f828c44d5994154ac43ccc17bd",
+    ".cache/physical/fabric_stream_xcelium/forced_stall.log": "03a8e654f20e55eccbe4a7f55038d24820d6b5848daad2f25a90dd323b094779",
+    "syn/run_tri_oracle_fabric_stream_simulation.sh": "1ae1e165cca8dbbf4425810604457097f1cd74927bbf42c65002cb0915444461"
+  }
+}
