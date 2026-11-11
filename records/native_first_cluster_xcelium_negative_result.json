@@ -1,0 +1,29 @@
+{
+  "state": "mapped_attention_replay_rejects_one_bit_reference_error",
+  "rank": 204,
+  "reference_bit_flipped": 0,
+  "changed_fixture_file": "rows.txt",
+  "reference_sha256": "93b42f004adc0f7316ff94c06c316e9e9dfdb950b6c16ae6ee89b90800f31c2b",
+  "altered_reference_sha256": "198dd25a7f2bfd9aadb2492705af8f3480ba73670413e49491d21550a5a62da4",
+  "unchanged_snapshot_pack_sha256": "92e9e3f29dec36790afc3d4395d890aec72b47a22c3dd84bdd8cd1ab729861a1",
+  "native": {
+    "state": "native_exit",
+    "native_pid": 973404,
+    "native_exit_status": 2,
+    "elapsed_seconds": 26.05875007598661,
+    "available_min_bytes": 18890076160,
+    "anonymous_peak_bytes": 3695288320,
+    "log_sha256": "6c2000e768aa0ab99e7ede79a4e196e4df6980332963d67ef3313586e8c55126"
+  },
+  "expected_error": "COMPOSE430_ROW_RESULT rank=204",
+  "input_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/receipt.json": "f6c0a85543aeec9001925f6ae0ddc3b900c2ca64d136c53a1ce81d7c14779808",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/snapshot_inventory_checked/snapshot_pack_sha256.json": "0f047ddb59c3f4976bc1f6319c2a66749a5e20831757fea6a5e194600c17ec05",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/run_negative_reference.py": "cd2eb6e121452a164fe41e9132c3b1bc71df66cb227080c533bfcd15bc68991c"
+  },
+  "local_evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/negative_reference/receipt.json": "d9fc18225105f40b53c03a57ae7f9c3e28697e5cc47e5acb6f53d12f680993b5",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/mapped_0_layer_fixture_split2/xcelium/negative_reference/console.log": "6c2000e768aa0ab99e7ede79a4e196e4df6980332963d67ef3313586e8c55126"
+  },
+  "scope": "Changed one bit of the expected rank-204 word in a temporary fixture and reused the qualified simulation snapshot. The original fixture and snapshot were preserved."
+}
