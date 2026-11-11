@@ -1,0 +1,29 @@
+{
+  "state": "integrated_attention_fixture_verified_on_twenty_cores_and_five_local_mergers",
+  "source_revision": "9373eea",
+  "elaborated_memory_macros": 623,
+  "elaborated_memory_bytes": 414416,
+  "maps": 576,
+  "checked_attention_rows": 4,
+  "independently_recomputed_attention_components": 256,
+  "checked_projection_writes": 27,
+  "expected_failed_writes": 2,
+  "measured_stalled_write_cycles": 63,
+  "previous_architecture_stalled_write_cycles": 60,
+  "traced_writes_per_architecture": 18,
+  "sampled_extra_stall_cycles_attributed_to_testbench_grant_schedule": 3,
+  "paired_trace_terminal_states": [
+    "memory_limit",
+    "memory_limit"
+  ],
+  "compact_replay_wall_seconds": 1369.571,
+  "vendor_macro_models_checked_at_consumer_sampling": 6,
+  "vendor_full_replay_completed": false,
+  "native_synthesis_checkpoint_verified": false,
+  "scope": "Functional fixture and paper cluster geometry. The paper's measured frequency, area, power and model accuracy remain open.",
+  "evidence": {
+    "path": "records/aggregator_integrated_attention_evidence.json.gz",
+    "sha256": "dd995c2ec8fccb37489b45a037e1a581313f9c69fb5d363aa6b2435b4a8a0b72",
+    "bytes": 21508
+  }
+}
