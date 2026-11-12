@@ -1,0 +1,48 @@
+{
+  "change_percentage_points": -60.93,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/ff_channel_scaled_pruned/receipt.json": "63c1f0a55df550b0dbcab39ac85d01e31d6540c86326b0ef220cb961f7f00ff3",
+    ".cache/model_reference/grouped_precision_holdout/manifest.json": "651d0792d17b3090668a3e79dd9dcb4ba5b75365c5eac3f79fa6ac6a298d83e9",
+    ".cache/model_reference/layer_thresholds_v1/full_sweep.json": "373bbe7e651e2e53f215326ff51d27dcb95d45dae01fd8da1e0b4c8112de8057",
+    ".cache/model_reference/paper_skip_target_holdout.exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/paper_skip_target_holdout.log": "5b3e527f74774c5e89831624907a53f3e5c0697387b860784248713adcf1a0ce",
+    ".cache/model_reference/paper_skip_target_holdout/receipt.json": "5a7b956cd4e000109b1f78aafa12be07cda02613736deb0a7c05dc1f9cf5e6f2",
+    ".cache/model_reference/paper_skip_target_holdout/threshold_receipt.json": "e26dd66446a19d55c512b9c2c2a459121b8c4120aa0b4cf889c80f696c76e6e2",
+    "records/ff_channel_scaled_pruning_result.json": "d30928a6327799564a06cb2338c0e22a2b7a03bc886b095f080b63dfded136f0",
+    "syn/evaluate_tri_oracle_skip_target.py": "0205381136ad052dae7c713e540089a0575e4936dd51145279642102be02e0d7",
+    "syn/verify_tri_oracle_skip_target.py": "15d2213ee79c20d40b2b5a308f029a761e21787d6d7dbcf065b06d440f846cf9"
+  },
+  "native_seconds": 269.8858934820164,
+  "paired_question_scores": {
+    "declined": 178,
+    "improved": 1,
+    "unchanged": 77
+  },
+  "peak_gpu_bytes": 7495686656,
+  "previous_zero_window_score_percent": 58.24,
+  "questions": 256,
+  "scope": "Fixed local 256-question Visual Question Answering v2 holdout. The paper's exact prompt and split remain unverified. The wider window was selected on separate archived activation rows.",
+  "scores_percent": {
+    "channel_scaled_down": 62.34,
+    "channel_scaled_down_pruned": 1.41
+  },
+  "state": "paper_rate_sign_threshold_local_holdout_independently_rescored",
+  "thresholds": [
+    0,
+    -4,
+    4
+  ],
+  "work": {
+    "decode": {
+      "channel_opportunities": 260817920,
+      "skip_percent": 56.50240980374355,
+      "skipped_channels": 147368410
+    },
+    "prefill": {
+      "channel_opportunities": 10427242496,
+      "skip_percent": 61.618673953969584,
+      "skipped_channels": 6425128556
+    }
+  }
+}
