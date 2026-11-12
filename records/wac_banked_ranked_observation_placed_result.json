@@ -1,0 +1,75 @@
+{
+  "clock_target_megahertz": 580,
+  "comparison_to_prior_six_macro_predictor": {
+    "hold_fast": {
+      "prior_slack_ns": -0.069385,
+      "slack_change_ns": 0.056344
+    },
+    "setup_slow": {
+      "prior_slack_ns": -2.706414,
+      "slack_change_ns": 1.028701
+    },
+    "setup_typ": {
+      "prior_slack_ns": -1.611386,
+      "slack_change_ns": 0.730412
+    }
+  },
+  "compiled_memories_by_master": {
+    "TS5N28HPCPSVTA32X128M2FW": 9,
+    "TS5N28HPCPSVTA512X64M4F": 1
+  },
+  "die_millimeters": [
+    0.41,
+    0.32
+  ],
+  "estimated_timing": {
+    "hold_fast": {
+      "endpoint": "slots_strip_slot_reg[96][2]/DA",
+      "estimated_annotated_nets": 21110,
+      "reported_paths": 15,
+      "startpoint": "slots_strip_slot_reg[96][2]/CP",
+      "violating_paths": 15,
+      "worst_slack_ns": -0.013041
+    },
+    "setup_slow": {
+      "endpoint": "metadata_word_reg[0]/D",
+      "estimated_annotated_nets": 21110,
+      "reported_paths": 15,
+      "startpoint": "metadata_memory_read_tail_reg/CP",
+      "violating_paths": 15,
+      "worst_slack_ns": -1.677713
+    },
+    "setup_typ": {
+      "endpoint": "metadata_word_reg[0]/D",
+      "estimated_annotated_nets": 21110,
+      "reported_paths": 15,
+      "startpoint": "metadata_memory_read_tail_reg/CP",
+      "violating_paths": 15,
+      "worst_slack_ns": -0.880974
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/ranked_sign_slots/mapped_banked_observation_32/native_receipt.json": "fa879f12204255ad6d1987a17d00c92f6c75b162095b0ce5f68eb9ddd615e9c4",
+    ".cache/physical/ranked_sign_slots/mapped_banked_observation_32/qualification.json": "e213f0c33f7ab852932970aad0eb4d698ee5d52c3934a4627174229215fb8e92",
+    ".cache/physical/ranked_sign_slots/mapped_banked_observation_bank_traffic/receipt.json": "d05b358d535af57a991fbea8126a33cca907eeb968b0118bad8737c2003ff91b",
+    ".cache/physical/ranked_sign_slots/physical_banked_observation_32/receipt.json": "bcfa4fc6d46ebd5f50ef970cbb84859f4c4b3e73c000bc049f758c3bda04b8b6",
+    "records/wac_pipelined_ranked_sign_placed_result.json": "5734150392d1e83086317cfd947e8a7e04456ab43046db6e9df61b8b525d9bd9"
+  },
+  "fixed_compiled_memories": 10,
+  "mapped_gate_replay": {
+    "bits_per_mask": 32,
+    "cycles": 1005350,
+    "external": 9152,
+    "groups": 2816,
+    "logical": 27808,
+    "skipped": 5231
+  },
+  "mapped_setup_slack_ps": 294,
+  "minimum_host_available_bytes": 15767449600,
+  "placed_instances": 18223,
+  "placement_density_percent": 59.14,
+  "scope": "Independent predictor block with unchanged outline and a different ten-macro floorplan. Pre-route interconnect extraction with an ideal clock. The comparison includes both the counter and memory changes.",
+  "state": "banked_compact_predictor_mapped_replayed_and_placed",
+  "synthesis_workers": 1,
+  "timing_target_met": false
+}
