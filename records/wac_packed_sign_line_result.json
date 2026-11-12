@@ -1,0 +1,44 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/batch396/gate_sign.hex": "44929c996d5f35e9162dee5dc183b7b91b09159b843dbc2fd1767b34576d6b4d",
+    ".cache/model_reference/batch396/up_sign.hex": "f07ca7ca0867a2037781b59a7388827bc52a7540db730df89db48d77a865572b",
+    ".cache/model_reference/packed_sign_line_workload/receipt.json": "b7fce4547a5b165f817953c1061e657e0a6c6a4cd040d415b3b3f335d78e614a",
+    ".cache/physical/packed_sign_fetch/green/console.log": "188116b3170d6313d9c8c0305a9de88d5c06f05d6e019c78a468c179018882cd",
+    ".cache/physical/packed_sign_fetch/green/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/packed_sign_fetch/green/xrun.history": "87b9cb4ac545f0d6d3a0aceab8ca3344c7c7da1eac9c010f82ef506eb1d3a7d1",
+    ".cache/physical/packed_sign_fetch/packed_sign_lines.hex": "1af8b7ce163e6f30ab9e4c23a030643af3c690e859fd7d14bb44075f21a49374",
+    ".cache/physical/packed_sign_fetch/red/console.log": "d3b9d78f71578ae98adcfa668e1ba2494d4d6d676148da16e15e661b526ca432",
+    ".cache/physical/packed_sign_fetch/red/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/packed_sign_fetch/red/legacy_adapter.sv": "03bd820d3954930f5eb51ea467995e9d62c0d3d14b5e8c52e462dc87a2298972",
+    ".cache/physical/sign_word_cache_native/trained_masks/receipt.json": "a6c63a2d0a3f1b07373a073984336caa5439c13ba6a3b9092bce10036ed5af9d",
+    "records/wac_primary_request_cycle_bound_result.json": "d37f3acd9df02d932c5a9eeb4d8bd00dd0db393384452b0c519a1e3cf15c1a45",
+    "syn/pack_tri_oracle_sign_lines.py": "373945f406c760262a0844eee91e063162dab3f523042cc378f99d3f0b6609de",
+    "verilog/tri_oracle_packed_sign_fetch.sv": "c0d1e18d922ae820435ce0f393af4e90b7524acd60c2f5532790bbafad3c3445",
+    "verilog/tri_oracle_packed_sign_fetch_tb.sv": "f57693f4cdcd8adcb6689ee158d0af7893a0e8c6db91e80e1b8ce3d6072f4ead"
+  },
+  "ideal_reads_above_port_budget": 274092,
+  "modeled_minimum_ms_by_cache": {
+    "0": {
+      "aligned_example": 922.9046482758621,
+      "trained_fixture": 922.9046482758621
+    },
+    "128": {
+      "aligned_example": 880.5978896551724,
+      "trained_fixture": 880.6008137931035
+    },
+    "256": {
+      "aligned_example": 877.9451448275862,
+      "trained_fixture": 877.9599965517241
+    },
+    "64": {
+      "aligned_example": 888.5749379310345,
+      "trained_fixture": 888.3990827586207
+    }
+  },
+  "modeled_minimum_ms_ideal_command_local": 877.9451448275862,
+  "native_legacy_failed_one_line_budget": true,
+  "native_verified_lines": 45056,
+  "native_verified_sign_words": 360448,
+  "scope": "Native packed sign reader proof against a trained sign fixture, including stalls and error drain. Workload estimates use the separate cache model and serialized primary port. Integrated execution remains pending.",
+  "state": "packed_sign_reader_native_verified_with_workload_bound"
+}
