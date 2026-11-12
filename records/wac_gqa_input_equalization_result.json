@@ -1,0 +1,71 @@
+{
+  "accuracy_change_percentage_points": -0.5,
+  "accuracy_percent": {
+    "baseline": 58.0,
+    "equalized": 57.5
+  },
+  "baseline_predictions_reproduced": 200,
+  "by_question_type": {
+    "choose": {
+      "baseline": 32,
+      "changed_answers": 3,
+      "equalized": 31,
+      "gained": 1,
+      "lost": 2
+    },
+    "compare": {
+      "baseline": 20,
+      "changed_answers": 0,
+      "equalized": 20,
+      "gained": 0,
+      "lost": 0
+    },
+    "logical": {
+      "baseline": 25,
+      "changed_answers": 2,
+      "equalized": 27,
+      "gained": 2,
+      "lost": 0
+    },
+    "query": {
+      "baseline": 16,
+      "changed_answers": 8,
+      "equalized": 15,
+      "gained": 0,
+      "lost": 1
+    },
+    "verify": {
+      "baseline": 23,
+      "changed_answers": 1,
+      "equalized": 22,
+      "gained": 0,
+      "lost": 1
+    }
+  },
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "elapsed_seconds": 157.40315532905515,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/down_scale_panel_cadence_replay/inputs.json": "9355ddea6fc37a75e5fd24cc22d6b99a63c319f4dfafc1925ae75935ed650040",
+    ".cache/model_reference/gqa_testdev/input_equalization_panel/console.log": "c56d2e79f73e90eae4bddd8df63fd8e2335ccdf20b87a7e87012ebab5b5c92f1",
+    ".cache/model_reference/gqa_testdev/input_equalization_panel/inputs.json": "7fbedaea3a4df3e6b5eb6b4296e2d1418f2a3e70394f0d26bd74e605d8422294",
+    ".cache/model_reference/gqa_testdev/input_equalization_panel/predictions.jsonl": "6582ba708209634214f51aa9024f124d9968cc81034efaea3e6747cbd9fe2537",
+    ".cache/model_reference/gqa_testdev/input_equalization_panel/receipt.json": "0bcd2c36fefb2b0c456d2cacba07723bd7bc32bf29b7526627cf8e463da776ec",
+    ".cache/model_reference/gqa_testdev/pruned_reference/predictions.jsonl": "68394aff6c8360f7cc671382a01157b2f727a3a962f84969a7f2c4a30ef7081f",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_feedforward_input_equalization_result.json": "73d50eb1836dd9cb200f1472b27a1ae56dd59f61577ecf582eb0e52bc61bd058",
+    "syn/evaluate_tri_oracle_input_equalization_gqa.py": "00343013afb62191cbe5da7bc6039307d6c2f777332e4b22994541570debc8f4"
+  },
+  "paired_exact_two_sided_p_value": 1.0,
+  "peak_gpu_bytes": 7949822464,
+  "questions": 200,
+  "scope": "Paired software comparison on the 200 predetermined, image-disjoint questions of the local balanced GQA Test-Dev panel.",
+  "scores": {
+    "baseline": 116,
+    "changed_answers": 14,
+    "equalized": 115,
+    "gained": 3,
+    "lost": 4
+  },
+  "state": "frozen_input_equalization_gqa_panel_independently_rescored"
+}
