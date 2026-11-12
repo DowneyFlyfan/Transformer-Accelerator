@@ -1,0 +1,113 @@
+{
+  "activity_canary": {
+    "capture_commands": [
+      "run 40 ns",
+      "dumpsaif -scope tri_oracle_external_write_mux_tb.dut -internal -divider / -output activity.saif",
+      "run",
+      "exit"
+    ],
+    "clock_transitions": 95,
+    "duration_fs": 471000000,
+    "scope": "tri_oracle_external_write_mux_tb/dut",
+    "start_ns": 40
+  },
+  "common_corners": [
+    "ffg0p99v0c",
+    "ffg0p99v125c",
+    "ffg0p99vm40c",
+    "ffg1p05v0c",
+    "ffg1p05v125c",
+    "ffg1p05vm40c",
+    "ssg0p81v0c",
+    "ssg0p81v125c",
+    "ssg0p81vm40c",
+    "ssg0p9v0c",
+    "ssg0p9v125c",
+    "ssg0p9vm40c",
+    "tt0p9v25c",
+    "tt0p9v85c",
+    "tt1v25c",
+    "tt1v85c"
+  ],
+  "common_voltages": [
+    0.81,
+    0.9,
+    0.99,
+    1.0,
+    1.05
+  ],
+  "evidence_sha256": {
+    ".cache/physical/joined_low_voltage_power_views/activity_canary.saif": "b73f39842190d63679aeaa3d8ea0c01aaab887778ea9273eadd95cf4c6ec632a",
+    ".cache/physical/joined_low_voltage_power_views/activity_canary_delayed.log": "e15554a40facaec7abc5241f1f5d2c93f902ed3d4dcfa2f4679ea304a7ca87a2",
+    ".cache/physical/joined_low_voltage_power_views/activity_canary_receipt.json": "cc392cb23fcdbd90013f5801ea61b5f1793ed1bb9e32214d807984ac822abdd2",
+    ".cache/physical/joined_low_voltage_power_views/receipt.json": "185ac57f6a882ef947041397e3a82e5ca06cacd567f6c6a5e55869009df973a9",
+    "syn/audit_tri_oracle_low_voltage_power_views.py": "5e4a3298a7d6bdeb721b1623f2f177b2e5176b9f2e5c009ea57c301ab1974bd5"
+  },
+  "libraries": {
+    "TS5N28HPCPSVTA16X80M2FW": {
+      "cell_masters": 1,
+      "liberty": ".cache/physical/shared437/merge455/compiler/16x80m2f/ts5n28hpcpsvta16x80m2fw_130a/NLDM/ts5n28hpcpsvta16x80m2fw_130a_ssg0p81v125c.lib",
+      "sha256": "b86f326f03789e4b14ffe82db1bb8c70823b840eb6f0fc4c0515918bcb2ceea9",
+      "with_internal_power": 1,
+      "with_leakage_power": 1
+    },
+    "TS5N28HPCPSVTA24X128M2FW": {
+      "cell_masters": 1,
+      "liberty": ".cache/physical/shared437/merge455/compiler/24x128m2f/ts5n28hpcpsvta24x128m2fw_130a/NLDM/ts5n28hpcpsvta24x128m2fw_130a_ssg0p81v125c.lib",
+      "sha256": "fa8dae1db497c6d339608b0df1ec4a5953c6590df1a3424a04fc7ff200b3f95e",
+      "with_internal_power": 1,
+      "with_leakage_power": 1
+    },
+    "TS5N28HPCPSVTA32X128M2FW": {
+      "cell_masters": 1,
+      "liberty": ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p81v125c.lib",
+      "sha256": "d74068a5aa4c14d87d783e0cbc54665f2f8e53de6a9735d012febabb2f2c3e3b",
+      "with_internal_power": 1,
+      "with_leakage_power": 1
+    },
+    "TS5N28HPCPSVTA512X64M4F": {
+      "cell_masters": 1,
+      "liberty": ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ssg0p81v125c.lib",
+      "sha256": "c121e6fed6fa1574a5a5071d1aed8297271459ad0c2cb399f6cc8e494ea91fbb",
+      "with_internal_power": 1,
+      "with_leakage_power": 1
+    },
+    "TS5N28HPCPSVTA8X80M2FW": {
+      "cell_masters": 1,
+      "liberty": ".cache/physical/shared437/merge455/compiler_inplace/8x80m2f/ts5n28hpcpsvta8x80m2fw_130a/NLDM/ts5n28hpcpsvta8x80m2fw_130a_ssg0p81v125c.lib",
+      "sha256": "89d5d0bdf8c5194d1d957d26a99c6f72f447d25a507d645781420d34ff68768c",
+      "with_internal_power": 1,
+      "with_leakage_power": 1
+    },
+    "TS6N28HPCPSVTA16X128M2F": {
+      "cell_masters": 1,
+      "liberty": ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/NLDM/ts6n28hpcpsvta16x128m2f_130a_ssg0p81v125c.lib",
+      "sha256": "288fcc0483a1120ceeb0108c584d548adb7513878ee38c72d538ceecd52eca45",
+      "with_internal_power": 1,
+      "with_leakage_power": 1
+    },
+    "tcbn28hpcplusbwp12t40p140": {
+      "cell_masters": 1142,
+      "liberty": ".cache/physical/joined_low_voltage_power_views/tcbn28hpcplusbwp12t40p140ssg0p81v125c.lib",
+      "sha256": "cf6cd6180f20e17134b22d6ebda1ec67ae62028e078f025993f3e42eefb16859",
+      "with_internal_power": 1106,
+      "with_leakage_power": 1126
+    }
+  },
+  "paper_reported_power_points": [
+    {
+      "clock_megahertz": 65,
+      "volts": 0.75,
+      "watts": 0.14
+    },
+    {
+      "clock_megahertz": 580,
+      "volts": 1.1,
+      "watts": 1.97
+    }
+  ],
+  "scope": "Verified local standard-cell and compiled memory models plus a native switching-activity canary.",
+  "selected_temperature_c": 125,
+  "selected_voltage": 0.81,
+  "state": "joined_power_library_and_activity_inputs_verified"
+}
