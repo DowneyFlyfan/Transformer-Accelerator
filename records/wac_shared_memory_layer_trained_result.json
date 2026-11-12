@@ -1,0 +1,34 @@
+{
+  "state": "mapped_shared_memory_layer_replayed_exact_trained_workload",
+  "candidate_netlist_sha256": "cd617037d47782f929ad0244899978878bba777f1640d6f0b73a16b13a21866e",
+  "simulator": "Cadence Xcelium 25.03",
+  "process": "TSMC 28HPC+",
+  "compiled_memory_instances": 623,
+  "counters": {
+    "tokens": 16,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "outputs": 2048,
+    "exact_outputs": 32768,
+    "intermediate_bytes": 90112,
+    "output_packets": 208,
+    "read_requests": 353280,
+    "read_bytes": 38545920,
+    "fault": 0,
+    "trained": 1
+  },
+  "verified_mask_packets": 71,
+  "verified_output_tiles": 13,
+  "native_seconds": 7026.839272817946,
+  "original_compact_cycle_log_matched": true,
+  "scope": "Full-width trained feed-forward replay on the mapped shared-memory baseline. This candidate precedes context restore.",
+  "evidence_sha256": {
+    ".cache/physical/shared_memory_layer_boundary/mapped_trained_replay/receipt.json": "ce6496d00791085e48e33129060d64775b57e1b53a7f71676a4ca363fd9cca62",
+    ".cache/physical/shared_memory_layer_boundary/linked/receipt.json": "2ab113549ad3660d774a7429cb502936e82dde208a69325e677be2efc3da9cbf",
+    "records/wac_shared_memory_layer_native_attention_result.json": "24b57b714574c4a3825582c17a45788b974784a3b52666ab0f19e92143b05af9",
+    ".cache/physical/shared_memory_layer_boundary/linked/candidate.v": "cd617037d47782f929ad0244899978878bba777f1640d6f0b73a16b13a21866e",
+    ".cache/physical/shared_memory_layer_boundary/mapped_trained_replay/xrun.log": "e8127cd16c52564f6bd2f2cd1c07613285e302db295a5199c10484c2c59c3b3d",
+    ".cache/physical/shared_memory_layer_boundary/mapped_trained_replay/progress.log": "3395cfda007b7868ce71750c6594e8011592fc71494267e5195a7c83353690ba",
+    ".cache/physical/shared_memory_layer_boundary/mapped_trained_replay/invocation.json": "b603d5e6ca43112259244197078002d42c1f74af538e33b35c87c2d3239e4cd0"
+  }
+}
