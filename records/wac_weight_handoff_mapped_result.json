@@ -1,0 +1,54 @@
+{
+  "state": "mapped_dual_lane_weight_handoff_verified",
+  "genus_clock_period_ns": 1.72414,
+  "genus_timing_corner": "ssg0p9v125c",
+  "baseline": {
+    "mapped_cells": 8900,
+    "mapped_cell_area_um2": 14589.624,
+    "worst_setup_slack_ps": 75,
+    "six_tile_simulated_ns": 38120,
+    "dense_parallel": {
+      "requests_per_lane": 40,
+      "writes_per_lane": 1280,
+      "handoffs_per_lane": 28,
+      "gap": 5,
+      "overlap": 1099,
+      "cycles": 1526
+    }
+  },
+  "candidate": {
+    "mapped_cells": 9109,
+    "mapped_cell_area_um2": 14667.576,
+    "worst_setup_slack_ps": 14,
+    "six_tile_simulated_ns": 21900,
+    "dense_parallel": {
+      "requests_per_lane": 40,
+      "writes_per_lane": 1280,
+      "handoffs_per_lane": 28,
+      "gap": 1,
+      "overlap": 1212,
+      "cycles": 1358
+    }
+  },
+  "dense_cycles_saved": 168,
+  "six_tile_simulated_ns_saved": 16220,
+  "mapped_cell_area_change_um2": 77.952,
+  "mapped_cell_area_change_percent": 0.534,
+  "setup_slack_change_ps": -61,
+  "baseline_rejected_candidate_gap_check": true,
+  "scope": "Both mapped loader netlists passed native Xcelium functional tests. Genus area and setup use identical pre-placement wireload assumptions. The dense probe checks within-row-group handoffs under immediate responses. The workload runtime and whole-chip timing remain unqualified.",
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/baseline/netlist.v": "d17332fbec25fafaa659221f9f61eb3628fdf82060dcd241fdc0fe46040f323f",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/candidate/netlist.v": "579ff2371203e80c35a69d410c64b889b92a364f1570a4087c7d1ac315c9ddcc",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/dense_baseline/console.log": "90ab432a51ad02374d0c94946494a13789b67b506be43f59a13517b48a3e035b",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/dense_baseline/dense_netlist.v": "d9fbaffe5b6263ebc3ae366005ae7da84bc1b4de6d3c3fd696f5720c7249cd69",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/dense_baseline/rejected_candidate_budget.log": "4e24cbf892be4462407718cb6eb0c1a91a7df4ef34d5c118514f5ee2252db9b7",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/dense_baseline/rejected_candidate_budget.status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/dense_candidate/console.log": "7c454f067b55b28b5c232bcced2ca3b8570de73d4f0a995235f2bf6142baa0d8",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/dense_candidate/dense_netlist.v": "c19e893f72962160ef91ceb84bdf83e11b02e0aba791203207d49f21cbfa6633",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/independent_verification.json": "d4349e63c2699a18aab9355b959262db570d56f80f6e89a1713837ada6e92e56",
+    ".cache/physical/wide_weight_loader/burst_handoff/matched_block_mapping/receipt.json": "fc30ff6332fd6ccf79c148d7bc28b5ae0dff997fc5fb55d69d6d6c85f443f60c",
+    "records/wac_weight_handoff_trial_result.json": "c9a9076a0bb5f010c47d34d23565577f2f3caa6521da18667d7ce47b4a2ffd88",
+    "verilog/tri_oracle_parallel_weight_handoff_tb.sv": "3f8d3ec623d24bfd3079bf23d0e4bb58adda4e447fb205c50816b7ba0c76d2bd"
+  }
+}
