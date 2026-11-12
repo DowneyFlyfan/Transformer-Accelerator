@@ -1,0 +1,33 @@
+{
+  "baseline_idle_cycles_between_dense_bursts": 5,
+  "candidate_idle_cycles_between_dense_bursts": 1,
+  "dense_requests": 4,
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/burst_handoff/rtl/tri_oracle_packed_weight_schedule.sv": "f3c53a63bf2ea00630f72c59a801eda23ff5432a02e9034dc4aee77c39da6fdf",
+    ".cache/physical/wide_weight_loader/burst_handoff/rtl/tri_oracle_wide_weight_loader.sv": "11a74f4479ef1097167f386daaab0aac10d9a4ff3e2dccb7bd8bcfd68a51cb71",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_baseline/console.log": "7b4114bafeb4ea1f2b7881a4592731d483c2c05ac7df0fa77c5e35857efc9c53",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_baseline/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_candidate/console.log": "4b588e2a9eedc6c5eb35f81518549089c98e0056f94e7e58636513692913f8ef",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_candidate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_completion_hold/console.log": "d8ded1eb8a95fb89e47f4a593b7dbc91af1cb0459a3f04b13997b60d8d19bc2d",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_completion_hold/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_parallel/console.log": "b7d58894d8b6345ba98fb9f62a955b9888b3296d3906427ccdff4233919aa98a",
+    ".cache/physical/wide_weight_loader/burst_handoff/verified_parallel/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "records/wac_dual_lane_burst_budget_result.json": "cda1cf1295fab0a1a98c8216488b7951b95fde38e14cf817e0f1215a44372da9",
+    "syn/tri_oracle_weight_handoff.patch": "faf440d970019f1dab1e3adf829b820dc4a33d6d802b9fa21c1090c270e0294d",
+    "verilog/tri_oracle_packed_weight_schedule.sv": "069e2c8b4c58c5a6784fe2cb82fab884d83ee7e7152badb8827f1d150a6e7f93",
+    "verilog/tri_oracle_paired_weight_schedule.sv": "6e8d9db150427a5a7cd0c164a5c2d2f86b9196706ed1482602f690b1b891b40e",
+    "verilog/tri_oracle_parallel_weight_loader.sv": "595ea250bb91ee929f264d64e3d9b43d0d45eb722bb88f87eed0e1778835ae23",
+    "verilog/tri_oracle_parallel_weight_loader_tb.sv": "91add87ad9e863481748afe4f7bbef98c3a81490d5d7d519dd1fac54df42b6c2",
+    "verilog/tri_oracle_weight_handoff_tb.sv": "6cafea96ca3f2fbf65b08582a70721375b3ca67f36dece56526dfd6cae284382",
+    "verilog/tri_oracle_wide_weight_loader.sv": "41d1bc4df3efd02634b117217eccb22f04b2c983c198f277f3d5f81135d74823"
+  },
+  "existing_parallel_collision_cycles": 34,
+  "existing_parallel_fault_tiles": 1,
+  "existing_parallel_tiles_passed": 6,
+  "held_completion_cycles": 3,
+  "optimistic_weight_latency_floor_ms_at_one_cycle": 848.0615413793104,
+  "scope": "The patch reproduces the exact alternative sources used in native component simulations. The latency value assumes one idle cycle for every packed burst in the archived workload. Full-chip trained execution and physical timing require separate measurements.",
+  "state": "packed_scheduler_burst_handoff_reduced_to_one_cycle_in_xcelium",
+  "verified_dense_writes": 128
+}

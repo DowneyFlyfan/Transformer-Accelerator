@@ -1,0 +1,94 @@
+--- a/verilog/tri_oracle_wide_weight_loader.sv
++++ b/verilog/tri_oracle_wide_weight_loader.sv
+@@ -43 +43 @@
+-  logic invalid_config, response_bad;
++  logic invalid_config, response_bad, last_success, prior_done, current_error;
+@@ -49 +49,2 @@
+-  assign cfg_ready = rst_n && state == Idle;
++  assign last_success = state == Receive && rsp_valid && rsp_ready && rsp_last && !response_bad;
++  assign cfg_ready = rst_n && (state == Idle || (last_success && !prior_done && !invalid_config));
+@@ -51 +52,2 @@
+-  assign done_valid = rst_n && state == Done;
++  assign done_valid = rst_n && (state == Done || prior_done);
++  assign done_error = !prior_done && current_error;
+@@ -67 +69,2 @@
+-      done_error <= 0;
++      prior_done <= 0;
++      current_error <= 0;
+@@ -76,12 +79,14 @@
+-      case (state)
+-        Idle: if (cfg_valid) begin
+-          req_address <= cfg_address;
+-          req_length <= cfg_words;
+-          load_core <= cfg_core;
+-          word_address <= cfg_first_word;
+-          words_remaining <= cfg_words;
+-          row_group <= cfg_row_group;
+-          row_enable <= cfg_row_enable;
+-          done_error <= invalid_config;
+-          state <= invalid_config ? Done : Request;
+-        end
++      if (prior_done && done_ready) prior_done <= 0;
++      if (cfg_valid && cfg_ready) begin
++        req_address <= cfg_address;
++        req_length <= cfg_words;
++        load_core <= cfg_core;
++        word_address <= cfg_first_word;
++        words_remaining <= cfg_words;
++        row_group <= cfg_row_group;
++        row_enable <= cfg_row_enable;
++        current_error <= invalid_config;
++        state <= invalid_config ? Done : Request;
++        if (last_success) prior_done <= 1;
++      end else case (state)
++        Idle: ;
+@@ -91 +96 @@
+-            done_error <= 1;
++            current_error <= 1;
+@@ -101 +106 @@
+-        Done: if (done_ready) state <= Idle;
++        Done: if (done_ready && !prior_done) state <= Idle;
+--- a/verilog/tri_oracle_packed_weight_schedule.sv
++++ b/verilog/tri_oracle_packed_weight_schedule.sv
+@@ -52,0 +53,2 @@
++  logic [1:0] outstanding;
++  logic accept_burst, finish_burst, drained;
+@@ -76,2 +78,5 @@
+-  assign load_cfg_valid = rst_n && state == Offer;
+-  assign load_done_ready = rst_n && state == Await;
++  assign load_cfg_valid = rst_n && state == Offer && outstanding < 2;
++  assign load_done_ready = rst_n && outstanding != 0;
++  assign accept_burst = load_cfg_valid && load_cfg_ready;
++  assign finish_burst = load_done_valid && load_done_ready;
++  assign drained = outstanding == 0 || (outstanding == 1 && finish_burst);
+@@ -100,0 +106 @@
++      outstanding <= 0;
+@@ -102 +108,9 @@
+-      case (state)
++      case ({accept_burst, finish_burst})
++        2'b10: outstanding <= outstanding + 2'd1;
++        2'b01: outstanding <= outstanding - 2'd1;
++        default: ;
++      endcase
++      if (finish_burst && load_done_error) begin
++        done_error <= 1;
++        state <= Done;
++      end else case (state)
+@@ -124 +138 @@
+-            if (6'(group_index) + 6'd1 == group_count) state <= Done;
++            if (6'(group_index) + 6'd1 == group_count) state <= drained ? Done : Await;
+@@ -143,9 +157,3 @@
+-        Offer: if (load_cfg_ready) state <= Await;
+-        Await: if (load_done_valid) begin
+-          if (load_done_error) begin
+-            done_error <= 1;
+-            state <= Done;
+-          end else begin
+-            word_index <= word_index + load_cfg_words;
+-            state <= Find;
+-          end
++        Offer: if (accept_burst) begin
++          word_index <= word_index + load_cfg_words;
++          state <= Find;
+@@ -152,0 +161 @@
++        Await: if (drained) state <= Done;
