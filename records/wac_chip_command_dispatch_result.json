@@ -1,0 +1,33 @@
+{
+  "state": "chip_command_controller_mapped_and_boundary_tested",
+  "clock_target_ns": 1.72414,
+  "mapped_cells": 1264,
+  "mapped_cell_area_um2": 3426.864,
+  "prelayout_worst_setup_ps": 826.0,
+  "boundary_operations": 6,
+  "checked_descriptor_fields": 44,
+  "before_boundary_bits": 13299,
+  "after_boundary_bits": 11263,
+  "standalone_unit_cases": 10,
+  "boundary_layer_model_cases": 6,
+  "bound_layer_netlist_sha256": "cd617037d47782f929ad0244899978878bba777f1640d6f0b73a16b13a21866e",
+  "evidence_sha256": {
+    ".cache/physical/chip_dispatch/flat_rtl_unit/console.log": "7f7ecc7a181268f2c3cfd24a2691d8ee816b5bd77582174901e078d14d5d1a17",
+    ".cache/physical/chip_dispatch/flat_rtl_boundary/console.log": "1f79ba0722ef20d554d1d6e3f15a056fe2fb7aa3cffecfdd222684d8de40eb20",
+    ".cache/physical/chip_dispatch/flat_mapped_unit/console.log": "b7edc60c8337023ac28c7b17554b6abc7d23fbe4a2fabca39faa07f6e3f17049",
+    ".cache/physical/chip_dispatch/flat_mapped_boundary/console.log": "7236bf157af75fca5c94ccf141c82b9bdb25b45d3ef868615bfafc9e7691bf2a",
+    "verilog/tri_oracle_chip_dispatch.sv": "e54074222e5c69eae9f75749ece68daed525b1ec7e682efdbf656625c872e873",
+    "verilog/tri_oracle_chip_dispatch_tb.sv": "8390ae1beb463c0d89721f34a6450311bf44d5710aae445dde10793cf7dc6cb3",
+    "syn/prepare_tri_oracle_chip_command_layer.py": "c1190082b639425968546ed218f8acb51f80b5790e7bf60e2654808a8bcf4790",
+    "syn/run_tri_oracle_simulation.sh": "33705e75a74e794f2c5b684aa69b1edaf94f561894931555ef87743220477dac",
+    ".cache/physical/chip_dispatch/mapped_flat/receipt.json": "0cff6eff59b1b4160aceab1a42d717d35077856197db159136c0121c50d2d617",
+    ".cache/physical/chip_dispatch/boundary/interface.json": "a351e528282da5af416dfc2dd52f00563a6097e6dcf7693d6d1a345cc14dc7e4",
+    ".cache/physical/chip_dispatch/boundary/tri_oracle_chip_command_layer.sv": "fe5812a91e7006a5dc46341bac3d290501d864633b9821a877652fa3ddf9f977",
+    ".cache/physical/chip_dispatch/mapped_flat/netlist.v": "725e36dc683563e604de4995b5ce636de76ee4bb1675c3131ef3e7cb6b602942",
+    ".cache/physical/chip_dispatch/mapped_flat/timing.rpt": "4352f373297a38f8c7d25cc81428bb75db2c9c89399876807250c40ee7e51da6",
+    ".cache/physical/chip_dispatch/mapped_flat/area.rpt": "ba313c19cc35b1193d0b4bb8795c32e5b31733e6e739b8d9ad9243fda6e17bf1",
+    ".cache/physical/chip_dispatch/integration/stub.sv": "b87ab9d34f1b572cdee68c902227fa75d7abcceee9db5a55a741776c93d536e9",
+    ".cache/physical/chip_dispatch/integration/integration_tb.sv": "d85c369d6faf5947447256869179957a613c134318d960fff97018b7d55eca72"
+  },
+  "scope": "Mapped command controller exercised against the verified interface model. Full decoder-layer integration and physical timing remain open."
+}
