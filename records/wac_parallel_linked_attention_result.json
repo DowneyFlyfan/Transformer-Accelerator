@@ -1,0 +1,31 @@
+{
+  "candidate_sha256": "f632209f7dfcb5a83350cedb59ef8cecfe24984275d07de2b2d81c5f88a7bea0",
+  "compiled_memories": 623,
+  "counters": {
+    "attention_reads": 57992,
+    "failed_writes": 2,
+    "maps": 576,
+    "rows": 4,
+    "stalls": 59,
+    "values": 1023,
+    "writes": 27
+  },
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native/attention/xrun.log": "62ce18a1478e4c903bd7e992a48f1acc908056230ed5bfce640b2f80c692f537",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay/attention/xrun.log": "bade499bc7380f2d10599a0009a123edb986daa34850add1d2360f5f25f84b93",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay/attention_receipt.json": "790b31b0e6fe02b2a63738e321c33520f8dabaeed46c8668b572e7c074e709ee",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay_prepared/attention_bundle.sv": "16722bc1344a764a88518a20cbfd276975f2f43c01a2434ea007b207650708fe",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay_prepared/prepared.json": "cf61ec2583b2adfee1ab5b06c4dd58de6806b653785cd53f494dc0ea4a54f862",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_chip/chip.v": "f632209f7dfcb5a83350cedb59ef8cecfe24984275d07de2b2d81c5f88a7bea0",
+    "syn/verify_tri_oracle_joined_replay_trace.py": "356217215ef9e3d4e48323e5c9fed7d64960b68289cd28c91594bca3dc73e692"
+  },
+  "markers": [
+    "COMPOSE430_SHARED_WRITE_PASS vector_bursts=29 vector_beats=232 errors=1",
+    "COMPOSE430_SHARED_READ_PASS vector_bursts=1023 vector_beats=8184",
+    "COMPOSE430_PASS maps=576 writes=27 failed_writes=2 rows=4 values=1023 attention_reads=57992 stalls=59"
+  ],
+  "native_elapsed_seconds": 656.0127078789519,
+  "scope": "Exact earlier linked gate-level attention workload; trained feed-forward, physical timing and model accuracy remain separate.",
+  "simulated_milestones_matched": 77,
+  "state": "parallel_linked_chip_attention_replay_verified"
+}
