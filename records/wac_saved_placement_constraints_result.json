@@ -1,0 +1,26 @@
+{
+  "archived_whole_chip_timed_port_bits": {
+    "input": 4732,
+    "output": 7631
+  },
+  "clock_period_ns": 1.72414,
+  "input_sha256": {
+    ".cache/physical/ranked_sign_slots/mapped_prefetched_metadata_32/constraints.sdc": "fa7f28b538c6b46c6738cbc790e790b9a8b2aeecc34804f4945b264aba9d4817",
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32_setup_margin/place/placed.db/mmmc/modes/functional/functional.sdc": "b4b131b2faf5771ab40b8cf85e494c169798d35f2922ae250a33cf761cc40fa5",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/native_parent/constraints.sdc": "7657118602adcef8eea238529083ba15244b507c07a1ea8978e2b6883af787c7",
+    "syn/verify_tri_oracle_joined_placed_constraints.py": "504280cdd4415b7cd8d5a38e724dd00fc722334dbf049a60069aebef54edb6ad"
+  },
+  "native_default_export_forms_verified": [
+    "separate rise/fall zero setup gating checks",
+    "nested bus selector braces",
+    "segmented wire-load mode with optional quoting",
+    "min and max pin loads emitted separately"
+  ],
+  "predictor_timed_port_bits": {
+    "input": 1332,
+    "output": 800
+  },
+  "predictor_top": "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1",
+  "scope": "Independent comparison of saved native constraints. The current whole-chip placement timing job is queued.",
+  "state": "saved_innovus_predictor_and_genus_timing_constraints_reconciled"
+}
