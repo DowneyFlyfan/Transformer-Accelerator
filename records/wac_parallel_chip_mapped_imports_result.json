@@ -1,0 +1,101 @@
+{
+  "checked_cut_ports": 641,
+  "cuts": {
+    "dispatch": {
+      "compiled_memories": 0,
+      "definition_sha256": "e5cfc70584091f5ebeb4849042bce22a74594aab2f0c127ed1f14adf8f20df13",
+      "master": "tri_oracle_chip_dispatch",
+      "ports": 23,
+      "reachable_definitions": 1
+    },
+    "layer.context_memory": {
+      "compiled_memories": 0,
+      "definition_sha256": "f42e39ed9b82cb8b36f3a8041494207f86a2e0dfbb68b5f608120c634a89791d",
+      "master": "tri_oracle_context_memory_fabric",
+      "ports": 37,
+      "reachable_definitions": 1
+    },
+    "layer.layer.attention_pipeline": {
+      "compiled_memories": 0,
+      "definition_sha256": "a2c40b0507171f1e21ddc63029b29d89ee2fb3923bd246da3cec31040cd879fa",
+      "master": "tri_oracle_context_attention_pipeline",
+      "ports": 192,
+      "reachable_definitions": 11
+    },
+    "layer.layer.feedforward.compute.compute.tensor.fabric.clusters[0].unit.selected_bank0.block_instance": {
+      "compiled_memories": 125,
+      "definition_sha256": "2e12bdd2a578ce52ed61896370f292cbb401c63da28833fa563758e439050e02",
+      "master": "tri_oracle_native_cluster0_budgeted_parent",
+      "ports": 59,
+      "reachable_definitions": 34
+    },
+    "layer.layer.feedforward.compute.compute.tensor.fabric.clusters[1].unit.selected_bank1.block_instance": {
+      "compiled_memories": 124,
+      "definition_sha256": "1ee592c97c0fb9cf2ec7584c417b839dbd914e85c2507a148bac9e472bd73ec0",
+      "master": "tri_oracle_native_cluster1_budgeted_parent",
+      "ports": 59,
+      "reachable_definitions": 34
+    },
+    "layer.layer.feedforward.compute.compute.tensor.fabric.clusters[2].unit.selected_bank2.block_instance": {
+      "compiled_memories": 124,
+      "definition_sha256": "829bf5d0a68d91e587c6960da7b045af4c50bf21cba887f755e744e450ac17f1",
+      "master": "tri_oracle_native_cluster2_budgeted_parent",
+      "ports": 59,
+      "reachable_definitions": 34
+    },
+    "layer.layer.feedforward.compute.compute.tensor.fabric.clusters[3].unit.selected_bank3.block_instance": {
+      "compiled_memories": 124,
+      "definition_sha256": "ee3f632799109a0b4e3ffe573f418419b8447c5a2fcb1c4dd80b83c5e0580bfd",
+      "master": "tri_oracle_native_cluster3_budgeted_parent",
+      "ports": 59,
+      "reachable_definitions": 34
+    },
+    "layer.layer.feedforward.compute.compute.tensor.fabric.clusters[4].unit.selected_bank4.block_instance": {
+      "compiled_memories": 124,
+      "definition_sha256": "b974225881ce0fac475ba5db627e7c37416a3b7cd3ef5c8b9f1d0f5db1751959",
+      "master": "tri_oracle_native_cluster4_budgeted_parent",
+      "ports": 59,
+      "reachable_definitions": 34
+    },
+    "layer.layer.feedforward.compute.compute.tensor.packed_loader.implementation": {
+      "compiled_memories": 0,
+      "definition_sha256": "75c02b2acea518738d0de867feccd24791e6b3584c7b222a2c88a9fdc37700a6",
+      "master": "tri_oracle_parallel_weight_loader_mapped",
+      "ports": 34,
+      "reachable_definitions": 1
+    },
+    "layer.shared_reads": {
+      "compiled_memories": 0,
+      "definition_sha256": "ed322758edd524866145cbeb876a0460bfac05dbadf5e39b524d680b0b674db0",
+      "master": "tri_oracle_external_read_mux",
+      "ports": 27,
+      "reachable_definitions": 1
+    },
+    "layer.shared_writes": {
+      "compiled_memories": 0,
+      "definition_sha256": "016a435221a4754dc87df3d596225f2f7f7fdbcd6695e929f196c88eba86b4ea",
+      "master": "tri_oracle_external_write_mux",
+      "ports": 33,
+      "reachable_definitions": 1
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_synthesis/mapped_import_preflight_v2.json": "e565f8a635ea1a68ec8d175b2828639b7f618aca7346b88f9b01869bde5dead6",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/prepared.json": "64a52038b350fc5b38cc57085f7eb217c8e1f23c0618d9f971de3a345ba9481a",
+    "records/wac_mapped_paper_topology_result.json": "fe72e49bae80fae91916c2524002b06ebe5df681c63dd48129c7914f7e6461dd",
+    "syn/link_tri_oracle_parallel_chip.py": "5f5f72f3ec9bee7255db968adf6ca9999146b1bdfb6e0191eced61477f19680f"
+  },
+  "expected_compiled_memories_after_link": 623,
+  "imported_compiled_memories": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 360,
+    "TS5N28HPCPSVTA512X64M4F": 40,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "imported_definitions": 186,
+  "imported_definitions_sha256": "6e71383107ea9384f9d2ad9cfecff4ff355c75a3f8a3185c1dab70f99e758616",
+  "scope": "Read-only verification of the mapped imports selected for the dual-lane chip. Two additional prediction-metadata memories are expected from the mapped parent.",
+  "state": "parallel_chip_mapped_import_signatures_and_memory_inventory_verified"
+}
