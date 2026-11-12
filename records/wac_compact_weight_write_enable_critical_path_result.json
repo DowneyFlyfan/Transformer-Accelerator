@@ -1,0 +1,52 @@
+{
+  "added_buffers_across_all_rows": 192,
+  "bank": 3,
+  "bank_branches_from_root": 5,
+  "buffer_trial_placement": {
+    "database_files_fingerprinted": 64,
+    "density_percent": 45.76,
+    "fixed_memory_macros": 623,
+    "native_seconds": 103.13035684591159,
+    "placed_instances": 2120613,
+    "standard_cell_area_increase_um2": 441,
+    "unplaced_instances": 0
+  },
+  "core_sinks_per_bank_in_geometry": 8,
+  "endpoint": "feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/weights[15]/BWEB[64]",
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/estimated_placement_timing/weight_load_path_structure.json": "59d96570797d76a00065241d9886c2d2344ef06e73cced7169f4542276ff952f",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/inputs/candidate.v": "783bf11dc504399979ee021718d7af455238a73de5dacabc9210749521b2afac",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/placed/placed.v": "75a7e811a6839e786f0aa53ef55a82911fab8e6ea906683825db5da9a6751912",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/timing/report/macro_poses.tsv": "9cd798d424bec285df1a3a3c80de979c6bbed40623cd11404eff7458de388359",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/candidate.v": "f2caf5d3b305dc1dfc5fb47397f88f69c9216b4cc9db6f79ef3d798fbc86ac0e",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/integrated_attention/receipt.json": "e16d3fd6d6c68feb23e3c3d23035c79f835b184560d39113a17fbf126ae1c7f1",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/eco/console.log": "e9a697636086e0a07845ab4e5b88c2c040af788da68a17c0ceb81947914586b1",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/eco/macro_poses.tsv": "9cd798d424bec285df1a3a3c80de979c6bbed40623cd11404eff7458de388359",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/eco/native_receipt.json": "77b02a9214d74fc83e32ae6c48582b212e665a60179c5938713cec9bbf5f9edf",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/eco/placed.v": "cade8bb79cad4feadd10443b243b56ca32cadef91f32cbcb9901ae87c1922b6a",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/eco/placement.rpt": "fc3fb21c01ffca8e3b4f3f7963aca56d11bb5f8cfef51cfd33a4a0b0b1a45bf7",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/eco/placement_violations.rpt": "ba8ebf87a6ec94de171db6383982c3e02764605de23da9ed6d487ad7fd442a24",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/placed_baseline_geometry.json": "7bde9fcd2f8b5844aed0309654d67fff3d45d8cb5986ef39875856a8a2826221",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/receipt.json": "79bd4ec0c551752a97df0a65737954d69133894402ad750a2439eee18767ebb7",
+    "records/wac_compact_weight_decoder_matched_placement_result.json": "3ca5a5f5e954a17d7430f78101d05f4ac3514e33629c46a56fb91279ce233020",
+    "records/wac_compact_weight_decoder_matched_timing_result.json": "4484ce5ceabf13eea090d9c535515baace3d9c5f27b89d3736a6a59b3a258b07"
+  },
+  "first_stage": {
+    "cell": "OAI21D0BWP12T40P140",
+    "delay_ns": 48.129498,
+    "fanout": 40,
+    "point": "feedforward/compute/compute/tensor/g322517/ZN",
+    "transition_ns": 0.6461
+  },
+  "next_stage": {
+    "cell": "INVD6BWP12T40P140",
+    "delay_ns": 17.013199,
+    "fanout": 64,
+    "point": "feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/g146856/ZN",
+    "transition_ns": 73.634804
+  },
+  "row_enable_bit": 31,
+  "scope": "The measured critical path is covered by the buffer trial. The placed trial passed legality with matching memory macro poses. Its slow-corner setup timing remains pending.",
+  "state": "matched_weight_write_enable_critical_path_covered_by_buffer_trial",
+  "worst_slack_before_buffering_ns": -78.820381
+}
