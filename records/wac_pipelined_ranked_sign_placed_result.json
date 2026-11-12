@@ -1,0 +1,389 @@
+{
+  "clock_target_megahertz": 580,
+  "die_millimeters": [
+    0.41,
+    0.32
+  ],
+  "estimated_timing": {
+    "hold_fast": {
+      "endpoint": "lower_metadata/D[9]",
+      "estimated_annotated_nets": 14183,
+      "reported_paths": 15,
+      "startpoint": "packed_word_reg[9]/CP",
+      "violating_paths": 15,
+      "worst_slack_ns": -0.069385
+    },
+    "setup_slow": {
+      "endpoint": "slots_strip_uses_reg[210][3]/DB",
+      "estimated_annotated_nets": 14183,
+      "reported_paths": 15,
+      "startpoint": "strip_index_reg[0]/CP",
+      "violating_paths": 15,
+      "worst_slack_ns": -2.706414
+    },
+    "setup_typ": {
+      "endpoint": "slots_strip_uses_reg[216][3]/DB",
+      "estimated_annotated_nets": 14183,
+      "reported_paths": 15,
+      "startpoint": "strip_index_reg[0]/CP",
+      "violating_paths": 15,
+      "worst_slack_ns": -1.611386
+    }
+  },
+  "fixed_compiled_memories": 6,
+  "input_sha256": {
+    ".cache/model_reference/batch396/branch_masks.hex": "b62f99a1054dc13a8e8df38603e2cd147ad08c246d96f0ae485aab0becf204f0",
+    ".cache/model_reference/batch396/outlier_counts.hex": "fd3dff8468bfbc398e2dbb4a9599ce86b07799c817d57889f60710bd1ecd9310",
+    ".cache/model_reference/batch403/norm.hex": "bdddc34bb97eae4b27b43a121698b0be4f5b9b96827546cbbe43fd6c9898ce0f",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/physical/ranked_sign_slots/map_pipelined_serial.tcl": "1d33be2e637b3aaabca32f143119a3b2b1e77fde9ff5cc7ccb903bfc6c3ae39a",
+    ".cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/area.rpt": "f11a66a2fe377a4ac591a5278bf8c506fad31caf456665ba650fafc475b00ec0",
+    ".cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/check.rpt": "0d40f91291af53c98cd0b5b644d1d038acaaa8912f6029b14a65295a9881579a",
+    ".cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/constraints.sdc": "d6c0976bcf8bb4505b7224a84d504f483b3427ecbdc623ecf53c4285e983dc5f",
+    ".cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/native_receipt.json": "7ee3468baebcd84c24f3044bbb511443c5f9092db709e95175af38ba2825f91f",
+    ".cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/netlist.v": "6c245f9289f901d587e3e6f55f1da0ecf72bc4ce553f5fd67cefba9ecf92c7c6",
+    ".cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/qualification.json": "411213949bf7339f16d39573bdcb1e001f839d99e6559aa9ac3ad36f49171338",
+    ".cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/timing.rpt": "f6036e77867e78c70d9b251e28682b57d5e0534f37990e5b10e1f9a6207d01e2",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/console.log": "53d04f5462183ca31039a5e89df844ad1f03058f670d8833e8905a8471a3716f",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/invocation.json": "3e14c158d7a6f47e9ffd2ca1ba86f448d58ae49be4201f7f190db865a6ae4dc3",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/mapped_predictor.sv": "f16f2ed9e272f6f9a623aaabd253f9ca783258d85f70a912ab8dbdd1731a0590",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/memory_witness.sv": "01dd93f2bc58541e92c281d7b6026a4c23d25be2eb1637104bcde483ef792536",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/receipt.json": "e816918f547c152afac07f4750a78d7375e38225749bbf52b1551ec4982aa431",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/tri_oracle_packed_sign_predictor_tb.sv": "b13ac0861f6bd6d21edf8f5c87efcd13ad2172c314ac160c8d1ca132440c4519",
+    ".cache/physical/ranked_sign_slots/mapped_replay_pipelined_32/xrun.log": "aff9d389b48978b33f2aeb316977b2489341ad6f9fc6ccb7b55fe898326a2df3",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/extract/console.log": "59e9a3044fdb032ec0954cf8f9f6ede0f3014ffa03230160f030d5ffd8773790",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/extract/hold_fast.spef": "aaec84eb1ff65db30961767d7df04f3e372c151a830bd5400467d597e2e05906",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/extract/macro_poses.tsv": "73b955b4eb34c797f15c313219672932f9a89f82ef552f07e7ebbe06ac6f4f84",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/extract/native_receipt.json": "804d27f2434a33e785132441519afa9d00df7cfebe8c3c8ed0efb69bf97e5a85",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/extract/placement.rpt": "910816592e65dce848297ac0420d9cb5083518623b1c487ab5c1179686c04dd4",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/extract/setup_slow.spef": "df56006033986d13c859d05ccafeb3acb7c031751ef9851ad16a409245546cd6",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/extract/setup_typ.spef": "bf814094b3c37524d5811fc6ce0bac897acd8f86cbd0da1921f8afe11516fae8",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/inputs.tcl": "8a2d87f85d8d701adc033cfc3ef5e33c7cda9dd16e72d17bb640283ba0bb6dc3",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/place/area.rpt": "b5988ae7e189f3cf9e2cbd15422c1bc19ad0b2d9bc15984cb1c58ccd1c3ee1c9",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/place/console.log": "b823686cb74699b19032c95c469f09855005d887c7481a3afa0eb65335eb7752",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/place/macro_poses.tsv": "73b955b4eb34c797f15c313219672932f9a89f82ef552f07e7ebbe06ac6f4f84",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/place/native_receipt.json": "fe85fae9a07848434e1670fd0ff73a6e7affe4339eef3d847cccbaaedce6be48",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/place/placed.def": "af7ea43678ca0d5d5759704fab38dffde85f75c5b176c8447340a76507646525",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/place/placed.v": "1508e85ecbcd7d0a675a1f7fa1883a685cf141aa781ade34c66198ebffa44e36",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/place/placement.rpt": "93bfa0121c288d081962b711a66d8ad177636503a69104d4f5cd56deda14855d",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/receipt.json": "b8d2709a6f9c19baf7af5c5f2f7ea2903add11a901da1316c50564c928145695",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/console.log": "0c1fca12140ba8fb9f09999024462fb2500a1a315fe9fb9fd2434e8241f1b7eb",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/hold_fast.rpt": "1e76fdd0d82c604d61d5fae34336d3c13f06f425f380027e3e8ca255a7348bb4",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/hold_fast_annotation.rpt": "223a026b5af85c47ac55af6ea46943e0e8f49291e250e33a09c9738d7ef54f6b",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/macro_poses.tsv": "73b955b4eb34c797f15c313219672932f9a89f82ef552f07e7ebbe06ac6f4f84",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/native_receipt.json": "b3642573e56ae67755e429f75641ef48519aa8bf2547692ec69cb36a8be64240",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/placement.rpt": "92aa7b83ce5d569dce88b7cde6633ca3da96352cc46dca41d1821ac0ce25deb2",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/setup_slow.rpt": "89931523a68ffd11a28ad60a2dfa287216f483980a286191298477a48822ab7a",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/setup_slow_annotation.rpt": "f7e63d3e197aec11f70ee9451084f56cd44c9db2ea8aaa3382b000ccc8cc90e2",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/setup_typ.rpt": "ac7262cc08d51298f223010554f1f4bef32696ecb2c8e926d0ebda058483cf5c",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/report/setup_typ_annotation.rpt": "e8e672cafcbe4f8cfd330497f9f378d6e8270a980a4c5b0f2e3776eb69502048",
+    ".cache/physical/ranked_sign_slots/physical_pipelined_32/timing.tcl": "54956a987907e9330b076bdcf33dfd678a0fa674d1f1448d4573062859147b9e",
+    ".cache/physical/ranked_sign_slots/pipelined_32/miss_addresses.hex": "9f603e872156fde703c0db76409ecf6291b9dc0fc31d11afa9e09ad6d6d74127",
+    ".cache/physical/ranked_sign_slots/pipelined_32/prepared.json": "8adaea8830c8ff45891f49c7473f24bf1d0dcf17fede9dd979d4383cd4d02153",
+    ".cache/physical/ranked_sign_slots/pipelined_32/red/console.log": "616a92c2e94d721f928156ecd1795a3259a04dc37d11ca1f54e46c656275dd17",
+    ".cache/physical/ranked_sign_slots/pipelined_32/red/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/ranked_sign_slots/pipelined_32/red/invocation.json": "f857c9f0d65b6ec344e034461b28c1ba2409bef95af3beaebc23f213dc383420",
+    ".cache/physical/ranked_sign_slots/pipelined_32/red/xrun.log": "e8eff8b96b44633206d8bae71bae7905a39f7d1c03f69472351fae8a5bf1a3af",
+    ".cache/physical/ranked_sign_slots/pipelined_32/trained/console.log": "036b955aaab11c63774803416c98da9c101b3db29e38d4741d32a5b4dbeaa301",
+    ".cache/physical/ranked_sign_slots/pipelined_32/trained/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/ranked_sign_slots/pipelined_32/trained/invocation.json": "3e8072260a7f1cda1a6a53d887514dc41bfb54fc77024b8dfdc28de150155015",
+    ".cache/physical/ranked_sign_slots/pipelined_32/trained/xrun.log": "372fd5fd37b77754fab654d72b9ce77aa44483fc6a866588ce3ce599101837f1",
+    ".cache/physical/ranked_sign_slots/pipelined_32/tri_oracle_packed_outlier_replay.sv": "d8c8bd8aec78885ca79c2d4c7d86d5e2ad4499e086ebca07dd09c9a6ca433708",
+    ".cache/physical/ranked_sign_slots/pipelined_32/tri_oracle_packed_sign_predictor_tb.sv": "b0ae06204da3bd64037afa2f3a91b397c08bec823202c678e2088466b821fa2c",
+    ".cache/physical/ranked_sign_slots/pipelined_32/tri_oracle_ranked_sign_line_cache.sv": "f3aaa80d3d2ec022607dbe7e8c87c571dea5bc1457744716d7588ffc40ba5d1e",
+    ".cache/physical/ranked_sign_slots/pipelined_32/tri_oracle_ranked_sign_slots.sv": "d37b401b3bea61704f776490b183148032019f059603e70c8f1b3b2dd3d9c3d9",
+    ".cache/physical/ranked_sign_slots/pipelined_32/tri_oracle_ranked_sign_slots_tb.sv": "81befdcb7fd94816cb2d79fda579a22f95cad32df8d66ccfe8fa188e40e3de73",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_5/console.log": "6bd66a2187c70f884ec8bb8630e5ee90d5b7e6dae4d8b049a9344c12d23f4a0a",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_5/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_5/invocation.json": "edfc41beb51d50286e0b3f9e3851aff67a4dcc19d1de7eaee9a1a8eda71e8172",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_5/xrun.log": "b95e071a4f4991de1c19ea75550d121fc45f378a473f3c36d559f5f709aae3e4",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_6/console.log": "caa1a9773c42b3cdd3ef3a9c4c5dbcf5fb21bade62e98fb8100d05896f8a1f28",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_6/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_6/invocation.json": "16e436a6a0a08017c92137d80355a0bdb1a87f425b8ba7cfeb209abd082f532d",
+    ".cache/physical/ranked_sign_slots/pipelined_32/unit_6/xrun.log": "972c4788aae87c08f2b1825dee774481b118cb425a73c1129927b67eb80f9b0b",
+    ".cache/physical/ranked_sign_slots/qualify_pipelined_serial_ranked.py": "4d828d6e0b87f1cbc26039ff8818c08ee27b5363d4111f1fff545ce31248ad2a",
+    ".cache/physical/ranked_sign_slots/run_pipelined_ranked_placement.py": "1c63ea20f0bdc436f9084b129b5d33b18a410770a297edf8103c5da5ac4a6ab5",
+    ".cache/physical/ranked_sign_slots/run_pipelined_serial_mapping.py": "7355964e3c453155a856925a3357955294e4bc3ef8c9692247d8d725fd9bb4e8",
+    ".cache/physical/ranked_sign_slots/verify_pipelined_ranked_gate.py": "0bf1a4b14592b36b36e5f9a3b754acfd017ab80b55232612b9828c6f4e76f3b6",
+    ".cache/physical/rc/qrc_rcbest": "f776d0e89f8d651f8f817cb080f4b299c13adb95aa9a63a54712946da3a73f42",
+    ".cache/physical/rc/qrc_rcworst": "afb9f42a87bbb7871ef7a23b0579a3835dcda0706e1c0159f45e625b5692388f",
+    ".cache/physical/rc/qrc_typical": "9783442472f884a18d75e4e8f72caeaafaa3126412068d78d0541c0db4ad393a",
+    ".cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib": "4738640b8d478399ddda2e37d1f62530a833e24a89e5751118039402d6292f75",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib": "c23271fe010db935868909e8873c3e9f13c11c14a99fe9275428707165c7c945",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib": "382947ea1d22a7dacb9111bd2d3cebe35bb6232302d4f0598938a6db12c52d5e",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib": "4fe75de30dd7d720e74004776720037dc06daab560b531776d1f9655d967b6ce",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib": "2f1c8d8810530a75a291d00a91e779da57f43865febdfc0f375309dd83cd7d32",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    ".cache/physical/wac_budgeted_parent_boundary/check_linked_tsmc_split_extraction.py": "eb738ea1a9b459e4a30576fc172d427564aaa251cea154a0676630404bb8e61c",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/measure_compact_placed_timing.py": "4358158bd89e3f0a9e4f32179fcf9ba21e9d56adbbae0c993e77f1d4b5f0dcb8",
+    ".cache/physical/wac_budgeted_parent_boundary/verify_linked_bank_buffer_export.py": "04f697df0fb0bb93b860fd4846879c49b2671cb917c71bb9ae7d3aa86cdfcb41",
+    "records/wac_pipelined_ranked_sign_mapped_result.json": "c039062f2008045fbad5a29ec0100cef3c578a1100a5ecf61355912ea8f21033",
+    "records/wac_pipelined_ranked_sign_native_result.json": "1e5031369ddcb8193f499ce021e4bbc1d91baf81504820d213b2b8400f3a6e86",
+    "records/wac_ranked_sign_predictor_mapped_result.json": "1e03199897d77e3be9180360f9369e12b40b867f884e25f601f5a4cf9e20df67",
+    "records/wac_ranked_sign_predictor_native_result.json": "7f5395ac069ee1abbd19127c3f141ca8cd93db056e25bf1049d1db1aacf72522",
+    "records/wac_ranked_sign_predictor_placed_result.json": "1f10ea9a4e46780435ebe436b9050bd5e383f90514d2c53cc265a11ea1dedf47",
+    "records/wac_response_address_mapped_result.json": "554be20e46ea96f0b17833734214c54ac6f85a8b72dcd616505d57851e305e74",
+    "syn/prepare_tri_oracle_pipelined_ranked_sign.py": "de6bf7071763b10df9f14092c556d60e7693605d2581dd4c5bb446f0917a7402",
+    "syn/tri_oracle_place_ranked_sign_predictor.tcl": "4b482d79307ad2da8c83e35814cfdb01aac74a79545dfcce78d67bdabbab6fed",
+    "syn/tri_oracle_require_clean_placement.tcl": "ce2da70f85b964db47cf26139c4e9c9b25fe58d3ec522837bade4af7aa315088",
+    "verilog/tri_oracle_packed_sign_fetch.sv": "c0d1e18d922ae820435ce0f393af4e90b7524acd60c2f5532790bbafad3c3445",
+    "verilog/tri_oracle_ranked_sign_slots.sv": "9aa5b268f79b622259176110f46bd695788262608c9d13c7aee714357cb8da14",
+    "verilog/tri_oracle_ranked_sign_slots_tb.sv": "759d12192846c91f9e32e6bcf9655c74699389e6aecb25b47013ea1abf423964",
+    "verilog/tri_oracle_strip_predictor.sv": "ea9f70a6a507c65379e0ad4df15e1170947c5065ed09a54903d6feff5e3d48f8"
+  },
+  "placed_database": {
+    "files": {
+      "extraction/extractionBlkData.gz": {
+        "sha256": "19169fa0b9b2df2447302ade0ec29469ec1affd5449c566856c07b8dc0a9e15d",
+        "size_bytes": 2400
+      },
+      "extraction/extractionMetaData.gz": {
+        "sha256": "5a8595ba354505f44cb2c5045bba4aeabed9604bf54d81e216d67d5d54052f2c",
+        "size_bytes": 298
+      },
+      "extraction/extractionRCGridDensityData.gz": {
+        "sha256": "f2ed7a7841c1b4f318c530f4ffce857adb7c778933ac6620ca2b81dfb950738d",
+        "size_bytes": 1826
+      },
+      "extraction/extractionSerializerData.bin": {
+        "sha256": "a86173fae5e6d357ca1986e4f55ada327942a9cc5a62a926a2da7d533036f5bd",
+        "size_bytes": 449
+      },
+      "extraction/extractionUnitRCData_rc_fast.gz": {
+        "sha256": "aedae528048e2460f0e7e90a56062862b3ab3cd7e8edcf7153a7cc8e2c5c70c4",
+        "size_bytes": 1225
+      },
+      "extraction/extractionUnitRCData_rc_slow.gz": {
+        "sha256": "83fa0c53f1cfc35c7d17b977d32f73cebdf43a117b1823ce1d8854801e3fa29b",
+        "size_bytes": 1245
+      },
+      "extraction/extractionUnitRCData_rc_typ.gz": {
+        "sha256": "71fb87432ae46aba5abef048e30271404df64d8e41a102ed9c8bfc7d330ba01b",
+        "size_bytes": 1241
+      },
+      "flow": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      "flowstep": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      "inn.cmd.gz": {
+        "sha256": "e03b28f473a75c8c939d63010d2ef0fc8a7c01002bad86009ab645a3c800c674",
+        "size_bytes": 2796
+      },
+      "libs/lef/tcbn28hpcplusbwp12t40p140.lef": {
+        "sha256": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+        "size_bytes": 11768694,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.lef"
+      },
+      "libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": {
+        "sha256": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+        "size_bytes": 375220,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef"
+      },
+      "libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": {
+        "sha256": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+        "size_bytes": 169804,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef"
+      },
+      "libs/lef/tsmcn28_10lm5X2Y2ZUTRDL.tlef": {
+        "sha256": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+        "size_bytes": 166831,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef"
+      },
+      "libs/mmmc/constraints.sdc": {
+        "sha256": "d6c0976bcf8bb4505b7224a84d504f483b3427ecbdc623ecf53c4285e983dc5f",
+        "size_bytes": 321278,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/ranked_sign_slots/mapped_predictor_pipelined_32/constraints.sdc"
+      },
+      "libs/mmmc/rc_fast/qrc_rcbest": {
+        "sha256": "f776d0e89f8d651f8f817cb080f4b299c13adb95aa9a63a54712946da3a73f42",
+        "size_bytes": 101176015,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcbest"
+      },
+      "libs/mmmc/rc_slow/qrc_rcworst": {
+        "sha256": "afb9f42a87bbb7871ef7a23b0579a3835dcda0706e1c0159f45e625b5692388f",
+        "size_bytes": 98237827,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_rcworst"
+      },
+      "libs/mmmc/rc_typ/qrc_typical": {
+        "sha256": "9783442472f884a18d75e4e8f72caeaafaa3126412068d78d0541c0db4ad393a",
+        "size_bytes": 99806168,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/rc/qrc_typical"
+      },
+      "libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": {
+        "sha256": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+        "size_bytes": 107668732,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib"
+      },
+      "libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": {
+        "sha256": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+        "size_bytes": 107232046,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib"
+      },
+      "libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": {
+        "sha256": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+        "size_bytes": 106842492,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib": {
+        "sha256": "4fe75de30dd7d720e74004776720037dc06daab560b531776d1f9655d967b6ce",
+        "size_bytes": 24910,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": {
+        "sha256": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+        "size_bytes": 24909,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib": {
+        "sha256": "2f1c8d8810530a75a291d00a91e779da57f43865febdfc0f375309dd83cd7d32",
+        "size_bytes": 24894,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib": {
+        "sha256": "4738640b8d478399ddda2e37d1f62530a833e24a89e5751118039402d6292f75",
+        "size_bytes": 22177,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib": {
+        "sha256": "c23271fe010db935868909e8873c3e9f13c11c14a99fe9275428707165c7c945",
+        "size_bytes": 22176,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib"
+      },
+      "libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib": {
+        "sha256": "382947ea1d22a7dacb9111bd2d3cebe35bb6232302d4f0598938a6db12c52d5e",
+        "size_bytes": 22161,
+        "symlink_target": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/NLDM/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib"
+      },
+      "root.init": {
+        "sha256": "59654aa3aaf33678b7cca257e4d893894f281f3f369f3c832a2ea88d98a2747e",
+        "size_bytes": 157015
+      },
+      "root.post": {
+        "sha256": "0f8e82bea6625d53a32f87d01d25e18ea7a85c6fa36706df9a91d212daba31cc",
+        "size_bytes": 849
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.dbinfo": {
+        "sha256": "fe2c02e3ac660edac479df64d413230543ea1f64cd1faf38043ad4c0e2ed7fd5",
+        "size_bytes": 3946
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.flexmv": {
+        "sha256": "d8ccc49edcdb033f7daf7669636340a9f8f53b007bf735b9dfdd5de6ab33fa80",
+        "size_bytes": 26
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.fp.gz": {
+        "sha256": "6929f80837c7bd5884300cff1f6eda956d0aa37b9e302f7337b15a86ab4142be",
+        "size_bytes": 41869
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.fp.spr.gz": {
+        "sha256": "6fb52e9d25df4d8557bef6b53bc8902e7b18d65c76f6d71977047fef7017eaee",
+        "size_bytes": 375
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.globals": {
+        "sha256": "203bae1112e3cfb39ed619e34a6aa847fe131b88e930acdcdd8b34c5c5b1dd13",
+        "size_bytes": 159269
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.init": {
+        "sha256": "8d91a8f167645732da74beb69d5ecc5911314506858e93203411f6e067ef94f1",
+        "size_bytes": 49
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.mode": {
+        "sha256": "fe9f5b975cd31af9a352c4f104c7598be57e43bd7b5a7e353fd83ad9e2080a4c",
+        "size_bytes": 1374
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.opconds": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.pg.gz": {
+        "sha256": "eaa230da0999818920904c7284cc93132799a00c91f6bf61b731a0481e92d54a",
+        "size_bytes": 386
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.place.gz": {
+        "sha256": "e347643e8b6da549fdb11dbd4e08c77818ebf3ad4aed2332230a5f1d98d609ab",
+        "size_bytes": 154873
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.prop": {
+        "sha256": "4ef1f832a4b8620bac1f906b4fde4ee17f2097d65d3d0983c5a8aefec5711387",
+        "size_bytes": 723955
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.route.congmap.gz": {
+        "sha256": "2501c3ef28093b5ac31873e5115d48a5a9582fbffc963b3e1715064807fc065b",
+        "size_bytes": 30
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.route.gz": {
+        "sha256": "32a05a6dc943c3623bf86135b3c68898b7a11ab09a9c2b8217fc8f792ecb4f1a",
+        "size_bytes": 38801
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.symtbl.gz": {
+        "sha256": "ac40ce8e52468cecf484ff917abc25cabd78f9b8ac703eb844fea518d54be595",
+        "size_bytes": 136673
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.tcz": {
+        "sha256": "fe0cbe861d0d7f6e05c027b96d7e328fedf9fcf8bb07a5c57ba1018f1f4a7a38",
+        "size_bytes": 14780
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.techData.gz": {
+        "sha256": "68c0b706a86794e6a33ca7723e657d3b584b889daec1cf2ff35c71cac986f2d9",
+        "size_bytes": 23759028
+      },
+      "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1_power_constraints.tcl": {
+        "sha256": "34f331d6ccc7de1b34c4d094327abed954eaf498f04bc63c9563658a7a3c4eab",
+        "size_bytes": 701
+      },
+      "um.json.gz": {
+        "sha256": "66d9e21f22cc37550df2e7497f1a6b3682c536ea0249d4fa8bc8f3f16a0328d8",
+        "size_bytes": 21455
+      },
+      "vbin/tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.v.bin": {
+        "sha256": "8da9ecb867d742f5aa3701e4260b1c721b6005f25f1c88ba9634a0348c1f21bf",
+        "size_bytes": 644
+      },
+      "vbin/tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.v.bin_0": {
+        "sha256": "9a366023c8db372e5e4b64d3ccc25bd5c502349a006420e4aecc9b8451fecb12",
+        "size_bytes": 341568
+      },
+      "vbin/tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1.v.bin_lib": {
+        "sha256": "24de08a8f97260418143d18a000b94327c499e8866f25a2d367360382926f350",
+        "size_bytes": 26575
+      },
+      "viewDefinition.tcl": {
+        "sha256": "b7016aa11826e1092dcf866ef144298164a173040d964eab4a3589ae7ed3913c",
+        "size_bytes": 2710
+      }
+    },
+    "type": "directory"
+  },
+  "placed_instances": 12038,
+  "placement_density_percent": 33.81,
+  "relative_to_unpipelined_placement": {
+    "hold_fast": {
+      "baseline_worst_slack_ns": -0.072312,
+      "change_in_slack_ns": 0.002927
+    },
+    "setup_slow": {
+      "baseline_worst_slack_ns": -2.079699,
+      "change_in_slack_ns": -0.626715
+    },
+    "setup_typ": {
+      "baseline_worst_slack_ns": -1.205083,
+      "change_in_slack_ns": -0.406303
+    }
+  },
+  "scope": "Native placement and cold reloaded interconnect estimates for a predictor block with an ideal clock.",
+  "state": "ranked_predictor_geometric_placement_and_preroute_timing_verified",
+  "timing_target_met": false
+}
