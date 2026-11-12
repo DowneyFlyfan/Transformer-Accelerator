@@ -1,0 +1,96 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/dual_port_packed_sign_steering/receipt.json": "d261b075399dfa4689b301e82474367c76396e8276ddcdc2b7de75d6f93a27dd",
+    ".cache/model_reference/dual_port_packed_sign_steering/replay/packed_traffic.json": "15a8336799d7e5cc8786fcd1f2e33665d2a95ca17296237f00d8f0b485eee15d",
+    ".cache/model_reference/packed_sign_line_workload/receipt.json": "b7fce4547a5b165f817953c1061e657e0a6c6a4cd040d415b3b3f335d78e614a",
+    ".cache/model_reference/packed_workload_traffic_v1/packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    "records/wac_packed_sign_line_result.json": "35c6bbe4c02c172625f2205b585fa3414bdbff0b7d44e8c380347d5f2aa32195",
+    "records/wac_primary_request_cycle_bound_result.json": "d37f3acd9df02d932c5a9eeb4d8bd00dd0db393384452b0c519a1e3cf15c1a45",
+    "records/wac_weight_burst_schedule_result.json": "ef78cd49482669ee67625f255589b5864d6d1bf7ff6fb44fb258b89273f0c05a",
+    "syn/measure_tri_oracle_dual_port_sign_lines.py": "30eb7e9651df1913352d5c0e74e16767f59bd91c580fa7e936d0ab5b979ac7ad",
+    "syn/measure_tri_oracle_packed_sign_lines.py": "128886abde0407e0b3a8a299e5e9dafe84199086a8461c5afeaeb1dc4a38175b",
+    "syn/measure_tri_oracle_packed_workload_traffic.py": "d8b743214c635abef4d96b9089790b60d0d56a8140a0eca8fb48087610a42590",
+    "syn/measure_tri_oracle_sign_cache_workload.py": "13bbc53f6e871bdc973ad93d8c7421b34a3cb00cda2342daa13ddc17e2428907",
+    "syn/measure_tri_oracle_weight_burst_schedule.py": "07bf307a6f54415e0b615a727fa236d5ce0cd59a36eed4ba39d0919e32f3695f"
+  },
+  "paper_latency_cycle_budget": 508660000,
+  "peak_gpu_bytes": 7555977728,
+  "scope": "Exact reconstructed weight and sign schedules with zero cross-frame weight reuse. Models a shared sign cache and fixed steering across two serialized memory ports. Counts port service cycles only. Compute, all other traffic and controller stalls require separate measurement.",
+  "state": "dual_port_packed_sign_steering_budget_measured_on_local_trace",
+  "summary": {
+    "128": {
+      "headroom_ms": 0.16520689655172413,
+      "lane_cycles_by_layout": {
+        "aligned_example": [
+          508564180,
+          508509036
+        ],
+        "trained_fixture": [
+          508563158,
+          508511754
+        ]
+      },
+      "remaining_cycles_on_busiest_port": 95820,
+      "send_to_primary_when_bucket_below": 9,
+      "worst_port_service_ms": 876.8347931034483
+    },
+    "256": {
+      "headroom_ms": 1.1521206896551723,
+      "lane_cycles_by_layout": {
+        "aligned_example": [
+          507549036,
+          507985588
+        ],
+        "trained_fixture": [
+          507551468,
+          507991770
+        ]
+      },
+      "remaining_cycles_on_busiest_port": 668230,
+      "send_to_primary_when_bucket_below": 8,
+      "worst_port_service_ms": 875.8478793103449
+    },
+    "64": {
+      "headroom_ms": -4.166668965517242,
+      "lane_cycles_by_layout": {
+        "aligned_example": [
+          510623236,
+          511076668
+        ],
+        "trained_fixture": [
+          510587218,
+          511010690
+        ]
+      },
+      "remaining_cycles_on_busiest_port": -2416668,
+      "send_to_primary_when_bucket_below": 10,
+      "worst_port_service_ms": 881.1666689655173
+    }
+  },
+  "weight_by_phase_and_lane": {
+    "decode": [
+      {
+        "bursts": 11656656,
+        "payload": 359984756
+      },
+      {
+        "bursts": 11442736,
+        "payload": 353567628
+      }
+    ],
+    "prefill": [
+      {
+        "bursts": 4093344,
+        "payload": 127109888
+      },
+      {
+        "bursts": 4018784,
+        "payload": 124843264
+      }
+    ]
+  },
+  "weight_cycles_by_lane": [
+    502844644,
+    493872412
+  ]
+}
