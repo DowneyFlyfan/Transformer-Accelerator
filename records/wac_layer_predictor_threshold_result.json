@@ -1,0 +1,71 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/layer_thresholds_v1.log": "bfa87b17f9e727991461a022411fda55a20fa08353311d78f46dee349de75cd5",
+    ".cache/model_reference/layer_thresholds_v1/full_sweep.json": "373bbe7e651e2e53f215326ff51d27dcb95d45dae01fd8da1e0b4c8112de8057",
+    ".cache/model_reference/layer_thresholds_v1/receipt.json": "cc63b30a19571db8ae77f21262c9d11a58bb9bae951ac988f065ab7d5af28c79",
+    "records/wac_channel_packing_bound_result.json": "63074498af07d464cd96ea32eddc78519ed5eb1c85f892b9eb6eae425c69da59",
+    "records/wac_packed_predictor_threshold_result.json": "d44be5543d1f6e3a8f77338cd2580bc761bd15c6c2d2118757ff4054f9d9da1d",
+    "syn/measure_tri_oracle_layer_thresholds.py": "422e9d40e46ddb931a7ae3249624c9451df02514ab32ec74d8f8230d689f3f64"
+  },
+  "layers": 22,
+  "native_seconds": 6.2602625279687345,
+  "peak_gpu_bytes": 419826176,
+  "rows_per_split": 2640,
+  "scope": "Fits each layer on eight archived images and scores eight different images. The objectives use the paper's Visual Question Answering v2 targets on local samples. Projection error compares against the same dense fixed-point output.",
+  "state": "layer_specific_sign_threshold_tradeoff_independently_reconciled",
+  "summary": {
+    "baseline_layer_error": {
+      "fit": {
+        "channel_skip_percent": 2.2379153753443526,
+        "mean_relative_output_change": 0.08591016405035269,
+        "net_traffic_reduction_percent": -1.7577662612452651
+      },
+      "fit_layers_reaching_objective": 22,
+      "held": {
+        "channel_skip_percent": 2.1216761901687327,
+        "mean_relative_output_change": 0.0812325393099642,
+        "net_traffic_reduction_percent": -1.718740752249053
+      }
+    },
+    "fixed_baseline": {
+      "fit": {
+        "channel_skip_percent": 8.262337508608816,
+        "mean_relative_output_change": 0.16661614651307455,
+        "net_traffic_reduction_percent": -1.7577662612452651
+      },
+      "fit_layers_reaching_objective": 22,
+      "held": {
+        "channel_skip_percent": 8.071598441804408,
+        "mean_relative_output_change": 0.16158661833015212,
+        "net_traffic_reduction_percent": -1.718740752249053
+      }
+    },
+    "paper_skip_target": {
+      "fit": {
+        "channel_skip_percent": 62.48058308582989,
+        "mean_relative_output_change": 0.6898493049600111,
+        "net_traffic_reduction_percent": -1.7574972357631715
+      },
+      "fit_layers_reaching_objective": 22,
+      "held": {
+        "channel_skip_percent": 62.254702565426996,
+        "mean_relative_output_change": 0.6903915377375915,
+        "net_traffic_reduction_percent": -1.7184717267669594
+      }
+    },
+    "paper_traffic_target": {
+      "fit": {
+        "channel_skip_percent": 99.29787039428375,
+        "mean_relative_output_change": 0.9647928141732544,
+        "net_traffic_reduction_percent": 69.13636683104123
+      },
+      "fit_layers_reaching_objective": 22,
+      "held": {
+        "channel_skip_percent": 99.28119081439394,
+        "mean_relative_output_change": 0.9631521514296422,
+        "net_traffic_reduction_percent": 69.30694580078125
+      }
+    }
+  },
+  "threshold_settings_per_layer": 136
+}
