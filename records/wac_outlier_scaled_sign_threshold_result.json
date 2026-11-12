@@ -1,0 +1,140 @@
+{
+  "baseline": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.16661614651307455,
+      "net_reduction_percent": -1.7577662612452638,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 439.8666267945168,
+      "sign_bytes": 107050240,
+      "skip_percent": 8.262337508608816,
+      "skipped_channels": 1228484,
+      "traffic_bytes": 6197179648
+    },
+    "held": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.16158661833015212,
+      "net_reduction_percent": -1.7187407522490483,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 426.5886723916016,
+      "sign_bytes": 104673536,
+      "skip_percent": 8.071598441804408,
+      "skipped_channels": 1200124,
+      "traffic_bytes": 6194802944
+    },
+    "thresholds": [
+      0,
+      0,
+      0
+    ]
+  },
+  "cutoff_denominator": 32,
+  "evidence_sha256": {
+    ".cache/model_reference/outlier_scaled_thresholds_v1/fixed_threshold_control.json": "e8cbe106c7c4c4553722307ec3463500081d4bc0b2498a6545a1c93790958b1c",
+    ".cache/model_reference/outlier_scaled_thresholds_v1/receipt.json": "ec8c67f6b1d1f6dda3d59b5df1db2f47ba1e727f2ee03571541c59f6b0830df3",
+    "records/wac_channel_packing_bound_result.json": "63074498af07d464cd96ea32eddc78519ed5eb1c85f892b9eb6eae425c69da59",
+    "records/wac_packed_predictor_threshold_result.json": "d44be5543d1f6e3a8f77338cd2580bc761bd15c6c2d2118757ff4054f9d9da1d",
+    "syn/measure_tri_oracle_outlier_thresholds.py": "6a5aca3b823a83e7b87076887a88d4a883c0fd45c99ae2b09d46796be287f78b",
+    "syn/measure_tri_oracle_packed_thresholds.py": "b987f1ca4af3ba84884cf9cc02db87d69d6e61e49f2f0630fcbd21957d9e00b1",
+    "syn/test_tri_oracle_outlier_thresholds.py": "42ecf638ac6639d913a55870658ce711276e99c9d72ffd99a6cef2038d764baf"
+  },
+  "fit_settings_reaching_skip_target": 51,
+  "fit_settings_reaching_traffic_target": 2,
+  "fit_settings_reaching_traffic_target_at_baseline_error": 0,
+  "fit_skip_target_percent": 58,
+  "fit_traffic_target_percent": 57,
+  "fixed_threshold_at_fit_skip_target": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.6627405296974521,
+      "net_reduction_percent": -1.7577662612452638,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 1749.6349984012736,
+      "sign_bytes": 107050240,
+      "skipped_channels": 8817720,
+      "traffic_bytes": 6197179648
+    },
+    "held": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.6644263401267739,
+      "net_reduction_percent": -1.7187407522490483,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 1754.0855379346833,
+      "sign_bytes": 104673536,
+      "skipped_channels": 8819299,
+      "traffic_bytes": 6194802944
+    },
+    "thresholds": [
+      0,
+      -4,
+      4
+    ]
+  },
+  "held_settings_with_traffic_reduction_at_baseline_fit_error": 0,
+  "layers": 22,
+  "least_error_at_fit_skip_target": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.6510764189686639,
+      "net_reduction_percent": -1.7577662612452638,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 1718.8417460772725,
+      "sign_bytes": 107050240,
+      "skip_percent": 58.057205578512395,
+      "skipped_channels": 8632224,
+      "traffic_bytes": 6197179648
+    },
+    "held": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.6431949584636761,
+      "net_reduction_percent": -1.7187407522490483,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 1698.034690344105,
+      "sign_bytes": 104673536,
+      "skip_percent": 57.09769256844008,
+      "skipped_channels": 8489559,
+      "traffic_bytes": 6194802944
+    },
+    "thresholds": [
+      8,
+      -8,
+      8
+    ]
+  },
+  "least_error_at_fit_traffic_target": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.9760730631885529,
+      "net_reduction_percent": 85.56010348737732,
+      "predicted_weight_bytes": 772358144,
+      "relative_error_sum": 2576.8328868177796,
+      "sign_bytes": 107050240,
+      "skip_percent": 99.70275374483471,
+      "skipped_channels": 14824284,
+      "traffic_bytes": 879408384
+    },
+    "held": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.9733703550353876,
+      "net_reduction_percent": 82.55402956455535,
+      "predicted_weight_bytes": 957808640,
+      "relative_error_sum": 2569.6977372934234,
+      "sign_bytes": 104673536,
+      "skip_percent": 99.66299850421832,
+      "skipped_channels": 14818373,
+      "traffic_bytes": 1062482176
+    },
+    "thresholds": [
+      24,
+      -32,
+      32
+    ]
+  },
+  "native_elapsed_seconds": 7.948490204056725,
+  "native_exit_status": 0,
+  "peak_gpu_bytes": 419826176,
+  "rows_per_split": 2640,
+  "scope": "Local visual prompt activation rows in independent fit and held image splits. Output changes are relative to dense integer projection. Traffic uses the existing packed fetch model.",
+  "settings": 130,
+  "state": "outlier_scaled_sign_threshold_tradeoff_independently_reconciled"
+}
