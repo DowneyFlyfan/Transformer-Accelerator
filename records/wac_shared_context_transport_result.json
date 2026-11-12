@@ -1,0 +1,26 @@
+{
+  "state": "mapped_context_and_attention_share_memory_transport",
+  "archived_layer_maps": 22,
+  "trained_attention_rows": 25,
+  "exact_restored_origins": 14976,
+  "decoder_read_bursts": 49324,
+  "decoder_read_words": 98647,
+  "context_bytes_written": 15840,
+  "context_bytes_read": 18720,
+  "fabric_cells": 280,
+  "fabric_cell_area_um2": 280.56,
+  "isolated_pre_layout_setup_slack_ps": 838,
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_transport/attention_replay/receipt.json": "3c7a43f66cc4b965cc8528030679a6ef3bbfd6d9c4ea9ffbafaaa848fb85d8fb",
+    ".cache/physical/context_external/shared_transport/attention_replay/console.log": "58f92e6b54a84213206bf3d13eb969637e37f193594a4f38b64019ba54863cef",
+    ".cache/physical/context_external/shared_transport/red/xrun.log": "4c57205d80513f3375ea1c5a3035c9b6dd8560d099e0ce7ac3233947327844a0",
+    ".cache/physical/context_external/shared_transport/mapped_sim/xrun.log": "2b6f43e51479ce551c7ae424c443db2aeaa0cb6796ef1ca5f30592e54235aa5f",
+    ".cache/physical/context_external/shared_transport/mapped/area.rpt": "d2b295035252184c47477c4f72d02a7da49ca0dd476ab5c4e7bdaacb74a412a5",
+    ".cache/physical/context_external/shared_transport/mapped/timing.rpt": "b30a49124fbae40b642b52ee4fa13d508e21144371294cc9ab1dd12b1698df57",
+    "records/wac_external_context_attention_result.json": "c471e3912a54b78f580c1b4dbaf2b7fbd7c035d853a4acb11e33ef21435bff8a",
+    ".cache/physical/context_external/shared_transport/tri_oracle_context_memory_fabric.sv": "0c263e09bc7abd67870f757c368cb91b0bdc09ce1730100635ca69c57b555c94",
+    ".cache/physical/context_external/shared_transport/mapped/netlist.v": "f3f0394833cdd5af0ee8bbd723e3bfa31b9067931ec94bed38a6ae4fbef9351e",
+    ".cache/physical/context_external/shared_transport/replay_shared_context_attention.py": "0ef9a8417b9c0260b95256ad62e0311166b2a1c96b848cb7be3791a78ff7ea9a"
+  },
+  "scope": "Archived trained attention with mapped context storage and mapped arbitration on a single modeled external memory port. Restoration into the current decoder's aggregator-local tables remains open."
+}
