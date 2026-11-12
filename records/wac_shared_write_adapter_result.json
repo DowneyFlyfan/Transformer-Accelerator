@@ -1,0 +1,32 @@
+{
+  "state": "mapped_shared_write_adapter_verified_on_attention_and_feedforward",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "mapped_cells": 1057,
+  "isolated_timing_margin_ps": 888,
+  "attention_rows": 4,
+  "vector_write_bursts": 29,
+  "vector_write_beats": 232,
+  "vector_write_error_responses": 1,
+  "added_attention_fixture_cycles": 50,
+  "attention_fixture_clock_period_ns": 10,
+  "feedforward_outputs_per_case": 519,
+  "feedforward_cases": [
+    "normal",
+    "write_error_and_recovery"
+  ],
+  "feedforward_simulated_time_unchanged": true,
+  "scope": "Mapped write adapter replayed with register-transfer layer fixtures and compiled memories.",
+  "evidence_sha256": {
+    ".cache/physical/external_write_mux/composed_attention_replay/receipt.json": "d4145f71cf320a3bb3eaca57282daf57ba22b0499a58a26233e86cccbad76cf2",
+    ".cache/physical/external_write_mux/scalar_feedforward_replay/receipt.json": "ce91fcf6fc26271494910264659858026b60e41817714d0418ff949b188afc3a",
+    ".cache/physical/external_write_mux/composed_attention_replay/positive/xrun.log": "dcb4a1bf057d1f6e850a2afc8a8f5c670cd5dccd9b58ff68c54a2b6ec7f81922",
+    ".cache/physical/external_read_mux/composed_attention_replay/positive/xrun.log": "282d1db0243e3bb280e6a429b6d8af5b246f47c80a1830dc48b5be6d48110f0c",
+    ".cache/physical/external_write_mux/mapped/area.rpt": "6731205638720037746d7e019d0ee6504403e9d11e818f746f44d4db67953211",
+    ".cache/physical/external_write_mux/mapped/timing.rpt": "d3d9aa89d5e39b10c06350778568fea9ce652ff67e244e56b7f002c9f19894c6",
+    ".cache/physical/external_write_mux/green/native.log": "9aab87506690e71e8b383254f754f76a005077b1f3c25388a32103c8ebadc2ff",
+    ".cache/physical/external_write_mux/mapped_gate/native.log": "2862e8f609899c9fe467194f269d337c5bc88605b0e3904515b2d3e03cf44ae3",
+    "verilog/tri_oracle_external_write_mux.sv": "6cb488a2e7822d202cbf08a0d55b9c216dac0d453b3dcd8f4dd08e11b458bedf",
+    "verilog/tri_oracle_external_write_mux_tb.sv": "32df01f7b8bb3eb080b9877973f0511853429b7216dad439d4eaf709d5b97e21"
+  }
+}
