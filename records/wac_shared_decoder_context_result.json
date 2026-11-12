@@ -1,0 +1,46 @@
+{
+  "state": "compact_shared_decoder_context_restored_through_existing_memory_port",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "baseline_counters": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 57992,
+    "stalls": 59
+  },
+  "context_enabled_counters": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 57992,
+    "stalls": 63
+  },
+  "simulation_end_ns": 7238070,
+  "baseline_simulation_end_ns": 7227970,
+  "context_origins_saved": 576,
+  "context_origins_restored": 576,
+  "context_write_bytes": 720,
+  "context_read_bytes": 720,
+  "value_read_bursts": 1023,
+  "vector_write_bursts": 29,
+  "head_classes": {
+    "retrieval": 2,
+    "streaming": 1
+  },
+  "scope": "The compact shared decoder used register-transfer-level control and arithmetic, compiled memory models, and mapped shared memory transports. Context restore, projection, head offload, feed-forward ownership and exact attention output passed in the same replay. The five-mapped-bank replay remains separate.",
+  "evidence_sha256": {
+    ".cache/physical/shared_memory_layer_boundary/source_layer_replay/receipt.json": "3456537a0d54db585ca42d7c380da9f4badc38abc3cd44374ef32f227e8a6767",
+    ".cache/physical/context_external/shared_decoder/inputs.json": "ca410e78d6eb16696eb2d6099224733b4d5d1fa5b45d35e72b9078f7bee9903a",
+    ".cache/physical/context_external/shared_decoder/xrun.log": "631acc8875fdd1ac3821ab4cdc91b999b7f44bd7b9974f00d1a9693700bb7ca0",
+    ".cache/physical/context_external/shared_decoder/boundary.sv": "1e2479af29d2908571a84471e2fec75deb838630b04ac4be82f6e66df4281174",
+    ".cache/physical/context_external/shared_decoder/attention_tb.sv": "898401171a3a783a91529c9a91ddab69511d4ab4473eb2c9fa4994048ab89644",
+    ".cache/physical/context_external/shared_decoder/prepare.py": "4a01b2f8c4377a3028ab7a793b823c30d4375edf0a5c9a6599db7e86b5e994e6",
+    ".cache/physical/context_external/shared_decoder/prepare_shared_decoder_context_bench.py": "07ba1bd512293b377425ca4c7a017c06afbad92fbfe1c618f4f5040887721669",
+    ".cache/physical/context_external/shared_decoder/mapped_banks_wired/prepared.json": "1d2a4e30edefce2fdcba2912aaa8a4b73b5c17ad507fb9b0e7c1e3f6adb4e663"
+  }
+}
