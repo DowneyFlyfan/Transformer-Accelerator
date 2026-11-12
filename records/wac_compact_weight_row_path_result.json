@@ -1,0 +1,35 @@
+{
+  "state": "compact_weight_row_path_diagnosed_and_buffer_trial_prepared",
+  "baseline": {
+    "clock_period_ns": 1.72414,
+    "worst_slack_ns": -97.23806,
+    "view": "setup_slow",
+    "weight_row_enable_bit": 18,
+    "driver": "feedforward/compute/compute/tensor/g322515/ZN",
+    "estimated_net_capacitance_pf": 1.98983,
+    "slow_liberty_driver_max_capacitance_pf": 0.0246915,
+    "core_write_enable_sink_pins": 40,
+    "decoder_data_gate_sink_pins": 5
+  },
+  "unmasked_data_variant": {
+    "earlier_decoder_cells_per_bank": 2181,
+    "replacement_decoder_cells_per_bank": 357,
+    "source_transactions_matching_addresses_cycles_and_written_bits": 381
+  },
+  "buffer_trial": {
+    "candidate_netlist_sha256": "f2caf5d3b305dc1dfc5fb47397f88f69c9216b4cc9db6f79ef3d798fbc86ac0e",
+    "root_buffers": 32,
+    "bank_buffers": 160,
+    "receiver_pins_across_all_32_bits": 1280,
+    "buffer_contraction_recovers_original_netlist": true
+  },
+  "scope": "Pre-route timing and parasitics from the earlier placed compact baseline. The buffer trial is a structurally checked alternative. It requires independent simulation and placement timing.",
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/estimated_placement_timing/weight_load_path_structure.json": "59d96570797d76a00065241d9886c2d2344ef06e73cced7169f4542276ff952f",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/placed_baseline_geometry.json": "7bde9fcd2f8b5844aed0309654d67fff3d45d8cb5986ef39875856a8a2826221",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/receipt.json": "79bd4ec0c551752a97df0a65737954d69133894402ad750a2439eee18767ebb7",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/integrated/receipt.json": "407fea7ad387023ae4d3017849911ae3f301378dbadefb28e51633ab212158c8",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/estimated_placement_timing/receipt.json": "273da910bf78de6c4c94a764651da15b5740531ab406c9152c79944cfc5b4b47"
+  }
+}
