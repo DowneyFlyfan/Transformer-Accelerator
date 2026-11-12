@@ -1,0 +1,29 @@
+{
+  "state": "wide_weight_loader_mapped_and_verified_with_compiled_weight_memories",
+  "wide_response_bits": 512,
+  "rows_per_full_write": 8,
+  "checked_row_groups": 4,
+  "consecutive_good_beats_checked": 3,
+  "matched_memory_compute_readbacks": 128,
+  "invalid_or_malformed_cases_rejected": 8,
+  "lane_order_mutation_rejected": true,
+  "mapped_cells": 2316,
+  "mapped_cell_area_um2": 1880.424,
+  "isolated_synthesis_setup_slack_ps": 1065,
+  "synthesis_period_ns": 1.72414,
+  "scope": "Source and mapped loader with the existing core and compiled static random-access memory models. Decoder-wide request scheduling and external memory integration remain open.",
+  "evidence_sha256": {
+    "verilog/tri_oracle_wide_weight_loader.sv": "41d1bc4df3efd02634b117217eccb22f04b2c983c198f277f3d5f81135d74823",
+    "verilog/tri_oracle_wide_weight_loader_tb.sv": "c001b8a17ebdee8b46af173205df7decad0c54a9b2e80c5fd18c2d2f73137896",
+    ".cache/physical/wide_weight_loader/map/synthesize.tcl": "9d109e705322141336fb56da779dc2dea3394231851254fba740b4453c150fa8",
+    ".cache/physical/wide_weight_loader/map/console.log": "0dec2be55780a568d60627d71fa11056bdb1b2423ce2ca9e5259f28a2b1faf22",
+    ".cache/physical/wide_weight_loader/map/area.rpt": "d1913d539ed3fadac208cdedbce43b931170f59a2166d6240fe04e3b4d341d15",
+    ".cache/physical/wide_weight_loader/map/timing.rpt": "08e3d709ad5276f072aaee688a5500d6882b9095044c3497154f921f807d3389",
+    ".cache/physical/wide_weight_loader/map/check.rpt": "c523eaf42b5f017f7f18f63d1aa48d4993c4655dc7d4e01f8e907753622dbd86",
+    ".cache/physical/wide_weight_loader/map/netlist.v": "431ed4db9c17bb9478283d388a5fada3db7d4b0182216c17d06816c5ae23e96b",
+    ".cache/physical/wide_weight_loader/red/console.log": "05bca46b7fbae86835b5de87718a033e083bea0a7e18d66c97a259867b781d7d",
+    ".cache/physical/wide_weight_loader/source/console.log": "74bf03a58536ba3307bbd3851854972dd3648ae157c45bb2a7bc57f081bfa8a3",
+    ".cache/physical/wide_weight_loader/mapped_sim/console.log": "cef5a439c4f461aad147b6c23fc562b6fd2902ca382858cf7b03b6b35346a5b0",
+    ".cache/physical/wide_weight_loader/mutation/console.log": "a9b915ac2ac783506a0e17bc9d203877efdff8efbb73d244476b194ffd963129"
+  }
+}

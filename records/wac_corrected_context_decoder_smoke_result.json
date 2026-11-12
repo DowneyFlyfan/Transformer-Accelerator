@@ -1,0 +1,28 @@
+{
+  "state": "corrected_mapped_context_decoder_passed_first_merge_and_restore",
+  "candidate_netlist_sha256": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+  "mapped_clusters": 5,
+  "mapped_cores": 20,
+  "remapped_modules": [
+    "tri_oracle_qkv429",
+    "tri_oracle_qkv_store430",
+    "tri_oracle_attention_row426",
+    "tri_oracle_attention_head_predictor415"
+  ],
+  "native_synthesis_seconds": 3010.718686462962,
+  "loaded_undriven_cut_outputs": 0,
+  "merged_entries": 576,
+  "restored_entries": 576,
+  "scope": "Gate-level smoke test for the repaired first merge and restore. Full attention, trained replay, and physical qualification remain separate.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/candidate.v": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_complete_partition/native/receipt.json": "f8c64df5323a87cee6900660fc1e3529fd362c139d856826e8c33b779347487d",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/receipt.json": "2fbd7b71db5febefdb6173e113304d364ef12cd1acdcc1860f120b0b3354775a",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/architecture_receipt.json": "9e73e05c8aacd5bb011908cb88e6bdd9ef4e19d73945ccac08786c93995d0712",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/cut_drivers_audit.json": "8b6996b2d858a5dc45a61e5e4e2a3d6067cf874cbd35429966e88bcf9b57a5eb",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention/attention_tb.sv": "5e57bde5538dc5b9bb3be4cdf4c6f74cd99186683caff3717c15bd30d19b8335",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention/bundle.sv": "6e0fc8fbcde63bcda518567dcbb84ba9f55177ff6c49370910d096642ddfd9bc",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention/elaborate/xrun.log": "3ba3f8ff750a27d8236f45f313d33f78c2f2d84e246d294be0314355cdad4b02",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention/smoke/xrun.log": "8b7061dc8f1963eb3213eb78f2638e859183c52f5f125e972b8d9c82ca58e1b4"
+  }
+}
