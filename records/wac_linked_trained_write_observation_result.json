@@ -1,0 +1,27 @@
+{
+  "activation_bytes_exact_and_acknowledged": 2048,
+  "corrected_observation": "dut.layer.shared_writes.scalar_strobe",
+  "input_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay/invocation.json": "528f012da0fe68412e66cc49f87fb2dd758015726c4453f4868446c72ec7100f",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay/trained/xrun.log": "cb0eeb1b57f0e3a545dd99a6e0c4a15b2671396840e36bc9a4a613c657008292",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay_prepared/trained_bundle.sv": "b920dc9fc4eb31a609db89309a8d6a1845398d8452fa43a2428f8dd4f4715aa7",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/gate_replay_prepared/trained_tb.sv": "d22908cd59590503b2d9f249345496df0aba49a4bb8dc43189bbcf72f0605b06",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_chip/chip.v": "f632209f7dfcb5a83350cedb59ef8cecfe24984275d07de2b2d81c5f88a7bea0",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/trained_write_observer_canary/receipt.json": "72a0ff63bcfc37a9aa79f32d6d23c4987de6423c544c15044ac1147f4d970ebd",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/trained_write_observer_canary/trained/progress.log": "b3220c6db1d6595fcdd230cf6033b4fc0e6bea3b8c02eaa08c15f90bbb22e480",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/trained_write_observer_canary/trained/xrun.log": "95378f94b004423d722aed5700a24bba83bacdcc3af437ce8138152224d4f525",
+    "syn/retarget_tri_oracle_mapped_write_observation.py": "4e392f704db552b4c3bf263d4790f472e8815fb51c179dd4da7b2b5e381e0c4b"
+  },
+  "mapped_value_at_mux": "0xff",
+  "native": {
+    "elapsed_seconds": 158.14832342299633,
+    "log_sha256": "95378f94b004423d722aed5700a24bba83bacdcc3af437ce8138152224d4f525",
+    "minimum_host_available_bytes": 15335149568,
+    "native_exit_status": 0,
+    "peak_cgroup_anonymous_bytes": 5700001792
+  },
+  "original_observation": "dut.layer.layer.wr_strobe",
+  "scope": "Earlier linked gates with the original trained fixtures and independent external protocol and expected activation checks. The run ends after the first activation is fully acknowledged.",
+  "state": "corrected_linked_trained_first_activation_verified",
+  "top": "tri_oracle_chip_command_layer_parallel_chip"
+}
