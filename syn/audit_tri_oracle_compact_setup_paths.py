@@ -18,10 +18,12 @@ NS = r"-?\d+\.\d+"
 PATH = re.compile(rf"(?m)^Path (\d+): (VIOLATED|MET) \(({NS}) ns\) Setup Check")
 POINT = re.compile(rf"(?m)^  (\S+)\s+\S+\s+\S+\s+[RF]\s+(\S+)\s+(\d+)\s+({NS})\s+({NS}|-)\s+({NS})\s*$")
 TOLERANCE = Decimal("0.000150")
+ATTENTION_CAPTURE_STATE = "compact_attention_capture_buffer_matched_pre_route_timing_measured"
 NATIVE_FIELDS = {
     "compact_tensor_matched_slow_placement_timing_measured": ("extraction_native", "report_native"),
     "compact_weight_decoder_matched_pre_route_timing_measured": ("extraction_native", "report_native"),
     "compact_row_buffer_matched_pre_route_timing_measured": ("extraction", "report"),
+    ATTENTION_CAPTURE_STATE: ("extraction", "report"),
 }
 
 
@@ -107,6 +109,77 @@ def audit(folder):
     }, paths
 
 
+def audit_attention_placement(baseline, candidate, receipt, pins):
+    """Bind the timed database to its placement and exact Xcelium inputs."""
+    variant = candidate.parent
+    placed_log = candidate / "eco/console.log"
+    original_log = baseline / "eco/console.log"
+    netlist = variant / "candidate.v"
+    placed_netlist = candidate / "eco/placed.v"
+    preparation = variant / "prepared.json"
+    replay_folder = variant / "integrated_attention"
+    replay_path = replay_folder / "receipt.json"
+    prior_replay_path = baseline.parent / "integrated_attention/receipt.json"
+    prior_log = prior_replay_path.parent / "positive/xrun.log"
+    original_receipt = read(baseline / "receipt.json")
+    assert original_receipt["evidence_sha256"][str(prior_replay_path)] == sha(prior_replay_path)
+    prior_replay = read(prior_replay_path)
+    assert prior_replay["input_sha256"][str(prior_log)] == sha(prior_log)
+    evidence = receipt["evidence_sha256"]
+    for path in (netlist, placed_netlist, preparation, replay_path):
+        assert evidence[str(path)] == sha(path), path
+    prepared, replay = read(preparation), read(replay_path)
+    assert prepared["state"] == "attention_capture_select_buffer_contraction_verified"
+    assert replay["state"] == "attention_capture_select_buffer_candidate_replayed_exactly"
+    assert replay["candidate_sha256"] == prepared["candidate_sha256"] == evidence[str(netlist)]
+    assert replay["compiled_memories"] == receipt["fixed_memory_macros"] == 623
+    bundle = replay_folder / "bundle.sv"
+    simulator_log = replay_folder / "positive/xrun.log"
+    for path in (bundle, simulator_log):
+        assert replay["input_sha256"][str(path)] == sha(path), path
+    assert bundle.read_text().splitlines().count(f'`include "{netlist}"') == 1
+    assert replay["replay"]["simulator_log_path"] == str(simulator_log)
+    assert replay["elaboration"]["native_exit_status"] == replay["replay"]["native_exit_status"] == 0
+    simulated, original_simulated = simulator_log.read_text(), prior_log.read_text()
+    replay_pass = r"^COMPOSE430_PASS (.+)$"
+    summary = field(replay_pass, simulated)
+    assert summary == field(replay_pass, original_simulated)
+    assert {"rows=4", "values=1023"} <= set(summary.split())
+    end = r"^Simulation complete via \$finish\(1\) at time (\d+) NS \+ 0$"
+    assert int(field(end, simulated)) == replay["simulation_end_ns"] == prior_replay["simulation_end_ns"]
+
+    assert receipt["placement"]["native_exit_status"] == 0
+    assert receipt["placement"]["log_sha256"] == sha(placed_log)
+    assert original_receipt["placement"]["log_sha256"] == sha(original_log)
+    placement = placed_log.read_text()
+    assert placement.splitlines().count("VERIFIED_ATTENTION_CAPTURE_BUFFER_LOADS") == 1
+    assert placement.splitlines().count("BANK_BUFFER_PLACEMENT_SAVED") == 1
+    counts = r"^BANK_BUFFER_PLACEMENT_COUNTS (\d+) [0-9.]+$"
+    placed_instances = int(field(counts, placement))
+    prior_instances = int(field(counts, original_log.read_text()))
+    assert placed_instances - prior_instances == len(prepared["branches"]) == 72
+    assert prepared["changed_original_pins"] == 1536
+
+    poses = [baseline / "report/macro_poses.tsv"]
+    poses.extend(candidate / stage / "macro_poses.tsv" for stage in ("eco", "extract", "report"))
+    expected = set(poses[0].read_text().splitlines())
+    assert len(expected) == 623
+    for path in poses[1:]:
+        actual = path.read_text().splitlines()
+        assert len(actual) == len(expected) and set(actual) == expected, path
+    for path in (netlist, placed_netlist, preparation, replay_path, bundle, simulator_log, placed_log,
+                 original_log, prior_replay_path, prior_log, *poses):
+        pins[str(path.relative_to(ROOT))] = sha(path)
+    return {
+        "placed_instances": placed_instances,
+        "fixed_memory_macros": len(expected),
+        "added_buffers": placed_instances - prior_instances,
+        "register_selects_buffered": prepared["changed_original_pins"],
+        "attention_rows_replayed": 4,
+        "attention_values_replayed": 1023,
+    }
+
+
 def run(baseline, candidate, output):
     if not __debug__:
         raise RuntimeError("Run the timing audit with assertions enabled")
@@ -123,6 +196,8 @@ def run(baseline, candidate, output):
         assert revised["period_ns"] == original["period_ns"]
         delta = revised["timing"]["worst_slack_ns"] - original["timing"]["worst_slack_ns"]
         assert abs(delta - receipt["delta_worst_slack_ns"]) < 1e-9
+        if receipt["state"] == ATTENTION_CAPTURE_STATE:
+            revised["placement"] = audit_attention_placement(baseline, candidate, receipt, current)
         result.update(candidate=revised, delta_worst_slack_ns=delta)
         pins.update(current)
     pins[str(Path(__file__).resolve().relative_to(ROOT))] = sha(Path(__file__))

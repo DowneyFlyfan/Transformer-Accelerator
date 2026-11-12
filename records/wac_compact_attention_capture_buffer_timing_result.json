@@ -1,0 +1,130 @@
+{
+  "baseline": {
+    "critical_startpoints": {
+      "feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/out_output_reg[3]/CP": 15
+    },
+    "largest_delay_stages": {
+      "attention_pipeline/attention/attention/hi_fo_buf361362/ZN": 15
+    },
+    "period_ns": 1.72414,
+    "timing": {
+      "reported_paths": 15,
+      "violating_paths": 15,
+      "worst_slack_ns": -50.796532
+    },
+    "worst_path": {
+      "arrival_ns": 48.348598,
+      "endpoint": "attention_pipeline/attention/attention/packet_reg[5047]/SA",
+      "largest_stages": [
+        {
+          "cell": "CKND16BWP12T40P140",
+          "delay_ns": 21.3923,
+          "fanout": 704,
+          "point": "attention_pipeline/attention/attention/hi_fo_buf361362/ZN",
+          "transition_ns": 6.022
+        },
+        {
+          "cell": "BUFFD16BWP12T40P140",
+          "delay_ns": 20.3881,
+          "fanout": 834,
+          "point": "attention_pipeline/attention/attention/g342419/Z",
+          "transition_ns": 0.2802
+        },
+        {
+          "cell": "INVD6BWP12T40P140",
+          "delay_ns": 2.4491,
+          "fanout": 2,
+          "point": "attention_pipeline/attention/attention/hi_fo_buf361370/ZN",
+          "transition_ns": 43.5569
+        }
+      ],
+      "period_ns": 1.72414,
+      "required_ns": -2.447933,
+      "slack_ns": -50.796532,
+      "startpoint": "feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/out_output_reg[3]/CP"
+    }
+  },
+  "candidate": {
+    "critical_startpoints": {
+      "rsp_valid": 15
+    },
+    "largest_delay_stages": {
+      "feedforward/compute/compute/tensor/g322574/ZN": 15
+    },
+    "period_ns": 1.72414,
+    "placement": {
+      "added_buffers": 72,
+      "attention_rows_replayed": 4,
+      "attention_values_replayed": 1023,
+      "fixed_memory_macros": 623,
+      "placed_instances": 2120685,
+      "register_selects_buffered": 1536
+    },
+    "timing": {
+      "reported_paths": 15,
+      "violating_paths": 15,
+      "worst_slack_ns": -45.748207
+    },
+    "worst_path": {
+      "arrival_ns": 47.307098,
+      "endpoint": "feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/inputs[1]/A[3]",
+      "largest_stages": [
+        {
+          "cell": "ND2D0BWP12T40P140",
+          "delay_ns": 33.3186,
+          "fanout": 40,
+          "point": "feedforward/compute/compute/tensor/g322574/ZN",
+          "transition_ns": 0.7342
+        },
+        {
+          "cell": "AO222D1BWP12T40P140",
+          "delay_ns": 7.247898,
+          "fanout": 2,
+          "point": "feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/g143200/Z",
+          "transition_ns": 53.410801
+        },
+        {
+          "cell": "CKND2D1BWP12T40P140",
+          "delay_ns": 2.9318,
+          "fanout": 2,
+          "point": "feedforward/g14383/ZN",
+          "transition_ns": 5.295
+        }
+      ],
+      "period_ns": 1.72414,
+      "required_ns": 1.558891,
+      "slack_ns": -45.748207,
+      "startpoint": "rsp_valid"
+    }
+  },
+  "delta_worst_slack_ns": 5.048324999999998,
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/candidate.v": "45229d36ee8577b5e0d37be4f121dcc2149a069a9966e7886042ef1c48d03f1e",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/integrated_attention/bundle.sv": "e4086fec3133c8bf3a47e8eeb03c909f4fe9d2203758568d1579053b846f8f0f",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/integrated_attention/positive/xrun.log": "7375f3305b3561800d4b87c610c92cd5e55469ca37e221f58de83668e2dd5330",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/integrated_attention/receipt.json": "9ad398c4f7efbf12df1dbb7185d19a8844f9560b3b88dd929f49ae1473d1642f",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/eco/console.log": "3d61dacdebfbd59e281744cb0aff473a9671b38f54ce5f1f54de7188ec9b98ad",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/eco/macro_poses.tsv": "9cd798d424bec285df1a3a3c80de979c6bbed40623cd11404eff7458de388359",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/eco/placed.v": "51e782456a611278e433503df04c311ef7eb741b7ec41e30decab108401a3164",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/extract/console.log": "4a7e51ec02c6e82a62cf005855d7af765743b8e1f3912c81cc1f9a7aff6f41f5",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/extract/macro_poses.tsv": "9cd798d424bec285df1a3a3c80de979c6bbed40623cd11404eff7458de388359",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/receipt.json": "1e0fa287bf96fec53db9adbab5c882b94f719904dd251c9de729ba4194061058",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/report/annotation.rpt": "7431d0b49fb715220bb4816341093a90330e5df4c1f7bfed4c1521267d34893e",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/report/console.log": "339e5d66fdd221b0a0737870f10183c38f3fe9edc1b0d6a967a84d83349dc25b",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/report/macro_poses.tsv": "9cd798d424bec285df1a3a3c80de979c6bbed40623cd11404eff7458de388359",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/physical_comparison/report/timing.rpt": "b4f0484c101ad74687f157a55f75af11057e957fbf59aa26c103aeee9137f44b",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/attention_select_buffer_trial/prepared.json": "419e843800866dfd5ef647d355ac06a828cfd3f61a0718eb7715720abaf9f14b",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/integrated_attention/positive/xrun.log": "6b58ce7308fbd8ead9ddb0060ba1cbadb24dbc0abcfffc3418229b74a40a3c0e",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/integrated_attention/receipt.json": "e16d3fd6d6c68feb23e3c3d23035c79f835b184560d39113a17fbf126ae1c7f1",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/eco/console.log": "e9a697636086e0a07845ab4e5b88c2c040af788da68a17c0ceb81947914586b1",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/extract/console.log": "e3b1f14d387b6cfaf84e56e785f55a69757afdbce837f93c0f70dca37927980f",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/receipt.json": "dec25537726a74d9a403e9aca13c13852ff04928a76a7c3dad5904b7ef468c61",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/report/annotation.rpt": "c1594ff6609a286083e4e700911376b1d3d40815b10239e02ae8b2ca4f43d01a",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/report/console.log": "7953e6a1915a034f50506db89f493754c0c156da8707b669680fa98849c3803b",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/report/macro_poses.tsv": "9cd798d424bec285df1a3a3c80de979c6bbed40623cd11404eff7458de388359",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/report/timing.rpt": "695b8e8b64b416f7c0cc1f39fee6f08a670f8c9a5514c7632db805cdf473a04e",
+    "syn/audit_tri_oracle_compact_setup_paths.py": "f0ceae52e0fd7d576507dbbfe5fc04dbe19d628acadc2e962b07e4b3335c7d44"
+  },
+  "scope": "Estimated interconnect delay on legally placed compact decoder versions.",
+  "state": "compact_placed_slow_setup_paths_independently_checked"
+}
