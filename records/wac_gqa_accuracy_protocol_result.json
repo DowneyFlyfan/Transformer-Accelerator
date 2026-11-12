@@ -1,0 +1,52 @@
+{
+  "state": "balanced_gqa_testdev_inputs_and_calibration_isolation_verified",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "questions": 12578,
+  "images": 398,
+  "calibration_images": {
+    "calibration": 8,
+    "held": 8
+  },
+  "exact_decoded_image_overlap": {
+    "calibration": 0,
+    "held": 0
+  },
+  "prompt": "USER: <image>\n{question}\nAnswer the question using a single word or phrase.\nASSISTANT:",
+  "decoder_max_new_tokens": 128,
+  "answer_processing": "Trim whitespace and trailing periods, lowercase, then exact match",
+  "scoring_reference": "https://cs.stanford.edu/people/dorarad/gqa/evaluate.html",
+  "paper_reported_accuracy_percent": 55.04,
+  "paper_prompt_and_split_confirmed": false,
+  "mapped_execution_accuracy_verified": false,
+  "input_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/dataset_verification.json": "e317feafc07e5a78dfb6394765b9a19282519a54e5df6f8e07352fdb26fbfc62",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/testdev_balanced_images.parquet": "ba0a57a72c483d6e4a390ecbbee05d07a55365aeac3e93f4a923ac61c9e465eb",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/pruned_reference/inputs.json": "f4f27cde9000da4c862d531da71a09733320ea813cdc307bb26542add742cf45",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/down_scale_full/inputs.json": "6c0a1460e03dfeb51feb348266a4e9bf00f625303887ccef18f6e2e65d584cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/down_output_scale_calibration/receipt.json": "57f7f5a27396e8a1e56405d8146fd0be772d24d41a5f66f80ebed8d544fc9662",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/format320_multi_image_range_audit.json": "f7040e04f3af6776ae0495343d7ef8b06667d3f46c99eb5ad1c53ded45dba36f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/inputs.json": "e9e998bceee5d04c0e1ebcb88a21cf0ab7bdca76395aa078a363c0dfbb5382e3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_00.png": "fa39f41abaf6e93af189346d48f3e48dfeec9211b29475f4b0d5b76eaddb9681",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_01.png": "611e7720df31e9cfd1f2ad911ddd3c24a3ec7865d4cba04006174f812350630d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_02.png": "65219fd05e8487ea92b74a864cfbb40d670ac1020826d702722585ff99a829b4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_03.png": "71eb9c94e4241349585c63a633280017354a2efd1326a8a162671b4892dbd769",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_04.png": "d71ee9093bee55de62c8bcfbdb4e55351ac7a4b1171d519ee8a3590db4fc36f6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_05.png": "cc687f36fd4e1dd80c8b5733c5ff4c4a0b57a560dd826cf4c630fc40cddae43e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_06.png": "276a7b7281b691280a0c21c6235cd8cddc0c6fef6c98495a81fdfd797d3c9986",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_07.png": "fa6805f40ee5dd15d900215601a6e36669fade33056cb30f238fd5ae1823e36e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_08.png": "5f34c3bf51735e41be7f221bf90e27e3e212cf59c94749098996cbfd2de9ac7b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_09.png": "7e61a5cc2278cd1b38c92e420cfe48c96bb987dd9610261702ed2497f561c22d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_10.png": "8b955eec1d79de557d4c606faf04682445842cda0baa6d28ba3e56feac802e28",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_11.png": "47c365d2d91809ebc9b71d3f6a991d0c45c5cf5f03505ac4bd578590960ed390",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_12.png": "fc8d1df0e16ba8c1384f5789327515c330c2eb5a4b61ce7f5502f55c767a6be7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_13.png": "d50b11e690740acdc281387041f72ea04fd5818ac19d160d19ab70a3b6d58fcf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_14.png": "7e792f8bb05c76266d48ee0fad93ad9b1072becd50ff44d4959efa1fc3c39e07",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/ai2d285/input_15.png": "98d331cb1164b4237d1d53ebb20ed96a9813a2340d342d6e6eae8ed2d9845a07",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/verify_tri_oracle_gqa_protocol.py": "0ce095a590923394a34b884e4d7eeb8f9300530d6c2dd988f4dfd901abbea8b2"
+  }
+}

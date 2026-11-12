@@ -1,0 +1,58 @@
+{
+  "state": "full_balanced_gqa_down_scale_accuracy_independently_verified",
+  "questions": 12578,
+  "exact_matches": {
+    "dense": 7163,
+    "baseline_pruned": 5975,
+    "calibrated_pruned": 5960
+  },
+  "exact_match_percent": {
+    "dense": 56.948640483383684,
+    "baseline_pruned": 47.50357767530609,
+    "calibrated_pruned": 47.38432183176975
+  },
+  "calibrated_delta_percentage_points": -0.11925584353633328,
+  "paper_reported_accuracy_percent": 55.04,
+  "paper_gap_percentage_points": 7.655678168230246,
+  "calibrated_panel_rows_reproduced": 240,
+  "paired_transitions": {
+    "gained": 522,
+    "lost": 537
+  },
+  "calibration_improves_full_split": false,
+  "outcome_order": [
+    "dense",
+    "baseline_pruned",
+    "calibrated_pruned"
+  ],
+  "paired_correctness_histogram": {
+    "000": 4226,
+    "001": 192,
+    "010": 175,
+    "011": 822,
+    "100": 1855,
+    "101": 330,
+    "110": 362,
+    "111": 4616
+  },
+  "paper_prompt_and_split_confirmed": false,
+  "mapped_execution_accuracy_verified": false,
+  "scope": "Local TinyLLaVA-v1 software exact-match scores on balanced GQA Test-Dev.",
+  "input_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/down_scale_full/independent_accuracy.json": "2f8ad108b9528c2cda849cd7acab673d5b13e60c8b74e56f8e0deedec52f3ec7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/verify_full_down_scale_accuracy.py": "eca7d94efd7a94232e8ba50093f095d8642416819a91b17f538d26a3176d0d9b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/pruned_reference/independent_accuracy.json": "5355fe0ff2c08c803f89f78adf267e063919c5af6e4585a7720931bc39ec0435",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/down_scale_full/receipt.json": "941c6c7c803ea8564f304a07680d936ba8b8404934621f24952b3ac217a63473",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/down_scale_full/inputs.json": "6c0a1460e03dfeb51feb348266a4e9bf00f625303887ccef18f6e2e65d584cdf",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/down_scale_full/predictions.jsonl": "12814bbe839a9874f22ab5fcd1c3ecae82854aa7626d60eccb96941e40f3404d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/pruned_reference/receipt.json": "330708dd9dd2826ef37aa31aedf43e39e37b3949e31f732fe2f210efbd163c44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/pruned_reference/inputs.json": "f4f27cde9000da4c862d531da71a09733320ea813cdc307bb26542add742cf45",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/pruned_reference/predictions.jsonl": "68394aff6c8360f7cc671382a01157b2f727a3a962f84969a7f2c4a30ef7081f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd"
+  }
+}
