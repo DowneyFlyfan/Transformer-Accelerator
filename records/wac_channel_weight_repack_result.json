@@ -1,0 +1,30 @@
+{
+  "bytes_per_beat": 64,
+  "compute_beats": 56,
+  "evidence_sha256": {
+    ".cache/model_reference/channel_major_layer0_v1/down.bin": "cb6aa53a1a3f794425ee1eb285d1ced420e3e011c8649b750fdcaecc18cee33d",
+    ".cache/model_reference/channel_major_layer0_v1/gate.bin": "5981f6a67363b6fed5f615f6d507d7fa915bda0088ce3fdae3c70748e3e9ae05",
+    ".cache/model_reference/channel_major_layer0_v1/up.bin": "7b99c9ea82ef7fd94555cfde6de626add6413096868cb7bd604662b5b6ed2087",
+    ".cache/physical/channel_weight_repack/final/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/channel_weight_repack/final/xrun.log": "43bec9495138e52f0ad02e01fff64b260d56cbd65299788e75ff6fc6727d9e36",
+    ".cache/physical/channel_weight_repack/red/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/channel_weight_repack/red/no_repack.sv": "a79bd0b765af7b274ddb1aab4cbb8079bfa0ff2284d0f306a9ee93a070cc9e6c",
+    ".cache/physical/channel_weight_repack/red/xrun.log": "13520a9e93c0b8ec942c639f76032db72eea26de7c104e0b4b4b0b3240798131",
+    ".cache/physical/channel_weight_repack/verilator.exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/channel_weight_repack/verilator.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "records/wac_channel_major_weight_image_result.json": "80df35db77d6a1aab27c2768989f035f77e19e8abe55b9efaf40b828e279cf0a",
+    "verilog/tri_oracle_channel_weight_repack.sv": "907463e36800621357c158957f68d80e29a1886a5baf54b588a2cefb6a1d4b52",
+    "verilog/tri_oracle_channel_weight_repack_tb.sv": "9c3abd110779f7d78089204b17b05cf2081c3e2896bc3cd0104ba8c87f628fc8"
+  },
+  "input_responses": 22,
+  "lint_exit_status": 0,
+  "native_exit_status": 0,
+  "scope": "Standalone repacker compared all bytes with the original compute format for the sampled trained tiles. Coverage includes skipped channels, stalls and reset during a transfer. Chip integration and mapped timing are pending.",
+  "state": "channel_major_trained_weight_repacking_verified_in_xcelium",
+  "tiles": 7,
+  "verified_branches": [
+    "gate",
+    "up",
+    "down"
+  ]
+}
