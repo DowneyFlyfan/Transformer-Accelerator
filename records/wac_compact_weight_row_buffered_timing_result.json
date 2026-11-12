@@ -1,0 +1,108 @@
+{
+  "baseline": {
+    "critical_startpoints": {
+      "feedforward/compute/compute/tensor/state_reg[0]/CP": 15
+    },
+    "largest_delay_stages": {
+      "feedforward/compute/compute/tensor/g322517/ZN": 15
+    },
+    "period_ns": 1.72414,
+    "timing": {
+      "reported_paths": 15,
+      "violating_paths": 15,
+      "worst_slack_ns": -78.820381
+    },
+    "worst_path": {
+      "arrival_ns": 79.314796,
+      "endpoint": "feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/weights[15]/BWEB[64]",
+      "largest_stages": [
+        {
+          "cell": "OAI21D0BWP12T40P140",
+          "delay_ns": 48.129498,
+          "fanout": 40,
+          "point": "feedforward/compute/compute/tensor/g322517/ZN",
+          "transition_ns": 0.6461
+        },
+        {
+          "cell": "INVD6BWP12T40P140",
+          "delay_ns": 17.013199,
+          "fanout": 64,
+          "point": "feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/g146856/ZN",
+          "transition_ns": 73.634804
+        },
+        {
+          "cell": "CKND1BWP12T40P140",
+          "delay_ns": 6.2098,
+          "fanout": 32,
+          "point": "feedforward/compute/compute/tensor/g327150/ZN",
+          "transition_ns": 16.4643
+        }
+      ],
+      "period_ns": 1.72414,
+      "required_ns": 0.494413,
+      "slack_ns": -78.820381,
+      "startpoint": "feedforward/compute/compute/tensor/state_reg[0]/CP"
+    }
+  },
+  "candidate": {
+    "critical_startpoints": {
+      "feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/out_output_reg[3]/CP": 15
+    },
+    "largest_delay_stages": {
+      "attention_pipeline/attention/attention/hi_fo_buf361362/ZN": 15
+    },
+    "period_ns": 1.72414,
+    "timing": {
+      "reported_paths": 15,
+      "violating_paths": 15,
+      "worst_slack_ns": -50.796532
+    },
+    "worst_path": {
+      "arrival_ns": 48.348598,
+      "endpoint": "attention_pipeline/attention/attention/packet_reg[5047]/SA",
+      "largest_stages": [
+        {
+          "cell": "CKND16BWP12T40P140",
+          "delay_ns": 21.3923,
+          "fanout": 704,
+          "point": "attention_pipeline/attention/attention/hi_fo_buf361362/ZN",
+          "transition_ns": 6.022
+        },
+        {
+          "cell": "BUFFD16BWP12T40P140",
+          "delay_ns": 20.3881,
+          "fanout": 834,
+          "point": "attention_pipeline/attention/attention/g342419/Z",
+          "transition_ns": 0.2802
+        },
+        {
+          "cell": "INVD6BWP12T40P140",
+          "delay_ns": 2.4491,
+          "fanout": 2,
+          "point": "attention_pipeline/attention/attention/hi_fo_buf361370/ZN",
+          "transition_ns": 43.5569
+        }
+      ],
+      "period_ns": 1.72414,
+      "required_ns": -2.447933,
+      "slack_ns": -50.796532,
+      "startpoint": "feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/out_output_reg[3]/CP"
+    }
+  },
+  "delta_worst_slack_ns": 28.023849,
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/timing/extract/console.log": "d0e2718b835bdebb569ae1d315d166a9e9a9d90f9d79595c8c615c1aad4fad40",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/timing/receipt.json": "096cb46d3973799cbd6668c1702137f854bb9b115d783515b89c4abf15580d20",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/timing/report/annotation.rpt": "3edd4a716fd54dc8233a54280f7ef426296510e260815a217b6324208c236d10",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/timing/report/console.log": "953f5e3d2ac2f6084d8eb785c68ab0f5047796b2b903edd6f2f1ba9cb9a5e00d",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/matched_placement/timing/report/timing.rpt": "586b7c4cb497df5798d234a583e2a3b5badee9a93df86e2c7f9d2b88b3030bab",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/extract/console.log": "e3b1f14d387b6cfaf84e56e785f55a69757afdbce837f93c0f70dca37927980f",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/receipt.json": "dec25537726a74d9a403e9aca13c13852ff04928a76a7c3dad5904b7ef468c61",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/report/annotation.rpt": "c1594ff6609a286083e4e700911376b1d3d40815b10239e02ae8b2ca4f43d01a",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/report/console.log": "7953e6a1915a034f50506db89f493754c0c156da8707b669680fa98849c3803b",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/physical_comparison/report/timing.rpt": "695b8e8b64b416f7c0cc1f39fee6f08a670f8c9a5514c7632db805cdf473a04e",
+    "syn/audit_tri_oracle_compact_setup_paths.py": "b84f1f32f1bd0cf21e6f9f8c9493d7da446bb8ef083645e9d50e3c35ed44d87a"
+  },
+  "scope": "Estimated interconnect delay on legally placed compact decoder versions.",
+  "state": "compact_placed_slow_setup_paths_independently_checked"
+}
