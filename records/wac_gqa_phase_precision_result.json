@@ -1,0 +1,36 @@
+{
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/paired_ablation/independent_receipt.json": "0d2e6a849b121ce4378c5e6b3761e9628f5a85e54c8d3a449fbb96421e35690a",
+    ".cache/model_reference/gqa_testdev/phase_precision.log": "f97114014a72584ecc9e42789f60253e92bbfb6626dd8b9e69c01c7b0e8731f6",
+    ".cache/model_reference/gqa_testdev/phase_precision/architecture.pdf": "9ec441777662e5735838d7a0a2d30d33475297dc022988f7031eb1b8a15cb00f",
+    ".cache/model_reference/gqa_testdev/phase_precision/inputs.json": "7cf1487e570e84b50b649c05248210534c4e83bf4b0142687a2aabcd564710ff",
+    ".cache/model_reference/gqa_testdev/phase_precision/predictions.jsonl": "dff72dd665825d193286602e0e60f72e00ff7622670b4c451a8766585e093e1f",
+    ".cache/model_reference/gqa_testdev/phase_precision/receipt.json": "6893ffdf533fe3022612fca927534dd85b8942269bb8135b44335d7ddfa45a56",
+    "syn/evaluate_tri_oracle_gqa_phase_precision.py": "225df39fe4929163faf0c0df1d3e08d6fff87d4c3dc567a652c4a295a06c4ad8"
+  },
+  "exact_matches": {
+    "float_both_archived": 106,
+    "float_decode": 90,
+    "float_prefill": 106,
+    "integer_both": 89
+  },
+  "integer_control_answers_reproduced": 160,
+  "native_elapsed_seconds": 163.31958434998523,
+  "paired_changes_from_integer_both": {
+    "float_decode": {
+      "first_token_changed": 0,
+      "gained": 1,
+      "lost": 0
+    },
+    "float_prefill": {
+      "first_token_changed": 49,
+      "gained": 32,
+      "lost": 15
+    }
+  },
+  "peak_gpu_bytes": 7451023360,
+  "questions": 160,
+  "scope": "Software phase ablation on the archived 160-question panel with compact streaming attention and weight skipping disabled. Floating arithmetic is a diagnostic control.",
+  "state": "gqa_feedforward_phase_precision_independently_rescored"
+}
