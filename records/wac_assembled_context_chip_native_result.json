@@ -1,0 +1,32 @@
+{
+  "chip_netlist_sha256": "daa5ba27d8e8d96a21322f062a7e3de16b9fb8e94096ed79eb24bae72af36688",
+  "compiled_memory_instances": 623,
+  "counters": {
+    "attention_reads": 57992,
+    "failed_writes": 2,
+    "maps": 576,
+    "rows": 4,
+    "stalls": 59,
+    "values": 1023,
+    "writes": 27
+  },
+  "decoder_netlist_sha256": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+  "elaboration_wall_seconds": 147.65964002802502,
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/assembled_context_chip_native/bundle.sv": "64be8af406fb2920a4cca733012362c4a2b7d625526b8052c23da12e32efbf58",
+    ".cache/physical/context_external/shared_decoder/assembled_context_chip_native/elaborate/xrun.log": "05e37ecf655780e74da2afaf1460a17e135f0ff92ffc8866c930daeace2ae778",
+    ".cache/physical/context_external/shared_decoder/assembled_context_chip_native/receipt.json": "052b1ed82a0b5b4341580fcb72a674d29d47b999c2026b5769606c5ee17fc330",
+    ".cache/physical/context_external/shared_decoder/assembled_context_chip_native/replay/xrun.log": "9e332b7975950af1f688ea6ecd0991d269594856e91c6871ab14740b3612546e",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_full_source/receipt.json": "166e42aefe7eddf53be2ef21ff9f336e20c9cf5662a5e71ca9ff0b994aa520ed",
+    ".cache/physical/context_external/shared_decoder/mapped_context_chip/chip.v": "daa5ba27d8e8d96a21322f062a7e3de16b9fb8e94096ed79eb24bae72af36688",
+    ".cache/physical/context_external/shared_decoder/mapped_context_chip/receipt.json": "c7bdddd7a4438d4d4925cd1cbd478a541bc1dbacd2b6e10c45fb2eb5a6274379",
+    ".cache/physical/context_external/shared_decoder/mapped_context_chip_physical_inputs/handoff.json": "67cc426c7b8febd9f466342d45a9f2b01b7e4607ec1093a5e85794bc9fe11387",
+    ".cache/physical/wide_weight_loader/unified_chip/full_native/attention_receipt.json": "5e3244e2b32954b618df4165fbf220f7db2718834e1eebdcd3b82f0e5fba99d3",
+    "records/wac_corrected_context_trained_gate_result.json": "68db322f7bb9dea4837ef30babc240250c843b9b2a6449b1e022578232468b35",
+    "syn/run_tri_oracle_assembled_context_chip.py": "0021a9c33bd654fc1bc82d39dec945c0af96a6d46980085f1c55a0537f515d46"
+  },
+  "native_exit_status": 0,
+  "replay_wall_seconds": 540.9258219429757,
+  "scope": "The exact assembled chip netlist passed the host command, context, and attention fixture with compiled memory models. Trained feed-forward outputs were verified in the separately pinned decoder replay. Timing and paper-level accuracy remain pending.",
+  "state": "assembled_mapped_context_chip_passed_full_command_attention_replay"
+}
