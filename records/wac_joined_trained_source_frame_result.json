@@ -1,0 +1,84 @@
+{
+  "attention_counters": {
+    "attention_reads": 57992,
+    "failed_writes": 2,
+    "maps": 576,
+    "rows": 4,
+    "stalls": 59,
+    "values": 1023,
+    "writes": 27
+  },
+  "fixture_cycles": {
+    "previous": 3904531,
+    "reduction_percent": 5.029899877859851,
+    "updated": 3708137
+  },
+  "fixture_scalar_read_counters": {
+    "read_bytes": {
+      "previous": 3942912,
+      "updated": 3497984
+    },
+    "read_requests": {
+      "previous": 82944,
+      "updated": 27328
+    }
+  },
+  "input_sha256": {
+    ".cache/physical/wide_weight_loader/dual_lane_joined_chip/full_native/attention/xrun.log": "3627e317f39f6614faea3f5bfb926700c1f58b07e166fb5d9ea29eb6b943fe1d",
+    ".cache/physical/wide_weight_loader/dual_lane_joined_chip/full_native/invocation.json": "1afc0738c340d4cb830c54759ef781c85a41d8bdd9ac92815184d4f276b47fd6",
+    ".cache/physical/wide_weight_loader/dual_lane_joined_chip/full_native/trained/progress.log": "71be8878440643a45306a991fa703f58da61abb00a2ff96600e3dd2cc9846549",
+    ".cache/physical/wide_weight_loader/dual_lane_joined_chip/full_native/trained/xrun.log": "77ab4c53e4283fd5efe4488f3aee70965925bca6c3f009cd6475ac0c87e27564",
+    ".cache/physical/wide_weight_loader/dual_lane_joined_chip/full_native/trained_receipt.json": "979996fec43eae2f5507bbf3bbe4d8855c32c94b6fff5c939832ab99012023dd",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native/attention/xrun.log": "62ce18a1478e4c903bd7e992a48f1acc908056230ed5bfce640b2f80c692f537",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native/trained_receipt.json": "ca08570292b6c37c5ac2962af85a0af4b91651290def5d54190d63610477b1a0",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native_retry/trained/progress.log": "ccd3a147713b57405806949eda23db17807d493ecb3b199334285728498dbe8a",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native_retry/trained/xrun.log": "b051a210f98b91332f31a266bc58d1cc566864d602d11d8359af8fcc7c2b64e0",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native_retry/trained_invocation.json": "7f5ebdd274e85f6847358e8a2a250665dfd5e9242bbe1ab1a547d966f38d1085"
+  },
+  "packed_sign_traffic": {
+    "mixed_response_cycles": 159,
+    "overlap_cycles": 419,
+    "requests": 9152,
+    "responses": 9152
+  },
+  "phase_progress": {
+    "MASK_ACCEPTED": {
+      "previous_last_cycle": 2685595,
+      "updated_last_cycle": 2501640
+    },
+    "OUTPUT_TILE": {
+      "previous_last_cycle": 3904524,
+      "updated_last_cycle": 3708130
+    }
+  },
+  "scope": "Same trained 16-token layer and four archived attention rows through the source-level joined design. Source fixture counters characterize this workload.",
+  "state": "joined_trained_source_frame_independently_verified",
+  "trained_counters": {
+    "exact_outputs": 32768,
+    "fault": 0,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "intermediate_bytes": 90112,
+    "output_packets": 208,
+    "outputs": 2048,
+    "read_bytes": 3497984,
+    "read_requests": 27328,
+    "tokens": 16,
+    "trained": 1
+  },
+  "trained_native_elapsed_seconds": 1175.3636543299071,
+  "weight_responses_by_lane": [
+    [
+      "0",
+      "90624",
+      "90624",
+      "91520"
+    ],
+    [
+      "1",
+      "89600",
+      "89600",
+      "88704"
+    ]
+  ]
+}
