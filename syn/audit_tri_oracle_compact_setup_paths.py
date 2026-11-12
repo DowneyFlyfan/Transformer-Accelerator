@@ -18,6 +18,11 @@ NS = r"-?\d+\.\d+"
 PATH = re.compile(rf"(?m)^Path (\d+): (VIOLATED|MET) \(({NS}) ns\) Setup Check")
 POINT = re.compile(rf"(?m)^  (\S+)\s+\S+\s+\S+\s+[RF]\s+(\S+)\s+(\d+)\s+({NS})\s+({NS}|-)\s+({NS})\s*$")
 TOLERANCE = Decimal("0.000150")
+NATIVE_FIELDS = {
+    "compact_tensor_matched_slow_placement_timing_measured": ("extraction_native", "report_native"),
+    "compact_weight_decoder_matched_pre_route_timing_measured": ("extraction_native", "report_native"),
+    "compact_row_buffer_matched_pre_route_timing_measured": ("extraction", "report"),
+}
 
 
 def read(path):
@@ -73,12 +78,9 @@ def parse_setup_paths(text):
 def audit(folder):
     receipt_path = folder / "receipt.json"
     receipt = read(receipt_path)
-    assert receipt["state"] in (
-        "compact_tensor_matched_slow_placement_timing_measured",
-        "compact_weight_decoder_matched_pre_route_timing_measured",
-    )
+    keys = NATIVE_FIELDS[receipt["state"]]
     paths = {}
-    for stage, key in (("extract", "extraction_native"), ("report", "report_native")):
+    for stage, key in zip(("extract", "report"), keys, strict=True):
         log = folder / stage / "console.log"
         assert receipt[key]["native_exit_status"] == 0
         assert sha(log) == receipt[key]["log_sha256"]
@@ -105,13 +107,19 @@ def audit(folder):
     }, paths
 
 
-def run(candidate, output):
-    original, pins = audit(BASELINE)
+def run(baseline, candidate, output):
+    if not __debug__:
+        raise RuntimeError("Run the timing audit with assertions enabled")
+    original, pins = audit(baseline)
     result = {"state": "compact_placed_slow_setup_paths_independently_checked", "baseline": original}
     if candidate:
         revised, current = audit(candidate)
         receipt = read(candidate / "receipt.json")
-        assert receipt["baseline_timing"] == original["timing"]
+        baseline_field = ("unmasked_timing" if receipt["state"] == "compact_row_buffer_matched_pre_route_timing_measured"
+                          else "baseline_timing")
+        baseline_receipt = baseline / "receipt.json"
+        assert receipt["evidence_sha256"][str(baseline_receipt)] == sha(baseline_receipt)
+        assert receipt[baseline_field] == original["timing"]
         assert revised["period_ns"] == original["period_ns"]
         delta = revised["timing"]["worst_slack_ns"] - original["timing"]["worst_slack_ns"]
         assert abs(delta - receipt["delta_worst_slack_ns"]) < 1e-9
@@ -129,6 +137,7 @@ def run(candidate, output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--baseline", type=lambda value: Path(value).resolve(), default=BASELINE)
     parser.add_argument("--candidate", type=lambda value: Path(value).resolve())
     args = parser.parse_args()
-    run(args.candidate, args.output)
+    run(args.baseline, args.candidate, args.output)
