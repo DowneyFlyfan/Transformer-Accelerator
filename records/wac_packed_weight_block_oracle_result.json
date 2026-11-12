@@ -1,0 +1,44 @@
+{
+  "at_57_percent_target": {
+    "channel_shared": {
+      "dense_weight_bytes": 6090108928,
+      "highest_tested_traffic_reduction_at_baseline_error_percent": 20.010384418529732,
+      "mean_relative_output_change": 0.3780622337060621,
+      "relative_error_sum": 998.084296984004,
+      "remaining_weight_bytes": 2617933824,
+      "saved_weight_bytes": 3472175104,
+      "weight_reduction_percent": 57.01334976187802
+    },
+    "packed_per_token": {
+      "dense_weight_bytes": 91350974464,
+      "highest_tested_traffic_reduction_at_baseline_error_percent": 10.084329619965201,
+      "mean_relative_output_change": 0.4269918109674906,
+      "relative_error_sum": 1127.2583809541752,
+      "remaining_weight_bytes": 39187906560,
+      "saved_weight_bytes": 52163067904,
+      "weight_reduction_percent": 57.101818792920106
+    },
+    "packed_shared": {
+      "dense_weight_bytes": 6090129408,
+      "highest_tested_traffic_reduction_at_baseline_error_percent": 0,
+      "mean_relative_output_change": 0.5434185298924851,
+      "relative_error_sum": 1434.6249189161606,
+      "remaining_weight_bytes": 2612527104,
+      "saved_weight_bytes": 3477602304,
+      "weight_reduction_percent": 57.10227272727273
+    }
+  },
+  "baseline_predictor_mean_relative_output_change": 0.16158661833015212,
+  "evidence_sha256": {
+    ".cache/model_reference/weight_block_oracle_v1.json": "c8ef612a1cc5b42f5a85662221e863f21d41768d05aa90570fd80c5bf872c231",
+    ".cache/model_reference/weight_block_oracle_v1.log": "09baa30dd6875960da6fe7f4dfc6538b75e8af156fdbfcc2a37a5cbeaf46d57d",
+    "records/wac_packed_predictor_threshold_result.json": "d44be5543d1f6e3a8f77338cd2580bc761bd15c6c2d2118757ff4054f9d9da1d",
+    "syn/measure_tri_oracle_weight_block_oracle.py": "5e02692943e981b0e4e65eb28182c2f8b53e80348424758c87d67d646159ccc1"
+  },
+  "held_rows": 2640,
+  "native_seconds": 4.71299401007127,
+  "observed_target_weight_reduction_percent": 57,
+  "peak_gpu_bytes": 431311360,
+  "scope": "Exact contributions rank isolated channel blocks on held rows. The ranked prefix is a heuristic. Traffic excludes sign reads, and the channel-granular layout is hypothetical.",
+  "state": "packed_weight_contribution_oracle_independently_reconciled"
+}
