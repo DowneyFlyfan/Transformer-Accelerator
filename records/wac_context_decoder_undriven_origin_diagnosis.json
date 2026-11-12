@@ -1,0 +1,93 @@
+{
+  "state": "linked_context_decoder_first_merge_undriven_origin_isolated",
+  "failed_candidate_netlist_sha256": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+  "undriven_output": {
+    "mapped_master": "split_attention_tri_oracle_attention_row426_READ_MERGE_TABLE0_LOCAL_TOKEN_SIZES1_budgeted_parent",
+    "name": "token_sizes_request[map_origin]",
+    "bits": 10,
+    "previous_parent_connection": "All ten bits were unconnected in the original synthesized hierarchy.",
+    "source_connection": "The row logic forwards map_origin to token_sizes_request.map_origin."
+  },
+  "first_transfer": {
+    "time_ns": 125,
+    "merge_origin_hex": "000",
+    "row_origin_hex": "000",
+    "token_size_origin_hex": "zzz",
+    "next_cycle_time_ns": 127,
+    "next_cycle_token_size_ready_and_error": "xx"
+  },
+  "isolated_size_controller_control": {
+    "mapped_implementations_tested": 2,
+    "known_origin_ready_and_error": [
+      "11",
+      "00"
+    ],
+    "unknown_origin_ready_and_error": [
+      "xx",
+      "xx"
+    ]
+  },
+  "live_undriven_output_bits_by_cut": {
+    "projection": {
+      "tensor_done_ready": 1,
+      "done_tag": 32,
+      "tensor_cfg_tag": 32,
+      "tensor_cfg_count": 7,
+      "tensor_cfg_channels": 2547,
+      "tensor_cfg_keep": 2560
+    },
+    "cache_writer": {
+      "source_done_ready": 1,
+      "write_address": 6
+    },
+    "attention/attention": {
+      "origin_read_valid": 1,
+      "softmax_request[outlier_valid]": 1,
+      "tensor_cfg_valid": 1,
+      "tensor_done_ready": 1,
+      "origin_read_address": 10,
+      "token_sizes_request[map_origin]": 10,
+      "softmax_request[normalized]": 128,
+      "tensor_cfg_tag": 32,
+      "tensor_cfg_dense_rows": 6,
+      "tensor_cfg_channels": 960,
+      "tensor_cfg_keep": 2560
+    },
+    "attention/predictor": {
+      "tensor_done_ready": 1,
+      "tensor_cfg_dense_rows": 6,
+      "tensor_cfg_channels": 1628,
+      "tensor_cfg_keep": 527,
+      "head_request": 33
+    },
+    "attention/placement": {},
+    "attention/store": {}
+  },
+  "remap_preflight": {
+    "genus_exit_status": 0,
+    "retained_abstracts": [
+      "attention/placement",
+      "attention/contexts.store"
+    ],
+    "remapped_instances": [
+      "projection",
+      "cache_writer",
+      "attention/attention",
+      "attention/predictor"
+    ]
+  },
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder/candidate.v": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+    ".cache/physical/wac_core_local_outlier_v2/tri_oracle_attention_row426.sv": "adb8011b2c2f715ba53889b48fdc5218716461d18fe5534404c95249c62769a2",
+    ".cache/physical/context_external/shared_decoder/first_merge_payload_trace/receipt.json": "c442e092388762f294c709696bedf8158c60c9cf3f9aae852e9bea2bc7b94637",
+    ".cache/physical/context_external/shared_decoder/first_merge_payload_trace/trace/xrun.log": "9c545d5210d90364954703c56245114dbef90fcf08dafc05fda63d683674550d",
+    ".cache/physical/context_external/shared_decoder/first_merge_payload_trace/live_undriven_cut_ports.json": "d7f96aeb1188a419b62d516eb67e9a7c86cbbb962dd5be0cb3e6fb29a31678ec",
+    ".cache/physical/context_external/shared_decoder/first_merge_size_control_probe/inputs.json": "43db7156d68d95262001b8d8d991a725fbbfd114cedb75833d8a48f43eafd4e0",
+    ".cache/physical/context_external/shared_decoder/first_merge_size_control_probe/xrun.log": "cc1b59098a2490dd203de52605d68ac305e1cc2b2d6b46d85fdfc22064b5aa9c",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_complete_partition/prepared.json": "1c1d07180ac5f99dbf36a056ff794b49f6a04abc5a0babd239b42cd8a33fc5c0",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_complete_partition/elaboration_preflight/receipt.json": "64b33b132628ec19c7e4f28c18ad89623fe286c03280bf0cda6f6fafeccef71d",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_complete_partition/elaboration_preflight/console.log": "9cf20849a339c7ec6dd45f21f23fe8a3985ff3a24d00b79a091620644f4f98ca",
+    ".cache/physical/context_external/shared_decoder/remap_attention_partition.py": "c02858d6bfd563af089833a5c362bfae723a41d58fa589b82931b98f729c691b"
+  },
+  "scope": "Failure isolation on the old linked decoder and elaboration of the corrected partition. Integrated gate replay and placement qualification are pending."
+}
