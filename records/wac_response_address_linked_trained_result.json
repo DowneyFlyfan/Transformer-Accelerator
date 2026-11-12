@@ -1,0 +1,38 @@
+{
+  "compiled_memory_macros": 623,
+  "counters": {
+    "exact_outputs": 32768,
+    "fault": 0,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "intermediate_bytes": 90112,
+    "output_packets": 208,
+    "outputs": 2048,
+    "read_bytes": 38545920,
+    "read_requests": 353280,
+    "tokens": 16,
+    "trained": 1
+  },
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor_trained/progress.log": "3395cfda007b7868ce71750c6594e8011592fc71494267e5195a7c83353690ba",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/response_address_trial/linked_buffered/candidate.v": "1fe2889db56902b2f0a8e602c6ecd5087eabba0b3b9b8d078c741958392c736e",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/response_address_trial/linked_buffered/integrated_trained/progress.log": "3395cfda007b7868ce71750c6594e8011592fc71494267e5195a7c83353690ba",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/response_address_trial/linked_buffered/integrated_trained/receipt.json": "0d8a40d50a9689f43b76bb366b99f3dcf651087c92be90ff231e1f944b50ca56",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/response_address_trial/linked_buffered/integrated_trained/xrun.log": "593607e9d763daadc8fa7c6b267ca018c817ae3a6dfdb895f0b5b98782ecebfd",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/response_address_trial/linked_buffered/physical_comparison/eco/console.log": "5c7b782794df37d1bc57f0a2196a77c7fb6d92cf3306411a2e17fcf80327dae3",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/response_address_trial/linked_buffered/physical_comparison/eco/placement.rpt": "9ed224a4ffd7f9bbb1717fc542313347924538ed1c6b96ad8a9bb565c60d14a7",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/response_address_trial/linked_buffered/receipt.json": "c07de2d8bef2501df50e253cc72d9d1bb4c0015bb77e1c8f83f7f876e966966a"
+  },
+  "initial_placement_violations": {
+    "overlapping_instances": 1061,
+    "placement_blockage": 2
+  },
+  "last_output_tile_cycle": 10964192,
+  "mapped_decoder_sha256": "1fe2889db56902b2f0a8e602c6ecd5087eabba0b3b9b8d078c741958392c736e",
+  "mask_packets": 71,
+  "native_simulation_seconds": 7313.03900285298,
+  "output_tiles": 13,
+  "progress_identical_to_archived_reference": true,
+  "scope": "Mapped decoder layer with its existing scalar sign read path. The trained frame and cycle log passed. The initial placement comparison rejected the replacement geometry.",
+  "state": "linked_response_address_trained_gate_replay_verified_placement_pending"
+}
