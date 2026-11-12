@@ -1,0 +1,34 @@
+{
+  "state": "mapped_redundancy_topology_verified_chip_services_open",
+  "architecture_figure": "31.6.2",
+  "candidate_netlist_sha256": "cd617037d47782f929ad0244899978878bba777f1640d6f0b73a16b13a21866e",
+  "clusters": 5,
+  "aggregator_token_mergers": 5,
+  "mapped_processing_arrays": 20,
+  "attention_head_predictors": 20,
+  "strip_predictors": 20,
+  "open_chip_services": [
+    "all-digital phase-locked loop",
+    "complete chip-level network and external memory integration"
+  ],
+  "context_restore_enabled_in_current_decoder": false,
+  "tested_profile_variant": {
+    "rejects_unsupported_restore": true,
+    "checks_default_controller_cases": 10,
+    "rejects_before_payload": true,
+    "mapped_cells": 1255,
+    "mapped_cell_area_um2": 3426.024
+  },
+  "evidence_sha256": {
+    ".cache/physical/chip_dispatch/mapped_redundancy_topology.json": "f631466d1008315adac4f2205eb3ae7a8aa449ca459bd9afa1e65a5c0af69e85",
+    ".cache/physical/chip_dispatch/profile_restore_reject/red/xrun.log": "a194669424dad9f1a1f14a5ff4f4f761281571a91740ff12ff77e0be64a85c8e",
+    ".cache/physical/chip_dispatch/profile_restore_reject/green/xrun.log": "b5bb411de342b55306548e5b4a527c9a865fc8dfd1cf15ab969b15dd8ef599c6",
+    ".cache/physical/chip_dispatch/profile_restore_reject/default/xrun.log": "bd602455de5cd864ecb886066e02acdb49d8607d04f7ee1d5a715c885cd932d0",
+    ".cache/physical/chip_dispatch/profile_restore_reject/mapped_replay/xrun.log": "8f12cb68504d5441e83071cf96ed14b5c5e6e89b649ecd40b0cc2825fc4954ee",
+    ".cache/physical/chip_dispatch/profile_restore_reject/mapped/area.rpt": "726b2e233eb08c4329d20d3b7c031aa8ca7ad46cbf894dba06ae2a37e7dd7b1e",
+    ".cache/physical/chip_dispatch/profile_restore_reject/tri_oracle_chip_dispatch.sv": "3816b8dcd049a3c7b0979d1d1a7cbd7199ae14189df66b757e09df03a5118d3a",
+    ".cache/physical/chip_dispatch/profile_restore_reject/restore_profile_tb.sv": "3ee5b25eb9891de492964599b70bc470cc2a2ae9246f7c02d8e5bb01db3e63f1",
+    ".cache/physical/chip_dispatch/profile_restore_reject/mapped/netlist.v": "200409d0a1667047fb4a5d46f30ff6779ecce51b0176cdba324f92588ab554fa"
+  },
+  "scope": "Mapped shared-memory decoder topology and isolated controller-profile correction. The queued decoder replay uses the original controller."
+}
