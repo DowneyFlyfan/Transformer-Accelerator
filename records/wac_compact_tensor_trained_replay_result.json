@@ -1,0 +1,27 @@
+{
+  "state": "compact_tsmc_mapped_layer_passed_trained_feedforward",
+  "candidate_netlist_sha256": "712e96e24c4a769964dc8eac01d31ed70300cea5f50e4d0df48da5d9faf0fec9",
+  "simulator": "Cadence Xcelium 25.03",
+  "mapped_compute_cores": 20,
+  "compiled_memory_macros": 623,
+  "exact_outputs": 32768,
+  "activation_tokens": 16,
+  "verified_mask_packets": 71,
+  "verified_output_tiles": 13,
+  "output_packets": 208,
+  "last_output_tile_cycle": 10964192,
+  "cycle_log_matches_archived_reference": true,
+  "native_elapsed_seconds": 6962.6879461739445,
+  "native_exit_status": 0,
+  "scope": "Functional gate-level replay on the compact tensor layer. Whole-chip timing and workload accuracy are open.",
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor_trained/receipt.json": "23090b80ff086e96552092dc7eff1ce9a4e4c9bf217e28d099055b17d9fa2e42",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/trained/receipt.json": "23d44246421404b560efc04cdbebea278502f154c8974a7c6d0c9ecd37d6806a",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor/receipt.json": "bdf9019b35f10497477dd7cb76d629cdfc2e810063c16d529b429709f57bee4b",
+    "records/wac_compact_tensor_mapped_attention_result.json": "927d99aeb05a8f6264bb43ea316279e4cd7ea10e0b8c48aa9b95496acf136a75",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor_trained/progress.log": "3395cfda007b7868ce71750c6594e8011592fc71494267e5195a7c83353690ba",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/trained/progress.log": "3395cfda007b7868ce71750c6594e8011592fc71494267e5195a7c83353690ba",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor_trained/xrun.log": "0aeaffefc619e492469cf49afaba667cd404f474d5b7f74dd8098c64d35dd217",
+    ".cache/physical/wac_budgeted_parent_boundary/fully_mapped_layer_replays_split/trained/xrun.log": "fdb20182b4cd2bb7e3bdd33665d4c2e65bad2ca38a1494dd9c3542d01041670f"
+  }
+}

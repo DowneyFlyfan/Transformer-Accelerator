@@ -1,0 +1,38 @@
+{
+  "state": "first_token_activation_precision_independently_scored",
+  "split_scores": {
+    "pilot": {
+      "questions": 40,
+      "baseline": 23,
+      "refined": 26,
+      "gained": 4,
+      "lost": 1,
+      "changed_tokens": 5,
+      "change_percentage_points": 7.5
+    },
+    "holdout": {
+      "questions": 200,
+      "baseline": 116,
+      "refined": 113,
+      "gained": 4,
+      "lost": 7,
+      "changed_tokens": 16,
+      "change_percentage_points": -1.5
+    }
+  },
+  "first_token_only": true,
+  "end_to_end_full_benchmark_verified": false,
+  "hardware_replay_verified": false,
+  "input_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/pruned_reference/predictions.jsonl": "68394aff6c8360f7cc671382a01157b2f727a3a962f84969a7f2c4a30ef7081f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/pruned_reference/receipt.json": "330708dd9dd2826ef37aa31aedf43e39e37b3949e31f732fe2f210efbd163c44",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/down_scale_panel_cadence_replay/inputs.json": "9355ddea6fc37a75e5fd24cc22d6b99a63c319f4dfafc1925ae75935ed650040",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/verify_first_token_precision.py": "1aa5d8ef90b337c58518c907ff0afaf89526382478d22315487ce7b53b118ca2",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/run_first_token_precision_pilot.py": "d371f534477d2ceef61cdb2a8f31d85f278b39eb598351c79aa351869525cf0c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/first_token_precision_pilot.json": "6c071f0f44e4d98ab36519efacf84d254b56cd47b753afd895b4a94196f64a68",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/run_first_token_precision_holdout.py": "6aa17fb413c33c7add6a93f1bb40be740a4f37689947301b9f006a0aadefed85",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/gqa_testdev/first_token_precision_holdout.json": "8325cbc70015d0cc981cb4f5f5833711d4652fc4efad98eb9b502c2a119a9f38"
+  }
+}
