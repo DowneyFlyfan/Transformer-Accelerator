@@ -1,0 +1,103 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/normalized_weight_burst_schedule_v2/receipt.json": "94793a844459fded4f2c7568f4f9b0cc5c71a6191605a40eb5dd71f59c8357ea",
+    ".cache/model_reference/normalized_weight_burst_schedule_v2/replay/packed_traffic.json": "16be001cc240f5ffc77bb05efc8485a529a3079fe0b09165c3eae560cd98fc70",
+    ".cache/model_reference/packed_workload_traffic_v1/packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/boundary.sv": "50102d859c155c41e4e4d1b8f0565054b7b539641340ff2a82123d97e03a93c6",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native_retry/trained/xrun.log": "b051a210f98b91332f31a266bc58d1cc566864d602d11d8359af8fcc7c2b64e0",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native_retry/trained_receipt.json": "ca08570292b6c37c5ac2962af85a0af4b91651290def5d54190d63610477b1a0",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/prepared.json": "1891b843765c3bcb315dce48f0ec18cc6291dd17e991eb75dfbd9fbb09453f01",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/tri_oracle_batched_frame393.sv": "26c32b8e0cbf73b63f83a2642df62f2fed3253828a8a1015ca08c066fcc60776",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/tri_oracle_batched_tensor390.sv": "403a51afa12b2dd9dc2d00e69aaf4b0c8688ba0851dd95e4f23fbf8e7ac69436",
+    "records/wac_assembled_context_chip_structure_result.json": "6782bbb88fab8436c242cdd07fd88e9763ff32a683952c68b37d5120b80625c3",
+    "records/wac_dual_lane_burst_budget_result.json": "cda1cf1295fab0a1a98c8216488b7951b95fde38e14cf817e0f1215a44372da9",
+    "records/wac_packed_trained_weight_traffic_result.json": "2c51943ece69e10070ce7c9381b7627e8ad9be4ab3b873789462b32dbaaf5745",
+    "records/wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "records/wac_weight_handoff_mapped_result.json": "ad95167eedb00b671661a18ec64f82fb7d5f6e647f0695583f44421497edf9d8",
+    "syn/measure_tri_oracle_packed_workload_traffic.py": "d8b743214c635abef4d96b9089790b60d0d56a8140a0eca8fb48087610a42590",
+    "syn/measure_tri_oracle_weight_burst_schedule.py": "07bf307a6f54415e0b615a727fa236d5ce0cd59a36eed4ba39d0919e32f3695f",
+    "verilog/tri_oracle_packed_read_mux.sv": "88f5f74337a6045d80127cd59589599e943a02116257201479aeae146a2785b7",
+    "verilog/tri_oracle_parallel_weight_loader.sv": "595ea250bb91ee929f264d64e3d9b43d0d45eb722bb88f87eed0e1778835ae23",
+    "verilog/tri_oracle_sign_fetch.sv": "a87a29deacb5677c5338a113da3e44830c2e9c7f7094f96a628824725ca552f1"
+  },
+  "minimum_bursts_after_optimistic_reuse": 30445252,
+  "minimum_dual_lane_transfer_cycles": 492193218,
+  "minimum_payload_beats_after_optimistic_reuse": 953941186,
+  "minimum_primary_weight_and_uncached_sign_payload_ms": 898.1913206896552,
+  "minimum_primary_weight_beats_after_optimistic_reuse": 475530294,
+  "minimum_uncached_sign_response_reduction_percent": 27.06029096178938,
+  "minimum_uncached_sign_responses_to_avoid_if_weights_unchanged": 12290966,
+  "minimum_weight_transfer_ms_at_paper_clock": 848.6089965517241,
+  "paper_latency_ms": 877,
+  "peak_gpu_bytes": 7555977728,
+  "phases": {
+    "decode": {
+      "batches": 1320,
+      "down": {
+        "1": 14336,
+        "10": 8448,
+        "11": 5632,
+        "12": 9216,
+        "13": 7168,
+        "14": 9984,
+        "15": 5888,
+        "16": 1347072,
+        "17": 4608,
+        "18": 3072,
+        "19": 4352,
+        "2": 14592,
+        "20": 3840,
+        "21": 4864,
+        "22": 1536,
+        "23": 2304,
+        "24": 3072,
+        "25": 4096,
+        "26": 2560,
+        "27": 3328,
+        "28": 2816,
+        "29": 3328,
+        "3": 10752,
+        "30": 2048,
+        "31": 1280,
+        "32": 6689792,
+        "4": 9728,
+        "5": 11520,
+        "6": 12544,
+        "7": 8192,
+        "8": 10240,
+        "9": 8704
+      },
+      "gate_up": {
+        "32": 14868480
+      },
+      "lane_payload_beats": [
+        359984756,
+        353567628
+      ],
+      "minimum_beats": 705005384,
+      "minimum_bursts": 22521388,
+      "minimum_primary_weight_beats": 351437756
+    },
+    "prefill": {
+      "batches": 466,
+      "down": {
+        "16": 477184,
+        "32": 2385920
+      },
+      "gate_up": {
+        "32": 5249024
+      },
+      "lane_payload_beats": [
+        127109888,
+        124843264
+      ],
+      "minimum_beats": 248935802,
+      "minimum_bursts": 7923864,
+      "minimum_primary_weight_beats": 124092538
+    }
+  },
+  "primary_payload_exceeds_paper_cycle_budget": true,
+  "scope": "Modeled fixed-layout requests from the archived integer replay. The weight-only bound assumes perfectly balanced lanes. The primary-port payload bound uses fixed lane assignment and uncached sign requests. Both grant the entire compiled memory to weight reuse in every batch. Whole-chip latency remains unmeasured.",
+  "state": "normalized_weight_bursts_reconstructed_from_fixed_layout",
+  "uncached_narrow_sign_response_beats": 45420672
+}
