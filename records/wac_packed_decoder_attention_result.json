@@ -1,0 +1,22 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/packed_decoder/full_native/attention/xrun.log": "eaae929671366382ac14d890e9781ce86cd1b17261130ecf690f89525f75d48e",
+    ".cache/physical/wide_weight_loader/packed_decoder/full_native/attention_bundle.sv": "f8e22e7d5600d682b22f886abc463e3d9f8d0568e26c4505076327ae45eea7c6",
+    ".cache/physical/wide_weight_loader/packed_decoder/full_native/attention_receipt.json": "42b25651db249ca37286dedbb746fb15625dc64dcce7175c53c258a38357f027",
+    ".cache/physical/wide_weight_loader/packed_decoder/full_native/attention_tb.sv": "dd9016f3319ce1eced3ec54ef117e36b1ef07e4c1a31e41b48de2015be226380",
+    ".cache/physical/wide_weight_loader/packed_decoder/prepared.json": "4260c6be50b6f76084337f397b24a5968405734f63bd95d907d3c3f67117e44c"
+  },
+  "exact_attention_rows": 4,
+  "head_classifications": {
+    "retrieval": 2,
+    "streaming": 1
+  },
+  "merged_tokens": 576,
+  "native_seconds": 219.19246519205626,
+  "packed_weight_port_idle": true,
+  "process": "TSMC 28HPC+",
+  "saved_and_restored_origins": 576,
+  "scope": "Source-level context decoder with separate narrow and packed read interfaces and compiled memory models. Packed down weights enabled for the build; this test exercised attention and context restore.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "packed_decoder_preserved_context_attention_replay"
+}
