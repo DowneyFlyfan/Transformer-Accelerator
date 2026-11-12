@@ -1,0 +1,81 @@
+{
+  "added_compiled_sram_bytes": {
+    "128": 8192,
+    "256": 16384
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/normalized_sign_cache_workload/receipt.json": "11c1f9abd3a2556cdb5798ce36f6a6d9a882d1e1fb7e9cd7124632a522805876",
+    ".cache/model_reference/packed_sign_line_workload/receipt.json": "b7fce4547a5b165f817953c1061e657e0a6c6a4cd040d415b3b3f335d78e614a",
+    "records/wac_dual_port_sign_line_cache_result.json": "6ebbc6e5de3d485c3f5d1651bc1e36459791de9ac8b677edb42dfe96ca091d85",
+    "records/wac_packed_sign_line_result.json": "35c6bbe4c02c172625f2205b585fa3414bdbff0b7d44e8c380347d5f2aa32195",
+    "records/wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "records/wac_primary_request_cycle_bound_result.json": "d37f3acd9df02d932c5a9eeb4d8bd00dd0db393384452b0c519a1e3cf15c1a45",
+    "records/wac_weight_burst_schedule_result.json": "ef78cd49482669ee67625f255589b5864d6d1bf7ff6fb44fb258b89273f0c05a",
+    "syn/audit_tri_oracle_sign_payload.py": "4fb4288bda740a92d823cd4b74e7f287cfaabee6ee89561d18241a11b6fafa10"
+  },
+  "scope": "Modeled sign transactions on the archived workload. The break-even model assumes the same fixed energy per request and marginal energy per payload byte for both readers. Transfer granularity cases assume one transfer per request. The physical external-memory controller and chip power are unmeasured.",
+  "state": "packed_sign_traffic_and_memory_cost_quantified",
+  "summary": {
+    "128": {
+      "aligned_example": {
+        "break_even_request_energy_in_byte_energy_units": 18.22251012145749,
+        "change_in_total_weight_and_sign_payload_percent": 0.638355154203427,
+        "legacy_requests": 31914080,
+        "legacy_sign_payload_bytes": 255312640,
+        "packed_minus_legacy_sign_bytes_at_assumed_transfer_granularity": {
+          "16": 140771840,
+          "32": -369853440,
+          "64": -1391104000,
+          "8": 396084480
+        },
+        "packed_requests": 10178080,
+        "packed_sign_payload_bytes": 651397120
+      },
+      "trained_fixture": {
+        "break_even_request_energy_in_byte_energy_units": 20.123187283554635,
+        "change_in_total_weight_and_sign_payload_percent": 0.6574745794315001,
+        "legacy_requests": 30447611,
+        "legacy_sign_payload_bytes": 243580888,
+        "packed_minus_legacy_sign_bytes_at_assumed_transfer_granularity": {
+          "16": 164289616,
+          "32": -322872160,
+          "64": -1297195712,
+          "8": 407870504
+        },
+        "packed_requests": 10178928,
+        "packed_sign_payload_bytes": 651451392
+      }
+    },
+    "256": {
+      "aligned_example": {
+        "break_even_request_energy_in_byte_energy_units": 15.41190731283872,
+        "change_in_total_weight_and_sign_payload_percent": 0.559004960352567,
+        "legacy_requests": 31914080,
+        "legacy_sign_payload_bytes": 255312640,
+        "packed_minus_legacy_sign_bytes_at_assumed_transfer_granularity": {
+          "16": 91536896,
+          "32": -419088384,
+          "64": -1440338944,
+          "8": 346849536
+        },
+        "packed_requests": 9408784,
+        "packed_sign_payload_bytes": 602162176
+      },
+      "trained_fixture": {
+        "break_even_request_energy_in_byte_energy_units": 17.060381506209794,
+        "change_in_total_weight_and_sign_payload_percent": 0.5784662307247321,
+        "legacy_requests": 30447611,
+        "legacy_sign_payload_bytes": 243580888,
+        "packed_minus_legacy_sign_bytes_at_assumed_transfer_granularity": {
+          "16": 115276048,
+          "32": -371885728,
+          "64": -1346209280,
+          "8": 358856936
+        },
+        "packed_requests": 9413091,
+        "packed_sign_payload_bytes": 602437824
+      }
+    }
+  },
+  "weight_payload_bytes_held_fixed": 61792354304
+}

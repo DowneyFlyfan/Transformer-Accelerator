@@ -1,0 +1,62 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/packed_sign_burst_workload/receipt.json": "424ad280f15112071a37bbee209365025c4c37106884f5690cb2897bd10e498e",
+    ".cache/model_reference/packed_sign_burst_workload/replay/packed_traffic.json": "7fc6369c19b47bbcd61f4dd482be4794a6d36f0e45d1c0a768c57e4fe135dd33",
+    ".cache/model_reference/packed_sign_line_workload/receipt.json": "b7fce4547a5b165f817953c1061e657e0a6c6a4cd040d415b3b3f335d78e614a",
+    ".cache/model_reference/packed_workload_traffic_v1/packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    "records/wac_dual_lane_burst_budget_result.json": "cda1cf1295fab0a1a98c8216488b7951b95fde38e14cf817e0f1215a44372da9",
+    "records/wac_dual_port_packed_sign_steering_result.json": "f65895ecdee8616ada55bcb90c6711de57facfbad7f039136465fd3c5bb645a1",
+    "records/wac_packed_sign_payload_result.json": "8b1eb45a5361c1c13138d8b2e1a20edd5f7a4aed3d8e742acfa5cd96d3d274f9",
+    "syn/measure_tri_oracle_packed_sign_bursts.py": "d66e4ef08368a84b366d7e2ef7bd38849574d88ce69215b10495ca38d6244168",
+    "syn/measure_tri_oracle_packed_sign_lines.py": "128886abde0407e0b3a8a299e5e9dafe84199086a8461c5afeaeb1dc4a38175b",
+    "syn/measure_tri_oracle_packed_workload_traffic.py": "d8b743214c635abef4d96b9089790b60d0d56a8140a0eca8fb48087610a42590",
+    "syn/measure_tri_oracle_sign_cache_workload.py": "13bbc53f6e871bdc973ad93d8c7421b34a3cb00cda2342daa13ddc17e2428907"
+  },
+  "paper_latency_ms": 877,
+  "peak_gpu_bytes": 7555977728,
+  "primary_buckets": {
+    "128": 9,
+    "32": 10,
+    "64": 10
+  },
+  "scope": "Optimistic batching of consecutive addresses in the ordered sign miss stream after steering. Holds hits and evictions fixed, with no added lookahead, buffering, traffic or compute cycles. The per-token/group case stays within one predictor group and token. No burst reader is implemented here.",
+  "state": "packed_sign_burst_savings_bounded_on_archived_trace",
+  "summary": {
+    "128": {
+      "busiest_port_cycles": {
+        "same_token_and_group": 508492317,
+        "single": 508564180,
+        "whole_frame": 508485216
+      },
+      "worst_port_ms": {
+        "same_token_and_group": 876.7108913793104,
+        "single": 876.8347931034483,
+        "whole_frame": 876.6986482758621
+      }
+    },
+    "32": {
+      "busiest_port_cycles": {
+        "same_token_and_group": 513638716,
+        "single": 513959764,
+        "whole_frame": 513637615
+      },
+      "worst_port_ms": {
+        "same_token_and_group": 885.5839931034483,
+        "single": 886.137524137931,
+        "whole_frame": 885.5820948275862
+      }
+    },
+    "64": {
+      "busiest_port_cycles": {
+        "same_token_and_group": 510831012,
+        "single": 511076668,
+        "whole_frame": 510829822
+      },
+      "worst_port_ms": {
+        "same_token_and_group": 880.7431241379311,
+        "single": 881.1666689655173,
+        "whole_frame": 880.7410724137931
+      }
+    }
+  }
+}
