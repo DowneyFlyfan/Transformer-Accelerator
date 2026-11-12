@@ -29,7 +29,33 @@
     ".cache/physical/context_external/shared_decoder/chip_command_context_source/syntax/console.log": "eeafc58ba4ccbbe82d1a9de944d2dce7d0f4b9c2fffedb428d62fef616ca2880",
     ".cache/physical/context_external/shared_decoder/chip_command_context_source/tri_oracle_chip_command_layer.sv": "541f3863fc53e0decac1825105e335b324ad2c747ad249bd9e011f345fd5cb1d",
     ".cache/physical/context_external/shared_decoder/chip_command_context_source/attention_tb.sv": "714a498d6cbc9d39501f0461bbe398553d8f657488f3f8da014c7927156fa017",
-    ".cache/physical/context_external/shared_decoder/chip_command_context_source/prepared.json": "e14a0076d789373363635a2edc1540eb4400c0eec68d1ba34ae29c6b2ccfa634"
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/prepared.json": "e14a0076d789373363635a2edc1540eb4400c0eec68d1ba34ae29c6b2ccfa634",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_full_source/receipt.json": "166e42aefe7eddf53be2ef21ff9f336e20c9cf5662a5e71ca9ff0b994aa520ed",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_full_source/replay/xrun.log": "02445f907a1afb96c70d9b07b63751d30eb31caf0b036e7cbdff3b4f5466bea2",
+    "records/wac_shared_decoder_context_result.json": "746632706dbcd86ca8f66376269a0e231d11f3a6bb551ebc93a0a5e8040512ef"
   },
-  "scope": "Mapped controller and compiled memories with the source-level context-enabled decoder. The whole decoder netlist and full attention fixture require separate replay."
+  "scope": "Mapped controller and compiled memories with the source-level context-enabled decoder. Exact fixture checks cover command transport, projection, merge and restore, head decisions, and attention outputs. The fully mapped decoder requires separate replay.",
+  "full_attention_replay": {
+    "state": "mapped_chip_controller_passed_full_source_context_attention_replay",
+    "issued_commands": {
+      "feedforward": 1,
+      "projection": 7,
+      "merge": 1,
+      "restore": 2,
+      "head": 3,
+      "row": 4
+    },
+    "observed_counters": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "values": 1023,
+      "attention_reads": 57992,
+      "stalls": 59
+    },
+    "simulation_end_ns": 7239330,
+    "direct_decoder_stalls": 63,
+    "replay_seconds": 207.17738681996707
+  }
 }
