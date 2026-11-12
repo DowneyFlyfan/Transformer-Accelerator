@@ -1,0 +1,44 @@
+{
+  "added_constraint_lines": 2076,
+  "auxiliary_port_bits": {
+    "input": 516,
+    "output": 72
+  },
+  "clock_period_ns": 1.72414,
+  "corrected_baseline_protection_check": {
+    "decoder_netlist_sha256": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+    "wrapper_sha256": "fe1b72b087371d5a684e53e7fc7a2a6e3913f8a654bcae39891e751ca6d94d4e",
+    "resolved_targets": 38474
+  },
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_synthesis/pin_constraint_preflight/candidate.sdc": "25208c3f451a6f9914bd7cdf70f909b9f708adf2e42b8eb9f097ecc8b1fcc651",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/pin_constraint_preflight/receipt.json": "0a88cdc4485d731c3152a6034e3a333641fe045b22c86f092d9287700d5b5806",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/tri_oracle_chip_command_layer.sv": "09807c00bd3cbd20255252965ec1e351b202f531da72b4aa57c948c88ccf3850",
+    "syn/prepare_tri_oracle_parallel_pin_constraints.py": "497a6d1b4bc21ad474c28253f79eb05e3cbe6f0a204c128ae3fe627685a6a5ba"
+  },
+  "external_constraint_counts": {
+    "set_input_delay": 4732,
+    "set_input_transition": 4732,
+    "set_load": 7631,
+    "set_output_delay": 7631
+  },
+  "external_port_bits_including_clock_and_reset": 12365,
+  "inherited_protections_outside_preserved_cuts": {
+    "get_cells": 1,
+    "get_nets": 38467
+  },
+  "inherited_protections_under_preserved_cuts": {
+    "get_cells": 6
+  },
+  "primary_port_bits_added": {
+    "input": 448,
+    "output": 2
+  },
+  "rejected_negative_controls": [
+    "missing_second_lane_constraint",
+    "duplicate_primary_lane_constraint",
+    "narrowed_second_lane"
+  ],
+  "scope": "Source port and constraint coverage. The linked netlist still needs exact port and protection-target checks.",
+  "state": "parallel_chip_source_pin_constraints_preflight"
+}
