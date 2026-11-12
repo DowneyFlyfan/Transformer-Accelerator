@@ -1,0 +1,55 @@
+{
+  "state": "compact_tsmc_mapped_layer_passed_archived_attention",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "candidate_netlist_sha256": "712e96e24c4a769964dc8eac01d31ed70300cea5f50e4d0df48da5d9faf0fec9",
+  "clock_target_megahertz": 580,
+  "mapped_compute_cores": 20,
+  "compiled_memory_macros": 623,
+  "compiled_memory_bytes": 414416,
+  "wide_payload": {
+    "shared_payload_signals": 2048,
+    "fabric_to_bank_payload_pin_connections": 10240
+  },
+  "compact_payload": {
+    "shared_payload_signals": 64,
+    "fabric_to_bank_payload_pin_connections": 320
+  },
+  "matched_fixture": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "attention_reads": 57992,
+    "stalls": 63,
+    "value_reads": 1023
+  },
+  "simulation_end_ns": 7143030,
+  "native_seconds": {
+    "elaboration": 327.2836079869885,
+    "replay": 352.79303970199544
+  },
+  "placement_constraints": {
+    "total": 14775,
+    "renamed": 408
+  },
+  "scope": "Functional gate-level replay. The testbench compared four output rows bitwise and counted 1,023 value reads. Candidate trained replay and placed timing are pending.",
+  "evidence_sha256": {
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor_attention/receipt.json": "a8f645fb481607599e286e338e71d835eb94ac249f344492cd425fae67d4acd6",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor/receipt.json": "bdf9019b35f10497477dd7cb76d629cdfc2e810063c16d529b429709f57bee4b",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/linked_tensor_attention/positive/xrun.log": "1f020c483cbcf4a3e51950dfafea0a6e977d1c5e0c5fb1faaaf23babd839cb42",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/mapped_payload_connections.json": "4fb6f3e6db7cdcf4e81ce1361807059f74a54ee494dca8ac11649aacd2d26a21",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/mapped_memory_capacity/receipt.json": "b1ec831dbdf44e47cd44cdbc55173710211f17e0b263b8e8b39e22b9c2c807bd",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/placement_constraints/receipt.json": "d510371efb262c9970f883ebbde265d3e3aa3a45695cebcb2693b41e5308bb84",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/mapped_architecture.json": "9f4059f6927129c48e68702c57e62bd3c4650e1a8c9f8efbeb79fa080a960f13"
+  },
+  "compute_array_geometry": {
+    "clusters": 5,
+    "cores": 20,
+    "rows_and_lanes": [
+      32,
+      8
+    ],
+    "signed_operand_bits": 8
+  }
+}
