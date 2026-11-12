@@ -1,0 +1,26 @@
+{
+  "state": "linked_decoder_first_frame_failure_persists_with_previous_compute_fabric",
+  "candidate_netlist_sha256": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+  "fatal": "COMPOSE430_FRAME_RESULT",
+  "simulation_time_of_fatal_ns": 5870,
+  "first_map_entry_ns": 125,
+  "first_observed_unknown_on_map_interface_ns": 135,
+  "verified_controls": {
+    "previously_qualified_xcelium_scheduling_option": "same_failure",
+    "previously_qualified_mapped_compute_fabric_substitution": "same_failure"
+  },
+  "first_cycle_trace": "LINKED_CONTEXT_TRACE t=125.00 ns frame=00 sign=11 map=1:0 done=00 restore=01 relay=00:1536:00 rst=1",
+  "first_unknown_trace": "LINKED_CONTEXT_TRACE t=135.00 ns frame=00 sign=1x map=x:1 done=00 restore=01 relay=00:1536:00 rst=1",
+  "previous_fabric_port_trace": "FIRST_MERGE_PORTS cyc=10 ext=000000 select=xZzzzz map=x:1:1 store=000",
+  "scope": "Root cause remains open. The diagnostic controls exclude the omitted scheduler option and the new compute-fabric mapping as sole causes.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder/receipt.json": "54ae54d8a6a46810731e732866aa6d9a1d7fad991e1741c3e38b156edd675421",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder/candidate.v": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_initial_frame_failure/replay/xrun.log.gz": "25838b59fede67191495b11af4f324274887768c31c8a50c02b89bc6a52f2a51",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay/smoke/xrun.log.gz": "d07148d8b7b89c49d8289116ca85ed002d1a0d7c9fcfe9c07601fcce90c40da1",
+    ".cache/physical/context_external/shared_decoder/first_merge_previous_fabric_diagnostic/replay/xrun.log.gz": "4e1fa3d67f74526f2487abb3b39062449358f216319c0834f6bd4bd516718086",
+    ".cache/physical/context_external/shared_decoder/replay_linked_context_candidate.py": "92404dc9b5e678577f9ba4d41923578098a1c797fa7b6dcb0e9fccac3c982ee0",
+    ".cache/physical/context_external/shared_decoder/diagnose_first_merge_frame.py": "f251976db075b6b5e3d308a2a9522950763d41c59358944ef7f0a4e0d33b60d7",
+    ".cache/physical/context_external/shared_decoder/first_merge_previous_fabric_diagnostic/candidate.v": "c027b111f7b1e89160af856f4c5844814141a978685220966e0a51d8f31009d4"
+  }
+}
