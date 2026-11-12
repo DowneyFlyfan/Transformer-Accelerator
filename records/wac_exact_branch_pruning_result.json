@@ -1,0 +1,164 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/exact_branch_pruning_v1.log": "edf76784d830df76a724255f6fc8602b9ded47ff50a0bce15c03b16c77222aef",
+    ".cache/model_reference/exact_branch_pruning_v1/container_exit.log": "f640f3c2b5a137557eaa6ef6a842ca0f84548dc8c6298781f6bbae3dce6543dd",
+    ".cache/model_reference/exact_branch_pruning_v1/control_sweep.json": "99a178b2dfef374fde037425007751aa45c01c7364da85199fd390755e4cb6d7",
+    ".cache/model_reference/exact_branch_pruning_v1/receipt.json": "b64739e5613528e4e8b3e207a454abd30ce7a1ff3e3be6c99a2e74c9f0befce2",
+    "records/wac_channel_packing_bound_result.json": "63074498af07d464cd96ea32eddc78519ed5eb1c85f892b9eb6eae425c69da59",
+    "records/wac_packed_predictor_threshold_result.json": "d44be5543d1f6e3a8f77338cd2580bc761bd15c6c2d2118757ff4054f9d9da1d",
+    "syn/measure_tri_oracle_exact_branch_pruning.py": "d9a5e63e699695043aa0add18ed459f050364ab10fb050b38672f758d5ef6636"
+  },
+  "native_exit_status": 0,
+  "native_seconds": 7.815765421953984,
+  "peak_gpu_bytes": 455614464,
+  "rows_per_split": 2640,
+  "scope": "Exact branches and products are diagnostic controls on archived activation rows. Weight traffic projections exclude sign reads. Per-token figures use a different baseline.",
+  "selected_up_to_gate_powers_by_layer": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "state": "exact_branch_pruning_diagnostic_independently_reconciled",
+  "summary": {
+    "exact_branch_intersection": {
+      "fit": {
+        "channel_skip_percent": 58.144901160037875,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.26240379218334225,
+        "opportunities": 14868480,
+        "output_change": 692.7460113640235,
+        "per_token_weight_reduction_percent": 1.8856896068710438,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 8645263,
+        "skipped_exact_zero": 2595190,
+        "token_dense_bytes": 91351056384,
+        "token_kept_bytes": 89628459008
+      },
+      "held": {
+        "channel_skip_percent": 57.97920163997934,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.2616944106545163,
+        "opportunities": 14868480,
+        "output_change": 690.873244127923,
+        "per_token_weight_reduction_percent": 1.883395589477832,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 8620626,
+        "skipped_exact_zero": 2580963,
+        "token_dense_bytes": 91350974464,
+        "token_kept_bytes": 89630474240
+      }
+    },
+    "exact_product": {
+      "fit": {
+        "channel_skip_percent": 58.013119027634296,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.16273811431847784,
+        "opportunities": 14868480,
+        "output_change": 429.6286218007815,
+        "per_token_weight_reduction_percent": 1.622992646924315,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 8625669,
+        "skipped_exact_zero": 2890491,
+        "token_dense_bytes": 91351056384,
+        "token_kept_bytes": 89868435456
+      },
+      "held": {
+        "channel_skip_percent": 57.83928148674242,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.1620582114895094,
+        "opportunities": 14868480,
+        "output_change": 427.8336783323048,
+        "per_token_weight_reduction_percent": 1.6203755599600522,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 8599822,
+        "skipped_exact_zero": 2875657,
+        "token_dense_bytes": 91350974464,
+        "token_kept_bytes": 89870745600
+      }
+    },
+    "exact_quantized_zeros": {
+      "fit": {
+        "channel_skip_percent": 19.44039336905992,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.0,
+        "opportunities": 14868480,
+        "output_change": 0.0,
+        "per_token_weight_reduction_percent": 0.0019370022307785284,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 2890491,
+        "skipped_exact_zero": 2890491,
+        "token_dense_bytes": 91351056384,
+        "token_kept_bytes": 91349286912
+      },
+      "held": {
+        "channel_skip_percent": 19.340625269025484,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.0,
+        "opportunities": 14868480,
+        "output_change": 0.0,
+        "per_token_weight_reduction_percent": 0.0021163561870540804,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 2875657,
+        "skipped_exact_zero": 2875657,
+        "token_dense_bytes": 91350974464,
+        "token_kept_bytes": 91349041152
+      }
+    },
+    "wide_sign_predictor": {
+      "fit": {
+        "channel_skip_percent": 59.30478434917355,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.6627405296974521,
+        "opportunities": 14868480,
+        "output_change": 1749.6349984012736,
+        "per_token_weight_reduction_percent": 3.8733408589457063,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 8817720,
+        "skipped_exact_zero": 1693131,
+        "token_dense_bytes": 91351056384,
+        "token_kept_bytes": 87812718592
+      },
+      "held": {
+        "channel_skip_percent": 59.3154041300792,
+        "dense_bytes": 6090129408,
+        "kept_bytes": 6090129408,
+        "mean_relative_output_change": 0.6644263401267739,
+        "opportunities": 14868480,
+        "output_change": 1754.0855379346833,
+        "per_token_weight_reduction_percent": 4.085966388317996,
+        "shared_weight_reduction_percent": 0.0,
+        "skipped": 8819299,
+        "skipped_exact_zero": 1681669,
+        "token_dense_bytes": 91350974464,
+        "token_kept_bytes": 87618404352
+      }
+    }
+  },
+  "target_skip_percent": 58
+}
