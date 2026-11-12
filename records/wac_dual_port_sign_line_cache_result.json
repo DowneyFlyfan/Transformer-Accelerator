@@ -1,0 +1,66 @@
+{
+  "cache_variants": {
+    "128": {
+      "added_sram_bytes": 8192,
+      "auxiliary": 6836,
+      "combined_compiled_sram_bytes_if_added": 422608,
+      "data_sram_macro_area_um2": 76386.968752,
+      "data_sram_macros": 16,
+      "entries": 128,
+      "hits": 18304,
+      "primary": 2668,
+      "requests": 27808
+    },
+    "256": {
+      "added_sram_bytes": 16384,
+      "auxiliary": 6864,
+      "combined_compiled_sram_bytes_if_added": 430800,
+      "data_sram_macro_area_um2": 152773.937504,
+      "data_sram_macros": 32,
+      "entries": 256,
+      "hits": 18656,
+      "primary": 2288,
+      "requests": 27808
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/dual_port_sign_line_cache/elaborated_128/console.log": "d067d7a0f41857ef6c2d2e684f343eecad4391f03d919e5ab4d3fa5007233a5b",
+    ".cache/physical/dual_port_sign_line_cache/elaborated_128/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/dual_port_sign_line_cache/elaborated_256/console.log": "48a93d9e4634b9f9cca66cb6e0a4e8f0df1a92b38c9f02534b420819430505c1",
+    ".cache/physical/dual_port_sign_line_cache/elaborated_256/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/dual_port_sign_line_cache/integrated_predictor_128/console.log": "a93749d5ac342de320b36e16a7e11254f147dc2bde587c915d2711c008e36100",
+    ".cache/physical/dual_port_sign_line_cache/integrated_predictor_128/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/dual_port_sign_line_cache/integrated_predictor_128/prepared.json": "c9c36e3f6735048cfb744f767a9aeecd81739f2a54a982a9fb545c47e085e2a0",
+    ".cache/physical/dual_port_sign_line_cache/native_128/console.log": "65237592cb78e3aeb91280531b1d7e7dab66c23601a04053e7b9a66a12834b5a",
+    ".cache/physical/dual_port_sign_line_cache/native_128/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/dual_port_sign_line_cache/native_256/console.log": "d9875d4f86ffedcb71973a9e033d0189b9dcdc35abf4c0b2910149830ab45ff9",
+    ".cache/physical/dual_port_sign_line_cache/native_256/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/dual_port_sign_line_cache/red/console.log": "db42aab8396ad1da2ec52d984e8bd26b71bee93328114f0f8871e5354281c831",
+    ".cache/physical/dual_port_sign_line_cache/red/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/dual_port_sign_line_cache/red/uncached_adapter.sv": "dfe2b73b368e6541a1ca890fb934735360e9c36d57dde55bf12a18f88d27253c",
+    ".cache/physical/dual_port_sign_line_cache/sequence_128.hex": "696ce8aa959658109ab8f1edaabd250e306ad2dfa3813e79fe44ea222e871843",
+    ".cache/physical/dual_port_sign_line_cache/sequence_128.json": "a44ec9c196c2987b3be0fe7181d22e333a16b2018fe0579fb9c6bd5147eb7553",
+    ".cache/physical/dual_port_sign_line_cache/sequence_256.hex": "c18a22f272b44baa01bcdce91a9d68895d0db8d7297c65bfd8dfc24815e53232",
+    ".cache/physical/dual_port_sign_line_cache/sequence_256.json": "c3da438719435e693084ab5a3cd997dd0cf92055b0cdc096c9f3dceba3013486",
+    ".cache/physical/packed_sign_fetch/packed_sign_lines.hex": "1af8b7ce163e6f30ab9e4c23a030643af3c690e859fd7d14bb44075f21a49374",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/NLDM/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    "records/wac_assembled_context_chip_structure_result.json": "6782bbb88fab8436c242cdd07fd88e9763ff32a683952c68b37d5120b80625c3",
+    "records/wac_sign_cache_trained_masks_result.json": "54c96944c4b5a909a3ac3c60daed54849b192508dc0c9e512157ddaac3f44c1f",
+    "syn/prepare_tri_oracle_sign_line_cache_replay.py": "16599970e9206e53f932e88eaee2ef7c3c25efe1d0e8ce671dac369486a6ddd3",
+    "syn/tri_oracle_check_sign_line_cache_macros.tcl": "ecd5ff8931a9b68bb8609cd98e6347d47cecf37fdb126ecedab1e60a0a88a612",
+    "verilog/tri_oracle_dual_port_sign_line_cache.sv": "997d44a0971c3cdd0ac2300e95bdb71c520d8ed02dda06816dc0e45729a7686f",
+    "verilog/tri_oracle_dual_port_sign_line_cache_tb.sv": "6b87c483ed0f77d29ba7585435f0d9d44ca236fb86798e0d140397a5b7bde9ed"
+  },
+  "scope": "Native compiled data memory, both cache capacities and complete trained predictor fixture for 128 entries. The measured memory cost excludes tags and control. No whole-chip integration or energy estimate.",
+  "state": "dual_port_sign_line_cache_native_and_trained_predictor_verified",
+  "trained_predictor_128": {
+    "cycles": 1039142,
+    "external_payload_bytes": 608256,
+    "external_reads": 9504,
+    "legacy_cached_cycles": 1239999,
+    "legacy_cached_external_payload_bytes": 174592,
+    "skipped": 5231,
+    "verified_masks": 2816
+  }
+}
