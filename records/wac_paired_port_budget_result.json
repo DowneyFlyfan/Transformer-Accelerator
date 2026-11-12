@@ -1,0 +1,34 @@
+{
+  "control_cycles_per_burst": 4,
+  "decode_transfer_minimum": {
+    "down": {
+      "bursts": 7432704,
+      "responses": 237761024
+    },
+    "gate_up": {
+      "bursts": 13888512,
+      "responses": 444432384
+    }
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/packed_read_traffic_trace/run/per_token_reads.json": "809a275f839de85597a411f8d57ee7710cb3305319a2c1a696034e41de2a5234",
+    ".cache/physical/wide_weight_loader/paired_chip/prepared.json": "34b5a6954011a95a6970698c1925097cd7904fd3b161b99957c1ab9d0a237166",
+    ".cache/physical/wide_weight_loader/paired_chip/tri_oracle_batched_frame393.sv": "786ab34aa4cbb6ed7dc7593f3648bbae3cfb69645697ad6c1d5613f3707364f4",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_paired_chip_feedforward_result.json": "fbc8f2994d02589e90221db6e94fe0a6d8f309c73c96e15555ce0a9fb87fc373",
+    "records/wac_unified_decode_read_budget_result.json": "750451d4235354b8860806c7b5909b6f8d20cfdc8064e1116c526f36b706751c",
+    "syn/measure_tri_oracle_paired_port_budget.py": "907aad0766181f9676d104f00d023dda1b776f2f903764a8b913989423eec2b5",
+    "verilog/tri_oracle_packed_weight_schedule.sv": "069e2c8b4c58c5a6784fe2cb82fab884d83ee7e7152badb8827f1d150a6e7f93",
+    "verilog/tri_oracle_wide_weight_loader.sv": "41d1bc4df3efd02634b117217eccb22f04b2c983c198f277f3d5f81135d74823"
+  },
+  "minimum_service_milliseconds": {
+    "dual_gate_up_dual_down_serial_bursts": 661.6192,
+    "dual_gate_up_single_down_serial_bursts": 892.2156137931034,
+    "one_port_payload_only": 1176.1955310344827,
+    "one_port_serial_bursts": 1323.2384
+  },
+  "paper_clock_megahertz": 580,
+  "paper_end_to_end_milliseconds": 877,
+  "scope": "Lower bounds for the current packed representation on the archived local software workload. Gate and up each need a burst for every retained group of eight output rows. Down begins after the feed-forward intermediates are committed. Each lane accepts one response per clock with ideal readiness. The bounds assume no persistent weight reuse and exclude prefill, attention, compute, sparse mask fragmentation, and channel imbalance. Two-lane estimates assume perfectly balanced work within a projection and preserve serialized bursts per lane.",
+  "state": "dual_gate_up_only_exceeds_budget_with_current_serial_bursts"
+}
