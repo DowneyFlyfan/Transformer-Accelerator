@@ -1,0 +1,30 @@
+{
+  "state": "shared_memory_layer_boundary_mapped_and_source_replay_verified",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "mapped_boundary_cells": 106,
+  "original_external_signal_bits": 14343,
+  "external_signal_bits": 13299,
+  "value_address_checks": 6144,
+  "shared_boundary_netlist_sha256": "cd617037d47782f929ad0244899978878bba777f1640d6f0b73a16b13a21866e",
+  "compact_layer_netlist_sha256": "712e96e24c4a769964dc8eac01d31ed70300cea5f50e4d0df48da5d9faf0fec9",
+  "fixture_counters": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "attention_reads": 57992,
+    "stalls": 59,
+    "value_reads": 1023
+  },
+  "simulation_end_ns": 7227970,
+  "scope": "Mapped boundary and adapters replayed with the compact layer register-transfer design and compiled memories. Fully mapped layer replay and placed timing remain pending.",
+  "evidence_sha256": {
+    ".cache/physical/shared_memory_layer_boundary/linked/receipt.json": "2ab113549ad3660d774a7429cb502936e82dde208a69325e677be2efc3da9cbf",
+    ".cache/physical/shared_memory_layer_boundary/source_layer_replay/receipt.json": "3456537a0d54db585ca42d7c380da9f4badc38abc3cd44374ef32f227e8a6767",
+    ".cache/physical/shared_memory_layer_boundary/address_gate/native.log": "de59eb9978ae50f2805023cb1a33e32e52044c03a27a4299b40f85f18aa141e2",
+    ".cache/physical/shared_memory_layer_boundary/source_layer_replay/positive/xrun.log": "3735e20e8946549a00511cedf437b26eb94bac8de8ea9a115844ee1dcbad31af",
+    ".cache/physical/shared_memory_layer_boundary/address_tb.sv": "4b65798ef66957ae8c7db200d230533ab38d64b37b60edb671fb985746def353",
+    ".cache/physical/shared_memory_layer_boundary/mapped/area.rpt": "bbd9bd04984819a59a7a968d46c42e5faa70845f6676830b2151409cdcfa588f"
+  }
+}
