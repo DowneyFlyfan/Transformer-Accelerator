@@ -1,0 +1,46 @@
+{
+  "compiled_memory_instances": 623,
+  "core_area_outside_macro_halos_mm2": "7.2184108553",
+  "die_um": [
+    "3600",
+    "3600"
+  ],
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/candidate.v": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/receipt.json": "2fbd7b71db5febefdb6173e113304d364ef12cd1acdcc1860f120b0b3354775a",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention_serial/memory_receipt.json": "0824cbe39e8ddbc7050741b6bb0713859daf6bbe2597ae27704ea1ec6ebe3d95",
+    ".cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    ".cache/physical/shared437/merge455/compiler/16x80m2f/ts5n28hpcpsvta16x80m2fw_130a/LEF/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/physical/shared437/merge455/compiler/24x128m2f/ts5n28hpcpsvta24x128m2fw_130a/LEF/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/physical/shared437/merge455/compiler_inplace/8x80m2f/ts5n28hpcpsvta8x80m2fw_130a/LEF/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/physical/shared_memory_layer_boundary/physical_inputs/macro_seed.json": "74c8274dcf5bd41927b0d5ffc96dc897f49fd2a664270c6917740494080e1bed",
+    ".cache/physical/shared_memory_layer_boundary/physical_inputs/receipt.json": "895b39619736ed2e2c93200397e523329a5e46873caae48c867232f948b46b8c",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/LEF/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/physical/wac_budgeted_parent_boundary/audit_linked_layer_memory.py": "da2a7b43132222d848fb9fe8741b6bb0a0197f645df1914a753725cd6590b943",
+    ".cache/physical/wac_budgeted_parent_boundary/linked_tsmc_physical_views.json": "f0f302004f69575013d99f920a66b46858a8f4dbfd93df88a2e93ddd7bf38a40",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/macro_outline_preflight/receipt.json": "77d72242f3aa30f734875a6d0416bd040539db14e1f5b5db81f9db24dcc02965",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_corrected_context_decoder_native_result.json": "76f8cae0c19291c2dbdd03350e0051eb46d8d8537f781d91fae51ecc7ea9b58d",
+    "syn/prepare_tri_oracle_parallel_macro_seed.py": "2e48ca6456ba8e9e6c9131f6b53af827adf817e20925796ec09b1c273196198d"
+  },
+  "macro_and_halo_area_mm2": "5.4551891447",
+  "macro_area_mm2": "3.7404893447",
+  "macros_by_master": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 360,
+    "TS5N28HPCPSVTA512X64M4F": 42,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "rejected_negative_controls": [
+    "off_grid_macro",
+    "macro_halo_outside_core",
+    "overlapping_macro_halos"
+  ],
+  "scope": "Corrected mapped decoder memory paths and library geometry on the paper outline. The linked dual-lane chip must match every macro path and master before receiving a candidate-bound seed.",
+  "state": "parallel_chip_macro_outline_preflight"
+}
