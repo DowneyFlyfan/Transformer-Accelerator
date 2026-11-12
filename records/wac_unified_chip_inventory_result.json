@@ -1,0 +1,79 @@
+{
+  "by_master": {
+    "TS5N28HPCPSVTA16X80M2FW": {
+      "bits_per_word": 80,
+      "bytes": 640,
+      "instances": 4,
+      "words": 16
+    },
+    "TS5N28HPCPSVTA24X128M2FW": {
+      "bits_per_word": 128,
+      "bytes": 6144,
+      "instances": 16,
+      "words": 24
+    },
+    "TS5N28HPCPSVTA32X128M2FW": {
+      "bits_per_word": 128,
+      "bytes": 184320,
+      "instances": 360,
+      "words": 32
+    },
+    "TS5N28HPCPSVTA512X64M4F": {
+      "bits_per_word": 64,
+      "bytes": 172032,
+      "instances": 42,
+      "words": 512
+    },
+    "TS5N28HPCPSVTA8X80M2FW": {
+      "bits_per_word": 80,
+      "bytes": 80,
+      "instances": 1,
+      "words": 8
+    },
+    "TS6N28HPCPSVTA16X128M2F": {
+      "bits_per_word": 128,
+      "bytes": 51200,
+      "instances": 200,
+      "words": 16
+    }
+  },
+  "bytes_by_role": {
+    "aggregator_input_output": 10240,
+    "feedforward_prediction_metadata": 8192,
+    "input": 163840,
+    "output": 40960,
+    "skip_mask": 20480,
+    "survived_sign": 6144,
+    "token_merge_table": 720,
+    "weight": 163840
+  },
+  "changed_port_width_rejected_in_xcelium": true,
+  "checked_cut_port_widths": 607,
+  "clusters": 5,
+  "compiled_bytes": 414416,
+  "compiled_instances": 623,
+  "compiled_kibibytes": 404.703125,
+  "cores": 20,
+  "difference_from_binary_label_bytes": -304,
+  "difference_from_decimal_label_bytes": 9416,
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/unified_chip/source_inventory/receipt.json": "9d84c4f6f65e9771f6e1d1baab9edb8d64b1a070661359df181403a6089ce0ac",
+    ".cache/physical/wide_weight_loader/unified_chip/synthesis/negative/xrun.log": "77b987102b152bb82b3fdeae79c08caebaa77eecbb622c85ec5591833f0b2fac",
+    ".cache/physical/wide_weight_loader/unified_chip/synthesis/preflight_receipt.json": "a5d73b2ea2b189eea19742dd56365018792d34513da43da46f63ec26bd8fc71b",
+    ".cache/physical/wide_weight_loader/unified_chip/synthesis/prepared.json": "1d7607af83edeeb32d8eda5006f8a338df765543b66851dc60225b52bf88e77d"
+  },
+  "missing_duplicate_macro_and_wrong_array_shape_rejected": true,
+  "nominal_ops_per_second_at_paper_clock": 5939200000000,
+  "paper_architecture_figure": "31.6.2",
+  "paper_byte_convention_confirmed": false,
+  "paper_capacity_label_kb": 405,
+  "paper_memory_figure": "31.6.7",
+  "preserved_synthesis_blocks": 10,
+  "process": "TSMC 28HPC+",
+  "processing_element_lanes": 8,
+  "processing_element_rows": 32,
+  "scope": "Source elaboration and synthesis interface preflight. Nominal arithmetic rate assumes the paper clock. The architecture inventory covers processing arrays and compiled memory, while independent verification of the complete architecture, physical timing, and paper benchmark remains required.",
+  "signed_operand_bits": 8,
+  "source_training_receipt_required": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/wide_weight_loader/unified_chip/image_trained/receipt.json",
+  "state": "unified_chip_source_inventory_verified_and_synthesis_cut_widths_checked"
+}
