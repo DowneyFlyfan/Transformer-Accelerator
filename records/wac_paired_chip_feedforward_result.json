@@ -1,0 +1,202 @@
+{
+  "controller_sha256": "725e36dc683563e604de4995b5ce636de76ee4bb1675c3131ef3e7cb6b602942",
+  "directed": {
+    "gate_fault": {
+      "command_responses": [
+        "tag=3930dead error=1",
+        "tag=39300001 error=0"
+      ],
+      "decoder": {
+        "cycles": 6020,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 444,
+        "wide_bursts": 180
+      },
+      "drained_output_prefix_packets": 0,
+      "frame": {
+        "exact_outputs": 504,
+        "fault": 2,
+        "hidden": 64,
+        "intermediate": 96,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 1248,
+        "read_requests": 84,
+        "tokens": 3,
+        "trained": 0
+      },
+      "weight_responses": {
+        "down_narrow": 0,
+        "down_wide": 252,
+        "gate_narrow": 0,
+        "gate_wide": 96,
+        "up_narrow": 0,
+        "up_wide": 96
+      }
+    },
+    "packed": {
+      "command_responses": [
+        "tag=39300001 error=0"
+      ],
+      "decoder": {
+        "cycles": 4699,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 444,
+        "wide_bursts": 180
+      },
+      "drained_output_prefix_packets": null,
+      "frame": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 64,
+        "intermediate": 96,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 1248,
+        "read_requests": 84,
+        "tokens": 3,
+        "trained": 0
+      },
+      "weight_responses": {
+        "down_narrow": 0,
+        "down_wide": 252,
+        "gate_narrow": 0,
+        "gate_wide": 96,
+        "up_narrow": 0,
+        "up_wide": 96
+      }
+    },
+    "scalar": {
+      "command_responses": [
+        "tag=39300001 error=0"
+      ],
+      "decoder": {
+        "cycles": 24291,
+        "outputs": 504,
+        "packed": 0,
+        "scalar_down_beats": 2016,
+        "trained": 0,
+        "wide_beats": 0,
+        "wide_bursts": 0
+      },
+      "drained_output_prefix_packets": null,
+      "frame": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 64,
+        "intermediate": 96,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 29536,
+        "read_requests": 1516,
+        "tokens": 3,
+        "trained": 0
+      },
+      "weight_responses": {
+        "down_narrow": 2016,
+        "down_wide": 0,
+        "gate_narrow": 760,
+        "gate_wide": 0,
+        "up_narrow": 760,
+        "up_wide": 0
+      }
+    },
+    "tail_fault": {
+      "command_responses": [
+        "tag=3930dead error=1",
+        "tag=39300001 error=0"
+      ],
+      "decoder": {
+        "cycles": 9341,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 444,
+        "wide_bursts": 180
+      },
+      "drained_output_prefix_packets": 3,
+      "frame": {
+        "exact_outputs": 504,
+        "fault": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 1248,
+        "read_requests": 84,
+        "tokens": 3,
+        "trained": 0
+      },
+      "weight_responses": {
+        "down_narrow": 0,
+        "down_wide": 252,
+        "gate_narrow": 0,
+        "gate_wide": 96,
+        "up_narrow": 0,
+        "up_wide": 96
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/packed_decoder/full_native/trained_receipt.json": "2c1987ad8987cd78b7ad03e2d5c9590f7eb421af5b24f592a46a14b6038a779e",
+    ".cache/physical/wide_weight_loader/paired_chip/native/gate_fault/progress.log": "ed7b3e84b9c98f219d4863672e461a3e77da441ca81fd82a1fa3359c121f760f",
+    ".cache/physical/wide_weight_loader/paired_chip/native/gate_fault/xrun.log": "903cfd95d731f887879eed0981295baf9bb1cbecdf9997b69dcd00da6b34cdc2",
+    ".cache/physical/wide_weight_loader/paired_chip/native/packed/progress.log": "495c277850970eae59de13ef1f2f19c6672352f6a7e150e02694c0dbaec72682",
+    ".cache/physical/wide_weight_loader/paired_chip/native/packed/xrun.log": "4406191271ee5597a7e93ea92a80af97540a1ca879647350391ec5cae167f2c9",
+    ".cache/physical/wide_weight_loader/paired_chip/native/scalar/progress.log": "6b842c732d244a463a5d031e827e4e9c60e2849f3a80e16abbb705bfcb6f3d5a",
+    ".cache/physical/wide_weight_loader/paired_chip/native/scalar/xrun.log": "73307210ec2539c68f687e43b2366c48112c7934e872f6c7a915c674186349f3",
+    ".cache/physical/wide_weight_loader/paired_chip/native/tail_fault/progress.log": "f6fc9466eeb38ac9f7f6d06680da06a67447a1c1d4554823e748c7f179b393e4",
+    ".cache/physical/wide_weight_loader/paired_chip/native/tail_fault/xrun.log": "52d75931cbbf3295abff98158a142b0f41d391168bafd236c232f308575cc79d",
+    ".cache/physical/wide_weight_loader/paired_chip/prepared.json": "34b5a6954011a95a6970698c1925097cd7904fd3b161b99957c1ab9d0a237166",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/area.rpt": "d9361fca60b661c8c5893d014895f74b44fce45ea05da548171b1c6fdef10e9c",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/check.rpt": "d81c5c0e594ee6ca72498aed4b4d2677a028f1daa78abdb8524047d5de5ef68e",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/console.log": "97faa4f22535367e45165293e48405eb96c3a33c0d46a0e7e3626d86035fb482",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/netlist.v": "ac6a4e24b041f3cb187a1e05d4564a529da0faa3fb20a6130622a312b82b43c1",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/mapped/mutation/console.log": "4c7fca2a6e460f38342552fc82541faa7f151b800c4f654e2222f54123c31cb7",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/mapped/mutation/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/mapped/positive/console.log": "b284a883540a6ad11c90f9bbe59748f2e428acacbc4056b5fc2bb37a8f6f43cd",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/mapped/positive/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/source/mutation/console.log": "41954bf4e53da9d6729cb28cf32c3206b963958dfd3c1a740385db7b7d38ee7e",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/source/mutation/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/source/positive/console.log": "65c9fa4bc0e6dae94a352fadca775f5266ef8d46ec19d008a2ce1ca57f661965",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/replay/source/positive/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/synthesize.tcl": "9d3d7a985d43480e0bb65d39b1c5199ff94425751236c666acf2b86cb45f8634",
+    ".cache/physical/wide_weight_loader/paired_schedule/map/timing.rpt": "7af487e2ac7c68110aa93a6fa6eb1c265a35e2d9c4e4e5f83df84a1787e0a38e",
+    ".cache/physical/wide_weight_loader/unified_chip/native/packed/xrun.log": "d4c40ffcd512fae3f524c4af65cf257a72c8c558b210805584575fcbacd112fc",
+    ".cache/physical/wide_weight_loader/unified_chip/native/scalar/progress.log": "6b842c732d244a463a5d031e827e4e9c60e2849f3a80e16abbb705bfcb6f3d5a",
+    "verilog/tri_oracle_paired_weight_schedule_tb.sv": "d59d9a5fafdce0bccc2737e530019bbbf5d467a6fe79ed6449d95d1fef89788f"
+  },
+  "isolated_scheduler": {
+    "cell_area_um2": 6260.688,
+    "mapped_cells": 4003,
+    "period_ns": 1.72414,
+    "preplacement_worst_setup_slack_ps": 22,
+    "process_voltage_temperature": "ssg0p9v125c",
+    "source_and_mapped_expected_error_cases": 3,
+    "source_and_mapped_mutant_exit_status": 2,
+    "source_and_mapped_positive_descriptors": 105,
+    "technology": "TSMC 28HPC+",
+    "tool": "Cadence Genus 25.10-p002_1"
+  },
+  "previous_packed_down_only_source_trained_frame": {
+    "exact_outputs": 32768,
+    "simulated_cycles": 8690575,
+    "wide_weight_bursts": 6144,
+    "wide_weight_responses": 180224
+  },
+  "prior_packed_down_directed_cycles": 15093,
+  "scalar_progress_byte_identical_to_prior_chip": true,
+  "scope": "Isolated preplacement scheduler synthesis and functional replay. Chip command controller is mapped. Chip decoder, weight interface and datapath use source register-transfer level. Directed frame results are 3 tokens at reduced dimensions.",
+  "state": "paired_weight_schedule_mapped_and_directed_chip_frames_exact"
+}

@@ -1,0 +1,30 @@
+{
+  "bytes_per_response": 64,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "each_matrix_sha256_verified": true,
+  "evidence_sha256": {
+    ".cache/model_reference/batch389/gate.hex": "4a84b3afb16c991a72c01ae0cf5ea4fb9df7b56716da9af076691ca13e47cf0d",
+    ".cache/model_reference/batch389/up.hex": "0caa6b6cd97f98ed269c792678f194ccef5db94c9cd3f9fb1af5a444484b33e2",
+    ".cache/model_reference/packed_gate_up_export/export.log": "c63ed3e841c00bc130e44e55ff9b4ace39faa3848e2640ab91034422b1e3ff68",
+    ".cache/model_reference/packed_gate_up_export/v1/manifest.json": "cec6265adaf4cbec8a71afa3b1815b359e8c3127700e877565511c9867dbb063",
+    ".cache/model_reference/tiny_llava_v1/config.json": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249",
+    ".cache/model_reference/tiny_llava_v1/model-00001-of-00002.safetensors": "5757b71668b0f69d61185ff018ada04d490dac417f998bbd6455ec8a84fa1c72",
+    ".cache/model_reference/tiny_llava_v1/model-00002-of-00002.safetensors": "c163e6bae7ffadf52ebc7ccae0763f43055e62cadd6dd78c408d6b2f840021ce",
+    ".cache/model_reference/tiny_llava_v1/model.safetensors.index.json": "e50f2b3f29f9b4fadf25d427e30d96c2d3aa402eb66ba9e07a0842afe75d4a3b",
+    "records/batch389_fixture_preparation.json": "ad1bf3d82179359699edd43becae7602a8e762192b78dc419dcf793b29365771",
+    "syn/pack_tri_oracle_checkpoint_down.py": "1c57da76c1202ced7d11bece5b8b06e386a7d46b759ecd5fb15cdba40a123d53",
+    "syn/pack_tri_oracle_checkpoint_pair.py": "99c98bf7a92463814119f964a4d6429507f5d62e2c3693396e1fbbeb21d57d94",
+    "syn/pack_tri_oracle_weights.py": "b0ff3db555447cd794d2842e725e2158f55251013acecd20a8f3983e3b97c3b5",
+    "syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a"
+  },
+  "features_per_row": 2048,
+  "first_layer_matrices_match_hardware_fixture": true,
+  "layers": 22,
+  "matrices": 44,
+  "peak_allocated_gpu_bytes": 230688256,
+  "rows_per_matrix": 5632,
+  "scope": "Local integer reference weight format for all language layers.",
+  "state": "packed_checkpoint_gate_up_weights_cpu_cuda_exact_for_all_language_layers",
+  "total_bytes": 507510784,
+  "weights_sha256": "63d4fdb8100df478f44a852614a91ffcb670c0d444e4871293e1912a7d301164"
+}
