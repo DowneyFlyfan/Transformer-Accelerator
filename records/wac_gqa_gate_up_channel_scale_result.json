@@ -1,0 +1,26 @@
+{
+  "state": "later_gate_up_channel_scaling_no_accuracy_gain_on_fixed_panel",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "questions": 200,
+  "baseline_predictions_reproduced": 200,
+  "exact_matches": {
+    "baseline": 116,
+    "refined": 116,
+    "gained": 6,
+    "lost": 6
+  },
+  "accuracy_percent": {
+    "baseline": 58.0,
+    "gate_up_channel_scale": 58.0
+  },
+  "accuracy_change_percentage_points": 0.0,
+  "elapsed_seconds": 171.20220511197113,
+  "peak_graphics_allocated_bytes": 8243155968,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/gate_up_channel_scale_panel/receipt.json": "986d0cbe4a639aa7b1538d1fda4be796e91f8b8a8ab54e810f6925ec6eb998b5",
+    ".cache/model_reference/gqa_testdev/gate_up_channel_scale_panel/independent_receipt.json": "b79112cb17f3441a19694689029c8bc22746febc637802b770681e0a4f07ea0a",
+    ".cache/model_reference/gqa_testdev/run_gate_up_channel_scale.py": "92bbe892cbb8c8de7c825144ef77217d848f174518b3bf3f3a810e9d21186dd6",
+    ".cache/model_reference/gqa_testdev/gate_up_channel_scale_panel/inputs.json": "b3433359acba5a35905cbcdf8664a45556fdf49fef202fd1e19e3ed100a4777d"
+  },
+  "scope": "Paired GQA Test-Dev software panel. Only later-token gate and up weight quantization uses one exponent per output channel."
+}
