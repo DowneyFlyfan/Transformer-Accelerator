@@ -1,0 +1,31 @@
+{
+  "state": "local_decode_down_weight_bandwidth_lower_bound_exceeds_paper_latency_budget",
+  "paper_latency_ms": 877,
+  "assumed_clock_mhz": 580,
+  "decode_steps": 60,
+  "layers": 22,
+  "active_channel_columns": 6942010,
+  "bytes_per_uncompressed_down_column": 2048,
+  "logical_down_weight_bytes": 14217236480,
+  "optimistic_weight_reuse_bytes_per_step": 414416,
+  "minimum_external_read_bytes": 14192371520,
+  "read_response_bits": 64,
+  "peak_port_bytes_per_second": 4640000000,
+  "maximum_port_bytes_in_paper_latency": 4069280000,
+  "minimum_read_time_ms": 3058.7007586206896,
+  "minimum_required_bytes_per_second": 16182863763,
+  "minimum_equivalent_parallel_ports_at_clock": 4,
+  "scope": "Analytic lower bound for the local uncompressed weight layout and one archived pruning trace. Only decode down-projection weights are counted. The hardware and paper system latencies remain unmeasured locally.",
+  "evidence_sha256": {
+    "records/normalized_workload_trace_result.json": "2148ba1d8ed4f60365ef53b96ef83c17295163acaa3927563f6a61f0f9d8121e",
+    ".cache/model_reference/normalized_workload_trace/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/model_reference/tiny_llava_v1/config.json": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249",
+    ".cache/physical/shared_memory_layer_boundary/physical_inputs/native_memory_partition_receipt.json": "26bed44cc96bac8bc6ec37bc98d8aec5de13664ad796154ffa018d57c5646c33",
+    "records/wac_shared_memory_layer_native_attention_result.json": "24b57b714574c4a3825582c17a45788b974784a3b52666ab0f19e92143b05af9",
+    ".cache/physical/context_external/shared_decoder/boundary.sv": "1e2479af29d2908571a84471e2fec75deb838630b04ac4be82f6e66df4281174",
+    "records/wac_shared_decoder_context_result.json": "746632706dbcd86ca8f66376269a0e231d11f3a6bb551ebc93a0a5e8040512ef",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "syn/audit_tri_oracle_decode_bandwidth.py": "fbc3b2261016fbcd13e5b4d2e794f7373740f2633a53a4dd36bf946806e5a434"
+  }
+}
