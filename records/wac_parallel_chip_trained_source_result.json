@@ -1,0 +1,36 @@
+{
+  "attention_rows": 4,
+  "dual_lane_simulated_cycles": 3904531,
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native/attention_receipt.json": "064d7679bb9bbd5a28dfa908d1f858c1a4c5956bc40ca855b46dca4180c8299c",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native/trained_receipt.json": "ca08570292b6c37c5ac2962af85a0af4b91651290def5d54190d63610477b1a0",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native_retry/trained/progress.log": "ccd3a147713b57405806949eda23db17807d493ecb3b199334285728498dbe8a",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/full_native_retry/trained/xrun.log": "b051a210f98b91332f31a266bc58d1cc566864d602d11d8359af8fcc7c2b64e0",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/genus_elaboration_guarded/cut_inventory.tsv": "9c4d89b766cfe9edeaba43da49a81e702d7cb33ed78a9bfa5ffa8f8ed92225b8",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/genus_elaboration_guarded/native_status.json": "c15e683c327f8e99515b0e098fd18f07cd72c31f4549b11c95624fa45fe15f4a",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/preflight_receipt.json": "7701b362077e963e8cbe1584bf8d8be58370f04e6e6943f8447438e8891e3a25",
+    "records/wac_paired_chip_trained_result.json": "03adf61de200ca724a8c4ec1c11d75e58aef18e6505be6229c376fbbfc50307f",
+    "syn/run_tri_oracle_parallel_chip_synthesis.py": "aff01c17e00adf81f934e796552ce5df86e12f045778322cceeb3fe09040c7e7"
+  },
+  "exact_outputs": 32768,
+  "genus_verified_preserved_cuts": 11,
+  "mask_packets": 71,
+  "output_tiles": 13,
+  "responses_by_lane": [
+    {
+      "down": 91520,
+      "gate": 90624,
+      "up": 90624
+    },
+    {
+      "down": 88704,
+      "gate": 89600,
+      "up": 89600
+    }
+  ],
+  "scope": "Full trained source-layer replay with mapped dispatch and compiled memory models. Both lanes preserve the single-lane packed weight counts. The separate Genus elaboration check verifies native cut master names and bit widths before parent mapping.",
+  "simulated_cycle_reduction_percent": 7.2916018658826784,
+  "simultaneous_weight_responses": 223700,
+  "single_lane_simulated_cycles": 4211626,
+  "state": "dual_lane_source_replay_and_genus_cut_admission_verified"
+}

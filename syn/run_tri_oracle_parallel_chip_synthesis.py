@@ -14,6 +14,13 @@ from verify_tri_oracle_packed_down_weights import ROOT, sha256
 
 
 GIB = 2**30
+ATTENTION_CUT = "layer.layer.attention_pipeline"
+# Genus specializes this abstract for the enabled attention parameters in
+# the prepared decoder. The Xcelium bind reports its unspecialized name.
+ATTENTION_SPECIALIZATION = (
+    "_PERSIST_LAYER_CONTEXT1_COMPILED_SIGN_BANK1_AGGREGATOR_SIGN_BANK1"
+    "_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_CORE_HEAD_PREDICTOR1"
+)
 
 
 def proc_identity(pid):
@@ -86,9 +93,14 @@ def check_elaboration(output, setup, pins):
     for line in ledger.read_text().splitlines():
         raw, master, hpins = line.split("\t")
         name = raw.replace("\\", "").removeprefix(TOP + "/").replace("/", ".")
-        assert name not in found and int(hpins) > 0, line
-        found[name] = master
-    assert found == {name: item["source_module"] for name, item in setup["preserved"].items()}, found
+        assert name not in found, line
+        found[name] = master, int(hpins)
+    expected = {
+        name: (cut["source_module"] + (ATTENTION_SPECIALIZATION if name == ATTENTION_CUT else ""),
+               sum(width(span) for _, span in cut["ports"].values()))
+        for name, cut in setup["preserved"].items()
+    }
+    assert found == expected, found
     for path in (status, log, ledger, output / "port_inventory.tsv", output / "elaborate.tcl"):
         pin(pins, path)
 
