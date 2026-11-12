@@ -1,0 +1,38 @@
+{
+  "archived_request_trace": {
+    "external_read_reduction_percent": 60.75949367088608,
+    "external_reads_with_cache": 21824,
+    "external_reads_without_cache": 55616,
+    "logical_reads": 55616,
+    "simulated_cycles_with_cache": 241467,
+    "simulated_cycles_without_cache": 389307
+  },
+  "directed_dual_lane_chip": {
+    "cycles_with_cache": 4097,
+    "cycles_without_cache": 4117,
+    "exact_outputs": 504,
+    "external_sign_reads_with_cache": 24,
+    "external_sign_reads_without_cache": 36
+  },
+  "entries": 64,
+  "evidence_sha256": {
+    ".cache/model_reference/batch396/outlier_pairs.hex": "48fd8addc51eba91dbdd7c9e3f6091823f99e8b0e5d9ad972f1af35cc7b01359",
+    ".cache/physical/sign_word_cache_native/green/console.log": "aa5adac6edee9b7321a947dda8a031912f585b3d3709fa06f01101ea8124876a",
+    ".cache/physical/sign_word_cache_native/red/console.log": "ca17c052ce54ff7c228dd2fc4a30e50bb7975ff495d80ad370aad0d0a391d366",
+    ".cache/physical/sign_word_cache_native/source_regression.log": "d3ea61c069b5bfbbad3a11cc355653ea00c18e7000abc326ef7e1e9936ca33d8",
+    ".cache/physical/wide_weight_loader/parallel_chip_sign_cache_v2/directed/native.json": "191558e935db31300a55ac7acd4c711a63977b200ef29cd175d2a4ee04b0e313",
+    ".cache/physical/wide_weight_loader/parallel_chip_sign_cache_v2/directed/xrun.log": "ae81fc466b0e2ca5ffe759c48d4239cf5c2d7c7cccc165dc6dceb107f804ab46",
+    ".cache/physical/wide_weight_loader/parallel_chip_sign_cache_v2/prepared.json": "2e127e3baf66fce49ba10655f8caee67cbae9f6a909b026c51915700367d2b2d",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/packed/console.log": "2408ab802ca3516798b65b02143ec7370e0ff6c7c1084e91ac5fb0c02dad9096",
+    "records/wac_parallel_weight_loader_result.json": "70e373eded8f5b35351bfc1b0c4357e49085abe33f90d80a163aec7cad4e0fd7",
+    "syn/prepare_tri_oracle_sign_cache_trial.py": "a831f0aa0d263c3369aa347c5f5caa40e92323d3c59b2407c7a2eead817426ac",
+    "verilog/tri_oracle_sign_word_cache.sv": "dcebab5b4380fbd42567dc0d4c07e8bd6b504316cdd98c36609bf6509a5bb220",
+    "verilog/tri_oracle_sign_word_cache_tb.sv": "fcc66ca8436c8007afde31deb775b602af2b7c2cc2532f6f6b9bf32f991696df"
+  },
+  "scope": "Separate cache trial. The archived sign-request trace uses a delayed test memory; the integrated case is the directed three-token source simulation.",
+  "source_regression": {
+    "existing_compute_fabric_and_cluster_lint_warnings": 12,
+    "xcelium_runs_completed": 26
+  },
+  "state": "sign_word_cache_verified_on_archived_trace_and_directed_dual_lane_chip"
+}
