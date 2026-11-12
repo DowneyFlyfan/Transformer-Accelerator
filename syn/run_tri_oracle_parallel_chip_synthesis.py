@@ -114,7 +114,7 @@ def memory():
             read_value("/sys/fs/cgroup/memory.stat", "anon "))
 
 
-def map_parent(script, output):
+def map_parent(script, output, address_gib=6):
     deadline = time.monotonic() + 4 * 3600
     available, anonymous = memory()
     while available < 18.5 * GIB or anonymous > 3.5 * GIB:
@@ -123,7 +123,8 @@ def map_parent(script, output):
         available, anonymous = memory()
     native_log = output / "genus"
     console = output / "console.log"
-    cmd = ["/usr/bin/prlimit", f"--as={6 * GIB}", "--", "/opt/cadence/bin/genus",
+    address_limit = address_gib * GIB
+    cmd = ["/usr/bin/prlimit", f"--as={address_limit}", "--", "/opt/cadence/bin/genus",
            "-batch", "-files", str(script), "-log", str(native_log)]
     (output / "invocation.json").write_text(json.dumps({"argv": cmd}, indent=2) + "\n")
     started = time.monotonic()
@@ -145,6 +146,7 @@ def map_parent(script, output):
         finally:
             terminate_process_group(process, log_argument=str(native_log))
     result = {"native_exit_status": process.returncode, "stop_reason": stop_reason,
+              "virtual_address_limit_bytes": address_limit,
               "elapsed_seconds": time.monotonic() - started, "minimum_host_available_bytes": minimum,
               "peak_cgroup_anonymous_bytes": peak}
     (output / "native_status.json").write_text(json.dumps(result, indent=2) + "\n")
@@ -188,7 +190,7 @@ def check_netlist(code, setup):
     return top, cuts
 
 
-def run(synthesis, candidate, source_worker, interface_worker):
+def run(synthesis, candidate, source_worker, interface_worker, address_gib=6):
     prepared = synthesis / "prepared.json"
     setup = read(prepared)
     assert setup["state"] == "parallel_chip_synthesis_partition_prepared"
@@ -218,7 +220,7 @@ def run(synthesis, candidate, source_worker, interface_worker):
     output.mkdir()
     admission = output / "admission.json"
     admission.write_text(json.dumps({"trained_layer_cycles": cycles, "input_sha256": pins}, indent=2) + "\n")
-    native = map_parent(synthesis / "map.tcl", output)
+    native = map_parent(synthesis / "map.tcl", output, address_gib)
     netlist = output / "netlist.v"
     top, cuts = check_netlist(netlist.read_text(), setup)
     verify(pins)
@@ -241,4 +243,5 @@ if __name__ == "__main__":
     parser.add_argument("candidate", type=lambda value: Path(value).resolve())
     parser.add_argument("source_worker", type=int)
     parser.add_argument("interface_worker", type=int)
+    parser.add_argument("--address-gib", type=int, choices=(6, 8), default=6)
     run(**vars(parser.parse_args()))
