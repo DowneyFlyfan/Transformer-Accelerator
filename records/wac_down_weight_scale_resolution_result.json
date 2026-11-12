@@ -1,0 +1,28 @@
+{
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/down_weight_scale_resolution_pinned/console.log": "abad639fb5efc098bf97e45d64229a34fdabbd587d33f269f7677b5d691463b6",
+    ".cache/model_reference/down_weight_scale_resolution_pinned/native.json": "aa374501c8351836b42a523782ed45def4edb707127d51b9bb35cb610b518a8e",
+    ".cache/model_reference/down_weight_scale_resolution_pinned/receipt.json": "da481961c6530773d0b2c810127dde46ca45a83e6a66f9f86a52fe3d66f0a875",
+    ".cache/model_reference/ff_quantization_sources_channel_scaled/receipt.json": "8ecc0b4274d5418e9871c7892a149e3f76c3964b884c143ad223c6dad596e09d",
+    ".cache/model_reference/gqa_testdev/pruned_reference/independent_accuracy.json": "5355fe0ff2c08c803f89f78adf267e063919c5af6e4585a7720931bc39ec0435",
+    "syn/audit_tri_oracle_down_weight_scale_resolution.py": "e8730f40dc0322f27d569b848accfae9fa45b588374e94fa76325f8056b7e0c8"
+  },
+  "later_prefill_rows_per_layer": 120,
+  "layers": 22,
+  "layers_improved": {
+    "linear_absmax": 22,
+    "linear_weight_error_fit": 19,
+    "power_of_two": 0
+  },
+  "local_pruned_reference_exact_match_percent": 47.50357767530609,
+  "mean_row_relative_error": {
+    "linear_absmax": 0.11044219106533758,
+    "linear_weight_error_fit": 0.11084910446893118,
+    "power_of_two": 0.11125037298777188
+  },
+  "paper_reported_gqa_accuracy_percent": 55.04,
+  "peak_gpu_allocated_bytes": 394747904,
+  "scope": "Isolated layer-output error on archived TinyLLaVA-v1 inputs with weight skipping disabled.",
+  "state": "down_weight_scale_resolution_measured_on_frozen_prefill_rows"
+}
