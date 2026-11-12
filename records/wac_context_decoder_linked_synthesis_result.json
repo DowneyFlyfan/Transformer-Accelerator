@@ -1,0 +1,34 @@
+{
+  "state": "context_enabled_decoder_synthesized_and_structurally_linked",
+  "process": "TSMC 28HPC+",
+  "candidate_netlist_sha256": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+  "preserved_compute_clusters": 5,
+  "preserved_compute_cores": 20,
+  "preserved_compiled_memory_instances": 623,
+  "preserved_compiled_memories_by_master": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 360,
+    "TS5N28HPCPSVTA512X64M4F": 42,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "external_context_base_bits": 64,
+  "synthesis_seconds": {
+    "mapped_attention_partition": 455.12886680301744,
+    "mapped_compute_partition": 66.1832234270405,
+    "mapped_context_shell": 36.13532420003321
+  },
+  "scope": "Synthesis and structural linkage with exact existing memory paths and compute-array geometry. Native replay, placement timing and routing of this candidate remain open.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder/receipt.json": "54ae54d8a6a46810731e732866aa6d9a1d7fad991e1741c3e38b156edd675421",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder/architecture_receipt.json": "ee66d29d5af83ecf55bf3b3a7748a004bdc36a1ddc7dd66b5cf9e54b5b0227a3",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder/candidate.v": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+    ".cache/physical/shared_memory_layer_boundary/linked/receipt.json": "2ab113549ad3660d774a7429cb502936e82dde208a69325e677be2efc3da9cbf",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/native/receipt.json": "aa25b37fb7c7e1795092533df384e3d5bcebd9023bfd82b8b8a5f92e3b711346",
+    ".cache/physical/context_external/shared_decoder/mapped_compute_partition/native/receipt.json": "209bd720b1545c08db9167186d7e0039b0b623b4a286f4cff8fb84b85d2537a4",
+    ".cache/physical/context_external/shared_decoder/mapped_context_shell/native/receipt.json": "d95600bd91d8a21b634634bbe6331b5844770bd338cd88f6bd56df9c4ca06c3d",
+    ".cache/physical/context_external/shared_decoder/linked_context_duplicate_definition.sha256": "4011f78867ea056405f7f74bfc70c04f444341733327fca0554b7538a4c15fa7",
+    ".cache/physical/context_external/shared_decoder/link_context_candidate.py": "63e17ccd7a9adb269e4a08e27ac31372351219a7e5bb2e7bbd9706fdcd07975a"
+  }
+}
