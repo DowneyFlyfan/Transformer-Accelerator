@@ -1,0 +1,70 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/normalized_sign_cache_workload/primary_port_native/console.log": "e832984b09595a24ef0d23c59dce32df7a02e0373439364cd63d91559bca077b",
+    ".cache/model_reference/normalized_sign_cache_workload/receipt.json": "11c1f9abd3a2556cdb5798ce36f6a6d9a882d1e1fb7e9cd7124632a522805876",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/prepared.json": "1891b843765c3bcb315dce48f0ec18cc6291dd17e991eb75dfbd9fbb09453f01",
+    ".cache/physical/wide_weight_loader/unified_decoder/tri_oracle_scalar_request_owner.sv": "6b33242307d924b83414677863cc6df9ee0178d69f217aadf0c2123a3e895232",
+    "records/wac_dual_lane_burst_budget_result.json": "cda1cf1295fab0a1a98c8216488b7951b95fde38e14cf817e0f1215a44372da9",
+    "records/wac_weight_burst_schedule_result.json": "ef78cd49482669ee67625f255589b5864d6d1bf7ff6fb44fb258b89273f0c05a",
+    "syn/audit_tri_oracle_primary_request_cycles.py": "b269084607c1968676b2d71f11fe268581a4a491aa1035e3cf4e0591091fe501",
+    "verilog/tri_oracle_packed_read_mux.sv": "88f5f74337a6045d80127cd59589599e943a02116257201479aeae146a2785b7",
+    "verilog/tri_oracle_packed_read_mux_tb.sv": "1c2630fbd28873b5ae15c7ae3f9196efddcdb69e40f60df225751b0636756bd0"
+  },
+  "maximum_sign_reads_in_remaining_port_budget": 9134692,
+  "minimum_primary_weight_requests": 14860322,
+  "minimum_primary_weight_response_beats": 475530294,
+  "paper_clock_mhz": 580,
+  "paper_latency_cycle_budget": 508660000,
+  "scenarios": {
+    "128_entries_aligned_example": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 545603224,
+      "minimum_ms_at_paper_clock": 940.6952137931034,
+      "sign_reads": 27606304
+    },
+    "128_entries_trained_fixture": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 543634474,
+      "minimum_ms_at_paper_clock": 937.3008172413793,
+      "sign_reads": 26621929
+    },
+    "256_entries_aligned_example": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 535492376,
+      "minimum_ms_at_paper_clock": 923.2627172413793,
+      "sign_reads": 22550880
+    },
+    "256_entries_trained_fixture": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 536374228,
+      "minimum_ms_at_paper_clock": 924.783151724138,
+      "sign_reads": 22991806
+    },
+    "64_entries_aligned_example": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 554218776,
+      "minimum_ms_at_paper_clock": 955.5496137931035,
+      "sign_reads": 31914080
+    },
+    "64_entries_trained_fixture": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 551285838,
+      "minimum_ms_at_paper_clock": 950.492824137931,
+      "sign_reads": 30447611
+    },
+    "ideal_command_local": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 530073688,
+      "minimum_ms_at_paper_clock": 913.9201517241379,
+      "sign_reads": 19841536
+    },
+    "uncached": {
+      "fits_paper_cycle_budget": false,
+      "minimum_cycles": 581231960,
+      "minimum_ms_at_paper_clock": 1002.1240689655173,
+      "sign_reads": 45420672
+    }
+  },
+  "scope": "Local archived workload and current single-outstanding primary port. Grants maximum-length weight bursts, optimistic weight reuse, immediate responses, and zero cost for every other client. The ideal command-local scenario eliminates every repeated sign read within each frame.",
+  "state": "serialized_primary_memory_port_cycles_bounded"
+}
