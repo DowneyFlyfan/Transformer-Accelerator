@@ -1,0 +1,47 @@
+{
+  "archived_work_counts_exact": true,
+  "assumed_clock_megahertz": 580,
+  "current_shared_port_minimum_decode_weight_cycles": 3788962024,
+  "current_shared_port_minimum_decode_weight_ms": 6532.693144827586,
+  "decode_steps": 60,
+  "down_weight_bytes": 15216705536,
+  "evidence_sha256": {
+    ".cache/model_reference/normalized_workload_trace/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/model_reference/packed_read_traffic_trace/console.log": "7bf1c126d18d3c92db5567e44064e47041d5f151f8d6a8824c4cdd7704998905",
+    ".cache/model_reference/packed_read_traffic_trace/run/per_token_reads.json": "809a275f839de85597a411f8d57ee7710cb3305319a2c1a696034e41de2a5234",
+    ".cache/model_reference/packed_read_traffic_trace/run/read_budget.json": "e40ad1de10e0a29d644b78bbc74f37b4cbc1be6196916a9925b1077ab3d8d92b",
+    ".cache/model_reference/packed_read_traffic_trace/run/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/physical/wide_weight_loader/packed_decoder/tri_oracle_batched_frame393.sv": "a201ce734beaf19a539c4a9dd8530f519b6c45de300cdcf19d8c45e52732364b",
+    ".cache/physical/wide_weight_loader/unified_decoder/boundary.sv": "86503eabf8310ebd911b04b24f17db472415dd2675642d1ae6bd56544e3305d4",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_decode_bandwidth_lower_bound.json": "e4a61dab89458b1c7c0614270d5389341fefb692f9d7b49aa1a5d62538e429f5",
+    "records/wac_packed_decoder_feedforward_result.json": "c8e3e56d79b42ba4f11e53a855a0c8545fea46fa4a1a67cf207f0b0a8d255938",
+    "records/wac_unified_chip_inventory_result.json": "6140998eecd1e6337d68c13b8abd357a891f856176324b54115c0dac673f95f3",
+    "records/wac_unified_decoder_read_result.json": "7b9ffdc7b3e2c5638b0bd72bd54641e3b465cff29a30ddb26a33e3df9822fe2d",
+    "syn/measure_tri_oracle_decode_read_budget.py": "58adee6f0edce6425afdf076d675e5628476b2f86733a1f4367561aef7a3ae8d",
+    "syn/run_tri_oracle_normalized_workload_trace.py": "bfce9cad3ec0681d54f5461ef14faf306e8d597497c99f8db21d18b7ad9f1b28",
+    "syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a"
+  },
+  "gate_up_weight_bytes": 28434472960,
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "ideal_all_wide_minimum_decode_weight_ms": 1175.2778431034483,
+  "layers": 22,
+  "logical_responses_before_optimistic_reuse": {
+    "down_responses": 237761024,
+    "gate_up_responses": 3554309120
+  },
+  "maximum_effective_weight_byte_fraction_on_one_wide_port": 0.7462065290741691,
+  "minimum_weight_bandwidth_gb_per_second_at_paper_latency": 49.74494131812999,
+  "minimum_weight_bytes_per_clock_at_paper_latency": 85.7671402036724,
+  "optimistic_cache_reuse_bytes": 24864960,
+  "optimistic_weight_bytes_after_reuse": 43626313536,
+  "paper_latency_ms": 877,
+  "prefill_tokens": 600,
+  "scope": "Quantized activation and pruning observations on the archived software trajectory. The read floors assume one accepted response per clock, exclude prefill and other operations, and use the local uncompressed layouts.",
+  "state": "measured_local_decode_weight_demand_exceeds_paper_latency_budget",
+  "trace_memory": {
+    "maximum_container_anonymous_bytes": 1651269632,
+    "minimum_host_available_bytes": 16282087424
+  }
+}
