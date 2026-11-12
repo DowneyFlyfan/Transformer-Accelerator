@@ -1,0 +1,134 @@
+{
+  "archived_baseline_max_error_difference": 3.038264634325216e-08,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/input_equalization_v1/verified_receipt.json": "55ea8b65bc8c4ef3454e7af94322a20ac6a61c122b1fd3e920524b7e2ed26440",
+    ".cache/model_reference/weight_range_v2.json": "cceff4535bf59bccf3702c536b5d78357cb2c1f2e4dbdb7976e498f663beb051",
+    ".cache/model_reference/weight_range_v2.log": "68a83403d7d6c0ac9febcec1f2f94229716e89ea739388f2474732fb4ac997b5",
+    "syn/measure_tri_oracle_weight_range.py": "214f72e214153ea5b22ab81c156bc713eab1083719d3a90365ba643cc337d9e7"
+  },
+  "fit_images": 8,
+  "held_images": 8,
+  "held_layers_improved": {
+    "dense": 22,
+    "pruned": 22
+  },
+  "held_relative_output_error": {
+    "dense": {
+      "baseline": 0.11125037298777189,
+      "calibrated": 0.07638231009142576
+    },
+    "pruned": {
+      "baseline": 0.22709798038129805,
+      "calibrated": 0.2052687661433784
+    }
+  },
+  "layers": 22,
+  "native_seconds": 5.336892923922278,
+  "peak_gpu_bytes": 467938816,
+  "relative_error_reduction_percent": {
+    "dense": 31.341973927744636,
+    "pruned": 9.6122449883827
+  },
+  "repeated_gpu_layer_results_exact": true,
+  "rows_per_split_per_layer": 120,
+  "scope": "Offline signed-eight-bit weight-range calibration on later prompt rows. Existing shift and down projection policies, and original prediction signs, are retained.",
+  "selected_offsets_by_layer": [
+    [
+      -1,
+      -1
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -1
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -1,
+      -2
+    ],
+    [
+      -1,
+      -2
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -1,
+      -1
+    ],
+    [
+      -2,
+      -1
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -2,
+      -1
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -1,
+      -2
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -2
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      -1,
+      -1
+    ]
+  ],
+  "selected_offsets_counts": {
+    "[-1, -1]": 5,
+    "[-1, -2]": 4,
+    "[-1, 0]": 1,
+    "[-2, -1]": 3,
+    "[-2, -2]": 9
+  },
+  "state": "gate_up_weight_ranges_independently_checked_on_held_prompt_rows"
+}
