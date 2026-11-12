@@ -1,0 +1,66 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/sign_word_cache_native/green/xrun.log": "b0e4ece08e40ffa751e3b560864c23b85cbee54482233ef266c3820a33a78d24",
+    ".cache/physical/sign_word_cache_native/mapped_directed/elapsed_seconds": "8fcc19c2e649690e9a789ca5891353650622a20712d16c8628c0001b910e6879",
+    ".cache/physical/sign_word_cache_native/mapped_directed/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/sign_word_cache_native/mapped_directed/invocation.json": "90a803adf98783a28c82ba42b65590b345014a49f7ac721cbb82c2e9c2a83017",
+    ".cache/physical/sign_word_cache_native/mapped_directed/xrun.log": "e24c59c6f6cb49190b923ed2fb0512d80c2a448a986a5a3e12642bcf076e8148",
+    ".cache/physical/sign_word_cache_native/mapped_trained/elapsed_seconds": "048e5e1e45953d7a01adf84f757b5c3d33bc0aaecc118b816f5e525d35391d9e",
+    ".cache/physical/sign_word_cache_native/mapped_trained/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/sign_word_cache_native/mapped_trained/invocation.json": "6df076198f5ac3f332613efb0275ee830dea52416638dd491c453ce3acce9b3e",
+    ".cache/physical/sign_word_cache_native/mapped_trained/xrun.log": "7574164f7d6103ea98ff0435aeb52de3ee5b30609f9d50d9b69bccd61d78946a",
+    ".cache/physical/sign_word_cache_native/synthesis_retry/area.rpt": "2877e9d314f0810fbd586d01231df1bf814430d75a7c5f120195b0f9da7199cf",
+    ".cache/physical/sign_word_cache_native/synthesis_retry/cache.tcl": "ea0633976793e224147b431e335b1fcc20a1318e32fac4f5b445d97ef14917e3",
+    ".cache/physical/sign_word_cache_native/synthesis_retry/cache_mapped.v": "1d2cd3f9e70d1dfffcd387559208f45316f71a0afef99cca3eccaebff20de40a",
+    ".cache/physical/sign_word_cache_native/synthesis_retry/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/sign_word_cache_native/synthesis_retry/mapped_check.rpt": "a389ae5019200ef9dcad4ec5124653e41f742909d37c251db98987017d22fc35",
+    ".cache/physical/sign_word_cache_native/synthesis_retry/timing.rpt": "d1dbb09b646f7e4adab81a4839ff8e7e9fd262ce4e6fe0537e21b2de0b663a6c",
+    ".cache/physical/sign_word_cache_native/trained_masks/native/xrun.log": "e73e06db5d6069c1c95c79c4ad080c43fcddaa41f2226c354246307e524931af",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/physical/wide_weight_loader/parallel_chip_sign_cache_v2/tri_oracle_batched_outlier_replay404.sv": "aed425861489a154d451fa66f0f4644c6cb44cd424d4175850ee28c35d6b512c",
+    "records/wac_sign_cache_trained_masks_result.json": "54c96944c4b5a909a3ac3c60daed54849b192508dc0c9e512157ddaac3f44c1f",
+    "verilog/tri_oracle_sign_cache_trained_masks_tb.sv": "9882169d7d9fc169ae4705bd8b53b2e57b2c26b1154d71fe848a8286545aaa3e",
+    "verilog/tri_oracle_sign_fetch.sv": "a87a29deacb5677c5338a113da3e44830c2e9c7f7094f96a628824725ca552f1",
+    "verilog/tri_oracle_sign_word_cache_tb.sv": "fcc66ca8436c8007afde31deb775b602af2b7c2cc2532f6f6b9bf32f991696df",
+    "verilog/tri_oracle_strip_predictor.sv": "ea9f70a6a507c65379e0ad4df15e1170947c5065ed09a54903d6feff5e3d48f8"
+  },
+  "external_sign_bytes_saved": 270336,
+  "scope": "Standalone mapped sign cache substituted for its source in both benches. The trained predictor datapath uses source and compiled memory models. Timing is synthesis-only with zero wireload.",
+  "state": "genus_mapped_sign_cache_passed_directed_and_trained_xcelium_replay",
+  "synthesis": {
+    "mapped_cell_area_um2": 31193.064,
+    "mapped_cells": 14142,
+    "target_clock_period_ns": 1.72414,
+    "technology": "TSMC 28HPC+",
+    "temperature_c": 125,
+    "volts": 0.9,
+    "worst_reported_setup_slack_ps": 526
+  },
+  "trained_trace": {
+    "bits_per_mask": 32,
+    "cycles": 1239999,
+    "external": 21824,
+    "groups": 2816,
+    "logical": 55616,
+    "skipped": 5231
+  },
+  "xcelium": {
+    "mapped_directed": {
+      "matched_source_markers": [
+        "SIGN_CACHE_TRACE logical=55616 external=21824 cycles=241467",
+        "SIGN_CACHE_PASS repeat_frame_stall_error_drain_burst=1"
+      ],
+      "native_exit_status": 0,
+      "wall_seconds": 4.632349
+    },
+    "mapped_trained": {
+      "matched_source_markers": [
+        "TRAINED_SIGN_CACHE_PASS groups=2816 bits_per_mask=32 skipped=5231 logical=55616 external=21824 cycles=1239999"
+      ],
+      "native_exit_status": 0,
+      "wall_seconds": 12.480067
+    }
+  }
+}
