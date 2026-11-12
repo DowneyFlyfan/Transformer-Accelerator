@@ -1,0 +1,39 @@
+{
+  "state": "chip_top_port_and_physical_inputs_statically_verified",
+  "reference_decoder_netlist_sha256": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+  "verified_decoder_ports": 143,
+  "verified_controller_ports": 23,
+  "external_port_bits_including_clock_and_reset": 11327,
+  "memory_macro_seeds": 623,
+  "protected_targets": {
+    "get_cells": 7,
+    "get_nets": 38467
+  },
+  "external_constraint_counts": {
+    "set_load": 7557,
+    "set_output_delay": 7557,
+    "set_input_delay": 3768,
+    "set_input_transition": 3768
+  },
+  "analysis_views": [
+    "setup_slow",
+    "setup_typ",
+    "hold_fast"
+  ],
+  "clock_period_ns": 1.72414,
+  "rejected_negative_controls": [
+    "swapped_context_base_pin",
+    "missing_context_input_delay",
+    "wrong_hierarchical_protected_target"
+  ],
+  "scope": "Structural wrapper and static physical inputs checked against the earlier linked netlist. The earlier netlist failed integrated replay. The corrected candidate and all physical results remain pending.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/chip_structural_interface_preflight/receipt.json": "97a1b0112694d9d90fd8f2b97bb9bcda69ee9e2c63a54b0fa8f0304d5686edc0",
+    ".cache/physical/context_external/shared_decoder/chip_structural_interface_preflight/chip_wrapper.v": "fe1b72b087371d5a684e53e7fc7a2a6e3913f8a654bcae39891e751ca6d94d4e",
+    ".cache/physical/context_external/shared_decoder/chip_structural_interface_preflight/syntax/console.log": "9eef0d0af24c1e957fa4127672e3734c5b3e9c192355a1abab59e5c5b7742154",
+    ".cache/physical/context_external/shared_decoder/chip_physical_input_preflight/receipt.json": "5775b6459703909ca4f929de9f453fd2fc4eec17be777d898c2e1d832bc4f701",
+    ".cache/physical/context_external/shared_decoder/chip_physical_input_preflight/negative_controls.json": "f6ad2819a45b68501949c3331d9a751066556556bcb4367338245ee60311e41a",
+    ".cache/physical/context_external/shared_decoder/chip_physical_input_preflight/candidate.sdc": "50076a24c8c492d96a54cd0d0aff9d1d0bec9c4dec756967614cde9176823e7c",
+    ".cache/physical/context_external/shared_decoder/chip_physical_input_preflight/timing.tcl": "f63b97cb5de2a167d5202b811e15f94403871cc9f9164281ab3e6d448c65f619"
+  }
+}
