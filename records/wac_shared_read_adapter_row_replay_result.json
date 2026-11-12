@@ -1,0 +1,28 @@
+{
+  "state": "mapped_shared_read_adapter_passed_archived_trained_attention_rows",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "source_archive_commit": "7aca48d",
+  "attention_rows": 5,
+  "verified_error_cases": 5,
+  "verified_scores": 1029,
+  "verified_value_reads": 1029,
+  "serialized_vector_bursts": 1032,
+  "serialized_vector_beats": 8256,
+  "original_simulated_time_ns": 631790,
+  "adapter_simulated_time_ns": 716010,
+  "simulated_time_change_percent": 13.330378765095997,
+  "scope": "Local shared-read protocol choice tested with the original 20-core row fixture. Full compact-layer and placed checks remain pending.",
+  "evidence_sha256": {
+    "verilog/tri_oracle_external_read_mux.sv": "e0b5c97ac88ba472e3cd46ca23d8369d5b8deac33d4e723ac628f63c38380feb",
+    "verilog/tri_oracle_external_read_mux_tb.sv": "1a6032a42bcc2a28a91381d01b0b3f58699faf4150ea6923dbd19ac1b69c0bd7",
+    "records/batch426_attention_row_result.json": "593f638fb24ceaf8966ec2897af59815adbb67ad5cdb0348b5d8a2fce265b388",
+    "records/batch426_attention_row_logs.json.gz": "fc68a7652e1d68ce1a0ab0312b877278b614e152094d0afa37edde10804791d9",
+    ".cache/physical/external_read_mux/trained_row_replay/receipt.json": "e53f6a4b6526353f9e1e44d7e741baab6dc1d2e4b6b7bcff3de162e51b047c30",
+    ".cache/physical/external_read_mux/trained_row_replay/console.log": "a291930cd9f40f4ab56c491228d4d141e82c3d4cc76a2edd048faedb327b7c87",
+    ".cache/physical/external_read_mux/green/native.log": "718a25b69a6260fc89698e5ee8bf86483853ea083b75cf4fe44a0f9faf945ecd",
+    ".cache/physical/external_read_mux/mapped_gate/native.log": "35a5c9deb53b17f7111ba9592269f4453a46d22dc51b923fb73dfde4588011e1",
+    ".cache/physical/external_read_mux/mapped/area.rpt": "23ec2e7c8e293d9df34544a1bf0e9996f184efcd3e2c92f0b503cf99c4e486f9",
+    ".cache/physical/external_read_mux/mapped/timing.rpt": "138c22f5d665354c2c5713dec82764b955fd5f4f692f802b489b3d6658514ec9"
+  }
+}
