@@ -1,0 +1,35 @@
+{
+  "clock_megahertz": 580,
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/burst_budget/console.log": "2207b6740ea205b1d54cc135a6ed11c944230f323e1532a908ddae0bf384dbc1",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/prepared.json": "1891b843765c3bcb315dce48f0ec18cc6291dd17e991eb75dfbd9fbb09453f01",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/tri_oracle_batched_tensor390.sv": "403a51afa12b2dd9dc2d00e69aaf4b0c8688ba0851dd95e4f23fbf8e7ac69436",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/tri_oracle_chip_command_layer.sv": "7ee26a1be0e04784c000ec2fcff670e322cc1c6de7a0a3ab2e4ef7fccac6c680",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_assembled_context_chip_structure_result.json": "6782bbb88fab8436c242cdd07fd88e9763ff32a683952c68b37d5120b80625c3",
+    "records/wac_channel_packing_bound_result.json": "63074498af07d464cd96ea32eddc78519ed5eb1c85f892b9eb6eae425c69da59",
+    "records/wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "syn/audit_tri_oracle_parallel_burst_budget.py": "adc571dab1eef4b8f40f88467a5df1b945530dd25f4b82aad2e80ab8ed16bf45",
+    "verilog/tri_oracle_parallel_weight_loader.sv": "595ea250bb91ee929f264d64e3d9b43d0d45eb722bb88f87eed0e1778835ae23",
+    "verilog/tri_oracle_weight_burst_budget_tb.sv": "2bb7d75af494df78f95d078779758e89ada8a4b0f664672ecc0c134439e92b44",
+    "verilog/tri_oracle_wide_weight_loader.sv": "41d1bc4df3efd02634b117217eccb22f04b2c983c198f277f3d5f81135d74823"
+  },
+  "minimum_burst_length_to_fit_paper_budget_at_measured_gap": 46,
+  "minimum_payload_beats_on_busiest_lane": 476970370,
+  "minimum_weight_cycles_with_burst_gaps": 521686342,
+  "minimum_weight_latency_with_burst_gaps_ms": 899.4592103448276,
+  "native_burst_probe": {
+    "inter_burst_cycles": 3,
+    "max_beats": 32,
+    "oversize_rejected": 1,
+    "payload_beats": 64
+  },
+  "optimistic_reuse_bytes": 740146976,
+  "paper_latency_cycle_budget": 508660000,
+  "paper_latency_ms": 877,
+  "payload_only_latency_floor_ms": 822.3627068965517,
+  "projected_weight_bytes": 61792354304,
+  "scope": "One archived local 600-prefill and 60-decode trajectory with current uncompressed packed weights. The bound gives both lanes ideal balance and immediate responses, and counts only weight transport.",
+  "state": "dual_lane_weight_transport_exceeds_paper_latency_on_local_trace"
+}
