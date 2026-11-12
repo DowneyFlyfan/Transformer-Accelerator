@@ -1,0 +1,26 @@
+{
+  "candidate_netlist_sha256": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+  "compiled_memories": 623,
+  "compiled_memory_bytes": 414416,
+  "counters": {
+    "attention_reads": 57992,
+    "failed_writes": 2,
+    "maps": 576,
+    "rows": 4,
+    "stalls": 63,
+    "values": 1023,
+    "writes": 27
+  },
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/candidate.v": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention_serial/bundle.sv": "d77395031f13286477450d12a7b61df65db57149317cbf0e2ab6f632a3f88833",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention_serial/memory_receipt.json": "0824cbe39e8ddbc7050741b6bb0713859daf6bbe2597ae27704ea1ec6ebe3d95",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention_serial/receipt.json": "f0fee6e094ef72ba6e6e5629f7aed4893880d577ac2c6503056a592496a7df1d",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention_serial/replay/xrun.log": "d15760c8faf7a66298a884909b9c0416041269bd2c0e0144d9e63a7171726e44",
+    ".cache/physical/context_external/shared_decoder/linked_context_replay_complete_attention_serial/smoke/xrun.log": "d5be96559e98a80c72354bc8e6517cde0bf2532a6846205ca771aa81eaeb8efc",
+    "records/wac_mapped_paper_topology_result.json": "fe72e49bae80fae91916c2524002b06ebe5df681c63dd48129c7914f7e6461dd"
+  },
+  "native_replay_wall_seconds": 556.462940835976,
+  "scope": "Corrected, fully mapped decoder with compiled memory models. This replay covers context restoration and four archived attention rows.",
+  "state": "corrected_mapped_decoder_completed_archived_attention_and_memory_replay"
+}

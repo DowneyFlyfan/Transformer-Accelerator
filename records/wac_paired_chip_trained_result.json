@@ -1,0 +1,41 @@
+{
+  "attention_frame": {
+    "attention_reads": 57992,
+    "failed_writes": 2,
+    "maps": 576,
+    "rows": 4,
+    "stalls": 59,
+    "values": 1023,
+    "writes": 27
+  },
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/paired_chip/full_native/attention_receipt.json": "a6f68315ac973282e3a19d242fa50da666f11bd85add47f87023b8bf65080a87",
+    ".cache/physical/wide_weight_loader/paired_chip/full_native/trained/progress.log": "aee4643daf642517393188c5a696afd8bd86fc46dff72282e2d9985d5372aac6",
+    ".cache/physical/wide_weight_loader/paired_chip/full_native/trained/xrun.log": "76c632f97bb13e365fd1e4081c75c5caaac9dd70e5f24478ef694010bd450f7a",
+    ".cache/physical/wide_weight_loader/paired_chip/full_native/trained_receipt.json": "f20a5b5ebd51659e76cde98073a860b2b1aeef45ab630734535069393b0271de",
+    "records/wac_paired_chip_feedforward_result.json": "fbc8f2994d02589e90221db6e94fe0a6d8f309c73c96e15555ce0a9fb87fc373"
+  },
+  "exact_outputs": 32768,
+  "packed_weight_responses_by_projection": {
+    "down": 180224,
+    "gate": 180224,
+    "up": 180224
+  },
+  "scope": "One decoder layer and sixteen archived trained tokens. Mapped command controller, source layer datapath and compiled memory simulation models.",
+  "simulated_cycles": 4211626,
+  "simulator_wall_seconds": 1534.6598403989337,
+  "state": "single_packed_lane_matched_full_width_trained_layer_from_checkpoint_images",
+  "training_frame": {
+    "exact_outputs": 32768,
+    "fault": 0,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "intermediate_bytes": 90112,
+    "output_packets": 208,
+    "outputs": 2048,
+    "read_bytes": 3942912,
+    "read_requests": 82944,
+    "tokens": 16,
+    "trained": 1
+  }
+}
