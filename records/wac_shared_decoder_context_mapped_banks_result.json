@@ -1,0 +1,43 @@
+{
+  "state": "shared_decoder_context_restored_through_five_mapped_banks",
+  "simulator": "Cadence Xcelium 25.03",
+  "process": "TSMC 28HPC+",
+  "mapped_cluster_count": 5,
+  "mapped_compute_cores": 20,
+  "compiled_memory_instances": 623,
+  "compiled_memory_instances_by_master": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 360,
+    "TS5N28HPCPSVTA512X64M4F": 42,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "shared_decoder_checks": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 57992,
+    "stalls": 63
+  },
+  "exact_restored_origins": 576,
+  "context_read_bytes": 720,
+  "context_write_bytes": 720,
+  "simulation_end_ns": 7238070,
+  "native_seconds": {
+    "elaboration": 123.12311111192685,
+    "replay": 607.9693001579726
+  },
+  "scope": "All five synthesized compute banks and compiled memory instances were exercised behind the context-enabled shared decoder. The shared decoder controller and tensor control were register-transfer level. Full gate-level decoder integration and physical qualification remain open.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/mapped_banks_wired/receipt.json": "11f96e97bfdc03f745d4f0d0f14dfba07acf58132702173d38f889e526191e95",
+    "records/wac_shared_decoder_context_result.json": "746632706dbcd86ca8f66376269a0e231d11f3a6bb551ebc93a0a5e8040512ef",
+    ".cache/physical/context_external/shared_decoder/xrun.log": "631acc8875fdd1ac3821ab4cdc91b999b7f44bd7b9974f00d1a9693700bb7ca0",
+    ".cache/physical/context_external/shared_decoder/mapped_banks_wired/replay/xrun.log": "e8b528aa97dc76829a5f44b670580f7ccf297122edac2d54c8b6a5519d307e2c",
+    ".cache/physical/context_external/shared_decoder/mapped_banks_wired/elaborate/xrun.log": "bb58fe6e5025063d6cd7f6d6d08fad28ff9566bcf8ed7859141277830a0b444a",
+    ".cache/physical/shared_memory_layer_boundary/mapped_layer_replay/normalized_replay.log": "b630b5618f7e78bb485b5565fb258d00cbd10660c9fc682d8bf0c8d1b6351882",
+    ".cache/physical/context_external/shared_decoder/mapped_banks_wired/prepared.json": "1d2a4e30edefce2fdcba2912aaa8a4b73b5c17ad507fb9b0e7c1e3f6adb4e663"
+  }
+}
