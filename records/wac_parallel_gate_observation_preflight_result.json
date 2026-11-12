@@ -1,0 +1,19 @@
+{
+  "archived_mapped_attention_signals": 52,
+  "archived_mapped_trained_signals": 41,
+  "dual_lane_bench_retargeting_tested_against_mapped_context_netlist": {
+    "attention_aliases_retargeted": 43,
+    "attention_signals_bound": 52,
+    "trained_aliases_retargeted": 23,
+    "trained_signals_bound": 45,
+    "unresolved_probe_rejected": true
+  },
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_synthesis/mapped_observation_preflight_v2.json": "71446c3907d42d205c800e49d49a5e4cd841a520c7dbbe6874caddf2c7d242dc",
+    "records/wac_corrected_context_chip_mapped_restore_result.json": "af31f731044432587f8b9ff91130b29f86414a5aceb1f3b45b0e5e698fc8dbc6",
+    "records/wac_shared_memory_layer_trained_result.json": "b39b133788da1c4980d61db41208a969cd259035c8239e02dbe9dfb42553d3bb",
+    "syn/prepare_tri_oracle_parallel_gate_replay.py": "3fbce4cfc7e9d111b07b6dc9f290e2b7ae919a180b959808bab1784a89b1bd2e"
+  },
+  "scope": "Static observation binding on two previously replayed mapped netlists. The dual-lane candidate is queued for binding after it is linked.",
+  "state": "mapped_attention_and_trained_bench_observations_bound"
+}
