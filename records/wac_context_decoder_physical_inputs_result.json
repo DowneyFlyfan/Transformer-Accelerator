@@ -1,0 +1,31 @@
+{
+  "state": "context_decoder_placement_inputs_statically_verified",
+  "candidate_netlist_sha256": "12ae0b033a0353bdde2c4c867934c6f69d6138895735d904a158e96f6c0f2218",
+  "preserved_macros": 623,
+  "protected_targets": {
+    "get_cells": 7,
+    "get_nets": 38467
+  },
+  "external_constraint_counts": {
+    "set_load": 7664,
+    "set_output_delay": 7664,
+    "set_input_delay": 5697,
+    "set_input_transition": 5697
+  },
+  "new_context_base_constraints": 128,
+  "analysis_views": [
+    "setup_slow",
+    "setup_typ",
+    "hold_fast"
+  ],
+  "scope": "Static physical input checks. Placement and timing remain unmeasured for this candidate.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/physical_inputs/receipt.json": "05760a199ab5c2d68d1e938a711d866996b0ca258bd0b67a01e3c810059264ea",
+    "records/wac_context_decoder_linked_synthesis_result.json": "664544e2a0a99b3ff74268dcb6b5c0f8513bb5497fb70d15d28648d16c9fd5e0",
+    ".cache/physical/context_external/shared_decoder/physical_inputs/candidate.sdc": "51e58ae7f59085e6f1deb93b070bf8fd2135c5b2c1cdfad72ab19809f1848505",
+    ".cache/physical/context_external/shared_decoder/physical_inputs/macro_seed.json": "196f60cfbeb394c579fad8ad61a765cf8f175bb796decb6482f2fd371b2b1daf",
+    ".cache/physical/context_external/shared_decoder/physical_inputs/timing.tcl": "6b0e49b5766b550a1620fc85f348d541904992dba7cbb7ca375602b740a2ba96",
+    ".cache/physical/context_external/shared_decoder/physical_inputs/innovus_inputs.tcl": "632bd6a01c38d5111acbbb7c47db0367061462256a6b1d347da48be2de57763e",
+    ".cache/physical/context_external/shared_decoder/prepare_context_physical_inputs.py": "4368a0228db47612d0a20ed1841c4b7f0ff7d57a22ba757b2a8bfd6878ae8e02"
+  }
+}
