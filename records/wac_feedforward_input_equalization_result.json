@@ -1,0 +1,48 @@
+{
+  "archived_dense_control_max_absolute_error_difference": 1.3058865488968507e-08,
+  "calibration_choices": {
+    "0.25": 16,
+    "0.5": 5,
+    "identity": 1
+  },
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "end_to_end_accuracy_verified": false,
+  "evidence_sha256": {
+    ".cache/model_reference/ff_quantization_sources_channel_scaled/receipt.json": "8ecc0b4274d5418e9871c7892a149e3f76c3964b884c143ad223c6dad596e09d",
+    ".cache/model_reference/input_equalization_v1/architecture.pdf": "e04aad72fb876fc6a245aa5cb245e3dc689c1d2ec70aa91f821d0cf9b6b59ec4",
+    ".cache/model_reference/input_equalization_v1/receipt.json": "0116a597a5395d3d5aba2015e50897637af7aa82de5684a5e0928446ae43c1d5",
+    ".cache/model_reference/input_equalization_v1/verified_receipt.json": "55ea8b65bc8c4ef3454e7af94322a20ac6a61c122b1fd3e920524b7e2ed26440",
+    ".cache/model_reference/input_equalization_v1/verified_repeat.log": "051567383c5ee5b785b64fd6e566576518ae1d200f3c460d2f8aa5040a3744f5",
+    "syn/measure_tri_oracle_input_equalization.py": "8d33887d23779b692ab1f3087945032749c47f10050cd3ba1ad9537c5f40386d"
+  },
+  "fit_images": 8,
+  "held_images": 8,
+  "held_layers_improved": {
+    "dense": 21,
+    "pruned": 21
+  },
+  "held_relative_output_error": {
+    "dense": {
+      "baseline": 0.11125037751414558,
+      "equalized": 0.08583000336181033
+    },
+    "pruned": {
+      "baseline": 0.2270979881286621,
+      "equalized": 0.21092629635875876
+    }
+  },
+  "layers": 22,
+  "native_hardware_verified": false,
+  "peak_gpu_bytes": 501516288,
+  "prediction_metadata_preserved": true,
+  "relative_error_reduction_percent": {
+    "dense": 22.849696981120825,
+    "pruned": 7.121019390423355
+  },
+  "repeated_gpu_outputs_exact": true,
+  "rows_per_split_per_layer": 120,
+  "scope": "Captured ordinary feed-forward rows. Both branches retain signed8 matrix inputs. Pruning decisions use the original weight sign metadata and residual. Feed-forward output errors are measured against frozen floating-point captures.",
+  "seconds": 5.2152534739580005,
+  "state": "fit_only_power_of_two_input_equalization_measured_on_held_rows"
+}
