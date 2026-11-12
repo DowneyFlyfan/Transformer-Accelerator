@@ -1,0 +1,20 @@
+{
+  "candidate_netlist_sha256": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+  "compiled_memory_instances": 623,
+  "context_transfer": {
+    "read_bursts": 18,
+    "restored": 576,
+    "saved": 576,
+    "write_bursts": 18
+  },
+  "controller_sha256": "725e36dc683563e604de4995b5ce636de76ee4bb1675c3131ef3e7cb6b602942",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/chip_command_context_mapped/bundle.sv": "83f7d09f8b199a9d2110adbcc6851cfac9e97258d3a2357427f3b3a1e8c04be9",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_mapped/receipt.json": "8bac67673e5fdd0ce40ee740fa772fa9c21a8c0300e6a8b551b41ae986989ce8",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_mapped/smoke/xrun.log": "b9d406b9b17cb88d33e24b63f780bf8a642296ded1f762310c9c16429c5ecdd8",
+    ".cache/physical/context_external/shared_decoder/linked_context_decoder_complete_attention/candidate.v": "47742623118b1a2b7fd89380a88e285fd52ce7f1ea8a9d6b7d64d17276a039b7",
+    "records/wac_corrected_context_decoder_native_result.json": "76f8cae0c19291c2dbdd03350e0051eb46d8d8537f781d91fae51ecc7ea9b58d"
+  },
+  "scope": "Tagged context save and restore through the mapped chip command controller and the corrected mapped decoder.",
+  "state": "mapped_chip_controller_restored_context_on_corrected_gate_decoder"
+}
