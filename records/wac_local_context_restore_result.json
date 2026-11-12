@@ -1,0 +1,47 @@
+{
+  "state": "compact_attention_restores_compiled_local_merge_tables",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "trained_layers": 22,
+  "exact_merge_map_origins": 12672,
+  "exact_attention_rows": 25,
+  "exact_scores": 3235,
+  "restores": 27,
+  "restored_map_origins": 15552,
+  "compiled_table_entries_by_bank": [
+    128,
+    128,
+    128,
+    128,
+    64
+  ],
+  "decoder_read_bursts": 49481,
+  "decoder_read_words": 99231,
+  "external_context_bytes_written": 15840,
+  "external_context_bytes_read": 19440,
+  "mapped_command_replay": {
+    "tagged_responses": 50,
+    "expected_errors": 4,
+    "table_writes": 13856,
+    "accepted_restores": 24,
+    "stale_map_continuation_rejected": true,
+    "external_read_fault_table_writes_before_error": 32
+  },
+  "scope": "The compact attention and compute RTL reuse five compiled merge-table banks, with mapped external context storage, memory arbitration and command dispatch. Full mapped decoder integration, paper accuracy, timing and physical routing remain open.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/local_restore/bank_restore_receipt.json": "7e7e5bbcefc85e9673995a7d65e48f5632ef985f92c93b37db9dbd8fabb15123",
+    ".cache/physical/context_external/attention_replay/receipt.json": "bc8765ab6271e9912fd75efd8836d1ae454402eff760771ab5ee07146439c647",
+    ".cache/physical/context_external/local_restore/layer_replay_v2/inputs.json": "81b8132ad7edbd4c54141cb962f93000973cffb79a046ea8ccdd2ba207951c3f",
+    ".cache/physical/context_external/local_restore/layer_boundary_v2/inputs.json": "a17a7ff69ce4086d5c226a78946a1fc18468a07d4f99ce7b983f419618599189",
+    ".cache/physical/context_external/local_restore/dispatched_layer/inputs.json": "fd0d34bb818be98fd06ae2268bba4cebe72ccb504b3ad611feed7d859b012a1f",
+    ".cache/physical/context_external/local_restore/layer_replay_v2/xrun.log": "b0e92b9c79bd848b6d45873d5787851ed51d0f233e0b32903cfc0822447d33cc",
+    ".cache/physical/context_external/local_restore/layer_boundary_v2/xrun.log": "45ebf338659ea64e0703e01710794573fb9c6d7c3af9f72701b1a7fd3694763d",
+    ".cache/physical/context_external/local_restore/dispatched_layer/xrun.log": "01291f05209e6ca7fad562972686cf213e5d2c6e5cdd496ac4942ac9708890cf",
+    ".cache/physical/context_external/local_restore/layer_replay_v2/tri_oracle_attention_layer427.sv": "710d74ffb73b4b65f382ba93da34c52a12a014b87a8529e4cfb8bc44df9a50a4",
+    ".cache/physical/context_external/local_restore/layer_replay_v2/tri_oracle_compute_fabric.sv": "1b0868527e972896a0b22bfe2f32f894d1bbece0977851fc9fba619cfa19de79",
+    ".cache/physical/context_external/local_restore/prepare_layer_replay.py": "ff478b4b72b66b2e08d99d1977a24d61796db2284ddc44ca48df3a0dce4703f0",
+    ".cache/physical/context_external/local_restore/prepare_layer_boundary.py": "22a28d2b286d1b4f0f4ddd15ff1f5740b25a6c6c15bb1424a006808203a6ddc6",
+    ".cache/physical/context_external/local_restore/prepare_dispatched_layer.py": "f39c07e3f0b2cef113469f59ca0e908fd8409869f2535605bfaba7077e53d54d",
+    ".cache/physical/context_external/local_restore/record_restore_result.py": "c9d6d1a180f54c664ceaaf3c45866748153a1607d04edb93ee35cc59a4da3d0b"
+  }
+}
