@@ -87,7 +87,59 @@
     ".cache/physical/context_external/shared_decoder/mapped_attention_complete_partition/prepared.json": "1c1d07180ac5f99dbf36a056ff794b49f6a04abc5a0babd239b42cd8a33fc5c0",
     ".cache/physical/context_external/shared_decoder/mapped_attention_complete_partition/elaboration_preflight/receipt.json": "64b33b132628ec19c7e4f28c18ad89623fe286c03280bf0cda6f6fafeccef71d",
     ".cache/physical/context_external/shared_decoder/mapped_attention_complete_partition/elaboration_preflight/console.log": "9cf20849a339c7ec6dd45f21f23fe8a3985ff3a24d00b79a091620644f4f98ca",
-    ".cache/physical/context_external/shared_decoder/remap_attention_partition.py": "c02858d6bfd563af089833a5c362bfae723a41d58fa589b82931b98f729c691b"
+    ".cache/physical/context_external/shared_decoder/remap_attention_partition.py": "c02858d6bfd563af089833a5c362bfae723a41d58fa589b82931b98f729c691b",
+    ".cache/physical/context_external/shared_decoder/first_merge_payload_trace/all_imported_cut_drivers_verified.json": "3dc8b79f1b04fb618a48748c01c54269c8a662732d9cff13b7df05ff676c0263"
   },
-  "scope": "Failure isolation on the old linked decoder and elaboration of the corrected partition. Integrated gate replay and placement qualification are pending."
+  "scope": "Failure isolation on the old linked decoder and elaboration of the corrected partition. Integrated gate replay and placement qualification are pending.",
+  "directly_loaded_undriven_output_bits_by_partition": {
+    "attention_pipeline": {
+      "cache_writer": {
+        "source_done_ready": 1,
+        "write_address": 6
+      },
+      "projection": {
+        "done_tag": 32,
+        "tensor_cfg_tag": 32,
+        "tensor_cfg_count": 7,
+        "tensor_cfg_channels": 2547,
+        "tensor_cfg_keep": 2560,
+        "tensor_done_ready": 1
+      }
+    },
+    "attention_controller": {
+      "attention": {
+        "softmax_request[normalized]": 128,
+        "softmax_request[outlier_valid]": 1,
+        "token_sizes_request[map_origin]": 10,
+        "tensor_cfg_valid": 1,
+        "tensor_cfg_tag": 32,
+        "tensor_cfg_dense_rows": 6,
+        "tensor_cfg_channels": 960,
+        "tensor_cfg_keep": 2560,
+        "tensor_done_ready": 1
+      },
+      "\\contexts.store": {},
+      "placement": {},
+      "predictor": {
+        "tensor_cfg_dense_rows": 6,
+        "tensor_cfg_channels": 1628,
+        "tensor_cfg_keep": 527,
+        "tensor_done_ready": 1,
+        "head_request": 33
+      }
+    },
+    "compute_fabric": {
+      "\\clusters[0].unit": {},
+      "\\clusters[1].unit": {},
+      "\\clusters[2].unit": {},
+      "\\clusters[3].unit": {},
+      "\\clusters[4].unit": {}
+    },
+    "memory_shell": {
+      "context_memory": {},
+      "layer": {},
+      "shared_reads": {},
+      "shared_writes": {}
+    }
+  }
 }
