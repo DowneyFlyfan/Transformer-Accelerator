@@ -12,7 +12,7 @@
   "original_simulated_time_ns": 631790,
   "adapter_simulated_time_ns": 716010,
   "simulated_time_change_percent": 13.330378765095997,
-  "scope": "Local shared-read protocol choice tested with the original 20-core row fixture. Full compact-layer and placed checks remain pending.",
+  "scope": "Shared-read protocol choice tested on the archived row workload and the compact composed layer. Full mapped layer replay and placement remain pending.",
   "evidence_sha256": {
     "verilog/tri_oracle_external_read_mux.sv": "e0b5c97ac88ba472e3cd46ca23d8369d5b8deac33d4e723ac628f63c38380feb",
     "verilog/tri_oracle_external_read_mux_tb.sv": "1a6032a42bcc2a28a91381d01b0b3f58699faf4150ea6923dbd19ac1b69c0bd7",
@@ -23,6 +23,26 @@
     ".cache/physical/external_read_mux/green/native.log": "718a25b69a6260fc89698e5ee8bf86483853ea083b75cf4fe44a0f9faf945ecd",
     ".cache/physical/external_read_mux/mapped_gate/native.log": "35a5c9deb53b17f7111ba9592269f4453a46d22dc51b923fb73dfde4588011e1",
     ".cache/physical/external_read_mux/mapped/area.rpt": "23ec2e7c8e293d9df34544a1bf0e9996f184efcd3e2c92f0b503cf99c4e486f9",
-    ".cache/physical/external_read_mux/mapped/timing.rpt": "138c22f5d665354c2c5713dec82764b955fd5f4f692f802b489b3d6658514ec9"
+    ".cache/physical/external_read_mux/mapped/timing.rpt": "138c22f5d665354c2c5713dec82764b955fd5f4f692f802b489b3d6658514ec9",
+    ".cache/physical/external_read_mux/composed_attention_replay/receipt.json": "f77c8eeee4a4fe46e881788878eeff2ca8bb2d6d833bac95ba4a6adafeffd612",
+    ".cache/physical/external_read_mux/composed_attention_replay/positive/xrun.log": "282d1db0243e3bb280e6a429b6d8af5b246f47c80a1830dc48b5be6d48110f0c",
+    ".cache/physical/wac_core_local_outlier_v2/xcelium/positive/xrun.log": "dc68fc249686720b78d4a7ce84eda449bbbe78f7d5f8acfb6a0ca87721f73a5f"
+  },
+  "composed_attention": {
+    "counters": {
+      "maps": 576,
+      "writes": 27,
+      "failed_writes": 2,
+      "rows": 4,
+      "attention_reads": 57992,
+      "stalls": 63,
+      "value_reads": 1023
+    },
+    "vector_bursts": 1023,
+    "vector_beats": 8184,
+    "original_simulated_time_ns": 7143030,
+    "adapter_simulated_time_ns": 7227470,
+    "simulated_time_change_percent": 1.1821313924203034,
+    "scope": "Compact layer register-transfer design with the mapped shared-read adapter and compiled memory models."
   }
 }
