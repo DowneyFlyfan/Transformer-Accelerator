@@ -1,0 +1,50 @@
+{
+  "state": "fully_mapped_shared_memory_attention_and_memory_inventory_verified",
+  "process": "TSMC 28HPC+",
+  "simulator": "Cadence Xcelium 25.03",
+  "candidate_netlist_sha256": "cd617037d47782f929ad0244899978878bba777f1640d6f0b73a16b13a21866e",
+  "external_signal_bits": 13299,
+  "mapped_compute_cores": 20,
+  "counters": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 57992,
+    "stalls": 59
+  },
+  "elapsed_seconds": {
+    "elaboration": 157.16378270892892,
+    "replay": 509.41133405303117
+  },
+  "simulation_end_ns": 7227970,
+  "memory": {
+    "compiled_instances": 623,
+    "bytes": 414416,
+    "kibibytes": 404.703125,
+    "bytes_by_role": {
+      "input": 163840,
+      "skip_mask": 20480,
+      "output": 40960,
+      "weight": 163840,
+      "survived_sign": 6144,
+      "token_merge_table": 720,
+      "aggregator_input_output": 10240,
+      "feedforward_prediction_metadata": 8192
+    },
+    "paper_published_kb": 405,
+    "difference_from_binary_label_bytes": -304,
+    "difference_from_decimal_label_bytes": 9416,
+    "paper_byte_convention_confirmed": false
+  },
+  "evidence_sha256": {
+    ".cache/physical/shared_memory_layer_boundary/mapped_layer_replay/receipt.json": "c87fd027093a0899e9f85023d84049a2ef790422aaff405b86ed82378129635b",
+    ".cache/physical/shared_memory_layer_boundary/physical_inputs/native_memory_partition_receipt.json": "26bed44cc96bac8bc6ec37bc98d8aec5de13664ad796154ffa018d57c5646c33",
+    ".cache/physical/shared_memory_layer_boundary/mapped_layer_replay/positive/xrun.log": "8aadae7a90ec0aebe754ddf21b78e6ffe1a4ce0ec0cfe3339e273d35632ebb6a",
+    ".cache/physical/shared_memory_layer_boundary/mapped_layer_replay/elaborate/xrun.log": "ac4c53b0176b9051390df33755e83fafce20c5b245c1f1bc22973086afe8e7e0",
+    "records/wac_shared_memory_layer_boundary_result.json": "43503c9ecdc7c8adaef0468f7f48d9ad7c48da2cc519652d239b1a7ca7902d80",
+    "records/wac_shared_memory_layer_capacity_result.json": "7b2255a54ca0224aa92f96bb73aaad35b71b6cb10d014ec0b3ecd0243c862a41"
+  },
+  "scope": "Fully mapped shared-memory decoder layer. The archived attention fixture and exact memory-instance census passed. Model accuracy and physical timing remain open."
+}
