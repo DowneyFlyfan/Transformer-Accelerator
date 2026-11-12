@@ -1,0 +1,58 @@
+{
+  "die_um": [
+    "3600",
+    "3600"
+  ],
+  "edge_end_margin_um": "20",
+  "input_sha256": {
+    ".cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    ".cache/physical/shared_memory_layer_boundary/physical_inputs/macro_seed.json": "74c8274dcf5bd41927b0d5ffc96dc897f49fd2a664270c6917740494080e1bed",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/genus_elaboration_guarded/port_inventory.tsv": "15bc609e2011a914c41e70922b520b2f8ce13b9054f75aefc2904063d2538c07",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/native_parent_bit_level_10g_memory_guard_stop/admission.json": "9ab0a2c98a79371f906bdf1b3c2266b51c9b3c8685d5d99e37354218176f6447",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/tri_oracle_chip_command_layer.sv": "09807c00bd3cbd20255252965ec1e351b202f531da72b4aa57c948c88ccf3850",
+    "records/wac_joined_chip_synthesis_preflight_result.json": "0bbc14a15d5dd80fd8497ee6bdaad335fbdfad852348e26a1731f0d36eca0e34",
+    "records/wac_joined_predictor_macro_outline_result.json": "7cc269cf5d04eecc6cc9044738fcdc1d25f3b5575ca62ea83e6b79c53ccb64fc",
+    "syn/prepare_tri_oracle_joined_pin_plan.py": "7a4de71e4a9f373e9a397d3ae7e7415ddcc1bb754e9e12d73afd051d559c080e"
+  },
+  "port_bits": 12365,
+  "scope": "Nominal track capacity on the outline using the archived Genus port inventory and existing side order. Native pin geometry and routing remain pending.",
+  "sides": {
+    "bottom": {
+      "first_pin": "result_values[838]",
+      "inputs": 2763,
+      "last_pin": "wr_strobe[7]",
+      "layer": "M5",
+      "nominal_tracks": 35601,
+      "pitch_um": "0.100",
+      "port_bits": 3092
+    },
+    "left": {
+      "first_pin": "angle_cos[0]",
+      "inputs": 1644,
+      "last_pin": "out_data[2170]",
+      "layer": "M4",
+      "nominal_tracks": 35601,
+      "pitch_um": "0.100",
+      "port_bits": 3091
+    },
+    "right": {
+      "first_pin": "out_data[2171]",
+      "inputs": 0,
+      "last_pin": "out_data[4953]",
+      "layer": "M4",
+      "nominal_tracks": 35601,
+      "pitch_um": "0.100",
+      "port_bits": 3091
+    },
+    "top": {
+      "first_pin": "out_data[4954]",
+      "inputs": 327,
+      "last_pin": "result_values[837]",
+      "layer": "M5",
+      "nominal_tracks": 35601,
+      "pitch_um": "0.100",
+      "port_bits": 3091
+    }
+  },
+  "state": "joined_chip_boundary_pin_capacity_checked"
+}
