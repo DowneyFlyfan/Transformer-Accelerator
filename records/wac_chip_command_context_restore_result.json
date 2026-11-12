@@ -1,0 +1,35 @@
+{
+  "state": "mapped_chip_controller_restored_context_on_source_decoder",
+  "architecture_reference": "Tri-Oracle Figure 31.6.2 top controller",
+  "mapped_controller_sha256": "725e36dc683563e604de4995b5ce636de76ee4bb1675c3131ef3e7cb6b602942",
+  "context_base_port_bits": 64,
+  "restore_requests": [
+    {
+      "tag_hex": "43030001",
+      "error": true,
+      "origins": 0
+    },
+    {
+      "tag_hex": "43030002",
+      "error": false,
+      "origins": 576
+    }
+  ],
+  "shared_memory_read_bursts": 18,
+  "shared_memory_write_bursts": 18,
+  "shared_memory_bytes_each_direction": 720,
+  "native_seconds": {
+    "elaboration": 10.537425164016895,
+    "smoke": 2.531333836959675
+  },
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/receipt.json": "6571facd58ee448a99ad29f7bd7fa20a39cb7b60b5039fb0ee29e89bc1d8d6a1",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/elaborate/xrun.log": "ea312f457d69ef89d6bc93c5e4cdcc54b3b70d0e38f7aeacfcbdd79286d09d5a",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/smoke/xrun.log": "0e7eac0efd566839cdf4636cac7b5d10aaa51100df4ad412473488e63aa5b7d3",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/syntax/console.log": "eeafc58ba4ccbbe82d1a9de944d2dce7d0f4b9c2fffedb428d62fef616ca2880",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/tri_oracle_chip_command_layer.sv": "541f3863fc53e0decac1825105e335b324ad2c747ad249bd9e011f345fd5cb1d",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/attention_tb.sv": "714a498d6cbc9d39501f0461bbe398553d8f657488f3f8da014c7927156fa017",
+    ".cache/physical/context_external/shared_decoder/chip_command_context_source/prepared.json": "e14a0076d789373363635a2edc1540eb4400c0eec68d1ba34ae29c6b2ccfa634"
+  },
+  "scope": "Mapped controller and compiled memories with the source-level context-enabled decoder. The whole decoder netlist and full attention fixture require separate replay."
+}
