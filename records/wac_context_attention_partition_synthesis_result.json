@@ -1,0 +1,33 @@
+{
+  "state": "context_attention_partition_mapped_and_interface_verified",
+  "process": "TSMC 28HPC+",
+  "tool": "Cadence Genus 25.10",
+  "mapped_cell_count": 21462,
+  "mapped_cell_area_um2": 22784.664,
+  "native_seconds": 455.12886680301744,
+  "prelayout_setup_slack_ps_at_580_mhz": 535,
+  "preserved_subblock_interfaces": [
+    "attention/attention",
+    "attention/placement",
+    "attention/predictor",
+    "attention/store",
+    "cache_writer",
+    "projection"
+  ],
+  "added_context_ports": 22,
+  "scope": "Pre-layout timing and area apply only to the mapped attention controller and pipeline with six retained implementation boundaries. Full decoder linkage, exact native replay, and physical timing remain open.",
+  "evidence_sha256": {
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/native/receipt.json": "aa25b37fb7c7e1795092533df384e3d5bcebd9023bfd82b8b8a5f92e3b711346",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/prepared.json": "5d690096ff67908cf7f1d0de602448dffd1a2a28e6d1e32b534fd30738c1fac7",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/native/netlist.v": "f7dd4bb26a7ee221a26ea109250bb22282da4d0a57b523826bfbb5c8194ba745",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/native/area.rpt": "5e5d952bee0441ae096db68092e6ede96d34f106c9eed76ba4b67361c51e0ffe",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/native/timing.rpt": "dad3b6b91aad5324c7c35322523b0dfdadf4f779f6893202d0cc872daf6e03b3",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/native/mapped_check.rpt": "dfee2932814aeb831dfcda9c4f0d7c23d5df0ea692111bd3168dba6768d2bb78",
+    ".cache/physical/context_external/shared_decoder/mapped_attention_partition/native/console.log": "15c038b2d398dfbf48822152b6150ef0a0981845ba06c6bc8a96728a0100d701",
+    ".cache/physical/context_external/shared_decoder/architecture_verifier_baseline.json": "a59c88b17ecc49e96b051b54f60e89b05bc138ce923358c4f911a2bb90065cb5",
+    ".cache/physical/context_external/shared_decoder/memory_verifier_baseline.json": "0495195739d67da8f8ad8cddfd269cdc1e7ddd42d83ff2872aebc631c576e200",
+    ".cache/physical/context_external/shared_decoder/memory_verifier_wrong_log.log": "3addd08495d625fcfc07c3cdc8aaf230f2bbe1c1e82dda37aecaa52092914050",
+    ".cache/physical/context_external/shared_decoder/verify_candidate_memory.py": "1d1cf459e28ef084b0e35d099c1d71b79f7f9d5e4374c3c25e9a3badcf13cc40",
+    ".cache/physical/context_external/shared_decoder/verify_candidate_architecture.py": "933935a20c0f3c6791fe0800d1e3c9bb98468941c6b8e98e952b7754ce7e69d8"
+  }
+}
