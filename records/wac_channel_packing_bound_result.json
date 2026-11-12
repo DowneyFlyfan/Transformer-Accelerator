@@ -1,0 +1,53 @@
+{
+  "combined": {
+    "batches": 1786,
+    "channel_positions": 48339456,
+    "maximum_dense_baseline_bytes": 61800972288,
+    "maximum_omitted_gate_up_channel_groups": 96068,
+    "maximum_possible_reduction_percent": 38.42703349282297,
+    "minimum_remaining_gate_up_bytes": 38052691968,
+    "predicted_skipped_channels": 3828952,
+    "predicted_skipped_channels_percent": 7.920966259943016
+  },
+  "decode": {
+    "batches": 1320,
+    "channel_positions": 7434240,
+    "maximum_dense_baseline_bytes": 45675970560,
+    "maximum_omitted_gate_up_channel_groups": 61520,
+    "maximum_possible_reduction_percent": 37.746786042240586,
+    "minimum_remaining_gate_up_bytes": 28434759680,
+    "predicted_skipped_channels": 492230,
+    "predicted_skipped_channels_percent": 6.62112065254821
+  },
+  "decode_batch_rows": 1,
+  "evidence_sha256": {
+    ".cache/model_reference/normalized_workload_trace/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/model_reference/packed_workload_traffic_v1/packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "syn/bound_tri_oracle_channel_packing.py": "984b30fb6bb69c92615d38f270e50a6f82a5adc4d0017e4b2024b1ee761fca60"
+  },
+  "paper_figure_31_6_5": {
+    "gated_feedforward_external_memory_access_reduction_percent": {
+      "VQAv2": 57
+    },
+    "predicted_channel_reduction_percent": {
+      "GQA": 56,
+      "VQAv2": 58
+    }
+  },
+  "prefill": {
+    "batches": 466,
+    "channel_positions": 40905216,
+    "maximum_dense_baseline_bytes": 16125001728,
+    "maximum_omitted_gate_up_channel_groups": 34548,
+    "maximum_possible_reduction_percent": 40.35391468331383,
+    "minimum_remaining_gate_up_bytes": 9617932288,
+    "predicted_skipped_channels": 3336722,
+    "predicted_skipped_channels_percent": 8.157204205937942
+  },
+  "prefill_batch_rows": 16,
+  "scope": "One pinned local 600-prefill and 60-decode trajectory. Allows any ordering of intermediate channels within the existing batches and eight-lane transfer geometry. Holds predictor masks and gate/up input packing fixed. Optimistically assumes no down-weight or sign reads.",
+  "state": "fixed_predictor_channel_packing_upper_bound_measured"
+}
