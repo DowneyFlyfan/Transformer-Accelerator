@@ -1,0 +1,32 @@
+{
+  "accuracy_change_percentage_points": -0.5,
+  "baseline_predictions_reproduced": 200,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/weight_range_panel/console.log": "2f5a942095c2af055ed025f51e0bd7c0b0c797c1e204253dfb2541140fd89b43",
+    ".cache/model_reference/gqa_testdev/weight_range_panel/inputs.json": "27f7bc188481612b581524b2f7a728606139430ca3324b5ddab63fb15d835b3d",
+    ".cache/model_reference/gqa_testdev/weight_range_panel/predictions.jsonl": "b85f07e509804f17ae169954153f971ac98f4806423da0a50e1de099632d9ff4",
+    ".cache/model_reference/gqa_testdev/weight_range_panel/receipt.json": "06587d789ff6337ce6989fa4e6a3c8926600988d0134e538ff9d29c2805f3668",
+    "records/wac_gate_up_weight_range_result.json": "6f68032a8d27672a3a8f15deec8b19bd6ceb7d30d3201cc0eb627e83c94695a8",
+    "syn/evaluate_tri_oracle_weight_range_gqa.py": "ba0b2ba42bb2fe174cf2b062f5c8c63e3f1469ad7cb4a434ab3824a8ea470a3b"
+  },
+  "exact_matches": {
+    "baseline": 116,
+    "calibrated_prefill": 115
+  },
+  "native_elapsed_seconds": 152.02106484305114,
+  "paired_changes": {
+    "changed_answers": 19,
+    "gained": 6,
+    "lost": 7
+  },
+  "paired_exact_two_sided_p_value": 1,
+  "peak_gpu_bytes": 7972362240,
+  "questions": 200,
+  "scope": "Fixed 200-question software panel with weight skipping active. The calibrated gate/up weights are applied to later prompt positions. First-position and generation weight codes use the baseline.",
+  "skipped_channel_events": {
+    "baseline": 701360017,
+    "calibrated_prefill": 698340966
+  },
+  "state": "frozen_prefill_gate_up_weight_ranges_independently_rescored"
+}
