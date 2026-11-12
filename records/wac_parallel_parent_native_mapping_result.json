@@ -1,0 +1,36 @@
+{
+  "clock_target_megahertz": 580,
+  "compiled_memories": 623,
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_chip/chip.v": "f632209f7dfcb5a83350cedb59ef8cecfe24984275d07de2b2d81c5f88a7bea0",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_chip/receipt.json": "292bf2aa2d5eca8753d262bda6e0878b547c480b667cd0185d024ee951bcd31c",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_macro_seed/receipt.json": "55a74f7e9f6aaf9f517f9b08b6f8038ef53d8411a83414fd5d1b32c767294938",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_pin_constraints/diagnostics.json": "cd99a7789d7e0909d5f36385cbdc7abeec12cfc05b12b306bee54e8e00e76019",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/native_constraint_handoff/candidate.sdc": "88d8732e54736c61e853a3926528d4d333c709e518fc52c23c21885de41cac27",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/native_constraint_handoff/receipt.json": "aace878a711b1360d964ce8b381d7a2fb3f6a8ee748819c986ac50699bdadf26",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/native_parent/constraints.sdc": "7657118602adcef8eea238529083ba15244b507c07a1ea8978e2b6883af787c7",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/native_parent/receipt.json": "b26b35703747288723732a446876013b9c882a3a648c6546d5dc784dd9b6e572",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/tri_oracle_chip_command_layer.sv": "09807c00bd3cbd20255252965ec1e351b202f531da72b4aa57c948c88ccf3850",
+    "syn/verify_tri_oracle_native_parent_constraints.py": "f3738cbaaa99ee2353d84746e32d22dba634cd2584dd57b0eeaeed193f899778"
+  },
+  "external_port_bits": 12365,
+  "linked_chip_sha256": "f632209f7dfcb5a83350cedb59ef8cecfe24984275d07de2b2d81c5f88a7bea0",
+  "native": {
+    "anonymous_limit_bytes": 10737418240,
+    "elapsed_seconds": 4156.518192097079,
+    "host_reserve_bytes": 11274289152,
+    "minimum_host_available_bytes": 11697758208,
+    "native_exit_status": 0,
+    "peak_cgroup_anonymous_bytes": 8640327680,
+    "stop_reason": null,
+    "virtual_address_limit_bytes": 12884901888
+  },
+  "preserved_cuts": 11,
+  "resolved_native_protections": {
+    "get_cells": 11
+  },
+  "scope": "Earlier dual-lane chip with scalar sign reads. Native Genus parent, linked blocks and physical constraint targets verified before integrated gate simulation.",
+  "state": "parallel_parent_native_mapping_and_constraint_handoff_verified",
+  "top": "tri_oracle_chip_command_layer_parallel_chip",
+  "unresolved_legacy_protections": 5268
+}
