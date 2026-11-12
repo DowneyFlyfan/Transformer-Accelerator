@@ -1,0 +1,199 @@
+{
+  "best_32_fixed_index": {
+    "data_sram_bytes": 2048,
+    "entries": 32,
+    "external_line_reads_by_layout": {
+      "aligned_example": 11844976,
+      "trained_fixture": 11844976
+    },
+    "lane_cycles_by_layout": {
+      "aligned_example": [
+        510224512,
+        510182496
+      ],
+      "trained_fixture": [
+        510219484,
+        510187524
+      ]
+    },
+    "minimum_uses": 2,
+    "policy": "retain_fold",
+    "remaining_port_cycles": -1564512,
+    "send_to_primary_when_bucket_below": 10,
+    "worst_port_cycles": 510224512,
+    "worst_port_ms_at_580mhz": 879.6974344827586
+  },
+  "best_64_fixed_index": {
+    "data_sram_bytes": 4096,
+    "entries": 64,
+    "external_line_reads_by_layout": {
+      "aligned_example": 10855680,
+      "trained_fixture": 10855680
+    },
+    "lane_cycles_by_layout": {
+      "aligned_example": [
+        508941374,
+        509487042
+      ],
+      "trained_fixture": [
+        508939886,
+        509488530
+      ]
+    },
+    "minimum_uses": 2,
+    "policy": "retain_fold",
+    "remaining_port_cycles": -828530,
+    "send_to_primary_when_bucket_below": 9,
+    "worst_port_cycles": 509488530,
+    "worst_port_ms_at_580mhz": 878.4285
+  },
+  "direct_128_baseline": {
+    "data_sram_bytes": 8192,
+    "entries": 128,
+    "external_line_reads_by_layout": {
+      "aligned_example": 10178080,
+      "trained_fixture": 10178928
+    },
+    "lane_cycles_by_layout": {
+      "aligned_example": [
+        508564180,
+        508509036
+      ],
+      "trained_fixture": [
+        508563158,
+        508511754
+      ]
+    },
+    "minimum_uses": 1,
+    "policy": "direct",
+    "remaining_port_cycles": 95820,
+    "send_to_primary_when_bucket_below": 9,
+    "worst_port_cycles": 508564180,
+    "worst_port_ms_at_580mhz": 876.8347931034483
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/packed_sign_line_workload/receipt.json": "b7fce4547a5b165f817953c1061e657e0a6c6a4cd040d415b3b3f335d78e614a",
+    ".cache/model_reference/packed_workload_traffic_v1/packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    ".cache/model_reference/sign_cache_admission_ranked/receipt.json": "e3130c7d181aa6ad64e793425747850e7d4c73d669fc7b1c6671d848e5690f8a",
+    ".cache/model_reference/sign_cache_admission_ranked/replay/packed_traffic.json": "9849603e226e19d969d84265244aeba62727889a82338af4968db49726a90156",
+    ".cache/physical/dual_port_sign_line_cache/sequence_128.hex": "696ce8aa959658109ab8f1edaabd250e306ad2dfa3813e79fe44ea222e871843",
+    "records/wac_dual_port_packed_sign_steering_result.json": "f65895ecdee8616ada55bcb90c6711de57facfbad7f039136465fd3c5bb645a1",
+    "records/wac_dual_port_sign_line_cache_result.json": "6ebbc6e5de3d485c3f5d1651bc1e36459791de9ac8b677edb42dfe96ca091d85",
+    "syn/measure_tri_oracle_dual_port_sign_lines.py": "30eb7e9651df1913352d5c0e74e16767f59bd91c580fa7e936d0ab5b979ac7ad",
+    "syn/measure_tri_oracle_packed_sign_bursts.py": "d66e4ef08368a84b366d7e2ef7bd38849574d88ce69215b10495ca38d6244168",
+    "syn/measure_tri_oracle_packed_sign_lines.py": "128886abde0407e0b3a8a299e5e9dafe84199086a8461c5afeaeb1dc4a38175b",
+    "syn/measure_tri_oracle_packed_workload_traffic.py": "d8b743214c635abef4d96b9089790b60d0d56a8140a0eca8fb48087610a42590",
+    "syn/measure_tri_oracle_sign_cache_admission.py": "8216572e33366f14f12e59b9994794ee4bf615e357521cc90501baebce9d3002",
+    "syn/test_tri_oracle_sign_cache_admission.py": "82360507d899446f23ebec84e16a6c545805cdaa23495e00846f459254d25ea1"
+  },
+  "native_gpu_exit_status": 0,
+  "native_gpu_seconds": 27.480956189101562,
+  "paper_latency_cycle_budget": 508660000,
+  "peak_gpu_bytes": 7555977728,
+  "ranked": {
+    "128": {
+      "data_sram_bytes": 8192,
+      "entries": 128,
+      "external_line_reads_by_layout": {
+        "aligned_example": 9408784,
+        "trained_fixture": 9408784
+      },
+      "lane_cycles_by_layout": {
+        "aligned_example": [
+          507549036,
+          507985588
+        ],
+        "trained_fixture": [
+          507549036,
+          507985588
+        ]
+      },
+      "minimum_uses": 2,
+      "policy": "ranked",
+      "remaining_port_cycles": 674412,
+      "send_to_primary_when_bucket_below": 8,
+      "worst_port_cycles": 507985588,
+      "worst_port_ms_at_580mhz": 875.8372206896552
+    },
+    "16": {
+      "data_sram_bytes": 1024,
+      "entries": 16,
+      "external_line_reads_by_layout": {
+        "aligned_example": 12066560,
+        "trained_fixture": 12066560
+      },
+      "lane_cycles_by_layout": {
+        "aligned_example": [
+          510375460,
+          510474716
+        ],
+        "trained_fixture": [
+          510370718,
+          510479458
+        ]
+      },
+      "minimum_uses": 2,
+      "policy": "ranked",
+      "remaining_port_cycles": -1819458,
+      "send_to_primary_when_bucket_below": 10,
+      "worst_port_cycles": 510479458,
+      "worst_port_ms_at_580mhz": 880.1369965517241
+    },
+    "32": {
+      "data_sram_bytes": 2048,
+      "entries": 32,
+      "external_line_reads_by_layout": {
+        "aligned_example": 9744768,
+        "trained_fixture": 9744768
+      },
+      "lane_cycles_by_layout": {
+        "aligned_example": [
+          508320562,
+          507886030
+        ],
+        "trained_fixture": [
+          508319236,
+          507887356
+        ]
+      },
+      "minimum_uses": 2,
+      "policy": "ranked",
+      "remaining_port_cycles": 339438,
+      "send_to_primary_when_bucket_below": 9,
+      "worst_port_cycles": 508320562,
+      "worst_port_ms_at_580mhz": 876.4147620689655
+    },
+    "64": {
+      "data_sram_bytes": 4096,
+      "entries": 64,
+      "external_line_reads_by_layout": {
+        "aligned_example": 9408784,
+        "trained_fixture": 9408784
+      },
+      "lane_cycles_by_layout": {
+        "aligned_example": [
+          507549036,
+          507985588
+        ],
+        "trained_fixture": [
+          507549036,
+          507985588
+        ]
+      },
+      "minimum_uses": 2,
+      "policy": "ranked",
+      "remaining_port_cycles": 674412,
+      "send_to_primary_when_bucket_below": 8,
+      "worst_port_cycles": 507985588,
+      "worst_port_ms_at_580mhz": 875.8372206896552
+    }
+  },
+  "scope": "Models per-frame admission from token outlier metadata, two fixed memory lanes and unchanged weight traffic. Port service excludes compute, admission logic and controller stalls. Slot ranking and data read/write scheduling are modeled in software.",
+  "state": "ranked_sign_cache_service_budget_independently_reconciled",
+  "trained_fixture": {
+    "native_direct_128_external_reads": 9504,
+    "ranked_32_external_reads": 9152,
+    "ranked_32_hits": 18656,
+    "requests": 27808
+  }
+}
