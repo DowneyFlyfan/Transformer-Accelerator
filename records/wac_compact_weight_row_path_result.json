@@ -21,15 +21,23 @@
     "root_buffers": 32,
     "bank_buffers": 160,
     "receiver_pins_across_all_32_bits": 1280,
-    "buffer_contraction_recovers_original_netlist": true
+    "buffer_contraction_recovers_original_netlist": true,
+    "isolated_xcelium_pass": {
+      "masks": 67,
+      "banks": 5,
+      "buffer_instances": 192
+    }
   },
-  "scope": "Pre-route timing and parasitics from the earlier placed compact baseline. The buffer trial is a structurally checked alternative. It requires independent simulation and placement timing.",
+  "scope": "Pre-route timing and parasitics from the earlier placed compact baseline. The trial passed structural checks and isolated simulation of the added cells. Integrated simulation and placement timing remain pending.",
   "evidence_sha256": {
     ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/estimated_placement_timing/weight_load_path_structure.json": "59d96570797d76a00065241d9886c2d2344ef06e73cced7169f4542276ff952f",
     ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/placed_baseline_geometry.json": "7bde9fcd2f8b5844aed0309654d67fff3d45d8cb5986ef39875856a8a2826221",
     ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/receipt.json": "79bd4ec0c551752a97df0a65737954d69133894402ad750a2439eee18767ebb7",
     ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
     ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/integrated/receipt.json": "407fea7ad387023ae4d3017849911ae3f301378dbadefb28e51633ab212158c8",
-    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/estimated_placement_timing/receipt.json": "273da910bf78de6c4c94a764651da15b5740531ab406c9152c79944cfc5b4b47"
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/estimated_placement_timing/receipt.json": "273da910bf78de6c4c94a764651da15b5740531ab406c9152c79944cfc5b4b47",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/native_buffer_test/xrun.log": "7e26f573bc1e838cf1e948c17040262e3e809f77669af51fc943e8473b481883",
+    ".cache/physical/wac_budgeted_parent_boundary/compact_load_transport/weight_data_unmask/row_enable_bank_buffer_trial/native_buffer_test/buffer_tb.sv": "93b770eaf0580d9eecf603a6a018024099c3f5954f2999c4eb0cf794fb209988",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d"
   }
 }
