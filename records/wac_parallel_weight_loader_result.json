@@ -1,0 +1,217 @@
+{
+  "clusters": 5,
+  "directed": {
+    "gate_fault_lane0": {
+      "cycles": 5789,
+      "drained_output_prefix_packets": 0,
+      "fault": 2,
+      "outputs": 504,
+      "responses_by_lane": [
+        {
+          "down": 132,
+          "gate": 56,
+          "lane": 0,
+          "up": 56
+        },
+        {
+          "down": 120,
+          "gate": 40,
+          "lane": 1,
+          "up": 40
+        }
+      ],
+      "simultaneous_response_cycles": 78
+    },
+    "gate_fault_lane1": {
+      "cycles": 5789,
+      "drained_output_prefix_packets": 0,
+      "fault": 2,
+      "outputs": 504,
+      "responses_by_lane": [
+        {
+          "down": 132,
+          "gate": 56,
+          "lane": 0,
+          "up": 56
+        },
+        {
+          "down": 120,
+          "gate": 40,
+          "lane": 1,
+          "up": 40
+        }
+      ],
+      "simultaneous_response_cycles": 78
+    },
+    "packed": {
+      "cycles": 4117,
+      "drained_output_prefix_packets": null,
+      "fault": 0,
+      "outputs": 504,
+      "responses_by_lane": [
+        {
+          "down": 132,
+          "gate": 56,
+          "lane": 0,
+          "up": 56
+        },
+        {
+          "down": 120,
+          "gate": 40,
+          "lane": 1,
+          "up": 40
+        }
+      ],
+      "simultaneous_response_cycles": 41
+    },
+    "scalar": {
+      "cycles": 24291,
+      "drained_output_prefix_packets": null,
+      "fault": 0,
+      "outputs": 504,
+      "responses_by_lane": [
+        {
+          "down": 0,
+          "gate": 0,
+          "lane": 0,
+          "up": 0
+        },
+        {
+          "down": 0,
+          "gate": 0,
+          "lane": 1,
+          "up": 0
+        }
+      ],
+      "simultaneous_response_cycles": 0
+    },
+    "tail_fault": {
+      "cycles": 8165,
+      "drained_output_prefix_packets": 3,
+      "fault": 3,
+      "outputs": 504,
+      "responses_by_lane": [
+        {
+          "down": 132,
+          "gate": 56,
+          "lane": 0,
+          "up": 56
+        },
+        {
+          "down": 120,
+          "gate": 40,
+          "lane": 1,
+          "up": 40
+        }
+      ],
+      "simultaneous_response_cycles": 78
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/wide_weight_loader/paired_chip/native/scalar/progress.log": "6b842c732d244a463a5d031e827e4e9c60e2849f3a80e16abbb705bfcb6f3d5a",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/gate_fault_lane0/console.log": "e9fee89bc9994877c43897301ce24009b26d423bb3c6466262fe72e4b8d161b1",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/gate_fault_lane0/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/gate_fault_lane0/progress.log": "38606e5985f659fcbbeb83db181d92cc7753f8b362a8606032209bf534658069",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/gate_fault_lane1/console.log": "396f02b53d5ee4275e65cd7a47dca94da680f050cd9327470b45185e053f3098",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/gate_fault_lane1/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/gate_fault_lane1/progress.log": "38606e5985f659fcbbeb83db181d92cc7753f8b362a8606032209bf534658069",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/packed/console.log": "2408ab802ca3516798b65b02143ec7370e0ff6c7c1084e91ac5fb0c02dad9096",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/packed/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/packed/progress.log": "77bd34da46f447059794e5510554fd8fa84d892a9d83e86ddcafd99cfd7e2b29",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/scalar/console.log": "956b0fd4b0093890e9beba02e62281184bc9fd79d884c775be89af393474686b",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/scalar/progress.log": "6b842c732d244a463a5d031e827e4e9c60e2849f3a80e16abbb705bfcb6f3d5a",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/tail_fault/console.log": "06ac268f8c741ad1d9b887139722a7eddd429670a1c722f9822ff3ddb07c1602",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/tail_fault/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/native/tail_fault/progress.log": "02228804c22e72aac75c938c27e7a6c4536bd5e63217beb78b123a4481c7ed74",
+    ".cache/physical/wide_weight_loader/parallel_chip_v3/prepared.json": "1891b843765c3bcb315dce48f0ec18cc6291dd17e991eb75dfbd9fbb09453f01",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped/area.rpt": "aeb059188946b10c81186ed54ad87595d67b5c7006edbcdb25251c4d72ce7483",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped/check.rpt": "bbf7b968f20b06bbe915c462fdd48c1dd2551c26dc62dcc65ec1940d60f0b4fb",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped/exit_status": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped/native.log": "33862c939cfca153ea9d97463131dbe90b77ccdfa146fbd4b8be9db7293e8f72",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped/netlist.v": "345c42da95d2916a5c5501009249a903d5b46ddf6c149578d093de0deec9be91",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped/synthesize.tcl": "e79171c9b59ee6786909f027dc7a1909a4c194e5e15fe3cfcc4959f6f452e0b0",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped/timing.rpt": "feaaa40d064333555c3cd1f16f06ef8198daaa1016ce3442e6e9011e9d4c214b",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped_adapter/adapter.sv": "343c5baa094752cb14a0a56d8949846439cbd51836372ad481fac846fee1460c",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped_adapter/console.log": "c87e401ef666113770c2e056ce1888302ca73e65736327e897dbc6073a246b6a",
+    ".cache/physical/wide_weight_loader/parallel_loader/mapped_adapter/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/wide_weight_loader/parallel_loader/mutation/console.log": "edc0dfb315503a1f5afa541023934df495b73d9a262ed25228c4a8ad2bbbe26b",
+    ".cache/physical/wide_weight_loader/parallel_loader/mutation/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/wide_weight_loader/parallel_loader/mutation/mutant.sv": "2b7fe2758e7b41f19fb56ee26d62fd61e66fb59ce9080f17ef4f230874054ee9",
+    ".cache/physical/wide_weight_loader/parallel_loader/source_verified/console.log": "783b56ad1ba2167959c8be749af6e7ab279052b15db1b51c1379593b546728c1",
+    ".cache/physical/wide_weight_loader/parallel_loader/source_verified/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "records/wac_paired_chip_feedforward_result.json": "fbc8f2994d02589e90221db6e94fe0a6d8f309c73c96e15555ce0a9fb87fc373",
+    "syn/replay_tri_oracle_parallel_chip.py": "372583d3523b5d14c3019f95f177507e672a36b577ab9d672c30b65dc3c49a64",
+    "verilog/tri_oracle_parallel_weight_loader_tb.sv": "91add87ad9e863481748afe4f7bbef98c3a81490d5d7d519dd1fac54df42b6c2"
+  },
+  "lanes": 2,
+  "port_width_bits": 512,
+  "previous_single_lane_packed_cycles": 4699,
+  "removed_arbitration_rejected": true,
+  "routing_policy": "Two exclusive clusters per lane, and two cores per lane in the shared cluster with round-robin single-write arbitration.",
+  "scalar_progress_byte_identical": true,
+  "scope": "Source chip with the mapped command controller and compiled memory models. Standalone weight loader separately synthesized and replayed. Short chip workload is three tokens, 64 input features, 96 intermediate features and 168 output features.",
+  "source_and_mapped_loader_tiles": [
+    {
+      "conflicts": 17,
+      "fault": 0,
+      "overlaps": 0,
+      "paired": 1,
+      "responses": 240,
+      "rows": 75
+    },
+    {
+      "conflicts": 17,
+      "fault": 0,
+      "overlaps": 0,
+      "paired": 0,
+      "responses": 240,
+      "rows": 155
+    },
+    {
+      "conflicts": 0,
+      "fault": 1,
+      "overlaps": 0,
+      "paired": 1,
+      "responses": 122,
+      "rows": 75
+    },
+    {
+      "conflicts": 0,
+      "fault": 0,
+      "overlaps": 8,
+      "paired": 1,
+      "responses": 240,
+      "rows": 75
+    },
+    {
+      "conflicts": 0,
+      "fault": 0,
+      "overlaps": 29,
+      "paired": 0,
+      "responses": 240,
+      "rows": 155
+    },
+    {
+      "conflicts": 0,
+      "fault": 0,
+      "overlaps": 0,
+      "paired": 0,
+      "responses": 12,
+      "rows": 8
+    }
+  ],
+  "standalone_synthesis": {
+    "cell_area_um2": 14589.624,
+    "clock_period_ns": 1.72414,
+    "corner": "ssg0p9v125c",
+    "mapped_cells": 8900,
+    "native_log_normal_exit": true,
+    "preplacement_worst_setup_slack_ps": 75,
+    "process": "TSMC 28HPC+",
+    "split_multidimensional_ports_reconnected_for_gate_replay": 10,
+    "tool": "Cadence Genus 25.10-p002_1",
+    "wrapper_exit_status": 124
+  },
+  "state": "parallel_weight_loader_mapped_and_chip_directed_frames_exact"
+}
