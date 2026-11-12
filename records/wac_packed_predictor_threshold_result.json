@@ -1,0 +1,104 @@
+{
+  "baseline": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.16661614651307455,
+      "net_reduction_percent": -1.7577662612452638,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 439.8666267945168,
+      "sign_bytes": 107050240,
+      "skipped_channels": 1228484,
+      "traffic_bytes": 6197179648
+    },
+    "held": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.16158661833015212,
+      "net_reduction_percent": -1.7187407522490483,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 426.5886723916016,
+      "sign_bytes": 104673536,
+      "skipped_channels": 1200124,
+      "traffic_bytes": 6194802944
+    },
+    "thresholds": [
+      0,
+      0,
+      0
+    ]
+  },
+  "best_traffic_at_baseline_fit_error": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.08591016405035269,
+      "net_reduction_percent": -1.7577662612452638,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 226.8028330929311,
+      "sign_bytes": 107050240,
+      "skipped_channels": 332744,
+      "traffic_bytes": 6197179648
+    },
+    "held": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.0812325393099642,
+      "net_reduction_percent": -1.7187407522490483,
+      "predicted_weight_bytes": 6090129408,
+      "relative_error_sum": 214.4539037783055,
+      "sign_bytes": 104673536,
+      "skipped_channels": 315461,
+      "traffic_bytes": 6194802944
+    },
+    "thresholds": [
+      -8,
+      0,
+      0
+    ]
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/packed_thresholds_v1.json": "88df8a5f68f2172b28d1fa3bdcb6895d3a40820eeaee720cbdf418297b44d580",
+    ".cache/model_reference/packed_thresholds_v1.log": "49bc5ed59c5e96af9ef1ccfd6fc5bec3276a6d6e0e26344b94d81ce93321d682",
+    "records/ff_pruning_threshold_grid_result.json": "72b4f9c921d12cc431513e16d51d492aae9e3112602ae1e7bc68abf3c779b639",
+    "syn/measure_tri_oracle_packed_thresholds.py": "b987f1ca4af3ba84884cf9cc02db87d69d6e61e49f2f0630fcbd21957d9e00b1"
+  },
+  "fit_settings_at_or_below_baseline_error": 3,
+  "fit_settings_reaching_traffic_target": 26,
+  "fit_settings_reaching_traffic_target_at_baseline_error": 0,
+  "least_error_at_paper_fit_traffic_target": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.9559115632686724,
+      "net_reduction_percent": 60.38200861823132,
+      "predicted_weight_bytes": 2305736704,
+      "relative_error_sum": 2523.606527029295,
+      "sign_bytes": 107050240,
+      "skipped_channels": 14694902,
+      "traffic_bytes": 2412786944
+    },
+    "held": {
+      "dense_bytes": 6090129408,
+      "mean_relative_output_change": 0.9543656851518246,
+      "net_reduction_percent": 60.64513235381155,
+      "predicted_weight_bytes": 2292088832,
+      "relative_error_sum": 2519.525408800817,
+      "sign_bytes": 104673536,
+      "skipped_channels": 14690724,
+      "traffic_bytes": 2396762368
+    },
+    "thresholds": [
+      8,
+      -12,
+      12
+    ]
+  },
+  "native_seconds": 5.929364473908208,
+  "paper_traffic_target_percent": 57,
+  "peak_gpu_bytes": 419826176,
+  "rows_per_split": 2640,
+  "scope": "Archived ordinary prompt samples grouped by image, fifteen rows per group. Traffic uses the current 8-by-8 layout and includes sign reads. Output change is relative to the dense fixed-point reference.",
+  "settings": 136,
+  "state": "packed_predictor_threshold_tradeoff_independently_verified",
+  "threshold_order": [
+    "gate_maximum",
+    "up_minimum",
+    "up_maximum"
+  ]
+}
