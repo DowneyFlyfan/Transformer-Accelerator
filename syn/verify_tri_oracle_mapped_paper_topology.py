@@ -164,6 +164,52 @@ def audit_memory(mapped, included, reference, pin):
             "cluster_bytes_by_role": [dict(item) for item in cluster_roles]}
 
 
+def paper_reference(pin):
+    reference_path = ROOT / "records/wac_shared_memory_layer_native_attention_result.json"
+    pin(reference_path)
+    pin(REFERENCE, read(reference_path)["evidence_sha256"][str(REFERENCE.relative_to(ROOT))])
+    reference = read(REFERENCE)
+    targets_path = ROOT / "records/paper_result_targets.json"
+    pin(targets_path, reference["input_sha256"][str(targets_path)])
+    pin(ROOT / PAPER_RELATIVE, PAPER_SHA256)
+    targets = read(targets_path)
+    require(targets["source"] == PAPER_RELATIVE, "Paper target source changed")
+    return reference, targets
+
+
+def audit_chip_hierarchy(code, top, native_memories, included, pin):
+    """Check the paper-facing hierarchy on the exact chip netlist replayed by Xcelium."""
+    reference, targets = paper_reference(pin)
+    memory = inventory(code, top)
+    require(memory == native_memories, "Chip netlist and native memory census differ")
+    prefix = "layer."
+    require(all(path.startswith(prefix) for path in memory), "Memory outside the verified decoder hierarchy")
+    spans = module_index(code)
+    _, ports, _, children, _ = parse_module(code, spans[top])
+    decoder, fields = children["layer"]
+    connections = pin_fields(fields)
+    require(ports["clk"] == ("input", None) and "clk" in connections, "Missing chip clock connection")
+    topology = audit_topology(code, decoder, targets)
+
+    decoder_memory = {path.removeprefix(prefix): master for path, master in memory.items()}
+    capacity = audit_memory(decoder_memory, included, reference, pin)
+    for helper in (inventory, array_registers, module_index, capacities_by_owner, memory_shape):
+        pin(Path(helper.__code__.co_filename))
+    pin(Path(__file__))
+    label = targets["silicon"]["sram_published_KB"]
+    return {
+        "decoder_module": decoder,
+        "chip_clock_port": "clk",
+        "decoder_clock_connection": connections["clk"].strip(),
+        "external_clock_direct_to_decoder": connections["clk"].strip() == "clk",
+        "topology": topology,
+        "memory": capacity,
+        "paper_sram_label_kb": label,
+        "difference_from_binary_label_bytes": capacity["compiled_bytes"] - label * 1024,
+        "difference_from_decimal_label_bytes": capacity["compiled_bytes"] - label * 1000,
+    }
+
+
 def audit(candidate, replay):
     require(__debug__, "Run this verifier with Python assertions enabled")
     evidence = {}
@@ -180,15 +226,7 @@ def audit(candidate, replay):
     linked = read(link)
     netlist_sha = pin(netlist, linked["candidate_netlist_sha256"])
     code = netlist.read_text()
-    reference_path = ROOT / "records/wac_shared_memory_layer_native_attention_result.json"
-    pin(reference_path)
-    pin(REFERENCE, read(reference_path)["evidence_sha256"][str(REFERENCE.relative_to(ROOT))])
-    reference = read(REFERENCE)
-    targets_path = ROOT / "records/paper_result_targets.json"
-    pin(targets_path, reference["input_sha256"][str(targets_path)])
-    pin(ROOT / PAPER_RELATIVE, PAPER_SHA256)
-    targets = read(targets_path)
-    require(targets["source"] == PAPER_RELATIVE, "Paper target source changed")
+    reference, targets = paper_reference(pin)
 
     bundle = replay / "bundle.sv"
     elaborate = replay / "elaborate/xrun.log"

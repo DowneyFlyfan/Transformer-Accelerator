@@ -78,6 +78,7 @@ def verify(synthesis, candidate):
     from run_linked_layer_replay import check_census
     from run_linked_trained_replay import archived_inputs, verify_trained
     from run_tri_oracle_parallel_gate_replay import TRAINED_MARKERS, check_attention, check_lane_activity
+    from verify_tri_oracle_mapped_paper_topology import audit_chip_hierarchy
 
     gate = linked / "chip.v"
     link_path, setup_path = linked / "receipt.json", prepared / "prepared.json"
@@ -151,13 +152,26 @@ def verify(synthesis, candidate):
     assert all(text.splitlines().count(marker) == 1 for marker in TRAINED_MARKERS)
     activity = check_lane_activity(text, source_training)
     assert all(trained[key] == value for key, value in activity.items())
+    hierarchy_pins = {}
+
+    def pin_hierarchy(path, expected=None):
+        key = str(path.relative_to(ROOT))
+        digest = sha(path)
+        assert expected is None or digest == expected, path
+        assert hierarchy_pins.setdefault(key, digest) == digest, path
+
+    attention_bundle = prepared / "attention_bundle.sv"
+    included = [Path(name) for name in INCLUDE.findall(attention_bundle.read_text())]
+    hierarchy = audit_chip_hierarchy(gate.read_text(), link["top"], memories, included, pin_hierarchy)
+    verify_pins(hierarchy_pins)
     evidence = (path, attention_path, link_path, setup_path, gate, progress, trained_log,
                 replay / "attention/xrun.log", Path(__file__).resolve())
     return {
         "state": "linked_mapped_dual_lane_execution_independently_verified",
         "candidate_sha256": identity, "compiled_memories": len(memories), "attention_rows": attention["counters"]["rows"],
         "trained_exact_outputs": counters["exact_outputs"], **activity,
-        "evidence_sha256": {str(item.relative_to(ROOT)): sha(item) for item in evidence},
+        "mapped_hierarchy": hierarchy,
+        "evidence_sha256": {str(item.relative_to(ROOT)): sha(item) for item in evidence} | hierarchy_pins,
         "scope": "Native mapped workload execution before placement. Timing, model accuracy and energy are separate proofs.",
     }
 
