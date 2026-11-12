@@ -1,0 +1,265 @@
+{
+  "candidate_sha256": "f632209f7dfcb5a83350cedb59ef8cecfe24984275d07de2b2d81c5f88a7bea0",
+  "compiled_memories": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 360,
+    "TS5N28HPCPSVTA512X64M4F": 42,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "cores": 20,
+  "dispatch_module": "tri_oracle_chip_dispatch",
+  "external_clock_direct_to_dispatch_and_decoder": true,
+  "input_sha256": {
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_chip/chip.v": "f632209f7dfcb5a83350cedb59ef8cecfe24984275d07de2b2d81c5f88a7bea0",
+    ".cache/physical/wide_weight_loader/parallel_synthesis/linked_chip/receipt.json": "292bf2aa2d5eca8753d262bda6e0878b547c480b667cd0185d024ee951bcd31c",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "syn/audit_tri_oracle_linked_chip_structure.py": "b3d54001e6d3976787b63941a6a4223a161c15fbb3767a1e04785e66cde46f70",
+    "syn/verify_tri_oracle_mapped_paper_topology.py": "be8ac476ba31d25d7a25e709948d66765efff899bfc8a215449236153f03d5a5"
+  },
+  "mapped_decoder_module": "tri_oracle_shared_memory_layer_PACKED_FEEDFORWARD_WEIGHTS1_parallel_chip",
+  "read_response_widths_bits": [
+    512,
+    512
+  ],
+  "scope": "Mapped compute, local redundancy units and command wiring. On-chip clock generation, system memory integration and workload accuracy require separate verification.",
+  "state": "linked_chip_compute_and_command_hierarchy_verified",
+  "top": "tri_oracle_chip_command_layer_parallel_chip",
+  "topology": {
+    "array_geometry": [
+      32,
+      8
+    ],
+    "array_registers_by_master": {
+      "tri_oracle_pe_array_verified_bank0": {
+        "product_lanes": 256,
+        "registered_final_sum_bits": 608,
+        "registered_product_bits": 4096
+      },
+      "tri_oracle_pe_array_verified_bank1": {
+        "product_lanes": 256,
+        "registered_final_sum_bits": 608,
+        "registered_product_bits": 4096
+      },
+      "tri_oracle_pe_array_verified_bank2": {
+        "product_lanes": 256,
+        "registered_final_sum_bits": 608,
+        "registered_product_bits": 4096
+      },
+      "tri_oracle_pe_array_verified_bank3": {
+        "product_lanes": 256,
+        "registered_final_sum_bits": 608,
+        "registered_product_bits": 4096
+      },
+      "tri_oracle_pe_array_verified_bank4": {
+        "product_lanes": 256,
+        "registered_final_sum_bits": 608,
+        "registered_product_bits": 4096
+      }
+    },
+    "clusters": [
+      {
+        "cluster": 0,
+        "cluster_master": "tri_oracle_sram_compute_cluster_MERGE_FEATURES512_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START0_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank0",
+        "cores": [
+          {
+            "array": "tri_oracle_pe_array_verified_bank0",
+            "core": 0,
+            "head": "tri_oracle_core_head450_13930_verified_bank0",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_13927_verified_bank0",
+            "strip": "tri_oracle_core_strip448_13933_verified_bank0"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank0",
+            "core": 1,
+            "head": "tri_oracle_core_head450_13931_verified_bank0",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_13928_verified_bank0",
+            "strip": "tri_oracle_core_strip448_13934_verified_bank0"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank0",
+            "core": 2,
+            "head": "tri_oracle_core_head450_13932_verified_bank0",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_13929_verified_bank0",
+            "strip": "tri_oracle_core_strip448_13935_verified_bank0"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank0",
+            "core": 3,
+            "head": "tri_oracle_core_head450_verified_bank0",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_verified_bank0",
+            "strip": "tri_oracle_core_strip448_verified_bank0"
+          }
+        ],
+        "merge_controller": "tri_oracle_cumulative_merge447_COMPILED_SIGN_BANK1_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_RANGE_START0_RANGE_END128_verified_bank0",
+        "sign_similarity": "tri_oracle_aggregator_sign447_FEATURES512_COMPILED_SIGN_BANK1_COMPACT_SIGN_DEPTH1_verified_bank0",
+        "token_merger": "tri_oracle_aggregator_token_merge_unit_BANK_START0_ENTRIES128_FEATURES512_verified_bank0",
+        "token_size_bank": "tri_oracle_token_size_bank_BANK_START0_ENTRIES128_verified_bank0"
+      },
+      {
+        "cluster": 1,
+        "cluster_master": "tri_oracle_sram_compute_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START128_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank1",
+        "cores": [
+          {
+            "array": "tri_oracle_pe_array_verified_bank1",
+            "core": 0,
+            "head": "tri_oracle_core_head450_12873_verified_bank1",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12870_verified_bank1",
+            "strip": "tri_oracle_core_strip448_12876_verified_bank1"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank1",
+            "core": 1,
+            "head": "tri_oracle_core_head450_12874_verified_bank1",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12871_verified_bank1",
+            "strip": "tri_oracle_core_strip448_12877_verified_bank1"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank1",
+            "core": 2,
+            "head": "tri_oracle_core_head450_12875_verified_bank1",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12872_verified_bank1",
+            "strip": "tri_oracle_core_strip448_12878_verified_bank1"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank1",
+            "core": 3,
+            "head": "tri_oracle_core_head450_verified_bank1",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_verified_bank1",
+            "strip": "tri_oracle_core_strip448_verified_bank1"
+          }
+        ],
+        "merge_controller": "tri_oracle_cumulative_merge447_COMPILED_SIGN_BANK1_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_RANGE_START128_RANGE_END256_verified_bank1",
+        "sign_similarity": "tri_oracle_aggregator_sign447_FEATURES384_COMPILED_SIGN_BANK1_COMPACT_SIGN_DEPTH1_verified_bank1",
+        "token_merger": "tri_oracle_aggregator_token_merge_unit_BANK_START128_ENTRIES128_FEATURES384_verified_bank1",
+        "token_size_bank": "tri_oracle_token_size_bank_BANK_START128_ENTRIES128_verified_bank1"
+      },
+      {
+        "cluster": 2,
+        "cluster_master": "tri_oracle_sram_compute_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START256_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank2",
+        "cores": [
+          {
+            "array": "tri_oracle_pe_array_verified_bank2",
+            "core": 0,
+            "head": "tri_oracle_core_head450_12877_verified_bank2",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12874_verified_bank2",
+            "strip": "tri_oracle_core_strip448_12880_verified_bank2"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank2",
+            "core": 1,
+            "head": "tri_oracle_core_head450_12878_verified_bank2",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12875_verified_bank2",
+            "strip": "tri_oracle_core_strip448_12881_verified_bank2"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank2",
+            "core": 2,
+            "head": "tri_oracle_core_head450_12879_verified_bank2",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12876_verified_bank2",
+            "strip": "tri_oracle_core_strip448_12882_verified_bank2"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank2",
+            "core": 3,
+            "head": "tri_oracle_core_head450_verified_bank2",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_verified_bank2",
+            "strip": "tri_oracle_core_strip448_verified_bank2"
+          }
+        ],
+        "merge_controller": "tri_oracle_cumulative_merge447_COMPILED_SIGN_BANK1_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_RANGE_START256_RANGE_END384_verified_bank2",
+        "sign_similarity": "tri_oracle_aggregator_sign447_FEATURES384_COMPILED_SIGN_BANK1_COMPACT_SIGN_DEPTH1_verified_bank2",
+        "token_merger": "tri_oracle_aggregator_token_merge_unit_BANK_START256_ENTRIES128_FEATURES384_verified_bank2",
+        "token_size_bank": "tri_oracle_token_size_bank_BANK_START256_ENTRIES128_verified_bank2"
+      },
+      {
+        "cluster": 3,
+        "cluster_master": "tri_oracle_sram_compute_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START384_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank3",
+        "cores": [
+          {
+            "array": "tri_oracle_pe_array_verified_bank3",
+            "core": 0,
+            "head": "tri_oracle_core_head450_12871_verified_bank3",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12868_verified_bank3",
+            "strip": "tri_oracle_core_strip448_12874_verified_bank3"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank3",
+            "core": 1,
+            "head": "tri_oracle_core_head450_12872_verified_bank3",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12869_verified_bank3",
+            "strip": "tri_oracle_core_strip448_12875_verified_bank3"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank3",
+            "core": 2,
+            "head": "tri_oracle_core_head450_12873_verified_bank3",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12870_verified_bank3",
+            "strip": "tri_oracle_core_strip448_12876_verified_bank3"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank3",
+            "core": 3,
+            "head": "tri_oracle_core_head450_verified_bank3",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_verified_bank3",
+            "strip": "tri_oracle_core_strip448_verified_bank3"
+          }
+        ],
+        "merge_controller": "tri_oracle_cumulative_merge447_COMPILED_SIGN_BANK1_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_RANGE_START384_RANGE_END512_verified_bank3",
+        "sign_similarity": "tri_oracle_aggregator_sign447_FEATURES384_COMPILED_SIGN_BANK1_COMPACT_SIGN_DEPTH1_verified_bank3",
+        "token_merger": "tri_oracle_aggregator_token_merge_unit_BANK_START384_ENTRIES128_FEATURES384_verified_bank3",
+        "token_size_bank": "tri_oracle_token_size_bank_BANK_START384_ENTRIES128_verified_bank3"
+      },
+      {
+        "cluster": 4,
+        "cluster_master": "tri_oracle_sram_compute_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES64_MERGE_TABLE_START512_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank4",
+        "cores": [
+          {
+            "array": "tri_oracle_pe_array_verified_bank4",
+            "core": 0,
+            "head": "tri_oracle_core_head450_12552_verified_bank4",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12549_verified_bank4",
+            "strip": "tri_oracle_core_strip448_12555_verified_bank4"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank4",
+            "core": 1,
+            "head": "tri_oracle_core_head450_12553_verified_bank4",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12550_verified_bank4",
+            "strip": "tri_oracle_core_strip448_12556_verified_bank4"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank4",
+            "core": 2,
+            "head": "tri_oracle_core_head450_12554_verified_bank4",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_12551_verified_bank4",
+            "strip": "tri_oracle_core_strip448_12557_verified_bank4"
+          },
+          {
+            "array": "tri_oracle_pe_array_verified_bank4",
+            "core": 3,
+            "head": "tri_oracle_core_head450_verified_bank4",
+            "head_classifier": "tri_oracle_attention_head_classifier410_SERIAL_RATIO1_SHARED_CONFIG1_verified_bank4",
+            "strip": "tri_oracle_core_strip448_verified_bank4"
+          }
+        ],
+        "merge_controller": "tri_oracle_cumulative_merge447_COMPILED_SIGN_BANK1_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_RANGE_START512_RANGE_END576_verified_bank4",
+        "sign_similarity": "tri_oracle_aggregator_sign447_FEATURES384_COMPILED_SIGN_BANK1_COMPACT_SIGN_DEPTH1_verified_bank4",
+        "token_merger": "tri_oracle_aggregator_token_merge_unit_BANK_START512_ENTRIES64_FEATURES384_verified_bank4",
+        "token_size_bank": "tri_oracle_token_size_bank_BANK_START512_ENTRIES64_verified_bank4"
+      }
+    ],
+    "decoder_external_clock": true,
+    "decoder_hierarchy_children": {
+      "context_memory": "tri_oracle_context_memory_fabric",
+      "external_reads": "tri_oracle_packed_read_mux_parallel_chip",
+      "layer": "tri_oracle_shared_layer437_PACKED_FEEDFORWARD_WEIGHTS1_PERSIST_LAYER_CONTEXT1_COMPILED_SIGN_BANK1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_parallel_chip",
+      "shared_reads": "tri_oracle_external_read_mux",
+      "shared_writes": "tri_oracle_external_write_mux"
+    },
+    "nominal_operations_per_second_at_paper_clock": 5939200000000,
+    "operand_bits": 8
+  }
+}
