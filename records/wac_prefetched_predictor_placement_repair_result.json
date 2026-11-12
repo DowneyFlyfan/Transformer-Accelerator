@@ -1,0 +1,37 @@
+{
+  "clock_target_megahertz": 580,
+  "evidence_sha256": {
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32/receipt.json": "19511580661958c2a3d40b77cf926b17d830455aa7af7df41d9166c868a2815d",
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32_preclock_repair_address_retry/place/placed.v": "94688069c1031ccef577dbf760f148fa0c46fd5fc3da9468359e0dc02cfac08c",
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32_preclock_repair_address_retry/receipt.json": "3dae3a5fed04c65205e8b463f96c20985d92d06f098473ccf6b510d2fb55c2d5",
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32_preclock_repair_address_retry/report/hold_fast.rpt": "6360c9776008099ade3eb9ad25a5f476517a57b26b11756a3f0d8ad8b2de67ce",
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32_preclock_repair_address_retry/report/setup_slow.rpt": "73d977f829e8c44e90f7a64d175599f2c16ee0ef3651a1254e4dfedca345b89c",
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32_preclock_repair_address_retry/report/setup_typ.rpt": "4e7f340494ab39a0fa63ad4eca1a532f390657ead998777c506b61249ea903e1",
+    ".cache/physical/ranked_sign_slots/physical_prefetched_metadata_32_preclock_repair_address_retry/trained_gate_replay/receipt.json": "f796e7b03531fa1d3b111f2b8da5a629e722d3e2a921d62f12abfaa226daf5fd"
+  },
+  "fixed_memory_macros": 10,
+  "scope": "Standalone predictor on TSMC 28HPC+ with an ideal clock and estimated interconnect.",
+  "state": "optimized_standalone_predictor_function_and_preroute_timing_measured",
+  "trained_counters": {
+    "bits_per_mask": 32,
+    "cycles": 1005350,
+    "external": 9152,
+    "groups": 2816,
+    "logical": 27808,
+    "skipped": 5231
+  },
+  "worst_slack_ns": {
+    "hold_fast": {
+      "after_ns": -0.016249,
+      "before_ns": -0.013749
+    },
+    "setup_slow": {
+      "after_ns": -0.026402,
+      "before_ns": -1.785517
+    },
+    "setup_typ": {
+      "after_ns": 0.344777,
+      "before_ns": -0.988584
+    }
+  }
+}
