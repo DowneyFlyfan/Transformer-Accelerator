@@ -1,0 +1,70 @@
+{
+  "combined_sixteen_row_prefill_and_single_row_decode": {
+    "avoided_weight_bytes": 4210688,
+    "net_bytes_added_by_predictor": 359154688,
+    "net_traffic_reduction_percent": -0.5811887570878658,
+    "sign_bytes": 363365376,
+    "with_predictor_weight_bytes": 61792354304,
+    "without_predictor_weight_bytes": 61796564992
+  },
+  "decode": {
+    "avoided_weight_bytes": 4210688,
+    "net_bytes_added_by_predictor": 66952448,
+    "net_traffic_reduction_percent": -0.1465954813348252,
+    "sign_bytes": 71163136,
+    "with_predictor_weight_bytes": 45667352576,
+    "without_predictor_weight_bytes": 45671563264
+  },
+  "decode_steps": 60,
+  "evidence_sha256": {
+    ".cache/model_reference/normalized_workload_trace/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/model_reference/packed_workload_traffic_v1/console.log": "57b0d110b26f4219d1585605694029d4bb08f984af06cc80b5b779f8ff242bfa",
+    ".cache/model_reference/packed_workload_traffic_v1/packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    ".cache/model_reference/packed_workload_traffic_v1/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_packed_trained_weight_traffic_result.json": "2c51943ece69e10070ce7c9381b7627e8ad9be4ab3b873789462b32dbaaf5745",
+    "records/wac_unified_decode_read_budget_result.json": "750451d4235354b8860806c7b5909b6f8d20cfdc8064e1116c526f36b706751c",
+    "syn/measure_tri_oracle_packed_workload_traffic.py": "d8b743214c635abef4d96b9089790b60d0d56a8140a0eca8fb48087610a42590"
+  },
+  "layers": 22,
+  "native_seconds": 14.211917645996436,
+  "paper_external_memory_access_reduction_percent": 57,
+  "peak_gpu_bytes": 7555977728,
+  "prefill_by_batch_size": {
+    "1": {
+      "avoided_weight_bytes": 11780096,
+      "net_bytes_added_by_predictor": 280422144,
+      "net_traffic_reduction_percent": -0.11177799228795232,
+      "sign_bytes": 292202240,
+      "with_predictor_weight_bytes": 250862419968,
+      "without_predictor_weight_bytes": 250874200064
+    },
+    "16": {
+      "avoided_weight_bytes": 0,
+      "net_bytes_added_by_predictor": 292202240,
+      "net_traffic_reduction_percent": -1.812106720538269,
+      "sign_bytes": 292202240,
+      "with_predictor_weight_bytes": 16125001728,
+      "without_predictor_weight_bytes": 16125001728
+    },
+    "4": {
+      "avoided_weight_bytes": 81920,
+      "net_bytes_added_by_predictor": 292120320,
+      "net_traffic_reduction_percent": -0.4630855673870493,
+      "sign_bytes": 292202240,
+      "with_predictor_weight_bytes": 63081201664,
+      "without_predictor_weight_bytes": 63081283584
+    },
+    "8": {
+      "avoided_weight_bytes": 0,
+      "net_bytes_added_by_predictor": 292202240,
+      "net_traffic_reduction_percent": -0.9238968618936907,
+      "sign_bytes": 292202240,
+      "with_predictor_weight_bytes": 31627149312,
+      "without_predictor_weight_bytes": 31627149312
+    }
+  },
+  "prefill_tokens": 600,
+  "scope": "Projection from verified integer inputs on one local normalized trajectory. Counts cover packed weight payloads and sign reads. Predictor-off counts use the same activations; neither the memory device nor elapsed hardware time is modeled.",
+  "state": "normalized_workload_packed_weight_traffic_independently_reconciled"
+}
