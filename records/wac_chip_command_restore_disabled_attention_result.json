@@ -1,0 +1,31 @@
+{
+  "state": "restore_disabled_mapped_chip_controller_passed_attention_replay",
+  "mapped_controller_sha256": "200409d0a1667047fb4a5d46f30ff6779ecce51b0176cdba324f92588ab554fa",
+  "simulator": "Cadence Xcelium 25.03",
+  "attention_counters": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 57992,
+    "stalls": 60
+  },
+  "native_seconds": {
+    "elaboration": 144.65325283596758,
+    "replay": 528.9269580459222
+  },
+  "chip_command_markers": [
+    "CHIP_COMMAND_BUSY_HEADER_REJECTED",
+    "CHIP_COMMAND_INVALID_FEEDFORWARD_HELD",
+    "CHIP_COMMAND_DISABLED_RESTORE_REJECTED",
+    "CHIP_COMMAND_COUNTS feedforward=1 projection=7 merge=1 restore=0 head=3 row=4"
+  ],
+  "scope": "Chip command dispatch with the restore-disabled profile and existing mapped decoder. This does not qualify the context-enabled decoder.",
+  "evidence_sha256": {
+    ".cache/physical/chip_dispatch/profile_restore_reject/full_attention/receipt.json": "5a41cb9db5c4c616f79143fddec10021ddf4343d746f5750445450d86c8326c3",
+    ".cache/physical/chip_dispatch/profile_restore_reject/mapped/netlist.v": "200409d0a1667047fb4a5d46f30ff6779ecce51b0176cdba324f92588ab554fa",
+    ".cache/physical/chip_dispatch/profile_restore_reject/full_attention/elaborate/xrun.log": "0e1db7b5b288f47b5324841f12d402492daa504c42f7159350c740fcdd8937dc",
+    ".cache/physical/chip_dispatch/profile_restore_reject/full_attention/positive/xrun.log": "702dc22441b0355388659e10f237bdbdc8f293d0244c96740fdf594a18619891"
+  }
+}
