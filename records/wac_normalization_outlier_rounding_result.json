@@ -1,0 +1,243 @@
+{
+  "elapsed_seconds": 7.661943122977391,
+  "evidence_sha256": {
+    ".cache/model_reference/normalization_outliers_v1.log": "0390305b1eafe88fd44ed30c7b7320441645cffc7a8b569fbb0aaaa0db8cb8b2",
+    ".cache/model_reference/normalization_outliers_v1/fixed_threshold_control.json": "b0bcae68eb53907199637ee9e20b38a6b413a77f68d2aff40c664e23b31a2713",
+    ".cache/model_reference/normalization_outliers_v1/receipt.json": "46ea81b71fc4ffcaba9db2f6164c757682b6da8f18ea2e4249e87864eafd8117",
+    "records/wac_channel_packing_bound_result.json": "63074498af07d464cd96ea32eddc78519ed5eb1c85f892b9eb6eae425c69da59",
+    "records/wac_packed_predictor_threshold_result.json": "d44be5543d1f6e3a8f77338cd2580bc761bd15c6c2d2118757ff4054f9d9da1d",
+    "syn/measure_tri_oracle_normalization_outliers.py": "b2c7c397d37206b7526fa4f94cd20cb43a1418a31e086b49f6ad84034e1df17e",
+    "syn/measure_tri_oracle_packed_thresholds.py": "b987f1ca4af3ba84884cf9cc02db87d69d6e61e49f2f0630fcbd21957d9e00b1"
+  },
+  "paper_skip_target_percent": 58,
+  "paper_traffic_target_percent": 57,
+  "peak_gpu_bytes": 419826176,
+  "rows_per_split": 2640,
+  "rules": {
+    "q8_unit_sigma": {
+      "fit_settings_reaching_paper_skip_rate": 8,
+      "fit_settings_reaching_paper_traffic_reduction": 0,
+      "lowest_fit_output_change_at_paper_skip_rate": {
+        "fit": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.6627405296974521,
+          "net_reduction_percent": -1.7577662612452638,
+          "outliers": 38304,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 1749.6349984012736,
+          "sign_bytes": 107050240,
+          "skip_percent": 59.30478434917355,
+          "skipped_channels": 8817720,
+          "support_bit_changes_from_q8": 0,
+          "traffic_bytes": 6197179648
+        },
+        "held": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.6644263401267739,
+          "net_reduction_percent": -1.7187407522490483,
+          "outliers": 37464,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 1754.0855379346833,
+          "sign_bytes": 104673536,
+          "skip_percent": 59.3154041300792,
+          "skipped_channels": 8819299,
+          "support_bit_changes_from_q8": 0,
+          "traffic_bytes": 6194802944
+        },
+        "thresholds": [
+          0,
+          -4,
+          4
+        ]
+      },
+      "reference_threshold": {
+        "fit": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.16661614651307455,
+          "net_reduction_percent": -1.7577662612452638,
+          "outliers": 38304,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 439.8666267945168,
+          "sign_bytes": 107050240,
+          "skip_percent": 8.262337508608816,
+          "skipped_channels": 1228484,
+          "support_bit_changes_from_q8": 0,
+          "traffic_bytes": 6197179648
+        },
+        "held": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.16158661833015212,
+          "net_reduction_percent": -1.7187407522490483,
+          "outliers": 37464,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 426.5886723916016,
+          "sign_bytes": 104673536,
+          "skip_percent": 8.071598441804408,
+          "skipped_channels": 1200124,
+          "support_bit_changes_from_q8": 0,
+          "traffic_bytes": 6194802944
+        },
+        "thresholds": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "unrounded_measured_sigma": {
+      "fit_settings_reaching_paper_skip_rate": 8,
+      "fit_settings_reaching_paper_traffic_reduction": 0,
+      "lowest_fit_output_change_at_paper_skip_rate": {
+        "fit": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.6625610528558931,
+          "net_reduction_percent": -1.7641009706439448,
+          "outliers": 38446,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 1749.1611795395577,
+          "sign_bytes": 107436032,
+          "skip_percent": 59.27515791795799,
+          "skipped_channels": 8813315,
+          "support_bit_changes_from_q8": 142,
+          "traffic_bytes": 6197565440
+        },
+        "held": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.6629344597789589,
+          "net_reduction_percent": -1.7250754616477293,
+          "outliers": 37604,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 1750.1469738164517,
+          "sign_bytes": 105059328,
+          "skip_percent": 59.12539143207645,
+          "skipped_channels": 8791047,
+          "support_bit_changes_from_q8": 140,
+          "traffic_bytes": 6195188736
+        },
+        "thresholds": [
+          0,
+          -4,
+          4
+        ]
+      },
+      "reference_threshold": {
+        "fit": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.16777794010894495,
+          "net_reduction_percent": -1.7641009706439448,
+          "outliers": 38446,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 442.93376188761465,
+          "sign_bytes": 107436032,
+          "skip_percent": 8.31017023932507,
+          "skipped_channels": 1235596,
+          "support_bit_changes_from_q8": 142,
+          "traffic_bytes": 6197565440
+        },
+        "held": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.15870557669308816,
+          "net_reduction_percent": -1.7250754616477293,
+          "outliers": 37604,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 418.98272246975273,
+          "sign_bytes": 105059328,
+          "skip_percent": 7.923392303719008,
+          "skipped_channels": 1178088,
+          "support_bit_changes_from_q8": 140,
+          "traffic_bytes": 6195188736
+        },
+        "thresholds": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "unrounded_unit_sigma": {
+      "fit_settings_reaching_paper_skip_rate": 8,
+      "fit_settings_reaching_paper_traffic_reduction": 0,
+      "lowest_fit_output_change_at_paper_skip_rate": {
+        "fit": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.6627758898950373,
+          "net_reduction_percent": -1.761650316642993,
+          "outliers": 38392,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 1749.7283493228986,
+          "sign_bytes": 107286784,
+          "skip_percent": 59.31218254993113,
+          "skipped_channels": 8818820,
+          "support_bit_changes_from_q8": 88,
+          "traffic_bytes": 6197416192
+        },
+        "held": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.6634777222051007,
+          "net_reduction_percent": -1.72271728515625,
+          "outliers": 37552,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 1751.5811866214658,
+          "sign_bytes": 104915712,
+          "skip_percent": 59.20344917570592,
+          "skipped_channels": 8802653,
+          "support_bit_changes_from_q8": 88,
+          "traffic_bytes": 6195045120
+        },
+        "thresholds": [
+          0,
+          -4,
+          4
+        ]
+      },
+      "reference_threshold": {
+        "fit": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.1681287096675247,
+          "net_reduction_percent": -1.761650316642993,
+          "outliers": 38392,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 443.8597935222652,
+          "sign_bytes": 107286784,
+          "skip_percent": 8.325861150568182,
+          "skipped_channels": 1237929,
+          "support_bit_changes_from_q8": 88,
+          "traffic_bytes": 6197416192
+        },
+        "held": {
+          "dense_bytes": 6090129408,
+          "eligible_rows": 2640,
+          "mean_relative_output_change": 0.15996972368513004,
+          "net_reduction_percent": -1.72271728515625,
+          "outliers": 37552,
+          "predicted_weight_bytes": 6090129408,
+          "relative_error_sum": 422.3200705287433,
+          "sign_bytes": 104915712,
+          "skip_percent": 7.990951327909779,
+          "skipped_channels": 1188133,
+          "support_bit_changes_from_q8": 88,
+          "traffic_bytes": 6195045120
+        },
+        "thresholds": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "scope": "Figure 31.6.5 places detection before applying the learned normalization weight. Trained checkpoint prompt rows from disjoint calibration and held images. Output change is relative to dense integer feed-forward output. Traffic uses grouped packed reads.",
+  "settings_per_rule": 18,
+  "state": "normalization_outlier_rounding_traffic_and_error_independently_checked"
+}
