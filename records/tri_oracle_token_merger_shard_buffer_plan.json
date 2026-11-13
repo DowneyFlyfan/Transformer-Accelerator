@@ -1,0 +1,30 @@
+{
+  "candidate_sha256": "31908635614045664eb6778ef40821d6b8e3c78abeff2e048efe049b64512a6f",
+  "driver": "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/local_merge.token_merge/similarity/shard/g47991/Z",
+  "driver_loads": 513,
+  "local_plan_sha256": "e0169189096306fa2c8f0be5e800cedba02b8a9ff4560960bfffe77a7b38a7a2",
+  "pin_load_checks": {
+    "ffg1p05vm40c.lib": {
+      "minimum_buffer_margin_pf": "0.396926240",
+      "original_driver_pin_load_pf": "0.394525462",
+      "planned_driver_pin_load_pf": "0.00405929"
+    },
+    "ssg0p9v125c.lib": {
+      "minimum_buffer_margin_pf": "0.353575256",
+      "original_driver_pin_load_pf": "0.395547248",
+      "planned_driver_pin_load_pf": "0.00398054"
+    },
+    "tt1v25c.lib": {
+      "minimum_buffer_margin_pf": "0.36816908",
+      "original_driver_pin_load_pf": "0.395230273",
+      "planned_driver_pin_load_pf": "0.00398222"
+    }
+  },
+  "planned_buffers": 46,
+  "scope": "Plan for one measured shard and a standard-cell logic test. The buffers have not been inserted and timing has not been measured.",
+  "state": "placed_token_merger_shard_buffer_plan_logic_verified",
+  "xcelium_log_sha256": {
+    "inverted": "148509b461c7de20c1e438b857217c7dc711ae93b4ed9080d3a6dff9c7544207",
+    "positive": "06f0eb0ca0cf3960e8ad54cb1000cf355be6e67096407f5775153d99d23aa35b"
+  }
+}
