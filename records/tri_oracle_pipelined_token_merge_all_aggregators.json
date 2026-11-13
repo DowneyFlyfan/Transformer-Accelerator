@@ -1,0 +1,36 @@
+{
+  "clusters": 5,
+  "compiled_memories": 631,
+  "cores": 20,
+  "isolated_genus_clock_period_ns": 1.724137931,
+  "isolated_genus_worst_setup_slack_ps": {
+    "controller_0": 128.9,
+    "controller_128": 89.7,
+    "controller_256": 45.8,
+    "controller_384": 85.4,
+    "controller_512": 3.2,
+    "shard_384": 1173.8,
+    "shard_512": 890.9
+  },
+  "local_receipt_sha256": {
+    "all_mapped_aggregator_replay/receipt.json": "ee8a3e0d4eeaa7c0e4c12d7340d236b61cc036b608262a3a6abcd1b1e4770d52",
+    "mapped_merge_partitions/independent_topology_receipt.json": "4a7793e358f579e8e810f04ac3368073b5832228c04dc2563811dfe97984ae74",
+    "mapped_merge_partitions/receipt.json": "b25d367329bee6b977a54ed9094de9487eea4d7907b1205c685bea430727d88d"
+  },
+  "mapped_chip_sha256": "31908635614045664eb6778ef40821d6b8e3c78abeff2e048efe049b64512a6f",
+  "partitions_mapped": 7,
+  "placed_parent_sha256": "a8314fe50a25ab6f50774f04ec57f7f153cda6d4cab30f1f6da281835b02da86",
+  "replaced_modules": 10,
+  "scope": "The five replacement controllers and five score shards are mapped and replayed with the boundary fixture. Whole-chip functional replay, revised placement, physical timing and routing remain unverified.",
+  "score_trace_sha256": "77395bfc5d6b532bdf58b9f51ab2aea31affaada850c1e020b8e9ca549d006aa",
+  "state": "pipelined_token_merge_mapped_and_all_aggregators_replayed",
+  "unchanged_modules": 213,
+  "verified_score_memory_connections": 16,
+  "xcelium_boundary_fixture": {
+    "frames": 20,
+    "maps": 11520,
+    "rows": 280,
+    "signs": 6478,
+    "sizes": 9199
+  }
+}
