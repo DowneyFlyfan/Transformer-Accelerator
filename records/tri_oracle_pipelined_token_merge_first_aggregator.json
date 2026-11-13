@@ -1,0 +1,39 @@
+{
+  "state": "mapped_score_shard_and_first_aggregator_pass_xcelium",
+  "first_controller_genus_setup_slack_ps": 128.9,
+  "first_controller_endpoint": "merge_sign_control[1]",
+  "xcelium_regressions": {
+    "mapped_shard_replay/trained": {
+      "modes": 2,
+      "layers": 44,
+      "maps": 25344,
+      "signs": 15561,
+      "rows": 25432,
+      "sizes": 4380542,
+      "cfg_errors": 3,
+      "map_stalls": 3894,
+      "done_stalls": 235
+    },
+    "mapped_shard_replay/pipelined": {
+      "frames": 20,
+      "maps": 11520,
+      "signs": 6478,
+      "rows": 280,
+      "sizes": 9199
+    },
+    "mapped_first_aggregator_replay": {
+      "frames": 20,
+      "maps": 11520,
+      "signs": 6478,
+      "rows": 280,
+      "sizes": 9199
+    }
+  },
+  "timing_report_sha256": "5695fac7e5780c28c2e7741de36c2f19163e8b28c5959361ee16b5617f59bc9e",
+  "local_receipt_sha256": {
+    "mapped_shard_replay/trained": "2f09b62012df1e4b5f9762d8a9b1769298220abeff9127fe150281e2963f6071",
+    "mapped_shard_replay/pipelined": "9da498ff91de6e3a7d17964e5d12201664207b1132542ad1dc2ce0325b89c2e2",
+    "mapped_first_aggregator_replay": "c2ecc3ad8b2787b4e3fcf44368bcef8e8cb3fce1b9dd9291f69d1c65bd20a57f"
+  },
+  "scope": "Mixed mapped and register-transfer-level five-aggregator fixtures. Only the first aggregator was replaced at gate level. Whole-chip mapping, placed timing and routing remain pending."
+}
