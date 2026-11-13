@@ -1,0 +1,40 @@
+{
+  "state": "mapped_attention_value_retention_verified_in_cluster_and_shared_read_lanes",
+  "whole_chip_baseline_sha256": "3ade7fc1e8aa295b662982f6dd5ee2a21ce505cd1dba2f889e332e7964e3ba2f",
+  "baseline_value_transport": {
+    "whole_chip_fixture_value_requests": 1023,
+    "whole_chip_fixture_response_beats": 8184,
+    "isolated_ideal_consecutive_request_spacing_cycles": 10
+  },
+  "trained_cluster_fixture": {
+    "maximum_visible_keys": 403,
+    "existing_memory_macros": 8,
+    "retained_value_vectors": 256,
+    "exact_output_features": 832,
+    "external_beats_without_retention": 1677,
+    "external_beats_with_retention": 844,
+    "cycles_without_retention": 9666,
+    "cycles_with_retention": 9675
+  },
+  "mapped_controller": {
+    "exact_vectors_across_cache_lifetimes": 224,
+    "isolated_synthesis_clock_period_ns": 1.72414,
+    "isolated_synthesis_worst_setup_slack_ps": 2,
+    "cell_count": 5580,
+    "cell_area_um2": 9008.160
+  },
+  "two_read_lanes_with_directed_weight_traffic": {
+    "attention_groups": 4,
+    "exact_attention_value_deliveries": 2016,
+    "external_attention_beats": 160,
+    "exact_weight_beats": 32,
+    "concurrent_response_cycles": 30
+  },
+  "local_evidence_sha256": {
+    "mapped_baseline_value_transport": "7bc080db0f90a9c08aa9866b2dfc5f4776cadb143096633b03265d8ebb3a6311",
+    "cluster_value_retention": "256a8a2967e6ed19425448449db2f76abcacfdb1deefccd75c5f25f2e4f9baf2",
+    "mapped_controller_cache_lifetimes": "3ab4e3c94934b4e0a903c53fd76eccde2559cd1c3e5670d0867f9029c08b0f11",
+    "mapped_controllers_with_weight_traffic": "594a0a98368c06c4f7fe18c53a73c93bc006b9581e093fceaf748a58b1d936cd"
+  },
+  "scope": "Cadence Xcelium functional replay and isolated Genus synthesis for Taiwan Semiconductor Manufacturing Company 28HPC+. The retention design is a prototype outside the whole-chip baseline. Integrated scheduling, physical timing, model accuracy and power remain unverified."
+}
