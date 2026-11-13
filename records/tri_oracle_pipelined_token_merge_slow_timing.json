@@ -1,0 +1,29 @@
+{
+  "baseline_slack_ns": -53.259449,
+  "candidate_sha256": "31908635614045664eb6778ef40821d6b8e3c78abeff2e048efe049b64512a6f",
+  "clock_target_mhz": 580,
+  "compiled_memory": {
+    "binary_kibibytes": 405.203125,
+    "bytes": 414928,
+    "local_receipt_sha256": "435005b17206b5d948dcf7fe49f9d071bf2650050c965f543d280dda805d3954",
+    "macros": 631,
+    "paper_capacity_label": 405,
+    "paper_unit_convention_confirmed": false
+  },
+  "critical_relay_arc_delay_ns": 32.609505,
+  "critical_relay_loads": 2083,
+  "improvement_ns": 4.828243,
+  "local_attribution_sha256": "c2cdd966e1c18ba6f8d17c1bc34510c9c0521d3dd3d4f33834b5bd5d96c83deb",
+  "local_receipt_sha256": "ce754091bff1f7081a37564dd864042ee9e84bcf58ce60a47a1920d5eb38ce70",
+  "native_elapsed_seconds": 441.87,
+  "reported_paths": 15,
+  "reported_violations": 15,
+  "scope": "Matched TSMC 28 nm slow-corner pre-route estimates with an ideal clock. Timing remains below target.",
+  "skipped_detailed_analysis_nets": [
+    "clk",
+    "layer/layer/feedforward/compute/compute/tensor/backend_rst_n",
+    "rst_n"
+  ],
+  "state": "whole_chip_pre_route_slow_setup_timing_measured",
+  "worst_setup_slack_ns": -48.431206
+}
