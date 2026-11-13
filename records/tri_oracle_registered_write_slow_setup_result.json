@@ -1,0 +1,30 @@
+{
+  "state": "registered_write_slow_setup_report_and_skipped_nets_verified",
+  "candidate_sha256": "3ade7fc1e8aa295b662982f6dd5ee2a21ce505cd1dba2f889e332e7964e3ba2f",
+  "placed_netlist_sha256": "f2676629daaed19f5fbe7a660097ee52cdb4d413f1660821b76701cfa1933b44",
+  "clock_constraint_ns": 1.72414,
+  "slow_corner_worst_setup_slack_ns": -53.259449,
+  "slow_corner_data_path_ns": 54.657693,
+  "native_elapsed_seconds": 463.8811875160318,
+  "worst_path_startpoints": {
+    "sign_data[746]": 15
+  },
+  "worst_endpoint": "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/local_merge.token_merge/similarity/shard/left_sign_reg[107]/D",
+  "clusters_crossed_by_worst_path": [
+    0,
+    1,
+    4
+  ],
+  "reported_setup_violations": 15,
+  "leaf_loads_by_net_skipped_in_detailed_analysis": {
+    "clk": 386462,
+    "layer/layer/feedforward/compute/compute/tensor/backend_rst_n": 105350,
+    "rst_n": 41942
+  },
+  "local_evidence_sha256": {
+    "timing_receipt": "aa55b8710a25d7b696b70c1fb3b263d28ad4a8807f5462127fdfd22d4e8cecb2",
+    "timing_report": "e53e8abee1dec733cc0b517c45606fcd18d6294cd88bd06e7623f3ba4cd4391a",
+    "clock_reset_fanout": "e0ff53efb1d51d994e5dd855661a899ad73aa21a4cb8fad0ce472a7e94ea1582"
+  },
+  "scope": "Slow-corner, pre-route timing with ideal clock and high-fanout delay substitution disabled. Full-corner and routed timing remain unverified."
+}
