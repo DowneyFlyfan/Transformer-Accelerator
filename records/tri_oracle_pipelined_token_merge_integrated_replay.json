@@ -1,0 +1,68 @@
+{
+  "state": "pipelined_token_merge_integrated_twenty_core_xcelium_replay_verified",
+  "fixture_counts": {
+    "maps": 576,
+    "writes": 27,
+    "failed_writes": 2,
+    "rows": 4,
+    "values": 1023,
+    "attention_reads": 24768,
+    "stalls": 63
+  },
+  "merge_steps_by_aggregator": [
+    [
+      0,
+      128
+    ],
+    [
+      128,
+      128
+    ],
+    [
+      256,
+      128
+    ],
+    [
+      384,
+      128
+    ],
+    [
+      512,
+      64
+    ]
+  ],
+  "local_size_reads_by_aggregator": [
+    [
+      0,
+      16
+    ],
+    [
+      128,
+      16
+    ],
+    [
+      256,
+      16
+    ],
+    [
+      384,
+      16
+    ],
+    [
+      512,
+      8
+    ]
+  ],
+  "xcelium_runtime": "00:02:18",
+  "matched_archived_attention_ownership": true,
+  "evidence_sha256": {
+    "xrun.log": "ce1a63476fb57baa87ab117ed04d31d511a022426cae399b746ab12e04076c52",
+    "receipt.json": "7d799279eef0d59beaa5b3e00fdf6f517da3d56f84ac809fc01b1d1459d3007e",
+    "input_sha256.json": "ca5f8d15deccde594be8fcb598ff94a44e76111b5237f88222eea543590043d5",
+    "bundle.sv": "47d2f07c376a50285966c9b88bc367d3ceb9818c769ebc555360e366e5ebed0f",
+    "integrated_bundle.sv": "13eb2673758af4de9ffe9673b083c57b57db892bb98e407cf75eafabc17c70b3",
+    "integrated_local_merge_fabric.sv": "e31584a98684ebde6e48c5dfb63adb0292838e2551e4678d598c155dbea66549",
+    "xrun.history": "df354f28129fad64a967049b1d69c429b4e2cf8f2550cc6b2b0e72efd80f6609"
+  },
+  "scope": "Integrated register-transfer-level layer and compiled memory simulation. Mapped whole-chip replay, placement and timing pending."
+}
