@@ -1,0 +1,48 @@
+{
+  "integrated_source": {
+    "control_cycles": 1533547,
+    "cycles_saved": 49786,
+    "exact_outputs": 32768,
+    "repaired_cycles": 1483761,
+    "weight_response_beats_saved": 81162
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/compact_decoder/area.rpt": "01b6fd7c7d3c5feaed013596cde621e67b21424be35a749f2c8a67b2c848dcea",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/compact_decoder/mapped.v": "8f96355d75eb698039c52cf9d8d077e6fe2a2f9a1b152bfcf3e76b2065409968",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/compact_decoder/mapped_receipt.json": "9222dee69c49efbf842465a86cd3e4fdb2b42b52c783c86717c63c683d3d1d9a",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/compact_decoder/timing.rpt": "1a37fbeec21546987cbf83d7fed7d46b0435516e01681c3aaa6c72299a1517ad",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/qualification_receipt.json": "95f91a4045d5db951f36e5fc8a35ea8d70fae641ec2939e15e30cfa9a8e548f4",
+    ".cache/weight_tile_regression/before.log": "359d5a5b19e0b65c202f93e6fb5a11fedfaeaa8f75505c66abd4556ece2fbb23",
+    ".cache/weight_tile_regression/mapped.log": "0c4e962cbbc6ac8f796e09c699f7a87db4741337db65bf3c0770e42d47dd314a",
+    ".cache/weight_tile_regression/repaired.log": "6521fc6110797653a263be6c13328342f5be7755fe983178e2a0878bd96ac373"
+  },
+  "mapped_down_matrix": {
+    "cases": 78,
+    "exact_bytes": 11534336
+  },
+  "scope": "The integrated run uses source tiles. The mapped tests cover the standalone parser regression and the layer-zero down-weight matrix in two loader lanes. The timing report uses zero wireload.",
+  "simulator": "Cadence Xcelium 25.03",
+  "source_sha256": {
+    "verilog/weight_decode_flush.sv": "1fc5c0d950f5a4c9d47a9e979b0ee9524dac8232fe47060230d3f1ae8bbe3d78",
+    "verilog/weight_stream_tile.sv": "20917641a70c4c641b9d8a304a4439d35dd0c0abd117b7c566470a948aa3d84e",
+    "verilog/weight_stream_tile_tb.sv": "29a9cc77b6a184a143481edcfefb644cc5c0d27b7529e516d9b9a858f07150c7"
+  },
+  "standalone": {
+    "exact_writes": 32,
+    "mapped_tile_exit": 0,
+    "repaired_source_exit": 0,
+    "stream_bytes": 4420,
+    "unrepaired_exit": 2,
+    "unrepaired_failure": "WEIGHT_TILE_VALID_STREAM_REJECTED"
+  },
+  "state": "stalled_packed_weight_header_verified_in_source_and_mapped_tile",
+  "synthesis": "Cadence Genus 25.10",
+  "synthesized_tile": {
+    "cell_area_um2": 79727.592,
+    "library_temperature_c": 125,
+    "library_voltage": 0.9,
+    "period_ps": 1724.14,
+    "pre_placement_setup_slack_ps": 80,
+    "standard_cells": 63775
+  }
+}
