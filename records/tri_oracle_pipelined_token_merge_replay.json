@@ -1,0 +1,46 @@
+{
+  "state": "five_aggregator_pipelined_token_merging_replayed",
+  "change": "Register local score reductions at three levels and wait for valid scores before committing a fresh root.",
+  "archived_reference_traces_matched": true,
+  "xcelium": {
+    "pipelined": {
+      "metrics": {
+        "frames": 20,
+        "maps": 11520,
+        "signs": 6478,
+        "rows": 280,
+        "sizes": 9199
+      },
+      "score_trace_sha256": "77395bfc5d6b532bdf58b9f51ab2aea31affaada850c1e020b8e9ca549d006aa",
+      "xcelium_log_sha256": "3cb79c1cfe640dd2483b59ebe1e297a3811325ac95777c7d9e7bdf35e7be8eb5"
+    },
+    "trained": {
+      "metrics": {
+        "modes": 2,
+        "layers": 44,
+        "maps": 25344,
+        "signs": 15561,
+        "rows": 25432,
+        "sizes": 4380542,
+        "cfg_errors": 3,
+        "map_stalls": 3894,
+        "done_stalls": 235
+      },
+      "score_trace_sha256": "5ed898a00c4ce4e5a7bc57eda897b2ff6491d032b14c95efef84e50ae875fcf0",
+      "xcelium_log_sha256": "f743f188e4d0dfc2f735bb6fa97bfa40dcde19ae4849f0d380cfd58fe4702ecd"
+    }
+  },
+  "original_rejected_early_commit": true,
+  "gpu": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "compared_shard_scores": 44615,
+    "exact_size_emissions": 9199,
+    "receipt_sha256": "58c0a7d8a46d4e7c9603ba6a27cff2075cc09e2413fec5c4f6c446232ba5ca56"
+  },
+  "source_sha256": {
+    "prepare.py": "efe8057a2579edceb4f6ba494d33222c068c5d6f634fd16d91618c22dd53a3bc",
+    "tri_oracle_cumulative_token_merger423.sv": "e6327d01ec128ae2af74c08e517c4f87b0bb731a6a9f609486184059b33917ba",
+    "tri_oracle_local_merge_fabric.sv": "1d47c41c466fca5d4aad842cd942b42c1edcc8819186f1f20810671eef982596"
+  },
+  "scope": "Five-aggregator register-transfer-level replay with compiled memory models. Whole-chip integration, mapped timing and routed timing are pending."
+}
