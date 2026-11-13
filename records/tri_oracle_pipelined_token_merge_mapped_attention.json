@@ -1,0 +1,37 @@
+{
+  "added_fixture_cycles": 1630,
+  "added_fixture_elapsed_percent": 0.22515895808037484,
+  "candidate_sha256": "31908635614045664eb6778ef40821d6b8e3c78abeff2e048efe049b64512a6f",
+  "compiled_memories": 631,
+  "fixture_clock_period_ns": 10,
+  "fixture_elapsed_ns": {
+    "candidate": 7255630,
+    "control": 7239330
+  },
+  "footprint": {
+    "candidate_logic_area_mm2": "3.346035336",
+    "logic_area_change_mm2": "0.009565416",
+    "memory_macro_area_mm2": "3.7704761158",
+    "parent_logic_area_mm2": "3.33646992"
+  },
+  "local_receipt_sha256": {
+    "mapped_merge_partitions/independent_footprint_receipt.json": "3d6b1185111553db9785b52a8af3ec642761eeb5969910cc515bad7a7494a2ea",
+    "mapped_whole_chip_replay/attention_independent_receipt.json": "54b6029ace4fa9de80d5df9493cca2c74a792f61fa842df129b84471699120f3",
+    "mapped_whole_chip_replay/attention_receipt.json": "c191c3c707707ccbfb15163be2063b84fb36f923b4de799b71212b12d0b1b8a2"
+  },
+  "matched_attention_counts": {
+    "attention_reads": 57992,
+    "failed_writes": 2,
+    "maps": 576,
+    "rows": 4,
+    "values": 1023,
+    "writes": 27
+  },
+  "native_elapsed_seconds": 672.55,
+  "scope": "Archived whole-chip attention fixture at gate level with timing checks disabled. Cell footprints come from library abstracts. Trained replay, placement and routing are pending.",
+  "state": "synthesized_token_merge_pipeline_whole_chip_attention_replayed",
+  "write_stall_cycles": {
+    "candidate": 59,
+    "control": 59
+  }
+}
