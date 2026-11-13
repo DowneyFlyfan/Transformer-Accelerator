@@ -1,0 +1,38 @@
+{
+  "local_evidence_sha256": {
+    "native_attention_run": "340c7314637bb9c2c1826583a2238f783a11fa30536147926b50fea292a361f6",
+    "native_trained_run": "b5b6ec6d98995762138690c1e3f4da3eea79e395ce269bdbd4e735849da55ca1",
+    "placement_connectivity": "4be3e834ecd56b91717d6bc8cdf4ec28ec9fbeddcf7414608ea610b18467e1bb",
+    "pre_route_timing": "6c078d6ae4d9ea16fc7b2789aa37af1c38b6c6736e97ca20433757233640fa9d",
+    "trained_verification": "6c20c4ca4bad16cb285ad791dc7d7a576d34235fb7f4db5a78a0e399a399f2f9"
+  },
+  "placed_netlist_sha256": "f87f8e21e97ccd35e5849c69c73a60284f69b43a62acb267620fba55240d54c3",
+  "placement": {
+    "inserted_buffers": 37,
+    "rewired_sinks": 435
+  },
+  "pre_route_diagnostic": {
+    "clock_period_ns": 1.72414,
+    "corner": "setup_slow",
+    "high_fanout_delay_substitution_enabled": true,
+    "tool": "Cadence Innovus",
+    "worst_setup_slack_ns": -52.574642
+  },
+  "scope": "Placed-netlist replay of archived attention and trained feed-forward fixtures. Whole-chip routing, timing closure, and model accuracy remain pending.",
+  "simulation": {
+    "attention_exact_values": 1023,
+    "attention_map_entries": 576,
+    "attention_rows": 4,
+    "memory_instances": 631,
+    "timing_checks_enabled": false,
+    "tool": "Cadence Xcelium 25.03-s001",
+    "trained_exact_outputs": 32768,
+    "trained_frame_cycles": 3708137,
+    "trained_output_packets": 208,
+    "trained_output_tiles": 13,
+    "trained_simulation_wall_seconds": 3792.331,
+    "trained_tokens": 16
+  },
+  "state": "placed_tri_oracle_attention_and_trained_feedforward_replay_verified",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28HPC+"
+}
