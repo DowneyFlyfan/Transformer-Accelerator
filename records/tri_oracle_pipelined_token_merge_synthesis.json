@@ -1,0 +1,25 @@
+{
+  "state": "matched_512_feature_sign_bank_synthesis_compared",
+  "target_clock_megahertz": 580,
+  "library_corner": "0.9 V, 125 degrees Celsius, slow",
+  "results": {
+    "original": {
+      "worst_setup_slack_ps": 424.7,
+      "cell_count": 3105,
+      "cell_area_um2": 24221.048,
+      "sram_instances": 4,
+      "wall_seconds": 83.37
+    },
+    "pipelined": {
+      "worst_setup_slack_ps": 891.0,
+      "cell_count": 4587,
+      "cell_area_um2": 26568.008,
+      "sram_instances": 4,
+      "wall_seconds": 114.06
+    }
+  },
+  "setup_slack_improvement_ps": 466.3,
+  "area_change_percent": 9.69,
+  "local_evidence_sha256": "d0344c6ae578fb9ac47513cad12cdb04cd6d304e78dd167b23dfff68c39c8bbc",
+  "scope": "Matched Genus synthesis of one 512-feature sign bank using zero wireload. Full-chip timing and routing remain pending."
+}
