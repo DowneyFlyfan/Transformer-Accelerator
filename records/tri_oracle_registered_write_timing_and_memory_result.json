@@ -1,0 +1,39 @@
+{
+  "mapped_candidate_sha256": "3ade7fc1e8aa295b662982f6dd5ee2a21ce505cd1dba2f889e332e7964e3ba2f",
+  "placed_netlist_sha256": "f2676629daaed19f5fbe7a660097ee52cdb4d413f1660821b76701cfa1933b44",
+  "pre_route_slow_corner_diagnostic": {
+    "high_fanout_delay_substitution_enabled": true,
+    "prior_response_to_memory_setup_slack_ns": -52.574642,
+    "response_to_register_setup_slack_ns": -7.496354,
+    "register_to_same_memory_setup_slack_ns": -24.046474
+  },
+  "compiled_memory": {
+    "macros": 631,
+    "bytes": 414928,
+    "bytes_by_labeled_role": {
+      "aggregator_input_output": 10240,
+      "input": 163840,
+      "output": 40960,
+      "skip_mask": 20480,
+      "weight": 163840
+    },
+    "paper_capacity_label": "405 KB",
+    "binary_kibibytes": 405.203125,
+    "simulator_censuses": [
+      "attention",
+      "trained"
+    ]
+  },
+  "proposed_attention_distribution_repair": {
+    "buffers": 51,
+    "sinks": 577,
+    "cell_simulation_passed": true,
+    "inverted_scan_input_detected": true
+  },
+  "local_evidence_sha256": {
+    "split_timing": "70301bbcc2ac247db0be352ca0adf027c1386e5c3a5280aec2ec6754f249dc34",
+    "compiled_memory_by_role": "9b3f2949f74cbeb9a9cd012f99a4797fe26991ee9b179b80c0f56e28c462cf55",
+    "buffer_logic": "54f70e1d97b8b0c547c6f200fb5d0a246ca910429609a407f3e1173bdb89511a"
+  },
+  "scope": "Placed memory accounting, estimated setup path segments and pre-placement buffer logic. Post-repair timing, routing and model accuracy remain unverified."
+}
