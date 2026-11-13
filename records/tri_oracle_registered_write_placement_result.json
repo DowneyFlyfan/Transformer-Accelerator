@@ -1,0 +1,35 @@
+{
+  "state": "registered_write_whole_chip_replay_placement_and_cold_reload_verified",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28HPC+",
+  "mapped_candidate_sha256": "3ade7fc1e8aa295b662982f6dd5ee2a21ce505cd1dba2f889e332e7964e3ba2f",
+  "placed_netlist_sha256": "f2676629daaed19f5fbe7a660097ee52cdb4d413f1660821b76701cfa1933b44",
+  "xcelium_gate_replay": {
+    "attention_map_entries": 576,
+    "attention_rows": 4,
+    "attention_value_requests": 1023,
+    "trained_feed_forward_exact_outputs": 32768,
+    "trained_feed_forward_output_tiles": 13,
+    "timing_checks_enabled": false
+  },
+  "innovus_placement": {
+    "die_dimensions_mm": [3.6, 3.6],
+    "placed_instances": 2164588,
+    "unplaced_instances": 0,
+    "memory_macros": 631,
+    "pins": 12365,
+    "placement_wall_seconds": 719.34498,
+    "cold_reload_wall_seconds": 53.81651
+  },
+  "memory_inventory": {
+    "compiled_bytes": 414928,
+    "paper_label_kb": 405,
+    "size_kibibytes": 405.203125,
+    "matches_rounded_binary_label": true
+  },
+  "local_evidence_sha256": {
+    "placed_database_and_cold_reload": "9e8fe63a1794057cde73f58247a127b5e02c596df1a8cffa32a385aadf59a14a",
+    "independent_gate_replay": "ec678a85f9c12b32ef16b82284d934ad5ca6803df833d77a1221d448fc49d8dd",
+    "compiled_memory_and_paper_comparison": "a802ceadb6221c3357607a3421ecec069a92ebc081e3bbb0e516b27de2540e85"
+  },
+  "scope": "Functional replay of the mapped candidate and geometric verification of its placed export. Timing closure, clock distribution, detailed routing, paper-level model accuracy and energy remain unverified."
+}
