@@ -1,0 +1,49 @@
+{
+  "full_exact_matches": {
+    "dense_reference": 7163,
+    "down_scale_full": 5960,
+    "pruned_reference": 5975
+  },
+  "full_questions": 12578,
+  "local_receipt_sha256": "fc036b6d12e7f20ed6829710e613e578213bf88e82ae1f4a5a11ac7543dd4d6a",
+  "panel_full_run_exact_matches": {
+    "dense_reference": 126,
+    "down_scale_full": 116,
+    "pruned_reference": 116
+  },
+  "panel_question_types": {
+    "choose": 40,
+    "compare": 40,
+    "logical": 40,
+    "query": 40,
+    "verify": 40
+  },
+  "panel_questions": 200,
+  "panel_variants": {
+    "dense_prefill": {
+      "exact_matches": 118,
+      "gained": 8,
+      "lost": 6,
+      "lost_dense_correct": 3,
+      "recovered_dense_correct": 8
+    },
+    "linear_down_prefill": {
+      "exact_matches": 117,
+      "gained": 4,
+      "lost": 3,
+      "lost_dense_correct": 2,
+      "recovered_dense_correct": 3
+    },
+    "strict_prefill": {
+      "exact_matches": 117,
+      "gained": 7,
+      "lost": 6,
+      "lost_dense_correct": 4,
+      "recovered_dense_correct": 6
+    }
+  },
+  "paper_gqa_percent": 55.04,
+  "paper_protocol_confirmed": false,
+  "scope": "Type-balanced 200-question software diagnostic with one question per image. Hardware execution and paper protocol remain unverified.",
+  "state": "gqa_prefill_panel_bound_to_full_software_runs"
+}
