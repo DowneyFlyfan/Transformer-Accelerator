@@ -1,0 +1,36 @@
+{
+  "arcs": {
+    "layer/layer/attention_pipeline/attention/g150859/ZN": {
+      "all_component_origins_unchanged": true,
+      "baseline": {
+        "maximum_driver_sink_manhattan_um": 2455.26,
+        "origin_box_span_um": 2461.66
+      },
+      "historical_arc_delay_ns": "2.777800",
+      "reset_trial": {
+        "maximum_driver_sink_manhattan_um": 2455.26,
+        "origin_box_span_um": 2461.66
+      },
+      "sinks": 5
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/g10821/ZN": {
+      "all_component_origins_unchanged": true,
+      "baseline": {
+        "maximum_driver_sink_manhattan_um": 2385.14,
+        "origin_box_span_um": 2714.48
+      },
+      "historical_arc_delay_ns": "3.924000",
+      "reset_trial": {
+        "maximum_driver_sink_manhattan_um": 2385.14,
+        "origin_box_span_um": 2714.48
+      },
+      "sinks": 15
+    }
+  },
+  "driver_load_record_sha256": "873d33a891eb39e3abd7e6d7f968e9ab1e6f9f1306620aab367294540d547c9f",
+  "linked_candidate_sha256": "4191c72e54d3699a24d85bb3d75a3c3939a38a79b344acb2016631fe7b85ccc0",
+  "local_receipt_sha256": "311c492d7697fa9be499e176e4581f6f24372599b3515ce4b7af4871004b5acc",
+  "reset_trial_placed_netlist_sha256": "8392fe480ac5b18240ce2b624767b9bc5388dbfdaa29db40d19d57df088e57cb",
+  "scope": "Component-origin distances in existing placements with connectivity checked against the corrected linked candidate. Pin coordinates, wiring and timing are unmeasured.",
+  "state": "historical_setup_arc_geometry_compared"
+}
