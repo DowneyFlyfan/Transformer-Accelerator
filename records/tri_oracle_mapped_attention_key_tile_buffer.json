@@ -1,0 +1,29 @@
+{
+  "compiled_bytes_if_added_to_chip": 416976,
+  "compiled_kibibytes_if_added_to_chip": 407.203125,
+  "evidence_sha256": {
+    "mixed_attention_fixture/prepared.json": "febf94138f0efe3e51d0a01ca0aaf752b85a43536b43a746a73fb5722ce050c9",
+    "wide_attention_value_integration/mixed/attention/xrun.log": "8fab34b6b7fbf551ed545a2490e23dc761b0a585a90ee51544e1f421edf8d53e",
+    "wide_attention_value_integration/mixed/receipt.json": "a03db8c65fdabf28664bfbc955cfd745d4c5f4d880409a7eff41304a8e6f4997",
+    "wide_key_tile_buffer/mapped/xrun.log": "3e0a2857a6e36ccd57d0fca59351f977b3f77878dd3cb0cf8ed3d06bc5feca33",
+    "wide_key_tile_buffer/mapping/key_buffer.v": "6ed84c71e3ccd8a0817ada720017769743004a9210db20e392a1e7261efae8bf",
+    "wide_key_tile_buffer/mapping/timing.rpt": "f3bc847e1dfb8b6d51e2418775573de1dbc5033f7c0ebf1e6618d55ae626c541",
+    "wide_key_tile_buffer/no_reuse/xrun.log": "ab109230d466a084fb06ef82b4e84cbe7a8a6fd4efc3c1cbb53bcb813bbfe315",
+    "wide_key_tile_buffer/trained_inputs/xrun.log": "654ac8dce8062500339c4265a0c0def380d2541aea1e8372844f99886aff1629"
+  },
+  "exact_accumulator_words": 640,
+  "isolated_buffer_exact_scalar_key_words": 9144,
+  "isolated_buffer_memory_bytes": 2048,
+  "isolated_buffer_memory_macros": 4,
+  "isolated_buffer_setup_slack_ps": 854,
+  "isolated_buffer_wide_key_responses": 1143,
+  "mixed_candidate_sha256": "ec68f645050a860e87aaf530abd87a9aebccc71d027d60e3d8411f4d632ae3d6",
+  "observed_key_response_beats_by_mode": {
+    "retrieval": 7552,
+    "streaming": 1592
+  },
+  "observed_wide_value_responses": 1143,
+  "scope": "The repaired mapped chip replay checks both attention modes with wide value reads. The key buffer gate replay uses the same selected ranks and compiled memory models. The buffer remains outside the full chip, and adding its dedicated memory exceeds the rounded capacity in the paper.",
+  "state": "mixed_mapped_attention_key_traffic_and_wide_tile_buffer_verified",
+  "trained_attention_rows": 10
+}
