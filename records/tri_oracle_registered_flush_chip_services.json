@@ -1,0 +1,35 @@
+{
+  "array_geometry": [
+    32,
+    8
+  ],
+  "candidate_sha256": "4191c72e54d3699a24d85bb3d75a3c3939a38a79b344acb2016631fe7b85ccc0",
+  "clusters": 5,
+  "cores": 20,
+  "dispatch_module": "tri_oracle_chip_dispatch",
+  "external_clock_direct_to_dispatch_and_layer": true,
+  "external_memory_payload_widths_bits": {
+    "auxiliary_read": 512,
+    "main_read": 512,
+    "write": 64
+  },
+  "local_receipt_sha256": "8b8acac51a7479249a9a59ca626adff61cfa30d61b6dce1af032f24b1b3d871c",
+  "negative_controls_rejected": [
+    "extra_top_level_child",
+    "swapped_auxiliary_read_payload",
+    "disconnected_dispatch_clock"
+  ],
+  "nominal_peak_tops_at_580_mhz": 5.9392,
+  "operand_bits": 8,
+  "paper_figure": "31.6.2",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "per_core_attention_predictors": 20,
+  "per_core_strip_predictors": 20,
+  "scope": "Mapped structural audit of the corrected candidate. Nominal peak counts two operations per multiply-accumulate at the paper clock. It is not measured throughput or timing closure.",
+  "services_pending": [
+    "on-chip all-digital phase-locked loop",
+    "complete chip-level network and external memory integration"
+  ],
+  "state": "candidate_mapped_compute_topology_verified_chip_services_pending",
+  "token_mergers": 5
+}
