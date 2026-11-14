@@ -1,0 +1,29 @@
+{
+  "state": "registered_projection_flush_synthesis_reproduced",
+  "tool": "Cadence Genus 25.10-p002_1",
+  "clock_period_ns": 1.72414,
+  "source": {
+    "input": "verilog/tri_oracle_batched_projection356.sv",
+    "transformations_in_order": [
+      "syn/prepare_tri_oracle_cluster_local_scores.py:projection",
+      "syn/prepare_tri_oracle_registered_flush.py:register_flush"
+    ],
+    "generated_sha256": "b70c129de591dde4c5dccb01a875c638b95a2e60dc4065d7ae605dc9015601b1"
+  },
+  "recipe": "syn/tri_oracle_map_registered_projection_flush.tcl",
+  "recipe_sha256": "1750a60559b812a360c1db40b894812e4f5a525287419e07cb6dde7802b7bf12",
+  "library": "tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib",
+  "library_sha256": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+  "native_exit_status": 0,
+  "unresolved_references": 0,
+  "empty_modules": 0,
+  "standalone_setup_worst_slack_ps": 462,
+  "wall_seconds": 60.77,
+  "peak_resident_kibibytes": 1534980,
+  "archived_mapped_sha256": "982fe04d16d33987ecff0c9da79532d8e332fde56b49a1374fc54fa075aa863a",
+  "fresh_mapped_sha256": "cd744377c4e16c368de3967b98dfc258060bf7cc8410221ac9c1e70964c3e87c",
+  "mapped_sha256_without_generation_timestamp": "c2d907cc87d7c8a2c9381bbda858cfd1f0233a751d979269dce5aa47ddc78c8e",
+  "link_command": "syn/restore_tri_oracle_projection_constants.py --replace-sequencer",
+  "linked_chip_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "scope": "Standalone projection sequencer synthesis and exact regeneration of the repaired chip netlist from its existing parent checkpoint."
+}
