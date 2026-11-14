@@ -1,0 +1,111 @@
+{
+  "archived_workload_interface_rate": {
+    "archived_workload_read_payload_bytes": 62416019456,
+    "ideal_receive_pads_at_one_bit_per_cycle": 982,
+    "ideal_receive_pads_at_two_bits_per_cycle": 491,
+    "minimum_average_read_bits_per_cycle": 981.654,
+    "paper_latency_cycle_budget": 508660000,
+    "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "paper_targets_sha256": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "scope": "Ideal receive-only lower bound from the modeled archived workload. Every bit time carries payload.",
+    "traffic_record_sha256": "f592da0b95283d31812187ad68c4b5ea5ac9316bbcb1b0b2b462f604874e9b21"
+  },
+  "candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "die_um": [
+    "3600",
+    "3600"
+  ],
+  "memory_interface_signal_bits": 1454,
+  "minimum_corner_width_um": "110.000",
+  "minimum_signal_pad_width_um": "20.000",
+  "negative_controls_rejected": [
+    "missing_port_bit",
+    "wrong_port_direction"
+  ],
+  "pad_abstract_sha256": "58608b1b0a791906a6f7982a4afa544fe835ff7290dee36c50ea01e0d6d242f0",
+  "pad_instances_from_audited_library": 0,
+  "pad_library_signal_masters": 56,
+  "placed_def_sha256": {
+    "cold": "c68a1cb75b6af631affc02c96e31d33cab9bc54e0787662cffec4fae31118a7b",
+    "place": "3f0da1203c68b9674d1b75d8b13a3a58002ff27faa6973f272f7c0f0da171c49"
+  },
+  "placed_netlist_sha256": {
+    "cold": "8697155bd0be908d45cf989f3957a4a8235c0f8461b6beff6aa608348e7a21d8",
+    "place": "1826eccdb94f06668ceb94863644fd1cdb55a90e59d42a6f78f8cd4e21a7fa1d"
+  },
+  "placement_receipt_sha256": "4e8784c9cd275281de71dd0fd754c50f7a54e276e6c21128bc668909763f0dc2",
+  "raw_memory_channel_signal_bits": 1326,
+  "scope": "Placed Verilog and DEF boundary inventory. Pad capacity assumes one signal per pad on one perimeter row and excludes power, ground, spacing and packaging constraints.",
+  "signal_terminals": 12365,
+  "signals_by_function": {
+    "attention_result": {
+      "input": 0,
+      "output": 2048,
+      "total": 2048
+    },
+    "clock_and_reset": {
+      "input": 2,
+      "output": 0,
+      "total": 2
+    },
+    "command_and_response": {
+      "input": 103,
+      "output": 39,
+      "total": 142
+    },
+    "feedforward_result": {
+      "input": 1,
+      "output": 5182,
+      "total": 5183
+    },
+    "head_prediction_result": {
+      "input": 0,
+      "output": 42,
+      "total": 42
+    },
+    "memory_auxiliary_read": {
+      "input": 516,
+      "output": 72,
+      "total": 588
+    },
+    "memory_base_addresses": {
+      "input": 128,
+      "output": 0,
+      "total": 128
+    },
+    "memory_primary_read": {
+      "input": 516,
+      "output": 73,
+      "total": 589
+    },
+    "memory_write": {
+      "input": 4,
+      "output": 145,
+      "total": 149
+    },
+    "normalization_stream": {
+      "input": 388,
+      "output": 6,
+      "total": 394
+    },
+    "rotary_angles": {
+      "input": 1026,
+      "output": 1,
+      "total": 1027
+    },
+    "token_signs_and_origins": {
+      "input": 2050,
+      "output": 23,
+      "total": 2073
+    }
+  },
+  "single_row_pad_capacity_with_corners": 676,
+  "single_row_pad_capacity_without_corners": 720,
+  "state": "repaired_placement_signal_boundary_verified",
+  "terminals_by_edge": {
+    "bottom": 3092,
+    "left": 3091,
+    "right": 3091,
+    "top": 3091
+  }
+}
