@@ -1,0 +1,26 @@
+{
+  "evidence_sha256": {
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "records/tri_oracle_partial_pad_ring_seed.json": "0b7e35b9c878173b025268bb40349eb5fee83dd96e4970dc20512ce38fd02d38",
+    "syn/build_tri_oracle_partial_pad_placement_seed.py": "755e7004beeccbbbef75488561fdf9afba81194a18749d0cf16c78e8cd850ac4",
+    "syn/verify_tri_oracle_partial_pad_ring_geometry.py": "5314a0c8fae2e75efda6024fcc5a9ee9828cbabd565ee9e73253e80065d5e9fe"
+  },
+  "exact_component_names_masters_and_fixed_status": 3765868,
+  "geometry": {
+    "fixed_memories": 631,
+    "free_unblocked_sites": 967860,
+    "standard_cells": 3765237,
+    "used_sites": 35159189
+  },
+  "input_candidate_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "input_def_sha256": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+  "max_moved_cell_manhattan_um": 4352.5,
+  "mean_moved_cell_manhattan_um": 633.2403461358867,
+  "moved_standard_cells": 871623,
+  "prefer_nearby_gaps": true,
+  "preserved_standard_cell_locations": 2893614,
+  "reopened_every_nth_row": 8,
+  "scope": "Geometric placement seed checked against the candidate component inventory and planned memory halos and pad reservations. Innovus import, timing and pad connections require separate checks.",
+  "seed_def_sha256": "b0fbcd2393a3eaa9aba240e0db0fc9efecf468a9bb3f732a90581caf43b25d5a",
+  "state": "partial_pad_geometric_seed_verified"
+}
