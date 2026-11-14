@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "Matrix work retires before a probability lease",
+    "Native softmax retains priority",
+    "Both bank slices round-trip exactly",
+    "A probability write requires activation reload",
+    "A read-only lease preserves activation validity"
+  ],
+  "distinct_owner_netlists": 20,
+  "evidence_sha256": {
+    "all_mapped_owners_xcelium": "8220c047dfdcd7aef143f2859241a80d8e556eb48b5985e1d48c99d4dd7a4527",
+    "extracted_mapped_owner_bench": "0b147e6883338effb2968a38e482e9728cd4c610e7d1474db90b07a98c1159cc",
+    "genus_netlist": "430b444db662579b26902f1873057ef25a7b71df2a3ac7de9cc6fe3a5586ade6",
+    "genus_timing": "47bf1135745fb2b10d39509c3963f772a500f5f3f996cb059304e2f0e9832a87",
+    "isolated_mapped_xcelium": "e22641f367cf41758904a3989d38a5cfda9bbf8b5993473932935dd5ffa1c1f9",
+    "isolated_source_xcelium": "60c68164ccd1cac42298c08948508942d9234617af0a4787f92c662dedc78d3d",
+    "lease_bench": "7cd69d94851431b43438157d648e94f8a01db4c63bfcb8f54a1ea2b969831ae2",
+    "lease_source": "4e26775d918e6a8eaa448179baf1249f47d9692df426411d5cbb441071118d5e",
+    "missing_invalidation_xcelium": "7e2967424afd923e1ed82112a654667eb883d9226340243d76ef2efc4718dee7"
+  },
+  "isolated_genus_clock_period_ns": 1.72414,
+  "isolated_reported_genus_slack_ps": 946,
+  "memory_models_instantiated": 40,
+  "negative_missing_invalidation_exit_status": 2,
+  "scope": "Standalone circuits with original mapped owner definitions and compiled memory models. Reset branches receive the same stimulus. The lease has yet to be wired into the full grouped chip datapath.",
+  "source_chip_sha256": "9b7091cce2c532c415aa347d9c366bd63ba209d832fcb10f3885ef23086f81f9",
+  "state": "mapped_grouped_input_bank_lease_verified_with_all_core_owners"
+}

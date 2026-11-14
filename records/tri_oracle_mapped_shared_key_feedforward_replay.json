@@ -1,0 +1,22 @@
+{
+  "candidate_sha256": "9b7091cce2c532c415aa347d9c366bd63ba209d832fcb10f3885ef23086f81f9",
+  "compiled_memory_instances": 631,
+  "elapsed_seconds": 1690.83,
+  "evidence_sha256": {
+    "candidate_attention_receipt": "db90f56686a501cba7c284536cdb44b94d91ade68f7a455ec29f9b58e6e22606",
+    "candidate_bundle": "d21e30f3aa76e0ab3d62f431fbc3a41256c887af5cab69a9aaddcfdee8332f20",
+    "candidate_feedforward_progress": "b0f478437f2725cb990ab2e4bf055c956c26f08d2a315ffce83c0677da9cf974",
+    "candidate_feedforward_xcelium": "8985a1cca62d7562c1c282af83b8ccabc26c12dc741a8e7dddc85f6f9c0f3aa1",
+    "reference_feedforward_capture": "a91955ce8b3eae7fdd9a1b79220aace9cec92ec0c7c505af6b0f4a88050b0ba9",
+    "reference_feedforward_xcelium": "f6b6f3987576d01f6cfffe2d56efb089ad05b021a1dc13f53086709e415059ed",
+    "reference_output_words": "45a4a12f614a24da8ea5780a973742aeb114caeb03cf9a1f150fcb8eb440e893"
+  },
+  "exact_feedforward_words": 8192,
+  "native_exit_status": 0,
+  "scope": "A standalone trained feed-forward replay on the same mapped netlist used for trained attention. The attention-to-feed-forward transition with live shared-bank contents requires the separate no-reset replay.",
+  "shared_sign_key_memory_instances": 4,
+  "sign_read_requests": 3872,
+  "sign_read_responses": 3872,
+  "state": "shared_key_bank_candidate_preserves_trained_feedforward",
+  "trained_tokens": 4
+}
