@@ -1,0 +1,20 @@
+{
+  "altered_input_rejected": true,
+  "destination_layer": 1,
+  "differences_from_floating_normalization": 10,
+  "exact_normalized_codes": 8192,
+  "exact_signed_activation_codes": 8192,
+  "learned_scale_fractional_bits": 15,
+  "local_receipt_sha256": "3f61526c3425d6003e1ab0fd629c1fbf61ee11dd0e5fd86a10afef2253f22015",
+  "native_exit_status": 0,
+  "original_token_positions": [
+    0,
+    305,
+    607,
+    608
+  ],
+  "raw_fractional_bits": 13,
+  "scope": "Four trained tokens. The host reconstructs both residual additions from reference projection and feed-forward codes. Xcelium verifies the next layer's normalization arithmetic. The mapped producer handoffs and full decoder accuracy remain pending.",
+  "source_layer": 0,
+  "state": "trained_next_decoder_input_normalization_verified_in_xcelium"
+}
