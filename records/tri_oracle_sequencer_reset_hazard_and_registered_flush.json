@@ -1,0 +1,24 @@
+{
+  "buffered_placed_netlist_sha256": "8392fe480ac5b18240ce2b624767b9bc5388dbfdaa29db40d19d57df088e57cb",
+  "cycles_per_flush": 2,
+  "injected_state_skew_ps": 1,
+  "local_evidence_sha256": {
+    "placed_reset_cone_receipt": "4b4297b688a86667890371781a0bdfe9ba03a6b3fef6c13c6caae359c6f574a5",
+    "registered_flush_mapped_netlist": "569f983f3b557ff0b4340359afde9d9e3411521211754cd50f1c76feb6bd1c5d",
+    "registered_flush_mapped_replay": "2e93ac3a9a232213d2b71c9ff1a2f080cfa170e09e8c888c47c5428907cb2888",
+    "registered_flush_rtl_receipt": "01d3d5cab3cdae18a06d6e07b0d1972b91ac566472ad48f0be3ee9d273f73f18",
+    "registered_flush_synthesis_console": "70e02b12a3c453ab6b33a70d202b04e31d68dc599322751fd2a539007cfabac9",
+    "registered_flush_synthesis_recipe": "1750a60559b812a360c1db40b894812e4f5a525287419e07cb6dde7802b7bf12",
+    "registered_flush_synthesis_timing": "6476611e896bdc826ede1ebe8b5a060ac93b66a3c38db2f31ce8ea30a91acdc1"
+  },
+  "mapped_control_flushes": 3,
+  "original_placed_netlist_sha256": "89add15c91f60404cb0a3ded399765c1a8150333d5aa8c1f7acb74a10d89a773",
+  "scope": "The exact placed decoder cone glitches with injected skew. The registered flush retained one launch register after TSMC 28 nm Genus synthesis and passed the Xcelium boundary workload. Whole-chip integration and routed pulse behavior remain pending.",
+  "state": "placed_sequencer_reset_decode_hazard_and_registered_flush_control_verified",
+  "targeted_clock_period_ns": 1.72414,
+  "transition": "DONE (11) to IDLE (00)",
+  "worst_order": [
+    "state[0] falls",
+    "state[1] falls"
+  ]
+}
