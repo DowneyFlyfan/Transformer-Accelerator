@@ -1,0 +1,29 @@
+{
+  "bank_modules": 4,
+  "bits_per_bank_row": 64,
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "evidence_sha256": {
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge/bridge_handoff.hex": "b27eab1dd09c9463c5746f140d5db4df40a78bb7d3d3e5367f23ade7821fe717",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_bank/adapter.log": "13bb27177eed383bd4885b557311ebb4aca33a121d2ac68c2ea0c12ccfc88801",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_bank/control.log": "24e60f845b1dd3cb5051805840ece67ac6f4a6a9fdf185c576a2d71121fe28aa",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_bank/control.sv": "32009d777a7dab7a832143abb1880bc5af3962777c454f64818fe23599f7689d",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_bank/simulate.sh": "257ed82be686861b69673b5fc24cd3cfc79c8a8c0258b998f969a14262a40d85",
+    "records/tri_oracle_decoder_writeback_bridge_result.json": "1633576eb1cafebf0a10172f45bdac1ea2e2f270ea386da0c6c72fe5e78d26ef",
+    "records/tri_oracle_partial_pad_memory_roles.json": "044617527bc30e02f112b57ec0c9c04eb8d88a1bdd57b3c247c8db9cc5cbc18b",
+    "records/tri_oracle_trained_layer10_bypass_precision.json": "dc9f653d95730799e6984425da812205dac395d22a5c4b490b040dacaa5bb90c",
+    "verilog/tri_oracle_residual_bank_adapter.sv": "efac4852e10ac3dede2ba24ffe4a2a3e8eafdf028220dbbb5ee89ea3e478b928",
+    "verilog/tri_oracle_residual_bank_tb.sv": "022e8121f81f92101cbb45dd67ed9a3e849c5b20235870d004a3db53692cc53a"
+  },
+  "exact_residual_values": 4096,
+  "hidden_features_per_token": 2048,
+  "ignored_address_bit_control_rejected": true,
+  "lane_padding_bits_per_row": 24,
+  "physical_capacity_bytes": 16384,
+  "rows_per_bank": 512,
+  "scope": "Four standalone compiled memory models represent the same geometry as two existing core inputs. The test covers exact data, address isolation, stalls and access without a lease. Concurrent bank ownership and chip wiring are unverified.",
+  "signed_bits_per_residual": 29,
+  "state": "trained_residual_bank_storage_verified_with_compiled_memory_models",
+  "stored_residual_bytes": 14848,
+  "trained_tokens": 2
+}
