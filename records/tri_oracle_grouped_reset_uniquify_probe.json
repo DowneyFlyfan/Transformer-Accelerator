@@ -1,0 +1,32 @@
+{
+  "diagnosis": {
+    "effective_dont_touch": false,
+    "effective_read_only": false,
+    "isolated_module": "tri_oracle_grouped_attention_command_cells_1",
+    "prior_insertion_error": "IMPOPT-3714",
+    "shared_module": "tri_oracle_grouped_attention_command_cells"
+  },
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_unprotected/apply/console.log": "9732f4362fa6e1cbb0d95f51fcc7755ca773b73d7b563ff5ed291bfc0a6369ab",
+    ".cache/placement_coordinate_reuse/grouped_reset_plan/grouped_0.tsv": "328fbe05f3c6f0a9b6fe36fcad8aaf97a8a76002f44dc2b5233141c6b6dfa2ac",
+    ".cache/placement_coordinate_reuse/grouped_reset_protection_probe/console.log": "28f618f2461cfc731f7eaed68cb62e1efb95f68948bf5c3dcbd339d992d7ae6f",
+    ".cache/placement_coordinate_reuse/grouped_reset_unique_probe/native/console.log": "60af0fc5edcc5737e4902729ee2141ee04d7beba1e9bdcd6d0f3fcd9563aa21e",
+    "syn/tri_oracle_probe_grouped_reset_uniquify.tcl": "32980ce97257c49d7cb1112fb1532be9aa8fbcda1ea1e2b869a47a5cebe61909"
+  },
+  "native": {
+    "minimum_host_available_bytes": 14255407104,
+    "peak_anonymous_bytes": 7904956416,
+    "seconds": 64.31371563801076
+  },
+  "placed_netlist_sha256": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+  "probe": {
+    "buffered_loads": 31,
+    "checkpoint_saved": false,
+    "instance": "grouped_0/TRI_GROUPED_RESET_0_0",
+    "master": "BUFFD4BWP12T40P140",
+    "original_reset_loads_per_group": 18484,
+    "peer_groups_with_unchanged_reset_nets_and_module": 4
+  },
+  "scope": "In-memory Innovus diagnostic. All five reset roots preserved by scoped uniquification. The selected buffer was connected to the planned pins, with every other original reset connection preserved. Full-tree placement and timing require separate verification.",
+  "state": "native_scoped_uniquification_and_one_reset_buffer_verified"
+}
