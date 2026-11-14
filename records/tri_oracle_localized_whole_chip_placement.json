@@ -1,0 +1,59 @@
+{
+  "state": "localized_whole_chip_geometric_placement_verified",
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "localized_def_sha256": "bfff37ad4e801ff7573563bd78f3ee5222ce13b487e0671bf5978c162d1732ea",
+  "geometric_control_def_sha256": "1d8dfb0a08143f17908d2c66d7c85b61f16d6347f2c1147938559adbf49e08d3",
+  "mapped_logic_cells": 3760655,
+  "seed_poses_preserved": 2173521,
+  "memory_halos": 631,
+  "overlapping_cell_rectangles": 0,
+  "grouped_command_cells": 1542870,
+  "grouped_cells_in_own_nearest_macro_region_by_variant": {
+    "geometric_control": 254541,
+    "localized": 1530607
+  },
+  "per_cluster": [
+    {
+      "cluster": 0,
+      "cells": 308574,
+      "average_distance_um": 815.248,
+      "cells_outside_local_region": 0,
+      "prior_average_distance_um": 2803.478
+    },
+    {
+      "cluster": 1,
+      "cells": 308574,
+      "average_distance_um": 881.692,
+      "cells_outside_local_region": 0,
+      "prior_average_distance_um": 2170.719
+    },
+    {
+      "cluster": 2,
+      "cells": 308574,
+      "average_distance_um": 745.277,
+      "cells_outside_local_region": 0,
+      "prior_average_distance_um": 2205.496
+    },
+    {
+      "cluster": 3,
+      "cells": 308574,
+      "average_distance_um": 783.423,
+      "cells_outside_local_region": 0,
+      "prior_average_distance_um": 2534.274
+    },
+    {
+      "cluster": 4,
+      "cells": 308574,
+      "average_distance_um": 837.713,
+      "cells_outside_local_region": 12263,
+      "prior_average_distance_um": 1916.022
+    }
+  ],
+  "evidence_sha256": {
+    "row_fallback_locality.json": "bc90068302c2b90f7815d26ea2201839c7b5823f141e3287b29aab21cc5aeddb",
+    "localized_row_fallback_locality.json": "5362d9148a7a93f5babf2eec9f9638cba8964a3c45c6963d57e1e01658c67952",
+    "localized_row_fallback_verified.json": "fb21ec8df8c8a64a3d2867c4264998b9a5bb24fc7ba9cad9839c433e0f62cc87",
+    "build_localized_rows.py": "cf6bd1cb348f0ad35e3f9fc9f3c6b42c9287441d055cff6aba5422242c17368f"
+  },
+  "scope": "Candidate-bound geometric placement and relative distance to cluster memories. Innovus legality, pin access, and timing require separate native checks."
+}
