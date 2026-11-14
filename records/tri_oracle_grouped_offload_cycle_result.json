@@ -1,0 +1,55 @@
+{
+  "elapsed_seconds": 696.6,
+  "evidence_sha256": {
+    "innovus_import": "f155466a803d3ecbafdda6feb606b05880e83ff25a89e155492ef1c3d5d1d65c",
+    "log": "57c5c2908b843451b330ba5eefa8f808a02fa0eac17f857e0fe3272d04d02bfc",
+    "receipt": "1f4f012b03968e48bbc4d0c035d815af9f66c41662075c683265bffab53e5231",
+    "schedule": "eb4849b1fdf224dd90e90a06102db39d5de7352edf0b6a671c785acef8c0c454"
+  },
+  "grouped_offload_vs_baseline_percent": {
+    "cycles": -13.020572,
+    "key_vectors": 25.0,
+    "value_vectors": 0.0
+  },
+  "grouped_offload_vs_initial_offload_percent": {
+    "cycles": -12.581947,
+    "key_vectors": -16.666667,
+    "value_vectors": -3.194103
+  },
+  "head_count": 32,
+  "layer": 10,
+  "netlist_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "plans": {
+    "baseline": {
+      "cycles": 7972,
+      "dual_lane_cycles": 1050,
+      "exact_output_words": 4096,
+      "key_vectors": 1500,
+      "query_vectors": 64,
+      "value_vectors": 1970
+    },
+    "grouped_offload": {
+      "cycles": 6934,
+      "dual_lane_cycles": 1264,
+      "exact_output_words": 4096,
+      "key_vectors": 1875,
+      "query_vectors": 64,
+      "value_vectors": 1970
+    },
+    "offloaded": {
+      "cycles": 7932,
+      "dual_lane_cycles": 1245,
+      "exact_output_words": 4096,
+      "key_vectors": 2250,
+      "query_vectors": 64,
+      "value_vectors": 2035
+    }
+  },
+  "positions": [
+    607,
+    608
+  ],
+  "question": 42000,
+  "scope": "Functional cycle and traffic comparison on the exact Innovus input. All 32 heads at two trained token positions in one layer. The paper reports an average latency improvement over its own workload.",
+  "state": "trained_offload_cycle_and_traffic_benchmark_verified"
+}
