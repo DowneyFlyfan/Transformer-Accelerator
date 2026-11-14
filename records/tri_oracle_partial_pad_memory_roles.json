@@ -1,0 +1,58 @@
+{
+  "aggregator_io_bytes": 10240,
+  "aggregator_io_bytes_per_cluster": 2048,
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "compiled_bytes": 414928,
+  "compiled_macros": 631,
+  "core_memory_bytes": 389120,
+  "core_memory_bytes_per_core": {
+    "inputs": 8192,
+    "masks": 1024,
+    "outputs": 2048,
+    "weights": 8192
+  },
+  "difference_from_binary_label_bytes": 208,
+  "difference_from_decimal_label_bytes": 9928,
+  "evidence_file": ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/pad_memory_roles.json",
+  "evidence_file_count": 72,
+  "local_receipt_sha256": "4cf597d0abcc206d56e1a8dbf7649a1027c7d96ce809244861db11249b5bc045",
+  "local_support_bytes_by_cluster": {
+    "0": {
+      "surviving_token_signs": 1536,
+      "token_merge_table": 160
+    },
+    "1": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 160
+    },
+    "2": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 160
+    },
+    "3": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 160
+    },
+    "4": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 80
+    }
+  },
+  "paper_label_kb": 405,
+  "scope": "Cold physical memory, compiler models and a reset-buffered Xcelium inventory. The paper does not specify the unit convention. Register storage and runtime memory bandwidth are outside this census.",
+  "state": "pad_reserved_chip_compiled_memory_roles_verified",
+  "support_bytes_by_role": {
+    "prediction_metadata": 6656,
+    "shared_weight_signs": 2048,
+    "surviving_token_signs": 6144,
+    "token_merge_table": 720
+  },
+  "support_macro_count_by_role": {
+    "prediction_metadata": 6,
+    "shared_weight_signs": 4,
+    "surviving_token_signs": 16,
+    "token_merge_table": 5
+  },
+  "support_memory_bytes": 15568,
+  "timing_views_checked": 18
+}
