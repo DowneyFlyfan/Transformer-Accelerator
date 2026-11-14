@@ -1,0 +1,39 @@
+{
+  "compiled_input_banks_per_core": 2,
+  "concurrent_matrix_commands_without_stalls": 16,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/bank_overlap/capacity.log": "6a2dd1ec6d44cb73a0dd10a826555fb3547c2a6dab0fba5a43ed352ea8d7c3ea",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/bank_overlap/green.log": "01342f206995f22855304e4853ab8b37962a88346ca3e1e2fbb9f6eadec5f101",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/bank_overlap/red.log": "edac5cfbfeb529d6650a819de8aadc55b27243ef6d26e88da31cb6982d9d38e0",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/bank_overlap/residual_core.sv": "7883f2ba7fe0c734e4b04b2197e9d243ed7da774f05dbb009f833b48d15afefa",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/bank_overlap/shared_address.log": "f67911317955e7cfc7f0e307a71865e7a2d9ba16c028a5a5f25504cbf80da378",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/bank_overlap/simulate.sh": "77bc3124d440fa08435d212715575a51d5bb2a1cad257e192535ab4c59624a63",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/bank_overlap/wide_loader.log": "276ecde3423fa86242508866157f6c5a5598f807dda6cc82bb31fc9db2aa8dd8",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge/bridge_handoff.hex": "b27eab1dd09c9463c5746f140d5db4df40a78bb7d3d3e5367f23ade7821fe717",
+    "syn/prepare_tri_oracle_residual_bank_core.py": "c9224be46bb61c2b13daa38d5d4dc9e1b05ab702a2881d9d56c0f8529404e195",
+    "verilog/tri_oracle_batched_projection356.sv": "06ded16e6a328a4a86a0a4161742fed467de7668c55c3ccc47dc7e3cf68cc5e4",
+    "verilog/tri_oracle_batched_tensor390.sv": "38c24567337e405455677bc62bd8139f78666f8c0223c36d4ac9cef1c3d448ef",
+    "verilog/tri_oracle_sram_memory_compute.sv": "435bfdf1db3758ce1f927836307721a27133402cb26f529c6a63c8a6df659f39",
+    "verilog/tri_oracle_sram_residual_overlap_tb.sv": "cb43bb74543fba73237e30e606683e309c3bd5f711522f34f1418319b2a4d381"
+  },
+  "exact_matrix_values_checked": 544,
+  "native_feed_forward_tile_address_bound": {
+    "max_address": 511,
+    "max_strip": 31,
+    "max_tokens": 16,
+    "stride": 32
+  },
+  "original_core_rejected_by_reservation_test": {
+    "conflicting_native_load_address": 1023,
+    "exit": 2
+  },
+  "original_full_bank_capacity_regression_commands": 1024,
+  "scope": "Source simulation uses one complete weight-attention core and its compiled memories. The upper bank stores 64 bits of each trained residual fixture row. Native upper-bank compute works after release and reload. Four upper banks on four cores are needed for the full 232-bit residual strip. The twenty-core integration, native softmax coexistence, generated residual producer and new mapped physical results are pending.",
+  "shared_address_fault_detected": {
+    "exit": 2,
+    "first_mismatch_row": 511
+  },
+  "simulator": "Xcelium 25.03-s001",
+  "state": "one_core_compiled_input_bank_overlap_verified",
+  "trained_residual_slice_rows_checked": 512
+}
