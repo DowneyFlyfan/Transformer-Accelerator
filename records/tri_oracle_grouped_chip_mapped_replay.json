@@ -1,0 +1,62 @@
+{
+  "compiled_memory_instances": 631,
+  "elapsed_seconds": 201.19,
+  "error_cases": 4,
+  "evidence_sha256": {
+    "mapped_replay": "2a2ba9b78376db03a117a074fd2d08e118a10b08b0c2bfe9c072b74431f16694",
+    "mapping": "517206e34728ea00e270419add03280ec741f93e243d554a9c2232e1954cff96",
+    "native_xcelium": "b5c073c1ecd7fa2a5d5cecfb47624e3a0043d171fbf3b897175e20d51825f266",
+    "source_replay": "da21991cad2f4a8c6d4c726fde137aa83547c5b9c57a86d7b22e7abb4c974073"
+  },
+  "exact_output_words": 832,
+  "mapped_chip_sha256": "16d9021b44c0b9cf4441fe4dd7430c7c9cdd00bdffef9fd873813bc2f714643b",
+  "partitions": {
+    "command": {
+      "cells": 7794,
+      "logic_area_um2": "8248.968",
+      "netlist_sha256": "f637ce1418c0a95cdc7ff63ac3d54b9a8336d46a542d1109d28273cc02ca097a",
+      "partition_setup_slack_ps": 502,
+      "top": "tri_oracle_grouped_attention_command"
+    },
+    "dispatcher": {
+      "cells": 1258,
+      "logic_area_um2": "3434.424",
+      "netlist_sha256": "46cad6f402376d27b8474747dbbeabc67354eefdef8477009894511197065ead",
+      "partition_setup_slack_ps": 992,
+      "top": "tri_oracle_chip_dispatch"
+    },
+    "key_loader": {
+      "cells": 29405,
+      "logic_area_um2": "65065.896",
+      "netlist_sha256": "b3b024cc7be821b110cb1077d886c50a63c113cd742efe146545c55b13a2bc5d",
+      "partition_setup_slack_ps": 683,
+      "top": "resident_key_controller"
+    },
+    "memory_burst": {
+      "cells": 968,
+      "logic_area_um2": "945.840",
+      "netlist_sha256": "5bf59ddead74fec87ae2e5a9b8adc61e179b7c533e899b09b3c49e6ed1aad53f",
+      "partition_setup_slack_ps": 708,
+      "top": "resident_key_burst"
+    },
+    "value_accumulator": {
+      "cells": 23176,
+      "logic_area_um2": "33643.680",
+      "netlist_sha256": "e30896eddfcc8f4b2234fab2da4bf21118545b7f7df6645ec4aea8f91e1da4d1",
+      "partition_setup_slack_ps": 50,
+      "top": "value_accumulate"
+    },
+    "value_multicast": {
+      "cells": 1202,
+      "logic_area_um2": "3047.688",
+      "netlist_sha256": "97d219e3601722a2d76dc2f529be591544172dafff15688aaaf07668ac3b6f18",
+      "partition_setup_slack_ps": 841,
+      "top": "prefill_value_pair"
+    }
+  },
+  "same_simulated_cycles": true,
+  "scope": "The grouped command, dispatcher, key loader, read burst, value multicast and value accumulator are mapped to Taiwan Semiconductor Manufacturing Company 28 nm cells and linked with the previously mapped probability controller and compute cluster. Causal sizes are supplied by the testbench. Setup slack is from isolated synthesis reports at 1.72414 ns.",
+  "source_chip_sha256": "f7087bf3640a55ec988907bdf0a99f070e4fc62e1508688dd22db5428d8dbea7",
+  "state": "all_grouped_command_partitions_replayed_after_mapping",
+  "valid_commands": 5
+}
