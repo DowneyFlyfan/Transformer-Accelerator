@@ -1,0 +1,57 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "clear_slots_after_ideal_payload": -65,
+  "components_intersecting_full_perimeter_strip": {
+    "FIXED": 85,
+    "PLACED": 494294
+  },
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.def": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+    "records/tri_oracle_grouped_active_boundary.json": "4ea079a613d72f8bc6969efa1da9fc3a1869e56b69f11c5efd5eb157b6f7d32f",
+    "syn/audit_tri_oracle_pad_ring_clearance.py": "ca0db9195f243df30909f91579d1b20085b59d25bdcb95ee0d72ce4dd63d3416"
+  },
+  "full_perimeter_component_clearance_micrometers": "110",
+  "ideal_two_bit_payload_pads": 489,
+  "no_macro_relocation_slots_by_edge": {
+    "bottom": {
+      "clear_of_fixed": 25,
+      "conflicting_fixed_macros": 75,
+      "fixed_blocked": 144,
+      "sliding_slots_clear_of_fixed": 27,
+      "slots": 169
+    },
+    "left": {
+      "clear_of_fixed": 61,
+      "conflicting_fixed_macros": 10,
+      "fixed_blocked": 108,
+      "sliding_slots_clear_of_fixed": 61,
+      "slots": 169
+    },
+    "right": {
+      "clear_of_fixed": 169,
+      "conflicting_fixed_macros": 0,
+      "fixed_blocked": 0,
+      "sliding_slots_clear_of_fixed": 169,
+      "slots": 169
+    },
+    "top": {
+      "clear_of_fixed": 169,
+      "conflicting_fixed_macros": 0,
+      "fixed_blocked": 0,
+      "sliding_slots_clear_of_fixed": 169,
+      "slots": 169
+    }
+  },
+  "no_macro_relocation_slots_clear_of_fixed": 424,
+  "optimistic_sliding_slots_after_ideal_payload": -63,
+  "optimistic_sliding_slots_clear_of_fixed": 426,
+  "scope": "Regular slots and optimally slid 20-micrometer-wide, 110-micrometer-deep pad bodies after corner cells. A pad slot can still require local standard-cell relocation. The comparison excludes macro halos, power and ground allocation, package wiring and pad spacing rules.",
+  "state": "placed_pad_ring_clearance_screened"
+}
