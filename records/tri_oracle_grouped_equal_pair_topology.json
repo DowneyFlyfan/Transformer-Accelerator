@@ -1,0 +1,41 @@
+{
+  "candidate_sha256": "df70c3addcb639bcc97c53d23641c624d4647ffc95db8f573941d7f2bed6919f",
+  "clusters": 5,
+  "compiled_capacity_bytes_from_master_geometry": 414928,
+  "compiled_capacity_minus_paper_binary_label_bytes": 208,
+  "compiled_memories_by_master": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 369,
+    "TS5N28HPCPSVTA512X64M4F": 41,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "compiled_memory_instances": 631,
+  "evidence_sha256": {
+    "Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "audit_equal_pair_chip.py": "e98707d303f2dc41652520cf967b1e411e358446c73aa6fc6f81945d6b06978b",
+    "audit_token_position_fanout.py": "628a3f2eaa248149c7479732b4d977e0f0d2b824fe45d37a800b2e891a600cbb",
+    "paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "receipt.json": "504a6f989a15f1ca523b670f7869cd5e4e4425650847e441f2e6906580bf872b",
+    "xrun.log": "83b96abac8330e50affb0c384b0ee650e34c1ff28cc2e1b0a5435fb4c710c674"
+  },
+  "external_clock_input": true,
+  "merge_table_query_banks": 5,
+  "nominal_operations_per_second_at_paper_clock": 5939200000000,
+  "paper_compiled_memory_label_kib": 405,
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "processing_cores": 20,
+  "processing_element_shape": [
+    32,
+    8
+  ],
+  "read_lane_width_bits": [
+    512,
+    512
+  ],
+  "rounded_compiled_capacity_kib": 405,
+  "scope": "Static mapped topology and all native compiled memory paths are independently checked. Capacity is from mapped macro geometry. Whole-chip timing, routing, and measured workload performance remain open.",
+  "signed_operand_bits": 8,
+  "state": "corrected_causal_chip_compute_topology_and_memory_paths_verified"
+}
