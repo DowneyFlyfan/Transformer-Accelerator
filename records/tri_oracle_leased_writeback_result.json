@@ -1,0 +1,38 @@
+{
+  "borrowed_input_bank_owners": 2,
+  "completed_source_packets": 26,
+  "evidence_sha256": {
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/leased_writeback/bad_token.log": "9b62fa3c1ed4abe17c77c332916f0b109fe87e6228021c82db91f564577b530f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/leased_writeback/early_release.log": "0bf11955ccc26fd44d5b876b049bad41759d29059be6eefc12f205b89fdf546a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/leased_writeback/normal.log": "763fa19f4a88672fad0df505d8c11ed0fef15a48a258878bbf0221a9f45cd228",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/leased_writeback/simulate.sh": "0e5636fad4e9bbc16c1fbe7bff35039fc970177203a9dceb49d792c19bab5b10",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge/bridge_handoff.hex": "b27eab1dd09c9463c5746f140d5db4df40a78bb7d3d3e5367f23ade7821fe717",
+    "verilog/tri_oracle_decoder_residual_writeback.sv": "3a7c2c664133c66d0e9e577618525ca5851d803aaef3b3c509abec7d23b9c384",
+    "verilog/tri_oracle_decoder_writeback_bridge.sv": "543d6975a658dc37571d7ab9256b0668bc129e4fb0b3577e6de92c7812da270b",
+    "verilog/tri_oracle_input_bank_lease.sv": "4e26775d918e6a8eaa448179baf1249f47d9692df426411d5cbb441071118d5e",
+    "verilog/tri_oracle_leased_writeback_tb.sv": "03e13cb02fb7b74939c666561c7b2d6eb73423cdc7832af54b11016f327026a6",
+    "verilog/tri_oracle_residual_bank_adapter.sv": "efac4852e10ac3dede2ba24ffe4a2a3e8eafdf028220dbbb5ee89ea3e478b928",
+    "verilog/tri_oracle_wac_imem_owner.sv": "4099968eb5c3a4bbf4a5046647d743c81c442d82aa0fd48c76483ed9279311b3"
+  },
+  "exact_writeback_values": 4096,
+  "held_output_cycles": 1024,
+  "matrix_acceptance_reenabled_after_independent_reload": true,
+  "negative_controls": {
+    "drop_read_token_address_bit": {
+      "exit": 2,
+      "first_mismatch_row": 256
+    },
+    "unguarded_lease_release": {
+      "exit": 2,
+      "first_mismatch_row": 0
+    }
+  },
+  "reference_candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "scope": "The test composes two input-bank owners and multiplexers, four compiled SRAM models, and the residual adapter and write-back bridge at RTL. A trained fixture supplies the arithmetic operands. It proves atomic acquisition in the presence of outstanding compute and a competing native request, exact readback during stalls and activation reload gating. The placed candidate provides the reference SRAM geometry. It does not include this testbench composition, its fixture loader, or a schedule that sustains all twenty cores.",
+  "simulator": "Xcelium 25.03-s001",
+  "state": "trained_residual_writeback_verified_with_dual_bank_lease",
+  "static_memory_macros": 4,
+  "static_memory_reads": 512,
+  "trained_tokens": 2
+}
