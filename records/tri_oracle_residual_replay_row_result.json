@@ -1,0 +1,24 @@
+{
+  "bypass_bits": 232,
+  "edge_values": 514,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/row.sh": "622288a2a938bab99cd11c3997955294ac20aaeb1594d48994a6a06836147069",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/row_green.log": "afe0eeecbab21fa2878af04d23ce695a73bdf706eea05e9d83a3ca22c81ed151",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/row_red.log": "36890663c8118189e459439775f094f6d06e04779857e7ffbd3b89ddd39ec3ad",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/vectors.hex": "b7bcc3b224165703b8d3c6fb6d4790eb178d6426bcd06e913534b299d913990c",
+    "verilog/tri_oracle_decoder_residual_writeback.sv": "3a7c2c664133c66d0e9e577618525ca5851d803aaef3b3c509abec7d23b9c384",
+    "verilog/tri_oracle_residual_replay_row.sv": "2ae32abd15d943b68f48a5126ccf3276c5233d549c1111b78bf0a2a0ffc5da2e",
+    "verilog/tri_oracle_residual_replay_row_tb.sv": "589023605e55bd189c8d7fa3cbecf458383a623c3cf3bee180994cbd89176c3e"
+  },
+  "missing_corrections_control": {
+    "exit": 2,
+    "first_mismatch_row": 513
+  },
+  "reserved_bits": 8,
+  "rounding_correction_bits": 16,
+  "row_bits": 256,
+  "scope": "The row codec reproduces the first-pass normalization values from the bank-format bypass and two-bit corrections. Trained and edge vectors cover both halfway cases and saturation. The normalization controller and memory adapter still need to carry these bits through actual compiled memory.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "normalization_replay_rounding_verified_with_existing_bank_row_width",
+  "trained_values": 4096
+}
