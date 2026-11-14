@@ -1,0 +1,29 @@
+{
+  "directed_arithmetic_cases": 128,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/residual_add_test/add_mutated.log": "3e9e2432d0896e0ce1a4dfe6fac6b7df02e27ed5c5e4c841782d031edc1b9dbe",
+    ".cache/placement_coordinate_reuse/residual_add_test/normalization.log": "5b2e5a5b1d86a837a6b7e7bc09a1604c759e504fded656cbbc9638efd750db80",
+    ".cache/placement_coordinate_reuse/residual_add_test/normalization_mutated.log": "3df86216e52085d32ddd369b1defebd7215ba1283d3b68cf3ca5a55a3fe626c8",
+    "records/tri_oracle_layer10_residual_normalization.json": "6cc76e7b119278e9206e2727fb4da4b0e57c278d65da1b977604a95e6a98462e",
+    "syn/test_tri_oracle_residual_add.py": "2bcbe0460858c9278d454415baefaa296c05686e99b4fed5d2491aa994c3b27f",
+    "verilog/tri_oracle_residual_add.sv": "31d99c420744473ac7ca34b460af9a5d694903be2ca3c3a702a2adb69f60f60e",
+    "verilog/tri_oracle_residual_add_tb.sv": "332c9cd0a85a87d87d452bd79be8881ba36bf985e32aea25230008b6326bdc99"
+  },
+  "exact_normalization_packets": 512,
+  "exact_residual_codes": 4096,
+  "input_residual_fraction_bits": 25,
+  "input_residual_width_bits": 27,
+  "layer": 10,
+  "negative_controls_rejected": [
+    "zero_adder",
+    "flipped_normalization_expectation_bit"
+  ],
+  "positions": [
+    607,
+    608
+  ],
+  "projection_source": "archived trained integer fixture",
+  "result_fraction_bits": 13,
+  "scope": "The residual is quantized to signed fixed point at the fixture boundary. The adder drives both passes of the existing normalization in Xcelium. Physical and mapped integration of the new adder are separate work.",
+  "state": "fixed_point_residual_adder_and_normalization_replayed_in_xcelium"
+}
