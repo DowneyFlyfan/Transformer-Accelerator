@@ -1,0 +1,41 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "checkpoint_layer": 0,
+  "elapsed_seconds": 4655.03,
+  "evidence_sha256": {
+    "independent_traffic_receipt": "05549d1ffaee443fe2470fed58dc165794187bba7f3b8ac5929b889a4c22f9b7",
+    "native_replay_receipt": "99cc7deec8c9b3f4308f6aed27e31de193b36934677097ffcd50534a2034b019",
+    "xcelium_log": "a864a52edb79306320699b5b191f7a59d1efcf34608854b0a2638601a3571318"
+  },
+  "milestones": 103,
+  "paper_reported_external_access_reduction_percent": 57,
+  "scope": "One trained layer-zero 16-token fixture with packed weights and a same-batch dense payload denominator. The paper's 57 percent workload-level external-access reduction requires a matching workload measurement.",
+  "state": "concurrent_mapped_feedforward_replay_and_payload_verified",
+  "traffic": {
+    "cycles": 3708137,
+    "dense_weight_bytes": 34603008,
+    "exact_outputs": 32768,
+    "output_packets": 208,
+    "sign_bytes": 585728,
+    "skipped_token_channel_pairs": 5231,
+    "tokens": 16,
+    "weight_and_sign_bytes": 35188736,
+    "weight_and_sign_overhead_percent": "1.692708333333333333333333300",
+    "weight_beats_by_lane": {
+      "0": {
+        "down": 91520,
+        "gate": 90624,
+        "up": 90624
+      },
+      "1": {
+        "down": 88704,
+        "gate": 89600,
+        "up": 89600
+      }
+    },
+    "weight_bytes": 34603008,
+    "weight_payload_reduction_percent": "0",
+    "wide_weight_bursts": 17408
+  },
+  "xcelium_exit_status": 0
+}
