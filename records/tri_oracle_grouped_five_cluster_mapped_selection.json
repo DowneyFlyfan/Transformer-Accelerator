@@ -1,0 +1,33 @@
+{
+  "causal_table_queries": 14,
+  "clusters_tested": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "compiled_memory_instances": 631,
+  "concurrent_clusters": 1,
+  "cycle_exact_commands": 11,
+  "elapsed_seconds": 481.4,
+  "evidence_sha256": {
+    "mapped_chip": "975a76802c3fcdd4cea0d5b45f1d9acf5680ef89e2e21b486c816984e909e6da",
+    "mapped_command_partitions": "91207558fb46a1d9b53f989b541a1dad63b0b2bb5f91cb8f9574c5b3b654b839",
+    "mapped_replay_receipt": "192cf16c1f50486f8d3fdba7728ff00fa317f17abc36e2a5c4e40cb87ae7eb7f",
+    "mapping_receipt": "195724c064107ff4345239a2287d4b0d243378720e6a61c1de62bd8ac23b2d84",
+    "source_replay_receipt": "d96e61d2a35e32bf18dede80af82c83ca4d9ea9ffaac8ac4579c7bccb1dde059",
+    "xcelium_log": "eb16bf3c629bc85b2a5e137316ff160719b2dd85e8ebf9339e5ac3eaa3a796d7"
+  },
+  "genus_clock_period_ns": 1.72414,
+  "grouped_exact_words": 2240,
+  "legacy_exact_words": 640,
+  "partition_setup_slack_ps": {
+    "command": 508,
+    "token_sizes": 438
+  },
+  "rejected_commands": 6,
+  "scope": "TSMC 28 nm replay of the selectable command and cached causal sizes after Genus mapping. Each command owns one cluster. Genus timing is for the command and cache separately.",
+  "state": "mapped_grouped_command_selects_all_five_clusters",
+  "xcelium_exit_status": 0
+}
