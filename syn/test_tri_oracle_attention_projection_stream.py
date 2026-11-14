@@ -12,17 +12,24 @@ from tri_oracle_process_guard import terminate_process_group
 
 
 MODULE = "tri_oracle_attention_projection_stream"
-TOP = f"{MODULE}_tb"
+STORE = "tri_oracle_projection_activation_store"
+SRAM = (ROOT / ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a"
+        / "VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v")
 
 
-def run(source, log, cell_model, mutate):
+def run(source, log, cell_model, mutate, storage=False):
     assert Path("/.dockerenv").is_file()
     check_memory(8 * GIB)
     vectors, pins = trained_vectors()
     assert len(vectors) == 64 * 64
-    bench = ROOT / "verilog" / f"{TOP}.sv"
+    top = f"{STORE if storage else MODULE}_tb"
+    bench = ROOT / "verilog" / f"{top}.sv"
     scaler = ROOT / "verilog/tri_oracle_attention_projection_scale.sv"
     dependencies = [cell_model] if cell_model else [scaler]
+    if storage:
+        dependencies.append(SRAM)
+        if cell_model is None:
+            dependencies.append(ROOT / "verilog" / f"{MODULE}.sv")
     pins.update({path: sha(path) for path in (source, bench, *dependencies, Path(__file__).resolve())})
     operands, outputs = [], []
     for start in range(0, len(vectors), 64):
@@ -42,8 +49,10 @@ def run(source, log, cell_model, mutate):
         output_file.write_text("\n".join(outputs) + "\n")
         native_log = directory / "xrun.log"
         command = ["/usr/bin/prlimit", "--as=4294967296", "--", "/opt/cadence/bin/xrun", "-64bit",
-                   "-sv", "-top", TOP, "-l", str(native_log), "-history_file", str(directory / "xrun.history")]
-        if cell_model:
+                   "-sv", "-top", top, "-l", str(native_log), "-history_file", str(directory / "xrun.history")]
+        if storage:
+            command.append("+define+UNIT_DELAY")
+        if storage or cell_model:
             command.extend(["-nospecify", "-notimingchecks"])
         command.extend([*map(str, (*dependencies, source, bench)),
                         f"+OPERANDS={input_file}", f"+EXPECTED={output_file}"])
@@ -57,24 +66,30 @@ def run(source, log, cell_model, mutate):
     assert all(sha(path) == digest for path, digest in pins.items())
     text = log.read_text()
     for line in text.splitlines():
-        if line.startswith("PROJECTION_STREAM_") or re.search(r"\*[EF],", line):
+        if line.startswith(("PROJECTION_STREAM_", "ACTIVATION_STORE_")) or re.search(r"\*[EF],", line):
             print(line, flush=True)
     if mutate:
-        assert status and "PROJECTION_STREAM_MISMATCH row=63 word=0 ready=1" in text
-        assert "PROJECTION_STREAM_PASS" not in text
+        mismatch = "ACTIVATION_STORE_HELD_RESPONSE first=496 beat=8" if storage else (
+            "PROJECTION_STREAM_MISMATCH row=63 word=0 ready=1")
+        assert status and mismatch in text
+        assert not re.search(r"(?m)^(?:PROJECTION_STREAM|ACTIVATION_STORE)_PASS", text)
         return 0
     if status == 0:
-        assert text.splitlines().count("PROJECTION_STREAM_PASS rows=64 words=512 stalls=768 resets=1") == 1
+        marker = (r"ACTIVATION_STORE_PASS rows=64 beats=516 errors=3 stalls=\d+"
+                  if storage else r"PROJECTION_STREAM_PASS rows=64 words=512 stalls=768 resets=1")
+        assert len(re.findall(rf"(?m)^{marker}$", text)) == 1
         assert not re.search(r"\*[EF],", text)
     return status
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source", type=Path, default=ROOT / "verilog" / f"{MODULE}.sv")
+    parser.add_argument("--source", type=Path)
     parser.add_argument("--cell-model", type=Path)
+    parser.add_argument("--storage", action="store_true")
     parser.add_argument("--mutate", action="store_true")
     parser.add_argument("log", type=Path)
     args = parser.parse_args()
-    raise SystemExit(run(args.source.resolve(), args.log.resolve(),
-                         args.cell_model.resolve() if args.cell_model else None, args.mutate))
+    source = args.source or ROOT / "verilog" / f"{STORE if args.storage else MODULE}.sv"
+    raise SystemExit(run(source.resolve(), args.log.resolve(),
+                         args.cell_model.resolve() if args.cell_model else None, args.mutate, args.storage))
