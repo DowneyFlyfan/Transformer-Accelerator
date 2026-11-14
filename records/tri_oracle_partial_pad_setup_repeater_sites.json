@@ -1,0 +1,86 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/cold_native/receipt.json": "1389667d798e7c0118827fdaa1e93ed0f5a722d32cc4b0ab5dc1478b0ab6e04d",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/native/pad_ring.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/native/pad_ring.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/native/pad_ring.db/libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/native/pad_ring.def": "ee68ea2cdc5ebb17123273ff97b4b8ef9f3c7ed57192f4c742832125e7c403fe",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/native/pad_ring.v": "c5b952b8888a8360e45cdd8dd04e911e8a9aae1c7399ddf196f64e9d54723cb8",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/native_probe/plan.tsv": "9751a873bcb21c8da2052bf8d0fa8b70e8f4994732aed0f2392137b401800072",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/result.json": "8490a0e740b0ab1dae473c1615b6ad4375395a60e44a00cbc2e95f8ba8892487",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/selective_repeaters.json": "be8c7e216cf9a201adb9824b65e30d048da7aa7ea018f70a08284c5d1cd451c4",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/selective_repeaters.py": "44ed2001336f4076c5c82062b073be1e5fa13e67eba65d48abd2da2afa439ed6",
+    "syn/plan_tri_oracle_grouped_reset.py": "2c97c2ca9aa4c6e1b6ecc5ce4e2a65565aef7f2f7e8a1786954b8edf1477d3cf"
+  },
+  "repeaters": {
+    "layer/layer/attention_pipeline/attention/g150859/ZN": {
+      "all_original_sinks_reconciled": 5,
+      "buffer_location_dbu": [
+        4812320,
+        3270400,
+        "FS"
+      ],
+      "buffer_master": "BUFFD1BWP12T40P140",
+      "buffer_to_farthest_sink_um": 1227.64,
+      "buffered_sinks": 5,
+      "driver_to_buffer_um": 1227.62,
+      "farthest_unbuffered_sink_um": 0.0,
+      "largest_segment_um": 1227.64,
+      "original_box_span_um": 2461.66,
+      "original_farthest_sink_um": 2455.26,
+      "pin_load_fraction": {
+        "ffg1p05vm40c": {
+          "driver": 0.0160729511817981,
+          "repeater": 0.03516557521258919
+        },
+        "ssg0p9v125c": {
+          "driver": 0.0217138316480537,
+          "repeater": 0.03982463497809317
+        },
+        "tt1v25c": {
+          "driver": 0.01956542783932025,
+          "repeater": 0.03811846043813409
+        }
+      },
+      "retained_sinks": 0,
+      "splits_screened": 5,
+      "sum_box_spans_um": 2461.66
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/g10821/ZN": {
+      "all_original_sinks_reconciled": 15,
+      "buffer_location_dbu": [
+        4339400,
+        3971200,
+        "FS"
+      ],
+      "buffer_master": "BUFFD1BWP12T40P140",
+      "buffer_to_farthest_sink_um": 1192.6,
+      "buffered_sinks": 2,
+      "driver_to_buffer_um": 1192.54,
+      "farthest_unbuffered_sink_um": 865.4,
+      "largest_segment_um": 1192.6,
+      "original_box_span_um": 2714.48,
+      "original_farthest_sink_um": 2385.14,
+      "pin_load_fraction": {
+        "ffg1p05vm40c": {
+          "driver": 0.12137284103837005,
+          "repeater": 0.015744550874792297
+        },
+        "ssg0p9v125c": {
+          "driver": 0.1603042853857173,
+          "repeater": 0.017630320821975257
+        },
+        "tt1v25c": {
+          "driver": 0.1473594405079229,
+          "repeater": 0.016932277290667798
+        }
+      },
+      "retained_sinks": 13,
+      "splits_screened": 15,
+      "sum_box_spans_um": 2719.28
+    }
+  },
+  "scope": "Prospective noninverting repeaters selected from farthest-sink prefixes, favoring unchanged or reduced aggregate bounding-box span. Pin-only loads and available row sites were screened. Propagated delay, routed wire loading and clock timing require native measurement.",
+  "state": "two_setup_net_repeaters_sized_at_vacant_sites"
+}
