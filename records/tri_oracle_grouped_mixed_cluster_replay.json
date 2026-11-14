@@ -1,0 +1,23 @@
+{
+  "causal_table_queries": 9,
+  "compiled_memory_instances": 631,
+  "concurrent_clusters": 5,
+  "concurrent_engine_cycles": 61,
+  "dual_lane_cycles": 744,
+  "evidence_sha256": {
+    "gpu_reference": "c29787fe28220048dd023d9dd7fe1aacf57566ee4c6db21f0d32118e57c63fa1",
+    "linked_chip": "656b33114ccd31bcd913c03a87327014c294f0b13d93c63b1a601f97d2d29861",
+    "replay_receipt": "c4af54848004f8d45ea9b95bbb09d3da4ab1bf9f3ccc8aa50260efd2b53d2242",
+    "testbench": "d4b6a6998be91e3011ddcafb17ad0a67436141702161649b871cf171cb9adfd1"
+  },
+  "grouped_exact_words": 704,
+  "legacy_exact_words": 640,
+  "scope": "Mixed retrieval and streaming fixture with distinct query vectors on five mapped clusters. Overlap counts cycles when two or more cluster key controllers are executing score strips. Command acceptance and load activity are counted separately.",
+  "simultaneous_command_accept_cycles": 0,
+  "simultaneous_load_cycles": 21,
+  "state": "mixed_attention_replayed_on_five_mapped_clusters",
+  "xcelium": {
+    "log_sha256": "da5e3eeaa17fb683ed7885c221376f84ff4bfa4c691f85ac3d2fe1c2235b4707",
+    "native_exit_status": 0
+  }
+}
