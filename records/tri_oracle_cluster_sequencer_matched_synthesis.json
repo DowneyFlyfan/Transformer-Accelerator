@@ -1,0 +1,39 @@
+{
+  "clock_period_ns": 1.72414,
+  "library_corner": "TSMC 28 nm slow, 0.9 V, 125 degrees Celsius",
+  "local_evidence_sha256": {
+    "baseline_area": "2533693b8263a1b7fd5748c2e30ceba1529136a64eb4489171808ac854a301a2",
+    "baseline_netlist": "6aefb365ec0c8fb66f981007de9b2ad234431e0d3739cf57e3e6402f9ffe0b77",
+    "baseline_rtl": "7717ba36cb34f2a0aa3f323f8cf7b1f74ce776d1f9deed523da37dc27485d263",
+    "baseline_run": "9fe8da37478eaa8e776e1f28cfd78269e198e2696d4f0285d14d6af3786db970",
+    "baseline_timing": "13779aaec3107a35f9a278b518d3a02bfee3214db30f45846454f1a33a2027af",
+    "registered_flush_area": "7d2c9cefaa73f71c8db925c719663127131e24f10c1f9d0326d85b380a4eb5c4",
+    "registered_flush_netlist": "982fe04d16d33987ecff0c9da79532d8e332fde56b49a1374fc54fa075aa863a",
+    "registered_flush_rtl": "b70c129de591dde4c5dccb01a875c638b95a2e60dc4065d7ae605dc9015601b1",
+    "registered_flush_run": "f19376cda61702447992619bda2fba57a5e0cdda3f3975d6510e62292752c530",
+    "registered_flush_timing": "80e580f33403f1aedef5ca55be3994facb2adeb9d5561146296b9e14516c8499",
+    "shared_library": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "shared_recipe": "1750a60559b812a360c1db40b894812e4f5a525287419e07cb6dde7802b7bf12"
+  },
+  "registered_flush_delta": {
+    "mapped_cell_area_um2": -0.336,
+    "mapped_cells": -3,
+    "worst_reported_setup_slack_ps": -92
+  },
+  "results": {
+    "baseline": {
+      "mapped_cell_area_um2": 1540.224,
+      "mapped_cells": 956,
+      "worst_endpoint": "context_tokens_reg[4]/CP->SE",
+      "worst_reported_setup_slack_ps": 554
+    },
+    "registered_flush": {
+      "mapped_cell_area_um2": 1539.888,
+      "mapped_cells": 953,
+      "worst_endpoint": "context_tokens_reg[4]/CP->SE",
+      "worst_reported_setup_slack_ps": 462
+    }
+  },
+  "scope": "Matched Genus remaps of the cluster-aware sequencer. Zero wireload excludes reset-tree wire delay and whole-chip timing.",
+  "state": "cluster_sequencer_matched_synthesis_compared"
+}
