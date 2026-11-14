@@ -6,8 +6,33 @@ from tempfile import TemporaryDirectory
 from check_tri_oracle_paper300_gate import (
     CONCURRENT_IMPORT, LEGACY_QUALIFICATION, REPEATER_PLACEMENT, placement_checks, qualification_source,
 )
+from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
 
 class PaperPlacementGateTests(unittest.TestCase):
+    def test_placed_memory_matches_netlist_instance_and_master(self):
+        verilog = """module chip (clk);
+  tri_oracle_bank \\banks[0].unit  (.clk(clk));
+endmodule
+module tri_oracle_bank (clk);
+  TS5N28_EXAMPLE \\entries[0]  (.CLK(clk));
+endmodule
+"""
+        definition = """COMPONENTS 1 ;
+- banks[0].unit/entries[0] TS5N28_EXAMPLE + FIXED ( 0 0 ) N ;
+END COMPONENTS
+"""
+        with TemporaryDirectory(dir=".cache") as directory:
+            netlist = Path(directory) / "placed.v"
+            placement = Path(directory) / "placed.def"
+            netlist.write_text(verilog)
+            placement.write_text(definition)
+            _, macros = compiled_memory_inventory(netlist, placement, top="chip")
+            self.assertEqual(macros, {"banks[0].unit.entries[0]": "TS5N28_EXAMPLE"})
+
+            placement.write_text(definition.replace("entries[0]", "entries[1]"))
+            with self.assertRaisesRegex(ValueError, "netlist and placement"):
+                compiled_memory_inventory(netlist, placement, top="chip")
+
     def test_current_candidate_selected_while_receipt_is_pending(self):
         with TemporaryDirectory(dir=".cache") as directory:
             root = Path(directory).resolve()

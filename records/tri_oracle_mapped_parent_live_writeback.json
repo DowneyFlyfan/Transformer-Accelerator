@@ -1,0 +1,31 @@
+{
+  "chip_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "chip_output_packets": 26,
+  "elapsed_seconds": 2232.442752568051,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge_tail_checked/bridge_handoff.hex": "b27eab1dd09c9463c5746f140d5db4df40a78bb7d3d3e5367f23ade7821fe717",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge_tail_checked/native/progress.log": "fe768bc4cfa1d1ca12c5f83a8e34ba551c0a6260653b77fe122d7bfe2813888f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge_tail_checked/native/xrun.log": "f89fd2d17c9844c6f52f8a760cd8adec14aa79afc4805fa44af0822062029334",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge_tail_checked/prepared.json": "f2e00d5432861dbee9c2ad3167e8b9ef7bb46412998e00bb22cbc67073abb0db",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge_tail_checked/receipt.json": "c1fd5fe7444431db08105a09ad39301cd66e2eed2768eb33b6c38f31f42d2942",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge_tail_checked/trained_writeback_tb.sv": "651644c634368a39c479a964bbf81148dcff0406525561ace949df0312a403f7",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/strip_bridge/mapped/netlist.v": "31a0171c4a762e717fdfaf6fa2cc39f27be5c995012ea532e4cff95ea03da202"
+  },
+  "final_tile": {
+    "count": 128,
+    "start": 1920
+  },
+  "minimum_host_available_bytes": 15244795904,
+  "native_exit_status": 0,
+  "output_values": 4096,
+  "peak_anonymous_bytes": 6211371008,
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "One Xcelium session connects the mapped feed-forward parent to the mapped write-back bridge. A trained fixture supplies the high-precision residual bypass and shifts. This test covers two token positions and has no timing annotation.",
+  "simulated_memory_macros": 631,
+  "state": "live_mapped_feedforward_and_mapped_writeback_verified",
+  "writeback_netlist_sha256": "31a0171c4a762e717fdfaf6fa2cc39f27be5c995012ea532e4cff95ea03da202",
+  "writeback_strips": 512
+}

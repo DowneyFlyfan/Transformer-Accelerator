@@ -13,7 +13,7 @@ CLUSTER = re.compile(r"tri_oracle_sram_compute_cluster_.*_verified_bank([0-4])")
 CORE = re.compile(r"tri_oracle_sram_strip_core448_.*_verified_bank([0-4])")
 MODULE = re.compile(rb"(?m)^[ \t]*module\s+([\w$]+)\s*\(")
 ENDMODULE = re.compile(rb"(?m)^[ \t]*endmodule\b")
-CHILD = re.compile(rb"(?m)^[ \t]*(tri_oracle_\w+)\s+(\\\S+|[\w$]+)\s*\(\s*\.")
+CHILD = re.compile(rb"(?m)^[ \t]*((?:tri_oracle_|TS[56]N28)\w+)\s+(\\\S+|[\w$]+)\s*\(\s*\.")
 CLUSTER_MERGER = "tri_oracle_aggregator_token_merge_unit_"
 MEMORY_COMPUTE = "tri_oracle_sram_memory_compute_verified_bank"
 PE_ARRAY = "tri_oracle_pe_array_verified_bank"
@@ -23,7 +23,7 @@ SHARED_HEAD = "tri_oracle_attention_head_predictor415_"
 SHARED_STRIP = "tri_oracle_packed_outlier_replay_"
 
 
-def hierarchy(netlist):
+def hierarchy(netlist, *, include_memory=False):
     """Retain child hierarchy and named connections between module definitions."""
     with netlist.open("rb") as stream, mmap.mmap(stream.fileno(), 0, access=mmap.ACCESS_READ) as source:
         definitions = list(MODULE.finditer(source))
@@ -40,7 +40,10 @@ def hierarchy(netlist):
             children = {}
             for match in CHILD.finditer(source, definition.end(), end.start()):
                 child, instance = (field.decode() for field in match.groups())
-                if child not in modules or instance in children:
+                is_compiled_memory = child.startswith(("TS5N28", "TS6N28"))
+                if is_compiled_memory and not include_memory:
+                    continue
+                if (child not in modules and not is_compiled_memory) or instance in children:
                     raise ValueError(f"Unresolved master or repeated instance in {master}: {child} {instance}")
                 children[instance] = child
             result[master] = children

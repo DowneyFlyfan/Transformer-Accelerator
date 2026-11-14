@@ -399,17 +399,21 @@ def main():
         if qualification_path == root / REPEATER_PLACEMENT:
             from verify_tri_oracle_repeater_placement_evidence import verify
             placed = verify()
+            clusters = placed["candidate_topology"]["clusters"]
+            memory = placed["candidate_compiled_memory"]
             facts.update(
                 candidate_sha256=placed["candidate_placement_netlist_sha256"],
                 evidence_stage="cold Innovus repeater placement",
                 candidate_cold_qualified=True,
+                original_full_models_verified=placed["original_full_models_verified"],
                 die_width_mm=placed["die_mm"][0],
                 die_height_mm=placed["die_mm"][1],
                 clock_period_ns=placed["core_clock_constraint_ns"],
+                clusters=len(clusters),
+                cores=sum(cluster["cores"] for cluster in clusters),
                 fixed_memory_macros=placed["fixed_memory_macros"],
                 unplaced_instances=placed["unplaced_instances"],
                 parent_mapped_netlist_sha256=placed["parent_mapped_netlist_sha256"],
-                parent_compiled_memory_bytes=placed["parent_compiled_memory_bytes"],
                 parent_exact_feedforward_values=placed["parent_exact_feedforward_values"],
                 parent_completed_slow_timing_paths=placed["parent_completed_slow_timing_paths"],
             )
