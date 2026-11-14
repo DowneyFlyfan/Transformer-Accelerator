@@ -1,0 +1,39 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/fixture/raw.hex": "2877f5908ada54d175aaeabb35afacff550ba840dc365683f09efeeb6f36e71c",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/receipt.json": "1a5a1189f633d716a708ccce6f8a4b417c9eda86b96518a5561b52b7b458017f",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_normalization/norm_expected.hex": "ca14a843326c11112b024fafc6444c1ff28497156266f05b542321d5d077b310",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/output.hex": "8624e8e6391497c3a574da10a67fd261ced8afe09ed74f6e7a26b65144672bfa",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/xrun.log": "478941fd6d46ab6b3a2a3bf4594cb76e9303a8592c7a7149cbee813c42f2a21a",
+    ".cache/placement_coordinate_reuse/residual_add_corner_check/canonical/netlist.v": "f777198005df877ab2a598a35dfb2bfc133026df443a444fc86e715813fa0a62",
+    ".cache/placement_coordinate_reuse/trained_mapped_residual_handoff/mutated_projection_xrun.log": "6ac9895f367dd9a0a3c1ff8b0979ead8ee8b9bd2292b2a3dd9c3f3d2248865a8",
+    ".cache/placement_coordinate_reuse/trained_mapped_residual_handoff/native_handoff.tsv": "c935a9bab385225f516f1f8de2cf8e3ba53254ce91c66db542b57c1fd4515b9a",
+    ".cache/placement_coordinate_reuse/trained_mapped_residual_handoff/receipt.json": "4526fc1f5eb324dc745e40353f658da2d5189573a7979ef3e458f67fd6000eb6",
+    ".cache/placement_coordinate_reuse/trained_mapped_residual_handoff/residual_dump_tb.sv": "979db919cd79724de024053417512fee262d5122ee1aaa74b0de5c1467149123",
+    ".cache/placement_coordinate_reuse/trained_mapped_residual_handoff/run.py": "7dfab566df0353310142ff48ffbf6e9bd62837e0bfacbcc9ad8767fbb32acae3",
+    ".cache/placement_coordinate_reuse/trained_mapped_residual_handoff/xrun.log": "6aa803025300ccb221a4474f16d89e59899050e5c05cd88e79e7b2994c354140",
+    "records/tri_oracle_grouped_active_graph.json": "4a8e9881c7e99f4cdc153f33e9bd6cb2cae531c8427f314e446b1d4f15342499",
+    "records/tri_oracle_grouped_reset_replay.json": "2a84df2143abb58646ff448a5b11de67a5dfb45b86cc12a0cfdcb0003cf47c15",
+    "records/tri_oracle_layer10_mapped_feedforward.json": "a9392632832c9d42dabb77af240a212a11d8e96acc12a28b36dbf8272369a4de",
+    "records/tri_oracle_layer10_mapped_projection_residual.json": "38b7432e10a5b4048b8eac9b3049eb93f8f61e39dce708a4687ab77c28ad45aa",
+    "records/tri_oracle_residual_add_corner_repair.json": "a0b70ca187018b0b2d3fd58dfda31a856ffc47e260981d201ff8ba43eda82672",
+    "verilog/tri_oracle_affine_quantizer.sv": "41181d013bca2c5802935a98154164c5893c170551d0853e787c5fd3b2698356",
+    "verilog/tri_oracle_residual_add_tb.sv": "332c9cd0a85a87d87d452bd79be8881ba36bf985e32aea25230008b6326bdc99",
+    "verilog/tri_oracle_rms_activation.sv": "38b33b02165bd45845597757c62042665d0582d64f1b4478966d0d0057c02494",
+    "verilog/tri_oracle_rmsnorm.sv": "750394cbed15e27691147b7284bd527369dbf281ffc72ab68a05304fbb786c45"
+  },
+  "exact_normalization_packets": 512,
+  "exact_raw_codes": 4096,
+  "flipped_native_projection_code_rejected_at_word": 0,
+  "layer": 10,
+  "mapped_residual_adder_sha256": "f777198005df877ab2a598a35dfb2bfc133026df443a444fc86e715813fa0a62",
+  "positions": [
+    607,
+    608
+  ],
+  "producer_netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "residual_vectors_sha256": "8d89c9219aee97c3f78856ef0e60e162cd0c8da1cddbe7ecd98a898e29726a08",
+  "scope": "Separate Xcelium replay of the mapped residual adder and register-transfer-level normalization. The native attention output supplied projection data and the native residual output matched the archived mapped feed-forward input bytes. The residual bypass still comes from the trained fixture.",
+  "state": "mapped_residual_handoff_matches_trained_feedforward_input",
+  "xcelium_exit_status": 0
+}
