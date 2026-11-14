@@ -1,0 +1,36 @@
+{
+  "attention_tile_scheduler": {
+    "score_ready_response_bit": 71,
+    "score_valid_request_bit": 393,
+    "streaming_decision_response_bit": 68
+  },
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/shared_prediction_roles.json": "b7f5f88397d2781c542ee13e7dbb32d51195bec4a85ec33081c36d66a0db3d52",
+    "records/tri_oracle_concurrent_predictor_interconnect.json": "d7ff01fab3df3dbadd6f0e704f6dabf99f080149fd82cf0a029938b543997170",
+    "records/tri_oracle_mapped_redundancy_and_timing_limit.json": "70c6b7deda488717b24a614f4ac61a2011a1314cb143fbcdc9499e2e974ecef1",
+    "syn/audit_tri_oracle_shared_prediction_roles.py": "ed237d0dae2f6bb982890fd09fd1e9fa54d537a548caad17262477392ea58349"
+  },
+  "feedforward_metadata_and_sign_replay": {
+    "metadata_capacity_bytes": 6656,
+    "metadata_macros": 6,
+    "response_bits_wired_to_masks_and_count": 109,
+    "shared_sign_key_capacity_bytes": 2048,
+    "shared_sign_key_macros": 4
+  },
+  "mapped_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "negative_controls_rejected": [
+    "crossed score valid",
+    "crossed streaming decision",
+    "crossed skip mask",
+    "wrong sign cache bank"
+  ],
+  "paper_figures": [
+    "31.6.2",
+    "31.6.4",
+    "31.6.5"
+  ],
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "placed_sha256": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+  "scope": "Mapped and placed pin-level agreement. Shared attention logic schedules tiles, and shared feed-forward logic replays metadata and signs. Classification and skip masks return from per-core prediction paths. No latency, traffic reduction or full-model accuracy is established by this check.",
+  "state": "shared_prediction_support_roles_verified_on_mapped_and_placed_candidate"
+}
