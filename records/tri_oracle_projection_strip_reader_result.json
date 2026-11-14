@@ -1,0 +1,27 @@
+{
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/output.hex": "8624e8e6391497c3a574da10a67fd261ced8afe09ed74f6e7a26b65144672bfa",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/vectors.hex": "b7bcc3b224165703b8d3c6fb6d4790eb178d6426bcd06e913534b299d913990c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/reader_positive.log": "060cffd5bf9f0e217588e7bde4855c876b0d366e9c7a1af0ee8c76376592828a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/reader_wrong_address.log": "4311ba9930d9489f03a601a546fb2a6441d9874a4cf611a7d24bf382b8f12fb0",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/strip_reader.sh": "1fa42caa2bce1c8baa3e023263280288e4118a090187653d610b4c16db53c9db",
+    "verilog/tri_oracle_projection_strip_reader.sv": "eb242b5fd2cbded05d84be5788c74aa4626bd3deb0fa2b6ec16c4b14cd5f3f54",
+    "verilog/tri_oracle_projection_strip_reader_tb.sv": "298d43141d5d4bdb08efb045c3ca7dad93fe4535b3bc02d2cac3b59fb9869825"
+  },
+  "exact_codes": 4096,
+  "exact_strips": 512,
+  "output_stall_cycles": 298,
+  "positions": [
+    607,
+    608
+  ],
+  "projection_packet_reads": 64,
+  "retained_payload_bits": 512,
+  "scope": "Captured mapped projection packets are supplied by a testbench memory peer. The reader requests one token at a time, stores one packet and streams its strips without changing stalled payloads. Integration with the chip memory request path and bank-backed normalization remains pending.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "projection_reader_verified_for_trained_two_token_packet_order",
+  "wrong_address_control": {
+    "exit": 2,
+    "first_bad_request": 1
+  }
+}
