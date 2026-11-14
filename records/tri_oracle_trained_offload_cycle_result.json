@@ -1,0 +1,41 @@
+{
+  "elapsed_seconds": 693.6,
+  "evidence_sha256": {
+    "log": "5387397cfaa2cf9215493e38af37be9b9e194164fbe26a7030ad96312d7890d5",
+    "receipt": "8a0498ecdc340c43a4f07a9ed07d6a057d918c192ed2adae7985fb1dac64756c",
+    "trained_pair_receipt": "8ffada3fe2dd718a727e71c93ffb51f8df856258b906fd2774f77f02eccb82d5"
+  },
+  "head_count": 32,
+  "layer": 10,
+  "netlist_sha256": "65cd9c0fc0eab98eab74ee9960c3e4c8a413708945cde9b00c72de0f96a53ae2",
+  "offloaded_change_percent": {
+    "cycles": -0.589046,
+    "key_vectors": 50.0,
+    "value_vectors": 3.299492
+  },
+  "plans": {
+    "baseline": {
+      "cycles": 7979,
+      "dual_lane_cycles": 1039,
+      "exact_output_words": 4096,
+      "key_vectors": 1500,
+      "query_vectors": 64,
+      "value_vectors": 1970
+    },
+    "offloaded": {
+      "cycles": 7932,
+      "dual_lane_cycles": 1245,
+      "exact_output_words": 4096,
+      "key_vectors": 2250,
+      "query_vectors": 64,
+      "value_vectors": 2035
+    }
+  },
+  "positions": [
+    607,
+    608
+  ],
+  "question": 42000,
+  "scope": "Cadence Xcelium functional-cycle measurement of a single trained layer at two adjacent token positions on the token-size-selector revision. Timing checks disabled. The paper reports an average across a different workload and implementation.",
+  "state": "trained_offload_cycle_and_traffic_benchmark_verified"
+}
