@@ -1,0 +1,36 @@
+{
+  "aggregate_logic_cell_area_um2_per_four_lane_controller": "234638.544",
+  "aggregate_logic_cell_count_per_four_lane_controller": 140097,
+  "evidence_sha256": {
+    "mapped_lane": "8c98441f0c37fd7f5d13cad7bbf79e75752b2e9a6f3efdccf3ab4856c352f168",
+    "mapped_lane_timing": "2a0613ed1d43a11bbdc53d302141fe9fbfdf07d16bd56b480194288ce80c0d4b",
+    "mapped_scheduler": "e9953bc87daa35b4c93ef44e8d63e28fbb50fdc4ff859619be2d1c65bc1aa21e",
+    "mapped_scheduler_timing": "edf6ecf3a87cf4c0504df43be34b511c759ca7094de964121857b91110da8e74",
+    "repeated_xcelium": "5204d94f9a0675a1327d6ba91c4bc35e7b6cd6bd1c9a52ce339c6424d893125d",
+    "replay_receipt": "627108455a3a3d938cbf2218532380f833ab80378652fa5df94169a28151a94c"
+  },
+  "fixture": {
+    "compiled_memory_instances": 8,
+    "consecutive_batches": 5,
+    "lane_masks": 15,
+    "mask_output_words": 2048,
+    "mask_probabilities": 9208,
+    "mixed_score_shifts": [
+      -1,
+      -2,
+      -6,
+      -3
+    ],
+    "repeated_key_bursts": 9,
+    "repeated_key_fetches": 512,
+    "repeated_output_words": 832,
+    "repeated_probabilities": 3965
+  },
+  "mapped_controller_sha256": "8168849ece96ada0d817f49409c4b6cb86e82dcf45617a2e51a1ebc5af3707cf",
+  "scope": "Genus mapped the scheduler and normalization lane separately, and the linked controller executed with a source cluster and eight compiled memory models. Timing reports cover the separate partitions. Whole-chip integration, interface timing, and the paper benchmark require further verification.",
+  "setup_slack_ps_at_1_72414_ns": {
+    "scheduler_abstracting_lanes": 1156,
+    "single_lane": 0
+  },
+  "state": "hierarchically_mapped_grouped_attention_replayed"
+}
