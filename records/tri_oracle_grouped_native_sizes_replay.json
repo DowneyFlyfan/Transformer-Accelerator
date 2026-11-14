@@ -1,0 +1,19 @@
+{
+  "compiled_merge_table_banks": 5,
+  "evidence_sha256": {
+    "adapter": "632c20202576e69e2729501eb53ef255040991561826a66225ab0f62b9724e5d",
+    "archived_attention_oracle": "32174d8e52f00cd7418d909b010720938fee917d66b36fceac5e19e497a407a2",
+    "archived_merge_map": "f4427d94ae4df8a72989b6f75048dca73fb078fb93365645f780893801d5fa1c",
+    "testbench": "96cab3f4c54c99cfc4701c7f98b2e4e70623609d16af67404c1568cc1296ed3d",
+    "xcelium": "d65eedf0fb249c0b16ffa57c3d7cdff2486c04f49db94a4be054941b8e832d33"
+  },
+  "exact_size_values": 1543,
+  "first_and_second_visible_keys": [
+    347,
+    348
+  ],
+  "native_causal_queries": 7,
+  "scope": "Register-transfer-level adapter linked to the existing token-size controller and five compiled merge table models. Covers leading text, dense rows, sparse prefix and suffix order, an incorrect visible count, and a backward causal query. Chip command integration is pending.",
+  "state": "causal_sizes_from_compiled_merge_tables_match_grouped_row_order",
+  "xcelium_exit_status": 0
+}
