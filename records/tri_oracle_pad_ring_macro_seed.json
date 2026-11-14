@@ -1,0 +1,42 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "continuous_area_budget": {
+    "area_available_to_movable_cells_mm2": 5.883546136,
+    "fixed_macro_halo_area_mm2": 5.540853864,
+    "interior_mm2": 11.4244,
+    "standard_cell_area_margin_mm2": -0.023197616
+  },
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.def": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+    ".cache/placement_coordinate_reuse/installed_pad_views/pad_ring_macro_moves_rows.tsv": "9ae68cf46efbb2e48474e643f5b3326431d13d9ffff8050ccd1ebb08603686cb",
+    "records/tri_oracle_grouped_active_boundary.json": "4ea079a613d72f8bc6969efa1da9fc3a1869e56b69f11c5efd5eb157b6f7d32f",
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "records/tri_oracle_pad_ring_clearance.json": "22ab2568b3450208ef06228e1c5aaf68c2470e8c26ea9e794646556180ca8f75",
+    "syn/plan_tri_oracle_pad_ring_macros.py": "ad0116c1fc449f1861b1065b850c717bfb09fca7a2e4116995ef216bc3a78e2e"
+  },
+  "existing_macros": 631,
+  "maximum_macro_manhattan_move_micrometers": 60.08,
+  "moved_macros": 180,
+  "moved_macros_by_master": {
+    "TS5N28HPCPSVTA16X80M2FW": 2,
+    "TS5N28HPCPSVTA24X128M2FW": 2,
+    "TS5N28HPCPSVTA32X128M2FW": 100,
+    "TS5N28HPCPSVTA512X64M4F": 16,
+    "TS6N28HPCPSVTA16X128M2F": 60
+  },
+  "original_halos_intersecting_perimeter": 85,
+  "potential_perimeter_slots": 676,
+  "reserved_pad_depth_micrometers": "110",
+  "scope": "The seed preserves each memory master and orientation and keeps all macro halos clear of the reserved perimeter. Row counts are geometric and exclude new pad control logic, native blockage accounting, congestion and timing. If the cell area exceeds the geometric bound, this seed cannot proceed to legalization with the existing cells.",
+  "site_capacity": {
+    "existing_standard_cell_area_mm2": 5.906743752,
+    "fits_existing_standard_cell_area": false,
+    "minimum_site_deficit": 157065,
+    "new_geometric_sites": 35002124,
+    "new_geometric_utilization_percent": 100.44872991136195,
+    "original_geometric_sites": 42438175,
+    "original_geometric_utilization_percent": 82.84802303586335
+  },
+  "state": "pad_ring_macro_seed_screened_for_chip_cell_capacity"
+}
