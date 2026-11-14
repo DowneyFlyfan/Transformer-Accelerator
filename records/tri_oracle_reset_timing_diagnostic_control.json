@@ -1,0 +1,49 @@
+{
+  "checks": {
+    "masked_recovery": {
+      "launch": "en",
+      "paths": 6,
+      "view": "setup_slow",
+      "worst_slack_ns": 1.638742
+    },
+    "masked_removal": {
+      "launch": "en",
+      "paths": 6,
+      "view": "hold_fast",
+      "worst_slack_ns": 0.041498
+    },
+    "recovery": {
+      "launch": "rst_n",
+      "paths": 6,
+      "view": "setup_slow",
+      "worst_slack_ns": 1.440042
+    },
+    "removal": {
+      "launch": "en",
+      "paths": 6,
+      "view": "hold_fast",
+      "worst_slack_ns": 0.041498
+    }
+  },
+  "clock_period_ns": 1.72414,
+  "fixture_sequential_reset_sinks": 6,
+  "local_evidence_sha256": {
+    "console.log": "cd3df44023fb7530544929ec83d905cc3c052ed6650f54a77b793b1ce392943f",
+    "diagnostic.tcl": "888e3339131818bf676a2732187def37fd2bed48375d3e704f1b4ce7b088a969",
+    "fixture_placement_receipt": "e339b27ab8dec346959374713c2f51bcc30b3a2931f816c67aa2fe11f39d3865",
+    "masked_recovery.rpt": "b7885195e98f3b075121b63e97aa1276c939fa7680cde531fc8f069c490d7b7a",
+    "masked_removal.rpt": "66ef01b41ef469c3834ecd4bbed3e0ce61565b2d130b6b1dfc2415f7bbad92b3",
+    "recovery.rpt": "38320259ffdf5af9f8810f874130492d9df460eb78f79775219b1d96facd8b52",
+    "removal.rpt": "71560b132046af57854abb6c3ebb510dfc92f3cafbfe8bbc31db1cb6f9006c14",
+    "reset_drv.rpt": "576a701ca6007d25b8602001a76833c483e9c1d8f6a1a50ab1fe4c410be31e10",
+    "whole_chip_exported_constraints": "b95619b75b617511f4e400f0bebd9960f57273387eab3d1c09db42aec661aa93"
+  },
+  "scope": "TSMC 28 nm placed reset fixture at the 580 MHz target. The external-reset exception hides the worst external recovery launch while the independent gate-enable path remains visible. Whole-chip reset timing is unmeasured.",
+  "slow_corner_driver_margins": {
+    "max_capacitance_pf": 0.047,
+    "max_transition_ns": 0.239
+  },
+  "state": "placed_reset_timing_diagnostic_control_verified",
+  "tool": "Cadence Innovus 25.10-p002_1",
+  "whole_chip_constraint": "set_false_path -from [get_ports {rst_n}]"
+}
