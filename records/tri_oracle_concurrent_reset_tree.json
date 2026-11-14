@@ -1,0 +1,77 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "evidence_sha256": {
+    "local_reset_tree_receipt": "01779a60a23f7e735dc1c272383427d1efa385e1465ede75934550a85e40dae6",
+    "native_import_record": "081abec945ff442511895a690d528308c577cfe97c7278a4b35e12821e3177c6"
+  },
+  "scope": "Connectivity and pin capacitance for the registered feed-forward reset tree on the imported 20-core chip. Wire capacitance, slew, reset recovery and removal, and timing closure remain unmeasured. The functional constraints set a false path from external reset.",
+  "state": "concurrent_import_reset_tree_pin_loads_measured",
+  "timing_views": {
+    "hold_fast": {
+      "drivers_exceeding_pin_limit": 0,
+      "minimum_margin": {
+        "driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+        "limit_pf": "0.0725175",
+        "load_pf": "0.02435574",
+        "margin_pf": "0.04816176"
+      },
+      "register_output_margin_pf": "0.101519817",
+      "root": {
+        "driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+        "limit_pf": "0.0725175",
+        "load_pf": "0.02435574",
+        "margin_pf": "0.04816176"
+      }
+    },
+    "setup_slow": {
+      "drivers_exceeding_pin_limit": 0,
+      "minimum_margin": {
+        "driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+        "limit_pf": "0.0552179",
+        "load_pf": "0.02388324",
+        "margin_pf": "0.03133466"
+      },
+      "register_output_margin_pf": "0.088905913",
+      "root": {
+        "driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+        "limit_pf": "0.0552179",
+        "load_pf": "0.02388324",
+        "margin_pf": "0.03133466"
+      }
+    },
+    "setup_typ": {
+      "drivers_exceeding_pin_limit": 0,
+      "minimum_margin": {
+        "driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+        "limit_pf": "0.0597256",
+        "load_pf": "0.02389332",
+        "margin_pf": "0.03583228"
+      },
+      "register_output_margin_pf": "0.093387867",
+      "root": {
+        "driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+        "limit_pf": "0.0597256",
+        "load_pf": "0.02389332",
+        "margin_pf": "0.03583228"
+      }
+    }
+  },
+  "topology": {
+    "buffer_depth": 6,
+    "buffers": 4407,
+    "root_buffer_masters": {
+      "BUFFD16BWP12T40P140": 6
+    },
+    "sinks": 105390,
+    "sinks_by_pin": {
+      "A1": 69,
+      "A2": 32,
+      "A3": 83,
+      "B1": 41,
+      "C": 20,
+      "CDN": 105094,
+      "I": 5,
+      "SDN": 46
+    }
+  }
+}
