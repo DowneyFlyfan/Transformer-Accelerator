@@ -1,0 +1,44 @@
+{
+  "baseline": {
+    "batch_commands": 4,
+    "first_command": 0,
+    "key_fills": 4,
+    "key_vectors": 1500,
+    "output_rows": 64,
+    "value_vectors": 1970
+  },
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "evidence_sha256": {
+    "capture": "ef6f7ccd3a4f9271ff4068b9b2c1e5ceb308450ccd51adcae196af74eb6c0791",
+    "merge_map": "8779ceafbf036eb058ceec3cf8c9d5557e9398dd7d6a45f7ee96f8bf50e7b09b",
+    "plan": "dccf72de0f0e18b4f9bd7fed306585ad4710d6a782b489049280422b6ed3531c"
+  },
+  "exact_output_words_per_plan": 4096,
+  "groups": 4,
+  "model_answer_tokens": [
+    6054,
+    2
+  ],
+  "model_layer": 10,
+  "offloaded": {
+    "batch_commands": 4,
+    "first_command": 4,
+    "key_fills": 6,
+    "key_vectors": 2250,
+    "output_rows": 64,
+    "value_vectors": 2035
+  },
+  "query_positions": [
+    607,
+    608
+  ],
+  "question": 42000,
+  "retrieval_heads": 4,
+  "scope": "All 32 heads at two trained TinyLLaVA token positions. Integer scores, causal normalization and outputs were recomputed from the captured inputs. Traffic counts are schedule predictions for cold starts. Hardware cycle and traffic measurements are pending.",
+  "state": "trained_offload_benchmark_fixture_verified",
+  "streaming_heads": 28,
+  "visible_keys": [
+    374,
+    375
+  ]
+}
