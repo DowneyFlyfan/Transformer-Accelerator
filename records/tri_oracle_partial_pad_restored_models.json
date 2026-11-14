@@ -1,0 +1,19 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "clock_period_nanoseconds": "1.72414",
+  "constraint_sha256": "e2f38bbe3503a8aaaed666f2aa45aa3cba7c8fa30b4bf0950936a4c31fe338a8",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/cold_native/console.log": "a7767b6a72440eb16a26c30b15ac1da0cb5e68a9235ebd997f7981e6ee1394fa",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/cold_native/receipt.json": "1389667d798e7c0118827fdaa1e93ed0f5a722d32cc4b0ab5dc1478b0ab6e04d",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_partial_pad_native_cold_result.json": "3ce3c08d9142f51d32211a5c70d96aab7898f60b969ae5b1e50f7701988ed1da",
+    "syn/verify_tri_oracle_pad_restored_models.py": "7fe5738c7dca222baf03e7dcfccd7e50cb47aa431cecd30d15c6a574738bab52"
+  },
+  "extraction_models": 3,
+  "identical_library_and_constraint_files": 33,
+  "paper_target_megahertz": 580,
+  "physical_abstracts": 8,
+  "scope": "The saved placement and its cold reload use the same physical libraries, extraction models and clock constraint as the verified buffered candidate. No timing slack was measured.",
+  "state": "pad_ring_cold_restored_timing_and_physical_inputs_verified",
+  "timing_libraries": 21
+}
