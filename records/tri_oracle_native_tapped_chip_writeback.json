@@ -1,0 +1,19 @@
+{
+  "chip_activation_bytes": 4096,
+  "compiled_memory_macros": 631,
+  "elapsed_seconds": 2268.9352417771006,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/native_replay/native/progress.log": "fe768bc4cfa1d1ca12c5f83a8e34ba551c0a6260653b77fe122d7bfe2813888f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/native_replay/native/xrun.log": "def339d49533f1cb93688c3f730d7094e578859327efe756faef7e1885123108",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/native_replay/receipt.json": "2a4c7fc6aedf2ab0851018f893341994bfcf5e1da364dc2998402e345483d251"
+  },
+  "feedforward_values": 4096,
+  "native_tapped_candidate_sha256": "e280906c5c7b6590219ae1dc89d22e5a0dc9d2dee35e44fcabe6ed55f62c0652",
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "The mapped chip ran with residual-bank lease disabled. The mapped write-back bridge consumed live feed-forward output, with bypass residuals and shifts from the trained fixture. Xcelium timing annotation was disabled.",
+  "state": "live_mapped_feedforward_and_mapped_writeback_verified",
+  "writeback_values": 4096
+}
