@@ -1,0 +1,78 @@
+{
+  "causal_table_queries": 4,
+  "compiled_memory_instances": 631,
+  "elapsed_seconds": 437.9,
+  "evidence_sha256": {
+    "candidate": "df70c3addcb639bcc97c53d23641c624d4647ffc95db8f573941d7f2bed6919f",
+    "gpu_receipt": "e35c68938e68b4279406a39981499bbb6871db005141bd8fce37804abba9e17d",
+    "legacy_capture": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "oracle": "2c5a017b03fffce340da31feb8d30c5a984e00558b308594ca8bef397c68e49b",
+    "receipt": "a19167e4ac808fc2ca676b57199962d53310c766650bf43e5f856b485e095fdc",
+    "xcelium_log": "af8e548f3c3564e7fe3f9ef736911d6ff9c0b3f3e02458fc9f9ba0b5f1a88303"
+  },
+  "gpu_crosscheck": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "exact_dot_products": 809,
+    "exact_output_words": 256,
+    "exact_sizes": 809
+  },
+  "grouped_cases": [
+    {
+      "cycles": 3249,
+      "keys": 341,
+      "mask": "f",
+      "outputs": 256,
+      "tag": "00006f03",
+      "values": 341
+    },
+    {
+      "cycles": 503,
+      "keys": 0,
+      "mask": "a",
+      "outputs": 128,
+      "tag": "00006f04",
+      "values": 65
+    },
+    {
+      "cycles": 1935,
+      "keys": 0,
+      "mask": "5",
+      "outputs": 128,
+      "tag": "00006f06",
+      "values": 341
+    },
+    {
+      "cycles": 1796,
+      "keys": 0,
+      "mask": "4",
+      "outputs": 64,
+      "tag": "00006f07",
+      "values": 341
+    },
+    {
+      "cycles": 2062,
+      "keys": 0,
+      "mask": "f",
+      "outputs": 256,
+      "tag": "00006f08",
+      "values": 341
+    }
+  ],
+  "grouped_exact_words": 832,
+  "key_fill_bursts": 6,
+  "key_vectors_read": 341,
+  "legacy_exact_words": 640,
+  "query_positions": [
+    566,
+    568
+  ],
+  "rejected_commands": 5,
+  "removed_original_position": 567,
+  "scope": "Grouped command and cached causal-size logic run on the TSMC 28 nm mapped chip in Xcelium. This verifies distinct compact prefix lengths in one compute cluster.",
+  "state": "grouped_chip_command_replays_adjacent_retained_tokens",
+  "visible_keys_per_query": [
+    340,
+    341
+  ],
+  "xcelium_exit_status": 0
+}
