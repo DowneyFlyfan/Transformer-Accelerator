@@ -1,0 +1,72 @@
+{
+  "active_compute_cores": 4,
+  "candidate_sha256": "f7087bf3640a55ec988907bdf0a99f070e4fc62e1508688dd22db5428d8dbea7",
+  "cases": [
+    {
+      "cycles": 3690,
+      "key_beats": 512,
+      "mask": "f",
+      "output_words": 256,
+      "tag": "00006f03",
+      "value_beats": 512
+    },
+    {
+      "cycles": 503,
+      "key_beats": 0,
+      "mask": "a",
+      "output_words": 128,
+      "tag": "00006f04",
+      "value_beats": 65
+    },
+    {
+      "cycles": 2837,
+      "key_beats": 0,
+      "mask": "5",
+      "output_words": 128,
+      "tag": "00006f06",
+      "value_beats": 512
+    },
+    {
+      "cycles": 2641,
+      "key_beats": 0,
+      "mask": "4",
+      "output_words": 64,
+      "tag": "00006f07",
+      "value_beats": 512
+    },
+    {
+      "cycles": 2952,
+      "key_beats": 0,
+      "mask": "f",
+      "output_words": 256,
+      "tag": "00006f08",
+      "value_beats": 512
+    }
+  ],
+  "command_opcode": 6,
+  "compiled_memory_instances": 631,
+  "descriptor_words": 5,
+  "elapsed_seconds": 198.69,
+  "error_cases": [
+    "513-key capacity overflow",
+    "truncated grouped descriptor",
+    "query read error followed by successful retry",
+    "truncated legacy attention descriptor"
+  ],
+  "evidence_sha256": {
+    "command_source": "c87c5c2318394be499bf4465fa8a6fef7ab511c2e3d1c59e3cbeb16a9ceeedea",
+    "command_testbench": "fc9b627502e43377a433493e958ec8b67297bb589c561548e862e2699ae11e29",
+    "link_preparation": "8a37fc097b5d07abc5bd4003232965a95492859432d8e7e957e360e69cd91f72",
+    "mapped_cluster_record": "70c0434455aa1dd5191cbd70ea4007a15d99b699f16fa44f334bff56f67d3737",
+    "native_receipt": "da21991cad2f4a8c6d4c726fde137aa83547c5b9c57a86d7b22e7abb4c974073",
+    "native_xcelium": "76624fe19433e47206b50c11028a9496a417b89c62eb8f527eb93e39a4169956",
+    "replay_bundle": "ca163c65ffa765897eb8f9953eb88661624d094151a4d25298b7fd31918cfc6e"
+  },
+  "exact_output_words": 832,
+  "key_fill_beats": 512,
+  "key_fill_bursts": 9,
+  "parent_sha256": "15a1eb6af1ee468e46916e0b3d0fa110304ddae3ee003a6c79d92fdf386a52c3",
+  "scope": "Grouped commands enter through the chip dispatcher and use the main external read and output interfaces. The linked chip contains the mapped cluster and probability controller. The new command and memory sequencers are simulated as RTL, and the testbench supplies token-size lookups. Concurrent execution across the five clusters, native token-size integration and physical timing remain open.",
+  "state": "grouped_attention_runs_through_chip_command_ports",
+  "xcelium_exit_status": 0
+}
