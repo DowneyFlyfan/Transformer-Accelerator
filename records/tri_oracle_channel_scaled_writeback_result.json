@@ -1,0 +1,52 @@
+{
+  "boundary_rows": 64,
+  "clock_constraint_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/check.sv": "52fea517502851b4d46e560fb03d33be016da595d99f3033eb8bb432cb0ebcc8",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/map/area.rpt": "7567d0e33dfe201dd3e47baa40662ad1a2eba02c694e1c3efac5d11fa1aef640",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/map/console.log": "cb32e190d83bc41944eef84618c754d000a8a499461803d08e5e8265fab5130f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/map/netlist.v": "269eaad50eca7cb4bab78bd72f6fdf4d1d9442064578ed3cf3567f2b5993379b",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/map/run.tcl": "e69b1983493eccbb584da4d0b191eee64f8fc2c35431de18ff0309977f895744",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/map/timing.rpt": "a5dc3fdba5bfa27627c3096adabf8882af1465717a3574eb500b669ccbf671fe",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/mapped_replay/xrun.log": "a5b2568ba5b088a929bd43d8338802c4720230f33650595c36a97779ad4d4767",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/pack_scale_metadata.py": "436ee6eb2d974a17030d6a957df9c6af37986702628971d66be95fc987dfd259",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/red/xrun.log": "0fd4400b4779ba5737c9cea07118a5811bcb57485a20d9e2c537882acf223890",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/reference.json": "d7397f3cbfc07dff5d38de7f36804e435db5a3a790ce24a8a1eef58311dd4587",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/rtl/xrun.log": "d5954aaea43c63c2c65d7633cfc42d8823085e2db78587308c69ca613998bd8c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_metadata.json": "74c71993b831b63e1517fc684653896fff343076f998c8e4f6b829758e0b58fe",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/vectors.py": "3a6e144ad0370532d5be0eaf5bff08172bc64b1f37694d242d3bf6ac202ecd7c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/verified_vectors.hex": "91a9e2c880e902b7ff2716b99185f1fd12aceed9c517f481404d7f4856fce52c",
+    "syn/prepare_tri_oracle_channel_writeback.py": "c4d0352378c5d3a9def0144a24a5b5b8134dfdb7465f4308f5577efba6aaab27",
+    "verilog/tri_oracle_decoder_residual_writeback_per_lane.sv": "386b2f43af655269d474cf36ee598ca89868776981d824c1892e5c416a6bb0ff"
+  },
+  "global_weight_exponent": -7,
+  "isolated_slow_setup_slack_ps": 1,
+  "lane_shift_range": [
+    7,
+    11
+  ],
+  "mapped_cell_area_um2": 3749.76,
+  "mapped_cell_count": 4904,
+  "metadata_physical_bytes_per_layer": 1024,
+  "metadata_scale_bits": 3,
+  "positions": [
+    607,
+    608
+  ],
+  "rmse_in_q13_code_units": {
+    "output_channel_weight_scales": {
+      "exact_codes": 387,
+      "maximum_absolute_code_error": 35,
+      "root_mean_squared_code_error": 4.6403619454063065
+    },
+    "scalar_weight_scale": {
+      "exact_codes": 52,
+      "maximum_absolute_code_error": 128,
+      "root_mean_squared_code_error": 36.9135292620216
+    }
+  },
+  "scope": "The same trained intermediate inputs and residuals were used for both weight schemes. CPU and CUDA agree on the channel-scaled accumulators. Xcelium compared the saved trained and boundary values against source and mapped arithmetic. The metadata packing was checked in software. Feeding it through the chip and verifying full-model scores and extracted physical timing remain pending.",
+  "shared_metadata_tokens": 2,
+  "state": "per_channel_down_projection_writeback_matches_trained_reference_in_mapped_replay",
+  "trained_values": 4096
+}
