@@ -1,0 +1,28 @@
+{
+  "clusters": 5,
+  "compiled_memory_bytes": 414928,
+  "compiled_memory_instances": 631,
+  "compute_array_rows_and_lanes": [
+    32,
+    8
+  ],
+  "cores_per_cluster": 4,
+  "dual_memory_lane_cycles": 814,
+  "evidence_sha256": {
+    "compiled_memory_audit": "4a4e9144a8bb23a961f62633f4900256e5e752e1534e1e91b2df997b3584db8b",
+    "innovus_import": "f155466a803d3ecbafdda6feb606b05880e83ff25a89e155492ef1c3d5d1d65c",
+    "mapped_compute_geometry": "c89f27f5287e1c86000eb92d5c2eff2cd6caa73a870920f944a9030353b3aa09",
+    "trained_replay": "a95f314c04ed8a68923eb0c41582953fcd1beb9d9253031a7e3fd4f0abba3edf",
+    "xcelium_log": "e29bdbf4386fe4e21758fdc1dc3939d1a5d2a7108d9f672f30f1a3ba08f31f32"
+  },
+  "exact_reference_outputs": 640,
+  "exact_trained_outputs": 704,
+  "memory_capacity_kibibytes": 405.203125,
+  "netlist_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "operand_bits": 8,
+  "paper_byte_unit_confirmed": false,
+  "paper_capacity_label": "405 KB",
+  "scope": "Mapped compute geometry, trained attention fixture and compiled memory inventory on the exact Innovus input. Timing checks disabled in Xcelium. The memory total rounds to the paper label in binary units.",
+  "state": "innovus_imported_concurrent_chip_trained_attention_and_memory_verified",
+  "xcelium_elapsed_seconds": 648.0
+}
