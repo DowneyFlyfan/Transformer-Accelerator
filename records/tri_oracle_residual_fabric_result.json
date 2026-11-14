@@ -1,0 +1,34 @@
+{
+  "bank_cluster": 0,
+  "borrowed_upper_banks": 4,
+  "clusters": 5,
+  "compiled_input_macros": 40,
+  "compute_cores": 20,
+  "concurrent_broadcast_matrix_commands_without_stalls": 16,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_chip_bridge/bridge_handoff.hex": "b27eab1dd09c9463c5746f140d5db4df40a78bb7d3d3e5367f23ade7821fe717",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_fabric/bad_lane.log": "e33ee5507f0ec10fa861606c183ec1ba36eacf14661a9890a6926e066a287c7d",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_fabric/normal.log": "85985d4f80a6449e28100fe42c7cd5bb53810431aba5935808dd74a534e31e33",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_fabric/simulate.sh": "6928668c5765a3bd3a3529c08665005799c0c6f47e9a1bc0f2919b546a761925",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_fabric/variant.sv": "91df78984d5e4b8beacb4a15afa969cff7c2443677cc6ea34c1aecda91c68238",
+    "syn/prepare_tri_oracle_residual_bank_core.py": "c9224be46bb61c2b13daa38d5d4dc9e1b05ab702a2881d9d56c0f8529404e195",
+    "syn/prepare_tri_oracle_residual_fabric.py": "1d4468a3422f0ea3fce332dd86ff15fefdef1b7d3953314f468c8a12cc8d84a7",
+    "verilog/tri_oracle_compute_fabric.sv": "d64ad3253cd74fa87b9ede129a986884207ffc25cc25ad5d4a5625b3d982dc13",
+    "verilog/tri_oracle_decoder_writeback_bridge.sv": "543d6975a658dc37571d7ab9256b0668bc129e4fb0b3577e6de92c7812da270b",
+    "verilog/tri_oracle_residual_bank_adapter.sv": "efac4852e10ac3dede2ba24ffe4a2a3e8eafdf028220dbbb5ee89ea3e478b928",
+    "verilog/tri_oracle_residual_fabric_tb.sv": "2c92c39c71b059b817746b2d80008af0ce1645b42f63a59f38be7bc73fba18ac",
+    "verilog/tri_oracle_sram_compute_cluster.sv": "8e89d8ff2e8f9a5edabf7e630ff29095dbd4ea217cd4a15a6c5971ac48ceccaa",
+    "verilog/tri_oracle_sram_memory_compute.sv": "435bfdf1db3758ce1f927836307721a27133402cb26f529c6a63c8a6df659f39"
+  },
+  "exact_cluster_matrix_results": 2560,
+  "exact_residual_strips": 512,
+  "exact_writeback_values": 4096,
+  "scope": "The generated variant routes four existing compiled input banks in cluster zero. All five clusters compute and retire test matrix commands while the bridge reads those banks. The write-back packet and residual inputs are trained fixture data. The full feed-forward scheduler, trained residual producer and softmax ownership are pending integration. Timing and physical results are outside this source simulation.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "trained_residual_writeback_passed_on_twenty_core_source_fabric",
+  "swapped_bank_input_control": {
+    "exit": 2,
+    "first_raw_residual_mismatch_row": 0
+  },
+  "trained_input_packets": 26
+}
