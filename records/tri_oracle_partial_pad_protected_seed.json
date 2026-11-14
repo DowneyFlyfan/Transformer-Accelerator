@@ -1,0 +1,46 @@
+{
+  "checked_buffer_tree_nets": 4588,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/buffer_span_reproduced.json": "bcc6fd91369cd9db3d3b8e91c2b683e99d1908d956990678acbf8ec75e052d78",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_nearby/buffer_span_reproduced.json": "09384be258dea27cdda0266ee8af2878cc66d65c28381f339e91b45bc8a5c518",
+    "records/tri_oracle_grouped_active_graph.json": "4a8e9881c7e99f4cdc153f33e9bd6cb2cae531c8427f314e446b1d4f15342499",
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "records/tri_oracle_grouped_reset_plan.json": "8432c04bc39e17a415d07bb133db336e9aac1486999a6cd2e88ff840e24e7805",
+    "records/tri_oracle_partial_pad_placement_seed.json": "1f5148e26223f8e142f8f223d9eccbf2bc135a0d37661035d114391cbd3942cb",
+    "records/tri_oracle_partial_pad_ring_seed.json": "0b7e35b9c878173b025268bb40349eb5fee83dd96e4970dc20512ce38fd02d38",
+    "syn/audit_tri_oracle_partial_pad_tree_span.py": "0af19bcb06208337f3154cb13b664fad98142625f896e9e86b16f688aa1980f8",
+    "syn/build_tri_oracle_partial_pad_placement_seed.py": "7b680d255ec1fd005f00f26ba6f3c5dddf5cb6ae0238259d44d2711e8b9f1652",
+    "syn/verify_tri_oracle_partial_pad_ring_geometry.py": "5314a0c8fae2e75efda6024fcc5a9ee9828cbabd565ee9e73253e80065d5e9fe"
+  },
+  "exact_component_names_masters_and_fixed_status": 3765868,
+  "first_seed_sum_of_endpoint_bounding_box_spans_um": 2848740.5,
+  "geometry": {
+    "fixed_memories": 631,
+    "free_unblocked_sites": 967860,
+    "standard_cells": 3765237,
+    "used_sites": 35159189
+  },
+  "input_candidate_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "input_def_sha256": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+  "max_moved_cell_manhattan_um": 5168.02,
+  "mean_moved_cell_manhattan_um": 555.4293021562568,
+  "moved_standard_cells": 859777,
+  "original_sum_of_endpoint_bounding_box_spans_um": 711528.98,
+  "prefer_nearby_gaps": true,
+  "preserve_legal_buffer_tree_endpoints": true,
+  "preserved_standard_cell_locations": 2905460,
+  "reopened_every_nth_row": 8,
+  "revised_seed_span_decrease_percent": 53.997,
+  "revised_seed_sum_of_endpoint_bounding_box_spans_um": 1310504.44,
+  "scope": "Geometrically checked seed. Preserving legal reset and enable endpoints reduces summed bounding-box spans compared with the prior seed, while the spans still exceed the original placement. Native placement, wiring and timing remain pending.",
+  "seed_def_sha256": "f676c56af275ca8e595a1faf7077ce59b2b363b3393663f1b0053dd201bebdfd",
+  "state": "partial_pad_geometric_seed_verified",
+  "tree_span_growth_ratios_vs_original": {
+    "grouped_active": 2.4665,
+    "grouped_reset_0": 1.9054,
+    "grouped_reset_1": 1.6829,
+    "grouped_reset_2": 1.925,
+    "grouped_reset_3": 1.9484,
+    "grouped_reset_4": 1.2269
+  }
+}

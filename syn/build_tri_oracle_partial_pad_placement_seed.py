@@ -45,7 +45,7 @@ def verify_inventory(before, after):
     return count
 
 
-def build(active, seed, work):
+def build(active, seed, work, preserve_tree_endpoints=False):
     assert __debug__ and Path("/.dockerenv").is_file()
     assert work.is_relative_to(ROOT / ".cache") and work.is_dir()
     source_def = active / "active.def"
@@ -53,6 +53,12 @@ def build(active, seed, work):
     placement = json.loads((ROOT / "records/tri_oracle_grouped_active_placement.json").read_bytes())
     assert plan["candidate_netlist_sha256"] == placement["candidate_netlist_sha256"]
     assert digest(source_def) == placement["placed_design_exchange_sha256"]
+    protected = set()
+    if preserve_tree_endpoints:
+        from audit_tri_oracle_partial_pad_tree_span import read_trees
+
+        protected = {name for tree in read_trees().values() for driver, loads in tree.items()
+                     for name in (driver, *loads)}
     lefs = sorted((active / "active.db/libs/lef").glob("*.lef"))
     for path in (seed / "macros.tsv", seed / "blockages.tsv", *lefs):
         assert digest(path) == plan["evidence_sha256"][str(path.relative_to(ROOT))]
@@ -110,7 +116,8 @@ def build(active, seed, work):
             side, grid = rows[y]
             start, width = (x - 40000) // pitch, dx // pitch
             assert 0 <= start < start + width <= len(grid)
-            if ((y - 40000) // 2400) % 8 == 0 or any(grid[start:start + width]):
+            spare_row = ((y - 40000) // 2400) % 8 == 0
+            if any(grid[start:start + width]) or (spare_row and name.replace("\\", "") not in protected):
                 jobs[width].append((x, y, name, master))
             else:
                 grid[start:start + width] = b"\x02" * width
@@ -204,6 +211,10 @@ def build(active, seed, work):
         "Geometric placement seed checked against the candidate component inventory and planned "
         "memory halos and pad reservations. Innovus import, timing and pad connections require separate checks."
     )
+    if preserve_tree_endpoints:
+        receipt["preserve_legal_buffer_tree_endpoints"] = True
+        audit = ROOT / "syn/audit_tri_oracle_partial_pad_tree_span.py"
+        receipt["evidence_sha256"][str(audit.relative_to(ROOT))] = digest(audit)
     return receipt
 
 
@@ -211,4 +222,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("active", "seed", "work"):
         parser.add_argument(name, type=lambda path: Path(path).resolve())
+    parser.add_argument("--preserve-tree-endpoints", action="store_true")
     print(json.dumps(build(**vars(parser.parse_args())), indent=2, sort_keys=True))
