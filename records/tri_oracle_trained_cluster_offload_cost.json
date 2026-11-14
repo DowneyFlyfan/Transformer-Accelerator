@@ -1,0 +1,92 @@
+{
+  "audit_sha256": "eeb32fd3a2bbd46a968256d60d22e5f2ff15d571fe328893dcd5b5fb6f1accc1",
+  "baseline_peak_score_pairs_sum": 10159296,
+  "clusters": 5,
+  "compact_decoder_receipt_sha256": "ca17f5877a80f01dc9027d57a2b924534ef36eb7e8cfeca733d8ba53c2ace734",
+  "compact_prefill_tokens": [
+    408,
+    403,
+    398,
+    398,
+    397,
+    391,
+    384,
+    375,
+    374,
+    374,
+    374,
+    374,
+    371,
+    367,
+    365,
+    360,
+    359,
+    358,
+    355,
+    353,
+    345,
+    342
+  ],
+  "evidence_sha256": {
+    "analysis_receipt": "de86609b008673b3ae2e02e143cfe73715f106f215aed71fefb888f5599795f8",
+    "capture_receipt": "76c2a241a98cf4688a74b257d397bf3b5385aace2ffb2c513217336bb99fc0ff"
+  },
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "groups": 4,
+  "heads_per_layer": 32,
+  "ideal_divisible_peak_sum": 6692541,
+  "layer10": {
+    "baseline": [
+      319975,
+      175360,
+      175360,
+      223565,
+      0
+    ],
+    "moves": [
+      {
+        "head": 0,
+        "policy": "top-bottom",
+        "source": 0,
+        "target": 4
+      },
+      {
+        "head": 1,
+        "policy": "top-bottom",
+        "source": 0,
+        "target": 4
+      },
+      {
+        "head": 24,
+        "policy": "top-bottom",
+        "source": 3,
+        "target": 4
+      }
+    ],
+    "scheduled": [
+      179725,
+      175360,
+      175360,
+      153440,
+      210375
+    ]
+  },
+  "model_answer_tokens": [
+    6054,
+    2
+  ],
+  "model_layers": 22,
+  "moves_by_kind": {
+    "top-bottom": 103
+  },
+  "original_prefill_tokens": 608,
+  "question": 42000,
+  "reversed_pair_order_peak_score_pairs_sum": 7407246,
+  "scheduled_peak_score_pairs_sum": 7407246,
+  "scope": "Analytic count of eligible score products for one trained compact TinyLLaVA prompt across 22 layers. Whole-head moves use a local interpretation of Fig. 31.6.4. Cost excludes memory movement, compute overlap, and cycles.",
+  "score_pairs": 33462673,
+  "state": "trained_cluster_attention_workload_and_offload_cost_verified",
+  "sum_of_per_layer_peak_score_pair_reduction_percent": 27.09,
+  "trace_sha256": "76c2a241a98cf4688a74b257d397bf3b5385aace2ffb2c513217336bb99fc0ff",
+  "trained_streaming_heads": 351
+}
