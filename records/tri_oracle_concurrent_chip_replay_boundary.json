@@ -1,0 +1,44 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "mapped_boundary": {
+    "clock_consumers": [
+      "layer",
+      "dispatch",
+      "batch",
+      "grouped_reads",
+      "grouped_sizes",
+      "grouped_0",
+      "grouped_1",
+      "grouped_2",
+      "grouped_3",
+      "grouped_4"
+    ],
+    "external_memory_response_bits_per_lane": 512,
+    "external_memory_response_lanes": 2,
+    "grouped_attention_commands": 5
+  },
+  "open_measurements": [
+    "integrated all-digital phase-locked loop",
+    "physical external memory interface latency and energy",
+    "continuous full-model hardware workload"
+  ],
+  "paper_figure": "31.6.2",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "state": "mapped_chip_and_replay_boundary_verified",
+  "supplied_by_attention_fixture": [
+    "clock",
+    "memory response data",
+    "rotation coefficients",
+    "token sign vectors"
+  ],
+  "supplied_by_feedforward_fixture": [
+    "clock",
+    "memory response data",
+    "normalization activation strips"
+  ],
+  "evidence_sha256": {
+    "local_boundary_receipt": "ff7288346bfaecc26136db33ab9f7d42241d74b980140aee3e1a50ea9720c6a4",
+    "local_verifier": "21ffc94d7c68ba098db1ae177a8eb7421a3fccc83433fd5dd487d2e18a1f1942"
+  },
+  "scope": "Mapped instance and port connectivity, combined with the actual testbench and Xcelium run for the same candidate. External input streams and the bare clock constrain system-level reproducibility."
+}
