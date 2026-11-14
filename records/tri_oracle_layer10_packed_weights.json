@@ -1,0 +1,49 @@
+{
+  "branches": {
+    "down": {
+      "bytes": 11534336,
+      "checkpoint_key": "language_model.model.layers.10.mlp.down_proj.weight",
+      "offset_bytes": 115343360,
+      "packed_sha256": "7981bb53ceb1c23b3d3e4062b6eb9221b3ba766fb306ea3c316515472ab253c5",
+      "scale_exponent": -7,
+      "shape": [
+        2048,
+        5632
+      ]
+    },
+    "gate": {
+      "bytes": 11534336,
+      "checkpoint_key": "language_model.model.layers.10.mlp.gate_proj.weight",
+      "offset_bytes": 230686720,
+      "packed_sha256": "7b2b0d0b63cb2027db094828601d2185bbbf085afaaf6f0bda97fbe0f0fb6c5c",
+      "scale_exponent": -8,
+      "shape": [
+        5632,
+        2048
+      ]
+    },
+    "up": {
+      "bytes": 11534336,
+      "checkpoint_key": "language_model.model.layers.10.mlp.up_proj.weight",
+      "offset_bytes": 242221056,
+      "packed_sha256": "bc0b7bf1df89154465e908cae2d17e6053d6fdd9876c26897fd6bc05b314edd9",
+      "scale_exponent": -8,
+      "shape": [
+        5632,
+        2048
+      ]
+    }
+  },
+  "evidence_sha256": {
+    "local_receipt": "36507b00a42220067905a5f8b19def2853b90148f8b0976687da35b00e83f0e3",
+    "records/model_reference_candidate.json": "d462cb1574fc26edea3b17e06e1f3567c395f579f06d5cc087443e475167e9d5",
+    "records/wac_packed_checkpoint_down_result.json": "624820bbe2e123d491aba89d6c3dd7decbef9b146d0a560aae56f8530118946a",
+    "records/wac_packed_checkpoint_gate_up_result.json": "412d808a157b0e61c50e4d2f78fa4b75d73ecc8e56ce13decbbacfd1bf66cd36",
+    "syn/verify_tri_oracle_layer_weight_slices.py": "766dfa1ba704a0fd6d33183cd8d9a07bd9951e2b2df8d71fddb56378c217b9e1"
+  },
+  "exact_bytes": 34603008,
+  "layer": 10,
+  "model_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "scope": "Independent unpacking and comparison to quantized checkpoint matrices. Covers the layer used by the two-position attention replay. Integrated feed-forward execution with these weights is pending.",
+  "state": "trained_layer_packed_weights_match_checkpoint_byte_for_byte"
+}
