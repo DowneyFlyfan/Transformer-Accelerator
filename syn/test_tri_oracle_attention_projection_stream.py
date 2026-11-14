@@ -17,7 +17,7 @@ SRAM = (ROOT / ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512
         / "VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v")
 
 
-def run(source, log, cell_model, mutate, storage=False):
+def run(source, log, cell_model, mutate, storage=False, shared_bank=False):
     assert Path("/.dockerenv").is_file()
     check_memory(8 * GIB)
     vectors, pins = trained_vectors()
@@ -30,6 +30,8 @@ def run(source, log, cell_model, mutate, storage=False):
         dependencies.append(SRAM)
         if cell_model is None:
             dependencies.append(ROOT / "verilog" / f"{MODULE}.sv")
+            if shared_bank:
+                dependencies.append(ROOT / "verilog" / f"{STORE}.sv")
     pins.update({path: sha(path) for path in (source, bench, *dependencies, Path(__file__).resolve())})
     operands, outputs = [], []
     for start in range(0, len(vectors), 64):
@@ -52,6 +54,8 @@ def run(source, log, cell_model, mutate, storage=False):
                    "-sv", "-top", top, "-l", str(native_log), "-history_file", str(directory / "xrun.history")]
         if storage:
             command.append("+define+UNIT_DELAY")
+        if shared_bank:
+            command.extend(["-defparam", f"{top}.SHARED_BANK=1"])
         if storage or cell_model:
             command.extend(["-nospecify", "-notimingchecks"])
         command.extend([*map(str, (*dependencies, source, bench)),
@@ -78,6 +82,8 @@ def run(source, log, cell_model, mutate, storage=False):
         marker = (r"ACTIVATION_STORE_PASS rows=64 beats=516 errors=3 stalls=\d+"
                   if storage else r"PROJECTION_STREAM_PASS rows=64 words=512 stalls=768 resets=1")
         assert len(re.findall(rf"(?m)^{marker}$", text)) == 1
+        if shared_bank:
+            assert text.splitlines().count("ACTIVATION_STORE_SHARED_BANK_PASS") == 1
         assert not re.search(r"\*[EF],", text)
     return status
 
@@ -87,9 +93,14 @@ if __name__ == "__main__":
     parser.add_argument("--source", type=Path)
     parser.add_argument("--cell-model", type=Path)
     parser.add_argument("--storage", action="store_true")
+    parser.add_argument("--shared-bank", action="store_true")
     parser.add_argument("--mutate", action="store_true")
     parser.add_argument("log", type=Path)
     args = parser.parse_args()
-    source = args.source or ROOT / "verilog" / f"{STORE if args.storage else MODULE}.sv"
+    module = STORE if args.storage else MODULE
+    if args.shared_bank:
+        module = "tri_oracle_projection_shared_bank"
+    source = args.source or ROOT / "verilog" / f"{module}.sv"
     raise SystemExit(run(source.resolve(), args.log.resolve(),
-                         args.cell_model.resolve() if args.cell_model else None, args.mutate, args.storage))
+                         args.cell_model.resolve() if args.cell_model else None, args.mutate,
+                         args.storage or args.shared_bank, args.shared_bank))

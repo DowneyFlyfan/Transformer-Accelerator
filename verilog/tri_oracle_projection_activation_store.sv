@@ -3,7 +3,9 @@
 // Store the 32 head rows of each of two tokens in projection read order.
 // Writes are provisional until all 64 distinct rows have been received.
 // A duplicate row invalidates the frame until reset or release.
-module tri_oracle_projection_activation_store (
+module tri_oracle_projection_activation_store #(
+    parameter bit EXTERNAL_BANK = 0
+) (
     input logic clk, rst_n, in_valid,
     input logic [2047:0] in_data,
     input logic [4:0] in_shift,
@@ -18,7 +20,11 @@ module tri_oracle_projection_activation_store (
     output logic req_ready, rsp_valid,
     input logic rsp_ready,
     output logic rsp_last, rsp_error,
-    output logic [63:0] rsp_data
+    output logic [63:0] rsp_data,
+    output logic bank_ce_n, bank_we_n,
+    output logic [8:0] bank_address,
+    output logic [63:0] bank_write_data,
+    input logic [63:0] bank_read_data
 );
     logic [63:0] present, row_mask;
     logic [5:0] rows_received;
@@ -51,10 +57,18 @@ module tri_oracle_projection_activation_store (
                             advance_read ? read_word + 9'd1 : req_word;
     assign rsp_data = rsp_valid && !rsp_error ? read_data : '0;
 
-    TS5N28HPCPSVTA512X64M4F activation_bank (
-        .CLK(clk), .CEB(!(memory_write || memory_read)), .WEB(!memory_write),
-        .A(memory_address), .D(write_data), .Q(read_data)
-    );
+    assign bank_ce_n = !(memory_write || memory_read);
+    assign bank_we_n = !memory_write;
+    assign bank_address = memory_address;
+    assign bank_write_data = write_data;
+    if (EXTERNAL_BANK) begin : shared_storage
+        assign read_data = bank_read_data;
+    end else begin : dedicated_storage
+        TS5N28HPCPSVTA512X64M4F activation_bank (
+            .CLK(clk), .CEB(bank_ce_n), .WEB(bank_we_n),
+            .A(bank_address), .D(bank_write_data), .Q(read_data)
+        );
+    end
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
