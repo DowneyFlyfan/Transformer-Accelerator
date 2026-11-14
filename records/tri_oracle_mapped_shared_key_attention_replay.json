@@ -1,0 +1,68 @@
+{
+  "added_memory_macros": 0,
+  "candidate_sha256": "9b7091cce2c532c415aa347d9c366bd63ba209d832fcb10f3885ef23086f81f9",
+  "compiled_memory_instances": 631,
+  "evidence_sha256": {
+    "archived_weight_value_service_inputs": "67ee5f5212ff813783a342199576784b29bbf1e532cbc041d22dfe9f4f047b17",
+    "expected_accumulators": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "expected_fixture": "febf94138f0efe3e51d0a01ca0aaf752b85a43536b43a746a73fb5722ce050c9",
+    "failed_first_link_log": "9254daaf9f9018c7f10a269eee9bbe70aefaf8e63854546e0a6b17f9e9e4f3b3",
+    "linked_gate_netlist": "9b7091cce2c532c415aa347d9c366bd63ba209d832fcb10f3885ef23086f81f9",
+    "linked_netlist_manifest": "f5555ee99554ffa7c70944d73298ce18102494d509a4ef24b4b8e14f79871e01",
+    "paper_targets": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "simulation_accumulators": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "testbench": "ad56e79a29a571ea2819f9ad81de06407624bc35e987733c5d3ce17eefc01c6f",
+    "trained_attention_xcelium_log": "18a6aacedea1177bc5f8e95ed839be2fd2d454155e623b0c21ae01e96d05d108",
+    "unmodified_wide_value_run": "a03db8c65fdabf28664bfbc955cfd745d4c5f4d880409a7eff41304a8e6f4997"
+  },
+  "exact_32_bit_accumulator_words": 640,
+  "external_512_bit_key_responses": 1143,
+  "external_512_bit_value_responses": 1143,
+  "paper_latency_screening": {
+    "layouts": {
+      "aligned_example": {
+        "conditional_memory_service_cycles": [
+          567467911,
+          567481735
+        ],
+        "conditional_memory_service_ms": [
+          "978.39295",
+          "978.41678"
+        ],
+        "weight_sign_cycles": [
+          435526447,
+          435540271
+        ]
+      },
+      "trained_fixture": {
+        "conditional_memory_service_cycles": [
+          567469237,
+          567483061
+        ],
+        "conditional_memory_service_ms": [
+          "978.39524",
+          "978.41907"
+        ],
+        "weight_sign_cycles": [
+          435527773,
+          435541597
+        ]
+      }
+    },
+    "published_target_cycles": 508660000,
+    "published_target_ms": 877,
+    "scope": "Conditional cycle budget for the archived 600-prefill, 60-decode trajectory and fixed indexed weight and sign traffic. Assumes one 512-bit key fetch and one 512-bit value fetch per visible query-key pair, one cycle for each request and response, serial command ownership, and disjoint score and value phases. Excludes compute, other traffic and physical delays. Grouped reuse or overlapping phases changes this model.",
+    "serialized_attention_memory_service_cycles": 131941464,
+    "visible_pairs": 32985366
+  },
+  "restored_query_address_bits": 27,
+  "retrieval_rows": 5,
+  "scope": "Mapped attention and token-context replay with functional memory models. Feed-forward replay on this candidate and post-placement timing remain separate checks.",
+  "shared_macros": 4,
+  "source_sha256": "ec68f645050a860e87aaf530abd87a9aebccc71d027d60e3d8411f4d632ae3d6",
+  "state": "whole_chip_shared_key_sign_bank_mixed_attention_replayed",
+  "streaming_rows": 5,
+  "trained_attention_rows": 10,
+  "xcelium_elapsed_seconds": 397.34,
+  "xcelium_exit_status": 0
+}
