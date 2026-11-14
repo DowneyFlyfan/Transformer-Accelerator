@@ -1,0 +1,28 @@
+{
+  "base_candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "compiled_weight_memory_models": 320,
+  "concurrent_lane_write_cycles": 4093,
+  "controller_netlist_sha256": "bfab062c76e2139f13b9dbd16b3f77c6ff6146ba46d6824f4d96a10e7075a6c1",
+  "directed_masked_rows_retained": 320,
+  "evidence_sha256": {
+    "mapped_directed/xrun.log": "88ef5d3faddd5133b99b1226c5b4983adc87a1f02f5a4c448fa0313f8d7f25d8",
+    "mapped_full/xrun.log": "4fd7f8dd13b1a9a070b2496c6ec49ef29c2c3dfdba83781d570d52aa54c166d7",
+    "mapping/adapted.v": "d2c3fbb8c8ddd79b0ad88cc197690c71906b9ca357f5813ddc50941d88a547e5",
+    "mapping/area.rpt": "d52a9df433ec87dda7f5c7785a159a5dbae399ebe87d887ffd5bf8978a22e467",
+    "mapping/timing.rpt": "c435a5f27671dcfa2e0d43f9df930cebe7bf32e0de1b9b81a5a9f491a5d1a2cd",
+    "old_width_data/xrun.log": "3d125af2d0ee4f9770e18c12d9dfd0065f0790bd0f11020d010717e3f2a92fa4",
+    "rtl_directed/xrun.log": "ab13cd5ed0019cbd26fe093d4eb144e92866bf79ca892dc83b3cfac83ae32dca",
+    "weight_bank_audit.json": "df88457eea1d81ad31bf78e087c74af373b4fd45c51a0441eea88d7972539e90"
+  },
+  "exact_weight_bytes": 11534336,
+  "isolated_mapped_cell_area_um2": 23974.104,
+  "isolated_mapped_cells": 14686,
+  "isolated_worst_reported_setup_slack_ps": 689,
+  "memory_model_sha256": "899d9fc175509df34d32e84df004a2dd2b59360dfd2cc18a9564c8d23b3e71e5",
+  "memory_word_read_checks": 49920,
+  "scope": "Isolated mapped indexed down-projection controller, registered write stage and cluster steering, with the compiled memory model and audited data and mask wiring. Chip integration and timing remain pending.",
+  "state": "mapped_full_width_weight_path_replayed_into_compiled_memories",
+  "tile_transactions": 78,
+  "trained_layer": 0,
+  "truncated_payload_rejected": true
+}

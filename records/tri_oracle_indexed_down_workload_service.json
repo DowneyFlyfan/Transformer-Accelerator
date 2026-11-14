@@ -1,0 +1,38 @@
+{
+  "batch_counts": {
+    "decode": 1320,
+    "prefill": 466
+  },
+  "ideal_balanced_current_value_transport_ms": 976.79415,
+  "ideal_balanced_one_beat_per_value_ms": 777.744528,
+  "indexed_down_requests": {
+    "decode": 5744640,
+    "prefill": 2028032
+  },
+  "indexed_down_response_beats": {
+    "decode": 131602560,
+    "prefill": 46455886
+  },
+  "inputs_sha256": {
+    "packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    "receipt.json": "8dbea0536f7ca658c7da59337b64dbce8a895ae95c2f83f00e6af88c34668826",
+    "tri_oracle_all_trained_down_weight_transport.json": "5915085f124859c0dd50939b8616ee4dcf56f7021c350be068dc188852b611f0",
+    "tri_oracle_restored_placed_memory_service.json": "26b4ec4cb401f4dcbeb306cc9964738563c44f60627f3a072eede27c54ee11f7",
+    "wac_dual_port_packed_sign_steering_result.json": "f65895ecdee8616ada55bcb90c6711de57facfbad7f039136465fd3c5bb645a1",
+    "wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "wac_weight_burst_schedule_result.json": "ef78cd49482669ee67625f255589b5864d6d1bf7ff6fb44fb258b89273f0c05a"
+  },
+  "original_down_requests": {
+    "decode": 8230912,
+    "prefill": 2863104
+  },
+  "original_down_response_beats": {
+    "decode": 237761024,
+    "prefill": 83984384
+  },
+  "paper_latency_ms": 877,
+  "scope": "Scenario using all indexed down tiles per batch and one service cycle per request or response. Changes only modeled down-projection transport on the archived trace. Perfect lane balance. Omits keys, writes, compute, stalls and physical memory timing.",
+  "source_candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "state": "modeled_indexed_down_weight_replacement_on_archived_trace",
+  "two_port_service_cycles_avoided": 147008306
+}
