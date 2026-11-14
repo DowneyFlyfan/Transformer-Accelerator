@@ -1,0 +1,18 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "direct_scan_input_feedback_instances": 18100,
+  "elapsed_seconds": 497.37,
+  "evidence_sha256": {
+    "independent_scan_pin_census": "825d20b7e851eedb005aa10bd07214cf3a3f24552567676a1f01b1bf0a6274a5",
+    "native_console": "d2e295552b8097c60d979c77e72aa4af259139be46e8fb5c4ff50d234d80e429",
+    "native_status": "d61395e7c19acdeb25d7d872a32b5301a38bcb1feaaf99b9480cf744ef95790a"
+  },
+  "lowest_available_host_gib": 3.61,
+  "peak_container_anonymous_gib": 16.21,
+  "placement_workers": 20,
+  "scan_diagnostic": "IMPSP-9099",
+  "scan_pin_instances": 172675,
+  "scope": "Mapped full-chip placement reached global placement iterations but the memory guard terminated it before export. Direct feedback on scan-capable cells is separately counted.",
+  "state": "whole_chip_placement_stopped_on_host_memory_pressure",
+  "terminal_reason": "Host memory recovery deadline exceeded"
+}

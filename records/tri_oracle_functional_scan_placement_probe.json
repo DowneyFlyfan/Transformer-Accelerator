@@ -1,0 +1,34 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "cases": {
+    "baseline": {
+      "scan_cell_specifications_after": 246,
+      "scan_cell_specifications_before": 246,
+      "scan_chain_diagnostic_count": 0
+    },
+    "functional": {
+      "scan_cell_specifications_after": 0,
+      "scan_cell_specifications_before": 246,
+      "scan_chain_diagnostic_count": 0
+    }
+  },
+  "direct_output_feedback_instances": 18100,
+  "evidence_sha256": {
+    "baseline_after": "a65bf900107d213db28913cac94c274761e399ac4e822581ffbdeffed72cca38",
+    "baseline_after_scan": "0b754e8b14db317a89884a4003f7f629fbb63007d138ac54986a95810527dfbc",
+    "baseline_before": "5eff89521da8865eb3fd9e759577605bef5279e0d5512c460547506475999845",
+    "baseline_before_scan": "0b754e8b14db317a89884a4003f7f629fbb63007d138ac54986a95810527dfbc",
+    "baseline_log": "7b2a4eae2e541f694a1da74fcda6ed2e7d43e361ab3717e70c3d3763883b6557",
+    "functional_after": "e7e5e6296abdfe7e0b5ab5a3102ceb5be65eb27bf8c215dc814c545ba444c4c2",
+    "functional_after_scan": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "functional_before": "c5df18c741823323550d7d2dd6b85f575545a11cc14eae45b14f9f09721668de",
+    "functional_before_scan": "0b754e8b14db317a89884a4003f7f629fbb63007d138ac54986a95810527dfbc",
+    "functional_log": "e6c548c8a848ebedc31bda92318dd7d14eb8978b42f94c8739d62c9efe784162",
+    "scan_pin_census": "825d20b7e851eedb005aa10bd07214cf3a3f24552567676a1f01b1bf0a6274a5"
+  },
+  "fixture_leaves": 16,
+  "identical_mapped_connectivity": true,
+  "scan_pin_instances": 172675,
+  "scope": "Sixteen scan-capable flip-flops use their scan inputs for functional feedback. The supported Innovus command changes scan metadata. Fixture connectivity is checked before and after placement. Whole-chip placement and test-chain integration remain open.",
+  "state": "functional_scan_cell_placement_control_measured"
+}
