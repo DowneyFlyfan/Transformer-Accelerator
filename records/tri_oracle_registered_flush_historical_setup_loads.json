@@ -1,0 +1,103 @@
+{
+  "arcs": {
+    "layer/layer/attention_pipeline/attention/g150859/ZN": {
+      "after_loads": 5,
+      "before_loads": 5,
+      "measurements": {
+        "ffg1p05vm40c": {
+          "after_pf": "0.003597790",
+          "before_pf": "0.003597790",
+          "limit_pf": "0.054324"
+        },
+        "ssg0p9v125c": {
+          "after_pf": "0.00360855",
+          "before_pf": "0.00360855",
+          "limit_pf": "0.0393901"
+        },
+        "tt1v25c": {
+          "after_pf": "0.003597525",
+          "before_pf": "0.003597525",
+          "limit_pf": "0.0435923"
+        }
+      },
+      "original_arc_delay_ns": "2.777800",
+      "same_sink_census": true
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/local_merge.token_merge/similarity/shard/g47991/Z": {
+      "after_loads": 1,
+      "before_loads": 513,
+      "measurements": {
+        "ffg1p05vm40c": {
+          "after_pf": "0.00405929",
+          "before_pf": "0.394525462",
+          "limit_pf": "0.627757"
+        },
+        "ssg0p9v125c": {
+          "after_pf": "0.00398054",
+          "before_pf": "0.395547248",
+          "limit_pf": "0.501488"
+        },
+        "tt1v25c": {
+          "after_pf": "0.00398222",
+          "before_pf": "0.395230273",
+          "limit_pf": "0.52162"
+        }
+      },
+      "original_arc_delay_ns": "6.730202",
+      "same_sink_census": false
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_merge.relay/g4904/ZN": {
+      "after_loads": 1,
+      "before_loads": 2083,
+      "measurements": {
+        "ffg1p05vm40c": {
+          "after_pf": "0.00405929",
+          "before_pf": "1.829253144",
+          "limit_pf": "0.0356941"
+        },
+        "ssg0p9v125c": {
+          "after_pf": "0.00398054",
+          "before_pf": "1.814050159",
+          "limit_pf": "0.0267489"
+        },
+        "tt1v25c": {
+          "after_pf": "0.00398222",
+          "before_pf": "1.811629970",
+          "limit_pf": "0.0293209"
+        }
+      },
+      "original_arc_delay_ns": "32.609505",
+      "same_sink_census": false
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/g10821/ZN": {
+      "after_loads": 15,
+      "before_loads": 15,
+      "measurements": {
+        "ffg1p05vm40c": {
+          "after_pf": "0.009539333",
+          "before_pf": "0.009539333",
+          "limit_pf": "0.0725175"
+        },
+        "ssg0p9v125c": {
+          "after_pf": "0.009593857",
+          "before_pf": "0.009593857",
+          "limit_pf": "0.0552179"
+        },
+        "tt1v25c": {
+          "after_pf": "0.009546255",
+          "before_pf": "0.009546255",
+          "limit_pf": "0.0597256"
+        }
+      },
+      "original_arc_delay_ns": "3.924000",
+      "same_sink_census": true
+    }
+  },
+  "baseline_placed_netlist_sha256": "c6a1a45ef5e6b6ed040bf1a5eb7ba4ca5e5bb763c304dfbef8237907dc9a4b3e",
+  "baseline_slow_setup_report_sha256": "d309c88320bb1a1a16d95e88316a28a46e11f1d6962c1abe2ebf9eac942b44eb",
+  "candidate_sha256": "4191c72e54d3699a24d85bb3d75a3c3939a38a79b344acb2016631fe7b85ccc0",
+  "local_receipt_sha256": "5a188af6f69bf2e33d944a82c6a002390fa8a4abcc261ffa47c2048ed63673ae",
+  "original_setup_slack_ns": "-48.431206",
+  "scope": "Direct cell-pin loads from hierarchical connectivity. Wire capacitance and current placed timing are excluded.",
+  "state": "historical_slow_setup_arc_loads_compared"
+}
