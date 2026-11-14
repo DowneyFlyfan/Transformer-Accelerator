@@ -1,0 +1,25 @@
+{
+  "evidence_sha256": {
+    "corrected_mapped_xcelium": "47cba86dbf2f72c3025d68de102db906989f6e644da79f531d2475c9c84b4cdd",
+    "corrected_source_xcelium": "8ed17d1784bfc1e52a704c8149ea9e1c16618e7c13f34d149b6041770ed9c00a",
+    "isolated_setup_report": "c88e1c58709a2bcae371cca730a20333f7d17d2ad061a0edba73d5be7dfef892",
+    "mapped_redirect": "1e1fc21ea1e8df64ab08f0dec98eededb3c2d92aab9aec50085deccfffaf8ec9",
+    "original_xcelium": "9fb286987284f00db130a47d47eeef4bbaba98e7924a2287bd8d77de40f43442",
+    "verilog/tri_oracle_key_buffer_external_storage.sv": "0f9667b70b9e6e256262a1f49c997fd141425d838560743b03bfd0f90135d9ad",
+    "verilog/tri_oracle_key_redirect.sv": "7bd64fe92756f638bd3025b8cc54f9cae4301182e8fe331460d3ae0a80d8178b",
+    "verilog/tri_oracle_key_redirect_tb.sv": "3bb2188f27c08358b021c3278c202732657e4060fc4357984dacd2c6a7f68709"
+  },
+  "isolated_genus_clock_period_ns": 1.72414,
+  "isolated_genus_reported_setup_slack_ps": 18,
+  "maximum_buffered_row_keys": 1024,
+  "original_xcelium_exit_status": 2,
+  "regression": [
+    "31-beat request starting at word seven",
+    "two-beat request crossing the cache-line boundary",
+    "non-key query read",
+    "row with 1025 keys"
+  ],
+  "scope": "Directed fallback verifies every response beat for four unsupported requests. The redirect was mapped separately in Taiwan Semiconductor Manufacturing Company 28 nm high-performance compact plus. Whole-chip timing and trained replay require separate evidence.",
+  "source_and_mapped_xcelium_exit_status": 0,
+  "state": "attention_key_redirect_bounds_verified_in_source_and_mapped_xcelium"
+}
