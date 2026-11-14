@@ -1,0 +1,116 @@
+{
+  "audited_pad_instances": 0,
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "die_micrometers": [
+    "3600",
+    "3600"
+  ],
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/trial.def": "3bafc9d3de79fe74f0b01eb1cafd9bb25f35070035d9fd864cfdbbf4073d427b",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "records/wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "syn/audit_tri_oracle_grouped_active_boundary.py": "bc7a9dbbd6f89f646e21c5ed8e42b0b207c5354abc582ae4a75904b0feb33f0f",
+    "syn/audit_tri_oracle_placed_chip_boundary.py": "57a7520a4f382aad06961e331fe360a96e4ac40258b75e14111a85936bc7481b"
+  },
+  "minimum_corner_cell_micrometers": "110.000",
+  "minimum_signal_pad_micrometers": "20.000",
+  "modeled_payload_rate": {
+    "bounds_by_bits_per_pad_per_cycle": {
+      "1": {
+        "minimum_payload_pads": 978,
+        "signal_slots_left_after_payload": -302,
+        "transfer_time_floor_ms": 1268.225
+      },
+      "2": {
+        "minimum_payload_pads": 489,
+        "signal_slots_left_after_payload": 187,
+        "transfer_time_floor_ms": 634.113
+      }
+    },
+    "cycle_budget": 508660000,
+    "decode_tokens": 60,
+    "minimum_mean_payload_bits_per_cycle": 977.56,
+    "packed_weight_and_sign_read_bits": 497245757440,
+    "prefill_tokens": 600,
+    "scope": "One archived local model trace and only packed weight and sign reads. The transfer floor assumes every signal pad receives payload at full rate."
+  },
+  "pad_abstract_sha256": "58608b1b0a791906a6f7982a4afa544fe835ff7290dee36c50ea01e0d6d242f0",
+  "pad_library_signal_masters": 56,
+  "parent_netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "placement_definition_sha256": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+  "raw_external_memory_channel_signals": 1326,
+  "scope": "Native placement export and one-row perimeter bound using the installed 28 nm pad library. The bound leaves out power and ground pads, spacing and package constraints. The placement has no cells from the audited pad library.",
+  "signals_by_function": {
+    "attention_result": {
+      "input": 0,
+      "output": 2048,
+      "total": 2048
+    },
+    "clock_and_reset": {
+      "input": 2,
+      "output": 0,
+      "total": 2
+    },
+    "command_and_response": {
+      "input": 103,
+      "output": 39,
+      "total": 142
+    },
+    "feedforward_result": {
+      "input": 1,
+      "output": 5182,
+      "total": 5183
+    },
+    "head_prediction_result": {
+      "input": 0,
+      "output": 42,
+      "total": 42
+    },
+    "memory_auxiliary_read": {
+      "input": 516,
+      "output": 72,
+      "total": 588
+    },
+    "memory_base_addresses": {
+      "input": 128,
+      "output": 0,
+      "total": 128
+    },
+    "memory_primary_read": {
+      "input": 516,
+      "output": 73,
+      "total": 589
+    },
+    "memory_write": {
+      "input": 4,
+      "output": 145,
+      "total": 149
+    },
+    "normalization_stream": {
+      "input": 388,
+      "output": 6,
+      "total": 394
+    },
+    "rotary_angles": {
+      "input": 1026,
+      "output": 1,
+      "total": 1027
+    },
+    "token_signs_and_origins": {
+      "input": 2050,
+      "output": 23,
+      "total": 2073
+    }
+  },
+  "single_row_signal_pad_limit": 676,
+  "state": "grouped_active_placement_boundary_verified",
+  "terminals": 12365,
+  "terminals_by_edge": {
+    "bottom": 3092,
+    "left": 3091,
+    "right": 3091,
+    "top": 3091
+  }
+}
