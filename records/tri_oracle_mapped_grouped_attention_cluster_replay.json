@@ -1,0 +1,55 @@
+{
+  "active_compute_cores": 4,
+  "added_chip_modules": 0,
+  "bank_leases_acquired_and_released": 26,
+  "batch_cycles": [
+    2910,
+    472,
+    2810,
+    2621,
+    2911
+  ],
+  "batch_masks": [
+    "f",
+    "a",
+    "5",
+    "4",
+    "f"
+  ],
+  "clusters_instantiated": 5,
+  "compiled_memory_instances": 631,
+  "evidence_sha256": {
+    "gpu_fixture_receipt": "1dd23f5cccd320de4afe8d8cd623d5f0486067cb93b0d7e46fabcfab86996706",
+    "link_preparation": "f7d5ef284005bcc746eed6d2b673cbd923bed74300d517b5a31f17cf64b73c60",
+    "native_xcelium": "5413fafd541c7e816496db37020794df4e819a2c2ddd828e357dc616d1c98dce",
+    "prior_canary_record": "8f0a72d5b981411705b7591b4ae52ff98abbc1c436903337673a3bc25b5d156f",
+    "replay_bundle": "4dfa0805eaff3335e5f93cfcfc692a762fd8bdbc7523dbbe7d362e687b39133f",
+    "replay_receipt": "95b17a9f672d93bdc4e842806cc80032237f8c6c298242110fafabed2422365c",
+    "replay_testbench": "7ada57f5481d27fd873c253ddc5048b027e9833958c08d5b12cfa23d499decb2"
+  },
+  "exact_accumulated_words": 832,
+  "exact_dot_products": 3965,
+  "exact_probabilities": 3965,
+  "gpu_crosscheck": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "exact_accumulated_words": 256,
+    "exact_dot_products": 1151
+  },
+  "key_fill_beats": 512,
+  "key_fill_bursts": 9,
+  "mapped_controller_sha256": "8168849ece96ada0d817f49409c4b6cb86e82dcf45617a2e51a1ebc5af3707cf",
+  "mapped_test_candidate_sha256": "15a1eb6af1ee468e46916e0b3d0fa110304ddae3ee003a6c79d92fdf386a52c3",
+  "parent_mapped_canary_sha256": "31ab65db60372786cdc2af59b01071ebf8060de34d3017cae8de1f7154ec3345",
+  "probability_drain_cycles": [
+    611,
+    82,
+    613,
+    610,
+    612
+  ],
+  "rejected_key_count": 513,
+  "scope": "Four mapped probability lanes drive the original compute cluster and its compiled memories through diagnostic ports. The other clusters are instantiated. Key and value transports are exercised in the test harness. The production chip command path, full workload scheduling, and physical timing need separate verification.",
+  "state": "mapped_grouped_controller_and_cluster_replayed",
+  "tested_cluster": 0,
+  "xcelium_exit_status": 0
+}
