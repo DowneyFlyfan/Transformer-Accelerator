@@ -1,0 +1,33 @@
+{
+  "state": "current_candidate_coordinate_reuse_and_native_fixture_verified",
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "previous_def_sha256": "3f0da1203c68b9674d1b75d8b13a3a58002ff27faa6973f272f7c0f0da171c49",
+  "candidate_seed_def_sha256": "33e8aaf7b07844e8280d2bb6ecd499f82bff3b38f7d2139a5968f627327c3741",
+  "candidate_logic_cells": 3760655,
+  "candidate_memory_macros_at_same_master_orientation_and_position": 631,
+  "candidate_renamed_memory_macros": 4,
+  "matched_logic": {
+    "instances": 2173521,
+    "area_mm2": "3.350286408"
+  },
+  "logic_requiring_placement": {
+    "new_names": 1587097,
+    "different_master": 37,
+    "area_mm2": "2.550084432"
+  },
+  "fixture": {
+    "logic_cells": 512,
+    "poses_imported_exactly": 256,
+    "poses_unchanged_after_legalization": 143,
+    "additional_cells_placed": 256,
+    "unplaced": 0,
+    "exact_named_pin_connectivity": true
+  },
+  "evidence_sha256": {
+    "seed_receipt.json": "9b6fb02e3958ad957135c25f7ea799891cd8770f58e95e3f675055332b3a6e3a",
+    "fixture_receipt.json": "d6c4092f151e47977116c9f71290713e46631761bfd85dd40592bc5a3fb3c0df",
+    "build_seed.py": "41a47195a3ae7065ad507524fd061111ceaf124a728e50f60f8a4f1bdb0d7f1b",
+    "verify_fixture.py": "54eaa8d52027fe61de8fece7ef464d2c2990993b0785b4c01812c49f7122f989"
+  },
+  "scope": "Candidate coordinates match exact hierarchical names and masters. An Innovus fixture verified the partial DEF import and legal placement with identical mapped connectivity. The fixture establishes command behavior; it does not establish timing, full-chip placement, or final coordinates on the candidate."
+}
