@@ -1,0 +1,20 @@
+{
+  "direct_writer_parent_sha256": "3d1ac6b8ab6d0f61d66bcd60d5c7e2eb364d73a42d8a3bba4956049189e83bdf",
+  "estimated_cell_area_change_um2": -25492.824,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/audit.py": "312111a07ad74a52e1340e61368f23b7849801690d359275939d5cbe9c55070d",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/combined_area_screen.json": "560576e0e86c2e0ce5654896dba5f84f67a54c84ad4006bbad17a4aa94e5d912",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/connect.py": "2ece1e5fefa085a134de94c3dae1d03e869e41b18c3ce1bb2ec287226a305528",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/control/linked_writeback_control_tb.sv": "959bff0168174fbed8197acb1b0f4a103a83444846c4c84404bd513f23df2f01",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/control/xrun.log": "32776f3f3812f3a18ef972d6cc75240245e2fcb09790c2f76d20d662b8150aab",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/mapped_bundle.sv": "3cb3876090a7a3b9481aa11bd15f9b053dce10c7bd2817baacc35791b5d1a644",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/structure.json": "24f59bbeb225d4fa1128dcaee09c74cf323f738babad75a9d146b472a407006a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/syntax/xrun.log": "bb7b33291f1827359ff87130d6e7b086741624861ceebd4854affd33b7d522c6"
+  },
+  "linked_candidate_sha256": "4326ed1cdaa37110153a6fad17ec01d42496a7239b6d592bbbcab37ecbb736b8",
+  "mapped_cells_fitting_released_rows": 57310,
+  "memory_instance_paths": 631,
+  "scope": "The top binds the mapped projection, memory ports and mapped write-back together. The extracted command control was simulated for separate readiness, accepted commands, sticky error and abort. Frame scales and the lease are configured externally. The released-row result checks widths. The linked candidate still needs whole-chip simulation, physical placement and timing.",
+  "state": "in_chip_writeback_netlist_linked_and_control_verified",
+  "writeback_port_bindings": 31
+}
