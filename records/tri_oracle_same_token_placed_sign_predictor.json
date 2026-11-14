@@ -1,0 +1,24 @@
+{
+  "auxiliary_reads": 2781,
+  "cycles_in_fixture": 245902,
+  "external_reads": 3872,
+  "local_receipt_sha256": "ca44c02f8a85d32271d0213e5a3a6c18ccef425eeeeb02043288e84e20745a41",
+  "logical_reads": 5104,
+  "mask_bits_per_branch": 22528,
+  "mask_groups": 704,
+  "native": {
+    "native_exit_status": 0
+  },
+  "placed_predictor_sha256": "94688069c1031ccef577dbf760f148fa0c46fd5fc3da9468359e0dc02cfac08c",
+  "primary_reads": 1091,
+  "scope": "Standalone placed predictor replay. Checks gate, up, and skip masks and ordered memory requests for the four trained tokens. Whole-chip feed-forward replay remains pending.",
+  "skipped_channels": 2214,
+  "state": "placed_strip_predictor_matches_same_token_trained_fixture",
+  "token_positions": [
+    0,
+    305,
+    607,
+    608
+  ],
+  "wrong_first_read_address_rejected": true
+}
