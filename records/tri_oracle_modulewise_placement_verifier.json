@@ -1,0 +1,32 @@
+{
+  "archived_mapped_placed_inventory": {
+    "expanded_leaves": 2120476,
+    "modules": 203,
+    "named_instances": 1017878
+  },
+  "current_candidate_inventory": {
+    "expanded_leaves": 3761286,
+    "modules": 337,
+    "named_instances": 2347574
+  },
+  "current_candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "evidence_sha256": {
+    "archived_mapped": "6644047a1b84fffea0820854d7d3339f429020717b55f03361076fafa0464317",
+    "archived_placed": "3220dd0a13a43c1ce2a35df9d03af8ef2744283e1b3fe3b8b08c1eaa8588c280",
+    "checked_leaf_inventory": "168fe1c9009ec759c7b386224ee059cd035a84e6687e64744db9d004bb7b1b9b",
+    "checker": "fe2ac078fcedbb05390ac3eec0f5fa8bde33d8fc970a89d6d40b0af0e0f2619f",
+    "local_check_receipt": "50b1e3b3c96af05ab66bc6f1339ace94063dbee0629369ab885d7719a13f34c2"
+  },
+  "gate_state_at_verification": "hold_only_missing_independent_paper_qualification_flows",
+  "negative_controls_rejected": [
+    "pin_rewire",
+    "net_width_change",
+    "assignment_rewire",
+    "different_literal",
+    "instance_master",
+    "non_netlist_directive"
+  ],
+  "scope": "The current mapped netlist was enumerated. The archived mapped and placed pair was compared and agreed with the prior checker. Current-candidate placement is pending.",
+  "state": "modulewise_placement_connectivity_checker_verified",
+  "test_address_space_limit_mib": 1536
+}
