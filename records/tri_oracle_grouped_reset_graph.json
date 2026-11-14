@@ -1,0 +1,40 @@
+{
+  "buffered_netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "compared_other_nets": 4502349,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_net_equivalence/buffered/console.log": "877eb294e13f813765b4b436b5ea28d955525a081515caaaa350afc58bd285c7",
+    ".cache/placement_coordinate_reuse/grouped_reset_net_equivalence/original/console.log": "e25e0fb65cb94f691f3198a97c8e197a6addc69b70a6af0de7aba09affb896b0",
+    ".cache/placement_coordinate_reuse/grouped_reset_net_equivalence/proof.json": "9eefd14e480be6acba7853f2160f6f336998a70d8b556b4370499b17557ad457",
+    "records/tri_oracle_grouped_reset_placement.json": "4155de3626d61290fcd2d67892d1ddb32273914f5de9f0056823f088dc32ad37",
+    "records/tri_oracle_grouped_reset_plan.json": "8432c04bc39e17a415d07bb133db336e9aac1486999a6cd2e88ff840e24e7805",
+    "syn/tri_oracle_grouped_reset_net_graph.tcl": "1d539fffe61695e39c774c684b39a05f779804e9eb1eac7e89f424b259c53199",
+    "syn/verify_tri_oracle_grouped_reset_graph.py": "489f1663d0f539e47630ad1620d296ad43aabe65c9dec0fa1334dd5e8ca4d899"
+  },
+  "inserted_noninverting_buffers": 3870,
+  "native": {
+    "buffered": {
+      "ignored_reset_nets": 3875,
+      "minimum_host_available_bytes": 10787180544,
+      "nets": 4502349,
+      "peak_anonymous_bytes": 11571404800,
+      "reset_loads": 92420,
+      "seconds": 128.6595242229523,
+      "sha256": "59b6a338326b9ddac162067fdcb3fcee9a978b1ebf16ee0bcb4aa2e8c5ca7961"
+    },
+    "original": {
+      "ignored_reset_nets": 5,
+      "minimum_host_available_bytes": 12120244224,
+      "nets": 4502349,
+      "peak_anonymous_bytes": 9988452352,
+      "reset_loads": 92420,
+      "seconds": 124.65978883206844,
+      "sha256": "59b6a338326b9ddac162067fdcb3fcee9a978b1ebf16ee0bcb4aa2e8c5ca7961"
+    }
+  },
+  "normalized_graph_sha256": "59b6a338326b9ddac162067fdcb3fcee9a978b1ebf16ee0bcb4aa2e8c5ca7961",
+  "original_cells": 3761286,
+  "original_netlist_sha256": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+  "scope": "Cold native checkpoint graphs matched byte for byte outside the five verified reset trees. Graph records cover leaf drivers and sinks, top-level ports and direct pin constants. Existing placement and library checks cover original cells and noninverting buffer functions. This verifies structural logic preservation under zero-delay buffer substitution. Functional replay on the buffered netlist, wire capacitance and timing are pending.",
+  "state": "whole_chip_native_endpoint_graph_preserved_across_reset_buffer_insertion",
+  "verified_reset_loads": 92420
+}
