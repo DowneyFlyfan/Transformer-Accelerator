@@ -1,0 +1,40 @@
+{
+  "causal_table_queries": 14,
+  "compiled_memory_instances": 631,
+  "concurrent_clusters": 1,
+  "elapsed_seconds": 465.9,
+  "evidence_sha256": {
+    "adjacent_pair_receipt": "a19167e4ac808fc2ca676b57199962d53310c766650bf43e5f856b485e095fdc",
+    "candidate_manifest": "6fc5f1148390b92f215e9a7341b87bbc6f9728dfcfa4e4d308aa14cb39f25d13",
+    "linked_chip": "7bf87bf43720f20c54828987e17e3cb532e463c56d4775c48135723674f047b8",
+    "replay_receipt": "d96e61d2a35e32bf18dede80af82c83ca4d9ea9ffaac8ac4579c7bccb1dde059",
+    "source_chip": "df70c3addcb639bcc97c53d23641c624d4647ffc95db8f573941d7f2bed6919f",
+    "testbench": "5de9ceb5cf21b3d886706de960d0ed56468df9db0233a295d92dafd639f47250",
+    "xcelium_log": "9cc50ec1758a69a04774abfbcefe46982ebd9e9c1571b71a5c8542adc9cb7fc6"
+  },
+  "grouped_exact_words": 2240,
+  "key_fill_bursts": 36,
+  "key_fills": 6,
+  "key_vectors_read": 2046,
+  "legacy_exact_words": 640,
+  "query_positions": [
+    566,
+    568
+  ],
+  "rejected_commands": 6,
+  "scope": "The grouped command selects each of the five mapped four-core clusters in TSMC 28 nm, with one cluster active per command. All clusters use the original probability banks and memory models.",
+  "selected_clusters": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "state": "grouped_chip_command_selects_all_five_clusters",
+  "successful_grouped_commands": 11,
+  "visible_keys_per_query": [
+    340,
+    341
+  ],
+  "xcelium_exit_status": 0
+}
