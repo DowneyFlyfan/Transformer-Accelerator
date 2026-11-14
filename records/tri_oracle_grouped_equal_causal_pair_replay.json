@@ -1,0 +1,78 @@
+{
+  "archived_image_pairs": 288,
+  "archived_image_pairs_with_equal_key_counts": 113,
+  "compiled_memory_instances": 631,
+  "elapsed_seconds": 460.4,
+  "evidence_sha256": {
+    "fixture": "72374d305160a924de2c996f4df3319a953ce8a005c982106787065665ac998a",
+    "gpu_reference": "54094d31f47d5cd7277322e23efa9d603137dd55519e068bd1407a42382cb77f",
+    "legacy_capture": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "native_xcelium": "83b96abac8330e50affb0c384b0ee650e34c1ff28cc2e1b0a5435fb4c710c674",
+    "receipt": "504a6f989a15f1ca523b670f7869cd5e4e4425650847e441f2e6906580bf872b",
+    "value_transport": "8d8d6adb476d92ec983bedf49838feef6818d884c313bac469c80ec4fafa9800",
+    "value_transport_xcelium": "c8292a5a355acae00827afeb2527be73f93a8c010cbee9cda97dbd1c517a38a1"
+  },
+  "gpu_crosscheck": {
+    "causal_sizes": 822,
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "exact_dot_products": 822,
+    "exact_outputs": 256
+  },
+  "grouped_cases": [
+    {
+      "cycles": 3286,
+      "keys": 347,
+      "mask": "f",
+      "outputs": 256,
+      "tag": "00006f03",
+      "values": 347
+    },
+    {
+      "cycles": 1200,
+      "keys": 0,
+      "mask": "a",
+      "outputs": 128,
+      "tag": "00006f04",
+      "values": 64
+    },
+    {
+      "cycles": 2657,
+      "keys": 0,
+      "mask": "5",
+      "outputs": 128,
+      "tag": "00006f06",
+      "values": 347
+    },
+    {
+      "cycles": 2167,
+      "keys": 0,
+      "mask": "4",
+      "outputs": 64,
+      "tag": "00006f07",
+      "values": 347
+    },
+    {
+      "cycles": 2780,
+      "keys": 0,
+      "mask": "f",
+      "outputs": 256,
+      "tag": "00006f08",
+      "values": 347
+    }
+  ],
+  "grouped_exact_words": 832,
+  "key_fill_bursts": 6,
+  "key_vectors_read": 347,
+  "legacy_exact_words": 640,
+  "query_positions": [
+    579,
+    580
+  ],
+  "scope": "Ten legacy rows and five grouped commands complete on one reset with the trained merge map. The two grouped queries have identical compact key counts and different causal sizes. The command, size adapter and value transport are simulated as register-transfer logic on the mapped chip.",
+  "state": "grouped_chip_command_replays_equal_length_causal_pair",
+  "visible_keys_per_query": [
+    347,
+    347
+  ],
+  "xcelium_exit_status": 0
+}
