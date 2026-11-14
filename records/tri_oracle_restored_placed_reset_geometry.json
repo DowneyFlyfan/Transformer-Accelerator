@@ -1,0 +1,43 @@
+{
+  "candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "corner_pin_loads": {
+    "ffg1p05vm40c": {
+      "driver_limit_pf": "0.0725175",
+      "margin_before_wiring_pf": "0.04816176",
+      "total_root_pin_load_pf": "0.02435574"
+    },
+    "ssg0p9v125c": {
+      "driver_limit_pf": "0.0552179",
+      "margin_before_wiring_pf": "0.03133466",
+      "total_root_pin_load_pf": "0.02388324"
+    },
+    "tt1v25c": {
+      "driver_limit_pf": "0.0597256",
+      "margin_before_wiring_pf": "0.03583228",
+      "total_root_pin_load_pf": "0.02389332"
+    }
+  },
+  "driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+  "geometry": {
+    "all_roots_bbox_um": 1933.96,
+    "driver_master": "INR2D1BWP12T40P140",
+    "driver_to_roots_um": [
+      223.32,
+      629.56,
+      695.16,
+      917.28,
+      1020.0,
+      1026.62
+    ],
+    "register_master": "EDFCNQD1BWP12T40P140",
+    "register_to_driver_um": 806.8,
+    "root_count": 6
+  },
+  "local_receipt_sha256": "b7f0d26ee5d78eb7b64218d06b98d868549ab191d2988ac39b9ed6b85d7196dc",
+  "placed_netlist_sha256": {
+    "cold": "8697155bd0be908d45cf989f3957a4a8235c0f8461b6beff6aa608348e7a21d8",
+    "place": "1826eccdb94f06668ceb94863644fd1cdb55a90e59d42a6f78f8cd4e21a7fa1d"
+  },
+  "scope": "Independent reset connectivity, instance-origin distances and library pin loads. Wire parasitics, recovery/removal timing and slew remain unmeasured.",
+  "state": "placed_registered_reset_geometry_and_pin_load_verified"
+}
