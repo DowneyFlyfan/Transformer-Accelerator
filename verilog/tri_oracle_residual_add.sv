@@ -14,15 +14,25 @@ module tri_oracle_residual_add (
         input logic signed [7:0] projection,
         input logic [4:0] shift
     );
-        // 40 bits cover both signed operands even at the largest shift, plus
-        // the rounding bias. Negative sums use floor((sum + 2047) / 4096).
-        logic signed [39:0] projected, combined, rounded;
+        // At shift 31, the negative projection alone can be -2^38.
+        // The signed 40-bit sum also covers the residual in that case.
+        logic signed [39:0] projected, combined;
+        logic signed [27:0] floor_code;
+        logic [15:0] rounded;
+        logic round_up;
+
         projected = 40'(projection) <<< shift;
         combined = 40'(residual) + projected;
-        rounded = (combined + (combined < 0 ? 40'sd2047 : 40'sd2048)) >>> 12;
-        if (rounded > 40'sd32767) return 16'h7fff;
-        if (rounded < -40'sd32768) return 16'h8000;
-        return rounded[15:0];
+        floor_code = $signed(combined[39:12]);
+        // The low 12 bits are the nonnegative remainder after flooring.
+        // Round up above half, or at a tie when the sum is nonnegative.
+        round_up = combined[11] && (!combined[39] || (|combined[10:0]));
+        rounded = floor_code[15:0] + 16'(round_up);
+        // Rounding can increase the floor by at most one, so values beyond
+        // these bounds still saturate to the same endpoint.
+        if (floor_code >= 28'sd32767) return 16'h7fff;
+        if (floor_code < -28'sd32768) return 16'h8000;
+        return rounded;
     endfunction
 
     always_comb begin

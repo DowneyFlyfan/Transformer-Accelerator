@@ -1,0 +1,27 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/expected.bin": "4af86bd505dfeac32a0bd8ca49558e38463cc8c1b7a2e1dd758b5b93e10f263e",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/output.hex": "8624e8e6391497c3a574da10a67fd261ced8afe09ed74f6e7a26b65144672bfa",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/receipt.json": "39a3908f389386d9b22cef716db0fcc7e8d07ff065c6e1fb0190e67482122703",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/replay/xrun.log": "a6ad7af34ff18aab2856df44c9c406f68731f0f532bc83b94782d3ff3b05129b",
+    ".cache/placement_coordinate_reuse/layer10_bridge_native.json": "e67de55e7a5b5b56b9b361fb8e5bf4e50e7782aaa5191c71d71fb0b492c71692",
+    ".cache/placement_coordinate_reuse/residual_add_corner_check/canonical/mapped_native_projection.log": "7847f8a7d814478b6a006640a577b77ea4a363213f02355a5f7b9249154464a3",
+    ".cache/placement_coordinate_reuse/residual_add_corner_check/canonical/netlist.v": "f777198005df877ab2a598a35dfb2bfc133026df443a444fc86e715813fa0a62",
+    "records/tri_oracle_localized_native_full_chip_placement.json": "a734e36962808af07424010d74fed6bd2fef19a2a2b459523e2c39538642d5dc",
+    "records/tri_oracle_residual_add_corner_repair.json": "a0b70ca187018b0b2d3fd58dfda31a856ffc47e260981d201ff8ba43eda82672"
+  },
+  "exact_mapped_residual_codes": 4096,
+  "exact_normalization_packets": 512,
+  "exact_projection_codes": 4096,
+  "layer": 10,
+  "positions": [
+    607,
+    608
+  ],
+  "projection_groups": 32,
+  "projection_native_elapsed_seconds": 1837.43,
+  "projection_write_beats": 512,
+  "scope": "The placed chip candidate's mapped netlist ran attention and output projection. The verified native output drove the revised mapped residual adder and register-transfer-level normalization in a separate Xcelium session. Feed-forward runs separately on the placed chip's mapped netlist.",
+  "state": "mapped_chip_attention_projection_and_separate_mapped_residual_replay_verified"
+}
