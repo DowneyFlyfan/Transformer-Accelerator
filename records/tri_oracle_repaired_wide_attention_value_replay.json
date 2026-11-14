@@ -1,0 +1,47 @@
+{
+  "attention_rows": 4,
+  "auxiliary_stalled_cycles": {
+    "request": 872,
+    "response": 146
+  },
+  "baseline_candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "baseline_log_sha256": "65694e677dad3befc893b9eb894e1a2a4be11dce3b783ee42b78694552dad5f8",
+  "baseline_value_response_beats": 8184,
+  "candidate_value_response_beats": 1023,
+  "compiled_memory_instances": 631,
+  "directed_log_sha256": "ef9a6196ebc4b079e04aa7d0576e5eb3715d83af99864a7de745fa80f2c04487",
+  "exact_output_words": 256,
+  "fixed_auxiliary_service_model_ms": {
+    "aligned_example": [
+      864.650309,
+      864.674143
+    ],
+    "trained_fixture": [
+      864.652595,
+      864.676429
+    ]
+  },
+  "fixed_auxiliary_service_model_scope": "Archived 600-token prefill and 60-token decode. One cycle per request or response, all attention values on the auxiliary lane, fixed sign placement, and no reuse of indexed weights across batches. This screening model excludes keys, writes, compute, controller bubbles and physical memory timing.",
+  "full_log_sha256": "39fb8add02b7ca2d62433d4bd171941aaa1ce983be6fbf85d52be0b820df15c5",
+  "isolated_weight_value_lane_faults_checked": 2,
+  "local_receipt_sha256": "c3394046095899bd4f6e3c002e35bd75dbd710aa0149b61683bd620579ed4eab",
+  "mapped_response_setup_slack_ps": 1178,
+  "modeled_service_with_eight_key_beats_per_pair_ms": {
+    "aligned_example": [
+      1202.656798,
+      1202.680633
+    ],
+    "trained_fixture": [
+      1202.654512,
+      1202.678347
+    ]
+  },
+  "modified_candidate_sha256": "ec68f645050a860e87aaf530abd87a9aebccc71d027d60e3d8411f4d632ae3d6",
+  "requests": 1023,
+  "scope": "Gate-level replay of the modified repaired netlist with a modeled auxiliary memory port and all 631 compiled memory instances. Checks four archived attention rows, context transfers and projection cache writes. No physical timing or full-model latency measurement.",
+  "simulated_ns": {
+    "baseline": 7255630,
+    "candidate": 7191710
+  },
+  "state": "wide_attention_value_on_repaired_mapped_chip_replayed"
+}
