@@ -1,0 +1,78 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.def": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+    ".cache/placement_coordinate_reuse/installed_pad_views/partial_pad_seed/blockages.tsv": "9e63ebf4c6b76ed14de0646c1b497e1edcbfd791a1854b626ecf117536a18cf8",
+    ".cache/placement_coordinate_reuse/installed_pad_views/partial_pad_seed/macros.tsv": "a46d30f0c8574ad2c530cdc6a5bf78096891d78a1887b848e958241310fd1c59",
+    "records/tri_oracle_grouped_active_boundary.json": "4ea079a613d72f8bc6969efa1da9fc3a1869e56b69f11c5efd5eb157b6f7d32f",
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "records/tri_oracle_pad_ring_clearance.json": "22ab2568b3450208ef06228e1c5aaf68c2470e8c26ea9e794646556180ca8f75",
+    "records/tri_oracle_pad_ring_macro_seed.json": "d1c4d1c0d84dd875e28e8318f21d558828387fbb6b7a07bf11feeab78f7ead90",
+    "syn/plan_tri_oracle_partial_pad_ring.py": "34bc5501b6db7e1a9b3dac8cba28e97db6f861614ae033558905e3b5dd6ba0d3"
+  },
+  "ideal_double_data_rate_payload_pads": 489,
+  "original_macro_halos_preserved": 631,
+  "scenarios_by_reserved_bottom_slots": {
+    "0": {
+      "free_placement_sites": 1653585,
+      "geometric_utilization_percent": 95.50812171883597,
+      "moved_macros": 70,
+      "slots_beyond_ideal_payload": 18,
+      "total_signal_pad_slots": 507
+    },
+    "128": {
+      "free_placement_sites": 282210,
+      "geometric_utilization_percent": 99.20372782124092,
+      "moved_macros": 163,
+      "slots_beyond_ideal_payload": 146,
+      "total_signal_pad_slots": 635
+    },
+    "160": {
+      "free_placement_sites": -60718,
+      "geometric_utilization_percent": 100.17299329079036,
+      "moved_macros": 180,
+      "slots_beyond_ideal_payload": 178,
+      "total_signal_pad_slots": 667
+    },
+    "169": {
+      "free_placement_sites": -157065,
+      "geometric_utilization_percent": 100.44872991136195,
+      "moved_macros": 180,
+      "slots_beyond_ideal_payload": 187,
+      "total_signal_pad_slots": 676
+    },
+    "32": {
+      "free_placement_sites": 1310760,
+      "geometric_utilization_percent": 96.40591765017275,
+      "moved_macros": 97,
+      "slots_beyond_ideal_payload": 50,
+      "total_signal_pad_slots": 539
+    },
+    "64": {
+      "free_placement_sites": 967860,
+      "geometric_utilization_percent": 97.3209547228726,
+      "moved_macros": 114,
+      "slots_beyond_ideal_payload": 82,
+      "total_signal_pad_slots": 571
+    },
+    "96": {
+      "free_placement_sites": 625035,
+      "geometric_utilization_percent": 98.25332246970062,
+      "moved_macros": 135,
+      "slots_beyond_ideal_payload": 114,
+      "total_signal_pad_slots": 603
+    }
+  },
+  "scope": "Analytical placement capacity with existing macro sizes and original halos. The pad allowance assumes the selected depth and pitch and ideal two-bit-per-cycle receive throughput. Control, power, ground, package access, legal standard-cell placement and wiring remain to be verified.",
+  "selected_bottom_slots": 64,
+  "standard_cell_sites_required": 35159189,
+  "state": "partial_pad_ring_macro_and_blockage_seed_verified"
+}
