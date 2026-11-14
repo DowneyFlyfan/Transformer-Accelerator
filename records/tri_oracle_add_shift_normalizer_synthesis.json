@@ -1,0 +1,32 @@
+{
+  "clock_period_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/add_shift.log": "37f6c978ed276cc27363f10d54fc6af0e747e9458f5a3def59bf92f5c483d5e4",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/area.rpt": "c9b38aaeb94fc1bdfd589c2cd2409a4abffe4ae497c44175ea54f0064a464df5",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/baseline.log": "c2f61c4a83785c8b0ca3b474f835b0d149cb61a9e3a552145f18e78d96bb3db8",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/console.log": "993942f7cc100ac681aa40411f2320045e5acb762def8668d22614c8a0e875f2",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/constraints.sdc": "501344e4f7807639a3a43cd6768553742eef7d0ed182a19773ad4d8322c23c1c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/map.tcl": "cb1cec1696353d1bc57a39ce2f8fb86c50ee38181a8484e53f7a3e906c42b698",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/mapped_replay.log": "140a9418a699ae4b69248c2e0e6912c0077f297255641b75a8cf9d60af0b3b62",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/netlist.v": "8976cd1866e08299831c6d46ec04823c8191105bf32476b6cd6e578d2c4a54a5",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/projection.log": "087dce9602d0d52fd25445da1a183b0d554668ed252b73b5eb0e33495a607d13",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/replay.log": "c8c2070f1d45e47d8dc9cb575f5bedb1e9b08680de6196c29f1cca57095a45d6",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/normalizer_restoring_root/timing.rpt": "5fb377ad7445cd1385a3b346f5f54ed8934b5b0782cbf42e391cc75b99139bdb",
+    "syn/test_tri_oracle_rmsnorm.py": "e56674c6e50bd9c627afa224a981210fb9468ed81b92179f5cdbd0c10517b6d0",
+    "verilog/tri_oracle_rmsnorm.sv": "ff1b90d6c0427a8c8f103b54b18cc3cc117726417a476b5b25f0f8f18d3a60f7"
+  },
+  "mapped_bank_normalizer_cell_area_um2": 47973.576,
+  "mapped_bank_normalizer_cells": 46390,
+  "mapped_normalizer_subtree_cells": 28012,
+  "scope": "The corrected bank normalizer uses a restoring root based on additions, subtractions and fixed shifts. The isolated Genus block uses the Taiwan Semiconductor Manufacturing Company 28 nm slow library and a zero-wireload timing model, with no attached memory timing or placed interconnect. The mapped Xcelium replay checks trained values with compiled memory models and without timing annotation.",
+  "search_cycles_per_strip": 15,
+  "slow_corner_setup_slack_ps_at_displayed_precision": 0,
+  "source_vector_replay_responses": 1883,
+  "state": "add_shift_root_synthesized_and_trained_values_verified_in_xcelium",
+  "trained_activation_values": 4096,
+  "trained_positions": [
+    607,
+    608
+  ],
+  "trained_residual_values": 4096
+}

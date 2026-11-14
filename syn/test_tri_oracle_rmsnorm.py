@@ -112,6 +112,7 @@ module tri_oracle_rmsnorm_tb;
                 @(negedge clk); timeout++;
             end
             if (out_valid !== 1'b1) $fatal(1,"RMS_RESULT_TIMEOUT");
+            if (!error && timeout != 15) $fatal(1,"RMS_SEARCH_LATENCY cycles=%0d",timeout);
             if ({out_tag,out_index,out_count,out_last,out_error} !==
                 {expected_tag,10'(index),4'(error ? 0 : 8),last,error})
                 $fatal(1,"RMS_METADATA_MISMATCH tag=%h index=%0d",out_tag,out_index);
@@ -242,9 +243,10 @@ class RmsNormalizerTest(unittest.TestCase):
                              if line.startswith('MemAvailable:')))*1024
         self.assertGreaterEqual(available, 6*1024**3)
         def bounded():
-            resource.setrlimit(resource.RLIMIT_AS, (1024**3, 1024**3))
+            resource.setrlimit(resource.RLIMIT_AS, (2*1024**3, 2*1024**3))
+        source = Path(getattr(self, 'normalizer_source_path', 'verilog/tri_oracle_rmsnorm.sv')).resolve()
         with tempfile.TemporaryDirectory(prefix='rmsnorm_test_', dir='.cache') as directory:
-            root = Path(directory)
+            root = Path(directory).resolve()
             input_file, expected_file = root/'input.memh', root/'expected.memh'
             input_file.write_text(''.join(f'{word:032x}\n' for word in input_words))
             expected_file.write_text(''.join(f'{word:034x}\n' for word in expected_words))
@@ -253,19 +255,14 @@ class RmsNormalizerTest(unittest.TestCase):
             text = text.replace('@INPUT_FILE@', str(input_file))
             text = text.replace('@EXPECTED_FILE@', str(expected_file))
             bench.write_text(text.replace('@BODY@', '\n'.join(body)))
-            binary = root/'rmsnorm.vvp'
-            compile_result = subprocess.run([
-                'iverilog', '-g2012', '-s', 'tri_oracle_rmsnorm_tb', '-o', str(binary),
-                getattr(self, 'normalizer_source_path', 'verilog/tri_oracle_rmsnorm.sv'),
-                str(bench)],
-                capture_output=True, text=True, timeout=60, preexec_fn=bounded)
-            self.assertEqual(compile_result.returncode, 0, compile_result.stderr)
-            result = subprocess.run(['vvp', str(binary)], capture_output=True, text=True,
-                                    timeout=120, preexec_fn=bounded)
+            result = subprocess.run([
+                '/opt/cadence/bin/xrun', '-64bit', '-sv', '-top', 'tri_oracle_rmsnorm_tb',
+                str(source), str(bench)], cwd=root, capture_output=True, text=True,
+                timeout=120, preexec_fn=bounded)
         self.assertFalse(root.exists())
         self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
-        self.assertEqual(result.stdout.count('RMS_NORMALIZER_PASS'), 1)
-        self.assertEqual(result.stdout.count('RMS_VECTOR_PASS'), len(cases)+2)
+        self.assertEqual(sum(line.startswith('RMS_NORMALIZER_PASS ') for line in result.stdout.splitlines()), 1)
+        self.assertEqual(sum(line.startswith('RMS_VECTOR_PASS ') for line in result.stdout.splitlines()), len(cases)+2)
 
 
 if __name__ == '__main__':
