@@ -1,0 +1,61 @@
+{
+  "archived_attention_operands_exact": false,
+  "evidence_sha256": {
+    "normalization_receipt": "909dd69ec73699dd3558e58fc26c39f34a67230b75f76d83f2028683a2851ade",
+    "residual_receipt": "a9f8870a073a1b01aaef92e5c6c550efc0ad50ab47d7a535d7709383e675880e",
+    "xcelium_negative": "3d855835de3b993633aafde8edbfa31954c9780a4a6b0573bb2dd4eaef461b2d",
+    "xcelium_positive": "18cd28f6ec25497c180c7884ccba4e3d71de1585bccbfaa7bea10fac270900b0"
+  },
+  "expected_feedforward_words": 4096,
+  "expected_intermediate_bytes": 11264,
+  "layer": 10,
+  "negative_control_first_expected_bit_flip_rejected": true,
+  "normalization_native_exit_status": 0,
+  "normalized_activation_codes": 4096,
+  "operand_comparison": [
+    {
+      "differences": {
+        "key_rows": 6,
+        "maximum_result_delta": 66,
+        "projection_input_codes": 0,
+        "query_rows": 0,
+        "result_words": 48,
+        "score_shifts": 0,
+        "value_exponents": 0,
+        "value_rows": 21
+      },
+      "key_rows": 1496,
+      "position": 607,
+      "query_heads": 32,
+      "value_rows": 1496
+    },
+    {
+      "differences": {
+        "key_rows": 6,
+        "maximum_result_delta": 71,
+        "projection_input_codes": 0,
+        "query_rows": 0,
+        "result_words": 95,
+        "score_shifts": 0,
+        "value_exponents": 0,
+        "value_rows": 21
+      },
+      "key_rows": 1500,
+      "position": 608,
+      "query_heads": 32,
+      "value_rows": 1500
+    }
+  ],
+  "positions": [
+    607,
+    608
+  ],
+  "projection_input_codes": 4096,
+  "question": 42000,
+  "scope": "Reference projection values and recovered residual feed standalone Xcelium normalization. The mapped projection handoff and mapped feed-forward are pending.",
+  "skipped_channels_by_token": [
+    0,
+    764
+  ],
+  "state": "layer10_projection_residual_normalization_and_feedforward_reference_verified"
+}

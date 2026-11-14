@@ -3,6 +3,7 @@
 import argparse
 from hashlib import sha256
 import json
+import math
 from pathlib import Path
 import struct
 
@@ -35,20 +36,22 @@ def unpack_slice(payload, shape):
         rows // 8, features // 8, 8, 8).transpose(0, 2, 1, 3).reshape(shape)
 
 
-def checkpoint_matrix(path, key, shape):
-    """Read only one float32 matrix from a verified SafeTensors shard."""
+def checkpoint_tensor(path, key, shape=None):
+    """Read only one float32 tensor from a verified SafeTensors shard."""
     with path.open("rb") as shard:
         header_size, = struct.unpack("<Q", shard.read(8))
         assert 0 < header_size <= 100_000_000
         entry = json.loads(shard.read(header_size))[key]
-        assert entry["dtype"] == "F32" and entry["shape"] == list(shape)
+        assert entry["dtype"] == "F32"
+        actual_shape = tuple(entry["shape"])
+        assert shape is None or tuple(shape) == actual_shape
         start, stop = entry["data_offsets"]
-        assert 0 <= start < stop and stop - start == 4 * shape[0] * shape[1]
+        assert 0 <= start < stop and stop - start == 4 * math.prod(actual_shape)
         assert 8 + header_size + stop <= path.stat().st_size
         shard.seek(8 + header_size + start)
         data = shard.read(stop - start)
     assert len(data) == stop - start
-    return np.frombuffer(data, dtype="<f4").reshape(shape)
+    return np.frombuffer(data, dtype="<f4").reshape(actual_shape)
 
 
 def verify(layer, output):
@@ -90,7 +93,7 @@ def verify(layer, output):
                 stream.seek(offset)
                 payload = stream.read(entry["bytes"])
             assert len(payload) == entry["bytes"] and sha256(payload).hexdigest() == entry["sha256"]
-            codes, scale = quantized_matrix(checkpoint_matrix(checkpoint, key, shape))
+            codes, scale = quantized_matrix(checkpoint_tensor(checkpoint, key, shape))
             assert scale == entry["scale_exponent"]
             np.testing.assert_array_equal(unpack_slice(payload, shape), codes)
             rows[branch] = dict(shape=list(shape), scale_exponent=scale, bytes=len(payload),
