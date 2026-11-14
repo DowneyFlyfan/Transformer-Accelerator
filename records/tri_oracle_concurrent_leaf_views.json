@@ -1,0 +1,45 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "evidence_sha256": {
+    "local_leaf_coverage_receipt": "018bb0367ffc3eda07ab87cad4fed128b9953297929edbd32a5459c1a14a3573",
+    "mapped_replay_record": "5d9c055ee656250425c040c84716e9ccbd622e4dba8ade91845b6d272f94c038",
+    "native_import_record": "081abec945ff442511895a690d528308c577cfe97c7278a4b35e12821e3177c6"
+  },
+  "functional_models": {
+    "instances": 3761286,
+    "masters": 430
+  },
+  "memory_macro_instances": 631,
+  "memory_macro_masters": 6,
+  "physical_abstracts": {
+    "instances": 3761286,
+    "masters": 430
+  },
+  "scope": "Full leaf master coverage for the imported Taiwan Semiconductor Manufacturing Company 28 nm netlist. The three timing model catalogs cover the selected local corners. Placement, timing closure and paper operating-point measurements remain pending.",
+  "standard_cell_instances": 3760655,
+  "standard_cell_masters": 424,
+  "state": "concurrent_netlist_leaf_view_coverage_verified",
+  "timing_views": {
+    "hold_fast": {
+      "degrees_celsius": -40,
+      "instances": 3761286,
+      "library_files": 7,
+      "masters": 430,
+      "voltage": "1.05"
+    },
+    "setup_slow": {
+      "degrees_celsius": 125,
+      "instances": 3761286,
+      "library_files": 7,
+      "masters": 430,
+      "voltage": "0.9"
+    },
+    "setup_typ": {
+      "degrees_celsius": 25,
+      "instances": 3761286,
+      "library_files": 7,
+      "masters": 430,
+      "voltage": "1.0"
+    }
+  }
+}
