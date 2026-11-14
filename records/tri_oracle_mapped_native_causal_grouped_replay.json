@@ -1,0 +1,36 @@
+{
+  "compiled_memory_instances": 631,
+  "elapsed_seconds": 471.4,
+  "evidence_sha256": {
+    "legacy_capture": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "mapped_chip": "49a57377b17ec618afefe510ac8150f02f9bbf32212b40db0f521f869b1da82a",
+    "mapped_command_partitions": "a20abc25bb18d5d2a828d8c8d3818f3ddf7d40fa1d4606ec233b98ad6af93b88",
+    "mapping_receipt": "9c63dd4cdb11102dba3f9e7c272a6a045a78e5ca4d62dfb2caf27fa7062fb5f0",
+    "replay_receipt": "f539c683993b8fc60c2238dc3e3143554ffccbcecb0c1e8740f23aaf6f2a0662",
+    "source_replay_receipt": "504a6f989a15f1ca523b670f7869cd5e4e4425650847e441f2e6906580bf872b",
+    "xcelium_log": "bf0169edbfc3c6e7534d67116139b8591c5dbd080cc3a755bae26e4224d68abe"
+  },
+  "genus_clock_period_ns": 1.72414,
+  "grouped_cases_cycle_exact_with_source": 5,
+  "grouped_exact_words": 832,
+  "key_fill_bursts": 6,
+  "key_vectors_read": 347,
+  "legacy_exact_words": 640,
+  "partition_setup_slack_ps": {
+    "command": 513,
+    "token_sizes": 427,
+    "value_multicast": 841
+  },
+  "query_positions": [
+    579,
+    580
+  ],
+  "rejected_commands": 5,
+  "scope": "TSMC 28 nm mapped logic replay for two retained image tokens with equal compact causal key counts. Five grouped commands use one cluster after ten legacy rows on one reset. Genus slacks are from separately mapped partitions.",
+  "state": "mapped_native_causal_grouped_attention_pass",
+  "visible_keys_per_query": [
+    347,
+    347
+  ],
+  "xcelium_exit_status": 0
+}
