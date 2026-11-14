@@ -12,6 +12,36 @@
       "scan_chain_diagnostic_count": 0
     }
   },
+  "connected_scan_pin_fixture": {
+    "diagnostic_count_by_mode": {
+      "baseline": 2,
+      "functional": 0,
+      "no_reorder": 2
+    },
+    "evidence_sha256": {
+      "baseline/before.v": "c398ac84eb9755da1770adfa4b455f8f821992256f4ce6d57fdd19369f5c8d04",
+      "baseline/console.log": "9667d09b8175a69058be72b31f12377176fb621fdd486d5d079d02d068b258a5",
+      "baseline/placed.v": "20c39d16a1142b656d1a988849ae572bc77c0b6e2b2347c3f3ed7df0f9a10125",
+      "baseline/scan_cells_after.rpt": "0b754e8b14db317a89884a4003f7f629fbb63007d138ac54986a95810527dfbc",
+      "baseline/scan_chains_before.rpt": "0f3edb4aece5c9e0cf5006cebab89d38ef61f753fcc6eaadd9802ffbe9768012",
+      "functional/before.v": "8f7a9dcc637b4f7771faa76a790629429ac3df57ea73c346c7135e89be0ef93d",
+      "functional/console.log": "3958424f5783fb3898116fae2449713472cc3fffcbba6d491fc94d0370223f3b",
+      "functional/placed.v": "0d73257147df885a6568016f8ba34154a9dc61d90ae81fa22b69dd209a4b04fd",
+      "functional/scan_cells_after.rpt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functional/scan_chains_before.rpt": "0f3edb4aece5c9e0cf5006cebab89d38ef61f753fcc6eaadd9802ffbe9768012",
+      "no_reorder/before.v": "8921050f05abae1ed9baae7c63493054dbd17647def264fb84fcdebd912aad4f",
+      "no_reorder/console.log": "e96a480d2fcefbc401bd76456e3b1c0b8d73d5d7657e7bb0ce63647fadabc490",
+      "no_reorder/placed.v": "a229e6638fe99bbcc265720c90b4d2b982e619470371668e77cf488fa1a275ab",
+      "no_reorder/scan_cells_after.rpt": "0b754e8b14db317a89884a4003f7f629fbb63007d138ac54986a95810527dfbc",
+      "no_reorder/scan_chains_before.rpt": "0f3edb4aece5c9e0cf5006cebab89d38ef61f753fcc6eaadd9802ffbe9768012",
+      "run.tcl": "109eef00a7da3265e75699cabe1d569e0a78fa649011c96110a6555f92f7331f",
+      "scan_probe.v": "97e49729bf491e99dbee7f985e9c20044244837e47ec850b220a94761003ae87",
+      "supervisor.log": "221f5a4f49308feabc854c73f00ce5baf08d9b2db9024740a513d706d249a258"
+    },
+    "identical_mapped_connectivity": true,
+    "placed_instances": 512,
+    "scan_metadata_command": "delete_all_scan_cells"
+  },
   "direct_output_feedback_instances": 18100,
   "evidence_sha256": {
     "baseline_after": "a65bf900107d213db28913cac94c274761e399ac4e822581ffbdeffed72cca38",
@@ -29,6 +59,6 @@
   "fixture_leaves": 16,
   "identical_mapped_connectivity": true,
   "scan_pin_instances": 172675,
-  "scope": "Sixteen scan-capable flip-flops use their scan inputs for functional feedback. The supported Innovus command changes scan metadata. Fixture connectivity is checked before and after placement. Whole-chip placement and test-chain integration remain open.",
+  "scope": "Two Innovus controls use scan-capable flip-flops for functional data. The connected 512-cell control reproduces IMPSP-9099. Removing scan metadata clears it while preserving the full exported connectivity. Whole-chip placement and test-chain integration remain open.",
   "state": "functional_scan_cell_placement_control_measured"
 }
