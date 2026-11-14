@@ -1,0 +1,78 @@
+{
+  "arcs": {
+    "layer/layer/attention_pipeline/attention/g150859/ZN": {
+      "before": {
+        "maximum_driver_sink_manhattan_um": 2455.26,
+        "origin_box_span_um": 2461.66
+      },
+      "driver_moved": false,
+      "historical_arc_delay_ns": "2.777800",
+      "moved_sink_instances": 1,
+      "placed": {
+        "maximum_driver_sink_manhattan_um": 2455.26,
+        "origin_box_span_um": 2461.66
+      },
+      "sinks": 5
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/local_merge.token_merge/similarity/shard/g47991/Z": {
+      "before": {
+        "maximum_driver_sink_manhattan_um": 292.8,
+        "origin_box_span_um": 292.8
+      },
+      "driver_moved": false,
+      "historical_arc_delay_ns": "6.730202",
+      "moved_sink_instances": 0,
+      "placed": {
+        "maximum_driver_sink_manhattan_um": 292.8,
+        "origin_box_span_um": 292.8
+      },
+      "sinks": 1
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_merge.relay/g4904/ZN": {
+      "before": {
+        "maximum_driver_sink_manhattan_um": 2.68,
+        "origin_box_span_um": 2.68
+      },
+      "driver_moved": false,
+      "historical_arc_delay_ns": "32.609505",
+      "moved_sink_instances": 0,
+      "placed": {
+        "maximum_driver_sink_manhattan_um": 2.68,
+        "origin_box_span_um": 2.68
+      },
+      "sinks": 1
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/g10821/ZN": {
+      "before": {
+        "maximum_driver_sink_manhattan_um": 2385.14,
+        "origin_box_span_um": 2714.48
+      },
+      "driver_moved": false,
+      "historical_arc_delay_ns": "3.924000",
+      "moved_sink_instances": 0,
+      "placed": {
+        "maximum_driver_sink_manhattan_um": 2385.14,
+        "origin_box_span_um": 2714.48
+      },
+      "sinks": 15
+    }
+  },
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/audit_registered_flush_arc_geometry.py": "df1e957205a89f6aadf3df4beccd7aa7b98022bc02f1df06ba899f7339d7de7d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/nonlinear_rounding_trial/joined_variant_verification/plan_backend_reset_tree.py": "4f47789b9385cb0ef791b061389edeeffc2f104eb012bc585093203401ecf28a",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.def": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.v": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/cold_native/receipt.json": "1389667d798e7c0118827fdaa1e93ed0f5a722d32cc4b0ab5dc1478b0ab6e04d",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/native/pad_ring.def": "ee68ea2cdc5ebb17123273ff97b4b8ef9f3c7ed57192f4c742832125e7c403fe",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/native/pad_ring.v": "c5b952b8888a8360e45cdd8dd04e911e8a9aae1c7399ddf196f64e9d54723cb8",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/historical_paths.py": "8e2058576b6f2c75d82b6fc4d24b8ebca3511054ffbb4f1712742cc45dbe693e",
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "records/tri_oracle_partial_pad_native_cold_result.json": "3ce3c08d9142f51d32211a5c70d96aab7898f60b969ae5b1e50f7701988ed1da",
+    "records/tri_oracle_partial_pad_restored_models.json": "d74756e7cebadf97c49d872e357307f9955d37b59638efd190347c81f853059c",
+    "records/tri_oracle_registered_flush_historical_setup_loads.json": "873d33a891eb39e3abd7e6d7f968e9ab1e6f9f1306620aab367294540d547c9f"
+  },
+  "scope": "Physical endpoint distances for drivers from a historical slow setup report. The historical delays were measured on a different design. Current wire delays are unmeasured.",
+  "state": "historical_critical_drivers_compared_on_pad_reserved_placement"
+}
