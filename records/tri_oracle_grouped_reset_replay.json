@@ -1,0 +1,30 @@
+{
+  "buffered_netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/expected.bin": "4af86bd505dfeac32a0bd8ca49558e38463cc8c1b7a2e1dd758b5b93e10f263e",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/receipt.json": "39a3908f389386d9b22cef716db0fcc7e8d07ff065c6e1fb0190e67482122703",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/replay/xrun.log": "a6ad7af34ff18aab2856df44c9c406f68731f0f532bc83b94782d3ff3b05129b",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/bundle.sv": "df478cd99e5ea5bddfed7164227bbd2626bb739e8019bd7c4c02142b710ad745",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/output.hex": "8624e8e6391497c3a574da10a67fd261ced8afe09ed74f6e7a26b65144672bfa",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/receipt.json": "ae8937a26416c720f95688c7c33cbb12d845ed4b9e7e2edb08bdfe2978a414bb",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/xrun.log": "478941fd6d46ab6b3a2a3bf4594cb76e9303a8592c7a7149cbee813c42f2a21a",
+    "records/tri_oracle_grouped_reset_graph.json": "cc651de12665f5c414974765cc8a81a163734558b1df6fb6756be5118d223edf",
+    "syn/verify_tri_oracle_grouped_reset_replay.py": "9a8cc0ead3ca831914e59201879750073a88930be65a584ac842b7584da9647a"
+  },
+  "heads": 32,
+  "memory_macros": 631,
+  "native": {
+    "minimum_host_available_bytes": 16459689984,
+    "peak_anonymous_bytes": 6087294976,
+    "seconds": 1896.8775341250002,
+    "xcelium_exit_status": 0
+  },
+  "output_codes": 4096,
+  "projection_write_beats": 512,
+  "reference_netlist_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "scope": "Trained layer 10 attention-to-projection fixture at two positions. Timing checks disabled.",
+  "state": "buffered_placed_netlist_trained_projection_replayed_in_xcelium",
+  "tokens": 2,
+  "trained_attention_schedules_with_identical_cycles_and_requests": 3
+}
