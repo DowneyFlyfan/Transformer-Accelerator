@@ -1,0 +1,77 @@
+{
+  "active_grouped_cores": 4,
+  "command_errors_verified": 5,
+  "elapsed_seconds": 440.39,
+  "evidence_sha256": {
+    "bench": "176c567785ff8323f84ee680d1b82f73e74e3a87117e2a49f72384247821c874",
+    "command_source": "c70487be31bce89e38728ceeb581d941610022f6a879def27fbb146ab163cc04",
+    "gpu_reference": "078bdc1e8a3e13ed204a7ad49a6a1c91f36b84e4b89a8c366bd634c64869e1b4",
+    "grouped_oracle": "c229048209a25ef72372b4a5266b523a0d59ce06d51ee3552dce2dd1a57d3df2",
+    "legacy_capture": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "native_xcelium": "b71cc4f5998fc72f5be8cddbe84ac6b170f45fad00f460f2ea13f92886b0fcc4",
+    "receipt": "e5feef1922e388edb4a0fccde94ed3093d1ae72139bd0104864edefb7e1bfff4"
+  },
+  "gpu_crosscheck": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "exact_dot_products": 823,
+    "exact_output_words": 256,
+    "exact_sizes": 823
+  },
+  "grouped_attention_words": 832,
+  "grouped_cases": [
+    {
+      "cycles": 3287,
+      "keys": 348,
+      "mask": "f",
+      "outputs": 256,
+      "tag": "00006f03",
+      "values": 348
+    },
+    {
+      "cycles": 1200,
+      "keys": 0,
+      "mask": "a",
+      "outputs": 128,
+      "tag": "00006f04",
+      "values": 65
+    },
+    {
+      "cycles": 2658,
+      "keys": 0,
+      "mask": "5",
+      "outputs": 128,
+      "tag": "00006f06",
+      "values": 348
+    },
+    {
+      "cycles": 2170,
+      "keys": 0,
+      "mask": "4",
+      "outputs": 64,
+      "tag": "00006f07",
+      "values": 348
+    },
+    {
+      "cycles": 2783,
+      "keys": 0,
+      "mask": "f",
+      "outputs": 256,
+      "tag": "00006f08",
+      "values": 348
+    }
+  ],
+  "grouped_command_successes": 5,
+  "key_fill_bursts": 6,
+  "key_vectors_read": 348,
+  "legacy_attention_words": 640,
+  "legacy_layers": 11,
+  "mapped_chip_sha256": "7b4c7585661fca7ebd96e51c025f58a04c4dcc348bcbae7c55f0d4759840fb58",
+  "retained_compiled_memory_instances": 631,
+  "scope": "The same reset covers trained token merging, context restore, ten legacy attention rows, and the grouped command. The grouped sequencer and token-size adapter are simulated as register-transfer logic on the mapped chip. The test uses the archived merge map with independent grouped attention vectors. The paper's full-model benchmark and placed timing remain open.",
+  "state": "grouped_chip_command_uses_compiled_causal_merge_tables",
+  "visible_keys_per_query": [
+    347,
+    348
+  ],
+  "xcelium_exit_status": 0
+}
