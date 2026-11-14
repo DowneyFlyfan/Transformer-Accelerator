@@ -1,0 +1,30 @@
+{
+  "clock_period_ns": 1.72414,
+  "compiled_memory_macros": 631,
+  "elapsed_seconds": 84.6,
+  "evidence_sha256": {
+    "inverter_equivalence": "a9731f762dc8c5fa18929d9d515c92393fc94e3e2d63ac7c32733da4f0e66307",
+    "native_log": "d09599333a2e020f6635532f2265aa55b4270879413446d6fdbf75caac19f62c",
+    "native_receipt": "f155466a803d3ecbafdda6feb606b05880e83ff25a89e155492ef1c3d5d1d65c",
+    "physical_footprint": "2a3d319585dbc17b65ee7123b7829cf0e1cc06c922277b82bc20e04beb97033f"
+  },
+  "external_constraint_counts": {
+    "set_input_delay": 4732,
+    "set_input_transition": 4732,
+    "set_load": 7631,
+    "set_output_delay": 7631
+  },
+  "netlist_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "protected_instances_per_view": 12,
+  "scope": "Successful cold Innovus import and exact boundary, memory, and constraint inventories. The timing period is a constraint. Placement, timing closure and routing are pending.",
+  "signal_pin_bits": 12365,
+  "standard_cell_inverters_added": 2,
+  "standard_cell_muxes_added": 10652,
+  "state": "concurrent_chip_innovus_cold_import_verified",
+  "timing_threads": 20,
+  "timing_views": [
+    "setup_slow",
+    "setup_typ",
+    "hold_fast"
+  ]
+}
