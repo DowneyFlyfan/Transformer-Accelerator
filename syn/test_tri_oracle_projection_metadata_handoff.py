@@ -14,6 +14,7 @@ RANKED = ROOT / ".cache/physical/ranked_sign_slots"
 REPLAY = RANKED / "mapped_prefetched_metadata_bank_traffic"
 PREDICTOR = RANKED / "mapped_prefetched_metadata_32/netlist.v"
 BANK = ROOT / ".cache/placement_coordinate_reuse/projection_shared_bank/netlist.v"
+BRIDGE = ROOT / "verilog/tri_oracle_projection_read_bridge.sv"
 TOP = "tri_oracle_packed_sign_predictor_tb"
 BANK_PORTS = dict(CEB="metadata_ce_n", WEB="metadata_we_n", A="metadata_address",
                   D="metadata_write_data", Q="metadata_read_data")
@@ -24,24 +25,45 @@ PROJECTION_TEST = r"""
     logic [2047:0] row_data;
     logic [4:0] row_shift;
     logic [5:0] row_index;
-    logic projection_req_valid = 0, projection_req_ready, projection_rsp_valid;
+    logic projection_req_valid = 0, projection_rsp_valid;
     logic [8:0] projection_req_word;
     logic projection_rsp_ready = 0, projection_rsp_last, projection_rsp_error;
     logic [63:0] projection_rsp_data;
+    logic chip_req_ready, chip_rsp_valid, chip_rsp_last, chip_rsp_error, bridge_idle;
+    logic [511:0] chip_rsp_data;
+    logic local_req_valid, local_req_ready, local_rsp_ready, external_read;
+    logic [8:0] local_req_word;
+    logic [4:0] local_req_length;
     wire metadata_ce_n, metadata_we_n;
     wire [8:0] metadata_address;
     wire [63:0] metadata_write_data, metadata_read_data;
     logic [2052:0] operands[64];
     logic [511:0] activation[64];
 
+    tri_oracle_projection_read_bridge projection_reads (
+        .clk, .rst_n, .projection_enabled(frame_ready),
+        .req_valid(projection_req_valid), .req_wide(1'b0), .req_ready(chip_req_ready),
+        .req_address(64'h10000 | (64'(projection_req_word) << 3)), .req_length(6'd16),
+        .rsp_valid(chip_rsp_valid), .rsp_ready(projection_rsp_ready),
+        .rsp_last(chip_rsp_last), .rsp_error(chip_rsp_error), .rsp_data(chip_rsp_data),
+        .external_req_valid(external_read), .external_req_ready(1'b0),
+        .external_req_wide(), .external_req_address(), .external_req_length(),
+        .external_rsp_valid(1'b0), .external_rsp_last(1'b0), .external_rsp_error(1'b0),
+        .external_rsp_ready(), .external_rsp_data('0),
+        .local_req_valid, .local_req_ready, .local_req_word, .local_req_length,
+        .local_rsp_valid(projection_rsp_valid), .local_rsp_ready,
+        .local_rsp_last(projection_rsp_last), .local_rsp_error(projection_rsp_error),
+        .local_rsp_data(projection_rsp_data), .idle(bridge_idle)
+    );
+
     tri_oracle_projection_shared_bank projection (
         .clk, .rst_n, .metadata_idle(cfg_ready && !cfg_valid),
         .acquire_valid, .acquire_ready, .release_valid, .release_ready,
         .row_valid, .row_ready, .row_data, .row_shift, .row_index,
         .frame_ready, .fill_error,
-        .req_valid(projection_req_valid), .req_ready(projection_req_ready),
-        .req_word(projection_req_word), .req_length(5'd16),
-        .rsp_valid(projection_rsp_valid), .rsp_ready(projection_rsp_ready),
+        .req_valid(local_req_valid), .req_ready(local_req_ready),
+        .req_word(local_req_word), .req_length(local_req_length),
+        .rsp_valid(projection_rsp_valid), .rsp_ready(local_rsp_ready),
         .rsp_last(projection_rsp_last), .rsp_error(projection_rsp_error), .rsp_data(projection_rsp_data),
         .metadata_ce_n, .metadata_we_n, .metadata_address, .metadata_write_data, .metadata_read_data
     );
@@ -73,21 +95,21 @@ PROJECTION_TEST = r"""
             projection_req_valid = 1;
             projection_req_word = 9'(word);
             @(posedge clk);
-            if (projection_req_ready !== 1'b1) $fatal(1, "PROJECTION_METADATA_REQUEST");
+            if ({chip_req_ready, external_read} !== 2'b10) $fatal(1, "PROJECTION_METADATA_REQUEST");
             @(negedge clk);
             projection_req_valid = 0;
             for (int beat = 0; beat < 16; beat++) begin
                 // Each burst includes a held response before its first acceptance.
                 if (beat == 0) begin
                     @(posedge clk);
-                    if (release_ready || !projection_rsp_valid)
+                    if (release_ready || !chip_rsp_valid || bridge_idle)
                         $fatal(1, "PROJECTION_METADATA_ACTIVE_RELEASE");
                     @(negedge clk);
                 end
                 projection_rsp_ready = 1;
                 @(posedge clk);
-                if ({projection_rsp_valid,projection_rsp_error,projection_rsp_last,projection_rsp_data} !==
-                    {1'b1,1'b0,(beat==15),activation[(word+beat)/8][64*((word+beat)%8) +: 64]})
+                if ({chip_rsp_valid,chip_rsp_error,chip_rsp_last,chip_rsp_data} !==
+                    {1'b1,1'b0,(beat==15),448'b0,activation[(word+beat)/8][64*((word+beat)%8) +: 64]})
                     $fatal(1, "PROJECTION_METADATA_OPERAND word=%0d", word+beat);
                 @(negedge clk);
                 projection_rsp_ready = 0;
@@ -99,7 +121,7 @@ PROJECTION_TEST = r"""
         if (release_ready !== 1'b1) $fatal(1, "PROJECTION_METADATA_RELEASE");
         @(negedge clk);
         release_valid = 0;
-        if (frame_ready || projection_rsp_valid) $fatal(1, "PROJECTION_METADATA_STALE_FRAME");
+        if (frame_ready || chip_rsp_valid || !bridge_idle) $fatal(1, "PROJECTION_METADATA_STALE_FRAME");
         $display("PROJECTION_METADATA_HANDOFF_PASS rows=64 words=512");
     endtask
 """
@@ -149,7 +171,7 @@ def extend_bench(text):
 """)
 
 
-def run(log, mutate):
+def run(log, mutate, bridge=BRIDGE):
     assert Path("/.dockerenv").is_file()
     check_memory(10 * GIB)
     receipt = json.loads((REPLAY / "receipt.json").read_text())
@@ -162,7 +184,7 @@ def run(log, mutate):
     result = json.loads((ROOT / "records/tri_oracle_projection_shared_bank.json").read_text())
     assert sha(BANK) == result["evidence_sha256"][str(BANK.relative_to(ROOT))]
     vectors, pins = trained_vectors()
-    pins.update({path: sha(path) for path in (*inputs, BANK, Path(__file__).resolve())})
+    pins.update({path: sha(path) for path in (*inputs, BANK, bridge, Path(__file__).resolve())})
     with TemporaryDirectory(prefix="mapped_projection_metadata_", dir=ROOT / ".cache") as tmp:
         work = Path(tmp)
         rows, expected = work / "rows.hex", work / "expected.hex"
@@ -189,7 +211,8 @@ def run(log, mutate):
             replacement.write_text(content)
             command[command.index(str(path))] = str(replacement)
         log_file = work / "xrun.log"
-        command.extend([str(BANK), "-l", str(log_file), f"+PROJECTION_ROWS={rows}", f"+PROJECTION_EXPECTED={expected}"])
+        command.extend([str(BANK), str(bridge), "-l", str(log_file),
+                        f"+PROJECTION_ROWS={rows}", f"+PROJECTION_EXPECTED={expected}"])
         with log.open("x") as stream:
             child = subprocess.Popen(command, cwd=work, stdin=subprocess.DEVNULL,
                                      stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
@@ -221,5 +244,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("log", type=Path)
     parser.add_argument("--mutate", action="store_true")
+    parser.add_argument("--bridge", type=Path, default=BRIDGE)
     args = parser.parse_args()
-    run(args.log.resolve(), args.mutate)
+    run(args.log.resolve(), args.mutate, args.bridge.resolve())
