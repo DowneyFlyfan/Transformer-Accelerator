@@ -1,0 +1,31 @@
+{
+  "compiled_memory_instances": 631,
+  "corrected_netlist_structure": {
+    "array_rows_and_lanes": [
+      32,
+      8
+    ],
+    "clusters": 5,
+    "cores": 20,
+    "netlist_sha256": "65cd9c0fc0eab98eab74ee9960c3e4c8a413708945cde9b00c72de0f96a53ae2",
+    "nominal_operations_per_second_at_580_mhz": 5939200000000
+  },
+  "elapsed_seconds": 697.6,
+  "evidence_sha256": {
+    "corrected_netlist_geometry_receipt": "9839d0c9a4da4282c0ac40322eb4c9bc4f6fa4fa58a85ebaa9c97151e65b53e3",
+    "gpu_oracle_receipt": "9100e6ee010467cea2be339326b914e6e3e1e00dcf36416def763f4080a1418c",
+    "native_log": "ab30a85cc14d8959d2509824a37cb45868c091f67b6200cdf4b1f6b9641cae51",
+    "native_receipt": "7d75f536ddf89e94d587661a765ccd0afc8cf37a62f087e903ed27465edffbde"
+  },
+  "exact_grouped_words": 704,
+  "exact_legacy_words": 640,
+  "replayed_netlist_sha256": "ef7fb97d6729b97973642d8d6c5f47b5cba24f0bfc8a3ca2be52602644eb8e02",
+  "scope": "Trained attention replay across five clusters with timing checks disabled on the export before selector cell mapping. The corrected export has independently checked compute geometry and is undergoing its own replay. The nominal peak uses the paper clock frequency.",
+  "state": "trained_attention_pair_replayed_on_five_mapped_clusters",
+  "trained_grouped_requests": {
+    "dual_lane_cycles": 814,
+    "key_beats": 1875,
+    "query_beats": 11,
+    "value_beats": 1254
+  }
+}
