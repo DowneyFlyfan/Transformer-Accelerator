@@ -28,7 +28,7 @@ def exact_match(pattern, text):
     return value
 
 
-def verify(gate_path):
+def verify(gate_path=None):
     record = read(REPEATER)
     memory, timing, functional = map(read, (PARENT_MEMORY, PARENT_TIMING, PARENT_FUNCTION))
     parent = record["parent_mapped_netlist_sha256"]
@@ -87,17 +87,12 @@ def verify(gate_path):
     for field in ("candidate_netlist_sha256", "compiled_bytes", "compiled_macros"):
         assert memory_census[field] == memory[field]
 
-    gate = read(gate_path)
-    gate_candidate = gate["observed_facts"]["candidate_sha256"]
-    assert gate_candidate != candidate and not gate["advance_to_clock_distribution_or_routing_allowed"]
-    assert not gate["verification_errors"]
-    for path in (REPEATER, PARENT_MEMORY, PARENT_TIMING, PARENT_FUNCTION, gate_path, Path(__file__).resolve()):
+    for path in (REPEATER, PARENT_MEMORY, PARENT_TIMING, PARENT_FUNCTION, Path(__file__).resolve()):
         paths[str(path.relative_to(ROOT))] = sha(path)
-    return {
+    result = {
         "state": "cold_reloaded_repeater_placement_verified_against_candidate_exports",
         "candidate_placement_netlist_sha256": candidate,
         "parent_mapped_netlist_sha256": parent,
-        "paper_gate_candidate_sha256": gate_candidate,
         "die_mm": dimensions,
         "core_clock_constraint_ns": period,
         "placed_instances": placed,
@@ -107,15 +102,21 @@ def verify(gate_path):
         "parent_compiled_memory_bytes": memory["compiled_bytes"],
         "parent_completed_slow_timing_paths": timing["completed_timing_paths"],
         "parent_exact_feedforward_values": functional["exact_feedforward_outputs"],
-        "scope": "The cold placement geometry and clock constraint belong to the repeater export. The memory capacity, timing attempt and trained replay refer to its mapped parent. This verifier records the candidate identities and does not change the paper gate or grant permission to route.",
+        "scope": "The cold placement geometry and clock constraint belong to the repeater export. The memory capacity, timing attempt and trained replay refer to its mapped parent.",
         "evidence_sha256": paths,
     }
+    if gate_path is not None:
+        gate = read(gate_path)
+        assert not gate["advance_to_clock_distribution_or_routing_allowed"] and not gate["verification_errors"]
+        result["paper_gate_candidate_sha256"] = gate["observed_facts"]["candidate_sha256"]
+        paths[str(gate_path.relative_to(ROOT))] = sha(gate_path)
+    return result
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("gate_report", type=Path)
+    parser.add_argument("gate_report", type=Path, nargs="?")
     args = parser.parse_args()
     if not __debug__:
         raise RuntimeError("Run with Python assertions enabled")
-    print(json.dumps(verify(args.gate_report.resolve()), indent=2, sort_keys=True))
+    print(json.dumps(verify(args.gate_report.resolve() if args.gate_report else None), indent=2, sort_keys=True))

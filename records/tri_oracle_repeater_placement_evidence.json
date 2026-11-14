@@ -34,7 +34,7 @@
     ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/setup_slow/native_status.json": "be2f2be226fecd48aabd0e11fec5bb84477d4e194678588b703ba7e6eb4427bd",
     ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/setup_slow/timing.rpt": "efcaaa6e32afdb187f5c0a3b56e624d82d8083170a019f67ef6afed790590a2d",
     ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/supervisor.log": "7f32a43d8ae4d90d52e9ee23fd07a84b1ec17f4ebb983249274617da08a75f12",
-    ".cache/placement_coordinate_reuse/trained_layer11_boundary/paper_gate_review/gate.json": "430a7d3d51010320fb1bbf6be2cda69a0a40563bc42bdcf5921ee1fa3f2435ec",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/paper_gate_review/current_gate.json": "c301f7ea8791088c11646faae874033c3726c1c06c6d7a4af8b92783a0365c73",
     "records/tri_oracle_grouped_active_graph.json": "4a8e9881c7e99f4cdc153f33e9bd6cb2cae531c8427f314e446b1d4f15342499",
     "records/tri_oracle_grouped_active_trained_feedforward.json": "6c19b9e83c43bb799922c14502ebc3aea9e278ef80c1cf3e38cf21a984199cb9",
     "records/tri_oracle_partial_pad_historical_setup_geometry.json": "6dc423cab3b33522935798433ad394d08dadd11e4d20324efc98e8b31cae858a",
@@ -44,17 +44,17 @@
     "records/tri_oracle_partial_pad_restored_models.json": "d74756e7cebadf97c49d872e357307f9955d37b59638efd190347c81f853059c",
     "records/tri_oracle_partial_pad_slow_timing_memory_limit.json": "69e26081a96796e297b1ec2b8fcccb89c9a3753a3ac918ceb593ed6e36e53e79",
     "syn/run_tri_oracle_buffered_feedforward.py": "0c5917ef86963497cf71077e3cecb680636eb6642da92d21554a8873410d1685",
-    "syn/verify_tri_oracle_repeater_placement_evidence.py": "c2284c87319b8414132c3cebda189c419f052000a1e5c2c7efa0fc2d44c1cb17"
+    "syn/verify_tri_oracle_repeater_placement_evidence.py": "a0ef10f673bbb54a0e48433a913b6d0d2bef57bef23223807eb03e965c58ce15"
   },
   "fixed_memory_macros": 631,
   "netlist_modules_compared": 541,
-  "paper_gate_candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "paper_gate_candidate_sha256": "4882f7f18fdfe12f0c965a41e15b7eb464da7fbbcef8df38dd59bf85d822f614",
   "parent_compiled_memory_bytes": 414928,
   "parent_completed_slow_timing_paths": 0,
   "parent_exact_feedforward_values": 4096,
   "parent_mapped_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
   "placed_instances": 3765870,
-  "scope": "The cold placement geometry and clock constraint belong to the repeater export. The memory capacity, timing attempt and trained replay refer to its mapped parent. This verifier records the candidate identities and does not change the paper gate or grant permission to route.",
+  "scope": "The cold placement geometry and clock constraint belong to the repeater export. The memory capacity, timing attempt and trained replay refer to its mapped parent.",
   "state": "cold_reloaded_repeater_placement_verified_against_candidate_exports",
   "unplaced_instances": 0
 }
