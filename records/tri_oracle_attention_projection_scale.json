@@ -1,0 +1,48 @@
+{
+  "cell_area_um2": 200.76,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/activation.hex": "d5c8c8be725f5dec56e8f5f405d3db4eef45f10216ae97bf5a65f4be07ab6d42",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/receipt.json": "39a3908f389386d9b22cef716db0fcc7e8d07ff065c6e1fb0190e67482122703",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/routes.hex": "f8334de886d1d04823b5494ab8fbb87845a11edbe42b63fd548b4e8df9c92b05",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_offload_benchmark_traffic/expected.hex": "a20d7d6a06488196be8f69ac84b67e057b308ef0eef302411348f11b12a27544",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/area.rpt": "7f2f22b5ed1246a0da325e577c21376e32ce8dfff0b1d0f780d4634b7c5e6060",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/console.log": "099555c67c0ad5686e5919dd338f0f6189ec0e5a44c65cc6acc910feeae785b1",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/constraints.sdc": "4c46fec6a17101f6587b31e811b1733e936874ee2bbc98b58c94ea11775703a0",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/mapped.log": "778be44c2f4426608c7ea19a4c4567d222aabc706fa21051ef311d20ccb227e2",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/mapped_negative.log": "4351b94ed51e5d9a54687cefe284a54aa170150bd929d06cb18679eccf11e48c",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/negative_expected.log": "236f90cf645c99b6b0a907a70f748105bf23daac3bc150ac86398ad06daad2a5",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/negative_zero.log": "1de763a13a11933c732ae456782ee26cd26946fd4de48d59530c66c867525920",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/netlist.v": "c47785616da0b0ce2df1beee221ec67f71ab4ef3177a2217e5f973707253a6c3",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/resources.txt": "b99773462d2691e859fb48574b182930c8dc7913b2ea4003e62cf24ea94e35db",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/source.log": "f44d06542f83932c048760d32641ea2767f137fc5c823aaffa9826ecd88d5dfe",
+    ".cache/placement_coordinate_reuse/attention_projection_scale/timing.rpt": "2bfd09931084d094e737a81dd8ca330f9a4e7bca0c3b8912186e994f70e806a9",
+    "records/tri_oracle_localized_native_full_chip_placement.json": "a734e36962808af07424010d74fed6bd2fef19a2a2b459523e2c39538642d5dc",
+    "syn/test_tri_oracle_attention_projection_scale.py": "00438281efb49215b2e29649873e57b1650e4b294b7536a9428caed81e464909",
+    "syn/tri_oracle_synthesize_attention_projection_scale.tcl": "1f77d9eb10ae473fd16be5b45d6f65631aa82c5c1f8185f86280c7af8b9370d7",
+    "verilog/tri_oracle_attention_projection_scale.sv": "23cf537bb2e377e45cb4d7c7bbeb744a5ec3dce03bf157a99647ce6c97a973e6",
+    "verilog/tri_oracle_attention_projection_scale_tb.sv": "963f27b17930aa429755c1404e368cace218a39f92434a104dfd6a79c3ed9fdb"
+  },
+  "exact_directed_cases": 13738,
+  "exact_trained_operands": 4096,
+  "genus_elapsed_seconds": 34.52,
+  "layer": 10,
+  "library_corner": "slow, 0.90 V, 125 C",
+  "mapped_lanes": 1,
+  "positions": [
+    607,
+    608
+  ],
+  "rejected_negative_controls": [
+    "zero_output",
+    "flipped_expected_bit_source",
+    "flipped_expected_bit_mapped"
+  ],
+  "scope": "One standalone scaler matched archived attention accumulator values checked by the placed chip replay. This run used a virtual clock and zero wireload. Full on-chip lane packing, data transport, and physical timing still need verification.",
+  "source_chip_candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "standard_cells": 265,
+  "state": "trained_attention_projection_scale_matches_source_and_tsmc28_mapped_xcelium",
+  "virtual_clock_period_ns": 1.72414,
+  "worst_synthesis_setup_slack_ps": 294
+}
