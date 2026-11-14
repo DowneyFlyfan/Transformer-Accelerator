@@ -1,0 +1,52 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_normalization/norm_expected.hex": "ca14a843326c11112b024fafc6444c1ff28497156266f05b542321d5d077b310",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_normalization/norm_input.hex": "4608db76bca97f289be137279503128ee7a05e8f9d7cedb4b1fa7b149567e996",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/output.hex": "8624e8e6391497c3a574da10a67fd261ced8afe09ed74f6e7a26b65144672bfa",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/vectors.hex": "b7bcc3b224165703b8d3c6fb6d4790eb178d6426bcd06e913534b299d913990c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/activation_writer.sv": "7c82ef5d2fd8585ed1077b8149a13e270428b592b2f09151f064de9e77fee013",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/branch_expected.hex": "c71f7ea6d88ba8ba55ea269029c2e7c56301b01d45f355e0de1ceee26a9618f0",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/gate.hex": "3400b59d84e4fd3520a665a2f0d0ef09cfa09e5d9c28d85d8de3541b2984fca4",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/ingress_tb.sv": "9b5eb5298e0480cf9b12d8fc7cc4ad548d77c7a9749884dcb22026441ba2f5a8",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/mapped_activation_path_pins.json": "0565ac47c194ceee237f9cfd7ef7dc4243293ed98a14ab970ffb2942a97dfb11",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/prepare.py": "76bf240973e39f626e5c14beb0d6a04a0289c7a1bdde91939c03aefe4f478801",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/projection_source.sv": "b39a96d25f11ad017cf3c7437850a8c0aeaf20744b2eaf84a31f536975e29291",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/run.py": "e483482c363dd7b2750313373ca185ed2938d1ec4a1fbf47c56ff3948decb6ac",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/up.hex": "f53ffb35b474630c441352fd2408ddb9a23dc1ae64bd1c5343405a10bd2cea7f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/verify.py": "2a143bbd7fed76fa0d093a2710b26285bfabfc45ca3a12f80d034f515ed96496",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/projection.v": "4fd21ef9a37956f18e0aaccbcd84dcd619f056130ef66b965c24054b28ec7997",
+    "verilog/tri_oracle_batched_normalize405.sv": "821062cd8ded32d771b6248b48656e01e80ccd1f59d166c721efc24fe90c7dcb",
+    "verilog/tri_oracle_batched_outlier_replay404.sv": "cc044621eadb1400f09d45bda55f5b3a170d303db1af1607c9e8ebfa69752532"
+  },
+  "logical_candidate_sha256": "e280906c5c7b6590219ae1dc89d22e5a0dc9d2dee35e44fcabe6ed55f62c0652",
+  "mapped_graft_point": {
+    "port_count": 27,
+    "provider": "tri_oracle_rms_activation_parallel_chip",
+    "provider_instance": "activation_path",
+    "writer": "tri_oracle_packed_normalize405_CORE_STRIP_PREDICTOR1_parallel_chip"
+  },
+  "positions": [
+    607,
+    608
+  ],
+  "runs_by_failing_acknowledgment_burst": {
+    "0": {
+      "local_log": ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/fault0.log",
+      "marker": "PROJECTION_PREDICTOR_INGRESS_PASS packets=64 activation_bytes=4096 bursts=32 masks=4 sign_reads=136 stall_cycles=204",
+      "sha256": "2cafc201c56be17fd5f5d2b23d828ef529ff741617f3e5d3cee2fbccadb3a5ea"
+    },
+    "1": {
+      "local_log": ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/fault1.log",
+      "marker": "PROJECTION_PREDICTOR_INGRESS_FAULT_PASS burst=1 committed=0 drained_strips=256 masks=0 sign_reads=0",
+      "sha256": "5d294e7c071f5d6db0c4c8d76fad6b71712fc4bd0d221d17299d9c9925dc0870"
+    },
+    "32": {
+      "local_log": ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/predictor_ingress/fault32.log",
+      "marker": "PROJECTION_PREDICTOR_INGRESS_FAULT_PASS burst=32 committed=496 drained_strips=512 masks=0 sign_reads=0",
+      "sha256": "537653095460e608c88b1df5bedd81ad87896f7920f659fe990d03ba7b16dadb"
+    }
+  },
+  "scope": "Mapped projection consumed captured native attention packets and trained normalization operands. The activation writer and sign predictor RTL consumed the ready/valid stream with six compiled memory models, sustained stalls, and two trained weight-sign groups. This prototype ran separately from the placed chip. The packed distributed predictor and whole-chip graft still require verification.",
+  "state": "mapped_projection_stream_drives_feedforward_activation_writer_and_prediction",
+  "verified_channel_groups": 2
+}
