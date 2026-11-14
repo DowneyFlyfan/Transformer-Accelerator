@@ -1,0 +1,49 @@
+{
+  "array_instances": 20,
+  "array_lanes": 8,
+  "array_rows": 32,
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "clusters": 5,
+  "cores_per_cluster": 4,
+  "evidence_sha256": {
+    "paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "syn/audit_tri_oracle_mapped_redundancy.py": "7a54829e8b9deeb8aa4efc595830212f45f1d1326e81024aae85c1b46800ee51",
+    "syn/audit_tri_oracle_shared_prediction_roles.py": "ed237d0dae2f6bb982890fd09fd1e9fa54d537a548caad17262477392ea58349",
+    "syn/verify_tri_oracle_buffered_topology.py": "eca57f3ee50b64d9f3de77a95e38a77a60028ed3fef1580df988ad990bd3f91f",
+    "tri_oracle_grouped_active_graph.json": "4a8e9881c7e99f4cdc153f33e9bd6cb2cae531c8427f314e446b1d4f15342499",
+    "tri_oracle_grouped_reset_graph.json": "cc651de12665f5c414974765cc8a81a163734558b1df6fb6756be5118d223edf",
+    "tri_oracle_mapped_redundancy_and_timing_limit.json": "70c6b7deda488717b24a614f4ac61a2011a1314cb143fbcdc9499e2e974ecef1",
+    "tri_oracle_shared_prediction_roles.json": "017a385cd723630b9b3bacef5fe19f4b215fc29b9465b11660c2b514e180f197"
+  },
+  "local_head_predictors": 20,
+  "local_strip_predictors": 20,
+  "local_token_mergers": 5,
+  "nominal_operations_per_second_at_paper_clock": 5939200000000,
+  "operand_bits": 8,
+  "paper_figures": [
+    "31.6.2",
+    "31.6.4",
+    "31.6.5",
+    "31.6.7"
+  ],
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "prediction_roles": {
+    "attention_tile_scheduler": {
+      "score_ready_response_bit": 71,
+      "score_valid_request_bit": 393,
+      "streaming_decision_response_bit": 68
+    },
+    "feedforward_metadata_and_sign_replay": {
+      "metadata_capacity_bytes": 6656,
+      "metadata_macros": 6,
+      "response_bits_wired_to_masks_and_count": 109,
+      "shared_sign_key_capacity_bytes": 2048,
+      "shared_sign_key_macros": 4
+    }
+  },
+  "registered_final_sum_bits_per_array": 608,
+  "registered_product_bits_per_array": 4096,
+  "scope": "Structural checks on the grouped-active placed netlist. Peak operations use the paper's assumed clock. Whole-chip timing, prediction effectiveness, external interface and end-to-end model accuracy require separate measurements.",
+  "state": "buffered_compute_array_and_local_prediction_topology_verified",
+  "unique_array_masters": 20
+}
