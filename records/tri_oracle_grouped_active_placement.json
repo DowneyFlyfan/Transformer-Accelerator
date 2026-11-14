@@ -1,0 +1,47 @@
+{
+  "buffers": 712,
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/console.log": "d9762e665eba3f74ed430698312443b8cc6300197b0da0caf6a7fe5f3f5e257e",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/placement.rpt": "19a0be42eda3c44c2230a50763f03db330310b9caa54b630f6f914059f59abc5",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/cold_exact/active_loads.tsv": "4e29e8c07816ec9601d2172c2739718bf7efc88c3c5d737176dfa7553e3752be",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/cold_exact/console.log": "519f3cae0e159a6f02a88dd2e756f3b3fd26aa6e1edac70dd5ef55246669cfb4",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/cold_exact/drivers.tsv": "ed9b462b667906d20bce6c51a322ff2f39e13ebf0951ca62376f8943edc507de",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/geometry.json": "b4b4939c5698ac5c949e2e008362d993f804bd97d6d0ec0e290ed2050322642a",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/receipt.json": "a0aa40f264151fd10ccc745bb5e3ec5740e16ffdd7429ac65b9f5fdab90d411e",
+    ".cache/placement_coordinate_reuse/grouped_reset_pin_loads_checked/grouped_active_tree_verified.tsv": "fa7cdedbeba8dc698568ac01ef9e8d8e4df515141bf539383725f0cb9406962e",
+    "records/tri_oracle_grouped_reset_graph.json": "cc651de12665f5c414974765cc8a81a163734558b1df6fb6756be5118d223edf",
+    "records/tri_oracle_grouped_reset_pin_loads.json": "2cba5ac6cb69acdf62935759b2abed18be9e8ec30e2851977904950f1f4b39f2",
+    "syn/tri_oracle_apply_grouped_active.tcl": "66382f7e338b1e99fbe22cee52fc9c1ba2fca151b575e51a415b2df782a65c52"
+  },
+  "native_cold": {
+    "minimum_host_available_bytes": 13330440192,
+    "peak_anonymous_bytes": 9447747584,
+    "seconds": 198.67277756496333
+  },
+  "original_loads": 17013,
+  "parent_netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "pin_margins": {
+    "hold_fast": {
+      "driver": "TRI_GROUPED_ACTIVE_270/Z",
+      "max_pin_load_ratio": 0.20537897310513448,
+      "original_driver_sink_count": 1
+    },
+    "setup_slow": {
+      "driver": "TRI_GROUPED_ACTIVE_270/Z",
+      "max_pin_load_ratio": 0.22950819672131148,
+      "original_driver_sink_count": 1
+    },
+    "setup_typ": {
+      "driver": "TRI_GROUPED_ACTIVE_270/Z",
+      "max_pin_load_ratio": 0.22105263157894736,
+      "original_driver_sink_count": 1
+    }
+  },
+  "placed_design_exchange_sha256": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+  "preserved_fixed_memory_instances": 631,
+  "preserved_instances": 3765156,
+  "scope": "The saved placement retains the original component records and reconnects all grouped_active sinks through the verified tree. Pin loads use Innovus display precision and exclude wires. Whole-chip graph equivalence after this edit and mapped replay remain pending.",
+  "state": "grouped_active_placed_cold_connected_and_pin_loads_verified",
+  "unplaced_instances": 0
+}
