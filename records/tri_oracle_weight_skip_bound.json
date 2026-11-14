@@ -1,0 +1,58 @@
+{
+  "channels": 5632,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "decode_rows": 1320,
+  "decode_skipped": 492230,
+  "decode_steps": 60,
+  "dense_whole_channel_fetch_scenarios": {
+    "1": {
+      "batch_channels": 48339456,
+      "max_percent": "7.920966",
+      "max_removed_batch_channels": 3828952
+    },
+    "16": {
+      "batch_channels": 10058752,
+      "max_percent": "7.642091",
+      "max_removed_batch_channels": 768699
+    },
+    "4": {
+      "batch_channels": 17701376,
+      "max_percent": "7.723897",
+      "max_removed_batch_channels": 1367236
+    },
+    "8": {
+      "batch_channels": 12581888,
+      "max_percent": "7.501323",
+      "max_removed_batch_channels": 943808
+    }
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/normalized_workload_trace/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/model_reference/packed_workload_traffic_v1/packed_traffic.json": "00cd97add38900b860dcaaac5ab2e877b4b975af2261593607cf4a96f3613459",
+    "records/normalized_workload_trace_result.json": "2148ba1d8ed4f60365ef53b96ef83c17295163acaa3927563f6a61f0f9d8121e",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "syn/audit_tri_oracle_weight_skip_bound.py": "6f2f583e38b3c5fb447ff566fe2cd1d5fef10074ea01b5560bdca0629d984372"
+  },
+  "hidden_features": 2048,
+  "layers": 22,
+  "max_eliminated_down_weight_bytes": 7841693696,
+  "max_eliminated_gate_and_up_weight_bytes": 3148591104,
+  "max_percent_of_packed_baseline_saving_at_observed_sign_cost": "17.196618",
+  "max_percent_of_packed_baseline_saving_with_free_signs": "17.784621",
+  "max_weight_bytes_eliminated_by_preserving_applied_masks": 10990284800,
+  "packed_predictor_off_weight_baseline_bytes": 61796564992,
+  "packed_predictor_sign_bytes": 363365376,
+  "packed_projected_percent_saving_at_observed_sign_cost": "-0.581189",
+  "paper_feedforward_external_access_reduction_percent": 57,
+  "paper_target_unreachable_under_bound": true,
+  "prefill_rows": 7263,
+  "prefill_skipped": 3336722,
+  "prefill_tokens": 600,
+  "scope": "One fixed local model trajectory. The bound counts only skipping from its existing masks versus its existing dense packed baseline. Independent lossless coding, batching changes, different masks, or different paper inputs and accounting are outside the bound.",
+  "skip_mask_percent": {
+    "decode": "6.621121",
+    "prefill": "8.157204"
+  },
+  "state": "applied_weight_skip_masks_cannot_reach_target_with_packing_alone_on_local_trace"
+}
