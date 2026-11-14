@@ -1,0 +1,40 @@
+{
+  "candidate_placement_netlist_sha256": "4882f7f18fdfe12f0c965a41e15b7eb464da7fbbcef8df38dd59bf85d822f614",
+  "clock_period_ns": 1.72414,
+  "completed_timing_paths": 0,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/repeater_candidate_timing/inputs.tcl": "2d8deef5e5d001e3580b2a9a62049f984bb40e06466cf0e080644c30c84347ab",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/repeater_candidate_timing/run_repeater_timing.py": "6e760abd90d12d008557bfac84be10fdb77ede13f6edc7de213e2e1d4e4c2d44",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/repeater_candidate_timing/setup_slow/before.sdc": "8ebab6796dac13d56b1f337ce4a696fee5c67b9fe9f01039b2c4530298ed7cb5",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/repeater_candidate_timing/setup_slow/console.log": "db1f9bd0b04684d06945941084a615d8ef54d1564e0dab2202d8fd91fc47e878",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/repeater_candidate_timing/setup_slow/native_status.json": "963b61ef6967fe0de48f17991c1013d0da5eb0e85082af9397144b594b78d8c3",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/repeater_candidate_timing/setup_slow/timing.rpt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/repeater_candidate_timing/supervisor.log": "6863c810d0e2e965040135354274b4e0e1c271aaa385ad0e7e69787d84d0ce7e",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/run.tcl": "36fdc4c8ee2ee48a42cf70235a37be8e41d7fdc74be313f20b7be39a73eac2a1",
+    "records/tri_oracle_partial_pad_repeater_placement.json": "d46f2084451369e59ecb78b2034e18ba1a15ce150e7a852eb9a6a0250321d53c"
+  },
+  "loaded_nets": 4309417,
+  "native": {
+    "elapsed_seconds": 157.35010469693225,
+    "minimum_host_available_bytes": 4409999360,
+    "native_exit_status": -15,
+    "peak_cgroup_anonymous_bytes": 17984221184,
+    "peak_sampled_virtual_bytes": 25049939968,
+    "pressure": [
+      {
+        "action": "pause",
+        "anonymous": 17984188416,
+        "available": 4616359936,
+        "process_groups": [
+          1598247,
+          1598458
+        ]
+      }
+    ],
+    "stop_reason": "Host memory recovery deadline exceeded",
+    "virtual_address_limit_bytes": 32212254720
+  },
+  "scope": "Slow-corner timing for the cold-reloaded two-repeater placement uses original libraries and the ideal clock. The host-memory guard stopped the extraction estimate without a slack measurement. Clock distribution and whole-chip routing remain gated.",
+  "state": "current_repeater_placement_slow_timing_stopped_under_host_memory_pressure",
+  "view": "setup_slow"
+}
