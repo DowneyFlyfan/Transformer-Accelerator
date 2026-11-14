@@ -1,0 +1,24 @@
+{
+  "checked_activation_values": 4096,
+  "checked_projection_packets": 64,
+  "checked_residual_values": 4096,
+  "compiled_testbench_banks": 4,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_lease_validity/omit_correction.log": "b7b64c0e2d4f7da0c8955d5e709f110b9f44023b0689e9e2ca0b3ba44ce6aaf6",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_lease_validity/original.log": "279a90e259bab653dc3030e3880f505cb949e94946d1da449c66182a25b835e1",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_lease_validity/swap_address.log": "9b718ba70501040f4904462326ecafe5ba9790e14f69bb86b765e4961183cb16",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_lease_validity/tracked_normalizer.log": "1f4c444e583312d071127017ed500e69628d74753c51bb0eede1be44693e40d3",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/residual_lease_validity/tracked_projection.log": "bc767d22b7a4a2a23dafe58d7b5aa3a350c8a17fd4420d268e45a99c38e1078d",
+    "verilog/tri_oracle_residual_normalize_bank.sv": "ababfb481fc8451e8f204b98428372fca87d7423d39ce068f03ce2f2f89918b8",
+    "verilog/tri_oracle_residual_normalize_bank_tb.sv": "52d447bc212e5da00a60b76ef9bc63722042afd6e4f97f511d0ff7780647f2a4"
+  },
+  "negative_controls": {
+    "missing_correction_first_error_row": 0,
+    "original_bad_bank_ce_n": 0,
+    "original_bad_read_ready": 1,
+    "swapped_address_first_error_row": 0
+  },
+  "read_attempts_blocked": 5,
+  "scope": "Source simulation with four compiler memory models. Read requests are blocked for tokens with no committed result in the current lease. Checks cover first acquisition, the other token before commit, and both tokens after releasing and reacquiring the banks. The two-seat Genus run reached datapath optimization but produced no mapped artifact within its runtime limit.",
+  "state": "uncommitted_and_released_residual_bank_rows_blocked_in_xcelium"
+}

@@ -93,6 +93,17 @@ module tri_oracle_residual_normalize_bank_tb;
         end
     end
 
+    task automatic expect_uncommitted_read_blocked(input logic [8:0] address);
+        read_row=address;
+        read_valid=1;
+        #1;
+        if (read_ready !== 1'b0 || bank_ce_n !== 1'b1 || response_valid !== 1'b0)
+            $fatal(1, "RESIDUAL_BANK_UNCOMMITTED_READ row=%0d ready=%b ce_n=%b response=%b",
+                   address, read_ready, bank_ce_n, response_valid);
+        @(negedge clk);
+        read_valid=0;
+    endtask
+
     initial begin
         if (!$value$plusargs("VECTORS=%s", fixture) ||
             !$value$plusargs("NORM_INPUTS=%s", gamma_path) ||
@@ -105,6 +116,8 @@ module tri_oracle_residual_normalize_bank_tb;
         rst_n=1;
         if (cfg_ready) $fatal(1, "RESIDUAL_BANK_REPLAY_UNLEASED");
         lease_granted=1;
+        expect_uncommitted_read_blocked(9'd0);
+        expect_uncommitted_read_blocked(9'd256);
         for (int token=0; token<2; token++) begin
             cfg_token=1'(token);
             cfg_tag=32'ha4010000+32'(token);
@@ -121,6 +134,7 @@ module tri_oracle_residual_normalize_bank_tb;
             in_valid=0;
             wait (outputs==(token+1)*256 && cfg_ready);
             @(negedge clk);
+            if (token==0) expect_uncommitted_read_blocked(9'd256);
         end
         if (gamma_count!=512 || writes!=512 || reads!=512 || inputs!=512 || stalls==0)
             $fatal(1, "RESIDUAL_BANK_REPLAY_CENSUS input=%0d gamma=%0d writes=%0d reads=%0d",
@@ -137,6 +151,11 @@ module tri_oracle_residual_normalize_bank_tb;
             @(negedge clk);
             response_ready=0;
         end
+        lease_granted=0;
+        @(negedge clk);
+        lease_granted=1;
+        expect_uncommitted_read_blocked(9'd0);
+        expect_uncommitted_read_blocked(9'd256);
         halfway_case=1;
         cfg_token=0;
         cfg_tag=32'ha4010010;

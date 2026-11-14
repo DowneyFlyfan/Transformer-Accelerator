@@ -40,6 +40,8 @@ module tri_oracle_residual_normalize_bank (
     typedef enum logic [1:0] {Idle, Collect, Replay, Finish} state_t;
     state_t state;
     logic token;
+    logic [1:0] committed_tokens;
+    logic allow_read;
     logic [8:0] inputs;
     logic [7:0] replay_strip;
     logic write_valid, write_ready, norm_valid, norm_ready, producer_ready;
@@ -59,7 +61,8 @@ module tri_oracle_residual_normalize_bank (
     assign norm_ready = state == Collect && stats_ready;
     assign last_stats = norm_valid && norm_ready && (&norm_row[7:0]);
     assign last_write = write_valid && write_ready && (&write_row[7:0]);
-    assign read_ready = state == Idle && !cfg_valid && req_ready;
+    assign allow_read = state == Idle && !cfg_valid && committed_tokens[read_row[8]];
+    assign read_ready = allow_read && req_ready;
     assign response_valid = state == Idle && rsp_valid;
     assign response_data = response_valid ? rsp_data : '0;
     assign gamma_strip = replay_strip;
@@ -67,7 +70,7 @@ module tri_oracle_residual_normalize_bank (
 
     assign req_valid = (state == Collect && write_valid) ||
                        (state == Replay && replay_ready) ||
-                       (state == Idle && !cfg_valid && read_valid);
+                       (allow_read && read_valid);
     assign req_row = state == Collect ? write_row : state == Replay ? {token, replay_strip} : read_row;
     assign rsp_ready = state == Idle ? response_ready : gamma_valid && gamma_ready;
     assign write_ready = state == Collect && req_ready;
@@ -99,6 +102,15 @@ module tri_oracle_residual_normalize_bank (
         .out_valid, .out_ready, .out_last, .out_error, .out_tag, .out_index,
         .out_count, .out_norm_q8, .out_outlier_mask, .out_activation
     );
+
+    // A completed token remains readable for the lifetime of its lease.
+    // The next owner may have replaced any row while the lease was released.
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) committed_tokens <= '0;
+        else if (!lease_granted) committed_tokens <= '0;
+        else if (cfg_valid && cfg_ready) committed_tokens[cfg_token] <= 1'b0;
+        else if (out_valid && out_ready && out_last) committed_tokens[token] <= !out_error;
+    end
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin

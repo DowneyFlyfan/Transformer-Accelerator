@@ -1,0 +1,32 @@
+{
+  "checked_projection_groups": 32,
+  "checked_projection_strips": 512,
+  "chip_memory_instances": 631,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/trial.v": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/verified_receipt.json": "2a84df2143abb58646ff448a5b11de67a5dfb45b86cc12a0cfdcb0003cf47c15",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/bundle.sv": "7d8ff921ab5d56050397eea9191682cfb4c5702d188c71ba42bff2742cb53f05",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/live_norm.sv": "651af7689c40b84034d3b95355179ccad6159710d8c95e17656b8292630a7009",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/native_command_tb.sv": "1782942b20d57f66ebe318278b926cd8c9fb4911484f3f54ab5002e6b73323de",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/output.hex": "8624e8e6391497c3a574da10a67fd261ced8afe09ed74f6e7a26b65144672bfa",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/prepare.py": "71358b0e62b2e6e87c3824962d5787ff4d31d0e5f62c5a165956c28174424de8",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/run.py": "9efb8376517f32b61aecf66e21e9473b9112efd5405c57785dcf8ea31fa85a5c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/supervisor.log": "d52455ca171f3eec05efe91405de3c59bd5d0391ae23ac6baa6e366f60c3e345",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/tested_residual_normalizer.sv": "9f7467dd5288f11445c385bbace8d1357ba205209c7bd740c3745037acdffbc3",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/xrun.log": "953a09e7b526c587117553cb70246829a4d059a29a5125740cd3d97aaa9cc954"
+  },
+  "exact_activation_values": 4096,
+  "exact_residual_values": 4096,
+  "native_exit_status": 0,
+  "netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "Mapped attention and projection run on the reset-buffered netlist. Four testbench memory instances back source-level normalization, with residual operands and shifts supplied by the fixture. The wrapper counted the testbench memories together with the chip memories. The native exit and per-instance census were verified directly. Timing annotation and end-to-end accuracy are outside this experiment.",
+  "simulator_seconds": 1943,
+  "source_revision_before_lease_fix": "69b674703be3f5fd05e0176e7cf7e310b98d3077",
+  "state": "mapped_attention_projection_and_bank_normalization_verified_by_instance_path",
+  "testbench_normalization_memory_instances": 4
+}
