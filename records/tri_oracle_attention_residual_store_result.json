@@ -1,0 +1,33 @@
+{
+  "compiled_sram_macros": 4,
+  "computed_and_read_back_rows": 512,
+  "computed_bypass_values": 4096,
+  "computed_normalization_inputs": 4096,
+  "evidence_sha256": {
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/store.sh": "4f6f38d01c56b300b246f71d17a04ce90360bb96c1a325f418c25bd9b81c579e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/store_positive.log": "9841b268ecb1f57e973b693e12e62d249727c129c0b1f9bd6ce2e667d69c5659",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/store_unbuffered.log": "e735227247d7ce992ea2e5afc7e390e7106eedd638c71eb627620325fbeb1224",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/attention_precision/vectors.hex": "b7bcc3b224165703b8d3c6fb6d4790eb178d6426bcd06e913534b299d913990c",
+    "records/tri_oracle_attention_residual_precision_result.json": "5e77f612289f1e78e9b31f63aab02d9620f8d61a78cd3bd1c1d2e0d13a1ba5aa",
+    "verilog/tri_oracle_attention_residual_precision.sv": "0075fc2bfd659d909d79b8c9e5e9247b6b452ff5669c9ed1b8c58e238c80619e",
+    "verilog/tri_oracle_attention_residual_store.sv": "e1b604831afea83fc95ef5d51ad880e90c707b8e1bdc2d834f1f9c4f02be8ae6",
+    "verilog/tri_oracle_attention_residual_store_tb.sv": "2cb73676c78216e4a424ecd3052d5543073553ea34b7f4ad5a19c2aa4d90808f",
+    "verilog/tri_oracle_residual_bank_adapter.sv": "efac4852e10ac3dede2ba24ffe4a2a3e8eafdf028220dbbb5ee89ea3e478b928"
+  },
+  "layer": 10,
+  "positions": [
+    607,
+    608
+  ],
+  "same_cycle_input_and_two_output_handshakes": 272,
+  "scope": "The RTL producer uses captured mapped attention projection codes and a trained incoming residual fixture. The bench checks the normalization words and reads every generated write-back word from four compiled memory models after independent downstream stalls. The full attention, normalization and feed-forward scheduler are not joined in this run.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "stalled_bank_write_cycles": 357,
+  "stalled_normalization_cycles": 494,
+  "state": "attention_residual_producer_and_compiled_bank_readback_verified",
+  "unbuffered_control": {
+    "exit": 2,
+    "failed_unaccepted_write_index": 0
+  }
+}
