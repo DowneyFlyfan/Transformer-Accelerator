@@ -1,0 +1,34 @@
+{
+  "archived_visible_pairs": 32985366,
+  "candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "current_primary_value_response_cycles": 263882928,
+  "fixed_steering_cycles_available_for_value_responses": 340764,
+  "fixed_steering_floor_cycles_by_layout": {
+    "aligned_example": 772203490,
+    "trained_fixture": 772202164
+  },
+  "ideal_balanced_cycles_available_for_value_responses": 1113408,
+  "ideal_balanced_two_port_floor_cycles": 640044760,
+  "ideal_balanced_two_port_floor_ms": 1103.525448,
+  "ideal_balanced_two_port_floor_ms_with_one_beat_per_uncached_value": 904.475826,
+  "ideal_minimum_gigabits_per_second_per_receive_pad": {
+    "512_receive_pads": 1.149642,
+    "all_pad_positions": 0.870734
+  },
+  "minimum_fixed_steering_ms": 1331.383041,
+  "minimum_narrow_value_beats_to_eliminate_percent": 99.578067,
+  "minimum_payload_receive_lanes_at_two_bits_per_chip_cycle": 508,
+  "modeled_uncached_value_payload_bytes": 2111063424,
+  "modeled_weight_and_sign_payload_bytes": 62416019456,
+  "native_fixture": {
+    "narrow_response_beats": 8184,
+    "value_requests": 1023
+  },
+  "paper_clock_megahertz": 580,
+  "paper_latency_cycles": 508660000,
+  "paper_latency_ms": 877,
+  "placed_netlist_sha256": "1826eccdb94f06668ceb94863644fd1cdb55a90e59d42a6f78f8cd4e21a7fa1d",
+  "scope": "Conditional bound for the archived 600-token prefill and 60-token decode trajectory with the current uncached value transport and modeled weight/sign service. Omits key, projection, write, compute and physical memory timing costs. Package rates are payload-only requirements.",
+  "state": "placed_memory_service_misses_paper_latency_for_archived_trace",
+  "unchanged_mapped_value_multiplexer_sha256": "5609827e7b2c3b66aa3650c240cb95d57990abc80a3454d54866aa78d910db58"
+}

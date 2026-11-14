@@ -1,0 +1,31 @@
+{
+  "destination_layer": 1,
+  "exact_mapped_output_words": 8192,
+  "feedforward_cycles": 1354194,
+  "local_handoff_receipt_sha256": "17cc3dd9112d2191df8ec4faa7961b93218dbd0dbfcfde08142a06adbc4ff643",
+  "local_normalization_receipt_sha256": "3f61526c3425d6003e1ab0fd629c1fbf61ee11dd0e5fd86a10afef2253f22015",
+  "local_projection_receipt_sha256": "c89496049eb069ee144d91cfa58c7a270a0149327f5f31d7b061ddddef9bc3ab",
+  "memory_macros": 631,
+  "native": {
+    "elapsed_seconds": 1671.808712524944,
+    "log_sha256": "f6b6f3987576d01f6cfffe2d56efb089ad05b021a1dc13f53086709e415059ed",
+    "minimum_host_available_bytes": 16959979520,
+    "native_exit_status": 0,
+    "peak_cgroup_anonymous_bytes": 4578754560
+  },
+  "next_layer_normalized_activation_codes": 8192,
+  "original_token_positions": [
+    0,
+    305,
+    607,
+    608
+  ],
+  "output_packets": 52,
+  "packed_read_bursts": 17408,
+  "packed_sign_reads": 3872,
+  "packed_weight_beats": 540672,
+  "placed_netlist_sha256": "89add15c91f60404cb0a3ded399765c1a8150333d5aa8c1f7acb74a10d89a773",
+  "scope": "Four trained tokens on the earlier relay-site placement. The host formed the residual sums. Xcelium verified the next layer normalization using its register-transfer-level fixture.",
+  "source_layer": 0,
+  "state": "mapped_trained_decoder_layer_boundary_verified"
+}
