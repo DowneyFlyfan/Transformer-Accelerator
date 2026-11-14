@@ -1,0 +1,19 @@
+{
+  "activation_words": 1024,
+  "differs_from_floating_normalization_codes": 149,
+  "exact_activation_codes": 8192,
+  "exact_input_activation_codes": 8192,
+  "exact_normalized_codes": 8192,
+  "flipped_first_expected_activation_bit_rejected": true,
+  "local_receipt_sha256": "26a17cefc6da30a91c3401187128291362e8636f84894e652ad2ae5027a48a8e",
+  "native_exit_status": 0,
+  "positions": [
+    0,
+    305,
+    607,
+    608
+  ],
+  "question": 42000,
+  "scope": "Four matching trained tokens. The vision-language checkpoint supplies the original residual, the archived integer oracle supplies attention projection codes, and Xcelium executes the normalization module. Native mapped projection output and downstream feed-forward integration remain pending.",
+  "state": "trained_same_token_residual_normalization_verified_in_xcelium"
+}
