@@ -1,0 +1,24 @@
+{
+  "exact_weight_bytes": 11534336,
+  "index_beats_by_lane": [
+    780,
+    756
+  ],
+  "linked_netlist_sha256": "bfab062c76e2139f13b9dbd16b3f77c6ff6146ba46d6824f4d96a10e7075a6c1",
+  "mapping_receipt_sha256": "33d880074e1e660888b3772b89d8c4809c3c022c49896b0538e2c0678211e1d9",
+  "payload_beats_by_lane": [
+    49531,
+    47995
+  ],
+  "preserved_cuts": [
+    "legacy",
+    "lane_io[0].indexed.loader/loader/decoder",
+    "lane_io[1].indexed.loader/loader/decoder"
+  ],
+  "replay_receipt_sha256": "efff2cf5eba898ad2a42caab24f28fd121ecdde52e1ce3f1e10972bfbe7469a7",
+  "scope": "Isolated gate-level simulation of indexed weight transport, including the mapped control and tile decoders, with a behavioral memory model. Only the indexed down-projection path was exercised.",
+  "state": "mapped_indexed_weight_transport_replayed_trained_down_matrix",
+  "tile_transactions": 78,
+  "trained_layer": 0,
+  "xrun_log_sha256": "58e5302258dfad427ee4003f475a20045096eaa83dc796b6f5dbe54ff39c8817"
+}
