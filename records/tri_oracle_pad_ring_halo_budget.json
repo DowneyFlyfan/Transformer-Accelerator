@@ -1,0 +1,143 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "compiled_memory_masters": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 369,
+    "TS5N28HPCPSVTA512X64M4F": 41,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.db/libs/lef/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    ".cache/placement_coordinate_reuse/grouped_active_eco/apply/active.def": "ac125ae1b1fcead1a09f062720a05424e76a106a6f1f2386113f8ee8baf1cc6d",
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "records/tri_oracle_pad_ring_clearance.json": "22ab2568b3450208ef06228e1c5aaf68c2470e8c26ea9e794646556180ca8f75",
+    "records/tri_oracle_pad_ring_macro_seed.json": "d1c4d1c0d84dd875e28e8318f21d558828387fbb6b7a07bf11feeab78f7ead90",
+    "syn/audit_tri_oracle_pad_ring_halo_budget.py": "d23653cac9ca7c20d47f578bbf9eee62e0fb074a2d6015efbf2df7bf657a485d",
+    "syn/plan_tri_oracle_pad_ring_macros.py": "ad0116c1fc449f1861b1065b850c717bfb09fca7a2e4116995ef216bc3a78e2e"
+  },
+  "pad_ring_depth_micrometers": 110.0,
+  "scenarios": {
+    "0": {
+      "fits_before_pad_interface_logic": false,
+      "free_sites_after_existing_standard_cells": -157065,
+      "geometric_utilization_percent": 100.44872991136195,
+      "maximum_macro_manhattan_move_micrometers": 60.08,
+      "minimum_remaining_halo_micrometers": 5.0,
+      "moved_macros": 180,
+      "placement_sites": 35002124,
+      "trim_nanometers_per_side": 0
+    },
+    "100": {
+      "fits_before_pad_interface_logic": false,
+      "free_sites_after_existing_standard_cells": -141130,
+      "geometric_utilization_percent": 100.4030206243013,
+      "maximum_macro_manhattan_move_micrometers": 59.88,
+      "minimum_remaining_halo_micrometers": 4.9,
+      "moved_macros": 172,
+      "placement_sites": 35018059,
+      "trim_nanometers_per_side": 100
+    },
+    "1000": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 1726038,
+      "geometric_utilization_percent": 95.32051680202483,
+      "maximum_macro_manhattan_move_micrometers": 58.08,
+      "minimum_remaining_halo_micrometers": 4.0,
+      "moved_macros": 164,
+      "placement_sites": 36885227,
+      "trim_nanometers_per_side": 1000
+    },
+    "150": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 106783,
+      "geometric_utilization_percent": 99.69720670112254,
+      "maximum_macro_manhattan_move_micrometers": 59.78,
+      "minimum_remaining_halo_micrometers": 4.85,
+      "moved_macros": 172,
+      "placement_sites": 35265972,
+      "trim_nanometers_per_side": 150
+    },
+    "1500": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 2777712,
+      "geometric_utilization_percent": 92.67807352002737,
+      "maximum_macro_manhattan_move_micrometers": 57.08,
+      "minimum_remaining_halo_micrometers": 3.5,
+      "moved_macros": 112,
+      "placement_sites": 37936901,
+      "trim_nanometers_per_side": 1500
+    },
+    "200": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 115352,
+      "geometric_utilization_percent": 99.67298794901399,
+      "maximum_macro_manhattan_move_micrometers": 59.68,
+      "minimum_remaining_halo_micrometers": 4.8,
+      "moved_macros": 172,
+      "placement_sites": 35274541,
+      "trim_nanometers_per_side": 200
+    },
+    "2000": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 3828774,
+      "geometric_utilization_percent": 90.17959979083801,
+      "maximum_macro_manhattan_move_micrometers": 56.08,
+      "minimum_remaining_halo_micrometers": 3.0,
+      "moved_macros": 112,
+      "placement_sites": 38987963,
+      "trim_nanometers_per_side": 2000
+    },
+    "300": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 382743,
+      "geometric_utilization_percent": 98.92312269349905,
+      "maximum_macro_manhattan_move_micrometers": 59.48,
+      "minimum_remaining_halo_micrometers": 4.7,
+      "moved_macros": 172,
+      "placement_sites": 35541932,
+      "trim_nanometers_per_side": 300
+    },
+    "50": {
+      "fits_before_pad_interface_logic": false,
+      "free_sites_after_existing_standard_cells": -147438,
+      "geometric_utilization_percent": 100.42111004388212,
+      "maximum_macro_manhattan_move_micrometers": 59.98,
+      "minimum_remaining_halo_micrometers": 4.95,
+      "moved_macros": 180,
+      "placement_sites": 35011751,
+      "trim_nanometers_per_side": 50
+    },
+    "500": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 658030,
+      "geometric_utilization_percent": 98.162811021146,
+      "maximum_macro_manhattan_move_micrometers": 59.08,
+      "minimum_remaining_halo_micrometers": 4.5,
+      "moved_macros": 172,
+      "placement_sites": 35817219,
+      "trim_nanometers_per_side": 500
+    },
+    "750": {
+      "fits_before_pad_interface_logic": true,
+      "free_sites_after_existing_standard_cells": 1192290,
+      "geometric_utilization_percent": 96.72010594121906,
+      "maximum_macro_manhattan_move_micrometers": 58.58,
+      "minimum_remaining_halo_micrometers": 4.25,
+      "moved_macros": 164,
+      "placement_sites": 36351479,
+      "trim_nanometers_per_side": 750
+    }
+  },
+  "scope": "No overlaps among macro bodies or their modeled haloes. Standard-cell capacity is optimistic. The analysis excludes pad interface cells, clock tree cells, layout congestion, timing and pin access. The smaller haloes are trial inputs requiring native placement and verification.",
+  "standard_cell_sites_required": 35159189,
+  "state": "pad_ring_macro_clearance_sensitivity_measured"
+}
