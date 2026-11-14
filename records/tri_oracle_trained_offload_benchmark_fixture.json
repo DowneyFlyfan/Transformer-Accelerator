@@ -10,10 +10,24 @@
   "device": "NVIDIA GeForce RTX 5070 Ti",
   "evidence_sha256": {
     "capture": "ef6f7ccd3a4f9271ff4068b9b2c1e5ceb308450ccd51adcae196af74eb6c0791",
+    "grouped_schedule": "eb4849b1fdf224dd90e90a06102db39d5de7352edf0b6a671c785acef8c0c454",
     "merge_map": "8779ceafbf036eb058ceec3cf8c9d5557e9398dd7d6a45f7ee96f8bf50e7b09b",
-    "plan": "dccf72de0f0e18b4f9bd7fed306585ad4710d6a782b489049280422b6ed3531c"
+    "plan": "dccf72de0f0e18b4f9bd7fed306585ad4710d6a782b489049280422b6ed3531c",
+    "traffic_audit": "df1398d6beb0265197ac72a2ec62b81b1847f0fb23afac7da8bf38e38bdb8013"
   },
   "exact_output_words_per_plan": 4096,
+  "grouped_offload": {
+    "batch_commands": 4,
+    "first_command": 8,
+    "key_fills": 5,
+    "key_vectors": 1875,
+    "moved_retrieval_heads": [
+      0,
+      1
+    ],
+    "output_rows": 64,
+    "value_vectors": 1970
+  },
   "groups": 4,
   "model_answer_tokens": [
     6054,
@@ -28,13 +42,18 @@
     "output_rows": 64,
     "value_vectors": 2035
   },
+  "predicted_peak_score_products": {
+    "baseline": 2887,
+    "grouped_offload": 1645,
+    "offloaded": 2247
+  },
   "query_positions": [
     607,
     608
   ],
   "question": 42000,
   "retrieval_heads": 4,
-  "scope": "All 32 heads at two trained TinyLLaVA token positions. Integer scores, causal normalization and outputs were recomputed from the captured inputs. Traffic counts are schedule predictions for cold starts. Hardware cycle and traffic measurements are pending.",
+  "scope": "All 32 heads at two trained TinyLLaVA token positions. Integer scores, causal normalization and outputs were recomputed from the captured inputs. The grouped schedule moves same-group retrieval heads together to preserve key reuse. Traffic and score counts are schedule predictions for cold starts.",
   "state": "trained_offload_benchmark_fixture_verified",
   "streaming_heads": 28,
   "visible_keys": [
