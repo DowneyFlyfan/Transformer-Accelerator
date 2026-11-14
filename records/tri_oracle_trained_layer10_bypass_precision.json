@@ -1,0 +1,47 @@
+{
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/layer11_input.hex": "6858fd76b9cf92d04ee4ca7fec1c91e5463ddbd38103f34fa1bd090432914b09",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/precision.py": "3e5c37e72745ef93389479456f34a5d7d30840131a5fd9c7ee8c643f330128ff",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/receipt.json": "4dc9d34aca8a8827db3b6a4e498b523a4431ea1e85c3591aea5a54d52e178a58",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/run.py": "dc809e208c8a9b91294ab5cb0a6d69457a28c8b0b9786aad793476d696ce1876"
+  },
+  "local_receipt_sha256": "7a095ec10d3ba2bd212cbb8fa9d45b44d1bea000f8c76c9a22c5c5c98984003e",
+  "maximum_unrounded_attention_denominator_bits": 32,
+  "minimum_sample_exact_fractional_bits": 26,
+  "minimum_sample_signed_width": 29,
+  "mismatch_when_rounded_to_13_bits": 1026,
+  "mismatches_by_fractional_bits": {
+    "13": 1026,
+    "14": 551,
+    "15": 521,
+    "16": 270,
+    "17": 145,
+    "18": 70,
+    "19": 38,
+    "20": 16,
+    "21": 8,
+    "22": 3,
+    "23": 2,
+    "24": 1,
+    "25": 1,
+    "26": 0,
+    "27": 0,
+    "28": 0,
+    "29": 0,
+    "30": 0,
+    "31": 0,
+    "32": 0
+  },
+  "positions": [
+    607,
+    608
+  ],
+  "post_attention_residual_extrema": [
+    -0.6084234118461609,
+    2.0852084159851074
+  ],
+  "scope": "Bit-accurate sweep for the two trained positions. Fractional depth requirements outside this fixture depend on the full model's distributions.",
+  "signed_width_to_hold_sample_and_at_least_existing_range": 29,
+  "state": "layer10_residual_precision_sweep_verified",
+  "values": 4096
+}
