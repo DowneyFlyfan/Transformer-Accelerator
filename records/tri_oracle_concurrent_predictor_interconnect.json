@@ -1,0 +1,29 @@
+{
+  "bit_counts": {
+    "head_request_bits_verified": 6620,
+    "head_request_tag_bits_removed": 1280,
+    "head_response_bits_verified": 820,
+    "head_response_tag_bits_removed": 640,
+    "strip_count_high_bits_removed": 20,
+    "strip_request_bits_verified": 2940,
+    "strip_response_bits_verified": 780
+  },
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "clusters": 5,
+  "cores": 20,
+  "evidence_sha256": {
+    "candidate_interconnect_receipt": "af05111c2e2f0d7944a2b98c4d556bb3b4e404dac4305ab8928f903e0f6d3bf5",
+    "verifier": "0f3b5ff439e3064371ac2479bb39f44ae5370fc26d1c0343b2864e4ab3ed757b"
+  },
+  "head_predictors": 20,
+  "near_zero_strip_predictors": 20,
+  "negative_controls_rejected": [
+    "head_request",
+    "strip_request",
+    "strip_response"
+  ],
+  "paper_figure": "31.6.2",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "scope": "Checks the cluster and per-core predictor interconnect, including synthesized direct payload wires and optimized-away tags and count high bits. Logic inside predictors and end-to-end trained behavior are separate requirements.",
+  "state": "concurrent_chip_mapped_predictor_interconnect_verified"
+}
