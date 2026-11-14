@@ -1,0 +1,41 @@
+{
+  "cell_area_um2": 2122.176,
+  "clock_period_ns": 1.72414,
+  "directed_arithmetic_cases": 128,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/area.rpt": "e1f6022cb669ad60e877052c28bebbd57d799858c2ddc4543005269b1c529c29",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/console.log": "9d04b2330afce0f329f9aabaead9d0cfc590945b50e5707a8e9f856c5496298b",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/constraints.sdc": "c3f322af58ea219d7b98d7f240ae34517f8cea492918836deffde263070cf806",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/mapped_mutation.log": "42ceb08992c833728a3d6338ce4e1a6a6136a607a7f96df88f28dca4318277e3",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/mapped_xcelium.log": "fda6401b1eec5b6b5b5d9af6ed58ca98a58c2a49e7ffd12be89d74d29b6fa379",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/netlist.v": "a937c899187d38112984d48a15247f7ad4fe2ee39642ca25e2723e1e37f7fd50",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/resources.txt": "a51df28148fa7c4092d48dad01a9b3497feb1f9a5f885bdec7cea0b141e7226c",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/source_xcelium.log": "a46b397bbe8c3c4122209f176c74330fc3a852733853bc47519c105da5291b61",
+    ".cache/placement_coordinate_reuse/residual_add_synthesis/verify/timing.rpt": "4ae38b53309edfadd69954cd676a856d4e58f3d15a7d397fdb5afb5f5a04d049",
+    "syn/test_tri_oracle_residual_add.py": "671132f7eaaf0828db6fcb83a065f2dac29b4de9b4a51236d647b2328a8f140a",
+    "syn/tri_oracle_synthesize_residual_add.tcl": "b96465839788c11e8674ee071400ab56a16c983f054a4a75b7a65be9ace19832",
+    "verilog/tri_oracle_residual_add.sv": "31d99c420744473ac7ca34b460af9a5d694903be2ca3c3a702a2adb69f60f60e",
+    "verilog/tri_oracle_residual_add_tb.sv": "332c9cd0a85a87d87d452bd79be8881ba36bf985e32aea25230008b6326bdc99"
+  },
+  "exact_normalization_packets": 512,
+  "exact_residual_codes": 4096,
+  "flipped_normalization_expectation_bit_rejected": true,
+  "genus_elapsed_seconds": 62.71,
+  "genus_peak_resident_kibibytes": 1557224,
+  "input_delay_ns": 0.2,
+  "layer": 10,
+  "library_corner": "typical, 1.00 V, 25 C",
+  "output_delay_ns": 0.2,
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "Block-only synthesis using a virtual clock and zero wireload. Xcelium simulated the mapped residual adder with the existing normalization RTL and archived projection values. Physical and whole-chip timing require integrated placement evidence.",
+  "standard_cells": 2477,
+  "state": "standalone_tsmc28_genus_mapping_and_xcelium_cell_simulation_verified",
+  "worst_path_end": "result_q13[0]",
+  "worst_path_start": "projection_shift[3]",
+  "worst_synthesis_slack_ps": 3
+}

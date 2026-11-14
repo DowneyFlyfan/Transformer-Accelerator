@@ -109,13 +109,15 @@ def corners():
     return strips
 
 
-def run(source, native, output, mutate=False):
+def run(source, native, output, mutate=False, cell_model=None):
     assert __debug__ and Path("/.dockerenv").is_file()
     check_memory(8 * GIB)
     assert shutil.disk_usage(ROOT).free > 10 * GIB
     bench = ROOT / "verilog" / f"{TOP}.sv"
     normalization_sources = [ROOT / "verilog" / f"{name}.sv" for name in
                              ("tri_oracle_rmsnorm", "tri_oracle_affine_quantizer", "tri_oracle_rms_activation")]
+    if cell_model is not None:
+        normalization_sources.append(cell_model)
     data, pins, norm_inputs, norm_expected = fixture_inputs(native)
     pins.update({path: sha(path) for path in (source, bench, *normalization_sources,
                                              PINNED_LAYER, Path(__file__).resolve())})
@@ -129,8 +131,9 @@ def run(source, native, output, mutate=False):
             norm_expected = work / "norm_expected_mutated.hex"
             norm_expected.write_text("\n".join(packets) + "\n")
         native_log = work / "native.log"
+        simulation_options = ["-nospecify", "-notimingchecks"] if cell_model is not None else []
         command = ["/usr/bin/prlimit", "--as=4294967296", "--", "/opt/cadence/bin/xrun",
-                   "-64bit", "-sv", "-top", TOP, "-xmlibdirname", str(work / "xcelium.d"),
+                   "-64bit", "-sv", *simulation_options, "-top", TOP, "-xmlibdirname", str(work / "xcelium.d"),
                    "-l", str(native_log), "-history_file", str(work / "history"),
                    *map(str, (*normalization_sources, source, bench)), f"+VECTORS={vectors}",
                    f"+NORM_INPUTS={norm_inputs}", f"+NORM_EXPECTED={norm_expected}"]
@@ -161,8 +164,10 @@ def run(source, native, output, mutate=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, default=ROOT / "verilog/tri_oracle_residual_add.sv")
+    parser.add_argument("--cell-model", type=Path)
     parser.add_argument("--native-projection", action="store_true")
     parser.add_argument("--mutate-normalization", action="store_true")
     parser.add_argument("log", type=Path)
     args = parser.parse_args()
-    raise SystemExit(run(args.source.resolve(), args.native_projection, args.log.resolve(), args.mutate_normalization))
+    raise SystemExit(run(args.source.resolve(), args.native_projection, args.log.resolve(), args.mutate_normalization,
+                         args.cell_model.resolve() if args.cell_model else None))
