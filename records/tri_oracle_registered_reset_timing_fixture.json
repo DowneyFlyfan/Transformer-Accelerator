@@ -1,0 +1,32 @@
+{
+  "candidate_sha256": "4191c72e54d3699a24d85bb3d75a3c3939a38a79b344acb2016631fe7b85ccc0",
+  "clock_period_ns": 1.72414,
+  "corners": {
+    "hold_fast": {
+      "check": "removal",
+      "endpoints": 6,
+      "worst_slack_ns": 0.092704
+    },
+    "setup_slow": {
+      "check": "recovery",
+      "endpoints": 6,
+      "max_capacitance_margin_pf": 0.028,
+      "max_transition_margin_ns": 0.203,
+      "worst_slack_ns": 1.552521
+    },
+    "setup_typ": {
+      "check": "recovery",
+      "endpoints": 6,
+      "max_capacitance_margin_pf": 0.033,
+      "max_transition_margin_ns": 0.173,
+      "worst_slack_ns": 1.595522
+    }
+  },
+  "local_receipt_sha256": "96ec285a665f2503372c8242515ac989f04c05ea5ec1fec8ee29df13043e91ec",
+  "masked_launch_reports_no_path": true,
+  "path_checks": 18,
+  "placed_cells": 14,
+  "root_buffers": 6,
+  "scope": "Pre-route TSMC 28 nm fixture with the linked register, gate, and six root buffers. Each buffer drives one representative reset sink with an ideal clock. Whole-chip branch loads, clock skew, and extracted wiring require separate verification.",
+  "state": "registered_flush_reset_timing_fixture_verified"
+}
