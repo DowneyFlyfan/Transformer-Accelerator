@@ -1,0 +1,49 @@
+{
+  "added_placed_buffers": 3870,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/console.log": "360c90be169a3e5d7f06689b1b41eae35347e0df64e86a6b19875d3612338db6",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/placement.rpt": "36d9f8422c0c2491b6cbb4642f0e95c6caf9dbba09c52732c14f5bbe36b7e1bc",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/trial.def": "3bafc9d3de79fe74f0b01eb1cafd9bb25f35070035d9fd864cfdbbf4073d427b",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/trial.v": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/cold/console.log": "805b10525edc3493a328429f1d5df1873f0b15c8903c7c7a312aed998fa1b186",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/cold/reset_tree.tsv": "9d67d571111a4af828581caad53e228fb7168b0b38459c1044817af2fe3e6ec4",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/geometry.json": "7257695fdeee05152eeeeae3d4fd41600450ae8bc273ced865282352e433256c",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/prepare/console.log": "438b64d1f70400933c8034ca48c45d93d44ad31f1909c65c53ca75df663fbf77",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/receipt.json": "cc53268623b4a554d8dcc2aa8bc355ac39dc7ae32267e8ebe926d4695d8de743",
+    ".cache/placement_coordinate_reuse/grouped_reset_plan.json": "8432c04bc39e17a415d07bb133db336e9aac1486999a6cd2e88ff840e24e7805",
+    "syn/run_tri_oracle_grouped_reset.py": "a68125d49fdf6575b15a6077c58924c26b4ed3affa12b54c3eff5947cb753233",
+    "syn/tri_oracle_apply_grouped_reset.tcl": "6e7e76f8e43f081872a63db31e2d1cb3adcc16f33ab015138be90aea82432619",
+    "syn/verify_tri_oracle_grouped_reset_placement.py": "1b6dd6b60556fda88aacee332ef42e02a1ead50ce4c530371a9564eb1aaa8fb8"
+  },
+  "independently_checked_tree_count": 5,
+  "native": {
+    "apply": {
+      "minimum_host_available_bytes": 10647552000,
+      "peak_anonymous_bytes": 11575615488,
+      "seconds": 142.68897170107812
+    },
+    "cold": {
+      "minimum_host_available_bytes": 14071808000,
+      "peak_anonymous_bytes": 7870976000,
+      "seconds": 52.300644766073674
+    },
+    "prepare": {
+      "minimum_host_available_bytes": 14898794496,
+      "peak_anonymous_bytes": 7096528896,
+      "seconds": 63.33368803502526
+    }
+  },
+  "native_cpu_workers": 8,
+  "original_component_geometry": {
+    "added": 0,
+    "fixed": 631,
+    "original": 3761286,
+    "original_component_records_sha256": "bcd9d8ec3a3754e3cc33a6ed5df2b33a23c700cfe37a594cac8b00bf72551330"
+  },
+  "original_netlist_sha256": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+  "original_reset_sinks_verified": 92420,
+  "placement_density_percent": 82.83,
+  "scope": "Original component records match the reference Design Exchange Format export. Native reset-tree connectivity survives a separate cold reload. The added buffer placement is diagnostic. Whole-chip logical equivalence, mapped functional replay, physical capacitance with wires, timing and routing remain pending.",
+  "state": "grouped_reset_buffers_placed_cold_connected_and_original_geometry_verified",
+  "unplaced_instances": 0
+}
