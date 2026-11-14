@@ -1,0 +1,38 @@
+{
+  "analysis_view": "setup_slow",
+  "candidate_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "completed_timing_paths": 0,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/inputs.tcl": "f7fe800132a0159bb61ad1961721b3138c23d5e5967c145266bbc22ba9a585d6",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/run.tcl": "36fdc4c8ee2ee48a42cf70235a37be8e41d7fdc74be313f20b7be39a73eac2a1",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/setup_slow/console.log": "331aac03038ab3335b072f129f26fb3b174d04128772e46796064200865e3c17",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/setup_slow/native_status.json": "be2f2be226fecd48aabd0e11fec5bb84477d4e194678588b703ba7e6eb4427bd",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/setup_slow/timing.rpt": "efcaaa6e32afdb187f5c0a3b56e624d82d8083170a019f67ef6afed790590a2d",
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/supervisor.log": "7f32a43d8ae4d90d52e9ee23fd07a84b1ec17f4ebb983249274617da08a75f12",
+    "records/tri_oracle_partial_pad_native_cold_result.json": "3ce3c08d9142f51d32211a5c70d96aab7898f60b969ae5b1e50f7701988ed1da",
+    "records/tri_oracle_partial_pad_restored_models.json": "d74756e7cebadf97c49d872e357307f9955d37b59638efd190347c81f853059c"
+  },
+  "native": {
+    "elapsed_seconds": 149.1752344010165,
+    "minimum_host_available_bytes": 4647845888,
+    "native_exit_status": -15,
+    "peak_cgroup_anonymous_bytes": 16318111744,
+    "peak_sampled_virtual_bytes": 23952859136,
+    "pressure": [
+      {
+        "action": "pause",
+        "anonymous": 16070840320,
+        "available": 4739309568,
+        "process_groups": [
+          1584843,
+          1584940
+        ]
+      }
+    ],
+    "stop_reason": "Host memory recovery deadline exceeded",
+    "virtual_address_limit_bytes": 32212254720
+  },
+  "nets_loaded": 4309415,
+  "state": "pad_reserved_chip_slow_timing_stopped_under_host_memory_pressure",
+  "target_clock_period_ns": 1.72414
+}
