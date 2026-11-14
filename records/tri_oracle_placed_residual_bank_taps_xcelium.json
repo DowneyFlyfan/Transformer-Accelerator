@@ -1,0 +1,32 @@
+{
+  "activation_values": 4096,
+  "changed_original_module_definitions": 20,
+  "elapsed_seconds": 318.408136083046,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/mux/netlist.v": "8662f4bfaa0613ecbb6838999deda7a3662d7ec58816b27f2d7a6349fe85634e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/mux/pin_mux.log": "a86c437e84c14874868361ece3d5648c641a6ba14d29c11f6adfb1c461f3b34a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/netlist_receipt.json": "c60481e386c25aa0dd988f25cf243a0e00f760009a6d19eff17215fa8c7a18ac",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/receipt.json": "25da97a18f1b3f7fe525092c8e31d2236855399a84604366b5fcab8b146b04d0",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/replay.py": "bb15d83101720bf2d8a47e730ab3dcc69fd7e21ee838eda0ee728c6801aa3685",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structure.json": "2d14a0b665054b50a64aa5ba9bb1b7863cf18347b1ee7e91182b7050e2446c06",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/xrun.log": "c1ccf9d8f58406c0486f9562bb0f2b340a8ea54a8dc99c94a9953dab45c6114c",
+    "syn/link_tri_oracle_placed_residual_banks.py": "aa0d061d2f57690784142f54238f0bc2aad3f8c602d45bdd0ad80afba1cb704c",
+    "syn/tri_oracle_synthesize_residual_bank_pin_mux.tcl": "8aad760c745076cc89d33313caf11de5c17325ad6587730b3272b1d1f6dd35c0",
+    "verilog/tri_oracle_residual_bank_pin_mux.sv": "331a0c3a602bca2f9726769e540fd0df6d2d5d63e9282814cdb81b995d1184f5"
+  },
+  "existing_compiled_static_random_access_memory_instances": 631,
+  "lease_mux_instances": 4,
+  "mapped_selector_cases": 512,
+  "packets": 64,
+  "parent_placement_sha256": "4882f7f18fdfe12f0c965a41e15b7eb464da7fbbcef8df38dd59bf85d822f614",
+  "positions": [
+    607,
+    608
+  ],
+  "recovery_strips": 256,
+  "residual_values": 4096,
+  "scope": "The mapped projection normalizer accesses four existing input banks in the whole-chip logical export. The testbench drives the lease and provides captured packets and trained operands while the native command path stays idle. The exported bank paths match the placed design. Added mux cells and nets have no new physical placement or timing evidence in this run.",
+  "state": "mapped_projection_reuses_four_banks_on_placed_chip_logical_export",
+  "tapped_logical_netlist_sha256": "e280906c5c7b6590219ae1dc89d22e5a0dc9d2dee35e44fcabe6ed55f62c0652",
+  "unchanged_original_module_definitions": 521
+}
