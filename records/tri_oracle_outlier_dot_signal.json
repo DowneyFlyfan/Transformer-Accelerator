@@ -1,0 +1,51 @@
+{
+  "budget_per_token": 3267,
+  "evaluated_channels": 101376,
+  "evidence_sha256": {
+    ".cache/model_reference/batch389/gate.hex": "4a84b3afb16c991a72c01ae0cf5ea4fb9df7b56716da9af076691ca13e47cf0d",
+    ".cache/model_reference/batch389/shifts.hex": "059842ae76a571f84d1cb7d3a384c00bf6eb907ad75493a5be0a470f223ba1b1",
+    ".cache/model_reference/batch389/up.hex": "0caa6b6cd97f98ed269c792678f194ccef5db94c9cd3f9fb1af5a444484b33e2",
+    ".cache/model_reference/batch403/activation.hex": "bb4bb6890bbf22a1dfe152db46a2abe52d3f31a2c87d251fc2ffb647324f42d5",
+    ".cache/model_reference/batch403/norm.hex": "bdddc34bb97eae4b27b43a121698b0be4f5b9b96827546cbbe43fd6c9898ce0f",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/fixture/gate.hex": "3d91949fd15800c22be6de751ea343964e3147a392ff4d4c1efef30c7d859e02",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/fixture/shifts.hex": "2c50dfadd2f157a9cda9bf7cdd1b02a03de859a7fa6608a450b497841650f1f6",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/fixture/up.hex": "4d9de8db11686a1393ada64921057d339fba2170bc67f48efce2f3dd4db57200",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_normalization/activation.hex": "111f5644e09dd9ea2c7e0bf6dff48d3521f00d268f7258b33a3b8164a05e36b1",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_normalization/norm_expected.hex": "ca14a843326c11112b024fafc6444c1ff28497156266f05b542321d5d077b310",
+    ".cache/placement_coordinate_reuse/outlier_dot_signal.json": "085281b0f1b0e233d89e107d72407cac8a924ea5e7d3c04c8dbdbaab771cbf31",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/tri_oracle_predictor_parity.json": "1607fa235bb4d4dac8a787b7bad9ae90a012085baa63f419062f4e07f0f8ae3a",
+    "records/wac_channel_packing_bound_result.json": "63074498af07d464cd96ea32eddc78519ed5eb1c85f892b9eb6eae425c69da59",
+    "syn/audit_tri_oracle_outlier_dot_signal.py": "7b96461b4f7ba689c377133c1e8ffb26303f237ceec8046882118510c4454f09",
+    "syn/audit_tri_oracle_predictor_parity.py": "30bbf1d929e76c253e6e22429715d1aaeb9751a34b649c9ba66d4f9cc1978e94",
+    "syn/tri_oracle_fixture_dot.c": "c57d54ef760332a0812fd4d5fb27404b04fd86819cf2c0a35e7183ace127f91c",
+    "syn/tri_oracle_model_reference.py": "21d0bb53840fdc07273aa54fc3b7bde5ee82a2d76df4f15af9d50ba25d363e75"
+  },
+  "exact_zero_channels": 21538,
+  "median_correlations": {
+    "gate": {
+      "outlier_only": 0.4291194578690939,
+      "sign_only": 0.2094927694339284,
+      "weighted_sign_only": 0.3041329737987992
+    },
+    "up": {
+      "outlier_only": 0.40019685955282636,
+      "sign_only": 0.18008996129089516,
+      "weighted_sign_only": 0.2659678054867986
+    }
+  },
+  "nonzero_channels_under_skip_budget": {
+    "best_possible": 37268,
+    "outlier_only_ranking": 46095,
+    "sign_only_ranking": 44751,
+    "weighted_sign_ranking": 45940
+  },
+  "paper_figure": "31.6.5",
+  "paper_reported_skip_percent": 58,
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "scope": "Two mapped replay fixtures. Exact zeros are defined by the local fixed-point format. Sign ranking uses an optimistic tie break and is diagnostic only. The skip budget applies the reported aggregate rate uniformly as a diagnostic. The evaluated nonzero codes are local, and no answer accuracy was measured.",
+  "selected_activation_square_fraction_median": 0.13868495457076363,
+  "skip_budget": 58806,
+  "state": "trained_outlier_dot_signal_measured",
+  "tokens": 18
+}
