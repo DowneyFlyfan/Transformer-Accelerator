@@ -1,0 +1,44 @@
+{
+  "bank_master": "TS5N28HPCPSVTA512X64M4F",
+  "baseline_predictor": {
+    "bits_per_mask": 32,
+    "cycles": 1005350,
+    "external": 9152,
+    "groups": 2816,
+    "logical": 27808,
+    "skipped": 5231
+  },
+  "corrupted_metadata_rebuild_rejected_at_first_mask": true,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/activation.hex": "d5c8c8be725f5dec56e8f5f405d3db4eef45f10216ae97bf5a65f4be07ab6d42",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/receipt.json": "39a3908f389386d9b22cef716db0fcc7e8d07ff065c6e1fb0190e67482122703",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/routes.hex": "f8334de886d1d04823b5494ab8fbb87845a11edbe42b63fd548b4e8df9c92b05",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_offload_benchmark_traffic/expected.hex": "a20d7d6a06488196be8f69ac84b67e057b308ef0eef302411348f11b12a27544",
+    ".cache/physical/ranked_sign_slots/mapped_prefetched_metadata_32/netlist.v": "648e594ccd7d4dfde30c33e0a3882038fd292248c1bc31a2d59177ac635a11a8",
+    ".cache/physical/ranked_sign_slots/mapped_prefetched_metadata_bank_traffic/receipt.json": "720ff4e36f97597752d3940a695d49d442a2a1d491a9fc591efaf494d4884ad6",
+    ".cache/physical/ranked_sign_slots/mapped_prefetched_metadata_bank_traffic/xrun.log": "5a0f58bc66fdf168fd2f698bde0876b657aba42861816fcb0df210f2304f9f7a",
+    ".cache/placement_coordinate_reuse/projection_real_metadata/mapped.log": "0a1c5471d9ecdd93898e22530ba7c652a4789f49fc28471c52ce3b0d5a00bdee",
+    ".cache/placement_coordinate_reuse/projection_real_metadata/metadata_mutation.log": "a877402720e90aab2ad8009311e406e26e28c7dbe2d42f8c6ea03e476a7e1898",
+    ".cache/placement_coordinate_reuse/projection_shared_bank/netlist.v": "991b5d5fd0c8293cdea1ed4c49fb639f555987785f852dd9c6ea8fcede8729cf",
+    "records/tri_oracle_localized_native_full_chip_placement.json": "a734e36962808af07424010d74fed6bd2fef19a2a2b459523e2c39538642d5dc",
+    "records/tri_oracle_projection_shared_bank.json": "db48ff7f109bf602549cc78ed2aafdf2cfb28212e95b91d4c2d3fa53b79bc43c",
+    "syn/test_tri_oracle_projection_metadata_handoff.py": "5465819ad2df8d6dd4894d7ffd680fffc0d91b1caa96c991157df41bbca54fa4"
+  },
+  "mapped_predictor_after_handoff": {
+    "bits_per_mask": 32,
+    "cycles": 1006442,
+    "external": 9152,
+    "groups": 2816,
+    "logical": 27808,
+    "skipped": 5231
+  },
+  "matched_original_metadata_reads": 90112,
+  "matched_original_metadata_writes": 512,
+  "other_memory_macros_with_matching_master_and_read_write_counts": 9,
+  "projection_operand_reads_at_shared_bank": 512,
+  "projection_operand_words": 512,
+  "projection_operand_writes_at_shared_bank": 512,
+  "scope": "Mapped shared-bank circuit and the real mapped prediction subsystem share one compiled memory in Xcelium. Projection fixtures are from layer 10 and predictor rebuild uses the separately pinned 16-token trained fixture. Full-chip command ownership, full-chip placement timing and paper accuracy remain distinct.",
+  "source_chip_candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "state": "mapped_projection_to_real_mapped_predictor_bank_handoff_verified"
+}
