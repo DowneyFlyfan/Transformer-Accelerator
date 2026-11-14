@@ -95,6 +95,11 @@ module tri_oracle_grouped_token_sizes (
                         state <= Done;
                     end else if (later || !queries[1]) state <= Done;
                     else later <= 1;
+                end else if (!native_query_ready || native_error) begin
+                    // At command admission the dispatcher owns an idle coordinator.
+                    // An unavailable query at this boundary means no restored frame.
+                    failed <= 1;
+                    state <= Done;
                 end else state <= Query;
             end
             Query: if (native_error) begin
