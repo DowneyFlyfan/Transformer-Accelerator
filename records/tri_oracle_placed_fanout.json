@@ -1,0 +1,116 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/place/placed.v": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/receipt.json": "2d36c7e0ff661d50ec6372838d8331e1d71e6cf05e362728fc9941808f43e927",
+    ".cache/placement_coordinate_reuse/placed_fanout_indexed/console.log": "57ac8a99c532b6ecaa24798cffd701840cd7a4aeba68d4911b6b5b7c6b5236cf",
+    ".cache/placement_coordinate_reuse/placed_fanout_indexed/placed_fanout.tsv": "6780001fe301f5434a5fb4d5458b8304cf75f400b1a69f0cd3c8d29d50bd72ea",
+    ".cache/placement_coordinate_reuse/placed_fanout_indexed/receipt.json": "a2502f5ce8184b14e29b0d507f369519da6e510c97db87d40ae1ee93c402b2fd",
+    "syn/audit_tri_oracle_placed_fanout.py": "8455387859e01b24e4956ced75436d0cd4b5902f11c90b19339fb8b3c70f49ba",
+    "syn/tri_oracle_report_placed_fanout.tcl": "98a66863cc01f950a00dcf352fb3cc60a271694c260d7f061b2d1362dbaa0987"
+  },
+  "high_fanout_candidates": 5882,
+  "load_threshold": 128,
+  "mapped_netlist_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "minimum_host_available_bytes": 12809928704,
+  "nets_over_limit_from_known_pin_loads": 3501,
+  "nets_with_complete_pin_loads": 5880,
+  "nets_with_pin_limits": 5880,
+  "peak_container_anonymous_bytes": 9086722048,
+  "placed_netlist_sha256": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+  "reported_capacitance_precision": "Innovus default display precision. Counts near the driver limit may change with higher precision.",
+  "scope": "Single-driver data nets at or above the load threshold. Sums use modeled sink pin values. Wire load, slew and path slack remain unmeasured. This diagnostic cannot release routing.",
+  "slow_corner": "setup_slow",
+  "state": "whole_chip_placed_pin_load_screen_measured",
+  "worst": [
+    {
+      "driver": "grouped_0/g83737/ZN",
+      "limit_pf": "0.029000000",
+      "loads": "18484",
+      "missing_sink_caps": "0",
+      "net": "grouped_0/n_9508",
+      "pin_load_pf": "36.050000000",
+      "ratio": 1243.103448275862
+    },
+    {
+      "driver": "grouped_1/g83737/ZN",
+      "limit_pf": "0.029000000",
+      "loads": "18484",
+      "missing_sink_caps": "0",
+      "net": "grouped_1/n_9508",
+      "pin_load_pf": "36.050000000",
+      "ratio": 1243.103448275862
+    },
+    {
+      "driver": "grouped_2/g83737/ZN",
+      "limit_pf": "0.029000000",
+      "loads": "18484",
+      "missing_sink_caps": "0",
+      "net": "grouped_2/n_9508",
+      "pin_load_pf": "36.050000000",
+      "ratio": 1243.103448275862
+    },
+    {
+      "driver": "grouped_3/g83737/ZN",
+      "limit_pf": "0.029000000",
+      "loads": "18484",
+      "missing_sink_caps": "0",
+      "net": "grouped_3/n_9508",
+      "pin_load_pf": "36.050000000",
+      "ratio": 1243.103448275862
+    },
+    {
+      "driver": "grouped_4/g83737/ZN",
+      "limit_pf": "0.029000000",
+      "loads": "18484",
+      "missing_sink_caps": "0",
+      "net": "grouped_4/n_9508",
+      "pin_load_pf": "36.050000000",
+      "ratio": 1243.103448275862
+    },
+    {
+      "driver": "batch/g166179/Z",
+      "limit_pf": "0.091000000",
+      "loads": "17013",
+      "missing_sink_caps": "0",
+      "net": "grouped_active",
+      "pin_load_pf": "27.687000000",
+      "ratio": 304.25274725274727
+    },
+    {
+      "driver": "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/g10419/ZN",
+      "limit_pf": "0.028000000",
+      "loads": "5701",
+      "missing_sink_caps": "0",
+      "net": "grouped_count[0]",
+      "pin_load_pf": "5.701000000",
+      "ratio": 203.60714285714286
+    },
+    {
+      "driver": "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/g10418/ZN",
+      "limit_pf": "0.028000000",
+      "loads": "5701",
+      "missing_sink_caps": "0",
+      "net": "grouped_count[1]",
+      "pin_load_pf": "5.701000000",
+      "ratio": 203.60714285714286
+    }
+  ],
+  "worst_net_attribution": {
+    "direct_reset_port_fanout_per_group": {
+      "partial_probability_controller_command_bridge": 1,
+      "value_accumulate": 4
+    },
+    "driver_inputs": [
+      "rst_n",
+      "command_ready"
+    ],
+    "driver_master": "INR2D0BWP12T40P140",
+    "groups": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}
