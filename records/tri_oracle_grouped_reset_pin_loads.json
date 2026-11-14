@@ -1,0 +1,71 @@
+{
+  "buffered_netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/trial.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/trial.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/placement_coordinate_reuse/grouped_reset_eco_reload/apply/trial.db/libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/placement_coordinate_reuse/grouped_reset_pin_loads_checked/grouped_active_sinks.tsv": "10683b1f5410002edfe869824edf891312bda7767829176a3bf8f6790e1a67e8",
+    ".cache/placement_coordinate_reuse/grouped_reset_pin_loads_checked/grouped_active_tree_verified.tsv": "fa7cdedbeba8dc698568ac01ef9e8d8e4df515141bf539383725f0cb9406962e",
+    ".cache/placement_coordinate_reuse/grouped_reset_pin_loads_checked/loads.tsv": "13bc554edbaa24ad7e0b9612d3ca4f48d1f1e051ca4bd27d0df6ecbd310bb992",
+    "records/tri_oracle_grouped_reset_graph.json": "cc651de12665f5c414974765cc8a81a163734558b1df6fb6756be5118d223edf",
+    "syn/qualify_tri_oracle_grouped_reset_pin_loads.py": "bd55193d4ad613bb3783e3fa41c7e1a47a02ba7b5b192d55851b89108f7fcccd",
+    "syn/tri_oracle_measure_grouped_reset_loads.tcl": "8a53a80cb07fecaae2f14759e839ce6bbe585a8f1f44bb0eedb0e1f534136d8b"
+  },
+  "grouped_active_buffer_plan": {
+    "buffers": 712,
+    "depth": 6,
+    "max_pin_load_ratio": {
+      "ffg1p05vm40c": 0.1707281968575129,
+      "ssg0p9v125c": 0.18980380475033545,
+      "tt1v25c": 0.18142235771823545
+    },
+    "sinks": 17013
+  },
+  "measured_views": {
+    "hold_fast": {
+      "grouped_active": {
+        "limit_pf": 0.102,
+        "load_pf": 27.687,
+        "multiple": 271.44117647058823,
+        "sinks": 17013
+      },
+      "maximum_reset_pin_load_ratio": 0.15892420537897312,
+      "reset_drivers": 3875,
+      "worst_reset_driver": "grouped_2/TRI_GROUPED_RESET_2_30"
+    },
+    "setup_slow": {
+      "grouped_active": {
+        "limit_pf": 0.091,
+        "load_pf": 27.687,
+        "multiple": 304.25274725274727,
+        "sinks": 17013
+      },
+      "maximum_reset_pin_load_ratio": 0.18579234972677597,
+      "reset_drivers": 3875,
+      "worst_reset_driver": "grouped_4/TRI_GROUPED_RESET_4_5"
+    },
+    "setup_typ": {
+      "grouped_active": {
+        "limit_pf": 0.094,
+        "load_pf": 27.687,
+        "multiple": 294.5425531914894,
+        "sinks": 17013
+      },
+      "maximum_reset_pin_load_ratio": 0.17894736842105263,
+      "reset_drivers": 3875,
+      "worst_reset_driver": "grouped_4/TRI_GROUPED_RESET_4_5"
+    }
+  },
+  "native": {
+    "candidate_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+    "exit_status": 0,
+    "log_sha256": "2e81f14b3bb2b00120df8a27fef28a6bdea370a8b844042f8cc186618d2519bd",
+    "minimum_host_available_bytes": 9662128128,
+    "peak_anonymous_bytes": 13082836992,
+    "recipe_sha256": "8a53a80cb07fecaae2f14759e839ce6bbe585a8f1f44bb0eedb0e1f534136d8b",
+    "seconds": 221.17409795999993,
+    "table_sha256": "13bc554edbaa24ad7e0b9612d3ca4f48d1f1e051ca4bd27d0df6ecbd310bb992"
+  },
+  "scope": "Native library pin load measurements and a proposed tree for grouped_active. Wire extraction, reset slew and recovery/removal timing remain unmeasured. The grouped_active tree has not been applied.",
+  "state": "buffered_reset_pin_loads_verified_and_grouped_active_tree_planned"
+}
