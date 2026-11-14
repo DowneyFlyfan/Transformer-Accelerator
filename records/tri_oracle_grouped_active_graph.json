@@ -1,0 +1,38 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_active_eco/cold_exact/drivers.tsv": "ed9b462b667906d20bce6c51a322ff2f39e13ebf0951ca62376f8943edc507de",
+    ".cache/placement_coordinate_reuse/grouped_reset_pin_loads_checked/grouped_active_tree_verified.tsv": "fa7cdedbeba8dc698568ac01ef9e8d8e4df515141bf539383725f0cb9406962e",
+    "records/tri_oracle_grouped_active_placement.json": "1e7b48cdf7a5e2b922124b95c8dafeccad5b7e0fb495b65d91115dfa358cea0c",
+    "syn/tri_oracle_grouped_active_net_graph.tcl": "d39b00530b89f957e1b1073d233ee9d6aa7d66a5092e1cfc57497ee342d575fb",
+    "syn/verify_tri_oracle_grouped_active_graph.py": "b30a62360123097a2e1a76959bab676ab8b1441efb988e5c40f74089b6b3c97f"
+  },
+  "inserted_buffers": 712,
+  "native": {
+    "candidate": {
+      "active_loads": 17013,
+      "graph_sha256": "30b91270d18cab67f546839527213a7d4b55669712c4111b473b5990cc362c85",
+      "ignored_active_nets": 713,
+      "log_sha256": "9dc2da264c5f9a9c5687ad2f331dac6c205ec5cc33d0faf6a8aec03c9a1a1c40",
+      "minimum_host_available_bytes": 10955833344,
+      "nets": 4506223,
+      "peak_anonymous_bytes": 11584413696,
+      "seconds": 132.66151930496562
+    },
+    "parent": {
+      "active_loads": 17013,
+      "graph_sha256": "30b91270d18cab67f546839527213a7d4b55669712c4111b473b5990cc362c85",
+      "ignored_active_nets": 1,
+      "log_sha256": "590ae6ba3218fb6b58921cf8c10e6bba330107d84415119674770fdd21af6433",
+      "minimum_host_available_bytes": 11145523200,
+      "nets": 4506223,
+      "peak_anonymous_bytes": 11581759488,
+      "seconds": 133.6634360140888
+    }
+  },
+  "original_loads": 17013,
+  "other_nets": 4506223,
+  "parent_netlist_sha256": "3800abb23359152b69241bfaf9fad5276219df3d2ea4d6e5676e9b786cecbab0",
+  "scope": "Cold native signal connectivity, top-level ports and direct pin constants. The checked noninverting tree replaces only grouped_active. Timing and functional replay are separate checks.",
+  "state": "whole_chip_native_endpoint_graph_preserved_across_grouped_active_buffering"
+}
