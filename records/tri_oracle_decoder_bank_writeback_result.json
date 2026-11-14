@@ -1,0 +1,35 @@
+{
+  "constraints": {
+    "corner": "ssg0p9v125c",
+    "extracted_interconnect": false,
+    "input_and_output_delay_ns": 0.2,
+    "period_ns": 1.72414
+  },
+  "controller_cell_area_um2": 118.272,
+  "controller_cells": 79,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/bank_writeback_tb.sv": "b6303eee5405824223122dfea3d9217f0ee0eae1c6003da71c1bb753812c3ee3",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/comb_scale_pre_fix/timing.rpt": "8e6e74fa36baa6f4d3f4f4275337fbf1e2575983f275773204e9296c3b9cde3f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/green.log": "d8c9cc4f6059aa7d81e2cf4368331678db55bd6bbb11168d77cff063b55da0f7",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/import_bridge/area.rpt": "c3e37f21b44b208a5c7f45d5173f969710c01636ac6d2b7d479183510dc3a3f4",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/import_bridge/console.log": "4288b3b4a8ebf9a87e09210c124a641da1fca399fd3d87d4218ac1af16b5b5fd",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/import_bridge/constraints.sdc": "c19f2d772230c08cae472101b6eedfd21bbb2ded9cf58ce45d7efcfe1a401e58",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/import_bridge/netlist.v": "4a4ca40655c0054c58411be6a7fc061c213f0c2011867add7ff5ebc4fa897a5e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/import_bridge/run.tcl": "daccc23b4d9fd5d8bd123d26a9a83442cb21bca59843d7aa7ca1ba912b62b70a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/import_bridge/timing.rpt": "187e44b2bfbf610b8e852f58f678771b330f102eba9d2fca21177369a9d68d64",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/mapped.log": "b7c72402d91228c3786106ff3a64bcbd2a3349e468c2d0a12cf5ffa2a66dd47a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/reject_config_before_fix.log": "e3bd7adf8d69f9c235f7a0675ff920543169cdc59fee4a150215f0560701df89",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/run.py": "d6dfd5d465d71d734745e59b6a668d968e74a42e82d899c87fa12d6472e931b6",
+    "verilog/tri_oracle_decoder_bank_writeback.sv": "cbe0388a90486ebb6df3c5733ec0e48ea8d675401a86528daeae84090ddc7bc1"
+  },
+  "mapped_cell_area_um2": 7224.672,
+  "mapped_cells": 8633,
+  "original_combinational_scale_slack_ps": -74,
+  "packets": 26,
+  "registered_scale_slack_ps": 24,
+  "retained_bank_reads": 512,
+  "scope": "Genus mapped the control around the preserved write-back datapath. Source and mapped Xcelium tests used four compiled memory models and trained residual vectors. The tests verified backpressure, abort drainage, malformed packet rejection and distinct token scales. Chip integration and physical timing remain pending.",
+  "stalled_cycles": 1024,
+  "state": "memory_backed_decoder_writeback_mapped_and_verified",
+  "trained_values": 4096
+}
