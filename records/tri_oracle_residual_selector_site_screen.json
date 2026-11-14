@@ -1,0 +1,72 @@
+{
+  "banks": [
+    {
+      "compact_box_center_distance_um": 113.255,
+      "compact_box_design_units": [
+        434800,
+        6215200,
+        448240,
+        6239200
+      ],
+      "core": 0,
+      "existing_cells_intersecting_box": 34,
+      "free_sites_in_80_um_margin": 313,
+      "no_move_trial_max_distance_um": 1140.015,
+      "widest_run_in_80_um_margin_sites": 1
+    },
+    {
+      "compact_box_center_distance_um": 113.255,
+      "compact_box_design_units": [
+        2134680,
+        6215200,
+        2148120,
+        6239200
+      ],
+      "core": 1,
+      "existing_cells_intersecting_box": 48,
+      "free_sites_in_80_um_margin": 1110,
+      "no_move_trial_max_distance_um": 528.235,
+      "widest_run_in_80_um_margin_sites": 2
+    },
+    {
+      "compact_box_center_distance_um": 112.855,
+      "compact_box_design_units": [
+        434800,
+        4816000,
+        448240,
+        4840000
+      ],
+      "core": 2,
+      "existing_cells_intersecting_box": 36,
+      "free_sites_in_80_um_margin": 286,
+      "no_move_trial_max_distance_um": 589.665,
+      "widest_run_in_80_um_margin_sites": 1
+    },
+    {
+      "core": 3,
+      "free_sites_in_80_um_margin": 11437,
+      "local_sites_available_without_moves": 77,
+      "no_move_trial_max_distance_um": 62.155,
+      "widest_run_in_80_um_margin_sites": 16
+    }
+  ],
+  "base_placed_netlist_sha256": "4882f7f18fdfe12f0c965a41e15b7eb464da7fbbcef8df38dd59bf85d822f614",
+  "compact_box_height_um": 12,
+  "compact_box_width_um": 6.72,
+  "coordinates_per_um": 2000,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/partial_pad_seed_keep_tree/whole_chip_timing/driver_sites/native_probe/placed/candidate.def": "125c4cc3c60d5db3ad1f07c959fd163b0ed4b39f7412a7a4f92a362ee3e559fb",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/compact_selector_nearby.json": "a1075b0c0c519324818dacd31ad4cc1c1eadd7df5e18cbeeff7abd781c84cf23",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/mux/netlist.v": "8662f4bfaa0613ecbb6838999deda7a3662d7ec58816b27f2d7a6349fe85634e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/plan_compact_selector_sites.py": "32055284d31fc2776f0ae2f8ea95baf36ef5763f7852fe48d615c92631c9efcc",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/screen_selector_sites.py": "35ff51940a2a0e96f97e04e586eaf77a3f1bc985b107e8a3a211a9ad1bf18ae0",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/selector_sites.json": "60edf44b376aedf12fbdd7b97fdc33f01b4c27f4b82abdc1f3037630c0c40d4c"
+  },
+  "fixed_memory_banks_in_baseline": 631,
+  "logical_export_with_selectors_sha256": "e280906c5c7b6590219ae1dc89d22e5a0dc9d2dee35e44fcabe6ed55f62c0652",
+  "mapped_selector_cells_per_bank": 77,
+  "mapped_site_pitches_per_bank": 456,
+  "scope": "Geometric screen of the saved placement and mapped selector cells. The three compact boxes avoid fixed memory halos and pad reserves. The original placed cell list was reread to count box intersections. The fourth selector fits in vacant local sites. Neither the proposed moves nor the new selector sites have been legalized or timed in Innovus.",
+  "state": "bank_selector_geometry_and_compact_reservations_verified",
+  "total_existing_cells_to_relegalize": 118
+}
