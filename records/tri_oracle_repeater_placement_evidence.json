@@ -98,7 +98,31 @@
         "local_strip_predictors": 4,
         "local_token_mergers": 1
       }
-    ]
+    ],
+    "compute_arrays": {
+      "array_instances": 20,
+      "array_lanes": 8,
+      "array_rows": 32,
+      "nominal_operations_per_second_at_paper_clock": 5939200000000,
+      "operand_bits": 8,
+      "registered_final_sum_bits_per_array": 608,
+      "registered_product_bits_per_array": 4096,
+      "unique_array_masters": 20
+    },
+    "shared_prediction_roles": {
+      "attention_tile_scheduler": {
+        "score_ready_response_bit": 71,
+        "score_valid_request_bit": 393,
+        "streaming_decision_response_bit": 68
+      },
+      "feedforward_metadata_and_sign_replay": {
+        "metadata_capacity_bytes": 6656,
+        "metadata_macros": 6,
+        "response_bits_wired_to_masks_and_count": 109,
+        "shared_sign_key_capacity_bytes": 2048,
+        "shared_sign_key_macros": 4
+      }
+    }
   },
   "cold_loaded_library_and_constraint_files": 33,
   "core_clock_constraint_ns": 1.72414,
@@ -107,11 +131,13 @@
     3.6
   ],
   "evidence_sha256": {
-    ".cache/placement_coordinate_reuse/trained_layer11_boundary/paper_gate_review/current_gate.json": "50e4d115f7976c09a72812fe582664fbc2f2b0d95cd9f12d3f6bb699d300d161",
-    ".cache/placement_coordinate_reuse/trained_layer11_boundary/paper_gate_review/repeater_candidate.json": "a77373074cb460d25b4513ee1354490bedb383877170eee4b94e3177f06a3441",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/paper_gate_review/current_gate.json": "46ce24ec88f9bb0710ad2993df3ead83c6c6cdb6b6b256a34004fc5a53f5880f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/paper_gate_review/parent_topology_recheck.json": "7290fe4833dd0f0387f14acc99a2c50e39f25d85508ba84acce2a3aa1a6fa304",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/paper_gate_review/repeater_candidate.json": "ff4d395a5907e018437b5f6e213b3cc67478073aefef67c57bf0ec5b13f4977a",
     "records/tri_oracle_partial_pad_repeater_placement.json": "d46f2084451369e59ecb78b2034e18ba1a15ce150e7a852eb9a6a0250321d53c",
-    "syn/check_tri_oracle_paper300_gate.py": "38f20b19a33be1805d3e1d6df25c8cc08c8f5e10c70bb3bb22745c3d55227bf8",
-    "syn/verify_tri_oracle_repeater_placement_evidence.py": "252d5ff48f57095e3d39270d40e57b5c7be77671d3b92452aa1cc043fe5138d1"
+    "syn/check_tri_oracle_paper300_gate.py": "7be2e908e6b0878136c335e3445dffe83afc6dba175c50aae636c2061d063314",
+    "syn/verify_tri_oracle_buffered_topology.py": "c73d10f53606b536710462c7fbb3d717aa4661e7e5e024de00c54ff3aabb55f3",
+    "syn/verify_tri_oracle_repeater_placement_evidence.py": "660f5d871ecb176e3cf6c5bbfdd61570ab0f8f34f8ecfa6a8e84053e4b52c9d4"
   },
   "fixed_memory_macros": 631,
   "netlist_modules_compared": 541,

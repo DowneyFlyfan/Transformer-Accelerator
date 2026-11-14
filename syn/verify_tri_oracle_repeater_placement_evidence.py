@@ -7,7 +7,9 @@ from pathlib import Path
 import re
 
 from audit_tri_oracle_mapped_redundancy import TOP, audit, hierarchy
+from audit_tri_oracle_shared_prediction_roles import measure
 from verify_tri_oracle_buffered_memory import PREFIXES, placed_memory, replay_memory
+from verify_tri_oracle_buffered_topology import verify_compute_arrays
 from verify_tri_oracle_pad_memory import compiler_sizes, memory_roles
 from verify_tri_oracle_pad_restored_models import library_contents, observations
 
@@ -178,15 +180,18 @@ def verify(gate_path=None):
         paths[str((library_dir / name).relative_to(ROOT))] = checksum
 
     targets_path = RECORDS / "paper_result_targets.json"
-    targets = read(targets_path)["silicon"]
+    paper_targets = read(targets_path)
+    targets = paper_targets["silicon"]
     assert len(topology["clusters"]) == targets["clusters"]
     assert all(cluster["cores"] == targets["cores_per_cluster"] for cluster in topology["clusters"])
+    topology["compute_arrays"] = verify_compute_arrays(netlist, graph, paper_targets)
+    topology["shared_prediction_roles"] = measure(netlist)
     assert compiled["paper_label_kb"] == targets["sram_published_KB"]
     assert sha(netlist) == candidate and sha(design) == paths[str(design.relative_to(ROOT))]
 
     for path in (REPEATER, PARENT_MEMORY, PARENT_TIMING, PARENT_FUNCTION, memory_path, targets_path,
                  parent_cold_path, Path(__file__).resolve(), *(Path(method.__code__.co_filename).resolve()
-                    for method in (audit, placed_memory, compiler_sizes, observations))):
+                    for method in (audit, measure, verify_compute_arrays, placed_memory, compiler_sizes, observations))):
         paths[str(path.relative_to(ROOT))] = sha(path)
     result = {
         "state": "cold_reloaded_repeater_placement_verified_against_candidate_exports",

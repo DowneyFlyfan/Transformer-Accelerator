@@ -60,6 +60,7 @@ END COMPONENTS
     def complete(self):
         return dict(candidate_cold_qualified=True,native_workers_terminal=True,
             original_full_models_verified=True,clusters=5,cores=20,
+            array_instances=20,array_geometry=[32,8],operand_bits=8,
             die_width_mm=3.6,die_height_mm=3.6,clock_period_ns=1.72414,
             corner_slack_ns={"setup_slow":0.02,"setup_typ":0.24,"hold_fast":0.005},
             high_fanout_substitution_disabled=True,
@@ -122,6 +123,15 @@ END COMPONENTS
             facts=self.complete();facts[key]=value
             with self.subTest(key=key):
                 self.assertFalse(placement_checks(facts)[check])
+
+    def test_array_geometry_must_match_alongside_core_count(self):
+        self.assertTrue(placement_checks(self.complete())["paper_compute_array_geometry"])
+        for key, value in (("array_instances", 19), ("array_geometry", [8, 32]), ("operand_bits", 16)):
+            facts = self.complete()
+            facts[key] = value
+            with self.subTest(key=key):
+                self.assertTrue(placement_checks(facts)["paper_five_clusters_twenty_cores"])
+                self.assertFalse(placement_checks(facts)["paper_compute_array_geometry"])
 
     def test_all_required_qualifications_fail_when_missing_or_not_exact_true(self):
         fields=["candidate_cold_qualified","native_workers_terminal","original_full_models_verified",

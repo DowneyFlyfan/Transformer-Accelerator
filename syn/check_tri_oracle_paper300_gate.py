@@ -64,6 +64,9 @@ def placement_checks(facts):
     checks.update(dict.fromkeys(UNIMPLEMENTED_VERIFIERS, False))
     checks["memory_capacity_reconciled"] = False
     checks["paper_five_clusters_twenty_cores"] = facts.get("clusters") == 5 and facts.get("cores") == 20
+    checks["paper_compute_array_geometry"] = (facts.get("array_instances") == 20
+                                               and facts.get("array_geometry") == [32, 8]
+                                               and facts.get("operand_bits") == 8)
     checks["paper_3_6_millimeter_die"] = all(
         finite(facts.get(key)) and math.isclose(facts[key], 3.6, rel_tol=0, abs_tol=1e-6)
         for key in ["die_width_mm", "die_height_mm"])
@@ -400,6 +403,7 @@ def main():
             from verify_tri_oracle_repeater_placement_evidence import verify
             placed = verify()
             clusters = placed["candidate_topology"]["clusters"]
+            arrays = placed["candidate_topology"]["compute_arrays"]
             memory = placed["candidate_compiled_memory"]
             facts.update(
                 candidate_sha256=placed["candidate_placement_netlist_sha256"],
@@ -411,6 +415,10 @@ def main():
                 clock_period_ns=placed["core_clock_constraint_ns"],
                 clusters=len(clusters),
                 cores=sum(cluster["cores"] for cluster in clusters),
+                array_instances=arrays["array_instances"],
+                array_geometry=[arrays["array_rows"], arrays["array_lanes"]],
+                operand_bits=arrays["operand_bits"],
+                nominal_operations_per_second_at_paper_clock=arrays["nominal_operations_per_second_at_paper_clock"],
                 fixed_memory_macros=placed["fixed_memory_macros"],
                 unplaced_instances=placed["unplaced_instances"],
                 parent_mapped_netlist_sha256=placed["parent_mapped_netlist_sha256"],

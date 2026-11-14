@@ -69,6 +69,29 @@ def verify_array(body, rows, lanes, width):
     return {"registered_product_bits": len(product_bits), "registered_final_sum_bits": len(sum_bits)}
 
 
+def verify_compute_arrays(netlist, graph, targets):
+    silicon = targets["silicon"]
+    rows, lanes = silicon["processing_element_array_per_core"]
+    assert silicon["processing_element_precision"] == "signed INT8"
+    arrays = reachable_arrays(graph, TOP)
+    assert arrays.total() == silicon["clusters"] * silicon["cores_per_cluster"]
+    checked = {}
+    with netlist.open("rb") as stream, mmap.mmap(stream.fileno(), 0, access=mmap.ACCESS_READ) as source:
+        for module in MODULE.finditer(source):
+            name = module[1].decode()
+            if name in arrays:
+                end = ENDMODULE.search(source, module.end()).start()
+                checked[name] = verify_array(source[module.end():end], rows, lanes, 8)
+    assert checked.keys() == arrays.keys()
+    peak = arrays.total() * rows * lanes * 2 * targets["peak"]["clock_megahertz"] * 10**6
+    assert round(peak / 10**12, 2) == targets["peak"]["trillion_operations_per_second"]
+    return dict(array_instances=arrays.total(), unique_array_masters=len(checked),
+                array_rows=rows, array_lanes=lanes, operand_bits=8,
+                registered_product_bits_per_array=rows * lanes * 16,
+                registered_final_sum_bits_per_array=rows * (16 + lanes.bit_length() - 1),
+                nominal_operations_per_second_at_paper_clock=peak)
+
+
 def verify():
     assert __debug__ and Path("/.dockerenv").is_file()
     evidence = {}
@@ -96,35 +119,20 @@ def verify():
     assert all(previous[name] == result for name, result in roles.items())
     silicon = targets["silicon"]
     clusters, cores = silicon["clusters"], silicon["cores_per_cluster"]
-    rows, lanes = silicon["processing_element_array_per_core"]
-    assert silicon["processing_element_precision"] == "signed INT8"
-    arrays = reachable_arrays(graph, TOP)
-    assert arrays.total() == clusters * cores
-    checked = {}
-    with NETLIST.open("rb") as stream, mmap.mmap(stream.fileno(), 0, access=mmap.ACCESS_READ) as source:
-        for module in MODULE.finditer(source):
-            name = module[1].decode()
-            if name in arrays:
-                end = ENDMODULE.search(source, module.end()).start()
-                checked[name] = verify_array(source[module.end():end], rows, lanes, 8)
-    assert checked.keys() == arrays.keys() and digest(NETLIST) == identity
+    arrays = verify_compute_arrays(NETLIST, graph, targets)
+    assert digest(NETLIST) == identity
     for name in (Path(__file__).name, "audit_tri_oracle_mapped_redundancy.py",
                  "audit_tri_oracle_shared_prediction_roles.py"):
         evidence[f"syn/{name}"] = digest(ROOT / "syn" / name)
-    peak = clusters * cores * rows * lanes * 2 * targets["peak"]["clock_megahertz"] * 10**6
-    assert round(peak / 10**12, 2) == targets["peak"]["trillion_operations_per_second"]
     return dict(
         state="buffered_compute_array_and_local_prediction_topology_verified",
         candidate_netlist_sha256=identity, paper_sha256=PAPER_SHA256,
         paper_figures=["31.6.2", "31.6.4", "31.6.5", "31.6.7"],
-        clusters=clusters, cores_per_cluster=cores, array_rows=rows, array_lanes=lanes,
+        clusters=clusters, cores_per_cluster=cores,
         local_token_mergers=sum(item["local_token_mergers"] for item in topology["clusters"]),
         local_head_predictors=sum(item["local_head_predictors"] for item in topology["clusters"]),
         local_strip_predictors=sum(item["local_strip_predictors"] for item in topology["clusters"]),
-        array_instances=arrays.total(), unique_array_masters=len(checked),
-        operand_bits=8, registered_product_bits_per_array=rows * lanes * 16,
-        registered_final_sum_bits_per_array=rows * (16 + lanes.bit_length() - 1),
-        nominal_operations_per_second_at_paper_clock=peak, prediction_roles=roles,
+        **arrays, prediction_roles=roles,
         evidence_sha256=evidence,
         scope="Structural checks on the grouped-active placed netlist. Peak operations use the paper's "
               "assumed clock. Whole-chip timing, prediction effectiveness, external interface and "
