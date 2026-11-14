@@ -1,0 +1,49 @@
+{
+  "state": "localized_full_chip_placement_and_cold_reload_independently_verified",
+  "mapped_candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "localized_coordinate_sha256": "bfff37ad4e801ff7573563bd78f3ee5222ce13b487e0671bf5978c162d1732ea",
+  "die_mm": [
+    3.6,
+    3.6
+  ],
+  "cpu_workers": 8,
+  "placement": {
+    "boundary_pins": 12365,
+    "fixed_memories": 631,
+    "pins_by_orientation": {
+      "E": 3091,
+      "N": 3092,
+      "S": 3091,
+      "W": 3091
+    },
+    "placed_instances": 3761286,
+    "placement_density_percent": "82.75",
+    "unplaced_instances": 0
+  },
+  "exact_logic_coordinates_preserved": 3760655,
+  "mapped_connectivity": {
+    "mapped_leaf_instances": 3761286,
+    "mapped_modules": 337,
+    "named_instances": 2347574
+  },
+  "restored_models": {
+    "extraction_models": 3,
+    "physical_abstracts": 8,
+    "timing_libraries_per_set": {
+      "ls_fast": 7,
+      "ls_slow": 7,
+      "ls_typ": 7
+    }
+  },
+  "native_elapsed_seconds": {
+    "cold": 64.12,
+    "place": 88.42
+  },
+  "evidence_sha256": {
+    "placed_def": "f2c4d1d9ac621c89159eeac99837d8afca426a5583de8d60f32637544aafabd8",
+    "placed_verilog": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+    "native_coordinate_identity": "bbbaa7e33283847517ef8c285b48e0cb4cc00a010c59be8cb2f6dfecb3d859bb",
+    "cold_checkpoint_receipt": "2d36c7e0ff661d50ec6372838d8331e1d71e6cf05e362728fc9941808f43e927"
+  },
+  "scope": "Whole-chip Innovus legality, restart from the saved database, port and memory inventory, and bit-level connectivity of 337 modules. Timing, routing, and paper-level performance qualification remain pending."
+}
