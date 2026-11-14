@@ -1,0 +1,26 @@
+{
+  "attention_rows": 10,
+  "compiled_memory_instances": 631,
+  "elapsed_seconds": 1701.31,
+  "evidence_sha256": {
+    "captured_attention": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "expected_attention": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "expected_feedforward": "a91955ce8b3eae7fdd9a1b79220aace9cec92ec0c7c505af6b0f4a88050b0ba9",
+    "independent_verifier": "d253ff70dcec6a683b9f7fc52003774dd8d6be6ac3a084203c3495105ee31c1a",
+    "native_progress": "b0f478437f2725cb990ab2e4bf055c956c26f08d2a315ffce83c0677da9cf974",
+    "native_receipt": "fcb5f3e3225010d9520178ac8fde606deb63a14c83b99a2a763bbaeb1356a19a",
+    "native_xcelium": "4a8c78f4a3e078c28d44a49fb0d3d18320b25829ee6e05c0c63e3b7c5ca59012",
+    "previous_feedforward_xcelium": "8985a1cca62d7562c1c282af83b8ccabc26c12dc741a8e7dddc85f6f9c0f3aa1",
+    "replay_bundle": "a32820cf8b13ee5a54796d559c85727cdd982cc3e18741c65a1e78b86534e852"
+  },
+  "exact_attention_words": 640,
+  "exact_feedforward_words": 8192,
+  "key_vectors_written": 1143,
+  "mapped_candidate_sha256": "9b7091cce2c532c415aa347d9c366bd63ba209d832fcb10f3885ef23086f81f9",
+  "scope": "One mapped-chip run from one reset. Ten trained attention rows are followed by one trained feed-forward command. Exact captures are compared with fixed integer reference fixtures. Full-model accuracy and physical timing require separate evidence.",
+  "shared_sign_key_memory_instances": 4,
+  "sign_reads": 3872,
+  "state": "trained_attention_and_feedforward_share_memory_without_reset",
+  "trained_feedforward_tokens": 4,
+  "xcelium_exit_status": 0
+}
