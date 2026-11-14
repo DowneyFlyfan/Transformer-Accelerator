@@ -1,0 +1,63 @@
+{
+  "compiled_memory": {
+    "additional_bytes_by_role": {
+      "feedforward_prediction_metadata": 6656,
+      "shared_sign_key": 2048,
+      "survived_sign": 6144,
+      "token_merge_tables": 720
+    },
+    "capacity_bytes": 414928,
+    "capacity_kibibytes": 405.203125,
+    "compiler_timing_corners_checked": [
+      "ssg0p9v125c",
+      "tt1v25c",
+      "ffg1p05vm40c"
+    ],
+    "core_and_aggregator_bytes_by_role": {
+      "aggregator_input_output": 10240,
+      "input": 163840,
+      "output": 40960,
+      "skip_mask": 20480,
+      "weight": 163840
+    },
+    "instances": 631,
+    "masters": 6,
+    "paper_byte_unit_confirmed": false,
+    "paper_capacity_label": "405 KB"
+  },
+  "evidence_sha256": {
+    "floorplan_audit": "7c94e30f0711d0662ebbbe50dee9d439207e732848799c7c108b0b4889c2d12a",
+    "genus_parent": "8ce809cf39b0fcc2862cf12c1e89339e7f2101bc0d6e1c6507f9e18a76e09ee2",
+    "original_paper": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "parent_netlist": "6c4386432cd38a632ef2f9c872d8408a241f8cb605e4f4e109ab8706212c05ae",
+    "previous_replay": "9e508ea7560d5a88fd89b845064417158c82c842e73e72a6123609f1a2af693e",
+    "xcelium_log": "4cec69f7c4333beae5de830e54d137f10258fe0ac2108a0ea7d5edec1e25971c",
+    "xcelium_replay": "aa9660ba9fe2f44ebb89a158ad7f92033b45b3f8f83a8cf60b518eabe6474879"
+  },
+  "genus_isolated_parent": {
+    "abstract_child_masters": 6,
+    "logic_area_um2": 8986.656,
+    "logic_cells": 12425,
+    "setup_slack_ps": 1250
+  },
+  "mapped_footprint": {
+    "combined_mm2": "9.6565299958",
+    "logic_cells": 3750001,
+    "logic_mm2": "5.88605388",
+    "memory_mm2": "3.7704761158",
+    "paper_die_mm": [
+      3.6,
+      3.6
+    ]
+  },
+  "scope": "Functional replay of the six-piece mapped design with timing checks disabled. Footprints are measured before placement. Parent timing treats six child masters as interfaces. Memory capacity rounds to the paper label in binary units.",
+  "state": "mapped_physical_parent_replays_mixed_attention",
+  "xcelium": {
+    "active_clusters": 5,
+    "dual_lane_cycles": 744,
+    "elapsed_seconds": 666.0,
+    "grouped_exact_words": 704,
+    "legacy_exact_words": 640,
+    "native_exit_status": 0
+  }
+}
