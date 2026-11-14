@@ -1,0 +1,30 @@
+{
+  "clean_recovery_transactions": 3,
+  "data_bus_bits": 64,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/grouped_reset_xcelium_serial/output.hex": "8624e8e6391497c3a574da10a67fd261ced8afe09ed74f6e7a26b65144672bfa",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/dma_positive.log": "5e69ceda66053858c1bdbc514ab4caab9c609a9bddd441be5a1eafd178267345",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/dma_wrong_stride.log": "79a11c7a8e686627b5b7a88b40dad899e3ab91c84f2b4e4c847ede1836003a0e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/live_attention_normalization/packet_dma.sh": "5892c086502ef99b5ac428ab10dd0ca27de08a13ee2839853415fdc8fd59dccc",
+    "verilog/tri_oracle_projection_packet_dma.sv": "4fc0d5927f7be60c4ab6aa018e32af289a924b460e17c50f7a38b28570f33b98",
+    "verilog/tri_oracle_projection_packet_dma_tb.sv": "5c048cd97a3a6443cea2a2ace016f80931ca86769c9bc13791ac928a5e6f251e"
+  },
+  "exact_projection_codes": 4096,
+  "head_byte_stride": 65536,
+  "malformed_bursts_rejected": [
+    "early_last",
+    "error_before_last",
+    "late_last"
+  ],
+  "native_protocol_beats": 512,
+  "native_protocol_reads": 64,
+  "scope": "The bus adapter uses the mapped attention write address layout and reassembles eight 64-bit words in bus order. A testbench memory peer supplies captured trained packet bytes and injected malformed bursts. Chip bus arbitration and propagation of a read fault to the layer scheduler remain pending.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "trained_projection_packet_reader_memory_bus_adapter_verified",
+  "token_byte_stride": 64,
+  "trained_projection_packets": 64,
+  "wrong_head_stride_control": {
+    "exit": 2,
+    "first_bad_packet_address": 2
+  }
+}
