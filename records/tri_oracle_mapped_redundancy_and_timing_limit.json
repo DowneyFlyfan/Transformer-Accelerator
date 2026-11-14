@@ -1,0 +1,97 @@
+{
+  "additional_shared_prediction_instances": {
+    "tri_oracle_chip_command_layer_parallel_chip.layer.layer.attention_pipeline.attention.predictor": "tri_oracle_attention_head_predictor415_CORE_HEAD_PREDICTOR1_context_partition",
+    "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.packed_signs.predictor.replay_table": "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1"
+  },
+  "clusters": [
+    {
+      "bank": 0,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[0].unit.selected_bank0.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 1,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[1].unit.selected_bank1.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 2,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[2].unit.selected_bank2.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 3,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[3].unit.selected_bank3.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 4,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[4].unit.selected_bank4.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    }
+  ],
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/receipt.json": "2d36c7e0ff661d50ec6372838d8331e1d71e6cf05e362728fc9941808f43e927",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/timing.initial_allocation_failure/setup_slow/console.log": "3cc6c251b775d4fccc229f1360de50b80ca1fac4602a8706b9ce0904d8e7ab38",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/timing.initial_allocation_failure/setup_slow/native_status.json": "db914363ff9efc3dfe9457d8636e2aa6a1fa0739dcc5e4e060b4cce0cbc08ca3",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/timing/inputs.tcl": "14a3128cc1581880220a3d8e2dc27c8e9e6ee989dbc45c5949e6da36d64b27d9",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/timing/run.tcl": "36fdc4c8ee2ee48a42cf70235a37be8e41d7fdc74be313f20b7be39a73eac2a1",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/timing/setup_slow/console.log": "3de6120e196fba9c7ec611352b564121d2d711f2c003ef70127212c2c0eb2cd2",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/placed_rebound_row_fallback/timing/setup_slow/native_status.json": "75b48b53c3e6f2c112bb67ad0ecdadf35b7a9a0fd08f53359a26f803a1b62c93",
+    ".cache/placement_coordinate_reuse/mapped_redundancy.json": "0326a21e31a46d20facb4e7dbbcc12594eaeb36ec09035e27aeeee36c3e7f646",
+    ".cache/placement_coordinate_reuse/placed_mapped_redundancy.json": "04af3723fc146a14f0dbfc71387314dde085b89de6ba4cd89c4fda3d62b89bdc",
+    "syn/audit_tri_oracle_mapped_redundancy.py": "7a54829e8b9deeb8aa4efc595830212f45f1d1326e81024aae85c1b46800ee51"
+  },
+  "mapped_netlist_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "negative_controls_rejected": [
+    "detached merger",
+    "foreign core bank",
+    "missing core head predictor",
+    "missing core strip predictor"
+  ],
+  "paper_figure": "31.6.2",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "placed_netlist_sha256": "ce6cd8d7ddf4ecbc328197187ac8ebf744bb0ba172c5ce416e353cfbaa9d72c7",
+  "scope": "Instance ownership and reachable hierarchy on the same imported and placed chip. Two additional shared prediction blocks remain. Timing extraction did not finish. Trained end-to-end accuracy and whole-chip routing remain unqualified.",
+  "slow_corner": {
+    "clock_period_ns": 1.72414,
+    "first_attempt": {
+      "elapsed_seconds": 101.12311727402266,
+      "minimum_host_available_bytes": 5481426944,
+      "native_exit_status": 12,
+      "peak_cgroup_anonymous_bytes": 16750346240,
+      "pressure": [],
+      "stop_reason": null,
+      "virtual_address_limit_gib": 22,
+      "workers": 8
+    },
+    "observed_early_global_estimation_nets": 4304833,
+    "retry": {
+      "elapsed_seconds": 188.73295816697646,
+      "minimum_host_available_bytes": 4633776128,
+      "native_exit_status": -15,
+      "peak_cgroup_anonymous_bytes": 17574924288,
+      "peak_sampled_virtual_bytes": 24244101120,
+      "stop_reason": "Host memory recovery deadline exceeded",
+      "virtual_address_limit_bytes": 32212254720,
+      "workers": 1
+    },
+    "slack_ns": null
+  },
+  "state": "mapped_and_placed_redundancy_inventory_verified_slow_corner_memory_limited"
+}
