@@ -1,0 +1,38 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/innovus_import_rebound/linked_physical.v": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/receipt.json": "1a5a1189f633d716a708ccce6f8a4b417c9eda86b96518a5561b52b7b458017f",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/trained/progress.log": "97890bfe547642f18d394dbeabaff7d44c4a3d071ad4ed9d486d67912af44e61",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/trained/xrun.log": "473b7429196e82861c18163297523855c5dad127443b64c48a663e943ce328f5",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/receipt.json": "39a3908f389386d9b22cef716db0fcc7e8d07ff065c6e1fb0190e67482122703",
+    ".cache/placement_coordinate_reuse/layer10_bridge_native.json": "e67de55e7a5b5b56b9b361fb8e5bf4e50e7782aaa5191c71d71fb0b492c71692",
+    ".cache/placement_coordinate_reuse/layer10_weight_traffic_native.json": "116b322bb34371a1fe151db1021747057eb16b7163df83c0e7de8035bf92bb64",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_layer10_mapped_projection_residual.json": "38b7432e10a5b4048b8eac9b3049eb93f8f61e39dce708a4687ab77c28ad45aa"
+  },
+  "exact_feedforward_outputs": 4096,
+  "exact_projection_values": 4096,
+  "feedforward_native_elapsed_seconds": 1966.53,
+  "feedforward_output_packets": 26,
+  "layer": 10,
+  "measured_feedforward_cycles": 967859,
+  "memory_traffic": {
+    "added_sign_bytes": 304128,
+    "packed_weight_bytes": 34603008,
+    "paper_reports_feedforward_external_memory_access_reduction_percent": 57,
+    "same_batch_dense_weight_bytes": 34603008,
+    "skip_decisions_by_token": [
+      0,
+      764
+    ],
+    "total_payload_increase_percent": "0.87890625"
+  },
+  "normalized_activation_bytes": 4096,
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "The same whole-chip mapped candidate ran attention and projection, then normalization and feed-forward in a second Xcelium session. The host supplied the residual addition. Traffic measures weight and sign payload for this two-token fixture. The paper reports a workload-level reduction.",
+  "state": "mapped_layer10_attention_projection_and_feedforward_bit_exact_with_host_residual"
+}
