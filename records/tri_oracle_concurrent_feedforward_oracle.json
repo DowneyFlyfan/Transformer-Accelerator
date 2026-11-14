@@ -1,0 +1,21 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "checkpoint_layer": 0,
+  "cpu_threads": 20,
+  "evidence_sha256": {
+    "independent_arithmetic_checker": "8f4c922c0145d6a3dae33fa9ad4cca817c538b7e95d51656647c08b6963d7ee1",
+    "local_oracle_receipt": "d04d3d47e3d9c5911b601da7771e1146d00176d6e73dea78217b97b8396a5146",
+    "replay_inputs": "cb353b266ce2f44ff19da688f88d51f3dbd3dfd4c72806b59be301fd2bffa2ce"
+  },
+  "exact_intermediate_bytes": 90112,
+  "exact_near_zero_mask_bits": 90112,
+  "exact_output_words": 32768,
+  "gate_only_instead_of_gate_up_intersection_changed_pairs": 48011,
+  "outliers": 159,
+  "peak_child_resident_kib": 140116,
+  "scope": "Recomputed the near-zero decisions and fixed-point numerical fixtures for the current mapped Xcelium replay. This verifies the expected values. The hardware replay must exit successfully to establish agreement on all words.",
+  "skipped_pairs": 5231,
+  "state": "current_xcelium_feedforward_oracle_recomputed",
+  "tokens": 16,
+  "verified_packed_layer_zero_weight_bytes": 34603008
+}
