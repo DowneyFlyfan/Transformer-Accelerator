@@ -1,0 +1,16 @@
+{
+  "causal_sizes_compared": 4920,
+  "duplicate_queries_eliminated": 4,
+  "evidence_sha256": {
+    "archived_map": "f4427d94ae4df8a72989b6f75048dca73fb078fb93365645f780893801d5fa1c",
+    "native_no_reuse_control": "441912b30cbafe24ea7a10c9f52db23bd09d1d7d0b9da3bf3f3eee9cb76ff86b",
+    "native_positive": "225dcf8d0a35e5d4a1c959d99f1b8fb9b0c9d95f610ad9df63e8c7fbcc76aad2",
+    "size_adapter": "c125a17feae5c722160ecd52ef7aab90d6107bcdb54b946cd0f74397193945fd",
+    "testbench": "d666788e0ba0fc1ec1e1eb9be876bb98a1744c53d88eacffd0acb6a702fc863e"
+  },
+  "invalidated_prefixes_reloaded": 2,
+  "merge_table_queries": 12,
+  "scope": "Compiled-table test of the size adapter with distinct original positions. Repeated batches reuse cached prefixes, and context invalidation forces a new lookup. Full-chip and synthesized cache qualification are pending.",
+  "state": "causal_size_cache_reuses_group_queries_and_reloads_after_invalidation",
+  "xcelium_exit_status": 0
+}
