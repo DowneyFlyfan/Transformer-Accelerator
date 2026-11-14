@@ -1,0 +1,27 @@
+{
+  "attention_rows": 4,
+  "candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "exact_cycle_match": true,
+  "exact_output_words": 256,
+  "local_receipt_sha256": "c16b2709ca76c5b0905dbd7c9ea1fc526f71997bbeee38c4958f0ac35271bc87",
+  "memory_macros": 631,
+  "native": {
+    "elapsed_seconds": 688.0431955800159,
+    "log_sha256": "65694e677dad3befc893b9eb894e1a2a4be11dce3b783ee42b78694552dad5f8",
+    "minimum_host_available_bytes": 16027860992,
+    "native_exit_status": 0,
+    "peak_cgroup_anonymous_bytes": 5541150720
+  },
+  "rejected_capture_faults": 2,
+  "scope": "Complete archived four-row workload with output capture on the repaired linked gates. All-head coverage and trained feed-forward require their own replays.",
+  "simulated_ns": {
+    "baseline": 7255630,
+    "repaired": 7255630
+  },
+  "stalled_writes": {
+    "baseline": 59,
+    "repaired": 59
+  },
+  "state": "repaired_chip_full_archived_attention_bit_exact",
+  "value_requests": 1023
+}
