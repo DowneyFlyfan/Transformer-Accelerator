@@ -1,0 +1,43 @@
+{
+  "evidence_sha256": {
+    "fixed_shift_negative_xcelium": "d3d093c6347c84cfeae7fc64c823c973bb1b88897647989a334a561fb4b5e6e3",
+    "grouped_controller": "f31346147b29e48887cf7d28715230289197997abe4a19d29a10d69a50e28f91",
+    "grouped_lane": "1f62a04a341c3bdb00a319b41d977d944c4295222f7de495bdcfc2f78c2c467d",
+    "grouped_mapped_scaler_xcelium": "22aa164a4de82c8329eb88e93fe007d75104e865c36eeda1187f237946504986",
+    "grouped_source_xcelium": "a4cb61fc83f27c2ea5854e9be9ecb30a80d86abc4ea88e2f631bd65a6027725c",
+    "isolated_genus_netlist": "b699d53a574c3de7ee6b3be853ba85085319f241f18ea5c4b3fd189cbb4e0f2b",
+    "isolated_genus_timing": "5d37db894169c477ea9e4a7a7291c107de5db666fc843847fd0864299184bc33",
+    "isolated_mapped_xcelium": "ced7d821b7066ca23eefba051f59b827e63980a920bf79fa45c411c467a99a1f",
+    "isolated_source_xcelium": "3b104be47caa98e98b259c3459ffa13782793042a232bed56a8b41f75566bb54",
+    "mixed_shift_bench": "bf83a57e1eb0b0c58ec23bedac086874914bf1c37b4518b1f7976c70a947ddcc",
+    "mixed_shift_oracle": "d71347bd9ecb237c81606ed38f96c939d38b00ef85f5b77f54a07dfadc3f5613",
+    "tracked_bench": "09a3f7efafbe8365db038dfaeca45e36bf7b623d17102ce9db30efbd484d33a4",
+    "tracked_scaler": "4c1fb3c4d085cb8a18d5510e082dc92bfd3123331b40b783130499a9f114c1e9",
+    "trained_operands": "ffe3c7453f6a9f49f29c62d50c2318b69288c5805d9e4eabe023c1b0a928e6ef",
+    "trained_score_vectors": "5ddf6206404533c1b8fc6547215dbd64bd713f3a8f767f2c93644b2c359a05d6"
+  },
+  "group_fixture": {
+    "cycles": 2910,
+    "descriptor_shifts": [
+      -1,
+      -2,
+      -6,
+      -3
+    ],
+    "exact_output_words": 256,
+    "exact_probabilities": 1151,
+    "existing_compiled_memory_instances": 8,
+    "fixed_shift_negative_status": 2
+  },
+  "isolated_genus_reported_slack_ps": 0,
+  "isolated_total_checks": 23836,
+  "isolated_trained_score_checks": 3235,
+  "scope": "The scaler was synthesized and replayed inside a four-core grouped attention fixture. The surrounding grouped controller used source models. Grouped controller timing and whole-chip integration remain open.",
+  "state": "descriptor_score_scaling_verified_in_grouped_attention",
+  "trained_shift_row_counts": {
+    "-6": 1,
+    "-3": 4,
+    "-2": 7,
+    "-1": 13
+  }
+}
