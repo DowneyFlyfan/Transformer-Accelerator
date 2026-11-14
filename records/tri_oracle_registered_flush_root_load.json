@@ -1,0 +1,31 @@
+{
+  "candidate_sha256": "4191c72e54d3699a24d85bb3d75a3c3939a38a79b344acb2016631fe7b85ccc0",
+  "corners": {
+    "ffg1p05vm40c": {
+      "baseline_root_pin_margin_pf": "0.06820426",
+      "register_pin_margin_pf": "0.101519817",
+      "root_limit_pf": "0.0725175",
+      "root_pin_load_pf": "0.02435574",
+      "root_pin_margin_pf": "0.04816176"
+    },
+    "ssg0p9v125c": {
+      "baseline_root_pin_margin_pf": "0.05029636",
+      "register_pin_margin_pf": "0.088905913",
+      "root_limit_pf": "0.0552179",
+      "root_pin_load_pf": "0.02388324",
+      "root_pin_margin_pf": "0.03133466"
+    },
+    "tt1v25c": {
+      "baseline_root_pin_margin_pf": "0.05272998",
+      "register_pin_margin_pf": "0.093387867",
+      "root_limit_pf": "0.0597256",
+      "root_pin_load_pf": "0.02389332",
+      "root_pin_margin_pf": "0.03583228"
+    }
+  },
+  "local_receipt_sha256": "f0fd2e47acf529ff5bec24928e6b6347a35821892ee40f4efd3ad282908d3214",
+  "reset_driver": "layer/layer/feedforward/compute/compute/tensor/sequencer/g7249__6260/ZN",
+  "root_branches": 6,
+  "scope": "Traced the registered reset driver and its six root buffers in the linked chip. Pin loads exclude wire capacitance. Slew and reset timing require native placement and timing.",
+  "state": "registered_flush_linked_reset_pin_limits_verified"
+}
