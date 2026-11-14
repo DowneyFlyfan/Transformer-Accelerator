@@ -1,0 +1,28 @@
+{
+  "candidate_netlist_sha256": "26428230758d8d625090cec5d21a51f1b74ba528303773a7d94ccafb07a88f14",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/receipt.json": "1a5a1189f633d716a708ccce6f8a4b417c9eda86b96518a5561b52b7b458017f",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/trained_grouped_output_projection/native_attention_handoff/layer10_mapped_feedforward/trained/xrun.log": "473b7429196e82861c18163297523855c5dad127443b64c48a663e943ce328f5",
+    ".cache/placement_coordinate_reuse/grouped_active_feedforward/bundle.sv": "ab6d88a4e6d8003fd02f29ff9cc9474b4a36d4ef273a7f85af25819fa29615b1",
+    ".cache/placement_coordinate_reuse/grouped_active_feedforward/progress.log": "97890bfe547642f18d394dbeabaff7d44c4a3d071ad4ed9d486d67912af44e61",
+    ".cache/placement_coordinate_reuse/grouped_active_feedforward/receipt.json": "10f4ac3cebae2cb1ae34adf799d5b0e87834e80b3db194ecceb51a97db09dbc5",
+    ".cache/placement_coordinate_reuse/grouped_active_feedforward/xrun.log": "c2b01b96bc177bbbc4032cbb60c2a4d43b4eef5e63787b55af862038c4afde13",
+    "records/tri_oracle_grouped_active_graph.json": "4a8e9881c7e99f4cdc153f33e9bd6cb2cae531c8427f314e446b1d4f15342499",
+    "syn/run_tri_oracle_buffered_feedforward.py": "0c5917ef86963497cf71077e3cecb680636eb6642da92d21554a8873410d1685"
+  },
+  "exact_feedforward_outputs": 4096,
+  "feedforward_cycles": 967859,
+  "memory_macros": 631,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 13980577792,
+    "peak_anonymous_bytes": 6047195136,
+    "seconds": 2069.756327687064
+  },
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "Functional feed-forward replay with archived host residual inputs at two layer-10 positions. The replay disables timing checks and uses the same expected codes and memory fixtures as the imported chip.",
+  "state": "buffered_chip_layer10_trained_feedforward_verified"
+}
