@@ -91,7 +91,7 @@ def feedforward_bench(source, descriptor, external):
     payload_valid=0;payload_last=0;payload_data='x;loading_command=0;
     @(posedge clk);
     if(dut.layer_command_valid!==6'b000001 || dut.layer_command_ready[0]!==1'b1 ||
-       dut.layer_command_tag!==cfg_tag || dut.layer_command_payload!==descriptor)
+       dut.layer_command_tag!==cfg_tag || dut.layer_command_payload[959:0]!==descriptor)
       $fatal(1,"UNIFIED_CHIP_FEEDFORWARD_LOWER_ISSUE");
     command_count++;
     @(negedge clk);cfg_tag='1;"""),

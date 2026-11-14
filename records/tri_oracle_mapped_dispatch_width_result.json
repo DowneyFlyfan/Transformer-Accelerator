@@ -1,0 +1,27 @@
+{
+  "candidate_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "evidence_sha256": {
+    "dispatcher_extracted_from_candidate": "99b8e7d0e4b121c57e477af19d092405f90c9f76264f69a4db9875d6d492cf8c",
+    "native_dispatcher_log": "05c8d3ffddacb574f0dd60e6682227bda26ef427d6f700169a327f25aae26acd",
+    "original_full_chip_failure_log": "75899341baff1f58d6d975d535c4c3d82b3d3cff2b9522c4c889de4dace7733a",
+    "testbench": "ff53ec4472a72227470247d8a0092e304b967f763794bd0081b28e986fae069e"
+  },
+  "feedforward_payload_bits": 960,
+  "feedforward_payload_words": 15,
+  "grouped_payload_words": 26,
+  "native_exit_status": 0,
+  "native_simulator": "Xcelium 25.03-s001",
+  "original_failure_time_ns": 205,
+  "scope": "Functional Xcelium replay of the extracted mapped dispatcher. Both feed-forward commands match all 15 written words. A whole-bus comparison fails with unknown or retained upper words. The corrected whole-chip trained feed-forward replay is a separate test.",
+  "shared_payload_bits": 1664,
+  "state": "mapped_dispatch_feedforward_payload_width_mismatch_reproduced",
+  "unused_upper_bits": {
+    "after_grouped_attention": "prior grouped payload",
+    "after_reset": "unknown"
+  },
+  "verified_cases": [
+    "feedforward after reset",
+    "grouped attention",
+    "feedforward after grouped attention"
+  ]
+}
