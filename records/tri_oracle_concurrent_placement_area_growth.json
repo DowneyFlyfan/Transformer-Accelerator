@@ -1,0 +1,83 @@
+{
+  "current": {
+    "logic_cells": 3760655,
+    "logic_mm2": "5.90037084",
+    "memory_macros": 631,
+    "memory_mm2": "3.7704761158"
+  },
+  "current_logic_fraction_outside_macro_halos": "0.8229404146302438304489251848",
+  "current_netlist_sha256": "78935b2601cb2aa9644733d236e9bbba9567004e933d6b3eb8c333cbb18c3b75",
+  "eight_worker_attempt": {
+    "global_iteration_reached": 2,
+    "lowest_available_host_gib": 3.03,
+    "peak_container_anonymous_gib": 16.72,
+    "scan_diagnostic_count": 0,
+    "terminal_reason": "Host memory recovery deadline exceeded"
+  },
+  "evidence_sha256": {
+    "area_inventory": "c78a5d5b5e7868bca95a39b9ae7372866779bd1569faa6d33b27fe45e7272198",
+    "native_console": "f33e01cf5d082b24841c6380495ee7aff6a9c652b89521a7e4307bb995ca5460",
+    "native_status": "52d7fc6efb1da53103f7825c329222726395eb51e1f8ae4ff1470b4f7e4131de"
+  },
+  "five_grouped_commands_and_services": {
+    "logic_cells": 1552972,
+    "logic_mm2": "2.513104104",
+    "memory_macros": 0,
+    "memory_mm2": "0.0"
+  },
+  "grouped_command_children_per_cluster": {
+    "partial_probability_controller_command_bridge": {
+      "logic_cells": 140097,
+      "logic_mm2": "0.234638544",
+      "memory_macros": 0,
+      "memory_mm2": "0.0"
+    },
+    "prefill_value_pair": {
+      "logic_cells": 2186,
+      "logic_mm2": "0.004010328",
+      "memory_macros": 0,
+      "memory_mm2": "0.0"
+    },
+    "resident_key_burst": {
+      "logic_cells": 968,
+      "logic_mm2": "0.00094584",
+      "memory_macros": 0,
+      "memory_mm2": "0.0"
+    },
+    "resident_key_controller": {
+      "logic_cells": 29405,
+      "logic_mm2": "0.065065896",
+      "memory_macros": 0,
+      "memory_mm2": "0.0"
+    },
+    "tri_oracle_grouped_token_sizes": {
+      "logic_cells": 35398,
+      "logic_mm2": "0.053069184",
+      "memory_macros": 0,
+      "memory_mm2": "0.0"
+    },
+    "value_accumulate": {
+      "logic_cells": 92704,
+      "logic_mm2": "0.13457472",
+      "memory_macros": 0,
+      "memory_mm2": "0.0"
+    }
+  },
+  "grouped_command_per_cluster": {
+    "logic_cells": 308574,
+    "logic_mm2": "0.500692416",
+    "memory_macros": 0,
+    "memory_mm2": "0.0"
+  },
+  "net_logic_area_growth_mm2": "2.547268584",
+  "net_logic_cell_growth": 1585654,
+  "previous": {
+    "logic_cells": 2175001,
+    "logic_mm2": "3.353102256",
+    "memory_macros": 631,
+    "memory_mm2": "3.7704761158"
+  },
+  "prior_placed_netlist_sha256": "1826eccdb94f06668ceb94863644fd1cdb55a90e59d42a6f78f8cd4e21a7fa1d",
+  "scope": "Exact netlist leaf and library footprint counts on the same 20-core scale. Grouped command hierarchy excludes other logic changes. Area does not measure placement congestion, placement peak memory, or timing.",
+  "state": "concurrent_chip_placement_footprint_growth_reconciled"
+}
