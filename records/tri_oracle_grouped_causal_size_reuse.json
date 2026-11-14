@@ -1,0 +1,15 @@
+{
+  "eliminated_duplicate_walks": 1,
+  "evidence_sha256": {
+    "after_fix_xcelium": "c4558ff12c8aabb5704e784f7c81fb29c925261e2a6d6c60de4419123668bee3",
+    "before_fix_xcelium": "bad430bbe905fec60f7f291ad30708c9cc8ec58e2da98929fc35b148d2ffd408",
+    "map": "f4427d94ae4df8a72989b6f75048dca73fb078fb93365645f780893801d5fa1c",
+    "rtl": "8d37038902713e0c8a8795f113ce0abd5ffc69a9401a18a0b58635d6add9bff3",
+    "testbench": "549d8ec56be47b2356efbeb6d8fa3c93edda25e10d68299af652aa4981ec146c"
+  },
+  "exact_size_values": 2365,
+  "native_queries": 8,
+  "scope": "The grouped size adapter reuses the first image prefix once both positions see the full image. A pair spanning distinct image prefixes still makes both causal queries. The test links the compiled merge-table memories.",
+  "state": "adjacent_text_queries_reuse_causal_image_size_walk",
+  "xcelium_exit_status": 0
+}

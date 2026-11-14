@@ -16,7 +16,7 @@ module tri_oracle_grouped_native_sizes_tb;
     logic [3:0][9:0] selected_size;
     logic [9:0] map_data[576];
     int counted_queries=0,checked_sizes=0,cycles=0;
-    int native_query_positions[7];
+    int native_query_positions[8];
 
     tri_oracle_cluster_token_sizes tables (
         .clk,.rst_n,.frame_valid,.frame_ready,.map_valid,.map_ready,.map_origin,.map_last,.table_request,
@@ -30,7 +30,7 @@ module tri_oracle_grouped_native_sizes_tb;
         cycles++;
         if (cycles>10000) $fatal(1,"GROUPED_SIZES_TIMEOUT");
         if (native_query_valid && native_query_ready) begin
-            if (counted_queries==7) $fatal(1,"EXTRA_GROUPED_SIZE_QUERY");
+            if (counted_queries==8) $fatal(1,"EXTRA_GROUPED_SIZE_QUERY");
             native_query_positions[counted_queries]=int'(native_query_position);
             counted_queries++;
         end
@@ -136,10 +136,13 @@ module tri_oracle_grouped_native_sizes_tb;
         compare(580,4'h4,0);
         compare(400,4'h1,1);
         compare(400,4'h1,0);
-        if (counted_queries!=7 || checked_sizes<=1000 ||
+        compare(579,4'hf,0);
+        compare(580,4'hf,1);
+        if (counted_queries!=8 || checked_sizes!=2365 ||
             native_query_positions[0]!=575 || native_query_positions[1]!=575 ||
-            native_query_positions[2]!=575 || native_query_positions[3]!=575 ||
-            native_query_positions[4]!=575 || native_query_positions[5]!=395 || native_query_positions[6]!=395)
+            native_query_positions[2]!=575 || native_query_positions[3]!=395 ||
+            native_query_positions[4]!=395 || native_query_positions[5]!=574 ||
+            native_query_positions[6]!=575 || native_query_positions[7]!=575)
             $fatal(1,"GROUPED_SIZES_COVERAGE queries=%d sizes=%d",counted_queries,checked_sizes);
         $display("GROUPED_NATIVE_SIZES_PASS queries=%0d exact_sizes=%0d",counted_queries,checked_sizes);
         $finish;

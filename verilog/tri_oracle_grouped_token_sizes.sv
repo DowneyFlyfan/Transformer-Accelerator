@@ -24,7 +24,7 @@ module tri_oracle_grouped_token_sizes (
 );
     typedef enum logic [2:0] {Idle, StartQuery, Query, Collect, Done} state_t;
     state_t state;
-    logic later, failed;
+    logic later, failed, shared_image_counts;
     logic [1:0] queries;
     logic [10:0] base_position;
     logic [9:0] prefix_start, root_index;
@@ -55,7 +55,7 @@ module tri_oracle_grouped_token_sizes (
                     : 10'(size_index[lane]);
         assign selected_size[lane] =
             rank >= prefix_start && rank < prefix_start + image_roots[QUERY]
-            ? counts[QUERY][9'(rank-prefix_start)] : 10'd1;
+            ? counts[QUERY==1 && !shared_image_counts][9'(rank-prefix_start)] : 10'd1;
     end
 
     always_ff @(posedge clk) begin
@@ -69,6 +69,7 @@ module tri_oracle_grouped_token_sizes (
             later <= 0;
             failed <= 0;
             queries <= '0;
+            shared_image_counts <= 0;
             base_position <= 0;
             prefix_start <= 0;
             root_index <= 0;
@@ -78,6 +79,7 @@ module tri_oracle_grouped_token_sizes (
         end else case (state)
             Idle: if (prepare_valid) begin
                 queries <= {|active_rows[3:2], |active_rows[1:0]};
+                shared_image_counts <= 0;
                 later <= active_rows[1:0] == 0;
                 base_position <= first_position;
                 prefix_start <= image_start;
@@ -117,7 +119,14 @@ module tri_oracle_grouped_token_sizes (
                     if (later || !queries[1] || failed ||
                         last_root_rank >= 512 || native_size_count == 0 ||
                         implied_visible != 11'(visible[later])) state <= Done;
-                    else begin
+                    else if (position + 1'b1 >= image_end) begin
+                        // Both queries use the complete image prefix. The next
+                        // text token adds one unit-sized key without a new walk.
+                        image_roots[1] <= root_index + 1'b1;
+                        shared_image_counts <= 1;
+                        failed <= implied_visible + 1'b1 != 11'(visible[1]);
+                        state <= Done;
+                    end else begin
                         later <= 1;
                         state <= StartQuery;
                     end
