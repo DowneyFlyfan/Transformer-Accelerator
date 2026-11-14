@@ -1,0 +1,23 @@
+{
+  "archived_holdout_consensus_percent": {
+    "channel_scaled_down": 62.34,
+    "channel_scaled_down_pruned": 58.24
+  },
+  "archived_holdout_questions": 256,
+  "batch_boundary_control_questions": 1025,
+  "full_split_synthetic_negative_control_percent": 0.0,
+  "images": 40504,
+  "input_sha256": {
+    ".cache/model_reference/ff_channel_scaled_pruned/receipt.json": "63c1f0a55df550b0dbcab39ac85d01e31d6540c86326b0ef220cb961f7f00ff3",
+    "syn/score_tri_oracle_vqav2_validation.py": "05b1baf73c68ca4db5da3d77036338e649ca099a365894881b64f6337f3c4d46"
+  },
+  "invalid_cohorts_rejected": [
+    "missing question",
+    "duplicate question",
+    "wrong image"
+  ],
+  "questions": 214354,
+  "scope": "The archived predictions are software holdout runs. Full-split testing used a synthetic wrong answer. Paper evaluation split, mapped predictions, and paper-level accuracy are still unverified.",
+  "state": "full_validation_scorer_verified_with_archived_predictions_and_controls",
+  "validation_split": "VQAv2 val2014"
+}
