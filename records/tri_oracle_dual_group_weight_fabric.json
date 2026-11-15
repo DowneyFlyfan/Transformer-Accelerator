@@ -1,0 +1,24 @@
+{
+  "added_lane_selector_cells": 2560,
+  "added_payload_registers": 1024,
+  "base_candidate_sha256": "75dc67eab2ddcd3266d26ba072c7d715aa7553edde1715977b2f07d841b95ea6",
+  "clusters": 5,
+  "compiled_weight_memories_replayed": 320,
+  "cores": 20,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/fabric_replay/baseline/xrun.log": "939abfad25a2f27b26a075ab826401b4f608d3ee0712adcb7789ffa2da961044",
+    ".cache/indexed_whole_chip/dual_group_probe/fabric_replay/prepare.py": "c2d71abc43e32002df269b7ea91feb228b2598bd32a11d25873520f9ee9c55d8",
+    ".cache/indexed_whole_chip/dual_group_probe/fabric_replay/wide/bench.sv": "acbbe9ab0a1a7f447f4427b2a624b4d7db081759eccb357cb4ff98d7d0e78914",
+    ".cache/indexed_whole_chip/dual_group_probe/fabric_replay/wide/cut.v": "d9bb641f80865c4c4eb3f84e1cb35bea6d01990e5954e694e770d0b6f0d9e424",
+    ".cache/indexed_whole_chip/dual_group_probe/fabric_replay/wide/xrun.log": "620dd3c4212e808280356da939a4b9286ababb62adf17952d2b7de0ef0eb8df4",
+    ".cache/indexed_whole_chip/dual_group_probe/fabric_wide.v": "de8b561138c4fdb9bcd8d30aaf3569504cfc6b9e8b05653e15d67c9f06a83758",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    "syn/prepare_tri_oracle_dual_group_fabric.py": "c26f0db48e9d0d7fad4e4410f128529dd569fb6e7fc774d02bc808eedf46bfb0"
+  },
+  "lane_write_bits": 1024,
+  "lanes": 2,
+  "narrow_path_failed_readback": true,
+  "scope": "Exact widened native registered stage, lane selection and five mapped cluster adapters. A test harness connects the cluster load interfaces to the compiled memory models and checks both selected and held rows, including mirrored raw writes. The harness substitutes for the native core controllers. This verifies functional write distribution before full-chip linkage and timing.",
+  "state": "mapped_stage_and_cluster_weight_distribution_verified_with_compiled_memory_models",
+  "weight_rows_read_back": 640
+}
