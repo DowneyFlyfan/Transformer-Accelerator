@@ -1,0 +1,30 @@
+{
+  "calibration_images": 8,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "elapsed_seconds": 8.197730776970275,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/activation_range_per_row/receipt.json": "22ff5a9e54aac4a63389e480a98fa75667933c7aa6130dac9378118ba787d6d7",
+    ".cache/model_reference/gqa_testdev/activation_range_rows/receipt.json": "255402439ba4080aa6543e6751c99aee3b033c7139eaa3a9a404a03a4ddc3a96",
+    ".cache/model_reference/gqa_testdev/activation_range_workflow/workflow.pdf": "2dad96b71ff35301796bed8d1bf12651fc8d1a96a74783f9910633897a1c8ea0",
+    "syn/measure_tri_oracle_activation_range.py": "57165f151de2e241569d7809bf93c7903caa5fd6c64f7cd2c4ba57677588b819"
+  },
+  "held_images": 8,
+  "held_mean_relative_output_error": {
+    "0": 0.2270979881286621,
+    "1": 0.2549153647639535,
+    "2": 0.425094028765505,
+    "activation_distortion_selection_mean_error": 0.22737052494829352,
+    "fit_selected": 0.2270979881286621,
+    "target_aware_minimum_mean_error": 0.2257809808308428
+  },
+  "holdout_rows_total_across_layers": 2640,
+  "input_only_selection_changed_rows": 449,
+  "layers": 22,
+  "peak_gpu_bytes": 391806976,
+  "per_layer_fit_selected_original_range": 22,
+  "rows_per_split_per_layer": 120,
+  "scope": "Offline mean relative Euclidean error against held-out feed-forward layer outputs. The selection uses ordinary prompt rows and retains the existing signed eight-bit arithmetic, training weights, and pruning rule. Fixed negative exponent offsets clip more activations. The input-only choice minimizes input quantization distortion for each row. The target-aware choice uses held-out outputs and serves as a diagnostic ceiling. This experiment measures layer error. Model answer accuracy and mapped execution require separate evidence.",
+  "state": "signed8_activation_range_fit_and_held_rows_measured",
+  "target_aware_choices_improving_rows": 481
+}

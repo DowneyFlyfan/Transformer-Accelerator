@@ -1,0 +1,57 @@
+{
+  "candidate_sha256": "75dc67eab2ddcd3266d26ba072c7d715aa7553edde1715977b2f07d841b95ea6",
+  "compiled_memory_paths": 631,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/indexed_replay/inputs.json": "8b1f8f82c39a6366b30c8054ff7616e1b42fe60d1325b2918a756d2e18967420",
+    ".cache/indexed_whole_chip/indexed_replay/progress.log": "d55072d9bb13a11ea2b1b566a6607913f58e5e9f28260c37192c686f553cd642",
+    ".cache/indexed_whole_chip/indexed_replay/status.json": "7062e03790bef9290a4456adbdc414906d385184c2526290124c9eefee11f24a",
+    ".cache/indexed_whole_chip/indexed_replay/verified.json": "ee20fab1f34c55b7c08aacb5e88990b150a5f0ba2b7f5baa945331a1b125f1b4",
+    ".cache/indexed_whole_chip/indexed_replay/xrun.log": "93bd16c9d4ca7d6c9b3d0409cd4d3d45ea7cae38923d9d3c2917f7ee9da93bbe",
+    ".cache/indexed_whole_chip/raw_replay/inputs.json": "ece9dc69771ee71bc94e319bd8df39d3a42486b902b4af4a3fbd5bde95144a55",
+    ".cache/indexed_whole_chip/raw_replay/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/indexed_whole_chip/raw_replay/status.json": "f9488a2b0215e34f9c26a4d7b09544c0a98fb131be6afd6ddaf5b82c4491ff26",
+    ".cache/indexed_whole_chip/raw_replay/verified.json": "6e87f0dc270094f86574ae30a5977664144b9b6c31056d06d15134704de8aa0e",
+    ".cache/indexed_whole_chip/raw_replay/xrun.log": "3c58dbafdb1541401e4d67f65bf906cd36a6c1111ab308c8dbb7720a09beb853",
+    "syn/run_tri_oracle_indexed_native_replay.py": "4c99e3ab4154fd2e5bb1c8ec21ec6981d4ddc54f02f12ba47695e7d14094603b"
+  },
+  "exact_feedforward_outputs": 4096,
+  "exact_writeback_outputs": 4096,
+  "functional_checkpoints": 90,
+  "indexed": {
+    "cycles": 908407,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  },
+  "indexed_response_beats_by_lane": [
+    {
+      "down_index": 780,
+      "down_payload": 49416,
+      "pair_index": 1416,
+      "pair_payload": 118925
+    },
+    {
+      "down_index": 756,
+      "down_payload": 47897,
+      "pair_index": 1400,
+      "pair_payload": 117617
+    }
+  ],
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 11690610688,
+    "peak_container_anonymous_bytes": 8280842240,
+    "wall_seconds": 3003.229967287043
+  },
+  "raw": {
+    "cycles": 973270,
+    "weight_requests": 17408,
+    "weight_response_beats": 540672
+  },
+  "reduction_percent": {
+    "cycles": 6.66444,
+    "weight_requests": 26.470588,
+    "weight_response_beats": 37.446918
+  },
+  "scope": "Raw and losslessly indexed external weight data on the same earlier, narrow mapped chip. Two trained token rows, each with 2,048 channels. Raw and indexed runs checked the same quantized outputs and writeback values. Simulated cycles include the testbench memory service model with timing checks disabled. These are functional and transfer measurements for this fixture. Physical timing and paper benchmark measurements remain unqualified.",
+  "state": "native_indexed_trained_feedforward_and_writeback_verified"
+}
