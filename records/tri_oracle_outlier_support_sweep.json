@@ -1,0 +1,150 @@
+{
+  "activation_normalization_integer_cutoffs": [
+    384,
+    512,
+    640,
+    768,
+    896,
+    1024
+  ],
+  "baseline": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": -0.017577662612452638,
+      "mean_error_numerator": 439.8666267945168,
+      "mean_outliers_per_row": 14.50909090909091,
+      "mean_relative_output_perturbation": 0.16661614651307455,
+      "nonzero_skipped": 985882,
+      "outlier_elements": 38304,
+      "predicted_weight_bytes": 6090129408,
+      "sign_bytes": 107050240,
+      "skipped_channels": 1228484,
+      "skipped_fraction": 0.08262337508608815
+    },
+    "gate_numerator": 0,
+    "held": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": -0.017187407522490483,
+      "mean_error_numerator": 426.5886723916016,
+      "mean_outliers_per_row": 14.190909090909091,
+      "mean_relative_output_perturbation": 0.16158661833015212,
+      "nonzero_skipped": 966671,
+      "outlier_elements": 37464,
+      "predicted_weight_bytes": 6090129408,
+      "sign_bytes": 104673536,
+      "skipped_channels": 1200124,
+      "skipped_fraction": 0.08071598441804408
+    },
+    "outlier_cutoff_q8": 768,
+    "up_numerator": 0
+  },
+  "best_fit_traffic_at_or_below_baseline_error": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": -0.011445016571969724,
+      "mean_error_numerator": 422.5768027177125,
+      "mean_outliers_per_row": 9.416287878787879,
+      "mean_relative_output_perturbation": 0.16006697072640624,
+      "nonzero_skipped": 894065,
+      "outlier_elements": 24859,
+      "predicted_weight_bytes": 6090129408,
+      "sign_bytes": 69701632,
+      "skipped_channels": 1091642,
+      "skipped_fraction": 0.07341987883092287
+    },
+    "gate_numerator": -8,
+    "held": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": -0.011131517814867431,
+      "mean_error_numerator": 423.55550569965646,
+      "mean_outliers_per_row": 9.164015151515152,
+      "mean_relative_output_perturbation": 0.16043769155290016,
+      "nonzero_skipped": 903633,
+      "outlier_elements": 24193,
+      "predicted_weight_bytes": 6090129408,
+      "sign_bytes": 67792384,
+      "skipped_channels": 1099300,
+      "skipped_fraction": 0.07393492811639119
+    },
+    "outlier_cutoff_q8": 896,
+    "up_numerator": 0
+  },
+  "comparator_denominator": 32,
+  "evidence_sha256": {
+    ".cache/model_reference/ff_outlier_support_sweep/console.log": "40920d098d29cb2037aa9750dbe9af34fab0a549436a561c31d0506c1e359dd0",
+    ".cache/model_reference/ff_outlier_support_sweep/receipt.json": "06fe5baabf15120647e63f3cf0ae80a4d85cdd02d914b64897cdb8e520be1f3c",
+    ".cache/model_reference/ff_outlier_support_sweep/run.py": "617f6af5285c5e8c11aa363416f2e3b404ce985b184ed9146f1e02ee98edee18",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_outlier_scaled_sign_threshold_result.json": "8a405edb1f291e6c9fddf1c7ac0d03934586c11e55e87deb9aa69cd06f2ca979"
+  },
+  "fit_rules_reaching_paper_byte_target": 7,
+  "fit_rules_reaching_paper_byte_target_at_baseline_error": 0,
+  "layers": 22,
+  "least_fit_error_at_paper_byte_target": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": 0.7512164155313792,
+      "mean_error_numerator": 2533.7407101595077,
+      "mean_outliers_per_row": 28.211363636363636,
+      "mean_relative_output_perturbation": 0.9597502689998135,
+      "nonzero_skipped": 11884797,
+      "outlier_elements": 74478,
+      "predicted_weight_bytes": 1308491776,
+      "sign_bytes": 206632448,
+      "skipped_channels": 14760081,
+      "skipped_fraction": 0.9927094766916322
+    },
+    "gate_numerator": 16,
+    "held": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": 0.7137199380837853,
+      "mean_error_numerator": 2526.588927510855,
+      "mean_outliers_per_row": 27.937121212121212,
+      "mean_relative_output_perturbation": 0.9570412604207783,
+      "nonzero_skipped": 11890294,
+      "outlier_elements": 73754,
+      "predicted_weight_bytes": 1538801664,
+      "sign_bytes": 204680960,
+      "skipped_channels": 14750329,
+      "skipped_fraction": 0.9920535925662879
+    },
+    "outlier_cutoff_q8": 640,
+    "up_numerator": 24
+  },
+  "lowest_fit_error_at_or_above_baseline_skip_count": {
+    "fit": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": -0.017577662612452638,
+      "mean_error_numerator": 439.8666267945168,
+      "mean_outliers_per_row": 14.50909090909091,
+      "mean_relative_output_perturbation": 0.16661614651307455,
+      "nonzero_skipped": 985882,
+      "outlier_elements": 38304,
+      "predicted_weight_bytes": 6090129408,
+      "sign_bytes": 107050240,
+      "skipped_channels": 1228484,
+      "skipped_fraction": 0.08262337508608815
+    },
+    "gate_numerator": 0,
+    "held": {
+      "dense_bytes": 6090129408,
+      "external_traffic_reduction_fraction": -0.017187407522490483,
+      "mean_error_numerator": 426.5886723916016,
+      "mean_outliers_per_row": 14.190909090909091,
+      "mean_relative_output_perturbation": 0.16158661833015212,
+      "nonzero_skipped": 966671,
+      "outlier_elements": 37464,
+      "predicted_weight_bytes": 6090129408,
+      "sign_bytes": 104673536,
+      "skipped_channels": 1200124,
+      "skipped_fraction": 0.08071598441804408
+    },
+    "outlier_cutoff_q8": 768,
+    "up_numerator": 0
+  },
+  "paper_external_memory_access_reduction_percent": 57,
+  "rows_per_split": 2640,
+  "rules_tested": 252,
+  "scope": "Only the sign predictor's activation support and comparators vary. Weight traffic uses the existing packed fetch model with sign traffic. The eight held images are scored with settings selected using eight separate calibration images. Layer perturbation uses dense fixed-point outputs. This experiment reports modeled weight and sign traffic and fixed-point projection perturbation.",
+  "state": "outlier_cutoff_and_comparator_sweep_independently_verified"
+}
