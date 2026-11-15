@@ -1,0 +1,134 @@
+{
+  "arrays": {
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "ideal": {
+        "high_wire_resistance_warning_nets": 0,
+        "median_of_five_reported_slacks_ns": 0.956109,
+        "native": {
+          "exit_status": 0,
+          "minimum_host_available_bytes": 13515669504,
+          "peak_container_anonymous_bytes": 7055769600,
+          "stop_reason": null,
+          "wall_seconds": 28.0446855800692
+        },
+        "violating_reported_paths": 0,
+        "worst_slack_ns": 0.956109
+      },
+      "original": {
+        "annotated_internal_nets": 68499,
+        "high_wire_resistance_warning_nets": 0,
+        "median_of_five_reported_slacks_ns": -31.548119,
+        "native": {
+          "exit_status": 0,
+          "minimum_host_available_bytes": 13485891584,
+          "peak_container_anonymous_bytes": 7118471168,
+          "stop_reason": null,
+          "wall_seconds": 29.54136567795649
+        },
+        "total_complete_nets": 73465,
+        "violating_reported_paths": 5,
+        "worst_slack_ns": -31.548622
+      },
+      "refined": {
+        "annotated_internal_nets": 68499,
+        "high_wire_resistance_warning_nets": 0,
+        "median_of_five_reported_slacks_ns": -23.182451,
+        "native": {
+          "exit_status": 0,
+          "minimum_host_available_bytes": 13485891584,
+          "peak_container_anonymous_bytes": 7118471168,
+          "stop_reason": null,
+          "wall_seconds": 30.542409030953422
+        },
+        "total_complete_nets": 73465,
+        "violating_reported_paths": 5,
+        "worst_slack_ns": -23.182852
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_1": {
+      "ideal": {
+        "high_wire_resistance_warning_nets": 0,
+        "median_of_five_reported_slacks_ns": 0.956109,
+        "native": {
+          "exit_status": 0,
+          "minimum_host_available_bytes": 13383323648,
+          "peak_container_anonymous_bytes": 7127502848,
+          "stop_reason": null,
+          "wall_seconds": 27.03932118101511
+        },
+        "violating_reported_paths": 0,
+        "worst_slack_ns": 0.956109
+      },
+      "original": {
+        "annotated_internal_nets": 68499,
+        "high_wire_resistance_warning_nets": 0,
+        "median_of_five_reported_slacks_ns": -27.103132,
+        "native": {
+          "exit_status": 0,
+          "minimum_host_available_bytes": 13383323648,
+          "peak_container_anonymous_bytes": 7127502848,
+          "stop_reason": null,
+          "wall_seconds": 27.03895251499489
+        },
+        "total_complete_nets": 73465,
+        "violating_reported_paths": 5,
+        "worst_slack_ns": -27.103331
+      },
+      "refined": {
+        "annotated_internal_nets": 68499,
+        "high_wire_resistance_warning_nets": 0,
+        "median_of_five_reported_slacks_ns": -41.995235,
+        "native": {
+          "exit_status": 0,
+          "minimum_host_available_bytes": 13515669504,
+          "peak_container_anonymous_bytes": 7055769600,
+          "stop_reason": null,
+          "wall_seconds": 30.297987230005674
+        },
+        "total_complete_nets": 73465,
+        "violating_reported_paths": 5,
+        "worst_slack_ns": -41.995537
+      }
+    }
+  },
+  "clock_period_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/timing_tree/archive_timing.py": "ab5b159520c4778e20bfeee4f5131fe1c4df2fef67550719377f27ee7327d98d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/timing_tree/prepared.json": "5444e91e121012c9d412fb80d578e070ac99b3c60cb5b8490d92e06aeed73d85",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/timing_tree/tri_oracle_pe_array_verified_bank1_1/refined/timing.rpt": "fa3809416bc2a2a706f86afb4156a135870b47f91e946a5ce21fdfecb3455471",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/timing_tree/verified.json": "5abc07e47aa5f0e0c497528e40cad98a914b699dc4a55f553d70a4154dee628f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75"
+  },
+  "model": "Manhattan minimum spanning trees on connected cell centers, split ground capacitance and series resistance. Branches below 100 micrometers use M2/M3; longer branches use M10/M9. Same-cell branches use 0.10 micrometers. Via, coupling and congestion effects omitted.",
+  "scope": "Two selected mapped arrays, ideal clock, internal register-to-register slow-corner timing. Only internal net estimates are annotated. Timing omits routability, via and coupling effects, array data ports, inter-array wiring, clock distribution and all other corners.",
+  "state": "two_exact_compute_arrays_native_modeled_slow_corner_timing_compared",
+  "two_critical_high_fanout_nets": {
+    "n_12": {
+      "driver": "g174381",
+      "driver_cell": "ND2OPTFAD16BWP12T40P140",
+      "driver_pin": "ZN",
+      "fanout": 641,
+      "library_sink_pin_caps_pf": 0.93240602,
+      "max_driver_cap_pf": 0.93828,
+      "modeled_wire_cap_pf": 1.573909113,
+      "sink_types": {
+        "DFMQD1BWP12T40P140/SA": 576,
+        "INVD6BWP12T40P140/I": 1,
+        "SDFQD1BWP12T40P140/SE": 64
+      }
+    },
+    "n_20166": {
+      "driver": "hi_fo_buf174707",
+      "driver_cell": "INVD9BWP12T40P140",
+      "driver_pin": "ZN",
+      "fanout": 512,
+      "library_sink_pin_caps_pf": 0.74345472,
+      "max_driver_cap_pf": 0.712698,
+      "modeled_wire_cap_pf": 1.475164174,
+      "sink_types": {
+        "DFMQD1BWP12T40P140/SA": 512
+      }
+    }
+  },
+  "worst_refined_array": "tri_oracle_pe_array_verified_bank1_1"
+}
