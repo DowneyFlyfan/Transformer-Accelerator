@@ -1,0 +1,62 @@
+{
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "compiled_memory_paths": 631,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/indexed/inputs.json": "369d59789c33072e345523b7c0ef4f6f02525e44df8b62f2a17c3b2852d5cf7e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/indexed/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/indexed/status.json": "5b4aab672d9d03424cfe8d7606918c9cf3d9b79cb06db44020a82300f579db34",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/indexed/verified.json": "e4e3f0fcbdf55b572cb776f0fab066f0d8cb7c21700f6783148aabe474dd6401",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/indexed/xrun.log": "b3a9170007dfca4ea2821a21223c9694a1486904db6293b3728508d905032024",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/verified.json": "02a510fdcf33fb0cbff1aedb09029e30fe36c1d3b8c971c07267fbbbed981122",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/xrun.log": "76c3d5ef25888ea39e5158d9ab4ba2b08810bd0e3105738c2a2d1bdaabe80ab1",
+    "records/tri_oracle_bounded_decoder_mapped_paper_structure.json": "d27d0e8bdb4c25515c83482f7ed76237c5d8701384e14b2df575628a12a9d459",
+    "records/tri_oracle_bounded_decoder_native_raw_replay.json": "944da7ccd1fa770765e41b94adc8541be40bd6b7f0ee01d96283eaa5bb3b23b3",
+    "records/tri_oracle_dual_group_native_indexed_replay.json": "216d1873521dbbfe864f73abef0e273d9123ca3b0017bd11c144314faf3544dd"
+  },
+  "exact_feedforward_outputs": 4096,
+  "exact_writeback_outputs": 4096,
+  "functional_checkpoints": 90,
+  "indexed": {
+    "cycles": 846486,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  },
+  "indexed_response_beats_by_lane": [
+    {
+      "down_index": 780,
+      "down_payload": 49416,
+      "pair_index": 1416,
+      "pair_payload": 118925
+    },
+    {
+      "down_index": 756,
+      "down_payload": 47897,
+      "pair_index": 1400,
+      "pair_payload": 117617
+    }
+  ],
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 10087727104,
+    "peak_container_anonymous_bytes": 8053997568,
+    "wall_seconds": 2892.1375749430154
+  },
+  "raw": {
+    "cycles": 973270,
+    "weight_requests": 17408,
+    "weight_response_beats": 540672
+  },
+  "reduction_fraction_vs_raw": {
+    "cycles": 0.13026601045958475,
+    "weight_requests": 0.2647058823529411,
+    "weight_response_beats": 0.3744691790956439
+  },
+  "scope": "Two trained token rows on the exact smaller mapped netlist. Output and traffic checks use timing-disabled Xcelium and the established external memory model. Cold placement, extracted timing and full-model paper benchmarks have separate gates.",
+  "state": "native_indexed_trained_feedforward_and_writeback_verified",
+  "wider_indexed": {
+    "cycles": 846486,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  }
+}
