@@ -1,0 +1,30 @@
+{
+  "cases": {
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "delta_setup_slack_ns": 1.188837,
+      "endpoint": "carry_save.row[14].compressor[1].sum_reg[16]/DB",
+      "modeled_internal_nets": 69156,
+      "omitted_boundary_nets": 4966,
+      "prior_setup_slack_ns": -3.147821,
+      "setup_slack_ns": -1.958984,
+      "startpoint": "product[117].value_reg[15]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "delta_setup_slack_ns": 1.166984,
+      "endpoint": "carry_save.row[20].sum_reg[1]/DB",
+      "modeled_internal_nets": 69156,
+      "omitted_boundary_nets": 4967,
+      "prior_setup_slack_ns": -3.200165,
+      "setup_slack_ns": -2.033181,
+      "startpoint": "carry_save.row[20].compressor[0].carry_reg[1]/CP"
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/all_path_locality/verified.json": "b870e6d563d7aa81ce4314221703edf4e7d4a7edf6ee36d3a98b5454b5b0d0fd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/control_locality/prepared.json": "69cc1567f4f0bb003630d11a237ee696b9ad6944db9499117a9d6deb3cabf7d3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/control_locality/verified.json": "948b967b8b18d7b6b002f6df14d41da2ad2db81d9761c6d8cb702ef015ab9fdb",
+    "records/tri_oracle_carry_save_all_region_path_locality.json": "4a29acb646d7eb06b46118e14f32927574a9fdf902d4a322a58ecbb2f2744404"
+  },
+  "scope": "Two worst regions after the reduction path adjustment. Control buffers can exchange equal-width sites. Both measurements use identical internal estimated wires and an ideal clock.",
+  "state": "carry_save_control_path_locality_measured_in_worst_two_regions"
+}
