@@ -1,0 +1,42 @@
+{
+  "attempts": [
+    {
+      "corrected_name_arguments": false,
+      "native": {
+        "exit_status": 1,
+        "minimum_host_available_bytes": 7716130816,
+        "peak_container_anonymous_bytes": 12678225920,
+        "stop_reason": null,
+        "wall_seconds": 76.10742678202223
+      },
+      "overlapping_instances_reported": 88
+    },
+    {
+      "corrected_name_arguments": true,
+      "native": {
+        "exit_status": 1,
+        "minimum_host_available_bytes": 7720914944,
+        "peak_container_anonymous_bytes": 12675080192,
+        "stop_reason": null,
+        "wall_seconds": 90.10860928089824
+      },
+      "overlapping_instances_reported": 84
+    }
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_local_legalization/import/console.log": "1e13a45dc6b580cf150c0505a5ef87bcf0a700051404919534ba8f89421be0b1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_local_legalization/import/placement.rpt": "6973187980d560982953fc521992710d0f012588602ca46d2c5d6528770ab97a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_local_legalization/import/status.json": "caa22f094642e1bb3a812221690fbef691ba65de5e645cdc27f0baa0e1b0b3cd",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_local_legalization_retry/import/console.log": "858cb07fae88f7467cc99ddb0b7278f24f69dad219a23f58716aff2058eef554",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_local_legalization_retry/import/placement.rpt": "833321696218040792863a580a2b9d45a199e8f52c42ba0766a3fbf593c062d4",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_local_legalization_retry/import/status.json": "f596df78fc8650b6d27a150f3d6b4ac5d1eddc3f4b6f89f70076e235d942cba5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/value_register_local_placement.tcl": "86a257b9b3153c98ab6ce4573cb4c3bce1a9f5aca1fd9f8c1e648ca6e33e0bb1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/value_register_local_placement_retry.tcl": "817d2615fd532d04d484a5f47b6d14e6cfab296aca0b283c99d20f7797b426d8",
+    "records/tri_oracle_token_map_native_indexed_replay.json": "3ef6447495da403363d8bc098166c4590a96b2c96cba957c3d9591049b7c74f5"
+  },
+  "scope": "The corrected Innovus invocation found the register instances and moved a subset. The remaining overlaps failed the clean-placement check. No cold database was produced.",
+  "source_cold_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "state": "targeted_native_legalization_failed_overlap_gate",
+  "supplied_resize_targets": 320,
+  "unresolved_targets_entering_native_legalizer": 44
+}
