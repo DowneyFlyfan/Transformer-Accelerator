@@ -1,0 +1,53 @@
+{
+  "evidence_sha256": {
+    ".cache/host_command_link/chip_narrow_host.json": "de9afc627cb1a7f7cbca8b683303a836d153613d280938ffe8519c361d5cc89e",
+    ".cache/host_command_link/genus/area.rpt": "e4439dd1b2813f4ad875f55c28a98d387d0b114706e1b7bd3caadeb619130da6",
+    ".cache/host_command_link/genus/console.log": "e4acd78789ecba3cf0926c5f88d3a011ecd2048d0981334feab40542b860eb02",
+    ".cache/host_command_link/genus/constraints.sdc": "7f7130cc867e3dee09c277221439d65c5614e15c2f7704576495d469176888ca",
+    ".cache/host_command_link/genus/mapped_check.rpt": "c1cd0cb738ca7ec49b1d930524fc59f062ccda282e8fe52f193056cec3ee00c2",
+    ".cache/host_command_link/genus/netlist.v": "fd2dda0fa98167f96840802abb9a0ae67bd9269b5be0ec63fde716c234d15a17",
+    ".cache/host_command_link/genus/timing.rpt": "1fafd266a75d7868a23bbb9f6521767dabd26aed8ce0e9a0ec0dd88ecf7b332e",
+    ".cache/host_command_link/indexed_dispatch.v": "b574795a029698ce2d9cea971c542437c0e46061eb776b8afd9252d05b622190",
+    ".cache/host_command_link/mapped/console.log": "c2320ae7232af7e2af988b8bf28926d338980fbd5f8044333f8b036be16ce034",
+    ".cache/host_command_link/pad_budget.json": "6805264750e1bd36513c40e3085820c0e519a027b2e7d19fa600ad1ee39a5c01",
+    ".cache/host_command_link/red/console.log": "002c77bccdc43e37058b8b08f487b13ca30f26b5feb06eb4fa9ff2544c390e47",
+    ".cache/host_command_link/red/unimplemented.sv": "51d59749e8bf17f2952e7e5272bef8a8235342ace2c28f9c8f10489cc46f054a",
+    ".cache/host_command_link/rtl/console.log": "d59b2809b70d89b00f85377b7e4f1fecacb974ba049971794473b284b0216159",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "syn/link_tri_oracle_narrow_host.py": "05b8cb21e2ba1f91232ac4337219690bfc2778ba2dcda1801503327f77a12b30",
+    "syn/tri_oracle_synthesize_host_command_link.tcl": "8d332bedd349f134580310c70340a202763c18a1ad04ce6aedb2f039b7cd1625",
+    "verilog/tri_oracle_host_command_link.sv": "3d11efa44473456ea8cb27d24d479cca9cea965a11fca4d50900989e0371e551",
+    "verilog/tri_oracle_host_command_link_tb.sv": "f4eb5a269ac1526c0d9791a5907b9f6061d7e5c86afef62e2ab2b02b93a9bf22"
+  },
+  "host_port_bits_after": 39,
+  "host_port_bits_before": 142,
+  "macro_halo_pad_budget": {
+    "clock_reset_and_host_bits_after": 41,
+    "clock_reset_and_host_bits_before": 144,
+    "illustrative_receive_data_pads": 448,
+    "macro_clear_signal_sites": 585,
+    "sites_before_other_signals_with_narrow_host": 96,
+    "sites_before_other_signals_with_parallel_host": -7
+  },
+  "mapped_block": {
+    "cell_area_um2": 264.936,
+    "cells": 116,
+    "slow_prelayout_min_setup_slack_ps": 1152,
+    "slow_prelayout_period_ns": 1.72414
+  },
+  "native_replay": {
+    "concurrent_stalled_header": true,
+    "input_flits": 579,
+    "output_flits": 45,
+    "rejected_malformed_commands": 3,
+    "reset_partial_header": true,
+    "timing_checks": false,
+    "valid_commands": 12
+  },
+  "original_chip_ports_in_bits": 7945,
+  "projected_wrapped_chip_ports_in_bits": 7842,
+  "scope": "Synthesized host link replayed against the exact current mapped dispatcher. The generated wrapper preserves all other ports. Full-wrapper simulation, placement, on-die and external-link timing, and the remaining physical memory and control interfaces are pending.",
+  "source_cold_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "state": "narrow_host_command_link_mapped_and_replayed_with_current_dispatcher"
+}
