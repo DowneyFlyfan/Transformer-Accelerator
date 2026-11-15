@@ -1,0 +1,94 @@
+{
+  "calibrated_clipped_correct": 6247,
+  "correct_needed_for_55_04_on_this_split": 6923,
+  "dense_correct": 7163,
+  "dense_correct_but_both_clipped_wrong": 1474,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dataset_verification.json": "e317feafc07e5a78dfb6394765b9a19282519a54e5df6f8e07352fdb26fbfc62",
+    ".cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/inputs.json": "a332fd6e1403b202b8080b08138de61b8585e9afa95a71cccaccaad405e8b3f9",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/predictions.jsonl": "078467331feca85071b4325f6642b1a16aed90f642bc30d49c1ba41884ec308a",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/receipt.json": "8ea2849d487a76762e722f9c93125da6bb5de3331d9bdd006bee3a9744d4af0a",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/inputs.json": "38d658feeca843b41e228c6dc30858d1d5495dd4d729f6affcd206e243ada836",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/predictions.jsonl": "298d20fdefd25c9f1781ed8bb49db2e7438d4d587fc928921cb38e76d55bea6b",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/receipt.json": "b3e8d43e8e738ff32bc79ffc9e16f9746d39bce6b0f91e5d3618607989411361",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/physical/carry_lookahead_comparison/wire_layer_sensitivity/compare_gqa_clipping.py": "380ad6217e5cc630f2d0f0ad3c9456e89beed7a93c7a66a8dc1d278018fee056",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c",
+    "records/tri_oracle_full_joint_late_clip_accuracy.json": "92f3f0b92a944ebd2990979cf1fcefc34e25939eed825acf074f610e59945541"
+  },
+  "graphics_device": "NVIDIA GeForce RTX 5070 Ti",
+  "image_cluster_bootstrap_replicates": 8192,
+  "images": 398,
+  "intervals": {
+    "calibrated_clip_minus_dense_pp": [
+      -8.1976,
+      -6.3586
+    ],
+    "clipping_union_percent": [
+      53.32078,
+      56.00281
+    ],
+    "joint_clip_minus_dense_pp": [
+      -8.27542,
+      -6.41729
+    ]
+  },
+  "joint_clipped_correct": 6241,
+  "oracle_surplus_or_shortfall_correct": -44,
+  "questions": 12578,
+  "scope": "Local TinyLLaVA software predictions on the same balanced Graph Question Answering development questions. The union is an upper bound for answer selection among these two archived variants. No selector was run. The paper's exact dataset protocol and chip accuracy remain unverified.",
+  "software_oracle_upper_bound_correct": 6879,
+  "software_oracle_upper_bound_percent": 54.69073,
+  "state": "paired_local_graph_question_accuracy_and_two_clipping_overlap_verified",
+  "structural_question_type": {
+    "choose": {
+      "calibrated_correct": 827,
+      "dense_correct": 863,
+      "dense_only_relative_to_both": 61,
+      "either_clip_correct": 902,
+      "joint_correct": 818,
+      "questions": 1129
+    },
+    "compare": {
+      "calibrated_correct": 255,
+      "dense_correct": 355,
+      "dense_only_relative_to_both": 169,
+      "either_clip_correct": 273,
+      "joint_correct": 256,
+      "questions": 589
+    },
+    "logical": {
+      "calibrated_correct": 1069,
+      "dense_correct": 1268,
+      "dense_only_relative_to_both": 413,
+      "either_clip_correct": 1157,
+      "joint_correct": 1072,
+      "questions": 1803
+    },
+    "query": {
+      "calibrated_correct": 2561,
+      "dense_correct": 2909,
+      "dense_only_relative_to_both": 467,
+      "either_clip_correct": 2902,
+      "joint_correct": 2572,
+      "questions": 6805
+    },
+    "verify": {
+      "calibrated_correct": 1535,
+      "dense_correct": 1768,
+      "dense_only_relative_to_both": 364,
+      "either_clip_correct": 1645,
+      "joint_correct": 1523,
+      "questions": 2252
+    }
+  },
+  "two_clip_overlap": {
+    "both_correct": 5609,
+    "both_wrong": 5699,
+    "only_calibrated_correct": 638,
+    "only_joint_correct": 632
+  }
+}
