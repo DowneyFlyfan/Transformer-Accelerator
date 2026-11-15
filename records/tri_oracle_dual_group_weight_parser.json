@@ -1,0 +1,51 @@
+{
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/gate_loader_short/xrun.log": "69868d95f07d121d01633b2aa03291a850dbda950133094ba5c086e4ed659276",
+    ".cache/indexed_whole_chip/dual_group_probe/gate_loader_wide/xrun.log": "23258473a82e79305420a74bccb96198ab69ef47690a7b09f8f22d876c8f5866",
+    ".cache/indexed_whole_chip/dual_group_probe/gate_malformed/xrun.log": "06ed68dc464f130e3ff42d7cdca859962a77b3d59f4cd25043cb5cc11c49b7e3",
+    ".cache/indexed_whole_chip/dual_group_probe/gate_test/xrun.log": "3e1164dd9c45ddc771b80b3369b351db8b9adbafb2f6889b681b4c633894c147",
+    ".cache/indexed_whole_chip/dual_group_probe/linked.v": "8cb6405e1e74d5b55d82ba58dbe76ca0ae604c0e7f5f4bd109ab22f23b94858a",
+    ".cache/indexed_whole_chip/dual_group_probe/loader_rtl_receipt.json": "9c9de695ac966d8f2033b6c3fa31b5b291cca8c67ece2236e68b47ddb30acaa0",
+    ".cache/indexed_whole_chip/dual_group_probe/mapping/area.rpt": "ee9b6a063139d92a607f9a3a203dadb477222df2ee1474b664a2e1421a042a61",
+    ".cache/indexed_whole_chip/dual_group_probe/mapping/timing.rpt": "c7f2ecda5842d2ca38ccbba66731fd7988688af73fa8f7fb402373e8a6758388",
+    ".cache/indexed_whole_chip/dual_group_probe/short_loader_tb.sv": "6decc15b9d0da02d998476c810a76bd5a26b07ef4fa3f13b5e907dbf988bd505",
+    ".cache/indexed_whole_chip/dual_group_probe/trained_short_tile.txt": "29ab846dcdda1508f9758394413472eb2feb494589bb7e427287a381ae430127",
+    ".cache/indexed_whole_chip/dual_group_probe/wide.sv": "e288266e9954433c8f314b67333f6cdaa011894dc9c2f50b488ad70353961ea8",
+    ".cache/indexed_whole_chip/dual_group_probe/wide_loader.sv": "8f99be2013ebeb002bca835ae994f08f5ea1984eeab69494868728d9192248ee",
+    "syn/prepare_tri_oracle_dual_weight_groups.py": "87f8a56d2fd89e9a39e278aefac71c773fc91d9294eeaea4fc17a413bd33e70e"
+  },
+  "full_tile_fixture": {
+    "cycles_by_width_and_stall": {
+      "1024_0": 2666,
+      "1024_1": 3323,
+      "512_0": 3788,
+      "512_1": 5237
+    },
+    "exact_bytes": 229376,
+    "rejection_cases": 6,
+    "trained_tiles": 28
+  },
+  "isolated_parser_mapping": {
+    "cell_area_um2": 20495.832,
+    "period_ns": 1.72414,
+    "setup_slack_ps": 60,
+    "standard_cells": 17468
+  },
+  "mapped_xcelium_checks": {
+    "gate_loader_short": "DUAL_GROUP_SHORT_LOADER_PASS stall=1 trained_tiles=2 exact_trained_bytes=8192 writes=64 cycles=134 beats=99 requests=3 overlap=50",
+    "gate_loader_wide": "DUAL_GROUP_LOADER_STREAM_PASS stall=1 trained_tiles=28 exact_trained_bytes=229376 writes=1792 cycles=3323 beats=2470 requests=56 overlap=1522 faults=6",
+    "gate_malformed": "MALFORMED_TILE_PASS",
+    "gate_test": "DUAL_GROUP_STALLED_HEADER_PASS bytes=4420 writes=64"
+  },
+  "scope": "Isolated 1024-bit indexed parser with two mapped entropy decoders and register-transfer-level loader. Reported synthesis timing uses decoder abstracts and excludes placement. The whole-chip writer, compiled memory banks and extracted timing require separate verification.",
+  "short_tile_fixture": {
+    "exact_bytes": 8192,
+    "modes": [
+      "packed",
+      "raw"
+    ],
+    "short_tiles": 2,
+    "trained_layer": 10
+  },
+  "state": "dual_group_mapped_parser_and_isolated_loader_verified"
+}
