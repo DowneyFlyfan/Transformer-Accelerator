@@ -1,0 +1,65 @@
+{
+  "all_layer_channel_scale_totals": {
+    "baseline": {
+      "payload_beats": 3578818,
+      "payload_bytes": 228028312,
+      "raw_tiles": 0,
+      "tiles": 33792
+    },
+    "calibrated": {
+      "payload_beats": 3578569,
+      "payload_bytes": 228015044,
+      "raw_tiles": 0,
+      "tiles": 33792
+    }
+  },
+  "all_layer_payload_beat_delta": -249,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/linked_cut.v": "6124ab08416fa32605217c49530bde448782a8babe6eaf89bbe703ae4f799235",
+    ".cache/indexed_whole_chip/encoded_weights/image.json": "663292c27895bef995e672d9a99313cdac9139f398536b56937157c70b78557f",
+    ".cache/model_reference/gqa_testdev/down_code_transport/layer10_scalar_comparison.json": "eca0aef47f1423b23dd50e13de6ffa4e12d98d0eed3b39a5a7dbdacb0ce92daa",
+    ".cache/model_reference/gqa_testdev/down_code_transport/native_layer10_calibrated/status.txt": "c51ebc0aa5b5f3e20c5ba4292860f7b017ab8f956258a3bc388308618b362d9e",
+    ".cache/model_reference/gqa_testdev/down_code_transport/native_layer10_calibrated/test.sv": "deaca212bc156828f64a09b74bb51d6a14378fe130c41849f6ea0f3f2355bf27",
+    ".cache/model_reference/gqa_testdev/down_code_transport/native_layer10_calibrated/xrun.log": "374c9f37e5952051dc22221a5c348432877ab2276ce1ead4fe8e0ff454dc4815",
+    ".cache/model_reference/gqa_testdev/down_code_transport/receipt.json": "3204cd780d5c5c47b7e7ab6d5c4e26b50ad3f74d344cbf207c80929e78b35d93",
+    "records/tri_oracle_bounded_weight_decoder.json": "25f8b49478f3359715a3e78e92a302c0dab00a36eaeddad810b8cc26f3f89060",
+    "syn/audit_tri_oracle_calibrated_weight_transport.py": "6b04a6bc83623c7b25a57335f0b776640198a118b82532c40f42d674a050963c"
+  },
+  "layer10_archived_scalar_scale": {
+    "payload_beats": 97313,
+    "payload_bytes": 6173596,
+    "raw_tiles": 0,
+    "tiles": 1536
+  },
+  "layer10_calibrated_payload_increase_vs_scalar_percent": 66.5122,
+  "layer10_channel_scale": {
+    "baseline": {
+      "payload_beats": 162066,
+      "payload_bytes": 10325476,
+      "raw_tiles": 0,
+      "tiles": 1536
+    },
+    "calibrated": {
+      "payload_beats": 162038,
+      "payload_bytes": 10324448,
+      "raw_tiles": 0,
+      "tiles": 1536
+    }
+  },
+  "native_layer10_calibrated": {
+    "commands": 78,
+    "cycles": 118973,
+    "index_beats_by_lane": [
+      780,
+      756
+    ],
+    "payload_beats_by_lane": [
+      82359,
+      79679
+    ],
+    "verified_weight_bytes": 11534336,
+    "writes": 90112
+  },
+  "scope": "The 22-layer comparison holds channel scales fixed and counts one full indexed read per down matrix. The scalar comparison uses the archived source weights for the same layer 10. Xcelium separately checks all calibrated layer-10 bytes in the exact mapped loader and write-stage cut with ideal memory writes and timing checks disabled. Full-chip execution with these weights, external memory energy, and paper results remain unqualified.",
+  "state": "calibrated_down_code_weight_transport_and_mapped_cut_exact"
+}
