@@ -1,46 +1,61 @@
 {
+  "archived_visible_pairs": 32985366,
   "batches": {
     "decode": 1320,
     "prefill": 466
   },
   "evidence_sha256": {
-    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/indexed_whole_chip/workload/service.json": "f326841943a14bd8435a2190b70347b7a709396b617f062ba105c140fa3f95bb",
-    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/verify_tri_oracle_indexed_workload.py": "33ca38e3ec5c49fc5f983205b2dc8f9453c9726b6ff6f49fc84ea99150f5e636",
-    "records/tri_oracle_repaired_native_mixed_attention.json": "009444dbabb5741279f0171d5558f72cc44eb9d5273bb28be8485520f789c162"
+    ".cache/indexed_whole_chip/workload/service.json": "f326841943a14bd8435a2190b70347b7a709396b617f062ba105c140fa3f95bb",
+    "records/tri_oracle_repaired_native_mixed_attention.json": "009444dbabb5741279f0171d5558f72cc44eb9d5273bb28be8485520f789c162",
+    "syn/verify_tri_oracle_indexed_workload.py": "4df0d8c8646c1d37d198cb4319842fe4da88c3615f94997ad50aaf8ce6404237"
   },
   "linked_candidate_sha256": "75dc67eab2ddcd3266d26ba072c7d715aa7553edde1715977b2f07d841b95ea6",
   "linked_write_payload_bits_per_lane": 512,
+  "observed_attention_transfers": {
+    "external_512_bit_key_responses": 1143,
+    "external_512_bit_value_responses": 1143,
+    "internal_64_bit_key_words": 9144,
+    "mapped_transport_and_named_connections_preserved": true,
+    "measured_netlist_sha256": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+    "rows": 10
+  },
   "paper_cycle_budget": 508660000,
   "scenarios_by_write_lane_bits": {
     "1024": {
-      "average_key_beat_budget_after_weights_and_values": 5.032875,
+      "remaining_paper_cycles_after_wide_service": 67055142,
       "weight_cycles": 309663394,
       "weight_ms": 533.902403,
-      "weight_plus_wide_value_and_narrow_key_cycles": 606531688,
-      "weight_plus_wide_value_and_narrow_key_ms": 1045.74429,
+      "weight_plus_narrow_key_fallback_and_wide_value_requests_and_responses_cycles": 672502420,
+      "weight_plus_narrow_key_fallback_and_wide_value_requests_and_responses_ms": 1159.486931,
+      "weight_plus_wide_key_and_value_requests_and_responses_cycles": 441604858,
+      "weight_plus_wide_key_and_value_requests_and_responses_ms": 761.387686,
       "weight_plus_wide_value_cycles": 342648760,
       "weight_plus_wide_value_ms": 590.773724
     },
     "2048": {
-      "average_key_beat_budget_after_weights_and_values": 5.032875,
+      "remaining_paper_cycles_after_wide_service": 67055142,
       "weight_cycles": 309663394,
       "weight_ms": 533.902403,
-      "weight_plus_wide_value_and_narrow_key_cycles": 606531688,
-      "weight_plus_wide_value_and_narrow_key_ms": 1045.74429,
+      "weight_plus_narrow_key_fallback_and_wide_value_requests_and_responses_cycles": 672502420,
+      "weight_plus_narrow_key_fallback_and_wide_value_requests_and_responses_ms": 1159.486931,
+      "weight_plus_wide_key_and_value_requests_and_responses_cycles": 441604858,
+      "weight_plus_wide_key_and_value_requests_and_responses_ms": 761.387686,
       "weight_plus_wide_value_cycles": 342648760,
       "weight_plus_wide_value_ms": 590.773724
     },
     "512": {
-      "average_key_beat_budget_after_weights_and_values": -0.348306,
+      "remaining_paper_cycles_after_wide_service": -110445112,
       "weight_cycles": 487163648,
       "weight_ms": 839.937324,
-      "weight_plus_wide_value_and_narrow_key_cycles": 784031942,
-      "weight_plus_wide_value_and_narrow_key_ms": 1351.77921,
+      "weight_plus_narrow_key_fallback_and_wide_value_requests_and_responses_cycles": 850002674,
+      "weight_plus_narrow_key_fallback_and_wide_value_requests_and_responses_ms": 1465.521852,
+      "weight_plus_wide_key_and_value_requests_and_responses_cycles": 619105112,
+      "weight_plus_wide_key_and_value_requests_and_responses_ms": 1067.422607,
       "weight_plus_wide_value_cycles": 520149014,
       "weight_plus_wide_value_ms": 896.808645
     }
   },
-  "scope": "Archived schedule with complete indexed weights per batch and fixed lane steering. Each stage is budgeted at the maximum of its read and write occupancy. The attention scenarios serialize one value beat and optionally eight key beats per archived pair. Request and response service share each weight lane. Compute, other traffic and physical timing remain pending.",
+  "scope": "Modeled archived schedule with complete indexed weights per batch and fixed lane steering. Each stage is budgeted at the maximum of its read and write occupancy. The primary scenario serializes one request and one 512-bit response per key and per value, as supported by the measured eligible rows. The fallback scenario models one key request and eight 64-bit key responses per pair. Neither assumes reuse between pairs. Compute, other traffic, stalls and physical timing remain outside both scenarios.",
   "state": "all_layer_indexed_service_and_write_width_scenarios_verified",
   "trained_layers": 22
 }
