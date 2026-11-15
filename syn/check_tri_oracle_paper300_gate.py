@@ -18,6 +18,7 @@ import argparse
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import re
 import sys
@@ -37,6 +38,8 @@ REPEATER_PLACEMENT = Path("records/tri_oracle_partial_pad_repeater_placement.jso
 SCALAR_PLACEMENT = Path("records/tri_oracle_scalar_whole_chip_cold_reload.json")
 GUARDED_SCALAR_PLACEMENT = Path("records/tri_oracle_guarded_scalar_whole_chip_cold_reload.json")
 BUFFERED_GRANT_PLACEMENT = Path("records/tri_oracle_buffered_grant_whole_chip_cold_reload.json")
+REDUCED_PORT_PLACEMENT = Path("records/tri_oracle_reduced_port_placement_and_reload.json")
+REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
 SCALAR_PLACEMENT_STAGES = {
     BUFFERED_GRANT_PLACEMENT: "cold Innovus buffered grant placement",
     GUARDED_SCALAR_PLACEMENT: "cold Innovus guarded scalar placement",
@@ -47,7 +50,7 @@ SCALAR_PLACEMENT_STAGES = {
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (*SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
+    for candidate in (REDUCED_PORT_PLACEMENT, *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
         placement = root / candidate
         if placement.is_file():
             return placement
@@ -109,6 +112,87 @@ def dimensions(path):
     if not units or not die or die[2] <= die[0] or die[3] <= die[1]:
         raise ValueError("Missing or invalid native die dimensions")
     return ((die[2]-die[0])/units/1000, (die[3]-die[1])/units/1000)
+
+
+def reduced_port_placement_facts(root, facts, identities):
+    from tri_oracle_artifact_fingerprint import artifact_fingerprint
+    from tri_oracle_process_guard import _processes
+    from verify_tri_oracle_current_mapped_architecture import verify
+    from verify_tri_oracle_joined_placed_constraints import parse_sdc
+
+    def pin(name, expected=None):
+        path = root / name
+        key = str(path)
+        if key not in identities:
+            identities[key] = sha(path)
+        if expected is not None and identities[key] != expected:
+            raise ValueError(f"Changed evidence: {path}")
+        return path
+
+    record = json.loads(pin(REDUCED_PORT_PLACEMENT).read_bytes())
+    assert record["state"] == "reduced_port_whole_chip_placement_and_reload_independently_verified"
+    for name, expected in record["evidence_sha256"].items():
+        pin(name, expected)
+    stage = REDUCED_PORT_STAGE
+    receipt = json.loads(pin(stage / "cold/cold_receipt.json").read_bytes())
+    assert receipt["state"] == "current_chip_placement_and_cold_reload_verified"
+    coords = json.loads(pin(stage / "cold/independent_coordinates.json",
+                            receipt["coordinate_verification_sha256"]).read_bytes())
+    simulation = json.loads(pin(stage / "whole_chip/verified.json",
+                                receipt["prerequisite_xcelium_replay_sha256"]).read_bytes())
+    candidate = record["candidate_sha256"]
+    pin(stage / "candidate.v", candidate)
+    assert coords["candidate_sha256"] == simulation["candidate_sha256"] == candidate
+    assert artifact_fingerprint(root / stage / "native/placed.db") == receipt["database_fingerprint"]
+    arch = verify()
+    archived_arch = json.loads(pin("records/tri_oracle_current_mapped_architecture.json").read_bytes())
+    # The architecture verifier uses dimensions() from this module. Keep its
+    # archived digest intact and compare the other evidence and all observations.
+    this_module = str(Path(__file__).resolve().relative_to(root))
+    current_sources = arch.pop("evidence_sha256")
+    archived_sources = archived_arch.pop("evidence_sha256")
+    assert current_sources.pop(this_module) == sha(root / this_module)
+    archived_sources.pop(this_module)
+    assert current_sources == archived_sources and json.loads(json.dumps(arch)) == archived_arch
+    assert arch["candidate_sha256"] == candidate
+
+    placed_layout = pin(stage / "cold/cold.def")
+    width, height = dimensions(placed_layout)
+    assert [width, height] == record["native_die_mm"]
+    counts = {}
+    clocks = set()
+    for view in sorted(VIEWS):
+        text = pin(stage / f"cold/{view}.sdc").read_text()
+        text = text.replace("-name core ", "-name core_clock ")
+        text = text.replace("[get_clocks {core}]", "[get_clocks {core_clock}]")
+        definitions, ports, _ = parse_sdc(text)
+        assert definitions["current_design"] == "tri_oracle_chip_command_layer_parallel_chip"
+        clocks.add(definitions["create_clock"][1])
+        counts[view] = len(ports)
+    assert counts == coords["constraint_entries_by_view"] and len(clocks) == 1
+    unplaced, = re.findall(r"(?m)^\*info: Unplaced = (\d+)\s*$",
+                           pin(stage / "cold/placement.rpt").read_text())
+    assert int(unplaced) == 0
+    memory = arch["compiled_memory"]
+    assert memory["compiled_macros"] == coords["fixed_memories"] == simulation["compiled_memory_paths"]
+    assert memory["compiled_bytes"] == record["compiled_memory_bytes"]
+    assert (2 * memory["compiled_bytes"] + 1024) // 2048 == memory["paper_label_kb"] == 405
+    prefix = os.fsencode(root / stage) + b"/"
+    workers = any(argument == b"-log" and arguments[index + 1].startswith(prefix)
+                  for _, _, arguments in _processes().values()
+                  for index, argument in enumerate(arguments[:-1]))
+    clusters, arrays = arch["clusters"], arch["compute"]
+    facts.update(
+        candidate_sha256=candidate, evidence_stage="cold Innovus reduced-port placement",
+        candidate_cold_qualified=True, original_full_models_verified=True,
+        native_workers_terminal=not workers,
+        die_width_mm=width, die_height_mm=height, clock_period_ns=float(clocks.pop()),
+        clusters=len(clusters), cores=sum(cluster["cores"] for cluster in clusters),
+        array_instances=arrays["array_instances"], array_geometry=[arrays["array_rows"], arrays["array_lanes"]],
+        operand_bits=arrays["operand_bits"], fixed_memory_macros=memory["compiled_macros"],
+        unplaced_instances=int(unplaced), constraint_entries_by_view=counts,
+    )
+    return memory
 
 
 def registered_memory(root, identities):
@@ -409,7 +493,9 @@ def main():
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
-        if relative_qualification in SCALAR_PLACEMENT_STAGES:
+        if relative_qualification == REDUCED_PORT_PLACEMENT:
+            memory = reduced_port_placement_facts(root, facts, identities)
+        elif relative_qualification in SCALAR_PLACEMENT_STAGES:
             from verify_tri_oracle_scalar_placement_evidence import verify
             placed = verify(guarded=relative_qualification == GUARDED_SCALAR_PLACEMENT,
                             buffered=relative_qualification == BUFFERED_GRANT_PLACEMENT)

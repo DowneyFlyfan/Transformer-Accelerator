@@ -90,6 +90,17 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None), buffered)
             self.assertEqual(qualification_source(root, guarded), guarded)
 
+    def test_reduced_port_placement_supersedes_buffered_grant_by_default(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            buffered = root / "records/tri_oracle_buffered_grant_whole_chip_cold_reload.json"
+            buffered.parent.mkdir()
+            buffered.touch()
+            reduced = buffered.with_name("tri_oracle_reduced_port_placement_and_reload.json")
+            reduced.touch()
+            self.assertEqual(qualification_source(root, None), reduced)
+            self.assertEqual(qualification_source(root, buffered), buffered)
+
     def complete(self):
         return dict(candidate_cold_qualified=True,native_workers_terminal=True,
             original_full_models_verified=True,clusters=5,cores=20,
