@@ -1,0 +1,46 @@
+{
+  "cold_netlist_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "compiled_memory_paths": 631,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/audit_relinked_reset_indexed_replay.py": "d1ed51c1432c9dcddf405a3a5545143e9288190c8d162246af4ebc2609291b62",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/indexed/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/indexed/xrun.log": "b3a9170007dfca4ea2821a21223c9694a1486904db6293b3728508d905032024",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/cold/cold.v": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/indexed/independent_verified.json": "37dda93997ddc1c6a5a0ba78ee55e07f8fab5b1716d661dcc5a72077a497ab79",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/indexed/inputs.json": "b76a45c40fe3ec490e78a8b9512d13cb1623ab2145a8161a39fae2385d5ee2eb",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/indexed/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/indexed/status.json": "a087c87d0ebf74589d842479063baf4e78a35e6e6557cef280b12e4e2e01b52e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/indexed/verified.json": "32e13e897c965e84694b36db3fd74fe5eed61cd13df85e8a1d67ae65b1138565",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/indexed/xrun.log": "5c3f25f854710fb1d19e615870ef801359bfc462432382a323f5dc5ba35e0269",
+    "records/tri_oracle_bounded_decoder_native_indexed_replay.json": "22ea578a785806391d882bdd380f055dd84ae77134acd6ffcf4e064902ad60ae",
+    "records/tri_oracle_bounded_decoder_reset_native_placement.json": "603086fa0dde955414a54c2afdc36f8ac3699f88710c8e2e3b0acaf7a88a7e49"
+  },
+  "exact_checkpoints": 90,
+  "exact_feedforward_values": 4096,
+  "exact_writeback_values": 4096,
+  "indexed_traffic": {
+    "cycles": 846486,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  },
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9550749696,
+    "peak_container_anonymous_bytes": 8017801216,
+    "wall_seconds": 3026.1818337419536
+  },
+  "reset_monitor": {
+    "0": {
+      "branches": 248,
+      "high": 1,
+      "low": 1
+    },
+    "1": {
+      "branches": 1306,
+      "high": 1,
+      "low": 1
+    }
+  },
+  "scope": "Exact native configured two-token layer fixture with timing disabled.",
+  "state": "reset_repaired_indexed_feedforward_independently_verified"
+}
