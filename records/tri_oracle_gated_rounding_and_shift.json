@@ -1,0 +1,50 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/gated_rounding/receipt.json": "797117ab10e88371e8d7e93ed266b50701cbcb1c21fb078652ad958c02a83fe6",
+    ".cache/model_reference/gqa_testdev/gated_rounding_and_shift/receipt.json": "9402038e10e4bf009937faa549d1f4b767067c4ec92a486a987048ec250aae9d",
+    ".cache/model_reference/gqa_testdev/gated_rounding_workflow/flow.pdf": "ca3043f76f0e11233f47a7fa697c0dc99579b67df9b08fa5805691b38fdff94d",
+    "records/tri_oracle_activation_range_holdout.json": "48979adbf76d630018b5a509542ae70428cca349c5f4b0a3450016eecf1cf183",
+    "syn/measure_tri_oracle_gated_rounding.py": "04d521e57e748262c03a1a9d1b991710e0a529db788ea1f32ebc61de22700d49"
+  },
+  "exact_signed16_range_checks": 655360,
+  "gated_codes": 14868480,
+  "held_rows": 2640,
+  "intermediate_clipped_codes": 53,
+  "layers": 22,
+  "rounding": {
+    "baseline": {
+      "changed_input_codes": 0,
+      "mean_per_channel_error": 0.2270979881286621,
+      "mean_scalar_error": 0.26424230906096374
+    },
+    "one_round": {
+      "changed_input_codes": 73052,
+      "mean_per_channel_error": 0.22706599262627689,
+      "mean_scalar_error": 0.2641878459941257
+    },
+    "wide_intermediate": {
+      "changed_input_codes": 0,
+      "mean_per_channel_error": 0.2270979881286621,
+      "mean_scalar_error": 0.26424230906096374
+    }
+  },
+  "scope": "Software measurement on held ordinary prompt rows with the existing pruning mask. The distortion selector uses gated activation codes only. The output oracle uses held targets and measures the best shift in the tested grid for each row. The current streaming hardware uses configured shifts, so adaptive selection needs a hardware design and answer-level validation.",
+  "shift_selection": {
+    "input_distortion": {
+      "changed_rows": 1071,
+      "improved_layers": 22,
+      "mean_per_channel_error": 0.22051714157516306
+    },
+    "output_oracle": {
+      "changed_rows": 1086,
+      "improved_layers": 22,
+      "mean_per_channel_error": 0.22028832002119583
+    },
+    "range": {
+      "changed_rows": 1022,
+      "improved_layers": 18,
+      "mean_per_channel_error": 0.22329330444335938
+    }
+  },
+  "state": "held_gated_rounding_and_shift_selection_reconciled"
+}
