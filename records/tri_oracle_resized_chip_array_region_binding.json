@@ -1,0 +1,31 @@
+{
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/apply_array_regions.tcl": "0ed909f032831beeec9aecc5da8063571dfe6a8001385752af8d7ec70555ff98",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/region_capacity.json": "b1a7dba976af900f591f7f7b0f52763ab065e3be8a35500430cfcaf1f11fc1d7",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/region_groups.tcl": "e9afdee9256e80010008a9b17c7ce6834f7334d46460fe02e799dda0af65181c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/region_plan_prepared.json": "3da8cdf0c34e1effc46e6e485f4279d9d02ef59485bf48f9a6e9756ccf429e40",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/whole_chip_array_region_binding/verified.json": "63e77cec7ceaad1fecb03b64fe476d55e956fd9ef62ec9795bbe56b2b503cf35",
+    "records/tri_oracle_resized_chip_compute_array_setup_geometry.json": "3b2a6f3ba681e1d1be4e82141a5bf589f14076b2f3a98a270da71447dadd7b73",
+    "records/tri_oracle_whole_chip_value_register_placement.json": "6da3816c6818d6821741c26e19508a7fee0da6cc77a57a59352004a664a02746"
+  },
+  "largest_fraction_of_a_region_needed_by_its_array": 0.3827477678088533,
+  "mapped_arrays": 20,
+  "maximum_region_center_distance_to_core_memory_median_um": 362.5075,
+  "median_current_array_half_perimeter_um": 2945.88,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9408765952,
+    "peak_container_anonymous_bytes": 10546307072,
+    "stop_reason": null,
+    "wall_seconds": 65.0080861459719
+  },
+  "region_grid": [
+    4,
+    5
+  ],
+  "scope": "Exact current chip and hierarchical array memberships. The region budgets fit the array cells. The room required for other logic during re-placement, routed wire lengths, and extracted timing are open.",
+  "sites_required_by_arrays": 10261460,
+  "state": "twenty_array_regions_bound_and_size_budget_verified",
+  "usable_sites_between_fixed_memory_halos_preserved_buffers_and_blockages": 36627235
+}
