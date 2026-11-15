@@ -1,0 +1,63 @@
+{
+  "candidate_sha256": "5ab023bce3e472d5a29455dbc25e489b0f339da1d91d69b8f7985d108e1daa95",
+  "compiled_memory_paths": 631,
+  "earlier_indexed": {
+    "cycles": 908407,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/indexed/inputs.json": "e19c173f4924d5992b1116e31a382b63a83e0cfa84863a47062632d036ebd8b1",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/indexed/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/indexed/status.json": "89a184cd948d0b9c38714197f3ca034a5f09566526394c781785de443acc83fb",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/indexed/verified.json": "93cb4952de1c548e433379e131e7d08807bbc38b164e7da9c210b121e4dd8d4f",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/indexed/xrun.log": "c765135176519c390b93a55dc24aee7abef07acf9a4d4f45e3324ad0384ad07b",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/raw/inputs.json": "a0ca35d37899ba870e8c6092fd911f568cca9e136add9eebb34dc9f6422ae1bb",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/raw/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/raw/verified.json": "da8190bf15de93dbb4f36a16935e99125959a4fec42d28f991b8e54f641ce718",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/raw/xrun.log": "c8bb878a9e56c6eceace43c73dc50a68949f1468ed5f5c1ece663e079970a789",
+    "records/tri_oracle_dual_group_native_raw_replay.json": "39b4bf5bd9341ea3d989e9410693ab2c3b7a17543ced7ba25fe2cef44c7fa213",
+    "records/tri_oracle_indexed_native_trained_replay.json": "6cb6863b5881822f635ad431504620e449b83a6d4d74c64e91e800cf1dc45488"
+  },
+  "exact_feedforward_outputs": 4096,
+  "exact_writeback_outputs": 4096,
+  "functional_checkpoints": 90,
+  "indexed": {
+    "cycles": 846486,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  },
+  "indexed_cycle_reduction_fraction_vs_earlier_mapped_candidate": 0.06816438006312153,
+  "indexed_response_beats_by_lane": [
+    {
+      "down_index": 780,
+      "down_payload": 49416,
+      "pair_index": 1416,
+      "pair_payload": 118925
+    },
+    {
+      "down_index": 756,
+      "down_payload": 47897,
+      "pair_index": 1400,
+      "pair_payload": 117617
+    }
+  ],
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9488748544,
+    "peak_container_anonymous_bytes": 10424221696,
+    "wall_seconds": 3036.215801946004
+  },
+  "raw": {
+    "cycles": 973270,
+    "weight_requests": 17408,
+    "weight_response_beats": 540672
+  },
+  "reduction_fraction_vs_raw": {
+    "cycles": 0.13026601045958475,
+    "weight_requests": 0.2647058823529411,
+    "weight_response_beats": 0.3744691790956439
+  },
+  "scope": "Two trained token rows on the wider mapped chip before the smaller decoder. Functional Xcelium replay uses the benchmark testbench memory service and disables timing checks. The measured cycle and traffic reductions apply to this layer fixture. Physical timing and paper performance require further verification.",
+  "state": "native_indexed_trained_feedforward_and_writeback_verified"
+}
