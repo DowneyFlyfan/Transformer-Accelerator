@@ -1,0 +1,101 @@
+{
+  "clipped_code_inventory": {
+    "bounded_clip_correction": {
+      "clipped_codes": 159500,
+      "codes": 1430629376,
+      "correction_outside_signed8": 17365,
+      "maximum_abs_overflow": 5508,
+      "rows": 254018,
+      "rows_with_clipping": 71416
+    },
+    "clipped_unrounded": {
+      "clipped_codes": 158877,
+      "codes": 1432099328,
+      "correction_outside_signed8": 17136,
+      "maximum_abs_overflow": 5508,
+      "rows": 254279,
+      "rows_with_clipping": 71642
+    },
+    "unclipped_rounded": {
+      "clipped_codes": 159383,
+      "codes": 1430505472,
+      "correction_outside_signed8": 17316,
+      "maximum_abs_overflow": 5508,
+      "rows": 253996,
+      "rows_with_clipping": 71545
+    }
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/late_down_clipping/clipping_counts.json": "e8f0b33319fefcd4011f2ec8e7a26ff886fa95339dd58bce283b32c63d254200",
+    ".cache/model_reference/gqa_testdev/late_down_clipping/inputs.json": "114f41c8b507d6ef8b081f9e25cf4365d2bc1de81da36076d88f2d710437bf21",
+    ".cache/model_reference/gqa_testdev/late_down_clipping/predictions.jsonl": "e9936c13bb8f163100a1d5eff8552374aaa77722950e6aaf62b42b2f44aa0469",
+    ".cache/model_reference/gqa_testdev/late_down_clipping/receipt.json": "6cddc231316d8bcfaf11e6c985d0e506f5197e38479e49a27df2f2a9bdc3d620",
+    ".cache/model_reference/gqa_testdev/late_down_clipping_workflow/flow.pdf": "f8481f05fe59af411d93fb30f3e557dde6437de8d2e54a7db8d0ec0a171f7c11",
+    ".cache/model_reference/gqa_testdev/late_down_clipping_workflow/verify_clipping.py": "aae1431db750e77c5d9f4b67899d1fcc974e0767df6bf886f2b05b5fa7489f32",
+    ".cache/model_reference/gqa_testdev/late_down_quantization/predictions.jsonl": "169f4cb034463e8a469267d1af54098c46e32452e2067ae204b9d6280ca42bb1",
+    ".cache/model_reference/gqa_testdev/late_prefill_projections/predictions.jsonl": "0f2852c7c7e56b79bdfc89e138f84e28ad6bfa3c7196941ec9f3add001f4346c",
+    ".cache/model_reference/gqa_testdev/phase_precision/predictions.jsonl": "dff72dd665825d193286602e0e60f72e00ff7622670b4c451a8766585e093e1f",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups/predictions.jsonl": "bf3a067f689c66710753a824bb585bfe0cb5af6b77f1073818c465dbada81a08",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_late_down_clipping.py": "50dbc5e22a0e0a024b358f3550e41ebff0fb5315abbe5af926b3d94f46507b95"
+  },
+  "floating_down_input_and_weights_control_correct": 96,
+  "floating_input_without_rounding_or_clipping_correct": 95,
+  "fully_floating_late_control_correct": 98,
+  "identical_bounded_and_exact_correction_token_sequences": 159,
+  "images": 131,
+  "integer_control_correct": 89,
+  "layers": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "projection_results": {
+    "bounded_clip_correction": {
+      "changed_first_generated_token": 10,
+      "correct": 95,
+      "image_cluster_interval_percentage_points": [
+        0.6134969325153374,
+        7.315121412803531
+      ],
+      "paired_vs_integer": {
+        "gained": 7,
+        "lost": 1,
+        "net_correct": 6
+      }
+    },
+    "clipped_unrounded": {
+      "changed_first_generated_token": 1,
+      "correct": 89,
+      "image_cluster_interval_percentage_points": [
+        0.0,
+        0.0
+      ],
+      "paired_vs_integer": {
+        "gained": 0,
+        "lost": 0,
+        "net_correct": 0
+      }
+    },
+    "unclipped_rounded": {
+      "changed_first_generated_token": 11,
+      "correct": 96,
+      "image_cluster_interval_percentage_points": [
+        1.1627906976744187,
+        7.975460122699387
+      ],
+      "paired_vs_integer": {
+        "gained": 8,
+        "lost": 1,
+        "net_correct": 7
+      }
+    }
+  },
+  "questions": 160,
+  "scope": "Runs keep the same model and checkpoint weights. Prompt arithmetic changes only in the last five down projections. The bounded correction adds one signed-eight-bit operand for each saturated input. The exact control reconstructs all overflows with signed-eight-bit digit passes. The results measure local software answers and arithmetic workloads. Mapped scheduling and energy remain unverified.",
+  "state": "paired_late_down_clipping_independently_verified"
+}
