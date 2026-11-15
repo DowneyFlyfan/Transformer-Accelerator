@@ -1,0 +1,75 @@
+{
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "cold_placement_density_percent": 97.94,
+  "coordinate_inventory_sha256": "d2aef5306f5fe253c32d679656e75fcf06566ff006204f5e74f1b2d4e976515a",
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/archive_verified_proxy_native_placement.py": "8dfbbfc484d46539907b299f960a6e39cf4454f98673238c81d635c923e92ec8",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry_proxy_whole_chip/native/console.log": "20e19703ce8177584885d459f39f0acb88a463438006e8d6a253d0e770bb2a6e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry_proxy_whole_chip/native/initial.rpt": "932c683830d527179e1267fa3520db9ea279cb9b5575bc831f855c466d537983",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry_proxy_whole_chip/native/legalized.rpt": "34249b2610c7cddf33bf2339672cc0f3f17054818e20e99dcf5f7afe20e0f9a7",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry_proxy_whole_chip/native/status.json": "236c7ed72a4e8e09cf99729617f7b271be461c088ca10c82c1189193ed5c5bc7",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry_proxy_whole_chip/place_whole_proxy.tcl": "dbde2f8181298d69ed1f245b46f2b8669fcd331d7f1b21447813b0847efd58e2",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry_proxy_whole_chip/prepared.json": "89bb4d0211d7365a88e218a287d21765a7717bd833251efe4272fa63c014ceca",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry_proxy_whole_chip/seed_verified.json": "aa4e04ba64d13e9f5fb2838c034e7cf9f033a61708ff766248362254abf106dd",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/native_receipt.json": "6c0416f5b1f06b1430d127b50df33eb8506b3a3bf5bbb2935fdc6ab8d0b39c03",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/prepared.json": "7fe06c6c9d2d0650b76b5c568bf88283af4b099915a2c8e418e4e283fb9a70de",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/value_register_movement.json": "e21c43296865d592b758bd423b1f88addded8e6b56facca02321cb0e247cfd42"
+  },
+  "overlapping_instances_after_linked_import": 0,
+  "placed_instances": 3868658,
+  "placement_movement": {
+    "fixed_memories": 631,
+    "fixed_prior_buffers": 2869,
+    "max_manhattan_move_um": 447.22,
+    "moved_cells": 1369792,
+    "reported_mean_move_um": 4.03
+  },
+  "process": "TSMC 28 nm HPC+",
+  "proxy_overlapping_instances_before_legalization": 88,
+  "resized_registers": {
+    "all_resized_registers": {
+      "changed_orientation": 6,
+      "max_manhattan_move_um": 7.98,
+      "median_manhattan_move_um": 0.0,
+      "moved": 122,
+      "registers": 320
+    },
+    "previously_overlapped_registers": {
+      "changed_orientation": 6,
+      "max_manhattan_move_um": 2.32,
+      "median_manhattan_move_um": 0.14,
+      "moved": 37,
+      "registers": 44
+    }
+  },
+  "runtime": {
+    "cold_reload": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 7348613120,
+      "peak_container_anonymous_bytes": 12856045568,
+      "stop_reason": null,
+      "wall_seconds": 121.81042442505714
+    },
+    "linked_import": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 7095713792,
+      "peak_container_anonymous_bytes": 13093961728,
+      "stop_reason": null,
+      "wall_seconds": 125.29467136308085
+    },
+    "proxy": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 7664001024,
+      "peak_container_anonymous_bytes": 12549324800,
+      "stop_reason": null,
+      "wall_seconds": 176.52448546991218
+    }
+  },
+  "scope": "Placement passed on the connected chip and after cold reload. Connected leaf instances, pin wiring, constraints and physical coordinates are checked. Timing, mapped execution on this export, and comparison with the paper remain open.",
+  "source_cold_netlist_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "state": "full_chip_linked_placement_cold_verified_after_value_register_resize"
+}
