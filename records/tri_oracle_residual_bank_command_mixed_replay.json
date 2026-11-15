@@ -1,0 +1,27 @@
+{
+  "both_acquisition_orders": true,
+  "candidate_sha256": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+  "concurrent_clusters": 5,
+  "evidence_sha256": {
+    ".cache/residual_bank_command_binding/mixed/bundle.sv": "d0c4c3edf578dabd23d8d1e587e75ad80c53fe8e91f0c12d6b065383adcb144d",
+    ".cache/residual_bank_command_binding/mixed/inputs.json": "b8994e98ea2017e0fe73f91b86cb8523c27f87e8bed122c061add4e877cd605d",
+    ".cache/residual_bank_command_binding/mixed/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    ".cache/residual_bank_command_binding/mixed/native_command_tb.sv": "2aea3200ef5f21addc0ecf173abee1cc36757398e3aabf798622611788f75292",
+    ".cache/residual_bank_command_binding/mixed/verified.json": "a24a5e45b7d6b0d01b5b1623bd21224f4861f19d1d7718c819292d6c916fbd45",
+    ".cache/residual_bank_command_binding/mixed/xrun.log": "ecdd633b942ab4b44877487c67dfc0c6e0e8c6e15394c2ab9d99d6fa46416153",
+    "records/tri_oracle_residual_bank_command_binding.json": "9f3dc49df185d296ebaca1a2700bd4ce339b1f844e7a55b92e012499e769b6d5"
+  },
+  "exact_grouped_output_values": 704,
+  "exact_reference_attention_rows": 10,
+  "exit_status": 0,
+  "golden_attention_dump_equal": true,
+  "key_beats": 1705,
+  "minimum_host_available_bytes": 13072584704,
+  "peak_container_anonymous_bytes": 8112627712,
+  "protected_cycles": 5617,
+  "query_beats": 11,
+  "scope": "Whole-chip functional Xcelium replay of the linked design. The contention test offers residual reservation while grouped attention uses the banks. Its companion trained feed-forward and residual write-back run has a separate scorecard.",
+  "state": "linked_whole_chip_attention_replay_and_residual_lease_orders_verified",
+  "value_beats": 1152,
+  "wall_seconds": 673.3259706130484
+}
