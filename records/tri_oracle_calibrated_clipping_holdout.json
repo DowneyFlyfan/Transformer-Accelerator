@@ -1,0 +1,69 @@
+{
+  "combined_accuracy_percent": 53.558052434456926,
+  "comparisons": {
+    "calibrated": {
+      "bootstrapped_image_cluster_95_percent_interval_pp": [
+        2.247191011235955,
+        9.043836005107107
+      ],
+      "change_percentage_points": 5.617977528089888,
+      "combined_correct": 143,
+      "control_correct": 128,
+      "gained": 20,
+      "lost": 5
+    },
+    "clipping": {
+      "bootstrapped_image_cluster_95_percent_interval_pp": [
+        -1.1320754716981132,
+        6.343283582089552
+      ],
+      "change_percentage_points": 2.247191011235955,
+      "combined_correct": 143,
+      "control_correct": 137,
+      "gained": 15,
+      "lost": 9
+    },
+    "pruned": {
+      "bootstrapped_image_cluster_95_percent_interval_pp": [
+        3.529935549525102,
+        11.654135338345865
+      ],
+      "change_percentage_points": 7.49063670411985,
+      "combined_correct": 143,
+      "control_correct": 123,
+      "gained": 27,
+      "lost": 7
+    }
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/calibrated_clip_holdout/controls.json": "eaffeb520fcddee3a0ead957c175c621c1013a413e7e0ff060cb2aba2bf3226c",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_holdout/independent_verified.json": "846b239180788d3e0d317dffa1285732a677937e305b32ecd42e65a73ae4dfa8",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_holdout/inputs.json": "42ffb19630db22aa045c1f31f67c5c6e2c5880d6216b35a7c2f96fd75301600c",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_holdout/predictions.jsonl": "cc8918692dae7df77737cad97fc9e0da93342e595ee3f6a8162913af72d1adc4",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_holdout/receipt.json": "fa86c3a93afcf053d0838b90c2090fb5604cd03674e6ef5dba5770690733c5e3",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_workflow/verify.py": "45b2519b05b7154afb60d0c1988901a220ac38acf72c78d6b2450650283e4e94",
+    ".cache/model_reference/gqa_testdev/down_code_calibration_panel/predictions.jsonl": "9f9cca7cca7e9fda0b462a68ae28ee19fae0cff2f1ea6179df6ae6bda2f3f4cb",
+    ".cache/model_reference/gqa_testdev/full_down_code/predictions.jsonl": "1fc767433ddcea7f036a1b0e614073c4a1d3c24760f877ea430c717ff71cf2b9",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/predictions.jsonl": "298d20fdefd25c9f1781ed8bb49db2e7438d4d587fc928921cb38e76d55bea6b",
+    ".cache/model_reference/gqa_testdev/joint_late_clip/predictions.jsonl": "2c0c470ccb782c90cbfe8c463f6ceaa6d35f9808c82bd620baa30db76b597185",
+    ".cache/model_reference/gqa_testdev/pruned_reference/predictions.jsonl": "68394aff6c8360f7cc671382a01157b2f727a3a962f84969a7f2c4a30ef7081f",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "images": 67,
+  "mapped_execution_accuracy_verified": false,
+  "paper_prompt_and_split_confirmed": false,
+  "questions": 267,
+  "scope": "Frozen local software panel with up to four questions per eligible image and no source-panel image overlap. Full split and mapped hardware remain unverified for this combined configuration.",
+  "state": "calibrated_down_and_clipping_holdout_independently_verified",
+  "verified_reproduced_controls": 16,
+  "workload": {
+    "active_rows": 115915,
+    "codes": 2460322304,
+    "retained_corrections": 238858,
+    "rows": 436847,
+    "saturated_codes": 246736,
+    "skipped_saturated_codes": 7878
+  }
+}
