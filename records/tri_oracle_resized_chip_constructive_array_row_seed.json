@@ -1,0 +1,56 @@
+{
+  "array_members": 1091600,
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "displacement": {
+    "array": {
+      "cells": 1091600,
+      "maximum_displacement_um": 3300.1,
+      "mean_displacement_um": 533.722823030414,
+      "moved": 1091596
+    },
+    "other": {
+      "cells": 2773558,
+      "maximum_displacement_um": 5979.38,
+      "mean_displacement_um": 1768.074612342702,
+      "moved": 2773556
+    }
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_geometry_proxy/prepared.json": "057ccb61e463e0a8376bcae96aed084aeec4d4f542ef82ecb763a1bb6953f866",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/check_geometry.tcl": "47d0213681d950fccea01574ce9a2a2b2d3bcb6c6a34db116e1d66839077a5b7",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/compare_path_geometry.py": "1bcb28a59dd9b543d356e0f02aa9ca70491b6f5a9ae964f9315f4c414f49e840",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/native/console.log": "845f42145a4c7b0b9564f147e4d0a15b3c9ff82adfb9bfd849bd88e5a5218f5a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/native/geometry.rpt": "00105382fb743ac54ea57666fbea0c5b8cef05cc815b7d4186d7e4b9e62ac5bc",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/native/status.json": "2e095db7a1bf5154a8b9b06c1bd399981d556857a56a8dff30bed7a42554acb2",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/path_comparison.json": "ba53421f3f042c0c365c26fe90a0f68b58d7f60498f79a519dccb2cf93983053",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/prepared.json": "157f7960dadc81dc84448519e0cb37fa8a86b14e14b6ecbe13c56010bacc7764",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/run_native_geometry.py": "448202962e1efcba44556e507b92320528bb763cea957f8b6f5d7836bd477cb1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/path_geometry.json": "49252010d952da92e3421aee50ad5246ecabd033800759cfae46e1edf82f8bbf",
+    "records/tri_oracle_resized_chip_array_region_placement_attempts.json": "39bf8ed46bf5d1a6e27dbcf8ae97f25f182fe12cdddc66fec5688d086718c31e"
+  },
+  "fixed_memories": 631,
+  "fixed_prior_buffers": 2869,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 11392561152,
+    "peak_container_anonymous_bytes": 9055948800,
+    "stop_reason": null,
+    "wall_seconds": 46.815776188042946
+  },
+  "paths": {
+    "edges": 1800,
+    "improved_paths": 26,
+    "mapped_cells": 1900,
+    "paths": 100,
+    "previous_largest_gap_um": 13338.88,
+    "previous_median_gap_um": 1716.1999999999998,
+    "seed_largest_gap_um": 8542.96,
+    "seed_median_gap_um": 2792.175
+  },
+  "placed_components": 3868658,
+  "placement_density_percent": 97.94,
+  "regions": 20,
+  "remaining_unoccupied_sites": 754388,
+  "scope": "All mapped instances are present with fixed anchors and compute-array regions. Innovus verified a placement-only design that omits signal connectivity. The path study binds the same pre-wire paths to both layouts. No routed wire length or setup slack was measured for the constructed seed.",
+  "state": "constructed_whole_chip_region_geometry_legal_with_mixed_path_distance_changes"
+}
