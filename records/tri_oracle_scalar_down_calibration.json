@@ -1,0 +1,44 @@
+{
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/linked_cut.v": "6124ab08416fa32605217c49530bde448782a8babe6eaf89bbe703ae4f799235",
+    ".cache/model_reference/gqa_testdev/scalar_down_calibration_workflow/workflow.pdf": "53dfd787358762721e765f380c8773ba076e4d1dc47e767f98d2a38b826643be",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/native_matched_scalar/calibrated/status.txt": "91fceb8a04f3f65f400299ad79e6401494bb5e3c1ce1d908e153ad7aca2b68e6",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/native_matched_scalar/calibrated/test.sv": "deaca212bc156828f64a09b74bb51d6a14378fe130c41849f6ea0f3f2355bf27",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/native_matched_scalar/calibrated/xrun.log": "6ddee7011def044bdcf7a9aeeece9aa97e0c0b249c4268ae9d4513803e459a62",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/native_matched_scalar/metadata_verified.json": "be4593bd38e3fc87e2d7c6f3e629a3d9c1967234650c5d8635ca22ebb3a05e74",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/native_matched_scalar/original/status.txt": "91fceb8a04f3f65f400299ad79e6401494bb5e3c1ce1d908e153ad7aca2b68e6",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/native_matched_scalar/original/test.sv": "deaca212bc156828f64a09b74bb51d6a14378fe130c41849f6ea0f3f2355bf27",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/native_matched_scalar/original/xrun.log": "927dab730fb0b16f8af9f9e4ef1d80b4d018410946d8d3009312e4b38f5b2105",
+    ".cache/model_reference/gqa_testdev/scalar_down_code_calibration/receipt.json": "6325f3ae4a9c1941f07d736c0df649e3c2d64882288d3ed009ab96c6f8af7cee",
+    "records/tri_oracle_bounded_weight_decoder.json": "25f8b49478f3359715a3e78e92a302c0dab00a36eaeddad810b8cc26f3f89060",
+    "syn/measure_tri_oracle_scalar_down_calibration.py": "1f4c05cf5f5081a9bc7d5957c5181e70947d210e52c8c25e1d1a5db7632442c9"
+  },
+  "fixed_escape_layer_outcomes": {
+    "improved": 18,
+    "unchanged": 1,
+    "worse": 3
+  },
+  "held_images": 8,
+  "held_mean_relative_error": {
+    "baseline": 0.26424230906096374,
+    "fixed_escape_classes": 0.26236452568661084,
+    "scalar": 0.2623599429022182
+  },
+  "held_rows_per_layer": 120,
+  "layer10_native": {
+    "changed_weight_bytes": 82559,
+    "commands": 78,
+    "cycles": 74657,
+    "exact_weight_bytes": 11534336,
+    "finish_time_ns": 756170,
+    "identical_index_entries": 1536,
+    "identical_paired_headers": 90112,
+    "payload_beats": 97313,
+    "writes": 90112
+  },
+  "layers_with_identical_transport_sizes": 22,
+  "scope": "One unchanged weight exponent per matrix. The constrained candidate preserves every escape class used by the encoder. Both layer-10 images were checked through the same mapped write-stage cut with ideal memory writes and timing checks disabled. The held-row result measures layer error. Model answers, full-chip execution and paper benchmarks remain pending.",
+  "state": "scalar_calibration_preserved_indexed_transfers_and_native_schedule",
+  "total_scalar_payload_beats": 2159584
+}
