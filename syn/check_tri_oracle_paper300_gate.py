@@ -48,6 +48,7 @@ BOUNDED_RESET_PLACEMENT = Path("records/tri_oracle_bounded_decoder_reset_native_
 BOUNDED_PROBABILITY_PLACEMENT = Path("records/tri_oracle_bounded_decoder_probability_native_placement.json")
 BOUNDED_PROBABILITY_SEED = Path("records/tri_oracle_bounded_decoder_probability_buffer_seed.json")
 BOUNDED_TOKEN_MAP_PLACEMENT = Path("records/tri_oracle_bounded_decoder_token_map_native_placement.json")
+BOUNDED_RESIZED_PLACEMENT = Path("records/tri_oracle_whole_chip_value_register_placement.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -61,7 +62,8 @@ SCALAR_PLACEMENT_STAGES = {
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (BOUNDED_TOKEN_MAP_PLACEMENT, BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT, BOUNDED_MAPPED_STRUCTURE,
+    for candidate in (BOUNDED_RESIZED_PLACEMENT, BOUNDED_TOKEN_MAP_PLACEMENT, BOUNDED_PROBABILITY_PLACEMENT,
+                      BOUNDED_RESET_PLACEMENT, BOUNDED_MAPPED_STRUCTURE,
                       TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT,
                       *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
         placement = root / candidate
@@ -464,6 +466,113 @@ def bounded_buffered_facts(root, facts, identities, predecessor_memory, *, token
     facts[buffer_field] = native["inserted_buffers"]
     return dict(predecessor_memory, candidate_sha256=facts["candidate_sha256"],
                 exported_cold_netlist_sha256=facts["exported_cold_netlist_sha256"])
+
+
+def bounded_resized_facts(root, facts, identities, predecessor_memory):
+    """Bind the current cold placement, mapped resources and scoped replay."""
+    from audit_tri_oracle_mapped_redundancy import PE_ARRAY, TOP
+    from tri_oracle_process_guard import _processes
+    from verify_tri_oracle_buffered_memory import placed_memory
+    from verify_tri_oracle_buffered_timing_inputs import canonical_sdc
+    from verify_tri_oracle_buffered_topology import verify_compute_arrays
+    from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
+
+    def pin(path, expected=None):
+        name = str(path)
+        if name not in identities:
+            identities[name] = sha(root / path)
+        assert expected is None or identities[name] == expected, path
+        return root / path
+
+    def read_evidence(path, expected=None):
+        evidence = json.loads(pin(path, expected).read_text())
+        for name, checksum in evidence["evidence_sha256"].items():
+            pin(Path(name), checksum)
+        return evidence
+
+    previous = BOUNDED_STAGE / "native_token_map_buffer_candidate"
+    stage = previous / "value_register_drive_check/native_proxy_relinked"
+    placed = read_evidence(BOUNDED_RESIZED_PLACEMENT)
+    assert placed["state"] == "full_chip_linked_placement_cold_verified_after_value_register_resize"
+    assert placed["source_cold_netlist_sha256"] == facts["exported_cold_netlist_sha256"]
+    witness_path = stage / "native_receipt.json"
+    witness = read_evidence(witness_path, placed["evidence_sha256"][str(witness_path)])
+    assert witness["state"] == "whole_chip_resize_proxy_relinked_native_placement_verified"
+    netlist_path = stage / "cold/cold.v"
+    cold_hash = witness["reloaded_cold_sha256"]
+    netlist = pin(netlist_path, witness["evidence_sha256"][str(netlist_path)])
+    assert cold_hash == placed["cold_netlist_sha256"] == identities[str(netlist_path)]
+    count = placed["placed_instances"]
+    assert witness["components"] == witness["native_connectivity"]["physical_leaf_instances"] == count == 3868658
+    assert placed["coordinate_inventory_sha256"] == witness["matched_native_coordinates_sha256"]
+    for step, key in (("import", "linked_import"), ("cold", "cold_reload")):
+        folder = stage / step
+        status = json.loads(pin(folder / "status.json").read_text())
+        assert status == placed["runtime"][key] and status["exit_status"] == 0 and status["stop_reason"] is None
+        assert dimensions(pin(folder / "layout.def")) == (3.6, 3.6)
+        report = pin(folder / "placement.rpt").read_text()
+        assert re.findall(r"(?m)^\*info: Placed = (\d+)\s+\(Fixed = (\d+)\)\s*$", report) == [(str(count), "631")]
+        assert re.findall(r"(?m)^\*info: Unplaced = (\d+)\s*$", report) == ["0"]
+        assert not re.search(r"(?i)overlap|orientation violation|out of core area", report)
+        assert re.findall(r"(?m)^Placement Density:([\d.]+)%", report) == [str(witness["density_percent"])]
+        for view in VIEWS:
+            before = canonical_sdc(pin(previous / "cold" / f"{view}.sdc"))
+            after = canonical_sdc(pin(folder / f"{view}.sdc"))
+            assert before == after and float(after[0]["create_clock"][1]) == facts["clock_period_ns"]
+
+    for directory, suffixes in (("lef", {".lef", ".tlef"}), ("mmmc", {".lib"})):
+        original = previous / "import/placed.db/libs" / directory
+        replacement = stage / "import/placed.db/libs" / directory
+        names = {path.name for path in (root / original).iterdir() if path.suffix in suffixes}
+        assert names and names == {path.name for path in (root / replacement).iterdir() if path.suffix in suffixes}
+        for name in sorted(names):
+            pin(original / name)
+            pin(replacement / name, identities[str(original / name)])
+
+    graph, macros = compiled_memory_inventory(netlist, pin(stage / "cold/layout.def"))
+    with pin(previous / "cold/layout.def").open() as stream:
+        assert placed_memory(stream) == macros
+    assert len(macros) == predecessor_memory["macros"] == witness["movement"]["fixed_memories"] == 631
+    # Innovus renames some intermediate masters on export. Check the reachable
+    # array instance paths against the independently checked cluster hierarchy.
+    def array_paths(master, path):
+        if master.startswith(PE_ARRAY):
+            yield path
+            return
+        for child, child_master in graph[master].items():
+            instance = child.removeprefix("\\")
+            yield from array_paths(child_master, f"{path}.{instance}")
+
+    clusters = json.loads(pin(BOUNDED_MAPPED_STRUCTURE).read_text())["clusters"]
+    expected = {f"{cluster['instance']}.cores[{core}].compute.compute"
+                for cluster in clusters for core in range(cluster["cores"])}
+    paths = list(array_paths(TOP, TOP))
+    assert len(paths) == len(expected) and set(paths) == expected
+    targets = json.loads(pin(Path("records/paper_result_targets.json")).read_text())
+    arrays = verify_compute_arrays(netlist, graph, targets)
+
+    replay = read_evidence(Path("records/tri_oracle_resized_chip_native_attention.json"))
+    assert replay["state"] == "value_register_resize_native_attention_replay_verified"
+    assert replay["cold_netlist_sha256"] == cold_hash and replay["native"]["exit_status"] == 0
+    assert (replay["matched_attention_rows"], replay["matched_attention_accumulator_words"],
+            replay["matched_grouped_cluster_outputs"]) == (10, 640, 704)
+
+    prefix = os.fsencode(root / stage) + b"/"
+    workers = sorted(pid for pid, (_, _, args) in _processes().items()
+                     if args and os.path.basename(args[0]) in {b"innovus", b"xrun", b"xmelab", b"xmsim", b"genus"}
+                     and any(arg.startswith(prefix) for arg in args[1:]))
+    prepared = json.loads(pin(stage / "prepared.json").read_text())
+    mapped_path = previous / "value_register_drive_check/native_local_legalization/resized.v"
+    candidate = prepared["evidence_sha256"][str(mapped_path)]
+    pin(mapped_path, candidate)
+    facts.update(candidate_sha256=candidate, exported_cold_netlist_sha256=cold_hash,
+                 evidence_stage="native Innovus value-register resize placement with verified cold reload",
+                 clusters=len(clusters), cores=sum(cluster["cores"] for cluster in clusters),
+                 array_instances=arrays["array_instances"], array_geometry=[arrays["array_rows"], arrays["array_lanes"]],
+                 operand_bits=arrays["operand_bits"], placement_density_percent=witness["density_percent"],
+                 matched_scoped_attention_rows=replay["matched_attention_rows"],
+                 active_candidate_native_workers=workers, native_workers_terminal=not workers)
+    return dict(predecessor_memory, candidate_sha256=candidate, exported_cold_netlist_sha256=cold_hash)
 
 
 def reduced_port_placement_facts(root, facts, identities, *, repaired=False):
@@ -913,16 +1022,19 @@ def main():
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
-        if relative_qualification in {BOUNDED_TOKEN_MAP_PLACEMENT, BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT}:
+        if relative_qualification in {BOUNDED_RESIZED_PLACEMENT, BOUNDED_TOKEN_MAP_PLACEMENT,
+                                       BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT}:
             reset_facts = {}
             baseline_memory = bounded_structure_facts(root, reset_facts, identities)
             assert baseline_memory is not None, "Missing verified baseline memory inventory"
-            memory = bounded_reset_facts(root, reset_facts, identities, baseline_memory)
-            facts = reset_facts
-            if relative_qualification in {BOUNDED_TOKEN_MAP_PLACEMENT, BOUNDED_PROBABILITY_PLACEMENT}:
-                memory = bounded_buffered_facts(root, facts, identities, memory)
-            if relative_qualification == BOUNDED_TOKEN_MAP_PLACEMENT:
-                memory = bounded_buffered_facts(root, facts, identities, memory, token_map=True)
+            candidate_memory = bounded_reset_facts(root, reset_facts, identities, baseline_memory)
+            if relative_qualification != BOUNDED_RESET_PLACEMENT:
+                candidate_memory = bounded_buffered_facts(root, reset_facts, identities, candidate_memory)
+            if relative_qualification in {BOUNDED_RESIZED_PLACEMENT, BOUNDED_TOKEN_MAP_PLACEMENT}:
+                candidate_memory = bounded_buffered_facts(root, reset_facts, identities, candidate_memory, token_map=True)
+            if relative_qualification == BOUNDED_RESIZED_PLACEMENT:
+                candidate_memory = bounded_resized_facts(root, reset_facts, identities, candidate_memory)
+            facts, memory = reset_facts, candidate_memory
         elif relative_qualification == BOUNDED_MAPPED_STRUCTURE:
             memory = bounded_structure_facts(root, facts, identities)
         elif relative_qualification in {TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT}:

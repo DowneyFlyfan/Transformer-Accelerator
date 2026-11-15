@@ -4,7 +4,8 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from check_tri_oracle_paper300_gate import (
-    BOUNDED_MAPPED_STRUCTURE, BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT, BOUNDED_TOKEN_MAP_PLACEMENT,
+    BOUNDED_MAPPED_STRUCTURE, BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT, BOUNDED_RESIZED_PLACEMENT,
+    BOUNDED_TOKEN_MAP_PLACEMENT,
     CONCURRENT_IMPORT, LEGACY_QUALIFICATION, REPEATER_PLACEMENT, TOKEN_TREE_PLACEMENT,
     placement_checks, qualification_source,
 )
@@ -60,6 +61,10 @@ END COMPONENTS
             token_map = root / BOUNDED_TOKEN_MAP_PLACEMENT
             token_map.touch()
             self.assertEqual(qualification_source(root, None), token_map)
+            resized = root / BOUNDED_RESIZED_PLACEMENT
+            resized.touch()
+            self.assertEqual(qualification_source(root, None), resized)
+            self.assertEqual(qualification_source(root, token_map), token_map)
             self.assertEqual(qualification_source(root, buffered), buffered)
             self.assertEqual(qualification_source(root, reset), reset)
 

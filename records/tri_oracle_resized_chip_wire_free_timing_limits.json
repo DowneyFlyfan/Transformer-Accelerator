@@ -8,6 +8,11 @@
   },
   "evidence_sha256": {
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/cold/setup_slow.sdc": "56169a1f890afd9b9c78914c589725b0d0a13d817159aab5607fa4c5eee5ad85",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/genus_setup_control_open_pins/console.log": "788306eb6828a486db939a9d226de86da9503d9ff13226448b50613a632c30e6",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/genus_setup_control_open_pins/setup.rpt": "2d4f6364a2623a38d41c05d22b317264792b750d9d232f8f8d635770c1bdbb8e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/genus_setup_control_open_pins/setup.tcl": "8c39d8e3b143e75d88e1e7a3fe091b4c295e01ad9da10b668f1f4a040ed83850",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/genus_setup_slow/console.log": "bd6d1a49730f68228db849c091e5ab53064dc05243345cdcb315b21e02082f94",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/genus_setup_slow/status.json": "07197ca55ade79c8984b77cbd0e3bd2fb501dc80ada21bc8e6c0536257981f70",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/native_receipt.json": "6c0416f5b1f06b1430d127b50df33eb8506b3a3bf5bbb2935fdc6ab8d0b39c03",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/single_corner_netlist_control/after.sdc": "9dbc25ce6078ef10c87f08b3353a25c94a3741107288f0bf66edbc5caffd36c0",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/single_corner_netlist_control/before.sdc": "56c1cb53b3745a0e2cf1227c48cb7ae59872a90c5a24762374054f88aea88201",
@@ -24,9 +29,21 @@
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/wire_free_setup_slow/console.log": "627938516ba14e23c915a743c6e8afbfad4927848ea27ef4520edb5102aed0d2",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/wire_free_setup_slow/status.json": "64a8376c194f1df7f96916bdb35e8012e0fb95d643571b07026aa92a841bcd3d",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/queue_value_register_wire_free_setup.py": "4d266ce826ec63692d4365e737fbca0bc4c123dcd481e8045944c98409a4ca26",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/run_value_register_genus_setup.py": "2c82274d4d7aeeae3a2b68c4bd9e4de208dc252b6474ecd2b0447ed1ca8f3641",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/run_value_register_single_corner_setup.py": "398058dcdba60a02d6968d9d92acfbe5a7120541c6edbfbe86cff80dc0c7adeb",
     "records/tri_oracle_resized_chip_native_attention.json": "3e078b0d6b2d4fba14168e68cb9264e3be2d0412bd5e0ecfee381dc33ffa3eb3",
     "records/tri_oracle_whole_chip_value_register_placement.json": "6da3816c6818d6821741c26e19508a7fee0da6cc77a57a59352004a664a02746"
+  },
+  "genus_control_comparison": {
+    "genus_slacks_ps": [
+      1134.0,
+      1314.0
+    ],
+    "innovus_slacks_ps": [
+      1133.14,
+      1312.34
+    ],
+    "maximum_absolute_delta_ps": 1.66
   },
   "native_attempts": {
     "connected_placement_database": {
@@ -36,6 +53,13 @@
       "stop_reason": "resource guard at 6429691904 host bytes, 13617315840 container anonymous bytes",
       "wall_seconds": 134.1111795679899
     },
+    "genus_exact_cold_export": {
+      "exit_status": -15,
+      "minimum_host_available_bytes": 6306471936,
+      "peak_container_anonymous_bytes": 14120669184,
+      "stop_reason": "resource guard at 6306471936 host bytes, 14120669184 container anonymous bytes",
+      "wall_seconds": 152.11480339500122
+    },
     "mapped_netlist_single_corner": {
       "exit_status": -15,
       "minimum_host_available_bytes": 6681542656,
@@ -44,7 +68,7 @@
       "wall_seconds": 121.95926793699618
     }
   },
-  "scope": "Slow-corner diagnostic with net loads ignored. Neither full-chip attempt completed a timing path. The control verifies the measurement method on the same two paths using both entry points.",
+  "scope": "Slow-corner diagnostics with net loads ignored. The Innovus and Genus full-chip runs reached the memory guard with zero completed timing paths. The control verifies the two reported path slacks across both Innovus entry points and Genus to within 2 ps.",
   "state": "resized_whole_chip_wire_free_setup_diagnostics_memory_limited",
   "timing_view": "setup_slow",
   "verified_control_path_slacks_ns": [
