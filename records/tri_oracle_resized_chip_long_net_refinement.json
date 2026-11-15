@@ -1,0 +1,183 @@
+{
+  "array_regions": 20,
+  "clock_period_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/archive_selected.py": "140c422f2297fed2d7ad0b332a9517ceb358c67d358173a929e54856a1efcb21",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/carry_diagnosis.json": "a71244d072f262cf02911efd5a34ef610329276850b7eadcf3efad4bd7a758d2",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/connected/prepared.json": "246aaa1dd11a61ea9fb5a2c7bc4eb68f636c8f43819a44fa70f9cea4b38bf13d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/graphs_verified.json": "521abc9244ac1cf6745b2128d22355b008c5645412c15b55df2dc693a28b6942",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/selected/prepared.json": "44f168789202ad066c1ca1261fe6fa4f0ae8cd6c3771ae0528444b7a16e8b143",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/selected/verified.json": "aff4b2b10737bdc480d9be598098020f02a6029eac37fd2715c25218e2cfaffe",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/timing/prepared.json": "65490dfec6816bc59ea36dfdb6e50461eddb3a9cd04a01d1fda2c7927305849a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/timing/verified.json": "5f5ba4907d63ad11606d1cd4ceef3d0256967a008343e5726caa3165f76763d0",
+    "records/tri_oracle_resized_chip_expanded_control_placement_and_timing.json": "d714a1355dc99bd8b7693e5c144a18a6c482fbbec190bbf90a121046dedfeb01"
+  },
+  "mapped_carry_chain": {
+    "arrays_with_at_least_eight_consecutive_carry_stages": 19,
+    "median_contiguous_carry_stages": 15.0,
+    "scope": "Exact carry-out-to-carry-in gate wiring and reported cumulative stage increments, using the same pre-route wire model. The stage increments can include net delay.",
+    "worst_slack_array": "tri_oracle_pe_array_verified_bank3",
+    "worst_slack_array_chain": {
+      "chain_end": "add_60_96_I2_I5_I1_g952",
+      "chain_start": "add_60_96_I2_I5_I1_g966",
+      "longest_contiguous_carry_chain": 15,
+      "summed_reported_increments_in_longest_chain_ns": 2.7732,
+      "total_reported_full_adder_carry_stages": 15
+    }
+  },
+  "mapped_gate_modules_verified": 693,
+  "matched_control_buffers": 18800,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 7423463424,
+    "peak_container_anonymous_bytes": 12258246656,
+    "stop_reason": null,
+    "wall_seconds": 93.62823071703315
+  },
+  "optimization": {
+    "baseline_array_placements_retained": 5,
+    "median_array_p99_span_all_swaps_um": 718.85,
+    "median_array_p99_span_before_um": 910.775,
+    "median_array_p99_span_selected_um": 732.5999999999999,
+    "native_selected_coordinate_changes": 410773,
+    "optimized_arrays_adopted": 15,
+    "protected_array_cell_count": 512000,
+    "trial_low_fanout_nets_over_100_um_after": 438385,
+    "trial_low_fanout_nets_over_100_um_before": 354431,
+    "weighted_by_quadratic_low_fanout_span": true
+  },
+  "placed_components": 3887458,
+  "placement_density_percent": 98.37,
+  "scope": "All 20 arrays were tested with the same slow-corner internal wire model and ideal clock. Each array keeps whichever legal placement provides better modeled worst slack. The selected placement was imported and independently checked for every coordinate and netlist module. Clock distribution, routed timing and inter-array timing are unverified.",
+  "state": "long_net_refinement_timing_selected_and_connected_placement_verified",
+  "timing": {
+    "annotated_internal_nets": 1388780,
+    "arrays": {
+      "tri_oracle_pe_array_verified_bank0": {
+        "baseline_slack_ns": -3.710417,
+        "chosen_slack_ns": -2.609402,
+        "optimized": true,
+        "trial_slack_ns": -2.609402
+      },
+      "tri_oracle_pe_array_verified_bank0_1": {
+        "baseline_slack_ns": -2.743486,
+        "chosen_slack_ns": -2.743486,
+        "optimized": false,
+        "trial_slack_ns": -2.783566
+      },
+      "tri_oracle_pe_array_verified_bank0_2": {
+        "baseline_slack_ns": -3.414095,
+        "chosen_slack_ns": -2.325614,
+        "optimized": true,
+        "trial_slack_ns": -2.325614
+      },
+      "tri_oracle_pe_array_verified_bank0_3": {
+        "baseline_slack_ns": -2.216345,
+        "chosen_slack_ns": -1.655347,
+        "optimized": true,
+        "trial_slack_ns": -1.655347
+      },
+      "tri_oracle_pe_array_verified_bank1": {
+        "baseline_slack_ns": -3.273437,
+        "chosen_slack_ns": -2.568617,
+        "optimized": true,
+        "trial_slack_ns": -2.568617
+      },
+      "tri_oracle_pe_array_verified_bank1_1": {
+        "baseline_slack_ns": -3.08462,
+        "chosen_slack_ns": -2.07467,
+        "optimized": true,
+        "trial_slack_ns": -2.07467
+      },
+      "tri_oracle_pe_array_verified_bank1_2": {
+        "baseline_slack_ns": -2.00061,
+        "chosen_slack_ns": -1.876407,
+        "optimized": true,
+        "trial_slack_ns": -1.876407
+      },
+      "tri_oracle_pe_array_verified_bank1_3": {
+        "baseline_slack_ns": -2.626457,
+        "chosen_slack_ns": -2.626457,
+        "optimized": false,
+        "trial_slack_ns": -2.895615
+      },
+      "tri_oracle_pe_array_verified_bank2": {
+        "baseline_slack_ns": -1.993988,
+        "chosen_slack_ns": -1.560264,
+        "optimized": true,
+        "trial_slack_ns": -1.560264
+      },
+      "tri_oracle_pe_array_verified_bank2_1": {
+        "baseline_slack_ns": -2.514892,
+        "chosen_slack_ns": -1.530345,
+        "optimized": true,
+        "trial_slack_ns": -1.530345
+      },
+      "tri_oracle_pe_array_verified_bank2_2": {
+        "baseline_slack_ns": -2.531266,
+        "chosen_slack_ns": -2.531266,
+        "optimized": false,
+        "trial_slack_ns": -3.152784
+      },
+      "tri_oracle_pe_array_verified_bank2_3": {
+        "baseline_slack_ns": -1.974223,
+        "chosen_slack_ns": -1.69688,
+        "optimized": true,
+        "trial_slack_ns": -1.69688
+      },
+      "tri_oracle_pe_array_verified_bank3": {
+        "baseline_slack_ns": -2.875954,
+        "chosen_slack_ns": -2.833619,
+        "optimized": true,
+        "trial_slack_ns": -2.833619
+      },
+      "tri_oracle_pe_array_verified_bank3_1": {
+        "baseline_slack_ns": -2.66909,
+        "chosen_slack_ns": -2.371518,
+        "optimized": true,
+        "trial_slack_ns": -2.371518
+      },
+      "tri_oracle_pe_array_verified_bank3_2": {
+        "baseline_slack_ns": -1.657928,
+        "chosen_slack_ns": -1.657928,
+        "optimized": false,
+        "trial_slack_ns": -1.768866
+      },
+      "tri_oracle_pe_array_verified_bank3_3": {
+        "baseline_slack_ns": -2.675224,
+        "chosen_slack_ns": -2.176734,
+        "optimized": true,
+        "trial_slack_ns": -2.176734
+      },
+      "tri_oracle_pe_array_verified_bank4": {
+        "baseline_slack_ns": -2.165764,
+        "chosen_slack_ns": -1.816537,
+        "optimized": true,
+        "trial_slack_ns": -1.816537
+      },
+      "tri_oracle_pe_array_verified_bank4_1": {
+        "baseline_slack_ns": -2.480243,
+        "chosen_slack_ns": -2.480243,
+        "optimized": false,
+        "trial_slack_ns": -2.672621
+      },
+      "tri_oracle_pe_array_verified_bank4_2": {
+        "baseline_slack_ns": -2.978526,
+        "chosen_slack_ns": -2.540286,
+        "optimized": true,
+        "trial_slack_ns": -2.540286
+      },
+      "tri_oracle_pe_array_verified_bank4_3": {
+        "baseline_slack_ns": -2.381071,
+        "chosen_slack_ns": -2.36434,
+        "optimized": true,
+        "trial_slack_ns": -2.36434
+      }
+    },
+    "arrays_with_negative_selected_slack": 20,
+    "median_array_slack_before_ns": -2.5788615,
+    "median_array_slack_selected_ns": -2.344977,
+    "worst_array_slack_before_ns": -3.710417,
+    "worst_array_slack_selected_ns": -2.833619
+  }
+}
