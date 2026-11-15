@@ -1,0 +1,118 @@
+{
+  "available_signal_pad_masters": 56,
+  "checked_clusters": [
+    {
+      "bank": 0,
+      "cores": 4,
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "placed_compute_cluster_master": "tri_oracle_native_token_map_copy_10",
+      "placed_token_merge_master": "tri_oracle_native_token_map_copy_11"
+    },
+    {
+      "bank": 1,
+      "cores": 4,
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "placed_compute_cluster_master": "tri_oracle_native_token_map_copy_17",
+      "placed_token_merge_master": "tri_oracle_native_token_map_copy_18"
+    },
+    {
+      "bank": 2,
+      "cores": 4,
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "placed_compute_cluster_master": "tri_oracle_native_token_map_copy_24",
+      "placed_token_merge_master": "tri_oracle_native_token_map_copy_25"
+    },
+    {
+      "bank": 3,
+      "cores": 4,
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "placed_compute_cluster_master": "tri_oracle_native_token_map_copy_31",
+      "placed_token_merge_master": "tri_oracle_native_token_map_copy_32"
+    },
+    {
+      "bank": 4,
+      "cores": 4,
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "placed_compute_cluster_master": "tri_oracle_native_token_map_copy_38",
+      "placed_token_merge_master": "tri_oracle_native_token_map_copy_39"
+    }
+  ],
+  "compute": {
+    "array_instances": 20,
+    "array_lanes": 8,
+    "array_rows": 32,
+    "nominal_operations_per_second_at_paper_clock": 5939200000000,
+    "operand_bits": 8,
+    "registered_final_sum_bits_per_array": 608,
+    "registered_product_bits_per_array": 4096,
+    "unique_array_masters": 20
+  },
+  "die_um": [
+    "3600",
+    "3600"
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/cold/cold.v": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/cold/layout.def": "b4ec28c589e06c1babaef2807e16bf13692a1a989ed7ca554f6a0839a144a324",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/native_receipt.json": "3cac1cab69efd7607df5fe78f1eae5d99dbdb1cf22eed7aaddd69743f6dd58bd",
+    ".cache/paper_figure_audit/boundary_result.json": "9458e87e9ed535ffe2fada322b7221a38f712aa2af8b1a7c1314726b853e28a9",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_bounded_decoder_mapped_paper_structure.json": "d27d0e8bdb4c25515c83482f7ed76237c5d8701384e14b2df575628a12a9d459",
+    "records/tri_oracle_bounded_decoder_token_map_native_placement.json": "99a0882680ba9478d0358de826062544da291340884175b50e13a6b42b6330e8",
+    "syn/audit_tri_oracle_mapped_redundancy.py": "00bb6daa727fdf62563b7a9dee6b54b33466b0e9255a1eb097f62457ec13c118",
+    "syn/audit_tri_oracle_placed_chip_boundary.py": "57a7520a4f382aad06961e331fe360a96e4ac40258b75e14111a85936bc7481b",
+    "syn/link_tri_oracle_parallel_chip.py": "5f5f72f3ec9bee7255db968adf6ca9999146b1bdfb6e0191eced61477f19680f",
+    "syn/verify_tri_oracle_buffered_chip_boundary.py": "b443352d39f247c22d218ed750db0d80bb262c7e4deab0daf5c35d8e0e7501d3",
+    "syn/verify_tri_oracle_buffered_topology.py": "c73d10f53606b536710462c7fbb3d717aa4661e7e5e024de00c54ff3aabb55f3",
+    "syn/verify_tri_oracle_cold_system_boundary.py": "27592d2f329167e6030ff9dc1b8f3d1dcad5ee8aa1edb07f08363e47cba4e2a2"
+  },
+  "external_clock_endpoints": {
+    "arrays": 20,
+    "clusters": 5,
+    "cores": 20,
+    "grouped_clients": 5
+  },
+  "external_dispatch_ports": 13,
+  "external_memory_data_width_bits": {
+    "aux_rsp_data": 512,
+    "proj_rsp_data": 64,
+    "rsp_data": 512,
+    "wr_data": 64
+  },
+  "external_memory_data_width_total_bits": 1152,
+  "extracted_pad_abstract_sha256": "58608b1b0a791906a6f7982a4afa544fe835ff7290dee36c50ea01e0d6d242f0",
+  "mapped_logical_ports": 106,
+  "minimum_corner_width_um": "110.000",
+  "minimum_signal_pad_width_um": "20.000",
+  "negative_cases_rejected": [
+    "missing_compute_core",
+    "wrong_token_merging_unit",
+    "wrong_placed_port_direction"
+  ],
+  "pad_archive": "/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_110a_sefu10lm.tar.gz",
+  "pad_archive_sha256": "dce3bc9a92da187e23450e5e3913f318fa793137c2c161e0e9716b5a3999a3cc",
+  "paper_figure": "31.6.2",
+  "placed_library_pad_cells": 0,
+  "placed_signal_terminals": 7945,
+  "placed_signal_terminals_by_direction": {
+    "input": 5218,
+    "output": 2727
+  },
+  "placed_signal_terminals_by_edge": {
+    "bottom": 1987,
+    "left": 1986,
+    "right": 1986,
+    "top": 1986
+  },
+  "scope": "Exact cold-exported placed candidate. The external clock feeds the verified arrays. The mapped dispatcher exposes a host command interface and the grouped read fabric uses external data ports. Paper clock generation and full network and external memory integration remain unverified. The pad bound assumes one signal per pad and a single perimeter row and excludes power, ground, and required spacing.",
+  "single_row_signal_pad_upper_bound": 676,
+  "single_row_upper_bound_ignoring_corners": 720,
+  "source_netlist_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "state": "current_cold_chip_boundary_verified_with_system_gaps"
+}
