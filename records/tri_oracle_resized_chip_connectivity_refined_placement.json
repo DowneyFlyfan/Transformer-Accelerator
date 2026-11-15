@@ -1,0 +1,44 @@
+{
+  "array_regions": 20,
+  "arrays_with_lower_sum_than_original": 10,
+  "cells": 3868658,
+  "changed_array_positions": 470286,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/compare_path_geometry.py": "c88bdfd8b945a743595f9e8757a924b46df22486207e02376187c5852b5278e9",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/connected/prepared.json": "27b444efda312209a3ec224c8853810ca91597f2e55172ab9cbad8801b97fa51",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/connected/verified.json": "8ed141c8e79b4e4de46a8dbb4f6ec2cd11c7cc6265fadefd07a153696cb9c079",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/path_comparison.json": "39acbdb67130722e118aa74bed0af9c7e61d0151a13038e07880a250db9788fb",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/swaps_verified.json": "cc5a41cfb4772cc453b89fc96b333773c5f396126986b22539d288d307374492",
+    "records/tri_oracle_resized_chip_retained_row_placement.json": "59db02bcc879fe0119aaeabca13014017ec6f364ac95c2f57dc25bc350eb5377"
+  },
+  "examined_internal_nets": 1369980,
+  "faster_timing_unverified": true,
+  "fixed_memory_macros": 631,
+  "held_array_port_cells": 345140,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 8566628352,
+    "peak_container_anonymous_bytes": 11956740096,
+    "stop_reason": null,
+    "wall_seconds": 91.87444446305744
+  },
+  "netlist_payload_sha256": "73e2553e863907075408665f955feb91e262c9c36135a27139e3d1f216f2e799",
+  "path_pin_geometry": {
+    "edges": 1800,
+    "improved_paths": 79,
+    "paths": 100,
+    "previous_largest_gap_um": 13338.88,
+    "previous_median_gap_um": 1716.1999999999998,
+    "scope": "Same 100 connectivity-verified paths selected without extracted wire loads. Distances are lower bounds from pin rectangles on each placement.",
+    "seed_largest_gap_um": 4009.37,
+    "seed_median_gap_um": 489.4375
+  },
+  "placement_density_percent": 97.94,
+  "scope": "Connected whole-chip geometry after equal-width site swaps inside each compute array. Array data-port cells, fixed memories, and non-array cell poses are preserved relative to the retained placement. The internal net span and sampled path pin distances are geometry metrics.",
+  "state": "same_width_connectivity_refinement_native_placement_verified",
+  "summed_net_span_um": {
+    "original_connected": 213553145.81,
+    "refined_placement": 155553140.65,
+    "retained_placement": 299381329.35
+  }
+}
