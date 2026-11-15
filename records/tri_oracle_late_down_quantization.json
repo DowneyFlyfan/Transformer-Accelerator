@@ -1,0 +1,71 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/late_down_quantization/inputs.json": "1baf6337683bae302f231d99210e7376bdf7f93e2c3e93de83e33de1d1841e5b",
+    ".cache/model_reference/gqa_testdev/late_down_quantization/predictions.jsonl": "169f4cb034463e8a469267d1af54098c46e32452e2067ae204b9d6280ca42bb1",
+    ".cache/model_reference/gqa_testdev/late_down_quantization/receipt.json": "69047f41f0b6d51d8791f9928b12323ffb975f667c6ec7e30ca977483c94df89",
+    ".cache/model_reference/gqa_testdev/late_down_quantization_workflow/flow.pdf": "4c932848e4a22a7f6664a80d9f97c70df187bb4a0f41965eb9ebcd00fe304ba8",
+    ".cache/model_reference/gqa_testdev/late_down_quantization_workflow/verify_down.py": "6ff9ddbee8630389cb97bfc1dd4aef43464a1ca94a57383cc7e03ebecea42cc1",
+    ".cache/model_reference/gqa_testdev/late_prefill_projections/predictions.jsonl": "0f2852c7c7e56b79bdfc89e138f84e28ad6bfa3c7196941ec9f3add001f4346c",
+    ".cache/model_reference/gqa_testdev/phase_precision/predictions.jsonl": "dff72dd665825d193286602e0e60f72e00ff7622670b4c451a8766585e093e1f",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups/predictions.jsonl": "bf3a067f689c66710753a824bb585bfe0cb5af6b77f1073818c465dbada81a08",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_late_down_quantization.py": "4f5c4622e327a486319dad3d1fdc774cf94cc3e88a45961967b7321addaba82a"
+  },
+  "floating_down_input_and_weights_control_correct": 96,
+  "fully_floating_late_control_correct": 98,
+  "images": 131,
+  "integer_control_correct": 89,
+  "layers": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "projection_results": {
+    "floating_input": {
+      "changed_first_generated_token": 10,
+      "correct": 95,
+      "image_cluster_interval_percentage_points": [
+        0.6172839506172839,
+        7.18562874251497
+      ],
+      "paired_vs_integer": {
+        "gained": 7,
+        "lost": 1,
+        "net_correct": 6
+      }
+    },
+    "floating_weights": {
+      "changed_first_generated_token": 1,
+      "correct": 89,
+      "image_cluster_interval_percentage_points": [
+        0.0,
+        0.0
+      ],
+      "paired_vs_integer": {
+        "gained": 0,
+        "lost": 0,
+        "net_correct": 0
+      }
+    },
+    "fractional_weight_scale": {
+      "changed_first_generated_token": 1,
+      "correct": 88,
+      "image_cluster_interval_percentage_points": [
+        -1.935483870967742,
+        0.0
+      ],
+      "paired_vs_integer": {
+        "gained": 0,
+        "lost": 1,
+        "net_correct": -1
+      }
+    }
+  },
+  "questions": 160,
+  "scope": "Paired software diagnostic on the same 160 questions, using unchanged late-layer gate and up arithmetic. The input and weight diagnostics remove one quantizer each. The fractional-scale candidate uses signed-eight-bit operands and a fixed-point coefficient after the dot product. All modes disable weight skipping. The chip realization and paper conditions remain unverified.",
+  "state": "paired_late_down_quantization_independently_verified"
+}
