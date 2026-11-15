@@ -1,0 +1,91 @@
+{
+  "array_area_change_um2_versus_matched_baseline": 618.24,
+  "carry_block_width_bits": 4,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/archive_last_level.py": "4be73d1743746aeba96fb183cbf531af185ddf910cc2ebc3a44ca1be56118aaf",
+    ".cache/physical/carry_lookahead_comparison/last_level/last_level.sv": "a01f972810a40881b013f2205f8b4fa1cab8274b9ea3d3f2e05ab7d1a1b0e586",
+    ".cache/physical/carry_lookahead_comparison/last_level/mapped/emitted.sdc": "939ea3a27284e26d860f748340c44fe62be1baff71e649390ae33d806202a87c",
+    ".cache/physical/carry_lookahead_comparison/last_level/rtl_0/console.log": "513da690bfa2ef63cc31f2fe6f1786dabb80fed92685ce2f959b25a4a2a604d2",
+    ".cache/physical/carry_lookahead_comparison/last_level/rtl_1/console.log": "77f5ee3a3470fb40138cbdeca9a083e498d67c31ed4ebb0ad4cc3453a28ae136",
+    ".cache/physical/carry_lookahead_comparison/last_level/synthesize.tcl": "5221d5a17f5c109808f1c3490e4806417ab1b63fd92a5d3ed7c2896ca43a6130",
+    ".cache/physical/carry_lookahead_comparison/last_level/verified_array_fit.json": "1dbe5a60cde57e98b99d387e9b7a9b21808edfdc10d9800f5d68753957c5e97d",
+    ".cache/physical/carry_lookahead_comparison/reduction_levels.json": "f16eacc79c260f9d360b94987be8e56949423d9b5e4f8ffbacb1a1c4b586c479",
+    "records/tri_oracle_full_array_carry_width_comparison.json": "e4ff068cc8f8bc64fac1ababa6b857b2ce1d77a88c93255c1b8053eb4d059ff6",
+    "verilog/tri_oracle_pe_array_tb.sv": "012608cdd146ee6846304fd6b5454295186dbe80b2736ab803140b9a616747a6"
+  },
+  "mapped": {
+    "lef_footprint_um2": 86848.608,
+    "liberty_area_um2": 86848.608,
+    "mapped_cells": 55802,
+    "maximum_consecutive_full_adder_carry_arcs_on_worst_path": 0,
+    "median_reported_path_slack_ps": 848.0,
+    "native": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 13702586368,
+      "peak_container_anonymous_bytes": 6624555008,
+      "stop_reason": null,
+      "wall_seconds": 602.553368705092
+    },
+    "native_mapped_gate_replay_transactions": 600,
+    "reduction_setup_slack_ps": {
+      "level0": 1021.0,
+      "level1": 993.0,
+      "level2": 1290.0
+    },
+    "registers": 8036,
+    "slack_ps": 848.0,
+    "worst_path": {
+      "endpoint": "product[251].value_reg[0]/D",
+      "startpoint": "valid_reg[3]/CP"
+    }
+  },
+  "minimum_remaining_sites_of_twenty_regions": 4992,
+  "physical_region_screen": {
+    "original_control_buffers_retained": true,
+    "regions_over_capacity": [],
+    "remaining_sites_by_region": {
+      "tri_oracle_pe_array_verified_bank0": 82704,
+      "tri_oracle_pe_array_verified_bank0_1": 7928,
+      "tri_oracle_pe_array_verified_bank0_2": 14183,
+      "tri_oracle_pe_array_verified_bank0_3": 4992,
+      "tri_oracle_pe_array_verified_bank1": 11029,
+      "tri_oracle_pe_array_verified_bank1_1": 16205,
+      "tri_oracle_pe_array_verified_bank1_2": 9001,
+      "tri_oracle_pe_array_verified_bank1_3": 52860,
+      "tri_oracle_pe_array_verified_bank2": 57493,
+      "tri_oracle_pe_array_verified_bank2_1": 31745,
+      "tri_oracle_pe_array_verified_bank2_2": 16947,
+      "tri_oracle_pe_array_verified_bank2_3": 15176,
+      "tri_oracle_pe_array_verified_bank3": 10160,
+      "tri_oracle_pe_array_verified_bank3_1": 35870,
+      "tri_oracle_pe_array_verified_bank3_2": 24898,
+      "tri_oracle_pe_array_verified_bank3_3": 11876,
+      "tri_oracle_pe_array_verified_bank4": 22825,
+      "tri_oracle_pe_array_verified_bank4_1": 5793,
+      "tri_oracle_pe_array_verified_bank4_2": 24356,
+      "tri_oracle_pe_array_verified_bank4_3": 62685
+    },
+    "replacement_sites_per_array": 516956,
+    "total_remaining_sites": 518726
+  },
+  "reduction_stage_slack_change_ps": {
+    "level0": 0.0,
+    "level1": 0.0,
+    "level2": 333.0
+  },
+  "regions_with_final_stage_as_preexisting_worst_path": [
+    "tri_oracle_pe_array_verified_bank0_2",
+    "tri_oracle_pe_array_verified_bank0_3",
+    "tri_oracle_pe_array_verified_bank3_1",
+    "tri_oracle_pe_array_verified_bank4_1",
+    "tri_oracle_pe_array_verified_bank4_2",
+    "tri_oracle_pe_array_verified_bank4_3"
+  ],
+  "rtl_testbench_transactions": 600,
+  "scope": "One full 32-by-8 array at the slow library corner, with net loads omitted. The row-site screen retains the current control buffers and models twenty identical mapped arrays. Legalized placement and interconnect timing require native verification.",
+  "stages_using_block_carry": [
+    2
+  ],
+  "state": "final_reduction_carry_mapped_verified_and_existing_region_area_screen_passed",
+  "whole_array_slack_change_ps": 0.0
+}
