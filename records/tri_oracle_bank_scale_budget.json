@@ -1,0 +1,77 @@
+{
+  "bank_output_channels": 32,
+  "baseline": {
+    "per_channel_mean_held_relative_error": 0.22709799016063864,
+    "per_channel_payload_beats": 3578818,
+    "scalar_mean_held_relative_error": 0.2642423049970107,
+    "scalar_payload_beats": 2159584
+  },
+  "calibration_rows_per_layer": 120,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/linked_cut.v": "6124ab08416fa32605217c49530bde448782a8babe6eaf89bbe703ae4f799235",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/grouped/status.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/grouped/test.sv": "deaca212bc156828f64a09b74bb51d6a14378fe130c41849f6ea0f3f2355bf27",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/grouped/xrun.log": "01da1e25091178c2b21008725ae00cdd9a9a58b99d7b63d8ef27b510e32a2daa",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/images.json": "8026a40d9c254222b6a82f57624df617a6398621bec3116d4d24885fdf1bff19",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/receipt.json": "56552b6ce7bb95611ffb2c4f841b91083a4224b0697bc88d32934974e1534fd1",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/scalar/status.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/scalar/test.sv": "deaca212bc156828f64a09b74bb51d6a14378fe130c41849f6ea0f3f2355bf27",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget/scalar/xrun.log": "fdd91ce435d66907fe57e2601579453d471d282418c38713cfe454c2a1653570",
+    ".cache/model_reference/gqa_testdev/bank_scale_budget_workflow/flow.pdf": "3efb63a67c64c67b4feff8f31360fab291fb7d570e9e69f669a9c1db83c8f670",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "syn/measure_tri_oracle_bank_scale_budget.py": "d9f4e745b3857997069d20546843d32a2f8c1b3fdcb9139785c0a0d6e7133f49"
+  },
+  "held_rows_per_layer": 120,
+  "layer17_native_weight_transport": {
+    "grouped": {
+      "commands": 78,
+      "exact_bytes": 11534336,
+      "index_entries": 1536,
+      "matrix_cycles": 87146,
+      "payload_beats": 116012,
+      "wide_writes": 90112
+    },
+    "scalar": {
+      "commands": 78,
+      "exact_bytes": 11534336,
+      "index_entries": 1536,
+      "matrix_cycles": 74830,
+      "payload_beats": 97412,
+      "wide_writes": 90112
+    }
+  },
+  "layers": 22,
+  "per_layer_payload_budget_percent": {
+    "0": {
+      "finer_banks": 0,
+      "layers_improved": 19,
+      "mean_held_relative_error": 0.2622437212954868,
+      "payload_beats": 2159584,
+      "payload_increase_fraction": 0.0
+    },
+    "10": {
+      "finer_banks": 498,
+      "layers_improved": 22,
+      "mean_held_relative_error": 0.25100321729074826,
+      "payload_beats": 2286537,
+      "payload_increase_fraction": 0.058785858757983034
+    },
+    "20": {
+      "finer_banks": 791,
+      "layers_improved": 22,
+      "mean_held_relative_error": 0.24641272628849203,
+      "payload_beats": 2371422,
+      "payload_increase_fraction": 0.0980920399484344
+    },
+    "5": {
+      "finer_banks": 294,
+      "layers_improved": 22,
+      "mean_held_relative_error": 0.2545824484391646,
+      "payload_beats": 2227553,
+      "payload_increase_fraction": 0.0314731911331072
+    }
+  },
+  "scope": "Held-row software output error uses frozen activations and the existing pruning policy. Payload counts exclude scale metadata and index transfer. The Xcelium comparison checks exact bytes at the mapped weight write stage with ideal memory writes and timing checks disabled. Grouped output scaling in the current whole-chip writeback, full-model answer accuracy, and paper performance remain unverified.",
+  "state": "grouped_down_scales_tradeoff_measured_with_native_weight_transport_control"
+}
