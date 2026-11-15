@@ -1,0 +1,33 @@
+{
+  "candidate_sha256": "436217a1f8719f883b0efd5fee4e706f1f6179e9774c9a1f5ba9b515fa78cfc9",
+  "direct_external_clock_endpoints": {
+    "arrays": 20,
+    "clusters": 5,
+    "cores": 20,
+    "grouped_clients": 5
+  },
+  "dispatcher_host_ports": 13,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/paper_boundary.json": "8a5fab8ddd4e82297ea169b9d90f8f0c472874353dacd7659c0712257f0c5e2a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/paper_boundary_negative.json": "4cf8c5b202495cea1cf4b3964d92b91d8616a14d6e03d394986c822221803ab2",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/tri_oracle_bounded_decoder_mapped_paper_structure.json": "d27d0e8bdb4c25515c83482f7ed76237c5d8701384e14b2df575628a12a9d459",
+    "records/tri_oracle_bounded_decoder_probability_buffer_seed.json": "60b3eac0cd5d7f801e77bed91b99cd2909d28a4dcdcaaf0998c902be2b3df5ef",
+    "syn/verify_tri_oracle_buffered_chip_boundary.py": "b443352d39f247c22d218ed750db0d80bb262c7e4deab0daf5c35d8e0e7501d3"
+  },
+  "external_clock_pin": "clk",
+  "external_grouped_read_response_widths": [
+    512,
+    512
+  ],
+  "grouped_read_client_signals_per_cluster": 9,
+  "negative_controls_rejected": {
+    "dispatch": "tri_oracle_chip_command_layer_parallel_chip.dispatch.clk",
+    "grouped_4": "grouped_4",
+    "grouped_reads": "grouped arbiter memory lane 1"
+  },
+  "paper_clock_generator_equivalence": false,
+  "paper_network_protocol_equivalence_verified": false,
+  "scope": "Direct external clock connections, command boundary, and grouped read binding on the buffered Innovus seed. The paper includes an on-chip phase-locked loop and a network-on-chip.",
+  "state": "candidate_bound_clock_command_and_grouped_read_boundary_verified"
+}
