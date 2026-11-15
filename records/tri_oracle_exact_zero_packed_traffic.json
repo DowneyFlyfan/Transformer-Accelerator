@@ -1,0 +1,182 @@
+{
+  "elapsed_seconds": 6.0182344280183315,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/zero_and_packed_traffic/receipt.json": "8285a4a8d626359b7382b47f618386e384cc9efb7105f5d6e28a0ace832431f1",
+    ".cache/model_reference/gqa_testdev/zero_and_packed_traffic/verify.py": "ab23b989d3edda5491ca19920026b0b7be0ef3f2f14d9bf90cb0f01d03a88ba9",
+    ".cache/model_reference/layer_thresholds_v1/full_sweep.json": "373bbe7e651e2e53f215326ff51d27dcb95d45dae01fd8da1e0b4c8112de8057"
+  },
+  "fit": {
+    "channel_opportunities": 14868480,
+    "minimum_nonzero_removals_for_target_aggregate": 5435858,
+    "minimum_nonzero_removals_for_target_per_token": 5436069,
+    "modes": {
+      "baseline": {
+        "mean_relative_output_change": 0.1666161465130746,
+        "skipped_channels": 1228484,
+        "skipped_nonzero_channels": 985882,
+        "skipped_percent": 8.262337508608816,
+        "traffic_reduction": {
+          "1": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.11361644638646853,
+            "gate_and_up_reduction_percent": 5.3805096418732784e-05
+          },
+          "15": {
+            "all_weight_reduction_including_sign_fetch_percent": -1.7577662612452651,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "4": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.46873766966540403,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "8": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.9374753393308081,
+            "gate_and_up_reduction_percent": 0.0
+          }
+        }
+      },
+      "exact_zero_oracle": {
+        "mean_relative_output_change": 0.0,
+        "skipped_channels": 2890491,
+        "skipped_nonzero_channels": 0,
+        "skipped_percent": 19.44039336905992,
+        "traffic_reduction": {
+          "1": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.0019370022307809024,
+            "gate_and_up_reduction_percent": 0.00290547520661157
+          },
+          "15": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.0,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "4": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.0,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "8": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.0,
+            "gate_and_up_reduction_percent": 0.0
+          }
+        }
+      },
+      "fit_threshold": {
+        "mean_relative_output_change": 0.6589675215960988,
+        "skipped_channels": 8511303,
+        "skipped_nonzero_channels": 6886089,
+        "skipped_percent": 57.2439348205062,
+        "traffic_reduction": {
+          "1": {
+            "all_weight_reduction_including_sign_fetch_percent": 2.948102542656197,
+            "gate_and_up_reduction_percent": 2.2230113636363638
+          },
+          "15": {
+            "all_weight_reduction_including_sign_fetch_percent": -1.7577662612452651,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "4": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.44735911135502754,
+            "gate_and_up_reduction_percent": 0.014634986225895317
+          },
+          "8": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.9361840170167585,
+            "gate_and_up_reduction_percent": 0.0008608815426997245
+          }
+        }
+      }
+    },
+    "oracle_zero_channels": 2890491,
+    "oracle_zero_percent": 19.44039336905992,
+    "prompt_rows": 2640,
+    "rows_reaching_target_with_only_zeros": 0
+  },
+  "held": {
+    "channel_opportunities": 14868480,
+    "minimum_nonzero_removals_for_target_aggregate": 5450692,
+    "minimum_nonzero_removals_for_target_per_token": 5450903,
+    "modes": {
+      "baseline": {
+        "mean_relative_output_change": 0.16158661833015212,
+        "skipped_channels": 1200124,
+        "skipped_nonzero_channels": 966671,
+        "skipped_percent": 8.071598441804408,
+        "traffic_reduction": {
+          "1": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.11072785659211772,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "15": {
+            "all_weight_reduction_including_sign_fetch_percent": -1.718740752249053,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "4": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.45833086726641414,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "8": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.9166617345328283,
+            "gate_and_up_reduction_percent": 0.0
+          }
+        }
+      },
+      "exact_zero_oracle": {
+        "mean_relative_output_change": 0.0,
+        "skipped_channels": 2875657,
+        "skipped_nonzero_channels": 0,
+        "skipped_percent": 19.340625269025484,
+        "traffic_reduction": {
+          "1": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.002116356187050734,
+            "gate_and_up_reduction_percent": 0.003174500688705234
+          },
+          "15": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.0,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "4": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.0,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "8": {
+            "all_weight_reduction_including_sign_fetch_percent": 0.0,
+            "gate_and_up_reduction_percent": 0.0
+          }
+        }
+      },
+      "fit_threshold": {
+        "mean_relative_output_change": 0.6587679360636421,
+        "skipped_channels": 8468479,
+        "skipped_nonzero_channels": 6863274,
+        "skipped_percent": 56.95591613937672,
+        "traffic_reduction": {
+          "1": {
+            "all_weight_reduction_including_sign_fetch_percent": 2.9527156593857438,
+            "gate_and_up_reduction_percent": 2.2431344696969697
+          },
+          "15": {
+            "all_weight_reduction_including_sign_fetch_percent": -1.718740752249053,
+            "gate_and_up_reduction_percent": 0.0
+          },
+          "4": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.4426197791121442,
+            "gate_and_up_reduction_percent": 0.009039256198347107
+          },
+          "8": {
+            "all_weight_reduction_including_sign_fetch_percent": -0.9166617345328283,
+            "gate_and_up_reduction_percent": 0.0
+          }
+        }
+      }
+    },
+    "oracle_zero_channels": 2875657,
+    "oracle_zero_percent": 19.340625269025484,
+    "prompt_rows": 2640,
+    "rows_reaching_target_with_only_zeros": 0
+  },
+  "paper_gqa_channel_reduction_percent": 56,
+  "peak_allocated_gpu_bytes": 419826176,
+  "scopes": "Fixed-point TinyLLaVA prompt activation archive from 16 images with fit and held halves. The exact-zero oracle uses post-computation signed 8-bit values plus free prediction and gives a fixed-group ceiling for skipping only exact zeros. Traffic is modeled weight bytes. End-to-end accuracy, energy, and the paper's Graph Question Answering protocol are unverified.",
+  "selected_fit_thresholds": [
+    0,
+    -8,
+    2
+  ]
+}
