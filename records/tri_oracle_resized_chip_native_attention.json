@@ -1,0 +1,73 @@
+{
+  "arbitration_protected_cycles": 5617,
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/archive_resized_chip_attention.py": "e3360e887bb5015f781b7e008614198245a2912782407ad74f1667184baba070",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/attention_replay/attention/inputs.json": "81a3abdba79c53b088f3ab69405a47f045c27bee6778395380bad74e28300c40",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/attention_replay/attention/xrun.log": "940ad8bc04e8a6a33ca3f233ad5026bb1f0cc1da2ee7e647901f12b144c37e6e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/attention_replay/verified.json": "c14b08700939122e2e0d3f0294b206a87dfb3a52976f8900bf59c92ff3c31aa1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/cold/cold.v": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+    "records/tri_oracle_whole_chip_value_register_placement.json": "6da3816c6818d6821741c26e19508a7fee0da6cc77a57a59352004a664a02746"
+  },
+  "grouped_dual_lane_cycles": 656,
+  "matched_attention_accumulator_words": 640,
+  "matched_attention_rows": 10,
+  "matched_grouped_cluster_outputs": 704,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9558999040,
+    "peak_container_anonymous_bytes": 9274425344,
+    "wall_seconds": 765.3457936319755
+  },
+  "probability_buffer_coverage": {
+    "all_source_nets": 320,
+    "nets_by_group": {
+      "0": {
+        "both_states": 47,
+        "high_seen": 47,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "1": {
+        "both_states": 30,
+        "high_seen": 30,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "2": {
+        "both_states": 26,
+        "high_seen": 26,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "3": {
+        "both_states": 12,
+        "high_seen": 12,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "4": {
+        "both_states": 30,
+        "high_seen": 30,
+        "known_nets": 64,
+        "low_seen": 64
+      }
+    },
+    "nets_with_both_logic_states": 145,
+    "watched_branches": 1280
+  },
+  "reset": {
+    "0": {
+      "branches": 248,
+      "high": 1,
+      "low": 1
+    },
+    "1": {
+      "branches": 1306,
+      "high": 1,
+      "low": 1
+    }
+  },
+  "scope": "Selected ten-row functional replay on the exact cold export. Timing checks are disabled. Full model execution remains separately required.",
+  "state": "value_register_resize_native_attention_replay_verified"
+}
