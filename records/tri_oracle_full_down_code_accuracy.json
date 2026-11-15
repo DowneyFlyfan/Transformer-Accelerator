@@ -1,0 +1,47 @@
+{
+  "additional_correct_to_reach_paper_percent_on_local_split": 933,
+  "baseline_accuracy_percent": 47.50357767530609,
+  "calibrated_accuracy_percent": 47.62283351884243,
+  "calibrated_change_percentage_points": 0.11925584353633328,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/full_down_code/independent_receipt.json": "39eab447c9ef3b7ff9059d7f27913ddb1b7696f8bc0c54c0b5ebe4afb1d830c3",
+    ".cache/model_reference/gqa_testdev/full_down_code/receipt.json": "721236e382523282bac0a1507f85c7691d3559ae5df630573172bbcad04ea539",
+    ".cache/model_reference/gqa_testdev/full_down_code/scale_variant_ceiling.json": "8540af8110e57f6426e45b651144c6bd3bca945e103a07d65989a32bb85b55b5",
+    ".cache/model_reference/gqa_testdev/oracle_full_scale_variants.py": "b3ed030e4a7d0268c5786e84ae8a61140faa088a214ce1ed3544e57901a1b07b",
+    "syn/run_tri_oracle_full_down_code_gqa.py": "40ce4c98961a5ae79ef38d776a637fc0361f05ec4c9251eef93c2dac952012ac",
+    "syn/verify_tri_oracle_full_down_code_score.py": "e75dad257c2d5ad56db47de8013e17b307859a504c5965a4a6f205a6ea61cbb1"
+  },
+  "image_cluster_bootstrap_replicates": 4096,
+  "image_cluster_interval_95_percent_percentage_points": [
+    -0.35756617460469275,
+    0.6079029904285024
+  ],
+  "images": 398,
+  "label_informed_ceiling_across_three_local_variants": {
+    "all_variant_maximum_accuracy_percent": 53.91159166799173,
+    "all_variant_maximum_correct": 6781,
+    "all_variants_correctness_order": [
+      "baseline",
+      "per_channel_scale",
+      "calibrated_weight_codes"
+    ],
+    "unrecovered_questions_needed_for_paper_percent": 142,
+    "variant_exact_matches": {
+      "baseline": 5975,
+      "calibrated_weight_codes": 5990,
+      "per_channel_scale": 5960
+    }
+  },
+  "paired_counts": {
+    "baseline": 5975,
+    "calibrated": 5990,
+    "changed": 2175,
+    "gained": 537,
+    "lost": 522
+  },
+  "paper_reported_accuracy_percent": 55.04,
+  "question_paired_exact_two_sided_p_descriptive": 0.6670633096578367,
+  "questions": 12578,
+  "scope": "All 12,578 questions on the pinned local Graph Question Answering split, with matched prompts and a fixed model checkpoint. The image-cluster interval accounts for questions sharing images. The three-variant ceiling chooses by ground-truth labels and measures coverage of the tested variants. The paper's exact protocol and the chip's mapped model accuracy remain unverified.",
+  "state": "full_calibrated_down_weight_code_software_accuracy_verified"
+}
