@@ -1,0 +1,36 @@
+{
+  "directed_same_cluster_conflicts": 234,
+  "evidence_sha256": {
+    ".cache/controlled_weight_transport/linked_indexed/xrun.log": "8382f6318fd6bef90426a38361c632701dc93031a48c7f23db9722b507299214",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/indexed_tb.sv": "b18b13f4b86b495290e81d1f1c636a40aaa6e8fc74ac57dbacb01b722791140d",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/raw/xrun.log": "e2df8e4dca60990713fae43f942effa0aa5a53e34180b50de9f9dba73a0cde6f",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/raw_tb.sv": "95bc30a3bbafae752fca2c8e776119cd8cbe4c8f58352ed7e7eba5742f8f83ff",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/stage.v": "84c66eef90a63e9c7fc7a20bfa0b48fdc7fecb39245df03e43bcb4bd8b63b6a0",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/trained/xrun.log": "4b3bc3f0f7b3acffd01d5dd934761dece386bee78a0caa87093a008bb7f07bb9",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/wide_lane.sv": "bd1fd3c03986a6c2a667d2d702eb3378ec14d15e9e6dd145c7319e13a0baef09",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/wide_loader.sv": "8f99be2013ebeb002bca835ae994f08f5ea1984eeab69494868728d9192248ee",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/wide_transport.sv": "75faa98d7f74d5f217e4db18a4cc3c77be8e82df6ada76ed078f5c066087e0e1",
+    "records/tri_oracle_dual_group_weight_fabric.json": "e023ba76aa69ce5f10baa8b014fc9285766843032319ad44b01d581441a490ac",
+    "syn/prepare_tri_oracle_dual_group_transport.py": "1cb8b950d6ebc2945bfb7d656eb2180dd55591836d832c6c6da7ffa8a9f61053"
+  },
+  "index_reads_by_lane": [
+    780,
+    756
+  ],
+  "narrow_fixture_cycles": 101502,
+  "narrow_register_write_beats": 180224,
+  "payload_responses_by_lane": [
+    49531,
+    47995
+  ],
+  "raw_mode_directed_tiles": 6,
+  "scope": "Register-transfer-level dual-format controller with mapped entropy parser, decoders and widened registered write stage. The two-lane fixture uses matched request and response conditions across write widths. The native hierarchy linkage, timing and complete chip replay require separate verification.",
+  "simultaneous_wider_writes": 26496,
+  "state": "two_lane_1024_bit_trained_weight_transport_verified",
+  "trained_commands": 78,
+  "trained_exact_down_projection_bytes": 11534336,
+  "trained_layer": 0,
+  "unsupported_indexed_mode_rejected": true,
+  "wider_fixture_cycles": 74974,
+  "wider_register_write_beats": 90112
+}
