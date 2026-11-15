@@ -1,0 +1,111 @@
+{
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "database_manifest_sha256": "cf924e00f94fdbc81c204ed1ec74b78c2fd45fc1955a689364d3485eb0f0f005",
+  "displayed_load_to_limit_bands": {
+    "over_100x": 1,
+    "over_10x": 3,
+    "over_1x": 3504,
+    "over_2x": 350,
+    "over_50x": 2,
+    "over_5x": 309
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/independent_pin_load.py": "02cfb2d3848fd7411192870f11d5f736aed98079bd486cf5d84b46c1f4c695ed",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_pin_load_screen/console.log": "b186aa0119e4270a9efd4ce0714c52fee6995f4fe3be81a9f1c5858f071121de",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_pin_load_screen/placed_fanout.tsv": "39dfda5f45a706d282c72c816b21f48d1013bd85e2f0a17e7e67474bd8eabcd1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_pin_load_screen/status.json": "92c30e621c40735c08e8638f5ed81fc03a5005694e98bcf3b86583d8bf4f50f1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_pin_load_screen/verified.json": "db93f3197ae7ff8d8bd1a59d388498b7712eb6e644c1d1bf4f775fd950359339",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/run_candidate_pin_load.py": "61b5e46dcc4e9e2c4c66a63f7083586c264f3ea8175c0c523dc0a69c60c6f16e",
+    "records/tri_oracle_bounded_decoder_native_placement.json": "9729b712e1c6320d2d99b615aa3fb5dc4aeb6a2782f5399ae10f5823ec3a8390",
+    "syn/tri_oracle_report_placed_fanout.tcl": "98a66863cc01f950a00dcf352fb3cc60a271694c260d7f061b2d1362dbaa0987"
+  },
+  "high_fanout_candidates": 6132,
+  "load_threshold": 128,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9206419456,
+    "peak_container_anonymous_bytes": 11608104960,
+    "stop_reason": null,
+    "wall_seconds": 137.12395769904833
+  },
+  "nets_over_limit_from_known_pin_loads": 3504,
+  "nets_with_complete_pin_loads": 6130,
+  "nets_with_pin_limits": 6130,
+  "scope": "Slow-corner modeled sink pin loads on single-driver data nets. Distributed wire capacitance, slew and path slack require extracted timing. Counts use the timing tool's reported capacitance precision. The screen covers nets with at least 128 sinks.",
+  "slow_corner": "setup_slow",
+  "state": "bounded_decoder_placed_pin_loads_measured",
+  "worst": [
+    {
+      "driver": "layer/layer/feedforward/compute/compute/tensor/g182827/Z",
+      "limit_pf": "0.074000000",
+      "loads": "15641",
+      "missing_sink_caps": "0",
+      "net": "layer/layer/feedforward/compute/compute/tensor/owner_rst_n",
+      "pin_load_pf": "30.966000000",
+      "ratio": 418.4594594594595
+    },
+    {
+      "driver": "direct_projection/g1718__1705/ZN",
+      "limit_pf": "0.055000000",
+      "loads": "2955",
+      "missing_sink_caps": "0",
+      "net": "direct_projection/pipeline_rst_n",
+      "pin_load_pf": "5.300000000",
+      "ratio": 96.36363636363636
+    },
+    {
+      "driver": "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/mapped_tokens_reg[0]/Q",
+      "limit_pf": "0.051000000",
+      "loads": "604",
+      "missing_sink_caps": "0",
+      "net": "layer/layer/feedforward/compute/compute/tensor/fabric/bank_command[0][map_position][0]",
+      "pin_load_pf": "0.606000000",
+      "ratio": 11.882352941176471
+    },
+    {
+      "driver": "grouped_0/normalizers/implementation/cores[0].controller/reader/g17289/ZN",
+      "limit_pf": "0.047000000",
+      "loads": "321",
+      "missing_sink_caps": "0",
+      "net": "grouped_0/probability[0][15]",
+      "pin_load_pf": "0.322000000",
+      "ratio": 6.851063829787234
+    },
+    {
+      "driver": "grouped_0/normalizers/implementation/cores[1].controller/reader/g17289/ZN",
+      "limit_pf": "0.047000000",
+      "loads": "321",
+      "missing_sink_caps": "0",
+      "net": "grouped_0/probability[1][15]",
+      "pin_load_pf": "0.322000000",
+      "ratio": 6.851063829787234
+    },
+    {
+      "driver": "grouped_0/normalizers/implementation/cores[2].controller/reader/g17289/ZN",
+      "limit_pf": "0.047000000",
+      "loads": "321",
+      "missing_sink_caps": "0",
+      "net": "grouped_0/probability[2][15]",
+      "pin_load_pf": "0.322000000",
+      "ratio": 6.851063829787234
+    },
+    {
+      "driver": "grouped_0/normalizers/implementation/cores[3].controller/reader/g17289/ZN",
+      "limit_pf": "0.047000000",
+      "loads": "321",
+      "missing_sink_caps": "0",
+      "net": "grouped_0/probability[3][15]",
+      "pin_load_pf": "0.322000000",
+      "ratio": 6.851063829787234
+    },
+    {
+      "driver": "grouped_1/normalizers/implementation/cores[0].controller/reader/g17289/ZN",
+      "limit_pf": "0.047000000",
+      "loads": "321",
+      "missing_sink_caps": "0",
+      "net": "grouped_1/probability[0][15]",
+      "pin_load_pf": "0.322000000",
+      "ratio": 6.851063829787234
+    }
+  ]
+}

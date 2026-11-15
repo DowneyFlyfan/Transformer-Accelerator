@@ -1,0 +1,38 @@
+{
+  "arbitration_protected_cycles": 5617,
+  "attention_value_vectors": 1143,
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "cold_netlist_sha256": "25addf3ca2ead3645999f41a86389dc2c2bc08d629132cc0fd0973c2d10e81be",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/independent_cold_attention.py": "17e1c3ad6dc1e27d35ef01550653bccf5ef5572d1c6983b02f0f214daa904a60",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_mixed_attention/bundle.sv": "bafee10b1a9b5de32455101a15ecc9997c31d40ba0a63cb6522350eaa969c5ae",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_mixed_attention/inputs.json": "fa4aa685d292c000d4c0e98234806d28b035d1d27538c7f6df37ffe8d12c0b2d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_mixed_attention/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_mixed_attention/status.json": "6cbf1ae8b998cd160bb4eb7fc5ac136bb4427c5d126554ac40ed4d08700e80e1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_mixed_attention/verified.json": "9dc11cb9174d8a616f08a4a2bd1688f971b177e426fa78f09d3fefb1258b9ca0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_mixed_attention/xrun.log": "fc65e18d6d78c73df99c8f5d7237191b4144c0fc517cfed5da4b56bbdadeb81a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_placement/cold/cold.v": "25addf3ca2ead3645999f41a86389dc2c2bc08d629132cc0fd0973c2d10e81be",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/queue_mixed_attention.py": "b1ea820bd809b9e0aa06f7849edd01ad7feb86a4e2ac9c736a9b990c4cb44b3a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/whole_chip.v": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/physical_parent_replay/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "records/tri_oracle_bounded_decoder_native_placement.json": "9729b712e1c6320d2d99b615aa3fb5dc4aeb6a2782f5399ae10f5823ec3a8390",
+    "records/tri_oracle_repaired_native_mixed_attention.json": "009444dbabb5741279f0171d5558f72cc44eb9d5273bb28be8485520f789c162"
+  },
+  "exact_attention_accumulator_words": 640,
+  "grouped_dual_lane_cycles": 656,
+  "grouped_key_beats": 1705,
+  "grouped_query_beats": 11,
+  "grouped_value_beats": 1152,
+  "matched_attention_rows": 10,
+  "matched_grouped_outputs": 704,
+  "matched_transcript_lines": 30,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 12034576384,
+    "peak_container_anonymous_bytes": 8028024832,
+    "wall_seconds": 704.3516291349661
+  },
+  "scope": "Ten trained attention rows and the established grouped-cluster fixture on the exact Innovus cold export. Native Xcelium functional simulation used external fixture memory and disabled timing checks.",
+  "state": "bounded_decoder_independent_post_placement_attention_verified",
+  "verified_grouped_clusters": 5
+}
