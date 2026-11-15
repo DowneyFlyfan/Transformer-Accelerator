@@ -1,0 +1,32 @@
+{
+  "candidate_sha256": "e93e25c4ab2c1718f493d4b41b6c768c75cb4ccb77c58c8fa5caede0c3c32c15",
+  "evidence_sha256": {
+    ".cache/residual_command_request/descriptor_fields/physical/command_drive_with_origins.json": "1c6185050c5428bbb170f97f4a3d6758f906d05c50e8f225c77e75c584581e59",
+    ".cache/residual_command_request/descriptor_fields/physical/estimated_command_wire_load.json": "9601032b4498891b02fdb37f1e6df13528820a4dfc4e5aea4bc0ddcda3a0bb1b",
+    "records/tri_oracle_descriptor_writeback_placement_seed.json": "2078c86db5f68af4b0084145ef055a48369660c0245d5085f6681dbcc85e8764"
+  },
+  "flagged_estimates_by_signal": {
+    "layer_command_payload[950]": 4.1005,
+    "layer_command_payload[951]": 4.1211,
+    "layer_command_payload[952]": 4.0897,
+    "layer_command_payload[953]": 4.1467,
+    "layer_command_payload[954]": 4.0698,
+    "layer_command_payload[955]": 4.0708,
+    "layer_command_payload[956]": 4.1672,
+    "layer_command_payload[957]": 4.0606,
+    "layer_command_payload[958]": 4.106,
+    "layer_command_payload[959]": 4.1287,
+    "layer_command_ready[0]": 5.1706,
+    "layer_command_valid[0]": 10.003,
+    "layer_done_ready[0]": 9.257,
+    "layer_done_valid[0]": 3.5846
+  },
+  "longest_added_branch_um": 3409.88,
+  "maximum_scale_branch_um": 2282.76,
+  "per_corner_signal_comparisons": 45,
+  "scope": "Exact mapped pin loads and seed origin spans in three installed cell-library views. Flags are estimates from the least-capacitive default-width routing-layer scenario. The estimate omits coupling, route detours and additional branch wire. Native extracted timing and physical closure remain pending.",
+  "screened_signal_count": 15,
+  "seed_sha256": "0c473e0740ce2b7d8bcbf683b0f83e3df6702b59c34736a9ab65148b184fc256",
+  "state": "descriptor_control_and_scale_nets_flagged_by_wire_load_screen",
+  "wire_capacitance_method_reference": "https://coriolis.lip6.fr/doc/lefdef/lefdefref/LEFSyntax.html"
+}
