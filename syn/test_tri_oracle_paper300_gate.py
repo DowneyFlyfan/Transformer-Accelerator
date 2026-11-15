@@ -101,6 +101,17 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None), reduced)
             self.assertEqual(qualification_source(root, buffered), buffered)
 
+    def test_verified_token_tree_placement_supersedes_its_baseline(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            baseline = root / "records/tri_oracle_reduced_port_placement_and_reload.json"
+            baseline.parent.mkdir()
+            baseline.touch()
+            repaired = baseline.with_name("tri_oracle_full_native_token_tree_placement.json")
+            repaired.touch()
+            self.assertEqual(qualification_source(root, None), repaired)
+            self.assertEqual(qualification_source(root, baseline), baseline)
+
     def complete(self):
         return dict(candidate_cold_qualified=True,native_workers_terminal=True,
             original_full_models_verified=True,clusters=5,cores=20,

@@ -39,6 +39,7 @@ SCALAR_PLACEMENT = Path("records/tri_oracle_scalar_whole_chip_cold_reload.json")
 GUARDED_SCALAR_PLACEMENT = Path("records/tri_oracle_guarded_scalar_whole_chip_cold_reload.json")
 BUFFERED_GRANT_PLACEMENT = Path("records/tri_oracle_buffered_grant_whole_chip_cold_reload.json")
 REDUCED_PORT_PLACEMENT = Path("records/tri_oracle_reduced_port_placement_and_reload.json")
+TOKEN_TREE_PLACEMENT = Path("records/tri_oracle_full_native_token_tree_placement.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
 SCALAR_PLACEMENT_STAGES = {
     BUFFERED_GRANT_PLACEMENT: "cold Innovus buffered grant placement",
@@ -50,7 +51,7 @@ SCALAR_PLACEMENT_STAGES = {
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (REDUCED_PORT_PLACEMENT, *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
+    for candidate in (TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT, *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
         placement = root / candidate
         if placement.is_file():
             return placement
@@ -114,7 +115,7 @@ def dimensions(path):
     return ((die[2]-die[0])/units/1000, (die[3]-die[1])/units/1000)
 
 
-def reduced_port_placement_facts(root, facts, identities):
+def reduced_port_placement_facts(root, facts, identities, *, repaired=False):
     from tri_oracle_artifact_fingerprint import artifact_fingerprint
     from tri_oracle_process_guard import _processes
     from verify_tri_oracle_current_mapped_architecture import verify
@@ -128,6 +129,10 @@ def reduced_port_placement_facts(root, facts, identities):
         if expected is not None and identities[key] != expected:
             raise ValueError(f"Changed evidence: {path}")
         return path
+
+    def constraints(name):
+        text = pin(name).read_text().replace("-name core ", "-name core_clock ")
+        return parse_sdc(text.replace("[get_clocks {core}]", "[get_clocks {core_clock}]"))
 
     record = json.loads(pin(REDUCED_PORT_PLACEMENT).read_bytes())
     assert record["state"] == "reduced_port_whole_chip_placement_and_reload_independently_verified"
@@ -162,11 +167,12 @@ def reduced_port_placement_facts(root, facts, identities):
     counts = {}
     clocks = set()
     for view in sorted(VIEWS):
-        text = pin(stage / f"cold/{view}.sdc").read_text()
-        text = text.replace("-name core ", "-name core_clock ")
-        text = text.replace("[get_clocks {core}]", "[get_clocks {core_clock}]")
-        definitions, ports, _ = parse_sdc(text)
+        parsed = constraints(stage / f"cold/{view}.sdc")
+        definitions, ports, _ = parsed
         assert definitions["current_design"] == "tri_oracle_chip_command_layer_parallel_chip"
+        if repaired:
+            actual = constraints(stage / f"token_tree_native_full_reloads/structure/{view}.sdc")
+            assert actual == parsed, f"Repaired placement changed constraints in {view}"
         clocks.add(definitions["create_clock"][1])
         counts[view] = len(ports)
     assert counts == coords["constraint_entries_by_view"] and len(clocks) == 1
@@ -192,7 +198,50 @@ def reduced_port_placement_facts(root, facts, identities):
         operand_bits=arrays["operand_bits"], fixed_memory_macros=memory["compiled_macros"],
         unplaced_instances=int(unplaced), constraint_entries_by_view=counts,
     )
+    if repaired:
+        repaired_placement_facts(root, facts, pin)
     return memory
+
+
+def repaired_placement_facts(root, facts, pin):
+    from tri_oracle_artifact_fingerprint import artifact_fingerprint
+
+    report = json.loads(pin(TOKEN_TREE_PLACEMENT).read_bytes())
+    stage = REDUCED_PORT_STAGE
+    reloads = stage / "token_tree_native_full_reloads"
+    for name, expected in report["evidence_sha256"].items():
+        pin(name, expected)
+    native = json.loads(pin(reloads / "receipt.json").read_bytes())
+    assert {
+        name: value for name, value in report.items()
+        if name not in {"checkpoint_fingerprint_sha256", "evidence_sha256"}
+    } == {
+        name: value for name, value in native.items()
+        if name not in {"placement_fingerprint", "evidence_sha256"}
+    }
+    assert native["state"] == "native_token_count_tree_placed_cold_connected_and_pin_loads_verified"
+    assert native["baseline_candidate_sha256"] == facts["candidate_sha256"]
+    assert all(item["exit_status"] == 0 and item["stop_reason"] is None for item in native["native"].values())
+    checkpoint = root / stage / "token_tree_native_full_split_flow/apply/placed.db"
+    fingerprint = artifact_fingerprint(checkpoint)
+    assert fingerprint == native["placement_fingerprint"]
+    assert hashlib.sha256(json.dumps(fingerprint, sort_keys=True).encode()).hexdigest() == report["checkpoint_fingerprint_sha256"]
+    repaired_netlist = native["repaired_netlist_sha256"]
+    pin(reloads / "legality/cold.v", repaired_netlist)
+    assert dimensions(pin(reloads / "legality/cold.def")) == (facts["die_width_mm"], facts["die_height_mm"])
+    assert native["constraint_entries_by_view"] == facts["constraint_entries_by_view"]
+    assert native["fixed_memory_macros"] == facts["fixed_memory_macros"]
+    assert native["unplaced_instances"] == facts["unplaced_instances"] == 0
+    assert native["native_branch_pin_checks"] == 3 * (native["added_buffers"] + 10)
+    assert 0 < native["worst_native_branch_pin_load_ratio"] < 1
+    facts.update(
+        candidate_sha256=repaired_netlist,
+        baseline_candidate_sha256=native["baseline_candidate_sha256"],
+        evidence_stage="cold Innovus repaired token-count placement",
+        endpoint_count=native["endpoint_count"],
+        added_buffers=native["added_buffers"],
+        worst_native_branch_pin_load_ratio=native["worst_native_branch_pin_load_ratio"],
+    )
 
 
 def registered_memory(root, identities):
@@ -493,8 +542,9 @@ def main():
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
-        if relative_qualification == REDUCED_PORT_PLACEMENT:
-            memory = reduced_port_placement_facts(root, facts, identities)
+        if relative_qualification in {TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT}:
+            memory = reduced_port_placement_facts(root, facts, identities,
+                                                 repaired=relative_qualification == TOKEN_TREE_PLACEMENT)
         elif relative_qualification in SCALAR_PLACEMENT_STAGES:
             from verify_tri_oracle_scalar_placement_evidence import verify
             placed = verify(guarded=relative_qualification == GUARDED_SCALAR_PLACEMENT,
