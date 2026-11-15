@@ -1,0 +1,58 @@
+{
+  "affected_value_outputs": 320,
+  "checked_internal_driver_nets": 340,
+  "checked_resized_input_pins_on_internal_nets": 640,
+  "cold_netlist_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "compared_cell_model_behavior_with_timing_disabled": true,
+  "corners": {
+    "hold_fast": {
+      "minimum_value_output_margin_pf": "0.089547612",
+      "upstream_over_limit_after": 0,
+      "value_outputs_over_limit_after": 0,
+      "value_outputs_over_limit_before": 320,
+      "worst_value_output_load_fraction": 0.5623711660639233
+    },
+    "setup_slow": {
+      "minimum_value_output_margin_pf": "0.072975444",
+      "upstream_over_limit_after": 0,
+      "value_outputs_over_limit_after": 0,
+      "value_outputs_over_limit_before": 320,
+      "worst_value_output_load_fraction": 0.6104173993817966
+    },
+    "setup_typ": {
+      "minimum_value_output_margin_pf": "0.080069308",
+      "upstream_over_limit_after": 0,
+      "value_outputs_over_limit_after": 0,
+      "value_outputs_over_limit_before": 320,
+      "worst_value_output_load_fraction": 0.5881526219684695
+    }
+  },
+  "current_cell": "EDFCNQD1BWP12T40P140",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/complete_geometry.json": "351efdeb844ebd765de19bd67ac2fa6f40f31cb6eecdc4446f506407f2090796",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/electrical.json": "1585fa656a90aa4b88e9767e5f4cf0cde630af713f57e1a6f548bfe3d3bdae96",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/geometry.json": "3f972f1b96c1f88ed6a62230df3d0512671f162aaa3a1139b24b816f878aa681",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/localized_geometry.json": "75d03562e58fffd9105bc83263ee07eee8aa40afb9e01b94bb1711250c8cb433",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/reset.json": "640ab37554672166e84316c7bd57cc0db5f0414702b2bb778ee2544c93931830",
+    "records/tri_oracle_bounded_decoder_token_map_native_loads.json": "ac55963c46088fcfac8a5ef9cc9d9df1f5ab955ab5cdcefb912bfa6214a821bb",
+    "records/tri_oracle_bounded_decoder_token_map_native_placement.json": "99a0882680ba9478d0358de826062544da291340884175b50e13a6b42b6330e8"
+  },
+  "offline_geometry": {
+    "area_increase_if_all_resized_um2": 107.52,
+    "components_checked": 3868658,
+    "maximum_local_target_displacement_um": 0.28,
+    "rejected_full_fit_maximum_displacement_um": 2143.2,
+    "resize_fit_after_local_small_gate_relocation": 273,
+    "resize_fit_within_original_segment": 270,
+    "unresolved_local_registers": 47
+  },
+  "primary_reset": {
+    "changed_reset_pins": 320,
+    "checked_reset_sink_pins": 51981,
+    "maximum_increase_percent": 0.37791401029600025,
+    "maximum_increase_pf": 0.2831904
+  },
+  "qualified_cell": "EDFCNQD2BWP12T40P140",
+  "scope": "A three-corner pin-load projection and offline placement trial on the exact saved design. The full-fit proposal moved registers by up to 2143.2 micrometers and was rejected. Native placement, reset timing, wire capacitance and routed timing remain open.",
+  "state": "value_register_drive_fix_electrically_qualified_with_open_local_placement"
+}
