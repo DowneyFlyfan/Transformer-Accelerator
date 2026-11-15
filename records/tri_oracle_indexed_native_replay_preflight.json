@@ -1,0 +1,33 @@
+{
+  "candidate_sha256": "75dc67eab2ddcd3266d26ba072c7d715aa7553edde1715977b2f07d841b95ea6",
+  "compiled_testbench_errors": 0,
+  "descriptor_words": 16,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/bench_preflight/console.log": "fc52fe12833e3eb6dc1c0d5a270dddad71792733435bfa8f396aed3aa038e49c",
+    ".cache/indexed_whole_chip/encoded_weights/image.json": "663292c27895bef995e672d9a99313cdac9139f398536b56937157c70b78557f",
+    ".cache/indexed_whole_chip/indexed_replay/bundle.sv": "c8b4516ca720248a77b744935c276083d2ed80989b73fa80e356b114fa96b2e4",
+    ".cache/indexed_whole_chip/indexed_replay/indexed_tb.sv": "c33feb8bb3dd7e1b46137529aabf1df2fdfcec90a014bf4f7f62cbd4c855d905",
+    ".cache/indexed_whole_chip/indexed_replay/inputs.json": "8b1f8f82c39a6366b30c8054ff7616e1b42fe60d1325b2918a756d2e18967420",
+    ".cache/indexed_whole_chip/request_checker/0/console.log": "2de4a1294e98ac7b82e01bc0ec4625957788b0bfb9e806cbef14a28e5383cc33",
+    ".cache/indexed_whole_chip/request_checker/1/console.log": "e628189887edeb8ab2cf9c2438277807b8a04d904b9257affdd0c7c579760d80",
+    ".cache/indexed_whole_chip/request_checker/2/console.log": "0387217c9e6855c395b67f0086065506f13f1c95a5f0c01bedc33463e5ca6eeb",
+    ".cache/indexed_whole_chip/request_checker/3/console.log": "a10c7ba08bc37e906d504320dd3d8cf33b048adcb3710b39c03ae808abae1517",
+    ".cache/indexed_whole_chip/request_checker/fixture_tb.sv": "f4e0da06fc4952b85248ca6a3ab9d589c795bbe902c73a4b0b29167de83d97b5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/trained_writeback_tb.sv": "ad7f255682ff29519c2f8c71e8f9d255e3bc403e0021c137d37ba8f8cd8ed9b2",
+    "records/tri_oracle_indexed_whole_chip_link.json": "222484dede2e62d28dc2a4ff2528dd0ff3e77a0605e825c035362316ac3a3c75",
+    "syn/prepare_tri_oracle_indexed_native_replay.py": "a9ae7c8730339b6fcb61259c6cb39f30495b33d8861fda6e3475a9e879277751",
+    "syn/run_tri_oracle_indexed_native_replay.py": "4c99e3ab4154fd2e5bb1c8ec21ec6981d4ddc54f02f12ba47695e7d14094603b"
+  },
+  "image_slots_by_branch": {
+    "down": 1536,
+    "paired_gate_up": 2816
+  },
+  "index_requests_accepted_in_checker": 4,
+  "injected_bad_requests_rejected": [
+    "INDEXED_NATIVE_WRONG_LANE",
+    "INDEXED_NATIVE_INDEX_BEFORE_PAYLOAD_RETIRED",
+    "INDEXED_NATIVE_PAYLOAD_SEQUENCE"
+  ],
+  "scope": "Xcelium compiled the indexed full-chip scoreboard. Isolated request checks used the pinned trained images. They rejected the wrong lane, a new index before the active tile completed, and a skipped payload beat. The full-chip follow-up uses the same functional and write-back golden data. Native full-chip indexed execution and benchmark comparison remain pending.",
+  "state": "native_indexed_replay_bench_and_request_checker_verified"
+}
