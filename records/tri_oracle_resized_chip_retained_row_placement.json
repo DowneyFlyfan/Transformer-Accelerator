@@ -1,0 +1,42 @@
+{
+  "array_cells_reassigned": 452622,
+  "cells": 3868658,
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "difference_percent": {
+    "retained_vs_original": 40.19054985795529,
+    "retained_vs_repacked": -48.08004547173892,
+    "swaps_vs_repacked": -15.68487853919679
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/archive_retained_seed.py": "705ed3acdc137125ee7026a47ce27cd5bfdc952f79cb74799c2732eb759fa97f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/local_release_verified.json": "90a6a11ce90cd660148cc1474881d6d9ea6a07d3a0262e4026e992b98021cc92",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/connected/verified.json": "c7a9021baae3cc2249e9a10b64f9b69fb4ba2b47b93a59121aa60f91c5b6c185",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/diagnosis/verified.json": "a9580b2bb327d3e5b7dd117fb3b45a3c72460c4ebc411b6976af704afa96e9c1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/prepared.json": "7cd7b84edd2f5e7e2f114aedb59ae8317c6afcfa698205f1848a268c7815db51",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/swaps_verified.json": "7f5588f4afc6ccb691a0f01d011c0e386c8191a7359ccac71b43bdccc9ca4125",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/verified.json": "22cdad3260ad7b820a926b1847339bf68449a8f308a2f48fc19ead4fb3337900",
+    "records/tri_oracle_resized_chip_connected_array_row_placement.json": "5bda5388fc4913d2f5ad6c05e2af81d9e22ced0a18f6efc06c086561b4df531b"
+  },
+  "fixed_memories": 631,
+  "measured_internal_array_nets": 1369980,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 8467931136,
+    "peak_container_anonymous_bytes": 11954483200,
+    "stop_reason": null,
+    "wall_seconds": 89.12327475298662
+  },
+  "ordinary_cells_reassigned": 573807,
+  "original_movable_positions_retained": 2838729,
+  "placed_density_percent": 97.94,
+  "regions": 20,
+  "scope": "The exact connected netlist was independently verified after native placement import. The measured half-perimeter sums cover internal standard-cell nets in all 20 compute arrays. Port connections, clocks, reset, inter-array wires, routed delay and signoff remain outside this study.",
+  "shared_netlist_payload_sha256": "73e2553e863907075408665f955feb91e262c9c36135a27139e3d1f216f2e799",
+  "state": "retained_row_region_connected_placement_verified_with_wirelength_tradeoff",
+  "summed_internal_array_span_um": {
+    "all_cells_repacked": 576620939.04,
+    "original_connected": 213553145.81,
+    "original_rows_retained": 299381329.35,
+    "repacked_with_equal_width_swaps": 486178645.12
+  }
+}
