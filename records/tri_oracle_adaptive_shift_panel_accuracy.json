@@ -1,0 +1,56 @@
+{
+  "accuracy_change_percentage_points": -2.0,
+  "by_question_type": {
+    "choose": {
+      "adaptive": 28,
+      "baseline": 32,
+      "gained": 2,
+      "lost": 6
+    },
+    "compare": {
+      "adaptive": 21,
+      "baseline": 20,
+      "gained": 2,
+      "lost": 1
+    },
+    "logical": {
+      "adaptive": 24,
+      "baseline": 25,
+      "gained": 3,
+      "lost": 4
+    },
+    "query": {
+      "adaptive": 16,
+      "baseline": 16,
+      "gained": 1,
+      "lost": 1
+    },
+    "verify": {
+      "adaptive": 23,
+      "baseline": 23,
+      "gained": 2,
+      "lost": 2
+    }
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/adaptive_shift_panel/inputs.json": "3194b1be5eeeeaddbe5cf8a9d2d4fe158ce8bbb5590e72ba77468277b15e59ae",
+    ".cache/model_reference/gqa_testdev/adaptive_shift_panel/predictions.jsonl": "2fd0b17346b22765248bb75dbfe878ad2f1b62fa05f460d604407f376e5de353",
+    ".cache/model_reference/gqa_testdev/adaptive_shift_panel/receipt.json": "91267bd9dc5a3fe156eb0726db21e0d285ed3003fae03adea57bcdbcbdb3b692",
+    ".cache/model_reference/gqa_testdev/adaptive_shift_workflow/flow.pdf": "51ca48a144997e8de9e415625dcd75f2543a48dac50abf3afffd5098da486e84",
+    ".cache/model_reference/gqa_testdev/adaptive_shift_workflow/verify_panel.py": "c3e5d1c276eab1b68c215a30d88f13ffd01389af67c8097abad8fbae231c849a",
+    ".cache/model_reference/gqa_testdev/input_equalization_panel/predictions.jsonl": "6582ba708209634214f51aa9024f124d9968cc81034efaea3e6747cbd9fe2537",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_adaptive_down_shift_gqa.py": "a5617aafdf9c41cb2122f6e3d2780f9d9254bf5343a7ed5355386e9dcb17ac94"
+  },
+  "exact_matches": {
+    "adaptive": 112,
+    "baseline": 116,
+    "gained": 10,
+    "lost": 14
+  },
+  "first_generated_token_changes": 27,
+  "paired_exact_two_sided_p": 0.5412561893463135,
+  "questions": 200,
+  "scope": "Paired software evaluation on 200 fixed questions from distinct images. Baseline tokens and per-question skip counts reproduce the archived controls. Adaptive shifts affect only ordinary prompt rows. End-to-end mapped hardware execution and the paper's protocol are unverified.",
+  "state": "paired_adaptive_prompt_shift_accuracy_independently_verified"
+}
