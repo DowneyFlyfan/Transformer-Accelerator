@@ -1,0 +1,33 @@
+{
+  "accumulator_words": 8192,
+  "attention_rows": 128,
+  "candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/unseeded_placed_attention_pressure_guard_retry/attention.hex": "33c2870522d6bbb6fc766bd833918d91ac8bc95f982a6d1fb9a173142a7ed8c2",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/unseeded_placed_attention_pressure_guard_retry/attention/xrun.log": "f73bfbb5346b2278b6a7054ed3b1b1507067d46be6bfd30e64803d6be4a74f6d",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/unseeded_placed_attention_pressure_guard_retry/attention_bundle.sv": "844a1a99b2182a367c92653e2ccc5cad63f54b4a954a9c5bcacb240c1b1ccde2",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_restored_unseeded_attention.pressure_retry.log": "55aaa92fc1662604a39a414534a3c1e7204c28185de43025e7214ba96392a826",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/trained_attention_output_reference/attention_accumulators.bin": "12771aa5bed9295321c6be43b693a76c75b48586343dd2f9b4a86ebec0e49196",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/recover_earlier_replay/recover_replay.py": "7691fa34f5a931a7f3f8cbaffc34f7f98fe95390d413fc07c06874f5c1852c80",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/recover_earlier_replay/recovered_receipt.json": "487e9f2a0fff4010fe3f734f2d59b8a613410b288e37fe8bbc55257a7484ccd1"
+  },
+  "historical_input": {
+    "syn/tri_oracle_require_clean_placement.tcl": {
+      "current_sha256": "251d928f254596f394f807a624d06ff04dbe63bdb4b82a04414747ce8ba81170",
+      "git_revision": "3bd810c8159655752f4477f2585eeccecb7f385d",
+      "sha256": "ce2da70f85b964db47cf26139c4e9c9b25fe58d3ec522837bade4af7aa315088",
+      "snapshot_path": ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/recover_earlier_replay/tri_oracle_require_clean_placement.tcl"
+    }
+  },
+  "memory_instances": 631,
+  "native_status_source": "The simulator completed and the supervisor reached its post-run hash check after the native stage and exact-output verification returned.",
+  "native_tool_wall_time": "15:37:52",
+  "placed_netlist_sha256": "1826eccdb94f06668ceb94863644fd1cdb55a90e59d42a6f78f8cd4e21a7fa1d",
+  "projected_vectors": 16360,
+  "projection_commands": 1041,
+  "scope": "Earlier repaired whole-chip placed candidate. Xcelium outputs and native log are rechecked from disk against pinned inputs and an independently generated reference.",
+  "seeded_vectors": 0,
+  "state": "completed_xcelium_unseeded_attention_replay_independently_verified_with_historical_input",
+  "value_requests": 32736,
+  "verified_input_count": 164
+}
