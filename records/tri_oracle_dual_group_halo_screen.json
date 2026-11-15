@@ -1,0 +1,194 @@
+{
+  "boundary_reservations_only_comparison": {
+    "available_sites_before_new_cells": 7406494,
+    "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+    "largest_free_interval_sites": 25428,
+    "projected_site_utilization_percent": 84.682213,
+    "spare_sites_by_area": 6500243
+  },
+  "candidate_seeds": {
+    "signal_and_power_edges": {
+      "cap_um": 3,
+      "sha256": "03c3444eb0708a6dd376d937e42276448311d02a27ce9194cee1738d9862736f"
+    },
+    "signal_edges": {
+      "cap_um": 4,
+      "sha256": "07ea9c6acad599e605ab3eca286f5e6092c60a44aebd9bfc72188c5d70f583e0"
+    }
+  },
+  "candidate_sha256": "5ab023bce3e472d5a29455dbc25e489b0f339da1d91d69b8f7985d108e1daa95",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/controller/placement_pin_power_halo_screen/receipt.json": "70de5f3191bed5229db54398f481f30f576a7779f5cd036dbfd6014fa898e6f9",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/placement_seed/geometry_verified.json": "e6118b20e92601d78394032ee47e4b97919ded98a2276f6277e065bb11fb1b14",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/placement_seed/seed.def": "b39bd6c6e12b8dd561b9a43b2564e54868748c7381008e7c9707fe3a69d6cbb7",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    "records/tri_oracle_dual_group_placement_seed.json": "65607f43331b722de5d17f114c7a27ed74fbc39295c9d0ad58445a8d962639e5",
+    "syn/scan_tri_oracle_dual_group_halos.py": "6d3cecf7b78ae07866070af529c829c7446c03699af551a56834d6163af13dee"
+  },
+  "fixed_macros_with_only_top_or_bottom_halo_changes": 631,
+  "halo_scenarios_by_protected_edges_and_cap_um": {
+    "signal_and_power_edges": {
+      "1": {
+        "available_sites_before_new_cells": 2159810,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+        "largest_free_interval_sites": 2525,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 96.629242,
+        "sites_recovered_from_original_halos": 1062181,
+        "spare_sites_by_area": 1253559
+      },
+      "2": {
+        "available_sites_before_new_cells": 1838428,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+        "largest_free_interval_sites": 2525,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 97.471572,
+        "sites_recovered_from_original_halos": 740799,
+        "spare_sites_by_area": 932177
+      },
+      "3": {
+        "available_sites_before_new_cells": 1614641,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+        "largest_free_interval_sites": 2525,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 98.066835,
+        "sites_recovered_from_original_halos": 517012,
+        "spare_sites_by_area": 708390
+      },
+      "4": {
+        "available_sites_before_new_cells": 1293259,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": false,
+        "largest_free_interval_sites": 2525,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 98.934528,
+        "sites_recovered_from_original_halos": 195630,
+        "spare_sites_by_area": 387008
+      },
+      "5": {
+        "available_sites_before_new_cells": 1097629,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": false,
+        "largest_free_interval_sites": 2525,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 99.470264,
+        "sites_recovered_from_original_halos": 0,
+        "spare_sites_by_area": 191378
+      }
+    },
+    "signal_edges": {
+      "1": {
+        "available_sites_before_new_cells": 5794526,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+        "largest_free_interval_sites": 2554,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 88.025962,
+        "sites_recovered_from_original_halos": 4696897,
+        "spare_sites_by_area": 4888275
+      },
+      "2": {
+        "available_sites_before_new_cells": 4593618,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+        "largest_free_interval_sites": 2547,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 90.693881,
+        "sites_recovered_from_original_halos": 3495989,
+        "spare_sites_by_area": 3687367
+      },
+      "3": {
+        "available_sites_before_new_cells": 3458622,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+        "largest_free_interval_sites": 2539,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 93.368405,
+        "sites_recovered_from_original_halos": 2360993,
+        "spare_sites_by_area": 2552371
+      },
+      "4": {
+        "available_sites_before_new_cells": 2223850,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": true,
+        "largest_free_interval_sites": 2532,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 96.463132,
+        "sites_recovered_from_original_halos": 1126221,
+        "spare_sites_by_area": 1317599
+      },
+      "5": {
+        "available_sites_before_new_cells": 1098104,
+        "exact_cell_widths_fit_without_releasing_existing_coordinates": false,
+        "largest_free_interval_sites": 2525,
+        "macros_with_smaller_halos": 631,
+        "projected_site_utilization_percent": 99.468956,
+        "sites_recovered_from_original_halos": 475,
+        "spare_sites_by_area": 191853
+      }
+    }
+  },
+  "original_geometry": {
+    "available_sites_before_new_cells": 1097629,
+    "exact_cell_widths_fit_without_releasing_existing_coordinates": false,
+    "largest_free_interval_sites": 2525,
+    "projected_site_utilization_percent": 99.470264,
+    "spare_sites_by_area": 191378
+  },
+  "pins_by_touching_side_and_master": {
+    "TS5N28HPCPSVTA16X80M2FW": {
+      "power_ground": {
+        "left": 2
+      },
+      "signal": {
+        "right": 247
+      }
+    },
+    "TS5N28HPCPSVTA24X128M2FW": {
+      "power_ground": {
+        "left": 2
+      },
+      "signal": {
+        "right": 392
+      }
+    },
+    "TS5N28HPCPSVTA32X128M2FW": {
+      "power_ground": {
+        "left": 2
+      },
+      "signal": {
+        "right": 392
+      }
+    },
+    "TS5N28HPCPSVTA512X64M4F": {
+      "power_ground": {
+        "left": 2
+      },
+      "signal": {
+        "right": 140
+      }
+    },
+    "TS5N28HPCPSVTA8X80M2FW": {
+      "power_ground": {
+        "left": 2
+      },
+      "signal": {
+        "right": 246
+      }
+    },
+    "TS6N28HPCPSVTA16X128M2F": {
+      "power_ground": {
+        "left": 2,
+        "right": 2
+      },
+      "signal": {
+        "right": 268
+      }
+    }
+  },
+  "retained_standard_cell_coordinates": 3744436,
+  "same_macro_locations": 631,
+  "scope": "Verified geometric capacity and seeds retaining all prior standard-cell coordinates. The original halo is retained on edges touched by signal pin shapes. One seed also retains the halo on edges touched by power and ground pin shapes. The boundary-reservation comparison is diagnostic. Both seeds keep every boundary reserve. Signal and power pin access, timing and routing still require native checks.",
+  "state": "fixed_memory_halo_capacity_screened",
+  "unplaced_standard_cells": 131706
+}
