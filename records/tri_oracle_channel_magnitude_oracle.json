@@ -1,0 +1,181 @@
+{
+  "channels_per_row": 5632,
+  "evidence_sha256": {
+    ".cache/model_reference/ff_oracle_magnitude/console.log": "dbe406e0709402454154cfedf9f85b06db9ebaa6341e6ebe46413e17d3be470f",
+    ".cache/model_reference/ff_oracle_magnitude/receipt.json": "84bd87aa5d47225824e3a2fe1cdccac9ab388d67aa7ddff8b8daff072388c794",
+    ".cache/model_reference/ff_oracle_magnitude/run.py": "2c1078e87f6b98c1d089b1b2e1cee334e4b929d8ffb77c6463edb0c4cd053a85",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/ff_pruning_threshold_grid_result.json": "72b4f9c921d12cc431513e16d51d492aae9e3112602ae1e7bc68abf3c779b639",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_exact_zero_packed_traffic.json": "46848b24e2c683b8ed84c2b2fa607812649ca9164bea9de4d796e104113c6d49"
+  },
+  "layers": 22,
+  "model_checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "paper_ffn_external_access_reduction_percent": 57,
+  "peak_allocated_gpu_bytes": 433652736,
+  "rows_per_split": 2640,
+  "scope": "Frozen later-token calibration and held image rows. The magnitude selectors use computed intermediate activations and are diagnostic controls. Channel percentages do not measure memory traffic. Errors are against the unpruned fixed-point layer and do not measure model accuracy.",
+  "state": "fixed_point_channel_selector_errors_reproduced_and_aggregates_verified",
+  "summary": {
+    "activation_magnitude_25pct": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.02940170184481533,
+        "nonzero_skipped_channels": 984270,
+        "p95_relative_output_perturbation": 0.0452614778885935,
+        "skipped_channels": 3717120,
+        "skipped_fraction": 0.25
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.0298357455198751,
+        "nonzero_skipped_channels": 988994,
+        "p95_relative_output_perturbation": 0.04569062294533968,
+        "skipped_channels": 3717120,
+        "skipped_fraction": 0.25
+      }
+    },
+    "activation_magnitude_40pct": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.07798299593372623,
+        "nonzero_skipped_channels": 3056927,
+        "p95_relative_output_perturbation": 0.09564116114980542,
+        "skipped_channels": 5945280,
+        "skipped_fraction": 0.39985795454545453
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.07798457451713643,
+        "nonzero_skipped_channels": 3072246,
+        "p95_relative_output_perturbation": 0.09608111078917424,
+        "skipped_channels": 5945280,
+        "skipped_fraction": 0.39985795454545453
+      }
+    },
+    "activation_magnitude_57pct": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.1550237867991645,
+        "nonzero_skipped_channels": 5583909,
+        "p95_relative_output_perturbation": 0.18246695164358886,
+        "skipped_channels": 8474400,
+        "skipped_fraction": 0.5699573863636364
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.1552843068667494,
+        "nonzero_skipped_channels": 5598743,
+        "p95_relative_output_perturbation": 0.18404812711688204,
+        "skipped_channels": 8474400,
+        "skipped_fraction": 0.5699573863636364
+      }
+    },
+    "activation_magnitude_matched_count": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.004001379606420527,
+        "nonzero_skipped_channels": 133511,
+        "p95_relative_output_perturbation": 0.02507606087971243,
+        "skipped_channels": 1228484,
+        "skipped_fraction": 0.08262337508608815
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.004302499092099545,
+        "nonzero_skipped_channels": 151481,
+        "p95_relative_output_perturbation": 0.02676370595079989,
+        "skipped_channels": 1200124,
+        "skipped_fraction": 0.08071598441804408
+      }
+    },
+    "exact_zero": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.0,
+        "nonzero_skipped_channels": 0,
+        "p95_relative_output_perturbation": 0.0,
+        "skipped_channels": 2890491,
+        "skipped_fraction": 0.19440393369059916
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.0,
+        "nonzero_skipped_channels": 0,
+        "p95_relative_output_perturbation": 0.0,
+        "skipped_channels": 2875657,
+        "skipped_fraction": 0.19340625269025483
+      }
+    },
+    "mapped_predictor": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.1666161465130746,
+        "nonzero_skipped_channels": 985882,
+        "p95_relative_output_perturbation": 0.405218966859929,
+        "skipped_channels": 1228484,
+        "skipped_fraction": 0.08262337508608815
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.16158661833015212,
+        "nonzero_skipped_channels": 966671,
+        "p95_relative_output_perturbation": 0.4121047995170473,
+        "skipped_channels": 1200124,
+        "skipped_fraction": 0.08071598441804408
+      }
+    },
+    "weighted_contribution_magnitude_25pct": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.028234889262837973,
+        "nonzero_skipped_channels": 984270,
+        "p95_relative_output_perturbation": 0.04356318334183204,
+        "skipped_channels": 3717120,
+        "skipped_fraction": 0.25
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.028659333211026185,
+        "nonzero_skipped_channels": 988994,
+        "p95_relative_output_perturbation": 0.04363308454219405,
+        "skipped_channels": 3717120,
+        "skipped_fraction": 0.25
+      }
+    },
+    "weighted_contribution_magnitude_40pct": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.07666891434220356,
+        "nonzero_skipped_channels": 3056927,
+        "p95_relative_output_perturbation": 0.09377790846194982,
+        "skipped_channels": 5945280,
+        "skipped_fraction": 0.39985795454545453
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.07677473905534701,
+        "nonzero_skipped_channels": 3072246,
+        "p95_relative_output_perturbation": 0.09425022238376081,
+        "skipped_channels": 5945280,
+        "skipped_fraction": 0.39985795454545453
+      }
+    },
+    "weighted_contribution_magnitude_57pct": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.15367007224463047,
+        "nonzero_skipped_channels": 5583909,
+        "p95_relative_output_perturbation": 0.1808451818504512,
+        "skipped_channels": 8474400,
+        "skipped_fraction": 0.5699573863636364
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.1539734585030733,
+        "nonzero_skipped_channels": 5598743,
+        "p95_relative_output_perturbation": 0.1821957508610418,
+        "skipped_channels": 8474400,
+        "skipped_fraction": 0.5699573863636364
+      }
+    },
+    "weighted_contribution_magnitude_matched_count": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.0038250889506495434,
+        "nonzero_skipped_channels": 133511,
+        "p95_relative_output_perturbation": 0.024383403779460428,
+        "skipped_channels": 1228484,
+        "skipped_fraction": 0.08262337508608815
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.004146717449726378,
+        "nonzero_skipped_channels": 151481,
+        "p95_relative_output_perturbation": 0.025799212939489332,
+        "skipped_channels": 1200124,
+        "skipped_fraction": 0.08071598441804408
+      }
+    }
+  }
+}
