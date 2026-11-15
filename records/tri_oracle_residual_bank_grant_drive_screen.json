@@ -1,0 +1,119 @@
+{
+  "by_library": {
+    "ffg1p05vm40c.lib": {
+      "batch_start_ready[0]": {
+        "drive_limit_pf": 0.09256,
+        "driver_cell_and_pin": "CKAN2D1BWP12T40P140/Z",
+        "driver_instance": "residual_bank_command/g696__6783",
+        "exceeds_limit_from_sink_pins": false,
+        "load_to_limit": 0.01491795592048401,
+        "pin_load_pf": 0.001380806,
+        "sink_pins": 2
+      },
+      "residual_bank_granted": {
+        "drive_limit_pf": 0.0725175,
+        "driver_cell_and_pin": "INR2D1BWP12T40P140/ZN",
+        "driver_instance": "residual_bank_command/g699__2802",
+        "exceeds_limit_from_sink_pins": true,
+        "load_to_limit": 2.7072988451063535,
+        "pin_load_pf": 0.196326544,
+        "sink_pins": 319
+      },
+      "residual_grouped_valid": {
+        "drive_limit_pf": 0.09256,
+        "driver_cell_and_pin": "CKAN2D1BWP12T40P140/Z",
+        "driver_instance": "residual_bank_command/g694__8428",
+        "exceeds_limit_from_sink_pins": false,
+        "load_to_limit": 0.00880481849611063,
+        "pin_load_pf": 0.000814974,
+        "sink_pins": 1
+      }
+    },
+    "ssg0p9v125c.lib": {
+      "batch_start_ready[0]": {
+        "drive_limit_pf": 0.0741796,
+        "driver_cell_and_pin": "CKAN2D1BWP12T40P140/Z",
+        "driver_instance": "residual_bank_command/g696__6783",
+        "exceeds_limit_from_sink_pins": false,
+        "load_to_limit": 0.018603510938317275,
+        "pin_load_pf": 0.001380001,
+        "sink_pins": 2
+      },
+      "residual_bank_granted": {
+        "drive_limit_pf": 0.0552179,
+        "driver_cell_and_pin": "INR2D1BWP12T40P140/ZN",
+        "driver_instance": "residual_bank_command/g699__2802",
+        "exceeds_limit_from_sink_pins": true,
+        "load_to_limit": 3.5621069435817008,
+        "pin_load_pf": 0.196692065,
+        "sink_pins": 319
+      },
+      "residual_grouped_valid": {
+        "drive_limit_pf": 0.0741796,
+        "driver_cell_and_pin": "CKAN2D1BWP12T40P140/Z",
+        "driver_instance": "residual_bank_command/g694__8428",
+        "exceeds_limit_from_sink_pins": false,
+        "load_to_limit": 0.010967557118129512,
+        "pin_load_pf": 0.000813569,
+        "sink_pins": 1
+      }
+    },
+    "tt1v25c.lib": {
+      "batch_start_ready[0]": {
+        "drive_limit_pf": 0.0766233,
+        "driver_cell_and_pin": "CKAN2D1BWP12T40P140/Z",
+        "driver_instance": "residual_bank_command/g696__6783",
+        "exceeds_limit_from_sink_pins": false,
+        "load_to_limit": 0.01796423542186254,
+        "pin_load_pf": 0.001376479,
+        "sink_pins": 2
+      },
+      "residual_bank_granted": {
+        "drive_limit_pf": 0.0597256,
+        "driver_cell_and_pin": "INR2D1BWP12T40P140/ZN",
+        "driver_instance": "residual_bank_command/g699__2802",
+        "exceeds_limit_from_sink_pins": true,
+        "load_to_limit": 3.28393800983163,
+        "pin_load_pf": 0.196135168,
+        "sink_pins": 319
+      },
+      "residual_grouped_valid": {
+        "drive_limit_pf": 0.0766233,
+        "driver_cell_and_pin": "CKAN2D1BWP12T40P140/Z",
+        "driver_instance": "residual_bank_command/g694__8428",
+        "exceeds_limit_from_sink_pins": false,
+        "load_to_limit": 0.01059869517496636,
+        "pin_load_pf": 0.000812107,
+        "sink_pins": 1
+      }
+    }
+  },
+  "candidate_sha256": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/native/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/native/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/native/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/residual_bank_command_binding/candidate_grouped_ready.v": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+    ".cache/residual_bank_command_binding/physical/anchor.json": "233909f715b954c1101a48bf0b7648c72ad5cd5189cd5d054d7f85bf0299fe0b",
+    ".cache/residual_bank_command_binding/physical/drive.json": "85009ca637d1966505590e880bdcafbe5b52adc5eac0537cec11b0780dc2c3ba",
+    ".cache/residual_bank_command_binding/physical/drive.py": "38bffebe93626c628aa366576c5a27f7abdba83e4e19d9d927511f4fbdb91fda",
+    "records/tri_oracle_residual_bank_command_binding.json": "9f3dc49df185d296ebaca1a2700bd4ce339b1f844e7a55b92e012499e769b6d5",
+    "records/tri_oracle_scalar_native_timing_inputs.json": "3f88bfc4e7281ffdfa74fe6dcf4b08a47dc2b4b45476cffa041b4f154c3baff9"
+  },
+  "placement_parent_origins": {
+    "best_possible_single_control_center_radius_um": 3058.37,
+    "grant_sink_bounds_um": {
+      "x_bounds_um": [
+        694.38,
+        2803.34
+      ],
+      "y_bounds_um": [
+        581.6,
+        3485.6
+      ]
+    },
+    "native_control_endpoint_cells": 600
+  },
+  "scope": "The current linked arbiter's direct grant driver exceeds the maximum load in three installed standard-cell views using input pin capacitance alone. Coordinates come from the preserved parent placement. The bound uses component origins for the control endpoints. The new cells are unplaced and extracted timing is pending.",
+  "state": "residual_bank_command_output_load_screened_across_three_views"
+}
