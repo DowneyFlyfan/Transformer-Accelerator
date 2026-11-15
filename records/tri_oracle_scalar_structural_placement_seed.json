@@ -1,0 +1,25 @@
+{
+  "candidate_sha256": "6ed5ab585810393ff58cb566f5090f89a049f9c3185c0562f357f8dc6b1a3922",
+  "components": 3742095,
+  "effective_unblocked_site_utilization_percent": 96.9011,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/installed_pad_views/partial_pad_seed/blockages.tsv": "9e63ebf4c6b76ed14de0646c1b497e1edcbfd791a1854b626ecf117536a18cf8",
+    ".cache/placement_coordinate_reuse/installed_pad_views/partial_pad_seed/macros.tsv": "a46d30f0c8574ad2c530cdc6a5bf78096891d78a1887b848e958241310fd1c59",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/build.json": "71adaef5a385eee6df70659de2026e3032b76349640015158c5f7fe7abddf841",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/native_inputs/prepared.json": "4730d3d0ad9fc56f462fdba4ac2dd4b1a52e0d6fedc82c8691131a6d74e0e4fe",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/run_native.py": "47248afa888ccc59bc776442f6e8dd96ca69de3b6f1af8314e2096359d30dd2f",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/verify.py": "417fc1fc430b31f6887d11d6d8453b182c9759b67cedbddd241021e1a6a65bcb",
+    "records/tri_oracle_partial_pad_repeater_placement.json": "d46f2084451369e59ecb78b2034e18ba1a15ce150e7a852eb9a6a0250321d53c"
+  },
+  "expected_boundary_ports": 13138,
+  "free_unblocked_site_pitches": 1119542,
+  "net_standard_cell_site_area_reduction_um2": 25483.584,
+  "new_logic_coordinates": 57627,
+  "occupied_standard_cell_site_pitches": 35007507,
+  "preserved_logic_coordinates": 3683837,
+  "removed_logic_coordinates": 81402,
+  "retained_fixed_memories": 631,
+  "scope": "Offline coordinate and instance verification. Each seed component matches the mapped netlist by exact hierarchical path and cell master. Standard cells are row-aligned with no overlaps or incursions into the fixed memory halos and four pad reserves. The seed still requires native Innovus import and placement checks.",
+  "seed_sha256": "67eb6bb783a8295ec44b33fe4efe98dafc24d5a9429719853fbd2561b8b6e890",
+  "state": "scalar_structural_chip_seed_independently_verified"
+}
