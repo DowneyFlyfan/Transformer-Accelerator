@@ -1,0 +1,90 @@
+{
+  "all_319_terminals_preserved": true,
+  "candidate_sha256": "181c45c86e236aee4a5f807604198912fd706b47818efb6890ce0fdfa5f7bb93",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/native/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/native/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/native/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/residual_bank_command_binding/candidate_grouped_ready.v": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+    ".cache/residual_bank_command_binding/physical/branch_loads.json": "4e395ae0be703fec52c89954cbec7a31ae140b2c48b9844a76cf061366777b99",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/candidate.v": "181c45c86e236aee4a5f807604198912fd706b47818efb6890ce0fdfa5f7bb93",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cut/inputs.f": "5a07f34fb10062a6e6f7fb852d00a99f2dfe1b70db2e36c2cd14d170240359f9",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cut/owners.v": "de4279657ef6ce7e0ced2a4cc83449348ffc496fdadea9c73f1f633c1c293400",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cut/xrun.log": "a9333a407c4dfce6d933918c053270e6967a7fa969258915ac4a5d68ded9124c",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/linked.json": "1cff8ad4b2a7d53050ee275fc232c7fe4fe99187f41d03f4e31e10d2c1d25293",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native_inputs/prepared.json": "0307b133ed2165dc1cc11e32c63c180d4859fbfae7e920f748c01e5a6124a30f",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/prepare_seed.py": "69f6cbb8318dd1f355bcb6ed995146e2757e2f7fcbac86156b42e9f9c570e492",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/verified.json": "9cbdffc1521d3130a9b5f7c7b59c6cec2050c4446bddd16125aee0814aab2e5f",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/verify.py": "51ddbede4d6632343b2f39dc56e060f22fe36750061bbc84ee695d0d95877f42",
+    "records/tri_oracle_residual_bank_command_mixed_replay.json": "167411daff6b3effb31d4220d95c57be1037d56cebefdc3fbf451768d3875018",
+    "syn/link_tri_oracle_residual_grant_buffers.py": "248c5d1e73c175f0b91a766a3c86e6fc04974584cfac0726646645c334b2b665"
+  },
+  "grant_buffers": {
+    "bank_writeback_grant_buffer": {
+      "anchor_um": [
+        892.48,
+        581.6
+      ],
+      "master": "BUFFD1BWP12T40P140",
+      "minimum_possible_radius_um": 0.0,
+      "sinks": 1
+    },
+    "direct_projection_grant_buffer": {
+      "anchor_um": [
+        2185.78,
+        3207.46
+      ],
+      "master": "BUFFD2BWP12T40P140",
+      "minimum_possible_radius_um": 835.7,
+      "sinks": 6
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/residual_grant_buffer": {
+      "anchor_um": [
+        1584.99,
+        2893.4
+      ],
+      "master": "BUFFD4BWP12T40P140",
+      "minimum_possible_radius_um": 1104.23,
+      "sinks": 78
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[1]/residual_grant_buffer": {
+      "anchor_um": [
+        1725.45,
+        3326.3
+      ],
+      "master": "BUFFD4BWP12T40P140",
+      "minimum_possible_radius_um": 646.61,
+      "sinks": 78
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[2]/residual_grant_buffer": {
+      "anchor_um": [
+        1450.87,
+        2845.4
+      ],
+      "master": "BUFFD4BWP12T40P140",
+      "minimum_possible_radius_um": 1088.29,
+      "sinks": 78
+    },
+    "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[3]/residual_grant_buffer": {
+      "anchor_um": [
+        1764.165,
+        2950.715
+      ],
+      "master": "BUFFD4BWP12T40P140",
+      "minimum_possible_radius_um": 1155.88,
+      "sinks": 78
+    }
+  },
+  "parent_candidate_sha256": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+  "prepared_seed_components": 3742146,
+  "prepared_seed_sha256": "fb3d953cf5d4bca064cd1a7862764835e10e203c0b85df266cc202ea6e070ff0",
+  "scope": "Connectivity and pin-only load verification across three installed timing libraries. The four core branches passed Xcelium with exact mapped modules and vendor memories. All 23 added cells have geometry-checked seed sites. The buffered chip still requires native placement, cold reload, and extracted timing.",
+  "state": "six_residual_grant_buffers_preserve_all_original_sinks_in_three_corners",
+  "unchanged_submodule_definitions": 555,
+  "verified_xcelium_core_owners": 4,
+  "worst_pin_load_fraction_by_view": {
+    "tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": 0.11661816802840694,
+    "tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": 0.15008057169867017,
+    "tcbn28hpcplusbwp12t40p140tt1v25c.lib": 0.13866616660192616
+  }
+}
