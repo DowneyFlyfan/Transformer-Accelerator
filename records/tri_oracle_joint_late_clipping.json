@@ -1,0 +1,47 @@
+{
+  "baseline_correct": 80,
+  "both_modes_skipped_channels": {
+    "baseline": 557623373,
+    "corrected": 557277013
+  },
+  "corrected": 89,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/joint_late_clip/inputs.json": "c43ca5fa8c6aded776acc121bb96b11bb1c1f6a0fb3324dc80b55bf142c15d51",
+    ".cache/model_reference/gqa_testdev/joint_late_clip/predictions.jsonl": "2c0c470ccb782c90cbfe8c463f6ceaa6d35f9808c82bd620baa30db76b597185",
+    ".cache/model_reference/gqa_testdev/joint_late_clip/receipt.json": "282411ba3f0c7cd5010e35040e37f3e270c8f7293730c749af9569ece73c30ba",
+    ".cache/model_reference/gqa_testdev/joint_late_clip_workflow/flow.pdf": "730d9738096a158ad1e91493cddd741df9c076daa13df4dbacfa9f84ab5906e6",
+    ".cache/model_reference/gqa_testdev/joint_late_clip_workflow/verify_joint_clip.py": "76dcaac893a916f39a46b0d94375da9c9553cec766f7e8d50ee073e4ebc9df31",
+    ".cache/model_reference/gqa_testdev/joint_late_clip_workflow/worker_retry.log": "74ba3c04e5556c0b0f0783d25e3e293442f9e33ee84b9d872fb57bb3f80cead1",
+    ".cache/model_reference/gqa_testdev/paired_ablation/predictions.jsonl": "768e86e18e870cc3ce37994ac7ad6afc0830341c186c329e5576ed55fef78a2f",
+    "syn/evaluate_tri_oracle_joint_late_clipping.py": "0ff27bbf260d21a8731a11eb208a21aed0a453974815161f7bf16ceaf34f28b6"
+  },
+  "gained": 13,
+  "image_group_bootstrap_95pct_interval_percentage_points": [
+    0.6425765095119934,
+    10.559006211180124
+  ],
+  "images": 131,
+  "late_layers": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "lost": 4,
+  "net_correct": 9,
+  "peak_gpu_bytes": 7457355264,
+  "questions": 160,
+  "scope": "Local 160-question Graph Question Answering panel. All three pruning features were enabled. The correction uses a signed-eight-bit masked delta in the last five prompt layers. The same questions informed the correction choice. Full-split accuracy and chip scheduling remain unverified.",
+  "state": "paired_joint_pruned_late_clip_independently_verified",
+  "token_changes": 21,
+  "wall_seconds": 132.07120328804012,
+  "workload": {
+    "active_rows": 72426,
+    "codes": 1457691136,
+    "retained_corrections": 150273,
+    "rows": 258823,
+    "saturated_codes": 155555,
+    "skipped_saturated_codes": 5282
+  }
+}
