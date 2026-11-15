@@ -1,0 +1,132 @@
+{
+  "channels_sharing_weight_word": 8,
+  "dense_weight_bytes_per_split": 6090129408,
+  "evidence_sha256": {
+    ".cache/model_reference/ff_batch_shared_magnitude/console.log": "3ede269437307ccc33cfad4cb0447c287f9755a272da73a054854a04cbc012f7",
+    ".cache/model_reference/ff_batch_shared_magnitude/receipt.json": "05dac2abdcef28711e1ed920be989499edcafb6ce7cf2ccdd64da762faeb386e",
+    ".cache/model_reference/ff_batch_shared_magnitude/run.py": "1f168d53484248697fdeb9b95ef458ded943c8d96b92cb6b6cb544831efdcc3c",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_channel_magnitude_oracle.json": "442d2bb8abfdd78f3fbe807f458aabfa27423ef99bfbcd8620ccee2688842b1b",
+    "records/tri_oracle_outlier_support_sweep.json": "19a828b11ca6fb6a7fc1cf89aa419aa05243cf1fbcce79afcb9744d9afde1fe5"
+  },
+  "experiments": {
+    "exact_zero": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.0,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.19440393369059916
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.0,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.19340625269025483
+      }
+    },
+    "predictor_control": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.16661614651307455,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.08262337508608815
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.16158661833015212,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.08071598441804408
+      }
+    },
+    "row_mag_25": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.02823488926283798,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.25
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.02865933321102619,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.25
+      }
+    },
+    "row_mag_40": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.07666891434220358,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.39985795454545453
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.076774739055347,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.39985795454545453
+      }
+    },
+    "row_mag_57": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.15367007224463045,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.5699573863636364
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.15397345850307326,
+        "optimistic_gate_up_down_weight_saving": 0.0,
+        "saving_after_gate_up_computation": 0.0,
+        "skipped_fraction": 0.5699573863636364
+      }
+    },
+    "word_shared_mag_25": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.3070297976204797,
+        "optimistic_gate_up_down_weight_saving": 0.25,
+        "saving_after_gate_up_computation": 0.08333333333333337,
+        "skipped_fraction": 0.25
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.3118067047976541,
+        "optimistic_gate_up_down_weight_saving": 0.25,
+        "saving_after_gate_up_computation": 0.08333333333333337,
+        "skipped_fraction": 0.25
+      }
+    },
+    "word_shared_mag_40": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.4186288021299572,
+        "optimistic_gate_up_down_weight_saving": 0.3991477272727273,
+        "saving_after_gate_up_computation": 0.13304924242424243,
+        "skipped_fraction": 0.3991477272727273
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.42412167417274427,
+        "optimistic_gate_up_down_weight_saving": 0.3991477272727273,
+        "saving_after_gate_up_computation": 0.13304924242424243,
+        "skipped_fraction": 0.3991477272727273
+      }
+    },
+    "word_shared_mag_57": {
+      "fit": {
+        "mean_relative_output_perturbation": 0.5411563148938809,
+        "optimistic_gate_up_down_weight_saving": 0.5696022727272727,
+        "saving_after_gate_up_computation": 0.1898674242424242,
+        "skipped_fraction": 0.5696022727272727
+      },
+      "held": {
+        "mean_relative_output_perturbation": 0.547088113186614,
+        "optimistic_gate_up_down_weight_saving": 0.5696022727272727,
+        "saving_after_gate_up_computation": 0.1898674242424242,
+        "skipped_fraction": 0.5696022727272727
+      }
+    }
+  },
+  "layers": 22,
+  "paper_feedforward_external_access_reduction_percent": 57,
+  "rows_per_split": 2640,
+  "scope": "Frozen activation rows grouped by image with the existing eight-lane weight layout. The per-token and shared-word scores use ground-truth fixed-point activations. Whole-branch savings assume advance mask knowledge and exclude metadata and sign reads. The down-only comparison retains all gate and up weight bytes. The measured error is the dense fixed-point layer difference.",
+  "state": "packed_weight_word_mask_traffic_reduction_independently_verified",
+  "tokens_per_shared_read": 15
+}
