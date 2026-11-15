@@ -1,0 +1,61 @@
+{
+  "against_current_pad_library_instances": 0,
+  "dedicated_clock_reset_and_command_response_sites": 144,
+  "die_microns": [
+    "3600",
+    "3600"
+  ],
+  "evidence_sha256": {
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/check_repaired_pad_budget.py": "6af21862a2fd63f95c09a8571b098b366ce99741693205648a3db15fcbedd631",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/legality/cold.def": "5fe517d23fb63036417653d1ec03a507b25beca61eace4b0015d74d3514d741d",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/legality/cold.v": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/receipt.json": "be0a5c233e27f9bfc44b48225914c031884a5aee4d8972517c57adff13f08d18",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    "/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_110a_sefu10lm.tar.gz": "dce3bc9a92da187e23450e5e3913f318fa793137c2c161e0e9716b5a3999a3cc",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_full_native_token_tree_placement.json": "413edabb81597235c4412e4f46986cd976a79de8f5858fd25af395aa402101fe",
+    "records/tri_oracle_physical_io_budget.json": "0b3efc498f02b53c4bbcc84164f4ded26ed27c91a02ad3a28c911377971f451a",
+    "records/tri_oracle_restored_placed_chip_boundary.json": "7957cf449259edc861a73f6718992cf9af801d7deb861c9852e95067df8eea78",
+    "syn/audit_tri_oracle_pad_ring_clearance.py": "ca0db9195f243df30909f91579d1b20085b59d25bdcb95ee0d72ce4dd63d3416",
+    "syn/audit_tri_oracle_physical_io_budget.py": "01ea751152a8f99037351fccb0ec827ba43da1e0aefca45facd8d43715f203da",
+    "syn/audit_tri_oracle_placed_chip_boundary.py": "57a7520a4f382aad06961e331fe360a96e4ac40258b75e14111a85936bc7481b"
+  },
+  "maximum_data_sites_with_dedicated_control": 441,
+  "maximum_perimeter_signal_sites_one_row_with_macro_halos": 585,
+  "pad_masters_screened": 56,
+  "receive_only_bounds": {
+    "archived_weight_and_sign": {
+      "minimum_ideal_two_bit_lanes": 491,
+      "minimum_link_clock_megahertz_if_all_data_slots_receive": 645.5321502235254,
+      "payload_bytes": 62416019456,
+      "peak_payload_utilization_required": 1.1129864659026298,
+      "slots_left_after_dedicated_control_and_payload": -50
+    },
+    "conditional_exact_weight_encoding_plus_full_index_and_sign": {
+      "minimum_ideal_two_bit_lanes": 383,
+      "minimum_link_clock_megahertz_if_all_data_slots_receive": 503.59178237497963,
+      "payload_bytes": 48691911744,
+      "peak_payload_utilization_required": 0.8682616937499649,
+      "slots_left_after_dedicated_control_and_payload": 58
+    }
+  },
+  "receive_only_window_core_clocks": 508660000,
+  "repaired_netlist_sha256": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+  "scope": "Native repaired signal terminals and a single row using the installed smallest pad footprint. The receive-only estimates treat every bit time as useful payload and omit other traffic, package, timing, spacing and power. The compressed traffic is conditional on integrating the archived encoding; it is not a measured physical link.",
+  "signal_site_shortfall_if_each_terminal_uses_own_pad": 7360,
+  "state": "repaired_native_signal_boundary_and_perimeter_capacity_verified",
+  "terminal_bits": 7945,
+  "terminal_bits_by_edge": {
+    "bottom": 1987,
+    "left": 1986,
+    "right": 1986,
+    "top": 1986
+  }
+}
