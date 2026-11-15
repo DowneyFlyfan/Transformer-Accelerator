@@ -1,0 +1,95 @@
+{
+  "array_setup_slack_ns": {
+    "before_setup_slack_ns": [
+      -2.194584,
+      -1.5218435000000001,
+      -1.00092
+    ],
+    "selected_slack_ns": [
+      -1.7777,
+      -1.480269,
+      -1.00092
+    ]
+  },
+  "cases": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "before_slack_ns": -1.8629,
+      "delta_setup_slack_ns": 0.0852,
+      "path_span_um_before_after": [
+        17838.72,
+        6277.44
+      ],
+      "selected_slack_ns": -1.7777,
+      "targeted_path_arcs": 88,
+      "tested_setup_slack_ns": -1.7777
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "before_slack_ns": -2.194584,
+      "delta_setup_slack_ns": 0.551221,
+      "path_span_um_before_after": [
+        19218.7,
+        5101.86
+      ],
+      "selected_slack_ns": -1.643363,
+      "targeted_path_arcs": 74,
+      "tested_setup_slack_ns": -1.643363
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "before_slack_ns": -1.855822,
+      "delta_setup_slack_ns": 0.104194,
+      "path_span_um_before_after": [
+        16254.98,
+        4645.02
+      ],
+      "selected_slack_ns": -1.751628,
+      "targeted_path_arcs": 73,
+      "tested_setup_slack_ns": -1.751628
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "before_slack_ns": -2.049566,
+      "delta_setup_slack_ns": 0.521841,
+      "path_span_um_before_after": [
+        7386.96,
+        2440.7
+      ],
+      "selected_slack_ns": -1.527725,
+      "targeted_path_arcs": 22,
+      "tested_setup_slack_ns": -1.527725
+    },
+    "tri_oracle_pe_array_verified_bank4_2": {
+      "before_slack_ns": -1.984972,
+      "delta_setup_slack_ns": 0.509599,
+      "path_span_um_before_after": [
+        15007.54,
+        5750.82
+      ],
+      "selected_slack_ns": -1.475373,
+      "targeted_path_arcs": 73,
+      "tested_setup_slack_ns": -1.475373
+    }
+  },
+  "cells": 3887458,
+  "compared_array_count": 5,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/critical_endpoints/archive_endpoints.py": "dcc6fc70fd8c7b4744f56ec150ac6be45cfd526a88edcb0fba7bf3567f8d5dad",
+    ".cache/physical/carry_lookahead_comparison/critical_endpoints/chip/native/geometry.rpt": "b9b00c70b73fbcdd8d9d4a8b57300c378d6249d5e92108e57036b4d38278ce66",
+    ".cache/physical/carry_lookahead_comparison/critical_endpoints/chip/prepared.json": "9d5bb283b78949f522f0d91c6a50bf260db256abbbe52aeeb05b7e66bc46ee1f",
+    ".cache/physical/carry_lookahead_comparison/critical_endpoints/chip/verified.json": "36b0fb50c6377f7c56f109b7f286849f86d537f9ceaf106574bdfa107a6ab458",
+    ".cache/physical/carry_lookahead_comparison/critical_endpoints/prepare_endpoints.py": "b4a366fcb5ea70de34f45d0e97c24a26808c21179ffbd0c0c13d5193ad045462",
+    ".cache/physical/carry_lookahead_comparison/critical_endpoints/verified_all.json": "ec24acdfb558e48494089906dc87214013722462b1c867f94aea78e62f1b49b4",
+    "records/tri_oracle_carry_weighted_chip_placement.json": "c90af2bd38558cbf50c1d37f0848645b7e7d3b6a03a143f5a104be8f4aee5094"
+  },
+  "fixed_macros": 631,
+  "geometry_native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 7775178752,
+    "peak_container_anonymous_bytes": 12212617216,
+    "stop_reason": null,
+    "wall_seconds": 93.87523798190523
+  },
+  "improved_arrays": 5,
+  "matched_gate_modules": 693,
+  "moved_cells": 87042,
+  "scope": "Five worst regions of the previous verified compute-array baseline. Candidate same-width placement swaps were weighted using every reported driver-to-sink setup-path net. Same mapped logic, slow timing-library corner, geometric internal wire delays and ideal clock. Native whole-chip import independently checks sites and the exact exported gate netlist.",
+  "state": "endpoint_weighted_placement_and_gate_identity_verified"
+}
