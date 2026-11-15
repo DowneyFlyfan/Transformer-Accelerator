@@ -1,0 +1,95 @@
+{
+  "all_floating_paired_vs_integer": {
+    "gained": 32,
+    "lost": 15,
+    "net_correct": 17
+  },
+  "all_floating_prefill_correct": 106,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/phase_precision/predictions.jsonl": "dff72dd665825d193286602e0e60f72e00ff7622670b4c451a8766585e093e1f",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups/inputs.json": "7697d062a63e2c833256abd35e616fc2d7242a9fca8956dacb6bbfffa2d423f8",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups/predictions.jsonl": "bf3a067f689c66710753a824bb585bfe0cb5af6b77f1073818c465dbada81a08",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups/receipt.json": "d68cc5c53c09b1b7976065bf0c83def79e3163e49107ca446355258759e19164",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups_workflow/flow.pdf": "896e13fe5f9bba3e57af82eceae3d07cb37c163396b6d42ab085770411ae1d85",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups_workflow/verify_groups.py": "71997f826404d472d14b4a21ad2bc0a4c4094a0464bd57038ad674418e87a194",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_gqa_prefill_layer_groups.py": "a81b9efbd2c926ad78ca83c762bd96108ce307d3066f13389f82eb54ec826abd"
+  },
+  "group_results": {
+    "layers_00_05": {
+      "changed_first_generated_token": 9,
+      "correct": 87,
+      "image_cluster_interval_percentage_points": [
+        -4.761904761904762,
+        1.9950331125827814
+      ],
+      "layers_inclusive": [
+        0,
+        5
+      ],
+      "paired_vs_integer": {
+        "gained": 3,
+        "lost": 5,
+        "net_correct": -2
+      }
+    },
+    "layers_06_10": {
+      "changed_first_generated_token": 6,
+      "correct": 92,
+      "image_cluster_interval_percentage_points": [
+        -0.6369426751592356,
+        4.77972626176219
+      ],
+      "layers_inclusive": [
+        6,
+        10
+      ],
+      "paired_vs_integer": {
+        "gained": 4,
+        "lost": 1,
+        "net_correct": 3
+      }
+    },
+    "layers_11_16": {
+      "changed_first_generated_token": 7,
+      "correct": 85,
+      "image_cluster_interval_percentage_points": [
+        -5.69620253164557,
+        0.0
+      ],
+      "layers_inclusive": [
+        11,
+        16
+      ],
+      "paired_vs_integer": {
+        "gained": 1,
+        "lost": 5,
+        "net_correct": -4
+      }
+    },
+    "layers_17_21": {
+      "changed_first_generated_token": 42,
+      "correct": 98,
+      "image_cluster_interval_percentage_points": [
+        -2.4280047017337645,
+        13.043478260869565
+      ],
+      "layers_inclusive": [
+        17,
+        21
+      ],
+      "paired_vs_integer": {
+        "gained": 25,
+        "lost": 16,
+        "net_correct": 9
+      }
+    }
+  },
+  "images": 131,
+  "integer_control_correct": 89,
+  "questions": 160,
+  "scope": "Local software diagnostic on a fixed panel. Each run substitutes original floating feed-forward arithmetic during prompt processing in exactly one layer group. All runs use the same integer answer generation and disable weight skipping. Effects across groups can interact. The resulting scores qualify localization only.",
+  "state": "paired_gqa_prompt_precision_layer_groups_independently_verified"
+}
