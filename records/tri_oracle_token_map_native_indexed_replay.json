@@ -1,0 +1,91 @@
+{
+  "candidate_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "checked_token_map_branch_outputs": 35,
+  "clocked_token_map_buffer_states": {
+    "0": {
+      "high": 0,
+      "low": 1
+    },
+    "1": {
+      "high": 0,
+      "low": 1
+    },
+    "2": {
+      "high": 0,
+      "low": 1
+    },
+    "3": {
+      "high": 0,
+      "low": 1
+    },
+    "4": {
+      "high": 0,
+      "low": 1
+    },
+    "5": {
+      "high": 0,
+      "low": 1
+    },
+    "6": {
+      "high": 0,
+      "low": 1
+    }
+  },
+  "compiled_memory_paths": 631,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/cold/cold.v": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/feedforward_monitor.sv": "5c41311787e708920b4130861cb52fb6c284004148269f20e9f42ccc5ac34df1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/bundle.sv": "3da3a1cf3965a985a86b49d0d2c05a2987d02ce6e586713b80c114cda199e63b",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/inputs.json": "52cffbc10a5f712b8e879aa29ea9da01439d0db90e615ef2df650c60251ebbc1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/status.json": "af67c3afa5876bb004d69447a59174c6d67bfa37d392d1bd1454bb6c71e8ee96",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/verified.json": "3a03c469f264e2f25b3520de0db7128f633a27b3a50e651212edcb5c02d7f9e6",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/xrun.log": "d81dec77492b4bf76b15c4b69a70bd4ca8565e0d4f0f125907fafe18f755ab0c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/native_receipt.json": "3cac1cab69efd7607df5fe78f1eae5d99dbdb1cf22eed7aaddd69743f6dd58bd",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/queue_token_map_native_replay.py": "90760be18ed61e23960c40191436c73fc98fca25de6538e1dab857df7d9605c6",
+    "records/tri_oracle_bounded_decoder_reset_indexed_replay.json": "02d8eab21ad7d5c45ad31f343ba34ad973cbaec70b1475f6e07b4b3fd1e14da1",
+    "records/tri_oracle_bounded_decoder_token_map_native_placement.json": "99a0882680ba9478d0358de826062544da291340884175b50e13a6b42b6330e8"
+  },
+  "exact_feedforward_outputs": 4096,
+  "exact_writeback_outputs": 4096,
+  "functional_checkpoints": 90,
+  "indexed": {
+    "cycles": 846486,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  },
+  "indexed_response_beats_by_lane": [
+    {
+      "down_index": 780,
+      "down_payload": 49416,
+      "pair_index": 1416,
+      "pair_payload": 118925
+    },
+    {
+      "down_index": 756,
+      "down_payload": 47897,
+      "pair_index": 1400,
+      "pair_payload": 117617
+    }
+  ],
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 10829742080,
+    "peak_container_anonymous_bytes": 8153722880,
+    "wall_seconds": 2974.2124313270906
+  },
+  "raw": {
+    "cycles": 973270,
+    "weight_requests": 17408,
+    "weight_response_beats": 540672
+  },
+  "scope": "Trained two-token feed-forward and writeback replay on the exact token-map-buffered cold export with timing checks disabled. The 35 added branches were observed at logic zero in this fixture.",
+  "state": "token_map_buffered_native_indexed_feedforward_verified",
+  "transcript_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/verified.json": "02a510fdcf33fb0cbff1aedb09029e30fe36c1d3b8c971c07267fbbbed981122",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/xrun.log": "76c3d5ef25888ea39e5158d9ab4ba2b08810bd0e3105738c2a2d1bdaabe80ab1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/indexed_replay/xrun.log": "d81dec77492b4bf76b15c4b69a70bd4ca8565e0d4f0f125907fafe18f755ab0c"
+  }
+}
