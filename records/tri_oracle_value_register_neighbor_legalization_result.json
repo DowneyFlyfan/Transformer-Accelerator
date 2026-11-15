@@ -1,0 +1,65 @@
+{
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/density_aware_area_windows.json": "5a45ff40ec530cbfcfdaa2effdd5727cb0145b6dfb4b35b383bfaf71f43470d6",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/density_aware_extended_windows.json": "2ba3800144e7fa825a6334a713cdcb0340e4a0b694ee7c6c677236be916c6f40",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_area_legalization/areas.tcl": "9cd095f03dbe40968b506a891cacadae64a58de19ac00cf75ca3f007d058235d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_area_legalization/import/console.log": "c0a55f9f808904a4f5a17592f0b8f6215c3e53d4b9e53b84bf19ecdb46ea2650",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_area_legalization/import/placement.rpt": "70b956e8307ac13d07afb76982b136311b975890ca6d0edd4bc11738b756099d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_area_legalization/import/status.json": "3b15c343cf397127c62536b436f1081f952a08490cfc972791fd057398fbc3d2",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_area_legalization/plan.tcl": "f69ed679eacb361b96c2d9ff4ef65bfe7cbe0ce42ef5dc32e58dd96e76f281ef",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_area_legalization/prepared.json": "5fe10eac770150cb797e06cc775d7f63ccade70020d6ed877c614e65d3268e39",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_neighbor_legalization/import/console.log": "7723e319b5a811f78947d53fa02595847d1903b43568eeb7a348d10333e464ff",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_neighbor_legalization/import/status.json": "b92c6f33d887bd37d2782a04e2cb82a1823b0e22156814906cd6e558f488cc73",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_neighbor_legalization/plan.tcl": "d5016867d837b0ca48f4285e5a3c3b5431c1ac7fd1d4b387a6ebcc05af9b3875",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_neighbor_legalization/prepared.json": "fe3a2df59fa5bd319871b379a1c2010109a55f35a6f43ae60b2c7df21ef3081d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/value_register_area_placement.tcl": "546835424eacded1ed53d67cfe7e297e458f950dd164b039b1b8f09b9f55f43e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/value_register_neighbor_placement.tcl": "c1cf375bb1bef574216353420ac449a9442d83dd976fe75f8732f4af58bafad0",
+    "records/tri_oracle_value_register_targeted_legalization_result.json": "5541bddf9f50a80a23b0f78b01078110aa1e196c8260bab603841e520ee2f9ed"
+  },
+  "local_area_attempt": {
+    "density_rejections": 20,
+    "final_orientation_violations": 2,
+    "final_overlapping_instances": 78,
+    "fixed_memory_macros": 631,
+    "maximum_reported_move_um": 89.66,
+    "native": {
+      "exit_status": 1,
+      "minimum_host_available_bytes": 7516872704,
+      "peak_container_anonymous_bytes": 12641595392,
+      "stop_reason": null,
+      "wall_seconds": 535.2739146240056
+    },
+    "placed_components": 3868658,
+    "rejected_density_percent_range": [
+      99.0,
+      103.0
+    ],
+    "windows_attempted": 32,
+    "windows_reporting_moves": 8
+  },
+  "offline_row_capacity": [
+    {
+      "estimated_occupancy_cap_percent": 97.5,
+      "selected_windows": 18,
+      "targets_inside_selected_windows": 22
+    },
+    {
+      "estimated_occupancy_cap_percent": 98.0,
+      "selected_windows": 23,
+      "targets_inside_selected_windows": 31
+    }
+  ],
+  "pending_at_import": 44,
+  "prior_buffers_held_fixed_during_legalization": 2869,
+  "scope": "The global attempt reached the host memory guard. The windowed attempt ran the complete placement check and failed it. Density estimates guide larger windows. There is no new verified cold candidate.",
+  "source_cold_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "state": "native_value_register_neighbor_placement_still_unqualified",
+  "supplied_resizes": 320,
+  "whole_chip_attempt": {
+    "exit_status": -15,
+    "minimum_host_available_bytes": 5539323904,
+    "peak_container_anonymous_bytes": 14887075840,
+    "stop_reason": "resource guard at 5539323904 host bytes, 14887075840 container anonymous bytes",
+    "wall_seconds": 116.18395217589568
+  }
+}
