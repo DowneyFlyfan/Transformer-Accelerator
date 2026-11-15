@@ -1,0 +1,93 @@
+{
+  "container_memory_limit_bytes": 25769803776,
+  "control_components": 4097,
+  "control_views": {
+    "hold_fast": {
+      "complete_nets": 6,
+      "constraints_preserved": true,
+      "high_fanout_substitution": false,
+      "native": {
+        "exit_status": 0,
+        "minimum_host_available_bytes": 9670369280,
+        "peak_container_anonymous_bytes": 9093742592,
+        "stop": null,
+        "virtual_address_limit_bytes": 23622320128,
+        "wall_seconds": 32.650598545908
+      },
+      "reported_paths": 2,
+      "worst_slack_ns": 0.4521
+    },
+    "setup_slow": {
+      "complete_nets": 6,
+      "constraints_preserved": true,
+      "high_fanout_substitution": false,
+      "native": {
+        "exit_status": 0,
+        "minimum_host_available_bytes": 9618898944,
+        "peak_container_anonymous_bytes": 9109602304,
+        "stop": null,
+        "virtual_address_limit_bytes": 23622320128,
+        "wall_seconds": 31.63367659400683
+      },
+      "reported_paths": 2,
+      "worst_slack_ns": -3.38936
+    },
+    "setup_typ": {
+      "complete_nets": 6,
+      "constraints_preserved": true,
+      "high_fanout_substitution": false,
+      "native": {
+        "exit_status": 0,
+        "minimum_host_available_bytes": 9479077888,
+        "peak_container_anonymous_bytes": 9177014272,
+        "stop": null,
+        "virtual_address_limit_bytes": 23622320128,
+        "wall_seconds": 34.13432037795428
+      },
+      "reported_paths": 2,
+      "worst_slack_ns": -1.81806
+    }
+  },
+  "control_virtual_address_limit_that_failed_bytes": 8589934592,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/probe.def": "63e470e9d345f685bda1afdc2863487d898b9762b1648fbb9c5ce8b2039e7ca3",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/probe.v": "b1695059b52eee378a4c0a98d9db7ba828d5ba44fbbb01b15eec96329c9b22e5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/verified.json": "7246958aa87b97f1feaa8f6cc0a62ed83c1acf26b6c5d1edd0b3a5730930536a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/views.tcl": "ad61077743804d6cdb74ad4ce591c7c738bebe21bde04571cfb3ea794560cae1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/hold_fast/after.sdc": "7adbeb274c29548cfdcfdcbf70525b00ae24f5aff0ef55ff24ddc5c57e8450b8",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/hold_fast/annotation.rpt": "0e714b9cedf65a6a6e9aee3a10fb17a7eb06ab7f718b67c2eac2946a7126bb7b",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/hold_fast/before.sdc": "7410c35afd70080b413a045fc354b5f26fa3faf97e170dc6f9d08d8a25ab35e0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/hold_fast/console.log": "f5ba8e8bb8f640cd90232c93c21cae136f1ed0e990c0f9fac5f8fc9cc1b9ceb7",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/hold_fast/status.json": "f68808ab8f9626e372680f932b5843337f9febf7f6514b36db793d9e9ee98262",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/hold_fast/timing.rpt": "25ce5d3f58a91984bda9ba231c3ac8043c07d03dc099e97b68c8016bc3b654f0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_slow/after.sdc": "485ebb2353c0031b02db36d3e513a41a78404366ab9e757edc7106afcd3f563c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_slow/annotation.rpt": "148aa96417031b2d532e53e68847447fc981c99291288afa61482deb34c6073c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_slow/before.sdc": "e5b79bc9d679d0da0b2613588fae6260fb0763eb771b05ed1bb4653de05dd53c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_slow/console.log": "b763c03ea5eeec7c7c4068fe38e2645a4ec049a6cf85c81be5de2d73ad4f1b85",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_slow/status.json": "57c7f4987c0f708c502605b8f1d21d9decc86c993d2c1746a9fdce1428837788",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_slow/timing.rpt": "b6114d0677cfef0636ad479cc2c5ce1b2d53e972ed0adafbe3e5b073f1a04a4f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_typ/after.sdc": "7ba440ea19a58612c3bbddb8385694b67c5818a317528059ac0c4a1512496707",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_typ/annotation.rpt": "abf8030cedee56d73af4b2e04252034d337ec19d5cdffcbe3cb3bf3231018799",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_typ/before.sdc": "2145041b9ab0a73e0d4731324cd8a39330de87ef9e0f1044b00c06fc00adcb8c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_typ/console.log": "7a9d934dd5d53a905bf2fb1d4f03b89eb92a076097c39cb5beba67ba00f5feca",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_typ/status.json": "3c4112abf2a37020bc98a32dc3e8318ebad6092e25d28ac1a521e4b7217d3a1a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_control/setup_typ/timing.rpt": "b82b2eceaf73a09d89b26903ac9c2f8c72ca9370e77a549336c4e8cbeda2c27c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_licensed_probe/setup_slow/console.log": "567fc62884690566d82e2eb456f78d4231af72292ff1f1fdf3ed222f212b7f44",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_licensed_probe/setup_slow/status.json": "23e06c4421f9c0d381b404e7cdb4bb83cc169abbe9d9f2a4ccd65b57c5a6f09a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_probe/run_control.py": "68ec39bd7b34f8c6cade949ab36d1c24f454dcab6394e53c7c6d63f3b2c61fe0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_probe/timing.tcl": "53d3d8b7f662f0e12f4ce92fc4555dede7a75fc749db460824beb7269eaf815f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_timing_target_preflight.json": "88818132fee42f3ac8e486eefcc045578892aeea27a1836eab77047d8b13b2d9"
+  },
+  "full_candidate_preflight_constraints": {
+    "hold_fast": 31772,
+    "setup_slow": 31772,
+    "setup_typ": 31772
+  },
+  "full_candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "full_candidate_target_clock_period_ns": 1.72414,
+  "prior_full_extraction_paths_reported": 0,
+  "reference_policy_container_headroom_bytes": 32212254720,
+  "reference_policy_host_available_bytes": 30064771072,
+  "scope": "Three-corner Innovus extraction and timing reports on the 4,097-component coordinate-import fixture. Recorded slack belongs to the fixture. The exact smaller chip's constraints and libraries are bound, but full-chip native placement and all three timing results are pending.",
+  "state": "exact_seed_probe_native_timing_flow_verified_at_three_corners"
+}
