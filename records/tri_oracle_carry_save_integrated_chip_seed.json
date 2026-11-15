@@ -1,0 +1,150 @@
+{
+  "array_count": 20,
+  "arrays_with_physical_reset_aliases": 11,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/selected/native/cold.v": "55a2b3a16c5023519d401f89c2dc9b9e5bfcc922c469eaf680cf2fc52ff52c67",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/selected/native/layout.def": "6abad3dd46f5865175e975ffda85d68a7afe801bb76d385694d00cf6ceca3057",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/carry_save/netlist.v": "dcbe155f97201e455a398dc893fcc160aa9a6e29b84443a457ecb9d624eee1cf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/buffered.v": "f1e8fc3c454efeac1ee55339b8a215da3c6762df45b56f352de328908b6cf9d7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/seed.def": "63ae93b6d4e39c4e9fc9ff9c3baa855a57552324ce252cac445a3a6b8850fddf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/verified_port_lineage.json": "4735f21785ec8f377182bee3d3ff2635be4a6a8dbfdac2632fd8ac1a6deb6d2b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/verified_reset_replays.json": "45097259214aaf7287eef42f83001e8b23f1d93e08d5eb4400ac7b76744bfda9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/verified_seed.json": "bf1f7ad48068d00f6c6b2f1eac216006e3e0d4aee4aba74c5974f644bd8aaec0"
+  },
+  "placement": {
+    "FIXED": 631,
+    "PLACED": 3878867,
+    "control_repeaters": 18920
+  },
+  "preserved_alias_ports": 14,
+  "reset_input_by_control_register": {
+    "tri_oracle_pe_array_verified_bank0": [
+      "p1",
+      "p1",
+      "p2",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank0_1": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank0_2": [
+      "p1",
+      "rst_n",
+      "p1",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank0_3": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank1": [
+      "p2",
+      "p1",
+      "p2",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank1_1": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank1_2": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank1_3": [
+      "p1",
+      "p1",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank2": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank2_1": [
+      "p1",
+      "p1",
+      "p1",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank2_2": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank2_3": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank3": [
+      "p1",
+      "p1",
+      "p1",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank3_1": [
+      "p1",
+      "p1",
+      "p2",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank3_2": [
+      "p1",
+      "p1",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank3_3": [
+      "p1",
+      "p1",
+      "p1",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank4": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank4_1": [
+      "rst_n",
+      "rst_n",
+      "rst_n",
+      "rst_n"
+    ],
+    "tri_oracle_pe_array_verified_bank4_2": [
+      "rst_n",
+      "p1",
+      "p1",
+      "p1"
+    ],
+    "tri_oracle_pe_array_verified_bank4_3": [
+      "p1",
+      "p1",
+      "rst_n",
+      "p1"
+    ]
+  },
+  "sampled_edges": 6304,
+  "scope": "Full-chip netlist and placement seed verified on the host. Xcelium gate replay covers the eight distinct reset layouts for the twenty arrays. Native whole-chip placement reload, integrated timing and full-chip replay for this candidate are pending.",
+  "state": "full_chip_carry_save_seed_and_array_reset_replay_independently_verified",
+  "tested_reset_layouts": 8,
+  "transaction_count": 4800,
+  "unchanged_module_definitions": 673,
+  "whole_chip_cells": 3879498,
+  "whole_chip_modules": 693
+}
