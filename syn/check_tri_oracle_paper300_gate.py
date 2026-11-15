@@ -45,6 +45,8 @@ BOUNDED_RAW_REPLAY = Path("records/tri_oracle_bounded_decoder_native_raw_replay.
 BOUNDED_INDEXED_REPLAY = Path("records/tri_oracle_bounded_decoder_native_indexed_replay.json")
 BOUNDED_NATIVE_PLACEMENT = Path("records/tri_oracle_bounded_decoder_native_placement.json")
 BOUNDED_RESET_PLACEMENT = Path("records/tri_oracle_bounded_decoder_reset_native_placement.json")
+BOUNDED_PROBABILITY_PLACEMENT = Path("records/tri_oracle_bounded_decoder_probability_native_placement.json")
+BOUNDED_PROBABILITY_SEED = Path("records/tri_oracle_bounded_decoder_probability_buffer_seed.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -58,7 +60,8 @@ SCALAR_PLACEMENT_STAGES = {
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (BOUNDED_RESET_PLACEMENT, BOUNDED_MAPPED_STRUCTURE, TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT,
+    for candidate in (BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT, BOUNDED_MAPPED_STRUCTURE,
+                      TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT,
                       *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
         placement = root / candidate
         if placement.is_file():
@@ -373,6 +376,74 @@ def bounded_reset_facts(root, facts, identities, baseline_memory):
         placement_density_percent=placed["place_density_percent"],
     )
     return dict(baseline_memory, candidate_sha256=facts["candidate_sha256"],
+                exported_cold_netlist_sha256=facts["exported_cold_netlist_sha256"])
+
+
+def bounded_probability_facts(root, facts, identities, reset_memory):
+    """Bind placement diagnostics to the buffered candidate and its cold export."""
+    from tri_oracle_process_guard import _processes
+    from verify_tri_oracle_buffered_memory import placed_memory
+    from verify_tri_oracle_buffered_timing_inputs import canonical_sdc
+    from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
+
+    def pin(path, expected=None):
+        absolute = root / path
+        name = str(absolute.relative_to(root))
+        if name not in identities:
+            identities[name] = sha(absolute)
+        assert expected is None or identities[name] == expected, absolute
+        return absolute
+
+    stage = BOUNDED_STAGE / "native_probability_buffer_candidate"
+    reset_stage = BOUNDED_STAGE / "native_reset_eco_relinked_native"
+    placed = json.loads(pin(BOUNDED_PROBABILITY_PLACEMENT).read_text())
+    assert placed["state"] == "probability_buffered_whole_chip_native_placement_verified"
+    for name, checksum in placed["evidence_sha256"].items():
+        pin(Path(name), checksum)
+    seed = json.loads(pin(BOUNDED_PROBABILITY_SEED).read_text())
+    receipt = stage / "native_receipt.json"
+    native = json.loads(pin(receipt, placed["evidence_sha256"][str(receipt)]).read_text())
+    assert native["state"] == "probability_buffer_native_import_cold_coordinates_and_connectivity_verified"
+    assert native["source_cold_netlist_sha256"] == seed["source_cold_netlist_sha256"] == facts["exported_cold_netlist_sha256"]
+    assert native["seed_netlist_sha256"] == seed["buffered_netlist_sha256"] == placed["seed_netlist_sha256"]
+    assert native["cold_netlist_sha256"] == placed["cold_netlist_sha256"]
+    assert native["inserted_buffers"] == seed["inserted_buffers"] == 1280
+    assert native["components"] == seed["physical_components"] == seed["old_components_unchanged"] + 1280
+    assert native["exact_connectivity"]["physical_leaf_instances"] == native["components"] == 3868623
+    paths = {Path(name): pin(Path(name), checksum) for name, checksum in native["evidence_sha256"].items()}
+    cold = stage / "cold"
+    assert identities[str(cold / "cold.v")] == native["cold_netlist_sha256"]
+    for step in ("import", "cold"):
+        folder = stage / step
+        status = json.loads(paths[folder / "status.json"].read_text())
+        assert status == native["native_status"][step] and status["exit_status"] == 0 and status["stop_reason"] is None
+        assert dimensions(paths[folder / "layout.def"]) == (3.6, 3.6)
+        report = paths[folder / "placement.rpt"].read_text()
+        assert re.findall(r"(?m)^\*info: Unplaced = (\d+)\s*$", report) == ["0"]
+        assert re.findall(r"(?m)^Placement Density:([\d.]+)%", report) == [str(native["density_percent"])]
+        for view in VIEWS:
+            before = canonical_sdc(pin(reset_stage / "cold" / f"{view}.sdc"))
+            after = canonical_sdc(paths[folder / f"{view}.sdc"])
+            assert before == after and float(after[0]["create_clock"][1]) == facts["clock_period_ns"]
+    with pin(reset_stage / "cold/layout.def").open() as stream:
+        reset_macros = placed_memory(stream)
+    _, macros = compiled_memory_inventory(paths[cold / "cold.v"], paths[cold / "layout.def"])
+    assert macros == reset_macros and len(macros) == reset_memory["macros"] == native["fixed_memories"] == 631
+    prefix = os.fsencode(root / stage) + b"/"
+    executables = {b"innovus", b"xrun", b"xmelab", b"xmsim"}
+    workers = [pid for pid, (_, _, args) in _processes().items()
+               if args and os.path.basename(args[0]) in executables
+               and any(arg.startswith(prefix) for arg in args[1:])]
+    facts.update(
+        evidence_stage="native Innovus probability-buffered placement with independently verified cold reload",
+        candidate_sha256=seed["buffered_netlist_sha256"],
+        exported_cold_netlist_sha256=native["cold_netlist_sha256"],
+        native_workers_terminal=not workers,
+        active_candidate_native_workers=sorted(workers),
+        placement_density_percent=native["density_percent"],
+        added_probability_buffers=native["inserted_buffers"],
+    )
+    return dict(reset_memory, candidate_sha256=facts["candidate_sha256"],
                 exported_cold_netlist_sha256=facts["exported_cold_netlist_sha256"])
 
 
@@ -823,12 +894,14 @@ def main():
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
-        if relative_qualification == BOUNDED_RESET_PLACEMENT:
+        if relative_qualification in {BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT}:
             reset_facts = {}
             baseline_memory = bounded_structure_facts(root, reset_facts, identities)
             assert baseline_memory is not None, "Missing verified baseline memory inventory"
             memory = bounded_reset_facts(root, reset_facts, identities, baseline_memory)
             facts = reset_facts
+            if relative_qualification == BOUNDED_PROBABILITY_PLACEMENT:
+                memory = bounded_probability_facts(root, facts, identities, memory)
         elif relative_qualification == BOUNDED_MAPPED_STRUCTURE:
             memory = bounded_structure_facts(root, facts, identities)
         elif relative_qualification in {TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT}:

@@ -1,0 +1,44 @@
+{
+  "checked_ports": 7945,
+  "cold_netlist_sha256": "0cb77c478595a7d31fac78bad8281bac70a15338bef5708a6bc43c5795c57b74",
+  "components": 3868623,
+  "density_percent": 97.93,
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/native_receipt.json": "f546ee750697c5370d5baede9854d95bc5b4864c38883dc7fc7971db19569171",
+    "records/tri_oracle_bounded_decoder_buffered_timing_inputs.json": "897cc9e03f926654aefafff8553534a342de63160eb4c8f6ee90742ffff8d430",
+    "records/tri_oracle_bounded_decoder_probability_buffer_boundary.json": "a6bae85e31069b9579f42fc01e4fc7ff050edc5b1f8647b163986865295f8d5f",
+    "records/tri_oracle_bounded_decoder_probability_buffer_seed.json": "60b3eac0cd5d7f801e77bed91b99cd2909d28a4dcdcaaf0998c902be2b3df5ef"
+  },
+  "exact_connectivity": {
+    "modules": 573,
+    "named_instances": 3863471,
+    "physical_leaf_instances": 3868623
+  },
+  "fixed_memories": 631,
+  "functional_replay_status": "separate native Xcelium replay pending",
+  "inserted_buffers": 1280,
+  "native_status": {
+    "cold": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 8116281344,
+      "peak_container_anonymous_bytes": 12046794752,
+      "stop_reason": null,
+      "wall_seconds": 120.114960362087
+    },
+    "import": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 7189725184,
+      "peak_container_anonymous_bytes": 12316307456,
+      "stop_reason": null,
+      "wall_seconds": 127.11099906009622
+    }
+  },
+  "scope": "Innovus import and cold reload with independently compared placement and reachable connectivity. Pre-route timing and whole-chip routing qualification remain pending.",
+  "seed_netlist_sha256": "436217a1f8719f883b0efd5fee4e706f1f6179e9774c9a1f5ba9b515fa78cfc9",
+  "source_cold_netlist_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "state": "probability_buffered_whole_chip_native_placement_verified"
+}

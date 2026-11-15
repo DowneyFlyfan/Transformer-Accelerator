@@ -4,8 +4,9 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from check_tri_oracle_paper300_gate import (
-    BOUNDED_MAPPED_STRUCTURE, CONCURRENT_IMPORT, LEGACY_QUALIFICATION, REPEATER_PLACEMENT,
-    TOKEN_TREE_PLACEMENT, placement_checks, qualification_source,
+    BOUNDED_MAPPED_STRUCTURE, BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT,
+    CONCURRENT_IMPORT, LEGACY_QUALIFICATION, REPEATER_PLACEMENT, TOKEN_TREE_PLACEMENT,
+    placement_checks, qualification_source,
 )
 from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
 
@@ -45,6 +46,18 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None, older), current / "receipt.json")
             legacy = root / LEGACY_QUALIFICATION
             self.assertEqual(qualification_source(root, legacy, older), legacy)
+
+    def test_buffered_probability_placement_supersedes_reset_placement(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            reset = root / BOUNDED_RESET_PLACEMENT
+            reset.parent.mkdir()
+            reset.touch()
+            self.assertEqual(qualification_source(root, None), reset)
+            buffered = root / BOUNDED_PROBABILITY_PLACEMENT
+            buffered.touch()
+            self.assertEqual(qualification_source(root, None), buffered)
+            self.assertEqual(qualification_source(root, reset), reset)
 
     def test_repeater_record_takes_precedence_over_older_concurrent_import(self):
         with TemporaryDirectory(dir=".cache") as directory:
