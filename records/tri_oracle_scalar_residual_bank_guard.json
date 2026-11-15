@@ -1,0 +1,61 @@
+{
+  "active_placed_candidate_sha256": "6ed5ab585810393ff58cb566f5090f89a049f9c3185c0562f357f8dc6b1a3922",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/bench.sv": "d92e3c05a4d96fd20fe6bfafd598ac15d19cb75df4740039d017d29bb2e3e13e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/guard.sv": "637746e247ee5b1d5c657117a2e610b1762b848062bbd231f0f61cf52ee011f8",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/instances_guarded.svh": "2a262a5b7efc3f01ae2a6adedc7a3eb00babbc7df619377f70373bd095fd38f3",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/link.json": "da499dd02b7ae164f9788f42ca3d3ab88ab7ac5b4860d025b8e8ae88d9c6667b",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/mapped_run/xrun.log": "2a8dce52d2d8f9bb7c7ac2f96475bc812c9ea298426552535505a14cafd36e52",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/red/xrun.log": "7fefb0a0931d0bbbeb16ac3d70956dd80a731cfe38acde62c04f5b80e7e31c21",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/source_run/xrun.log": "7ca3bc7a6ddad7556f18f6f9f4fa307f90c6986c50919e51577bb008f2506f38",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/synthesis/area.rpt": "64891dacb82b39407db74ace140df9441dcfc264670f64e25e6d838f406e5534",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/synthesis/console.log": "6ba0584d37f9e4dd3900a5b8b8dac138d475a344024bc18dfd51e50980c2887e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/synthesis/netlist.v": "1204f87194410ae020acf214cd0193f460f899eec6f6e4875061943f6d53ee76",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/synthesis/timing.rpt": "271cbfafab5addca281e924d237fef837db4cf9c20ba017107c9964c5e8416c7",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/prepared.json": "0da3e88038ad5c2df63c8b904bc59ac53533f0f71d36fb516d202f065597922e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/xrun.log": "4938bf3966d4693aa691f8cdf4d8a8b651edcacf4a7959098425deca6bcfd1d3"
+  },
+  "full_netlist_delta": {
+    "guarded_core_wrappers": 4,
+    "unchanged_original_definitions": 554
+  },
+  "fully_guarded_derivative_sha256": "afaf401183e69b1f3dd6c67511dd134281e0baedf2fc943e57b7d1fdfd11b451",
+  "guarded_source_and_mapped_checks": {
+    "lower_read_concurrent_with_residual_read": 4,
+    "unguarded_regression_fails_at_first_upper_read": true,
+    "upper_load_stalled_while_leased_then_drained": 4,
+    "upper_read_stalled_while_leased_then_drained": 4
+  },
+  "isolated_guard_area_um2": 4.872,
+  "isolated_guard_cells": 7,
+  "isolated_guard_slowest_setup_slack_ps": 1218,
+  "isolated_guard_virtual_clock_period_ns": 1.72414,
+  "ownership_conflicts_on_unmodified_placed_core_cut": {
+    "native_upper_load_accepted_without_error_and_suppressed": 4,
+    "native_upper_read_accepted_but_residual_row_read": 4
+  },
+  "placed_core_owners_checked": {
+    "core0": {
+      "grouped_reset_origin": "backend_rst_n",
+      "master": "tri_oracle_sram_memory_compute_verified_bank0_1",
+      "recorded_reset_fanout_ports": 162
+    },
+    "core1": {
+      "grouped_reset_origin": "backend_rst_n",
+      "master": "tri_oracle_sram_memory_compute_verified_bank0_2",
+      "recorded_reset_fanout_ports": 164
+    },
+    "core2": {
+      "grouped_reset_origin": "backend_rst_n",
+      "master": "tri_oracle_sram_memory_compute_verified_bank0_3",
+      "recorded_reset_fanout_ports": 165
+    },
+    "core3": {
+      "grouped_reset_origin": "backend_rst_n",
+      "master": "tri_oracle_sram_memory_compute_verified_bank0",
+      "recorded_reset_fanout_ports": 164
+    }
+  },
+  "scope": "Directed functional simulation on a cut of the four original compiled-memory cores. The guard enforces an externally acquired residual lease at each core's command and load handshake. The new whole-chip derivative has been checked structurally. Placement, whole-chip replay and internal lease scheduling for that derivative are pending.",
+  "state": "four_placed_core_bank_conflicts_reproduced_and_guarded"
+}

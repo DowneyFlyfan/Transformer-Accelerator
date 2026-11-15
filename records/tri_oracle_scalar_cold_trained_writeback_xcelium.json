@@ -1,0 +1,27 @@
+{
+  "accepted_mask_channels": 5632,
+  "baseline_cycle_trace_equal": true,
+  "candidate_sha256": "6ed5ab585810393ff58cb566f5090f89a049f9c3185c0562f357f8dc6b1a3922",
+  "cold_export_sha256": "8c7525fecea5828e59c09e09589751ee9a5ec15722af57e7ac3f4ffe00df21b3",
+  "compiled_memories": 631,
+  "elapsed_seconds": 2019.3565581919393,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/trained_replay/mapped_bundle.sv": "9c44dd768d0c307cdf46a70d0687c77161189f22bafac9eaac4d068088cd27d7",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/trained_replay/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/trained_replay/receipt.json": "e537ed2fb44e302e1efbee5da5424ff1919789ff059b92a04ca48b671a08987d",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/trained_replay/verify.py": "7c7d7403fd1fb8bb463514fdde36fdcde91b6744e1229668b410a724747c171e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/trained_replay/xrun.log": "ea79f5a2e54ffc035656b8a2253a4a1851f05c1011bc2b1ff79b5af46ecd0be7",
+    "records/tri_oracle_scalar_whole_chip_cold_reload.json": "d41ed035c729711b16d8086ddde46f1048521964433163e94709b509ffda034d"
+  },
+  "exact_feedforward_values": 4096,
+  "exact_writeback_values": 4096,
+  "generated_activation_bytes": 4096,
+  "output_packets": 26,
+  "scope": "Functional replay of two trained token fixtures on the exact Innovus reload export. An external testbench supplies layer, projection and bank controls.",
+  "simulation_finished_ns": 9732890,
+  "state": "cold_placed_scalar_trained_writeback_replayed_and_independently_verified",
+  "token_positions": [
+    607,
+    608
+  ]
+}
