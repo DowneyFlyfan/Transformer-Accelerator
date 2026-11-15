@@ -1,0 +1,69 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/late_prefill_projection_workflow/flow.pdf": "f18eecbdf3f2f92e108640b77c686ef0775afe13b3ab00955a3a5a964ceedfba",
+    ".cache/model_reference/gqa_testdev/late_prefill_projection_workflow/verify_projections.py": "ce69881cd0c652ba20c3a58bcd760db498bc4f935a77ef6e3f46f9eb618a324b",
+    ".cache/model_reference/gqa_testdev/late_prefill_projections/inputs.json": "3d05b93984186e4b25b14deb6122e57b12669e2c9783311491d0291f3ab8783f",
+    ".cache/model_reference/gqa_testdev/late_prefill_projections/predictions.jsonl": "0f2852c7c7e56b79bdfc89e138f84e28ad6bfa3c7196941ec9f3add001f4346c",
+    ".cache/model_reference/gqa_testdev/late_prefill_projections/receipt.json": "31d8f456154c18424e565ff1bf2684d55241d0669883a5ce88afc4b7bac08556",
+    ".cache/model_reference/gqa_testdev/phase_precision/predictions.jsonl": "dff72dd665825d193286602e0e60f72e00ff7622670b4c451a8766585e093e1f",
+    ".cache/model_reference/gqa_testdev/prefill_layer_groups/predictions.jsonl": "bf3a067f689c66710753a824bb585bfe0cb5af6b77f1073818c465dbada81a08",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_late_prefill_projections.py": "a2a1549836b1c016016cd01c7679fbe85658e8bfabc72bbf8cf7d23242c4dd64"
+  },
+  "fully_floating_late_control_correct": 98,
+  "images": 131,
+  "integer_control_correct": 89,
+  "layers": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "projection_results": {
+    "down_residual_plane": {
+      "changed_first_generated_token": 2,
+      "correct": 88,
+      "image_cluster_interval_percentage_points": [
+        -1.9736842105263157,
+        0.0
+      ],
+      "paired_vs_integer": {
+        "gained": 0,
+        "lost": 1,
+        "net_correct": -1
+      }
+    },
+    "floating_down": {
+      "changed_first_generated_token": 11,
+      "correct": 96,
+      "image_cluster_interval_percentage_points": [
+        1.1627906976744187,
+        7.975460122699387
+      ],
+      "paired_vs_integer": {
+        "gained": 8,
+        "lost": 1,
+        "net_correct": 7
+      }
+    },
+    "floating_gate_up": {
+      "changed_first_generated_token": 5,
+      "correct": 90,
+      "image_cluster_interval_percentage_points": [
+        -1.2987012987012987,
+        3.005284611499892
+      ],
+      "paired_vs_integer": {
+        "gained": 2,
+        "lost": 1,
+        "net_correct": 1
+      }
+    }
+  },
+  "questions": 160,
+  "scope": "The fixed software panel tests three substitutions in the final five feed-forward layers during prompt processing. The residual-plane run uses existing signed-eight-bit operands with a second down-projection pass. All modes disable weight skipping. These outcomes measure answer sensitivity and leave mapped execution, timing and energy unverified.",
+  "state": "paired_late_projection_precision_independently_verified"
+}
