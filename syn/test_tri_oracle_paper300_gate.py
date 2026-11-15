@@ -57,6 +57,17 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None), latest)
             self.assertEqual(qualification_source(root, older), older)
 
+    def test_scalar_cold_placement_supersedes_the_repeater_by_default(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            repeater = root / REPEATER_PLACEMENT
+            repeater.parent.mkdir()
+            repeater.touch()
+            scalar = repeater.with_name("tri_oracle_scalar_whole_chip_cold_reload.json")
+            scalar.touch()
+            self.assertEqual(qualification_source(root, None), scalar)
+            self.assertEqual(qualification_source(root, repeater), repeater)
+
     def complete(self):
         return dict(candidate_cold_qualified=True,native_workers_terminal=True,
             original_full_models_verified=True,clusters=5,cores=20,

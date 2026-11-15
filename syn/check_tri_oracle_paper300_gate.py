@@ -34,14 +34,16 @@ MAPPED_PIPELINE = REGISTERED_WRITE / "token_merge_pipeline"
 CONCURRENT_GROUP = Path(".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command")
 CONCURRENT_IMPORT = CONCURRENT_GROUP / "concurrent_cluster_chip/physical_parent_replay/innovus_import_rebound"
 REPEATER_PLACEMENT = Path("records/tri_oracle_partial_pad_repeater_placement.json")
+SCALAR_PLACEMENT = Path("records/tri_oracle_scalar_whole_chip_cold_reload.json")
 
 
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    repeater = root / REPEATER_PLACEMENT
-    if repeater.is_file():
-        return repeater
+    for candidate in (SCALAR_PLACEMENT, REPEATER_PLACEMENT):
+        placement = root / candidate
+        if placement.is_file():
+            return placement
     concurrent = root / CONCURRENT_IMPORT
     if concurrent.is_dir():
         return concurrent / "receipt.json"
@@ -399,7 +401,30 @@ def main():
             raise RuntimeError("Run the verifier with Python assertions enabled")
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
-        if qualification_path == root / REPEATER_PLACEMENT:
+        if qualification_path == root / SCALAR_PLACEMENT:
+            from verify_tri_oracle_scalar_placement_evidence import verify
+            placed = verify()
+            clusters, arrays = placed["clusters"], placed["compute"]
+            memory = placed["compiled_memory"]
+            width, height = placed["die_mm"]
+            facts.update(
+                candidate_sha256=placed["candidate_sha256"],
+                evidence_stage="cold Innovus scalar placement",
+                candidate_cold_qualified=True,
+                original_full_models_verified=True,
+                die_width_mm=width,
+                die_height_mm=height,
+                clock_period_ns=placed["constraint_period_by_view_ns"]["setup_slow"],
+                clusters=len(clusters),
+                cores=sum(cluster["cores"] for cluster in clusters),
+                array_instances=arrays["array_instances"],
+                array_geometry=[arrays["array_rows"], arrays["array_lanes"]],
+                operand_bits=arrays["operand_bits"],
+                nominal_operations_per_second_at_paper_clock=arrays["nominal_operations_per_second_at_paper_clock"],
+                fixed_memory_macros=memory["compiled_macros"],
+                unplaced_instances=placed["unplaced_instances"],
+            )
+        elif qualification_path == root / REPEATER_PLACEMENT:
             from verify_tri_oracle_repeater_placement_evidence import verify
             placed = verify()
             clusters = placed["candidate_topology"]["clusters"]

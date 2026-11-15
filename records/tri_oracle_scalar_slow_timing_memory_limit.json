@@ -1,0 +1,29 @@
+{
+  "analysis_view": "setup_slow",
+  "candidate_sha256": "6ed5ab585810393ff58cb566f5090f89a049f9c3185c0562f357f8dc6b1a3922",
+  "completed_timing_paths": 0,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/cold/cold_receipt.json": "ea51a12af38d921ae5965ff4686bca7f9b9fdea5c8bf41dd27f789966a08e02a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/run_timing.py": "a055f6c115de8c73676d63df3877894b09959d2bbc100d42a370108abd1c984b",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/timing/inputs.tcl": "ba4827b23a3c9be7f536eb0748a4206d5d0310f28933f9777ee71b2ffacfad87",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/timing/run.tcl": "dac82e04a2402237f35a6ee0b1891eec9b1c4929da7cfbe80b9c17a3306fa6d2",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/timing/setup_slow/before.sdc": "b35e4f2b0216947247235396b54616f5b43f5b4368f7526ef099db9739cd823e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/timing/setup_slow/console.log": "50d77585a5b0e354504dc7f3cbc7c3707fc739b35d79fa838ba885b53bb14833",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/timing/setup_slow/native_status.json": "7722cc4bee942e4e1b80bef3b37b8f7123497dadf2c5314ecdb7731c882bb1c9",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/timing/setup_slow/timing.rpt": "e53de8287a9b54ec5761b0adc1bbe983c1401f84dacf7af157edd0edd2eb56ad",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/timing/supervisor.log": "5f9e95932ea13ad0dad3766b6a4c4b67d0b1d6ac7a0141ac138d377d7e46b16f",
+    "records/tri_oracle_scalar_whole_chip_cold_reload.json": "d41ed035c729711b16d8086ddde46f1048521964433163e94709b509ffda034d"
+  },
+  "native": {
+    "elapsed_seconds": 404.4389193110401,
+    "exit_status": -15,
+    "maximum_container_anonymous_bytes": 16724500480,
+    "minimum_host_available_bytes": 3819630592,
+    "stop_reason": "Host memory recovery deadline exceeded"
+  },
+  "native_timing_threads": 20,
+  "nets_loaded": 4283372,
+  "scope": "Unrouted candidate and original models. The host memory guard stopped Innovus during its pre-route timing estimation.",
+  "state": "scalar_whole_chip_slow_timing_stopped_under_host_memory_pressure",
+  "target_clock_period_ns": 1.72414
+}
