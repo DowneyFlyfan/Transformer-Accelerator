@@ -1,0 +1,34 @@
+{
+  "candidate_sha256": "0ffe67d6b074071c65179d0a61b9406ffb4d1e492ce756c3a8ab9ef5645fabb8",
+  "clock_period_ns": 1.72414,
+  "estimated_maximum_new_segment_fraction_of_drive_limit": 0.7502185219805708,
+  "evidence_sha256": {
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/independent_seed_inventory.json": "d36feab56ed69a9adf5379a8655f4df420d35a26f4625b785aa1f040b2a98961",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/linked.json": "e033d811b2ad771d2b07c98694f03e059fbc689e08addf2f917cf57ad5fc74e4",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/native_input_verification.json": "612dbccae37f6c1f67fbe24552523cd2313993a83e5cd17df6accb05b27335f5",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/verified_cut/xrun.log": "7e83c43fb211f4d307e42cada67513c0e091b7fed4af0d1f3bd9984c2e0c7df1",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/verified_graph.json": "957d7a10e5f7ce5625b3d9a3aabafb1d4c12ea50aa4032ac45ab5e0de5fb6863",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/whole_chip/inputs.json": "37eb0475ff9f819cdfcc305d8add3a4159407bb33f1f6bd05ea6f44faa3bbfd0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/wrong_scale_cut/xrun.log": "1c107ff373fa7ada9dbcb1a10b7a88fd857fd56b09efa571a6306fa667ccbfa4",
+    ".cache/residual_command_request/descriptor_fields/physical/plan_command_repeaters.py": "baaa2f643d41a34b116ab8168678a9998c56657e15dc2a4b6a416991f86f6b33",
+    ".cache/residual_command_request/descriptor_fields/physical/prepare_repeater_cut.py": "68a246abcf5a0e4665491e17daced7287984d0a13aa13862ab77994391a8364f",
+    ".cache/residual_command_request/descriptor_fields/physical/repeater_plan.json": "7d3c2c4c1f8db91bd5b5ee7729037d5e4020d744accc3b00a7ee6bff6310d24e",
+    ".cache/residual_command_request/descriptor_fields/physical/verify_repeater_graph.py": "4e123ec352b49be626aaf3c327eb36c2cec8deb49be50f7ed509a6b61569bd45",
+    "syn/link_tri_oracle_descriptor_repeaters.py": "2b1a9c5d6a6e89553fc2ec44766ffdbc47a09b73ad6c36b41b8661fa233a010d"
+  },
+  "extent": "The mapped control cut tests two scale pairs, stalls, grouped commands, malformed descriptors and the override. Estimated load includes the new wire segments and retained sink pins. Existing wire branches, native placement, extracted timing and the whole-chip replay still require verification.",
+  "mapped_xcelium_regression_passed": true,
+  "max_repeater_distance_from_launch_um": 148.98,
+  "parent_candidate_sha256": "e93e25c4ab2c1718f493d4b41b6c768c75cb4ccb77c58c8fa5caede0c3c32c15",
+  "seed_sha256": "52a601f7fd0976b2ebaf7c3911a6217057d75894ee3b0635fc4a0e1a6e82a74d",
+  "size_counts": {
+    "BUFFD12": 3,
+    "BUFFD4": 1,
+    "BUFFD8": 10
+  },
+  "state": "descriptor_repeaters_mapped_regression_and_geometry_preflight_verified",
+  "unchanged_fixed_memories": 631,
+  "untouched_existing_components": 3742150,
+  "verified_repeaters": 14,
+  "wrong_scale_bit_rejected": true
+}
