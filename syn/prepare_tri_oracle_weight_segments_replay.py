@@ -22,8 +22,12 @@ def prepare_testbench(source):
   logic [1:0][511:0] segment_payload, staged_payload;
   logic [1:0][4:0] staged_core;
   logic [1:0][9:0] staged_addr;
+  int offered_cycles[2], accepted_cycles[2], denied_by_memory[2], denied_by_arbiter[2];
+  int decoded_words[2], response_beats[2], response_blocked[2];
+  bit ideal_writes;
   int concurrent_writes, same_cluster_conflicts;
 
+  initial ideal_writes=$test$plusargs("IDEAL_WRITES");
   always #5 clk=~clk;
   weight_stream_write_arbiter arbiter (
     .clk,.rst_n,.offered,.core(load_core),.memory_ready(request_grant),.granted
@@ -44,6 +48,17 @@ def prepare_testbench(source):
     .done_valid(stage_done),.done_error(stage_error)
   );
   always @(posedge clk) if (rst_n) begin
+    for (int lane=0; lane<2; lane++) begin
+      if (load_valid[lane] && load_ready[lane]) decoded_words[lane]++;
+      if (rsp_valid[lane] && rsp_ready[lane]) response_beats[lane]++;
+      if (rsp_valid[lane] && !rsp_ready[lane]) response_blocked[lane]++;
+      if (offered[lane]) begin
+        offered_cycles[lane]++;
+        if (granted[lane]) accepted_cycles[lane]++;
+        else if (request_grant[lane]) denied_by_arbiter[lane]++;
+        else denied_by_memory[lane]++;
+      end
+    end
     if (&offered && load_core[0][4:2]==load_core[1][4:2]) same_cluster_conflicts++;
     if (&staged_valid) begin
       if (staged_core[0][4:2]==staged_core[1][4:2]) $fatal(1,"SAME_CLUSTER_WRITE_COLLISION");
@@ -55,7 +70,7 @@ def prepare_testbench(source):
 
     replace(".done_ready(done_ready[lane])", ".done_ready(stage_ready && (&done_valid))")
     replace("    assign load_ready[lane]=cycle%7!=lane && cycle%7!=lane+2;", """
-    assign request_grant[lane]=cycle%7!=lane && cycle%7!=lane+2;
+    assign request_grant[lane]=ideal_writes || (cycle%7!=lane && cycle%7!=lane+2);
     tri_oracle_weight_write_segments split (
       .clk,.rst_n,.decoded_valid(load_valid[lane]),.decoded_ready(load_ready[lane]),
       .decoded_rows(load_row_enable[lane]),.decoded_payload(load_data[lane]),
@@ -108,6 +123,10 @@ def prepare_testbench(source):
     replace("256*(total_writes[0]+total_writes[1]),total_indices", "64*(total_writes[0]+total_writes[1]),total_indices")
     replace("INDEXED_DOWN_MATRIX_PASS", "STAGED_INDEXED_DOWN_MATRIX_PASS")
     replace('      $display("STAGED_INDEXED_DOWN_MATRIX_PASS', '''      $display("STAGED_MATRIX_CYCLES cycles=%0d",cycle);
+      for (int lane=0; lane<2; lane++)
+        $display("STAGED_MATRIX_LANE ideal=%0d lane=%0d offered=%0d accepted=%0d blocked_memory=%0d blocked_arbiter=%0d decoded_words=%0d response_beats=%0d response_blocked=%0d",
+                 ideal_writes,lane,offered_cycles[lane],accepted_cycles[lane],denied_by_memory[lane],
+                 denied_by_arbiter[lane],decoded_words[lane],response_beats[lane],response_blocked[lane]);
       $display("STAGED_INDEXED_DOWN_MATRIX_PASS''')
     replace("    $finish;", """    begin
       int dense_segments, previous_conflicts;

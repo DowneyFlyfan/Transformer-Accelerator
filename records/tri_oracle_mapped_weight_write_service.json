@@ -1,0 +1,69 @@
+{
+  "cycle_reduction_without_testbench_write_stalls": 36302,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/compact_decoder/gates.log": "0e48c636babc40dca47722006f13008efabe68141190ad094ba784ac5887eca5",
+    ".cache/weight_write_segments/service_replay/ideal.log": "f4ba5d0d6c7f4077b42aea7ca4fce965935de500bfa99d018fe99d46ddd7f24f",
+    ".cache/weight_write_segments/service_replay/indexed_down_staged_tb.sv": "ff88dbc11ba01aac0b2eb336752dced9984694986aa74b8aa398162ca84a5122",
+    ".cache/weight_write_segments/service_replay/write_stage.v": "2f756326d33852c5ed73df052eace791d302727859ceedfe32630700bd013428",
+    ".cache/weight_write_segments/service_replay_stalls/xrun.log": "83980c9aa90a9163089c092124ad66da81bafa1940eb2ee87ec5e38b26c2a233",
+    "records/tri_oracle_mapped_weight_write_segments.json": "fc756fb96551853ac0409a453219ffc4d062ec5809700caa5ba4ccd7348e42af"
+  },
+  "exact_weight_bytes": 11534336,
+  "matrix_tiles": 78,
+  "no_testbench_write_stalls": {
+    "concurrent_cycles_including_contention_case": 87716,
+    "directed_same_cluster_conflicts": 470,
+    "lanes": [
+      {
+        "accepted": 91520,
+        "blocked_arbiter": 0,
+        "blocked_memory": 0,
+        "decoded_words": 22880,
+        "offered": 91520,
+        "response_beats": 50311,
+        "response_blocked": 14997
+      },
+      {
+        "accepted": 88704,
+        "blocked_arbiter": 0,
+        "blocked_memory": 0,
+        "decoded_words": 22176,
+        "offered": 88704,
+        "response_beats": 48751,
+        "response_blocked": 14545
+      }
+    ],
+    "matrix_cycles": 103230
+  },
+  "one_write_per_lane_cycle_lower_bound": 91520,
+  "percent_reduction_without_testbench_write_stalls": 26.017,
+  "repaired_netlist_sha256": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+  "scope": "The same mapped decoder, adapter and extracted write stage replay the same down-projection matrix in both runs. The first mode always offers downstream acceptance while retaining actual same-cluster arbitration and the recorded input stalls. The lower bound sums the larger lane write count per sequential matrix tile, since each lane can issue one registered 512-bit write per cycle. This replay measures interface service cycles for a single matrix with timing checks disabled.",
+  "state": "mapped_weight_write_service_cycles_measured_with_identical_inputs",
+  "testbench_stalls_as_in_previous_replay": {
+    "concurrent_cycles_including_contention_case": 52416,
+    "directed_same_cluster_conflicts": 421,
+    "lanes": [
+      {
+        "accepted": 91520,
+        "blocked_arbiter": 0,
+        "blocked_memory": 36491,
+        "decoded_words": 22880,
+        "offered": 128011,
+        "response_beats": 50311,
+        "response_blocked": 38705
+      },
+      {
+        "accepted": 88704,
+        "blocked_arbiter": 0,
+        "blocked_memory": 35347,
+        "decoded_words": 22176,
+        "offered": 124051,
+        "response_beats": 48751,
+        "response_blocked": 37486
+      }
+    ],
+    "matrix_cycles": 139532
+  },
+  "wide_write_replay_cycles": 76343
+}
