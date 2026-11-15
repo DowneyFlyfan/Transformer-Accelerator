@@ -1,0 +1,100 @@
+{
+  "capacitive_pin_only_margins_pf": {
+    "hold_fast": "0.089547612",
+    "setup_slow": "0.072975444",
+    "setup_typ": "0.080069308"
+  },
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "distinct_library_pin_shapes": 14,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/electrical.json": "1585fa656a90aa4b88e9767e5f4cf0cde630af713f57e1a6f548bfe3d3bdae96",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/pin_span_nets.json": "0d0ec4663858fc82fdf9c97cf4383d8701342e75fdc7016333069d3c3ccf92e8",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/pin_span_receipt.json": "93001b8ba0a18706f569a30c8122129385408a2f7632812932e808c7b02d71b7",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/placement_spans.json": "9454bb04bd8c865f181bed8b5fd3d7a68fbdd8058538adb9545d2adc7368bbd9",
+    "records/tri_oracle_whole_chip_value_register_placement.json": "6da3816c6818d6821741c26e19508a7fee0da6cc77a57a59352004a664a02746"
+  },
+  "exact_internal_nets": 660,
+  "matched_leaf_terminals": 47055,
+  "physical_terminal_spans": {
+    "internal_upstream_nets": {
+      "checked_nets": 340,
+      "increased": 132,
+      "largest_increase": {
+        "after_um": 749.9,
+        "before_um": 713.18,
+        "delta_um": 36.72,
+        "driver": "grouped_1/values/burst/g9250__1705/Z",
+        "minimum_pin_margin_pf": "0.09023248",
+        "sinks": 1,
+        "value_output": false
+      },
+      "longest_after": {
+        "after_um": 3183.545,
+        "before_um": 3183.545,
+        "delta_um": 0.0,
+        "driver": "grouped_2/values/g5793/ZN",
+        "minimum_pin_margin_pf": "0.06001284",
+        "sinks": 128,
+        "value_output": false
+      },
+      "median_change_um": 0.0
+    },
+    "resized_register_outputs": {
+      "checked_nets": 320,
+      "increased": 100,
+      "largest_increase": {
+        "after_um": 4146.36,
+        "before_um": 4041.88,
+        "delta_um": 104.48,
+        "driver": "grouped_4/values/value_data_reg[177]/Q",
+        "minimum_pin_margin_pf": "0.072975444",
+        "sinks": 136,
+        "value_output": true
+      },
+      "longest_after": {
+        "after_um": 4886.48,
+        "before_um": 4886.48,
+        "delta_um": 0.0,
+        "driver": "grouped_4/values/value_data_reg[465]/Q",
+        "minimum_pin_margin_pf": "0.072975444",
+        "sinks": 136,
+        "value_output": true
+      },
+      "median_change_um": 0.0
+    }
+  },
+  "resized_register_outputs_by_group": {
+    "grouped_0": {
+      "max_span_after_um": 3261.9,
+      "median_span_after_um": 3046.825,
+      "outputs": 64,
+      "outputs_spanning_over_3_mm": 38
+    },
+    "grouped_1": {
+      "max_span_after_um": 3770.27,
+      "median_span_after_um": 3306.2825,
+      "outputs": 64,
+      "outputs_spanning_over_3_mm": 62
+    },
+    "grouped_2": {
+      "max_span_after_um": 3644.32,
+      "median_span_after_um": 2990.405,
+      "outputs": 64,
+      "outputs_spanning_over_3_mm": 32
+    },
+    "grouped_3": {
+      "max_span_after_um": 3460.15,
+      "median_span_after_um": 2886.695,
+      "outputs": 64,
+      "outputs_spanning_over_3_mm": 16
+    },
+    "grouped_4": {
+      "max_span_after_um": 4886.48,
+      "median_span_after_um": 3870.735,
+      "outputs": 64,
+      "outputs_spanning_over_3_mm": 60
+    }
+  },
+  "scope": "Reported span is a lower bound from enclosing physical pin rectangles in the saved layout. Capacitance margins cover receiver pins. Extracted wire capacitance and timing remain open.",
+  "state": "placed_value_register_physical_terminal_spans_verified"
+}
