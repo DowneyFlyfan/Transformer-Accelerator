@@ -1,0 +1,33 @@
+{
+  "baseline_checkpoint_and_transaction_trace_equal": true,
+  "candidate_sha256": "d31f8eac89aa4693c0461f22a2ca26bd2052481057f72ea20c2670e412405c53",
+  "compiled_memory_paths": 631,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/verify.py": "b7d154119e800c162f4529ba04396df98789d35e9c8ee2a958bcc297a04fc869",
+    ".cache/residual_bank_command_binding/trained/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/residual_bank_command_binding/trained/xrun.log": "6f2a365e4159aab2b8d6b242df7a69d677cbcba386bacd5976f706230c929ae2",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/candidate.v": "d31f8eac89aa4693c0461f22a2ca26bd2052481057f72ea20c2670e412405c53",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/bundle.sv": "d874ef6d4244a8649070203a874f71901d88a78e36bac7bbfff466a416f66da9",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/inputs.json": "093e0e7201d2f2b03bdb58708dae7e2e23dbdc18777150712968cdc25d4b50ce",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/status.json": "6a7cc5ac8b5fefcfafa16350ddc379f335ec4024084012912dab38319551af3d",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/verified.json": "14128fdab34f5b8c980c5c8de39b8e04b29aeea63825b6953dcc4e24bbb49d59",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/xrun.log": "31379ec009d9e497e7d74fc622b3389241359f9b964c6712d371f95a598c03d5",
+    "records/tri_oracle_internal_writeback_probes.json": "ef668994357be39edf51719d4a0c197239e4c97e586fb6cbdc599020facb9675",
+    "syn/verify_tri_oracle_autonomous_writeback_replay.py": "1cb3bc227519d70573b2d9cca8e1da49b1f8b2daa83022fc89f7a8710d7d134f"
+  },
+  "exact_feedforward_values": 4096,
+  "exact_reference_checkpoints": 90,
+  "exact_writeback_values": 4096,
+  "exit_status": 0,
+  "independent_lease_from_validated_command": true,
+  "minimum_host_available_bytes": 10991665152,
+  "native_timing_checks_enabled": false,
+  "override_residual_request_used": false,
+  "peak_container_anonymous_bytes": 9906434048,
+  "scope": "Mapped functional Xcelium replay on two trained feed-forward tokens. Results and memory traffic match the guarded predecessor with its externally driven residual lease. Full-model accuracy, extracted timing and routed performance have separate checks.",
+  "simulated_end_ns": 9732940,
+  "state": "whole_chip_autonomous_trained_feedforward_and_writeback_independently_verified",
+  "variant": "reduced-ports",
+  "wall_seconds": 2292.9860552869504
+}
