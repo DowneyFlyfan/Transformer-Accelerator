@@ -35,12 +35,13 @@ CONCURRENT_GROUP = Path(".cache/model_reference/lossless_weight_burst_probe/stre
 CONCURRENT_IMPORT = CONCURRENT_GROUP / "concurrent_cluster_chip/physical_parent_replay/innovus_import_rebound"
 REPEATER_PLACEMENT = Path("records/tri_oracle_partial_pad_repeater_placement.json")
 SCALAR_PLACEMENT = Path("records/tri_oracle_scalar_whole_chip_cold_reload.json")
+GUARDED_SCALAR_PLACEMENT = Path("records/tri_oracle_guarded_scalar_whole_chip_cold_reload.json")
 
 
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (SCALAR_PLACEMENT, REPEATER_PLACEMENT):
+    for candidate in (GUARDED_SCALAR_PLACEMENT, SCALAR_PLACEMENT, REPEATER_PLACEMENT):
         placement = root / candidate
         if placement.is_file():
             return placement
@@ -401,15 +402,16 @@ def main():
             raise RuntimeError("Run the verifier with Python assertions enabled")
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
-        if qualification_path == root / SCALAR_PLACEMENT:
+        if qualification_path in (root / GUARDED_SCALAR_PLACEMENT, root / SCALAR_PLACEMENT):
             from verify_tri_oracle_scalar_placement_evidence import verify
-            placed = verify()
+            guarded = qualification_path == root / GUARDED_SCALAR_PLACEMENT
+            placed = verify(guarded=guarded)
             clusters, arrays = placed["clusters"], placed["compute"]
             memory = placed["compiled_memory"]
             width, height = placed["die_mm"]
             facts.update(
                 candidate_sha256=placed["candidate_sha256"],
-                evidence_stage="cold Innovus scalar placement",
+                evidence_stage="cold Innovus guarded scalar placement" if guarded else "cold Innovus scalar placement",
                 candidate_cold_qualified=True,
                 original_full_models_verified=True,
                 die_width_mm=width,

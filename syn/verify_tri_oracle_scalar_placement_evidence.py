@@ -19,7 +19,7 @@ LAYOUT = (ROOT / ".cache/placement_coordinate_reuse/trained_layer11_boundary"
           / "placed_residual_bank_taps/structural_writeback_control/scalar")
 
 
-def verify():
+def verify(*, guarded=False):
     assert __debug__ and Path("/.dockerenv").is_file()
     evidence = {}
 
@@ -30,15 +30,28 @@ def verify():
         assert expected is None or evidence[name] == expected, name
         return path
 
-    cold = read(pin(RECORDS / "tri_oracle_scalar_whole_chip_cold_reload.json"))
+    original = read(pin(RECORDS / "tri_oracle_scalar_whole_chip_cold_reload.json"))
     library_record = read(pin(RECORDS / "tri_oracle_scalar_native_timing_inputs.json"))
     paper = read(pin(RECORDS / "paper_result_targets.json"))
     pin(ROOT / paper["source"], PAPER_SHA256)
-    identity = cold["candidate_sha256"]
-    assert library_record["scalar_candidate_sha256"] == identity
-    pin(LAYOUT / "chip.v", identity)
-
     stage = LAYOUT / "placement_seed"
+    candidate = LAYOUT / "chip.v"
+    cold = original
+    if guarded:
+        cold = read(pin(RECORDS / "tri_oracle_guarded_scalar_whole_chip_cold_reload.json"))
+        assert cold["state"] == "guarded_scalar_native_placement_and_fresh_reload_verified"
+        variant = stage / "bank_ownership_cut/guard"
+        stage = variant / "placement_explicit"
+        candidate = variant / "guarded_chip_explicit.v"
+        link_file = variant / "link_explicit.json"
+        link = read(pin(link_file, cold["evidence_sha256"][str(link_file.relative_to(ROOT))]))
+        assert link["parent_candidate_sha256"] == original["candidate_sha256"]
+        assert link["inserted_guard_instances"] == 4
+        assert link["evidence_sha256"][str(candidate.relative_to(ROOT))] == cold["candidate_sha256"]
+    identity = cold["candidate_sha256"]
+    assert library_record["scalar_candidate_sha256"] == original["candidate_sha256"]
+    pin(candidate, identity)
+
     reload = stage / "cold"
     db = stage / "native/placed.db"
 

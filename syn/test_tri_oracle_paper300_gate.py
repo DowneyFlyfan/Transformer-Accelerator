@@ -68,6 +68,17 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None), scalar)
             self.assertEqual(qualification_source(root, repeater), repeater)
 
+    def test_guarded_cold_placement_supersedes_the_original_scalar_by_default(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            scalar = root / "records/tri_oracle_scalar_whole_chip_cold_reload.json"
+            scalar.parent.mkdir()
+            scalar.touch()
+            guarded = scalar.with_name("tri_oracle_guarded_scalar_whole_chip_cold_reload.json")
+            guarded.touch()
+            self.assertEqual(qualification_source(root, None), guarded)
+            self.assertEqual(qualification_source(root, scalar), scalar)
+
     def complete(self):
         return dict(candidate_cold_qualified=True,native_workers_terminal=True,
             original_full_models_verified=True,clusters=5,cores=20,
