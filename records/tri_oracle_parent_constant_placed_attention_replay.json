@@ -1,0 +1,114 @@
+{
+  "candidate_sha256": "bbbe083231b9a458f48ed0370367f1752992f7d396274c2295d830f43e303e20",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/mixed_attention_replay/attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/mixed_attention_replay/attention/xrun.log": "18bb84c35e7c748c1c500e763b94732e19fe5b63a9ae93748bf2d411a3fe44f1",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/mixed_attention_replay/attention_bundle.sv": "e56e9052acd1a90d8e9cb578f786ce6cfcb8cc92688524eb1ee80817e5e29372",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/mixed_attention_replay/receipt.json": "69471c4871931137b1713027a0dac419437a1a0c6f3513e76fdf72de53111a40",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mapped_placement/relay_site_repair/reset_eco_trial/cluster_registered_flush/parent_constants_repair/placement/place/placed.v": "1826eccdb94f06668ceb94863644fd1cdb55a90e59d42a6f78f8cd4e21a7fa1d",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/mixed_attention_fixture/expected_accumulators.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "records/tri_oracle_registered_flush_parent_constant_repair.json": "af396f1932cc67c3ef122ae0938b21fed3f0116e0be0ed9e60b65315d99ab2ee"
+  },
+  "exact_accumulator_words": 640,
+  "heads": [
+    {
+      "head": 0,
+      "inner": 1833,
+      "recent": 2606,
+      "streaming": false
+    },
+    {
+      "head": 2,
+      "inner": 15,
+      "recent": 745,
+      "streaming": true
+    }
+  ],
+  "layer": 10,
+  "memory_instances": 631,
+  "merged_layers": 11,
+  "native": {
+    "elapsed_seconds": 409.49219876597635,
+    "log_sha256": "18bb84c35e7c748c1c500e763b94732e19fe5b63a9ae93748bf2d411a3fe44f1",
+    "minimum_host_available_bytes": 15567069184,
+    "native_exit_status": 0,
+    "peak_cgroup_anonymous_bytes": 4873641984
+  },
+  "placed_netlist_sha256": "1826eccdb94f06668ceb94863644fd1cdb55a90e59d42a6f78f8cd4e21a7fa1d",
+  "question": 42000,
+  "rows": [
+    {
+      "head": 0,
+      "key_beats": 8,
+      "position": 0,
+      "selected": 1,
+      "visible": 1
+    },
+    {
+      "head": 0,
+      "key_beats": 48,
+      "position": 5,
+      "selected": 6,
+      "visible": 6
+    },
+    {
+      "head": 0,
+      "key_beats": 1504,
+      "position": 316,
+      "selected": 188,
+      "visible": 188
+    },
+    {
+      "head": 0,
+      "key_beats": 2992,
+      "position": 607,
+      "selected": 374,
+      "visible": 374
+    },
+    {
+      "head": 0,
+      "key_beats": 3000,
+      "position": 608,
+      "selected": 375,
+      "visible": 375
+    },
+    {
+      "head": 2,
+      "key_beats": 8,
+      "position": 0,
+      "selected": 1,
+      "visible": 1
+    },
+    {
+      "head": 2,
+      "key_beats": 48,
+      "position": 5,
+      "selected": 6,
+      "visible": 6
+    },
+    {
+      "head": 2,
+      "key_beats": 512,
+      "position": 316,
+      "selected": 64,
+      "visible": 188
+    },
+    {
+      "head": 2,
+      "key_beats": 512,
+      "position": 607,
+      "selected": 64,
+      "visible": 374
+    },
+    {
+      "head": 2,
+      "key_beats": 512,
+      "position": 608,
+      "selected": 64,
+      "visible": 375
+    }
+  ],
+  "scope": "Trained query, key and value codes supplied from archived external memory. The chip performs cumulative merging, context restore, head prediction and row attention.",
+  "state": "trained_retrieval_and_streaming_replayed_on_repaired_placement",
+  "value_reads": 1143
+}
