@@ -1,0 +1,121 @@
+{
+  "candidate_sha256": "5ab023bce3e472d5a29455dbc25e489b0f339da1d91d69b8f7985d108e1daa95",
+  "clusters": [
+    {
+      "bank": 0,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[0].unit.selected_bank0.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 1,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[1].unit.selected_bank1.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 2,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[2].unit.selected_bank2.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 3,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[3].unit.selected_bank3.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 4,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[4].unit.selected_bank4.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    }
+  ],
+  "compiled_memory_bytes": 414928,
+  "compiled_memory_instances": 631,
+  "compute": {
+    "array_instances": 20,
+    "array_lanes": 8,
+    "array_rows": 32,
+    "nominal_operations_per_second_at_paper_clock": 5939200000000,
+    "operand_bits": 8,
+    "registered_final_sum_bits_per_array": 608,
+    "registered_product_bits_per_array": 4096,
+    "unique_array_masters": 20
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/candidate.v": "75dc67eab2ddcd3266d26ba072c7d715aa7553edde1715977b2f07d841b95ea6",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/cut.v": "e1dbdd309a92be0794320ce38dffac2e06190980c5f312c1e6d3eb185d535642",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/indexed/test.sv": "8c643018b49a196dc755c9aaa2dc3d5fbcb9c470351929300ad63230ab16d7b4",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/indexed/xrun.log": "4586d570ce9027da19cbb0c697b4a65eddbc47dca504938185a7b86949fe8206",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/raw/test.sv": "eac8f8b09ac1246825ca77b3511a38d237440b17a97c3452f24536e55036a974",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/raw/xrun.log": "776836ddbc4ebd27c01b2c252a91f11288ac1b867e6e74d510d2ca06622b9f2a",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/link_memory_verified.json": "a135736f1a3f4c667eba6a58eabc59b92e7e750cf90ea851b69dd0c34f44d2c0",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/mapping/area.rpt": "11409c918fb1b4d2cb21091456e9cdb23d3eaa54ce87ca7b4e7e1cbfeda59aeb",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/mapping/timing.rpt": "07179b69e4387f316b045749d0633ed6d972fd402349cb36ce634a9428ab4cdc",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/mapping_status.txt": "77111dfa308baf73612fabc36393de1bb331252df35355308afb3f88f7d96edb",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/indexed/inputs.json": "e19c173f4924d5992b1116e31a382b63a83e0cfa84863a47062632d036ebd8b1",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/raw/inputs.json": "a0ca35d37899ba870e8c6092fd911f568cca9e136add9eebb34dc9f6422ae1bb",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/whole_chip.v": "5ab023bce3e472d5a29455dbc25e489b0f339da1d91d69b8f7985d108e1daa95",
+    ".cache/indexed_whole_chip/dual_group_probe/fabric_wide.v": "de8b561138c4fdb9bcd8d30aaf3569504cfc6b9e8b05653e15d67c9f06a83758",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_dual_group_weight_fabric.json": "e023ba76aa69ce5f10baa8b014fc9285766843032319ad44b01d581441a490ac",
+    "records/tri_oracle_indexed_whole_chip_link.json": "222484dede2e62d28dc2a4ff2528dd0ff3e77a0605e825c035362316ac3a3c75",
+    "records/tri_oracle_repaired_native_compute_and_memory.json": "0f3f2155226110367c8eb106ced567208a145e6ece1115d089536c11c7ea03d0",
+    "syn/audit_tri_oracle_dual_group_candidate.py": "c5795e80472a7ce5c11c94ecd485d1b1180a16e1240b59d268aa3dc8e1f654c7",
+    "syn/link_tri_oracle_dual_group_whole_chip.py": "4281ccd2a94a4d62a529f70f932c98e793a23bc3c72c3586e9e2af987da5ce4d",
+    "syn/replay_tri_oracle_dual_group_native.py": "1bea32c9c64f2a9d7ba9feeed9c3cabd178bcb09ef2c538ee1f003324e2949d1"
+  },
+  "isolated_controller_mapping": {
+    "cell_area_um2": 15904.728,
+    "includes_abstract_children": true,
+    "mapped_cells": 13140,
+    "setup_slack_ps": 407,
+    "target_period_ns": 1.72414
+  },
+  "mapped_controller_extracted_regression": {
+    "indexed": [
+      "WIDE_MAPPED_INDEXED_DIRECTED_PASS cases=3 exact_bytes=237056",
+      "STAGED_WRITES_PASS segments=3704 concurrent=499 directed_conflicts=222",
+      "EARLY_PAIR_SPARSE_ROWS_PASS writes=384,384",
+      "INDEXED_WEIGHT_MODE_PASS switched_to_raw=1"
+    ],
+    "raw": [
+      "RAW_WEIGHT_MODE_PASS tiles=6 unsupported_indexed_rejected=1"
+    ]
+  },
+  "memory_masters": {
+    "TS5N28HPCPSVTA16X80M2FW": 4,
+    "TS5N28HPCPSVTA24X128M2FW": 16,
+    "TS5N28HPCPSVTA32X128M2FW": 369,
+    "TS5N28HPCPSVTA512X64M4F": 41,
+    "TS5N28HPCPSVTA8X80M2FW": 1,
+    "TS6N28HPCPSVTA16X128M2F": 200
+  },
+  "modified_existing_definitions": [
+    "tri_oracle_batched_tensor390_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip",
+    "tri_oracle_compute_fabric_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip",
+    "tri_oracle_packed_write_stage_mapped",
+    "tri_oracle_partitioned_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START128_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip",
+    "tri_oracle_partitioned_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START256_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip",
+    "tri_oracle_partitioned_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START384_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip",
+    "tri_oracle_partitioned_cluster_MERGE_FEATURES384_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES64_MERGE_TABLE_START512_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip",
+    "tri_oracle_partitioned_cluster_MERGE_FEATURES512_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_MERGE_TABLE_ENTRIES128_MERGE_TABLE_START0_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip"
+  ],
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "predecessor_sha256": "75dc67eab2ddcd3266d26ba072c7d715aa7553edde1715977b2f07d841b95ea6",
+  "preserved_raw_loader": "tri_oracle_parallel_weight_loader_parallel_chip",
+  "scope": "Linked resource check and functional Xcelium regression of the mapped controller extracted from the actual whole-chip design. Nominal compute peak uses the paper clock. End-to-end native replay, placement and extracted timing require separate evidence.",
+  "state": "widened_whole_chip_link_and_mapped_controller_regression_verified"
+}
