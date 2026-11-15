@@ -36,12 +36,18 @@ CONCURRENT_IMPORT = CONCURRENT_GROUP / "concurrent_cluster_chip/physical_parent_
 REPEATER_PLACEMENT = Path("records/tri_oracle_partial_pad_repeater_placement.json")
 SCALAR_PLACEMENT = Path("records/tri_oracle_scalar_whole_chip_cold_reload.json")
 GUARDED_SCALAR_PLACEMENT = Path("records/tri_oracle_guarded_scalar_whole_chip_cold_reload.json")
+BUFFERED_GRANT_PLACEMENT = Path("records/tri_oracle_buffered_grant_whole_chip_cold_reload.json")
+SCALAR_PLACEMENT_STAGES = {
+    BUFFERED_GRANT_PLACEMENT: "cold Innovus buffered grant placement",
+    GUARDED_SCALAR_PLACEMENT: "cold Innovus guarded scalar placement",
+    SCALAR_PLACEMENT: "cold Innovus scalar placement",
+}
 
 
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (GUARDED_SCALAR_PLACEMENT, SCALAR_PLACEMENT, REPEATER_PLACEMENT):
+    for candidate in (*SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
         placement = root / candidate
         if placement.is_file():
             return placement
@@ -402,16 +408,17 @@ def main():
             raise RuntimeError("Run the verifier with Python assertions enabled")
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
-        if qualification_path in (root / GUARDED_SCALAR_PLACEMENT, root / SCALAR_PLACEMENT):
+        relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
+        if relative_qualification in SCALAR_PLACEMENT_STAGES:
             from verify_tri_oracle_scalar_placement_evidence import verify
-            guarded = qualification_path == root / GUARDED_SCALAR_PLACEMENT
-            placed = verify(guarded=guarded)
+            placed = verify(guarded=relative_qualification == GUARDED_SCALAR_PLACEMENT,
+                            buffered=relative_qualification == BUFFERED_GRANT_PLACEMENT)
             clusters, arrays = placed["clusters"], placed["compute"]
             memory = placed["compiled_memory"]
             width, height = placed["die_mm"]
             facts.update(
                 candidate_sha256=placed["candidate_sha256"],
-                evidence_stage="cold Innovus guarded scalar placement" if guarded else "cold Innovus scalar placement",
+                evidence_stage=SCALAR_PLACEMENT_STAGES[relative_qualification],
                 candidate_cold_qualified=True,
                 original_full_models_verified=True,
                 die_width_mm=width,

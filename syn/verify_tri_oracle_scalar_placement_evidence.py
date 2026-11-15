@@ -19,7 +19,7 @@ LAYOUT = (ROOT / ".cache/placement_coordinate_reuse/trained_layer11_boundary"
           / "placed_residual_bank_taps/structural_writeback_control/scalar")
 
 
-def verify(*, guarded=False):
+def verify(*, guarded=False, buffered=False):
     assert __debug__ and Path("/.dockerenv").is_file()
     evidence = {}
 
@@ -37,7 +37,7 @@ def verify(*, guarded=False):
     stage = LAYOUT / "placement_seed"
     candidate = LAYOUT / "chip.v"
     cold = original
-    if guarded:
+    if guarded or buffered:
         cold = read(pin(RECORDS / "tri_oracle_guarded_scalar_whole_chip_cold_reload.json"))
         assert cold["state"] == "guarded_scalar_native_placement_and_fresh_reload_verified"
         variant = stage / "bank_ownership_cut/guard"
@@ -48,6 +48,35 @@ def verify(*, guarded=False):
         assert link["parent_candidate_sha256"] == original["candidate_sha256"]
         assert link["inserted_guard_instances"] == 4
         assert link["evidence_sha256"][str(candidate.relative_to(ROOT))] == cold["candidate_sha256"]
+    if buffered:
+        guarded_export = stage / "cold/cold.v"
+        guarded_export_digest = cold["evidence_sha256"][str(guarded_export.relative_to(ROOT))]
+        pin(guarded_export, guarded_export_digest)
+        command_stage = ROOT / ".cache/residual_bank_command_binding"
+        binding = read(pin(RECORDS / "tri_oracle_residual_bank_command_binding.json"))
+        linked_path = command_stage / "linked_grouped_ready.json"
+        linked = read(pin(linked_path, binding["evidence_sha256"][str(linked_path.relative_to(ROOT))]))
+        assert linked["parent_cold_export_sha256"] == guarded_export_digest
+        assert linked["candidate_sha256"] == binding["candidate_sha256"]
+        parent = command_stage / "candidate_grouped_ready.v"
+        pin(parent, linked["candidate_sha256"])
+
+        buffer_seed = read(pin(RECORDS / "tri_oracle_residual_grant_buffered_seed.json"))
+        inventory = read(pin(RECORDS / "tri_oracle_buffered_grant_seed_inventory.json"))
+        timing_inputs = read(pin(RECORDS / "tri_oracle_buffered_grant_native_input_verification.json"))
+        stage = command_stage / "physical/buffered_grant"
+        candidate = stage / "candidate.v"
+        cold = read(pin(RECORDS / "tri_oracle_buffered_grant_whole_chip_cold_reload.json"))
+        assert cold["state"] == "buffered_grant_native_placement_and_fresh_reload_verified"
+        assert buffer_seed["parent_candidate_sha256"] == linked["candidate_sha256"]
+        assert buffer_seed["all_319_terminals_preserved"] is True
+        assert {record["candidate_sha256"] for record in (inventory, timing_inputs, buffer_seed)} == {
+            cold["candidate_sha256"]
+        }
+        assert inventory["seed_sha256"] == buffer_seed["prepared_seed_sha256"]
+        assert inventory["matched_instances"] == cold["exact_reachable_connectivity"]["physical_leaf_instances"]
+        assert timing_inputs["expanded_min_max_constraint_count_per_view"] == 52544
+        pin(stage / "seed.def", inventory["seed_sha256"])
     identity = cold["candidate_sha256"]
     assert library_record["scalar_candidate_sha256"] == original["candidate_sha256"]
     pin(candidate, identity)

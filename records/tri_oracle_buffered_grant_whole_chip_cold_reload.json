@@ -1,0 +1,58 @@
+{
+  "candidate_sha256": "181c45c86e236aee4a5f807604198912fd706b47818efb6890ce0fdfa5f7bb93",
+  "cold_native": {
+    "elapsed_seconds": 107.12263471900951,
+    "exit_status": 0,
+    "maximum_anonymous_bytes": 11104206848,
+    "minimum_available_host_bytes": 9973747712,
+    "stop_reason": null
+  },
+  "constraint_entries_by_view": {
+    "hold_fast": 52544,
+    "setup_slow": 52544,
+    "setup_typ": 52544
+  },
+  "evidence_sha256": {
+    ".cache/residual_bank_command_binding/physical/buffered_grant/candidate.v": "181c45c86e236aee4a5f807604198912fd706b47818efb6890ce0fdfa5f7bb93",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/cold.def": "2e0c8a7a9bf64141d1178b9d8fa47f96c986abae7f2cb069236ce987bcee832d",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/cold.v": "53d2164e365ae89a76dc97d9c6b0c6d655ca11e2b589646d8dc4d71219b19d76",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/cold_receipt.json": "ab7830ee710af14ce1e19bd0b8aafcac1188ec32b5f5771c43af653a6dd7f35e",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/console.log": "7530ffb4564f36b7a5b6f5863fec37098b673f97fd6388d80208890ac69b4703",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/hold_fast.sdc": "7e0cfb79b3f686cbfa61b57501465c6c6cf19c09b8e119aba4fefc02fe903e19",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/independent_coordinates.json": "811ae4410de87b4ee2a7a21bd36b36afbda70c91f27977fea2eec071e94eac60",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/placement.rpt": "7f781af9d3b0fac60d6a5b3640a104ea0c11b775838e55645d2ca98499119cb7",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/setup_slow.sdc": "a257da6180460b83660bb58f5a7f56be1c4b8d596a43198dfd85211ac6265327",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/setup_typ.sdc": "49793bcb3fbeeadb1f1fc8b3badc03f0b9a1f2bd3480d38a8e499ab7698fee8b",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/status.json": "06b522fe4f8e32af39abd367e3527bcb48c1d8148c093397f6b13d6c0773f31e",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/console.log": "e9a60d4b901a3e71188ac7c7820179ae574cb004cd8914ab379ce3d6fec21ef2",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.def": "2478bd132d2197e4b6a2aa0c1072d6d7ee58669f6ccf8e483f78d0fbd584a0d9",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.v": "5ec3bce0bfc63e1b08c47e13e1181f80adfbda110255691a5e9d12082c147e2f",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placement.rpt": "269eb37db752507117c0a66441ab18b9a4e3eb90b3734db747eb5f2b440a2a26",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/status.json": "85a6c304d93928892f172cbba36cde74d36510500719c63557e229b1f73370cf",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native_inputs/prepared.json": "0307b133ed2165dc1cc11e32c63c180d4859fbfae7e920f748c01e5a6124a30f",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/seed.def": "fb3d953cf5d4bca064cd1a7862764835e10e203c0b85df266cc202ea6e070ff0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/verify_native.py": "7216a95ed4a03b8ff42ae243eae194ddc0c0894c16a24d556a4a09a26352257b",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/verify_reachable.py": "1905d9bf0f7e8b2b832a2080cff28261cbe56672a3c79aff9894fae1984b2105",
+    ".cache/residual_bank_command_binding/verify_completed_runs.py": "e10051ad0c77163d9df1de2957c579ac34ebf250baa0ec782499a6909b13507b",
+    "records/tri_oracle_residual_grant_buffered_seed.json": "245543066c732d6310b0f0eb010e31158879a8e4fe5f7d112ebf2447839b520e"
+  },
+  "exact_reachable_connectivity": {
+    "modules": 556,
+    "named_instances": 3736977,
+    "physical_leaf_instances": 3742146
+  },
+  "fixed_memories": 631,
+  "hard_pad_reserves": 4,
+  "hot_native": {
+    "elapsed_seconds": 90.33102718694136,
+    "exit_status": 0,
+    "maximum_anonymous_bytes": 11452911616,
+    "minimum_available_host_bytes": 9882136576,
+    "stop_reason": null
+  },
+  "physical_boundary_pins": 13138,
+  "scope": "The independent cold-session verification matches the seed and both native netlist exports on names, placement and per-pin connectivity. The buffer and command chain are included. Extracted timing and benchmark qualification remain pending.",
+  "standard_cells": 3741515,
+  "state": "buffered_grant_native_placement_and_fresh_reload_verified",
+  "unplaced_instances": 0
+}
