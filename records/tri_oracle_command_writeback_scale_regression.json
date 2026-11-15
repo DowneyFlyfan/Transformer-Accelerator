@@ -1,0 +1,29 @@
+{
+  "candidate_sha256": "e93e25c4ab2c1718f493d4b41b6c768c75cb4ccb77c58c8fa5caede0c3c32c15",
+  "evidence_sha256": {
+    ".cache/residual_command_request/descriptor_fields/linked.json": "b205e8af997104d7c4509c4fd3dde4efe3cdf8d0d5645387ea957af76f0c4fed",
+    ".cache/residual_command_request/descriptor_fields/positive/scale_tb.sv": "32777c6ba5fe99abe490850c090af8f187061f962b620c7a55ceb9377b7ff8b3",
+    ".cache/residual_command_request/descriptor_fields/positive/xrun.log": "8b6037ec71ac1a6bdadf2c7c6aef51bd38f488a5cab6c97a15bfe700ca20ee8c",
+    ".cache/residual_command_request/descriptor_fields/prepare_cut.py": "4f2267e78f29f34ce53b49a5ebdc1d45db3ee9b2588749552d72eec35548960b",
+    ".cache/residual_command_request/descriptor_fields/red/scale_tb.sv": "5c166319768d6c9b5cbc7408b0c9e72076fc3dfdb11157911648daa4cdeeb4dd",
+    ".cache/residual_command_request/descriptor_fields/red/xrun.log": "bd35bb0517c4df91ee6c51fa6713d1ae32b7edfdc67eda5ea27ee11af8298556",
+    ".cache/residual_command_request/descriptor_fields/verify_link.py": "8badd39d56bba6a73dfe38a4ccf03021375d6b1d972cdcf2278176d9023dea2e",
+    ".cache/residual_command_request/descriptor_fields/whole_chip/inputs.json": "6ecc7cefbe1508cec3baebf0a96b8f74b6dbf9dc72463766f1ddf40e195a6680",
+    ".cache/residual_command_request/map/netlist.v": "a712e20fbc56212fef5151fe7839803cecd40d09c22b6f11aa7165ea33cf3ce4",
+    ".cache/residual_command_request/placed_command_control_cut.v": "9987d1807df5775300c5fcd09a3a533318fca4967272764696825655ce04ea22",
+    "syn/link_tri_oracle_command_writeback_scales.py": "5a26ee8c03bc6fa3b3dbf230cfef1e46abd3c41746648cd92196f222929846a8"
+  },
+  "exact_port_delta": true,
+  "external_only_design_rejected": true,
+  "feedforward_payload_words": 15,
+  "matched_existing_modules": 560,
+  "parent_candidate_sha256": "ee4342af1ef65e9cf32da15beafcc6cac134c800992f1e7689ffe161b0b8e0b6",
+  "removed_input_bits": 10,
+  "scope": "The exact synthesized dispatch and bank controls present both distinct per-token scales at the writer configuration handshake. The whole-chip candidate removes ten input bits. Integrated replay and physical checks of this port change remain pending.",
+  "state": "mapped_dispatch_passed_descriptor_writeback_scale_regression",
+  "unchanged_module_definitions": 560,
+  "writer_scale_bits": [
+    959,
+    950
+  ]
+}
