@@ -1,0 +1,167 @@
+{
+  "candidate_cells_per_region": 55122,
+  "candidate_sites_per_region": 522501,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_geometry_proxy/prepared.json": "057ccb61e463e0a8376bcae96aed084aeec4d4f542ef82ecb763a1bb6953f866",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/selected/native/layout.def": "6abad3dd46f5865175e975ffda85d68a7afe801bb76d385694d00cf6ceca3057",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/selected/verified.json": "aff4b2b10737bdc480d9be598098020f02a6029eac37fd2715c25218e2cfaffe",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/carry_save/placement_inputs.json": "d2973c3f4cee90dc68b7b24fd4297528b99571ce2786dfe5b048c80eb8c7ced0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/carry_save/refined.def": "dbbe346646a630b762dc6f42ee87bc607c5e0be820d775e6ad261f17d8bcbad1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/check_all_region_sites.py": "9376ed51b4fdc528cad6bc4e65016a8dbb5ede792bd17f4fc58ed3ff75239407",
+    ".cache/physical/carry_lookahead_comparison/region_capacity.json": "0c88cc302701abcdde65bcaadd24a212fc8be8511bde904bd36e776d51491f3c",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/shared437/merge455/compiler/16x80m2f/ts5n28hpcpsvta16x80m2fw_130a/LEF/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/physical/shared437/merge455/compiler/24x128m2f/ts5n28hpcpsvta24x128m2fw_130a/LEF/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/physical/shared437/merge455/compiler_inplace/8x80m2f/ts5n28hpcpsvta8x80m2fw_130a/LEF/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/LEF/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/LEF/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/LEF/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    "records/tri_oracle_carry_save_critical_control_repair.json": "089506bdfd3a726f71bdf19fb7171b9fdbe488d47a72c8bce8bf1785d538ed29"
+  },
+  "minimum_free_site_region": "tri_oracle_pe_array_verified_bank0_3",
+  "minimum_free_sites": 7347,
+  "regions": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "free_sites_after_pack": 85059,
+      "legal_sites_before_pack": 607560,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "free_sites_after_pack": 10283,
+      "legal_sites_before_pack": 532784,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "free_sites_after_pack": 16538,
+      "legal_sites_before_pack": 539039,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank0_3": {
+      "free_sites_after_pack": 7347,
+      "legal_sites_before_pack": 529848,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "avoid creating one-site fragments"
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "free_sites_after_pack": 13386,
+      "legal_sites_before_pack": 535887,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7902,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank1_1": {
+      "free_sites_after_pack": 18560,
+      "legal_sites_before_pack": 541061,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank1_2": {
+      "free_sites_after_pack": 11356,
+      "legal_sites_before_pack": 533857,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "free_sites_after_pack": 55215,
+      "legal_sites_before_pack": 577716,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank2": {
+      "free_sites_after_pack": 59848,
+      "legal_sites_before_pack": 582349,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank2_1": {
+      "free_sites_after_pack": 34100,
+      "legal_sites_before_pack": 556601,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "free_sites_after_pack": 19302,
+      "legal_sites_before_pack": 541803,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank2_3": {
+      "free_sites_after_pack": 17531,
+      "legal_sites_before_pack": 540032,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank3": {
+      "free_sites_after_pack": 12515,
+      "legal_sites_before_pack": 535016,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank3_1": {
+      "free_sites_after_pack": 38225,
+      "legal_sites_before_pack": 560726,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank3_2": {
+      "free_sites_after_pack": 27253,
+      "legal_sites_before_pack": 549754,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank3_3": {
+      "free_sites_after_pack": 14231,
+      "legal_sites_before_pack": 536732,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "free_sites_after_pack": 25180,
+      "legal_sites_before_pack": 547681,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "free_sites_after_pack": 8148,
+      "legal_sites_before_pack": 530649,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank4_2": {
+      "free_sites_after_pack": 26711,
+      "legal_sites_before_pack": 549212,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "free_sites_after_pack": 65040,
+      "legal_sites_before_pack": 587541,
+      "old_array_sites_released": 513073,
+      "old_control_sites_released": 7900,
+      "strategy": "shortest-fitting interval"
+    }
+  },
+  "scope": "Host placement feasibility with exact original array regions and unchanged neighboring occupancy. Current array and control-tree cells are replaced. Timing and placement-database reload are separate checks.",
+  "state": "all_twenty_array_replacements_constructively_packed_by_actual_cell_width"
+}
