@@ -1,0 +1,40 @@
+{
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/independent_relinked_reset_attention.py": "ca9c83530d5a149c2646c9f7bf8a4d7bec3cdd18ade01098197e14bb5a94cff1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/cold/cold.v": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/attention/bundle.sv": "8bab1bf50ebe1bb53c1cfbd242621d9ba25bb0136ebad36eca4a93fc48246c4d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/attention/inputs.json": "c64d122b869e97ea345127e5fe97aa41f5d99c43ec33f6201b1bfc61f0414503",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/attention/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/attention/status.json": "ab4270377a789bf2eae46d4b22282e11b27a09e1d8c4f74552dc43d13bedd2ca",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/attention/verified.json": "69aa1d2857b85a2a733eff428df4cb101265a9f2ee46fb58ada6c02d7ca36925",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/attention/xrun.log": "62be8a9b306c78bb329fa43b17c2ce3b9e379ed22e25f1bae845486aac427b84",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/monitor.sv": "e54ffb0013e0b16e0680c3daf8768838e19bdd82cdda06ff4a595dca136bdc42",
+    "records/tri_oracle_bounded_decoder_reset_native_placement.json": "603086fa0dde955414a54c2afdc36f8ac3699f88710c8e2e3b0acaf7a88a7e49",
+    "records/tri_oracle_repaired_native_mixed_attention.json": "009444dbabb5741279f0171d5558f72cc44eb9d5273bb28be8485520f789c162"
+  },
+  "exported_cold_netlist_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "grouped_outputs": 704,
+  "matched_attention_accumulator_words": 640,
+  "matched_attention_rows": 10,
+  "matched_transcript_markers": 30,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9949396992,
+    "peak_container_anonymous_bytes": 8040513536,
+    "wall_seconds": 736.3435604720144
+  },
+  "recorded_reset_edges": {
+    "0": {
+      "branches": 248,
+      "high": 1,
+      "low": 1
+    },
+    "1": {
+      "branches": 1306,
+      "high": 1,
+      "low": 1
+    }
+  },
+  "scope": "Xcelium functional replay of the exact reset-repaired Innovus cold export. Both reset trees followed one low and one high state across all buffer branches. Timing and reset recovery/removal checks were disabled.",
+  "state": "reset_repaired_native_attention_and_branch_polarity_verified"
+}
