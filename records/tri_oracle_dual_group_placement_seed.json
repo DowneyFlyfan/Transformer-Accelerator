@@ -1,0 +1,44 @@
+{
+  "candidate_sha256": "5ab023bce3e472d5a29455dbc25e489b0f339da1d91d69b8f7985d108e1daa95",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/full_indexed/status.txt": "e315e04a5203cecfec68be88a3de2a8a1d19963355d6c203b345b09cd1969fa5",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/full_indexed/test.sv": "8c643018b49a196dc755c9aaa2dc3d5fbcb9c470351929300ad63230ab16d7b4",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/from_whole_chip/full_indexed/xrun.log": "83d8c7bd390022d29705018b4ff3ce9262a0fddd95fe136b31dd97f541ee97bd",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/placement_seed/geometry_verified.json": "e6118b20e92601d78394032ee47e4b97919ded98a2276f6277e065bb11fb1b14",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/placement_seed/pre_route_inputs/verified.json": "41c6300eca9fbfd2dffc95b63ece78ffd78a0049c9a35eb35021730b4544ea97",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/placement_seed/receipt.json": "7dc5527b7365369f5dca3452971fc6715c909ee4746f1df6ed80ccec1842af19",
+    "records/tri_oracle_dual_group_whole_chip_link.json": "377f0069447e009ef996aea98fde100d2a81a3b1d102c3075c6c54bb417e4d0d",
+    "syn/audit_tri_oracle_dual_group_placement_seed.py": "f9f3194de7944210840fcaa7e1ca68cda1bbcfdeeeceb6efd1c9d3e12a1582b5",
+    "syn/prepare_tri_oracle_dual_group_placement_seed.py": "987ed2a2bffd90b7fb0070142b44f9881be686bdc0856af7b478213864e88cac"
+  },
+  "existing_pin_constraints_by_view": {
+    "hold_fast": 31772,
+    "setup_slow": 31772,
+    "setup_typ": 31772
+  },
+  "mapped_weight_replay": {
+    "cycles": 74974,
+    "down_projection_commands": 78,
+    "exact_bytes": 11534336,
+    "register_writes": 90112,
+    "trained_layer": 0
+  },
+  "placement_seed": {
+    "available_sites_outside_fixed_reservations": 36127049,
+    "die_millimeters": [
+      3.6,
+      3.6
+    ],
+    "placement_seed_sha256": "4d1fb66b7dabdaffba0f1780a386ae9ef41d11c749499ca2a055d9fed1ac0bdf",
+    "preserved_standard_cell_coordinates": 2505293,
+    "projected_site_utilization_percent": 99.47026,
+    "released_prior_standard_cell_coordinates": 1239143,
+    "rows_partially_reopened": 989,
+    "same_boundary_pins": 7945,
+    "same_fixed_macros": 631,
+    "spare_sites_after_width_packing": 191378,
+    "standard_cells_pending_legalization": 1370849
+  },
+  "scope": "Functional Xcelium test of the exact mapped control and write-stage cut. The offline width packing only establishes site capacity. Whole-chip native execution, placement, timing and routing remain separate checks.",
+  "state": "mapped_full_weight_fixture_and_reused_physical_seed_verified"
+}
