@@ -1,0 +1,42 @@
+{
+  "baseline_predictions_reproduced": 200,
+  "changed_codes_across_layers": 59314450,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/down_code_calibration/receipt.json": "61e057df6115de12fb15409b599a61c623ee4ead625dd4fc9273ef83525aa3da",
+    ".cache/model_reference/gqa_testdev/down_code_calibration_export/receipt.json": "f518aa4c66a9523ed2a86898fb8c4ea2dc21cab0657a6851a22f63a12c18cb3f",
+    ".cache/model_reference/gqa_testdev/down_code_calibration_panel/inputs.json": "8b8f9084d55cacbcc4ac4d5db05c42185e1955313089ad3f5b07e33eee733ddc",
+    ".cache/model_reference/gqa_testdev/down_code_calibration_panel/predictions.jsonl": "9f9cca7cca7e9fda0b462a68ae28ee19fae0cff2f1ea6179df6ae6bda2f3f4cb",
+    ".cache/model_reference/gqa_testdev/down_code_calibration_panel/receipt.json": "9494954a52e4007986cfc17aaa281a6b1c49aea7d4eda917a7ec33a743424807",
+    ".cache/model_reference/gqa_testdev/down_code_calibration_workflow/workflow.pdf": "62837698706e34e47903d0f2f6726d61eae9fcb2b12ee04c6109310df8d49f09",
+    ".cache/model_reference/gqa_testdev/input_equalization_panel/predictions.jsonl": "6582ba708209634214f51aa9024f124d9968cc81034efaea3e6747cbd9fe2537",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_down_code_calibration_gqa.py": "f7071bf9d2b3d736592a06c5d268b3383817cb8ef0ee293f05b8b8117791d31e",
+    "syn/measure_tri_oracle_down_code_calibration.py": "a46a38994099468da042eb58ef46be9469159308fc273ef2427a7178a99f1f28"
+  },
+  "held_images": 8,
+  "held_output_mean_relative_error": {
+    "baseline": 0.2270979881286621,
+    "calibrated": 0.21911418505690314
+  },
+  "held_rows_per_layer": 120,
+  "layers_improved": 22,
+  "maximum_absolute_code_change": 1,
+  "panel_changed_answers": 12,
+  "panel_correct": {
+    "baseline": 116,
+    "calibrated_prefill": 120
+  },
+  "panel_gained": 6,
+  "panel_lost": 2,
+  "panel_paired_exact_two_sided_p_value": 0.2890625,
+  "panel_peak_gpu_bytes": 7717042688,
+  "panel_questions": 200,
+  "panel_skip_event_totals": {
+    "baseline": 701360017,
+    "calibrated_prefill": 698993356
+  },
+  "panel_wall_seconds": 166.35332772298716,
+  "scope": "The fixed signed eight-bit down codes change by at most one step. All 22 layers use unchanged output scales. The paired software comparison changed only ordinary prefill down codes. The full balanced test-dev split, paper accuracy, compressed weight image, and mapped hardware execution remain unqualified.",
+  "state": "bounded_down_weights_improved_held_layers_and_paired_panel_independently_rescored"
+}
