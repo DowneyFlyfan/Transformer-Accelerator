@@ -1,0 +1,124 @@
+{
+  "baseline_native_evidence_reused_for_byte_identical_inputs": true,
+  "buffered_candidate_minus_buffered_baseline_slack_ns": {
+    "array": 0.315692,
+    "level0": -0.002688,
+    "level1": -0.20823,
+    "level2": 0.65911
+  },
+  "cases": {
+    "baseline": {
+      "annotated_internal_nets": 68850,
+      "cells": 54930,
+      "excluded_boundary_nets": 4966,
+      "native_density_percent": 96.31,
+      "paths": {
+        "array": {
+          "endpoint": "reduction[2].row[13].sum[0].value_reg[17]/DB",
+          "startpoint": "reduction[1].row[13].sum[0].value_reg[0]/CP",
+          "worst_setup_slack_ns": -2.107503
+        },
+        "level0": {
+          "endpoint": "reduction[0].row[11].sum[1].value_reg[16]/DB",
+          "startpoint": "product[90].value_reg[0]/CP",
+          "worst_setup_slack_ns": -1.789123
+        },
+        "level1": {
+          "endpoint": "reduction[1].row[7].sum[0].value_reg[17]/DB",
+          "startpoint": "reduction[0].row[7].sum[0].value_reg[0]/CP",
+          "worst_setup_slack_ns": -1.455379
+        },
+        "level2": {
+          "endpoint": "reduction[2].row[13].sum[0].value_reg[17]/DB",
+          "startpoint": "reduction[1].row[13].sum[0].value_reg[0]/CP",
+          "worst_setup_slack_ns": -2.107503
+        }
+      },
+      "remaining_sites": 19947
+    },
+    "carry_save": {
+      "annotated_internal_nets": 69156,
+      "cells": 55122,
+      "excluded_boundary_nets": 4966,
+      "native_density_percent": 96.52,
+      "paths": {
+        "array": {
+          "endpoint": "carry_save.row[13].compressor[0].sum_reg[15]/DB",
+          "startpoint": "product[104].value_reg[15]/CP",
+          "worst_setup_slack_ns": -1.791811
+        },
+        "level0": {
+          "endpoint": "carry_save.row[13].compressor[0].sum_reg[15]/DB",
+          "startpoint": "product[104].value_reg[15]/CP",
+          "worst_setup_slack_ns": -1.791811
+        },
+        "level1": {
+          "endpoint": "carry_save.row[8].sum_reg[17]/DB",
+          "startpoint": "carry_save.row[8].compressor[1].sum_reg[16]/CP",
+          "worst_setup_slack_ns": -1.663609
+        },
+        "level2": {
+          "endpoint": "carry_save.row[7].value_reg[18]/DB",
+          "startpoint": "carry_save.row[7].sum_reg[3]/CP",
+          "worst_setup_slack_ns": -1.448393
+        }
+      },
+      "remaining_sites": 18811
+    }
+  },
+  "clock_period_ns": 1.72414,
+  "delta_from_unbuffered_slack_ns": {
+    "baseline": {
+      "array": 29.493121,
+      "level0": 0.0,
+      "level1": 0.0,
+      "level2": 0.0
+    },
+    "carry_save": {
+      "array": 52.550024,
+      "level0": 0.0,
+      "level1": 0.0,
+      "level2": 0.0
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/refined_baseline/timing_inputs.json": "3294236cbd3fb5fca27f024a14cd83d8bf41fba9b58d1c4571eb92c6215508f0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/annotation.rpt": "9b2cf6ccf9be0895f08520a02e6aae425c457b698a3e9cd55340540cc40fe575",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/array.rpt": "87d6c3e3c1c36b077c91b4bbf7b2ae06c9e6f49306b46663230c1f21f901f2d6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/console.log": "c4968eace8cd0c21b40bbd3b1ec7db598176f2140694ac2f305e71fd444c41ab",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/level0.rpt": "2ad4f6c9cbc4cf2a00d4d109a0a83311f63abdb68dc4d1c0e09440712aacf992",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/level1.rpt": "eea8a0d4bb48192f856b110309814f4317dd6ff1ef1a308dc5bda0bc4f38fead",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/level2.rpt": "f2055db332e862c1c4ba427d6bb41c7e01e2860fc103d97ce5a08c8560ebdf0a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/status.json": "fbb67459ca483e7bf70653a31497b342f5b8a32903bfa8e4abfee44058a2b602",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/verified_buffered_region.json": "d8a8d4b154020c7b662fd01d1968a45e43a554a8f76b26642c7efb9f4a34b95d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/baseline/placement_inputs.json": "172f230f0834f77551a248277d977d44bb4a150d70ee6bda3536f5b269dc43e8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/carry_save/gate_replay_0/verified.json": "fa2a4427316aa005b452bb873fd756c6630ce709b140956b35b55ee6142cd63f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/carry_save/gate_replay_1/verified.json": "8fe111dce6cca9fd76f18018c5b16d3d6cdfa45f7cca1ef9fac29d23e8452b7b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/carry_save/placement_inputs.json": "d2973c3f4cee90dc68b7b24fd4297528b99571ce2786dfe5b048c80eb8c7ced0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/place_seeded.tcl": "76825dbda6c541e0503f5c87411348cb73df3e64347b12b35a5b55fd118e33c8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/refined_carry_save/timing_inputs.json": "0c6c9fdc9301c07023dd045fc9783483cfdfb660bca35e6498f02aa1b8a22063",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/region.def": "fe13467e21a7adadb16ad8cbc7f6f44f38fc02f490dac474e720979dd0b21b0d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/region.json": "d85b224e68de4bd167ebfce19c28b462d00ce58cc274d63aedf0237415bcaca4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/run_buffered_region.py": "9fdbbadd3736b17f796f9646a651fe3aa6d2aed7e52cf46b45b97c3c36b049d0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/annotation.rpt": "4b770bf68c72ad8659fdb76addb870b3a7e9ff794ba8cccfe5b301acb704674a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/array.rpt": "d23f6741193bd05345a43e827f273e8a5c90b113437c21c14d50d9fbe97efd8b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/console.log": "ff7a5e61e95e452f2f6cafbc21d34fccf5a79ee250e4401c4d2bc414a6e70d0b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/level0.rpt": "36d6e82b038eef57cf5770bb370460bd4969888ed2cfe9c934e21a7852b8ea4a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/level1.rpt": "46f86b7704bfca9181d9c73ce13225857612bf61db3ea45d9b4f17b81549cec9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/level2.rpt": "7283a95d43e204864e7bef0715eea365d8bd87230425539f113860d166882633",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timed_refined_carry_save/status.json": "008e81dcc060bb006a1de0dc8fd7cdbc76f6ee53e75e3acf7efb36946dc3e375",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/timing.tcl": "4b76973292e5deadfb8bcecf43be4cc5da7da0eeeeca509315c35409e99568d1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/critical_control_leaf/views.tcl": "c2f1d35e9457bdd7552d3200e30f6e820610c36537c9dc9341ccecd8a0c57d93",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/verified_refined_region.json": "24bedf806e104b4d3a6a5de6a7a6c7ee1c4b6b0cf03a8d14ad90c1d3ab24c8d9"
+  },
+  "incremental_target": {
+    "net": "n_22367",
+    "sink_count": 112
+  },
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "replay_transactions_per_case": 600,
+  "scope": "Single placed array region from the exact blocked-site grid with matched high-fanout treatment. All original placed cells stay fixed. Timing uses estimated internal wires and an ideal clock.",
+  "state": "matched_buffered_array_legal_placement_mapped_replay_and_timing_verified"
+}
