@@ -1,0 +1,47 @@
+{
+  "array_slack_ns": {
+    "before_setup_slack_ns": [
+      -2.833619,
+      -2.344977,
+      -1.530345
+    ],
+    "selected_slack_ns": [
+      -2.194584,
+      -1.5218435000000001,
+      -1.00092
+    ],
+    "tested_setup_slack_ns": [
+      -2.194584,
+      -1.5218435000000001,
+      -1.00092
+    ]
+  },
+  "arrays": 20,
+  "cells": 3887458,
+  "component_inventory_sha256": "3e14c8cec5b38dfae4644236c16e540c22417fdf707cd840899e060dd93704a0",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/selected_carry_placement/chip/check_geometry.tcl": "16a93b43fd054b80682636764ab2f697e4f1445f03719f85e8916bbd269e7881",
+    ".cache/physical/carry_lookahead_comparison/selected_carry_placement/chip/native/console.log": "a16ad68441ae4ec19955e1e2127783444c6014e524c2af98f96b3ab9ea893230",
+    ".cache/physical/carry_lookahead_comparison/selected_carry_placement/chip/native/geometry.rpt": "be1ffe898492152decf600aaf4af2ba1599d10fad31740b4b7e3543560e8c8b7",
+    ".cache/physical/carry_lookahead_comparison/selected_carry_placement/chip/prepared.json": "5c90a6afd22dcec819ce42813c5985b30a990a4fa4ac32fc8f1c2f61eed33768",
+    ".cache/physical/carry_lookahead_comparison/selected_carry_placement/chip/verified.json": "6e647eda79d98fa74dd830cf77a316b6858f93e6145f08c8557a9ec31911a2f7",
+    ".cache/physical/carry_lookahead_comparison/selected_carry_placement/finish_chip.py": "b43a386b4243ff69d1d7a38822e8b6d2d225bcca1386f67383bf338513cdceca",
+    "records/tri_oracle_carry_weighted_setup_all_arrays.json": "add73b53be6409ccd4456db129d751704280f6a313a284eb934c995ec68f03ef"
+  },
+  "fixed_memory_macros": 631,
+  "matched_gate_modules": 693,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 7892516864,
+    "peak_container_anonymous_bytes": 12203147264,
+    "stop_reason": null,
+    "wall_seconds": 93.38537944597192
+  },
+  "placement_density_percent": 98.37,
+  "relocated_cells": 447746,
+  "scope": "Native Innovus import and legality check for the whole chip. Component poses and gate netlist were compared to the prepared checkpoint. Setup values come from the 20 corresponding individual array timing views using the geometric wire model and ideal clock.",
+  "state": "carry_weighted_whole_chip_placement_native_and_logical_identity_verified",
+  "technology": "TSMC 28HPC+",
+  "top": "tri_oracle_chip_command_layer_parallel_chip",
+  "unchanged_control_buffer_instances": 18800
+}
