@@ -1,0 +1,76 @@
+{
+  "array_members": 1091600,
+  "array_members_outside_own_region_initially": 452622,
+  "attempts": {
+    "connected": {
+      "legality": {
+        "instances_detail_placement_could_not_legalize": 255652,
+        "orientation_violations": 52,
+        "overlapping_instances": 202994,
+        "region_or_fence_violations": 166720
+      },
+      "movement": {
+        "instances": 1208644,
+        "maximum_micrometers": 2608.88,
+        "mean_micrometers": 89.85
+      },
+      "native": {
+        "exit_status": 1,
+        "minimum_host_available_bytes": 6622064640,
+        "peak_container_anonymous_bytes": 13477031936,
+        "stop_reason": null,
+        "wall_seconds": 276.63039921503514
+      }
+    },
+    "placement_geometry_proxy": {
+      "legality": {
+        "instances_detail_placement_could_not_legalize": 255652,
+        "orientation_violations": 52,
+        "overlapping_instances": 202994,
+        "region_or_fence_violations": 166720
+      },
+      "movement": {
+        "instances": 1208644,
+        "maximum_micrometers": 2608.88,
+        "mean_micrometers": 89.85
+      },
+      "native": {
+        "exit_status": 1,
+        "minimum_host_available_bytes": 9328173056,
+        "peak_container_anonymous_bytes": 10644873216,
+        "stop_reason": null,
+        "wall_seconds": 267.84472879301757
+      }
+    }
+  },
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "components": 3868658,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_geometry_proxy/native/initial.rpt": "e82def7b0c13bc7f75d226619ed04abb72d0662e3f5faee7b2bcb381b62344d8",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_geometry_proxy/native/innovus.log": "bc6f7c808ba1f390e7ce6f8917664a0bfcbe6c606e16884566b407f0de69336e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_geometry_proxy/native/legalized.rpt": "0f93858d0ae8e841d34b6e487169d234c1d64fa551b2355b13e33ebcc2069bcb",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_geometry_proxy/native/status.json": "0cd960608d405c366308f2c05af5273fa3926eedba5667be587cee9476c8423f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_geometry_proxy/prepared.json": "057ccb61e463e0a8376bcae96aed084aeec4d4f542ef82ecb763a1bb6953f866",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/connected_array_region_placement/innovus.log": "29c27f0560d581348a4f1df6c883c0911446201aee3814942f2112ae0238f88a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/connected_array_region_placement/placement.rpt": "361af53d843b41db663fc736b167c2aa59e534518140b16317a26779d8b3cdfe",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/connected_array_region_placement/status.json": "21bb393c1f8258f85f68127f91511dff54500e3d79542c15084f0b4c393bcd9b",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/place_whole_array_region_proxy.tcl": "1efa75351fb7cfcf02bdc70fddd43f6b174d7f301161bdab9be1439078aaab82",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/place_whole_array_regions.tcl": "d31f17be4baa1aba451ec3f65834ec2c75d0240154f92976124fc8eb7f2b4a9c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/region_all_standard_cells_capacity.json": "d45cc473c511b9bae9da4418cf8d5743338bf97d28d0f0d604fee5cd7c7114ac",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/region_plan_prepared.json": "3da8cdf0c34e1effc46e6e485f4279d9d02ef59485bf48f9a6e9756ccf429e40",
+    "records/tri_oracle_resized_chip_array_region_binding.json": "dd5f6427d5fce984333cb3cfe24e9946e2774c51d9584f2d63cb8764d11cedc4"
+  },
+  "fixed_memories": 631,
+  "fixed_prior_buffers": 2869,
+  "region_grid": [
+    4,
+    5
+  ],
+  "row_capacity": {
+    "ordinary_movable_cells_after_array_reservations": 2773558,
+    "remaining_sites_after_packing": 754388,
+    "status": "complete_constructive_width_fit"
+  },
+  "scope": "Exact full-chip inventory and array membership from the same mapped design. Both trials used the same 20 regions and started from the previous placement. The placement geometry proxy omits signal connectivity. Native detail placement produced no legal candidate. Constructive width packing establishes available row capacity and omits routed timing.",
+  "state": "whole_chip_array_region_detail_placement_failed_in_both_native_trials"
+}
