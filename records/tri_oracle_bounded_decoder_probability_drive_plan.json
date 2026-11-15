@@ -1,0 +1,29 @@
+{
+  "current_cold_export_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/choose_probability_drive_cells.py": "e920c3bbe655e9c50d56d8e002530db25824a7f5ba8297875cc9fa714fb0cd35",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_pin_load_screen/placed_fanout.tsv": "39dfda5f45a706d282c72c816b21f48d1013bd85e2f0a17e7e67474bd8eabcd1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/cold/cold.v": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_drive_plan.json": "da11f371db7bb7e7c1be9c2d70e87edc177cff07543beddd5fc965008f9b89ae",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_drive_plan_receipt.json": "d34c7130a45893ea6fb26ae7e8ae6ad586f6a9a0f6189ff1e54528cdc3d86ad3",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_drive_screen.json": "40d13a4d57845d9d648a72f3dff3cf61fe47dd37158fb2c3e65d02aa2dbbc055",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/import/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "records/tri_oracle_bounded_decoder_placed_pin_load.json": "269eeaefeec10ba1331b41872f594e7c539b74803d0c630cdf14f11f94d9fdf2",
+    "records/tri_oracle_bounded_decoder_reset_native_placement.json": "603086fa0dde955414a54c2afdc36f8ac3699f88710c8e2e3b0acaf7a88a7e49"
+  },
+  "matched_sinks": 81560,
+  "maximum_input_capacitance_growth": 6.821548756027349,
+  "minimum_remaining_pin_cap_margin_pf": "0.032939392",
+  "probability_drivers": 320,
+  "replacement_cell_counts": {
+    "CKND2D3BWP12T40P140": 20,
+    "CKND2D8BWP12T40P140": 300
+  },
+  "scope": "Placement-candidate-bound native endpoint names matched the measured pre-repair load census. Liberty input capacitance and output limits establish a pin-only drive option. Native resizing, upstream load, cell placement and timing still require checks.",
+  "state": "all_grouped_attention_probability_sinks_reconciled_at_three_library_corners",
+  "total_added_cell_area_um2": 719.04
+}
