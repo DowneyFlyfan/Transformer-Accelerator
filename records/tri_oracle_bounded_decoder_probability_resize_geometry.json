@@ -1,0 +1,40 @@
+{
+  "current_cold_export_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_resize_row_trial/receipt.json": "ba675fb82494916ecf0253b4aaa8e0721f9a8c6e6d6c695618e473415bbbdfae",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_resize_vacant_trial/receipt.json": "c3ad3d43d6bb15686d306e2da8b8b37fc4bf9d52d6936aac2c6cb8912a5e8288",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_resize_vacant_trial/span_receipt.json": "dd1565ad3a801d0667b6785771de32fd68d28186e5414879415545e766eaa6df",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_upstream_receipt.json": "2ccdd14bc536b3aaa8d57fb0a0e65d37dd4697e335d2494bc2d0d5d0217b0820",
+    "records/tri_oracle_bounded_decoder_reset_native_placement.json": "603086fa0dde955414a54c2afdc36f8ac3699f88710c8e2e3b0acaf7a88a7e49"
+  },
+  "same_row_capacity": {
+    "deficient_segments": 87,
+    "drivers_in_segments_with_capacity": 153,
+    "maximum_deficit_sites_in_one_segment": 61,
+    "missing_sites": 1398,
+    "proposed_drivers": 320
+  },
+  "scope": "Upstream sink-pin capacitance at three library corners, exact cell outlines, and component-origin bounding boxes. The proposal has not been applied to the native database. Wire capacitance and timing remain unmeasured.",
+  "source_def_sha256": "c29ab6e68c8255847dc77d1f9c5a417bf2257f805e1dcdc8354bb694c2c4ebd0",
+  "state": "probability_driver_resize_options_screened_on_exact_placement",
+  "upstream_pin_load": {
+    "checked_nets": 640,
+    "violations_by_corner": {
+      "ffg1p05vm40c": {},
+      "ssg0p9v125c": {},
+      "tt1v25c": {}
+    },
+    "worst_load_fraction": 0.19251441511581494
+  },
+  "vacant_site_trial": {
+    "all_components_checked": 3867343,
+    "drivers_fitted": 320,
+    "largest_driver_displacement_um": 2158.8,
+    "largest_origin_span_increase_net": "grouped_0/probability[3][3]",
+    "largest_origin_span_increase_um": 2158.8,
+    "matched_sink_pins": 81560,
+    "median_driver_displacement_um": 129.03,
+    "nets_with_higher_origin_span": 167,
+    "other_components_kept_in_place": 3867023
+  }
+}
