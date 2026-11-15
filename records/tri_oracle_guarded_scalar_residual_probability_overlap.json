@@ -1,0 +1,58 @@
+{
+  "active_native_probability_owners_preempted_by_residual": 4,
+  "candidate_sha256": "c1f56dc7307f50dee6113f9afcdff2939df86ea5138a4fd5340070cfe5232dc3",
+  "cold_export_sha256": "bf7df4d87f11f2cf5266e6f52927b63b419e78536c6246767d610f9abcf201dd",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/cold/cold.v": "bf7df4d87f11f2cf5266e6f52927b63b419e78536c6246767d610f9abcf201dd",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/bench.sv": "c0679194ba144bf3f7b29073b18f0ae96fa4d06aff7e1529677b0ba64812e3c9",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/cut.json": "cf64827ee90c2d82c546bfb79e4bdaae9d4d065ea86c7b3a2994f1b0d73e4d0b",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/inputs.f": "37e1b050c87ac4716e84b2d11d333905e3814841bbfe7298b33ffe98e9302066",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/instances_guarded.svh": "bdfc600eca4714eb97944cbdc9cfac62787b27fce3b49655dd9aae8d214d431a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/native_probability_trace.json": "dcd921e4abecf28e2f6ad9b5b943ff36d677e39c2e69765180a925dbd196713a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/owners.v": "c718608608206c9926fe345d64bd394fb06908aaddecc437c1dc203bccea7680",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/successful/xrun.log": "177719f14de68cf8f9d0ab638ae63f5005fdc73e4dee0977ea0a068412e60e66",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/probability_overlap_cold/trace_probability.py": "8037549b5bf21f74059895935f28998cc1535e7534e5a89bb911d2d858c9364a",
+    "records/tri_oracle_guarded_scalar_cold_trained_writeback_xcelium.json": "0b9ab2dafac28efef1f49adbf53166ec08a2e1c0e3849acab9aaa08b3d839cce",
+    "records/tri_oracle_guarded_scalar_whole_chip_cold_reload.json": "92dc4a5894dd4887bcbb4376f983be818d98659d32dce863e076410cb6b133bc"
+  },
+  "exclusive_native_lower_hex": "feedcafedeadbeef",
+  "exclusive_probability_controls_passing": 4,
+  "expected_native_upper_hex": "4142434451525354",
+  "native_grants_accepted_while_residual_owns_memory": 4,
+  "native_lane_request_and_grant_bindings": {
+    "0": {
+      "probability_grant": "probability_grant[0]",
+      "probability_release": "probability_release[0]",
+      "probability_request": "probability_request[0]",
+      "residual_lease": "residual_lease"
+    },
+    "1": {
+      "probability_grant": "probability_grant[1]",
+      "probability_release": "probability_release[1]",
+      "probability_request": "probability_request[1]",
+      "residual_lease": "residual_lease"
+    },
+    "2": {
+      "probability_grant": "probability_grant[2]",
+      "probability_release": "probability_release[2]",
+      "probability_request": "probability_request[2]",
+      "residual_lease": "residual_lease"
+    },
+    "3": {
+      "probability_grant": "probability_grant[3]",
+      "probability_release": "probability_release[3]",
+      "probability_request": "probability_request[3]",
+      "residual_lease": "residual_lease"
+    }
+  },
+  "native_owner_wrappers": {
+    "0": "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_13942_verified_bank0",
+    "1": "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_13943_verified_bank0",
+    "2": "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_13944_verified_bank0",
+    "3": "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank0"
+  },
+  "observed_residual_upper_hex": "0a0b0c0d5a5b5c5d",
+  "producer": "tri_oracle_chip_command_layer_parallel_chip.grouped_0",
+  "scope": "Directed Xcelium replay of an exact four-wrapper Innovus cold-export cut with vendor memory models. The testbench drives the shared-bank contenders at the cut. Structural tracing ties the probability ports to the on-chip grouped attention controller and the residual lease to a top-level input. The two trained feed-forward tokens in the separate whole-chip replay did not exercise these overlaps.",
+  "state": "cold_guarded_candidate_residual_probability_bank_conflict_reproduced"
+}

@@ -1,0 +1,27 @@
+{
+  "accepted_mask_channels": 5632,
+  "baseline_cycle_trace_equal": true,
+  "candidate_sha256": "c1f56dc7307f50dee6113f9afcdff2939df86ea5138a4fd5340070cfe5232dc3",
+  "cold_export_sha256": "bf7df4d87f11f2cf5266e6f52927b63b419e78536c6246767d610f9abcf201dd",
+  "compiled_memories": 631,
+  "elapsed_seconds": 2005.3210906420136,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/cold/independent_coordinates.json": "25b9acf6373a34dd7c48c797e4f1d2943cf69a248e59b99acca9d6206547334c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/mapped_bundle.sv": "4068784ae9ca6275f0fa052a6615b303f846e15bd3f57d3bddde71bd28aad4d4",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/receipt.json": "391f3be8c8628d4e814c7f187c676159ce687bc821b7c9981d66455e52ba5c95",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/verify.py": "b7d154119e800c162f4529ba04396df98789d35e9c8ee2a958bcc297a04fc869",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/xrun.log": "a2576065aeb78af6ed57caef58a3dea4d830f312e7ab19be1e830caabf35af33"
+  },
+  "exact_feedforward_values": 4096,
+  "exact_writeback_values": 4096,
+  "generated_activation_bytes": 4096,
+  "output_packets": 26,
+  "scope": "Functional replay of two trained token fixtures on the exact Innovus reload export. An external testbench supplies layer, projection and bank controls.",
+  "simulation_finished_ns": 9732890,
+  "state": "guarded_cold_placed_scalar_trained_writeback_replayed_and_independently_verified",
+  "token_positions": [
+    607,
+    608
+  ]
+}
