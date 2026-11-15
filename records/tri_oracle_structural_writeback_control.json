@@ -1,0 +1,66 @@
+{
+  "behavior_transitions_checked_in_xcelium": 256,
+  "control_cell_area_um2": 9.24,
+  "control_cells": 9,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/control_tb.sv": "6d8defcac824c87fbb65a3e10789a3d3a979e406aa8ded56c3fe069ce020109e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/mapped/console.log": "70505537b1f0170bd459cd5c5686fefea1a3e9ccecbda1e76e1bea4d3fac8f27",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/per_channel/syntax.log": "df799652f52f806320cfa1f630a079b5849482acc27901ffe0afcd3d3253b590",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/red/console.log": "0b60c028079bbb16e25a8ad80a07b861b0706ef44604233541e07b2bb3609b46",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/syntax.log": "df799652f52f806320cfa1f630a079b5849482acc27901ffe0afcd3d3253b590",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/source/console.log": "cc1fc19a9723f7a95b5f4c91c0d71d46ce81eb443b9908fd00322be3ac97b4d0",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/synthesis/area.rpt": "85acbcb5a1a861ec4dd6de54c28381fa8f855fde234567071eacae7712e3e933",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/synthesis/mapped_control.console.log": "71049fce012f87c0700d4e8dfabd19765715209f2487cc371782645623a36a00",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/synthesis/netlist.v": "489d985d6b12744a2a485845989097423aed1327b72324588cd6b24bd0dfe576",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/synthesis/run.tcl": "3220dc83cda99e429d5269a1fe48ff66f50184e3ab726c52b7d47dc3befda60d",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/synthesis/timing.rpt": "574d1c42d06b9fcdfad33825a67e745a78c142b4af01d6d06af378e01eeb6b9e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/verify.py": "82c30ec8f220260cc83917038e498195bbb080fa647439e69891aadac3fde12b",
+    "records/tri_oracle_current_replay_architecture_boundary.json": "6ab7608e7c3940b690967869ed9aa1e876f258d5f26ebb6d29f99d0b564affb6",
+    "syn/link_tri_oracle_writeback_control.py": "df89f1b28fe48ced9b8fdedba09e56ff2b49c0058fe24232a6126c2fec83ab79",
+    "syn/tri_oracle_map_linked_writeback_control.tcl": "3220dc83cda99e429d5269a1fe48ff66f50184e3ab726c52b7d47dc3befda60d",
+    "verilog/tri_oracle_linked_writeback_control.sv": "896aa11acc6f583ac5513cff9fad2a6b7d2f77939465eaeffe992b7efaaa84a2",
+    "verilog/tri_oracle_linked_writeback_control_tb.sv": "6d8defcac824c87fbb65a3e10789a3d3a979e406aa8ded56c3fe069ce020109e"
+  },
+  "negative_priority_control_rejected": true,
+  "per_channel": {
+    "attention_scheduler": {
+      "score_ready_response_bit": 71,
+      "score_valid_request_bit": 393,
+      "streaming_decision_response_bit": 68
+    },
+    "compiled_memory_macros": 631,
+    "feedforward_sign_replay": {
+      "metadata_capacity_bytes": 6656,
+      "metadata_macros": 6,
+      "response_bits_wired_to_masks_and_count": 109,
+      "shared_sign_key_capacity_bytes": 2048,
+      "shared_sign_key_macros": 4
+    },
+    "source_candidate_sha256": "4e6668b954c3f5b6a4f7359c70b765694085ada9c2e6ca51fdc43ec1d63933d9",
+    "structural_netlist_sha256": "9315af2146df250328f8605b67f77bbb60011d53386025528be18688353d12ef",
+    "top_and_mapped_control_syntax_errors": 0,
+    "verified_control_pin_count": 15
+  },
+  "scalar": {
+    "attention_scheduler": {
+      "score_ready_response_bit": 71,
+      "score_valid_request_bit": 393,
+      "streaming_decision_response_bit": 68
+    },
+    "compiled_memory_macros": 631,
+    "feedforward_sign_replay": {
+      "metadata_capacity_bytes": 6656,
+      "metadata_macros": 6,
+      "response_bits_wired_to_masks_and_count": 109,
+      "shared_sign_key_capacity_bytes": 2048,
+      "shared_sign_key_macros": 4
+    },
+    "source_candidate_sha256": "4326ed1cdaa37110153a6fad17ec01d42496a7239b6d592bbbcab37ecbb736b8",
+    "structural_netlist_sha256": "6ed5ab585810393ff58cb566f5090f89a049f9c3185c0562f357f8dc6b1a3922",
+    "top_and_mapped_control_syntax_errors": 0,
+    "verified_control_pin_count": 15
+  },
+  "scope": "The standalone controller passes register-transfer and mapped functional simulation. Both linked chip exports contain the mapped controller and preserve the verified predictor roles and static memory count. Timing is for the standalone controller with pre-placement estimates. The structural chip exports still require whole-chip physical import and verification.",
+  "standalone_genus_slow_slack_ps": 1225,
+  "state": "writeback_control_mapped_and_structural_exports_verified"
+}
