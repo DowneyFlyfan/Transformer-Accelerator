@@ -1,0 +1,121 @@
+{
+  "baseline": {
+    "lef_footprint_um2": 86230.368,
+    "liberty_area_um2": 86230.368,
+    "mapped_cells": 53978,
+    "maximum_consecutive_full_adder_carry_arcs_on_worst_path": 0,
+    "median_reported_path_slack_ps": 848.0,
+    "native": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 11653480448,
+      "peak_container_anonymous_bytes": 8613462016,
+      "stop_reason": null,
+      "wall_seconds": 581.9893848040374
+    },
+    "native_mapped_gate_replay_transactions": 600,
+    "registers": 8036,
+    "slack_ps": 848.0
+  },
+  "baseline_reduction_slack_ps": {
+    "level0": 1021.0,
+    "level1": 993.0,
+    "level2": 957.0
+  },
+  "carry_save": {
+    "lef_footprint_um2": 86430.792,
+    "liberty_area_um2": 86430.792,
+    "mapped_cells": 54176,
+    "maximum_consecutive_full_adder_carry_arcs_on_worst_path": 0,
+    "median_reported_path_slack_ps": 860.0,
+    "native": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 11919376384,
+      "peak_container_anonymous_bytes": 4751183872,
+      "stop_reason": null,
+      "wall_seconds": 665.9002114849864
+    },
+    "native_mapped_gate_replay_transactions": 600,
+    "registers": 8036,
+    "slack_ps": 859.0
+  },
+  "carry_save_reduction_slack_ps": {
+    "level0": 1444.0,
+    "level1": 1435.0,
+    "level2": 996.0
+  },
+  "clock_period_ns": 1.72414,
+  "delta_stage_slack_ps": {
+    "level0": 423.0,
+    "level1": 442.0,
+    "level2": 39.0
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/baseline/area.rpt": "4c138c86b99b2a544616ae45ba234c238399696802a87bf3db954cabd49a8112",
+    ".cache/physical/carry_lookahead_comparison/baseline/console.log": "509509eb0a430167e2a67c916b9ac59af8287e93fbb84695d873c3d0d4e26c7b",
+    ".cache/physical/carry_lookahead_comparison/baseline/emitted.sdc": "b3ed72387cf0c773c3059f4869d93f51b51cbbb7c7cad246d826e0a075fc433b",
+    ".cache/physical/carry_lookahead_comparison/baseline/gate_replay_0/verified.json": "b263b2f24048eff5e59b4602ac0974f92f30570ab8486a08c1ec5dfec14f0b92",
+    ".cache/physical/carry_lookahead_comparison/baseline/gate_replay_1/verified.json": "3a0380be94e81b070487e679394daeff8fee7df30c71b485f48b3ba11e5b3fad",
+    ".cache/physical/carry_lookahead_comparison/baseline/gates.rpt": "2b259a3e21a0a20a1a43a92e1d7272f2f309c82e9a526e6bc147ba8ead42629d",
+    ".cache/physical/carry_lookahead_comparison/baseline/netlist.v": "d2bea9c3f9feb70e467ee0192f9a3dba601d23ec5cca3118b49df3b1bf00b8bf",
+    ".cache/physical/carry_lookahead_comparison/baseline/register_setup.rpt": "42f320658db24104345843366e1ddebfb6bac347e080154a1b3fa36bedc37d2c",
+    ".cache/physical/carry_lookahead_comparison/baseline/status.json": "c5060099d3268bc1ea3566c9d69fbb1d1e97895b09c665c8e7406d2cb85e7a1c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/carry_save.sv": "792ff06dc38e574d361715d2a2aaa70cf33d877e3affb61a253f323e88b86739",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/complete_full_trial.py": "ebcd8d7a7d9adafed1b1ad61dab4b9f41bff420ffeb78f29890a064960f1fbf8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/area.rpt": "f5108475616cf3799cf3aa85a861957c8f97664c28f972c143c465ba2a8ef801",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/console.log": "2fd95fcdc1c42003a4752529397a87f63e8b52572ba13e24e26f7917cb65c039",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/emitted.sdc": "4eda4af19d5d25a4a5ce5ece91657bc5c2c690177426085b5cbb41052f07ba34",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/gate_replay_0/verified.json": "8dff61e5c8ee757da01a86066da2fa85528b9696182811ac0e7d152ea33f991a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/gate_replay_1/verified.json": "d2c130715e86c832c9f67a277eeacddd8695332b08d27669cec7c47a7233df74",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/gates.rpt": "277ecf4665f45f2ac20b39a49ceee8d59811d670cf596632153fdb5ecb295f99",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/netlist.v": "b086a4eb9834caaa4313f989f789e3b5b2c1b196f3905a2fe7e30f6b114c797f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/register_setup.rpt": "e22a5fc024bf96fea106e45fa4bfd66c024da3bac7b4da8ab3378819b1fe725a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/status.json": "a53eac2613eb2c370ea96d1913760220b2305a64ab139f253fc840e1bb738476",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/stage_diagnostic/carry_save/console.log": "27797022e60fbf1f6805ce69cbd963d448774337a4aa9f15331ad9f28fc7fea7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/stage_diagnostic/carry_save/level0.rpt": "8055a7ae4973f60fed0dcef6b16866c7fbaa348cc859ff1ed8588fb16910546d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/stage_diagnostic/carry_save/level1.rpt": "7de3e51434de9d17e9521a7195597651fc845d023fff173fe259ffe92f73e3aa",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/stage_diagnostic/carry_save/level2.rpt": "51ae8d7bfaa86a448f739fb2fadeeb64640add9e8edafff00f5f950e9f7274ed",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/stage_diagnostic/carry_save/status.json": "faf33ff47a3433338766fc07491fd6c2bc213134cf3499633a4fdeedbf8bf719",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/synthesize.tcl": "7d4bff572cfbf6d9f36001575f19671026ee2d3f912272bbd37a904616889942",
+    ".cache/physical/carry_lookahead_comparison/current_footprint.json": "ec1216b14a02c55f9c3682c9842b44d121c7edf3a14ca395b5eae519eff1751c",
+    ".cache/physical/carry_lookahead_comparison/reduction_paths/baseline/console.log": "4006e294d70c852f5f8cc178bf7c194f4d397b416d390affb5b3ec37cd374d59",
+    ".cache/physical/carry_lookahead_comparison/reduction_paths/baseline/level0.rpt": "e94adb73dc75e63140aec29df528df985d4ed48066316330c30aeb5e83057ccd",
+    ".cache/physical/carry_lookahead_comparison/reduction_paths/baseline/level1.rpt": "0ba69ce04f2ef6a5385c54dea1ce4db9e489a9ccd18da9e8cc50b6599b32cb16",
+    ".cache/physical/carry_lookahead_comparison/reduction_paths/baseline/level2.rpt": "60972126c1f4ab84b23da2ea5ae5f34b78c7649881989eec0ee065d79261134a",
+    ".cache/physical/carry_lookahead_comparison/reduction_paths/baseline/status.json": "489938fe4a44f0d2155bee90c6b5ed359dc33092db117546cd1b06cef57ab8f9",
+    ".cache/physical/carry_lookahead_comparison/region_capacity.json": "0c88cc302701abcdde65bcaadd24a212fc8be8511bde904bd36e776d51491f3c",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "records/tri_oracle_carry_save_reduction_row.json": "cac8b55f89a0e9914be450d57d3d4ba1acaad73afd3acd18bf8de81db8d643fe"
+  },
+  "mapped_clock_edges_compared": 788,
+  "physical_region_screen": {
+    "original_control_buffers_retained": true,
+    "regions_over_capacity": [],
+    "remaining_sites_by_region": {
+      "tri_oracle_pe_array_verified_bank0": 85191,
+      "tri_oracle_pe_array_verified_bank0_1": 10415,
+      "tri_oracle_pe_array_verified_bank0_2": 16670,
+      "tri_oracle_pe_array_verified_bank0_3": 7479,
+      "tri_oracle_pe_array_verified_bank1": 13516,
+      "tri_oracle_pe_array_verified_bank1_1": 18692,
+      "tri_oracle_pe_array_verified_bank1_2": 11488,
+      "tri_oracle_pe_array_verified_bank1_3": 55347,
+      "tri_oracle_pe_array_verified_bank2": 59980,
+      "tri_oracle_pe_array_verified_bank2_1": 34232,
+      "tri_oracle_pe_array_verified_bank2_2": 19434,
+      "tri_oracle_pe_array_verified_bank2_3": 17663,
+      "tri_oracle_pe_array_verified_bank3": 12647,
+      "tri_oracle_pe_array_verified_bank3_1": 38357,
+      "tri_oracle_pe_array_verified_bank3_2": 27385,
+      "tri_oracle_pe_array_verified_bank3_3": 14363,
+      "tri_oracle_pe_array_verified_bank4": 25312,
+      "tri_oracle_pe_array_verified_bank4_1": 8280,
+      "tri_oracle_pe_array_verified_bank4_2": 26843,
+      "tri_oracle_pe_array_verified_bank4_3": 65172
+    },
+    "replacement_sites_per_array": 514469,
+    "total_remaining_sites": 568466
+  },
+  "scope": "Matched mapped 32-by-8 arrays with a slow standard-cell corner, ideal clock and wire loads omitted. Region budgets use occupancy from the original placed chip and retain its control buffers. Physical timing and whole-chip legalization of the new logic require separate tests.",
+  "state": "carry_save_full_array_gate_lockstep_synthesis_timing_and_site_screen_verified"
+}
