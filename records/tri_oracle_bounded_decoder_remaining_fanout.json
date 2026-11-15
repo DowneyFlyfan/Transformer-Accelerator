@@ -1,0 +1,36 @@
+{
+  "at_least_twice_pin_capacitance_limit_at_any_corner": 7,
+  "cold_netlist_sha256": "0cb77c478595a7d31fac78bad8281bac70a15338bef5708a6bc43c5795c57b74",
+  "current_nets_reconciled": 5806,
+  "earlier_native_screened_candidates": 6130,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/bank_command_buffer_projection/receipt.json": "940fd3d162f0308734d8b137c6efd7cd290e4490987f839d90b54c54d490ec0b",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/remaining_fanout_exact/nets.json": "50814c1d0f2cc60b8ae9dd62dcef684da4f0a98ba5b8e3cf7c102532850609fd",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/remaining_fanout_exact/receipt.json": "a333dff12dcce4a899cfd2a7a9496197bfa29ca4cc8422c4a972129f50d360da",
+    "records/tri_oracle_bounded_decoder_probability_native_placement.json": "96787fef69fee6878633f6b2bebab7cad4e03dd4b5460eb7a36b5faade34a43d",
+    "records/tri_oracle_bounded_decoder_token_map_fanout.json": "e34750893b7c2e975408012d1a135e4a9a4a8c4ee9064ce4f7bfb7f2286427d6"
+  },
+  "excluded_repaired_source_nets": 322,
+  "max_pin_capacitance_fraction": 9.11047863147605,
+  "over_pin_capacitance_limit_at_any_corner": 427,
+  "over_pin_capacitance_limit_by_corner": {
+    "hold_fast": 354,
+    "setup_slow": 426,
+    "setup_typ": 356
+  },
+  "proposed_token_map_repair": {
+    "exact_vacant_sites": 35,
+    "grouped_nets": 7,
+    "max_original_segment_um": 2709.26,
+    "maximum_new_segment_um": 2307.5,
+    "nets_with_shorter_longest_segment": 7,
+    "required_new_buffers": 35,
+    "worst_pin_cap_fraction": 0.6196986127512112
+  },
+  "scope": "Three-corner library pin loads for reconciled original high-fanout candidates. The proposed token-map buffers occupy vacant sites in an offline projection. The native checkpoint and extracted interconnect timing remain separate.",
+  "state": "exact_buffered_candidate_remaining_fanout_and_token_map_projection_verified",
+  "unresolved_candidates": [
+    "layer/layer/attention_cfg_activation_stride[6]",
+    "layer_command_payload[0]"
+  ]
+}
