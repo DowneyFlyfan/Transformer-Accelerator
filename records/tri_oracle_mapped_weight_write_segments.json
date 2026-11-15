@@ -1,0 +1,49 @@
+{
+  "all_row_group_masks_verified": 16,
+  "baseline_matrix_only_finish_cycles": 76343,
+  "concurrent_write_cycles_across_matrix_and_directed_case": 52416,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/compact_decoder/gates.log": "0e48c636babc40dca47722006f13008efabe68141190ad094ba784ac5887eca5",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/compact_decoder/mapped.v": "8f96355d75eb698039c52cf9d8d077e6fe2a2f9a1b152bfcf3e76b2065409968",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/down_index.bin": "a245522580c1ee548b57246e5b498e38ef1ac7d9da931b12317edeb914729013",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/parser_repair/indexed_down_tb.sv": "326e3f2a605f57a8a5673b8fa67a527845793364545c8ab5437b2ff8d73d8bd0",
+    ".cache/model_reference/packed_down_export/v1/weights.bin": "7501c965e9933828b492fb089d2ced89bb24a896610e73d17dbed8904605d16b",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/weight_write_segments/mapped_replay/indexed_down_staged_tb.sv": "248199cb5e3fe96deb56ef972dba68c581f69ef5f4380cf3b10122799012418b",
+    ".cache/weight_write_segments/mapped_replay/write_stage.v": "2f756326d33852c5ed73df052eace791d302727859ceedfe32630700bd013428",
+    ".cache/weight_write_segments/mapped_replay/xrun.log": "8d5b524e7a42fe1ac373b8e3f5c134561e450cef119046be7d1caa0ca67f4920",
+    ".cache/weight_write_segments/mapped_unit/xrun.log": "2db9ed659651c400496350ff971c204d93a69f33d130991c001db01f37b1b945",
+    ".cache/weight_write_segments/mapping/area.rpt": "41f45826750db8ad4c36120b20a7124cf7b9618c4f805e8b1a66234c9b407aff",
+    ".cache/weight_write_segments/mapping/mapped.v": "f626ecde9ea333f0ce201df5e6e2ca0ea7693a8fcc1b564c51daac0110eec28f",
+    ".cache/weight_write_segments/mapping/timing.rpt": "270320bb4a97e88c5f5835d20dd4b60aae188a6e9b3efa8e8175fdc30cd1ff15",
+    ".cache/weight_write_segments/red/xrun.log": "16f5134d1433935cc38aa1363ae418ce3c7a66fd26bfd65576e0b1f422d9a8ce",
+    ".cache/weight_write_segments/rtl/xrun.log": "10d92b68f2353a1e5dced730a50649549b429c573a373f62785d992a50440285",
+    "syn/prepare_tri_oracle_weight_segments_replay.py": "4865b8f9847b2ec93afe2e72d8ea9fdcbdd781f99dedfa27dc65bc4c15a2ef7a",
+    "syn/tri_oracle_synthesize_weight_write_segments.tcl": "4a27e4b0b1b4c23ef17d88e2da51fc84500e54b8901a0cef142bdd2bd3645688",
+    "verilog/tri_oracle_weight_write_segments.sv": "9348d1ed5c1abda42aa80e984d80ad13f04f78996a70fbdd1ec3a7473d7bf859",
+    "verilog/tri_oracle_weight_write_segments_tb.sv": "14868307fdc40e07e9e1dadf80d11c34efce618e1fec28fa677948e86f00138b"
+  },
+  "exact_trained_weight_bytes": 11534336,
+  "indexed_response_beats_by_lane": [
+    50311,
+    48751
+  ],
+  "matrix_512_bit_writes": 180224,
+  "matrix_cycle_ratio": 1.827699,
+  "matrix_tiles": 78,
+  "one_adapter_slow_corner_mapping": {
+    "library_cell_area_um2": 1311.576,
+    "period_ns": 1.72414,
+    "standard_cells": 1696,
+    "unresolved_references": 0,
+    "worst_setup_slack_ps": 937
+  },
+  "registered_segmented_matrix_only_cycles": 139532,
+  "repaired_netlist_sha256": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+  "same_cluster_conflicts_exercised_in_directed_case": 421,
+  "scope": "One trained down-projection matrix plus directed same-cluster contention through two mapped tile decoders, mapped segment adapters, and the exact extracted registered write-stage cells. Indexed lane control and arbitration were register-transfer level. The older replay used wide decoder writes at the testbench boundary. The staged replay compares every 512-bit write with the original trained data. Simulations disable timing checks. Adapter slack is from isolated synthesis with external delays and zero wireload. Chip integration and paper latency remain unverified.",
+  "state": "mapped_weight_write_segments_replayed_through_repaired_write_stage",
+  "testbench_clock_period_ns": 10
+}
