@@ -1,0 +1,138 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/channel_reorder_bound/receipt.json": "58df4cff40ba7e9cbaf7875ae357414b37defcc9e74ea40f9e07acbd85f53d85",
+    ".cache/model_reference/gqa_testdev/channel_reorder_bound/verify.py": "1892dc12b554c4b27297f372f453032944c6256416cf1ef8b88a33a4b2af3efa",
+    "records/tri_oracle_exact_zero_packed_traffic.json": "46848b24e2c683b8ed84c2b2fa607812649ca9164bea9de4d796e104113c6d49"
+  },
+  "fit": {
+    "baseline": {
+      "1": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 5.3805096418732784e-05,
+          "ideal_8byte_lane": 8.262337508608816,
+          "retile_whole_layer": 8.231318870523417,
+          "retile_within_80": 6.01944516184573
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 13.760649373708677
+      },
+      "15": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.0,
+          "ideal_8byte_lane": 0.0,
+          "retile_whole_layer": 0.0,
+          "retile_within_80": 0.0
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 1.0
+      }
+    },
+    "exact_zero_oracle": {
+      "1": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.00290547520661157,
+          "ideal_8byte_lane": 19.44039336905992,
+          "retile_whole_layer": 19.377797865013775,
+          "retile_within_80": 15.051599087465565
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 12.083940994641013
+      },
+      "15": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.0,
+          "ideal_8byte_lane": 0.0014123837809917356,
+          "retile_whole_layer": 0.0,
+          "retile_within_80": 0.0
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 0.99998587616219
+      }
+    },
+    "fit_threshold": {
+      "1": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 2.2230113636363638,
+          "ideal_8byte_lane": 57.2439348205062,
+          "retile_whole_layer": 57.182657541322314,
+          "retile_within_80": 52.828695334022036
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 6.4134097769240705
+      },
+      "15": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.0,
+          "ideal_8byte_lane": 4.35357212035124,
+          "retile_whole_layer": 4.293646694214876,
+          "retile_within_80": 0.7990056818181818
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 0.9564642787964877
+      }
+    }
+  },
+  "held": {
+    "baseline": {
+      "1": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.0,
+          "ideal_8byte_lane": 8.071598441804408,
+          "retile_whole_layer": 8.041548295454545,
+          "retile_within_80": 5.9193138774104685
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 13.789260233729339
+      },
+      "15": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.0,
+          "ideal_8byte_lane": 0.0,
+          "retile_whole_layer": 0.0,
+          "retile_within_80": 0.0
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 1.0
+      }
+    },
+    "exact_zero_oracle": {
+      "1": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.003174500688705234,
+          "ideal_8byte_lane": 19.340625269025484,
+          "retile_whole_layer": 19.279603564049587,
+          "retile_within_80": 14.957224948347108
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 12.098906209646177
+      },
+      "15": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.0,
+          "ideal_8byte_lane": 0.0010088455578512396,
+          "retile_whole_layer": 0.0,
+          "retile_within_80": 0.0
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 0.9999899115444215
+      }
+    },
+    "fit_threshold": {
+      "1": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 2.2431344696969697,
+          "ideal_8byte_lane": 56.95591613937672,
+          "retile_whole_layer": 56.893777978650135,
+          "retile_within_80": 52.54261363636363
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 6.456612579093492
+      },
+      "15": {
+        "gate_up_reduction_percent": {
+          "fixed_contiguous": 0.0,
+          "ideal_8byte_lane": 4.100049231663223,
+          "retile_whole_layer": 4.037803460743802,
+          "retile_within_80": 0.7158768078512396
+        },
+        "ideal_payload_relative_to_dense_15_token_payload": 0.9589995076833677
+      }
+    }
+  },
+  "scope": "Bounds on gate and up weight payload for the archived prompt rows. Each token group can reorder channels freely inside each 80-channel compute tile or across the layer. The 8-byte option lets lanes be fetched separately with no transaction penalty. All three models exclude permutation overhead and retain the same skip masks and token batches. Denominator for the absolute payload ratio is the dense 15-token gate and up read volume on the same split. The model makes no claim about end-to-end latency, accuracy, or memory hardware.",
+  "selected_threshold": [
+    0,
+    -8,
+    2
+  ],
+  "state": "packed_gate_up_channel_reordering_and_lane_bounds_reconciled"
+}
