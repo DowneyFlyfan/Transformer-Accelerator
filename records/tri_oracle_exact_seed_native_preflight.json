@@ -1,0 +1,57 @@
+{
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "components": 3865789,
+  "constraint_entries_by_view": {
+    "hold_fast": 31772,
+    "setup_slow": 31772,
+    "setup_typ": 31772
+  },
+  "die_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_placement/plan.tcl": "a06b00f8fda64975c9c4b6cc6effff0b1214d6616ead380630290779cd031bf9",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_placement/prepared.json": "9e7ccd2fdd828dad7627ffe22f78103af9bb1f1b48af9368581b169266cb6a3b",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_placement/views.tcl": "80ed2378ac458c08e1fc1230dab28ff82b955663bca7bf2599720bc8ec8b9c44",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/cold/hold_fast.sdc": "571df40a380efa222cceb573d09558b47fd9b8e2db72602fdd0ee3f27cb4aeec",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/cold/innovus.log": "cdddd225a2512d2ce2724d7029643c4f71b6e904c665308146d70bdcfb797e61",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/cold/layout.def": "8b6f6c69001fd21c5a6f28c2c0a9614ad1cefc77c854df3a3b86ae1b98406237",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/cold/placement.rpt": "8a92791651ee65f64e19b0dc165aa68951666da4e1a701c61d4944f3c860d214",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/cold/setup_slow.sdc": "571df40a380efa222cceb573d09558b47fd9b8e2db72602fdd0ee3f27cb4aeec",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/cold/setup_typ.sdc": "571df40a380efa222cceb573d09558b47fd9b8e2db72602fdd0ee3f27cb4aeec",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/probe.def": "63e470e9d345f685bda1afdc2863487d898b9762b1648fbb9c5ce8b2039e7ca3",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/probe.sdc": "a358e0e4efa1d053015827d4bc9af46042a407a2f5ec06dff259f001411bc8b6",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/probe.v": "b1695059b52eee378a4c0a98d9db7ba828d5ba44fbbb01b15eec96329c9b22e5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/retry/hold_fast.sdc": "a5464f7169ac6edb2d417ee36da4510301f60341708e10a003216b0545d4efd5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/retry/innovus.log": "17a104e3df154f488fcbe11c8aeeb886e4c181e1007b6822b17b67b598171415",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/retry/layout.def": "f5e531b0a10343bc8f4515d54fdc726028104ca593c8046a8e7096500f3aa483",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/retry/placement.rpt": "2e8175b81cbb2ab840585d432db818297407246abba94d0f2bb8feaa2b0acb7e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/retry/setup_slow.sdc": "a5464f7169ac6edb2d417ee36da4510301f60341708e10a003216b0545d4efd5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/retry/setup_typ.sdc": "a5464f7169ac6edb2d417ee36da4510301f60341708e10a003216b0545d4efd5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/verified.json": "7246958aa87b97f1feaa8f6cc0a62ed83c1acf26b6c5d1edd0b3a5730930536a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_seed_probe_complete/views.tcl": "ad61077743804d6cdb74ad4ce591c7c738bebe21bde04571cfb3ea794560cae1",
+    "syn/prepare_tri_oracle_exact_native_seed.py": "2c024333b116fd7b3a0e7a1eb8bc36894185797a2249b6cd551e74778399bd75",
+    "syn/tri_oracle_import_exact_seed.tcl": "a41e89630a271fa60dea90705f4c8e54d6631ec51230ca0277670a9369fa3afa"
+  },
+  "extraction_models": 3,
+  "native_probe": {
+    "probe_blockages": 4,
+    "probe_cold_def_sha256": "8b6f6c69001fd21c5a6f28c2c0a9614ad1cefc77c854df3a3b86ae1b98406237",
+    "probe_components": 4097,
+    "probe_import_def_sha256": "f5e531b0a10343bc8f4515d54fdc726028104ca593c8046a8e7096500f3aa483",
+    "probe_pins": 5,
+    "probe_seed_sha256": "63e470e9d345f685bda1afdc2863487d898b9762b1648fbb9c5ce8b2039e7ca3",
+    "views": [
+      "setup_slow",
+      "setup_typ",
+      "hold_fast"
+    ]
+  },
+  "physical_abstracts": 8,
+  "placement_plan_sha256": "a06b00f8fda64975c9c4b6cc6effff0b1214d6616ead380630290779cd031bf9",
+  "scope": "Full-chip inputs bind the localized seed, the smaller decoder netlist, and the three inherited timing views. Innovus imported and cold-reloaded a 4,097-component fixture with the original die, sample pin shapes and compiled memory clearance. Full-chip native placement and timing require separate evidence.",
+  "seed_sha256": "223e088d5806affbad136a494b17148211c8db70ac6f2f2b25e4c99c58726dda",
+  "state": "native_coordinate_import_recipe_and_exact_chip_inputs_verified",
+  "timing_libraries": 21
+}
