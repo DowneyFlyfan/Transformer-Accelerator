@@ -1,0 +1,44 @@
+{
+  "added_buffer_area_um2": 645.12,
+  "all_existing_components_kept": 3867343,
+  "buffers_strengthened_without_geometry_changes": 402,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_buffer_trials/equal_footprint_receipt.json": "986d424e9ac82c11fa84885e52bdbd7aa3c42e5e686c2fe1d64b1375144156ea",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_buffer_trials/receipt.json": "6f7ef87e5dad415601f5df1708cccfdad5e71374b952ba9f213631d67383618f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_buffer_trials/verified.json": "b94b7bd9d03a68b6fa9a0231f3c3407dcc397233772edf553025cf5091b83f5e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_buffer_trials/worst_tree_vacancy_bounds.json": "95a8312aee64f35acf6775d71c42698064d393f94692fed669a4687735cc0291",
+    "records/tri_oracle_bounded_decoder_probability_hybrid_geometry.json": "495ab1c848922ced52399986e174575f981087a9fbe53e4c5216aa50a663279a"
+  },
+  "exported_cold_netlist_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "inserted_buffers": 1280,
+  "max_pin_cap_fraction_after": 0.7322158347220536,
+  "max_pin_cap_fraction_before": 0.9999175366568915,
+  "min_pin_cap_margin_pf_after": "0.024264191",
+  "min_pin_cap_margin_pf_before": "0.000004218",
+  "nets_with_better_cap_fraction": 177,
+  "nets_with_lower_longest_segment": 295,
+  "original_logical_drivers_kept": 320,
+  "scope": "Exact proposed reset-repaired grid, independently traced sink pins and three-corner Liberty pin capacitance. Span is a component-origin estimate. The buffer tree remains a proposed engineering change pending Innovus integration and extracted timing.",
+  "sinks_covered": 81560,
+  "source_def_sha256": "c29ab6e68c8255847dc77d1f9c5a417bf2257f805e1dcdc8354bb694c2c4ebd0",
+  "state": "probability_buffer_candidate_preserves_drivers_and_reduces_longest_estimated_segment",
+  "tested_branch_counts": {
+    "4": {
+      "best_case_per_branch_lower_bound_for_worst_net_um": 1454.22,
+      "longest_segment_um": 3693.88,
+      "max_pin_cap_fraction_before_equal_footprint_upgrade": 0.9999175366568915
+    },
+    "6": {
+      "best_case_per_branch_lower_bound_for_worst_net_um": 2063.52,
+      "longest_segment_um": 5168.46,
+      "max_pin_cap_fraction_before_equal_footprint_upgrade": 0.8768802150537635
+    },
+    "8": {
+      "best_case_per_branch_lower_bound_for_worst_net_um": 1978.82,
+      "longest_segment_um": 5211.86,
+      "max_pin_cap_fraction_before_equal_footprint_upgrade": 0.6632649462365592
+    }
+  },
+  "worst_buffer_segment_span_um": 3693.88,
+  "worst_original_net_span_um": 5136.8
+}
