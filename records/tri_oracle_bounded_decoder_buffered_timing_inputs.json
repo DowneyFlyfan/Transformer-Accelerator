@@ -1,0 +1,42 @@
+{
+  "buffered_netlist_sha256": "436217a1f8719f883b0efd5fee4e706f1f6179e9774c9a1f5ba9b515fa78cfc9",
+  "clock_period_ns": 1.72414,
+  "container_limit_gib": 24.0,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_placement/views.tcl": "80ed2378ac458c08e1fc1230dab28ff82b955663bca7bf2599720bc8ec8b9c44",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/timing_preflight.json": "23d1d62928dc45e3e9f4b9a22e354ae8c6de8db12da98a2824c9f4d65efde21d",
+    "syn/verify_tri_oracle_buffered_timing_inputs.py": "b41a5e69299e1dd46264bf2e06b1e4a457e71e04fe59fa7b449d8bf15b161a5b"
+  },
+  "full_diagnostic_reference_headroom_gib": 30.0,
+  "native_buffered_timing_measured": false,
+  "negative_controls_rejected": [
+    "swapped_hour_view",
+    "incorrect_typical_supply",
+    "wrong_extraction_model"
+  ],
+  "process": "TSMC 28nm HPC+",
+  "reference_energy_supply_volts": 0.75,
+  "reference_peak_supply_volts": 1.1,
+  "scope": "Verified the buffered placement import configuration against the native predecessor. Clock frequency, extracted timing, and energy are separate measurements.",
+  "state": "buffered_seed_three_corner_timing_inputs_verified",
+  "views": {
+    "hold_fast": {
+      "external_constraints": 31772,
+      "extraction_model": "qrc_rcbest",
+      "libraries": 7,
+      "nominal_supply_volts": 1.05
+    },
+    "setup_slow": {
+      "external_constraints": 31772,
+      "extraction_model": "qrc_rcworst",
+      "libraries": 7,
+      "nominal_supply_volts": 0.9
+    },
+    "setup_typ": {
+      "external_constraints": 31772,
+      "extraction_model": "qrc_typical",
+      "libraries": 7,
+      "nominal_supply_volts": 1.0
+    }
+  }
+}
