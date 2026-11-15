@@ -1,0 +1,51 @@
+{
+  "candidate_results_by_neighbor_spill_search_limit_um": {
+    "180": {
+      "drivers_moved_more_than_100_um": 49,
+      "fallback_count": 64,
+      "local_row_resize": 256,
+      "maximum_driver_displacement_um": 2158.8,
+      "median_driver_displacement_um": 1.54,
+      "neighbor_cells_moved": 36496,
+      "nets_with_increased_span": 55,
+      "selected_neighbor_maximum_displacement_um": 178.78,
+      "worst_span_increase": {
+        "delta_um": 2158.8,
+        "net": "grouped_0/probability[3][3]",
+        "original_um": 2468.46,
+        "proposed_um": 4627.26
+      }
+    },
+    "400": {
+      "drivers_moved_more_than_100_um": 45,
+      "fallback_count": 60,
+      "local_row_resize": 260,
+      "maximum_driver_displacement_um": 2158.8,
+      "median_driver_displacement_um": 1.4,
+      "neighbor_cells_moved": 36253,
+      "nets_with_increased_span": 53,
+      "selected_neighbor_maximum_displacement_um": 380.28,
+      "worst_span_increase": {
+        "delta_um": 2158.8,
+        "net": "grouped_0/probability[3][3]",
+        "original_um": 2468.46,
+        "proposed_um": 4627.26
+      }
+    }
+  },
+  "checked_probability_nets": 320,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_hybrid_span_receipt.json": "a20db4db595933f425ec0cc49f33f2be04fc9f015b63b5e17a9fa03ddba0d65f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_resize_spill_180um_source_500um_trial_complete/receipt.json": "edc72ebc2b5340d2c4938bff5f3f1acbf7fa44870e362f7c0b50a41f8bbb7c07",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_resize_spill_180um_source_500um_trial_complete/span_comparison.json": "43ab6a42be67300cfb85e1a8c97643414a37186ab90272fa7e5b74584a35d1e5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_resize_spill_400um_trial_complete/receipt.json": "ec79857116bb3f05faab4c3bcaf48142084f7dd60fc7fc42d851c86f53329132",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/grouped_probability_resize_spill_400um_trial_complete/span_comparison.json": "9e361f5c19f779095d32b1cd03c215a9f8bf018e060496c558319c0138c8df5b",
+    "records/tri_oracle_bounded_decoder_probability_resize_geometry.json": "50a8e8f9a6ccdebb61027f2bc0b03b936a00a12eb131d29879a52c242d7966fa"
+  },
+  "exported_cold_netlist_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "mapped_probability_sink_pins": 81560,
+  "placement_components": 3867343,
+  "scope": "Exact grid legality and component-origin span projection. The hybrid proposals preserve the worst 2.1588 mm span increase. Native placement, interconnect extraction, and timing remain open.",
+  "source_def_sha256": "c29ab6e68c8255847dc77d1f9c5a417bf2257f805e1dcdc8354bb694c2c4ebd0",
+  "state": "probability_driver_hybrid_options_legal_with_unresolved_worst_span"
+}
