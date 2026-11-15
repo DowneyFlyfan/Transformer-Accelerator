@@ -1,0 +1,50 @@
+{
+  "checked_buffer_sites": 35,
+  "cold_netlist_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "earlier_cohort_above_limit": 427,
+  "earlier_cohort_at_least_twice_limit_repaired": 7,
+  "earlier_unresolved_candidates": [
+    "layer/layer/attention_cfg_activation_stride[6]",
+    "layer_command_payload[0]"
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/paper_gate_verified.json": "66211e4ef54941c89b11f04e9c82683c77dba2bdffa5dc734189a9f779c77687",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/token_map_native_pin_loads/nets.json": "4140182502bf5beb2b2cde1d6701082b2325f00d93ce78ca188c3ea7c57ca748",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/token_map_native_pin_loads/receipt.json": "f5a622d5398f2a5c8deb0d6587540c44bd3cd096e2a38bc7162fa10948ade709",
+    "records/tri_oracle_bounded_decoder_remaining_fanout.json": "b4116b29d4b718e1a7d5d905ba6bb2f404ac6dfa95145fdcf6622d4660ad014d",
+    "records/tri_oracle_bounded_decoder_token_map_native_placement.json": "99a0882680ba9478d0358de826062544da291340884175b50e13a6b42b6330e8"
+  },
+  "existing_sink_pins": 4178,
+  "minimum_pin_margin_pf": "0.034459489",
+  "new_buffer_outputs": 35,
+  "previously_measured_unchanged_over_limit": 420,
+  "remaining_master_counts": {
+    "AN2D4BWP12T40P140": 2,
+    "BUFFD4BWP12T40P140": 20,
+    "CKAN2D8BWP12T40P140": 10,
+    "CKND12BWP12T40P140": 1,
+    "CKND16BWP12T40P140": 1,
+    "DFCND1BWP12T40P140": 5,
+    "DFCNQD1BWP12T40P140": 5,
+    "DFMQD1BWP12T40P140": 4,
+    "EDFCNQD1BWP12T40P140": 320,
+    "INVD15BWP12T40P140": 2,
+    "INVD18BWP12T40P140": 20,
+    "INVD6BWP12T40P140": 2,
+    "INVD8BWP12T40P140": 2,
+    "INVD9BWP12T40P140": 21,
+    "OR2D1BWP12T40P140": 2,
+    "OR2D4BWP12T40P140": 2,
+    "SDFCNOPTBD2BWP12T40P140": 1
+  },
+  "routing_gate_held": true,
+  "scope": "Actual repaired endpoints, coordinates, and library pin capacitance on the native cold export. The remaining count applies to unchanged signals from the earlier audited cohort.",
+  "source_nets": 7,
+  "state": "token_map_buffer_repair_verified_on_native_innovus_export",
+  "timing_views": [
+    "setup_slow",
+    "setup_typ",
+    "hold_fast"
+  ],
+  "worst_pin_fraction": 0.6196986127512112
+}
