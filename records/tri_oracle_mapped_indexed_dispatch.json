@@ -1,0 +1,50 @@
+{
+  "evidence_sha256": {
+    ".cache/indexed_dispatch/baseline_confirmed/xrun.log": "52285fdedf17b6973ca5d18ad8a09d9c34db711d86d055b386c0aa5f34624c83",
+    ".cache/indexed_dispatch/current.v": "e2181946bdcef48313ccf12a7bf348b1fb22443ce5e08d9d3314f7a4b2cedc37",
+    ".cache/indexed_dispatch/existing_scale_inputs.json": "411cd7882a726e79c328ac5df801e50743c3279b9d82ae424a0b58771954e41f",
+    ".cache/indexed_dispatch/indexed.sv": "895de23a4174da89bebbb089a14d4d8b23c1efe5c760a888e4374b16193f2b7d",
+    ".cache/indexed_dispatch/mapped/xrun.log": "eeaa12b9803f93c4ad61f19f34a94b19bfe870cc5d41cfaa711e48afe586e4da",
+    ".cache/indexed_dispatch/mapping/area.rpt": "618c745cbe7250fd45221f48772e43857925530a98da5ff71cbb1bbbbaa46b20",
+    ".cache/indexed_dispatch/mapping/mapped.v": "5f664744cb411bdc18438ffbe9de1c376503af8f3690c94209902b326d6452ef",
+    ".cache/indexed_dispatch/mapping/run.tcl": "16d1b41f59bbaf9ce3090477cbb761461f9aa1526108b920418c5e64c8e5ae18",
+    ".cache/indexed_dispatch/mapping/timing.rpt": "0c33bc494f8980b09abab2e7cc7c1913478c4299d982324a5717c41b5778ea06",
+    ".cache/indexed_dispatch/rtl/xrun.log": "eed85a47302c3b2c46d6c906b78b764bcae509557080f93f2bba4c42b28d978c",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/group_value_budget/grouped_command/concurrent_cluster_chip/tri_oracle_chip_dispatch.sv": "b172bc3a7bd41950584cfeae1b879d4eef51529ad81a4dc4807ac0a1357b0f78",
+    "records/tri_oracle_repaired_native_trained_writeback.json": "f4e0b3f5865e7d42f4dfcca75626db93f4f0e65c1b859c54259630ead1266129",
+    "syn/prepare_tri_oracle_indexed_dispatch.py": "a3f4d04b8a28a6cb62bca7e6c467d47e2adeac1fb825df63c163463ddbaa46c2",
+    "verilog/tri_oracle_indexed_dispatch_tb.sv": "5af5a3d00987883d77e501bb28290723a1e24271eba1c2087fcfdb88c7ac30c7"
+  },
+  "existing_writeback_scale_bits_msb_first": [
+    959,
+    958,
+    957,
+    956,
+    955,
+    954,
+    953,
+    952,
+    951,
+    950
+  ],
+  "indexed_extension_word_hex": "0000000000000001",
+  "indexed_feedforward_command_words": 16,
+  "isolated_zero_wireload_setup_slack_ps": 921,
+  "malformed_commands_rejected": 3,
+  "new_dispatcher_cell_area_um2": 5767.944,
+  "new_dispatcher_cell_count": 2076,
+  "original_command_lengths_accepted_by_opcode": [
+    15,
+    9,
+    1,
+    1,
+    3,
+    3,
+    5,
+    26
+  ],
+  "original_feedforward_payload_bits_preserved": 960,
+  "repaired_netlist_sha256": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+  "scope": "The exact extracted current dispatcher passes the eight original command lengths and rejects the indexed extension at the new positive check. The replacement dispatcher preserves all original payload words and accepts a separately consumed final word for indexed feed-forward. Register-transfer and mapped Xcelium replays also verify raw commands after indexed commands, rejection of three malformed frames and backpressure on the command and response interfaces. The configuration flag and indexed weight loader remain to be connected in the full-chip hierarchy.",
+  "state": "mapped_indexed_weight_command_extension_replayed"
+}
