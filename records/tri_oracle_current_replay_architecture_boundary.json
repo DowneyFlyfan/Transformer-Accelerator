@@ -1,0 +1,224 @@
+{
+  "memory_paths_identical": true,
+  "paper_architecture_figure": "31.6.2",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "per_channel": {
+    "candidate_sha256": "4e6668b954c3f5b6a4f7359c70b765694085ada9c2e6ca51fdc43ec1d63933d9",
+    "compiled_memory_interfaces": 631,
+    "direct_external_clock_connections": {
+      "bank_writeback": "clk",
+      "direct_projection": "clk",
+      "dispatch": "clk",
+      "layer": "clk",
+      "shared_read_port": "clk"
+    },
+    "evidence_sha256": {
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/bank_integration/map/netlist.v": "0bdde398320e7f8cd7f0ebffcc06f6e4eb239b7ef863b86e6be9901fc85aee0d",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/mapped_narrow_read_arbiter/netlist.v": "39923e55569dd15f177f0b8dc93da4dc5453aca2a6772d561fc128dbedc25d60",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/mapped_bundle.sv": "285ed3dd24e7097b93fd4937c8d5cfbcfc6399f7971d3bf46f5c548ba58705e9",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/projection_peer.sv": "46634342625518ac46cc9907f5b69ab0a67004311892bb608e829a36d5c49d24",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/structure.json": "280baaa017d38a333682e0302a06c6fc3e7f5487b36924ea1ee1f05e26a493ee",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/top.v": "c2d4ecb940ff8732148a56b77f5ee866ecfc0eda6acfd2fb6e1d12c88d2ab68b",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/trained_writeback_tb.sv": "a26ccf47252050f89e10c6862f70272f393372537471c1382d831cbaddba1077",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/projection.v": "4fd21ef9a37956f18e0aaccbcd84dcd619f056130ef66b965c24054b28ec7997",
+      "records/tri_oracle_in_chip_channel_writeback_linkage.json": "da8a6919b4a9bf247936aa7bcaac1ae90f294914be9a1e527bc78748d76c0d40"
+    },
+    "external_dispatch_inputs": {
+      "command_opcode": 3,
+      "command_tag": 32,
+      "command_valid": 1,
+      "payload_data": 64,
+      "payload_last": 1,
+      "payload_valid": 1,
+      "response_ready": 1
+    },
+    "external_projection_and_writeback_controls": {
+      "proj_gamma_data": 128,
+      "proj_gamma_valid": 1,
+      "proj_operand_valid": 1,
+      "proj_projection_shift": 5,
+      "residual_lease": 1,
+      "wb_frame_down_shifts": 10
+    },
+    "linked_specialist_module_families": {
+      "bank_writeback": "tri_oracle_decoder_channel_writeback",
+      "direct_projection": "tri_oracle_projection_bus_normalize",
+      "dispatch": "tri_oracle_chip_dispatch",
+      "layer": "tri_oracle_shared_memory_layer_PACKED_FEEDFORWARD_WEIGHTS1_parallel_chip",
+      "shared_read_port": "tri_oracle_narrow_read_arbiter"
+    },
+    "mapped_modules": 567,
+    "on_chip_writeback_inputs": {
+      "bank_data": "proj_response_data",
+      "data": "out_data"
+    },
+    "roles": {
+      "additional_shared_prediction_instances": {
+        "tri_oracle_chip_command_layer_parallel_chip.layer.layer.attention_pipeline.attention.predictor": "tri_oracle_attention_head_predictor415_CORE_HEAD_PREDICTOR1_context_partition",
+        "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.packed_signs.predictor.replay_table": "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1"
+      },
+      "clusters": [
+        {
+          "bank": 0,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[0].unit.selected_bank0.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 1,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[1].unit.selected_bank1.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 2,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[2].unit.selected_bank2.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 3,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[3].unit.selected_bank3.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 4,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[4].unit.selected_bank4.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        }
+      ]
+    },
+    "verified_external_projection_inputs": {
+      "gamma_data": "proj_gamma_data",
+      "gamma_valid": "proj_gamma_valid",
+      "lease_granted": "residual_lease",
+      "operand_valid": "proj_operand_valid",
+      "projection_shift": "proj_projection_shift",
+      "residual_q32": "proj_residual_q32"
+    }
+  },
+  "scalar": {
+    "candidate_sha256": "4326ed1cdaa37110153a6fad17ec01d42496a7239b6d592bbbcab37ecbb736b8",
+    "compiled_memory_interfaces": 631,
+    "direct_external_clock_connections": {
+      "bank_writeback": "clk",
+      "direct_projection": "clk",
+      "dispatch": "clk",
+      "layer": "clk"
+    },
+    "evidence_sha256": {
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/bank_writeback/import_bridge/netlist.v": "4a4ca40655c0054c58411be6a7fc061c213f0c2011867add7ff5ebc4fa897a5e",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/direct_writer/projection_peer.sv": "81fe7f0efcd06f900e514344ba04e8c9b8f91c464f23392665ef461a527a00f5",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/mapped_bundle.sv": "3cb3876090a7a3b9481aa11bd15f9b053dce10c7bd2817baacc35791b5d1a644",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/structure.json": "24f59bbeb225d4fa1128dcaee09c74cf323f738babad75a9d146b472a407006a",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/top.v": "87e9b5a299c9e130a8478112ba35ce309610df25d74e3fec9ca3b4eb70c8746c",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_writeback/trained_writeback_tb.sv": "4d187bc848ab55ae5683817505b16bb490748db904720deb0072a158fae2f6f2",
+      ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/projection.v": "4fd21ef9a37956f18e0aaccbcd84dcd619f056130ef66b965c24054b28ec7997",
+      "records/tri_oracle_in_chip_writeback_linkage.json": "02a7f9fa827a0c52f13338e3ecb2114c57e1db7c12dc5d6d23556d3cb12a895c"
+    },
+    "external_dispatch_inputs": {
+      "command_opcode": 3,
+      "command_tag": 32,
+      "command_valid": 1,
+      "payload_data": 64,
+      "payload_last": 1,
+      "payload_valid": 1,
+      "response_ready": 1
+    },
+    "external_projection_and_writeback_controls": {
+      "proj_gamma_data": 128,
+      "proj_gamma_valid": 1,
+      "proj_operand_valid": 1,
+      "proj_projection_shift": 5,
+      "residual_lease": 1,
+      "wb_frame_down_shifts": 10
+    },
+    "linked_specialist_module_families": {
+      "bank_writeback": "tri_oracle_decoder_bank_writeback",
+      "direct_projection": "tri_oracle_projection_bus_normalize",
+      "dispatch": "tri_oracle_chip_dispatch",
+      "layer": "tri_oracle_shared_memory_layer_PACKED_FEEDFORWARD_WEIGHTS1_parallel_chip"
+    },
+    "mapped_modules": 557,
+    "on_chip_writeback_inputs": {
+      "bank_data": "proj_response_data",
+      "data": "out_data"
+    },
+    "roles": {
+      "additional_shared_prediction_instances": {
+        "tri_oracle_chip_command_layer_parallel_chip.layer.layer.attention_pipeline.attention.predictor": "tri_oracle_attention_head_predictor415_CORE_HEAD_PREDICTOR1_context_partition",
+        "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.packed_signs.predictor.replay_table": "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1"
+      },
+      "clusters": [
+        {
+          "bank": 0,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[0].unit.selected_bank0.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 1,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[1].unit.selected_bank1.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 2,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[2].unit.selected_bank2.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 3,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[3].unit.selected_bank3.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        },
+        {
+          "bank": 4,
+          "cores": 4,
+          "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[4].unit.selected_bank4.block_instance.source_cluster.implementation",
+          "local_head_predictors": 4,
+          "local_strip_predictors": 4,
+          "local_token_mergers": 1
+        }
+      ]
+    },
+    "verified_external_projection_inputs": {
+      "gamma_data": "proj_gamma_data",
+      "gamma_valid": "proj_gamma_valid",
+      "lease_granted": "residual_lease",
+      "operand_valid": "proj_operand_valid",
+      "projection_shift": "proj_projection_shift",
+      "req_ready": "proj_req_ready",
+      "residual_q32": "proj_residual_q32",
+      "rsp_data": "proj_rsp_data",
+      "rsp_error": "proj_rsp_error",
+      "rsp_last": "proj_rsp_last",
+      "rsp_valid": "proj_rsp_valid"
+    }
+  },
+  "scope": "Structural check of the linked Xcelium candidates. Confirms local redundancy unit ownership, retained shared prediction units, identical static-memory paths and selected connectivity of the synthesized blocks. The same external clock directly feeds these blocks. The replay drives the lease, frame shift and projection operand interfaces. Neither the paper chip control plane nor physical import of these netlists is qualified.",
+  "state": "candidate_bound_redundancy_ownership_and_external_control_audited",
+  "verifier_sha256": "944c56777a9ae04fedaa34688fcca07d0e4cf84e6605d2c8e8605d83e9c48ecd"
+}
