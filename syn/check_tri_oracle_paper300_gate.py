@@ -44,6 +44,7 @@ BOUNDED_MAPPED_STRUCTURE = Path("records/tri_oracle_bounded_decoder_mapped_paper
 BOUNDED_RAW_REPLAY = Path("records/tri_oracle_bounded_decoder_native_raw_replay.json")
 BOUNDED_INDEXED_REPLAY = Path("records/tri_oracle_bounded_decoder_native_indexed_replay.json")
 BOUNDED_NATIVE_PLACEMENT = Path("records/tri_oracle_bounded_decoder_native_placement.json")
+BOUNDED_RESET_PLACEMENT = Path("records/tri_oracle_bounded_decoder_reset_native_placement.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -57,7 +58,7 @@ SCALAR_PLACEMENT_STAGES = {
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (BOUNDED_MAPPED_STRUCTURE, TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT,
+    for candidate in (BOUNDED_RESET_PLACEMENT, BOUNDED_MAPPED_STRUCTURE, TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT,
                       *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
         placement = root / candidate
         if placement.is_file():
@@ -279,6 +280,100 @@ def bounded_structure_facts(root, facts, identities):
                         label=label, binary_kibibytes=total / 1024, bytes_over_binary_label=total - label * 1024,
                         exact_paper_capacity_in_bytes_published=False, **roles)
     return None
+
+
+def bounded_reset_facts(root, facts, identities, baseline_memory):
+    """Bind the physical checks to the repaired design and its cold export."""
+    from tri_oracle_process_guard import _processes
+    from verify_tri_oracle_buffered_memory import placed_memory
+    from verify_tri_oracle_joined_placed_constraints import parse_sdc
+    from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
+
+    def pin(path, expected=None):
+        absolute = root / path
+        name = str(absolute.relative_to(root))
+        if name not in identities:
+            identities[name] = sha(absolute)
+        assert expected is None or identities[name] == expected, absolute
+        return absolute
+
+    stage = BOUNDED_STAGE / "native_reset_eco_relinked_native"
+    baseline_stage = BOUNDED_STAGE / "native_placement"
+    replay_stage = BOUNDED_STAGE / "native_reset_eco_relinked_replays"
+    placed = json.loads(pin(BOUNDED_RESET_PLACEMENT).read_text())
+    assert placed["state"] == "reset_repaired_whole_chip_native_import_cold_reload_and_geometry_verified"
+    assert placed["original_candidate_sha256"] == facts["candidate_sha256"] == baseline_memory["candidate_sha256"]
+    published = placed["evidence_sha256"]
+    native = json.loads(pin(stage / "native_receipt.json", published[str(stage / "native_receipt.json")]).read_text())
+    audit = json.loads(pin(stage / "verified.json", published[str(stage / "verified.json")]).read_text())
+    assert native["state"] == "reset_relinked_native_placement_and_cold_reload_passed"
+    assert audit["state"] == "relinked_reset_native_coordinates_and_connectivity_verified"
+    assert audit["native_receipt_sha256"] == placed["native_receipt_sha256"] == identities[str(stage / "native_receipt.json")]
+    for key in ("original_candidate_sha256", "reset_repaired_netlist_sha256", "exported_cold_netlist_sha256"):
+        assert placed[key] == audit[key] == native[key], key
+    assert native["components"] == placed["checked_component_count"] == audit["exact_connectivity"]["physical_leaf_instances"]
+    assert native["components"] == 3865789 + placed["added_reset_buffers"] == 3867343
+    assert placed["exact_connectivity"] == audit["exact_connectivity"]
+    paths = {Path(name): pin(Path(name), checksum) for name, checksum in native["evidence_sha256"].items()}
+    cold_netlist = paths[stage / "cold/cold.v"]
+    assert identities[str(stage / "cold/cold.v")] == placed["exported_cold_netlist_sha256"]
+
+    def constraint_set(path):
+        text = path.read_text().replace("-name core ", "-name core_clock ")
+        return parse_sdc(text.replace("[get_clocks {core}]", "[get_clocks {core_clock}]"))
+
+    def loaded_models(log):
+        text = log.read_text()
+        libraries = re.findall(r"(?m)^Reading ls_(slow|typ|fast) timing library (.+\.lib)\.$", text)
+        extraction = re.findall(r"(?m)^    RC-Corner Technology file: '([^']+)'\s*$", text)
+        assert len(libraries) == 21 and len(extraction) == 3
+        for _, name in libraries:
+            pin(Path(name))
+        for name in extraction:
+            pin(Path(name))
+        return ({(corner, Path(name).name, identities[str(Path(name).relative_to(root))])
+                 for corner, name in libraries},
+                {(Path(name).name, identities[str(Path(name).relative_to(root))]) for name in extraction})
+
+    for step in ("import", "cold"):
+        folder = stage / step
+        status = json.loads(paths[folder / "status.json"].read_text())
+        assert status == placed["native_status"][f"{step}_stage"] == native["native_status"][f"{step}_stage"]
+        assert status["exit_status"] == 0 and status["stop_reason"] is None
+        assert list(dimensions(paths[folder / "layout.def"])) == placed["die_dimensions_mm"] == [3.6, 3.6]
+        report = paths[folder / "placement.rpt"].read_text()
+        assert re.findall(r"(?m)^\*info: Unplaced = (\d+)\s*$", report) == ["0"]
+        assert re.findall(r"(?m)^Placement Density:([\d.]+)%", report) == [str(placed["place_density_percent"])]
+        assert loaded_models(paths[folder / "console.log"]) == loaded_models(pin(baseline_stage / step / "console.log"))
+        for view in VIEWS:
+            before = constraint_set(pin(baseline_stage / "cold" / f"{view}.sdc"))
+            after = constraint_set(paths[folder / f"{view}.sdc"])
+            assert before == after
+            assert float(after[0]["create_clock"][1]) == placed["clocks_target_period_ns"]
+
+    with pin(baseline_stage / "cold/layout.def").open() as stream:
+        baseline_macros = placed_memory(stream)
+    _, macros = compiled_memory_inventory(cold_netlist, paths[stage / "cold/layout.def"])
+    assert macros == baseline_macros
+    assert len(macros) == native["memories"] == placed["fixed_macros"] == baseline_memory["macros"]
+    prefixes = tuple(os.fsencode(root / directory) + b"/" for directory in (stage, replay_stage))
+    workers = [pid for pid, (_, _, args) in _processes().items()
+               if any(arg == b"-log" and args[i+1].startswith(prefixes) for i, arg in enumerate(args[:-1]))]
+    baseline_replay = facts.pop("raw_replay_exact_output_values", None)
+    facts.update(
+        evidence_stage="native Innovus reset repair with independently verified cold reload",
+        candidate_sha256=placed["reset_repaired_netlist_sha256"],
+        exported_cold_netlist_sha256=placed["exported_cold_netlist_sha256"],
+        baseline_raw_replay_exact_output_values=baseline_replay,
+        clock_period_ns=placed["clocks_target_period_ns"],
+        candidate_cold_qualified=True,
+        original_full_models_verified=True,
+        native_workers_terminal=not workers,
+        active_candidate_native_workers=sorted(workers),
+        placement_density_percent=placed["place_density_percent"],
+    )
+    return dict(baseline_memory, candidate_sha256=facts["candidate_sha256"],
+                exported_cold_netlist_sha256=facts["exported_cold_netlist_sha256"])
 
 
 def reduced_port_placement_facts(root, facts, identities, *, repaired=False):
@@ -728,7 +823,13 @@ def main():
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
-        if relative_qualification == BOUNDED_MAPPED_STRUCTURE:
+        if relative_qualification == BOUNDED_RESET_PLACEMENT:
+            reset_facts = {}
+            baseline_memory = bounded_structure_facts(root, reset_facts, identities)
+            assert baseline_memory is not None, "Missing verified baseline memory inventory"
+            memory = bounded_reset_facts(root, reset_facts, identities, baseline_memory)
+            facts = reset_facts
+        elif relative_qualification == BOUNDED_MAPPED_STRUCTURE:
             memory = bounded_structure_facts(root, facts, identities)
         elif relative_qualification in {TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT}:
             memory = reduced_port_placement_facts(root, facts, identities,

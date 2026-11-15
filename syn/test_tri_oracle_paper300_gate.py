@@ -124,6 +124,17 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None), current)
             self.assertEqual(qualification_source(root, older), older)
 
+    def test_native_reset_repair_supersedes_its_mapped_baseline(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            baseline = root / BOUNDED_MAPPED_STRUCTURE
+            baseline.parent.mkdir()
+            baseline.touch()
+            repaired = baseline.with_name("tri_oracle_bounded_decoder_reset_native_placement.json")
+            repaired.touch()
+            self.assertEqual(qualification_source(root, None), repaired)
+            self.assertEqual(qualification_source(root, baseline), baseline)
+
     def complete(self):
         return dict(candidate_cold_qualified=True,native_workers_terminal=True,
             original_full_models_verified=True,clusters=5,cores=20,
