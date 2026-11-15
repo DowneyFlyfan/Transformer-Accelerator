@@ -1,0 +1,157 @@
+{
+  "buffer_plan": {
+    "baseline": {
+      "added_row_sites": 8089,
+      "maximum_estimated_capacitance_limit_fraction": 0.6912321975999628,
+      "selected_nets": 16,
+      "topology": {
+        "checked_gate_pin_associations": 212519,
+        "inserted_noninverting_buffers": 952,
+        "preserved_original_instances": 53978,
+        "rewired_sinks": 8296
+      }
+    },
+    "carry_save": {
+      "added_row_sites": 7904,
+      "maximum_estimated_capacitance_limit_fraction": 0.8225035029638355,
+      "selected_nets": 16,
+      "topology": {
+        "checked_gate_pin_associations": 213841,
+        "inserted_noninverting_buffers": 932,
+        "preserved_original_instances": 54176,
+        "rewired_sinks": 8181
+      }
+    }
+  },
+  "buffered_candidate_minus_buffered_baseline_slack_ns": {
+    "array": -1.573891,
+    "level0": -0.002688,
+    "level1": -0.20823,
+    "level2": 0.65911
+  },
+  "cases": {
+    "baseline": {
+      "annotated_internal_nets": 68850,
+      "cells": 54930,
+      "excluded_boundary_nets": 4966,
+      "native_density_percent": 96.31,
+      "paths": {
+        "array": {
+          "endpoint": "reduction[2].row[13].sum[0].value_reg[17]/DB",
+          "startpoint": "reduction[1].row[13].sum[0].value_reg[0]/CP",
+          "worst_setup_slack_ns": -2.107503
+        },
+        "level0": {
+          "endpoint": "reduction[0].row[11].sum[1].value_reg[16]/DB",
+          "startpoint": "product[90].value_reg[0]/CP",
+          "worst_setup_slack_ns": -1.789123
+        },
+        "level1": {
+          "endpoint": "reduction[1].row[7].sum[0].value_reg[17]/DB",
+          "startpoint": "reduction[0].row[7].sum[0].value_reg[0]/CP",
+          "worst_setup_slack_ns": -1.455379
+        },
+        "level2": {
+          "endpoint": "reduction[2].row[13].sum[0].value_reg[17]/DB",
+          "startpoint": "reduction[1].row[13].sum[0].value_reg[0]/CP",
+          "worst_setup_slack_ns": -2.107503
+        }
+      },
+      "remaining_sites": 19947
+    },
+    "carry_save": {
+      "annotated_internal_nets": 69142,
+      "cells": 55108,
+      "excluded_boundary_nets": 4966,
+      "native_density_percent": 96.5,
+      "paths": {
+        "array": {
+          "endpoint": "carry_save.row[0].carry_reg[7]/SA",
+          "startpoint": "valid_reg[3]/CP",
+          "worst_setup_slack_ns": -3.681394
+        },
+        "level0": {
+          "endpoint": "carry_save.row[13].compressor[0].sum_reg[15]/DB",
+          "startpoint": "product[104].value_reg[15]/CP",
+          "worst_setup_slack_ns": -1.791811
+        },
+        "level1": {
+          "endpoint": "carry_save.row[8].sum_reg[17]/DB",
+          "startpoint": "carry_save.row[8].compressor[1].sum_reg[16]/CP",
+          "worst_setup_slack_ns": -1.663609
+        },
+        "level2": {
+          "endpoint": "carry_save.row[7].value_reg[18]/DB",
+          "startpoint": "carry_save.row[7].sum_reg[3]/CP",
+          "worst_setup_slack_ns": -1.448393
+        }
+      },
+      "remaining_sites": 18939
+    }
+  },
+  "clock_period_ns": 1.72414,
+  "delta_from_unbuffered_slack_ns": {
+    "baseline": {
+      "array": 29.493121,
+      "level0": 0.0,
+      "level1": 0.0,
+      "level2": 0.0
+    },
+    "carry_save": {
+      "array": 50.660441,
+      "level0": 0.0,
+      "level1": 0.0,
+      "level2": 0.0
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/baseline/gate_replay_0/verified.json": "c4e5b6e31639a52fbf542de28c634ca710683b97a98b07456374e75501ac2f24",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/baseline/gate_replay_1/verified.json": "8ccaff4927efa0e5b2d9e3940503bb78f605edeeb2c4c29a8c623b60fc673fb8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/baseline/placement_inputs.json": "0ddb698defa1495a603b5dbacc318f79251f15d16c0f103e80d0c0edceb70149",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/carry_save/gate_replay_0/verified.json": "80a0f1a4f44024239a9af94a90f3bca9d786bf127ae8c472cb1aa454054cdd21",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/carry_save/gate_replay_1/verified.json": "88dafcd54b4b557a49d44f810bb37ddbab17fed67c20fca7f0ee8a5fe27d370d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/carry_save/placement_inputs.json": "16490f79f735de5b0f935de94511d69132d433c04ba6790420f567da71711fa9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/place_seeded.tcl": "76825dbda6c541e0503f5c87411348cb73df3e64347b12b35a5b55fd118e33c8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/refined_baseline/timing_inputs.json": "3294236cbd3fb5fca27f024a14cd83d8bf41fba9b58d1c4571eb92c6215508f0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/refined_carry_save/timing_inputs.json": "b0a619b0aaa02a02637b37b0f257cbeb68c2d7785e5fbe9b0fdd99c6491caaab",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/region.def": "fe13467e21a7adadb16ad8cbc7f6f44f38fc02f490dac474e720979dd0b21b0d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/region.json": "d85b224e68de4bd167ebfce19c28b462d00ce58cc274d63aedf0237415bcaca4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/run_buffered_region.py": "ed9c35fa2bd1212d4eeafd134ea6f17dee6b1b4914583fefc53ba0a9175eba66",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/annotation.rpt": "9b2cf6ccf9be0895f08520a02e6aae425c457b698a3e9cd55340540cc40fe575",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/array.rpt": "87d6c3e3c1c36b077c91b4bbf7b2ae06c9e6f49306b46663230c1f21f901f2d6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/console.log": "c4968eace8cd0c21b40bbd3b1ec7db598176f2140694ac2f305e71fd444c41ab",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/level0.rpt": "2ad4f6c9cbc4cf2a00d4d109a0a83311f63abdb68dc4d1c0e09440712aacf992",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/level1.rpt": "eea8a0d4bb48192f856b110309814f4317dd6ff1ef1a308dc5bda0bc4f38fead",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/level2.rpt": "f2055db332e862c1c4ba427d6bb41c7e01e2860fc103d97ce5a08c8560ebdf0a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_baseline/status.json": "fbb67459ca483e7bf70653a31497b342f5b8a32903bfa8e4abfee44058a2b602",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/annotation.rpt": "f31822f62d6fa1b25983158aa6fa8859b93579721d0338947c5974d1a48b66cf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/array.rpt": "9face7fa4c70f8023894f1a672012b0572dc68ee217aa929cca9182cdb729ce6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/console.log": "3b2e9bedd42af01c631aacf67c60aa812f2153b8942ee3bdf1b621a0de5b5735",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/level0.rpt": "c71cc73a6c9cc2ed20b8399141f6d6c7385d064000e5aedf148c66ae677f2dca",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/level1.rpt": "546d2b5d84eb63f652a23d061b87f472848ef81bd1676c0b43c22debc32145e6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/level2.rpt": "bd392b7dd99f0ffc0efc516c47937a82be99b27175a3e1569a021dcba1825c43",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timed_refined_carry_save/status.json": "5ba21d645b73ada102544d5a638d730d7f339a107fe5f79ed5b0320d4a897181",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/timing.tcl": "4b76973292e5deadfb8bcecf43be4cc5da7da0eeeeca509315c35409e99568d1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/buffered_region/views.tcl": "c2f1d35e9457bdd7552d3200e30f6e820610c36537c9dc9341ccecd8a0c57d93",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/verified_refined_region.json": "24bedf806e104b4d3a6a5de6a7a6c7ee1c4b6b0cf03a8d14ad90c1d3ab24c8d9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/verified_full_array.json": "7b2ecf643a84fbb959b7012c3005f27d329dc65943047c5f5625f2979e7480ef",
+    ".cache/physical/carry_lookahead_comparison/current_footprint.json": "ec1216b14a02c55f9c3682c9842b44d121c7edf3a14ca395b5eae519eff1751c"
+  },
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "remaining_critical_control_branch": {
+    "arc_delay_ns": 3.7355,
+    "driver": "hi_fo_buf866253/ZN",
+    "fanout": 112
+  },
+  "replay_transactions_per_case": 600,
+  "scope": "Single placed array region from the exact blocked-site grid with matched high-fanout treatment. All original placed cells stay fixed. Timing uses estimated internal wires and an ideal clock.",
+  "site_count_projection_for_twenty_regions": {
+    "candidate_control_sites_based_on_single_region": 7904,
+    "minimum_free_sites_keeping_original_trees": -425,
+    "minimum_free_sites_replacing_original_trees": 7475,
+    "scope": "Aggregate site counts. The second site term becomes available by removing the existing control buffers. Exact legal placement is verified in one region."
+  },
+  "state": "matched_buffered_array_legal_placement_mapped_replay_and_timing_verified"
+}
