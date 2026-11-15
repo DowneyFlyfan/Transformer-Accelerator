@@ -1,0 +1,88 @@
+{
+  "balanced_row": {
+    "cell_area_um2": 2712.192,
+    "mapped_cells": 1695,
+    "native": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 14323888128,
+      "peak_container_anonymous_bytes": 3852025856,
+      "stop_reason": null,
+      "wall_seconds": 47.311825404991396
+    },
+    "register_count": 255,
+    "stage_setup_slack_ps": {
+      "level0": 1021.0,
+      "level1": 993.0,
+      "level2": 957.0
+    },
+    "worst_setup_slack_ps": 957.0
+  },
+  "carry_save_row": {
+    "cell_area_um2": 2720.088,
+    "mapped_cells": 1707,
+    "native": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 14323888128,
+      "peak_container_anonymous_bytes": 3852025856,
+      "stop_reason": null,
+      "wall_seconds": 47.31180952698924
+    },
+    "register_count": 255,
+    "stage_setup_slack_ps": {
+      "level0": 1446.0,
+      "level1": 1450.0,
+      "level2": 998.0
+    },
+    "worst_setup_slack_ps": 998.0
+  },
+  "clock_period_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/archive_row_trial.py": "ee0362057bba1f046f44dce3471259356f0382b29e37b97e50b85680bd12c920",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/arithmetic_verified.json": "15f1d53c52b81d3b9086b738846eb3eaa2084c0826f7b12e613fda499628f51c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/carry_save.sv": "792ff06dc38e574d361715d2a2aaa70cf33d877e3affb61a253f323e88b86739",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/lockstep.sv": "4ce48d71e27e835d7ce84122adb72f544bfded8eddc6825aae5cfb7e3eca69ae",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/reference.sv": "755ab62df01ee9127b5bb796e2d39cdff91fcb9f8462dc8adfaf2851202f1a55",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced.sv": "b4d1e49d71964a083aff2f21d9b3206de469cee2b168ac5ed4e57ffedc49a03b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/area.rpt": "2b176583f323c831f087860a5a50de66a72e44d786156a8f34d3a6a1359a482d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/console.log": "a51cbaf6ae0c5cd2dfc19411946af2e82b8ab649c55e1a9e677bcfd52159dcb4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/emitted.sdc": "5d279c0db1af4987648eb2b74fc63c5a6b51486f7e7ac0ef27e380646fd26b31",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/gates.rpt": "8bd7d5ff7399bf3fd53de473bc44d0e7e900abb9f057bbf45772cd00ae877a39",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/level0.rpt": "c7d9b090506ded68f1194f31667e4db9a30f60044a97c08d724ce27a35d94881",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/level1.rpt": "3f6e0e38a1f5d5523657e6161daccdbae644f67728ebed10059ec030168185c5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/level2.rpt": "14d0496a68bdd57bbcaaec83f5eb3fc49d43ae5f857809dd9d9ed3ab536443e9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/netlist.v": "ffe59510ff61eab8d176d6bb9a0a13028397bbaa8fa2730611ec1020da467b95",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/register_setup.rpt": "6f6e5ea3c1160649b03458aabe8a12f3de14f4274b72df6b382e112fd1383f39",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/balanced/status.json": "09ea10926e625b5fee9c18e58f3f35b430c5d1d2194c1b49678544e1429b0754",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save.sv": "66d8a0f35309dde788e587b920029ed4a7babc77e86296234ff5dd5f8c62bbee",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/area.rpt": "ceeb1f3c122cd792ff602c3169f7747d070c4d9c631c1aa0310583fdc399fc04",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/console.log": "35b13c3b7c691fa75446ed0726f5e3cf360b889d48cc70d6da85638202321b5a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/emitted.sdc": "5d279c0db1af4987648eb2b74fc63c5a6b51486f7e7ac0ef27e380646fd26b31",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/gates.rpt": "81a52fe30e3ecc2665df5612b7a909eaec3f2fce33b6b0c1df538327e42e71f7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/level0.rpt": "79a4cdd24d56bcfbff352aa3d10dae8dcac567aac1ed8d45836ec174e6a9cec0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/level1.rpt": "2fddc39b62c84bd2b4dcdfb9ca2cb53846f197ed1ff1196812fbdeb866e58586",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/level2.rpt": "e07fc99255c43ca9ce0bc7184733d3e5bf777bdf9361dc6a87b3a355e5947c34",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/netlist.v": "3a6b2494af6c3e207a4d323cf392ddc57cb28ddbf67489d2f86dc5e57f5c0d6c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/register_setup.rpt": "8800735cb6243f49728bb60eac88fa8d9b04d56d03beaea092c2952b689e88f8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/carry_save/status.json": "82a0a7f5e46e3f475cd5364c2ec8734fca801066e2d702f96268c7c61fce591d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/constraints.sdc": "8dce102a48b68a21ff08a39f102d5a8300ce24dc2915d6b7ae9ea1f873315e43",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/row_probe/synthesize.tcl": "7d764ecfa8aa7ee8d6980850df120f5bf07e9b9c1532436d4a8195bd9abe286a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/rtl_0/console.log": "e31a27e067cfff37d9f7245a01b54d30d6fdf21eaadc19f8c53a1d5488de750e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/rtl_1/console.log": "cedc4a53b5750a5769ab41eb07e094abcc68d9c1dd31e3b435fe9006700a5180",
+    "verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+    "verilog/tri_oracle_pe_array_tb.sv": "012608cdd146ee6846304fd6b5454295186dbe80b2736ab803140b9a616747a6"
+  },
+  "gpu_reference_dot_products": 1048576,
+  "row_cell_area_increase_percent": 0.29112983151635685,
+  "rtl_compared_edges_with_and_without_stalls": {
+    "0": 473,
+    "1": 315
+  },
+  "rtl_output_transactions_verified": 600,
+  "scope": "Full 32-by-8 array RTL was compared with the original at every valid clock edge. The native timing and area comparison covers a single eight-product row, the same ideal clock, and the slow model with wire loads omitted. Full-array mapping and physical timing are tracked separately.",
+  "stage_setup_gain_ps": {
+    "level0": 425.0,
+    "level1": 457.0,
+    "level2": 41.0
+  },
+  "state": "carry_save_compute_rtl_lockstep_and_paired_reduction_row_synthesis_verified"
+}
