@@ -1,0 +1,44 @@
+{
+  "audited_token_map_bits": 7,
+  "cold_netlist_sha256": "0cb77c478595a7d31fac78bad8281bac70a15338bef5708a6bc43c5795c57b74",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/bank_command_load_exact/nets.json": "bd2482f3c49a1b4140c771595da6e7a7552dce94424092cdc420f8b564c2e534",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/bank_command_load_exact/receipt.json": "e6ae4de98c09a6a350b4ab800aa02d27c2bb42ea8c67dddf0a1c6636d6b30276",
+    "records/tri_oracle_bounded_decoder_probability_native_placement.json": "96787fef69fee6878633f6b2bebab7cad4e03dd4b5460eb7a36b5faade34a43d"
+  },
+  "scope": "Gate-level loads checked against exact library pin limits across three corners, and spans measured from saved component origins. Wire capacitance, timing and physical repair require separate checks.",
+  "state": "remaining_token_map_driver_fanout_verified_on_buffered_cold_netlist",
+  "worst_net": "layer/layer/feedforward/compute/compute/tensor/fabric/bank_command[0][map_position][0]",
+  "worst_net_evidence": {
+    "branches_by_cluster": {
+      "0": 131,
+      "1": 132,
+      "2": 131,
+      "3": 132,
+      "4": 71,
+      "shared_fabric": 7
+    },
+    "corner_totals": {
+      "hold_fast": {
+        "limit_pf": "0.05115",
+        "load_over_limit": 9.11047863147605,
+        "pin_load_pf": "0.466000982"
+      },
+      "setup_slow": {
+        "limit_pf": "0.05115",
+        "load_over_limit": 9.07359100684262,
+        "pin_load_pf": "0.464114180"
+      },
+      "setup_typ": {
+        "limit_pf": "0.05115",
+        "load_over_limit": 9.050609208211144,
+        "pin_load_pf": "0.462938661"
+      }
+    },
+    "driver": "layer/layer/feedforward/compute/compute/tensor/fabric/coordinate_token_sizes.controller/mapped_tokens_reg[0]/Q",
+    "driver_master": "SDFCNQD0BWP12T40P140",
+    "furthest_sink_origin_um": 1142.72,
+    "origin_span_um": 2706.46,
+    "sink_count": 604
+  }
+}
