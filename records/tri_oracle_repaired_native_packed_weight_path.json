@@ -1,0 +1,32 @@
+{
+  "connection_mutations_rejected": [
+    "primary response payload swapped with auxiliary payload",
+    "auxiliary payload bypasses the registered stage",
+    "response payload port added to the raw command loader",
+    "loader completion bypasses the registered stage"
+  ],
+  "lanes": [
+    {
+      "lane": 0,
+      "parent_response_port": "wide_rsp_data",
+      "payload_bits": 512,
+      "registered_payload_net": "packed_stage_payload_0"
+    },
+    {
+      "lane": 1,
+      "parent_response_port": "aux_rsp_data",
+      "payload_bits": 512,
+      "registered_payload_net": "packed_stage_payload_1"
+    }
+  ],
+  "loader_instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.packed_loader",
+  "netlist_sha256": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+  "packed_write_stage": "tri_oracle_packed_write_stage_mapped",
+  "related_records": [
+    "records/tri_oracle_repaired_native_pad_budget.json",
+    "records/tri_oracle_mapped_indexed_weight_transport.json",
+    "records/tri_oracle_all_trained_down_weight_transport.json"
+  ],
+  "scope": "Direct connectivity in the exact repaired mapped netlist. The raw packed loader handles response status and drives write metadata. Each response payload bypasses the loader and enters its own registered 512-bit write lane. The stage drives payload and metadata to the compute fabric and owns the loader completion handshake. The previously verified indexed decoder emits 2048 bits per lane, so using that transport at this boundary requires adapting write granularity and preserving completion ordering. No compressed input rate or physical link performance was measured.",
+  "state": "native_packed_weight_path_is_raw"
+}
