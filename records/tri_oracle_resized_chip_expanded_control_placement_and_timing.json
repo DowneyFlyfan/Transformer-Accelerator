@@ -1,0 +1,338 @@
+{
+  "corrected_control_nets": 200,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/archive_expanded_candidate.py": "0443ab4b500c541b94efc73bd2c5a84effc5be664079ca8c8ea2a19968196c1d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_connected/prepared.json": "1b7939be2ff54b03d813df6ae333e3e6976fa6be4fa77ef4cfcc6214062bc962",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_connected/verified.json": "48bc8ed095190d3e87bf51c949ddaf6136274d3bf5112fd05ad7e25f606e8be8",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_netlist/tri_oracle_pe_array_verified_bank1_1.json": "653113da867e79c904894075b64a833461bc9d0a3debfdf2baec36e40bb5807e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_rows/planned.json": "9afad7a1929fa6466bc46b74f297a5874c78c3490d2f4b2db6ab94d579f0ee1e",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_sim/console.log": "e98e410fe617049b29e74c532c51e7e8bdf82429d04c1db69edf4e8ba59cac16",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_sim/tb.sv": "23d076372926103c108237a995f4b13d89ebc043a8bda985ddac8a037e2fe95f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_timing/critical_geometry.json": "fffda3f31f36e1cebebd7fd5ef4c7613870a05246706e0d31214eeae383a9cda",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_timing/verified.json": "87015359e5e60f9100ab4741e75e5709fb4065171ba34884a1ee05a2417f42e0",
+    "records/tri_oracle_resized_chip_buffered_array_placement.json": "93d4565b16316f736c65cfc21d9f92003e99dd1b72fa442dab53964a077ef69a"
+  },
+  "matched_netlist_modules": 693,
+  "max_modeled_driver_capacitance_fraction": 0.9891564563022156,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 8229810176,
+    "peak_container_anonymous_bytes": 12258652160,
+    "stop_reason": null,
+    "wall_seconds": 96.12345616403036
+  },
+  "placement": {
+    "actual_ordinary_moved": 135594,
+    "buffered_sites": 158002,
+    "buffers": 18800,
+    "components": 3887458,
+    "fixed_macros": 631,
+    "mean_moved_ordinary_displacement_um": 1277.445909406021,
+    "original_array_poses_changed": 0,
+    "residual_sites": 596386
+  },
+  "placement_density_percent": 98.37,
+  "prior_buffer_sites_preserved": 18520,
+  "region_count": 20,
+  "same_array_comparison": {
+    "expanded_worst_slack_ns": -3.08462,
+    "prior_worst_slack_ns": -5.932178,
+    "simulated_stall_cycles": 227,
+    "simulated_transactions": 253
+  },
+  "scope": "Native Innovus checked the exact connected placement, all component coordinates and the gate netlist. Slow-corner array setup timing uses modeled wire parasitics with an ideal clock and omits inter-array and routed paths. Functional replay compares the selected mapped array.",
+  "slow_corner_array_results": {
+    "arrays": {
+      "tri_oracle_pe_array_verified_bank0": {
+        "largest_delay_stage": {
+          "cell": "MOAI22D1BWP12T40P140",
+          "driver": "add_60_96_I2_I17_I2_g951",
+          "fanout": 1,
+          "library_arc": "B1->ZN",
+          "net": "n_13715",
+          "port": "ZN",
+          "reported_transition_ns": 1.0525,
+          "stage_increment_ns": 1.2558
+        },
+        "output_driver_to_sink_pin_gap_um": 1281.505,
+        "worst_slack_ns": -3.710417
+      },
+      "tri_oracle_pe_array_verified_bank0_1": {
+        "largest_delay_stage": {
+          "cell": "DFMQD1BWP12T40P140",
+          "driver": "reduction[0].row[0].sum[2].value_reg[1]",
+          "fanout": 2,
+          "library_arc": "CP->Q",
+          "net": "reduction[0].row[0].sum[2].value",
+          "port": "Q",
+          "reported_transition_ns": 0.0,
+          "stage_increment_ns": 0.5473
+        },
+        "output_driver_to_sink_pin_gap_um": 1010.725,
+        "worst_slack_ns": -2.743486
+      },
+      "tri_oracle_pe_array_verified_bank0_2": {
+        "largest_delay_stage": {
+          "cell": "MOAI22D1BWP12T40P140",
+          "driver": "add_53_82_I1_I3_I4_g905",
+          "fanout": 1,
+          "library_arc": "B1->ZN",
+          "net": "n_16299",
+          "port": "ZN",
+          "reported_transition_ns": 0.2257,
+          "stage_increment_ns": 0.7728
+        },
+        "output_driver_to_sink_pin_gap_um": 794.305,
+        "worst_slack_ns": -3.414095
+      },
+      "tri_oracle_pe_array_verified_bank0_3": {
+        "largest_delay_stage": {
+          "cell": "FA1D1BWP12T40P140",
+          "driver": "add_60_96_I3_I11_I1_g1024",
+          "fanout": 1,
+          "library_arc": "CI->CO",
+          "net": "add_60_96_I3_I11_I1_n_7",
+          "port": "CO",
+          "reported_transition_ns": 0.1403,
+          "stage_increment_ns": 0.493
+        },
+        "output_driver_to_sink_pin_gap_um": 910.265,
+        "worst_slack_ns": -2.216345
+      },
+      "tri_oracle_pe_array_verified_bank1": {
+        "largest_delay_stage": {
+          "cell": "SDFQD1BWP12T40P140",
+          "driver": "reduction[0].row[1].sum[3].value_reg[0]",
+          "fanout": 3,
+          "library_arc": "CP->Q",
+          "net": "reduction[0].row[1].sum[3].value",
+          "port": "Q",
+          "reported_transition_ns": 0.0,
+          "stage_increment_ns": 0.7835
+        },
+        "output_driver_to_sink_pin_gap_um": 1317.8,
+        "worst_slack_ns": -3.273437
+      },
+      "tri_oracle_pe_array_verified_bank1_1": {
+        "largest_delay_stage": {
+          "cell": "AOI21D1BWP12T40P140",
+          "driver": "add_53_82_I1_I9_I3_g904",
+          "fanout": 1,
+          "library_arc": "A1->ZN",
+          "net": "n_15907",
+          "port": "ZN",
+          "reported_transition_ns": 1.0799,
+          "stage_increment_ns": 0.8683
+        },
+        "output_driver_to_sink_pin_gap_um": 734.63,
+        "worst_slack_ns": -3.08462
+      },
+      "tri_oracle_pe_array_verified_bank1_2": {
+        "largest_delay_stage": {
+          "cell": "AN2D1BWP12T40P140",
+          "driver": "add_60_96_I2_I25_I1_g970",
+          "fanout": 2,
+          "library_arc": "A2->Z",
+          "net": "add_60_96_I2_I25_I1_n_1",
+          "port": "Z",
+          "reported_transition_ns": 0.8823,
+          "stage_increment_ns": 0.5931
+        },
+        "output_driver_to_sink_pin_gap_um": 747.41,
+        "worst_slack_ns": -2.00061
+      },
+      "tri_oracle_pe_array_verified_bank1_3": {
+        "largest_delay_stage": {
+          "cell": "CKND2D1BWP12T40P140",
+          "driver": "add_53_82_I1_I15_I3_g924",
+          "fanout": 2,
+          "library_arc": "A1->ZN",
+          "net": "add_53_82_I1_I15_I3_n_0",
+          "port": "ZN",
+          "reported_transition_ns": 0.694,
+          "stage_increment_ns": 1.4376
+        },
+        "output_driver_to_sink_pin_gap_um": 1219.98,
+        "worst_slack_ns": -2.626457
+      },
+      "tri_oracle_pe_array_verified_bank2": {
+        "largest_delay_stage": {
+          "cell": "AN2D1BWP12T40P140",
+          "driver": "add_60_96_I2_I6_I2_g970",
+          "fanout": 2,
+          "library_arc": "A2->Z",
+          "net": "add_60_96_I2_I6_I2_n_1",
+          "port": "Z",
+          "reported_transition_ns": 0.987,
+          "stage_increment_ns": 0.6892
+        },
+        "output_driver_to_sink_pin_gap_um": 623.69,
+        "worst_slack_ns": -1.993988
+      },
+      "tri_oracle_pe_array_verified_bank2_1": {
+        "largest_delay_stage": {
+          "cell": "FA1D1BWP12T40P140",
+          "driver": "add_60_96_I2_I27_I1_g952",
+          "fanout": 3,
+          "library_arc": "CI->CO",
+          "net": "add_60_96_I2_I27_I1_n_34",
+          "port": "CO",
+          "reported_transition_ns": 0.3455,
+          "stage_increment_ns": 0.5997
+        },
+        "output_driver_to_sink_pin_gap_um": 1065.005,
+        "worst_slack_ns": -2.514892
+      },
+      "tri_oracle_pe_array_verified_bank2_2": {
+        "largest_delay_stage": {
+          "cell": "MOAI22D1BWP12T40P140",
+          "driver": "add_60_96_I2_I2_I1_g951",
+          "fanout": 1,
+          "library_arc": "A1->ZN",
+          "net": "n_14273",
+          "port": "ZN",
+          "reported_transition_ns": 1.049,
+          "stage_increment_ns": 0.8199
+        },
+        "output_driver_to_sink_pin_gap_um": 720.145,
+        "worst_slack_ns": -2.531266
+      },
+      "tri_oracle_pe_array_verified_bank2_3": {
+        "largest_delay_stage": {
+          "cell": "AOI21D1BWP12T40P140",
+          "driver": "add_60_96_I2_I4_I2_g950",
+          "fanout": 1,
+          "library_arc": "A1->ZN",
+          "net": "n_14182",
+          "port": "ZN",
+          "reported_transition_ns": 0.7764,
+          "stage_increment_ns": 0.7556
+        },
+        "output_driver_to_sink_pin_gap_um": 711.46,
+        "worst_slack_ns": -1.974223
+      },
+      "tri_oracle_pe_array_verified_bank3": {
+        "largest_delay_stage": {
+          "cell": "FA1D1BWP12T40P140",
+          "driver": "add_60_96_I2_I3_I1_g958",
+          "fanout": 1,
+          "library_arc": "CI->CO",
+          "net": "add_60_96_I2_I3_I1_n_21",
+          "port": "CO",
+          "reported_transition_ns": 0.3745,
+          "stage_increment_ns": 0.5052
+        },
+        "output_driver_to_sink_pin_gap_um": 860.96,
+        "worst_slack_ns": -2.875954
+      },
+      "tri_oracle_pe_array_verified_bank3_1": {
+        "largest_delay_stage": {
+          "cell": "MOAI22D1BWP12T40P140",
+          "driver": "add_60_96_I3_I2_I1_g1009",
+          "fanout": 1,
+          "library_arc": "B1->ZN",
+          "net": "n_13137",
+          "port": "ZN",
+          "reported_transition_ns": 0.3677,
+          "stage_increment_ns": 0.9296
+        },
+        "output_driver_to_sink_pin_gap_um": 959.925,
+        "worst_slack_ns": -2.66909
+      },
+      "tri_oracle_pe_array_verified_bank3_2": {
+        "largest_delay_stage": {
+          "cell": "AOI21D1BWP12T40P140",
+          "driver": "add_53_82_I1_I4_I2_g904",
+          "fanout": 1,
+          "library_arc": "A1->ZN",
+          "net": "n_16264",
+          "port": "ZN",
+          "reported_transition_ns": 0.5707,
+          "stage_increment_ns": 0.6363
+        },
+        "output_driver_to_sink_pin_gap_um": 633.26,
+        "worst_slack_ns": -1.657928
+      },
+      "tri_oracle_pe_array_verified_bank3_3": {
+        "largest_delay_stage": {
+          "cell": "MOAI22D1BWP12T40P140",
+          "driver": "add_60_96_I3_I1_I1_g1009",
+          "fanout": 1,
+          "library_arc": "B1->ZN",
+          "net": "n_13156",
+          "port": "ZN",
+          "reported_transition_ns": 0.4373,
+          "stage_increment_ns": 0.6071
+        },
+        "output_driver_to_sink_pin_gap_um": 605.285,
+        "worst_slack_ns": -2.675224
+      },
+      "tri_oracle_pe_array_verified_bank4": {
+        "largest_delay_stage": {
+          "cell": "AOI21D1BWP12T40P140",
+          "driver": "add_60_96_I2_I4_I2_g950",
+          "fanout": 1,
+          "library_arc": "A1->ZN",
+          "net": "n_14182",
+          "port": "ZN",
+          "reported_transition_ns": 0.8603,
+          "stage_increment_ns": 1.0864
+        },
+        "output_driver_to_sink_pin_gap_um": 1145.575,
+        "worst_slack_ns": -2.165764
+      },
+      "tri_oracle_pe_array_verified_bank4_1": {
+        "largest_delay_stage": {
+          "cell": "SDFQD1BWP12T40P140",
+          "driver": "reduction[1].row[18].sum[0].value_reg[0]",
+          "fanout": 3,
+          "library_arc": "CP->Q",
+          "net": "reduction[1].row[18].sum[0].value",
+          "port": "Q",
+          "reported_transition_ns": 0.0,
+          "stage_increment_ns": 0.8498
+        },
+        "output_driver_to_sink_pin_gap_um": 1041.27,
+        "worst_slack_ns": -2.480243
+      },
+      "tri_oracle_pe_array_verified_bank4_2": {
+        "largest_delay_stage": {
+          "cell": "AOI21D1BWP12T40P140",
+          "driver": "add_60_96_I2_I6_I2_g950",
+          "fanout": 1,
+          "library_arc": "A1->ZN",
+          "net": "n_14110",
+          "port": "ZN",
+          "reported_transition_ns": 0.6213,
+          "stage_increment_ns": 0.6978
+        },
+        "output_driver_to_sink_pin_gap_um": 696.41,
+        "worst_slack_ns": -2.978526
+      },
+      "tri_oracle_pe_array_verified_bank4_3": {
+        "largest_delay_stage": {
+          "cell": "MOAI22D1BWP12T40P140",
+          "driver": "add_60_96_I2_I1_I2_g951",
+          "fanout": 1,
+          "library_arc": "A1->ZN",
+          "net": "n_14291",
+          "port": "ZN",
+          "reported_transition_ns": 1.1947,
+          "stage_increment_ns": 0.7751
+        },
+        "output_driver_to_sink_pin_gap_um": 583.505,
+        "worst_slack_ns": -2.381071
+      }
+    },
+    "arrays_with_negative_slack": 20,
+    "dominant_drivers_with_four_or_fewer_sinks": 20,
+    "maximum_driver_to_sink_pin_gap_um": 1317.8,
+    "median_array_worst_slack_ns": -2.5788615,
+    "modeled_internal_nets": 1388780,
+    "range_of_array_worst_slack_ns": [
+      -3.710417,
+      -1.657928
+    ]
+  },
+  "state": "expanded_control_buffered_connected_layout_and_all_array_timing_verified"
+}
