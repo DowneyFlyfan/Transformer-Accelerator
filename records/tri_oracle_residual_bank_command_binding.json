@@ -1,0 +1,69 @@
+{
+  "candidate_sha256": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+  "changed_top_pin_connections": 6,
+  "evidence_sha256": {
+    ".cache/residual_bank_command_binding/audit.py": "086791d19fab9b47bc455d704444ff7915bbc9eb64685cb98a667c34d3ed6e2d",
+    ".cache/residual_bank_command_binding/audited.json": "3b0e483b878158420f478b08a49b05090d385b082f6225119ed95c1ea6a6f113",
+    ".cache/residual_bank_command_binding/candidate_grouped_ready.v": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+    ".cache/residual_bank_command_binding/linked_grouped_ready.json": "63cdc8d912867bfaaf54373c91a07efe27b00b9614593167239fb23b6f842bf2",
+    ".cache/residual_bank_command_binding/map/area.rpt": "464513d3bff4ad5652ad71c14684e283225b4ae7f8b785bc0939fbea2daa03f8",
+    ".cache/residual_bank_command_binding/map/genus.log": "5d60e9f1abc4e981ab2876561f5745049e285b435e87f9f30d9192c51d9da82f",
+    ".cache/residual_bank_command_binding/map/map.tcl": "d0d7942b4d9ed765f4d1de819c3832114bacc7d8f094e123cd45c982d1f5e751",
+    ".cache/residual_bank_command_binding/map/netlist.v": "760aa5e71fbbd45701dd7350d9ce78d7bf20f11260e23543180f28c6faf8dc0e",
+    ".cache/residual_bank_command_binding/map/timing.rpt": "2f64315589c4c8e571fce362da484a08fae1ae86c673084ffc23168b5d83106c",
+    ".cache/residual_bank_command_binding/mapped/xrun.log": "bbca9b4a9bb86a4bfac9b6cbfc34b74948fc36051b4f030dcd1ac0e779210014",
+    ".cache/residual_bank_command_binding/negative/xrun.log": "8dd21056e44e879ca2ba66d4751bc25843378cb905bbecf195dc9a69d55d25ca",
+    ".cache/residual_bank_command_binding/source/xrun.log": "1f389c06755402c10bd0bc7ca43671782886a4de4ad3220b8f75b1cd317b81d0",
+    "records/tri_oracle_guarded_scalar_whole_chip_cold_reload.json": "92dc4a5894dd4887bcbb4376f983be818d98659d32dce863e076410cb6b133bc",
+    "syn/link_tri_oracle_residual_bank_command.py": "d333eb5947ce77b3c0ac11e305206088377be6b073605071e2da6971cb07ae5c",
+    "verilog/tri_oracle_residual_bank_arbiter.sv": "ccb617ee6062226a019f0639773c3e273f03ae7466255d01934ab53e18af70d6",
+    "verilog/tri_oracle_residual_bank_command.sv": "0decb33e454787aa4af474ab40d098041c70b71c827bcbed4d3b69ef235f3b2e",
+    "verilog/tri_oracle_residual_bank_command_tb.sv": "081e4bf45e5b6b3db44ba7ed6b0bf3a52a6109411a22e198945aac23c960bacd"
+  },
+  "fixed_memory_macros_preserved": 631,
+  "installed_tsmc_cells_added": 17,
+  "mapping_area_square_micrometers": 16.464,
+  "mapping_sha256": "760aa5e71fbbd45701dd7350d9ce78d7bf20f11260e23543180f28c6faf8dc0e",
+  "minimum_standalone_setup_slack_ps": 1257,
+  "preserved_top_instance_names_and_masters": 12956,
+  "scope": "Command control passed source and mapped Xcelium unit tests. The whole-chip link retains the guarded placement's pin declarations and memory hierarchy. The residual_lease input is a request. The batch result handshake now uses wb_out_ready. Whole-chip replay and placement of this derivative require separate evidence.",
+  "state": "residual_bank_command_binding_mapped_and_exact_top_delta_audited",
+  "tested_clock_period_ns": 1.72414,
+  "unchanged_parent_definitions": 558,
+  "verified_changed_pins": {
+    "bank_writeback": {
+      "lease_granted": [
+        "residual_lease",
+        "residual_bank_granted"
+      ]
+    },
+    "batch": {
+      "result_ready": [
+        "out_ready",
+        "wb_out_ready"
+      ]
+    },
+    "direct_projection": {
+      "lease_granted": [
+        "residual_lease",
+        "residual_bank_granted"
+      ]
+    },
+    "grouped_0": {
+      "command_ready": [
+        "batch_start_ready[0]",
+        "residual_grouped_ready"
+      ],
+      "command_valid": [
+        "batch_start_valid[0]",
+        "residual_grouped_valid"
+      ]
+    },
+    "layer": {
+      "residual_lease": [
+        "residual_lease",
+        "residual_bank_granted"
+      ]
+    }
+  }
+}
