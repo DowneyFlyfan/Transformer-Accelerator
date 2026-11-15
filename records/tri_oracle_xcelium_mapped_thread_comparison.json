@@ -1,0 +1,60 @@
+{
+  "evidence_sha256": {
+    ".cache/xcelium_multicore_qualification/mapped_comparison/mce_20/console.log": "1a189881919be049a3a23751d4a0c1c7e8c34ffd76b4229f1164ce512c078f88",
+    ".cache/xcelium_multicore_qualification/mapped_comparison/mce_20/mcesim.run/used_config.txt": "e3aa652068d65c9a22556316f18175a95319102d542800200594c350c2c3c6a6",
+    ".cache/xcelium_multicore_qualification/mapped_comparison/mce_4/console.log": "194f49763b0c43029825db900e7d7db07414ca6ad8010e0faaa0263ea440c885",
+    ".cache/xcelium_multicore_qualification/mapped_comparison/mce_4/mcesim.run/used_config.txt": "cc2e7775e7895fc9cd302e64a9180eac1e7b1d7fc5820d028b97d9d7d6d23a28",
+    ".cache/xcelium_multicore_qualification/mapped_comparison/mce_8/console.log": "942663ad826503cad7110ac799bf433cf0a52c745fa9f7afae8e189f4915eeb6",
+    ".cache/xcelium_multicore_qualification/mapped_comparison/mce_8/mcesim.run/used_config.txt": "7acc6bafbd0a4596ec3dfd282d1a5c77256ebc3fa30860e61622577bd9efe04d",
+    ".cache/xcelium_multicore_qualification/mapped_comparison/receipt_20.json": "59858ee6fcf707f49234867a64c5b25f62bc03ee1c4bb7caac48dc4dd3cfe776",
+    "records/native_first_cluster_xcelium_result.json": "67857f3dc6d330403581fc2344eaf938f7ad122c26e7300be8703c6f9880877d"
+  },
+  "fixture_counters": {
+    "attention_reads": 24768,
+    "failed_writes": 2,
+    "maps": 576,
+    "rows": 4,
+    "stalls": 63,
+    "values": 1023,
+    "writes": 27
+  },
+  "mapped_cores": 4,
+  "runtime": {
+    "20": {
+      "anonymous_peak_bytes": 5765619712,
+      "available_min_bytes": 14872346624,
+      "checked_transcript_sha256": "e4ac6c93ff251ba7086b300e89803d9a14a1c33c037df893720b9cbb14a0fb9b",
+      "elapsed_seconds": 85.68851659295615,
+      "log_sha256": "1a189881919be049a3a23751d4a0c1c7e8c34ffd76b4229f1164ce512c078f88",
+      "markers": 13,
+      "native_exit_status": 0,
+      "state": "native_exit"
+    },
+    "4": {
+      "anonymous_peak_bytes": 5726920704,
+      "available_min_bytes": 14614843392,
+      "checked_transcript_sha256": "e4ac6c93ff251ba7086b300e89803d9a14a1c33c037df893720b9cbb14a0fb9b",
+      "elapsed_seconds": 40.109195968019776,
+      "log_sha256": "194f49763b0c43029825db900e7d7db07414ca6ad8010e0faaa0263ea440c885",
+      "markers": 13,
+      "native_exit_status": 0,
+      "state": "native_exit"
+    },
+    "8": {
+      "anonymous_peak_bytes": 5736505344,
+      "available_min_bytes": 15047868416,
+      "checked_transcript_sha256": "e4ac6c93ff251ba7086b300e89803d9a14a1c33c037df893720b9cbb14a0fb9b",
+      "elapsed_seconds": 37.606393340043724,
+      "log_sha256": "942663ad826503cad7110ac799bf433cf0a52c745fa9f7afae8e189f4915eeb6",
+      "markers": 13,
+      "native_exit_status": 0,
+      "state": "native_exit"
+    }
+  },
+  "scope": "One runtime trial per thread count using the same precompiled mixed mapped-and-source fixture, while other local simulations remained active. Elaborating the design and throughput on the current full chip were outside this comparison.",
+  "source_cores": 16,
+  "state": "mapped_attention_multi_cpu_replays_independently_equal",
+  "verified_attention_rows": 4,
+  "verified_fixture_record_sha256": "67857f3dc6d330403581fc2344eaf938f7ad122c26e7300be8703c6f9880877d",
+  "xcelium_version": "25.03-s001"
+}
