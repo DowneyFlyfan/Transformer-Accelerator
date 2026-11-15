@@ -42,6 +42,7 @@ REDUCED_PORT_PLACEMENT = Path("records/tri_oracle_reduced_port_placement_and_rel
 TOKEN_TREE_PLACEMENT = Path("records/tri_oracle_full_native_token_tree_placement.json")
 BOUNDED_MAPPED_STRUCTURE = Path("records/tri_oracle_bounded_decoder_mapped_paper_structure.json")
 BOUNDED_RAW_REPLAY = Path("records/tri_oracle_bounded_decoder_native_raw_replay.json")
+BOUNDED_NATIVE_PLACEMENT = Path("records/tri_oracle_bounded_decoder_native_placement.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -121,8 +122,9 @@ def dimensions(path):
 
 
 def bounded_structure_facts(root, facts, identities):
-    """Recheck the new candidate's mapped evidence without certifying placement."""
+    """Recheck the candidate's mapped evidence and any same-candidate native placement."""
     from audit_tri_oracle_mapped_redundancy import audit
+    from tri_oracle_process_guard import _processes
     from verify_tri_oracle_buffered_topology import verify_compute_arrays
     from verify_tri_oracle_joined_placed_constraints import parse_sdc
     from verify_tri_oracle_pad_memory import compiler_sizes, memory_roles
@@ -205,6 +207,45 @@ def bounded_structure_facts(root, facts, identities):
         fixed_memory_macros_in_seed=len(macros),
         raw_replay_exact_output_values=exact_output_values,
     )
+
+    if (root / BOUNDED_NATIVE_PLACEMENT).is_file():
+        placement = json.loads(pin(BOUNDED_NATIVE_PLACEMENT).read_text())
+        assert placement["state"] == "bounded_decoder_exact_seed_import_and_cold_reload_verified"
+        assert placement["candidate_sha256"] == report["candidate_sha256"]
+        assert placement["constraint_period_ns"] == clock
+        paths = {Path(name): pin(Path(name), checksum)
+                 for name, checksum in placement["evidence_sha256"].items()}
+        stage = BOUNDED_STAGE / "native_placement"
+        proof = json.loads(paths[stage / "verified.json"].read_text())
+        assert proof["candidate_sha256"] == placement["candidate_sha256"]
+        assert proof["state"] == "exact_seed_native_import_and_cold_reload_verified"
+        assert proof["exact_connectivity"] == placement["exact_connectivity"]
+        assert proof["exact_connectivity"]["physical_leaf_instances"] == package["components"]
+        for step in ("import", "cold"):
+            status = json.loads(paths[stage / step / "status.json"].read_text())
+            assert status == proof["native"][step] and status["exit_status"] == 0 and status["stop_reason"] is None
+            measured = placement["native"][step]
+            assert list(dimensions(paths[stage / step / "layout.def"])) == measured["die_mm"] == report["die_mm"]
+            assert measured["placed_components"] == package["components"] and measured["fixed_memories"] == len(macros)
+            assert measured["timing_libraries_loaded"] == package["timing_libraries"]
+            assert measured["extraction_models_loaded"] == package["extraction_models"]
+            assert measured["constraint_entries_by_view"] == package["constraint_entries_by_view"]
+            native_report = paths[stage / step / "placement.rpt"].read_text()
+            assert re.findall(r"(?m)^\*info: Unplaced = (\d+)\s*$", native_report) == ["0"]
+        prefix = os.fsencode(root / stage) + b"/"
+        workers = [pid for pid, (_, _, arguments) in _processes().items()
+                   if any(arg == b"-log" and arguments[i + 1].startswith(prefix)
+                          for i, arg in enumerate(arguments[:-1]))]
+        facts.update(
+            evidence_stage="bounded decoder native Innovus placement and cold reload",
+            candidate_cold_qualified=True,
+            original_full_models_verified=True,
+            native_workers_terminal=not workers,
+            active_candidate_native_workers=sorted(workers),
+            unplaced_instances=0,
+            placement_density_percent=placement["native"]["cold"]["placement_density_percent"],
+            clock_period_scope="Placed design constraint. Achievable frequency requires timing evidence.",
+        )
 
 
 def reduced_port_placement_facts(root, facts, identities, *, repaired=False):
