@@ -1,0 +1,67 @@
+{
+  "additional_area_um2": 2159.304,
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "electrical": {
+    "ffg1p05vm40c": {
+      "direct_projection/pipeline_rst_n": {
+        "checked_driver_outputs": 249,
+        "maximum_pin_load_fraction": 0.06130271485472717,
+        "minimum_margin_pf": "0.06845821"
+      },
+      "layer/layer/feedforward/compute/compute/tensor/owner_rst_n": {
+        "checked_driver_outputs": 1307,
+        "maximum_pin_load_fraction": 0.06538501576130783,
+        "minimum_margin_pf": "0.08850071"
+      }
+    },
+    "ssg0p9v125c": {
+      "direct_projection/pipeline_rst_n": {
+        "checked_driver_outputs": 249,
+        "maximum_pin_load_fraction": 0.07208785556857468,
+        "minimum_margin_pf": "0.05123736"
+      },
+      "layer/layer/feedforward/compute/compute/tensor/owner_rst_n": {
+        "checked_driver_outputs": 1307,
+        "maximum_pin_load_fraction": 0.07401633184025623,
+        "minimum_margin_pf": "0.07019906"
+      }
+    },
+    "tt1v25c": {
+      "direct_projection/pipeline_rst_n": {
+        "checked_driver_outputs": 249,
+        "maximum_pin_load_fraction": 0.06667526152939443,
+        "minimum_margin_pf": "0.05574338"
+      },
+      "layer/layer/feedforward/compute/compute/tensor/owner_rst_n": {
+        "checked_driver_outputs": 1307,
+        "maximum_pin_load_fraction": 0.07044639219963468,
+        "minimum_margin_pf": "0.07264108"
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/evaluate_reset_row_repacking.py": "ce8f1f5ffae1e93057a2a20e8b42b0fd27c7f203a5915bf175c2a1dc34a61218",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_overloaded_reset_tree_plan/receipt.json": "b2ce738d1d87470836c28393d7ece5347a58d29d7843fba841a7244d370539f0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_preflight/verified.json": "4d6c0522a1dafde06af34f3ab35d0264fc20db6fc172ff44adbd44ba237469ec",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_repacked/independent_geometry.json": "d0e61e8723df8146218db3cdb1c44f46b2fc4c18852a489a12234508fabaca96",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_repacked/inputs.tcl": "7ba6f535a3d1424a3aae83fbeda5e2038c119896047fd1e16c5f43012fa9cb3a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_repacked/moves.tcl": "2be81ef0b51bfadf663febde3321aded281e057268ddf3c965d6aab8711a26ac",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_repacked/verified.json": "4c6888a7afd058ee117a738dde111f79b61f0db471e78861269336a9c945a41f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/qualify_reset_tree_sites.py": "fd9b2c6e71db3767668b87760f4d3f28f067255169dae070adcabe1e8280495d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/verify_reset_repacked_geometry.py": "96816ff4d3b8bef7d3f852abd72e05a70d348cdbf0d06ac827e6eda30835195c",
+    "records/tri_oracle_bounded_decoder_placed_pin_load.json": "269eeaefeec10ba1331b41872f594e7c539b74803d0c630cdf14f11f94d9fdf2"
+  },
+  "fixed_memory_macros": 631,
+  "max_existing_cell_shift_um": 76.86,
+  "median_existing_cell_shift_um": 0.7,
+  "moved_standard_cells": 128310,
+  "native_placed_component_inventory_checked": 3865789,
+  "proposed_buffers": 1554,
+  "resets": 18596,
+  "scope": "Independent offline slot and sink-pin-only electrical verification at the three TSMC 28 nm library corners. Native legality, resulting netlist behavior, wire capacitance, and timing require separate verification.",
+  "state": "bounded_candidate_repacked_reset_buffer_geometry_and_library_pin_loads_verified",
+  "worst_buffer_target_distance_um": {
+    "local_row_repack": 158.4078125000001,
+    "vacant_only": 2340.14
+  }
+}
