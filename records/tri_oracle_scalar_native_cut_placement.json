@@ -1,0 +1,38 @@
+{
+  "cold_reload_coordinate_matches": 57320,
+  "cold_reload_pin_matches": 7450,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/canary.tcl": "2b377f6fbe3022124593e19171211e6ed70988f8d50ba30f2bab0b0349673d77",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/cold.def": "3976b9b28c6d061dacf0c2ec1e32ded0dde91f1776008b9a93295ee913cea266",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/cold.rpt": "571c0cd2877a16325c8a1c35dd38256272392c6e4835c1fbd1bfe2c7a7a3a08a",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/cold.tcl": "e41a4eddf28e2af4c1ecbea68a8123da0ee5a2c42cc93db969572dbd528f48ec",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/cold_console.log": "e856381cd17baefa82ca93a2ff8da184cc3ad9f543ea6d8c48eb799fc510f520",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/console.log": "ed8b0af5c0d999ce7a8c3299b7d5081f6b270d2f2486cc0814982960ed9de05c",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/cut.def": "b1b04fc7fde649c3ca015af0a03f89ea834b6ae3fa0da6b402522d4e0de17e13",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/placed.def": "2c83769a93a7802f08c0e967d41366776026bbec13dc391ec2a37e857e9769bf",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/placement.rpt": "33de19142e6fda2e6b9e22c6375d97cbf0f29c3a6c4bd96108b905b94a11eff6",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/plan.tcl": "78abbf47b8255920193f6bf2b09c37984b0eac0766a65228573660e3bf1f4731",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/prepared.json": "e691a638b20c552c21d8802a25a0dcc93de10ba2d41db40ece2e57ee6d180b67",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/placed_subgraph_canary/verify.py": "09f8e55cf0060eb9b2c8a59f105fdc94bf76fa00b57371f2127d623f2d46bbe6"
+  },
+  "exact_native_coordinate_matches": 57320,
+  "fixed_macros": 1,
+  "fixed_memory_name": "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/inputs[1]",
+  "memory_halo_in_design_units": [
+    10040,
+    10800,
+    10000,
+    11620
+  ],
+  "parent_candidate_sha256": "6ed5ab585810393ff58cb566f5090f89a049f9c3185c0562f357f8dc6b1a3922",
+  "physical_pins": 7450,
+  "placed_components_by_block": {
+    "bank_writeback": 8633,
+    "direct_projection": 48677,
+    "fixed_memory": 1,
+    "writeback_control": 9
+  },
+  "placed_standard_cells": 57319,
+  "scope": "Native Innovus import and cold reload of the scalar direct projection, bank write-back, and mapped controller, plus one fixed compiled memory. Every component coordinate and boundary pin were preserved. The rest of the chip, routed timing, and paper performance remain unverified.",
+  "state": "scalar_mapped_cut_placement_coordinates_verified_in_innovus"
+}
