@@ -1,0 +1,29 @@
+{
+  "baseline_cycle_and_transaction_trace_equal": true,
+  "candidate_sha256": "a9efe5762a9480d8f5f2104250138995e4d8414d4b12e59f478106065d80dc35",
+  "compiled_memory_paths": 631,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/verify.py": "b7d154119e800c162f4529ba04396df98789d35e9c8ee2a958bcc297a04fc869",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/xrun.log": "a2576065aeb78af6ed57caef58a3dea4d830f312e7ab19be1e830caabf35af33",
+    ".cache/residual_bank_command_binding/trained/bundle.sv": "3ee9a4ccb02dd02ddf23bcaf90753980b4be7f25e0fecc0f163a2723702dc39d",
+    ".cache/residual_bank_command_binding/trained/inputs.json": "1e012dcd2580a1d9117e0550af285727015b8fc625f8f2f527928838d2ea3f1f",
+    ".cache/residual_bank_command_binding/trained/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/residual_bank_command_binding/trained/status.json": "c76549882cdde7228f6842c196c86aeb9799e3158a683b40f287feed8fbbf900",
+    ".cache/residual_bank_command_binding/trained/verified.json": "a1534c6e80ae8c813b95f73aadd043835b2f1ef36b0380456f9c066299b13706",
+    ".cache/residual_bank_command_binding/trained/xrun.log": "6f2a365e4159aab2b8d6b242df7a69d677cbcba386bacd5976f706230c929ae2",
+    ".cache/residual_bank_command_binding/verify_completed_runs.py": "e10051ad0c77163d9df1de2957c579ac34ebf250baa0ec782499a6909b13507b",
+    "records/tri_oracle_guarded_scalar_cold_trained_writeback_xcelium.json": "0b9ab2dafac28efef1f49adbf53166ec08a2e1c0e3849acab9aaa08b3d839cce",
+    "records/tri_oracle_residual_bank_command_binding.json": "9f3dc49df185d296ebaca1a2700bd4ce339b1f844e7a55b92e012499e769b6d5"
+  },
+  "exact_feedforward_values": 4096,
+  "exact_reference_checkpoints": 90,
+  "exact_writeback_values": 4096,
+  "exit_status": 0,
+  "minimum_host_available_bytes": 8869117952,
+  "native_simulated_end_ns": 9732890,
+  "peak_container_anonymous_bytes": 12094210048,
+  "scope": "Full-chip Xcelium replay of the linked arbitration candidate with external residual lease enabled. All arithmetic outputs and cycle checkpoints match the guarded reference. Buffered Innovus restoration and the autonomous request revision have separate criteria.",
+  "state": "linked_bank_arbiter_whole_chip_trained_feedforward_and_writeback_verified",
+  "wall_seconds": 1999.850108489045
+}
