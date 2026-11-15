@@ -1,0 +1,59 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/audit_first_token_skipping.py": "092d84843ddd4efdab1b5c100317ffff105cba2e588947e894c3604f52854c5d",
+    "records/tri_oracle_gqa_paired_channel_scales.json": "1bceed5dd82ab2e372f066c69524145772ffab84bed083e22aa5b06eef95c0dd"
+  },
+  "exact_matches": {
+    "channel_no_skip": 89,
+    "channel_skip": 80,
+    "scalar_no_skip": 89,
+    "scalar_skip": 87
+  },
+  "first_token_and_correctness": {
+    "scaling_with_skipping": {
+      "first_token_gain": 2,
+      "first_token_loss": 9,
+      "first_token_unchanged": 4,
+      "identical_sequence_unchanged": 145
+    },
+    "scaling_without_skipping": {
+      "first_token_gain": 2,
+      "first_token_loss": 2,
+      "identical_sequence_unchanged": 155,
+      "later_token_unchanged": 1
+    },
+    "skipping_with_channel_scaling": {
+      "first_token_gain": 1,
+      "first_token_loss": 10,
+      "first_token_unchanged": 2,
+      "identical_sequence_unchanged": 147
+    },
+    "skipping_with_scalar_scaling": {
+      "first_token_gain": 2,
+      "first_token_loss": 4,
+      "first_token_unchanged": 1,
+      "identical_sequence_unchanged": 152,
+      "later_token_unchanged": 1
+    }
+  },
+  "questions": 160,
+  "scope": "Offline audit of the frozen software Graph Question Answering panel. Every correctness change in these comparisons already has a different first generated token after prompt processing. Subsequent differences can still depend on decoding. The skipped-channel percentages describe these specific runs.",
+  "skipped_percent": {
+    "channel_no_skip": 0.0,
+    "channel_skip": 8.39596455844522,
+    "scalar_no_skip": 0.0,
+    "scalar_skip": 8.377807897899325
+  },
+  "total_skip_opportunities": {
+    "channel_no_skip": 6589220352,
+    "channel_skip": 6641564160,
+    "scalar_no_skip": 6591360512,
+    "scalar_skip": 6645382656
+  },
+  "total_skipped_channels": {
+    "channel_no_skip": 0,
+    "channel_skip": 557623373,
+    "scalar_no_skip": 0,
+    "scalar_skip": 556737393
+  }
+}
