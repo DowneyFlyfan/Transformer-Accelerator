@@ -4,7 +4,8 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from check_tri_oracle_paper300_gate import (
-    CONCURRENT_IMPORT, LEGACY_QUALIFICATION, REPEATER_PLACEMENT, placement_checks, qualification_source,
+    BOUNDED_MAPPED_STRUCTURE, CONCURRENT_IMPORT, LEGACY_QUALIFICATION, REPEATER_PLACEMENT,
+    TOKEN_TREE_PLACEMENT, placement_checks, qualification_source,
 )
 from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
 
@@ -111,6 +112,17 @@ END COMPONENTS
             repaired.touch()
             self.assertEqual(qualification_source(root, None), repaired)
             self.assertEqual(qualification_source(root, baseline), baseline)
+
+    def test_current_structure_is_selected_while_its_native_placement_is_pending(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            older = root / TOKEN_TREE_PLACEMENT
+            older.parent.mkdir()
+            older.touch()
+            current = root / BOUNDED_MAPPED_STRUCTURE
+            current.touch()
+            self.assertEqual(qualification_source(root, None), current)
+            self.assertEqual(qualification_source(root, older), older)
 
     def complete(self):
         return dict(candidate_cold_qualified=True,native_workers_terminal=True,

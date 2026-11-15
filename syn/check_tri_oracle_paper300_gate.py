@@ -40,6 +40,9 @@ GUARDED_SCALAR_PLACEMENT = Path("records/tri_oracle_guarded_scalar_whole_chip_co
 BUFFERED_GRANT_PLACEMENT = Path("records/tri_oracle_buffered_grant_whole_chip_cold_reload.json")
 REDUCED_PORT_PLACEMENT = Path("records/tri_oracle_reduced_port_placement_and_reload.json")
 TOKEN_TREE_PLACEMENT = Path("records/tri_oracle_full_native_token_tree_placement.json")
+BOUNDED_MAPPED_STRUCTURE = Path("records/tri_oracle_bounded_decoder_mapped_paper_structure.json")
+BOUNDED_RAW_REPLAY = Path("records/tri_oracle_bounded_decoder_native_raw_replay.json")
+BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
 SCALAR_PLACEMENT_STAGES = {
@@ -52,7 +55,8 @@ SCALAR_PLACEMENT_STAGES = {
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT, *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
+    for candidate in (BOUNDED_MAPPED_STRUCTURE, TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT,
+                      *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
         placement = root / candidate
         if placement.is_file():
             return placement
@@ -114,6 +118,93 @@ def dimensions(path):
     if not units or not die or die[2] <= die[0] or die[3] <= die[1]:
         raise ValueError("Missing or invalid native die dimensions")
     return ((die[2]-die[0])/units/1000, (die[3]-die[1])/units/1000)
+
+
+def bounded_structure_facts(root, facts, identities):
+    """Recheck the new candidate's mapped evidence without certifying placement."""
+    from audit_tri_oracle_mapped_redundancy import audit
+    from verify_tri_oracle_buffered_topology import verify_compute_arrays
+    from verify_tri_oracle_joined_placed_constraints import parse_sdc
+    from verify_tri_oracle_pad_memory import compiler_sizes, memory_roles
+    from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
+
+    def pin(path, expected=None):
+        absolute = root / path
+        name = str(absolute.relative_to(root))
+        if name not in identities:
+            identities[name] = sha(absolute)
+        assert expected is None or identities[name] == expected, absolute
+        return absolute
+
+    report = json.loads(pin(BOUNDED_MAPPED_STRUCTURE).read_text())
+    assert report["state"] == "bounded_decoder_mapped_compute_and_compiler_memory_verified"
+    assert report["paper_sha256"] == PAPER_SHA256
+    published = report["evidence_sha256"]
+    candidate = pin(BOUNDED_STAGE / "whole_chip.v", report["candidate_sha256"])
+    seed = pin(BOUNDED_STAGE / "localized_seed/localized_seed.def", report["coordinate_seed_sha256"])
+    targets_path = Path("records/paper_result_targets.json")
+    targets = json.loads(pin(targets_path, published[str(targets_path)]).read_text())
+    silicon = targets["silicon"]
+    assert list(dimensions(seed)) == report["die_mm"] == silicon["die_dimensions_mm"]
+    graph, macros = compiled_memory_inventory(candidate, seed)
+    topology = audit(graph)
+    assert topology["clusters"] == report["clusters"]
+    arrays = verify_compute_arrays(candidate, graph, targets)
+    assert arrays == report["compute"]
+
+    files = {pin(Path(name), checksum) for name, checksum in published.items()
+             if Path(name).parent.name in {"LEF", "NLDM", "VERILOG"}}
+    sizes = compiler_sizes(files, set(macros.values()))
+    memory = report["memory"]
+    assert sizes == memory["bytes_per_macro_master"] and len(macros) == memory["compiled_macros"]
+    roles = memory_roles(macros, sizes)
+    assert json.dumps(roles, sort_keys=True) == json.dumps({key: memory[key] for key in roles}, sort_keys=True)
+    total = sum(sizes[master] for master in macros.values())
+    assert total == memory["compiled_bytes"]
+    assert (total + 512) // 1024 == memory["rounded_binary_kb"] == silicon["sram_published_KB"]
+
+    package_path = BOUNDED_STAGE / "native_placement/prepared.json"
+    package = json.loads(pin(package_path, published[str(package_path)]).read_text())
+    assert package["candidate_sha256"] == report["candidate_sha256"]
+    definitions = {}
+    for name, checksum in package["evidence_sha256"].items():
+        path = Path(name)
+        if path.suffix == ".sdc" and path.stem in VIEWS:
+            text = pin(path, checksum).read_text().replace("-name core ", "-name core_clock ")
+            parsed = parse_sdc(text.replace("[get_clocks {core}]", "[get_clocks {core_clock}]"))
+            assert parsed[0]["current_design"] == "tri_oracle_chip_command_layer_parallel_chip"
+            assert len(parsed[1]) == package["constraint_entries_by_view"][path.stem]
+            definitions[path.stem] = parsed[0]["create_clock"]
+    assert definitions.keys() == VIEWS and len({tuple(value) for value in definitions.values()}) == 1
+    clock = float(definitions["setup_slow"][1])
+
+    exact_output_values = None
+    if (root / BOUNDED_RAW_REPLAY).is_file():
+        raw = json.loads(pin(BOUNDED_RAW_REPLAY).read_text())
+        assert raw["state"] == "widened_native_raw_replay_matches_reference"
+        assert raw["candidate_sha256"] == report["candidate_sha256"] and raw["exit_status"] == 0
+        for name, checksum in raw["evidence_sha256"].items():
+            pin(Path(name), checksum)
+        assert raw["functional_checkpoints"] == 90 and raw["compiled_memory_paths"] == len(macros)
+        assert raw["exact_feedforward_values"] == raw["exact_writeback_values"] == 4096
+        exact_output_values = raw["exact_feedforward_values"]
+
+    facts.update(
+        evidence_stage="bounded mapped netlist and coordinate seed",
+        candidate_sha256=report["candidate_sha256"],
+        die_width_mm=report["die_mm"][0],
+        die_height_mm=report["die_mm"][1],
+        clusters=len(topology["clusters"]),
+        cores=sum(cluster["cores"] for cluster in topology["clusters"]),
+        array_instances=arrays["array_instances"],
+        array_geometry=[arrays["array_rows"], arrays["array_lanes"]],
+        operand_bits=arrays["operand_bits"],
+        clock_period_ns=clock,
+        clock_period_scope="Constraint for the proposed placement. Achievable frequency is unmeasured.",
+        mapped_compiled_memory_bytes=total,
+        fixed_memory_macros_in_seed=len(macros),
+        raw_replay_exact_output_values=exact_output_values,
+    )
 
 
 def reduced_port_placement_facts(root, facts, identities, *, repaired=False):
@@ -563,7 +654,9 @@ def main():
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
-        if relative_qualification in {TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT}:
+        if relative_qualification == BOUNDED_MAPPED_STRUCTURE:
+            bounded_structure_facts(root, facts, identities)
+        elif relative_qualification in {TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT}:
             memory = reduced_port_placement_facts(root, facts, identities,
                                                  repaired=relative_qualification == TOKEN_TREE_PLACEMENT)
         elif relative_qualification in SCALAR_PLACEMENT_STAGES:
