@@ -1,0 +1,23 @@
+{
+  "candidate_sha256": "4e6668b954c3f5b6a4f7359c70b765694085ada9c2e6ca51fdc43ec1d63933d9",
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/area_screen.json": "64fb030a32081f7f7b5716508e3ece70c7ff959e834456fa7729cf9e968461da",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/connect.py": "5f7ab38890b315f7fa181a759a394167fc4ee41157c0bb58fb15d72ca1064418",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/mapped_bundle.sv": "285ed3dd24e7097b93fd4937c8d5cfbcfc6399f7971d3bf46f5c548ba58705e9",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/prepare_weights.py": "0d69f7c8bf7061227b1a9b02eb7f11e5cf324d4da7dc11325396859aaa24afc5",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/structure.json": "280baaa017d38a333682e0302a06c6fc3e7f5487b36924ea1ee1f05e26a493ee",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/syntax/xrun.log": "1202a01e1cd303cff8ed4e75aeeebc3544124510ee0f7ca167885fb5a4ec8fdb",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/verify.py": "63400f89a27f8476a9ba2251ab25adb01972e98d1672f8b5e3e57fbd018c48c7",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/in_chip_channel_writeback/weights.json": "41eb73265e6fe42af6429d5ef86dfa8c543b86ccb6524a21f5401a8f2ab01bb3"
+  },
+  "geometrically_fitted_cells": 58670,
+  "mapped_area_change_from_saved_baseline_um2": -23191.896,
+  "memory_instance_paths": 631,
+  "packed_down_image_bytes": 11534336,
+  "raw_weight_image_outputs": 4096,
+  "scalar_parent_sha256": "4326ed1cdaa37110153a6fad17ec01d42496a7239b6d592bbbcab37ecbb736b8",
+  "scale_table_bytes": 1024,
+  "scope": "The candidate shares the projection narrow port with channel-scale reads and retains all existing compiled memory paths. The new trained down weights were checked against the native wide-read layout and independent expected accumulators. Compilation and row capacity checks passed. Whole-chip simulation and physical placement for this candidate remain pending.",
+  "state": "in_chip_channel_writeback_and_shared_narrow_port_linked",
+  "verified_arbiter_connections": 23
+}

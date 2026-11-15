@@ -1,0 +1,23 @@
+{
+  "activation_bytes": 4096,
+  "candidate_sha256": "3d1ac6b8ab6d0f61d66bcd60d5c7e2eb364d73a42d8a3bba4956049189e83bdf",
+  "compiled_memories": 631,
+  "elapsed_seconds": 2116.3002890460193,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/direct_writer/native/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/direct_writer/native/xrun.log": "8c4ceca4f600c7d975f8807524094d68819155055448a14c073c119da6a9aa33",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/direct_writer/receipt.json": "d96d100604026889ad8bffc625eb1577fe9179638d5ded282b354f750bfa4932",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/direct_writer/structure.json": "c4c0291bcb428b2033617b9a287958ccc0646564df09efce06755cf49b403818"
+  },
+  "feedforward_packets": 26,
+  "feedforward_values": 4096,
+  "projection_packets": 64,
+  "residual_reads": 512,
+  "scope": "The mapped projection stage drives the chip's mapped activation writer and feed-forward layer. The projection packets, residual operands, and normalization scales come from captured trained inputs. The mapped write-back bridge is instantiated by the testbench and reads live retained residuals from the chip. Timing annotation was disabled.",
+  "state": "whole_chip_direct_projection_writer_and_trained_feedforward_verified",
+  "trained_positions": [
+    607,
+    608
+  ],
+  "writeback_values": 4096
+}
