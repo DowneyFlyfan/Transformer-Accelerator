@@ -10,8 +10,10 @@
   "evidence_sha256": {
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/archive_retained_seed.py": "705ed3acdc137125ee7026a47ce27cd5bfdc952f79cb74799c2732eb759fa97f",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/local_release_verified.json": "90a6a11ce90cd660148cc1474881d6d9ea6a07d3a0262e4026e992b98021cc92",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/compare_path_geometry.py": "c88bdfd8b945a743595f9e8757a924b46df22486207e02376187c5852b5278e9",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/connected/verified.json": "c7a9021baae3cc2249e9a10b64f9b69fb4ba2b47b93a59121aa60f91c5b6c185",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/diagnosis/verified.json": "a9580b2bb327d3e5b7dd117fb3b45a3c72460c4ebc411b6976af704afa96e9c1",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/path_comparison.json": "e03924402284eac96c4ae96806e5c469cae5dc4f6b67ec455bbb85d991476e39",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/prepared.json": "7cd7b84edd2f5e7e2f114aedb59ae8317c6afcfa698205f1848a268c7815db51",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/swaps_verified.json": "7f5588f4afc6ccb691a0f01d011c0e386c8191a7359ccac71b43bdccc9ca4125",
     ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/verified.json": "22cdad3260ad7b820a926b1847339bf68449a8f308a2f48fc19ead4fb3337900",
@@ -29,6 +31,16 @@
   "ordinary_cells_reassigned": 573807,
   "original_movable_positions_retained": 2838729,
   "placed_density_percent": 97.94,
+  "prewire_setup_path_geometry": {
+    "edges": 1800,
+    "improved_paths": 37,
+    "paths": 100,
+    "previous_largest_gap_um": 13338.88,
+    "previous_median_gap_um": 1716.1999999999998,
+    "scope": "Same 100 connectivity-verified paths selected without extracted wire loads. Distances are lower bounds from pin rectangles on each placement.",
+    "seed_largest_gap_um": 8098.78,
+    "seed_median_gap_um": 1439.13
+  },
   "regions": 20,
   "scope": "The exact connected netlist was independently verified after native placement import. The measured half-perimeter sums cover internal standard-cell nets in all 20 compute arrays. Port connections, clocks, reset, inter-array wires, routed delay and signoff remain outside this study.",
   "shared_netlist_payload_sha256": "73e2553e863907075408665f955feb91e262c9c36135a27139e3d1f216f2e799",
