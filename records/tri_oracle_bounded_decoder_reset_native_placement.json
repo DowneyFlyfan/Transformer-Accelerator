@@ -1,0 +1,49 @@
+{
+  "added_reset_buffers": 1554,
+  "checked_component_count": 3867343,
+  "checked_external_pins": 7945,
+  "clocks_target_period_ns": 1.72414,
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/audit_relinked_reset_native_import.py": "259e8ea17dc5733cd8918a588e071839510c1c86e1e0204357fa4c049235ce68",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/cold/placement.rpt": "ecd41fc93ce970a00d2069e68c25b7ac8e5ce9443e996270f8cdb656c522a959",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/import/placement.rpt": "3ab54f3b5164170fa85c58f362355518500d4607dbd20fa708f5db4faa5c1595",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/native_receipt.json": "85568db722e1ada0f3e57e0b066922e17acec94c67b7f3d185dc3df63258129d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/verified.json": "3dd12ba4fd5210c11d75f2538edd7a3d6f5a64767185940fa4190a4adad04e0a",
+    "records/tri_oracle_bounded_decoder_explicit_reset_relink.json": "354d57ff3453bfcaa339f4d47f3c9230205645e25b7a8913356c09fe5c79b464"
+  },
+  "exact_connectivity": {
+    "modules": 573,
+    "named_instances": 3862191,
+    "physical_leaf_instances": 3867343
+  },
+  "exported_cold_netlist_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "fixed_macros": 631,
+  "moved_standard_cells": 128310,
+  "native_receipt_sha256": "85568db722e1ada0f3e57e0b066922e17acec94c67b7f3d185dc3df63258129d",
+  "native_status": {
+    "cold_stage": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 8517840896,
+      "peak_container_anonymous_bytes": 12008923136,
+      "stop_reason": null,
+      "wall_seconds": 117.12282931793015
+    },
+    "import_stage": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 8020344832,
+      "peak_container_anonymous_bytes": 12277092352,
+      "stop_reason": null,
+      "wall_seconds": 123.0938555028988
+    }
+  },
+  "original_candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "place_density_percent": 97.92,
+  "reset_repaired_netlist_sha256": "7947101257e148a9002496edcdd583c899481bcd6aa202844ea59773ffe51699",
+  "scope": "Native Innovus placement and fresh reload. The coordinates, memory locations and keepouts, external pin placements, three constraint sets, and every reachable logical connection were checked. Post-repair simulation, extracted timing and routing require separate verification.",
+  "state": "reset_repaired_whole_chip_native_import_cold_reload_and_geometry_verified",
+  "verifier_sha256": "259e8ea17dc5733cd8918a588e071839510c1c86e1e0204357fa4c049235ce68"
+}
