@@ -1,0 +1,255 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/placed_drive_strength/archive_drive.py": "af30e2fd2ee227360560f196f2c204e249c09661f3a77ad6d8bbd00358766dda",
+    ".cache/physical/carry_lookahead_comparison/placed_drive_strength/choices.json": "b361a59356727cd72a47fff3308c7d7cd37819441d33913528521dc69baed6f4",
+    ".cache/physical/carry_lookahead_comparison/placed_drive_strength/choices_compacted.json": "b86c046136f3689f44cbe35205a4311c352b09ee3506ba378e764c0e0e9a64d9",
+    ".cache/physical/carry_lookahead_comparison/placed_drive_strength/compacted/verified.json": "e415f8fdcfc988b4d5a9f9e11d28f76be6815e988f081c1807d0ba623654a476",
+    ".cache/physical/carry_lookahead_comparison/placed_drive_strength/compacted/verified_truth.json": "660eb6de088a8329d4b5a48dcab1d8ac31fb214dcdd6353ef74c8de9886e4b6a",
+    ".cache/physical/carry_lookahead_comparison/placed_drive_strength/direct/verified.json": "2b782c10c2555dc76d1b2bd65463697097da7067b9882033ca00de8f32e419ae",
+    ".cache/physical/carry_lookahead_comparison/placed_drive_strength/direct/verified_truth.json": "69ff6e33c9c92b97279c4492e548916bdabeb6ba926c198e02375ddff4cbdab4"
+  },
+  "limiting_array_has_no_legal_tested_resize": "tri_oracle_pe_array_verified_bank1_3",
+  "pair_case_count": 4,
+  "results": {
+    "compacted": {
+      "cases": {
+        "tri_oracle_pe_array_verified_bank0_3": {
+          "baseline_slack_ns": -1.417647,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.417647
+        },
+        "tri_oracle_pe_array_verified_bank1": {
+          "baseline_slack_ns": -1.662737,
+          "improvement_ns": 0.0674,
+          "neighboring_cell_moves": 12,
+          "netlist_substitutions": 4,
+          "stronger_cell_slack_ns": -1.595337
+        },
+        "tri_oracle_pe_array_verified_bank1_2": {
+          "baseline_slack_ns": -1.445553,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 1,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.445553
+        },
+        "tri_oracle_pe_array_verified_bank2": {
+          "baseline_slack_ns": -1.266061,
+          "improvement_ns": 0.060705,
+          "neighboring_cell_moves": 4,
+          "netlist_substitutions": 6,
+          "stronger_cell_slack_ns": -1.205356
+        },
+        "tri_oracle_pe_array_verified_bank2_1": {
+          "baseline_slack_ns": -1.00092,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 4,
+          "netlist_substitutions": 6,
+          "stronger_cell_slack_ns": -1.00092
+        },
+        "tri_oracle_pe_array_verified_bank2_2": {
+          "baseline_slack_ns": -1.855822,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 2,
+          "stronger_cell_slack_ns": -1.855822
+        },
+        "tri_oracle_pe_array_verified_bank2_3": {
+          "baseline_slack_ns": -1.178273,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 3,
+          "netlist_substitutions": 2,
+          "stronger_cell_slack_ns": -1.178273
+        },
+        "tri_oracle_pe_array_verified_bank3": {
+          "baseline_slack_ns": -1.733814,
+          "improvement_ns": 0.1334,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.600414
+        },
+        "tri_oracle_pe_array_verified_bank3_1": {
+          "baseline_slack_ns": -1.603483,
+          "improvement_ns": 0.0488,
+          "neighboring_cell_moves": 1,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.554683
+        },
+        "tri_oracle_pe_array_verified_bank3_2": {
+          "baseline_slack_ns": -1.397382,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 1,
+          "netlist_substitutions": 2,
+          "stronger_cell_slack_ns": -1.397382
+        },
+        "tri_oracle_pe_array_verified_bank3_3": {
+          "baseline_slack_ns": -1.563095,
+          "improvement_ns": 0.0312,
+          "neighboring_cell_moves": 2,
+          "netlist_substitutions": 2,
+          "stronger_cell_slack_ns": -1.531895
+        },
+        "tri_oracle_pe_array_verified_bank4": {
+          "baseline_slack_ns": -1.433676,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 2,
+          "stronger_cell_slack_ns": -1.433676
+        },
+        "tri_oracle_pe_array_verified_bank4_1": {
+          "baseline_slack_ns": -2.049566,
+          "improvement_ns": 0.0113,
+          "neighboring_cell_moves": 1,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -2.038266
+        },
+        "tri_oracle_pe_array_verified_bank4_2": {
+          "baseline_slack_ns": -1.984972,
+          "improvement_ns": 0.2089,
+          "neighboring_cell_moves": 2,
+          "netlist_substitutions": 4,
+          "stronger_cell_slack_ns": -1.776072
+        },
+        "tri_oracle_pe_array_verified_bank4_3": {
+          "baseline_slack_ns": -1.397052,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 3,
+          "stronger_cell_slack_ns": -1.397052
+        }
+      },
+      "extra_sites": 65,
+      "improved_arrays": 7,
+      "neighbors": 31,
+      "num_affected": 15,
+      "num_unchanged": 5,
+      "patterns_verified": 36,
+      "substitutions": 38,
+      "whole_population_setup_min_median_max_ns": {
+        "all_trials": [
+          -2.194584,
+          -1.50853,
+          -1.00092
+        ],
+        "before": [
+          -2.194584,
+          -1.5218435000000001,
+          -1.00092
+        ],
+        "take_only_improvements": [
+          -2.194584,
+          -1.50853,
+          -1.00092
+        ]
+      }
+    },
+    "direct": {
+      "cases": {
+        "tri_oracle_pe_array_verified_bank0_3": {
+          "baseline_slack_ns": -1.417647,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.417647
+        },
+        "tri_oracle_pe_array_verified_bank1": {
+          "baseline_slack_ns": -1.662737,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.662737
+        },
+        "tri_oracle_pe_array_verified_bank2": {
+          "baseline_slack_ns": -1.266061,
+          "improvement_ns": 0.060705,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 4,
+          "stronger_cell_slack_ns": -1.205356
+        },
+        "tri_oracle_pe_array_verified_bank2_1": {
+          "baseline_slack_ns": -1.00092,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 3,
+          "stronger_cell_slack_ns": -1.00092
+        },
+        "tri_oracle_pe_array_verified_bank2_2": {
+          "baseline_slack_ns": -1.855822,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 2,
+          "stronger_cell_slack_ns": -1.855822
+        },
+        "tri_oracle_pe_array_verified_bank2_3": {
+          "baseline_slack_ns": -1.178273,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.178273
+        },
+        "tri_oracle_pe_array_verified_bank3": {
+          "baseline_slack_ns": -1.733814,
+          "improvement_ns": 0.1334,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.600414
+        },
+        "tri_oracle_pe_array_verified_bank3_2": {
+          "baseline_slack_ns": -1.397382,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 1,
+          "stronger_cell_slack_ns": -1.397382
+        },
+        "tri_oracle_pe_array_verified_bank4": {
+          "baseline_slack_ns": -1.433676,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 2,
+          "stronger_cell_slack_ns": -1.433676
+        },
+        "tri_oracle_pe_array_verified_bank4_2": {
+          "baseline_slack_ns": -1.984972,
+          "improvement_ns": 0.038,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 3,
+          "stronger_cell_slack_ns": -1.946972
+        },
+        "tri_oracle_pe_array_verified_bank4_3": {
+          "baseline_slack_ns": -1.397052,
+          "improvement_ns": 0.0,
+          "neighboring_cell_moves": 0,
+          "netlist_substitutions": 3,
+          "stronger_cell_slack_ns": -1.397052
+        }
+      },
+      "extra_sites": 35,
+      "improved_arrays": 3,
+      "neighbors": 0,
+      "num_affected": 11,
+      "num_unchanged": 9,
+      "patterns_verified": 36,
+      "substitutions": 22,
+      "whole_population_setup_min_median_max_ns": {
+        "all_trials": [
+          -2.194584,
+          -1.5218435000000001,
+          -1.00092
+        ],
+        "before": [
+          -2.194584,
+          -1.5218435000000001,
+          -1.00092
+        ],
+        "take_only_improvements": [
+          -2.194584,
+          -1.5218435000000001,
+          -1.00092
+        ]
+      }
+    }
+  },
+  "scope": "Exact pinned compute-array netlists with changes limited to approved combinational cell footprints and, in the second run, short shifts within the same row. Exhaustive native simulation compares each library cell pair across binary inputs. Native timing uses the existing slow library, modeled internal wire parasitics and an ideal clock; no routed-chip timing or power measurement.",
+  "state": "drive_size_setup_timing_and_exact_site_experiments_verified"
+}
