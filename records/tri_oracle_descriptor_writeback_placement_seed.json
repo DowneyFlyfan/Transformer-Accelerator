@@ -1,0 +1,49 @@
+{
+  "added_control_cells": {
+    "residual_command_request/awaiting_completion_reg": {
+      "master": "EDFCNQD1BWP12T40P140",
+      "orientation": "FS",
+      "x": 3024240,
+      "y": 3457600
+    },
+    "residual_command_request/g183__5107": {
+      "master": "OA31D1BWP12T40P140",
+      "orientation": "FS",
+      "x": 2432040,
+      "y": 4144000
+    },
+    "residual_command_request/g184__2398": {
+      "master": "AO21D1BWP12T40P140",
+      "orientation": "FS",
+      "x": 2433720,
+      "y": 4144000
+    },
+    "residual_command_request/g185__6260": {
+      "master": "AN2D1BWP12T40P140",
+      "orientation": "FS",
+      "x": 2435120,
+      "y": 4144000
+    }
+  },
+  "buffered_parent_candidate_sha256": "181c45c86e236aee4a5f807604198912fd706b47818efb6890ce0fdfa5f7bb93",
+  "candidate_sha256": "e93e25c4ab2c1718f493d4b41b6c768c75cb4ccb77c58c8fa5caede0c3c32c15",
+  "clock_constraint_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/residual_command_request/descriptor_fields/physical/independent_seed_inventory.json": "9f0edd8256a11e3be94d7f72f0b7123068fd9a995488402b2bd3dcb7d7da2256",
+    ".cache/residual_command_request/descriptor_fields/physical/native_input_verification.json": "3006810655759c090432cb57f81e028c7e2ed130a621d3685149cf9baf6db0d8",
+    ".cache/residual_command_request/descriptor_fields/physical/native_inputs/prepared.json": "f4e978b8fa00f1cfabf04ea3036095db7577f6b6e9fa825c79dc9ee18bc2aa15",
+    ".cache/residual_command_request/descriptor_fields/physical/verify_views.py": "0759496c9ccb00b15ed77b5b50d4a2c9f17f29f8af49aac033635ce6602a44d4",
+    ".cache/residual_command_request/descriptor_fields/prepare_physical_seed.py": "577c8af9b2fe3f9793ab134d5c3eb42c71303b23d69338fea2b8157a8e20e755",
+    "syn/verify_tri_oracle_seed_components.py": "e00ecb2852c8fbd85757c78cb29f1dc3438534c5cc72c658c8f656d0394d946a"
+  },
+  "expanded_constraints_per_view": 52504,
+  "matched_instances": 3742150,
+  "max_manhattan_um_from_existing_arbiter_anchor": 665.41,
+  "physical_port_bits": 13128,
+  "preserved_component_poses": 3742146,
+  "preserved_fixed_macros": 631,
+  "scope": "Component-only seed and timing input preflight. Adds four cells and drops ten external scale bits. The placed seed may require timing optimization because sites are up to 665.41 micrometers from the arbiter anchor. Native placement, wire delay and the whole-chip replay remain pending.",
+  "seed_sha256": "0c473e0740ce2b7d8bcbf683b0f83e3df6702b59c34736a9ab65148b184fc256",
+  "state": "descriptor_writeback_component_seed_and_timing_inputs_independently_verified",
+  "timing_models": 32
+}
