@@ -1,0 +1,85 @@
+{
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/independent_verified.json": "83c5c363ba1d460768d804e6ce79300e24589fc9bc891d28dd9c4bd064aaed0f",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/inputs.json": "38d658feeca843b41e228c6dc30858d1d5495dd4d729f6affcd206e243ada836",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/predictions.jsonl": "298d20fdefd25c9f1781ed8bb49db2e7438d4d587fc928921cb38e76d55bea6b",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/receipt.json": "b3e8d43e8e738ff32bc79ffc9e16f9746d39bce6b0f91e5d3618607989411361",
+    ".cache/model_reference/gqa_testdev/joint_late_clip/inputs.json": "c43ca5fa8c6aded776acc121bb96b11bb1c1f6a0fb3324dc80b55bf142c15d51",
+    ".cache/model_reference/gqa_testdev/joint_late_clip/predictions.jsonl": "2c0c470ccb782c90cbfe8c463f6ceaa6d35f9808c82bd620baa30db76b597185",
+    ".cache/model_reference/gqa_testdev/pruned_reference/inputs.json": "f4f27cde9000da4c862d531da71a09733320ea813cdc307bb26542add742cf45",
+    ".cache/model_reference/gqa_testdev/pruned_reference/predictions.jsonl": "68394aff6c8360f7cc671382a01157b2f727a3a962f84969a7f2c4a30ef7081f",
+    ".cache/model_reference/gqa_testdev/pruned_reference/receipt.json": "330708dd9dd2826ef37aa31aedf43e39e37b3949e31f732fe2f210efbd163c44",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_images.parquet": "ba0a57a72c483d6e4a390ecbbee05d07a55365aeac3e93f4a923ac61c9e465eb",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_joint_late_clipping.json": "e5779fd8ec0097149579a2aaaa1fd8c433682a097ce5ef801508e88a0246c321",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "records/wac_gqa_frozen_down_scale_result.json": "b1d1ef9c253ee04cbfcc72776f062ad4ba17fe0cd7939ec5d2961a4c221f6f34",
+    "syn/verify_tri_oracle_full_down_code_score.py": "e75dad257c2d5ad56db47de8013e17b307859a504c5965a4a6f205a6ea61cbb1",
+    "syn/verify_tri_oracle_full_joint_late_clip.py": "96a9ad18f62cd82d231931bb05aa2b4c41c41d4d179a1be7dde0cbef1f9c6041"
+  },
+  "final_accuracy_bounds": {
+    "absolute_paper_score_percent": 55.04,
+    "absolute_paper_score_still_possible": false,
+    "both_targets_still_possible_if_loss_is_in_percentage_points": false,
+    "dense_local_score_percent": 56.948640483383684,
+    "exact_correct_count_bounds": [
+      6241,
+      6241
+    ],
+    "minimum_correct_to_reach_absolute_paper_score": 6923,
+    "minimum_correct_to_reach_both_targets_if_loss_is_in_percentage_points": 6953,
+    "questions_remaining": 0
+  },
+  "full": {
+    "baseline_correct": 5975,
+    "corrected": 6241,
+    "gained": 570,
+    "image_bootstrap_95pct_pp": [
+      1.6178049191765775,
+      2.6076203035295578
+    ],
+    "images": 398,
+    "lost": 304,
+    "questions": 12578
+  },
+  "images_disjoint_from_panel": {
+    "baseline_correct": 3697,
+    "corrected": 3879,
+    "gained": 363,
+    "image_bootstrap_95pct_pp": [
+      1.754698710648009,
+      2.944652792025199
+    ],
+    "images": 267,
+    "lost": 181,
+    "questions": 7731
+  },
+  "mapped_execution_accuracy_verified": false,
+  "matched_panel_controls": 160,
+  "paper_prompt_and_split_confirmed": false,
+  "scope": "Balanced test-development software evaluation with a pinned local prompt and checkpoint. An image-disjoint comparison excludes the panel that informed clipping. Mapped integer execution and agreement with the paper's undisclosed prompt and split require separate evidence.",
+  "score_comparisons_percent": {
+    "clipped": 49.618381,
+    "dense": 56.948640483383684,
+    "improvement_over_pruned_percentage_points": 2.114804,
+    "pruned": 47.503578,
+    "published": 55.04,
+    "shortfall_from_published_percentage_points": 5.421619
+  },
+  "state": "full_joint_late_clip_software_accuracy_independently_verified",
+  "workload": {
+    "active_rows": 5661414,
+    "codes": 115257466368,
+    "retained_corrections": 12147784,
+    "rows": 20464749,
+    "saturated_codes": 12568027,
+    "skipped_saturated_codes": 420243
+  }
+}
