@@ -1,0 +1,34 @@
+{
+  "candidate_sha256": "d31f8eac89aa4693c0461f22a2ca26bd2052481057f72ea20c2670e412405c53",
+  "clock_constraint_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/linked.json": "1fbcceaabdd27e7f56ecd3ea2123064f81f7ac310d93fb88e4c55d4b43556cb3",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/native_input_verification.json": "e96d985efa49f53cd2c351053109c64f860a70970177af061a2bc0d38a167f59",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/verified.json": "4ac436daae1c6b8b2516330296daa6fbefc3916079a99b1428f4360f951b2aad",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/inputs.json": "093e0e7201d2f2b03bdb58708dae7e2e23dbdc18777150712968cdc25d4b50ce",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/whole_chip/trained_writeback_tb.sv": "ad7f255682ff29519c2f8c71e8f9d255e3bc403e0021c137d37ba8f8cd8ed9b2",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/xcelium_compile/xrun.log": "bd5f367740f4b6560bbcfbfc7938f2593d742db2f11bff2a285860fcac398be6",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/verify_internal_writeback.py": "b084f35c39392792cb361074d74e62e683d06996c192a246faf6dd6134126b4e",
+    "syn/link_tri_oracle_internalize_writeback_probes.py": "9c6b3131ba1aa48dc52675a4307f5950c19226799e6460d03a93a066840cd63e"
+  },
+  "internalized_probe_bits": {
+    "out_count": 8,
+    "out_data": 5120,
+    "out_last": 1,
+    "out_ready": 1,
+    "out_start": 16,
+    "out_tag": 32,
+    "out_token": 4,
+    "out_valid": 1
+  },
+  "new_signal_bits": 7945,
+  "old_signal_bits": 13128,
+  "other_module_contents_identical": true,
+  "parent_candidate_sha256": "0ffe67d6b074071c65179d0a61b9406ffb4d1e492ce756c3a8ab9ef5645fabb8",
+  "port_constraints_per_view": 31772,
+  "scope": "Eight existing feed-forward probes are now internal wires. The actual write-back interface and every internal connection are preserved. Xcelium compiled the exact mapped candidate and updated scoreboard. The existing testbench function-index warning remains. Native placement and the full replay of this port revision are pending.",
+  "state": "raw_feedforward_probes_internalized_without_a_circuit_delta",
+  "testbench_stimulus_and_checks_identical": true,
+  "top_connectivity_text_identical": true,
+  "xcelium_compile_passed": true
+}
