@@ -1,0 +1,75 @@
+{
+  "arbitration_protected_cycles": 5617,
+  "buffered_probability_coverage": {
+    "all_source_nets": 320,
+    "nets_by_group": {
+      "0": {
+        "both_states": 47,
+        "high_seen": 47,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "1": {
+        "both_states": 30,
+        "high_seen": 30,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "2": {
+        "both_states": 26,
+        "high_seen": 26,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "3": {
+        "both_states": 12,
+        "high_seen": 12,
+        "known_nets": 64,
+        "low_seen": 64
+      },
+      "4": {
+        "both_states": 30,
+        "high_seen": 30,
+        "known_nets": 64,
+        "low_seen": 64
+      }
+    },
+    "nets_with_both_logic_states": 145,
+    "watched_branches": 1280
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/attention_replay/attention/inputs.json": "2b2f25cb3193955b38e997dbc911d8b4a65faf148bb12d1b39d716935d5f22c5",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/attention_replay/attention/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/attention_replay/attention/verified.json": "bb1d875adc9591ae3a2a180df0657c329b8ba69ad271ba9320ea9ba9cfd2c243",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_probability_buffer_candidate/attention_replay/attention/xrun.log": "7caad8b64b76b4e5c73d658111597b23813389b4e4ae49a2651868e88c613780",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_replays/attention/legacy_attention.hex": "fe5a09d9d000f61104656dbe1d97ef71f3ee268cfcca711036793f970bc02134",
+    "records/tri_oracle_bounded_decoder_probability_native_placement.json": "96787fef69fee6878633f6b2bebab7cad4e03dd4b5460eb7a36b5faade34a43d",
+    "records/tri_oracle_repaired_native_mixed_attention.json": "009444dbabb5741279f0171d5558f72cc44eb9d5273bb28be8485520f789c162"
+  },
+  "exported_cold_netlist_sha256": "0cb77c478595a7d31fac78bad8281bac70a15338bef5708a6bc43c5795c57b74",
+  "grouped_dual_lane_cycles": 656,
+  "matched_attention_accumulator_words": 640,
+  "matched_attention_rows": 10,
+  "matched_grouped_cluster_outputs": 704,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 11767619584,
+    "peak_container_anonymous_bytes": 7935598592,
+    "wall_seconds": 724.3629467949504
+  },
+  "original_attention_markers": 30,
+  "reset_coverage": {
+    "0": {
+      "branches": 248,
+      "high": 1,
+      "low": 1
+    },
+    "1": {
+      "branches": 1306,
+      "high": 1,
+      "low": 1
+    }
+  },
+  "scope": "Ten-row Xcelium replay on the exact saved Innovus design. All 320 probability source nets reached a known value and 145 observed both states. Timing checks were disabled.",
+  "state": "native_buffered_attention_replay_independently_verified"
+}
