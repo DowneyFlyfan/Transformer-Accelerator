@@ -1,0 +1,47 @@
+{
+  "checked_pin_connections": 1800,
+  "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/audit_value_register_array_path_geometry.py": "773c2994a7880aaff90c724d77894b316a05b2d8a812bc20c9c9f7c23bd9996b",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/inputs.json": "c355dd38e3e07448d6cd568b7ecf64c78fc59bdb54235ce451e9f13b770603c8",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/path_geometry.json": "49252010d952da92e3421aee50ad5246ecabd033800759cfae46e1edf82f8bbf",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/setup.tcl": "edb5cdb76dc849a2d4cb5289366f6efbbd36e4707335982547846a4f096aaf4c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/verified.json": "fa6047910ee0288ec829e8d65cecd8629893d3ce21ab6eb9dcb156f997591555",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/prepare_value_register_array_timing.py": "de25c06856672fb02184a91ed5163777bfe5f8fa2c46f8366df19b9e58d2b9c0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/run_value_register_array_timing.py": "dc8794bcc81f3c51a7ce92571da7212e71cd96af44e2d5002b8daee002cd5371",
+    "records/tri_oracle_whole_chip_value_register_placement.json": "6da3816c6818d6821741c26e19508a7fee0da6cc77a57a59352004a664a02746"
+  },
+  "largest_summed_pin_gap": {
+    "array": "tri_oracle_pe_array_verified_bank0_1",
+    "capture": "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/compute/reduction[2].row[29].sum[0].value_reg[16]",
+    "connections": 18,
+    "launch": "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/compute/reduction[1].row[29].sum[1].value_reg[0]",
+    "maximum_single_gap_um": 2160.365,
+    "pin_gap_sum_um": 13338.88,
+    "rank": 3,
+    "slack_ps": 961.0
+  },
+  "longest_single_edge": {
+    "array": "tri_oracle_pe_array_verified_bank0_1",
+    "capture": "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/compute/reduction[2].row[27].sum[0].value_reg[16]",
+    "connections": 18,
+    "launch": "layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/compute/reduction[1].row[27].sum[1].value_reg[0]",
+    "maximum_single_gap_um": 2443.13,
+    "pin_gap_sum_um": 9546.825,
+    "rank": 5,
+    "slack_ps": 961.0
+  },
+  "mapped_array_modules": 20,
+  "mapped_array_registers_per_module": 8036,
+  "mapped_cells_on_reported_paths": 1900,
+  "maximum_cgroup_anonymous_bytes_among_runs": 6282665984,
+  "median_summed_pin_gap_um": 1716.1999999999998,
+  "period_ns": 1.72414,
+  "reported_setup_paths": 100,
+  "scope": "Exact 20 array instances from the frozen placed chip, with the original clock and uncertainty. Setup excludes wire loads and covers only paths inside each array. Placement pin gaps are geometric lower bounds on these reported paths. Whole-chip extracted setup and hold, routing, and paper qualification remain open.",
+  "setup_uncertainty_ns": 0.05,
+  "state": "exact_placed_compute_array_setup_and_path_geometry_screen_verified",
+  "timing_corner": "setup_slow",
+  "violating_reported_paths": 0,
+  "worst_reported_wire_free_setup_slack_ps": 961.0
+}
