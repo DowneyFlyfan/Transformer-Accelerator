@@ -42,6 +42,7 @@ REDUCED_PORT_PLACEMENT = Path("records/tri_oracle_reduced_port_placement_and_rel
 TOKEN_TREE_PLACEMENT = Path("records/tri_oracle_full_native_token_tree_placement.json")
 BOUNDED_MAPPED_STRUCTURE = Path("records/tri_oracle_bounded_decoder_mapped_paper_structure.json")
 BOUNDED_RAW_REPLAY = Path("records/tri_oracle_bounded_decoder_native_raw_replay.json")
+BOUNDED_INDEXED_REPLAY = Path("records/tri_oracle_bounded_decoder_native_indexed_replay.json")
 BOUNDED_NATIVE_PLACEMENT = Path("records/tri_oracle_bounded_decoder_native_placement.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
@@ -123,12 +124,15 @@ def dimensions(path):
 
 def bounded_structure_facts(root, facts, identities):
     """Recheck the candidate's mapped evidence and any same-candidate native placement."""
+    from collections import Counter
     from audit_tri_oracle_mapped_redundancy import audit
     from tri_oracle_process_guard import _processes
+    from verify_tri_oracle_buffered_memory import placed_memory
     from verify_tri_oracle_buffered_topology import verify_compute_arrays
     from verify_tri_oracle_joined_placed_constraints import parse_sdc
     from verify_tri_oracle_pad_memory import compiler_sizes, memory_roles
     from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
+    from verify_tri_oracle_shared_memory import check_native_census
 
     def pin(path, expected=None):
         absolute = root / path
@@ -246,6 +250,35 @@ def bounded_structure_facts(root, facts, identities):
             placement_density_percent=placement["native"]["cold"]["placement_density_percent"],
             clock_period_scope="Placed design constraint. Achievable frequency requires timing evidence.",
         )
+        if exact_output_values is not None and (root / BOUNDED_INDEXED_REPLAY).is_file():
+            for step in ("import", "cold"):
+                with paths[stage / step / "layout.def"].open() as stream:
+                    assert placed_memory(stream) == macros
+            assert Counter(macros.values()) == memory["compiled_macro_count_by_master"]
+            assert total == sum(roles[key] for key in ("core_memory_bytes", "aggregator_io_bytes", "support_memory_bytes"))
+            indexed = json.loads(pin(BOUNDED_INDEXED_REPLAY).read_text())
+            assert indexed["state"] == "native_indexed_trained_feedforward_and_writeback_verified"
+            assert indexed["candidate_sha256"] == report["candidate_sha256"]
+            assert indexed["native"]["exit_status"] == 0 and indexed["compiled_memory_paths"] == len(macros)
+            models = {path for path in files if path.parent.name == "VERILOG"}
+            for mode, replay in (("raw", raw), ("indexed", indexed)):
+                folder = BOUNDED_STAGE / "native_replay" / mode
+                manifest_path = folder / "inputs.json"
+                manifest = json.loads(pin(manifest_path, replay["evidence_sha256"][str(manifest_path)]).read_text())
+                assert manifest["candidate_sha256"] == report["candidate_sha256"] == manifest["inputs"][str(candidate)]
+                replay_models = {Path(name) for name in manifest["inputs"] if Path(name).parent.name == "VERILOG"}
+                assert replay_models == models
+                for model in models:
+                    pin(model, manifest["inputs"][str(model)])
+                transcript = folder / "xrun.log"
+                with pin(transcript, replay["evidence_sha256"][str(transcript)]).open() as stream:
+                    check_native_census(stream, "tri_oracle_batched406_learned_tb.dut.", macros)
+            label = silicon["sram_published_KB"]
+            assert (total + 500) // 1000 != label
+            return dict(candidate_sha256=report["candidate_sha256"], macros=len(macros), bytes=total,
+                        label=label, binary_kibibytes=total / 1024, bytes_over_binary_label=total - label * 1024,
+                        exact_paper_capacity_in_bytes_published=False, **roles)
+    return None
 
 
 def reduced_port_placement_facts(root, facts, identities, *, repaired=False):
@@ -696,7 +729,7 @@ def main():
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
         if relative_qualification == BOUNDED_MAPPED_STRUCTURE:
-            bounded_structure_facts(root, facts, identities)
+            memory = bounded_structure_facts(root, facts, identities)
         elif relative_qualification in {TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT}:
             memory = reduced_port_placement_facts(root, facts, identities,
                                                  repaired=relative_qualification == TOKEN_TREE_PLACEMENT)

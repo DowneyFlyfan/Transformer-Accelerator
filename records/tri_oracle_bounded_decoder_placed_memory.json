@@ -1,0 +1,69 @@
+{
+  "aggregator_io_bytes": 10240,
+  "aggregator_io_bytes_per_cluster": 2048,
+  "binary_kibibytes": 405.203125,
+  "bytes": 414928,
+  "bytes_over_binary_label": 208,
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "core_memory_bytes": 389120,
+  "core_memory_bytes_per_core": {
+    "inputs": 8192,
+    "masks": 1024,
+    "outputs": 2048,
+    "weights": 8192
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_placement/paper_gate_memory_reconciled.json": "193329a8ea5696fbe531b294d3769c09db5bd434f5a8383a883aa65ba2158920",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_bounded_decoder_mapped_paper_structure.json": "d27d0e8bdb4c25515c83482f7ed76237c5d8701384e14b2df575628a12a9d459",
+    "records/tri_oracle_bounded_decoder_native_indexed_replay.json": "22ea578a785806391d882bdd380f055dd84ae77134acd6ffcf4e064902ad60ae",
+    "records/tri_oracle_bounded_decoder_native_placement.json": "9729b712e1c6320d2d99b615aa3fb5dc4aeb6a2782f5399ae10f5823ec3a8390",
+    "records/tri_oracle_bounded_decoder_native_raw_replay.json": "944da7ccd1fa770765e41b94adc8541be40bd6b7f0ee01d96283eaa5bb3b23b3",
+    "syn/check_tri_oracle_paper300_gate.py": "a1200ee2935ffd108bb291628f6ad90ca6e7a06598d7f2826458b4bfad64f4ec"
+  },
+  "exact_paper_capacity_in_bytes_published": false,
+  "figures": [
+    "31.6.2",
+    "31.6.7"
+  ],
+  "label": 405,
+  "local_support_bytes_by_cluster": {
+    "0": {
+      "surviving_token_signs": 1536,
+      "token_merge_table": 160
+    },
+    "1": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 160
+    },
+    "2": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 160
+    },
+    "3": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 160
+    },
+    "4": {
+      "surviving_token_signs": 1152,
+      "token_merge_table": 80
+    }
+  },
+  "macros": 631,
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "scope": "The synthesized and placed chips, compiled models and two native replay logs agree on every memory instance and master. The paper provides bank sizes and a whole-kilobyte capacity label. The binary interpretation agrees after rounding. The paper does not give exact byte accounting for all support memories.",
+  "state": "placed_compiler_memory_inventory_matches_rounded_binary_paper_capacity",
+  "support_bytes_by_role": {
+    "prediction_metadata": 6656,
+    "shared_weight_signs": 2048,
+    "surviving_token_signs": 6144,
+    "token_merge_table": 720
+  },
+  "support_macro_count_by_role": {
+    "prediction_metadata": 6,
+    "shared_weight_signs": 4,
+    "surviving_token_signs": 16,
+    "token_merge_table": 5
+  },
+  "support_memory_bytes": 15568
+}
