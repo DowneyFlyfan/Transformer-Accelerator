@@ -1,0 +1,175 @@
+{
+  "baseline_worst_setup_slack_ns": -1.7777,
+  "clock_period_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/path_locality/prepared.json": "d74d7b08b48efd3796419cba1159a3e9dfba5f52197d52715a1c3df3fd84b2d4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/path_locality/verified.json": "9993a9110e20e86a6eaa8bd7a11dd04d999aad894964bedeaaf37549825afef9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/prepared.json": "43e9f8e05b5d0c2c78218ad96512afe22c95077e0da4225c78b33158139c3e31",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/verified_profile.json": "32cc23cfe095b2b47993aa4cbed0125cb463c75deefd65f5b9ff736bb1fcf643",
+    "records/tri_oracle_adaptive_path_chip_placement.json": "206a2c1e1c97fc2d01920c77744523eae808dbd32431fd2d7f451bda7f465bf9",
+    "records/tri_oracle_carry_save_native_chip_placement.json": "e01b1f27dd181b6436fb8ba1334e20bee83f103d5fa02ec43d2eda3ac9d49660"
+  },
+  "pilot_adjusted_vs_seed": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "delta_setup_slack_ns": 3.53349,
+      "endpoint": "product[245].value_reg[14]/D",
+      "prior_setup_slack_ns": -6.447974,
+      "setup_slack_ns": -2.914484,
+      "startpoint": "valid_reg[3]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "delta_setup_slack_ns": 1.259804,
+      "endpoint": "product[7].value_reg[7]/D",
+      "prior_setup_slack_ns": -3.702949,
+      "setup_slack_ns": -2.443145,
+      "startpoint": "valid_reg[3]/CP"
+    }
+  },
+  "regions": 20,
+  "scope": "Twenty region timing checks under the same geometric internal wire model and ideal clock as the accepted endpoint-selected placement. The two adjusted pilot regions retain their exact occupied site widths. This analysis measures internal setup and omits routed wires.",
+  "seed_vs_baseline": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "delta_setup_slack_ns": -4.670274,
+      "endpoint": "carry_save.row[7].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.7777,
+      "setup_slack_ns": -6.447974,
+      "startpoint": "carry_save.row[7].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "delta_setup_slack_ns": -3.021892,
+      "endpoint": "carry_save.row[13].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.422881,
+      "setup_slack_ns": -4.444773,
+      "startpoint": "carry_save.row[13].sum_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "delta_setup_slack_ns": -2.99289,
+      "endpoint": "carry_save.row[6].carry_reg[2]/DB",
+      "prior_setup_slack_ns": -1.558522,
+      "setup_slack_ns": -4.551412,
+      "startpoint": "carry_save.row[6].compressor[0].carry_reg[1]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank0_3": {
+      "delta_setup_slack_ns": -4.293011,
+      "endpoint": "carry_save.row[7].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.417647,
+      "setup_slack_ns": -5.710658,
+      "startpoint": "carry_save.row[7].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "delta_setup_slack_ns": -3.960993,
+      "endpoint": "carry_save.row[7].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.662737,
+      "setup_slack_ns": -5.62373,
+      "startpoint": "carry_save.row[7].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1_1": {
+      "delta_setup_slack_ns": -2.556875,
+      "endpoint": "carry_save.row[14].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.485165,
+      "setup_slack_ns": -4.04204,
+      "startpoint": "carry_save.row[14].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1_2": {
+      "delta_setup_slack_ns": -3.460611,
+      "endpoint": "carry_save.row[13].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.445553,
+      "setup_slack_ns": -4.906164,
+      "startpoint": "carry_save.row[13].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "delta_setup_slack_ns": -2.800413,
+      "endpoint": "carry_save.row[10].compressor[1].sum_reg[16]/DB",
+      "prior_setup_slack_ns": -1.643363,
+      "setup_slack_ns": -4.443776,
+      "startpoint": "product[84].value_reg[15]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2": {
+      "delta_setup_slack_ns": -3.652226,
+      "endpoint": "carry_save.row[9].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.266061,
+      "setup_slack_ns": -4.918287,
+      "startpoint": "carry_save.row[9].sum_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2_1": {
+      "delta_setup_slack_ns": -2.419724,
+      "endpoint": "carry_save.row[8].compressor[0].sum_reg[16]/DB",
+      "prior_setup_slack_ns": -1.00092,
+      "setup_slack_ns": -3.420644,
+      "startpoint": "product[66].value_reg[15]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "delta_setup_slack_ns": -1.951321,
+      "endpoint": "carry_save.row[11].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.751628,
+      "setup_slack_ns": -3.702949,
+      "startpoint": "carry_save.row[11].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2_3": {
+      "delta_setup_slack_ns": -3.233139,
+      "endpoint": "carry_save.row[2].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.178273,
+      "setup_slack_ns": -4.411412,
+      "startpoint": "carry_save.row[2].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3": {
+      "delta_setup_slack_ns": -2.470638,
+      "endpoint": "carry_save.row[12].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.733814,
+      "setup_slack_ns": -4.204452,
+      "startpoint": "carry_save.row[12].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3_1": {
+      "delta_setup_slack_ns": -2.834586,
+      "endpoint": "carry_save.row[30].compressor[1].sum_reg[16]/DB",
+      "prior_setup_slack_ns": -1.603483,
+      "setup_slack_ns": -4.438069,
+      "startpoint": "product[245].value_reg[15]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3_2": {
+      "delta_setup_slack_ns": -4.122241,
+      "endpoint": "carry_save.row[7].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.397382,
+      "setup_slack_ns": -5.519623,
+      "startpoint": "carry_save.row[7].carry_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3_3": {
+      "delta_setup_slack_ns": -2.963725,
+      "endpoint": "carry_save.row[10].carry_reg[18]/DB",
+      "prior_setup_slack_ns": -1.563095,
+      "setup_slack_ns": -4.52682,
+      "startpoint": "carry_save.row[10].compressor[1].sum_reg[16]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "delta_setup_slack_ns": -2.842185,
+      "endpoint": "carry_save.row[20].carry_reg[18]/DB",
+      "prior_setup_slack_ns": -1.433676,
+      "setup_slack_ns": -4.275861,
+      "startpoint": "carry_save.row[20].compressor[0].sum_reg[16]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "delta_setup_slack_ns": -1.625949,
+      "endpoint": "carry_save.row[13].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.527725,
+      "setup_slack_ns": -3.153674,
+      "startpoint": "carry_save.row[13].sum_reg[2]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4_2": {
+      "delta_setup_slack_ns": -1.174146,
+      "endpoint": "carry_save.row[6].carry_reg[2]/DB",
+      "prior_setup_slack_ns": -1.475373,
+      "setup_slack_ns": -2.649519,
+      "startpoint": "carry_save.row[6].compressor[0].carry_reg[1]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "delta_setup_slack_ns": -3.566875,
+      "endpoint": "carry_save.row[13].value_reg[18]/DB",
+      "prior_setup_slack_ns": -1.397052,
+      "setup_slack_ns": -4.963927,
+      "startpoint": "carry_save.row[13].sum_reg[2]/CP"
+    }
+  },
+  "seed_worst_setup_slack_ns": -6.447974,
+  "state": "native_carry_save_seed_region_timing_profile_and_locality_pilot_verified",
+  "worst_seed_region": "tri_oracle_pe_array_verified_bank0"
+}
