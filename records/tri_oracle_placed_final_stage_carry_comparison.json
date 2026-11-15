@@ -1,0 +1,204 @@
+{
+  "available_sites": 541312,
+  "candidate_minus_baseline_slack_ns": {
+    "exact_row_seed": {
+      "array": -0.486763,
+      "level0": -0.900948,
+      "level1": 0.29694,
+      "level2": -6.343955
+    },
+    "wire_optimized": {
+      "array": -0.592327,
+      "level0": 0.183676,
+      "level1": -0.93748,
+      "level2": -1.73236
+    }
+  },
+  "case": {
+    "baseline": {
+      "exact_row_seed": {
+        "annotated_internal_nets": 67898,
+        "cells": 53978,
+        "excluded_boundary_nets": 4966,
+        "native_density_percent": 94.82,
+        "paths": {
+          "array": {
+            "endpoint": "product[98].value_reg[15]/D",
+            "startpoint": "valid_reg[3]/CP",
+            "worst_setup_slack_ns": -31.706188
+          },
+          "level0": {
+            "endpoint": "reduction[0].row[1].sum[1].value_reg[16]/DB",
+            "startpoint": "product[10].value_reg[0]/CP",
+            "worst_setup_slack_ns": -2.54515
+          },
+          "level1": {
+            "endpoint": "reduction[1].row[7].sum[0].value_reg[17]/DB",
+            "startpoint": "reduction[0].row[7].sum[0].value_reg[0]/CP",
+            "worst_setup_slack_ns": -3.381865
+          },
+          "level2": {
+            "endpoint": "reduction[2].row[13].sum[0].value_reg[18]/DB",
+            "startpoint": "reduction[1].row[13].sum[0].value_reg[0]/CP",
+            "worst_setup_slack_ns": -2.450593
+          }
+        },
+        "remaining_sites": 28036
+      },
+      "graph_score_reduction_percent": 70.338116,
+      "protected_boundary_cells": 17257,
+      "same_width_swaps": 124040,
+      "unseeded_native_orientation_violations": 257,
+      "unseeded_native_overlap_count": 1183,
+      "wire_optimized": {
+        "annotated_internal_nets": 67898,
+        "cells": 53978,
+        "excluded_boundary_nets": 4966,
+        "native_density_percent": 94.82,
+        "paths": {
+          "array": {
+            "endpoint": "reduction[0].row[12].sum[2].value_reg[11]/SA",
+            "startpoint": "valid_reg[3]/CP",
+            "worst_setup_slack_ns": -31.600624
+          },
+          "level0": {
+            "endpoint": "reduction[0].row[11].sum[1].value_reg[16]/DB",
+            "startpoint": "product[90].value_reg[0]/CP",
+            "worst_setup_slack_ns": -1.789123
+          },
+          "level1": {
+            "endpoint": "reduction[1].row[7].sum[0].value_reg[17]/DB",
+            "startpoint": "reduction[0].row[7].sum[0].value_reg[0]/CP",
+            "worst_setup_slack_ns": -1.455379
+          },
+          "level2": {
+            "endpoint": "reduction[2].row[13].sum[0].value_reg[17]/DB",
+            "startpoint": "reduction[1].row[13].sum[0].value_reg[0]/CP",
+            "worst_setup_slack_ns": -2.107503
+          }
+        },
+        "remaining_sites": 28036
+      }
+    },
+    "last_level": {
+      "exact_row_seed": {
+        "annotated_internal_nets": 69338,
+        "cells": 55802,
+        "excluded_boundary_nets": 4966,
+        "native_density_percent": 95.5,
+        "paths": {
+          "array": {
+            "endpoint": "reduction[0].row[14].sum[3].value_reg[9]/SA",
+            "startpoint": "valid_reg[3]/CP",
+            "worst_setup_slack_ns": -32.192951
+          },
+          "level0": {
+            "endpoint": "reduction[0].row[12].sum[0].value_reg[16]/DB",
+            "startpoint": "product[97].value_reg[0]/CP",
+            "worst_setup_slack_ns": -3.446098
+          },
+          "level1": {
+            "endpoint": "reduction[1].row[14].sum[1].value_reg[16]/DB",
+            "startpoint": "reduction[0].row[14].sum[2].value_reg[0]/CP",
+            "worst_setup_slack_ns": -3.084925
+          },
+          "level2": {
+            "endpoint": "reduction[2].row[11].sum[0].value_reg[11]/DB",
+            "startpoint": "reduction[1].row[11].sum[0].value_reg[5]/CP",
+            "worst_setup_slack_ns": -8.794548
+          }
+        },
+        "remaining_sites": 24356
+      },
+      "graph_score_reduction_percent": 72.054034,
+      "protected_boundary_cells": 17257,
+      "same_width_swaps": 134219,
+      "unseeded_native_orientation_violations": 676,
+      "unseeded_native_overlap_count": 3030,
+      "wire_optimized": {
+        "annotated_internal_nets": 69338,
+        "cells": 55802,
+        "excluded_boundary_nets": 4966,
+        "native_density_percent": 95.5,
+        "paths": {
+          "array": {
+            "endpoint": "reduction[0].row[14].sum[3].value_reg[9]/SA",
+            "startpoint": "valid_reg[3]/CP",
+            "worst_setup_slack_ns": -32.192951
+          },
+          "level0": {
+            "endpoint": "reduction[0].row[23].sum[1].value_reg[16]/DB",
+            "startpoint": "product[187].value_reg[0]/CP",
+            "worst_setup_slack_ns": -1.605447
+          },
+          "level1": {
+            "endpoint": "reduction[1].row[9].sum[1].value_reg[17]/DB",
+            "startpoint": "reduction[0].row[9].sum[2].value_reg[0]/CP",
+            "worst_setup_slack_ns": -2.392859
+          },
+          "level2": {
+            "endpoint": "reduction[2].row[11].sum[0].value_reg[11]/DB",
+            "startpoint": "reduction[1].row[11].sum[0].value_reg[4]/CP",
+            "worst_setup_slack_ns": -3.839863
+          }
+        },
+        "remaining_sites": 24356
+      }
+    }
+  },
+  "common_port_locations": 4966,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/archive_matched_placement.py": "418a6b1873500aabe0b32ed2fdd654d65987c2cc373b56167a9497c2ab2c0813",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/baseline/legalized.rpt": "de2fed38915c37157827b41a56c14978a02861dd5669ec320de9c6485b87f532",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/baseline/refine.log": "ed39190f0cd8efbabfd0f770e1a548fa6242fb631994539382d6b509a0df970d",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/baseline/status.json": "2a5c2f2a0835cfc35cdd63c8ac1b0f66e29534ebba646db05fb860f5c4dd5d67",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/last_level/legalized.rpt": "d0ae3310b4a0b2a6c394b340cb64d60025f971fe9e9d789a7c1f99163b0399d7",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/last_level/refine.log": "392b66fcc69579b2ad00b82cbf5d0f7db2afcf750fe2c0bb5cee3b1c4b101dfc",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/last_level/status.json": "32e00b2eeb21481edbdab9a69f33537af54da10c3e4eddd7046147422cb52336",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/place.tcl": "ff019e3c9551bf60c984151411ae88462a0e5f508e9d102295acf19a74ec5d37",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/place_seeded.tcl": "76825dbda6c541e0503f5c87411348cb73df3e64347b12b35a5b55fd118e33c8",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/refine_region.py": "c88573d9c1847dc95ffe7dcbc27b88d496cc8ac4d1be0b723fe770a371f185c8",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/refined_baseline/timing_inputs.json": "20b1aa62e4adff5a260111abd04189612bba1876d4b1527c5e801d038bdd95ea",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/refined_last_level/timing_inputs.json": "2588c00aa543358a93d5025c3c28921c0ea6adafa00e545c185252c9db437c51",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/region.json": "d85b224e68de4bd167ebfce19c28b462d00ce58cc274d63aedf0237415bcaca4",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/seeded_baseline/timing_inputs.json": "c983d6917be3d2be6fc409a9e3d10b5b7fc7ee2928261a244f913f163c390505",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/seeded_last_level/timing_inputs.json": "422f8c9036b0c37c2cf40bc62ce8aec0d78c3ba5e2056a93beda2c87c5341653",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/annotation.rpt": "4d132fa7998707ef9356e28ac43724d8e6befab7dd6ead7b8edbdefeb6753452",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/array.rpt": "f8cbe7bd4beec08c2883ca4955ae36aac81b55cebb6b4a3007a857da47af8369",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/console.log": "4be615255307c6073bfe85501904a68c79b711e74c253f30341ef70225a0f088",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/level0.rpt": "c7f5ae2dc9a0d02d46a286af5e469075dd61fa0af49c52498d332a795a7200a1",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/level1.rpt": "aa3edb06f985637165e37e5ad6635104dcaf2f13901db6d4b495f031e9153329",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/level2.rpt": "a7e9a586176f3f4c56f15f43b71165f724ccf1481a09c682eb0860da515cb2fa",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_baseline/status.json": "d2baddb366623e52752f29bb475290fb9938cf307cd7670ccbca93e902705c7b",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/annotation.rpt": "1fe39b1227ce7f8e31b1690152834e8ccc96b7b2d7692ddf347a610503d24466",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/array.rpt": "a052412affa1d51f9b8d8f06cbe286f65260ca63f9f9e8e0a3a60f48485cbdf5",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/console.log": "82639e59669819cbac9c5bd51392b21c304296b90c9e08d600a6be648936d430",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/level0.rpt": "5808420add0fe8e6a5b67783d6d4ba5530fb428d2b14e34482c035dd64866d3f",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/level1.rpt": "925042323857ba0067f149e9252a647ce9bb05e5076edac5b6b0486d531317ec",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/level2.rpt": "6e277a6f27b2251265b0895a216e0ba8020328dde5a644aab924bf03a1c9a02b",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_last_level/status.json": "622972713fb335af2328081d5f95904eadea7728def080e58a41b2fcaf5dc84d",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/annotation.rpt": "3ee36d980cc62719c872e74b3461b7a2b9a1e4ab324c423f4f3e39ec6d8349fe",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/array.rpt": "c24be946f500c51053a714ab2c8b917a9132948d67324987f696349b546615fb",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/console.log": "236210610487d5cc6e98b73cfb80b3d02111fc6c4a37a6bcf9d85f4bcecdec04",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/level0.rpt": "f3191689e0a41062669b50e92b30a274904f958eae2f6999b3a7a520fa4b88a2",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/level1.rpt": "8bd8074834adfa966f5be82a48648dbac9b7b1282cdea374608f38a40bc6511d",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/level2.rpt": "ed650fc125ebefe298cf7cfdd43f222ac621d902bd9887693bf59495fa0b08ff",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/status.json": "5f829a1b24b5a0b4da713d895b8fb13997fe45b563111d106daee7eba8d5df35",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/annotation.rpt": "cdfa4c49a6fa434bb3b196938d1911af3e73dce10462daaa48bfde11afe2c394",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/array.rpt": "70e22e271467a0b13f788d51052677365ab3577a7b0453dff674b18f2fe25dc8",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/console.log": "d7c42c2005e2b6944a4a7393e2729074f354a77570cd7c13500edf69e67fa2e3",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/level0.rpt": "cdeaec8bcdf049dcc4c2e584eee44efc1e5c424f518fd36bfc19819f60ab099b",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/level1.rpt": "2f5cb076b9d7a8b20c626b2028f00a6ffb2c371977e761232c8ef545beddada7",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/level2.rpt": "acaa00617ec0ea4bcd37388925fdfb00fbe64a4d07f0759aaef21414c3ee3966",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_last_level/status.json": "851e6e1b5ab55780b5d584c97907f8246deccb15bb52f21834680dbb856e88d7",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timing.tcl": "c5332fb044885aae41e5852412b63dd60f425ab08a9d60d2b8d3155c94562bc2",
+    "records/tri_oracle_final_stage_carry_array.json": "2aa9e7a2c761cdb6c4e6238a26449ce38e78c400107451f7bfcf65a81c17811d"
+  },
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "scope": "One mapped 32-by-8 array in the exact legal rows of bank4_2. Same boundary pins and blocked sites. Internal wire estimates use the geometric layer model with an ideal clock. Inter-array wires, routed parasitics and power are outside this experiment.",
+  "state": "matched_legal_compute_region_placement_and_internal_timing_measured"
+}
