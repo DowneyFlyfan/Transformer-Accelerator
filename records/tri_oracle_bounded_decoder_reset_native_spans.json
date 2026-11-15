@@ -1,0 +1,68 @@
+{
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/measure_native_reset_tree_spans.py": "5f35fbb82a0a2fe1d9beec140a4da44098e722a261360862de72a12f06680b9c",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_overloaded_reset_tree_plan/receipt.json": "b2ce738d1d87470836c28393d7ece5347a58d29d7843fba841a7244d370539f0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_placement/cold/layout.def": "b3d96c9bed3254f42f1596ab09c8232eecbcef8b18c987d28070e9cc1224448a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/cold/layout.def": "c29ab6e68c8255847dc77d1f9c5a417bf2257f805e1dcdc8354bb694c2c4ebd0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/native_receipt.json": "85568db722e1ada0f3e57e0b066922e17acec94c67b7f3d185dc3df63258129d",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_reset_eco_relinked_native/reset_span_receipt.json": "3140e7cb76465d5cbdaf3653c9f653dad74e268f7a89b2acde5da9c302b4ea63",
+    "records/tri_oracle_bounded_decoder_reset_native_placement.json": "603086fa0dde955414a54c2afdc36f8ac3699f88710c8e2e3b0acaf7a88a7e49"
+  },
+  "exported_cold_netlist_sha256": "fa84f6ec318a0fa94ea5b4c3da6ca5fbdc6e5ba0875cc87bafcde5aed485bfa4",
+  "scope": "Half-perimeter bounding-box spans at the actual original and repaired cell origins. Routing and extracted resistance and capacitance remain unmeasured.",
+  "segments": {
+    "direct_projection/pipeline_rst_n": {
+      "buffered_segment_count": 249,
+      "maximum_sum_of_segment_spans_to_leaf_um": 10658.12,
+      "measured_segments": {
+        "branch": {
+          "maximum_span_um": 3748.32,
+          "median_span_um": 117.06,
+          "segments": 63,
+          "worst_driver": "direct_projection/TRI_BOUNDED_RST_0_B244"
+        },
+        "driver": {
+          "maximum_span_um": 355.46,
+          "median_span_um": 355.46,
+          "segments": 1,
+          "worst_driver": "direct_projection/g1718__1705"
+        },
+        "leaf": {
+          "maximum_span_um": 1555.88,
+          "median_span_um": 50.02,
+          "segments": 185,
+          "worst_driver": "direct_projection/TRI_BOUNDED_RST_0_B21"
+        }
+      },
+      "original_signal_span_um": 5501.42,
+      "reset_sinks": 2955
+    },
+    "layer/layer/feedforward/compute/compute/tensor/owner_rst_n": {
+      "buffered_segment_count": 1307,
+      "maximum_sum_of_segment_spans_to_leaf_um": 10785.42,
+      "measured_segments": {
+        "branch": {
+          "maximum_span_um": 2661.9,
+          "median_span_um": 294.18,
+          "segments": 328,
+          "worst_driver": "layer/layer/feedforward/compute/compute/tensor/TRI_BOUNDED_RST_1_B1305"
+        },
+        "driver": {
+          "maximum_span_um": 717.24,
+          "median_span_um": 717.24,
+          "segments": 1,
+          "worst_driver": "layer/layer/feedforward/compute/compute/tensor/g182827"
+        },
+        "leaf": {
+          "maximum_span_um": 916.42,
+          "median_span_um": 45.04,
+          "segments": 978,
+          "worst_driver": "layer/layer/feedforward/compute/compute/tensor/TRI_BOUNDED_RST_1_B634"
+        }
+      },
+      "original_signal_span_um": 4941.34,
+      "reset_sinks": 15641
+    }
+  },
+  "state": "reset_repaired_native_component_origin_spans_measured"
+}
