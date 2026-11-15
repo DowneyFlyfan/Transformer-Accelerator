@@ -1,0 +1,58 @@
+{
+  "burst_aligned_archived_weight_scenario": {
+    "conditional_serial_cycles_over_paper_budget": 7673221,
+    "conditional_serial_weight_and_projection_ms": 890.2296913793103,
+    "cycles_remaining_in_paper_budget_after_modeled_weight_service": 50965835,
+    "one_request_cycle_per_burst": 51329024,
+    "paper_system_latency_ms": 877,
+    "slice_padding_aggregate_fragments": 28689191,
+    "two_lane_ideal_balanced_service_cycles": 457694165,
+    "two_lane_ideal_balanced_weight_service_ms": 789.1278706896552
+  },
+  "conditional_workload_scope": "Archived encoding and weight reads only. Each burst ends on a chunk boundary. The balanced cycle estimate allows one accepted request per burst and no other overhead. It excludes fixed lane imbalance, sign and attention traffic, compute, physical capture and stalls. The serial scenario separately charges projection issue cycles without overlapping them.",
+  "digital_width_bits": {
+    "input_per_lane": 448,
+    "lanes_tested": 2,
+    "output_per_lane": 512
+  },
+  "evidence_sha256": {
+    ".cache/memory_response_gearbox/genus/area.rpt": "d3e5c93ef0f21efbc121ce00bac61f12045afd0ed01d591de7aec58caf09a270",
+    ".cache/memory_response_gearbox/genus/console.log": "421188b6c1d1c718dafcec755c8b8546d6851e0557ae9a6d28ca74f749d977ed",
+    ".cache/memory_response_gearbox/genus/constraints.sdc": "1fb1ece1271af8bdb12af37a4e9dca541d466a2f00e0b006a2af0bd241745bd0",
+    ".cache/memory_response_gearbox/genus/mapped_check.rpt": "1a6505b9722a7ff2c93e9e906cc00125ff21c253bab09c286e43843d1c65bf93",
+    ".cache/memory_response_gearbox/genus/netlist.v": "450e94c46f47320662e2b67d9952b22a49300481a0d3a6b9cdcf60d0c83c1df1",
+    ".cache/memory_response_gearbox/genus/timing.rpt": "b6bc654b8354ba12e24e1f27ebdd4c0ef89b27650fcdf83270c22baccd49e142",
+    ".cache/memory_response_gearbox/grouped_read_fabric.v": "f7a74637ffe76cabd0e9a77b5938154a9fa8fd5643e11ceec705cf17348905e8",
+    ".cache/memory_response_gearbox/mapped/console.log": "fd935011bea873c315dc9364e9c5a7446d6b600c42d763a4adfed77c24e15d1b",
+    ".cache/memory_response_gearbox/red/console.log": "b3264af28a08987f1f75d1e72f8205db79e40cfe30d395c8c801a3517c87d109",
+    ".cache/memory_response_gearbox/red/unimplemented.sv": "f6c0cf0921d3cee172d989eaebff352461add47e79a8fa88b566baa8fd1e431b",
+    ".cache/memory_response_gearbox/rtl/console.log": "de26cccd53063225ab7889fb4472c69d81bcebd0f602e2027219ece55dffbb79",
+    ".cache/memory_response_gearbox/workload_serial.json": "6a0821baa468472cf23095b6042c99d33908cc1dfc273ba0c9cf6b8f737f50d7",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "records/tri_oracle_bounded_decoder_token_map_native_placement.json": "99a0882680ba9478d0358de826062544da291340884175b50e13a6b42b6330e8",
+    "syn/tri_oracle_synthesize_memory_response_gearbox.tcl": "8235a51ffb740c7942fb0177fe9d7a9993117a1bde12457ab8d225cedc3ed49c",
+    "syn/verify_tri_oracle_gearbox_workload.py": "ba1670ac7f6f35235c9f46354526f7e2e11d04da7e254dedfca340447b026255",
+    "verilog/tri_oracle_memory_response_gearbox.sv": "26a28ff5042d8ceee75c7106e4f5591e413791306320e7ff6d87cc8f929e7dd5",
+    "verilog/tri_oracle_memory_response_gearbox_tb.sv": "b4ecf6b1fdb8734b97531040c0238d41efcb5bc6de7d4d7f72e1afef5efd933f"
+  },
+  "mapped_lane": {
+    "cell_area_um2": 5070.576,
+    "cells": 3329,
+    "slow_prelayout_min_setup_slack_ps": 532,
+    "slow_prelayout_period_ns": 1.72414
+  },
+  "scope": "Digital capture-side interface and exact extracted mapped read fabric tested in Xcelium. Technology-specific pad capture, request and write packaging, whole-chip integration, placement and physical timing remain open.",
+  "source_cold_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "state": "digital_memory_gearbox_mapped_and_verified_with_current_grouped_read_fabric",
+  "xcelium": {
+    "bursts": 45,
+    "errors_forwarded": 38,
+    "input_chunks": 878,
+    "input_stalls": 204,
+    "output_stalls": 293,
+    "response_beats": 559,
+    "simultaneous_response_valid_cycles": 265,
+    "uninterrupted_full_rate_bursts": 5
+  }
+}
