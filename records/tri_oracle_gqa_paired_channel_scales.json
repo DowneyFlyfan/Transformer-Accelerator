@@ -1,0 +1,67 @@
+{
+  "changed_answers": {
+    "no_skip": 5,
+    "skip": 15
+  },
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/paired_ablation/predictions.jsonl": "768e86e18e870cc3ce37994ac7ad6afc0830341c186c329e5576ed55fef78a2f",
+    ".cache/model_reference/gqa_testdev/paired_channel_scales/inputs.json": "08ca5bc54341a46293c90e5c16204341b50271a7f8c87bcf32ba3700919121e4",
+    ".cache/model_reference/gqa_testdev/paired_channel_scales/predictions.jsonl": "aed80e510455bb942a0ee66a16b044c83cc7c2ff62464e682a573938527882d5",
+    ".cache/model_reference/gqa_testdev/paired_channel_scales/receipt.json": "ac0826a55378294b73f2187b91abd00d027e6bb9813ae6ba0eb6f36dbf527118",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/gqa_testdev/verify_paired_channel_scales.py": "b19d4b162d162a7f91bf51f10afce606ba6580a3e977b0ede65e8280b39e89eb",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d"
+  },
+  "matched": {
+    "channel_no_skip": 89,
+    "channel_skip": 80,
+    "scalar_no_skip": 89,
+    "scalar_skip": 87
+  },
+  "matched_by_question_type": {
+    "choose": {
+      "channel_no_skip": 22,
+      "channel_skip": 19,
+      "scalar_no_skip": 22,
+      "scalar_skip": 23
+    },
+    "compare": {
+      "channel_no_skip": 13,
+      "channel_skip": 13,
+      "scalar_no_skip": 13,
+      "scalar_skip": 13
+    },
+    "logical": {
+      "channel_no_skip": 19,
+      "channel_skip": 15,
+      "scalar_no_skip": 19,
+      "scalar_skip": 17
+    },
+    "query": {
+      "channel_no_skip": 13,
+      "channel_skip": 11,
+      "scalar_no_skip": 13,
+      "scalar_skip": 12
+    },
+    "verify": {
+      "channel_no_skip": 22,
+      "channel_skip": 22,
+      "scalar_no_skip": 22,
+      "scalar_skip": 22
+    }
+  },
+  "paired_channel_minus_scalar": {
+    "no_skip": {
+      "gained": 2,
+      "lost": 2
+    },
+    "skip": {
+      "gained": 2,
+      "lost": 9
+    }
+  },
+  "peak_allocated_gpu_bytes": 7457355264,
+  "questions": 160,
+  "scope": "Software comparison on the frozen Graph Question Answering balanced test-development panel. Each question uses both scale modes with and without weight skipping. Channel-scale answers reproduced the archived controls token for token. Accuracy under the paper protocol and full-model accuracy on the mapped design remain unverified."
+}
