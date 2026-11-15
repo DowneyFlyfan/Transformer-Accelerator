@@ -1,0 +1,42 @@
+{
+  "all_token_skip_percent": {
+    "channel_decode_only": 0.02632642843664473,
+    "channel_no_skip": 0.0,
+    "channel_skip": 8.39596455844522,
+    "scalar_decode_only": 0.026089803415686695,
+    "scalar_no_skip": 0.0,
+    "scalar_skip": 8.377807897899325
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/decode_only_skipping/inputs.json": "18674d4e0691bfc9792eecfcf09e52fc3386b88f6f931cabd5226173aa2c0339",
+    ".cache/model_reference/gqa_testdev/decode_only_skipping/predictions.jsonl": "3f7ca0e7bb0bab629ef8743863c728c0c55423d2a1ea9db8ce35d68abfc1cb2f",
+    ".cache/model_reference/gqa_testdev/decode_only_skipping/receipt.json": "cd493b6bd4f9b30519aaa1ecfe5052a305bb0f09093baf268adf641fda0dd5d8",
+    ".cache/model_reference/gqa_testdev/paired_channel_scales/predictions.jsonl": "aed80e510455bb942a0ee66a16b044c83cc7c2ff62464e682a573938527882d5",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/gqa_testdev/verify_decode_only_skipping.py": "d28de413cff82ceaa26394d3b84552ae799f704ef5c5e7cf1fd1de1397b95aac",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d"
+  },
+  "matches": {
+    "channel_decode_only": 89,
+    "channel_no_skip": 89,
+    "channel_skip": 80,
+    "scalar_decode_only": 89,
+    "scalar_no_skip": 89,
+    "scalar_skip": 87
+  },
+  "paired_decode_only_vs_both_phases": {
+    "channel_decode_only": {
+      "first_token_changed_vs_both_phases": 13,
+      "gained_vs_both_phases": 10,
+      "lost_vs_both_phases": 1
+    },
+    "scalar_decode_only": {
+      "first_token_changed_vs_both_phases": 7,
+      "gained_vs_both_phases": 4,
+      "lost_vs_both_phases": 2
+    }
+  },
+  "questions": 160,
+  "scope": "Frozen Graph Question Answering software panel. Weight skipping only while generating the answer is a diagnostic comparison. Whole-chip accuracy and the paper-reported reduction remain unverified.",
+  "state": "gqa_decode_only_skip_independently_verified"
+}
