@@ -1,0 +1,69 @@
+{
+  "accuracy_percent": 49.666083638098264,
+  "best_possible_score_at_earlier_checkpoint": {
+    "maximum_accuracy_percent": 54.046748,
+    "maximum_final_correct": 6798,
+    "prefix_correct": 5677,
+    "verified_prefix": 11457
+  },
+  "comparisons": {
+    "calibrated": {
+      "bootstrapped_image_cluster_95_percent_interval_pp": [
+        1.5657609445888818,
+        2.5582834814865363
+      ],
+      "change_percentage_points": 2.0432501192558434,
+      "control_correct": 5990,
+      "gained": 547,
+      "lost": 290
+    },
+    "clipping": {
+      "bootstrapped_image_cluster_95_percent_interval_pp": [
+        -0.5344899108899677,
+        0.6488949787603943
+      ],
+      "change_percentage_points": 0.047702337414533315,
+      "control_correct": 6241,
+      "gained": 638,
+      "lost": 632
+    },
+    "pruned": {
+      "bootstrapped_image_cluster_95_percent_interval_pp": [
+        1.5838136320632061,
+        2.768661293834561
+      ],
+      "change_percentage_points": 2.162505962792177,
+      "control_correct": 5975,
+      "gained": 794,
+      "lost": 522
+    }
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/calibrated_clip_workflow/accuracy_impossibility_witness_prefix.jsonl": "7a47929af83cf9044b7e5e184279a5ff83dadc8ac75cd0f7c133768313247be7",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_workflow/archive_full_calibrated_clip.py": "93d5338f32d35ff0339a5d54ddf105990ea4a331394f33a6ac7aaf5f4efa2235",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/independent_verified.json": "a45a0759c083e9cdb79bed95da5ec7694ccbd14162f28bcca43f43934317b62f",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/predictions.jsonl": "078467331feca85071b4325f6642b1a16aed90f642bc30d49c1ba41884ec308a",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/receipt.json": "8ea2849d487a76762e722f9c93125da6bb5de3331d9bdd006bee3a9744d4af0a",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "exact_matches": 6247,
+  "mapped_execution_accuracy_verified": false,
+  "paper_absolute_shortfall_percentage_points": 5.373916,
+  "paper_accuracy_percent": 55.04,
+  "paper_prompt_and_split_confirmed": false,
+  "questions": 12578,
+  "reproduced_control_answers": 16,
+  "reproduced_panel_answers": 267,
+  "scope": "Complete local TinyLLaVA software score on balanced GQA test-development, using a pinned checkpoint and prompt. The paper's exact evaluation configuration remains unconfirmed and this score has no mapped-hardware execution claim.",
+  "state": "full_calibrated_and_clipped_local_software_accuracy_verified",
+  "workload": {
+    "active_rows": 5549428,
+    "codes": 115462274048,
+    "retained_corrections": 12017039,
+    "rows": 20501114,
+    "saturated_codes": 12431515,
+    "skipped_saturated_codes": 414476
+  }
+}
