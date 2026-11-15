@@ -1,0 +1,34 @@
+{
+  "additional_compiled_memories": 0,
+  "bus_bytes_for_two_tokens": 2048,
+  "bus_reads_for_two_tokens": 256,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/map/netlist.v": "269eaad50eca7cb4bab78bd72f6fdf4d1d9442064578ed3cf3567f2b5993379b",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/reference.json": "d7397f3cbfc07dff5d38de7f36804e435db5a3a790ce24a8a1eef58311dd4587",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_beats.hex": "5ab036164e342b58e4659c60a3153463ea702e6a4c9dc80712e30db16153f4df",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_metadata.json": "74c71993b831b63e1517fc684653896fff343076f998c8e4f6b829758e0b58fe",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/check.sv": "4d9f2d13637257d4a52a1d1db3b82d9cf0fe0f266e9108a1cc9b92204b62ed80",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/invalidation_mutant/xrun.log": "a63d452129dbff453ec94485a032fdc96b2e67abe796855cf2c2122765e9b729",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/map/area.rpt": "b9c35bd0bbe5683b17f33c194a64b76edb957bf5d0ac1068763c959208fd391b",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/map/console.log": "86f572390319d9aee612d7dca89316aa7f1bad4f25e40e0fc45785ccdd13f6dc",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/map/netlist.v": "14da2582d8b307318ba743eb2ba52cf2447e9ed99fa0dc810bbbc0b03f0eba88",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/map/run.tcl": "b11d44d2bb89865270c67b7cddd14afaea7d4336e142a6be48d4f7fa503fb0b7",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/map/timing.rpt": "f5208dba1a7e22ece324c919c9dff9c18a6d900f9bd0f9edbaa817a4330d521e",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/mapped/xrun.log": "c3f1fadf42d1a33c293984fed91b4b1169d33d6b146cba5733022d47e023c5b8",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/scale_reader/rtl/xrun.log": "fdb7c151f4f7dcdb40756cd998cc4e2046f0f51a6b2600df227f477177a454d3",
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/channel_writeback/verified_vectors.hex": "91a9e2c880e902b7ff2716b99185f1fd12aceed9c517f481404d7f4856fce52c",
+    "verilog/tri_oracle_channel_scale_reader.sv": "b03a9f428cacab74e0d0a4368bdcfffda23e7b4a8e27bac730abfcb686566552"
+  },
+  "minimum_table_bytes": 1024,
+  "period_ns": 1.72414,
+  "reader_isolated_setup_slack_ps": 315,
+  "reader_mapped_area_um2": 1171.968,
+  "reader_mapped_cells": 696,
+  "scope": "Both reader versions feed the mapped per-channel write-back arithmetic. The memory peer emulates the narrow external read channel. The test verifies stalls, malformed responses, full drain, address overflow, scale underflow and invalidation while a refill is in flight. Shared-bus chip integration and extracted interconnect remain pending.",
+  "state": "mapped_external_scale_reader_feeds_channel_scaled_writeback",
+  "trained_positions": [
+    607,
+    608
+  ],
+  "verified_scaled_results": 4096
+}
