@@ -1,0 +1,33 @@
+{
+  "baseline_checkpoint_and_transaction_trace_equal": true,
+  "candidate_sha256": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+  "compiled_memory_paths": 631,
+  "evidence_sha256": {
+    ".cache/placement_coordinate_reuse/trained_layer11_boundary/placed_residual_bank_taps/structural_writeback_control/scalar/placement_seed/bank_ownership_cut/guard/placement_explicit/trained_replay/verify.py": "b7d154119e800c162f4529ba04396df98789d35e9c8ee2a958bcc297a04fc869",
+    ".cache/residual_bank_command_binding/trained/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/residual_bank_command_binding/trained/xrun.log": "6f2a365e4159aab2b8d6b242df7a69d677cbcba386bacd5976f706230c929ae2",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/legality/cold.v": "336a92baebec58570a2f7a1b768169ce50210d1fdf8d39d7043a654faabec6f6",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/verify_repaired_trained_writeback.py": "d2a846f1e460b5ceab61b52f798e2a0f310b789e3e84131ad291978ed51e1c56",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/whole_chip/bundle.sv": "670eb8f5df4558a40c26c4aff1ad3ec49be6265896bc3579e1c659e6b5f462bf",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/whole_chip/inputs.json": "6ead44b2e6a43e7133cbaf4fd2a1ba88c29a17f834ac20d407fa2a00cac52271",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/whole_chip/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/whole_chip/status.json": "6f1afc50e671bf4ff4fae6984c2c7bbf3cd6da205963e8b7195b5cdcefa6a994",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/whole_chip/verified.json": "26333afd0387a9d24f4b2dac3313cc4acb666ec053e8b858ccc90cbf48d348d0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/whole_chip/xrun.log": "a13c74dfb844fb085198e876e5b08cb6e8be2c1b83e64da5f17f684d6ffd2977",
+    "records/tri_oracle_full_native_token_tree_placement.json": "413edabb81597235c4412e4f46986cd976a79de8f5858fd25af395aa402101fe"
+  },
+  "exact_feedforward_values": 4096,
+  "exact_reference_checkpoints": 90,
+  "exact_writeback_values": 4096,
+  "exit_status": 0,
+  "independent_lease_from_validated_command": true,
+  "minimum_host_available_bytes": 11385233408,
+  "native_timing_checks_enabled": false,
+  "override_residual_request_used": false,
+  "peak_container_anonymous_bytes": 8926208000,
+  "scope": "Mapped functional Xcelium replay on two trained feed-forward tokens. Results and memory traffic match the guarded predecessor with its externally driven residual lease. Full-model accuracy, extracted timing and routed performance have separate checks.",
+  "simulated_end_ns": 9732940,
+  "state": "whole_chip_autonomous_trained_feedforward_and_writeback_independently_verified",
+  "variant": "repaired",
+  "wall_seconds": 2261.930551280966
+}
