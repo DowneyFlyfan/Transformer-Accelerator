@@ -1,0 +1,54 @@
+{
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "compared_wider_candidate_sha256": "5ab023bce3e472d5a29455dbc25e489b0f339da1d91d69b8f7985d108e1daa95",
+  "compiled_aggregator_input_output_memory_total_bytes": 10240,
+  "configured_shift_bits_per_token": 6,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/controller/native_replay/indexed/xrun.log": "c765135176519c390b93a55dc24aee7abef07acf9a4d4f45e3324ad0384ad07b",
+    "records/tri_oracle_bounded_decoder_mapped_paper_structure.json": "d27d0e8bdb4c25515c83482f7ed76237c5d8701384e14b2df575628a12a9d459",
+    "records/tri_oracle_dual_group_native_indexed_replay.json": "216d1873521dbbfe864f73abef0e273d9123ca3b0017bd11c144314faf3544dd",
+    "records/tri_oracle_gated_rounding_and_shift.json": "3f43d4c4a5ccf7c4a5ee2175edf02fbbd7f31f25fe10c95faff72462c3ed2486",
+    "verilog/tri_oracle_batched_nonlinear391.sv": "4a341ad14a87a421c0140d060e6a14d99b420e5930b7eacb0ebb421bdd14f545"
+  },
+  "exact_inherited_frame_modules_sha256": {
+    "tri_oracle_batched_frame437_PACKED_FEEDFORWARD_WEIGHTS1_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_attention_tri_oracle_attention_tensor437_server_parallel_chip": "edfdd6c0c84d03f7d9bd4b71e10687ecd4ba8be619d53b4d2a1489b861096809",
+    "tri_oracle_batched_nonlinear391_parallel_chip": "63ed623e480271ba356cc47ac248bcac09433ba7579aef56940508e786d36d5d",
+    "tri_oracle_batched_shared392_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_parallel_chip": "d62132f3ee3ef35d9ca0e046df4bb13902a4ec12355b4a7130d70a2d408bd285"
+  },
+  "external_preserve_existing_byte_scratch_extra_bytes_per_two_token_frame": 45056,
+  "external_preserve_existing_byte_scratch_extra_full_64bit_beats": 5632,
+  "full_signed16_bytes_per_token": 11264,
+  "full_signed16_bytes_per_two_token_frame": 22528,
+  "full_signed16_row_minus_all_aggregator_input_output_memory_bytes": 1024,
+  "intermediate_bytes_written_by_existing_two_token_fixture": 11264,
+  "intermediate_channels": 5632,
+  "loss_input_cases_checked": 655360,
+  "loss_unsigned_accumulator_bits_by_shift_for_5632_values": [
+    43,
+    43,
+    43,
+    43,
+    43,
+    43,
+    42,
+    41,
+    29,
+    29
+  ],
+  "nonlinear_packet_channels": 80,
+  "scope": "The inherited nonlinear path produces 80-channel packets and the frame consumes the existing signed-eight-bit stream. A full signed16 row is larger than the combined compiled aggregator input/output memory capacity, regardless of existing users. The external accounting is a proposed two-pass implementation that writes and re-reads a separate signed16 image before emitting the original byte scratch image. Extra beats assume complete payloads and are lower bounds before protocol overhead. Other bank reuse, actual RTL integration, answer accuracy and timing are unmeasured.",
+  "state": "exact_mapped_frame_and_adaptive_shift_storage_budget_reconciled",
+  "timing_disabled_replay_tokens": 2,
+  "worst_signed16_error_by_candidate_shift": [
+    32640,
+    32513,
+    32259,
+    31751,
+    30735,
+    28703,
+    24639,
+    16511,
+    255,
+    256
+  ]
+}
