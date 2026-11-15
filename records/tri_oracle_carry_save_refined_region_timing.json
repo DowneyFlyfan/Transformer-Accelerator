@@ -1,0 +1,114 @@
+{
+  "array_worst_path_source": "valid_reg[3]/CP",
+  "baseline": {
+    "annotated_internal_nets": 67898,
+    "cells": 53978,
+    "excluded_boundary_nets": 4966,
+    "native_density_percent": 94.82,
+    "paths": {
+      "array": {
+        "endpoint": "reduction[0].row[12].sum[2].value_reg[11]/SA",
+        "startpoint": "valid_reg[3]/CP",
+        "worst_setup_slack_ns": -31.600624
+      },
+      "level0": {
+        "endpoint": "reduction[0].row[11].sum[1].value_reg[16]/DB",
+        "startpoint": "product[90].value_reg[0]/CP",
+        "worst_setup_slack_ns": -1.789123
+      },
+      "level1": {
+        "endpoint": "reduction[1].row[7].sum[0].value_reg[17]/DB",
+        "startpoint": "reduction[0].row[7].sum[0].value_reg[0]/CP",
+        "worst_setup_slack_ns": -1.455379
+      },
+      "level2": {
+        "endpoint": "reduction[2].row[13].sum[0].value_reg[17]/DB",
+        "startpoint": "reduction[1].row[13].sum[0].value_reg[0]/CP",
+        "worst_setup_slack_ns": -2.107503
+      }
+    },
+    "remaining_sites": 28036
+  },
+  "candidate_minus_baseline_slack_ns": {
+    "array": -22.741211,
+    "level0": -0.002688,
+    "level1": -0.20823,
+    "level2": 0.65911
+  },
+  "carry_save": {
+    "annotated_internal_nets": 68210,
+    "cells": 54176,
+    "excluded_boundary_nets": 4966,
+    "native_density_percent": 95.04,
+    "paths": {
+      "array": {
+        "endpoint": "carry_save.row[13].compressor[0].carry_reg[12]/SA",
+        "startpoint": "valid_reg[3]/CP",
+        "worst_setup_slack_ns": -54.341835
+      },
+      "level0": {
+        "endpoint": "carry_save.row[13].compressor[0].sum_reg[15]/DB",
+        "startpoint": "product[104].value_reg[15]/CP",
+        "worst_setup_slack_ns": -1.791811
+      },
+      "level1": {
+        "endpoint": "carry_save.row[8].sum_reg[17]/DB",
+        "startpoint": "carry_save.row[8].compressor[1].sum_reg[16]/CP",
+        "worst_setup_slack_ns": -1.663609
+      },
+      "level2": {
+        "endpoint": "carry_save.row[7].value_reg[18]/DB",
+        "startpoint": "carry_save.row[7].sum_reg[3]/CP",
+        "worst_setup_slack_ns": -1.448393
+      }
+    },
+    "remaining_sites": 26843
+  },
+  "carry_save_refinement": {
+    "graph_score_after": 175959027185,
+    "graph_score_before": 576032716725,
+    "swaps": 124029
+  },
+  "clock_period_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/build_graphs.py": "010f73635eb16e0b937493284fa8c677e587f0241db286d181d6364afe8a4240",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/optimize": "d1b3771374c2e2d61c82445450df8227f58262d608ebbc8131f032b07e261d36",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/long_net_placement/optimize.cc": "dcece87182c54960a6deeb04df56655633c08328e62ff7aad7273174f1193e93",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/netlist.v": "b086a4eb9834caaa4313f989f789e3b5b2c1b196f3905a2fe7e30f6b114c797f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/carry_save/refine.graph": "096bfc5b6746c192c291ba9f22e84321fffeab1a0f51fc03a800144a0076c216",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/carry_save/refine.swaps": "55ef3871910225f480d1e055204c720530d7d9a96a40d0520ced02e85093d020",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/carry_save/refined.def": "80094060a30aebecbf6069790c5ca78952815cd7415abb0835e56968b81eacec",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/prepare_refined_wires.py": "057cf10f0372b172c2ff541a5892d60fb090aa192f4aa211a413114d3a4113c9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/refine_candidate.py": "888065a599d85391df91e57e6a0656b3dd61c0e85cae98b229ea915968ae7947",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/refined_carry_save/timing_inputs.json": "b801e7490b10aac02da4191fd97ba8ceb938f896ba3555625f586398f926c48c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/run_refined.py": "2090d5e8213832de511d9cfbd04455eb8b23567e913568a7cdad8bc196c0cfd9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/annotation.rpt": "e0020b8f71de0b375f17b682fcdad2413cd5ee2923ca3e55d9bb83c8d30552d0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/array.rpt": "bd3922420b7597bfaa48571245077fc941e93dd0f430da67be19df95818aad92",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/console.log": "3503dac413a03be90612034b90e2c4bdaf7ae073b9c04c0df852355067aec84a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/level0.rpt": "4d97393ec5f3ba815822043a17c60a9347abbe8c1a2f64057b416ebd0afda967",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/level1.rpt": "a218849706e8d8017bdeb8d5146cd05ac22195ad99ef6200ff59b4eba0fb6afa",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/level2.rpt": "b902ec6449885d6db098f5de7c790e575fafebbfc0d21f458fa7cdfdd45aa613",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/timed_refined_carry_save/status.json": "8953af5141c5f9d77a9db53599ca029b135d6de63b27f510923440dff47964c5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/verified_region.json": "49aad622dbcbe41f1b1258cea8994afb525e01de69678e6e3bbd7c7a160fcb1f",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/baseline/refine.graph": "9981f3b5b850689271eb04b76588fbaebb3515040ec485410480b5d47226778d",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/baseline/refine.swaps": "421f8ed8a92db066afea52d2f54ff8d783abc9d8856afee911826f6f59078493",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/refined_baseline/timing_inputs.json": "20b1aa62e4adff5a260111abd04189612bba1876d4b1527c5e801d038bdd95ea",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/annotation.rpt": "3ee36d980cc62719c872e74b3461b7a2b9a1e4ab324c423f4f3e39ec6d8349fe",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/array.rpt": "c24be946f500c51053a714ab2c8b917a9132948d67324987f696349b546615fb",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/console.log": "236210610487d5cc6e98b73cfb80b3d02111fc6c4a37a6bcf9d85f4bcecdec04",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/level0.rpt": "f3191689e0a41062669b50e92b30a274904f958eae2f6999b3a7a520fa4b88a2",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/level1.rpt": "8bd8074834adfa966f5be82a48648dbac9b7b1282cdea374608f38a40bc6511d",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/level2.rpt": "ed650fc125ebefe298cf7cfdd43f222ac621d902bd9887693bf59495fa0b08ff",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/rc_slow.missing_nets.rpt": "cb426ad99edfd92b7cf3eba4e53dbc9b2e95cba77ca757eb3699b2a220c9276a",
+    ".cache/physical/carry_lookahead_comparison/placed_final_stage/timed_refined_baseline/status.json": "5f829a1b24b5a0b4da713d895b8fb13997fe45b563111d106daee7eba8d5df35"
+  },
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "scope": "One 32-by-8 array in the exact blocked sites and identical boundary pins of bank4_2. Matched geometric internal wire estimates and an ideal clock at the slow corner. The test does not model routed wires or whole-chip timing. The isolated comparison reserves the original external control-buffer sites. Its reported array-wide timing includes the two standalone mapped control networks.",
+  "state": "carry_save_array_matched_geometry_refinement_timing_verified",
+  "worst_reduction_setup_slack_ns": {
+    "baseline": -2.107503,
+    "candidate_minus_baseline": 0.315692,
+    "carry_save": -1.791811
+  }
+}
