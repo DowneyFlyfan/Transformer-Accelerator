@@ -40,6 +40,7 @@ GUARDED_SCALAR_PLACEMENT = Path("records/tri_oracle_guarded_scalar_whole_chip_co
 BUFFERED_GRANT_PLACEMENT = Path("records/tri_oracle_buffered_grant_whole_chip_cold_reload.json")
 REDUCED_PORT_PLACEMENT = Path("records/tri_oracle_reduced_port_placement_and_reload.json")
 TOKEN_TREE_PLACEMENT = Path("records/tri_oracle_full_native_token_tree_placement.json")
+REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
 SCALAR_PLACEMENT_STAGES = {
     BUFFERED_GRANT_PLACEMENT: "cold Innovus buffered grant placement",
@@ -199,11 +200,11 @@ def reduced_port_placement_facts(root, facts, identities, *, repaired=False):
         unplaced_instances=int(unplaced), constraint_entries_by_view=counts,
     )
     if repaired:
-        repaired_placement_facts(root, facts, pin)
+        return repaired_placement_facts(root, facts, pin, memory)
     return memory
 
 
-def repaired_placement_facts(root, facts, pin):
+def repaired_placement_facts(root, facts, pin, baseline_memory):
     from tri_oracle_artifact_fingerprint import artifact_fingerprint
 
     report = json.loads(pin(TOKEN_TREE_PLACEMENT).read_bytes())
@@ -234,14 +235,34 @@ def repaired_placement_facts(root, facts, pin):
     assert native["unplaced_instances"] == facts["unplaced_instances"] == 0
     assert native["native_branch_pin_checks"] == 3 * (native["added_buffers"] + 10)
     assert 0 < native["worst_native_branch_pin_load_ratio"] < 1
+    resources = json.loads(pin(REPAIRED_NATIVE_RESOURCES).read_bytes())
+    for name, expected in resources["evidence_sha256"].items():
+        pin(name, expected)
+    assert resources["state"] == "exact_repaired_native_compute_and_memory_inventory_verified"
+    assert resources["repaired_netlist_sha256"] == repaired_netlist
+    assert resources["baseline_candidate_sha256"] == native["baseline_candidate_sha256"]
+    assert resources["checkpoint_fingerprint_sha256"] == report["checkpoint_fingerprint_sha256"]
+    assert resources["verified_loaded_compiler_timing_views_per_reload"] == 18
+    assert resources["verified_loaded_compiler_physical_abstracts_per_reload"] == 6
+    memory = resources["compiled_memory"]
+    assert memory == json.loads(json.dumps(baseline_memory))
+    assert memory["compiled_macros"] == native["fixed_memory_macros"]
+    arrays = resources["compute"]
+    assert arrays["array_instances"] == facts["array_instances"]
+    assert [arrays["array_rows"], arrays["array_lanes"]] == facts["array_geometry"]
+    assert arrays["operand_bits"] == facts["operand_bits"]
+    assert len(resources["clusters"]) == facts["clusters"]
+    assert sum(cluster["cores"] for cluster in resources["clusters"]) == facts["cores"]
     facts.update(
         candidate_sha256=repaired_netlist,
         baseline_candidate_sha256=native["baseline_candidate_sha256"],
         evidence_stage="cold Innovus repaired token-count placement",
+        memory_accounting_candidate_sha256=resources["repaired_netlist_sha256"],
         endpoint_count=native["endpoint_count"],
         added_buffers=native["added_buffers"],
         worst_native_branch_pin_load_ratio=native["worst_native_branch_pin_load_ratio"],
     )
+    return memory
 
 
 def registered_memory(root, identities):
