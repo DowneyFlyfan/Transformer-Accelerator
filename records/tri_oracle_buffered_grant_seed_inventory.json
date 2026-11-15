@@ -1,0 +1,25 @@
+{
+  "candidate_sha256": "181c45c86e236aee4a5f807604198912fd706b47818efb6890ce0fdfa5f7bb93",
+  "evidence_sha256": {
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native_inputs/prepared.json": "0307b133ed2165dc1cc11e32c63c180d4859fbfae7e920f748c01e5a6124a30f",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/seed_audit_controls.log": "e9913e074ff872e2652bf81b5802a0b26ae24c856d27eb2307259652f9cf85f7",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/seed_independent.json": "cadaf247e90d5d1f2ed1ae5193b4a1e5ba1d478ffb7e0c658e22c4d4727fc7eb",
+    "records/tri_oracle_guarded_scalar_whole_chip_cold_reload.json": "92dc4a5894dd4887bcbb4376f983be818d98659d32dce863e076410cb6b133bc",
+    "records/tri_oracle_residual_grant_buffered_seed.json": "245543066c732d6310b0f0eb010e31158879a8e4fe5f7d112ebf2447839b520e",
+    "syn/verify_tri_oracle_seed_components.py": "e00ecb2852c8fbd85757c78cb29f1dc3438534c5cc72c658c8f656d0394d946a"
+  },
+  "matched_instances": 3742146,
+  "newly_matched_components": 23,
+  "parent_sha256": "7328c44970769257af4eb7e140ae7a8dc75dad3bc7a142e1c676b974471eb4a1",
+  "scope": "Independent exact flattened name-and-cell-type match between the new mapped netlist and the component-only placement seed. Existing coordinates, orientations and fixed macro halos match the parent seed. Native Innovus placement and extracted timing are pending.",
+  "seed_sha256": "fb3d953cf5d4bca064cd1a7862764835e10e203c0b85df266cc202ea6e070ff0",
+  "separate_negative_controls_rejected": [
+    "changed_cell_type",
+    "different_instance_name",
+    "moved_original_instance"
+  ],
+  "sorted_name_and_master_sha256": "f75dd986d7a019473e6b8a312eb0f9498ec940221007f2e2240b23e6b9cd04f8",
+  "state": "buffered_grant_netlist_and_seed_cell_inventory_identical",
+  "unchanged_fixed_parent_macros": 631,
+  "unchanged_parent_components": 3742123
+}
