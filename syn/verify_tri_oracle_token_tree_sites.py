@@ -20,11 +20,13 @@ def rows(path):
         yield from csv.DictReader(stream, delimiter="\t")
 
 
-def expected_sites(inputs, units):
+def expected_sites(inputs, units, buffers_per_bit=288):
+    if buffers_per_bit < 1:
+        raise ValueError("Expected a positive number of buffers per token-count bit")
     buffers = {}
     for bit in range(10):
         nodes = list(rows(inputs / f"bit_{bit}.tsv"))
-        if [int(node["id"]) for node in nodes] != list(range(288)):
+        if [int(node["id"]) for node in nodes] != list(range(buffers_per_bit)):
             raise ValueError(f"Incomplete token tree for bit {bit}")
         for node in nodes:
             name = f"TRI_TOKEN_COUNT_{bit}_{node['id']}"
@@ -49,10 +51,10 @@ def expected_sites(inputs, units):
     return sites
 
 
-def verify(layout, inputs):
+def verify(layout, inputs, *, buffers_per_bit=288):
     with layout.open() as stream:
         units = get_units(stream)
-    sites = expected_sites(inputs, units)
+    sites = expected_sites(inputs, units, buffers_per_bit)
     pending = set(sites)
     for raw_name, pose in components(layout):
         name = raw_name.decode().replace("\\", "")
@@ -69,12 +71,16 @@ def verify(layout, inputs):
         pending.remove(name)
     if pending:
         raise ValueError(f"{layout}: {len(pending)} expected sites missing, including {min(pending)}")
-    return {"inserted_buffer_sites": 2880, "relocated_cell_sites": 4, "units_per_micron": units}
+    return {"inserted_buffer_sites": 10 * buffers_per_bit, "relocated_cell_sites": 4, "units_per_micron": units}
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("inputs", type=Path)
     parser.add_argument("layouts", type=Path, nargs="+")
+    parser.add_argument("--buffers-per-bit", type=int, default=288)
     args = parser.parse_args()
-    print(json.dumps({str(layout): verify(layout, args.inputs) for layout in args.layouts}, indent=2))
+    print(json.dumps({
+        str(layout): verify(layout, args.inputs, buffers_per_bit=args.buffers_per_bit)
+        for layout in args.layouts
+    }, indent=2))
