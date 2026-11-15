@@ -1,0 +1,139 @@
+{
+  "candidate_sha256": "d31f8eac89aa4693c0461f22a2ca26bd2052481057f72ea20c2670e412405c53",
+  "cold_floorplan_candidate_sha256": "181c45c86e236aee4a5f807604198912fd706b47818efb6890ce0fdfa5f7bb93",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/coalesced_write_budget.json": "a97d8cc9936890ffd11e3b2e5a35f2f8ab098c94bd815c802db99832dc66f254",
+    ".cache/model_reference/lossless_weight_burst_probe/transport_receipt.json": "110fcdd200e519527ccbfc162428bf729d151c612dd5dbe3abb5951ffc5e5109",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/cold.def": "2e0c8a7a9bf64141d1178b9d8fa47f96c986abae7f2cb069236ce987bcee832d",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/cold/cold_receipt.json": "ab7830ee710af14ce1e19bd0b8aafcac1188ec32b5f5771c43af653a6dd7f35e",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/candidate.v": "d31f8eac89aa4693c0461f22a2ca26bd2052481057f72ea20c2670e412405c53",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/seed.def": "52a601f7fd0976b2ebaf7c3911a6217057d75894ee3b0635fc4a0e1a6e82a74d",
+    "/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_110a_sefu10lm.tar.gz": "dce3bc9a92da187e23450e5e3913f318fa793137c2c161e0e9716b5a3999a3cc",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_buffered_grant_whole_chip_cold_reload.json": "c67b3b7c4084358363fd49cdbc6e518e384c3ceba2d0b68d62e848384fe1ade7",
+    "records/tri_oracle_descriptor_repeaters_seed.json": "f75335259315e6f99bba0a10502c6e42d4dd9b29b1f54bb07fbf81353872e27e",
+    "records/tri_oracle_internal_writeback_probes.json": "ef668994357be39edf51719d4a0c197239e4c97e586fb6cbdc599020facb9675",
+    "records/tri_oracle_ranked_sign_workload_bounds.json": "f592da0b95283d31812187ad68c4b5ea5ac9316bbcb1b0b2b462f604874e9b21",
+    "records/tri_oracle_restored_placed_chip_boundary.json": "7957cf449259edc861a73f6718992cf9af801d7deb861c9852e95067df8eea78",
+    "records/wac_packed_workload_traffic_result.json": "827f0dc8e7b327c3294fe3fb14b454626c85ac7687608da27102f56497d91f46",
+    "syn/audit_tri_oracle_mapped_redundancy.py": "00bb6daa727fdf62563b7a9dee6b54b33466b0e9255a1eb097f62457ec13c118",
+    "syn/audit_tri_oracle_pad_ring_clearance.py": "ca0db9195f243df30909f91579d1b20085b59d25bdcb95ee0d72ce4dd63d3416",
+    "syn/audit_tri_oracle_physical_io_budget.py": "01ea751152a8f99037351fccb0ec827ba43da1e0aefca45facd8d43715f203da",
+    "syn/audit_tri_oracle_placed_chip_boundary.py": "57a7520a4f382aad06961e331fe360a96e4ac40258b75e14111a85936bc7481b",
+    "syn/verify_tri_oracle_pad_cold_reload.py": "11c2d716c33f4dd1223a3a69898c3080fa3b135be58d0543fbe75019e12d717f"
+  },
+  "macro_body_clear_slots": 587,
+  "macro_clear_slots_with_fixed_halos": 585,
+  "macro_halo_clear_slots_by_edge": {
+    "bottom": 78,
+    "left": 169,
+    "right": 169,
+    "top": 169
+  },
+  "perimeter_slots_before_blockages": 676,
+  "physical_signal_bits": 7945,
+  "receive_only_bounds": {
+    "archived_weight_and_sign": {
+      "one_bit_per_cycle_input_pads": 982,
+      "payload_bytes": 62416019456,
+      "payload_utilization_if_every_clear_pad_carries_two_bits": 0.839020566603521,
+      "slots_left_before_other_signals_with_two_bits_per_cycle": 94,
+      "two_bits_per_cycle_input_pads": 491
+    },
+    "conditional_exact_weight_encoding_plus_full_index_and_sign": {
+      "one_bit_per_cycle_input_pads": 766,
+      "payload_bytes": 48691911744,
+      "payload_utilization_if_every_clear_pad_carries_two_bits": 0.6545357383653582,
+      "slots_left_before_other_signals_with_two_bits_per_cycle": 202,
+      "two_bits_per_cycle_input_pads": 383
+    }
+  },
+  "scope": "Pad geometry assumes one row and the smallest installed signal pad. It preserves fixed memory macro halos. The payload estimates grant every assigned data lane one or two useful bits per clock and exclude compute stalls, other memory traffic, pad spacing, control, power, package, and timing. The encoded scenario assumes the archived encoding across the full workload and one index response per encoded block. The 448-pad trial assumes both edges of the paper's core clock carry data and counts the site's deficit before adding any other interface functions. The reduced-pin netlist still needs a physical interface.",
+  "signal_bits_by_role": {
+    "attention_result": {
+      "input_bits": 0,
+      "output_bits": 2048
+    },
+    "clock_and_reset": {
+      "input_bits": 2,
+      "output_bits": 0
+    },
+    "command_and_response": {
+      "input_bits": 103,
+      "output_bits": 39
+    },
+    "head_prediction_result": {
+      "input_bits": 0,
+      "output_bits": 42
+    },
+    "memory_auxiliary_read": {
+      "input_bits": 516,
+      "output_bits": 72
+    },
+    "memory_base_addresses": {
+      "input_bits": 128,
+      "output_bits": 0
+    },
+    "memory_primary_read": {
+      "input_bits": 516,
+      "output_bits": 73
+    },
+    "memory_write": {
+      "input_bits": 4,
+      "output_bits": 145
+    },
+    "normalization_stream": {
+      "input_bits": 388,
+      "output_bits": 6
+    },
+    "projection_normalization_parameters": {
+      "input_bits": 129,
+      "output_bits": 9
+    },
+    "projection_read": {
+      "input_bits": 68,
+      "output_bits": 71
+    },
+    "projection_residual_and_scale": {
+      "input_bits": 286,
+      "output_bits": 10
+    },
+    "residual_override": {
+      "input_bits": 1,
+      "output_bits": 0
+    },
+    "rotary_angles": {
+      "input_bits": 1026,
+      "output_bits": 1
+    },
+    "token_signs_and_origins": {
+      "input_bits": 2050,
+      "output_bits": 23
+    },
+    "writeback_result": {
+      "input_bits": 1,
+      "output_bits": 188
+    }
+  },
+  "state": "physical_pad_and_workload_budget_bound_to_candidate",
+  "target_cycles": 508660000,
+  "trial_448_receive_pads_at_two_bits_per_cycle": {
+    "existing_command_response_clock_and_reset_bits": 144,
+    "fraction_of_ideal_receive_capacity": {
+      "archived_weight_and_sign": 1.0955960523729014,
+      "conditional_exact_weight_encoding_plus_full_index_and_sign": 0.8546951047851217
+    },
+    "ideal_internal_512_bit_beats_per_four_clocks": 7,
+    "receive_pads": 448,
+    "site_deficit_with_dedicated_control_pads": 7,
+    "sites_after_dedicated_receive_pads": 137
+  }
+}
