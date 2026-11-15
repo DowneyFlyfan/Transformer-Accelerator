@@ -1,0 +1,48 @@
+{
+  "affected_sink_pins": 4124,
+  "checked_ports": 7945,
+  "cold_netlist_sha256": "67f65ed182ea0ea2aa5d286524088e4e5bc2ef01d6928e5e86ea6bb62aa336d1",
+  "components": 3868658,
+  "density_percent": 97.93,
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/native_receipt.json": "3cac1cab69efd7607df5fe78f1eae5d99dbdb1cf22eed7aaddd69743f6dd58bd",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/native_seed_verified.json": "d60bdff2311cb1fe319088e4d9dc0172da7096ba80071019d855f735cecd322a",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/prepared.json": "75171f8a973b942deef4ca38e3cd9efd5520081ecf51a51d3910c7f3f603e496",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/token_monitor_fixture/verified.json": "ce8be77655027c00c947206b83941d232642922c0837182f6db462f4b2789c14",
+    "records/tri_oracle_bounded_decoder_probability_native_placement.json": "96787fef69fee6878633f6b2bebab7cad4e03dd4b5460eb7a36b5faade34a43d",
+    "records/tri_oracle_bounded_decoder_remaining_fanout.json": "b4116b29d4b718e1a7d5d905ba6bb2f404ac6dfa95145fdcf6622d4660ad014d"
+  },
+  "exact_connectivity": {
+    "modules": 573,
+    "named_instances": 3863506,
+    "physical_leaf_instances": 3868658
+  },
+  "fixed_memories": 631,
+  "inserted_buffers": 35,
+  "native_status": {
+    "cold": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 8023412736,
+      "peak_container_anonymous_bytes": 12291272704,
+      "stop_reason": null,
+      "wall_seconds": 120.11779173207469
+    },
+    "import": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 7769661440,
+      "peak_container_anonymous_bytes": 12541890560,
+      "stop_reason": null,
+      "wall_seconds": 127.09878957702313
+    }
+  },
+  "scope": "Verified Innovus import, cold geometry, and gate-level export. The native Xcelium replay and extracted timing remain pending.",
+  "seed_netlist_sha256": "0f92bd9de38e8bfd6ade3c77b575b5365e4d814d4ba62611f2e3ecf00075f3fe",
+  "source_cold_sha256": "0cb77c478595a7d31fac78bad8281bac70a15338bef5708a6bc43c5795c57b74",
+  "state": "token_map_buffered_whole_chip_native_placement_verified",
+  "token_map_sources": 7,
+  "untouched_source_sinks": 54
+}
