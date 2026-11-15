@@ -20,6 +20,10 @@ proc tri_oracle_require_clean_placement {report} {
     if {$density <= 0 || $density > 100} {
         error "Missing or invalid placement density in $report"
     }
+    if {[regexp -nocase -line {^[ \t]*Out of Core Area:[ \t]*([0-9]+)[ \t]*$} $text -> outside_core] &&
+        $outside_core > 0} {
+        error "Instances outside the core area: $report"
+    }
     if {[regexp -nocase {\m(violations?|overlap(s|ped|ping)?|illegal|errors?|warnings?)\M} $text]} {
         error "Placement diagnostic requires repair before routing: $report"
     }
