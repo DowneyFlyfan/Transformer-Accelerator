@@ -1,0 +1,58 @@
+{
+  "assigned_new_loader_cells": 116768,
+  "assigned_other_new_cells": 3954,
+  "boundary_timing_constraints_by_view": {
+    "hold_fast": 31772,
+    "setup_slow": 31772,
+    "setup_typ": 31772
+  },
+  "candidate_sha256": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+  "coordinate_seed_sha256": "223e088d5806affbad136a494b17148211c8db70ac6f2f2b25e4c99c58726dda",
+  "die_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/localized_seed/verified.json": "16b58b954909fdde907b911fc2c3c604b9fff369d32131f4d266ea60f473a625",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/synthesis_login/mapped.v": "61d2744c8cf200d200e4fa31a3710bbfac6666b55a51e06e31bfb38a41327f64",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/whole_chip.v": "aabf3c0b82d5e4db79d74deb38d5c77bf58fc754a3e9e5018a533b532200e579",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/placement_pin_power_halo_screen/halo_seed_signal_and_power_edges.def": "03c3444eb0708a6dd376d937e42276448311d02a27ce9194cee1738d9862736f",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/structure/hold_fast.sdc": "95eb9945fd31b8347bec5350bdba370e72894795db0c6c3f19aac0986ef0b5b1",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/structure/setup_slow.sdc": "ce6d28afb1d5d004d6126bda3a8b0cff2270a25bd45053255c643d1de127171c",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_reloads/structure/setup_typ.sdc": "aef30d2d3057dd2176c01ab12c767b78ebaa1b844a7b5e00b3b4bc3212b4fbc4",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes/token_tree_native_full_split_flow/apply/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/weight_write_segments/early_pair/decoder_block_mapping/mapped.v": "2c0608cd0cb9e40d3467505a34734796cb9c7aa971e2a1e9a56935cd7074e4d8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/audit_tri_oracle_bounded_decoder_seed.py": "ba76b7ab5c40145fedbaa7dea432d4950a97bc0ab4a6f100a391dd880e96f3e3",
+    "records/tri_oracle_bounded_weight_decoder.json": "25f8b49478f3359715a3e78e92a302c0dab00a36eaeddad810b8cc26f3f89060",
+    "records/tri_oracle_weight_loader_placement_region.json": "e64aabe972ee238a60a7fe6d76437453bbebfdabba6b26832ab8c0ef47c1f05f"
+  },
+  "geometry": {
+    "available_sites": 771854,
+    "component_counts": {
+      "FIXED": 631,
+      "PLACED": 3865158
+    },
+    "existing_occupied_sites": 35872207,
+    "sites_required_for_unplaced_cells": 0,
+    "unassigned_sites_after_packing": 771854
+  },
+  "lower_bound_at_1000_um": {
+    "available_sites_in_intervals_at_least_three_sites_long": 774545,
+    "required_sites_in_cells_at_least_three_sites_wide": 804219
+  },
+  "physical_component_count": 3865789,
+  "placement_margin_um": 1025,
+  "retained_standard_cell_coordinates": 3744436,
+  "scope": "Exact grid-aligned, overlap-free coordinate seed for the linked netlist. The initial locations are based on intervals and cell width. Innovus placement, wire delay and routing are pending.",
+  "sorted_instance_master_inventory_sha256": "90d1e5bf2c6bf10de93a5278ded5fa20931eba9330902bb78bd0f4c8eabff46a",
+  "state": "bounded_decoder_coordinate_seed_and_complete_inventory_verified",
+  "unchanged_boundary_blockages": 4,
+  "unchanged_fixed_macros": 631,
+  "untouched_boundary_pins": 7945
+}
