@@ -1,0 +1,57 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/optimal_eight_row_groups/verified.json": "5a33de7b55e7ec627ed095342a0b902cc3ecce7c2a3bcf59876febaf91464316",
+    "records/tri_oracle_channel_major_traffic_workload.json": "57f116d905b8a42f5885b081ee09d500cf060c60e4af74fe4f1666959d33c9a8"
+  },
+  "held_rows": 2640,
+  "measured": {
+    "baseline": {
+      "counts": {
+        "early_down": 4053413888,
+        "early_gate_up": 8118743040,
+        "images": 176,
+        "oracle_down": 4033804288,
+        "oracle_gate_up": 8119816192,
+        "original_down": 4056631296,
+        "original_gate_up": 8120164352,
+        "partitions_examined": 1132560
+      },
+      "dense_same_group_payload": 12178624512,
+      "early_ratio_to_original_dense_shared_15_rows": 2.0158570765135373,
+      "early_reduction_percent": -0.8063796687650004,
+      "early_weight_bytes": 12276830464,
+      "oracle_ratio_to_original_dense_shared_15_rows": 2.0128133894655003,
+      "oracle_reduction_percent": -0.6541748940654069,
+      "oracle_weight_bytes": 12258294016,
+      "original_ratio_to_original_dense_shared_15_rows": 2.016618754909715,
+      "original_reduction_percent": -0.8444686992251427,
+      "original_weight_bytes": 12281469184,
+      "sign_bytes": 104673536
+    },
+    "fit_threshold": {
+      "counts": {
+        "early_down": 3182381056,
+        "early_gate_up": 6685777920,
+        "images": 176,
+        "oracle_down": 3181819904,
+        "oracle_gate_up": 6686035968,
+        "original_down": 3397005312,
+        "original_gate_up": 7149129728,
+        "partitions_examined": 1132560
+      },
+      "dense_same_group_payload": 12178624512,
+      "early_ratio_to_original_dense_shared_15_rows": 1.6375403286011752,
+      "early_reduction_percent": 18.11199612753116,
+      "early_weight_bytes": 9972832512,
+      "oracle_ratio_to_original_dense_shared_15_rows": 1.6374905588869877,
+      "oracle_reduction_percent": 18.11448494718153,
+      "oracle_weight_bytes": 9972529408,
+      "original_ratio_to_original_dense_shared_15_rows": 1.748864081937091,
+      "original_reduction_percent": 12.545061509159694,
+      "original_weight_bytes": 10650808576,
+      "sign_bytes": 104673536
+    }
+  },
+  "scope": "Exact partition search separately for each 15-row captured image and layer. Early scheduling uses only gate/up masks. The payload oracle also uses post-projection down codes and serves as a lower bound on achievable weight bytes.",
+  "state": "exact_channel_major_eight_seven_token_schedule_bound_verified"
+}
