@@ -1,0 +1,41 @@
+{
+  "candidate_sha256": "6a34b2b90b2057f757ab043d02940fb894b9005fd93209494df254b0e4c45f4a",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/mapped_strip_blocks.v": "8c8ee0332ea07ccc626aa5f50dde7c20599a609b2109378271485cebc5646ee5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/mapped_strip_replay_tb.sv": "6bff1891ede25b8bd3e9f86517d70aad2216a1315e92f4807f5d9c919ad85ea7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/prepare_weight_predictor_replay.py": "cd1b37f6c91efd502f9417f67b706e5569bc697248c20eedbd8bae6cef3d0390",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/strip_negative_verified/console.log": "691b06cb0191d4629d7a69124ec39c3d38162af6e663cb8e23741a78b630a2fc",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/strip_positive_verified/console.log": "1c328418f79cc69f6dafa71c9a63dffedb326df95e16d17e3a41102602e484ab",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/verified.json": "1a474a70d373fff4cc7de9d8649851710300ac0697e2d02cd24408dcca5bde6b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/weight_expected.hex": "c13c3ebbfee24c363b74e66c568f6a84940fa73d0a47276fa5fbc05e3323c6bc",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/weight_frame_lengths.hex": "b42e8abf38e72cf486bfc19a002d881173e1e145225e167062fe072e152acbc5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/weight_requests.hex": "c5f65e6e760d80bb212695bbb1486cf087f679971962efdba1874505f89c1419",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "syn/verify_tri_oracle_candidate_prediction_bindings.py": "5c73a3b54254c9f47efc93814b0785b0c356565ceb4e3558f52e082185c98e0f"
+  },
+  "head_score_and_decision_bindings": 20,
+  "mapped_strip_replay": {
+    "exact_responses_verified": 1980,
+    "frames_per_definition": 99,
+    "negative_control_detected_at_frame": 1,
+    "negative_control_flipped_response_bit": 13,
+    "strips_per_definition": 1928,
+    "unconnected_reserved_response_bits": [
+      12
+    ],
+    "unique_definitions": 20
+  },
+  "scope": "Exact placed netlist export. Port binding covers local token merging, head scores and decisions, and strip predictors. Dependency tracing covers the eight combined mask channels per core. Xcelium executes every extracted mapped strip definition against independently calculated Gate, Up, skip and outlier responses, with reset, backpressure, zero outliers and frame overflow. Head and merge evidence here is structural. Chip-level trained execution, paper accuracy, routing and extracted timing are separate checks.",
+  "sign_feature_input_width_by_cluster": [
+    512,
+    384,
+    384,
+    384,
+    384
+  ],
+  "state": "placed_candidate_predictor_port_bindings_and_local_weight_masks_replayed",
+  "strip_predictor_data_paths": 20,
+  "strip_sign_channels_structurally_checked": 160,
+  "token_merging_cluster_paths": 5
+}
