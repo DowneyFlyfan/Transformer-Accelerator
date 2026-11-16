@@ -1,0 +1,155 @@
+{
+  "added_cell_footprint_um2": 110.88,
+  "added_combinational_cells": 155,
+  "early_route_overflow_percent": {
+    "lookahead": {
+      "horizontal": 0.02,
+      "vertical": 0.0
+    },
+    "previous": {
+      "horizontal": 0.02,
+      "vertical": 0.0
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/archive.py": "185cea8719c8ce3c54d3c6d056932f614ecf81b1d51806cfb0ee937f34a653a5",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/native_candidate/overlap.json": "385ba3b714f32ad33fbc66d9079834e748fc867c3a9bbacae83c6b0cb22d53ed",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/native_candidate/prepared.json": "5120bdcf0aa473bb608aff7164ad93f0d2f7f54fe6e38645fd41424221b2171b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "cbc2fd99bfe657da8abac0e9649f7d20202104d8a30263afc210854363608a9c",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "ed232cdeb91b681644125f91b69f72eceec2649586986729891fdb9d764cadfe",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/slow_setup.rpt": "0766edc86106f1d90086d7319aace13ad32d15e032fbf441625b8648501a7eb5",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/native_candidate/verified.json": "4d179955513ce83615b6fcbc3f67681ef395ba5f5a5b346753abfb0f4cf7583f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/prepared.json": "4834373f5b94921e40f4a05a15fb1414a6482ab49a4f955483669e8d2a5c213b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/replay/verified.json": "02fa932c19c57cda96c64db9622491ac0e3aeb066d39f6ef11629eeb69a72377",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/parallel_carry/verify_completed_route.py": "505cfa7abba73d5029f7f8fdf2f62c711b453f04e92209c0c41eaf6581d81222",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "4a80fd37ad4d69fa16af7d1971be7bb2dc7c141890b8df429b5f296ebaba1bc5",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "f6698eac76e579d57ac4abd34641138dec02086d890f66b0d7f913e5c7eff194",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/slow_setup.rpt": "5a7c01a08964a98da88aca405dd8deffec31ef97bf474bab2c67d36863b084cd",
+    "records/tri_oracle_bank4_2_queue_mux_native.json": "791062dfcc0b5e3745672d54853a38071d64078ac38e147b74c9688ca3efada4"
+  },
+  "exhaustive_cases_per_row": 131072,
+  "lookahead_rows": {
+    "13": {
+      "original_carry": "add_150_34_I14_n_17",
+      "parallel_carry": "tri_pcla_13_carry",
+      "receiver": "add_150_34_I14_g2595",
+      "unchanged_lower_sums": 8
+    },
+    "18": {
+      "original_carry": "add_150_34_I19_n_17",
+      "parallel_carry": "tri_pcla_18_carry",
+      "receiver": "add_150_34_I19_g2595",
+      "unchanged_lower_sums": 8
+    },
+    "2": {
+      "original_carry": "add_150_34_I3_n_17",
+      "parallel_carry": "tri_pcla_2_carry",
+      "receiver": "add_150_34_I3_g2595",
+      "unchanged_lower_sums": 8
+    },
+    "21": {
+      "original_carry": "add_150_34_I22_n_17",
+      "parallel_carry": "tri_pcla_21_carry",
+      "receiver": "add_150_34_I22_g2595",
+      "unchanged_lower_sums": 8
+    },
+    "5": {
+      "original_carry": "add_150_34_I6_n_17",
+      "parallel_carry": "tri_pcla_5_carry",
+      "receiver": "add_150_34_I6_g2595",
+      "unchanged_lower_sums": 8
+    }
+  },
+  "matched_boundary_pins": 4967,
+  "paper_clock_mhz": 580,
+  "placement": {
+    "maximum_distance_from_anchor_um": 799.52,
+    "mean_distance_um": 221.29,
+    "sites_by_row": {
+      "13": 132,
+      "18": 132,
+      "2": 132,
+      "21": 132,
+      "5": 132
+    }
+  },
+  "qualifies_as_preferred_regional_candidate": false,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "sampled_slow_carry_path_counts": {
+    "lookahead": {
+      "13": 3,
+      "18": 8,
+      "2": 5,
+      "21": 8
+    },
+    "previous": {
+      "13": 1,
+      "18": 1,
+      "2": 2,
+      "21": 1,
+      "5": 2
+    }
+  },
+  "scope": "The inserted eight-bit carry proof covers all binary inputs on five rows. The exact mapped candidate passed a regional test and retained all original cell positions. Timing uses an isolated early global route and ideal clocks.",
+  "slowest_path_attribution": {
+    "lookahead": {
+      "full_adder_carry_outputs": 7,
+      "largest_wire_delay": {
+        "driver": "TRI_PCLA_21_carry/Z",
+        "ns": 0.7518,
+        "receiver": "add_150_34_I22_g2595/CI"
+      },
+      "summed_wire_delay_ns": 2.3696
+    },
+    "previous": {
+      "full_adder_carry_outputs": 15,
+      "largest_wire_delay": {
+        "driver": "add_150_34_I22_g2588/ZN",
+        "ns": 0.2995,
+        "receiver": "carry_save.row[21].value_reg[18]/DB"
+      },
+      "summed_wire_delay_ns": 0.9749
+    }
+  },
+  "state": "bank4_2_local_parallel_carry_exhaustively_checked_and_physically_measured",
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_ns": 0.0,
+      "launch": "completed_results_reg[1][534]/CP",
+      "lookahead_ns": -0.012664,
+      "previous_ns": -0.012664
+    },
+    "fast_hot_setup": {
+      "capture": "carry_save.row[21].value_reg[18]/DB",
+      "change_ns": -1.079572,
+      "launch": "carry_save.row[21].sum_reg[10]/CP",
+      "lookahead_ns": -2.132539,
+      "previous_ns": -1.052967
+    },
+    "fast_setup": {
+      "capture": "carry_save.row[21].value_reg[18]/DB",
+      "change_ns": -1.019817,
+      "launch": "carry_save.row[21].sum_reg[10]/CP",
+      "lookahead_ns": -2.01037,
+      "previous_ns": -0.990553
+    },
+    "slow_setup": {
+      "capture": "carry_save.row[21].value_reg[18]/DB",
+      "change_ns": -1.77832,
+      "launch": "carry_save.row[21].sum_reg[10]/CP",
+      "lookahead_ns": -3.317132,
+      "previous_ns": -1.538812
+    },
+    "typical_setup": {
+      "capture": "carry_save.row[21].value_reg[18]/DB",
+      "change_ns": -1.35798,
+      "launch": "carry_save.row[21].sum_reg[10]/CP",
+      "lookahead_ns": -2.187268,
+      "previous_ns": -0.829288
+    }
+  },
+  "unchanged_original_cells": 54141,
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.274
+}
