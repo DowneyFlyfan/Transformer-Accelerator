@@ -1,0 +1,31 @@
+{
+  "array": "tri_oracle_pe_array_verified_bank0_2",
+  "elapsed_seconds": 422.12,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/footprint.json": "135f9853ed4e0273891da4905834b5b1cd5d47014d6ea7dbe2f8144ec9ffecad",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/recut_capacity.json": "f01eddfa65ae46d2ad58e11d48542ac575ab0feac17eb984b71b56765fa02dce",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/recut_capacity.py": "067e705fede3cd74c7fc154414a386815c3b4fb9f98c2b7325150533bb9fd855",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/recut_donor_capacity.json": "adbe92da5c9e41b590543b31653eeb86052e892a0e0f16d139468026ae181c53",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/tri_oracle_pe_array_verified_bank0_2/native/before.rpt": "c762246faf39998d9f1dfb273c1afb2f40c6ab5d559dc3ef5cb7f672fe04ed5b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/tri_oracle_pe_array_verified_bank0_2/native/before_timing.rpt": "ed87dba2b1732c526423b268a5ac2944b9e0d4c7dc2d78641729168b8501158b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/tri_oracle_pe_array_verified_bank0_2/native/console.log": "475fed26ed11936ea9159f413ccd2496d513d498ca1a84448424275e7336ccb4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/tri_oracle_pe_array_verified_bank0_2/native/status.json": "985ccc3c4327c776b600756e8c5de216e45d211b83d98a5b5e4fad07bd8795aa"
+  },
+  "feasible_lower_edge_site_count_bound": {
+    "extra_sites": 11013,
+    "horizontal_edge_scan_um": 19.88,
+    "left_edge_extra_sites": 568,
+    "neighboring_array_instances_crossed": 872,
+    "neighboring_array_sites_after_relocation_budget": 66458,
+    "right_edge_extra_sites": 436,
+    "shift_um": 9.6,
+    "surplus_sites_before_moving_crossing_cells": 266
+  },
+  "hard_blockages_imported": 27407,
+  "memory_guard_triggered": false,
+  "native_exit_status": 124,
+  "pre_optimization_density_percent": 96.64,
+  "pre_optimization_setup_slack_ns": -1.82982,
+  "scope": "Early timing from the unchanged isolated array. Setup optimization stopped during initialization without a candidate. The boundary-shift result counts legal sites from the full-chip seed and requires relegalization and extracted timing checks.",
+  "state": "neighbor_reserved_optimization_timed_out_recut_capacity_measured"
+}

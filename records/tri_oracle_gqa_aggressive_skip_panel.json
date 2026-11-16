@@ -1,0 +1,87 @@
+{
+  "answers_correct": {
+    "control": 57,
+    "dense": 67,
+    "paper_rate_candidate": 0
+  },
+  "benchmark": "Graph Question Answering balanced Test-Dev",
+  "by_question_type": {
+    "choose": {
+      "control": 14,
+      "dense": 15,
+      "paper_rate_candidate": 0
+    },
+    "compare": {
+      "control": 8,
+      "dense": 13,
+      "paper_rate_candidate": 0
+    },
+    "logical": {
+      "control": 10,
+      "dense": 13,
+      "paper_rate_candidate": 0
+    },
+    "query": {
+      "control": 9,
+      "dense": 10,
+      "paper_rate_candidate": 0
+    },
+    "verify": {
+      "control": 16,
+      "dense": 16,
+      "paper_rate_candidate": 0
+    }
+  },
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "control_to_candidate": {
+    "gained": 0,
+    "lost": 57,
+    "net_correct": -57
+  },
+  "distinct_images": 100,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    ".cache/model_reference/gqa_testdev/frozen_skip_rate_panel/evaluate.py": "28603a41dc707c8bde780adc23f6a1ead9a361c18df67b17ff89a64ee3c60997",
+    ".cache/model_reference/gqa_testdev/frozen_skip_rate_panel/paired_predictions.jsonl": "dfd1e6fa562a224a9ffa5bb429b8f170fc02d2fbb09067730f4e19079c55d78b",
+    ".cache/model_reference/gqa_testdev/frozen_skip_rate_panel/receipt.json": "d363ed5fa8ba013fec321191909f5600b20ad52b7db2abc3dea3797bafd21961",
+    ".cache/model_reference/gqa_testdev/frozen_skip_rate_panel/verify.py": "27f1619e174ce1650cd8a7eaf5ccdbaaa0f0da7ffba01617f87e8d1883bf2c52",
+    ".cache/model_reference/gqa_testdev/pruned_reference/predictions.jsonl": "68394aff6c8360f7cc671382a01157b2f727a3a962f84969a7f2c4a30ef7081f",
+    ".cache/model_reference/gqa_testdev/pruned_reference/receipt.json": "330708dd9dd2826ef37aa31aedf43e39e37b3949e31f732fe2f210efbd163c44",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "mask_thresholds": [
+    0,
+    -8,
+    2
+  ],
+  "paired_exact_p_value": 1.3877787807814457e-17,
+  "paper_full_evaluation_accuracy_percent": 55.04,
+  "peak_gpu_bytes": 7449519616,
+  "questions": 100,
+  "scope": "Software inference on a deterministic 100-question panel with 20 questions per structural type and distinct images. Candidate thresholds were frozen on separate calibration images. Paper score is for its full evaluation. Candidate thresholds have no mapped-chip accuracy or performance evidence. The skipped-channel share is a workload statistic. The paper's reported 57% reduction concerns external memory access after weight-sign overhead.",
+  "state": "host_gpu_paired_skip_rate_accuracy_verified_on_held_out_panel",
+  "weight_skip": {
+    "control": {
+      "decode_opportunities": 14992384,
+      "decode_skipped": 1047441,
+      "decode_skipped_percent": 6.986487272471143,
+      "prefill_opportunities": 4112931328,
+      "prefill_skipped": 345938855,
+      "prefill_skipped_percent": 8.411004887072114,
+      "skipped_percent": 8.405831120165818
+    },
+    "paper_rate_candidate": {
+      "decode_opportunities": 85493760,
+      "decode_skipped": 46458386,
+      "decode_skipped_percent": 54.341259525841416,
+      "prefill_opportunities": 4100050944,
+      "prefill_skipped": 2397756114,
+      "prefill_skipped_percent": 58.48112978959122,
+      "skipped_percent": 58.39656897378583
+    }
+  }
+}
