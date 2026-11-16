@@ -1,0 +1,93 @@
+{
+  "array_origins_checked_on_gpu": 324,
+  "array_rows_and_columns": [
+    24,
+    24
+  ],
+  "array_sites": 576,
+  "assumed_die_edge_clearance_um": 110.0,
+  "body_clear_track_aligned_capacity_by_edge_margin_um": {
+    "0": {
+      "maximum_contacts_by_tested_regular_pitch_um": {
+        "103.5": 399,
+        "108": 382,
+        "112.5": 379,
+        "117": 362,
+        "121.5": 296,
+        "126": 306,
+        "130.5": 261,
+        "135": 239,
+        "139.5": 283,
+        "94.5": 509,
+        "99": 469
+      },
+      "tile_width_in_top_metal_tracks": 21,
+      "track_centers_away_from_memory": 178374,
+      "upper_bound_for_any_body_clear_track_aligned_placement": 693
+    },
+    "110": {
+      "maximum_contacts_by_tested_regular_pitch_um": {
+        "103.5": 313,
+        "108": 293,
+        "112.5": 272,
+        "117": 287,
+        "121.5": 228,
+        "126": 248,
+        "130.5": 223,
+        "135": 191,
+        "139.5": 213,
+        "94.5": 348,
+        "99": 362
+      },
+      "tile_width_in_top_metal_tracks": 21,
+      "track_centers_away_from_memory": 138007,
+      "upper_bound_for_any_body_clear_track_aligned_placement": 538
+    }
+  },
+  "bump_stream_sha256": "ee693f1eb7538a2757e767a81569053e2569a2254d10301c3661a8936be489bd",
+  "conditioning_cells_by_edge": {
+    "bottom": 68,
+    "left": 159,
+    "right": 159,
+    "top": 158
+  },
+  "conditioning_slots_available_by_edge": {
+    "bottom": 78,
+    "left": 169,
+    "right": 169,
+    "top": 169
+  },
+  "contacts_over_memory_halos": 359,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/layout.def": "0aecf99d8b5869cda885e167649bd823dba00534f9af6b2c2483e85bc33f57ee",
+    ".cache/physical/whole_chip_xcelium_speed/split_credit_ingress/chip_binding/credit_wrapper.v": "0ab2583e171a12a1aba75fc878b76485fa5e24488b879b8fb3dc0e26861d8cd6",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    "/home/downeyflyfan/Documents/pdks/tsmc28hpc/IO/tpbn28v_140b/AN61001_20180130/tpbn28v_140a_gdsfcmt10mz.tar.gz": "1b09e5819c1bfe322dd9669060aae7e1db83e809a190380463f9f57919700555",
+    "/home/downeyflyfan/Documents/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_110a_sefu10lm.tar.gz": "dce3bc9a92da187e23450e5e3913f318fa793137c2c161e0e9716b5a3999a3cc",
+    "/home/downeyflyfan/Documents/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_170a_rln.tar.gz": "b1c4f07494931a1b185e8048ce7b500c9084a02b9fffc0e58382df8fdf955eb7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/whole_chip_xcelium_speed/flip_chip_geometry/contacts.json": "a6ad7a0433ca009864439c385f5093c3ac9fd034169286a0cb3c96978431b90e",
+    "records/tri_oracle_bonded_pad_capacity.json": "8125c3e10d15ae8dd492e22ad7c122ad6b898d6f3de69ea9fb29c8efc2db8910",
+    "records/tri_oracle_physical_io_budget.json": "0b3efc498f02b53c4bbcc84164f4ded26ed27c91a02ad3a28c911377971f451a",
+    "records/tri_oracle_split_credit_ingress.json": "f42f169dd9f03495b6a090832de67a7dfd53e7fb0d0c37d3ca29be591611aa69",
+    "syn/audit_tri_oracle_flip_chip_geometry.py": "7ed7359d3324d70dd61fc79df08068e9e953bbbf5559aac23f254918fecbadbd"
+  },
+  "full_checked_footprint_um": 93.3,
+  "installed_bump_master": "PAD80MTB_EU",
+  "lower_bound_on_over_memory_contacts_with_assumed_margin": 6,
+  "maximum_body_clear_sites_in_trial_array": 213,
+  "memory_data_contacts": 448,
+  "minimum_memory_overlays_at_checked_pitch_and_edge_clearance": 331,
+  "pitch_um_aligned_to_top_redistribution_layer": 139.5,
+  "remaining_array_sites": 32,
+  "scope": "Constructive contact geometry using the installed bump bounding boxes and fixed macro halos. The bump pitch and edge margin are explicit layout scenarios. The body-clear capacity bound applies to rectangular footprint boxes centered on the tested metal track grid. Memory abstracts have no top redistribution layer obstructions. The array still requires package approval for bump-over-memory placement, continuous supply rails, a routed redistribution layer, package escape and timing verification.",
+  "signal_contacts": 531,
+  "state": "flip_chip_contact_geometry_constructed_for_credited_interface",
+  "supply_and_ground_contacts_scenario": 13
+}
