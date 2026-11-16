@@ -1,0 +1,235 @@
+{
+  "clock_period_ns": 1.72414,
+  "clock_uncertainty_ns": 0.05,
+  "control_comparison": {
+    "slow": {
+      "host_estimated_slack_ns": [
+        -8.779548,
+        -2.020995
+      ],
+      "innovus_early_slack_ns": [
+        -8.121532,
+        -2.746396
+      ],
+      "max_absolute_error_ns": 0.725401
+    },
+    "typical": {
+      "host_estimated_slack_ns": [
+        -7.075783,
+        -1.389677
+      ],
+      "innovus_early_slack_ns": [
+        -5.742542,
+        -1.580727
+      ],
+      "max_absolute_error_ns": 1.333241
+    }
+  },
+  "direct_worst_path_trials": {
+    "baseline": {
+      "slow": {
+        "change_vs_baseline_ns": 0.0,
+        "critical_end": "carry_save.row[25].value_reg[18]",
+        "critical_start": "carry_save.row[25].sum_reg[2]",
+        "estimated_worst_setup_slack_ns": -9.740833,
+        "sum_of_worst_100_slacks_ns": -890.721194,
+        "wire_free_worst_setup_slack_ns": 0.989002
+      },
+      "typical": {
+        "change_vs_baseline_ns": 0.0,
+        "critical_end": "carry_save.row[25].value_reg[18]",
+        "critical_start": "carry_save.row[25].sum_reg[2]",
+        "estimated_worst_setup_slack_ns": -8.564308,
+        "sum_of_worst_100_slacks_ns": -720.834815,
+        "wire_free_worst_setup_slack_ns": 1.164096
+      }
+    },
+    "path_local": {
+      "slow": {
+        "change_vs_baseline_ns": 1.388817,
+        "critical_end": "completed_results_reg[0][71]",
+        "critical_start": "running_valid_reg[3]",
+        "estimated_worst_setup_slack_ns": -8.352016,
+        "sum_of_worst_100_slacks_ns": -730.849612,
+        "wire_free_worst_setup_slack_ns": 0.989002
+      },
+      "typical": {
+        "change_vs_baseline_ns": 2.104081,
+        "critical_end": "completed_results_reg[0][71]",
+        "critical_start": "running_valid_reg[3]",
+        "estimated_worst_setup_slack_ns": -6.460227,
+        "sum_of_worst_100_slacks_ns": -562.490174,
+        "wire_free_worst_setup_slack_ns": 1.164096
+      }
+    },
+    "path_strong": {
+      "slow": {
+        "change_vs_baseline_ns": 0.968221,
+        "critical_end": "completed_results_reg[0][219]",
+        "critical_start": "shadow_valid_reg[3]",
+        "estimated_worst_setup_slack_ns": -8.772612,
+        "sum_of_worst_100_slacks_ns": -785.228678,
+        "wire_free_worst_setup_slack_ns": 0.989002
+      },
+      "typical": {
+        "change_vs_baseline_ns": 1.742956,
+        "critical_end": "completed_results_reg[0][219]",
+        "critical_start": "running_valid_reg[3]",
+        "estimated_worst_setup_slack_ns": -6.821352,
+        "sum_of_worst_100_slacks_ns": -597.918417,
+        "wire_free_worst_setup_slack_ns": 1.164096
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/resized.v": "5cd686dd491c7a632d75aae03d6334ac1f424b7ee24a805e3aca4dba2422428b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/verified.json": "e413a5eaa1589e83c8f559dedaacee5b18195af1eb882ab1e8846a17f53e7e04",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/baseline/tri_oracle_pe_array/native/after.def": "9ff1baad7eebb1aa2767b84d66d822c35364fc088dbf7a4430d60ab1f9b941b5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/baseline/verified.json": "1e29598a5637d92908677341abf5296f2d8131405360c9193a73f18aa13ee4f0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/optimized/tri_oracle_pe_array/native/after.def": "d562750b852ba3ab415d9db1a0a631b2d1f499e732c190a35b026d62e1f5e316",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/optimized/verified.json": "32a44aa960e1952a85134d65d26a5badc810595211d589d89d06480b546ba244",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/baseline/tri_oracle_pe_array/seed.def": "18d16cd666218c618f93018bffa0883d36ef0a37558b6eb9265c5a5c738ea873",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/local_swap_trial/timing_weighted/seed.def": "7229d9a30ea04bc8aeee193a2bbd8242179f7caade29fc5517841d2f79c3f013",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/local_swap_trial/verified.json": "934875433418490774db46b62339ecfbaeb34000ad996bec4efc83cb16f6893e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/local_swap_trial/wire_only/seed.def": "2cf7fdde4ece9bff6e5a2932d369c1c49a0c8284306959dedf0833eff1d6d3b5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/prepared.json": "c0a21657ad550036308dbad7c16e8371bdc0f8d82aa8b93ec7aa663f89019117",
+    ".cache/physical/host_opensta/calibration/archive.py": "22c218092fe9371c27bc405b6eaaa1a661bd0313cc5454f5c797a7a844ecb65d",
+    ".cache/physical/host_opensta/calibration/bank2_baseline.date_normalized.spef": "5c9f57833f32f505e52614054bb331cdbda11d34573c9ef5f4e1e71f25771d31",
+    ".cache/physical/host_opensta/calibration/bank2_baseline.geometric.spef": "66afb21baed44acce63bcaf21df73866d7309d5cc9cce7fd740f880d2d16a6de",
+    ".cache/physical/host_opensta/calibration/bank2_baseline.slow.strict.log": "3cfdda77aafd6a63eb27319ebd28153e2736104da44868857938fb67f3e54fec",
+    ".cache/physical/host_opensta/calibration/bank2_baseline.typical.strict.log": "bf0d02a89ab3dc0c15797f247ee200b6bfb3c4dc1be0514b44313a184eebf1c0",
+    ".cache/physical/host_opensta/calibration/bank2_timing_weighted.date_normalized.spef": "7e63cc4f1e327a13f343a8f2a7b9ed616af9062339b37b2d1bc6528ec0b5e7e4",
+    ".cache/physical/host_opensta/calibration/bank2_timing_weighted.geometric.spef": "988878863b64262570da16a1fd84ae399f3fb6407bbde2c07c08fad5ff8e07f0",
+    ".cache/physical/host_opensta/calibration/bank2_timing_weighted.slow.strict.log": "b5cc76e0012f0ac30e46647004c7f5a8308061d9170ee9396fcfe7a58c84c861",
+    ".cache/physical/host_opensta/calibration/bank2_timing_weighted.typical.strict.log": "7dcc03d90bc6f2a59a141df6bff592918b7eae02306c70a72fbb9c818f3e0800",
+    ".cache/physical/host_opensta/calibration/bank2_wire_only.date_normalized.spef": "778b4f6076651f399cbec04847b79cf2ba2e2c2945ffbd74ded12224a421f50b",
+    ".cache/physical/host_opensta/calibration/bank2_wire_only.geometric.spef": "74028be0eb038199f3ce1c30f24049d129beea247affa144d4fcd6276a77f1ec",
+    ".cache/physical/host_opensta/calibration/bank2_wire_only.slow.strict.log": "bdcb3bc71cbf511bb32acb6f462eae81b736a6adecc64a5f55240caa1ed51e39",
+    ".cache/physical/host_opensta/calibration/bank2_wire_only.typical.strict.log": "824acee750dcae8a75becd8d59b746d1fa33d4deafdcc4825631df1f051c0321",
+    ".cache/physical/host_opensta/calibration/control_baseline.date_normalized.spef": "65b315d8007c8262e17f539176ea2d0f990c442402cb6881fb79529162b013f7",
+    ".cache/physical/host_opensta/calibration/control_baseline.geometric.spef": "39ac8774bd14556bf46a16e34332b4897de976b9c91716a1a16962a205831d16",
+    ".cache/physical/host_opensta/calibration/control_baseline.slow.strict.log": "a92db86f06571ce1fd0e02c601f2d7027d0a1a7acea55e7725159d5b989765e3",
+    ".cache/physical/host_opensta/calibration/control_baseline.typical.strict.log": "a15c63eda7a31a045021bb8577f27b07afe0fb8d1b8070ad155cb05cbe193130",
+    ".cache/physical/host_opensta/calibration/control_optimized.date_normalized.spef": "b9a762131ef308a742165fe96f90a2808dfc30dd79633f671eef2ee20963ca90",
+    ".cache/physical/host_opensta/calibration/control_optimized.geometric.spef": "90df96aa2806f770148ab574abfca150e4b874ca2e57b63895732907be23f5f4",
+    ".cache/physical/host_opensta/calibration/control_optimized.slow.strict.log": "e1115eb75cfc5c1439c3f3770f208a0ab9206d6e57c57529679c380fb75bc38b",
+    ".cache/physical/host_opensta/calibration/control_optimized.typical.strict.log": "eacc46b594bbf574588f8502b1cc02866caec8716111b629b88acb8c9b681e14",
+    ".cache/physical/host_opensta/calibration/direct/verified.json": "ad148d384f0a8663c6ce59726d3422a5a82d5082d9bbcdfe2b7a15a5cf55bee5",
+    ".cache/physical/host_opensta/calibration/measure.tcl": "41224e6d7a7dc7ca90427966e06129e44ddd60f5cdbe23d0f8dfd03a283e16cf",
+    ".cache/physical/host_opensta/calibration/measure_strict.py": "7bc9d84b1e6bbc9887ab421d88c8744cec5c64490a6d3183f5e4d33d906df5db",
+    ".cache/physical/host_opensta/calibration/run_strict.log": "311c9118d185b35f4fc750a493a4421cc61ef4b829ae28f05641abd718f16edd",
+    ".cache/physical/host_opensta/usr/bin/sta": "7b9994f6e26be12db7285c4fdfb0a8e3dbac0a65de328dd1b448005cc9b0edd8",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/physical/routing_kit/N28_PRTF_Cad_v1d5a/PR_tech/Cadence/LefHeader/VHV/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e"
+  },
+  "measured_layouts": {
+    "bank2_baseline": {
+      "slow": {
+        "critical_path": [
+          "carry_save.row[25].sum_reg[2]",
+          "carry_save.row[25].value_reg[18]"
+        ],
+        "estimated_ns": -9.740833,
+        "wire_free_ns": 0.989002
+      },
+      "typical": {
+        "critical_path": [
+          "carry_save.row[25].sum_reg[2]",
+          "carry_save.row[25].value_reg[18]"
+        ],
+        "estimated_ns": -8.564308,
+        "wire_free_ns": 1.164096
+      }
+    },
+    "bank2_timing_weighted": {
+      "slow": {
+        "critical_path": [
+          "carry_save.row[13].compressor[0].carry_reg[17]",
+          "carry_save.row[13].carry_reg[18]"
+        ],
+        "estimated_ns": -9.760945,
+        "wire_free_ns": 0.989002
+      },
+      "typical": {
+        "critical_path": [
+          "carry_save.row[25].sum_reg[2]",
+          "carry_save.row[25].value_reg[18]"
+        ],
+        "estimated_ns": -8.564331,
+        "wire_free_ns": 1.164096
+      }
+    },
+    "bank2_wire_only": {
+      "slow": {
+        "critical_path": [
+          "carry_save.row[25].sum_reg[2]",
+          "carry_save.row[25].value_reg[18]"
+        ],
+        "estimated_ns": -9.740965,
+        "wire_free_ns": 0.989002
+      },
+      "typical": {
+        "critical_path": [
+          "carry_save.row[25].sum_reg[2]",
+          "carry_save.row[25].value_reg[18]"
+        ],
+        "estimated_ns": -8.564319,
+        "wire_free_ns": 1.164096
+      }
+    },
+    "control_baseline": {
+      "slow": {
+        "critical_path": [
+          "running_valid_reg[3]",
+          "completed_results_reg[2][391]"
+        ],
+        "estimated_ns": -8.779548,
+        "wire_free_ns": 0.989002
+      },
+      "typical": {
+        "critical_path": [
+          "running_valid_reg[3]",
+          "completed_results_reg[2][391]"
+        ],
+        "estimated_ns": -7.075783,
+        "wire_free_ns": 1.164096
+      }
+    },
+    "control_optimized": {
+      "slow": {
+        "critical_path": [
+          "running_valid_reg[3]",
+          "completed_results_reg[0][448]"
+        ],
+        "estimated_ns": -2.020995,
+        "wire_free_ns": 0.989002
+      },
+      "typical": {
+        "critical_path": [
+          "running_valid_reg[3]",
+          "completed_results_reg[1][389]"
+        ],
+        "estimated_ns": -1.389677,
+        "wire_free_ns": 1.164096
+      }
+    }
+  },
+  "route_model": {
+    "horizontal": {
+      "area_pf_per_um2": 0.000312857,
+      "edge_pf_per_um": 7.44e-05,
+      "ohm_per_um": 8.56,
+      "width": 0.05
+    },
+    "vertical": {
+      "area_pf_per_um2": 0.000312857,
+      "edge_pf_per_um": 7.44e-05,
+      "ohm_per_um": 8.56,
+      "width": 0.05
+    }
+  },
+  "scope": "OpenSTA comparison on an isolated, exactly placed 54,141-cell compute array. Straight Manhattan wire estimates over 68,168 internal nets, cell-center pin proxies, and an ideal clock. Native estimates are available only for the bank 4 control.",
+  "state": "bank2_host_regional_setup_screen_verified"
+}
