@@ -1,0 +1,132 @@
+{
+  "added_fast_hot_cell_models": [
+    "CKND4BWP12T40P140",
+    "ND2D4BWP12T40P140"
+  ],
+  "control_gate_slow_setup_paths": {
+    "previous": {
+      "g395666/ZN": {
+        "appears_in_sample": 80,
+        "worst_path_cell_delay_ns": 0.4156,
+        "worst_path_transition_ns": 0.4183
+      },
+      "g395668/ZN": {
+        "appears_in_sample": 80,
+        "worst_path_cell_delay_ns": 0.7556,
+        "worst_path_transition_ns": 1.2441
+      }
+    },
+    "resized": {
+      "g395666/ZN": {
+        "appears_in_sample": 0
+      },
+      "g395668/ZN": {
+        "appears_in_sample": 9
+      }
+    }
+  },
+  "early_route_overflow_percent": {
+    "horizontal": {
+      "previous": 0.03,
+      "resized": 0.02
+    },
+    "vertical": {
+      "previous": 0.0,
+      "resized": 0.0
+    }
+  },
+  "equivalent_output_bits": 610,
+  "equivalent_primitive_input_pins": 135958,
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "c2fd7a0f25b4ca2d78b496f5a4630b13d4c4dd37a890776d03721bd959fbfb8f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "6d6a897bf1921687f49d3b9ea87e58278c8dff161328b087a60f7faf9149948a",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/archive.py": "ba155461579e8fe49eeaf88808a5d348a11054ef1564aae2a54a76d5830320a9",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/overlap.json": "910530f66b9ed87d6cb32a843833ad9ad67c2e05485843ece7aa7050d0d3f0f4",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/prepared.json": "61940976124706184bdafdc0c0d36678f250d6c9c36c3934885bf2a9b3fc6d05",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "86b572f1ece52e12d733b76733971660a09a473a0f39669169e065db57345c20",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "d46b4022fc33b972c8b4a7d59bb1f6c8a8cbac148a0000d06cccb8cc241be767",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/verified.json": "e67fed1777dc9952bed62842343f2a3d4238244de347ec2173dd52889700782d",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/prepared.json": "8ad54cbb6bcbbbb4dec158ccdffeaba219062e40da0f856717e72c4537384b6c",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/replay/verified.json": "ee6a51606e9b6748fd97dc6091caa0712a1b242d51466702a62d6fd18e5bd601",
+    "records/tri_oracle_bank4_2_carry_select_native.json": "170c023b4d5714b1888c1e4cb89b726c8177a5b2a947a3d8f559bf2ff6326cc8"
+  },
+  "matched_boundary_pins": 4967,
+  "paper_clock_mhz": 580,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "resized_cells": {
+    "g395666": {
+      "manhattan_move_um": 271.08,
+      "previous_dbu": [
+        1473040,
+        959200
+      ],
+      "previous_master": "CKND1BWP12T40P140",
+      "previous_orientation": "N",
+      "resized_dbu": [
+        1226080,
+        1254400
+      ],
+      "resized_master": "CKND4BWP12T40P140",
+      "resized_orientation": "FS",
+      "width_increase_dbu": 840
+    },
+    "g395668": {
+      "manhattan_move_um": 145.46,
+      "previous_dbu": [
+        1316800,
+        1456000
+      ],
+      "previous_master": "ND2D1BWP12T40P140",
+      "previous_orientation": "FS",
+      "resized_dbu": [
+        1227480,
+        1254400
+      ],
+      "resized_master": "ND2D4BWP12T40P140",
+      "resized_orientation": "FS",
+      "width_increase_dbu": 1680
+    }
+  },
+  "scope": "Two drive-strength changes and relocations to legal free sites. Identical boundary pins, reserved sites, clock constraints, and analysis views. Isolated early global routing for a compute region with ideal clocks.",
+  "state": "bank4_2_two_control_drive_substitutions_xcelium_and_innovus_measured",
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_ns": 0.0,
+      "launch": "completed_results_reg[1][534]/CP",
+      "previous_ns": -0.012664,
+      "resized_ns": -0.012664
+    },
+    "fast_hot_setup": {
+      "capture": "completed_results_reg[2][464]/SA",
+      "change_ns": 0.369754,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "previous_ns": -1.782473,
+      "resized_ns": -1.412719
+    },
+    "fast_setup": {
+      "capture": "completed_results_reg[2][464]/SA",
+      "change_ns": 0.199722,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "previous_ns": -1.555264,
+      "resized_ns": -1.355542
+    },
+    "slow_setup": {
+      "capture": "carry_save.row[5].value_reg[17]/DB",
+      "change_ns": 0.669208,
+      "launch": "carry_save.row[5].carry_reg[2]/CP",
+      "previous_ns": -2.544794,
+      "resized_ns": -1.875586
+    },
+    "typical_setup": {
+      "capture": "carry_save.row[5].value_reg[18]/DB",
+      "change_ns": 0.443801,
+      "launch": "carry_save.row[5].carry_reg[2]/CP",
+      "previous_ns": -1.545405,
+      "resized_ns": -1.101604
+    }
+  },
+  "unchanged_cell_placements": 54139,
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.194
+}
