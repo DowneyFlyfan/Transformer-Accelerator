@@ -1,0 +1,49 @@
+{
+  "state": "matched_xcelium_queue_register_activity_and_invalid_input_hold_verified",
+  "scope": "Register-transfer-level diagnostic on the isolated carry-save processing array. The test sampled known consecutive edges outside reset for 8,352 arithmetic bits and 1,824 completion payload bits. Queue control state, clock, gates, wire capacitance and glitches were outside the measurement. The workload is directed and deterministic pseudorandom. The counts do not measure chip power or energy.",
+  "delivered_transactions_per_trial": 786,
+  "array_rows": 32,
+  "lanes_per_row": 8,
+  "phases": [
+    {
+      "phase": "directed_fill_backpressure_and_reset",
+      "arithmetic_edge_pairs": 32,
+      "original_arithmetic_bit_transitions": 15801,
+      "binary_and_one_hot_arithmetic_bit_transitions": 26924,
+      "hold_invalid_arithmetic_bit_transitions": 18945,
+      "completion_payload_bit_transitions_each_queue": 1194
+    },
+    {
+      "phase": "continuous_valid_and_ready",
+      "arithmetic_edge_pairs": 189,
+      "original_arithmetic_bit_transitions": 741424,
+      "binary_and_one_hot_arithmetic_bit_transitions": 741521,
+      "hold_invalid_arithmetic_bit_transitions": 741372,
+      "completion_payload_bit_transitions_each_queue": 0
+    },
+    {
+      "phase": "mixed_valid_ready_and_drain",
+      "arithmetic_edge_pairs": 928,
+      "original_arithmetic_bit_transitions": 2292124,
+      "binary_and_one_hot_arithmetic_bit_transitions": 2642937,
+      "hold_invalid_arithmetic_bit_transitions": 2294043,
+      "completion_payload_bit_transitions_each_queue": 73342
+    }
+  ],
+  "mixed_phase_arithmetic_reduction_percent": 13.201,
+  "negative_control": "The free-running one-hot queue failed the invalid-cycle product hold assertion at cycle 5.",
+  "candidate_status": "Invalid-cycle hold passed the isolated functional check. Area and timing remain unmeasured.",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/carry_save.sv": "792ff06dc38e574d361715d2a2aaa70cf33d877e3affb61a253f323e88b86739",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/sim_array.sv": "90724e9bf9d2bebb524caef4613b08737867dc5b6c18b07041a402f89101a8ac",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/sim_array.sv": "12fbcf88c68021cfe179374fd83cdb5a69494237ff4a8db00f89f546d0db4f72",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity/activity_tb.sv": "9145ea6b37621963854ec2e0fd09114702fe22520e5d73be2cdeab5e4702dec5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity_invalid_hold/activity_tb.sv": "c45fc4976836e9135a0b74145a77a79cc25bfc62533e2bebc078a09e39144b20",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity_invalid_hold/sim_array.sv": "8d3d5d7350656c8599949517fc61df25ba6ab7a596e9e092c54fcb09b2c0b7d8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity_invalid_hold/synthesis_array.sv": "8e17520b7d12a7afb367ef78259260801c2289d4694e0e793a314f7a99857f53",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity_binary/xrun.log": "5bda2436f6d5f40cb11a1fdcced3fa82dc4d82fa84d2c53c3e356f7cba89507c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity/xrun.log": "c99df4d0dedc8e5d6a6f1919b9bea79fb5a3e77fe1b6b359f9e6b6007c1ee374",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity_invalid_hold/green/xrun.log": "25c5d30733cbb5ea0882b72b235a419a9f4e84cf1c9ea5b58b98d0dd5c64eb44",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_activity_invalid_hold/red/xrun.log": "e91e256f50bc25741816b3b2c1d9954e5f38d67f102333d2aafcbe3b3f727a34"
+  }
+}
