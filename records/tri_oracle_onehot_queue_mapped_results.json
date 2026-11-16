@@ -1,0 +1,66 @@
+{
+  "state": "one_hot_queue_mapped_replay_and_regional_timing_verified",
+  "scope": "Matched mapping for the isolated 32-row eight-lane array and cycle-accurate gate-level simulation. The unbuffered regional comparison uses the same fixed neighboring occupancy, pin count, seed assignment method and 580 MHz ideal clock. Extracted slack is from the early routing diagnostic. The binary buffered-placement retest keeps each region's occupied slots and netlist fixed. Integrated chip timing, routing and power remain unverified.",
+  "mapped_replay_results_per_queue": 786,
+  "mapped_one_hot_wall_seconds": 601.07,
+  "mapping": {
+    "binary": {
+      "mapped_cells": 53511,
+      "registers": 9870,
+      "area_um2": 87698.184,
+      "cell_only_register_setup_slack_ps": 762.0,
+      "worst_path": {
+        "endpoint": "completed_results_reg[1][607]/SA",
+        "startpoint": "buffered_count_reg[0]/CP"
+      }
+    },
+    "one_hot": {
+      "mapped_cells": 53613,
+      "registers": 9874,
+      "area_um2": 87749.928,
+      "cell_only_register_setup_slack_ps": 990.0,
+      "worst_path": {
+        "endpoint": "carry_save.row[31].value_reg[17]/DB",
+        "startpoint": "carry_save.row[31].sum_reg[2]/CP"
+      }
+    }
+  },
+  "one_hot_cell_only_setup_gain_ps": 228.0,
+  "unbuffered_region": {
+    "binary": {
+      "setup_slack_ns": -49.25732,
+      "remaining_row_sites": 17026,
+      "worst_launch": "buffered_count_reg[1]/CP",
+      "worst_capture": "completed_results_reg[0][137]/SA"
+    },
+    "one_hot": {
+      "setup_slack_ns": -42.349716,
+      "remaining_row_sites": 16718,
+      "worst_launch": "occupancy_onehot_reg[0]/CP",
+      "worst_capture": "completed_results_reg[0][137]/SA"
+    }
+  },
+  "binary_buffered_second_pass_setup_slack_ns_before_after": {
+    "pilot": [
+      -1.840653,
+      -2.444349
+    ],
+    "tightest": [
+      -2.94539,
+      -2.792522
+    ]
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/verified.json": "b9b71dad3dd8f80b1405b8052987a63401f321266836090766b794cdb6014b89",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/verified.json": "41d3f98c898ba87191fefb6071e0b351ce5cb34f9637426f542e758312aab302",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_adaptive_leaves/second_gpu_refinement/verified.json": "e1d5817b87bad1fa768e94fa6f678838e72cdccb0c3e63d6382939993a96b0cc",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_tight_probe/second_gpu_refinement/verified.json": "4c483d51b172b70f1033ad0c2bb0a6cdd2b84872b547b9e434391965d92f29ec",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/archive_mapped_and_physical.py": "4feaab162fc02cd479e7b230030c8b7ee04a7cf42595399f66eaaa8161b4e75d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped_comparison.json": "4b7558d4d99a470da23ec22450b9cdd1851688138be6a88c924ddd6044e000ed",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped_replay/verified.json": "0c60a0719c8593d698cb93657713cfcf1a267dead2a054845dbdf44dbbd75dba",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/status.json": "b448d70a73acb0f1a2abed211886011c5b140049ae70c8ce1e5d62ff66edb477",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/mapped_comparison.json": "c3cf1edc6f23526619308870c6c072dcbcbeefad17ca4bd9e5882695b8ea484b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/mapped_replay/verified.json": "d460588b0f9e5b5ebb5954f5c6aba0e72f227e4afba7f6d8dadca12b26cc10e7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/mapped/status.json": "5645d5f23ab1fdee113927ccc5e5cf3b80b5b8f29d0a5fd797c3096e171eabb0"
+  }
+}
