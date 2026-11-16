@@ -1,0 +1,86 @@
+{
+  "added_delay_cell_area_square_um": 0.672,
+  "additional_delay_cells": 2,
+  "arithmetic_only": {
+    "hold_fast": {
+      "capture": "completed_results_reg[1][102]/DA",
+      "launch": "completed_results_reg[1][102]/CP",
+      "slack_ns": -0.000128
+    },
+    "setup_fast": {
+      "capture": "completed_results_reg[0][42]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": 0.059017
+    },
+    "setup_slow": {
+      "capture": "completed_results_reg[2][255]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": -0.451879
+    },
+    "setup_typ": {
+      "capture": "completed_results_reg[2][255]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": 0.020505
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/verified.json": "d37aaaa42a58d69f66176fd7e8097cc9fa6f74d57c508ced53d94c0d6b5f64e4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/verified.json": "78e63b5e7f97d7ff0974d33489e0ce3a031c9075c37bc694407d6b86511b849a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/verified.json": "e36933ddce632dd75826df28e087fee80d173f4f6830cee96ce7ae5411d3532f"
+  },
+  "fast_hold_endpoints_after": 0,
+  "mapped_cell_inventory": {
+    "previous": 54139,
+    "repaired": 54141
+  },
+  "mapped_replayed_transactions": 786,
+  "previous_hold_clean_placement": {
+    "hold_fast": {
+      "capture": "completed_results_reg[1][266]/DA",
+      "launch": "completed_results_reg[1][266]/CP",
+      "slack_ns": 1e-05
+    },
+    "setup_fast": {
+      "capture": "completed_results_reg[0][42]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": 0.058309
+    },
+    "setup_slow": {
+      "capture": "carry_save.row[15].sum_reg[16]/D",
+      "launch": "carry_save.row[15].compressor[0].sum_reg[16]/CP",
+      "slack_ns": -0.491657
+    },
+    "setup_typ": {
+      "capture": "carry_save.row[15].sum_reg[16]/D",
+      "launch": "carry_save.row[15].compressor[0].sum_reg[16]/CP",
+      "slack_ns": 0.008388
+    }
+  },
+  "process": "TSMC 28 nm HPC+",
+  "repaired_arithmetic_placement": {
+    "hold_fast": {
+      "capture": "completed_results_reg[1][477]/DA",
+      "launch": "completed_results_reg[1][477]/CP",
+      "slack_ns": 0.0
+    },
+    "setup_fast": {
+      "capture": "completed_results_reg[0][42]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": 0.056087
+    },
+    "setup_slow": {
+      "capture": "completed_results_reg[0][210]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": -0.453519
+    },
+    "setup_typ": {
+      "capture": "completed_results_reg[2][255]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": 0.02097
+    }
+  },
+  "repaired_endpoint": "completed_results_reg[1][102]/DA",
+  "scope": "Same isolated region with ideal clock, matched constraints and early wire estimates. The two inverters retain data polarity. No timing exceptions were applied, and hold slack at six printed decimal places is zero.",
+  "state": "regional_arithmetic_placement_and_single_hold_repair_verified",
+  "target_clock_mhz": 580
+}
