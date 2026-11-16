@@ -1,0 +1,117 @@
+{
+  "designs": {
+    "earlier_queue": {
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "actual": 0.278,
+            "limit": 0.091,
+            "reported_violating_pins": 4260,
+            "unit": "pf",
+            "worst_pin": "carry_save.row[31].value_reg[4]/Q",
+            "worst_slack": -0.188
+          },
+          "max_transition": {
+            "actual": 4.432,
+            "limit": 0.377,
+            "reported_violating_pins": 57084,
+            "unit": "ns",
+            "worst_pin": "product[94].value_reg[15]/CN",
+            "worst_slack": -4.055
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "actual": 0.3,
+            "limit": 0.094,
+            "reported_violating_pins": 4331,
+            "unit": "pf",
+            "worst_pin": "carry_save.row[31].value_reg[4]/Q",
+            "worst_slack": -0.205
+          },
+          "max_transition": {
+            "actual": 3.245,
+            "limit": 0.301,
+            "reported_violating_pins": 54037,
+            "unit": "ns",
+            "worst_pin": "product[62].value_reg[0]/CN",
+            "worst_slack": -2.944
+          }
+        }
+      },
+      "placed_cells": 53859,
+      "setup_and_hold_slack_ns": {
+        "hold_fast": -0.018896,
+        "setup_fast": -0.379531,
+        "setup_slow": -1.281411,
+        "setup_typ": -0.672056
+      }
+    },
+    "prefix_queue": {
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "actual": 0.257,
+            "limit": 0.091,
+            "reported_violating_pins": 4806,
+            "unit": "pf",
+            "worst_pin": "carry_save.row[6].value_reg[13]/Q",
+            "worst_slack": -0.167
+          },
+          "max_transition": {
+            "actual": 4.586,
+            "limit": 0.377,
+            "reported_violating_pins": 54783,
+            "unit": "ns",
+            "worst_pin": "product[42].value_reg[15]/CN",
+            "worst_slack": -4.209
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "actual": 0.276,
+            "limit": 0.094,
+            "reported_violating_pins": 4818,
+            "unit": "pf",
+            "worst_pin": "carry_save.row[6].value_reg[13]/Q",
+            "worst_slack": -0.182
+          },
+          "max_transition": {
+            "actual": 3.327,
+            "limit": 0.301,
+            "reported_violating_pins": 51599,
+            "unit": "ns",
+            "worst_pin": "product[42].value_reg[1]/CN",
+            "worst_slack": -3.026
+          }
+        }
+      },
+      "placed_cells": 55940,
+      "setup_and_hold_slack_ns": {
+        "hold_fast": -0.034034,
+        "setup_fast": -0.416815,
+        "setup_slow": -1.733394,
+        "setup_typ": -1.087589
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_slow_max_capacitance.rpt": "5d06c2cd829582ef0063be9f21f1291b197e9f60fdc6c07d22279178c9dc5d09",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_slow_max_transition.rpt": "c18dfc1e517274a9a5100dafae4bfa4391c0f4a53ea759b98ca86d85ba111937",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_typ_max_capacitance.rpt": "9fc0867b8f82908468be53214380bc5b9ca6b91a11b146c6c066abffa4c89fdc",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_typ_max_transition.rpt": "86b77afc5a3fdc4a5cfdf98431b25a10e5841dd2e857f8e07eb5606c23697a1e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/status.json": "895cdfd35b67916814b1150868abd5cfaa3483771708f9a7b48a23409eb3efd0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/verified.json": "719d5bee3c9364b4568e9044092d182112c4d1f9b0297ac64889341ca28cc351",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/reference_electrical_audit/feedback_reference/tri_oracle_pe_array/native/setup_slow_max_capacitance.rpt": "3260d52efccd40f5d1dc231d68c6db5ced08c78c0e650bb6b4094a0c741da661",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/reference_electrical_audit/feedback_reference/tri_oracle_pe_array/native/setup_slow_max_transition.rpt": "a4fa5add6cedbf8944755263c4f7a586c823953093cd3abcf4d2fca81572bac1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/reference_electrical_audit/feedback_reference/tri_oracle_pe_array/native/setup_typ_max_capacitance.rpt": "6dbeea53735cfaf51f0352849506e35859a26ad9ae2a2174f68acc2a7a68a18f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/reference_electrical_audit/feedback_reference/tri_oracle_pe_array/native/setup_typ_max_transition.rpt": "c52a2ca9c43285f7f903578d8845c9c934c648f22e58d5800ec88fd7917fd24b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/reference_electrical_audit/feedback_reference/tri_oracle_pe_array/native/status.json": "e024ead7f4d9b53ca04b49153cb30530a425c2a0afe2aa7b52b2d1db2ed03a74",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/reference_electrical_audit/verified.json": "46393713207cacfcb23ce600c64f23040505ff8c04e9f545a25907d28823ddc3"
+  },
+  "regional_timing_reference": "earlier_queue",
+  "regions_compared": "same array position with each variant\u2019s verified floorplan",
+  "scope": "Each design uses its own verified mapping, buffers and legal placement. Both runs use the same timing library and interconnect corners and an ideal clock at 580 MHz. Electrical counts are violating pins reported by Innovus after early extraction.",
+  "state": "same_corner_comparison_for_existing_and_prefix_queue_at_regional_placement",
+  "test_clock_mhz": 580
+}
