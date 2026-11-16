@@ -1,0 +1,56 @@
+{
+  "checked_cells": 53862,
+  "clock_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/bounded_site_refinement/assignment.json": "2a9355fc4fe5d9badabb0b66d2789208c20c50df323717a1b4ccd431ae59658e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/bounded_site_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "9aed255f952c1fc2087e4c9a6ee9a724c78a50766e5bf110864a26b3acc78571",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/bounded_site_refinement/verified.json": "94450cd5075f6db9791b2023126f75abe0f895d17e40337ab89be21f4978fdbe",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/empty_slot_refinement/assignment.json": "9815558b48b00e28217c03b123802a077ea4100b4846b542e8a98cb56110d4c9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/empty_slot_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "1ee996a0e244b70e05bb319b67c82c3168bfb88145923fff7cb4d568dc55368b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/empty_slot_refinement/verified.json": "96d750fd28efc1815ee3b0bbd75e22ab34438e4eeee17c0a0deec955fbd5ae3e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "b44eeddf2ea28c2e16908297b3d57a340c555cc866210b16abd95ae90650977a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/verified.json": "14efe21fda2815bd772af97b98bc06a26a953d53972a7d2e27f206606dfa782b"
+  },
+  "hard_reservations": 27407,
+  "reference": {
+    "endpoint": "completed_results_reg[2][4]/SA",
+    "setup_slack_ns": -0.507162,
+    "startpoint": "shadow_valid_reg[3]/CP"
+  },
+  "scope": "Two host graphics processor free-site placements replayed in Innovus against the same isolated one-hot queue netlist, boundary pins, fixed reservations, and ideal-clock constraints. Timing is measured by early extraction. Physical timing got worse despite the shorter geometric arc, so the reference placement remains selected.",
+  "state": "free_site_queue_refinements_measured_and_rejected",
+  "variants": {
+    "bounded": {
+      "arc_growth_limit_um": "12 + 0.025 * min(original length, 500)",
+      "endpoint": "completed_results_reg[1][469]/SA",
+      "moved_cells": 15,
+      "movement_limit_um": 125,
+      "peak_gpu_bytes": 2189824,
+      "setup_slack_ns": -0.515797,
+      "startpoint": "shadow_valid_reg[3]/CP",
+      "strongest_weighted_arc": [
+        "TRI_ARRAY_CTL_1_13",
+        "TRI_ARRAY_CTL_1_27"
+      ],
+      "weighted_arc_span_um_before_after": [
+        659.17,
+        658.19
+      ]
+    },
+    "unbounded": {
+      "endpoint": "completed_results_reg[0][161]/SA",
+      "moved_cells": 36,
+      "peak_gpu_bytes": 2167808,
+      "setup_slack_ns": -1.757162,
+      "startpoint": "running_valid_reg[3]/CP",
+      "strongest_weighted_arc": [
+        "TRI_ARRAY_CTL_1_13",
+        "TRI_ARRAY_CTL_1_27"
+      ],
+      "weighted_arc_span_um_before_after": [
+        659.17,
+        2.17
+      ]
+    }
+  }
+}
