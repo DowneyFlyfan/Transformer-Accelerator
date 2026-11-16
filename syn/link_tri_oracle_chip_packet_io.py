@@ -218,7 +218,7 @@ def run(phase, output):
     }, indent=2, sort_keys=True))
 
 
-def native(output):
+def native(output, fixture=None, dump=None):
     from audit_tri_oracle_placed_fanout import memory
     from tri_oracle_memory_pressure_guard import MemoryPressurePolicy, OwnedProcessPause
     from tri_oracle_process_guard import terminate_process_group
@@ -235,6 +235,8 @@ def native(output):
                "-64bit", "-sv", "-timescale", "1ns/1ps", "-nospecify", "-notimingchecks",
                "-sequdp_nba_delay", "-xmerror", "CUVMPW", "-xmerror", "RECOME",
                "-top", BENCH, str((output / "wrapper_bundle.sv").resolve()), "-log", str(log)]
+    if fixture is not None:
+        command.extend((f"+FIXTURE={fixture.resolve()}", f"+DUMP={dump.resolve()}"))
     control = MemoryPressurePolicy(host_reserve_bytes=8 * gib, resume_bytes=9 * gib,
                                    anonymous_limit_bytes=15 * gib, maximum_pause_seconds=180)
     started = time.monotonic()
@@ -281,7 +283,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("phase", choices=("prepare", "native", "verify"))
     parser.add_argument("directory", type=Path)
+    parser.add_argument("--fixture", type=Path)
+    parser.add_argument("--dump", type=Path)
     args = parser.parse_args()
+    assert (args.fixture is None) == (args.dump is None)
     if args.phase == "native":
-        native(args.directory)
+        native(args.directory, args.fixture, args.dump)
     run(args.phase, args.directory)
