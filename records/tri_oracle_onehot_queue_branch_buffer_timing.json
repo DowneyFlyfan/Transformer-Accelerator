@@ -1,0 +1,68 @@
+{
+  "clock_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/adaptive_width_screen.json": "25610041fb1b614b01aa77ba5a56ea1c4191b1b0ac862a981788b613de93778e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/archive_occupancy_and_hold.py": "495167e45c50c4f0a409a771d08af6999bed0d6475a9c5d4cb7041d41c2e367f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_and_hold_all/gpu_refinement/verified.json": "aad24dbcf233b7d441d815f12e875a438698f783d9513e1f9cd4f9225d430121",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_and_hold_all/prepared.json": "c8b89c4d37a7be6001259fc6a5e1fd060bc2290e602aefe532f82506a119e21f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_and_hold_all/trees.json": "fedbbbec143ed55bfe8ce7048a42594cd4a2f2dc4098359b62b305d5260c326f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_and_hold_all/verified.json": "c840ccd898ddd982a2ccd5bce23ae549ebb8f9fa85b08f20e324e2f6a0e59be3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_branch/prepared.json": "4792b1c8108313cb9cb9564c1488b9382dc6ec4828d51cd2efcef8290a0a86c3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_branch/trees.json": "f6114df2b05593f9385f31961ce339383da40dea91b220a6c3ca529d630af6e9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_branch/verified.json": "f0c4242f81b9c41703ccfd11e28c3598bb184c23edc5d837eab65dff339a9a06",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/compact_adaptive_leaves/prepared.json": "677749bc9312a0967104d8501a84cba811ed567e73cb2836c49151099fb04642",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/compact_adaptive_leaves/verified.json": "e9b291fe7bd500088a5b74071b004e5191aaa795115108cb14b840fdae0c1b5b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/occupancy_fine_width_screen.json": "5bbf706d82e958ced2b53e318205f7593c69c388f8eeca6dbbd18f72ce050b44",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/occupancy_hold_width_screen.json": "7b7cfa2a81fbb9a5c35bafeade8c4e26b6964f2c3dbd6e89f421ffc94ad0d5ca",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/verified.json": "41d3f98c898ba87191fefb6071e0b351ce5cb34f9637426f542e758312aab302"
+  },
+  "gate_level_results_checked_per_buffered_netlist": 786,
+  "scope": "Single-array Innovus early routing and wire extraction, with the same original cell locations, pins and neighbor reservations for the three buffered-netlist tests. Host width assignment checks free row intervals and cell widths. The slot-swapped result measures the same buffered netlist with equal-width cell moves. Complete chip routing, timing and power remain unverified.",
+  "state": "one_hot_queue_control_loads_and_local_buffer_replay_and_timing_verified",
+  "unbuffered_setup_slack_ns": -42.349716,
+  "variants": {
+    "seven_scalar_controls": {
+      "buffers_inserted": 213,
+      "extra_sites": 1318,
+      "ideal_clock_early_extracted_setup_slack_ns": -13.831889,
+      "internal_nets_buffered": 7,
+      "regions_with_width_assignment": 20,
+      "tightest_region_raw_open_sites_after_candidate": 6209,
+      "worst_capture": "occupancy_onehot_reg[1]/D",
+      "worst_launch": "occupancy_onehot_reg[0]/CP"
+    },
+    "with_equal_width_slot_swaps": {
+      "cells_moved": 4798,
+      "early_extracted_setup_slack_ns_before_after": [
+        -2.425034,
+        -1.299453
+      ],
+      "untouched_occupied_slots": 53862
+    },
+    "with_occupancy_and_hold_buffers": {
+      "buffers_inserted": 249,
+      "extra_sites": 1552,
+      "ideal_clock_early_extracted_setup_slack_ns": -2.425034,
+      "internal_nets_buffered": 9,
+      "occupancy_local_control_loads_preserved": 7,
+      "occupancy_output_loads_rewired": 608,
+      "regions_with_width_assignment": 19,
+      "register_hold_network_loads_buffered": 81,
+      "tightest_region_raw_open_sites_after_candidate": 5975,
+      "worst_capture": "carry_save.row[8].value_reg[10]/SA",
+      "worst_launch": "shadow_valid_reg[3]/CP"
+    },
+    "with_occupancy_output_branches": {
+      "buffers_inserted": 244,
+      "extra_sites": 1505,
+      "ideal_clock_early_extracted_setup_slack_ns": -4.233821,
+      "internal_nets_buffered": 8,
+      "occupancy_local_control_loads_preserved": 7,
+      "occupancy_output_loads_rewired": 608,
+      "regions_with_width_assignment": 19,
+      "tightest_region_raw_open_sites_after_candidate": 6022,
+      "worst_capture": "carry_save.row[8].value_reg[10]/SA",
+      "worst_launch": "shadow_valid_reg[3]/CP"
+    }
+  }
+}
