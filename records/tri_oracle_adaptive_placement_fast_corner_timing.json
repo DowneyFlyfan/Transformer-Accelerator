@@ -1,0 +1,177 @@
+{
+  "array_regions_meeting_target": 1,
+  "candidate_layout_sha256": "dae03a0d0839fc6b7de3671ec9d0bbad5d4c07050e7a0129752006404e1b55cd",
+  "candidate_placed_netlist_sha256": "76afde070aa9f536bebb08c6b86a282fd4f73360d6581339abf9dea9bfefdb5c",
+  "cases": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "endpoint": "reduction[2].row[17].sum[0].value_reg[18]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.670129,
+      "setup_slack_ns": -0.470779,
+      "startpoint": "reduction[1].row[17].sum[0].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "endpoint": "product[11].value_reg[9]/D",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.245813,
+      "setup_slack_ns": -0.242247,
+      "startpoint": "valid_reg[3]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "endpoint": "reduction[2].row[4].sum[0].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.558522,
+      "setup_slack_ns": -0.301351,
+      "startpoint": "reduction[1].row[4].sum[1].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank0_3": {
+      "endpoint": "reduction[2].row[12].sum[0].value_reg[18]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.221965,
+      "setup_slack_ns": -0.141404,
+      "startpoint": "reduction[1].row[12].sum[0].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "endpoint": "reduction[1].row[1].sum[1].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.6347,
+      "setup_slack_ns": -0.38395,
+      "startpoint": "reduction[0].row[1].sum[3].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1_1": {
+      "endpoint": "reduction[0].row[10].sum[0].value_reg[16]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.455341,
+      "setup_slack_ns": -0.354793,
+      "startpoint": "product[80].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1_2": {
+      "endpoint": "reduction[0].row[4].sum[1].value_reg[12]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.205759,
+      "setup_slack_ns": -0.118497,
+      "startpoint": "product[35].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "endpoint": "reduction[1].row[10].sum[0].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.501486,
+      "setup_slack_ns": -0.296239,
+      "startpoint": "reduction[0].row[10].sum[1].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2": {
+      "endpoint": "reduction[1].row[5].sum[0].value_reg[16]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.266061,
+      "setup_slack_ns": -0.150813,
+      "startpoint": "reduction[0].row[5].sum[1].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2_1": {
+      "endpoint": "product[176].value_reg[6]/D",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.00092,
+      "setup_slack_ns": 0.046044,
+      "startpoint": "valid_reg[3]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "endpoint": "reduction[1].row[1].sum[0].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.58754,
+      "setup_slack_ns": -0.348858,
+      "startpoint": "reduction[0].row[1].sum[0].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank2_3": {
+      "endpoint": "reduction[0].row[6].sum[3].value_reg[15]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.178273,
+      "setup_slack_ns": -0.093684,
+      "startpoint": "product[55].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3": {
+      "endpoint": "product[2].value_reg[2]/D",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.388317,
+      "setup_slack_ns": -0.310087,
+      "startpoint": "valid_reg[3]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3_1": {
+      "endpoint": "reduction[2].row[5].sum[0].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.603483,
+      "setup_slack_ns": -0.336048,
+      "startpoint": "reduction[1].row[5].sum[0].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3_2": {
+      "endpoint": "reduction[1].row[3].sum[0].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.397382,
+      "setup_slack_ns": -0.23873,
+      "startpoint": "reduction[0].row[3].sum[1].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank3_3": {
+      "endpoint": "reduction[2].row[2].sum[0].value_reg[18]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.387713,
+      "setup_slack_ns": -0.220785,
+      "startpoint": "reduction[1].row[2].sum[1].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "endpoint": "reduction[2].row[14].sum[0].value_reg[18]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.314762,
+      "setup_slack_ns": -0.201394,
+      "startpoint": "reduction[1].row[14].sum[1].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "endpoint": "reduction[2].row[18].sum[0].value_reg[18]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.527725,
+      "setup_slack_ns": -0.315176,
+      "startpoint": "reduction[1].row[18].sum[0].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4_2": {
+      "endpoint": "reduction[2].row[8].sum[0].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.360325,
+      "setup_slack_ns": -0.194247,
+      "startpoint": "reduction[1].row[8].sum[1].value_reg[0]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "endpoint": "reduction[2].row[12].sum[0].value_reg[17]/DB",
+      "modeled_internal_nets": 69439,
+      "prior_setup_slack_ns": -1.328626,
+      "setup_slack_ns": -0.209757,
+      "startpoint": "reduction[1].row[12].sum[0].value_reg[0]/CP"
+    }
+  },
+  "clock_target_mhz": 580,
+  "clock_target_ns": 1.72414,
+  "clock_uncertainty_ns": 0.05,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/adaptive_path_placement/chip/native/cold.v": "76afde070aa9f536bebb08c6b86a282fd4f73360d6581339abf9dea9bfefdb5c",
+    ".cache/physical/carry_lookahead_comparison/adaptive_path_placement/chip/native/layout.def": "dae03a0d0839fc6b7de3671ec9d0bbad5d4c07050e7a0129752006404e1b55cd",
+    ".cache/physical/carry_lookahead_comparison/adaptive_path_placement/chip/verified.json": "56c4c14b49542103d3ef32b82d822e9432e82192255f08e48a7b0e614a13b913",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/accepted_fast_corner/prepared.json": "3eeebcc7767be2753f4e96f4224825c6d634165f330bcbcd3b42942654bd3921",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/accepted_fast_corner/verified.json": "daa127505d7f6c51dd346a3b6af0101aa63b01c86455aabad9dfc92c7692cc45",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_adaptive_path_chip_placement.json": "206a2c1e1c97fc2d01920c77744523eae808dbd32431fd2d7f451bda7f465bf9"
+  },
+  "library_temperature_c": -40,
+  "library_voltage_v": 1.05,
+  "measured_array_regions": 20,
+  "paper_voltage_v": 1.1,
+  "scope": "1.05 V fast, fast, global process library at minus 40 degrees Celsius with the accepted placement's original estimated wires and ideal clock.",
+  "slack_min_median_max_ns": {
+    "prior_setup_slack_ns": [
+      -1.670129,
+      -1.388015,
+      -1.00092
+    ],
+    "setup_slack_ns": [
+      -0.470779,
+      -0.2404885,
+      0.046044
+    ]
+  },
+  "state": "accepted_twenty_region_setup_compared_under_fast_tsmc_library"
+}
