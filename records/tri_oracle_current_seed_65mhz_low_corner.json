@@ -1,0 +1,48 @@
+{
+  "checked_voltage_v": 0.81,
+  "clock_period_ns": 15.384615,
+  "clock_rate_mhz": 65,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/low_voltage_65mhz/prepared.json": "9d30e6aaaa03db60b50286f933b58eee42adbb3c6b0930c016f115511e113636",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/low_voltage_65mhz/verified.json": "a91c6ba1351bd36c49f43416790bdd7343f6bb14a68eb44ed877493b94b2ca93",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/low_voltage_latest_seed/verified.json": "4d0d3782aaa133d152bd2d2ed24674879d128df69e79a93024ef40e0f00295ee",
+    "records/tri_oracle_remaining_regions_timing_and_seed.json": "11b6d4bc4ca0759c8049fe0290204e528d1429b6a2f02e2813fb06e37843cb34"
+  },
+  "paper_operating_voltage_v": 0.75,
+  "placement_seed_sha256": "3d2c31e3db201c57e6f4384f6152aba2f32dbbf511f293cd3fdb257a8a504dd8",
+  "regional_slack_ns": {
+    "tri_oracle_pe_array_verified_bank0": 11.895216,
+    "tri_oracle_pe_array_verified_bank0_1": 12.454668,
+    "tri_oracle_pe_array_verified_bank0_2": 12.334796,
+    "tri_oracle_pe_array_verified_bank0_3": 11.860289,
+    "tri_oracle_pe_array_verified_bank1": 12.225482,
+    "tri_oracle_pe_array_verified_bank1_1": 12.140164,
+    "tri_oracle_pe_array_verified_bank1_2": 12.107029,
+    "tri_oracle_pe_array_verified_bank1_3": 12.114966,
+    "tri_oracle_pe_array_verified_bank2": 12.627887,
+    "tri_oracle_pe_array_verified_bank2_1": 12.103541,
+    "tri_oracle_pe_array_verified_bank2_2": 12.166966,
+    "tri_oracle_pe_array_verified_bank2_3": 12.41013,
+    "tri_oracle_pe_array_verified_bank3": 12.278497,
+    "tri_oracle_pe_array_verified_bank3_1": 12.355757,
+    "tri_oracle_pe_array_verified_bank3_2": 12.216537,
+    "tri_oracle_pe_array_verified_bank3_3": 12.26597,
+    "tri_oracle_pe_array_verified_bank4": 12.004883,
+    "tri_oracle_pe_array_verified_bank4_1": 12.106678,
+    "tri_oracle_pe_array_verified_bank4_2": 12.197521,
+    "tri_oracle_pe_array_verified_bank4_3": 11.75274
+  },
+  "regions_meeting_target": 20,
+  "rerun_regions": [
+    "tri_oracle_pe_array_verified_bank0_2",
+    "tri_oracle_pe_array_verified_bank0_3",
+    "tri_oracle_pe_array_verified_bank1",
+    "tri_oracle_pe_array_verified_bank2_2",
+    "tri_oracle_pe_array_verified_bank3",
+    "tri_oracle_pe_array_verified_bank3_1",
+    "tri_oracle_pe_array_verified_bank4_1"
+  ],
+  "scope": "Matched 0.81 V slow-process 125-degree-Celsius library and estimated internal wires. Seven changed regions were rerun and exact prior measurements reused for the 13 unchanged regions. This is regional setup; hold, routed timing, and energy need separate measurements.",
+  "state": "latest_selected_array_regions_meet_65mhz_at_common_tsmc_low_corner",
+  "worst_regional_setup_slack_ns": 11.75274
+}

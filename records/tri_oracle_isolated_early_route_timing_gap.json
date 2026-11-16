@@ -1,0 +1,36 @@
+{
+  "cases": {
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "early_global_route_horizontal_overflow_percent": 0.0,
+      "early_global_route_vertical_overflow_percent": 0.0,
+      "endpoint": "product[7].value_reg[13]/D",
+      "extracted_nets": 74406,
+      "extracted_on_same_internal_nets_setup_slack_ns": -1.245115,
+      "geometric_setup_slack_ns": 0.073486,
+      "internal_nets_in_original_geometry_model": 69439,
+      "native_early_route_setup_slack_ns": -1.919676,
+      "startpoint": "valid_reg[3]/CP"
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "early_global_route_horizontal_overflow_percent": 0.0,
+      "early_global_route_vertical_overflow_percent": 0.04,
+      "endpoint": "product[130].value_reg[1]/D",
+      "extracted_nets": 74406,
+      "extracted_on_same_internal_nets_setup_slack_ns": -1.217709,
+      "geometric_setup_slack_ns": -0.209757,
+      "internal_nets_in_original_geometry_model": 69439,
+      "native_early_route_setup_slack_ns": -1.605609,
+      "startpoint": "valid_reg[3]/CP"
+    }
+  },
+  "clock_rate_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/extracted_wire_replay/verified.json": "784e076551d6f615dede1dfab20a36774211804e0898c0a6c6e50812de8053e0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/local_early_route/prepared.json": "7f803a2158303623ad38e4889bc7eb1a76e7f89d12b3ba636604eb56290944ae",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/local_early_route/verified.json": "c81c48d6b042df050b8ae0f5375e3a7d6265bd9eb9f04e0a8c80c7092d0e2cf8",
+    "records/tri_oracle_remaining_regions_timing_and_seed.json": "11b6d4bc4ca0759c8049fe0290204e528d1429b6a2f02e2813fb06e37843cb34"
+  },
+  "placement_seed_sha256": "3d2c31e3db201c57e6f4384f6152aba2f32dbbf511f293cd3fdb257a8a504dd8",
+  "scope": "Two isolated compute arrays with their exact internal coordinates translated into standalone regions. Early global route and matched analysis at the fast corner. The re-imported parasitics reproduce the native reports. Full-chip routing, clock distribution and signoff remain pending.",
+  "state": "early_global_route_and_matched_parasitic_setup_comparison_verified"
+}
