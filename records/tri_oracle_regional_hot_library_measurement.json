@@ -1,0 +1,127 @@
+{
+  "cases": {
+    "hold_repaired": {
+      "hot_library_inventory": {
+        "source_cell_masters": 1142,
+        "source_sha256": "8aa2be43a6fdd04335d99321aa48fe7ba52bb857d74dff8b8265382b35b9eba4",
+        "subset_sha256": "7d0d779f63245d7276ca5bd448856f580347cb81e12dc900116102845bcbf151",
+        "used_cell_masters": 66
+      },
+      "hot_setup": {
+        "capture": "completed_results_reg[0][210]/SA",
+        "launch": "running_valid_reg[3]/CP",
+        "slack_ns": -0.035095
+      },
+      "original_timing_views": {
+        "hold_fast": {
+          "capture": "completed_results_reg[1][477]/DA",
+          "launch": "completed_results_reg[1][477]/CP",
+          "slack_ns": 0.0
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[0][42]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.056087
+        },
+        "setup_slow": {
+          "capture": "completed_results_reg[0][210]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": -0.453519
+        },
+        "setup_typ": {
+          "capture": "completed_results_reg[2][255]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.02097
+        }
+      },
+      "remaining_reported_violations": {
+        "fast_hold": 0,
+        "fast_setup": 0,
+        "hot_setup": 28,
+        "typical_setup": 0
+      },
+      "wall_seconds": 69.606
+    },
+    "resized_drivers": {
+      "hot_library_inventory": {
+        "source_cell_masters": 1142,
+        "source_sha256": "8aa2be43a6fdd04335d99321aa48fe7ba52bb857d74dff8b8265382b35b9eba4",
+        "subset_sha256": "620c39ed74f19ba688494644a3b11900e9d7a49e5b68db428a02e22dd670e2ba",
+        "used_cell_masters": 67
+      },
+      "hot_setup": {
+        "capture": "completed_results_reg[0][210]/SA",
+        "launch": "running_valid_reg[3]/CP",
+        "slack_ns": 0.088315
+      },
+      "mapped_xcelium_transactions": 786,
+      "original_timing_views": {
+        "hold_fast": {
+          "capture": "completed_results_reg[1][266]/DA",
+          "launch": "completed_results_reg[1][266]/CP",
+          "slack_ns": 1e-05
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[0][42]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.183917
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[0].carry_reg[18]/CN",
+          "launch": "carry_save.row[0].compressor[1].sum_reg[16]/CP",
+          "slack_ns": -0.399067
+        },
+        "setup_typ": {
+          "capture": "carry_save.row[8].value_reg[18]/DB",
+          "launch": "carry_save.row[8].carry_reg[2]/CP",
+          "slack_ns": 0.037234
+        }
+      },
+      "remaining_reported_violations": {
+        "fast_hold": 0,
+        "fast_setup": 0,
+        "hot_setup": 0,
+        "typical_setup": 0
+      },
+      "resized_cells": {
+        "g395622": [
+          "AO22D0BWP12T40P140",
+          "AO22D1BWP12T40P140"
+        ],
+        "g395665": [
+          "OR2D1BWP12T40P140",
+          "OR2D2BWP12T40P140"
+        ]
+      },
+      "wall_seconds": 69.609
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_library_view/physical/tri_oracle_pe_array/native/broader_setup.rpt": "d7ad8657922858407e0d8d6b15da041dcd1318f7ab0c04000fd8c9d6f5473116",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_library_view/physical/tri_oracle_pe_array/native/hold_fast_broader.rpt": "ef9ec55c63590473263c9800b0b3f633ccd02b0a377ee9cad33c25353e545db9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_library_view/physical/tri_oracle_pe_array/native/hot_negative_setup.rpt": "3fa5c20b9abdb312ddee67ec4e2d138d59c2d8b09515d203a0c8836820d557e2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_library_view/physical/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "adc187b33ad7ecc39b49091b0203259c90e0a1933829408c7afb1a9082b527ec",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_library_view/physical/tri_oracle_pe_array/native/status.json": "f50c3be63392cbbdbc05517e59a97b9eb5c1385b40624d85bbcce898c6a5f772",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_library_view/verified.json": "da0b8c06f1849cb3e22eed5a57abb4115544968e1a38c15a3eed7e5bea8962b5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/physical/tri_oracle_pe_array/native/broader_setup.rpt": "be91cdcb77331c432f8abf8454bc229dedc849e197d3b56fbce2ab6368effad6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/physical/tri_oracle_pe_array/native/hold_fast_broader.rpt": "1aad170fd102cf7c0631a4630f05a852632f6e965ab30e0abae7ff508ba6be70",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/physical/tri_oracle_pe_array/native/hot_negative_setup.rpt": "a89f42e5a27a20f499b364aec14547bec48f78b7c57507b8a563bbeba05532bb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/physical/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "ab5b366769b0c26f1f0a84a6aabead20e75e6f32f587f7c7db887a609bbae5f0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/physical/tri_oracle_pe_array/native/status.json": "460a429f8c00bf6d1e3ba47af64aacda8f5f67bc1606dfdfc4229a885f0534fd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/prepared.json": "3a645a28eb00dcb97c04073f1a52df9daa27dc1718de2b5fc7af87e6895b44fb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/verified.json": "e413a5eaa1589e83c8f559dedaacee5b18195af1eb882ab1e8846a17f53e7e04",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/publish_hot_comparison.py": "000bc2acfc7ddc36d50f94c6def8281d96a15e6848c112655d5b96af56eff941",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/verified.json": "d37aaaa42a58d69f66176fd7e8097cc9fa6f74d57c508ced53d94c0d6b5f64e4",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd"
+  },
+  "instances_per_variant": 54141,
+  "published_clock_mhz": 580,
+  "published_process": "Samsung 28nm fully depleted silicon-on-insulator",
+  "published_voltage": 1.1,
+  "scope": "Matched isolated-region placement checks and early routed timing with an ideal clock and the same pessimistic wire conditions for the characterized fast hot library. Each local library subset includes the complete original timing data for every used master. The paper reports actual chip measurements on a different process and supply.",
+  "state": "regional_hot_library_driver_size_comparison_measured",
+  "test_clock_mhz": 580,
+  "test_hot_temperature_c": 125,
+  "test_hot_voltage": 1.05,
+  "test_process": "TSMC 28 nm HPC+"
+}
