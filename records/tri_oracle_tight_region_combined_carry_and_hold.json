@@ -1,0 +1,29 @@
+{
+  "baseline": {
+    "capture": "completed_results_reg[1][385]/SA",
+    "launch": "running_valid_reg[3]/CP",
+    "slack_ns": -0.443085
+  },
+  "checked_array_transactions": 786,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/logic_only/verified.json": "c9493b343f0ac556b14ced58d9013820e11ad7d20e1f5f0b9d7cc97506e29c88",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/replay/console.log": "e6a864a918c4a4966af1def7db0ab18cb305c2532e20857f1b6566b8a4ef28fd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/tri_oracle_pe_array/native/timing.rpt": "1ff7411035970d8f307a706c4d01d29731656285caadfd4f33f8ba5a9971f467",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/verified.json": "fd3c91d6d5c47f70a00f7ed66c409db57ec39ae26034908f9adb2e11e489466e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/tri_oracle_pe_array/native/timing.rpt": "d560e189c983452212997291f701da1506e3d0d907a6faefe7d8a442ffafbb3a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/verified.json": "d96d4e15dd2bb966b6186e10055b3619b6414b2655534451849b4771cc9f2e7b"
+  },
+  "exhaustive_branch_comparisons": 96,
+  "fused_hold": {
+    "capture": "occupancy_onehot_reg[2]/D",
+    "launch": "running_valid_reg[3]/CP",
+    "slack_ns": -0.406875
+  },
+  "ideal_clock_mhz": 580,
+  "reclaimed_sites": 39,
+  "removed_cells": 3,
+  "reserved_rectangles": 27551,
+  "scope": "The baseline has the verified carry-save exclusive-NOR rewrite. The trial fuses the three hold-control branches on that mapped array. The paired timing uses identical retained cell coordinates, boundary pins, reservations and an ideal clock before routing.",
+  "setup_gain_ps": 36.21,
+  "state": "tight_region_combined_carry_xnor_and_hold_fusion_verified"
+}
