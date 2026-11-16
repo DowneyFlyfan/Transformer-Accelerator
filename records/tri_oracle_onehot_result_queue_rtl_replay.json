@@ -1,0 +1,91 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/check_onehot_structure.py": "79b177931beeaa5636129ffe288d340c7389eb04685d05a41614f4a839c9fe97",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/onehot_model.json": "15893c52d4722d9a529dd2545652b7a82654b20452b1ddb12e34dd8aa4b650a7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/onehot_rtl_tb.sv": "8dea05d642194e4ad2784dac0a6327945fdb2829ba357b635cdb6ccc9d796053",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_2/console.log": "7d06db70c1c69aaf233bac59fa51eef8b9f731083edcda3ddbd4ce4ee9a57415",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_4/console.log": "c83246fe726c296dbccd10c0e5e20d98c81ae2409c037d65e7eb43f0f8a2a49f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/rtl_8/console.log": "f2d76c4becf24c5c6a95a05d760bf9567a9d9a01e442a949f3a32079e969a59c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/sim_array.sv": "12fbcf88c68021cfe179374fd83cdb5a69494237ff4a8db00f89f546d0db4f72",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/stuck_write_slot/console.log": "9777e343fd457d591a3523c4b1a1f0a25b278652793ebf4b08b29e9e8cbb7628",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/synthesis_array.sv": "0ab7be6eb73c425f8827b11062a474804f9a41f6d595b3ded05e331ba26902d7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/verify_onehot_schedule.py": "793b271b0e13e9d73d4b7232a86c7b108fc198ad5accd931271e959fb1497755",
+    "syn/build_tri_oracle_decoupled_array.py": "41257c6a71addddb2c608066f4c1840572cd12df985886d8e2ee55952eab6002",
+    "verilog/decoupled_lockstep_tb.sv": "4375f615057235ba2017975e4012a5efc86ec860ec3498cd9a04d6eed5ae39fb"
+  },
+  "lane_trials": {
+    "2": {
+      "clock_edges": 1150,
+      "delivered": 801,
+      "discarded_on_reset": 2,
+      "observed_full_cycles": 313
+    },
+    "4": {
+      "clock_edges": 1154,
+      "delivered": 811,
+      "discarded_on_reset": 3,
+      "observed_full_cycles": 182
+    },
+    "8": {
+      "clock_edges": 1158,
+      "delivered": 786,
+      "discarded_on_reset": 4,
+      "observed_full_cycles": 169
+    }
+  },
+  "negative_control": "Nonrotating write slot corrupts the checked payload at cycle 6.",
+  "passed_transition_model": [
+    {
+      "full_hold_transitions": 2,
+      "queue_entries": 1,
+      "reachable_states": 7,
+      "stages": 2,
+      "transitions": 28
+    },
+    {
+      "full_hold_transitions": 4,
+      "queue_entries": 2,
+      "reachable_states": 52,
+      "stages": 3,
+      "transitions": 208
+    },
+    {
+      "full_hold_transitions": 6,
+      "queue_entries": 3,
+      "reachable_states": 273,
+      "stages": 4,
+      "transitions": 1092
+    },
+    {
+      "full_hold_transitions": 8,
+      "queue_entries": 4,
+      "reachable_states": 1252,
+      "stages": 5,
+      "transitions": 5008
+    },
+    {
+      "full_hold_transitions": 10,
+      "queue_entries": 5,
+      "reachable_states": 5355,
+      "stages": 6,
+      "transitions": 21420
+    },
+    {
+      "full_hold_transitions": 12,
+      "queue_entries": 6,
+      "reachable_states": 21954,
+      "stages": 7,
+      "transitions": 87816
+    },
+    {
+      "full_hold_transitions": 14,
+      "queue_entries": 7,
+      "reachable_states": 87465,
+      "stages": 8,
+      "transitions": 349860
+    }
+  ],
+  "scope": "The one-hot variant preserves the three-entry queue and final-stage hold semantics in a host exhaustive control model and Xcelium cycle-level directed/random regression. Mapped and physical timing remain unmeasured.",
+  "setup_driver_context": "Existing native paths through both the binary occupancy and the pipeline output-valid register terminate at completion-queue write selects.",
+  "state": "onehot_fifo_schedule_and_xcelium_lockstep_verified"
+}

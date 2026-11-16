@@ -69,6 +69,53 @@ TRIAL_CONTROL = """    localparam int PIPE_DEPTH = STAGES + 1;
             completed_results[write_index] <= arithmetic_result;
 """
 
+ONE_HOT_QUEUE = """    wire [RESULT_BITS-1:0] arithmetic_result;
+    logic [RESULT_BITS-1:0] completed_results [0:QUEUE_DEPTH-1];
+    logic [QUEUE_DEPTH-1:0] read_slot, write_slot;
+    logic [QUEUE_DEPTH:0] occupancy_onehot;
+    wire buffered = !occupancy_onehot[0];
+    wire queue_full = occupancy_onehot[QUEUE_DEPTH];
+    wire take_result = out_valid && out_ready;
+    wire completion = running_valid[STAGES];
+    wire read_buffer = take_result && buffered;
+    // An empty queue bypasses on a take. A full queue only writes on a take.
+    wire write_buffer = completion && (take_result ? buffered : !queue_full);
+    assign hold_result_stage = completion && queue_full && !take_result;
+
+    function automatic [QUEUE_DEPTH-1:0] advance_slot(input [QUEUE_DEPTH-1:0] slot);
+        advance_slot = (slot << 1) | QUEUE_DEPTH'(slot[QUEUE_DEPTH-1]);
+    endfunction
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            read_slot <= 1;
+            write_slot <= 1;
+            occupancy_onehot <= 1;
+        end else begin
+            if (read_buffer)
+                read_slot <= advance_slot(read_slot);
+            if (write_buffer)
+                write_slot <= advance_slot(write_slot);
+            case ({write_buffer, read_buffer})
+                2'b10: occupancy_onehot <= occupancy_onehot << 1;
+                2'b01: occupancy_onehot <= occupancy_onehot >> 1;
+                default: ;
+            endcase
+        end
+    end
+
+    wire [RESULT_BITS-1:0] read_data [0:QUEUE_DEPTH];
+    assign read_data[0] = '0;
+    for (genvar slot=0; slot<QUEUE_DEPTH; slot++) begin : result_slot
+        assign read_data[slot+1] = read_data[slot] |
+            ({RESULT_BITS{read_slot[slot]}} & completed_results[slot]);
+        always @(posedge clk)
+            if (write_buffer && write_slot[slot])
+                completed_results[slot] <= arithmetic_result;
+    end
+    assign out_sums = buffered ? read_data[QUEUE_DEPTH] : arithmetic_result;
+"""
+
 
 def reuse_result_stage(text: str) -> str:
     """Retain a completion in the final stage while the smaller queue is full."""
@@ -111,7 +158,20 @@ def reuse_result_stage(text: str) -> str:
     return text
 
 
-def generate(source: Path, output: Path, module: str, reuse_final=False) -> None:
+def onehot_queue(text: str) -> str:
+    """Keep the final-stage reuse but replace the FIFO's binary state."""
+    begin = "    wire [RESULT_BITS-1:0] arithmetic_result;\n"
+    product = "    for(genvar p=0;p<LINES*LANES;p=p+1) begin: product\n"
+    if text.count(begin) != 1 or text.count(product) != 1:
+        raise ValueError("Cannot find the result queue boundaries")
+    prefix, _, suffix = text.partition(begin)
+    _, _, arithmetic = suffix.partition(product)
+    prefix = prefix.replace("    localparam int INDEX_BITS = QUEUE_DEPTH > 1 ? $clog2(QUEUE_DEPTH) : 1;\n", "")
+    prefix = prefix.replace("    localparam int COUNT_BITS = $clog2(QUEUE_DEPTH + 1);\n", "")
+    return prefix + ONE_HOT_QUEUE + product + arithmetic
+
+
+def generate(source: Path, output: Path, module: str, reuse_final=False, onehot=False) -> None:
     text = source.read_text()
     declaration = "module tri_oracle_pe_array #("
     if text.count(STALL_CONTROL) != 1 or text.count(declaration) != 1:
@@ -132,6 +192,10 @@ def generate(source: Path, output: Path, module: str, reuse_final=False) -> None
     text = text.replace(declaration, f"module {module} #(")
     if reuse_final:
         text = reuse_result_stage(text)
+    if onehot:
+        if not reuse_final:
+            raise ValueError("One-hot control requires final-stage reuse")
+        text = onehot_queue(text)
     with output.open("x") as stream:
         stream.write(text)
 
@@ -143,6 +207,9 @@ if __name__ == "__main__":
     parser.add_argument("--simulation", action="store_true", help="rename the trial for lockstep simulation")
     parser.add_argument("--reuse-result-stage", action="store_true",
                         help="use the final arithmetic register as one queue slot, with at least two lanes")
+    parser.add_argument("--onehot-queue", action="store_true", help="store queue positions and occupancy as one-hot flags")
     args = parser.parse_args()
+    if args.onehot_queue and not args.reuse_result_stage:
+        parser.error("--onehot-queue requires --reuse-result-stage")
     top = "tri_oracle_pe_array_decoupled" if args.simulation else "tri_oracle_pe_array"
-    generate(args.source, args.output, top, reuse_final=args.reuse_result_stage)
+    generate(args.source, args.output, top, reuse_final=args.reuse_result_stage, onehot=args.onehot_queue)
