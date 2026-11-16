@@ -1,0 +1,81 @@
+{
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "conditional_archived_workload": {
+    "estimates": {
+      "aligned_address": {
+        "cycles_left_for_other_work_in_serial_model": 28345111,
+        "flits_per_request": 2,
+        "optimistic_read_and_request_cycles": 421675833,
+        "request_bits": 44,
+        "with_serial_projection_ms": 828.1291189655173
+      },
+      "full_address": {
+        "cycles_left_for_other_work_in_serial_model": -22983913,
+        "flits_per_request": 4,
+        "optimistic_read_and_request_cycles": 473004857,
+        "request_bits": 72,
+        "with_serial_projection_ms": 916.6274362068965
+      }
+    },
+    "modeled_sign_line_reads": 9744768,
+    "modeled_weight_requests": 51329024,
+    "modeled_weight_response_beats": 730948849,
+    "paper_target_ms": 877,
+    "shared_single_edge_request_data_bits": 22
+  },
+  "down_projection_fixture": {
+    "aligned_address": {
+      "compact_requests": 4352,
+      "full_requests": 0,
+      "matrix_cycles": 89997
+    },
+    "full_address": {
+      "compact_requests": 0,
+      "full_requests": 4352,
+      "matrix_cycles": 94842
+    },
+    "parallel": {
+      "compact_requests": 0,
+      "full_requests": 0,
+      "matrix_cycles": 87002
+    }
+  },
+  "evidence_sha256": {
+    ".cache/compact_index_io/fixed/compact_index_replay_tb.sv": "a21f599a93b63ba284d9230a7190b82c4070e6b17575fa75c0594f95f54fe13d",
+    ".cache/compact_index_io/fixed/current_weight_cut.v": "ef18799ebc21645fdcb7c4e57b3b6eef0c74542ad921b8826826cb73bc863e05",
+    ".cache/compact_index_io/fixed/prepared.json": "a0293137eaa1b3a9b217d7e42843d997b4aa81d71f13a644c96aa770b3fbf565",
+    ".cache/compact_index_io/genus/netlist.v": "fd8d5a3e5c45a985d985fd8aad2eb6d1b4a27fcad92dce9472c3b1768359f19d",
+    ".cache/memory_response_gearbox/workload_serial.json": "6a0821baa468472cf23095b6042c99d33908cc1dfc273ba0c9cf6b8f737f50d7",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_index.bin": "a245522580c1ee548b57246e5b498e38ef1ac7d9da931b12317edeb914729013",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
+    ".cache/model_reference/packed_down_export/v1/weights.bin": "7501c965e9933828b492fb089d2ced89bb24a896610e73d17dbed8904605d16b",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/aligned_address/console.log": "1912742c8de2cdb0b04a6d7f49b8e6fd017840fb59a4b452807277537fedce11",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/compact_index_replay_tb.sv": "14763c0f0e2970c9d52d9829eb8afaf1fb331436cfa9d71713077f7c52c79ff0",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/full_address/console.log": "32bdba3409d6259516d81cd30d74b6d28625b83d74c08368ad2f65fa9cf5697c",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/packed_weight_cut.v": "03ccaa5f177371e7fd12c9571352bece57886fd8fa9295a5e68b324203488e85",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/parallel/console.log": "01473335c0f5b8022be57f79d5ecc7da015405cb72adc026f5b37ce09471f88a",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/prepared.json": "8bac661e9b6135bd2683ea29af52bf183155c44a378ee1d41ce5233bf695566c",
+    ".cache/physical/wide_weight_loader/joined_chip_partition/serial_projection_budget.json": "47d2d2c81b9cac7af44ce649e61416d5e8b317d7f2de183afa9427aef9d0e981",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/measure_tri_oracle_serial_memory_requests.py": "098af57fb4e54a76a9faaea04b89a94520bc01fe9dce7433f0dd2d0669f64ccb",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_cold_memory_boundary.json": "e789418d5ef36619226ab21e0a40af08df9005e4b01c324b14f24ec0af05ecc6",
+    "records/tri_oracle_compact_index_ingress.json": "53a10c7918c309c81553e35070b7e448d06e234479eccc7140729cb7c80c5bca",
+    "records/tri_oracle_memory_response_gearbox.json": "2dedf77535d39a8df33faa95d194ef0b445a11f4266b3dd25ab23ce4aa1e0073",
+    "records/tri_oracle_narrow_host_command_link.json": "b110d7ca70ac5b3f03f4911ea4f8f4b4e90a948ae7a88d2bbcad8c47e4ca0b61",
+    "records/tri_oracle_ranked_sign_workload_bounds.json": "f592da0b95283d31812187ad68c4b5ea5ac9316bbcb1b0b2b462f604874e9b21",
+    "records/tri_oracle_repacked_whole_chip_cold_reload.json": "9ab38bed952ec1de1a794b2fa882c1d98e99001f64f11e3cbdf1240e04559fac"
+  },
+  "extracted_masters": {
+    "tri_oracle_dual_group_weight_transport": [
+      "tri_oracle_native_reset_copy_15",
+      972
+    ],
+    "tri_oracle_packed_write_stage_mapped": [
+      "tri_oracle_native_reset_copy_33",
+      2
+    ]
+  },
+  "scope": "Xcelium fixture applies request serialization delays to the current extracted mapped weight loader and write stage with functional reset pins tied together. The host model grants ideal two-lane receive balance and adds archived projection issue cycles serially. Packet encoding, physical timing, real memory, writes and whole-model execution remain unverified.",
+  "state": "serial_memory_request_service_compared_on_mapped_weight_fixture"
+}
