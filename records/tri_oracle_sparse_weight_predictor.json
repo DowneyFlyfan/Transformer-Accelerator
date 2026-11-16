@@ -1,0 +1,50 @@
+{
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "elapsed_seconds": 214.75941894506104,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/sparse_weight_predictor/inputs.json": "6ce84fb6b0690001ac091414d3a6e52b0af0897baf1b74c98fbd88db3b89ae78",
+    ".cache/model_reference/gqa_testdev/sparse_weight_predictor/predictions.jsonl": "8149cb38f7a316624398035fe517ccc613964ec007b1b0424e0edbc46aca0a53",
+    ".cache/model_reference/gqa_testdev/sparse_weight_predictor/receipt.json": "f0bd721f0665ed85d52bcb8ceb620d350e09accf30ac96eec05f3d287b560791",
+    "syn/evaluate_tri_oracle_sparse_weight_predictor.py": "2fa0e047a429b9b800a9e5634d089670f088e0d4e87abaaa25e2e56693e3d417",
+    "syn/verify_tri_oracle_sparse_weight_predictor.py": "9c43c541d9dda4d07754e4774f1185a342252539a3b43c09df5100c355f3f9e4"
+  },
+  "questions": 67,
+  "results": {
+    "high_rate_magnitude": {
+      "baseline": 34,
+      "candidate": 35,
+      "first_token_changed": 13,
+      "gained": 3,
+      "lost": 2
+    },
+    "sparse_three_sigma": {
+      "baseline": 34,
+      "candidate": 0,
+      "first_token_changed": 67,
+      "gained": 0,
+      "lost": 34,
+      "modeled_reduction_percent_with_reuse": 57.75,
+      "modeled_reduction_percent_without_reuse": 57.57
+    },
+    "sparse_top512": {
+      "baseline": 34,
+      "candidate": 29,
+      "first_token_changed": 16,
+      "gained": 0,
+      "lost": 5,
+      "modeled_reduction_percent_with_reuse": 48.33,
+      "modeled_reduction_percent_without_reuse": 41.32
+    },
+    "sparse_top64": {
+      "baseline": 34,
+      "candidate": 20,
+      "first_token_changed": 35,
+      "gained": 1,
+      "lost": 15,
+      "modeled_reduction_percent_with_reuse": 56.78,
+      "modeled_reduction_percent_without_reuse": 55.91
+    }
+  },
+  "scope": "Held-out software stress test at a fixed 58% ordinary prompt-row skip rate. The paper reports accuracy at mean reduction settings. The modeled coefficient reads exclude layout and bus overhead, so they do not establish physical weight traffic.",
+  "state": "sparse_weight_predictors_independently_rescored"
+}
