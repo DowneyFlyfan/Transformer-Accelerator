@@ -1,0 +1,30 @@
+{
+  "array": "tri_oracle_pe_array_verified_bank0_2",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/broad_setup_training/route.tcl": "47a7cf5b974088af569ee2786ff566ac207031870f22c9b65b46a926b9888b9a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/focused_timing_assignment/physical/tri_oracle_pe_array_verified_bank0_2/native/broader_setup.rpt": "609c08914a1cfd76ce3f735ae6387b80f2f5bcf67a27ae4bb2cae082fcb5d0d1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/focused_timing_assignment/verified.json": "43b852d299b4be708376f3245d22979a343aa733ae9a59266c8e126931bc1c26",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/refreshed_timing_assignment/physical/tri_oracle_pe_array_verified_bank0_2/native/broader_setup.rpt": "566ee7d4ff1d87185dc0f45eb33697249d6a561af7c24a59c4f0b347f0692b92"
+  },
+  "ideal_clock_mhz": 580,
+  "paired_sample": {
+    "common_endpoints": 550,
+    "improved": 518,
+    "median_delta_ns": 0.093584,
+    "worsened": 32
+  },
+  "peak_device_bytes": 180326400,
+  "same_legal_cell_slots": 65763,
+  "scope": "Ideal-clock early wire extraction on the same regional optimized netlist, reserved neighbors, pin placement and occupied sites. Each report asks for up to 1400 internal violating setup endpoints, so the baseline count is capped. The physical result still misses the 580 MHz timing target.",
+  "selected_scoring_arcs": 4646,
+  "setup_report_cap": 1400,
+  "state": "focused_host_gpu_placement_and_native_extracted_timing_verified",
+  "violating_endpoints_returned_before_after": [
+    1400,
+    1050
+  ],
+  "worst_setup_slack_ns": [
+    -0.939642,
+    -0.626037
+  ]
+}

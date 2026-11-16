@@ -1,0 +1,124 @@
+{
+  "added_area_um2": 3365.88,
+  "added_mapped_registers": 2443,
+  "candidates": {
+    "carry_save": {
+      "area_um2": 86430.792,
+      "cell_only_register_setup_slack_ps": 859.0,
+      "mapped_cells": 54176,
+      "region_screen": {
+        "original_control_buffers_retained": true,
+        "regions_over_capacity": [],
+        "remaining_sites_by_region": {
+          "tri_oracle_pe_array_verified_bank0": 85191,
+          "tri_oracle_pe_array_verified_bank0_1": 10415,
+          "tri_oracle_pe_array_verified_bank0_2": 16670,
+          "tri_oracle_pe_array_verified_bank0_3": 7479,
+          "tri_oracle_pe_array_verified_bank1": 13516,
+          "tri_oracle_pe_array_verified_bank1_1": 18692,
+          "tri_oracle_pe_array_verified_bank1_2": 11488,
+          "tri_oracle_pe_array_verified_bank1_3": 55347,
+          "tri_oracle_pe_array_verified_bank2": 59980,
+          "tri_oracle_pe_array_verified_bank2_1": 34232,
+          "tri_oracle_pe_array_verified_bank2_2": 19434,
+          "tri_oracle_pe_array_verified_bank2_3": 17663,
+          "tri_oracle_pe_array_verified_bank3": 12647,
+          "tri_oracle_pe_array_verified_bank3_1": 38357,
+          "tri_oracle_pe_array_verified_bank3_2": 27385,
+          "tri_oracle_pe_array_verified_bank3_3": 14363,
+          "tri_oracle_pe_array_verified_bank4": 25312,
+          "tri_oracle_pe_array_verified_bank4_1": 8280,
+          "tri_oracle_pe_array_verified_bank4_2": 26843,
+          "tri_oracle_pe_array_verified_bank4_3": 65172
+        },
+        "replacement_sites_per_array": 514469,
+        "total_remaining_sites": 568466
+      },
+      "registers": 8036,
+      "worst_path": {
+        "endpoint": "product[235].value_reg[0]/D",
+        "startpoint": "valid_reg[3]/CP"
+      }
+    },
+    "queue_trial": {
+      "area_um2": 89796.672,
+      "cell_only_register_setup_slack_ps": 1007.0,
+      "mapped_cells": 54171,
+      "region_screen": {
+        "original_control_buffers_retained": true,
+        "regions_over_capacity": [
+          "tri_oracle_pe_array_verified_bank0_1",
+          "tri_oracle_pe_array_verified_bank0_2",
+          "tri_oracle_pe_array_verified_bank0_3",
+          "tri_oracle_pe_array_verified_bank1",
+          "tri_oracle_pe_array_verified_bank1_1",
+          "tri_oracle_pe_array_verified_bank1_2",
+          "tri_oracle_pe_array_verified_bank2_2",
+          "tri_oracle_pe_array_verified_bank2_3",
+          "tri_oracle_pe_array_verified_bank3",
+          "tri_oracle_pe_array_verified_bank3_3",
+          "tri_oracle_pe_array_verified_bank4_1"
+        ],
+        "remaining_sites_by_region": {
+          "tri_oracle_pe_array_verified_bank0": 65156,
+          "tri_oracle_pe_array_verified_bank0_1": -9620,
+          "tri_oracle_pe_array_verified_bank0_2": -3365,
+          "tri_oracle_pe_array_verified_bank0_3": -12556,
+          "tri_oracle_pe_array_verified_bank1": -6519,
+          "tri_oracle_pe_array_verified_bank1_1": -1343,
+          "tri_oracle_pe_array_verified_bank1_2": -8547,
+          "tri_oracle_pe_array_verified_bank1_3": 35312,
+          "tri_oracle_pe_array_verified_bank2": 39945,
+          "tri_oracle_pe_array_verified_bank2_1": 14197,
+          "tri_oracle_pe_array_verified_bank2_2": -601,
+          "tri_oracle_pe_array_verified_bank2_3": -2372,
+          "tri_oracle_pe_array_verified_bank3": -7388,
+          "tri_oracle_pe_array_verified_bank3_1": 18322,
+          "tri_oracle_pe_array_verified_bank3_2": 7350,
+          "tri_oracle_pe_array_verified_bank3_3": -5672,
+          "tri_oracle_pe_array_verified_bank4": 5277,
+          "tri_oracle_pe_array_verified_bank4_1": -11755,
+          "tri_oracle_pe_array_verified_bank4_2": 6808,
+          "tri_oracle_pe_array_verified_bank4_3": 45137
+        },
+        "replacement_sites_per_array": 534504,
+        "total_remaining_sites": 167766
+      },
+      "registers": 10479,
+      "worst_path": {
+        "endpoint": "carry_save.row[31].value_reg[17]/D",
+        "startpoint": "carry_save.row[31].carry_reg[2]/CP"
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/constraints.sdc": "8dce102a48b68a21ff08a39f102d5a8300ce24dc2915d6b7ae9ea1f873315e43",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/audit_mapped_trial.py": "82f0c108b5f91c8227acfe6f7f8e030f36023838f970828addaa073c0ae88c6a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped/area.rpt": "c526dba59d5c713e4c0ae29a171610dfe76a43d78192181e8f105caabcc2af69",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped/console.log": "cabd4fe0f663ad503d90416efa258aea71dfae9ea36f7e937b1c26c91a4a9a8b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped/emitted.sdc": "86bed09f7ea4b849acdb524c37597a8279ad36083cae7af8cc5c8a137926ab0a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped/gates.rpt": "114c42385c3dedb1b8fe539c014c8dfcc334193e2f8e3adb432a6212836b5e1f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped/netlist.v": "d054e60d3d7028addd1dbe192fb8e2f5d6edfacb3ca891c563dae7a47b2ca7e7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped/register_setup.rpt": "02d0da7b3eae33f1d8f7df294c7e0ec7a97d674ef16e578547ffcb06ceab26c2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped/status.json": "5b5f0390d4b565c00c1498dce286ea17050391e8d990fe8b5c87a9e1a52f746d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped_comparison.json": "9575e2551ab699fbba4baa55d07af21aa1cc9ba03f51099b6d2548148c74451d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/mapped_replay/verified.json": "ef3130874a3c9a4894c88cc3b1b32e9f2ef01f037d9bb5b3885e6081364853fd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/synthesis_array.sv": "ab614f259e89838d1004ca0e83f31273c69dfd615cf88b7dde730b4dee65a8b4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/area.rpt": "f5108475616cf3799cf3aa85a861957c8f97664c28f972c143c465ba2a8ef801",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/console.log": "2fd95fcdc1c42003a4752529397a87f63e8b52572ba13e24e26f7917cb65c039",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/emitted.sdc": "4eda4af19d5d25a4a5ce5ece91657bc5c2c690177426085b5cbb41052f07ba34",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/gates.rpt": "277ecf4665f45f2ac20b39a49ceee8d59811d670cf596632153fdb5ecb295f99",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/netlist.v": "b086a4eb9834caaa4313f989f789e3b5b2c1b196f3905a2fe7e30f6b114c797f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/register_setup.rpt": "e22a5fc024bf96fea106e45fa4bfd66c024da3bac7b4da8ab3378819b1fe725a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/status.json": "a53eac2613eb2c370ea96d1913760220b2305a64ab139f253fc840e1bb738476",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/synthesize.tcl": "7d4bff572cfbf6d9f36001575f19671026ee2d3f912272bbd37a904616889942",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/verified_full_array.json": "7b2ecf643a84fbb959b7012c3005f27d329dc65943047c5f5625f2979e7480ef",
+    ".cache/physical/carry_lookahead_comparison/current_footprint.json": "ec1216b14a02c55f9c3682c9842b44d121c7edf3a14ca395b5eae519eff1751c",
+    ".cache/physical/carry_lookahead_comparison/region_capacity.json": "0c88cc302701abcdde65bcaadd24a212fc8be8511bde904bd36e776d51491f3c",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75"
+  },
+  "mapped_vectors": 786,
+  "scope": "Genus cells mapped with the same slow library and pre-wire constraints. Each region's total legal site budget reserves its original control buffers. Simulated gate payload is cycle-accurate. Native physical placement and extracted timing of this new netlist remain unmeasured.",
+  "state": "decoupled_array_mapped_functional_and_area_screen_verified"
+}
