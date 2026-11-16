@@ -1,0 +1,67 @@
+{
+  "cold_chip_response_bits": {
+    "auxiliary": 512,
+    "primary": 512,
+    "projection": 64
+  },
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "directed_replay": {
+    "faults": 3,
+    "requests": 7,
+    "responses": 8,
+    "simultaneous": 1,
+    "terminal_stalls": 5
+  },
+  "evidence_sha256": {
+    ".cache/compact_index_io/genus/netlist.v": "fd8d5a3e5c45a985d985fd8aad2eb6d1b4a27fcad92dce9472c3b1768359f19d",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_index.bin": "a245522580c1ee548b57246e5b498e38ef1ac7d9da931b12317edeb914729013",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/compact_index_replay_tb.sv": "2824bd75597cba9d85d791d50563e5aa8c14a8994dbd703bdb630aa13eb634fc",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_rx/netlist.v": "377d99436524749ae477d3fe09c1b5314c4d907b5f24517fc984f9f882e68fbb",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/packed_weight_cut.v": "03ccaa5f177371e7fd12c9571352bece57886fd8fa9295a5e68b324203488e85",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/compact_index_replay_tb.sv": "a9e9bd6cbd876b0dc65f426e1f286284d69ccd2e45aa2edba455e136fea93797",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/fixture/console.log": "63aa54158bd166835cd82be322c623ed1b4d799ab313de75d7d9c31278d23256",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/fixture/xrun.history": "d617fe257d4b7db61884368635719f33385832e4eaeafefd50380324129efccf",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/genus/area.rpt": "279d52575134b41d9e81b6396722e3afc435e873d22285af71ba40d8432bece7",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/genus/console.log": "35bcea4bda1d097609c094cb0b4dadab147b87fa845d6898e3bd08a3159f6615",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/genus/constraints.sdc": "349f05e5b92d70d0389011ef67c3ebb317f8a2fe0ad2e1a17c48c1b051fb9a5f",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/genus/mapped_check.rpt": "9a658b6c0316b73215ce8df8efc6fc018ce24d45187f66704ef14e450a1c3ab3",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/genus/netlist.v": "cb79481459c569dcf712129ee48949c5badec9e2406b9ef2ef55a6f2cf7a7dd0",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/genus/timing.rpt": "8dfbb2117764e22cadcb475e00c20f3df2be120de53deeb092010d27226c6f1d",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/mapped/console.log": "c754517962f913a2aaed398f6dc9e4a79c381f8b35bcc3a43249167fc4d90275",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/mapped/xrun.history": "4ba058c800df32aa9d9bb8fbfe27f01c3a819f0f098b20fd48a538029eb4bdd0",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/rtl/console.log": "4aa03cc9e2d4d6ee3411e7ea57d05578e8d645c4a1407f25300fc0fc3324e09c",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/rtl/xrun.history": "e5709d4d08f20986f19ca2fc6d3d462082d2100c4600b768b6735073957ebfe3",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/verify_tri_oracle_shared_read_link.py": "baedd9e62bdc0ed2de69c3ddc9996e52ba340436cf426468a15be88fb6d25c07",
+    "records/tri_oracle_cold_memory_boundary.json": "e789418d5ef36619226ab21e0a40af08df9005e4b01c324b14f24ec0af05ecc6",
+    "records/tri_oracle_mapped_memory_request_link.json": "cfe915d0efe232ff262fb5f8e231c3e14e03c7d6cc2e66c16acc7d4e11f4e3d0",
+    "records/tri_oracle_repacked_whole_chip_cold_reload.json": "9ab38bed952ec1de1a794b2fa882c1d98e99001f64f11e3cbdf1240e04559fac",
+    "syn/tri_oracle_synthesize_memory_request_link.tcl": "d6e907067d9f34a625fb9444d8ef69b016f96d447361f1c064ec25594d28c285",
+    "verilog/tri_oracle_memory_request_link.sv": "989bf1defdb79e4cfc4477f3f51daa542ab19f4150c173bf30f603b2ec47c8a0",
+    "verilog/tri_oracle_shared_read_link.sv": "c7c60dce331b30aa1f86e6112a8539dd0ab74c71d611b42dd885ef00f6615cbb",
+    "verilog/tri_oracle_shared_read_link_tb.sv": "cfa5084eef5189626d5dc89499de1093a2e2fc85e490c56dca6bf1c7ee6406dc"
+  },
+  "illustrative_signal_pad_budget": {
+    "request_data_and_control_sites": 24,
+    "response_control_sites": 8,
+    "response_data_sites": 512,
+    "sites_left": 0
+  },
+  "mapped": {
+    "cell_area_um2": 593.04,
+    "cells": 489,
+    "target_period_ns": 1.72414,
+    "worst_setup_slack_ps": 445
+  },
+  "scope": "The on-chip request serializer and response owner passed mapped replay with the decoded requests and two testbench memory-response lanes. The pin budget assumes two data bits per receive site per clock. Writes, package, power, physical capture and full-chip timing remain open.",
+  "state": "mapped_shared_response_link_and_trained_weight_replay_verified",
+  "trained_down_projection": {
+    "cycle_change_with_response_ownership": 0,
+    "cycles": 89953,
+    "exact_weight_bytes": 11534336,
+    "requests": 4352,
+    "tiles": 78
+  }
+}

@@ -1,7 +1,7 @@
-# Map either endpoint with the project's slow timing corner and interface budgets.
+# Map the request endpoints or shared link with the project's slow timing corner.
 set root [file dirname [file dirname [file normalize [info script]]]]
 set top $::env(TRI_ORACLE_REQUEST_ENDPOINT)
-if {$top ni {tri_oracle_memory_request_tx tri_oracle_memory_request_rx}} {
+if {$top ni {tri_oracle_memory_request_tx tri_oracle_memory_request_rx tri_oracle_shared_read_link}} {
     error "Unknown memory request endpoint $top"
 }
 set out [file normalize $::env(TRI_ORACLE_REQUEST_OUTPUT)]
@@ -9,7 +9,11 @@ file mkdir $out
 set_db auto_ungroup none
 set_db auto_super_thread false
 read_libs [file join $root .cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib]
-read_hdl -sv [file join $root verilog/tri_oracle_memory_request_link.sv]
+set files [list [file join $root verilog/tri_oracle_memory_request_link.sv]]
+if {$top eq "tri_oracle_shared_read_link"} {
+    lappend files [file join $root verilog/tri_oracle_shared_read_link.sv]
+}
+read_hdl -sv $files
 elaborate $top
 check_design -unresolved
 create_clock -name core_clock -period 1.72414 [get_ports clk]
