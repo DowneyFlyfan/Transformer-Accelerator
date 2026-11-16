@@ -70,7 +70,48 @@ TRIAL_CONTROL = """    localparam int PIPE_DEPTH = STAGES + 1;
 """
 
 
-def generate(source: Path, output: Path, module: str) -> None:
+def reuse_result_stage(text: str) -> str:
+    """Retain a completion in the final stage while the smaller queue is full."""
+    changes = {
+        "    localparam int INDEX_BITS = PIPE_DEPTH > 1 ? $clog2(PIPE_DEPTH) : 1;":
+            "    localparam int QUEUE_DEPTH = PIPE_DEPTH - 1;\n"
+            "    localparam int INDEX_BITS = QUEUE_DEPTH > 1 ? $clog2(QUEUE_DEPTH) : 1;",
+        "$clog2(PIPE_DEPTH + 1)": "$clog2(QUEUE_DEPTH + 1)",
+        "completed_results [0:PIPE_DEPTH-1]": "completed_results [0:QUEUE_DEPTH-1]",
+        "    wire accept = in_ready && in_valid;":
+            "    wire accept = in_ready && in_valid;\n"
+            "    wire hold_result_stage;",
+        "(running_valid << 1) | PIPE_DEPTH'(accept);":
+            "(running_valid << 1) | PIPE_DEPTH'(accept) |\n"
+            "                             (PIPE_DEPTH'(hold_result_stage) << STAGES);",
+        "    wire write_buffer = running_valid[STAGES] && (buffered || !take_result);":
+            "    // At capacity, a held completion is the only payload left in the datapath.\n"
+            "    assign hold_result_stage = running_valid[STAGES] &&\n"
+            "                               buffered_count == COUNT_BITS'(QUEUE_DEPTH) && !read_buffer;\n"
+            "    wire write_buffer = running_valid[STAGES] && (buffered || !take_result) &&\n"
+            "                        !hold_result_stage;",
+        "                    value <= sum + carry;":
+            "                if (!hold_result_stage)\n"
+            "                    value <= sum + carry;",
+    }
+    for before, after in changes.items():
+        if text.count(before) != 1:
+            raise ValueError(f"Cannot identify the final-stage insertion point: {before}")
+        text = text.replace(before, after)
+    if text.count("INDEX_BITS'(PIPE_DEPTH-1)") != 2:
+        raise ValueError("Cannot identify queue pointer limits")
+    text = text.replace("INDEX_BITS'(PIPE_DEPTH-1)", "INDEX_BITS'(QUEUE_DEPTH-1)")
+    text, counts = re.subn(
+        r"(?m)(^ +)(value <= \$signed\(\{(?:product|reduction)\[)",
+        r"\1if (level != STAGES - 1 || !hold_result_stage)\n\1    \2",
+        text,
+    )
+    if counts != 2:
+        raise ValueError("Cannot identify the last register in the fallback reduction tree")
+    return text
+
+
+def generate(source: Path, output: Path, module: str, reuse_final=False) -> None:
     text = source.read_text()
     declaration = "module tri_oracle_pe_array #("
     if text.count(STALL_CONTROL) != 1 or text.count(declaration) != 1:
@@ -89,6 +130,8 @@ def generate(source: Path, output: Path, module: str) -> None:
         raise ValueError("Unexpected arithmetic register or output structure")
     text = text.replace("assign out_sums[", "assign arithmetic_result[")
     text = text.replace(declaration, f"module {module} #(")
+    if reuse_final:
+        text = reuse_result_stage(text)
     with output.open("x") as stream:
         stream.write(text)
 
@@ -98,6 +141,8 @@ if __name__ == "__main__":
     parser.add_argument("source", type=Path, help="carry_save.sv from build_tri_oracle_carry_save_array.py")
     parser.add_argument("output", type=Path)
     parser.add_argument("--simulation", action="store_true", help="rename the trial for lockstep simulation")
+    parser.add_argument("--reuse-result-stage", action="store_true",
+                        help="use the final arithmetic register as one queue slot, with at least two lanes")
     args = parser.parse_args()
     top = "tri_oracle_pe_array_decoupled" if args.simulation else "tri_oracle_pe_array"
-    generate(args.source, args.output, top)
+    generate(args.source, args.output, top, reuse_final=args.reuse_result_stage)

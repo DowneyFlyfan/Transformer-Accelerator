@@ -1,0 +1,63 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/decoupled_reuse_tb.sv": "d8ad1b91bf11b63b14638911f12de8a80fca26f194fa3dd64223b53ca078ff4c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/lost_result_mutation/console.log": "10d79f6747410be81909ed4abc1dc85bd89ab82dee5517e1df56cde10216ac15",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/model.json": "dcb399b2e324cd16f9e20d40da3a7f655e76b7383a9433fec8571af6565010e6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/model_reuse.py": "88e836eadee9c5ece3c12d25cf966bafe8aa644c21d185dec65094308ee4cfc2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/negative_depth/console.log": "ba8516bd4ab22b4aa2a53f424c6ac53a8ccf0dd35e573406a34c0030f2d0fd46",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/rtl_2/console.log": "f91acddb4eb1aa5d8545a253520c6c40fdb2b64ca54f36312ad0ec3094fcc644",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/rtl_4/console.log": "8fa8556b06d5968d47b946f530a9748d31344dfb5948b1f1256dc3a554ae416f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/rtl_8/console.log": "a60d9f5489116fa189afeb8f9b8c11d5507916612094f312f119d81e23317476",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/sim_array.sv": "90724e9bf9d2bebb524caef4613b08737867dc5b6c18b07041a402f89101a8ac",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/synthesis_array.sv": "a7be216634c7c733f1be8c4cef284b37aa4a39551bdf7e2eb34e129d20fe6811",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/verified_full_array.json": "7b2ecf643a84fbb959b7012c3005f27d329dc65943047c5f5625f2979e7480ef",
+    "records/tri_oracle_carry_save_full_array.json": "7b2ecf643a84fbb959b7012c3005f27d329dc65943047c5f5625f2979e7480ef",
+    "syn/build_tri_oracle_decoupled_array.py": "cd10603b5244142442f74f4749a1c83695da358ee44ef6a147279dc4b497ada9"
+  },
+  "full_array_payload_bits": 608,
+  "full_array_separate_queue_bits_before_after": [
+    2432,
+    1824
+  ],
+  "negative_controls": {
+    "lost_result_mutation": "Payload differs at cycle 16, buffered 1",
+    "negative_depth": "RESULT_QUEUE_EXCEEDED_SMALLER_CAPACITY"
+  },
+  "previous_array_narrowest_region": {
+    "nominal_cell_area_headroom_um2": 1256.472,
+    "region": "tri_oracle_pe_array_verified_bank0_3",
+    "site_area_um2": 0.168,
+    "spare_sites": 7479
+  },
+  "scope": "The final arithmetic register can retain a result when the separate queue is full. This saves one separate payload slot and preserves the reference schedule on the tested traffic. The old site budget is a placement screen for the reference. Mapped area and timing of the smaller queue are still pending.",
+  "state": "completion_slot_reuse_verified_in_model_and_xcelium",
+  "trials": {
+    "2": {
+      "clock_edges": 1150,
+      "delivered": 801,
+      "exhaustive_model_transitions": 28,
+      "maximum_separate_queue_entries": 1,
+      "peak_pending": 2,
+      "reachable_model_states": 7,
+      "reset_discarded": 2
+    },
+    "4": {
+      "clock_edges": 1154,
+      "delivered": 811,
+      "exhaustive_model_transitions": 104,
+      "maximum_separate_queue_entries": 2,
+      "peak_pending": 3,
+      "reachable_model_states": 26,
+      "reset_discarded": 3
+    },
+    "8": {
+      "clock_edges": 1158,
+      "delivered": 786,
+      "exhaustive_model_transitions": 364,
+      "maximum_separate_queue_entries": 3,
+      "peak_pending": 4,
+      "reachable_model_states": 91,
+      "reset_discarded": 4
+    }
+  }
+}
