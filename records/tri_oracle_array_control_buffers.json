@@ -1,0 +1,50 @@
+{
+  "added_buffers": 175,
+  "added_row_sites": 2100,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/console.log": "6f28b31df6b75935af2d05563784f8376b1d0d4762924d35344933ee91dd932e",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/native_gate_hold.rpt": "ca31df149c164d9c50a3a93a28ead7aa5d905eff2c8aa6d1f574a40026dd3b51",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/native_gate_setup.rpt": "589f48bba0ce177ee637d26714fff53c6d47e5c4b2cd1679d666cdf93d62a133",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/native_hold.rpt": "1de4fba686ec0bd85129cabaab607dcea788ce786be2215fe444f10e9528a771",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/native_setup.rpt": "0dbdc0caf407400d3e8221ad310b9529387e0bfd94e5b4e638629575f52045ea",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/netlist.v": "b87658d81fd36a6c1f9fedbaac4da2553d78907921e0cd1fd87ff1eb884610d6",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/place.tcl": "14e8cbe6cbc3ac4edc4e343353a20dd40297581d1e6678dd59012f8ecb36c440",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/placed.def": "cfa9816def8403d503448444514818b49a4ffaade076896e2f9311e83f0e40d9",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/placement.rpt": "1b6835363b541248c39423d515835a80acf66b5bf98da5b94ed26ef27ca008bb",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/replay/console.log": "43e89f3316d1c398de43fa15ebd89318de3aced06b9c30dba3402d15601e0bc7",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/replay/decoupled_mapped.v": "569c36a61b82b55691b7bb5a216ebec503e75d54e9c389a708b4ed9d2e93e9d8",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/replay/xrun.history": "b2126c5628e4340bf712d79644988f65ba9baf204977a42f39860e9aaaafddd9",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/control_buffers/seed.def": "340642a1daf97bb535e38822bf2aa7ebf09cf7f8eb22d0e683e160bab0a4d303",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/placed.def": "70f77575ab6d7fb2979010977bd9ad383889c32a6f3330cfec1e4852f99f377f",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    ".cache/physical/whole_chip_xcelium_speed/gated_compute_array/emitted.sdc": "5f7b07b68bf0d4919533e27c78dd45ce648c38eaa3bf7c247fe27a7629e8096b",
+    ".cache/physical/whole_chip_xcelium_speed/gated_compute_array/netlist.v": "0ea962c8e958fcddf899f0679ed89dcde0ef82ec385aa9c834e62e4f32b43d80",
+    "records/tri_oracle_gated_array_placement.json": "48ca780a3cd323f570080cfc50db29466d7c2caa927f4f7c50423aa30d844ce5",
+    "records/tri_oracle_gated_compute_array.json": "d264994e6a1bbf152e21ab818cd5667d9606ea3f4bd952a95edd1f2bf7bf766b",
+    "syn/verify_tri_oracle_array_control_buffers.py": "f579b1cb1d7c83aba24fd65de14824c8650da6eba52cebd037397e843c97198a"
+  },
+  "original_data_load_counts": {
+    "g620406": 608,
+    "g620956": 608,
+    "g620957": 608,
+    "hi_fo_buf621057": 353,
+    "occupancy_onehot_reg[0]": 257
+  },
+  "placement_timing_after_ps": {
+    "gate_hold": 265.0,
+    "gate_setup": -4522.0,
+    "hold": -20.0,
+    "setup": -8757.0
+  },
+  "placement_timing_before_ps": {
+    "gate_hold": 266.0,
+    "gate_setup": -11867.0,
+    "hold": -20.0,
+    "setup": -33061.0
+  },
+  "projected_chip_site_deficit_if_repeated_across_twenty_arrays": 97548,
+  "remaining_array_row_sites": 15445,
+  "scope": "Five data-control nets buffered without moving existing cells. One array replayed 786 transactions. Timing uses estimated wires and an ideal clock in the same region.",
+  "state": "data_fanout_buffer_trees_placed_and_lockstep_verified"
+}

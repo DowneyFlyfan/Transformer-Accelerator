@@ -43,7 +43,7 @@ def fixture(source):
     return header + "\n\n" + "\n".join(text for _, text in geometry(source).values()) + "\nEND DESIGN\n"
 
 
-def row_slots(region, widths):
+def row_grid(region):
     rows = [(int(x), int(y), side, int(count), int(pitch))
             for line in region.splitlines() if (match := ROW.match(line))
             for x, y, side, count, pitch in (match.groups(),)]
@@ -64,6 +64,12 @@ def row_slots(region, widths):
         if start < end:
             for row in reserved[low:high]:
                 row[start:end] = b"\x01" * (end - start)
+    return rows, reserved, height
+
+
+def row_slots(region, widths):
+    rows, reserved, _ = row_grid(region)
+    left, _, _, _, pitch = rows[0]
     gaps = defaultdict(list)
     for row, status in enumerate(reserved):
         for match in re.finditer(rb"\x00+", status):
