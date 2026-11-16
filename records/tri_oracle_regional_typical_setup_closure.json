@@ -1,0 +1,117 @@
+{
+  "cases": {
+    "previous_placement": {
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018896
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[0][350]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.012037
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[20].value_reg[18]/DB",
+          "launch": "carry_save.row[20].carry_reg[2]/CP",
+          "slack_ns": -0.536012
+        },
+        "setup_typ": {
+          "capture": "carry_save.row[20].value_reg[18]/DB",
+          "launch": "carry_save.row[20].carry_reg[2]/CP",
+          "slack_ns": -0.061211
+        }
+      },
+      "violating_setup_endpoints": {
+        "fast": 0,
+        "typical": 15
+      }
+    },
+    "queue_and_arithmetic_placement": {
+      "hold_endpoint_counts": {
+        "direct_result_register_feedback": 132,
+        "other_register_paths": 5
+      },
+      "moved_cells": 117,
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018878
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[0][42]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.057048
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[15].sum_reg[16]/D",
+          "launch": "carry_save.row[15].compressor[0].sum_reg[16]/CP",
+          "slack_ns": -0.490413
+        },
+        "setup_typ": {
+          "capture": "running_valid_reg[0]/D",
+          "launch": "shadow_valid_reg[3]/CP",
+          "slack_ns": 0.008484
+        }
+      },
+      "violating_setup_endpoints": {
+        "fast": 0,
+        "typical": 0
+      }
+    },
+    "queue_branch_placement": {
+      "hold_endpoint_counts": {
+        "direct_result_register_feedback": 133,
+        "other_register_paths": 5
+      },
+      "moved_cells": 12,
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018878
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[0][42]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.06398
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[20].value_reg[18]/DB",
+          "launch": "carry_save.row[20].carry_reg[2]/CP",
+          "slack_ns": -0.536723
+        },
+        "setup_typ": {
+          "capture": "carry_save.row[20].value_reg[18]/DB",
+          "launch": "carry_save.row[20].carry_reg[2]/CP",
+          "slack_ns": -0.062221
+        }
+      },
+      "violating_setup_endpoints": {
+        "fast": 0,
+        "typical": 4
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/physical/tri_oracle_pe_array/native/broader_setup.rpt": "e8cf3dfa57ee7bc27343f536246548b77e9f80bb5cff77da02455a272628c162",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/physical/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "bb8e0295afc39d02e8e346ddbb168e22b9ed55e4ae846a85559cf8584e0013ae",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/physical/tri_oracle_pe_array/native/broader_setup.rpt": "972c422d965b44145da32df4bb76630a90283ae913e9d17695648acc8b69737d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/physical/tri_oracle_pe_array/native/hold_fast_broader.rpt": "aeb51bd98c11d071825f3912e38805a6f5f145d76982126755cc7521e368cd36",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/physical/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "710944794f7d577fbf701a819b415810981c5a5de2030c0851ced6edd6440a4d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/publish_typical.py": "1ebaa9a67dae7ae17eadf858f6feffbdb793a1f8b38fc43b5ab9101eba766e1e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical/tri_oracle_pe_array/native/broader_setup.rpt": "b13ac04c4868721bea9cc5157f8feed36d1269d4538d5b159bf9867fa62f1f9b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical/tri_oracle_pe_array/native/hold_fast_broader.rpt": "aaf0efd1ecca8345c57dc1205a7c88753afd1911eb9a74aea40b7c901be49d11",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "741fb2fb3bcf90483c628f5d19d7e8c64447ed091769e398821ed0667880143a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/verified.json": "1078e3c669bf630193bc00d4184be6b1f646715b9deddab492d82b7fbdfa9f7c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/verified.json": "a94f395b280c6c9cb9f01de86662fedc9ef540795936e821cff4da053077ff53",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/verified.json": "dffcc38553b034f5446d311d70aec625392d66807f6782ff8b0f061d38615f8c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/occupancy_feedback_bypass/bypass.v": "afd825b45fb5c31756d1110d15a3cd6bfc37e0b706a2465c8ec925ccebd8442d"
+  },
+  "process": "TSMC 28 nm HPC+",
+  "scope": "An isolated compute array in three exact-site placement variants with identical cell masters and logic. Innovus used ideal clocks and early routed wire estimates. Report counts cover register-to-register paths and the measured views. All reported hold paths are retained.",
+  "state": "regional_580mhz_fast_and_typical_setup_verified",
+  "target_mhz": 580
+}
