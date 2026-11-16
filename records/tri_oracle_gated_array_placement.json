@@ -1,0 +1,41 @@
+{
+  "available_row_sites": 529848,
+  "default_placement_unlegalized_cells": 1396,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/physical/tri_oracle_pe_array/native/after.def": "74518e4cdf54fa5586108f0dda4738293a5691e7e7e286c66143078cab553c27",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/verified.json": "d37aaaa42a58d69f66176fd7e8097cc9fa6f74d57c508ced53d94c0d6b5f64e4",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/attempt.def": "d1e77032963942858a071485fe9c5ce3ce7cccc03a5d6a216672b88d75a0a4d1",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/attempt.log": "7e951709d558ac337854ed5cd8195485fe04a6bda7b583d411db06a8d88d89c1",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/console.log": "1584c030129958912960d2246f73a3dd90e5d4a8dc260730930767f4e6856e94",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/native_gate_hold.rpt": "de8af7655b2a5e5b19fa61faa6b0ff4435addc6d8566ab7b917275e0b4f0b576",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/native_gate_setup.rpt": "1a13cd8c11a686155495a3bf589db678a1a1dfc866810499e44aeb0bd985831a",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/native_hold.rpt": "d83d9e4e95c83b28004d036c94d8491388e7d671589baa8e2c5e61ff83fa5d99",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/native_setup.rpt": "0194a78f6aaf0f4d3d93e646b4d3a8fbd3ca5fd66256450013e91e5ab94722e5",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/place.tcl": "364d55cd0cf7075de79ae65581e771b422614b47406793021ed901d4599c8c66",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/placed.def": "70f77575ab6d7fb2979010977bd9ad383889c32a6f3330cfec1e4852f99f377f",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/placement.rpt": "1df49c62092f5b6fad0c0e70b2ff601d280ec42040677a9bf774fd157da9ddb1",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/seed.def": "acaedc262b0b771837842004edac23821c13a739a2218983a264e36db08bb884",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/seed.json": "198210ddb54187f8406b02fce6958b2118c6e1908592205cb334ab0a2c82ce63",
+    ".cache/physical/whole_chip_xcelium_speed/gated_compute_array/emitted.sdc": "5f7b07b68bf0d4919533e27c78dd45ce648c38eaa3bf7c247fe27a7629e8096b",
+    ".cache/physical/whole_chip_xcelium_speed/gated_compute_array/netlist.v": "0ea962c8e958fcddf899f0679ed89dcde0ef82ec385aa9c834e62e4f32b43d80",
+    "records/tri_oracle_arithmetic_placement_single_hold_repair.json": "15f0e82e901653f1ed08d949411fd014db3c8f046f03c0bc18e961455d2fbcba",
+    "records/tri_oracle_gated_compute_array.json": "d264994e6a1bbf152e21ab818cd5667d9606ea3f4bd952a95edd1f2bf7bf766b",
+    "syn/tri_oracle_require_clean_placement.tcl": "251d928f254596f394f807a624d06ff04dbe63bdb4b82a04414747ce8ba81170",
+    "syn/verify_tri_oracle_gated_array_placement.py": "f4a549968937643c9fdfea849b0b60be6cc726fbf74787f01bd3a2135a018b21"
+  },
+  "io_pin_locations_preserved": 4966,
+  "neighbor_blockages_preserved": 27551,
+  "placed_cells": 53622,
+  "placed_preroute_timing_ps": {
+    "gate_hold": 266.0,
+    "gate_setup": -11867.0,
+    "hold": -20.0,
+    "setup": -33061.0
+  },
+  "reported_placement_density_percent": 96.68,
+  "scope": "One physical array region with the saved pin locations and neighboring cell blockages. Pre-route timing uses early wire estimates with ideal clocks. This is a legal geometry witness, and timing closure requires physical optimization.",
+  "state": "gated_array_legal_in_exact_tight_region",
+  "unoccupied_row_sites_after_placement": 17545
+}
