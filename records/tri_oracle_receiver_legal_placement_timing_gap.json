@@ -1,0 +1,43 @@
+{
+  "array": "tri_oracle_pe_array_verified_bank0_2",
+  "array_instances": 65763,
+  "available_sites": 559168,
+  "average_displacement_um": 193.974,
+  "early_extracted_reserved_slack_ns": -6.276101,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_local/verified.json": "776b870e2d2355652cc35c9c13f695af02fd9bfbf975dfe2f6c212b2872845eb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/all_cells_mobile/tri_oracle_pe_array_verified_bank0_2/native/before.rpt": "39fb83c12860845c41ef6bb957266604ba7b322eb7ed827425e5a4ec6bfa6338",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/anchored_witness.json": "140caa9f168a99374154a59f2a0347cb9f6877c8becc4d4ababa69225a15f52e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/gap_capacity.json": "3a04482c3bee1113386e6cb2efa8a0d4fdd4e7d4b8fa9d181a7c72d4604c1cc7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/tri_oracle_pe_array_verified_bank0_2/native/before.rpt": "5a42f98a84b39527a5b4db9003e4b73b4bec42c2aa3222f0b3de52034599a3d2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/verified.json": "0b99d6af6c6942bdc98221d627c6d030a98f740c8c9c3b9fa911065095683a12",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/verify_witness.py": "37110050fd803d17324b77c821722dc15a1958dd282faed1134ffb1c92ce0c1f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/witness_native/prepared.json": "e3b4cc131d4347ff854a61530e6a676baf0754420cf0a3c754d39884cd8fd4d8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/witness_native/tri_oracle_pe_array_verified_bank0_2/native/after.def": "acb872ed519b426e8623a27f2222a0be5dfe2e8ff6a180f4bf7cdb5381ba04ee",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/witness_native/tri_oracle_pe_array_verified_bank0_2/native/after.rpt": "d8fefacbc8961645d87b9b3e98f0d1fd4a7bce2c62c7c487c239b1f1aa220b28",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/witness_native/tri_oracle_pe_array_verified_bank0_2/native/console.log": "6a4df2a781306369d67fcd3aa17895ceacac0fdcf854af846da12dea9b77f73e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/witness_native/tri_oracle_pe_array_verified_bank0_2/native/status.json": "34c912ad9c6ce72a81b75c1f8285d64e0230a264b7470e53c38f025abcac5397",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/witness_native/tri_oracle_pe_array_verified_bank0_2/native/timing.rpt": "8d14b309feb35fab305d8c39190a3ac526837e30c57600951dabc4497890935a"
+  },
+  "ideal_clock_mhz": 580,
+  "max_displacement_um": 1219.04,
+  "moved_cells": 16716,
+  "optimized_unconstrained_slack_ns": 0.037849,
+  "retained_external_blockages": 28085,
+  "scope": "Cold Innovus import of the same previously replayed optimized netlist with the exact reserved full-chip neighbor mask and a shifted fence. Early global extraction uses regional pins and an ideal clock. Whole-chip compatibility and setup closure require separate verification.",
+  "scoped_legalization_failed_instances": 2998,
+  "sites_remaining": 9382,
+  "state": "receiver_expanded_region_legal_native_timing_measured",
+  "unrestricted_remaining_overlap_violations": 1270,
+  "width_capacity_deficit_if_only_violations_can_move": 1751,
+  "worst_path_total_data_delay_ns": 7.766801,
+  "worst_path_wire_arc": {
+    "delay_ns": 1.7647,
+    "driver": "FE_OFC16231_tri_array_ctl_5_57/ZN",
+    "load": "FE_OFC16233_tri_array_ctl_5_57/I",
+    "span_um_before_after": [
+      393.26,
+      843.82
+    ]
+  }
+}
