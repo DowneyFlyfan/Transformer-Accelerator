@@ -1,0 +1,97 @@
+{
+  "early_overflow_percent": {
+    "horizontal": {
+      "after": 41.61,
+      "before": 42.67,
+      "change_percentage_points": -1.06
+    },
+    "vertical": {
+      "after": 5.5,
+      "before": 5.5,
+      "change_percentage_points": 0.0
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/archive.py": "8fcdf454a42663b9be22b69f3e403c5b0785f681c3b34cbe80ca3b43ccd29aa3",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/native_candidate/overlap.json": "c3422e9afb690bd6001923a61a3cb665ba0b5f400572ada41c4eaacecd18ec5f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/native_candidate/prepared.json": "82491bb0e01d63bea893c5b228bdda0d3221dcc469dee752d1f15dbb2e9ebd1f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/constraints.sdc": "d470bce11858fc41f59caf9eddb7595431c429e7240303ed73f423b9ad797620",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/native_candidate/verified.json": "95d409d72c4e22798792f1cc0a48a14afc69db38c521f196ff00d29f8e682317",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/prepared.json": "23d8ceec1c11b43fb5b6835ab7ef5505d914af5f30707a4edc58e24807945877",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/tri_oracle_pe_array_verified_bank4_2/native/constraints.sdc": "c9f52d1e4ed93df6eba29580575702b07d97cd2a29086c02af4feb574a3e1673",
+    "records/tri_oracle_bank4_2_latest_region_native_timing.json": "4136cf0845f06e99124e9c9a58735233307442e4144d093f13f17214196426b6"
+  },
+  "exact_occupied_sites": 54141,
+  "host_setup_changes": {
+    "queue_weighted": {
+      "slow": {
+        "change_ns": -0.057666,
+        "slack_ns": -12.130675,
+        "wire_free_slack_ns": 0.989002
+      },
+      "typical": {
+        "change_ns": 0.215994,
+        "slack_ns": -9.420716,
+        "wire_free_slack_ns": 1.164096
+      }
+    },
+    "timing_weighted": {
+      "slow": {
+        "change_ns": 0.775478,
+        "slack_ns": -11.297531,
+        "wire_free_slack_ns": 0.989002
+      },
+      "typical": {
+        "change_ns": 0.905326,
+        "slack_ns": -8.731384,
+        "wire_free_slack_ns": 1.164096
+      }
+    }
+  },
+  "minimum_host_available_bytes": 16715988992,
+  "moved_cells": 1140,
+  "native_timing": {
+    "fast_hold": {
+      "change_ns": 0.000534,
+      "endpoint_after": "completed_results_reg[0][212]/DA",
+      "slack_after_ns": -0.012011,
+      "slack_before_ns": -0.012545,
+      "start_after": "completed_results_reg[0][212]/CP"
+    },
+    "fast_hot_setup": {
+      "change_ns": 2.11522,
+      "endpoint_after": "completed_results_reg[1][485]/SA",
+      "slack_after_ns": -9.078281,
+      "slack_before_ns": -11.193501,
+      "start_after": "shadow_valid_reg[3]/CP"
+    },
+    "fast_setup": {
+      "change_ns": 2.073458,
+      "endpoint_after": "completed_results_reg[1][485]/SA",
+      "slack_after_ns": -8.567377,
+      "slack_before_ns": -10.640835,
+      "start_after": "shadow_valid_reg[3]/CP"
+    },
+    "slow_setup": {
+      "change_ns": 1.78108,
+      "endpoint_after": "completed_results_reg[1][485]/SA",
+      "slack_after_ns": -10.397302,
+      "slack_before_ns": -12.178382,
+      "start_after": "shadow_valid_reg[3]/CP"
+    },
+    "typical_setup": {
+      "change_ns": 1.518752,
+      "endpoint_after": "completed_results_reg[1][485]/SA",
+      "slack_after_ns": -7.253918,
+      "slack_before_ns": -8.77267,
+      "start_after": "shadow_valid_reg[3]/CP"
+    }
+  },
+  "peak_container_anonymous_bytes": 6867374080,
+  "period_ns": 1.72414,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "scope": "Matched Innovus early-route diagnostics on the isolated receiver with exact equal-width occupied-site swaps and identical mapped logic, analysis views, and boundary options. No whole-chip extraction or clock distribution.",
+  "selected": "timing_weighted",
+  "state": "bank4_2_equal_width_swaps_native_comparison_verified",
+  "wall_seconds": 87.88018758199178
+}
