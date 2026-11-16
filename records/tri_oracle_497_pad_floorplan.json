@@ -1,0 +1,41 @@
+{
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/layout.def": "0aecf99d8b5869cda885e167649bd823dba00534f9af6b2c2483e85bc33f57ee",
+    ".cache/physical/whole_chip_xcelium_speed/497_pad_floorplan/memory_macros.tsv": "17e0bae4ebe8e3c238565e511f3a6c7a5da3210883df217c5dd8bef0a2e164e1",
+    ".cache/physical/whole_chip_xcelium_speed/497_pad_floorplan/pad_slots.tsv": "e09eccdd7c6b18839d33e67627a5bf36d9624896d18042388be4a2eedbf6ffab",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tsmcn28_10lm5X2Y2ZUTRDL.tlef": "fd8c62530212af3a9c9a51dbedc133f1d9faf61f3ac4175fcefd0be37096011e",
+    "/home/downeyflyfan/Documents/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_110a_sefu10lm.tar.gz": "dce3bc9a92da187e23450e5e3913f318fa793137c2c161e0e9716b5a3999a3cc",
+    "/home/downeyflyfan/Documents/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_170a_rln.tar.gz": "b1c4f07494931a1b185e8048ce7b500c9084a02b9fffc0e58382df8fdf955eb7",
+    "records/tri_oracle_bonded_pad_recovery.json": "2eb81cd536e53f0c1252ba1603b94fe8c6473f24b0c8c58a1f8295efebdab08d",
+    "records/tri_oracle_gated_receive_storage.json": "2357efebc8d2fe7451382122bd7ff6f4259034cc7766e3da684785a643b64a79",
+    "records/tri_oracle_serialized_placement_transfer.json": "66d682a34acc5f0fe082fe9499ee1c3e04499d85147a43ff3026584788d720bf",
+    "syn/plan_tri_oracle_497_pad_floorplan.py": "4a10b795bf60693527a30bc0e75e9331e31c661084b4119c432bd3e9168a3d24",
+    "syn/plan_tri_oracle_bonded_pad_recovery.py": "e5154a8284bf7db9c3eb9b63d12a0de21139564d2f2f04d4fad3df0046158cf8"
+  },
+  "feasible_macro_layouts_screened": 458,
+  "geometric_site_margin_with_verified_gated_receiver": -297588,
+  "macro_windows_attempted": 1176,
+  "moved_memory_macros": 291,
+  "new_geometric_site_capacity": 36158556,
+  "pad_reservations": 497,
+  "placement_grid_variants_screened": 1832,
+  "previous_geometric_site_capacity": 36158556,
+  "reserved_by_edge": {
+    "bottom": 92,
+    "left": 135,
+    "right": 135,
+    "top": 135
+  },
+  "scope": "Exact geometric row capacity after reserving 497 slots and adjusting the same 631 memory macros. Counts were independently recomputed with integer row intervals. Native placement, bonded IO extension, power and ground closure, timing, and routing are unverified.",
+  "selected_alignment": "rows then columns",
+  "site_capacity_change": 0,
+  "state": "current_pad_target_reoptimized_and_site_counts_independently_verified"
+}
