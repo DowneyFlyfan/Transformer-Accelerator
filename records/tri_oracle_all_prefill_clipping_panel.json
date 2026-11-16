@@ -1,0 +1,71 @@
+{
+  "accuracy_change_percentage_points": 2.985074626865672,
+  "baseline_layers": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "candidate_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "correction_dot_product_rows": {
+    "baseline": 29026,
+    "candidate": 115030
+  },
+  "correction_rows_multiplier": 3.962998690828912,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "distinct_images": 67,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_trial/inputs.json": "c7cff36b1391038bb4da32efb314080bda0d557cfc8ffaef1231bbbe24739b2e",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_trial/predictions.jsonl": "dca4238301e2eed56593fd61d1a3c48a836b64cb6ce3dff4d158111596421421",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_trial/receipt.json": "88535b2545ca83ca7f5cb5a0866807a381f02974054cbe11fde75162d094d5ea",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_trial/run.py": "01b51004bf64ab7ee06e3a503e91f507a5d9bbf43016defb1f7518bf12018ac5",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_trial/verify.py": "089419979b9869ae344edf1d2d33a41aae5e424958ed059516c72ccaf6cf08c3",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_holdout/predictions.jsonl": "cc8918692dae7df77737cad97fc9e0da93342e595ee3f6a8162913af72d1adc4",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_calibrated_clipping_holdout.json": "aa366ecf1b269d6d2bc3b85bafa8041de948c9ffb0f5ba72bca3ad072d32ee8b",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "exact_matches": {
+    "baseline": 40,
+    "candidate": 42
+  },
+  "image_bootstrap_95_percent_interval_pp": [
+    -2.985074626865672,
+    8.955223880597014
+  ],
+  "paired": {
+    "first_token_changed": 10,
+    "gained": 3,
+    "lost": 1
+  },
+  "paired_exact_two_sided_p": 0.625,
+  "peak_gpu_bytes": 7699360256,
+  "questions": 67,
+  "scope": "Paired software panel on one question per held-out image. Correction work counts extra signed-eight-bit down-projection rows. End-to-end mapped execution and energy under the paper's workload remain unmeasured for this experiment.",
+  "state": "all_prefill_signed8_clipping_panel_independently_verified"
+}
