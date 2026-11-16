@@ -1,0 +1,171 @@
+{
+  "clock_period_ns": 1.72414,
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/prepared.json": "e4c7da5c4cc76fc467cc1954f679c27f964378834eb8aae4f7a40631a5e67ee6",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "de648e6c48948806395c5bf0a8ab3f6d990692c205b93b28d72ee40e8a63cf3f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/constraints.sdc": "a30a8561f0beb3f019d4df2f6a140b524aa0092788f947ed6ddf61735d648a62",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/archive.py": "bd853d6122b4461771ff2cc46977021fd339241f83d45c40adb64bd04eb6e4cf",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/native_candidate/overlap.json": "b2e84919a5c0f1c487c061a2c4c2a69e5a6a44e274e7b2cbd3f6f33594fe12a3",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/native_candidate/prepared.json": "7fadec37c5e2dccb6a288d61397a09f80163cb56649c2dd06571276ae806cb6b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "f2dcf72018788811503864d20d0d710dabcfd103ecaf0ca6b39f48d2da4e1c36",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/constraints.sdc": "f3eeb074bcfc3a59427129a1c83666a8d5765a0fada7f226f702d8e6def4aa55",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "cb9afbe6ad2a371261328635dd80f7443ea0ce49e16b06fafd4ed1231e70097a",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/native_candidate/verified.json": "4c06e857ebc1e1098f3da6da45fe26ca95f98483435ff2a9d6749cb6ecf283a8",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/wirelength_trial/prepared.json": "c6367cadc0198dc09db3d3f69b1d46be52bf33e32b3b4e2c5c9ae1410b5e2ebf",
+    "records/tri_oracle_bank4_2_template_transfer_native.json": "fb977fca1354ab769c757d159bd7af2fe816c3ca363ff955656d0c8329a13d9d"
+  },
+  "full_graph_net_count": 68168,
+  "host_setup": {
+    "all_nets_with_setup_paths": {
+      "slow": {
+        "change_ns": -0.904062,
+        "slack_ns": -8.227094,
+        "wire_free_slack_ns": 0.989002
+      },
+      "typical": {
+        "change_ns": -0.597,
+        "slack_ns": -6.327661,
+        "wire_free_slack_ns": 1.164096
+      }
+    },
+    "all_signal_nets": {
+      "slow": {
+        "change_ns": -1.28752,
+        "slack_ns": -8.610552,
+        "wire_free_slack_ns": 0.989002
+      },
+      "typical": {
+        "change_ns": -1.082901,
+        "slack_ns": -6.813562,
+        "wire_free_slack_ns": 1.164096
+      }
+    }
+  },
+  "legal_swap_geometry": {
+    "all_nets_with_setup_paths": {
+      "accepted_swaps": 137257,
+      "after_half_perimeter_um": 10955777.78,
+      "before_half_perimeter_um": 21147020.55,
+      "measured_path_geometry": {
+        "fast_hot_setup.rpt": {
+          "longest_summed_pin_link_um": 2214.057,
+          "p95_summed_pin_link_um": 2212.474,
+          "path_count": 5
+        },
+        "setup_slow_broader_setup.rpt": {
+          "longest_summed_pin_link_um": 2540.955,
+          "p95_summed_pin_link_um": 2225.733,
+          "path_count": 80
+        },
+        "setup_typ_broader_setup.rpt": {
+          "longest_summed_pin_link_um": 2540.955,
+          "p95_summed_pin_link_um": 2225.733,
+          "path_count": 80
+        }
+      },
+      "moved_instances": 32335
+    },
+    "all_signal_nets": {
+      "accepted_swaps": 136142,
+      "after_half_perimeter_um": 10964857.96,
+      "before_half_perimeter_um": 21147020.55,
+      "measured_path_geometry": {
+        "fast_hot_setup.rpt": {
+          "longest_summed_pin_link_um": 3405.637,
+          "p95_summed_pin_link_um": 3353.185,
+          "path_count": 5
+        },
+        "setup_slow_broader_setup.rpt": {
+          "longest_summed_pin_link_um": 4403.833,
+          "p95_summed_pin_link_um": 4178.524,
+          "path_count": 80
+        },
+        "setup_typ_broader_setup.rpt": {
+          "longest_summed_pin_link_um": 4403.833,
+          "p95_summed_pin_link_um": 4178.524,
+          "path_count": 80
+        }
+      },
+      "moved_instances": 32275
+    }
+  },
+  "matched_boundary_pins": 4967,
+  "minimum_host_available_bytes": 16682311680,
+  "native_seconds": 83.62139804090839,
+  "occupied_cell_sites": 54141,
+  "overflow": {
+    "horizontal": {
+      "original_percent": 42.67,
+      "refined_percent": 0.03,
+      "transfer_percent": 34.37
+    },
+    "vertical": {
+      "original_percent": 5.5,
+      "refined_percent": 0.01,
+      "transfer_percent": 5.75
+    }
+  },
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "remaining_slow_path_diagnostic": {
+    "largest_interconnect_by_destination": {
+      "other": 6,
+      "result_queue_select": 74
+    },
+    "sampled_violating_paths": 80,
+    "worst_path_largest_interconnect": {
+      "delay_ns": 5.5072,
+      "source_pin": "TRI_ARRAY_CTL_2_6/Z",
+      "target_pin": "completed_results_reg[2][190]/SA"
+    }
+  },
+  "scope": "Matched isolated Innovus early-route diagnostics with the same mapped logic, boundary pins, occupied sites and analysis views. Parent interconnect and whole-chip timing need separate measurement.",
+  "selected": "all_nets_with_setup_paths",
+  "state": "bank4_2_full_wirelength_refinement_measured_in_innovus",
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_from_original_ns": -0.000119,
+      "change_from_transfer_ns": -0.000257,
+      "launch": "completed_results_reg[1][534]/CP",
+      "original_ns": -0.012545,
+      "refined_ns": -0.012664,
+      "transfer_ns": -0.012407
+    },
+    "fast_hot_setup": {
+      "capture": "completed_results_reg[2][190]/SA",
+      "change_from_original_ns": 3.986073,
+      "change_from_transfer_ns": 0.268052,
+      "launch": "shadow_valid_reg[3]/CP",
+      "original_ns": -11.193501,
+      "refined_ns": -7.207428,
+      "transfer_ns": -7.47548
+    },
+    "fast_setup": {
+      "capture": "completed_results_reg[2][190]/SA",
+      "change_from_original_ns": 3.777749,
+      "change_from_transfer_ns": 0.550153,
+      "launch": "shadow_valid_reg[3]/CP",
+      "original_ns": -10.640835,
+      "refined_ns": -6.863086,
+      "transfer_ns": -7.413239
+    },
+    "slow_setup": {
+      "capture": "completed_results_reg[2][190]/SA",
+      "change_from_original_ns": 4.235323,
+      "change_from_transfer_ns": 0.265237,
+      "launch": "shadow_valid_reg[3]/CP",
+      "original_ns": -12.178382,
+      "refined_ns": -7.943059,
+      "transfer_ns": -8.208296
+    },
+    "typical_setup": {
+      "capture": "completed_results_reg[2][190]/SA",
+      "change_from_original_ns": 3.290444,
+      "change_from_transfer_ns": 0.299357,
+      "launch": "shadow_valid_reg[3]/CP",
+      "original_ns": -8.77267,
+      "refined_ns": -5.482226,
+      "transfer_ns": -5.781583
+    }
+  }
+}
