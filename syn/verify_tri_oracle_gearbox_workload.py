@@ -54,7 +54,7 @@ def gate_cycles(weights, manifest, trace, proof):
 
 
 def verify():
-    assert Path("/.dockerenv").is_file() and __debug__ and memory()[0] >= 7*GIB
+    assert __debug__ and not Path("/.dockerenv").exists() and memory()[0] >= 7*GIB
     evidence = {}
 
     def pin(path, expected=None):

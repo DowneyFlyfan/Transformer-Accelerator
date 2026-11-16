@@ -1,0 +1,59 @@
+{
+  "archived_workload_lower_bounds": {
+    "compact_weight_request_cycles": 307974144,
+    "encoded_weight_fragments": 864059305,
+    "fraction_of_request_cycles_that_must_overlap_if_all_compact": 0.7828207974498015,
+    "full_address_weight_request_cycles": 615948288,
+    "ideal_encoded_response_cycles": 441774421,
+    "ideal_encoded_response_ms": 761.6800362068966,
+    "ideal_unencoded_response_cycles": 557285888,
+    "ideal_unencoded_response_ms": 960.8377379310344,
+    "minimum_compact_request_count": 17881382,
+    "minimum_compact_request_fraction": 0.3483678551924151,
+    "minimum_simultaneous_request_and_response_cycles_if_all_compact": 241088565,
+    "sign_fragments": 19489536
+  },
+  "evidence_sha256": {
+    ".cache/memory_response_gearbox/workload_serial.json": "6a0821baa468472cf23095b6042c99d33908cc1dfc273ba0c9cf6b8f737f50d7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/cold.v": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/layout.def": "0aecf99d8b5869cda885e167649bd823dba00534f9af6b2c2483e85bc33f57ee",
+    ".cache/physical/whole_chip_xcelium_speed/architecture_budget/gearbox_recomputed.json": "e6fc1fa42a49596edb5edb9470b9f5fdf976903e8d26d9f19a6b3752386d4778",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/top_wrapper.v": "63687ebec5f419f9172cfbbdb4c764f23162370b81949010a468caa5361b717f",
+    ".cache/physical/whole_chip_xcelium_speed/loaded_forwarded_pads/pads.lef": "58608b1b0a791906a6f7982a4afa544fe835ff7290dee36c50ea01e0d6d242f0",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_cold_memory_boundary.json": "e789418d5ef36619226ab21e0a40af08df9005e4b01c324b14f24ec0af05ecc6",
+    "records/tri_oracle_credited_request_link.json": "fe87739eaaaa76cfb4900afe637bbe20305bad23a1e59f79d2a8e0a3ae55f7c8",
+    "records/tri_oracle_loaded_forwarded_pads.json": "b042773d31f9de10f6905b57a4f18136ea041ca7face1fc4d13ea529906b51e1",
+    "records/tri_oracle_memory_response_gearbox.json": "2dedf77535d39a8df33faa95d194ef0b445a11f4266b3dd25ab23ce4aa1e0073",
+    "records/tri_oracle_ranked_sign_workload_bounds.json": "f592da0b95283d31812187ad68c4b5ea5ac9316bbcb1b0b2b462f604874e9b21",
+    "records/tri_oracle_restored_placed_chip_boundary.json": "7957cf449259edc861a73f6718992cf9af801d7deb861c9852e95067df8eea78",
+    "records/tri_oracle_serial_control_pads.json": "c2557d339f7ccbf9a61c380e25d45d5bee7d29c88c636bccfe1715a07de46745",
+    "records/tri_oracle_shared_edge_metadata.json": "43e6955cce56d119af1b841b35950adc6d7309fbbcd1b66a6e1b288f4e065ed0",
+    "syn/audit_tri_oracle_placed_chip_boundary.py": "57a7520a4f382aad06961e331fe360a96e4ac40258b75e14111a85936bc7481b",
+    "syn/verify_tri_oracle_bonded_system_budget.py": "4239c4a117c42a0460b75b42f0790186ecbc63adee41c6d298939ffddbcfa55c"
+  },
+  "paper_window_cycles": 508660000,
+  "placed": {
+    "clear_geometric_pad_sites_in_existing_layout": 585,
+    "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+    "die_um": [
+      3600,
+      3600
+    ],
+    "input_bits": 5218,
+    "installed_pad_instances": 0,
+    "layout_sha256": "0aecf99d8b5869cda885e167649bd823dba00534f9af6b2c2483e85bc33f57ee",
+    "output_bits": 2727,
+    "perimeter_pad_upper_bound_before_macros": 676,
+    "signal_bits": 7945
+  },
+  "scope": "The placed candidate still uses external wide ports. The distinct serialized wrapper is a structural boundary. The archived encoded workload uses one response fragment per clock edge and one request byte per clock with ideal scheduling. Bounds omit lane imbalance, request stalls, the outgoing sign requests, attention and other traffic, and computation. The archived trajectory is a local approximation of the paper's benchmark.",
+  "separate_wrapper": {
+    "digital_signal_bits": 484,
+    "incoming_bits_per_cycle": 896,
+    "outgoing_bits_per_cycle": 8,
+    "supply_and_ground_reservations": 13
+  },
+  "state": "exact_placed_and_serialized_boundaries_checked_against_archived_workload"
+}
