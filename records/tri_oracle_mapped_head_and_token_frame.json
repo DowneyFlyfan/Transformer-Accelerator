@@ -1,0 +1,31 @@
+{
+  "candidate_sha256": "6a34b2b90b2057f757ab043d02940fb894b9005fd93209494df254b0e4c45f4a",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/head_replay/negative/console.log": "2f75e982014afa81d04ce374e1a92c61203c28e9ebc8fada042989ab72d19af8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/head_replay/positive/console.log": "385a71c773e456f5def87c26d188f9db76248e9754b87eec232d894b37891a9c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/head_replay/prepared.json": "87542d74de73c8fcfbc9bb7b94558c958cb646a62dad501f517eb1377c4de5b1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/token_sign_replay/verified_frame.json": "342b6190b3ea4039df3e6a0043af3f0507e94fec42088654c32d349d219b4fa0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/prediction_binding/token_sign_replay/verified_frame_prefix.log": "42ca0f8fbb3c1530b2162abb95a1cf19eb60f1aee5d57ebbfa3c5c4ba6018b73",
+    "records/tri_oracle_candidate_prediction_bindings.json": "f9c331405615ee517d4117785985c7899fd330e14278503d33422fd3c9e2ce5d",
+    "syn/verify_tri_oracle_mapped_token_frame.py": "ca285721543e0e61864708c56bce43083ad6a15bd5204ac046091c0c855162d7"
+  },
+  "mapped_head_classifiers": {
+    "definitions": 20,
+    "directed_and_trained_responses": 1440,
+    "learned_scores_per_definition": 46080,
+    "negative_control_flipped_streaming_decision_at_head": 0,
+    "trained_heads_per_definition": 32
+  },
+  "prior_mapped_weight_predictor_responses": 1980,
+  "scope": "Head and weight blocks were exercised separately as mapped designs. The token map was checked at the whole-chip interface against the fixture and independently recomputed from trained signs. The frozen native prefix covers new-image merging through the first subsequent projection group. Whole-chip attention and paper-level model accuracy still require validation.",
+  "state": "candidate_weight_head_and_token_prediction_functional_evidence_verified",
+  "whole_chip_token_frame": {
+    "left_neighbor_merges": 87,
+    "minimum_matches": 1536,
+    "negative_host_control_rejected_at_position": 2,
+    "positions_and_origins_verified": 576,
+    "sign_word_bits": 2048,
+    "surviving_tokens": 376,
+    "upper_neighbor_merges": 113
+  }
+}
