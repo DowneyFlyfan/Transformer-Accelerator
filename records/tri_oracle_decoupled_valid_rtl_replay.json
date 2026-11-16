@@ -1,0 +1,51 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/carry_save.sv": "792ff06dc38e574d361715d2a2aaa70cf33d877e3affb61a253f323e88b86739",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/no_queue_bypass_mutation/console.log": "e01baa452b46929b2ebe709e6bc679f75c9ba9c85568b6b5691afc484e8f1e89",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/red_behavior/console.log": "8d690ac13def0907b3303dd69ed4fe5c36195d4c26a9be5893a60a05b81d90aa",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/rtl_validated_2/console.log": "7c3028c5db547ee9768fc6875c96f560bcf73932c0766d3bb90497f69bc537d3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/rtl_validated_4/console.log": "b27f3b1b7127455ec76af8513789a64a235c40bd7a3cc79fa6733c85a0667ab5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/rtl_validated_8/console.log": "98de83dd0a9e53883abcbc2684d8aa98b030088bf0aa8db5ff3793b20c02000f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/sim_array.sv": "7d671a6bb6a31134a19ba51508d9306d82350a8ad1fabc0d3bb8ec8915b19b97",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/synthesis_array.sv": "ab614f259e89838d1004ca0e83f31273c69dfd615cf88b7dde730b4dee65a8b4",
+    "syn/build_tri_oracle_decoupled_array.py": "173fdb4ed95e70e42d3456e2e84a3758cb88b7acd20c2754e613e13e8bb5b164",
+    "verilog/decoupled_lockstep_tb.sv": "4375f615057235ba2017975e4012a5efc86ec860ec3498cd9a04d6eed5ae39fb"
+  },
+  "negative_controls": {
+    "no_queue_bypass_mutation": "Payload differs at cycle 5, buffered 4",
+    "red_behavior": "FREE_RUNNING_PRODUCT_DID_NOT_ADVANCE"
+  },
+  "scope": "Cycle-level ready and valid plus exact valid payload under continuous and stalled traffic. Independent signed arithmetic scoreboard, full-queue drain, and reset while full. Source trial preserves the existing carry-save arithmetic. Area, switching power and physical timing remain unmeasured.",
+  "signed_sums_independently_compared": 76736,
+  "simulator": "Cadence Xcelium 25.03",
+  "state": "decoupled_rtl_and_stall_negative_controls_verified_in_xcelium",
+  "trials": {
+    "2": {
+      "accepted": 803,
+      "delivered": 801,
+      "edges": 1150,
+      "lanes": 2,
+      "lines": 32,
+      "peak_pending": 2,
+      "reset_discarded": 2
+    },
+    "4": {
+      "accepted": 814,
+      "delivered": 811,
+      "edges": 1154,
+      "lanes": 4,
+      "lines": 32,
+      "peak_pending": 3,
+      "reset_discarded": 3
+    },
+    "8": {
+      "accepted": 790,
+      "delivered": 786,
+      "edges": 1158,
+      "lanes": 8,
+      "lines": 32,
+      "peak_pending": 4,
+      "reset_discarded": 4
+    }
+  }
+}
