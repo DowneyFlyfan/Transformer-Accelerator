@@ -35,14 +35,14 @@ def lookup_sources():
     return inputs
 
 
-def edit(source, locations, allocate):
+def edit(source, locations, allocate, *, branches=BRANCHES):
     first, last = spans(source.encode())[TOP]
     assert len(source) == len(source.encode())
     body = source[first:last]
     insts = {item[1].removeprefix("\\"): item for item in INSTANCE.finditer(body)}
-    assert set(BRANCHES) <= insts.keys()
+    assert set(branches) <= insts.keys()
     drivers = {}
-    for name, (output, _) in BRANCHES.items():
+    for name, (output, _) in branches.items():
         net = dict(TERMINAL.findall(insts[name][2]))[output]
         assert net not in drivers
         drivers[net] = name, output
@@ -68,7 +68,7 @@ def edit(source, locations, allocate):
         return output_net
 
     for net, instances in sorted(loads.items()):
-        assert len(instances) == BRANCHES[drivers[net][0]][1], (net, len(instances))
+        assert len(instances) == branches[drivers[net][0]][1], (net, len(instances))
         ordered = sorted(instances)
         for first_leaf in range(0, len(ordered), 128):
             group = ordered[first_leaf:first_leaf + 128]
@@ -77,7 +77,7 @@ def edit(source, locations, allocate):
                 leaves = group[index:index + 16]
                 output = buffer(trunk, [(x, y) for _, x, y, _, _ in leaves])
                 replacements.extend((a, b, output) for _, _, _, a, b in leaves)
-    assert len(replacements) == sum(count for _, count in BRANCHES.values())
+    assert len(replacements) == sum(count for _, count in branches.values())
     for a, b, new in sorted(replacements, reverse=True):
         assert body[a:b] in drivers
         body = body[:a] + new + body[b:]

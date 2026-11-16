@@ -1,0 +1,47 @@
+{
+  "added_buffers": 175,
+  "added_row_sites": 2100,
+  "clock_megahertz": 580,
+  "delivered_lockstep_transactions": 786,
+  "early_congestion": {
+    "estimated_wire_length_um": 4794673,
+    "horizontal_overflow_percent": 0.0,
+    "vertical_overflow_percent": 0.0
+  },
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/console.log": "bfde2423a6d4fc5f680b4a90ea6ccfc000dbc568703929db94e771d26eb68b4e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/native_gate_hold.rpt": "2492faf02d1c85704d2af21790ee531473eab2fbb4686023e3c7a482bb3fd3e9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/native_gate_setup.rpt": "82d4f206145651cccaac5efc0d313b685174c50cb15c04a3217ebb70f6593ed3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/native_hold.rpt": "8a775fe171bef4919f18a9b010fd5e9cee2786dbf454f2cf6fd43802c2399f57",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/native_setup.rpt": "58b421c6ad86f47494b8d595808331c7b84fd6fa9eca7074f244bbdf003b0834",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/netlist.v": "4bdd1314a4d8c1bf09ea83eecc1b1d95de6c0e2f473e57b051380a1e259f1661",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/place.tcl": "83bbc116b9d17dc900b152cc170207bbb80d06c0f4851b7b8c97965ba2e57cfa",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/placed.def": "2f4df84fd3d65b3f089d6b02b424034c199ac5d60983920353b9bf2a6a05320d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/placement.rpt": "3996bbb11e0a93df721df3392fde443f1cadd6c43bcfafa457254003ae08c9bc",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/replay/console.log": "2801ab5dd463ace54a4c43489f249a20f6e455a628e819792a79c79102a7b2c5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/replay/decoupled_mapped.v": "6cfd602c4233c593fcd5eb2ae3c5bc6aad5f52e2f19fb1766ddc9d7b6cd7e157",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/replay/xrun.history": "e7823b6f1ba78bc4276ef2d062b6ce0c44805cbb4d6359574b4e2cb1e42fc628",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/seed.def": "8d72af7d219a03f5da6042284fbcc3a75447a8212743ed8bccdcd3289608eaee",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/placed.def": "8442fc8b3eeeff871c7511d20f81c145824eeb421c87859e3d4d01c8cbbbff7a",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    "records/tri_oracle_booth_array.json": "40e840e17ada502ac33a7ee679582e5b33267defff23dc569d139c2a0a3b84c9",
+    "records/tri_oracle_booth_array_placement.json": "f0c007e2f2a503547a3f93d05d9d4626c6e5fe395468e65fe56c0e22515c99e9",
+    "syn/verify_tri_oracle_array_control_buffers.py": "c34b4e82b5107026180930e4595223fcfe84cf36a9b2d3044a800961e91b3085",
+    "syn/verify_tri_oracle_booth_control_buffers.py": "2902067aa6d7ca3da924eb2924d1ca81ac9b9a8cb6431817d7b602cde4003a1e"
+  },
+  "pre_route_slack_after_ns": {
+    "gate_hold": 0.034,
+    "gate_setup": 0.254,
+    "hold": -0.021,
+    "setup": -1.685
+  },
+  "pre_route_slack_before_ns": {
+    "gate_hold": 0.034,
+    "gate_setup": 0.255,
+    "hold": -0.021,
+    "setup": -3.977
+  },
+  "remaining_row_sites": 40021,
+  "scope": "The original cell locations, region and boundary pins are preserved. Timing uses early wire estimates and an ideal clock.",
+  "state": "booth_array_data_control_buffers_placed_and_lockstep_verified"
+}
