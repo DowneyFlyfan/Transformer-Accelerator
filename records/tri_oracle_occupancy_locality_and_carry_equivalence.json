@@ -1,0 +1,43 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_resized/occupancy_gate_locality/assignment.json": "834de4e16ff939905c7a1ac82a426f05df388bf12ad227fe2d17cab16a8fa7f4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_resized/occupancy_gate_locality/physical/tri_oracle_pe_array/native/timing.rpt": "7935a9a80d84ababa566697dbae8e114ed9663e4d0efdd370b42147de291315a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_resized/occupancy_gate_locality/verified.json": "e7cd022b1155fefc54b76722121b173c24976cb62013ce599232f4e299d78229",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_resized/tri_oracle_pe_array/native/timing.rpt": "634055d10f5dcd6e28c1b102210e091fac2e2f781f176d57d30bdb968e9bcd04",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/launch.log": "9ba6f0d64e11781016022a1172a4f285e197be594ca6e808b0dcc26d53bd156b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/logic_only/verified.json": "c9493b343f0ac556b14ced58d9013820e11ad7d20e1f5f0b9d7cc97506e29c88"
+  },
+  "ideal_clock_mhz": 580,
+  "pilot_occupancy": {
+    "after": {
+      "capture": "read_slot_reg[1]/E",
+      "launch": "occupancy_onehot_reg[0]/CP",
+      "slack_ns": -0.423913
+    },
+    "before": {
+      "capture": "occupancy_onehot_reg[2]/D",
+      "launch": "occupancy_onehot_reg[0]/CP",
+      "slack_ns": -0.47137
+    },
+    "gain_ps": 47.457,
+    "geometry_span_um_before_after": [
+      807.15,
+      51.29
+    ],
+    "moved_gates": [
+      "g395620",
+      "g395667"
+    ],
+    "placed_cells": 53860,
+    "reservations": 27407
+  },
+  "scope": "Innovus early extraction verifies the same-netlist pilot placement; the geometry span uses Manhattan distance. The carry-save exclusive-NOR rewrite passed vendor-model and mapped functional checks. The tight-region fit search did not produce legal coordinates for the wider cell.",
+  "state": "queue_control_placement_gain_and_carry_xnor_function_verified",
+  "tightest_carry_xnor": {
+    "local_placement_status": "insufficient_contiguous_row_width_in_trial",
+    "mapped_transactions": 786,
+    "replacement": "g698623",
+    "shared_nor_retained": "g698659",
+    "vendor_truth_vectors": 4
+  }
+}
