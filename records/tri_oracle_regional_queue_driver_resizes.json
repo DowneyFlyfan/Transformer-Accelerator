@@ -1,0 +1,70 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_and_leaf/tightest/worst_path_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "9f62ddc823bb5e6361d36c0ada3488ae8711ad9f156b6fea27bfc3ca5422532d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_buffered/tri_oracle_pe_array/native/timing.rpt": "4e5969b2c98443fc7f3104e88863cb7cfaa86a83084eb3c9f117160a3ccdc107",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_resized/tri_oracle_pe_array/native/timing.rpt": "634055d10f5dcd6e28c1b102210e091fac2e2f781f176d57d30bdb968e9bcd04",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_resized/verified.json": "e4628f50b13abe7a34bbde48f8af175a331e9016e600728d0b50f0e60b1a9926",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/pilot_width_coverage/resized_width_screen.json": "11536b02cd421af677bfb1e5db77d7816e3588c1ceac797184315798f61847f5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/pilot_width_coverage/solve_tight_widths.py": "0e3486c6a66aed8d5892c076f486ac38ab65feccba4ad960b055adf519ecbfef",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/pilot_width_coverage/tight_width_problem.json": "20c551b51073aa3789338adf75d6ce1afda0669d271ef2ec3189500e51b2951e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/pilot_width_coverage/tight_width_witness.json": "c12f5cef912dd6cc6d9e05de04359ac2d4305044443173b6d3f315928f63b765",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/tri_oracle_pe_array/native/timing.rpt": "ce599c264c2b0e71052bdb710539aabd377fc71343fe71f93ab1a32fa4443da9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/verified.json": "e02b3eae23bf36771f230d8c9dca748599de8e0862c1d253d091a81061c61a6b"
+  },
+  "ideal_clock_mhz": 580,
+  "pilot_width_coverage": {
+    "cells": 53860,
+    "regions": 20,
+    "tightest_region": "tri_oracle_pe_array_verified_bank0_3",
+    "tightest_region_unoccupied_sites": 6005
+  },
+  "preceding_best_pilot_slack_ns": -0.507162,
+  "regions": {
+    "pilot": {
+      "gate_level_transactions": 786,
+      "instances": {
+        "g395668": [
+          "ND2D1BWP12T40P140",
+          "ND2D2BWP12T40P140"
+        ]
+      },
+      "placed_cells": 53860,
+      "reference": {
+        "capture": "completed_results_reg[0][466]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.568045
+      },
+      "reservations": 27407,
+      "resize": {
+        "capture": "occupancy_onehot_reg[2]/D",
+        "launch": "occupancy_onehot_reg[0]/CP",
+        "slack_ns": -0.47137
+      },
+      "setup_gain_ps": 96.675
+    },
+    "tightest": {
+      "gate_level_transactions": 786,
+      "instances": {
+        "g394992": [
+          "ND3D0BWP12T40P140",
+          "ND3D1BWP12T40P140"
+        ]
+      },
+      "placed_cells": 53862,
+      "reference": {
+        "capture": "occupancy_onehot_reg[2]/D",
+        "launch": "running_valid_reg[3]/CP",
+        "slack_ns": -0.54564
+      },
+      "reservations": 27551,
+      "resize": {
+        "capture": "carry_save.row[0].sum_reg[16]/D",
+        "launch": "carry_save.row[0].compressor[0].sum_reg[16]/CP",
+        "slack_ns": -0.4424
+      },
+      "setup_gain_ps": 103.24
+    }
+  },
+  "scope": "The pilot and tightest region use their own mapped queue variants. Both replace one equivalent standard cell at its original coordinates and replay 786 transactions. Setup timing comes from early extracted regional parasitics with ideal clocks. The all-region check covers the pilot inventory by row width.",
+  "state": "two_regional_gate_resizes_improve_timing_and_pilot_width_inventory_fits_all_regions"
+}
