@@ -1,0 +1,347 @@
+{
+  "buffer_branch_changes": {
+    "TRI_ARRAY_CTL_2_26": {
+      "exchanged_cells": [
+        "mul_98_69_I44_g1444",
+        "mul_98_69_I12_g1434"
+      ],
+      "new_xy_um": [
+        418.58,
+        569.0
+      ],
+      "old_xy_um": [
+        419.41999999999996,
+        726.2
+      ],
+      "root_leg_um": [
+        154.78,
+        310.42
+      ],
+      "score_before_after": [
+        893760.2423,
+        653201.7069
+      ],
+      "worst_child_leg_um": [
+        576.09,
+        418.05
+      ]
+    },
+    "TRI_ARRAY_CTL_2_27": {
+      "exchanged_cells": [
+        "mul_98_69_I154_g1466",
+        "mul_98_69_I7_g1401"
+      ],
+      "new_xy_um": [
+        568.24,
+        479.0
+      ],
+      "old_xy_um": [
+        604.08,
+        726.2
+      ],
+      "root_leg_um": [
+        32.28,
+        250.76
+      ],
+      "score_before_after": [
+        1280742.7363,
+        643857.2834
+      ],
+      "worst_child_leg_um": [
+        728.3,
+        445.26
+      ]
+    },
+    "TRI_ARRAY_CTL_2_28": {
+      "exchanged_cells": [
+        "add_150_34_I26_g2588",
+        "mul_98_69_I205_g1433"
+      ],
+      "new_xy_um": [
+        811.42,
+        477.8
+      ],
+      "old_xy_um": [
+        840.96,
+        726.2
+      ],
+      "root_leg_um": [
+        269.16,
+        485.62
+      ],
+      "score_before_after": [
+        1149846.7389,
+        871644.0653
+      ],
+      "worst_child_leg_um": [
+        632.82,
+        413.96
+      ]
+    },
+    "TRI_ARRAY_CTL_2_29": {
+      "exchanged_cells": [
+        "mul_98_69_I23_g1467",
+        "mul_98_69_I6_g1471"
+      ],
+      "new_xy_um": [
+        527.5,
+        637.4
+      ],
+      "old_xy_um": [
+        592.0400000000001,
+        729.8000000000001
+      ],
+      "root_leg_um": [
+        23.84,
+        133.1
+      ],
+      "score_before_after": [
+        315841.0431,
+        126391.6037
+      ],
+      "worst_child_leg_um": [
+        325.72,
+        169.62
+      ]
+    }
+  },
+  "cases": {
+    "buffer_branch_relocation": {
+      "cells_moved_from_preceding_case": 12,
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3306,
+              "worst_limit_multiple": 4.12
+            },
+            "total_violating_pins": 3600
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 22197,
+              "worst_limit_multiple": 8.122016
+            },
+            "total_violating_pins": 54928
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3375,
+              "worst_limit_multiple": 3.758621
+            },
+            "total_violating_pins": 3662
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 19632,
+              "worst_limit_multiple": 7.418605
+            },
+            "total_violating_pins": 51736
+          }
+        }
+      },
+      "innovus_seconds": 41.563,
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018896
+        },
+        "setup_fast": {
+          "capture": "carry_save.row[18].value_reg[18]/DB",
+          "launch": "carry_save.row[18].sum_reg[2]/CP",
+          "slack_ns": -0.038004
+        },
+        "setup_slow": {
+          "capture": "occupancy_onehot_reg[3]/D",
+          "launch": "shadow_valid_reg[3]/CP",
+          "slack_ns": -0.905511
+        },
+        "setup_typ": {
+          "capture": "occupancy_onehot_reg[3]/D",
+          "launch": "shadow_valid_reg[3]/CP",
+          "slack_ns": -0.366626
+        }
+      }
+    },
+    "compacted_occupancy_feedback": {
+      "cells_moved_from_preceding_case": 6,
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3304,
+              "worst_limit_multiple": 4.08
+            },
+            "total_violating_pins": 3599
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 22223,
+              "worst_limit_multiple": 8.156499
+            },
+            "total_violating_pins": 54951
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3368,
+              "worst_limit_multiple": 3.758621
+            },
+            "total_violating_pins": 3655
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 19649,
+              "worst_limit_multiple": 7.458472
+            },
+            "total_violating_pins": 51778
+          }
+        }
+      },
+      "innovus_seconds": 40.563,
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018878
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[1][32]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": -0.039987
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[18].value_reg[18]/DB",
+          "launch": "carry_save.row[18].sum_reg[2]/CP",
+          "slack_ns": -0.87438
+        },
+        "setup_typ": {
+          "capture": "carry_save.row[18].value_reg[18]/DB",
+          "launch": "carry_save.row[18].sum_reg[2]/CP",
+          "slack_ns": -0.315995
+        }
+      }
+    },
+    "electrical_guided_reference": {
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3298,
+              "worst_limit_multiple": 4.12
+            },
+            "total_violating_pins": 3591
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 22230,
+              "worst_limit_multiple": 8.055703
+            },
+            "total_violating_pins": 54985
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3370,
+              "worst_limit_multiple": 3.758621
+            },
+            "total_violating_pins": 3657
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 19692,
+              "worst_limit_multiple": 7.388704
+            },
+            "total_violating_pins": 51839
+          }
+        }
+      },
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018896
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[2][209]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": -0.253795
+        },
+        "setup_slow": {
+          "capture": "completed_results_reg[2][209]/SA",
+          "launch": "shadow_valid_reg[3]/CP",
+          "slack_ns": -0.952997
+        },
+        "setup_typ": {
+          "capture": "completed_results_reg[2][209]/SA",
+          "launch": "shadow_valid_reg[3]/CP",
+          "slack_ns": -0.345119
+        }
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/verified.json": "ac996596ee408146dbea0ce1380df623e572243d37573f0257b01cf7433f8880",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/verified.json": "f7abf6d1539de1abf7445abc9bfb5acb2c61e539527e71821088320b011449b5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/verified.json": "b49a9b8ca058971d7d21cb137ab837247bbd5dc24dad8aea55019f90ebade792"
+  },
+  "feedback_gate_changes": {
+    "g394074": {
+      "donor": "mul_98_69_I7_g1476",
+      "initial_um": [
+        545.28,
+        277.40000000000003
+      ],
+      "proposed_um": [
+        550.3199999999999,
+        659.0
+      ],
+      "score_before_after": [
+        1763530.2121,
+        469688.1091
+      ]
+    },
+    "g394992": {
+      "donor": "g702500",
+      "initial_um": [
+        617.24,
+        421.40000000000003
+      ],
+      "proposed_um": [
+        672.8199999999999,
+        699.8000000000001
+      ],
+      "score_before_after": [
+        422790.3079,
+        138178.3134
+      ]
+    },
+    "g394993": {
+      "donor": "mul_98_69_I162_g1477",
+      "initial_um": [
+        604.5,
+        277.40000000000003
+      ],
+      "proposed_um": [
+        595.8199999999999,
+        630.2
+      ],
+      "score_before_after": [
+        817282.7221,
+        237523.7982
+      ]
+    }
+  },
+  "mapped_cells": 53859,
+  "process": "TSMC 28 nm HPC+",
+  "scope": "All variants import the same mapped netlist. Innovus verified identical occupied site intervals, standard-cell masters, boundary pins and reserved sites. Wire delay is estimated with early routed parasitics and ideal clocks. Setup and hold are negative.",
+  "state": "result_queue_branch_and_occupancy_feedback_placement_verified",
+  "test_clock_mhz": 580,
+  "unchanged_boundary_ports": 4966,
+  "unchanged_reserved_rectangles": 27551
+}
