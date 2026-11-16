@@ -1,0 +1,125 @@
+{
+  "buffer_row_sites": 1552,
+  "cells_after_direct_control_branch": 55940,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight/tri_oracle_pe_array/native/timing.rpt": "af2f3047d748c4c82e6f2f7f28086174f24e35c350f0e459ed260d29b94264a7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight/verified.json": "98ff7a1fad9fab45054400428742a2b49264d9d91b7e9b20fd0739caeccbfd90",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight_all/gpu_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "8714bd9f2e98e3f94ea3791677065b14e1df901e4226b38f43e201f71b1b3523",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight_all/gpu_refinement/reconnect_control/publish_prefix_repair.py": "ba342f223793e037c9e9b382085502600e9d04fe2076076624513aeeb420e38f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight_all/gpu_refinement/reconnect_control/tri_oracle_pe_array/native/timing.rpt": "7562ef62b8e77a0b74d0623bf50fcfc5c0dd428b0422f5cb9375f2ddbb7022e9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight_all/gpu_refinement/reconnect_control/verified.json": "c2d400e9c5caa4314c6effeef5d7e96348e41ca63d7b963d171be62e054a5aba",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight_all/gpu_refinement/verified.json": "ba32e688e0811f431e41312f96588ce982271f27cd01415881791ae821d5b866",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight_all/tri_oracle_pe_array/native/timing.rpt": "f6f89e836d3d0a65d7664e5834b5b09a99089a57885390513ccddee073905103",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/buffered_tight_all/verified.json": "79071c937407437f6f8ed8f01eba76d99fb15c4e8a1a6298c33040b459a7a159",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_slow_max_capacitance.rpt": "5d06c2cd829582ef0063be9f21f1291b197e9f60fdc6c07d22279178c9dc5d09",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_slow_max_transition.rpt": "c18dfc1e517274a9a5100dafae4bfa4391c0f4a53ea759b98ca86d85ba111937",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_typ_max_capacitance.rpt": "9fc0867b8f82908468be53214380bc5b9ca6b91a11b146c6c066abffa4c89fdc",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/reconnected_prefix/tri_oracle_pe_array/native/setup_typ_max_transition.rpt": "86b77afc5a3fdc4a5cfdf98431b25a10e5841dd2e857f8e07eb5606c23697a1e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/prefix_corner_audit/verified.json": "719d5bee3c9364b4568e9044092d182112c4d1f9b0297ac64889341ca28cc351",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/recut_tight_native/tri_oracle_pe_array/native/timing.rpt": "b0d63aa9973472b036b657a83c84eccbcc135d574cae3a8aedcfdaefc94e767f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/recut_tight_native/verified.json": "c323f4a6fc15686ab82226c628725e910b2c9207d46854cd106f0e5f5af20d84"
+  },
+  "final_corner_measurements": {
+    "hold_fast": {
+      "capture": "occupancy_onehot_reg[0]/D",
+      "launch": "occupancy_onehot_reg[0]/CP",
+      "slack_ns": -0.034034
+    },
+    "setup_fast": {
+      "capture": "carry_save.row[24].value_reg[15]/DB",
+      "launch": "carry_save.row[24].sum_reg[11]/CP",
+      "slack_ns": -0.416815
+    },
+    "setup_slow": {
+      "capture": "carry_save.row[24].value_reg[15]/DB",
+      "launch": "carry_save.row[24].sum_reg[11]/CP",
+      "slack_ns": -1.733394
+    },
+    "setup_typ": {
+      "capture": "carry_save.row[24].value_reg[15]/DB",
+      "launch": "carry_save.row[24].sum_reg[11]/CP",
+      "slack_ns": -1.087589
+    }
+  },
+  "gpu_relocated_cells": 9598,
+  "native_regional_electrical_checks": {
+    "setup_slow": {
+      "max_capacitance": {
+        "actual": 0.257,
+        "reported_violating_pins": 4806,
+        "required": 0.091,
+        "slack": -0.167,
+        "unit": "pf",
+        "worst_pin": "carry_save.row[6].value_reg[13]/Q"
+      },
+      "max_transition": {
+        "actual": 4.586,
+        "reported_violating_pins": 54783,
+        "required": 0.377,
+        "slack": -4.209,
+        "unit": "ns",
+        "worst_pin": "product[42].value_reg[15]/CN"
+      }
+    },
+    "setup_typ": {
+      "max_capacitance": {
+        "actual": 0.276,
+        "reported_violating_pins": 4818,
+        "required": 0.094,
+        "slack": -0.182,
+        "unit": "pf",
+        "worst_pin": "carry_save.row[6].value_reg[13]/Q"
+      },
+      "max_transition": {
+        "actual": 3.327,
+        "reported_violating_pins": 51599,
+        "required": 0.301,
+        "slack": -3.026,
+        "unit": "ns",
+        "worst_pin": "product[42].value_reg[1]/CN"
+      }
+    }
+  },
+  "original_mapped_replay_transactions": 786,
+  "output_capacitance_geometry_model": {
+    "model_limit_excess_amount": 2,
+    "modeled_outputs": 257,
+    "worst": [
+      1.4274800532631615,
+      "TRI_PREFIX_CTL_3_9",
+      "Z"
+    ]
+  },
+  "paired_fast_setup": {
+    "direct_control_branch": {
+      "slack_ns": -0.416815,
+      "worst_capture": "carry_save.row[24].value_reg[15]/DB"
+    },
+    "eight_control_nets": {
+      "slack_ns": -4.891547,
+      "worst_capture": "carry_save.row[12].value_reg[16]/SA"
+    },
+    "gpu_refinement": {
+      "slack_ns": -0.56945,
+      "worst_capture": "carry_save.row[4].value_reg[12]/SA"
+    },
+    "nine_control_nets": {
+      "slack_ns": -2.462594,
+      "worst_capture": "carry_save.row[12].value_reg[16]/SA"
+    },
+    "unbuffered": {
+      "slack_ns": -22.549212,
+      "worst_capture": "completed_results_reg[2][209]/SA"
+    }
+  },
+  "removed_redundant_inverters": [
+    "hi_fo_buf709635",
+    "hi_fo_buf709636"
+  ],
+  "reserved_buffers_used": 249,
+  "rewired_sinks": 4866,
+  "scope": "One mapped array in the revised tight region. The direct branch preserves the logic verified in mapped replay. Setup and hold use the installed corners, early parasitics and ideal clocks. The capacitance model is a separate estimate of the targeted control outputs.",
+  "state": "prefix_array_exact_buffering_gpu_placement_reconnect_and_corners_measured",
+  "test_clock_mhz": 580,
+  "test_region": "tri_oracle_pe_array_verified_bank0_3"
+}
