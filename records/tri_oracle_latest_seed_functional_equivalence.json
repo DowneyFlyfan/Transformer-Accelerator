@@ -1,0 +1,41 @@
+{
+  "all_bytes_outside_changed_module_identical": true,
+  "byte_identical_other_modules": 692,
+  "changed_module": "tri_oracle_pe_array_verified_bank4_1",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/attention_checkpointed/attention_bundle.sv": "e98ff2a65006e73cfca097e3ed0ce209a2c412e7ad0555c25669467d1a5d0929",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/attention_checkpointed/prepared.json": "25fde32801c26a53d6b5cdc9efed034c1c5a909d8ed7d39de6c6f6eca7364ca2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/cold.v": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/candidate/candidate.v": "99555a2fc35d80b8c32872c38baef869adc83c0d79e1541c8dde92f9a95f98c7",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/nonlinear_rounding_trial/joined_variant_verification/audit_clock_reset_fanout.py": "773478ffa00c4c2e8a9bbf49251e302b60df361d41f38061781cd4d57fe1da8a",
+    ".cache/physical/paper_repacked_equivalence/verified.json": "a0d4bc7674e23226e08f0c35a704dacb575e78afbb445be57aee267f27191cbc",
+    ".cache/physical/paper_repacked_equivalence/verify.log": "e3495d2d105555d90e18cb5d4b673c0262160a11ff7122c847d041e60ebcd2b6",
+    ".cache/physical/paper_repacked_equivalence/verify.py": "79e14a851f699da8997071336ad2d255675461dba3f49e1ba522e5458d824980",
+    ".cache/physical/wac_budgeted_parent_boundary/verify_linked_placed_topology.py": "0ae41e960b53d9251bd5d0d9ff3bb0c353e8908bdfa11efc5157dc3e994cc69c",
+    "records/tri_oracle_bank4_receiver_repair_chip_composition.json": "64348fece45d7200c86eeecc218267427924033caa1fdd645bb715477e873b1a",
+    "records/tri_oracle_latest_seed_compute_and_memory.json": "75a016e25fdbc55407c8560243d7ecd7334fabe60671d46aa704ca23847a5c52",
+    "records/tri_oracle_repacked_whole_chip_cold_reload.json": "9ab38bed952ec1de1a794b2fa882c1d98e99001f64f11e3cbdf1240e04559fac",
+    "syn/link_tri_oracle_parallel_chip.py": "5f5f72f3ec9bee7255db968adf6ca9999146b1bdfb6e0191eced61477f19680f"
+  },
+  "latest_netlist_sha256": "99555a2fc35d80b8c32872c38baef869adc83c0d79e1541c8dde92f9a95f98c7",
+  "matched": {
+    "added_unary_cells_by_master": {
+      "BUFFD1BWP12T40P140": 1,
+      "CKND0BWP12T40P140": 122
+    },
+    "compared_primitive_input_connections": 135958,
+    "port_bits": 610,
+    "preserved_primitives": 50622,
+    "proved_stateless_control_replicas": 1,
+    "transparent_instances_after": 3642,
+    "transparent_instances_before": 3519
+  },
+  "negative_controls_detected_at": {
+    "ready_replica_input_changed": "TRI_INTERNAL_READY",
+    "single_inverter_polarity_changed": "\\completed_results_reg[0][467]"
+  },
+  "replay_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "scope": "All unchanged mapped primitives see identical normalized binary inputs for every corresponding primitive state and port input. Each collapsed branch uses buffer and inverter functions read from the standard-cell model used in Xcelium. The added ready-control gate duplicates an existing stateless gate with the same normalized pin inputs. This proves binary connectivity equivalence without propagation delays. The active whole-chip replay still exercises the earlier netlist.",
+  "state": "exact_current_bank4_delta_binary_wiring_equivalence_verified"
+}
