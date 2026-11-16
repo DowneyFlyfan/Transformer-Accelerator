@@ -1,0 +1,74 @@
+{
+  "archived_local_workload_payload_floors": {
+    "indexed_weights_one_index_response_per_block_and_signs": {
+      "fraction_of_ideal_receive_capacity_after_dedicated_control_pads": 0.8682616937499649,
+      "ideal_payload_latency_ms_after_dedicated_control_pads": 761.4655068965517,
+      "ideal_payload_latency_ms_with_both_512_bit_read_ports": 655.8716568965517,
+      "one_bit_per_cycle_input_pads": 766,
+      "payload_bytes": 48691911744,
+      "payload_utilization_if_every_clear_pad_carries_two_bits": 0.6545357383653582,
+      "sites_left_after_receive_and_dedicated_control": 58,
+      "slots_left_before_other_signals_with_two_bits_per_cycle": 202,
+      "two_bits_per_cycle_input_pads": 383
+    },
+    "raw_weights_and_signs": {
+      "fraction_of_ideal_receive_capacity_after_dedicated_control_pads": 1.1129864659026298,
+      "ideal_payload_latency_ms_after_dedicated_control_pads": 976.0891310344828,
+      "ideal_payload_latency_ms_with_both_512_bit_read_ports": 840.7330206896552,
+      "one_bit_per_cycle_input_pads": 982,
+      "payload_bytes": 62416019456,
+      "payload_utilization_if_every_clear_pad_carries_two_bits": 0.839020566603521,
+      "sites_left_after_receive_and_dedicated_control": -50,
+      "slots_left_before_other_signals_with_two_bits_per_cycle": 94,
+      "two_bits_per_cycle_input_pads": 491
+    }
+  },
+  "clear_pad_sites": 585,
+  "clear_pad_sites_by_edge": {
+    "bottom": 78,
+    "left": 169,
+    "right": 169,
+    "top": 169
+  },
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "dedicated_command_response_clock_reset_bits": 144,
+  "direct_signal_pad_deficit": 7360,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/transport_receipt.json": "110fcdd200e519527ccbfc162428bf729d151c612dd5dbe3abb5951ffc5e5109",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/cold.v": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/layout.def": "0aecf99d8b5869cda885e167649bd823dba00534f9af6b2c2483e85bc33f57ee",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/verified.json": "a1c3c53345623ebb38afc55d492f6d8352e8be5a440cad48107e5862f307e5b1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/verified_bindings.json": "0354a19e7b96c755799bd1450b9d13e15a29acfcc92839a4dbe1c1d30ec845e6",
+    "/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_110a_sefu10lm.tar.gz": "dce3bc9a92da187e23450e5e3913f318fa793137c2c161e0e9716b5a3999a3cc",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_physical_io_budget.json": "0b3efc498f02b53c4bbcc84164f4ded26ed27c91a02ad3a28c911377971f451a",
+    "records/tri_oracle_ranked_sign_workload_bounds.json": "f592da0b95283d31812187ad68c4b5ea5ac9316bbcb1b0b2b462f604874e9b21",
+    "records/tri_oracle_repacked_whole_chip_cold_reload.json": "9ab38bed952ec1de1a794b2fa882c1d98e99001f64f11e3cbdf1240e04559fac",
+    "syn/audit_tri_oracle_cold_memory_boundary.py": "962d8c5c0803ada786fa8c166dabcb7c0ecbb3bd8d09077d4d227c2ac83afa22",
+    "syn/audit_tri_oracle_pad_ring_clearance.py": "ca0db9195f243df30909f91579d1b20085b59d25bdcb95ee0d72ce4dd63d3416",
+    "syn/audit_tri_oracle_physical_io_budget.py": "01ea751152a8f99037351fccb0ec827ba43da1e0aefca45facd8d43715f203da",
+    "syn/audit_tri_oracle_placed_chip_boundary.py": "57a7520a4f382aad06961e331fe360a96e4ac40258b75e14111a85936bc7481b",
+    "syn/link_tri_oracle_indexed_whole_chip.py": "8617c5fac03ca90659061537ee42ad6c575b61f7c30c339d00b296efd5f1b06e"
+  },
+  "paper_latency_cycles": 508660000,
+  "physical_revision_sha256": "bd635234c78675665f3d28630e3278c33181878cce51cbd6483331d76e77fbbf",
+  "read_boundary": {
+    "direct_projection_read_width_bits": 64,
+    "grouped_external_read_widths_bits": {
+      "aux_rsp_data": 512,
+      "rsp_data": 512
+    },
+    "packed_weight_loader_master": "tri_oracle_native_reset_copy_15",
+    "packed_weight_loader_path": "layer.layer.feedforward.compute.compute.tensor.packed_loader"
+  },
+  "scope": "One-row pad geometry with fixed memory halos and smallest installed signal pad. The analytical traffic floor uses the archived local trajectory, ideal joint port utilization, and excludes compute, attention and other traffic. The two-bit-per-clock scenario grants ideal signaling on both clock edges. It excludes package, power, control beyond the dedicated subset, and pad timing, and does not establish interface feasibility.",
+  "state": "cold_netlist_read_boundary_and_fixed_macro_pad_budget_verified",
+  "top_level_signal_bits": 7945
+}
