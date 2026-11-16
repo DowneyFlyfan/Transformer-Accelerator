@@ -1,0 +1,41 @@
+{
+  "buffers_inserted": 248,
+  "clock_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/mapped_comparison.json": "df83f9d92ebaa979abf313f90515bbe688cd9a61fd0130d06496528d36563607",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/onehot_model.json": "15893c52d4722d9a529dd2545652b7a82654b20452b1ddb12e34dd8aa4b650a7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/physical_pilot/archive_capacity_guard_comparison.py": "7022db099385eb78a27a32ef8d5c4a8c4840b4bb3802652b9b42a099da4e2590",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/physical_pilot/buffered_occupancy_branch/gpu_refinement/verified.json": "000eeb62465008d25d973f55c2586c9cc1d357380d366c7d1feb2af559f44044",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/physical_pilot/buffered_occupancy_branch/verified.json": "3ef6b80f8b27d4c69e7c2728a42777161be408594e845a1b9089ccd198c42059",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/physical_pilot/capacity_guard_width_screen.json": "b010233bc8c502496b69f7217d34530f7185740a02dcbed611d3f431a051cad6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/physical_pilot/tight_width_problem.json": "bfbbc16cbcf5c4bf76f65f2ed8bb6250e45a2fb12d67843b88d3934cc48e835d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/physical_pilot/tight_width_witness.json": "112ebbdd2ca344f38f1bd055baee59b3b0456a5b6ecdbb1845c4b5f2a6b58c70",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/capacity_guard_trial/physical_pilot/verified.json": "c555855977c1c048c49755dccf0539221eee683df0b77ef89d5445d5c7090d9c",
+    "records/tri_oracle_queue_worst_path_placement_refinement.json": "64f7edb63d046b0f33229fa248e2f31ad5d21d24f6d9add8d5569c6b85777c87"
+  },
+  "genus_cell_only_register_setup_slack_ps": 979.0,
+  "genus_mapped_cell_area_um2_before_buffers": 87751.608,
+  "gpu_relocated_cells": 5058,
+  "gpu_weighted_geometry_cost_before_after": [
+    16899854.0,
+    5734926.40625
+  ],
+  "mapped_buffered_array_transactions_checked": 786,
+  "previous_best_pilot_setup_slack_ns": -0.507162,
+  "queue_model_transitions_checked": 465432,
+  "regional_cells": 53849,
+  "regional_setup_slack_ns": {
+    "buffered": -2.181394,
+    "buffered_with_gpu_slot_swaps": -2.323458,
+    "unbuffered": -41.5065
+  },
+  "regional_width_assignments_verified": 20,
+  "scope": "The capacity guard handles completing a queued vector when the queue is full. The tests cover one mapped array. The twenty-region proof checks only available row widths. Timing is measured at the ideal clock before routing. The geometry pass reduced estimated cost while measured setup slack declined. The earlier one-hot queue remains the regional timing reference.",
+  "state": "capacity_guard_queue_function_and_width_verified_regional_timing_regressed",
+  "tightest_width_assignment": {
+    "free_sites": 5984,
+    "gaps_replayed": 29715,
+    "occupied_sites": 523864,
+    "region": "tri_oracle_pe_array_verified_bank0_3"
+  }
+}
