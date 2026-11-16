@@ -1,0 +1,34 @@
+{
+  "array": "tri_oracle_pe_array_verified_bank0_2",
+  "available_sites_with_fixed_neighbors": 539039,
+  "cell_area_um2": [
+    87523.464,
+    92364.048
+  ],
+  "cells": [
+    55520,
+    65763
+  ],
+  "clock_rate_mhz": 580,
+  "critical_region_resynthesis_disabled_by_tool": true,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_local/functional/verified.json": "d349eb83d7b9cd6f6f68b679b5160a620629e32831b19fc7717a374722a3f3af",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_local/verified.json": "776b870e2d2355652cc35c9c13f695af02fd9bfbf975dfe2f6c212b2872845eb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/native_preclock_reserved/footprint.json": "135f9853ed4e0273891da4905834b5b1cd5d47014d6ea7dbe2f8144ec9ffecad"
+  },
+  "fast_corner_setup_slack_ns": [
+    -1.82982,
+    0.037849
+  ],
+  "innovus_worker_errors": [
+    "IMPOPT-800",
+    "IMPOPT-804"
+  ],
+  "optimized_requested_sites": 549786,
+  "pad_or_neighbor_overlap_cells": 14717,
+  "scope": "Isolated array after native pre-clock optimization and fresh early global wire extraction. Gates pass the sampled arithmetic, mask, backpressure and reset replay. Full-chip neighbor occupancy prohibits direct adoption.",
+  "site_shortfall": 10747,
+  "state": "isolated_preclock_timing_and_mapped_logic_verified_full_chip_fit_failed",
+  "xcelium_expected_output_words": 19200,
+  "xcelium_transactions": 600
+}
