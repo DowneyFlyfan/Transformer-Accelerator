@@ -1,0 +1,100 @@
+{
+  "comparisons": {
+    "baseline": {
+      "changed_first_token": 0,
+      "changed_token_sequences": 0,
+      "effective_skip_percent": 8.39730117283552,
+      "exact_matches": 40,
+      "image_bootstrap_95_percent_interval_pp": [
+        0.0,
+        0.0
+      ],
+      "paired_exact_two_sided_p": 1.0,
+      "paired_vs_baseline": {
+        "gained": 0,
+        "lost": 0,
+        "net_correct": 0
+      },
+      "restored_as_percent_of_predicted_skips": 0.0,
+      "workload": {
+        "effective_skipped": 235766164,
+        "opportunities": 2807642112,
+        "predicted_skipped": 235766164
+      }
+    },
+    "last_eight_rows": {
+      "changed_first_token": 4,
+      "changed_token_sequences": 4,
+      "effective_skip_percent": 8.231895181162592,
+      "exact_matches": 38,
+      "image_bootstrap_95_percent_interval_pp": [
+        -8.955223880597014,
+        2.985074626865672
+      ],
+      "paired_exact_two_sided_p": 0.625,
+      "paired_vs_baseline": {
+        "gained": 1,
+        "lost": 3,
+        "net_correct": -2
+      },
+      "restored_as_percent_of_predicted_skips": 2.04573202685302,
+      "workload": {
+        "added_correction_rows": 27,
+        "channels": 66412544,
+        "effective_skipped": 231119374,
+        "nonzero_primary_restored": 3797838,
+        "opportunities": 2807608320,
+        "predicted_skipped": 235946201,
+        "restored_channels": 4826827,
+        "restored_correction_channels": 121
+      }
+    },
+    "last_row": {
+      "changed_first_token": 4,
+      "changed_token_sequences": 4,
+      "effective_skip_percent": 8.372936071982721,
+      "exact_matches": 38,
+      "image_bootstrap_95_percent_interval_pp": [
+        -8.955223880597014,
+        2.985074626865672
+      ],
+      "paired_exact_two_sided_p": 0.625,
+      "paired_vs_baseline": {
+        "gained": 1,
+        "lost": 3,
+        "net_correct": -2
+      },
+      "restored_as_percent_of_predicted_skips": 0.2810495257765966,
+      "workload": {
+        "added_correction_rows": 2,
+        "channels": 8301568,
+        "effective_skipped": 235066046,
+        "nonzero_primary_restored": 527903,
+        "opportunities": 2807450624,
+        "predicted_skipped": 235728560,
+        "restored_channels": 662514,
+        "restored_correction_channels": 39
+      }
+    }
+  },
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "distinct_images": 67,
+  "elapsed_seconds": 91.69639733794611,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/final_prompt_skip/flow.pdf": "a4f5e2a1fdec91b182b71a611ab9c5fdd06da81ff96a674415047f0f5ba1e661",
+    ".cache/model_reference/gqa_testdev/final_prompt_skip/inputs.json": "99a201a95bf8ce3228aba943fb0bb40e49aeab32d57c9b2c611104109278d259",
+    ".cache/model_reference/gqa_testdev/final_prompt_skip/predictions.jsonl": "2eb9675ac6d0a3d8d7bd1d28386571675518a29f02b52a3f44cb60962199f9a6",
+    ".cache/model_reference/gqa_testdev/final_prompt_skip/receipt.json": "1c66a1d7bee7117e9d7588ab6d866abcb6a360131d65d9c98d10f7c3ff4a2c1a",
+    ".cache/model_reference/gqa_testdev/final_prompt_skip/run.py": "1863c4bcfbfbcb46c63490322c63d870da63067487f7fec9df3cfe5034cc018d",
+    ".cache/model_reference/gqa_testdev/final_prompt_skip/verify.py": "5b06c5493b63c7e4d1d654e403355899e36bfc5d0d5a7f5ef257318dfcff842f",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/predictions.jsonl": "078467331feca85071b4325f6642b1a16aed90f642bc30d49c1ba41884ec308a",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "peak_gpu_bytes": 7952927232,
+  "questions": 67,
+  "scope": "Paired TinyLLaVA software comparison on one fixed question per held image. The two experiments restore the down-projection channels normally skipped on the final one or eight retained text prompt rows. The integer formats, the skip policy on other rows, and the answer-generation policy are fixed. Partial array scheduling, routed speed, model accuracy on the mapped chip, and external memory energy are unverified.",
+  "state": "host_final_prompt_weight_retention_independently_scored"
+}
