@@ -1,0 +1,271 @@
+{
+  "carry_save_best_region_selection_used": false,
+  "cases": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "adaptive_best_baseline_ns": -1.670129,
+      "arithmetic_path_placement_ns": -2.914484,
+      "best_carry_save_ns": -2.899978,
+      "control_path_placement_ns": -2.899978,
+      "improved": true,
+      "original_ns": -6.447974,
+      "path_endpoint": "carry_save.row[28].carry_reg[2]/DB",
+      "path_startpoint": "carry_save.row[28].compressor[0].carry_reg[1]/CP",
+      "previous_chip_ns": -1.7777
+    },
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "adaptive_best_baseline_ns": -1.245813,
+      "arithmetic_path_placement_ns": -3.147821,
+      "best_carry_save_ns": -1.958984,
+      "control_path_placement_ns": -1.958984,
+      "improved": true,
+      "original_ns": -4.444773,
+      "path_endpoint": "carry_save.row[14].compressor[1].sum_reg[16]/DB",
+      "path_startpoint": "product[117].value_reg[15]/CP",
+      "previous_chip_ns": -1.422881
+    },
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "adaptive_best_baseline_ns": -1.558522,
+      "arithmetic_path_placement_ns": -2.212557,
+      "best_carry_save_ns": -1.622353,
+      "control_path_placement_ns": -1.622353,
+      "improved": true,
+      "original_ns": -4.551412,
+      "path_endpoint": "carry_save.row[0].carry_reg[2]/DB",
+      "path_startpoint": "carry_save.row[0].compressor[1].sum_reg[0]/CP",
+      "previous_chip_ns": -1.558522
+    },
+    "tri_oracle_pe_array_verified_bank0_3": {
+      "adaptive_best_baseline_ns": -1.221965,
+      "arithmetic_path_placement_ns": -3.02254,
+      "best_carry_save_ns": -1.320383,
+      "control_path_placement_ns": -1.320383,
+      "improved": true,
+      "original_ns": -5.710658,
+      "path_endpoint": "product[60].value_reg[2]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.417647
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "adaptive_best_baseline_ns": -1.6347,
+      "arithmetic_path_placement_ns": -3.074259,
+      "best_carry_save_ns": -1.995391,
+      "control_path_placement_ns": -1.995391,
+      "improved": true,
+      "original_ns": -5.62373,
+      "path_endpoint": "product[64].value_reg[0]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.662737
+    },
+    "tri_oracle_pe_array_verified_bank1_1": {
+      "adaptive_best_baseline_ns": -1.455341,
+      "arithmetic_path_placement_ns": -2.392691,
+      "best_carry_save_ns": -2.392691,
+      "control_path_placement_ns": -2.761341,
+      "improved": false,
+      "original_ns": -4.04204,
+      "path_endpoint": "product[197].value_reg[1]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.485165
+    },
+    "tri_oracle_pe_array_verified_bank1_2": {
+      "adaptive_best_baseline_ns": -1.205759,
+      "arithmetic_path_placement_ns": -2.138329,
+      "best_carry_save_ns": -1.682203,
+      "control_path_placement_ns": -1.682203,
+      "improved": true,
+      "original_ns": -4.906164,
+      "path_endpoint": "carry_save.row[13].compressor[0].sum_reg[15]/DB",
+      "path_startpoint": "product[105].value_reg[15]/CP",
+      "previous_chip_ns": -1.445553
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "adaptive_best_baseline_ns": -1.501486,
+      "arithmetic_path_placement_ns": -3.200165,
+      "best_carry_save_ns": -2.033181,
+      "control_path_placement_ns": -2.033181,
+      "improved": true,
+      "original_ns": -4.443776,
+      "path_endpoint": "carry_save.row[20].sum_reg[1]/DB",
+      "path_startpoint": "carry_save.row[20].compressor[0].carry_reg[1]/CP",
+      "previous_chip_ns": -1.643363
+    },
+    "tri_oracle_pe_array_verified_bank2": {
+      "adaptive_best_baseline_ns": -1.266061,
+      "arithmetic_path_placement_ns": -2.27212,
+      "best_carry_save_ns": -1.674784,
+      "control_path_placement_ns": -1.674784,
+      "improved": true,
+      "original_ns": -4.918287,
+      "path_endpoint": "product[93].value_reg[5]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.266061
+    },
+    "tri_oracle_pe_array_verified_bank2_1": {
+      "adaptive_best_baseline_ns": -1.00092,
+      "arithmetic_path_placement_ns": -1.686486,
+      "best_carry_save_ns": -1.686486,
+      "control_path_placement_ns": -2.031475,
+      "improved": false,
+      "original_ns": -3.420644,
+      "path_endpoint": "carry_save.row[20].carry_reg[18]/DB",
+      "path_startpoint": "carry_save.row[20].compressor[1].sum_reg[16]/CP",
+      "previous_chip_ns": -1.00092
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "adaptive_best_baseline_ns": -1.58754,
+      "arithmetic_path_placement_ns": -2.443145,
+      "best_carry_save_ns": -2.443145,
+      "control_path_placement_ns": -2.71659,
+      "improved": false,
+      "original_ns": -3.702949,
+      "path_endpoint": "carry_save.row[22].carry_reg[2]/DB",
+      "path_startpoint": "carry_save.row[22].compressor[0].carry_reg[1]/CP",
+      "previous_chip_ns": -1.751628
+    },
+    "tri_oracle_pe_array_verified_bank2_3": {
+      "adaptive_best_baseline_ns": -1.178273,
+      "arithmetic_path_placement_ns": -2.33777,
+      "best_carry_save_ns": -1.231382,
+      "control_path_placement_ns": -1.231382,
+      "improved": true,
+      "original_ns": -4.411412,
+      "path_endpoint": "product[52].value_reg[12]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.178273
+    },
+    "tri_oracle_pe_array_verified_bank3": {
+      "adaptive_best_baseline_ns": -1.388317,
+      "arithmetic_path_placement_ns": -2.073022,
+      "best_carry_save_ns": -1.444338,
+      "control_path_placement_ns": -1.444338,
+      "improved": true,
+      "original_ns": -4.204452,
+      "path_endpoint": "carry_save.row[3].sum_reg[1]/DB",
+      "path_startpoint": "carry_save.row[3].compressor[0].carry_reg[1]/CP",
+      "previous_chip_ns": -1.733814
+    },
+    "tri_oracle_pe_array_verified_bank3_1": {
+      "adaptive_best_baseline_ns": -1.603483,
+      "arithmetic_path_placement_ns": -3.092048,
+      "best_carry_save_ns": -2.019901,
+      "control_path_placement_ns": -2.019901,
+      "improved": true,
+      "original_ns": -4.438069,
+      "path_endpoint": "product[95].value_reg[0]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.603483
+    },
+    "tri_oracle_pe_array_verified_bank3_2": {
+      "adaptive_best_baseline_ns": -1.397382,
+      "arithmetic_path_placement_ns": -2.27391,
+      "best_carry_save_ns": -2.27391,
+      "control_path_placement_ns": -2.47268,
+      "improved": false,
+      "original_ns": -5.519623,
+      "path_endpoint": "carry_save.row[20].carry_reg[2]/DB",
+      "path_startpoint": "carry_save.row[20].compressor[0].carry_reg[1]/CP",
+      "previous_chip_ns": -1.397382
+    },
+    "tri_oracle_pe_array_verified_bank3_3": {
+      "adaptive_best_baseline_ns": -1.387713,
+      "arithmetic_path_placement_ns": -2.244225,
+      "best_carry_save_ns": -1.268279,
+      "control_path_placement_ns": -1.268279,
+      "improved": true,
+      "original_ns": -4.52682,
+      "path_endpoint": "product[112].value_reg[6]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.563095
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "adaptive_best_baseline_ns": -1.314762,
+      "arithmetic_path_placement_ns": -2.616035,
+      "best_carry_save_ns": -2.616035,
+      "control_path_placement_ns": -2.624499,
+      "improved": false,
+      "original_ns": -4.275861,
+      "path_endpoint": "carry_save.row[22].carry_reg[2]/DB",
+      "path_startpoint": "carry_save.row[22].compressor[0].carry_reg[1]/CP",
+      "previous_chip_ns": -1.433676
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "adaptive_best_baseline_ns": -1.527725,
+      "arithmetic_path_placement_ns": -2.115875,
+      "best_carry_save_ns": -1.822842,
+      "control_path_placement_ns": -1.822842,
+      "improved": true,
+      "original_ns": -3.153674,
+      "path_endpoint": "carry_save.row[15].compressor[0].sum_reg[16]/DB",
+      "path_startpoint": "product[121].value_reg[15]/CP",
+      "previous_chip_ns": -1.527725
+    },
+    "tri_oracle_pe_array_verified_bank4_2": {
+      "adaptive_best_baseline_ns": -1.360325,
+      "arithmetic_path_placement_ns": -2.222202,
+      "best_carry_save_ns": -1.715393,
+      "control_path_placement_ns": -1.715393,
+      "improved": true,
+      "original_ns": -2.649519,
+      "path_endpoint": "carry_save.row[13].sum_reg[1]/DB",
+      "path_startpoint": "carry_save.row[13].compressor[0].carry_reg[1]/CP",
+      "previous_chip_ns": -1.475373
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "adaptive_best_baseline_ns": -1.328626,
+      "arithmetic_path_placement_ns": -2.60775,
+      "best_carry_save_ns": -2.082824,
+      "control_path_placement_ns": -2.082824,
+      "improved": true,
+      "original_ns": -4.963927,
+      "path_endpoint": "product[106].value_reg[3]/D",
+      "path_startpoint": "valid_reg[3]/CP",
+      "previous_chip_ns": -1.397052
+    }
+  },
+  "compared_regions": 20,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/all_control_locality/prepared.json": "e3cca857f812e19d50589ebbccdf8ddea4eaeb1433e3f72b88d993e13e0c7db8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/all_control_locality/verified.json": "8d5cff22471bb6f5e58aa5338b56f55840a5a462f3f0979aa87c2e9a9c72cc81",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/all_path_locality/verified.json": "b870e6d563d7aa81ce4314221703edf4e7d4a7edf6ee36d3a98b5454b5b0d0fd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/control_locality/prepared.json": "69cc1567f4f0bb003630d11a237ee696b9ad6944db9499117a9d6deb3cabf7d3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/control_locality/verified.json": "948b967b8b18d7b6b002f6df14d41da2ad2db81d9761c6d8cb702ef015ab9fdb",
+    "records/tri_oracle_adaptive_path_chip_placement.json": "206a2c1e1c97fc2d01920c77744523eae808dbd32431fd2d7f451bda7f465bf9",
+    "records/tri_oracle_carry_save_native_chip_placement.json": "e01b1f27dd181b6436fb8ba1334e20bee83f103d5fa02ec43d2eda3ac9d49660"
+  },
+  "improved_regions": 15,
+  "regions_better_than_adaptive_baseline": 1,
+  "scope": "Same gate netlist and occupied widths. Timing uses identical estimated internal wires and an ideal clock.",
+  "slack_min_median_max_ns": {
+    "adaptive_best_baseline_ns": [
+      -1.670129,
+      -1.388015,
+      -1.00092
+    ],
+    "arithmetic_path_placement_ns": [
+      -3.200165,
+      -2.3652305,
+      -1.686486
+    ],
+    "best_carry_save_ns": [
+      -2.899978,
+      -1.890913,
+      -1.231382
+    ],
+    "control_path_placement_ns": [
+      -2.899978,
+      -1.9771874999999999,
+      -1.231382
+    ],
+    "original_ns": [
+      -6.447974,
+      -4.4442745,
+      -2.649519
+    ],
+    "previous_chip_ns": [
+      -1.7777,
+      -1.480269,
+      -1.00092
+    ]
+  },
+  "state": "all_twenty_carry_save_region_control_placement_comparison_verified"
+}

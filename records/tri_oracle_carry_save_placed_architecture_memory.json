@@ -1,0 +1,190 @@
+{
+  "candidate_sha256": "6a34b2b90b2057f757ab043d02940fb894b9005fd93209494df254b0e4c45f4a",
+  "clusters": [
+    {
+      "bank": 0,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[0].unit.selected_bank0.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1,
+      "native_cluster_master": "tri_oracle_native_token_map_copy_10",
+      "native_compute_arrays": [
+        "tri_oracle_pe_array_verified_bank0_1",
+        "tri_oracle_pe_array_verified_bank0_2",
+        "tri_oracle_pe_array_verified_bank0_3",
+        "tri_oracle_pe_array_verified_bank0"
+      ],
+      "native_token_merger_master": "tri_oracle_native_token_map_copy_11"
+    },
+    {
+      "bank": 1,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[1].unit.selected_bank1.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1,
+      "native_cluster_master": "tri_oracle_native_token_map_copy_17",
+      "native_compute_arrays": [
+        "tri_oracle_pe_array_verified_bank1_1",
+        "tri_oracle_pe_array_verified_bank1_2",
+        "tri_oracle_pe_array_verified_bank1_3",
+        "tri_oracle_pe_array_verified_bank1"
+      ],
+      "native_token_merger_master": "tri_oracle_native_token_map_copy_18"
+    },
+    {
+      "bank": 2,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[2].unit.selected_bank2.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1,
+      "native_cluster_master": "tri_oracle_native_token_map_copy_24",
+      "native_compute_arrays": [
+        "tri_oracle_pe_array_verified_bank2_1",
+        "tri_oracle_pe_array_verified_bank2_2",
+        "tri_oracle_pe_array_verified_bank2_3",
+        "tri_oracle_pe_array_verified_bank2"
+      ],
+      "native_token_merger_master": "tri_oracle_native_token_map_copy_25"
+    },
+    {
+      "bank": 3,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[3].unit.selected_bank3.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1,
+      "native_cluster_master": "tri_oracle_native_token_map_copy_31",
+      "native_compute_arrays": [
+        "tri_oracle_pe_array_verified_bank3_1",
+        "tri_oracle_pe_array_verified_bank3_2",
+        "tri_oracle_pe_array_verified_bank3_3",
+        "tri_oracle_pe_array_verified_bank3"
+      ],
+      "native_token_merger_master": "tri_oracle_native_token_map_copy_32"
+    },
+    {
+      "bank": 4,
+      "cores": 4,
+      "instance": "tri_oracle_chip_command_layer_parallel_chip.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[4].unit.selected_bank4.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1,
+      "native_cluster_master": "tri_oracle_native_token_map_copy_38",
+      "native_compute_arrays": [
+        "tri_oracle_pe_array_verified_bank4_1",
+        "tri_oracle_pe_array_verified_bank4_2",
+        "tri_oracle_pe_array_verified_bank4_3",
+        "tri_oracle_pe_array_verified_bank4"
+      ],
+      "native_token_merger_master": "tri_oracle_native_token_map_copy_39"
+    }
+  ],
+  "compiled_memory": {
+    "aggregator_io_bytes": 10240,
+    "aggregator_io_bytes_per_cluster": 2048,
+    "bytes_above_405_kib": 208,
+    "bytes_total": 414928,
+    "capacity_bytes_by_master": {
+      "TS5N28HPCPSVTA16X80M2FW": 160,
+      "TS5N28HPCPSVTA24X128M2FW": 384,
+      "TS5N28HPCPSVTA32X128M2FW": 512,
+      "TS5N28HPCPSVTA512X64M4F": 4096,
+      "TS5N28HPCPSVTA8X80M2FW": 80,
+      "TS6N28HPCPSVTA16X128M2F": 256
+    },
+    "core_memory_bytes": 389120,
+    "core_memory_bytes_per_core": {
+      "inputs": 8192,
+      "masks": 1024,
+      "outputs": 2048,
+      "weights": 8192
+    },
+    "instances": 631,
+    "local_support_bytes_by_cluster": {
+      "0": {
+        "surviving_token_signs": 1536,
+        "token_merge_table": 160
+      },
+      "1": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "2": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "3": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "4": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 80
+      }
+    },
+    "paper_rounded_label_kb": 405,
+    "support_bytes_by_role": {
+      "prediction_metadata": 6656,
+      "shared_weight_signs": 2048,
+      "surviving_token_signs": 6144,
+      "token_merge_table": 720
+    },
+    "support_macro_count_by_role": {
+      "prediction_metadata": 6,
+      "shared_weight_signs": 4,
+      "surviving_token_signs": 16,
+      "token_merge_table": 5
+    },
+    "support_memory_bytes": 15568,
+    "timing_views_loaded": 18,
+    "xcelium_instance_paths_matched": 631
+  },
+  "compute": {
+    "arithmetic_throughput_ops_per_second_at_paper_clock": 5939200000000,
+    "array_count": 20,
+    "first_and_second_compressor_register_bits_per_array": [
+      2176,
+      1152
+    ],
+    "lanes": 8,
+    "multiply_accumulates_per_cycle": 5120,
+    "output_register_bits_per_array": 608,
+    "product_register_bits_per_array": 4096,
+    "rows": 32,
+    "signed_operand_bits": 8,
+    "unique_array_definitions": 20
+  },
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/candidate_attention/memory_census_runtime_snapshot.txt": "8833d1fe4a44c42640715c2776adede2acaa4e9f40f9f86781c97493beb67a22",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/candidate_attention/prepared.json": "d55230a9c4f43b29a1665cea9ec48ba9b03854f8a437c6f0c655008ae5e1adff",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/native/cold.v": "6a34b2b90b2057f757ab043d02940fb894b9005fd93209494df254b0e4c45f4a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/native/layout.def": "eb4473e8d5e649663926dae7f98267e28d87e427a56e3a200735596a63e77ff4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/paper_architecture/check_placed_architecture.py": "4104dfe565e9fd43d4976becfbe8fa3ab8a4e80bf4b62dc5f6727af1d96c09bf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/paper_architecture/verified.json": "ea2df5329f075fb35aa09110af494a18f8772f732a42b11de0fa6ac27912404a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/verified.json": "71d1eec09b1a6f3fed86017d2a0e2d5f9044a1ddf8977c426d8ddf785ceb81b7",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd"
+  },
+  "scope": "Native compute hierarchy and compiled memory accounting. Throughput arithmetic is conditional on the paper clock. Complete architecture, trained model accuracy, timing and energy require separate proofs.",
+  "shared_prediction_roles": {
+    "attention_tile_scheduler": {
+      "score_ready_response_bit": 71,
+      "score_valid_request_bit": 393,
+      "streaming_decision_response_bit": 68
+    },
+    "feedforward_metadata_and_sign_replay": {
+      "metadata_capacity_bytes": 6656,
+      "metadata_macros": 6,
+      "response_bits_wired_to_masks_and_count": 109,
+      "shared_sign_key_capacity_bytes": 2048,
+      "shared_sign_key_macros": 4
+    }
+  },
+  "state": "placed_carry_save_compute_and_compiled_sram_bound_to_exact_native_exports"
+}
