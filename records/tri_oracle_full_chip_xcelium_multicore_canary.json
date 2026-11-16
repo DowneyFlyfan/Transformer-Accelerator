@@ -1,0 +1,30 @@
+{
+  "checked_merge_map_entries": 576,
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "compiled_snapshot_reused": true,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/expected.hex": "46945cc491896981ca121c5b4de6b4ab0e4f0b2395a857a7a28fff6838cfc730",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/attention_checkpointed/memory_census.json": "e51eca8ea883fd226aec4344decbc3f561234b11a32e7fc1cb4f0550275a5f11",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/cache_reused.hex": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/native/reused_xrun.log": "7dbe4d1ae888446fcd5b2d75eff19ef5b06863d0ce4d42035906dd8cd439c3ef",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/native/xrun.log": "06d07fe3fe274e5c4288e4bc870b1045ee5f830de911be26a53004f8120b3188",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/reused_samples.jsonl": "b5b81f31d24e90431ece54bbb246b8679f01245ee443b6fb30a12bdcb6655c91",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/reused_status.json": "3d3a582a2a800fd7f9f85288ced23b47711fd43e9ace2be75c0f11868db85cbe",
+    ".cache/physical/whole_chip_xcelium_speed/multicore_supervisor.log": "5e1be48ca89e0624e9dd3a9392b2539b698e899ab8ecc1e14f6550e0fa9c958d",
+    ".cache/physical/whole_chip_xcelium_speed/prepared.json": "c7b8b4626e0d2301f2cb4095a26f732310fd683a26dc10cb4a772004c73b63ab",
+    ".cache/physical/whole_chip_xcelium_speed/replay_compiled_prefix.py": "6775eab904cb380578c0e829b8f51b057f6fcb01abd452437580d7864a312543",
+    ".cache/physical/whole_chip_xcelium_speed/sample_reuse.py": "ed4c7a3d8cb1d86b6f64595fc2786aac5daa701c7cd12fac6b9b11eda9a6f7d9",
+    ".cache/physical/whole_chip_xcelium_speed/verify_multicore_canary.py": "33e6a71b89a85b2988eab384659f7ec15b1608f14b5aa056000df0c3e7630b36"
+  },
+  "expected_failed_writes": 2,
+  "initial_run_reached_twelve_minute_limit": true,
+  "matched_cache_vectors": 16,
+  "matched_static_memory_instance_paths_and_masters": 631,
+  "numa_placement_warning_count": 2,
+  "observed_simulator_active_threads": 4,
+  "replay_wall_seconds": 70.18993285903707,
+  "scope": "A short integrated projection prefix uses the exact cold chip and the same trained fixture. Its reused snapshot measurement covers simulator startup and execution. The paired one-core trial and all downstream attention groups are outside this canary.",
+  "simulation_time_ns": 990080,
+  "state": "four_thread_cold_chip_xcelium_prefix_verified_on_reused_snapshot",
+  "worker_samples": 10
+}
