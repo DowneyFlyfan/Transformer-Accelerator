@@ -1,0 +1,487 @@
+{
+  "array_regions": 20,
+  "critical_operand_spans": {
+    "operand_a[708]": {
+      "full_chip": {
+        "count": 160,
+        "max_um": 2846.49,
+        "median_um": 708.11,
+        "min_um": 112.09,
+        "p90_um": 940.48
+      },
+      "isolated_array": {
+        "count": 8,
+        "max_um": 1277.93,
+        "median_um": 1259.56,
+        "min_um": 1155.9,
+        "p90_um": 1277.13
+      }
+    },
+    "operand_a[709]": {
+      "full_chip": {
+        "count": 160,
+        "max_um": 1594.17,
+        "median_um": 756.9,
+        "min_um": 180.87,
+        "p90_um": 1014.85
+      },
+      "isolated_array": {
+        "count": 8,
+        "max_um": 1277.15,
+        "median_um": 1271.28,
+        "min_um": 1143.26,
+        "p90_um": 1276.93
+      }
+    },
+    "operand_a[713]": {
+      "full_chip": {
+        "count": 160,
+        "max_um": 1422.55,
+        "median_um": 666.02,
+        "min_um": 13.16,
+        "p90_um": 1159.77
+      },
+      "isolated_array": {
+        "count": 8,
+        "max_um": 1234.83,
+        "median_um": 1069.64,
+        "min_um": 939.37,
+        "p90_um": 1167.13
+      }
+    },
+    "operand_a[714]": {
+      "full_chip": {
+        "count": 160,
+        "max_um": 3553.97,
+        "median_um": 678.96,
+        "min_um": 29.91,
+        "p90_um": 1564.07
+      },
+      "isolated_array": {
+        "count": 8,
+        "max_um": 1233.95,
+        "median_um": 1069.23,
+        "min_um": 896.39,
+        "p90_um": 1166.39
+      }
+    }
+  },
+  "driver_kind_by_operand_bit": {
+    "logic": 320,
+    "sram": 320
+  },
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/packing/displaced.tsv": "8a581e24be675c62fbba932bb7d67379b68d5eb9a7dd8f8cc705d27dc9c4d147",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/packing/fences.tsv": "896034274a2efcde40e19cb7dff2bb8953b8e43ce75e1645587e705f6714f397",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/packing_proof.json": "5a757b3438902fa2436d65d20048de6c0cd22b5a52812b32384053e11effed39",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/placement_seed.def": "1a8172ef4489ae48ba7241afa56e2cf5815f3e83cdc65a5a7a9c200c110d5cbc",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/operand_buffers/native_setup.rpt": "c6dbf60791b529e2378797b5fc945bc19e87dde1d63eef1ab98a16dafcd3e1b6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/edges.tsv": "1c494608c981497c1684ca7b162b56fef2c49ecf011c371d184eef51855a3a06",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/native_setup.rpt": "837819c97c0f55752ad7c39eebb925812ed28aa11ce333e30daa97b9312a6e79",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/placed.def": "4874b40ffa7cad5792659a3d26e831e1df10547793c521f6db3fae1c36357250",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    "records/tri_oracle_497_pad_floorplan.json": "9aeeb2960a173844b8fa84887de204eab986880f6e12ccbad39dc67ae2493030",
+    "records/tri_oracle_booth_chip_seed.json": "7795b4f27ad9b78a4aabc4caf7eabe719646d93c82203572cb64ff545585e27f",
+    "records/tri_oracle_booth_operand_buffers.json": "432ca04fa05619752ff208fd700650686d28097518cfcb417446141930920cbb",
+    "records/tri_oracle_booth_timing_swaps.json": "a97c0c1ba5b2b824550ef79033167aca0a979b600b46d88a759495b5b7e90f96",
+    "records/tri_oracle_linked_booth_chip.json": "edd2622df13ab3dc8ee6c23a57f038d10fb33d1fa1d20fed695666e1a0f1e386",
+    "records/tri_oracle_serialized_placement_transfer.json": "66d682a34acc5f0fe082fe9499ee1c3e04499d85147a43ff3026584788d720bf",
+    "syn/audit_tri_oracle_booth_operand_spans.py": "f2b88654c2eb91dcf29820ddb7ca2354ffe22411b69b0fd505f003dc33f15ce8"
+  },
+  "isolated_array_spans": {
+    "count": 246,
+    "max_um": 1303.33,
+    "median_um": 952.61,
+    "min_um": 36.25,
+    "p90_um": 1262.93
+  },
+  "longest_twelve_unique_drivers": [
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/g147503",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        112.68,
+        3361.43
+      ],
+      "load": "product[88].recoded.signed_multiplier/g8004/B2",
+      "operand": "operand_a[705]",
+      "output_pin_um": [
+        2590.91,
+        140.653
+      ],
+      "region": "tri_array_region_1",
+      "span_um": 5699.01
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/g147501",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        708.17,
+        3279.8
+      ],
+      "load": "product[89].recoded.signed_multiplier/g8033/B1",
+      "operand": "operand_a[712]",
+      "output_pin_um": [
+        2329.25,
+        203.053
+      ],
+      "region": "tri_array_region_1",
+      "span_um": 4697.83
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/g93974",
+      "driver_kind": "relocated_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        914.18,
+        409.43
+      ],
+      "load": "product[89].recoded.signed_multiplier/g8002/B2",
+      "operand": "operand_a[716]",
+      "output_pin_um": [
+        2952.11,
+        2766.267
+      ],
+      "previous_driver_origin_um": [
+        1692.44,
+        64.4
+      ],
+      "region": "tri_array_region_8",
+      "span_um": 4394.77
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/g94029",
+      "driver_kind": "relocated_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        914.59,
+        409.5
+      ],
+      "load": "product[89].recoded.signed_multiplier/g8002/A2",
+      "operand": "operand_a[715]",
+      "output_pin_um": [
+        3040.58,
+        2401.443
+      ],
+      "previous_driver_origin_um": [
+        1083.72,
+        318.8
+      ],
+      "region": "tri_array_region_8",
+      "span_um": 4117.93
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/g147504",
+      "driver_kind": "relocated_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        1650.72,
+        327.8
+      ],
+      "load": "product[88].recoded.signed_multiplier/g8048/A2",
+      "operand": "operand_a[704]",
+      "output_pin_um": [
+        743.19,
+        3476.653
+      ],
+      "previous_driver_origin_um": [
+        1089.32,
+        318.8
+      ],
+      "region": "tri_array_region_8",
+      "span_um": 4056.38
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/g147502",
+      "driver_kind": "relocated_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        1574.99,
+        443.1
+      ],
+      "load": "product[88].recoded.signed_multiplier/g8010/A2",
+      "operand": "operand_a[706]",
+      "output_pin_um": [
+        744.45,
+        3476.653
+      ],
+      "previous_driver_origin_um": [
+        1094.5,
+        318.8
+      ],
+      "region": "tri_array_region_8",
+      "span_um": 3864.09
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[3]/compute/g147499",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        3414.45,
+        1701.7
+      ],
+      "load": "product[89].recoded.signed_multiplier/g8010/A2",
+      "operand": "operand_a[714]",
+      "output_pin_um": [
+        574.63,
+        2415.852
+      ],
+      "region": "tri_array_region_16",
+      "span_um": 3553.97
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[3]/compute/g147501",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        3318.585,
+        1776.215
+      ],
+      "load": "product[89].recoded.signed_multiplier/g8020/A2",
+      "operand": "operand_a[712]",
+      "output_pin_um": [
+        478.73,
+        2396.653
+      ],
+      "region": "tri_array_region_16",
+      "span_um": 3460.29
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[1]/compute/g147501",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        3476.03,
+        969.7
+      ],
+      "load": "product[89].recoded.signed_multiplier/g8006/A2",
+      "operand": "operand_a[712]",
+      "output_pin_um": [
+        799.89,
+        1705.453
+      ],
+      "region": "tri_array_region_14",
+      "span_um": 3411.89
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/g93908",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        3401.42,
+        528.17
+      ],
+      "load": "product[89].recoded.signed_multiplier/g7986/B2",
+      "operand": "operand_a[719]",
+      "output_pin_um": [
+        1569.04,
+        2065.443
+      ],
+      "region": "tri_array_region_12",
+      "span_um": 3369.65
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[0]/compute/g147499",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        180.16,
+        2012.63
+      ],
+      "load": "product[89].recoded.signed_multiplier/g8008/B2",
+      "operand": "operand_a[714]",
+      "output_pin_um": [
+        1688.33,
+        207.852
+      ],
+      "region": "tri_array_region_17",
+      "span_um": 3312.95
+    },
+    {
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[3]/compute/g147503",
+      "driver_kind": "retained_logic",
+      "driver_pin": "Z",
+      "input_pin_um": [
+        3397.5,
+        1746.23
+      ],
+      "load": "product[88].recoded.signed_multiplier/g8006/B2",
+      "operand": "operand_a[705]",
+      "output_pin_um": [
+        579.11,
+        2180.653
+      ],
+      "region": "tri_array_region_16",
+      "span_um": 3252.81
+    }
+  ],
+  "on_chip_spans": {
+    "count": 4920,
+    "max_um": 5699.01,
+    "median_um": 638.11,
+    "min_um": 13.16,
+    "p90_um": 982.65
+  },
+  "on_chip_spans_by_region": {
+    "tri_array_region_0": {
+      "count": 246,
+      "max_um": 2515.02,
+      "median_um": 531.38,
+      "min_um": 285.79,
+      "p90_um": 809.13
+    },
+    "tri_array_region_1": {
+      "count": 246,
+      "max_um": 5699.01,
+      "median_um": 718.9,
+      "min_um": 29.91,
+      "p90_um": 1247.57
+    },
+    "tri_array_region_10": {
+      "count": 246,
+      "max_um": 1417.14,
+      "median_um": 583.55,
+      "min_um": 234.37,
+      "p90_um": 775.53
+    },
+    "tri_array_region_11": {
+      "count": 246,
+      "max_um": 1066.93,
+      "median_um": 614.55,
+      "min_um": 13.16,
+      "p90_um": 792.61
+    },
+    "tri_array_region_12": {
+      "count": 246,
+      "max_um": 3369.65,
+      "median_um": 625.4,
+      "min_um": 100.8,
+      "p90_um": 845.13
+    },
+    "tri_array_region_13": {
+      "count": 246,
+      "max_um": 2704.56,
+      "median_um": 606.29,
+      "min_um": 112.09,
+      "p90_um": 1014.24
+    },
+    "tri_array_region_14": {
+      "count": 246,
+      "max_um": 3411.89,
+      "median_um": 571.77,
+      "min_um": 91.77,
+      "p90_um": 2083.47
+    },
+    "tri_array_region_15": {
+      "count": 246,
+      "max_um": 3020.66,
+      "median_um": 682.97,
+      "min_um": 47.27,
+      "p90_um": 871.09
+    },
+    "tri_array_region_16": {
+      "count": 246,
+      "max_um": 3553.97,
+      "median_um": 609.53,
+      "min_um": 114.52,
+      "p90_um": 2317.69
+    },
+    "tri_array_region_17": {
+      "count": 246,
+      "max_um": 3312.95,
+      "median_um": 637.98,
+      "min_um": 239.01,
+      "p90_um": 962.65
+    },
+    "tri_array_region_18": {
+      "count": 246,
+      "max_um": 1574.55,
+      "median_um": 726.44,
+      "min_um": 241.02,
+      "p90_um": 971.29
+    },
+    "tri_array_region_19": {
+      "count": 246,
+      "max_um": 1016.17,
+      "median_um": 597.92,
+      "min_um": 126.69,
+      "p90_um": 754.85
+    },
+    "tri_array_region_2": {
+      "count": 246,
+      "max_um": 1184.41,
+      "median_um": 683.76,
+      "min_um": 66.93,
+      "p90_um": 800.07
+    },
+    "tri_array_region_3": {
+      "count": 246,
+      "max_um": 2211.81,
+      "median_um": 670.42,
+      "min_um": 241.79,
+      "p90_um": 1422.55
+    },
+    "tri_array_region_4": {
+      "count": 246,
+      "max_um": 2837.9,
+      "median_um": 646.59,
+      "min_um": 230.65,
+      "p90_um": 1059.93
+    },
+    "tri_array_region_5": {
+      "count": 246,
+      "max_um": 1395.16,
+      "median_um": 654.85,
+      "min_um": 232.23,
+      "p90_um": 857.77
+    },
+    "tri_array_region_6": {
+      "count": 246,
+      "max_um": 2001.83,
+      "median_um": 657.32,
+      "min_um": 190.5,
+      "p90_um": 780.08
+    },
+    "tri_array_region_7": {
+      "count": 246,
+      "max_um": 1674.79,
+      "median_um": 550.58,
+      "min_um": 77.96,
+      "p90_um": 858.43
+    },
+    "tri_array_region_8": {
+      "count": 246,
+      "max_um": 4394.77,
+      "median_um": 615.93,
+      "min_um": 45.69,
+      "p90_um": 3646.61
+    },
+    "tri_array_region_9": {
+      "count": 246,
+      "max_um": 2539.67,
+      "median_um": 659.13,
+      "min_um": 55.25,
+      "p90_um": 858.45
+    }
+  },
+  "on_chip_spans_over_2000_um_by_driver_kind": {
+    "relocated_logic": 42,
+    "retained_logic": 144
+  },
+  "operand_bits_per_region": 32,
+  "scope": "Manhattan spans from the selected logic and memory output pin shapes to array input loads in the current whole-chip seed. The standalone region uses its fixed terminal anchors. These geometric spans do not estimate detailed route length or path delay.",
+  "selected_multiplier_lanes": [
+    88,
+    89
+  ],
+  "state": "linked_booth_array_operands_traced_to_placed_drivers"
+}
