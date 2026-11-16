@@ -1,0 +1,123 @@
+{
+  "all_region_width_witnesses": 20,
+  "boundary_changes": {
+    "tri_oracle_pe_array_verified_bank0_3": {
+      "crossing_cells": 0,
+      "old": [
+        40000,
+        4309600,
+        1819960,
+        5732800
+      ],
+      "revised": [
+        40000,
+        4304800,
+        1819960,
+        5732800
+      ]
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "crossing_cells": 197,
+      "old": [
+        5379880,
+        4309600,
+        7159840,
+        5732800
+      ],
+      "revised": [
+        5379880,
+        4304800,
+        7159840,
+        5730400
+      ]
+    },
+    "tri_oracle_pe_array_verified_bank1_2": {
+      "crossing_cells": 0,
+      "old": [
+        5379880,
+        5732800,
+        7159840,
+        7158400
+      ],
+      "revised": [
+        5379880,
+        5730400,
+        7159840,
+        7158400
+      ]
+    },
+    "tri_oracle_pe_array_verified_bank2_1": {
+      "crossing_cells": 234,
+      "old": [
+        40000,
+        1463200,
+        1819960,
+        2886400
+      ],
+      "revised": [
+        40000,
+        1463200,
+        1819960,
+        2881600
+      ]
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "crossing_cells": 607,
+      "old": [
+        5379880,
+        2886400,
+        7159840,
+        4309600
+      ],
+      "revised": [
+        5379880,
+        2886400,
+        7159840,
+        4304800
+      ]
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "crossing_cells": 398,
+      "old": [
+        40000,
+        2886400,
+        1819960,
+        4309600
+      ],
+      "revised": [
+        40000,
+        2881600,
+        1819960,
+        4304800
+      ]
+    }
+  },
+  "die_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/flat_prefix/verified.json": "1e220b0cb0f8a0d778f096c7eee59e03ea97b9e5d779ac3b7358288b95268fc7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/recut_tight_native/tri_oracle_pe_array/native/console.log": "94b5a6beaa1972f6444df4b6f45f067543783da87751e00b0eaf014d57e6d85b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/recut_tight_native/tri_oracle_pe_array/native/status.json": "fe28d10e369ea59db5ea8b1b52e0c2dec8e6bac8b1c7e91e4595419ca0589de2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/recut_tight_native/tri_oracle_pe_array/native/timing.rpt": "b0d63aa9973472b036b657a83c84eccbcc135d574cae3a8aedcfdaefc94e767f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/recut_tight_native/verified.json": "c323f4a6fc15686ab82226c628725e910b2c9207d46854cd106f0e5f5af20d84",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/verified.json": "6293c9f00b4c82ec581de2ef39e5eaba10cd23d501609ab958581f8a35cf86e2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/prefix_recut_floorplan/width_witnesses.json": "4c0e642e186fe471e4bc62bca91d1caf9b7bc5cd9f2d127966c63c0ce39d58c9"
+  },
+  "logic_sites_per_array": 526193,
+  "mapped_logic_cells_per_array": 55693,
+  "mapped_xcelium_transactions": 786,
+  "minimum_spare_sites_above_test_budget": 362,
+  "native_logic_cells": 55693,
+  "native_port_count": 4966,
+  "native_reserved_rectangles": 27865,
+  "native_test_region": "tri_oracle_pe_array_verified_bank0_3",
+  "original_cells_outside_proposed_boundaries": 1436,
+  "reference_buffer_budget_cells": 249,
+  "reference_buffer_budget_sites": 1552,
+  "scope": "Exact row-width packing under four revised internal boundaries with all non-array geometry fixed. The buffer inventory is a geometric budget copied from an earlier queue. Only the tightest region has native coordinates and early extraction for the new mapped design. Its buffer slots are empty.",
+  "state": "prefix_array_fit_constructed_for_twenty_regions_and_checked_in_tightest_innovus_import",
+  "test_clock_mhz": 580,
+  "unbuffered_regional_setup_slack_ns": -22.549212
+}
