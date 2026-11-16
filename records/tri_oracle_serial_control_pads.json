@@ -1,0 +1,63 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/serialized_memory_controls/binding.json": "e396dc48d39a93588fc06eae8e040dedf3b1775dfd94a4211a978774a0c902b0",
+    ".cache/physical/serialized_memory_controls/binding/serial_control_pads.v": "181a819a472820f0faa297c29bbf5ce2100315102d0bbb7788bddc752bff1ede",
+    ".cache/physical/serialized_memory_controls/binding/serial_control_wrapper.v": "cf937176ed298bdfff4c23eb8058c1d97474842f222ce0296f7600c745939222",
+    ".cache/physical/serialized_memory_controls/control_wrapper_round_trip_tb.sv": "f973165cb0371a515048bd01be28b373a0967350d5f340d78ea9733c68f7e6e1",
+    ".cache/physical/serialized_memory_controls/forward/console.log": "c064d2bc3486c945eb94a4bb4994f839e855fb5251221d78184e641951ec6800",
+    ".cache/physical/serialized_memory_controls/forward/tri_oracle_memory_forward_link_tb.sv": "0ee9d129819499b75d9e46f7814607590f2c9a36466060746b81bacc20aeb055",
+    ".cache/physical/serialized_memory_controls/genus/area.rpt": "1669b375f7571faee04f82d88994c7de5d4c781b214db360613f2e5189013441",
+    ".cache/physical/serialized_memory_controls/genus/console.log": "096e580d8288df4dcf4c5b3ab8f6db656d9dc96ecf6f21322fcc8156f63fecc3",
+    ".cache/physical/serialized_memory_controls/genus/constraints.sdc": "cf68ead107551456c63562eb78bad8f9537dade0f34282296c14f1256a959b14",
+    ".cache/physical/serialized_memory_controls/genus/mapped_check.rpt": "d32b5041b03e31e68fb645a7cbe6f8da5da03d989d9d18b7273335a489df1370",
+    ".cache/physical/serialized_memory_controls/genus/netlist.v": "3d8bec83af7aae95131743d7d7cfce9f3c171e7c2000f14d2e207822cdc6ebe5",
+    ".cache/physical/serialized_memory_controls/genus/timing.rpt": "da0f7d8b81c00ad081ef3e77b16386362cc97f487829a278072160a887a08f48",
+    ".cache/physical/serialized_memory_controls/mutation/console.log": "a988ce2c4588c7cc98e24a1259451682f58aebba9e80f8858d216fe1ad20198e",
+    ".cache/physical/serialized_memory_controls/rtl/console.log": "5ae82c0f44b6e47a12f984c3da1ca4628bcfae929e1382af2afe9c2c82510f63",
+    ".cache/physical/serialized_memory_controls/wrapper_mapped/console.log": "b9bc7ea353682817ad392280136db3877da65f2e596a917e21634daccd1ed432",
+    ".cache/physical/serialized_memory_controls/wrapper_mapped/peer.sv": "650df629a6584e59c3d003189506f7a64d54a2d3bd590dc3c77d1fbd5b094ca6",
+    ".cache/physical/serialized_memory_controls/wrapper_mapped/round_trip_tb.sv": "0ed3613fc5622228f1c66d288e18978189c0df72da00cb8fa011e3f7df626a51",
+    ".cache/physical/serialized_memory_controls/wrapper_rtl/console.log": "e443fb6f92ed249d9dac1dd894a0bcab29375eb592d2265ec5a2f19273eb45ff",
+    ".cache/physical/whole_chip_xcelium_speed/split_credit_ingress/chip_binding/credit_wrapper.v": "0ab2583e171a12a1aba75fc878b76485fa5e24488b879b8fb3dc0e26861d8cd6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/verify_tri_oracle_serial_controls.py": "fdc9e91e1ccb7f4e513396db399f79e4d98aa3e65e0a213c405bf34e03de061c",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_bonded_pad_capacity.json": "8125c3e10d15ae8dd492e22ad7c122ad6b898d6f3de69ea9fb29c8efc2db8910",
+    "records/tri_oracle_physical_io_budget.json": "0b3efc498f02b53c4bbcc84164f4ded26ed27c91a02ad3a28c911377971f451a",
+    "records/tri_oracle_serial_memory_requests.json": "00fe9bcfb1207689eac2cdd39c17fda58910b449ea1ed0e83052eed6ed73232f",
+    "records/tri_oracle_split_credit_ingress.json": "f42f169dd9f03495b6a090832de67a7dfd53e7fb0d0c37d3ca29be591611aa69",
+    "syn/link_tri_oracle_serial_controls.py": "ba90926a44d8d10a2f939829b408ad6dc1df7d7cf6df7b6b5ecff2044facd657",
+    "syn/tri_oracle_synthesize_serial_controls.tcl": "3c9e331c28c62e0204ae0436afd58ad89ed3091451e772943b65565fa68666ce",
+    "verilog/tri_oracle_serial_flit_bridge.sv": "d4507e4d2b574c98226d0fe4a7915932c3b8c1abd5622c3613b8566c740b93cc",
+    "verilog/tri_oracle_serial_flit_bridge_tb.sv": "bd07087ea8f50eb0a1ea7a336645d83520b726a7a0ed4909666f10ad492e6a82"
+  },
+  "ideal_encoded_receive_payload_only_ms_at_existing_width": 749.5676068965518,
+  "illustrative_supply_and_ground_reserve": 13,
+  "independent_request_link_lower_bound": {
+    "compact_cycles_per_request": 6,
+    "compact_only_link_cycles": 307974144,
+    "full_address_cycles_per_request": 12,
+    "full_address_only_link_cycles": 615948288,
+    "minimum_compact_fraction_if_every_target_cycle_can_serve_requests": 0.3483678551924151,
+    "request_count": 51329024,
+    "target_cycles": 508660000
+  },
+  "mapped_area_square_micrometers": 127.008,
+  "mapped_cells": 93,
+  "mapped_slow_corner_setup_slack_ps": 1188,
+  "physical_chip_boundary_signal_bits": 490,
+  "receive_data_bits_per_edge": 448,
+  "recovered_pads": 41,
+  "scope": "The three control serializers were tested as register-transfer logic and mapped gates. The credited chip is bound structurally, and independently tested memory forward packets use the narrowed serializer. Request and receive lower bounds assume unstalled links. Full-chip execution, bonded routing, memory service overlap and package timing remain open.",
+  "site_margin_by_case": {
+    "pad50_independent_fillers": -35,
+    "pad50_optimistic_shared_filler": 16,
+    "pad60_independent_fillers": -115,
+    "unbonded_cell_bodies": 82
+  },
+  "state": "serialized_control_pads_mapped_and_verified",
+  "verified_memory_forward_packets": {
+    "read_requests": 36,
+    "write_headers": 6,
+    "write_words": 21
+  }
+}
