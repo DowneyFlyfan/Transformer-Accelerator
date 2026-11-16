@@ -4,12 +4,59 @@
     ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/local_drive_size/physical/tri_oracle_pe_array/native/setup_slow_broader_setup.rpt": "ba4067badc99d94a69d214787b46416c6ffe802c4cb5ad3223fcf343f69791aa",
     ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/local_drive_size/verified.json": "909dea3e8c9f371cb86fbbfc56861a127ecb73b02793cd5a2e5ec8abde5ba19b",
     ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/physical/tri_oracle_pe_array/native/setup_slow_broader_setup.rpt": "d6af879e80e1f210b3810ace1b5839731275d995e1636847f849e27c8c919fe5",
-    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/publish_slow_comparison.py": "276a8e25db399c0c5714c8204d0fd09818c3ecb00b95c849aa8c865b053c38ba",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/publish_slow_comparison.py": "754c85fbd55c5600cb70357f62b544ca83241dad230ea2d1902c687278db1d15",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/physical/tri_oracle_pe_array/native/setup_slow_broader_setup.rpt": "2c4e25deddd559e25d26f73cd70ac51de9dfa74c41271132a947f8ec98acc826",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/verified.json": "78e63b5e7f97d7ff0974d33489e0ce3a031c9075c37bc694407d6b86511b849a",
     ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_corner_path_placement/physical/tri_oracle_pe_array/native/setup_slow_broader_setup.rpt": "6693b827466fff947aeeaa7bb4b277a3a266e2b7660e122d0dfd6b3d3703a069",
     ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_corner_path_placement/verified.json": "bb9a0ce2c875dd90e92bfc196ec91ef2a4505c09598c5037c78318e1addd0483",
     ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/verified.json": "e36933ddce632dd75826df28e087fee80d173f4f6830cee96ce7ae5411d3532f"
   },
   "measurements": {
+    "arithmetic_only_placement": {
+      "electrical_violating_pin_counts": {
+        "setup_slow": {
+          "max_capacitance": 3623,
+          "max_transition": 55024
+        },
+        "setup_typ": {
+          "max_capacitance": 3675,
+          "max_transition": 51905
+        }
+      },
+      "moved_cells": 10,
+      "timing": {
+        "hold_fast": {
+          "capture": "completed_results_reg[1][102]/DA",
+          "launch": "completed_results_reg[1][102]/CP",
+          "slack_ns": -0.000128
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[0][42]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.059017
+        },
+        "setup_slow": {
+          "capture": "completed_results_reg[2][255]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": -0.451879
+        },
+        "setup_typ": {
+          "capture": "completed_results_reg[2][255]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.020505
+        }
+      },
+      "violating_endpoint_counts": {
+        "broader_setup.rpt": 0,
+        "hold_fast_broader.rpt": 1,
+        "setup_typ_broader_setup.rpt": 0
+      },
+      "worst_80_slow_setup": {
+        "negative_endpoints_reported": 80,
+        "row15_carry_slack_ns": null,
+        "row15_sum_slack_ns": null
+      }
+    },
     "critical_path_placement": {
       "electrical_violating_pin_counts": {
         "setup_slow": {
