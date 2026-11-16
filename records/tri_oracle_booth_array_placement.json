@@ -1,0 +1,44 @@
+{
+  "available_row_sites": 529848,
+  "clock_megahertz": 580,
+  "early_congestion": {
+    "estimated_wire_length_um": 4766256,
+    "horizontal_overflow_percent": 0.0,
+    "vertical_overflow_percent": 0.0
+  },
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/emitted.sdc": "90a57f69480991ed0f1e975935669a64faf6b404ceaa06454556cb8c973bd92d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/attempt.def": "3090d11eeed9d2ed7fd8fdc8c99f1f5364fb5c96d1ab46dbb081691d52a606da",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/console.log": "782b959ec7890097a7da5b0cd51bae32cbed2f59db7dc1246cccafe897efbd16",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/native_gate_hold.rpt": "307fce7d09996757df9d8119624176a53c064d41bd7e31b9be37b4a5d0ef1b9c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/native_gate_setup.rpt": "c165d1e3cd24d820e754fe24038720a0d20a6d425897f233866b8b6aa0dcdc7f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/native_hold.rpt": "93b7c351cea11ff98dc008a0a3ebedfa798f72de9dc0e513b67f87ffb93afd6b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/native_setup.rpt": "6780e4fd92f40920ced7adfab56b58703abee77e50131eb33838f6cd7609da73",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/place.tcl": "78f252ad3d21e8dffff309cf2b5ffd34b7422f2fb0943c30ff587ae46513dcbc",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/placed.def": "8442fc8b3eeeff871c7511d20f81c145824eeb421c87859e3d4d01c8cbbbff7a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/placement.rpt": "4bec98fb934ea67c16986c9254a85ef4041d230654c9f811b8a66b83ed0772de",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/netlist.v": "fdee12230be0aeac29c38cf2dae278208c2b78f3b4c74cd3922ce3536db363a5",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    "records/tri_oracle_booth_array.json": "40e840e17ada502ac33a7ee679582e5b33267defff23dc569d139c2a0a3b84c9",
+    "records/tri_oracle_gated_array_placement.json": "48ca780a3cd323f570080cfc50db29466d7c2caa927f4f7c50423aa30d844ce5",
+    "syn/tri_oracle_require_clean_placement.tcl": "251d928f254596f394f807a624d06ff04dbe63bdb4b82a04414747ce8ba81170",
+    "syn/verify_tri_oracle_booth_placement.py": "98d1a39dd57024cd06fb2f704417804b8d33434673796698d43564c64f9aa020"
+  },
+  "placed_cells": 64630,
+  "placed_row_sites": 487727,
+  "placement_density_percent": 92.05,
+  "pre_route_slack_ns": {
+    "gate_hold": 0.034,
+    "gate_setup": 0.255,
+    "hold": -0.021,
+    "setup": -3.977
+  },
+  "remaining_row_sites": 42121,
+  "scope": "One compute-array region with the original pin and blockage reservations and unchanged mapped logic. Timing uses early wire estimates and an ideal clock.",
+  "state": "full_booth_array_legal_in_saved_region",
+  "worst_setup_endpoints": [
+    "occupancy_onehot_reg[0]/CP",
+    "out_sums[589]"
+  ]
+}
