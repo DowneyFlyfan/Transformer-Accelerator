@@ -2,7 +2,7 @@
 set root [file dirname [file dirname [file normalize [info script]]]]
 set top $::env(TRI_ORACLE_REQUEST_ENDPOINT)
 if {$top ni {tri_oracle_memory_request_tx tri_oracle_memory_request_rx tri_oracle_shared_read_link
-             tri_oracle_memory_write_link_tx tri_oracle_memory_forward_rx}} {
+             tri_oracle_memory_write_link_tx tri_oracle_memory_forward_rx tri_oracle_memory_io_link}} {
     error "Unknown memory request endpoint $top"
 }
 set out [file normalize $::env(TRI_ORACLE_REQUEST_OUTPUT)]
@@ -11,11 +11,14 @@ set_db auto_ungroup none
 set_db auto_super_thread false
 read_libs [file join $root .cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib]
 set files [list [file join $root verilog/tri_oracle_memory_request_link.sv]]
-if {$top eq "tri_oracle_shared_read_link"} {
+if {$top in {tri_oracle_shared_read_link tri_oracle_memory_io_link}} {
     lappend files [file join $root verilog/tri_oracle_shared_read_link.sv]
 }
-if {$top eq "tri_oracle_memory_write_link_tx"} {
+if {$top in {tri_oracle_memory_write_link_tx tri_oracle_memory_io_link}} {
     lappend files [file join $root verilog/tri_oracle_memory_write_link_tx.sv]
+}
+if {$top eq "tri_oracle_memory_io_link"} {
+    lappend files [file join $root verilog/tri_oracle_memory_io_link.sv]
 }
 read_hdl -sv $files
 elaborate $top
