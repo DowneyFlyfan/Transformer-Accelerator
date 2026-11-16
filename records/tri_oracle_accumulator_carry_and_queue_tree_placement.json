@@ -1,0 +1,359 @@
+{
+  "buffer_branch_changes": {
+    "TRI_ARRAY_CTL_0_26": {
+      "exchanged_cells": [
+        "mul_98_69_I70_g1467",
+        "mul_98_69_I140_g1401"
+      ],
+      "new_xy_um": [
+        495.44,
+        612.2
+      ],
+      "old_xy_um": [
+        459.73999999999995,
+        731.0
+      ],
+      "root_leg_um": [
+        186.32,
+        257.42
+      ],
+      "score_before_after": [
+        1006637.8392,
+        695371.8558
+      ],
+      "worst_child_leg_um": [
+        609.77,
+        468.04
+      ]
+    },
+    "TRI_ARRAY_CTL_0_27": {
+      "exchanged_cells": [
+        "mul_98_69_I14_g1446",
+        "mul_98_69_I48_g1433"
+      ],
+      "new_xy_um": [
+        638.8,
+        408.2
+      ],
+      "old_xy_um": [
+        735.26,
+        731.0
+      ],
+      "root_leg_um": [
+        101.2,
+        318.06
+      ],
+      "score_before_after": [
+        1701207.2755,
+        705790.9779
+      ],
+      "worst_child_leg_um": [
+        822.17,
+        425.44
+      ]
+    },
+    "TRI_ARRAY_CTL_0_28": {
+      "exchanged_cells": [
+        "mul_98_69_I175_g1466",
+        "mul_98_69_I83_g1468"
+      ],
+      "new_xy_um": [
+        701.8,
+        416.6
+      ],
+      "old_xy_um": [
+        676.0400000000001,
+        731.0
+      ],
+      "root_leg_um": [
+        41.98,
+        370.14
+      ],
+      "score_before_after": [
+        1330075.8083,
+        692401.0123
+      ],
+      "worst_child_leg_um": [
+        743.66,
+        403.5
+      ]
+    },
+    "TRI_ARRAY_CTL_0_29": {
+      "exchanged_cells": [
+        "mul_98_69_I4_g1467",
+        "mul_98_69_I23_g1433"
+      ],
+      "new_xy_um": [
+        602.26,
+        593.0
+      ],
+      "old_xy_um": [
+        638.94,
+        729.8000000000001
+      ],
+      "root_leg_um": [
+        5.92,
+        169.8
+      ],
+      "score_before_after": [
+        1268303.7126,
+        801439.2716
+      ],
+      "worst_child_leg_um": [
+        674.1,
+        500.62
+      ]
+    }
+  },
+  "carry_arc_total_estimated_um": [
+    24976.16,
+    16371.52
+  ],
+  "carry_chains": 32,
+  "carry_connections": 448,
+  "cases": {
+    "carry_compaction": {
+      "cells_moved_from_preceding_case": 1122,
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3294,
+              "worst_limit_multiple": 4.12
+            },
+            "total_violating_pins": 3589
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 22231,
+              "worst_limit_multiple": 8.259947
+            },
+            "total_violating_pins": 54946
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3363,
+              "worst_limit_multiple": 3.758621
+            },
+            "total_violating_pins": 3649
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 19634,
+              "worst_limit_multiple": 7.548173
+            },
+            "total_violating_pins": 51788
+          }
+        }
+      },
+      "innovus_seconds": 42.566,
+      "reported_fast_setup_violations": 14,
+      "slow_worst_path_breakdown": {
+        "cell_delay_ns": 1.4088,
+        "full_adder_carry_arcs": 0,
+        "net_delay_ns": 0.793,
+        "total_data_path_ns": 2.2018
+      },
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018896
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[1][32]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": -0.072873
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[1].compressor[0].sum_reg[16]/D",
+          "launch": "product[11].value_reg[15]/CP",
+          "slack_ns": -0.628974
+        },
+        "setup_typ": {
+          "capture": "carry_save.row[20].value_reg[16]/DB",
+          "launch": "carry_save.row[20].carry_reg[2]/CP",
+          "slack_ns": -0.115379
+        }
+      }
+    },
+    "fast_tree_relocation": {
+      "cells_moved_from_preceding_case": 12,
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3311,
+              "worst_limit_multiple": 4.08
+            },
+            "total_violating_pins": 3606
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 22200,
+              "worst_limit_multiple": 8.281167
+            },
+            "total_violating_pins": 54939
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3376,
+              "worst_limit_multiple": 3.758621
+            },
+            "total_violating_pins": 3663
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 19684,
+              "worst_limit_multiple": 7.554817
+            },
+            "total_violating_pins": 51853
+          }
+        }
+      },
+      "innovus_seconds": 40.562,
+      "reported_fast_setup_violations": 0,
+      "slow_worst_path_breakdown": {
+        "cell_delay_ns": 1.407,
+        "full_adder_carry_arcs": 0,
+        "net_delay_ns": 0.7961,
+        "total_data_path_ns": 2.2031
+      },
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018896
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[0][350]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": 0.007622
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[1].compressor[0].sum_reg[16]/D",
+          "launch": "product[11].value_reg[15]/CP",
+          "slack_ns": -0.630472
+        },
+        "setup_typ": {
+          "capture": "carry_save.row[20].value_reg[16]/DB",
+          "launch": "carry_save.row[20].carry_reg[2]/CP",
+          "slack_ns": -0.120267
+        }
+      }
+    },
+    "previous_placement": {
+      "electrical": {
+        "setup_slow": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3304,
+              "worst_limit_multiple": 4.08
+            },
+            "total_violating_pins": 3599
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 22223,
+              "worst_limit_multiple": 8.156499
+            },
+            "total_violating_pins": 54951
+          }
+        },
+        "setup_typ": {
+          "max_capacitance": {
+            "internal": {
+              "pins": 3368,
+              "worst_limit_multiple": 3.758621
+            },
+            "total_violating_pins": 3655
+          },
+          "max_transition": {
+            "internal": {
+              "pins": 19649,
+              "worst_limit_multiple": 7.458472
+            },
+            "total_violating_pins": 51778
+          }
+        }
+      },
+      "reported_fast_setup_violations": 17,
+      "slow_worst_path_breakdown": {
+        "cell_delay_ns": 1.939,
+        "full_adder_carry_arcs": 15,
+        "net_delay_ns": 0.5573,
+        "total_data_path_ns": 2.4963
+      },
+      "timing": {
+        "hold_fast": {
+          "capture": "running_valid_reg[2]/D",
+          "launch": "running_valid_reg[1]/CP",
+          "slack_ns": -0.018878
+        },
+        "setup_fast": {
+          "capture": "completed_results_reg[1][32]/SA",
+          "launch": "running_valid_reg[3]/CP",
+          "slack_ns": -0.039987
+        },
+        "setup_slow": {
+          "capture": "carry_save.row[18].value_reg[18]/DB",
+          "launch": "carry_save.row[18].sum_reg[2]/CP",
+          "slack_ns": -0.87438
+        },
+        "setup_typ": {
+          "capture": "carry_save.row[18].value_reg[18]/DB",
+          "launch": "carry_save.row[18].sum_reg[2]/CP",
+          "slack_ns": -0.315995
+        }
+      }
+    }
+  },
+  "clock_megahertz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/physical/tri_oracle_pe_array/native/broader_setup.rpt": "6ad837e5e4547606d0912afe757fcf01fde7711ba01d0ed1bdaa11d87fd7a396",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/verified.json": "2e9625331eebec43b958223dfaa8a670557b1c94f3a7b566b2a3b193072a5456",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/physical/tri_oracle_pe_array/native/broader_setup.rpt": "3499bd89be7b6890c37b1b4f66c87dab0c7dbcd9f84bdc62c3441c1b72745067",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/publish_carry.py": "6d9cc1cf0f8dc2404a6c96c6e6093f5671458c4bf7a457a46e4a0cb63ee9a4bd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/verified.json": "49f517289e140a8da65cb6dbec8b25e67d19f1c03d690df6d144d5bfe2f4bbdf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/physical/tri_oracle_pe_array/native/broader_setup.rpt": "ee575f24c46d6bd89f4dd79cecd444c4950220fb9320fe90943c485cf1f8458f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/verified.json": "ac996596ee408146dbea0ce1380df623e572243d37573f0257b01cf7433f8880"
+  },
+  "mapped_cells": 53859,
+  "process": "TSMC 28 nm HPC+",
+  "row18_estimated_carry_spans_um": {
+    "longest_um": [
+      371.58,
+      320.96
+    ],
+    "sum_um": [
+      2319.18,
+      1231.76
+    ]
+  },
+  "row20_estimated_carry_spans_um": {
+    "longest_um": [
+      405.02,
+      366.54
+    ],
+    "sum_um": [
+      1288.42,
+      1205.18
+    ]
+  },
+  "row31_estimated_carry_spans_um": {
+    "longest_um": [
+      207.78,
+      153.52
+    ],
+    "sum_um": [
+      1434.06,
+      643.62
+    ]
+  },
+  "scope": "Matched Innovus regional comparison with ideal clock and early routed wire resistance and capacitance. Same mapped logic, occupied site intervals, physical pins and reserved sites in all three cases. Timing and electrical counts describe this isolated array.",
+  "state": "regional_accumulator_carry_and_queue_tree_placement_measured"
+}
