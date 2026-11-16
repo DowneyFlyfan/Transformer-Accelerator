@@ -1,0 +1,305 @@
+{
+  "boundary_signal_pins": 484,
+  "defined_modules": 1035,
+  "evidence_sha256": {
+    ".cache/host_command_link/genus/netlist.v": "fd2dda0fa98167f96840802abb9a0ae67bd9269b5be0ec63fde716c234d15a17",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/verified_reset_replays.json": "856b34f6f2bbf7484fca945d7d0cff173c4e0ecc5c00537af19f4ec12494dd52",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/shared437/merge455/compiler/16x80m2f/ts5n28hpcpsvta16x80m2fw_130a/VERILOG/ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.v": "ccf723afb843be99519a3cb5fe2cf8c5d46ebce84a62dd1246f0f7bf397237a7",
+    ".cache/physical/shared437/merge455/compiler/24x128m2f/ts5n28hpcpsvta24x128m2fw_130a/VERILOG/ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.v": "35ea57a9268155751bd00d7087fd068fb1d5d9c575e2e52f61780c725a7acd54",
+    ".cache/physical/shared437/merge455/compiler_inplace/8x80m2f/ts5n28hpcpsvta8x80m2fw_130a/VERILOG/ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.v": "f23baa3b8e4b7e078a89899ff0e2194dd9022dc0dc7d6fbed71c8c98f21b5e41",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/simulation.sv": "ca34a210540b0b67c3d3e3c9a286bf65952513ddaa919325735e72603f1201e2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/netlist.v": "4bdd1314a4d8c1bf09ea83eecc1b1d95de6c0e2f473e57b051380a1e259f1661",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/chip_bundle.sv": "bcd6928f76844d40cc1b557452e45dc94f1728f00fbc7eb6a3f042a5a131ac95",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/netlist.v": "a4a8978e3b7492a98b9d0246a80a1cd8046c69da915238677dea621e427b3b22",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/host_pad_cut.v": "1becf5150d2cf24087462ab3f4fcb0bd771f570e2f8a3a435e7e0edc20debe6e",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/top_wrapper.v": "63687ebec5f419f9172cfbbdb4c764f23162370b81949010a468caa5361b717f",
+    ".cache/physical/whole_chip_xcelium_speed/gated_receive_storage/netlist.v": "d8f797ea9c8242ee44e5582b29ff7e0bfb096018184b1c371201da1e3afc6b1e",
+    ".cache/physical/whole_chip_xcelium_speed/host_control/rx/netlist.v": "ce8449723f882ea2dc643883535657152642462f6352a5d643d5289812b896a2",
+    ".cache/physical/whole_chip_xcelium_speed/host_control/tx/netlist.v": "d1d0f841db76d6923957e9b98558cbfa3ff2b1d5452cc1357c3e1f9598f560a3",
+    ".cache/physical/whole_chip_xcelium_speed/host_grouped/genus/netlist.v": "6d13cd0d7b87124f4b8126e7ee3ef42e602bcfab9baf13e92f00af5db91b0d81",
+    ".cache/physical/whole_chip_xcelium_speed/host_results/attention_wrapper.v": "187cb10f92e1d16223d082142de53d10d895f56b558bdd5fbf25f1e1caa6e7d0",
+    ".cache/physical/whole_chip_xcelium_speed/host_results/cold_results.v": "e68a0a6a50d88510ead55cc04f98540fe0eb48ecc98d455af73283a4bfb86b77",
+    ".cache/physical/whole_chip_xcelium_speed/host_results/rotary_wrapper.v": "f292f15e2cd6b65c98c7995a5f12a6b683c9c7fdbc0f3945ccae49df52caf327",
+    ".cache/physical/whole_chip_xcelium_speed/host_results/wrapper.v": "9972851903e60e994a5167fde8cd1e14a92bb89cfa19c47353af21f6ac37ff74",
+    ".cache/physical/whole_chip_xcelium_speed/host_status/genus_rx/netlist.v": "a0e0bc08191d1bed174fd4bddf6d47e71b741053ff0b0cbef6da88fd36c28dec",
+    ".cache/physical/whole_chip_xcelium_speed/host_status/genus_tx/netlist.v": "9fc7069f7b12e6c1301781a7df9dae125527271edd76cacceb05611a2f983a0e",
+    ".cache/physical/whole_chip_xcelium_speed/host_status_joined/projection_wrapper.v": "95654feb96a00eef103175ab4eb18a71c9bdcdb6423c903c44428bd5fde7c7ed",
+    ".cache/physical/whole_chip_xcelium_speed/host_status_joined/results_wrapper.v": "b5a2e05e6723721a04b1aeea4bf368dd613da2265adb7ef6dda3cfac7261000b",
+    ".cache/physical/whole_chip_xcelium_speed/host_writeback/genus/netlist.v": "83a25c1c72c909b74bdc62c9f6a671028fbacc634e462909fba30e7dc6891bdc",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/netlist.v": "9cbe51570042aee9e19621f70b885ca0837cf43d20f68479116a73ca1aa04aaa",
+    ".cache/physical/whole_chip_xcelium_speed/memory_io_link/genus/netlist.v": "7f1b67a16ace2d83482bd6666a246297025247a89124174ebc6ec640ceb86f96",
+    ".cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/credit_wrapper.v": "05bba0a33b31d5594993175c65acb81b4a4467521e219bb4981ad6bd0b5094da",
+    ".cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/genus/netlist.v": "507383750dfc9ac7bbd88678eb2123d88cb30f4ed89801d9d1352e21e139dde2",
+    ".cache/physical/whole_chip_xcelium_speed/token_sign_dma/genus/netlist.v": "24d36948b1488a1e643fce30d53a16a6399aa0c0aed8e9ca1be35c7e35b790e4",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    "records/tri_oracle_497_pad_floorplan.json": "9aeeb2960a173844b8fa84887de204eab986880f6e12ccbad39dc67ae2493030",
+    "records/tri_oracle_booth_control_buffers.json": "f1bd17b876070620281782c595e7f414f5274bdf1ce65aa52994c844064b34ee",
+    "records/tri_oracle_booth_fence_capacity.json": "50cec20e9379548b3589c8d2da87648dc6d89edd3dde872eb2f72870679c9010",
+    "records/tri_oracle_credited_request_link.json": "fe87739eaaaa76cfb4900afe637bbe20305bad23a1e59f79d2a8e0a3ae55f7c8",
+    "records/tri_oracle_gated_receive_storage.json": "2357efebc8d2fe7451382122bd7ff6f4259034cc7766e3da684785a643b64a79",
+    "records/tri_oracle_hot_timed_array_twenty_core_composition.json": "5b8083a8d9f95369a16b1e1fbe64b44d7febe9d8183cb0b6a1aa73b94bebadb7",
+    "records/tri_oracle_serialized_placement_transfer.json": "66d682a34acc5f0fe082fe9499ee1c3e04499d85147a43ff3026584788d720bf",
+    "syn/verify_tri_oracle_booth_chip_link.py": "367c30e3cdd3b1aee835d1dfeda874f35466a47c700ce5f0f39c8f97fda3372c"
+  },
+  "fixed_memory_macros": 631,
+  "gated_receivers": 1,
+  "mapped_arrays": 20,
+  "mapped_standard_cell_row_sites": 35764584,
+  "reachable_leaves_including_memories": 4104527,
+  "scope": "The mapped chip substitutes two already tested components and proves the twenty original array pin bindings and reachable leaf inventory. Native elaboration, timed placement and routing are separate.",
+  "state": "buffered_booth_serialized_chip_structurally_linked",
+  "top": "tri_oracle_chip_credited_request",
+  "unchanged_array_associations": [
+    {
+      "associations_sha256": "7f4ee2c7da4db8b5340172d8b73c94a4eb12e76ce1a2ae561e94827809700a30",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank4_3",
+      "predecessor": "tri_oracle_pe_array_verified_bank4_3",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "rst_n",
+        "p1"
+      ]
+    },
+    {
+      "associations_sha256": "408e6091ca2ed7eb91ae4fa1538f15de42c631a10851ea2863a6652ffa84fd20",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank4_2",
+      "predecessor": "tri_oracle_pe_array_verified_bank4_2",
+      "shadow_reset_nets": [
+        "rst_n",
+        "p1",
+        "p1",
+        "p1"
+      ]
+    },
+    {
+      "associations_sha256": "54c13b5571c9c6dca28e32fb1e564510a627d7a42ca28aec72c18ae7481b45a8",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank4_1",
+      "predecessor": "tri_oracle_pe_array_verified_bank4_1",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "6178606711061da24be31152d4c3543b32956de5e46a4c4c5fe85f35a298da2b",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank3_3",
+      "predecessor": "tri_oracle_pe_array_verified_bank3_3",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "p1",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "19e67a709e69a7b6b4fd82b24a7833c62ef78da37eda4dbf8c40e700b4406ff1",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank3_2",
+      "predecessor": "tri_oracle_pe_array_verified_bank3_2",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "77b55daf44a05571d19040d50f4bf517b1a75cfa81af4baec7857e3df20bb26f",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank3_1",
+      "predecessor": "tri_oracle_pe_array_verified_bank3_1",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "p2",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "210dca364842f7e01b725399438a58ee4102c3b59a840b4fceb4f0ec7ca7e5e0",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank2_3",
+      "predecessor": "tri_oracle_pe_array_verified_bank2_3",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "3c8b462d2a1e541d64cb5ac8a5a697953b195374c19c4b903950fd4f2a8a53ba",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank2_2",
+      "predecessor": "tri_oracle_pe_array_verified_bank2_2",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "1c28585952fb70c65400e685a570150649ff49fd60b3cf64460e744bb5f08675",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank2_1",
+      "predecessor": "tri_oracle_pe_array_verified_bank2_1",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "p1",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "345f899071b2d46ff086a63484ddcef4460a08e6b076d7e21cd2b7573ffd2983",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank1_3",
+      "predecessor": "tri_oracle_pe_array_verified_bank1_3",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "0e1882c381687c2f3d8fb13b4eda770aec14f9932280d77bc66f9db6018382b4",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank1_2",
+      "predecessor": "tri_oracle_pe_array_verified_bank1_2",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "3b17824f34bdc3fe39b76c6305fb5cc6147d2ccf3db5b2192b62b97dc6182b15",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank1_1",
+      "predecessor": "tri_oracle_pe_array_verified_bank1_1",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "427f6c4a6e07f075a9953d05cee528727bafc35beb14c89fcea4aba5b7e150ce",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank0_3",
+      "predecessor": "tri_oracle_pe_array_verified_bank0_3",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "33a1984104e323b578e6cd6ef6ce87ae2f9ff27f37820cc97631739a930e2ed9",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank0_2",
+      "predecessor": "tri_oracle_pe_array_verified_bank0_2",
+      "shadow_reset_nets": [
+        "p1",
+        "rst_n",
+        "p1",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "5580f33e209441b5b27e5613e8fc0222cace888e3b194ecdaf9208f5e4cdda33",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank0_1",
+      "predecessor": "tri_oracle_pe_array_verified_bank0_1",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "8e0c022318f2f70a37cf0701236f77dcbfbe84c68e232a254a4f7bd9f87fe7c8",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank0",
+      "predecessor": "tri_oracle_pe_array_verified_bank0",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "p2",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "c84d0577bde466c01bbaca1eda50fc65c4587a02c8f3992036f4300cf9933d2c",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank1",
+      "predecessor": "tri_oracle_pe_array_verified_bank1",
+      "shadow_reset_nets": [
+        "p2",
+        "p1",
+        "p2",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "236cdeda570834aec204af00315e0f928c2d4370bf03db40b1cbe3a4eb9f42f1",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank2",
+      "predecessor": "tri_oracle_pe_array_verified_bank2",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "38f3e2bf90c82e78a5e9cb38a6a667ee14ae17e108a637b931bf608dfd37d8e0",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank3",
+      "predecessor": "tri_oracle_pe_array_verified_bank3",
+      "shadow_reset_nets": [
+        "p1",
+        "p1",
+        "p1",
+        "rst_n"
+      ]
+    },
+    {
+      "associations_sha256": "0125297379845101813bea22ee09b2500841339d3ae7f5851a4110182e7a797a",
+      "instance": "compute",
+      "owner": "tri_oracle_sram_memory_compute_verified_bank4",
+      "predecessor": "tri_oracle_pe_array_verified_bank4",
+      "shadow_reset_nets": [
+        "rst_n",
+        "rst_n",
+        "rst_n",
+        "rst_n"
+      ]
+    }
+  ]
+}

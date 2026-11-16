@@ -1,0 +1,14 @@
+{
+  "arrays_replayed": 20,
+  "delivered_lockstep_transactions_per_array": 786,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/array_reset_replay/arrays.v": "d07c6d35c884c6862916027764810b2afc1067ed548241032ae6d0f7075ee616",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/array_reset_replay/console.log": "8b07bbf9a736547fd5af9a74821637552e9d2fd52d0d10deddf462e1ed32ab03",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/array_reset_replay/xrun.history": "e9095f965a0dc8f018db8f622c8843468f599bfbb293bb5d13de1d849fd943f5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/link_proof.json": "edd2622df13ab3dc8ee6c23a57f038d10fb33d1fa1d20fed695666e1a0f1e386",
+    "syn/verify_tri_oracle_linked_booth_resets.py": "142c4dc3fdf254b1f23c8fbaaa06f4dab9ab5adb3d14da924186b0fa3ad06076"
+  },
+  "reset_partitions": 8,
+  "scope": "Exact linked array modules and their reset bindings were replayed together. Each reset phase uses the same logical signal on the physical reset aliases.",
+  "state": "all_linked_booth_array_reset_bindings_verified"
+}
