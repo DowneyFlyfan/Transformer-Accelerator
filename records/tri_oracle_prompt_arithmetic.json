@@ -1,0 +1,106 @@
+{
+  "correct": {
+    "all_float_pruned": 32,
+    "all_float_unpruned": 37,
+    "baseline": 34,
+    "late_float_down": 33,
+    "late_float_feedforward": 36
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/late_down_precision_paired/inputs.json": "cd61b76e9dfa0698c847d5f4ad6003965a3806892c82cc736863ef0927ab50fd",
+    ".cache/model_reference/gqa_testdev/matched_prompt_arithmetic/inputs.json": "2b69b63c576af86db292b062fb0bdfa4a45abee9f2ebd1e6604e49106dbcb85c",
+    ".cache/model_reference/gqa_testdev/matched_prompt_arithmetic/predictions.jsonl": "3ef42b23bfc59031c6500f9dcf15b7846077410d06ef988d40160e9ffc5484b5",
+    ".cache/model_reference/gqa_testdev/matched_prompt_arithmetic/receipt.json": "f5e6142e7d0f4ef1cab12cd6abdfd40c9cd45b586ad6f4b05bebace891ff4367",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_late_down_precision.json": "7265d4407321b9b13c94bb4e3a19ed7a133e65e47d0d03dc60101b7f283f5677",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_prompt_arithmetic.py": "7a8c97faee07b85beafe004139e77c472fee53b5746ae503cce89e10879ad79f",
+    "syn/verify_tri_oracle_prompt_arithmetic.py": "60c70604be1933d8ac33459c246811e192e1eab1db1aa944943de4bce9ff14f2"
+  },
+  "host_gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "paired": {
+    "all_float_pruned_to_all_float_unpruned": {
+      "baseline": 32,
+      "candidate": 37,
+      "first_token_changed": 10,
+      "gained": 6,
+      "lost": 1,
+      "paired_exact_two_sided_p_value": 0.125
+    },
+    "baseline_to_all_float_pruned": {
+      "baseline": 34,
+      "candidate": 32,
+      "first_token_changed": 20,
+      "gained": 5,
+      "lost": 7,
+      "paired_exact_two_sided_p_value": 0.7744140625
+    },
+    "baseline_to_all_float_unpruned": {
+      "baseline": 34,
+      "candidate": 37,
+      "first_token_changed": 17,
+      "gained": 7,
+      "lost": 4,
+      "paired_exact_two_sided_p_value": 0.548828125
+    },
+    "baseline_to_late_float_down": {
+      "baseline": 34,
+      "candidate": 33,
+      "first_token_changed": 3,
+      "gained": 0,
+      "lost": 1,
+      "paired_exact_two_sided_p_value": 1
+    },
+    "baseline_to_late_float_feedforward": {
+      "baseline": 34,
+      "candidate": 36,
+      "first_token_changed": 13,
+      "gained": 6,
+      "lost": 4,
+      "paired_exact_two_sided_p_value": 0.75390625
+    },
+    "late_float_down_to_late_float_feedforward": {
+      "baseline": 33,
+      "candidate": 36,
+      "first_token_changed": 10,
+      "gained": 6,
+      "lost": 3,
+      "paired_exact_two_sided_p_value": 0.5078125
+    },
+    "late_float_feedforward_to_all_float_pruned": {
+      "baseline": 36,
+      "candidate": 32,
+      "first_token_changed": 10,
+      "gained": 1,
+      "lost": 5,
+      "paired_exact_two_sided_p_value": 0.21875
+    }
+  },
+  "peak_device_bytes": 7698868224,
+  "same_held_out_images": 67,
+  "scope": "Diagnostic software arithmetic substitutions on the exact held-out questions from the integer precision test. All arms retain the compact attention and answer-generation settings. The unpruned arm bypasses the feed-forward predictor mask only during prompt processing. Mapped execution and the paper's end-to-end benchmark require separate evidence.",
+  "state": "matched_prompt_arithmetic_controls_independently_rescored",
+  "substitution_counts": {
+    "all_float_pruned": {
+      "applied_skip_events": 236951050,
+      "predicted_skip_events": 236951050,
+      "prompt_rows": 496411
+    },
+    "all_float_unpruned": {
+      "applied_skip_events": 0,
+      "predicted_skip_events": 233120599,
+      "prompt_rows": 492832
+    },
+    "late_float_down": {
+      "applied_skip_events": 44124957,
+      "predicted_skip_events": 44124957,
+      "prompt_rows": 109644
+    },
+    "late_float_feedforward": {
+      "applied_skip_events": 43854907,
+      "predicted_skip_events": 43854907,
+      "prompt_rows": 109605
+    }
+  }
+}
