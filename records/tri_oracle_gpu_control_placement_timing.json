@@ -1,0 +1,70 @@
+{
+  "array": "tri_oracle_pe_array_verified_bank0_2",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/connected_assignment/unscored_branch.json": "ec4b82ab1428252da9d20ffe90cc5cb8f8ae689c25bfc1279f8f712596856950",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/connected_assignment/verified.json": "8e38e273690fbc696326e57ce1630c1c6b63179f8e8571874398737ea8171d62",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/expanded_control_assignment/physical/tri_oracle_pe_array_verified_bank0_2/native/after.def": "177b6075d03dbc44f2026f6b675b7bfa19a3455af1504246efbd08fd2910bb8a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/expanded_control_assignment/verified.json": "d288ec385fb8076901646d048f051e1c6549b402ffdc40a03b59ac5b353af6b7"
+  },
+  "first_pass_unscored_wire_arc": {
+    "critical_wire_arc": [
+      "FE_OFC17049_n_5/Z",
+      "g173986/B1"
+    ],
+    "explicitly_selected_in_initial_timing_arcs": false,
+    "fanout": 47,
+    "initial_scoring_fanout_cutoff": 18,
+    "measured_wire_delay_ns": 3.0258,
+    "span_um_after_expanded_pass": 247.04,
+    "span_um_before_after": [
+      265.34,
+      889.08
+    ]
+  },
+  "initial_to_final_setup_improvement_ns": 3.866338,
+  "scope": "Identical netlist, reserved neighboring sites, pin geometry, occupied slots and ideal-clock assumptions. Native early extraction measured both variants. The better regional placement still violates setup and requires whole-chip verification before any adoption.",
+  "state": "two_gpu_swap_passes_and_native_setup_comparison_verified",
+  "target_mhz": 580,
+  "trials": {
+    "expanded_control_fanout": {
+      "accepted_swaps": 43866,
+      "cells_at_new_positions": 27317,
+      "graph_cost_before_after": [
+        10010491.6,
+        5470709.4
+      ],
+      "peak_device_bytes": 180323328,
+      "relocated_geometry_setup_slack_ns": [
+        -6.985941,
+        -2.409763
+      ],
+      "selected_critical_arcs": 39,
+      "tracked_critical_span_um_before_after": [
+        8107.1,
+        5393.2
+      ],
+      "tracked_edges": 122285,
+      "unchanged_slots": 65763
+    },
+    "limited_fanout": {
+      "accepted_swaps": 95844,
+      "cells_at_new_positions": 38839,
+      "graph_cost_before_after": [
+        13878722.6,
+        4785990.1
+      ],
+      "peak_device_bytes": 48148480,
+      "relocated_geometry_setup_slack_ns": [
+        -6.276101,
+        -6.985941
+      ],
+      "selected_critical_arcs": 19,
+      "tracked_critical_span_um_before_after": [
+        8697.98,
+        1965.82
+      ],
+      "tracked_edges": 116871,
+      "unchanged_slots": 65763
+    }
+  }
+}
