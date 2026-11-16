@@ -1,0 +1,92 @@
+{
+  "actual_region_dbu": [
+    40000,
+    2886400,
+    1819960,
+    4309600
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/resized.v": "5cd686dd491c7a632d75aae03d6334ac1f424b7ee24a805e3aca4dba2422428b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/hot_sized_drive/verified.json": "e413a5eaa1589e83c8f559dedaacee5b18195af1eb882ab1e8846a17f53e7e04",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/baseline/verified.json": "1e29598a5637d92908677341abf5296f2d8131405360c9193a73f18aa13ee4f0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/optimized/assignment.json": "33a3f87e5140f868a9e34203f099cf65e85ebf501cc4804233ee58e40a240014",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/optimized/verified.json": "32a44aa960e1952a85134d65d26a5badc810595211d589d89d06480b546ba244",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/prepared.json": "201f264c74c266ed468c817e2f03c1c2787dc68e0b0977a99874066552f2d599",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/publish_receiver_comparison.py": "a9949ba1599bbe7a03f5a66f8330d087e29481c8daffa58d25582d2a712cee94"
+  },
+  "moved_cells": 52159,
+  "native_run_seconds": {
+    "baseline": 82.63,
+    "optimized": 71.862
+  },
+  "net_connection_cost": [
+    60065968.0,
+    10391302.0
+  ],
+  "placed_standard_cells": 54141,
+  "preserved_exact_occupied_site_footprints": true,
+  "region": "tri_oracle_pe_array_verified_bank4_1",
+  "reserved_rectangles": 30189,
+  "scope": "Same mapped array, legal footprint inventory, blockage map, track grid, probe pins and ideal clock in both variants. The receiver is one of the repacked regions in the composed chip. The comparison is an isolated early extraction.",
+  "single_original_timed_region_hot_setup": {
+    "capture": "completed_results_reg[0][210]/SA",
+    "launch": "running_valid_reg[3]/CP",
+    "slack_ns": 0.088315
+  },
+  "state": "native_repacked_receiver_timing_baseline_and_optimization_measured",
+  "target_mhz": 580,
+  "timing_optimized": {
+    "hold_fast": {
+      "capture": "completed_results_reg[0][265]/DA",
+      "launch": "completed_results_reg[0][265]/CP",
+      "slack_ns": -0.012407
+    },
+    "setup_fast": {
+      "capture": "completed_results_reg[0][168]/SA",
+      "launch": "shadow_valid_reg[3]/CP",
+      "slack_ns": -2.1366
+    },
+    "setup_fast_hot": {
+      "capture": "completed_results_reg[0][168]/SA",
+      "launch": "shadow_valid_reg[3]/CP",
+      "slack_ns": -2.321793
+    },
+    "setup_slow": {
+      "capture": "completed_results_reg[0][168]/SA",
+      "launch": "shadow_valid_reg[3]/CP",
+      "slack_ns": -2.746396
+    },
+    "setup_typ": {
+      "capture": "completed_results_reg[0][168]/SA",
+      "launch": "shadow_valid_reg[3]/CP",
+      "slack_ns": -1.580727
+    }
+  },
+  "timing_width_only": {
+    "hold_fast": {
+      "capture": "completed_results_reg[0][249]/DA",
+      "launch": "completed_results_reg[0][249]/CP",
+      "slack_ns": -0.012545
+    },
+    "setup_fast": {
+      "capture": "completed_results_reg[1][252]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": -7.370775
+    },
+    "setup_fast_hot": {
+      "capture": "completed_results_reg[1][252]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": -7.451597
+    },
+    "setup_slow": {
+      "capture": "completed_results_reg[1][252]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": -8.121532
+    },
+    "setup_typ": {
+      "capture": "completed_results_reg[1][252]/SA",
+      "launch": "running_valid_reg[3]/CP",
+      "slack_ns": -5.742542
+    }
+  }
+}
