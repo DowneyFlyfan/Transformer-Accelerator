@@ -1,4 +1,18 @@
 {
+  "cold_chip_read_request_ports": {
+    "auxiliary": {
+      "address_bits": 64,
+      "length_bits": 6
+    },
+    "primary": {
+      "address_bits": 64,
+      "length_bits": 6
+    },
+    "projection": {
+      "address_bits": 64,
+      "length_bits": 5
+    }
+  },
   "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
   "evidence_sha256": {
     ".cache/compact_index_io/genus/netlist.v": "fd8d5a3e5c45a985d985fd8aad2eb6d1b4a27fcad92dce9472c3b1768359f19d",
@@ -6,49 +20,50 @@
     ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
     ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
     ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/compact_index_replay_tb.sv": "10316555840d579e2c38021c50aa1d50098400f1170d1448f36e4b638d1334e0",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/fixture/console.log": "457a5f861195bd808fe8bd4a68a3ad76c94d68f4eecd7a0d8eca36f0b9bd7bc5",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/fixture/xrun.history": "5234a76f6767fbd424b80f0e76dd4dab3f731e8ad92af4daf7c1a2b6602acebe",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/fixture_bad/console.log": "96d1f34362009f82cb17b299bdabdcc833387d0851d389b50961fa3c8910a6cb",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/fixture_bad/xrun.history": "11a06a8002eaf69f5d520b988be9f39e272e03f4dfe764b09fa30c177e220ab6",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_rx/area.rpt": "cca2279610d4b000e67d1e7c64717a31449517318579b7105b9cb2e2e4d94512",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_rx/console.log": "ac0dab87043ea7121d7fb658e0cdfaf0d2a9b896cff2dd0b9f7c4028da1b942f",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_rx/constraints.sdc": "ca3425bce29afe0a8c84920a4d5f5ecf2c6d77c7bd8b7fe9f469d21f8818c3a3",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_rx/mapped_check.rpt": "80930fe219be898ea4d3a3a098f37a1fca1c728500c8b55fa0269e40d76bfa63",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_rx/netlist.v": "ddca0af08920292ebd2f24872c03eac2a87060d8d6b62104dc337af66f67de11",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_rx/timing.rpt": "20de605f4e2f857872c0ccc8f85383ff1fe753a74538a166d5260dba37b71ab0",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_tx/area.rpt": "090da00b52a0073151e0566b5c08955fad161a53df9e93403655d4df466df612",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_tx/console.log": "f6ff7c79f24aaffa295b86195b335d867460d4e7b38fe158568653eb2ed879d8",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_tx/constraints.sdc": "ef95975d61da0bc5f56ebd65525e6d0e3b76fbf566497e9b7dc25da5c5891ed2",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_tx/mapped_check.rpt": "be3b1437386e1aaf980cbc53937fcd5041f24425844fd2e43a98f812f1474521",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_tx/netlist.v": "afe9b3f6ad80a519475b23931f1510366700bc4fd78509e00806035f6df9adff",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/genus_tx/timing.rpt": "1acc307bf71bec90a9706ddde6ae484becb2a2d47f495a805edc8cdbe7b1bcc1",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/mapped/console.log": "c800b5fe8f51ceba7e3042080a522983936d0910246330a14782d1196b5aea7b",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/mapped/xrun.history": "3822136b01745e3155c41da84ddf5362e1c083fe68ba8aa83b1796742b38fa54",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/rtl/console.log": "b847c4d366684fc8e8a64557830b27218cf156b778b0dec45a9d6d5a0714ac3a",
-    ".cache/physical/whole_chip_xcelium_speed/memory_request_link/rtl/xrun.history": "a4f0d7b5390294bb7602224f8bb50daf7da82d4dd89e7d486fd5fe762e10a27d",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/compact_index_replay_tb.sv": "2824bd75597cba9d85d791d50563e5aa8c14a8994dbd703bdb630aa13eb634fc",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/fixture/console.log": "6e20a18069a11f9e4947d4893b0641b6aadfde4baa5c1682ca10f5f21408656a",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/fixture/xrun.history": "cf58e940dae1c1898ad92f58aeba1dfc547ade9eac9d1bbc26371ab403b4d41b",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/fixture_bad/console.log": "50f579e849ba6d81a0ca0b052c20b9a001184f9d7a5e9782769b87a91c18d5e4",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/fixture_bad/xrun.history": "96d0f4a476df6ca244d9ea53488cd0cf115c8e2913ac478405b900062d75bc70",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_rx/area.rpt": "1bc4f52e71e2f10aa33050600caa2437dc0eb53c7c43c59e5a4e5e8d35bf4407",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_rx/console.log": "78a3e3bd43816a447fe7abe3fc7b91326a78240b7341586786a4f9a91b4144d1",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_rx/constraints.sdc": "4a795a2f0ff0ae20879b74fdba9caa51131cb867f4f620675df402198a71564e",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_rx/mapped_check.rpt": "80930fe219be898ea4d3a3a098f37a1fca1c728500c8b55fa0269e40d76bfa63",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_rx/netlist.v": "377d99436524749ae477d3fe09c1b5314c4d907b5f24517fc984f9f882e68fbb",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_rx/timing.rpt": "dfae972a2196a4b47c8e5d6533f33f689c951ac07564874cdca58408e9bc53af",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_tx/area.rpt": "66795f7c3b2f817717f0bb2b47dfeb787a987f8c8a6a87d810bd1468fed20dff",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_tx/console.log": "5891e5f64ace345f068b3a20929775664dc8bb2238c896cb5b5f00522f0448a5",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_tx/constraints.sdc": "953efad359e7cb133cf979f002570e210337c2a24869ed110ca74c1a779af51a",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_tx/mapped_check.rpt": "be3b1437386e1aaf980cbc53937fcd5041f24425844fd2e43a98f812f1474521",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_tx/netlist.v": "a032ae9cfbe7da187b6ed7ffa1b943abde902e654f052e37d5bc162442739f01",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_tx/timing.rpt": "8e7847b82c52764e86223596d0e9619cba2ca9d783e1b2e11575194a7c255a6b",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/mapped/console.log": "0b3dbb414c6080cce939769253b0f843998d5af65d0a0bb8e4a3bd4eaf495746",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/mapped/xrun.history": "d660102e9465388beaaa9383e923736c75aee4fd0e7cd123bbc6df77112ed30e",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/rtl/console.log": "51bc4f7662cd4c76bc67e8b76169f9894c1021ef35f34cc31404fe0548741dbb",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/rtl/xrun.history": "1c82e3df0152db74343d47b55309f946eaf96868ec7d4431f317214baae2547e",
     ".cache/physical/whole_chip_xcelium_speed/request_serialization/compact_index_replay_tb.sv": "14763c0f0e2970c9d52d9829eb8afaf1fb331436cfa9d71713077f7c52c79ff0",
     ".cache/physical/whole_chip_xcelium_speed/request_serialization/packed_weight_cut.v": "03ccaa5f177371e7fd12c9571352bece57886fd8fa9295a5e68b324203488e85",
-    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/verify_tri_oracle_memory_request_link.py": "890c6ae8d295f40ecc62c89c52c6e048f26405a090a66829c078fe7c63cd4989",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/verify_tri_oracle_memory_request_link.py": "ef590eda570bd61a6f47cc15cc719118d3de1ef1709af40d1887680414142f35",
+    "records/tri_oracle_repacked_whole_chip_cold_reload.json": "9ab38bed952ec1de1a794b2fa882c1d98e99001f64f11e3cbdf1240e04559fac",
     "records/tri_oracle_serial_memory_requests.json": "00fe9bcfb1207689eac2cdd39c17fda58910b449ea1ed0e83052eed6ed73232f",
     "syn/tri_oracle_synthesize_memory_request_link.tcl": "c4a7d8aec580a45380604658963a204b7a96447c5e2f8b7ef4aa726cee6a0561",
-    "verilog/tri_oracle_memory_request_link.sv": "04691ffba6463c49b9e850577c5fedce1b190ae49ecd8d77c665e7eac9daac87",
-    "verilog/tri_oracle_memory_request_link_tb.sv": "94c258af9a4967b1592d6537bbf0a29903dcd5cd090edfe0bcac169ae057d8c4"
+    "verilog/tri_oracle_memory_request_link.sv": "989bf1defdb79e4cfc4477f3f51daa542ab19f4150c173bf30f603b2ec47c8a0",
+    "verilog/tri_oracle_memory_request_link_tb.sv": "94fab62aab06120e5145d4948bbf02b6da3ec11388f987f55ed5fdd1ca1a2635"
   },
-  "scope": "Synthesized wide-read request endpoints and a mapped down projection cut in Xcelium. Timing checks were disabled for mapped replay. Narrow reads, memory writes, physical pads, the external memory controller and complete model execution require separate evidence. Synthesis timing excludes placement and routing.",
+  "scope": "Synthesized three-port request endpoints tested with both read widths. The trained down projection cut uses the two wide request lanes. Mapped replay disables timing checks. Shared read responses, memory writes, physical pads, the external memory controller and complete model execution remain open. Synthesis timing excludes placement and routing.",
   "shared_request_wire_data_bits": 22,
-  "state": "mapped_request_link_and_trained_weight_replay_verified",
+  "state": "three_port_mapped_read_request_link_and_trained_weight_replay_verified",
   "synthesis": {
     "endpoints": {
       "rx": {
-        "cell_area_um2": 581.784,
-        "mapped_cells": 300,
-        "worst_setup_slack_ps": 1008
+        "cell_area_um2": 614.544,
+        "mapped_cells": 314,
+        "worst_setup_slack_ps": 921
       },
       "tx": {
-        "cell_area_um2": 466.536,
-        "mapped_cells": 412,
-        "worst_setup_slack_ps": 546
+        "cell_area_um2": 539.112,
+        "mapped_cells": 424,
+        "worst_setup_slack_ps": 455
       }
     },
     "slow_corner": "0.9 V, 125 C",
@@ -63,10 +78,12 @@
     "tiles": 78
   },
   "unit_replay": {
-    "compact": 173,
-    "flit_stalls": 253,
-    "full": 73,
-    "output_stalls": 221,
-    "packets": 246
+    "compact": 251,
+    "flit_stalls": 404,
+    "full": 118,
+    "narrow": 147,
+    "output_stalls": 352,
+    "packets": 369,
+    "projection": 122
   }
 }

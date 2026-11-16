@@ -2,10 +2,13 @@
 
 import argparse
 import json
+import mmap
 from pathlib import Path
 import re
 import shlex
 
+from audit_tri_oracle_mapped_redundancy import TOP
+from link_tri_oracle_indexed_whole_chip import module_at, signature, spans
 from measure_tri_oracle_serial_memory_requests import (INDEXED_FIXTURE, SERIAL_REQUESTS, digest, read, replace)
 
 
@@ -15,20 +18,28 @@ RECORDS = Path("records")
 
 CUT_LINK = """  logic wire_valid, wire_ready;
   logic [21:0] wire_data;
-  logic [1:0] decoded_valid, decoded_ready;
-  logic [1:0][63:0] decoded_address;
-  logic [1:0][5:0] decoded_length;
+  logic [2:0] serialized_ready, decoded_valid, decoded_ready;
+  logic [2:0][63:0] decoded_address;
+  logic [2:0][5:0] decoded_length;
+  logic decoded_wide;
   int compact_requests, full_requests, packet_flits_left;
 
+  assign req_ready = serialized_ready[1:0];
+  assign decoded_ready[2] = 1'b0;
   tri_oracle_memory_request_tx request_tx (
-    .clk, .rst_n, .req_valid, .req_ready, .req_address, .req_length,
+    .clk, .rst_n, .req_valid({1'b0, req_valid}), .req_ready(serialized_ready),
+    .req_address({64'd0, req_address}), .req_length({6'd0, req_length}), .primary_wide(1'b1),
     .tx_valid(wire_valid), .tx_ready(wire_ready), .tx_data(wire_data)
   );
   tri_oracle_memory_request_rx request_rx (
     .clk, .rst_n, .rx_valid(wire_valid), .rx_ready(wire_ready), .rx_data(wire_data),
     .req_valid(decoded_valid), .req_ready(decoded_ready),
-    .req_address(decoded_address), .req_length(decoded_length)
+    .req_address(decoded_address), .req_length(decoded_length), .req_wide(decoded_wide)
   );
+  always @(posedge clk) if (rst_n) begin
+    if (decoded_valid[2] || ((|decoded_valid) && !decoded_wide))
+      $fatal(1, "INVALID_WEIGHT_REQUEST_CLASS");
+  end
   always @(posedge clk) if (rst_n && wire_valid && wire_ready) begin
     if (packet_flits_left != 0)
       packet_flits_left--;
@@ -70,6 +81,23 @@ def prepare(output, previous):
         stream.write(make_bench(bench.read_text()))
 
 
+def check_chip_read_ports(pin, cold_sha256):
+    placement = read(pin(RECORDS / "tri_oracle_repacked_whole_chip_cold_reload.json"))
+    path, = (Path(name) for name in placement["evidence_sha256"] if name.endswith("/cold.v"))
+    assert digest(path) == placement["cold_netlist_sha256"] == cold_sha256
+    with path.open("rb") as stream, mmap.mmap(stream.fileno(), 0, access=mmap.ACCESS_READ) as data:
+        ports = signature(module_at(data, spans(data), TOP))
+    assert ports["req_wide"] == (b"output", b"")
+    read_ports = {}
+    for name, prefix, width in (("primary", "", 6), ("auxiliary", "aux_", 6), ("projection", "proj_", 5)):
+        assert ports[prefix + "req_valid"] == (b"output", b"")
+        assert ports[prefix + "req_ready"] == (b"input", b"")
+        assert ports[prefix + "req_address"] == (b"output", b"[63:0]")
+        assert ports[prefix + "req_length"] == (b"output", f"[{width - 1}:0]".encode())
+        read_ports[name] = {"address_bits": 64, "length_bits": width}
+    return read_ports
+
+
 def summarize(output, previous, previous_path):
     proof = {}
 
@@ -102,7 +130,8 @@ def summarize(output, previous, previous_path):
         fields, = re.findall(r"(?m)^MEMORY_REQUEST_LINK_PASS (.*)$", log)
         baselines[mode] = dict((key, int(value)) for key, value in (word.split("=") for word in fields.split()))
     assert baselines["mapped"] == baselines["rtl"]
-    assert baselines["mapped"]["packets"] == 246
+    assert baselines["mapped"]["packets"] == 369
+    assert baselines["mapped"]["narrow"] == 147 and baselines["mapped"]["projection"] == 122
 
     timing = {}
     for endpoint in ("tx", "rx"):
@@ -145,19 +174,21 @@ def summarize(output, previous, previous_path):
         fixture = pin(INDEXED_FIXTURE / name)
         assert proof[str(fixture)] == previous["evidence_sha256"][str(fixture)]
         assert all((output / run / name).resolve() == fixture.resolve() for run in ("fixture", "fixture_bad"))
+    read_ports = check_chip_read_ports(pin, previous["cold_netlist_sha256"])
     return {
-        "state": "mapped_request_link_and_trained_weight_replay_verified",
+        "state": "three_port_mapped_read_request_link_and_trained_weight_replay_verified",
         "cold_netlist_sha256": previous["cold_netlist_sha256"],
         "shared_request_wire_data_bits": 22,
+        "cold_chip_read_request_ports": read_ports,
         "unit_replay": baselines["mapped"],
         "trained_down_projection": {"tiles": 78, "exact_weight_bytes": 11534336,
                                     "compact_requests": compact, "full_requests": full, "cycles": int(cycles),
                                     "reserved_index_errors_rejected": 2},
         "synthesis": {"target_period_ns": 1.72414, "slow_corner": "0.9 V, 125 C", "endpoints": timing},
-        "scope": "Synthesized wide-read request endpoints and a mapped down projection cut in Xcelium. Timing "
-                 "checks were disabled for mapped replay. Narrow reads, memory writes, physical pads, the external "
-                 "memory controller and complete model execution require separate evidence. Synthesis timing "
-                 "excludes placement and routing.",
+        "scope": "Synthesized three-port request endpoints tested with both read widths. The trained down "
+                 "projection cut uses the two wide request lanes. Mapped replay disables timing checks. Shared "
+                 "read responses, memory writes, physical pads, the external memory controller and complete "
+                 "model execution remain open. Synthesis timing excludes placement and routing.",
         "evidence_sha256": proof,
     }
 
