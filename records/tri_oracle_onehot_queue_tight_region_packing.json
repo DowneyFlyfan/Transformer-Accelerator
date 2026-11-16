@@ -1,0 +1,37 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/archive_tight_width_proof.py": "8cefcca75ccb20a49ce31d5d63882efc21b695b04ca94eb5e3e8754fc62d4be4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_and_hold_all/gpu_refinement/focused_second_pass/verified.json": "cf403065a8881b7179f04e2ac129f4b1bdf950e7ac80836b060165fdb809268b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/buffered_occupancy_and_hold_all/verified.json": "c840ccd898ddd982a2ccd5bce23ae549ebb8f9fa85b08f20e324e2f6a0e59be3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/occupancy_hold_width_screen.json": "7b7cfa2a81fbb9a5c35bafeade8c4e26b6964f2c3dbd6e89f421ffc94ad0d5ca",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/solve_tight_widths.py": "0e3486c6a66aed8d5892c076f486ac38ab65feccba4ad960b055adf519ecbfef",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/tight_width_problem.json": "3876bbe7386eb38b36b7df809e8dd59e5b205098661da42cc8b343a29b36e22f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_pilot/tight_width_witness.json": "8a748bdd71cc65df29242aac92ba6c9b0fcc0fb28135aa962d7b02c7973ebc09",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_tight_probe/gpu_refinement/verified.json": "dc6732d25cb57b814e06e35d1f2d02211bee6d7d2a43aac58a1094da7597716f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_tight_probe/prepared.json": "e31feae7f26947734fb606d5df57b3fbd15fcbc7574b73c6c20310ae1ab911e4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_tight_probe/seed_tight_witness.py": "c3d9e7534d98400d7c11ddc2f3c493d73f8c09da8bd938d2e1a72f8c244667eb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/physical_tight_probe/verified.json": "5f883eba33b5d2c9aab7deb8f2760d10fb54ad44cb45934a6645b0cc3a4249d2"
+  },
+  "isolated_gate_level_transactions_checked": 786,
+  "pilot_setup_slack_ns_before_after_focused_slot_swaps": [
+    -1.299453,
+    -1.221514
+  ],
+  "scope": "Same buffered one-hot queue netlist across abstract width and isolated physical checks. The integer pattern counts were rechecked against every original gap and mapped width. The tightest region's native import preserved all pin count, legal cells and fixed neighbor reservations. The other nineteen regions have width-only packing coverage. Measured timing is early extracted ideal-clock array timing. Complete chip integration, detailed routing and signoff require separate proof.",
+  "state": "one_hot_queue_width_coverage_completed_and_tight_region_native_reload_verified",
+  "test_clock_mhz": 580,
+  "tightest_region": {
+    "blocked_rectangles_retained": 27551,
+    "compiled_standard_cells": 53862,
+    "early_extracted_setup_slack_ns_before_after_slot_swaps": [
+      -3.888935,
+      -1.656768
+    ],
+    "free_sites_after_placement": 5975,
+    "integer_patterns": 294,
+    "name": "tri_oracle_pe_array_verified_bank0_3",
+    "occupied_site_count": 523873,
+    "original_free_intervals_checked": 29715
+  },
+  "width_assignments_confirmed": 20
+}
