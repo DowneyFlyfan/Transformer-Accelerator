@@ -1,0 +1,198 @@
+{
+  "calibration_selected_percent_by_layer": {
+    "56": [
+      56,
+      100,
+      90,
+      90,
+      0,
+      90,
+      56,
+      0,
+      80,
+      0,
+      80,
+      0,
+      0,
+      0,
+      0,
+      80,
+      80,
+      90,
+      90,
+      80,
+      90,
+      80
+    ],
+    "58": [
+      56,
+      0,
+      90,
+      90,
+      0,
+      90,
+      90,
+      0,
+      90,
+      0,
+      80,
+      0,
+      0,
+      90,
+      0,
+      80,
+      90,
+      90,
+      90,
+      80,
+      90,
+      80
+    ]
+  },
+  "candidate_layer_rates_percent": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    56,
+    58,
+    60,
+    70,
+    80,
+    90,
+    100
+  ],
+  "channels_per_word": 8,
+  "evidence_sha256": {
+    ".cache/model_reference/shared_sign_group_policy_adaptive/receipt.json": "9a98c994143a71a5f5681dfca06ae3c1d79f3954b45197ac6003c3489560cb0a",
+    ".cache/model_reference/shared_sign_group_policy_replay/receipt.json": "eea4e1e211119ab1ea909275b72d480cb9bb7602791d3882bc35cf38a1a93815",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_predictor_alignment.json": "ed8d31a748c34e7ecce3417c6487d43170bfd2114ea03c71d7e04a66a7a8d20f",
+    "syn/measure_tri_oracle_shared_sign_policy.py": "7daa808848c64fb3249b9936ffee04e5d0f26004e977683f3d948efab5a52622"
+  },
+  "held_images": 8,
+  "held_layer_rows": 2640,
+  "paper_reference": {
+    "figure": "31.6.5",
+    "reported_gated_feed_forward_external_memory_access_reduction_percent_on_vqav2": 57,
+    "reported_skip_reduction_from_no_skip_bar_percent": {
+      "GQA": 56,
+      "VQAv2": 58
+    }
+  },
+  "results": {
+    "adaptive_sign_56": {
+      "fit": {
+        "mean_relative_projection_error_percent": 49.66503,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 55.44226,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 54.20814
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 50.27433,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 55.44924,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 54.24717
+      }
+    },
+    "adaptive_sign_58": {
+      "fit": {
+        "mean_relative_projection_error_percent": 51.00947,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 57.43089,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 56.19678
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 51.59877,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 57.43787,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 56.2358
+      }
+    },
+    "archived": {
+      "fit": {
+        "mean_relative_projection_error_percent": 16.66161,
+        "weight_and_sign_byte_reduction_percent_with_reuse": -0.52365,
+        "weight_and_sign_byte_reduction_percent_without_reuse": -1.75777
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 16.15866,
+        "weight_and_sign_byte_reduction_percent_with_reuse": -0.51667,
+        "weight_and_sign_byte_reduction_percent_without_reuse": -1.71874
+      }
+    },
+    "magnitude_56": {
+      "fit": {
+        "mean_relative_projection_error_percent": 53.13532,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 18.6553,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 18.6553
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 53.53963,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 18.6553,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 18.6553
+      }
+    },
+    "magnitude_58": {
+      "fit": {
+        "mean_relative_projection_error_percent": 54.5791,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 19.31818,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 19.31818
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 54.96149,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 19.31818,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 19.31818
+      }
+    },
+    "prior_56": {
+      "fit": {
+        "mean_relative_projection_error_percent": 55.05056,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 55.96591,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 55.96591
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 56.38961,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 55.96591,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 55.96591
+      }
+    },
+    "prior_58": {
+      "fit": {
+        "mean_relative_projection_error_percent": 56.51963,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 57.95455,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 57.95455
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 57.84073,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 57.95455,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 57.95455
+      }
+    },
+    "sign_56": {
+      "fit": {
+        "mean_relative_projection_error_percent": 55.07194,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 55.44226,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 54.20814
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 56.38164,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 55.44924,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 54.24717
+      }
+    },
+    "sign_58": {
+      "fit": {
+        "mean_relative_projection_error_percent": 56.50222,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 57.43089,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 56.19678
+      },
+      "held": {
+        "mean_relative_projection_error_percent": 57.8291,
+        "weight_and_sign_byte_reduction_percent_with_reuse": 57.43787,
+        "weight_and_sign_byte_reduction_percent_without_reuse": 56.2358
+      }
+    }
+  },
+  "scope": "Frozen prompt activations from sixteen distinct label-independent images. Sign ranks and the layer schedule were selected only from calibration images. Traffic counts this layout's packed weight and sign bytes. Error is relative to the unpruned fixed-point down projection. The image panel supplies neither benchmark answer accuracy nor a hardware run of the candidate.",
+  "state": "shared_sign_mask_and_layer_budget_independently_reconciled",
+  "token_rows_per_shared_fetch": 15
+}
