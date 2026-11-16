@@ -1,0 +1,98 @@
+{
+  "buffer_trees": {
+    "TRI_ARRAY_CTL_8_4": {
+      "branch_buffers": 4,
+      "receiver_sink_changes": {
+        "DFMQD1BWP12T40P140/SA": {
+          "changed_destinations": 56,
+          "new_RMS_um": 390.8535,
+          "new_max_span_um": 672.02,
+          "old_RMS_um": 751.9592,
+          "old_max_span_um": 1238.8
+        }
+      },
+      "sink_pins": 81,
+      "source_offset_multiplier": 0.3
+    }
+  },
+  "changed_control_connections": 56,
+  "early_route_overflow_percent": {
+    "horizontal": {
+      "carry_select": 0.03,
+      "previous": 0.03
+    },
+    "vertical": {
+      "carry_select": 0.0,
+      "previous": 0.0
+    }
+  },
+  "equivalent_output_bits": 610,
+  "equivalent_primitive_input_pins": 135958,
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/archive.py": "7f797ec3dc902b78affbe655b40538167459385e8fbcbf22f8200469a2d47ef7",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/native_candidate/overlap.json": "d4be975debc990cff22ac0cb5f041ef97dce30f69a26210e231e9c48fd8e8014",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/native_candidate/prepared.json": "dcddc4a285afef3d9f33226c1fd3f12643c523d123269413d67fb7a926b91789",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "c2fd7a0f25b4ca2d78b496f5a4630b13d4c4dd37a890776d03721bd959fbfb8f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "6d6a897bf1921687f49d3b9ea87e58278c8dff161328b087a60f7faf9149948a",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/native_candidate/verified.json": "8a61898cd696d7f02f72c78deb9b841a37cc77579fdfaa2aff9e1ebcbb676dbe",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/prepared.json": "6e3b4a426ea0291c0a4da5148a667c391fd64a68b3215e4ee694eeb4e64e411c",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/carry_select/replay/verified.json": "961e4e88520162f53c240e79ff9dd3a3d00cf8caccd3c36bc5fa70f6ec40fdf9",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_recluster/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "3de81827538cfddd37a9d06f49f0a4a655632efb3653054cbb0021960cdf7424",
+    "records/tri_oracle_bank4_2_recluster_native.json": "37bf3fabd3ddc0cd9b2f3329e555142cb75664f4affa4d6f253ae8fb33513b43"
+  },
+  "largest_carry_save_interconnect_ns_among_sampled_slow_paths": null,
+  "largest_interconnect_by_destination": {
+    "other": 80
+  },
+  "matched_boundary_pins": 4967,
+  "paper_clock_mhz": 580,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "sampled_slow_setup_violations": 80,
+  "scope": "Binary-equivalent carry-save select reassignment across four existing buffers with unchanged cell and pin load classes at the identical placed coordinates. The exact modified mapped array passed the reset-bound Xcelium fixture. Innovus comparison uses matched isolated early-route estimates and ideal clocks with the same boundary pins.",
+  "state": "bank4_2_carry_save_select_same_placement_xcelium_and_innovus_verified",
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "carry_select_ns": -0.012664,
+      "change_ns": 0.0,
+      "launch": "completed_results_reg[1][534]/CP",
+      "previous_ns": -0.012664
+    },
+    "fast_hot_setup": {
+      "capture": "completed_results_reg[2][464]/SA",
+      "carry_select_ns": -1.782473,
+      "change_ns": 0.925513,
+      "launch": "shadow_valid_reg[3]/CP",
+      "previous_ns": -2.707986
+    },
+    "fast_setup": {
+      "capture": "running_valid_reg[3]/D",
+      "carry_select_ns": -1.555264,
+      "change_ns": 1.142029,
+      "launch": "shadow_valid_reg[3]/CP",
+      "previous_ns": -2.697293
+    },
+    "slow_setup": {
+      "capture": "completed_results_reg[2][464]/SA",
+      "carry_select_ns": -2.544794,
+      "change_ns": 0.912248,
+      "launch": "shadow_valid_reg[3]/CP",
+      "previous_ns": -3.457042
+    },
+    "typical_setup": {
+      "capture": "completed_results_reg[1][297]/SA",
+      "carry_select_ns": -1.545405,
+      "change_ns": 0.650909,
+      "launch": "shadow_valid_reg[3]/CP",
+      "previous_ns": -2.196314
+    }
+  },
+  "unchanged_cell_sites": 54141,
+  "worst_slow_setup_interconnect": {
+    "delay_ns": 1.1936,
+    "endpoint": "TRI_ARRAY_CTL_2_1/I",
+    "source": "TRI_ARRAY_CTL_2_27/Z"
+  },
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.269
+}
