@@ -1,0 +1,29 @@
+{
+  "changed_cells": [
+    "TRI_ARRAY_CTL_2_8",
+    "g395612"
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/occupancy_feedback_bypass/replay/console.log": "543f3de3c354a30b33ca858a075d0ec88caa993b78b216c2745735fed6ca9dc1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/occupancy_feedback_bypass/tri_oracle_pe_array/native/timing.rpt": "3ff510b9de3b0f0ed6b57a4e1890c5ea7dcc1729870203afba66e18e51b38bf1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/occupancy_feedback_bypass/truth/console.log": "0af4cf5abc81d8bf4f287e067e1ff70044ed5f7bf91951bffad73808ed8699f5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/occupancy_feedback_bypass/verified.json": "eb5064e0f62a379da076f0eb498bccd98fa7729cf0ddefae5fb2d0970878b5eb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/tri_oracle_pe_array/native/timing.rpt": "1ff7411035970d8f307a706c4d01d29731656285caadfd4f33f8ba5a9971f467",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/occupancy_driver_resizing/tightest/compact_carry_xnor/minimal_packing/hold_gate_fusion/verified.json": "fd3c91d6d5c47f70a00f7ed66c409db57ec39ae26034908f9adb2e11e489466e"
+  },
+  "function_truth_vectors": 4,
+  "ideal_clock_mhz": 580,
+  "mapped_transactions": 786,
+  "regional_setup_slack_ns_before_after": [
+    -0.406875,
+    -0.379531
+  ],
+  "row_sites_added": 2,
+  "scope": "The replacement removes an intermediate net on one branch of the occupancy feedback while retaining the shared driver for other consumers. Both isolated regional layouts use the same clock, pins and reservations at the fast library corner with slow interconnect.",
+  "setup_gain_ps": 27.344,
+  "state": "tight_region_occupancy_feedback_bypass_regional_timing_verified",
+  "worst_capture_before_after": [
+    "occupancy_onehot_reg[2]/D",
+    "completed_results_reg[1][385]/SA"
+  ]
+}
