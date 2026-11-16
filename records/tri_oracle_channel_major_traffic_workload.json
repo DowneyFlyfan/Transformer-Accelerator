@@ -1,0 +1,97 @@
+{
+  "checks": {
+    "checked_integer_words": 1171456,
+    "down_payload": 372107264,
+    "gate_up_payload": 818507776
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/channel_major_traffic/verified.json": "c787fe69235dec6b096e8f1069d54d6df1d222aec369012a8785f977599f309e",
+    "records/tri_oracle_token_batch_traffic_bound.json": "54507ede6e065bdcb33bc2a90b835b1c98a2dc2f973d10a32d4b8687025d6a10"
+  },
+  "held_rows": 2640,
+  "original_dense_payload_shared_15_rows_bytes": 6090129408,
+  "scope": "Same trained quantized matrices and masks on held-out prompt rows. Proposed weights use channel-major 64-byte lines, without changing the model outputs for the same skip decisions. Transport bytes exclude latency, control, transpose storage and physical validation.",
+  "skipped_channels": {
+    "baseline": 1200124,
+    "fit_threshold": 8468479
+  },
+  "state": "channel_major_full_line_addresses_values_and_payload_verified",
+  "traffic": {
+    "baseline": {
+      "1": {
+        "dense_down_bytes": 24561301504,
+        "dense_gate_up_bytes": 60901294080,
+        "payload_reduction_percent": 7.945904906814394,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 22581559296,
+        "sparse_gate_up_bytes": 55985586176,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 12.91792238513957
+      },
+      "15": {
+        "dense_down_bytes": 2030022656,
+        "dense_gate_up_bytes": 4060086272,
+        "payload_reduction_percent": -1.7185447622916517,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 2030010368,
+        "sparse_gate_up_bytes": 4060086272,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 1.0171820270128487
+      },
+      "4": {
+        "dense_down_bytes": 8045760512,
+        "dense_gate_up_bytes": 16240345088,
+        "payload_reduction_percent": -0.17208087903561875,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 7989649408,
+        "sparse_gate_up_bytes": 16233574400,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 3.994643744686747
+      },
+      "8": {
+        "dense_down_bytes": 4058451968,
+        "dense_gate_up_bytes": 8120172544,
+        "payload_reduction_percent": -0.8444686992251427,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 4056631296,
+        "sparse_gate_up_bytes": 8120164352,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 2.016618754909715
+      }
+    },
+    "fit_threshold": {
+      "1": {
+        "dense_down_bytes": 24561301504,
+        "dense_gate_up_bytes": 60901294080,
+        "payload_reduction_percent": 56.91168313767652,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 10505316352,
+        "sparse_gate_up_bytes": 26214404096,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 6.046570034394908
+      },
+      "15": {
+        "dense_down_bytes": 2030022656,
+        "dense_gate_up_bytes": 4060086272,
+        "payload_reduction_percent": 3.0914452635550593,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 1903542272,
+        "sparse_gate_up_bytes": 3893620736,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 0.9690822885056173
+      },
+      "4": {
+        "dense_down_bytes": 8045760512,
+        "dense_gate_up_bytes": 16240345088,
+        "payload_reduction_percent": 26.80455603388301,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 5525370880,
+        "sparse_gate_up_bytes": 12146278400,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 2.9188743990643293
+      },
+      "8": {
+        "dense_down_bytes": 4058451968,
+        "dense_gate_up_bytes": 8120172544,
+        "payload_reduction_percent": 12.545061509159694,
+        "sign_bytes": 104673536,
+        "sparse_down_bytes": 3397005312,
+        "sparse_gate_up_bytes": 7149129728,
+        "sparse_total_payload_ratio_to_original_dense_shared_15_rows": 1.748864081937091
+      }
+    }
+  }
+}
