@@ -1,0 +1,43 @@
+{
+  "candidate_sha256": "bd635234c78675665f3d28630e3278c33181878cce51cbd6483331d76e77fbbf",
+  "checked_clock_frequency_mhz": 580,
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "compiled_physical_abstracts_verified": 6,
+  "compiled_timing_libraries_verified": 18,
+  "database_fingerprint_sha256": "a5505e949c7443b42ff6f6222da4ac38afd47a388be7d6f925b330726b1a52cd",
+  "die_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/cold.v": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/placed.db/viewDefinition.tcl": "b0bd6bd4dd2e2357085dc03a86a48a26ee833c43a69b146dbf5d45210a0d0e07",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/verified.json": "a1c3c53345623ebb38afc55d492f6d8352e8be5a440cad48107e5862f307e5b1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/verified_bindings.json": "0354a19e7b96c755799bd1450b9d13e15a29acfcc92839a4dbe1c1d30ec845e6",
+    "records/tri_oracle_composed_chip_structure.json": "591e8fa5bbb99be35c7e1943ad58a2360b62c80e31e1a25e4d769f3714e8103b"
+  },
+  "fixed_compiled_memory_macros": 631,
+  "native_runs": {
+    "cold": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 10096898048,
+      "peak_container_anonymous_bytes": 12379324416,
+      "stop_reason": null,
+      "wall_seconds": 123.15043769101612
+    },
+    "import": {
+      "exit_status": 0,
+      "minimum_host_available_bytes": 9875869696,
+      "peak_container_anonymous_bytes": 12623454208,
+      "stop_reason": null,
+      "wall_seconds": 126.15365736396052
+    }
+  },
+  "physical_components": 3859878,
+  "placement_density_percent": 98.55,
+  "reachable_modules_compared": 573,
+  "region_groups": 20,
+  "scope": "Innovus import, save, cold reload, unchanged cell positions and connectivity, and unchanged constraints and memory library contents. Placement check only.",
+  "seed_sha256": "36ae68689697c291290feb6c09cb17b7887a497567ed942657a351d73802a4df",
+  "state": "repacked_whole_chip_innovus_save_and_cold_reload_verified"
+}
