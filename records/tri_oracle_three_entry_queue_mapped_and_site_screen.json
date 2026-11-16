@@ -1,0 +1,124 @@
+{
+  "added_area_um2": 1267.392,
+  "added_area_vs_four_entry_queue_um2": -2098.488,
+  "added_mapped_registers": 1834,
+  "candidates": {
+    "carry_save": {
+      "area_um2": 86430.792,
+      "cell_only_register_setup_slack_ps": 859.0,
+      "mapped_cells": 54176,
+      "region_screen": {
+        "original_control_buffers_retained": true,
+        "regions_over_capacity": [],
+        "remaining_sites_by_region": {
+          "tri_oracle_pe_array_verified_bank0": 85191,
+          "tri_oracle_pe_array_verified_bank0_1": 10415,
+          "tri_oracle_pe_array_verified_bank0_2": 16670,
+          "tri_oracle_pe_array_verified_bank0_3": 7479,
+          "tri_oracle_pe_array_verified_bank1": 13516,
+          "tri_oracle_pe_array_verified_bank1_1": 18692,
+          "tri_oracle_pe_array_verified_bank1_2": 11488,
+          "tri_oracle_pe_array_verified_bank1_3": 55347,
+          "tri_oracle_pe_array_verified_bank2": 59980,
+          "tri_oracle_pe_array_verified_bank2_1": 34232,
+          "tri_oracle_pe_array_verified_bank2_2": 19434,
+          "tri_oracle_pe_array_verified_bank2_3": 17663,
+          "tri_oracle_pe_array_verified_bank3": 12647,
+          "tri_oracle_pe_array_verified_bank3_1": 38357,
+          "tri_oracle_pe_array_verified_bank3_2": 27385,
+          "tri_oracle_pe_array_verified_bank3_3": 14363,
+          "tri_oracle_pe_array_verified_bank4": 25312,
+          "tri_oracle_pe_array_verified_bank4_1": 8280,
+          "tri_oracle_pe_array_verified_bank4_2": 26843,
+          "tri_oracle_pe_array_verified_bank4_3": 65172
+        },
+        "replacement_sites_per_array": 514469,
+        "total_remaining_sites": 568466
+      },
+      "registers": 8036,
+      "worst_path": {
+        "endpoint": "product[235].value_reg[0]/D",
+        "startpoint": "valid_reg[3]/CP"
+      }
+    },
+    "queue_trial": {
+      "area_um2": 87698.184,
+      "cell_only_register_setup_slack_ps": 762.0,
+      "mapped_cells": 53511,
+      "region_screen": {
+        "original_control_buffers_retained": true,
+        "regions_over_capacity": [
+          "tri_oracle_pe_array_verified_bank0_3"
+        ],
+        "remaining_sites_by_region": {
+          "tri_oracle_pe_array_verified_bank0": 77647,
+          "tri_oracle_pe_array_verified_bank0_1": 2871,
+          "tri_oracle_pe_array_verified_bank0_2": 9126,
+          "tri_oracle_pe_array_verified_bank0_3": -65,
+          "tri_oracle_pe_array_verified_bank1": 5972,
+          "tri_oracle_pe_array_verified_bank1_1": 11148,
+          "tri_oracle_pe_array_verified_bank1_2": 3944,
+          "tri_oracle_pe_array_verified_bank1_3": 47803,
+          "tri_oracle_pe_array_verified_bank2": 52436,
+          "tri_oracle_pe_array_verified_bank2_1": 26688,
+          "tri_oracle_pe_array_verified_bank2_2": 11890,
+          "tri_oracle_pe_array_verified_bank2_3": 10119,
+          "tri_oracle_pe_array_verified_bank3": 5103,
+          "tri_oracle_pe_array_verified_bank3_1": 30813,
+          "tri_oracle_pe_array_verified_bank3_2": 19841,
+          "tri_oracle_pe_array_verified_bank3_3": 6819,
+          "tri_oracle_pe_array_verified_bank4": 17768,
+          "tri_oracle_pe_array_verified_bank4_1": 736,
+          "tri_oracle_pe_array_verified_bank4_2": 19299,
+          "tri_oracle_pe_array_verified_bank4_3": 57628
+        },
+        "replacement_sites_per_array": 522013,
+        "total_remaining_sites": 417586
+      },
+      "registers": 9870,
+      "worst_path": {
+        "endpoint": "completed_results_reg[1][607]/SA",
+        "startpoint": "buffered_count_reg[0]/CP"
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/constraints.sdc": "8dce102a48b68a21ff08a39f102d5a8300ce24dc2915d6b7ae9ea1f873315e43",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/audit_mapped_trial.py": "82f0c108b5f91c8227acfe6f7f8e030f36023838f970828addaa073c0ae88c6a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/area.rpt": "a5b10de00d132c5fdfe6440e5d6a931a892d80ececae26e7eddbf04285ad6ce3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/console.log": "61bdd694a7bafe3f6c66d377bccbe69899c1218c3d832985b9ee7699b88ebe7e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/emitted.sdc": "f244b67363d85b6317ce01c4b837b8205c62ceb9d324cba45e6e449ed771ba11",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/gates.rpt": "952c3ddb38a604eaf16c33e6f6d41a756771061b3ec055b859109ccca9655738",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/netlist.v": "b87eba1981bddede4ac4026397210a6dfe03d7184f957a455a0f57a51bce27a1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/register_setup.rpt": "fceb05d01f6d681f08408aabcae6f56663efcaf70484822532a25f883ef28ca2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped/status.json": "b448d70a73acb0f1a2abed211886011c5b140049ae70c8ce1e5d62ff66edb477",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped_comparison.json": "4b7558d4d99a470da23ec22450b9cdd1851688138be6a88c924ddd6044e000ed",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/mapped_replay/verified.json": "0c60a0719c8593d698cb93657713cfcf1a267dead2a054845dbdf44dbbd75dba",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/row_gap_alternatives.json": "92eeab6c08dafacc3d4a958bf50bbb7e231a50ffecbdb50b95a40d522d577b32",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/row_gap_screen.json": "d34b5f413844f244a4d6a0c2161e729f076493698a71a818e610d6d1e77d661d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/synthesis_array.sv": "a7be216634c7c733f1be8c4cef284b37aa4a39551bdf7e2eb34e129d20fe6811",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/area.rpt": "f5108475616cf3799cf3aa85a861957c8f97664c28f972c143c465ba2a8ef801",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/console.log": "2fd95fcdc1c42003a4752529397a87f63e8b52572ba13e24e26f7917cb65c039",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/emitted.sdc": "4eda4af19d5d25a4a5ce5ece91657bc5c2c690177426085b5cbb41052f07ba34",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/gates.rpt": "277ecf4665f45f2ac20b39a49ceee8d59811d670cf596632153fdb5ecb295f99",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/netlist.v": "b086a4eb9834caaa4313f989f789e3b5b2c1b196f3905a2fe7e30f6b114c797f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/register_setup.rpt": "e22a5fc024bf96fea106e45fa4bfd66c024da3bac7b4da8ab3378819b1fe725a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/mapped/status.json": "a53eac2613eb2c370ea96d1913760220b2305a64ab139f253fc840e1bb738476",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/synthesize.tcl": "7d4bff572cfbf6d9f36001575f19671026ee2d3f912272bbd37a904616889942",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/verified_full_array.json": "7b2ecf643a84fbb959b7012c3005f27d329dc65943047c5f5625f2979e7480ef",
+    ".cache/physical/carry_lookahead_comparison/current_footprint.json": "ec1216b14a02c55f9c3682c9842b44d121c7edf3a14ca395b5eae519eff1751c",
+    ".cache/physical/carry_lookahead_comparison/region_capacity.json": "0c88cc302701abcdde65bcaadd24a212fc8be8511bde904bd36e776d51491f3c",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75"
+  },
+  "latest_seed_exact_width_assignment": {
+    "all_cell_widths_packed": 20,
+    "region_at_tightest_site_surplus": "tri_oracle_pe_array_verified_bank0_3",
+    "region_count": 20,
+    "scope": "Every other placed instance and its halo stay fixed. Old array cells are released in their respective region. The width-only witness preserves the geometric reservation and does not establish timing or integration of the queue.",
+    "tightest_raw_free_site_surplus": 7835
+  },
+  "mapped_vectors": 786,
+  "scope": "Genus cells mapped with the same slow library and pre-wire constraints. Each region's total legal site budget reserves its original control buffers. Simulated gate payload is cycle-accurate. Native physical placement and extracted timing of this new netlist remain unmeasured.",
+  "state": "decoupled_array_mapped_functional_and_area_screen_verified"
+}

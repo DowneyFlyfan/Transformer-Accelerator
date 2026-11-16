@@ -1,0 +1,29 @@
+{
+  "baseline_native_path_delay": {
+    "cell_delay": 1.4152,
+    "slack": -0.626037,
+    "unchanged_cell_delay_margin": 0.164664,
+    "wire_delay": 0.7907
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/driver_resize_screen/contiguous_expansion.json": "8ea596b4d3128167e37108030e14ab59fa2afabe7ff1580c876d74b69d5fcb7b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/driver_resize_screen/screen.json": "6c92cfa5055da590e0f2c9ebd72c0e73185a1de4b3d6b1074a81718ac4f45efc",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/driver_resize_screen/verified.json": "a70d16f7340f44c17bc8e5f5574ee3e8af8b333c0036e1759e1606b45f9951d3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/wire_delay_assignment/verified.json": "6c892ca2c7c3d14c1ca093f1653bc74a7d301c71a7e7ed120abb1699ff027484"
+  },
+  "fixed_cell_positions": 65763,
+  "gpu_reassignment_setup_slack_ns": [
+    -0.626037,
+    -1.371677
+  ],
+  "improved_setup_slack_ns": [
+    -0.626037,
+    -0.55776
+  ],
+  "independently_checked_mapped_transactions": 600,
+  "larger_equivalent_drivers_with_contiguous_sites": 0,
+  "measured_ideal_clock_mhz": 580,
+  "replaced_gates": 14,
+  "scope": "Same-name replacement pins, equivalent single-input Liberty functions, and identical cell footprints and coordinates. Early routed wire extraction with an ideal clock was paired with functional Xcelium checks. Neither experiment meets the array clock target yet.",
+  "state": "same_site_sizing_improved_setup_gpu_reassignment_regressed"
+}
