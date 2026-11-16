@@ -1,0 +1,25 @@
+{
+  "anchor_questions_by_type": {
+    "choose": "201061262",
+    "compare": "201030233",
+    "logical": "201037055",
+    "query": "201055656",
+    "verify": "201047193"
+  },
+  "batch_size": 4,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    ".cache/model_reference/gqa_testdev/host_gpu_canary/check.py": "4ffdda7b3760854b421a0fa6e1e244298bbd6488b6d7f034dad6b67bb9381078",
+    ".cache/model_reference/gqa_testdev/host_gpu_canary/verified.json": "eca7e21762b674d2331134b4944a66bf8bf11a0485edaed90b5b3549c6ee1b72"
+  },
+  "matching_questions": 20,
+  "model_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "peak_graphics_memory_bytes": 3027292672,
+  "sampled_answer_matches": 14,
+  "scope": "Native workstation inference in the repository Python environment. Twenty generated token sequences match the pinned dense benchmark; this is runtime equivalence on the sampled questions.",
+  "state": "local_graphics_processor_reproduces_frozen_dense_tokens",
+  "torch": "2.11.0+cu130"
+}
