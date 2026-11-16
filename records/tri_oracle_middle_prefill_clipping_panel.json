@@ -1,0 +1,178 @@
+{
+  "comparisons": {
+    "all_layers": {
+      "gained": 1,
+      "image_bootstrap_95_percent_interval_pp": [
+        -11.940298507462687,
+        1.492537313432836
+      ],
+      "lost": 4,
+      "paired_exact_two_sided_p": 0.375,
+      "percentage_point_change": -4.477611940298507
+    },
+    "baseline": {
+      "gained": 2,
+      "image_bootstrap_95_percent_interval_pp": [
+        -7.462686567164179,
+        4.477611940298507
+      ],
+      "lost": 3,
+      "paired_exact_two_sided_p": 1,
+      "percentage_point_change": -1.492537313432836
+    }
+  },
+  "corrected_layers": {
+    "all_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "baseline": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "candidate": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "correction_dot_product_rows": {
+    "all_layers": 115030,
+    "baseline": 29026,
+    "candidate": 65011
+  },
+  "correction_row_factor_vs_baseline": 2.239750568455867,
+  "correction_row_reduction_vs_all_layers_percent": 43.48343910284274,
+  "correction_rows_by_layer": {
+    "all_layers": [
+      8082,
+      4241,
+      8670,
+      1381,
+      2242,
+      6192,
+      8493,
+      11440,
+      3359,
+      4096,
+      8583,
+      1376,
+      2849,
+      2235,
+      3001,
+      6172,
+      3194,
+      5163,
+      6916,
+      10979,
+      2367,
+      3999
+    ],
+    "baseline": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5043,
+      7068,
+      10947,
+      2160,
+      3808
+    ],
+    "candidate": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      8490,
+      11335,
+      3342,
+      4096,
+      8697,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5164,
+      6931,
+      10872,
+      2258,
+      3826
+    ]
+  },
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "distinct_images": 67,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_trial/predictions.jsonl": "dca4238301e2eed56593fd61d1a3c48a836b64cb6ce3dff4d158111596421421",
+    ".cache/model_reference/gqa_testdev/middle_prefill_clipping_trial/inputs.json": "2c1ddccb1eec5a5bf0e9e2200119c09271dc4f7fe3a2f237f4b87a38eaf1e753",
+    ".cache/model_reference/gqa_testdev/middle_prefill_clipping_trial/predictions.jsonl": "9db874330cf3b49bff71c0e6de62c1e2f76ade2c5e089966348a9e71f7601b0c",
+    ".cache/model_reference/gqa_testdev/middle_prefill_clipping_trial/receipt.json": "0be87a912ad0103ba76776e861baf0c7b3b29bede11f12edd850d38a74b6a4b0",
+    ".cache/model_reference/gqa_testdev/middle_prefill_clipping_trial/run.py": "bbd37da10de912793585692d216bfed02e8c64a1d5cbef6f5301ffea4cfd120a",
+    ".cache/model_reference/gqa_testdev/middle_prefill_clipping_trial/verify.py": "1f588b95c772f1687c83bbafbb905468ba90336ed0b88d41af810d30aa6cf806",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_all_prefill_clipping_panel.json": "bb0809efdff533afe5393a544561e6675d08c4338712d6eb6e74ef0078eb43de",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "exact_matches": {
+    "all_layers": 42,
+    "baseline": 40,
+    "candidate": 39
+  },
+  "first_token_changes_vs_baseline": {
+    "all_layers": 10,
+    "baseline": 0,
+    "candidate": 8
+  },
+  "peak_gpu_bytes": 7700404224,
+  "questions": 67,
+  "scope": "Paired software screen on the same held-out images as the earlier all-layer trial. Correction work counts extra signed-eight-bit down-projection rows. Full-split accuracy, mapped hardware, and energy remain unmeasured for this candidate.",
+  "state": "middle_and_late_prefill_signed8_clipping_panel_independently_verified"
+}
