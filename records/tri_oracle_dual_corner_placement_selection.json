@@ -1,0 +1,346 @@
+{
+  "array_regions": 20,
+  "baseline_slack_min_median_max_ns": {
+    "prior_setup_slack_ns": [
+      -1.670129,
+      -1.388015,
+      -1.00092
+    ],
+    "setup_slack_ns": [
+      -0.470779,
+      -0.2404885,
+      0.046044
+    ]
+  },
+  "candidate_cells": 3887458,
+  "clock_target_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/dual_corner_chip/archive.py": "aa5a2e26071bb47c552e3ef2712f1d58bf99ede5ac8b9c8f358c8a8d420a000d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/dual_corner_chip/prepared.json": "0d9be47fdc098afae6640fdf3374b1bdb48a4e8665fc4bf53d8fdc008d564e61",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/dual_corner_sweep/selected.json": "79792e3a9af565e599916bdb31d96529c3fc82fbb543acfa52be4e650f09bf2e",
+    "records/tri_oracle_adaptive_placement_fast_corner_timing.json": "c09e1714e966a3d39a36ebdc6253d7499877853cdaee38c166eef156992eaf00"
+  },
+  "existing_native_netlist_sha256": "76afde070aa9f536bebb08c6b86a282fd4f73360d6581339abf9dea9bfefdb5c",
+  "fixed_memory_macros": 631,
+  "moved_standard_cells": 510141,
+  "per_region": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.36187,
+          "prior_setup_slack_ns": -0.470779,
+          "setup_slack_ns": -0.108909
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.469487,
+          "prior_setup_slack_ns": -1.670129,
+          "setup_slack_ns": -1.200642
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.334135,
+          "prior_setup_slack_ns": -0.242247,
+          "setup_slack_ns": 0.091888
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.489012,
+          "prior_setup_slack_ns": -1.245813,
+          "setup_slack_ns": -0.756801
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.196338,
+          "prior_setup_slack_ns": -0.301351,
+          "setup_slack_ns": -0.105013
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.44602,
+          "prior_setup_slack_ns": -1.558522,
+          "setup_slack_ns": -1.112502
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank0_3": {
+      "apply_dual_corner_trial": false,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": -0.252219,
+          "prior_setup_slack_ns": -0.141404,
+          "setup_slack_ns": -0.393623
+        },
+        "slow": {
+          "delta_setup_slack_ns": -0.031802,
+          "prior_setup_slack_ns": -1.221965,
+          "setup_slack_ns": -1.253767
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.105693,
+          "prior_setup_slack_ns": -0.38395,
+          "setup_slack_ns": -0.278257
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.156175,
+          "prior_setup_slack_ns": -1.6347,
+          "setup_slack_ns": -1.478525
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_1": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.260172,
+          "prior_setup_slack_ns": -0.354793,
+          "setup_slack_ns": -0.094621
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.454214,
+          "prior_setup_slack_ns": -1.455341,
+          "setup_slack_ns": -1.001127
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_2": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.141842,
+          "prior_setup_slack_ns": -0.118497,
+          "setup_slack_ns": 0.023345
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.193875,
+          "prior_setup_slack_ns": -1.205759,
+          "setup_slack_ns": -1.011884
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.095184,
+          "prior_setup_slack_ns": -0.296239,
+          "setup_slack_ns": -0.201055
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.192125,
+          "prior_setup_slack_ns": -1.501486,
+          "setup_slack_ns": -1.309361
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.282654,
+          "prior_setup_slack_ns": -0.150813,
+          "setup_slack_ns": 0.131841
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.669262,
+          "prior_setup_slack_ns": -1.266061,
+          "setup_slack_ns": -0.596799
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2_1": {
+      "apply_dual_corner_trial": false,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": -0.213911,
+          "prior_setup_slack_ns": 0.046044,
+          "setup_slack_ns": -0.167867
+        },
+        "slow": {
+          "delta_setup_slack_ns": -0.214484,
+          "prior_setup_slack_ns": -1.00092,
+          "setup_slack_ns": -1.215404
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.223289,
+          "prior_setup_slack_ns": -0.348858,
+          "setup_slack_ns": -0.125569
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.409547,
+          "prior_setup_slack_ns": -1.58754,
+          "setup_slack_ns": -1.177993
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2_3": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.102461,
+          "prior_setup_slack_ns": -0.093684,
+          "setup_slack_ns": 0.008777
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.37944,
+          "prior_setup_slack_ns": -1.178273,
+          "setup_slack_ns": -0.798833
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.208653,
+          "prior_setup_slack_ns": -0.310087,
+          "setup_slack_ns": -0.101434
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.430904,
+          "prior_setup_slack_ns": -1.388317,
+          "setup_slack_ns": -0.957413
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3_1": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.308365,
+          "prior_setup_slack_ns": -0.336048,
+          "setup_slack_ns": -0.027683
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.645088,
+          "prior_setup_slack_ns": -1.603483,
+          "setup_slack_ns": -0.958395
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3_2": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.140323,
+          "prior_setup_slack_ns": -0.23873,
+          "setup_slack_ns": -0.098407
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.431168,
+          "prior_setup_slack_ns": -1.397382,
+          "setup_slack_ns": -0.966214
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3_3": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.307203,
+          "prior_setup_slack_ns": -0.220785,
+          "setup_slack_ns": 0.086418
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.511656,
+          "prior_setup_slack_ns": -1.387713,
+          "setup_slack_ns": -0.876057
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "apply_dual_corner_trial": false,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": -0.399296,
+          "prior_setup_slack_ns": -0.201394,
+          "setup_slack_ns": -0.60069
+        },
+        "slow": {
+          "delta_setup_slack_ns": -0.030739,
+          "prior_setup_slack_ns": -1.314762,
+          "setup_slack_ns": -1.345501
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.115343,
+          "prior_setup_slack_ns": -0.315176,
+          "setup_slack_ns": -0.199833
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.332967,
+          "prior_setup_slack_ns": -1.527725,
+          "setup_slack_ns": -1.194758
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4_2": {
+      "apply_dual_corner_trial": true,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.086102,
+          "prior_setup_slack_ns": -0.194247,
+          "setup_slack_ns": -0.108145
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.423687,
+          "prior_setup_slack_ns": -1.360325,
+          "setup_slack_ns": -0.936638
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "apply_dual_corner_trial": false,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": -0.011618,
+          "prior_setup_slack_ns": -0.209757,
+          "setup_slack_ns": -0.221375
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.163627,
+          "prior_setup_slack_ns": -1.328626,
+          "setup_slack_ns": -1.164999
+        }
+      }
+    }
+  },
+  "placement_seed_sha256": "d30bb5d4c82a40f7cd119f138991c1f317bbd8dcce25f27e6d4e0804d514ae3d",
+  "scope": "Regional internal timing with estimated wires and ideal clock. The combined seed was constructed from the passing site exchanges. Native reload, whole-chip timing, and routing have separate qualification steps.",
+  "selected_regions": 16,
+  "selected_timing_ns": {
+    "fast": {
+      "maximum_ns": 0.131841,
+      "median_ns": -0.1032235,
+      "minimum_ns": -0.278257,
+      "regions_meeting_clock": 6
+    },
+    "slow": {
+      "maximum_ns": -0.596799,
+      "median_ns": -1.0065055,
+      "minimum_ns": -1.478525,
+      "regions_meeting_clock": 0
+    }
+  },
+  "state": "twenty_region_two_corner_selection_and_exact_site_seed_verified"
+}
