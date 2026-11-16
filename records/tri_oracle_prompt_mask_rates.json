@@ -1,0 +1,78 @@
+{
+  "activity": {
+    "activation_oracle": {
+      "budget": 230776847,
+      "changed_selections": 190432482,
+      "high_budget_rows": 0,
+      "opportunities": 2774340096,
+      "used": 230776847
+    },
+    "calibrated_sign_rank": {
+      "budget": 234333246,
+      "changed_selections": 152323794,
+      "high_budget_rows": 0,
+      "opportunities": 2793466368,
+      "used": 234333246
+    },
+    "high_rate_magnitude": {
+      "budget": 1609863402,
+      "changed_selections": 1472481979,
+      "high_budget_rows": 492860,
+      "opportunities": 2784089088,
+      "used": 1609863402
+    }
+  },
+  "calibration_entries": 5555264,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/matched_prompt_arithmetic/inputs.json": "2b69b63c576af86db292b062fb0bdfa4a45abee9f2ebd1e6604e49106dbcb85c",
+    ".cache/model_reference/gqa_testdev/prompt_mask_rate_trials/inputs.json": "4dd99e351a6c81e774c98539689e5104e57c13bbe4dc98aae39ab42bcc3722f4",
+    ".cache/model_reference/gqa_testdev/prompt_mask_rate_trials/predictions.jsonl": "b0bced4c2f26614e949cac9b58c5a65e556b185b68be2825b7ed073c3f145423",
+    ".cache/model_reference/gqa_testdev/prompt_mask_rate_trials/receipt.json": "cda8bc9da030c021919b447ade6c54ac21cf21b01c2949ff5a93caf2d2647b2a",
+    ".cache/model_reference/gqa_testdev/prompt_mask_rate_trials/sign_rank_table.json": "638460eff50ebcf50ddd3893dc0e60c65443668d310d88ede4323fcfee14308d",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_prompt_arithmetic.json": "ac71f4c503e31a80315cedf1ab1c5b6502909efac7342f424cff2e43c60fbfbc",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_same_count_mask.py": "26f99f53bd205dee3cd4b10790b2bd654e342ee1b230a685a8d89661e4617614",
+    "syn/verify_tri_oracle_same_count_mask.py": "deaf27c181b8d60418d58f9413c7abd410ecd485aa2cd8c689044694a72cae66"
+  },
+  "held_out_questions": 67,
+  "high_rate_percent_for_nonfirst_prompt_rows": 58,
+  "label_free_calibration_images": 16,
+  "paired": {
+    "activation_oracle": {
+      "baseline": 34,
+      "candidate": 35,
+      "first_token_changed": 11,
+      "fraction_of_selections_changed_percent": 82.51801880281344,
+      "gained": 3,
+      "lost": 2,
+      "paired_exact_two_sided_p_value": 1,
+      "prompt_skip_percent": 8.31826088419118
+    },
+    "calibrated_sign_rank": {
+      "baseline": 34,
+      "candidate": 33,
+      "first_token_changed": 15,
+      "fraction_of_selections_changed_percent": 65.00306576216676,
+      "gained": 4,
+      "lost": 5,
+      "paired_exact_two_sided_p_value": 1,
+      "prompt_skip_percent": 8.388618838743076
+    },
+    "high_rate_magnitude": {
+      "baseline": 34,
+      "candidate": 35,
+      "first_token_changed": 13,
+      "fraction_of_selections_changed_percent": 91.46626832877091,
+      "gained": 3,
+      "lost": 2,
+      "paired_exact_two_sided_p_value": 1,
+      "prompt_skip_percent": 57.823702874266644
+    }
+  },
+  "peak_device_bytes": 7955958272,
+  "scope": "The same-count candidates retain the archived skip count for each prompt row they process. The high-rate diagnostic keeps the first row's count and uses a fixed fraction for the remaining rows. The magnitude trials use computed gate and up products. The sign-rank candidate uses a frozen calibration table and software row ranking. Hardware ranking cost, memory traffic, full accuracy and paper protocol remain open.",
+  "state": "same_count_prompt_masks_independently_rescored"
+}
