@@ -1,0 +1,55 @@
+{
+  "additional_signed8_dot_rows": {
+    "exact_gated": 83384,
+    "weight_plane": 138513
+  },
+  "baseline_outputs_reproduced": 67,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "distinct_held_out_images": 67,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/late_down_precision_paired/inputs.json": "cd61b76e9dfa0698c847d5f4ad6003965a3806892c82cc736863ef0927ab50fd",
+    ".cache/model_reference/gqa_testdev/late_down_precision_paired/predictions.jsonl": "a7697c4badd2ea98f89a6ead72dfa6259af7bbb5dbace1f30b1efee7de249712",
+    ".cache/model_reference/gqa_testdev/late_down_precision_paired/receipt.json": "5544ebc66bcb7148b4012fa7dbe8db3fe5dabca17a2129a7efaf042edf17ed70",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c",
+    "syn/evaluate_tri_oracle_late_down_precision.py": "b38554717c5e37e4aa58dc7aa338f1dfe305e22ce8daffba8c4f24e8f112589b",
+    "syn/verify_tri_oracle_late_down_precision.py": "2ea70774c4a119d1174270074cec3d5179d1677400f71bc38b8b91f8e277406a"
+  },
+  "extra_weight_code_bytes": {
+    "exact_gated": 0,
+    "weight_plane": 57671680
+  },
+  "late_prefill_layers": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "paired_results": {
+    "exact_gated": {
+      "control": 34,
+      "first_token_changed": 2,
+      "gained": 1,
+      "lost": 0,
+      "net_change_percentage_points": 1.492537313432836,
+      "paired_exact_two_sided_p_value": 1,
+      "refined": 35
+    },
+    "weight_plane": {
+      "control": 34,
+      "first_token_changed": 4,
+      "gained": 1,
+      "lost": 1,
+      "net_change_percentage_points": 0.0,
+      "paired_exact_two_sided_p_value": 1,
+      "refined": 34
+    }
+  },
+  "peak_device_bytes": 7834201088,
+  "questions": 67,
+  "scope": "Paired software evaluation on one question per held-out image. Both variants retain the archived pruning policy. Counts measure activity in this panel. Published dataset protocol, full-benchmark improvement and mapped hardware execution remain unverified.",
+  "state": "late_down_precision_host_panel_independently_rescored",
+  "verified_signed16_input_codes": 65536
+}
