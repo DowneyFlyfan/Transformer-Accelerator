@@ -1,0 +1,152 @@
+{
+  "change": {
+    "approx_source_distance_um": {
+      "previous": 634.44,
+      "shortcut": 212.66
+    },
+    "equivalent_input_pins": 135958,
+    "equivalent_output_bits": 610,
+    "feedback_endpoint": [
+      "g395621",
+      "A1"
+    ],
+    "new_source_fanout_before_edit": 5,
+    "previous_source_fanout": 23,
+    "source": {
+      "previous": [
+        "TRI_ARRAY_CTL_7_3",
+        "Z"
+      ],
+      "shortcut": [
+        "TRI_ARRAY_CTL_8_4",
+        "Z"
+      ]
+    }
+  },
+  "early_route_overflow_percent": {
+    "horizontal": 0.02,
+    "vertical": 0.0
+  },
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/archive.py": "da7980f8323f9478615028784d3cfe14b76df9a886ffd8816731a5406d96e1d1",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/overlap.json": "344e03affa5802f6278b352c84a6f9022bcd21ef0fc8f9141dc227da8cd57c0a",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/prepared.json": "0628f564e3b2b5018ffced947c71db0e73759dffa49b7030eff668ee67aa6be2",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "a16ea8d4eee26c04a1098aeecb4d05fdd70988ff0a1ae746a816057a63fef8e2",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/broader_setup.rpt": "8a757f01870f45f0caeca2eddd7726f9542d6ec7a7730ef09f618bc710ce318b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/hold_fast_broader.rpt": "b3220f961daec7c9a3742d569a2afeff8521298d285460234129044f8dde0c59",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "384d78ff02ef13ee003820aab657e63908851db44a8b2bd026f4d8917e32843b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_max_transition.rpt": "b305d64e7583ac5a6699d7e3e67c9b4c9b683af4ff4908b15d86b7e470017e55",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/verified.json": "d00b3b7bafa95a98d406426be848e546bd76394830ca3b9e9d83ab18ff9bc500",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/prepared.json": "7501e9ba6ed2d86215a1689f2c213b4abff98e127056944352c2f059e2a2fc23",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/replay/verified.json": "d7810bcea3c3cad75b8f5f732ad39eee0bea20c46e59eed4839d56722fedaff1",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/shared_buffer_site/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "a14d41f37239cfa7769afaf81b6edf146c00db45fd00789208eb42082b26235d",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/shared_buffer_site/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/broader_setup.rpt": "ae5c82280917edcb8c26f46e6c6b50f7271a9836b02fb657d210e9e88a40d080",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/shared_buffer_site/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/hold_fast_broader.rpt": "ad6c866b62f84a533aeef6854324ac21e3cf838b4fd22ce178db4b5dd26d6b04",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/shared_buffer_site/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "2d6fe481be744935d9c13e059a8230d7cfce5781a5703d21a73fd8c90a5bb841",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/shared_buffer_site/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_max_transition.rpt": "a2a802f208df0f4e6baa52bad255f18744e65652584d8ce4d4b9c7a9f89d1a67",
+    "records/tri_oracle_bank4_2_control_repeat_native.json": "0c3709b9fdc1c75f4c2d855a398853bf01f70985013e40595753d2eb74ed8643",
+    "records/tri_oracle_bank4_2_shared_buffer_site_native.json": "c96a115cad64cda3ea7048c5001cfa807790c6ca2c71b44b4d746a958f76dfa0"
+  },
+  "matched_boundary_pins": 4967,
+  "no_worst_slack_regression_from_repeated_reference": true,
+  "paper_clock_mhz": 580,
+  "physically_moved_instances": 0,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "sampled_valid_feedback": {
+    "current": {
+      "fast": null,
+      "hold": null,
+      "slow": null
+    },
+    "previous": {
+      "fast": -1.299573,
+      "hold": null,
+      "slow": -1.735446
+    }
+  },
+  "scope": "Isolated regional early global routing with ideal clocks and matching boundary geometry. Feedback values appear only when the endpoint is present in the bounded path report.",
+  "shared_branch_transition_violations": {
+    "current": {
+      "TRI_ARRAY_CTL_7_23/I": {
+        "actual_ns": 1.108,
+        "limit_ns": 0.377
+      },
+      "TRI_ARRAY_CTL_7_24/I": {
+        "actual_ns": 1.094,
+        "limit_ns": 0.377
+      },
+      "TRI_ARRAY_CTL_7_25/I": {
+        "actual_ns": 1.024,
+        "limit_ns": 0.377
+      },
+      "TRI_ARRAY_CTL_7_26/I": {
+        "actual_ns": 0.416,
+        "limit_ns": 0.377
+      }
+    },
+    "previous": {
+      "TRI_ARRAY_CTL_7_23/I": {
+        "actual_ns": 1.106,
+        "limit_ns": 0.377
+      },
+      "TRI_ARRAY_CTL_7_24/I": {
+        "actual_ns": 1.094,
+        "limit_ns": 0.377
+      },
+      "TRI_ARRAY_CTL_7_25/I": {
+        "actual_ns": 1.019,
+        "limit_ns": 0.377
+      },
+      "TRI_ARRAY_CTL_7_26/I": {
+        "actual_ns": 0.609,
+        "limit_ns": 0.377
+      }
+    }
+  },
+  "state": "bank4_2_feedback_shortcut_xcelium_and_innovus_measured",
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_from_repeated_reference_ns": 0.0,
+      "change_ns": 0.0,
+      "feedback_ns": -0.012664,
+      "launch": "completed_results_reg[1][534]/CP",
+      "previous_ns": -0.012664
+    },
+    "fast_hot_setup": {
+      "capture": "completed_results_reg[0][200]/SA",
+      "change_from_repeated_reference_ns": 0.266325,
+      "change_ns": 0.170412,
+      "feedback_ns": -1.146394,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "previous_ns": -1.316806
+    },
+    "fast_setup": {
+      "capture": "completed_results_reg[1][336]/SA",
+      "change_from_repeated_reference_ns": 0.234251,
+      "change_ns": 0.178282,
+      "feedback_ns": -1.121291,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "previous_ns": -1.299573
+    },
+    "slow_setup": {
+      "capture": "completed_results_reg[1][336]/SA",
+      "change_from_repeated_reference_ns": 0.20003,
+      "change_ns": 0.05989,
+      "feedback_ns": -1.675556,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "previous_ns": -1.735446
+    },
+    "typical_setup": {
+      "capture": "completed_results_reg[1][336]/SA",
+      "change_from_repeated_reference_ns": 0.223125,
+      "change_ns": 0.022097,
+      "feedback_ns": -0.878479,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "previous_ns": -0.900576
+    }
+  },
+  "worst_case_passes_paper_clock": false,
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.209
+}
