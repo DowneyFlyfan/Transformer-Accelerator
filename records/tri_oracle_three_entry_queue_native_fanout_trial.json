@@ -1,0 +1,39 @@
+{
+  "added_buffers": 553,
+  "affected_queue_control_nets": 9,
+  "calibrated_setup_slack_before_after_ns": [
+    -49.25732,
+    -3.710087
+  ],
+  "current_parent_interface_checks": {
+    "array_instances": 20,
+    "extra_equivalent_reset_ports": 14,
+    "standard_ports": 10
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/buffer_trial/prepared.json": "742e356f52c5a0408c344aa03b3a53e9ad0b9c79ae141dd433f1ad2629afaa52",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/buffer_trial/uniform_buffer_budget.json": "92861129a4ac658da08f4ea05adaf2464dc42444128ca7ef106e548c5f8a6725",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/buffer_trial/verified.json": "b881fb89332e0eacdb00f0e0e48d3ceeffb0033a490653efdf1154645cbf7daf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/parent_binding.json": "9ebdf4913c6f603085109df18dd2968f50afa64038abaa0a84d8df710e636453",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/prepared.json": "11128d8103d75d7a2f0e60000fd907e60beda43b8531037cf3462097923ebf2a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/verified.json": "b9b71dad3dd8f80b1405b8052987a63401f321266836090766b794cdb6014b89"
+  },
+  "initial_seed_cuda": {
+    "geometric_reference_registers": 6528,
+    "peak_cuda_bytes": 10075136,
+    "tracked_edges": 78702
+  },
+  "original_fence_blockages": 27407,
+  "paper_clock_target_mhz": 580,
+  "post_buffer_gate_replay_transactions": 786,
+  "preserved_cell_placements": 53511,
+  "row_sites_before_after_buffers": [
+    17026,
+    12340
+  ],
+  "scope": "Paired early wire-extracted Innovus diagnostics on the same exact standalone array fence with an ideal clock and identical original cell positions. The whole-chip parent check traces existing named ports. The buffered queue still misses setup, and uniform replication of this buffer inventory does not fit the narrowest region. Whole-chip replacement and timing have no passing evidence.",
+  "state": "three_entry_queue_native_region_timing_and_parent_interface_verified",
+  "uniform_buffer_replication_shortfalls_sites": {
+    "tri_oracle_pe_array_verified_bank0_3": -1594
+  }
+}
