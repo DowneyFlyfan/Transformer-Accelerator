@@ -1,0 +1,95 @@
+{
+  "compute": {
+    "arrays": 20,
+    "carry_result_registers": 608,
+    "carry_save_registers_per_array": 3328,
+    "clusters": 5,
+    "cores_per_cluster": 4,
+    "inverted_registered_product_drivers": {
+      "DFKCND1BWP12T40P140": 51
+    },
+    "lanes": 8,
+    "operand_bits": 8,
+    "output_port_bits": 608,
+    "product_registers": 4096,
+    "registered_completion_entries": 1824,
+    "rows": 32,
+    "theoretical_ops_per_second_at_580_mhz": 5939200000000
+  },
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/attention_checkpointed/first_checkpoint_native_prefix.log": "1e396fb863b1c4fc5f8a2fadcd67f1691a9e225eaf2418f4a78acf619879e679",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/cold.v": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/candidate/candidate.v": "99555a2fc35d80b8c32872c38baef869adc83c0d79e1541c8dde92f9a95f98c7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/remaining_region_swap_trials/assembled_seed.def": "26ffd08d7d54fd8d1bea9a2e24508b6e22a2a5d70eff5152540606d4ab6a475b",
+    ".cache/physical/paper_repacked_architecture/archive.py": "6ed941d801c914eab11be64730b6cce3a3cf35c898d2e98bf0d232b5379fddca",
+    ".cache/physical/paper_repacked_architecture/negative_control.log": "e480214d52e93aef2b3eb1943530c8620c88ff17750cdb34294c1adf94a27b56",
+    ".cache/physical/paper_repacked_architecture/recheck.py": "85541f99c40b873c55c4c44209d4f332ad068a7accae40374c6cbfbebb9812bb",
+    ".cache/physical/paper_repacked_architecture/test_shape.py": "98b861417ad8eb508dda2dab92468de9918c9af1893b508fec76bbd8c7feadf1",
+    ".cache/physical/paper_repacked_architecture/verified.json": "a8cc6c762645c4969e27df99dc77f222c9fa08de1f06179c1851ac155fa5e1cd",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd"
+  },
+  "latest_layout_sha256": "26ffd08d7d54fd8d1bea9a2e24508b6e22a2a5d70eff5152540606d4ab6a475b",
+  "latest_logic_sha256": "99555a2fc35d80b8c32872c38baef869adc83c0d79e1541c8dde92f9a95f98c7",
+  "memory": {
+    "aggregator_io_bytes": 10240,
+    "aggregator_io_bytes_per_cluster": 2048,
+    "bytes": 414928,
+    "bytes_above_decimal_405_kb": 9928,
+    "bytes_above_exact_405_kib": 208,
+    "core_memory_bytes": 389120,
+    "core_memory_bytes_per_core": {
+      "inputs": 8192,
+      "masks": 1024,
+      "outputs": 2048,
+      "weights": 8192
+    },
+    "exact_xcelium_predecessor_instance_paths_compared": 631,
+    "fixed_compiled_macros": 631,
+    "local_support_bytes_by_cluster": {
+      "0": {
+        "surviving_token_signs": 1536,
+        "token_merge_table": 160
+      },
+      "1": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "2": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "3": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "4": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 80
+      }
+    },
+    "physical_abstract_count": 6,
+    "rounded_binary_kb": 405,
+    "support_bytes_by_role": {
+      "prediction_metadata": 6656,
+      "shared_weight_signs": 2048,
+      "surviving_token_signs": 6144,
+      "token_merge_table": 720
+    },
+    "support_macro_count_by_role": {
+      "prediction_metadata": 6,
+      "shared_weight_signs": 4,
+      "surviving_token_signs": 16,
+      "token_merge_table": 5
+    },
+    "support_memory_bytes": 15568,
+    "timing_view_count": 18
+  },
+  "negative_control": "Verified real bank 4 carry and queue wiring on both netlists. An in-memory result-queue bit-index mutation failed.",
+  "scope": "The chip netlist and coordinate seed were verified directly. Innovus and Xcelium artifacts refer to the cold predecessor. The exact fixed memory instances and hardware compute dimensions agree across both candidates. Peak arithmetic assumes 580 MHz. Native reload of the latest seed and model execution on it remain pending.",
+  "state": "latest_chip_seed_compute_and_memory_rechecked",
+  "xcelium_cold_predecessor_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1"
+}
