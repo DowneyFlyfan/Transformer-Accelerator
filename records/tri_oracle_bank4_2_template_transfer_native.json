@@ -1,0 +1,145 @@
+{
+  "early_route_overflow_percent": {
+    "horizontal": {
+      "local_swap": 41.61,
+      "original": 42.67,
+      "transferred": 34.37
+    },
+    "vertical": {
+      "local_swap": 5.5,
+      "original": 5.5,
+      "transferred": 5.75
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/native_candidate/prepared.json": "82491bb0e01d63bea893c5b228bdda0d3221dcc469dee752d1f15dbb2e9ebd1f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "d6bd0855d96e3ef1a670af93f51167094f6412cf94b218e50d83af90b6facbbd",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/swap_trial/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/constraints.sdc": "d470bce11858fc41f59caf9eddb7595431c429e7240303ed73f423b9ad797620",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/archive.py": "d0a08e9a0b5bfe11bbc991efa80a97c0ed937b0f261d85b45b690be94b659925",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/overlap.json": "60f47af22ce8fdfa22d28190e65533db78a0405378db52d5b06cfaa7156b48a6",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/prepared.json": "e4c7da5c4cc76fc467cc1954f679c27f964378834eb8aae4f7a40631a5e67ee6",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "de648e6c48948806395c5bf0a8ab3f6d990692c205b93b28d72ee40e8a63cf3f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/constraints.sdc": "a30a8561f0beb3f019d4df2f6a140b524aa0092788f947ed6ddf61735d648a62",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/native_candidate/verified.json": "99a4a6527343a9d949fa8678aa35117f52673fac02904558a9928e1a326ef40c",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/template_transfer/prepared.json": "0d8d84836668ffd61c71454e23d7625a22f7406a137afa8d1b6072a6ddfdbce8",
+    "records/tri_oracle_bank4_2_latest_region_native_timing.json": "4136cf0845f06e99124e9c9a58735233307442e4144d093f13f17214196426b6",
+    "records/tri_oracle_bank4_2_native_placement_swaps.json": "7767e500b2e25ad5e059561eaa9774553c751ca559ae88b8809789968364f296"
+  },
+  "exact_occupied_sites": 54141,
+  "geometry_and_host_setup": {
+    "boundary_anchored": {
+      "anchored_boundary_cells": 21095,
+      "internal_half_perimeter_um": [
+        25066690.36,
+        22644029.19
+      ],
+      "moved_instances": 19524,
+      "p95_displacement_to_template_micrometers": [
+        826.46,
+        819.18
+      ],
+      "sum_displacement_to_template_dbu": [
+        36452585520,
+        27784528160
+      ],
+      "timing": {
+        "slow": {
+          "change_ns": 3.444271,
+          "slack_ns": -7.85326,
+          "wire_free_slack_ns": 0.989002
+        },
+        "typical": {
+          "change_ns": 2.569168,
+          "slack_ns": -6.162216,
+          "wire_free_slack_ns": 1.164096
+        }
+      }
+    },
+    "template": {
+      "anchored_boundary_cells": 0,
+      "internal_half_perimeter_um": [
+        25066690.36,
+        21147020.55
+      ],
+      "moved_instances": 30563,
+      "p95_displacement_to_template_micrometers": [
+        826.46,
+        815.56
+      ],
+      "sum_displacement_to_template_dbu": [
+        36452585520,
+        22410897840
+      ],
+      "timing": {
+        "slow": {
+          "change_ns": 3.974499,
+          "slack_ns": -7.323032,
+          "wire_free_slack_ns": 0.989002
+        },
+        "typical": {
+          "change_ns": 3.000723,
+          "slack_ns": -5.730661,
+          "wire_free_slack_ns": 1.164096
+        }
+      }
+    }
+  },
+  "graphics_processor": "NVIDIA GeForce RTX 5070 Ti",
+  "matched_boundary_pin_count": 4967,
+  "minimum_host_available_bytes": 16553598976,
+  "native_elapsed_seconds": 84.87596672400832,
+  "native_timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[0][120]/DA",
+      "gain_from_local_ns": -0.000396,
+      "gain_from_original_ns": 0.000138,
+      "launch": "completed_results_reg[0][120]/CP",
+      "local_swap_ns": -0.012011,
+      "original_ns": -0.012545,
+      "transferred_ns": -0.012407
+    },
+    "fast_hot_setup": {
+      "capture": "completed_results_reg[0][203]/SA",
+      "gain_from_local_ns": 1.602801,
+      "gain_from_original_ns": 3.718021,
+      "launch": "running_valid_reg[3]/CP",
+      "local_swap_ns": -9.078281,
+      "original_ns": -11.193501,
+      "transferred_ns": -7.47548
+    },
+    "fast_setup": {
+      "capture": "completed_results_reg[0][203]/SA",
+      "gain_from_local_ns": 1.154138,
+      "gain_from_original_ns": 3.227596,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "local_swap_ns": -8.567377,
+      "original_ns": -10.640835,
+      "transferred_ns": -7.413239
+    },
+    "slow_setup": {
+      "capture": "completed_results_reg[0][203]/SA",
+      "gain_from_local_ns": 2.189006,
+      "gain_from_original_ns": 3.970086,
+      "launch": "running_valid_reg[3]/CP",
+      "local_swap_ns": -10.397302,
+      "original_ns": -12.178382,
+      "transferred_ns": -8.208296
+    },
+    "typical_setup": {
+      "capture": "completed_results_reg[0][203]/SA",
+      "gain_from_local_ns": 1.472335,
+      "gain_from_original_ns": 2.991087,
+      "launch": "running_valid_reg[3]/CP",
+      "local_swap_ns": -7.253918,
+      "original_ns": -8.77267,
+      "transferred_ns": -5.781583
+    }
+  },
+  "nominal_clock_mhz": 580,
+  "peak_graphics_allocation_bytes": 46495744,
+  "reference_region": "tri_oracle_pe_array_verified_bank4_1",
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "scope": "Matched isolated Innovus diagnostics on the exact receiving region. Same mapped logic, row slots, analysis views and synthetic boundary pins. Parent interconnect effects and whole-chip routing remain unmeasured.",
+  "selected": "template",
+  "state": "bank4_2_native_template_transfer_comparison_verified"
+}
