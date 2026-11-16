@@ -1,0 +1,48 @@
+{
+  "cell_counts_by_design": {
+    "fused": 53859,
+    "fused_buffered": 53860,
+    "reference": 53862
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion/tri_oracle_pe_array/native/timing.rpt": "00b0cdc808829f1c621f7c13c7c1324c8186fd39b1731fd244abde3eeb6de3f9",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion/verified.json": "d61a4fa98398a88ce319aaf23222456983393d8cb84226b5fd92469d8bc1b6db",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_buffered/archive_result.py": "c5a28e895e0fd055614298c4f0fd6b60ce41b10f5063434fca38c3e834792c40",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_buffered/tri_oracle_pe_array/native/timing.rpt": "4e5969b2c98443fc7f3104e88863cb7cfaa86a83084eb3c9f117160a3ccdc107",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/branch_gate_fusion_buffered/verified.json": "15ff6ef4efbfcfdbc1304f93f6508b3eb650dea1b67e8f2de9f8d2469c7ae606",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "b44eeddf2ea28c2e16908297b3d57a340c555cc866210b16abd95ae90650977a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/verified.json": "14efe21fda2815bd772af97b98bc06a26a953d53972a7d2e27f206606dfa782b"
+  },
+  "exhaustive_hold_output_comparisons": 96,
+  "fused_branches": 3,
+  "fused_state_buffer_cell": "BUFFD4BWP12T40P140",
+  "fused_state_buffer_distance_um": 41.34,
+  "ideal_clock_mhz": 580,
+  "mapped_transactions_checked_per_variant": 786,
+  "matched_regional_ports": 4966,
+  "matched_reservations": 27407,
+  "remaining_sites_from_fusion_before_buffer": 39,
+  "results": {
+    "fused": {
+      "capture_pin": "completed_results_reg[2][4]/SA",
+      "launch_pin": "running_valid_reg[3]/CP",
+      "slack_ns": -0.736722,
+      "state_register_to_branch_wire_ns": 1.0762
+    },
+    "fused_buffered": {
+      "buffer_to_branch_wire_ns": null,
+      "capture_pin": "completed_results_reg[0][466]/SA",
+      "launch_pin": "shadow_valid_reg[3]/CP",
+      "slack_ns": -0.568045,
+      "state_register_to_buffer_wire_ns": null
+    },
+    "reference": {
+      "capture_pin": "completed_results_reg[2][4]/SA",
+      "launch_pin": "shadow_valid_reg[3]/CP",
+      "slack_ns": -0.507162
+    }
+  },
+  "scope": "Early extracted ideal-clock timing for an isolated array. The fused gate uses the positive write slot directly. The buffered case adds a noninverting driver to the state signal feeding three fused gates. Both cases use the same pin geometry and reservations as the reference. Whole-chip timing and routing are separate.",
+  "selected_regional_variant": "reference",
+  "state": "three_queue_branch_fusions_and_state_buffer_regional_comparison_verified"
+}
