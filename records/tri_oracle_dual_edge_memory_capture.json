@@ -1,0 +1,65 @@
+{
+  "coupled_endpoint_cases": {
+    "index_beats": 2,
+    "scalar_beats": 3,
+    "wide_beats": 2,
+    "write_acks": 1
+  },
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/compact_responses/genus/netlist.v": "d325ed952213bc5f2e3688385f17774b1c4c6db59eb7c80def147c72b6489f53",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/coupled/console.log": "cab749f4d5a0ab89c414082c031f7a861c33528e4f67fd546995f9bc24a05292",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/coupled/xrun.history": "d2593792710881d1d1ca63ee76a4008bda7da07b0426d05aa44630a9db81049d",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/coupled_tb.sv": "822f2d21a3ff44cc824625858a2cf2138bfa4334b98df5f36ae843091ea9ffdc",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/console.log": "d5b09a434083c6ef5e752f43d99455fafdcf1bd05e97d1379540154aef09627b",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/constraints.sdc": "0a56ca8db2f2f9150b8b3a44ada130a52fc5c4fc86cf22a986dac22461ec2d00",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/falling_output_timing.rpt": "27df9d295d2258a864ac398491d409da24a8ae5fe96360765d106af892da3b92",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/falling_ready_timing.rpt": "ac5ea85000b094f4912a561f6ecdb64ac12ba2c351bddfebb1f150068d0520e1",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/input_timing.rpt": "e0a53cd1399d1ac1185b0d2289268fee4a75c6d631dfe3847493a67ec6ba67b1",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/mapped_check.rpt": "8dcbe544358428f2e46feef4d8d3d66186c4067b24491a3f910d1cdb3b285c84",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/netlist.v": "0ed1001ff7ec693351a9f26c2b4785a6f501d505e9632023891955a785e8e275",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/genus/timing.rpt": "2670496155177cd9cc9b505d5ff7b24924f0a5fae5ea127d590259ec81505275",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/mapped/console.log": "cd49d0c4dbe5cdd4c8197cab1c76ca9b36afcec195f0940a9a3b40dfa3c63cb5",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/mapped/xrun.history": "be5d2aa841024cc05a7b244b0d3419b68df97e8226f165d1174a6a5690000cb5",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/red/baseline.sv": "af6b9a23db1ab084256e778c0e3cd14ba97f60db6abfa86b71084984bb8f09c8",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/red/console.log": "4782af57669561db23dfbc75e17f0173a33ab64904857b1a6c8c88406b132dd9",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/red/xrun.history": "2a4926bef7753c321d1e5b455a55daf7ecaee6f7a17daae61fe287f7766bb378",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/rtl/console.log": "d2170d1d66ddd2492929c57eb107d7faac2f768411cf218bf8a70e2bfe1e5fda",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/rtl/xrun.history": "04720cd1b6b5a4981250963a448d7724f67ebac0fb4eb1cb60d22eae489a5f7e",
+    ".cache/physical/whole_chip_xcelium_speed/memory_io_link/genus/netlist.v": "7f1b67a16ace2d83482bd6666a246297025247a89124174ebc6ec640ceb86f96",
+    "records/tri_oracle_compact_response_lane.json": "60d160553f03fb952d1c72c96c2e421ce41fe0daa1da27a5f28fd99c8105d29e",
+    "syn/tri_oracle_synthesize_dual_edge_memory_capture.tcl": "f2098e7470979c880185def07ca7aab2336c7d518353d85031c5ff37b22b8e64",
+    "syn/verify_tri_oracle_dual_edge_memory_capture.py": "f8ae88f94f92c07ad0e279e76839bb4126724628ce69f807697d58a766d4b273",
+    "verilog/tri_oracle_compact_response_lane_tb.sv": "46c587e360fb911825413d73c595732f3fb5eee97608dd29dc9711fa60e1ada7",
+    "verilog/tri_oracle_dual_edge_memory_capture.sv": "a0fe029fafd8bab1b185825980f528cfb2517e57891d4f62876ab6e237b1cff3",
+    "verilog/tri_oracle_dual_edge_memory_capture_tb.sv": "ad078123a81debc7e8eb669a22324d6765f3277749720a543ee0dc30f69c5582"
+  },
+  "falling_beats": 101,
+  "rising_beats": 128,
+  "scope": "Mapped digital receiver with an ideal common clock. The peer launches on alternating phases. The functional replay disables timing checks. Setup uses 0.2 ns interface budgets before pad, package, and routed clock effects.",
+  "shared_data_signals": 448,
+  "simulations": {
+    "mapped": {
+      "simultaneous_beats": 64,
+      "stalled_cycles": [
+        85,
+        103
+      ]
+    },
+    "rtl": {
+      "simultaneous_beats": 64,
+      "stalled_cycles": [
+        85,
+        103
+      ]
+    }
+  },
+  "standalone_clock_period_ns": 1.72414,
+  "standalone_setup_slack_ps": {
+    "falling_output_timing": 556,
+    "falling_ready_timing": 506,
+    "input_timing": 568,
+    "timing": 291
+  },
+  "state": "mapped_dual_edge_memory_capture_and_compact_endpoint_verified"
+}
