@@ -1,0 +1,97 @@
+{
+  "abstract_storage_transitions_verified_on_host_gpu": 40672,
+  "complete_beats_per_lane": 56,
+  "credit_depth_per_lane": 8,
+  "credit_stall_cycles_by_lane": {
+    "mapped": [
+      54,
+      78
+    ],
+    "rtl": [
+      54,
+      78
+    ]
+  },
+  "direct_fixture_cycles": 91749,
+  "eight_cycle_feedback_unstalled_sink_wait_by_lane": {
+    "mapped_delayed": [
+      28,
+      21
+    ],
+    "rtl_delayed": [
+      28,
+      21
+    ]
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_index.bin": "a245522580c1ee548b57246e5b498e38ef1ac7d9da931b12317edeb914729013",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
+    ".cache/model_reference/packed_down_export/v1/weights.bin": "7501c965e9933828b492fb089d2ced89bb24a896610e73d17dbed8904605d16b",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/compact_responses/genus/netlist.v": "d325ed952213bc5f2e3688385f17774b1c4c6db59eb7c80def147c72b6489f53",
+    ".cache/physical/whole_chip_xcelium_speed/compact_responses/index_alias.v": "ff5a537460a8b681cff28710d600e97e19af359ae9c3ae921954f1e852053579",
+    ".cache/physical/whole_chip_xcelium_speed/compact_responses/trained/console.log": "b7b741e2a28157ad664f78e208af3ee0c7526536e9ee1b906e372603c6ceb097",
+    ".cache/physical/whole_chip_xcelium_speed/compact_responses/trained_bundle.sv": "cf127af36b915d0a7c6c6c4f48fabc7e1a1bb01da615a086d02204965ed7248d",
+    ".cache/physical/whole_chip_xcelium_speed/compact_responses/tri_oracle_compact_response_lane.sv": "421ee41e79e647aa145f5bc1dd29c5be297a4b853c313344373354252e3ca236",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/credit_invariant_gpu.rechecked.json": "cb37549bb061106df489dd72b1cb80908de7b23ab76d40b21261f596ad601b16",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/genus/area.rpt": "36d9ff1c0f287b800f5fa4fb766de2e59bbf60b6d538d17442f65a685e444ee9",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/genus/console.log": "7d1cee23e8af84565e1ffcfc969a266cbef5295320ce4bad30e90019c202fe20",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/genus/constraints.sdc": "1dd3cdedc746504bcf38423369e9a8a440721cf007992d3e497dd7a359070178",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/genus/mapped_check.rpt": "114e3af0163eaaac39868084c941646cf8522474c18d02f5c053ab62d9956ef3",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/genus/netlist.v": "72837a9241ab97d93609de87bc8098b22795517e3bf5204c2c70b123144553aa",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/genus/timing.rpt": "ba32dd069a57534a0bb08b03c7d87969f4fd83d933d52c45c12351b6b1cd81a1",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/mapped/console.log": "494fdee3d52108893ac5b38729c6aff670fd83706ba3d2f580f3e175fd83225a",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/mapped/xrun.history": "c22cb2ed6801860cefb4b81d391c3c346110b5a662b3010e793732c1f171053f",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/mapped_delayed/console.log": "dd3dca40adc8301a7c7b8bf72536b93243514653916a607f815e3096cd20acc6",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/mapped_delayed/xrun.history": "8877f19744ce990fd1cfe2d4b60904ceb52a23ccbd07b845d37ffb99ade9f627",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/mixed/console.log": "449ec23c87d55f5f3e9c0946e0cf7f064890a5f6dba5e088f1f548d2b9bf9ef5",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/mixed/xrun.history": "04fb4797f1db915183d34b2de04509c94c000a9178ea76e6c659eab2980dcdde",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/mixed_tb.sv": "6d7fc2f10f98f771775575cf5c06e0757e456dc2e46d2bc4d349577804c3cd5c",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/red/baseline.sv": "90c775b32ade61bb8c32436eb2489f85eb719cb6b845447867bf3168b8ed2f84",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/red/console.log": "108a5bb864757e7ff8f245cd97003355ccfa5989f848da0268b09d09cd59b143",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/red/xrun.history": "c67ca931334a321d57fe19a2f9ac8fda652e4a6fda23fc28865ade563dd39998",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/rtl/console.log": "4d9621fbe66c0dc891aed188d1966069fba80172806cac77c0b02d51aa20e877",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/rtl/xrun.history": "6e40cc2056f66a34700eee125147e420f7b74ed7098fc07544a7ad8ec76ca4bf",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/rtl_delayed/console.log": "1a5e0854a06918ecde35fc6b2a92e2f74243b4dc70fc1d61f141777d2823d130",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/rtl_delayed/xrun.history": "0043bedde3a455c2596d0f91508ab27a3ed281994b53710279dc1b59f924d897",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/trained_mapped.sv": "0fc9646f78082e7afd121a7e5543e41ff2c525b046a55023df5e0a6ea3e6bde3",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/trained_mapped/console.log": "6ab8de5466b537d68ec9cad8bcc851e53eb75adb641aa95434a059448edf536b",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/trained_mapped/xrun.history": "a204d3fbdf5e11363716fce8787e613f93b726c354262c3dbcdd1f842d2396cc",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/trained_rtl.sv": "5adceb2de239d8b4d479ba904859187b094e76cef03d0fcab193890f57141679",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/trained_rtl/console.log": "e5f512c1ef351938b76837b4f997bcf0fb251b8d8b5f5ccc972f33942f848db1",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/trained_rtl/xrun.history": "bba60f522bf77ef67b67653cbb8b99e35af25ad315ab2569644101d061c4384f",
+    ".cache/physical/whole_chip_xcelium_speed/credit_ingress/trained_tb.sv": "e7d9958109c740b5afa3877aa9d63e7f655a94135530b968ea9af00408584f04",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/netlist.v": "2bbd60f72abbcba125f4ea0518773ec7282c5f159ee24c19bbc626c5bc41cc05",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_tb.sv": "639e80d4c16ce79573be99d2147e4fb0fe2f93613de3b423153487d10e7fa0cb",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/netlist.v": "9cbe51570042aee9e19621f70b885ca0837cf43d20f68479116a73ca1aa04aaa",
+    ".cache/physical/whole_chip_xcelium_speed/memory_io_link/compact_index_replay_tb.sv": "16660c2d708958ca9464b0eaf5c2c157d2ebfbf09a86d8a0ef4e7ba2bc3e4128",
+    ".cache/physical/whole_chip_xcelium_speed/memory_io_link/genus/netlist.v": "7f1b67a16ace2d83482bd6666a246297025247a89124174ebc6ec640ceb86f96",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/packed_weight_cut.v": "03ccaa5f177371e7fd12c9571352bece57886fd8fa9295a5e68b324203488e85",
+    ".cache/physical/whole_chip_xcelium_speed/single/cache_reused.hex": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+    "records/tri_oracle_compact_response_lane.json": "60d160553f03fb952d1c72c96c2e421ce41fe0daa1da27a5f28fd99c8105d29e",
+    "records/tri_oracle_dual_edge_memory_capture.json": "1500762a1cb558f7ebb95dbe7ea123881a4930b347b7ef0e97fc302e80a688f7",
+    "records/tri_oracle_dual_edge_memory_ingress.json": "072db50f0b9044de10c286039a06d281244f6ae7da6080dec1453570051c4f95",
+    "syn/check_tri_oracle_credit_conservation.py": "12707e535e06dbaab73f1ea694265c051730757876677df216d5e198a89c19c6",
+    "syn/tri_oracle_synthesize_credit_memory_ingress.tcl": "bdd2c481842b1bc2e34dfffc9b20006a6d272a8b69272549c016406f379f6ca7",
+    "syn/verify_tri_oracle_credit_memory_ingress.py": "26e2041e1bc8ec75dd60f2f68f72234958b87219fca42a26eb71db576c11ee98",
+    "verilog/async_fifo.sv": "e00c42a0d7fe2d62082806568d78aadc5527dd49eb3ed0b6891a1606b4e8e938",
+    "verilog/tri_oracle_credit_memory_ingress.sv": "a935dd24b1ee56848356d8168d991fb60bfc99380e9f1fc66a2605e0fb0f47af",
+    "verilog/tri_oracle_credit_memory_ingress_tb.sv": "c714874bca312ed6f29a792e45990bc2a19abebe312bec2f8b38e40b0340ccf0",
+    "verilog/tri_oracle_dual_edge_memory_capture.sv": "a0fe029fafd8bab1b185825980f528cfb2517e57891d4f62876ab6e237b1cff3",
+    "verilog/tri_oracle_memory_response_gearbox.sv": "26a28ff5042d8ceee75c7106e4f5591e413791306320e7ff6d87cc8f929e7dd5"
+  },
+  "mapped_cell_area_um2": 44969.904,
+  "mapped_cell_count": 22468,
+  "mapped_setup_slack_ps": 290,
+  "mixed_endpoint_overlapping_read_ack_cycles": 4,
+  "modeled_credit_return_delay_cycles": 4,
+  "scope": "Digital capture, FIFO, decoder and delayed credit protocol. The shared reset is part of the interface contract. Pad delay and numerical results on the whole workload require separate checks.",
+  "state": "mapped_credit_ingress_verified_with_delayed_peer",
+  "trained_fixture_cycles": {
+    "mapped": 100184,
+    "rtl": 100184
+  },
+  "trained_weight_bytes": 11534336,
+  "trained_weight_tiles": 78,
+  "uninterrupted_chunks_per_lane": 64
+}
