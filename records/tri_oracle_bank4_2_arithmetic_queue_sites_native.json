@@ -1,0 +1,198 @@
+{
+  "early_route_overflow_percent": {
+    "horizontal": {
+      "previous": 0.02,
+      "swapped": 0.01
+    },
+    "vertical": {
+      "previous": 0.0,
+      "swapped": 0.0
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "86b572f1ece52e12d733b76733971660a09a473a0f39669169e065db57345c20",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/broader_setup.rpt": "901ae3060a62e67da0ebbfc343e6e4e44a680215c7a48429f7ba0f7cd450de0f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/hold_fast_broader.rpt": "f7d8d1be59a9a22810b09e2200a91e44f4ade1dc873bafb56e59290aa8cfcf47",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "d46b4022fc33b972c8b4a7d59bb1f6c8a8cbac148a0000d06cccb8cc241be767",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/archive.py": "21b97b28fb21423f2386cc503351abcccad462ee23810e56ab84d0412bab4b8d",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/native_candidate/overlap.json": "719e217ceff7c55e184aa8f86afa4152e0234907a620b963c2b12a728970d058",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/native_candidate/prepared.json": "e4a5d14e90ece3b71d78b1bbd106f91bd02cdaa23975986cdec2634960e4f5c2",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "117392e5577af8744ad530ccada3dee75a2ec246ac648711b6ce01cc40025d2c",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/broader_setup.rpt": "c9f3bf2e6e8ef5c6787153aff995324734e6818e5dee23e5174620a7924e17cf",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/hold_fast_broader.rpt": "40c4043e7e1ea54db0462d17c7a30be205d7f91dd027eeff76245839348b36eb",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "107cb2259e018802e69667462d04640ad717615eb850c4bbc6bdd964941285bd",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/native_candidate/verified.json": "4da7594ee8830d4cf1d8f72956973c85503f3ae0641a585199f5ce3712a02aac",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/prepared.json": "2de766ad4e381eb9653a8f24de3ca88695c6e4ccb6173d26285317bac31ecf37",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/path_sites/replay/verified.json": "49549ae0b23ed0910a6b1864603be29d86acaf2df85094e9446a55a73be52bfa",
+    "records/tri_oracle_bank4_2_control_drive_native.json": "e870b4ac35d4c0c1175e7bceb31e039b4d71b28c3ea772ac2cab5abd83453794"
+  },
+  "matched_boundary_pins": 4967,
+  "matched_slow_setup_endpoint": {
+    "pin": "completed_results_reg[1][304]/SA",
+    "previous": {
+      "receiver_pin_arcs": [
+        {
+          "delay_ns": 0.023,
+          "pin": "TRI_ARRAY_CTL_0_30/I",
+          "slew_ns": 0.2741
+        },
+        {
+          "delay_ns": 0.1868,
+          "pin": "TRI_ARRAY_CTL_0_28/I",
+          "slew_ns": 0.4434
+        },
+        {
+          "delay_ns": 0.8281,
+          "pin": "TRI_ARRAY_CTL_0_25/I",
+          "slew_ns": 1.7551
+        }
+      ],
+      "slack_ns": -1.768186
+    },
+    "swapped": {
+      "receiver_pin_arcs": [
+        {
+          "delay_ns": 0.0231,
+          "pin": "TRI_ARRAY_CTL_0_30/I",
+          "slew_ns": 0.2754
+        },
+        {
+          "delay_ns": 0.1716,
+          "pin": "TRI_ARRAY_CTL_0_28/I",
+          "slew_ns": 0.4152
+        },
+        {
+          "delay_ns": 1.1531,
+          "pin": "TRI_ARRAY_CTL_0_25/I",
+          "slew_ns": 2.5839
+        }
+      ],
+      "slack_ns": -2.102575
+    }
+  },
+  "moved_instances": 8,
+  "paper_clock_mhz": 580,
+  "qualifies_as_preferred_regional_candidate": false,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "same_netlist_sha256": "705a6f3f454feec13933b76f1a7e37ffebaea1bfca7a50b3cccb884c0c2aff4d",
+  "scope": "Same mapped netlist, footprints, site inventory, reserved geometry, boundary pins, and four setup conditions. Geometric ranking uses cell centers. Innovus measured regional early global routing with an ideal clock.",
+  "state": "bank4_2_equal_footprint_arithmetic_queue_placement_swaps_measured",
+  "swaps": {
+    "TRI_ARRAY_CTL_0_24": {
+      "donor": "mul_98_69_I70_g1479",
+      "unweighted_donor_cost_delta": 6.832319,
+      "weighted_geometric_target_cost_delta": -350.177436,
+      "worst_observed_arc_after_um": 316.24,
+      "worst_observed_arc_before_um": 819.66
+    },
+    "TRI_ARRAY_CTL_2_1": {
+      "donor": "g704703",
+      "unweighted_donor_cost_delta": -32.95225,
+      "weighted_geometric_target_cost_delta": -309.581585,
+      "worst_observed_arc_after_um": 528.87,
+      "worst_observed_arc_before_um": 837.41
+    },
+    "add_150_34_I6_g2606": {
+      "donor": "mul_98_69_I65_g1474",
+      "unweighted_donor_cost_delta": -0.62876,
+      "weighted_geometric_target_cost_delta": -102.027172,
+      "worst_observed_arc_after_um": 455.63,
+      "worst_observed_arc_before_um": 904.03
+    },
+    "g395665": {
+      "donor": "g704444",
+      "unweighted_donor_cost_delta": -17.734831,
+      "weighted_geometric_target_cost_delta": -2.976583,
+      "worst_observed_arc_after_um": 383.59,
+      "worst_observed_arc_before_um": 474.95
+    }
+  },
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_ns": 0.0,
+      "launch": "completed_results_reg[1][534]/CP",
+      "previous_ns": -0.012664,
+      "swapped_ns": -0.012664
+    },
+    "fast_hot_setup": {
+      "capture": "carry_save.row[14].value_reg[3]/SA",
+      "change_ns": -0.21586,
+      "launch": "running_valid_reg[3]/CP",
+      "previous_ns": -1.412719,
+      "swapped_ns": -1.628579
+    },
+    "fast_setup": {
+      "capture": "running_valid_reg[3]/D",
+      "change_ns": -0.186308,
+      "launch": "running_valid_reg[3]/CP",
+      "previous_ns": -1.355542,
+      "swapped_ns": -1.54185
+    },
+    "slow_setup": {
+      "capture": "completed_results_reg[1][304]/SA",
+      "change_ns": -0.226989,
+      "launch": "running_valid_reg[3]/CP",
+      "previous_ns": -1.875586,
+      "swapped_ns": -2.102575
+    },
+    "typical_setup": {
+      "capture": "completed_results_reg[1][304]/SA",
+      "change_ns": -0.087976,
+      "launch": "running_valid_reg[3]/CP",
+      "previous_ns": -1.101604,
+      "swapped_ns": -1.18958
+    }
+  },
+  "timing_path_diagnostics": {
+    "previous": {
+      "fast_hold_negative_count_with_limit_1024": 274,
+      "fast_setup_negative_count_with_limit_1400": 1400,
+      "selected_slow_paths": {
+        "TRI_ARRAY_CTL_0_24/I": {
+          "maximum_reported_delay_ns": 0.8306,
+          "maximum_transition_ns": 1.7551,
+          "paths": 20
+        },
+        "TRI_ARRAY_CTL_2_1/I": {
+          "maximum_reported_delay_ns": 1.2081,
+          "maximum_transition_ns": 2.2214,
+          "paths": 20
+        },
+        "add_150_34_I6_g2606/Z": {
+          "maximum_reported_delay_ns": 0.2252,
+          "maximum_transition_ns": 0.4992,
+          "paths": 2
+        },
+        "g395665/Z": {
+          "maximum_reported_delay_ns": 0.1531,
+          "maximum_transition_ns": 0.0807,
+          "paths": 69
+        }
+      }
+    },
+    "swapped": {
+      "fast_hold_negative_count_with_limit_1024": 272,
+      "fast_setup_negative_count_with_limit_1400": 1400,
+      "selected_slow_paths": {
+        "TRI_ARRAY_CTL_0_24/I": {
+          "paths": 0
+        },
+        "TRI_ARRAY_CTL_2_1/I": {
+          "paths": 0
+        },
+        "add_150_34_I6_g2606/Z": {
+          "paths": 0
+        },
+        "g395665/Z": {
+          "maximum_reported_delay_ns": 0.0853,
+          "maximum_transition_ns": 0.1041,
+          "paths": 71
+        }
+      }
+    }
+  },
+  "unchanged_occupied_sites": 54141,
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.728
+}
