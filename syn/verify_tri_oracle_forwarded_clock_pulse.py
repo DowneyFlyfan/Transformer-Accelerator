@@ -16,12 +16,13 @@ PERIOD = Decimal("1.72414")
 RECEIVER = "peer_capture_0/CP"
 
 
-def verify_pulses(report, view):
+def verify_pulses(report, view, prefix="", clock_cell="PDDW16DGZ_H_G"):
     pulses = {}
+    receiver_pin = prefix + RECEIVER
     for path in re.split(r"(?m)(?=^Path \d+:)", report.read_text())[1:]:
         assert re.search(rf"(?m)^\s*View:\s+{view}$", path), report
-        assert f"PulseWidth Check with Pin {RECEIVER}->CP" in path, report
-        start, end = re.findall(rf"(?:Startpoint|Endpoint):\s+\(([RF])\) {RECEIVER}\b", path)
+        assert f"PulseWidth Check with Pin {receiver_pin}->CP" in path, report
+        start, end = re.findall(rf"(?:Startpoint|Endpoint):\s+\(([RF])\) {receiver_pin}\b", path)
         assert (start, end) in (("R", "F"), ("F", "R")), report
         clocks = re.findall(r"Clock:\s+\(([RF])\) core_clock", path)
         assert clocks == [end, start], report
@@ -34,8 +35,8 @@ def verify_pulses(report, view):
         assert abs(capture - launch - required - uncertainty - slack) <= REPORT_ROUNDING, report
         pad_times = []
         for block, edge, expected in zip(path.split("Other End Path:"), (start, end), (launch, capture), strict=True):
-            pad = re.search(rf"(?m)^\s+clock_pad/PAD\s+PDDW16DGZ_H_G\s+{number}\s+{number}\s+{edge}[ \t]*$", block)
-            receiver = re.search(rf"(?m)^\s+{RECEIVER}\s+DFQD1BWP12T40P140\s+{number}\s+{number}\s+{edge}[ \t]*$", block)
+            pad = re.search(rf"(?m)^\s+{prefix}clock_pad/PAD\s+{clock_cell}\s+{number}\s+{number}\s+{edge}[ \t]*$", block)
+            receiver = re.search(rf"(?m)^\s+{receiver_pin}\s+DFQD1BWP12T40P140\s+{number}\s+{number}\s+{edge}[ \t]*$", block)
             assert pad and receiver, report
             assert Decimal(pad[1]) > 0 and abs(Decimal(receiver[2]) - expected) <= REPORT_ROUNDING, report
             pad_times.append(Decimal(pad[2]))

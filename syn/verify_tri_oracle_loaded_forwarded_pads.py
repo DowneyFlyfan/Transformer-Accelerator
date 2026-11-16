@@ -69,13 +69,14 @@ def prepare(out):
     (out / "netlist.v").write_text(sender.read_text() + "\n" + text + "endmodule\n")
 
 
-def paths(report, view, mode, edge):
+def paths(report, view, mode, edge, prefix="", clock_cell=PADS[0]):
     text = report.read_text()
     timing = "Setup" if mode == "setup" else "Hold"
     items = re.split(r"(?m)(?=^Path \d+:)", text)[1:]
     margins = {}
     for item in items:
-        data_edge, endpoint, bit = re.search(r"Endpoint:\s+\(([RF])\) (peer_capture_(\d+)/D)", item).groups()
+        endpoint_pattern = rf"Endpoint:\s+\(([RF])\) {prefix}(peer_capture_(\d+)/D)"
+        data_edge, endpoint, bit = re.search(endpoint_pattern, item).groups()
         assert endpoint not in margins and timing + " Check" in item, report
         assert data_edge == edge[0].upper() and re.search(rf"(?m)^\s*View:\s+{view}$", item), report
         source, dest = re.findall(r"Clock:\s+\(([RF])\) core_clock", item)[:2]
@@ -87,8 +88,8 @@ def paths(report, view, mode, edge):
         number = r"(-?[\d.]+)"
         arrivals = []
         for block, pin, cell, transition in (
-            (data_path, f"data_pad_{bit}/PAD", PADS[int(bit) % 2], data_edge),
-            (clock_path, "clock_pad/PAD", PADS[0], "R"),
+            (data_path, f"{prefix}data_pad_{bit}/PAD", PADS[int(bit) % 2], data_edge),
+            (clock_path, f"{prefix}clock_pad/PAD", clock_cell, "R"),
         ):
             pad_arc = rf"(?m)^\s+{pin}\s+-\s+I->PAD\s+{transition}\s+{cell}\s+\d+"
             line = re.search(pad_arc + rf"\s+{number}\s+{number}\s+{number}[ \t]*$", block)
