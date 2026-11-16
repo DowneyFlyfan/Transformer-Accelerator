@@ -1,0 +1,90 @@
+{
+  "additional_matrix_cycles": 8826,
+  "candidate_signal_pins_if_link_replaces_ready_and_adds_clock": 484,
+  "credit_input_hold_margin_ps_at_fast_core_corner": 200.0,
+  "credited_request_matrix_cycles": 115922,
+  "credits": 16,
+  "direct_serial_matrix_cycles": 107096,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/combined_serial_memory/full/console.log": "0c7f102062af171e3838ba55e077659280a9d58da5e0dba19a119dce449bf8fb",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/bundle.sv": "9f2ef43df4c57012043056fefb7878174da79d176e2549f53f3ff1cbde46c8fd",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/chip_bundle.sv": "bcd6928f76844d40cc1b557452e45dc94f1728f00fbc7eb6a3f042a5a131ac95",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/area.rpt": "69d9d3d3a883bf5b0e5143f1a3b4f55770b12f7a0e5b66b1ecc943d84d48082b",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/console.log": "9cf10227f84a4f4f7a95edf4ac86c5a11ee344160e6b1d2363c79174f79984f6",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/constraints.sdc": "3ff8905145ca28eea72ae95b683b04eac721547123a16c1732186a9f82aae58d",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/mapped_check.rpt": "ee7131cb1b14a1c0ab13ab7047b4367ee0c8aef5e5e831e46a5303584a6219a0",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/native_pad_hold.rpt": "2c954d89ccd47c080df9f97f5695d163535f78d5f01e2e3b7bc50c59eeb30ffe",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/native_pad_setup.rpt": "2b0aaa10f39f54921d8475eb24adfec4b884cc4941f538a8fb4c8ea3af2c6a4c",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/native_return_hold.rpt": "14e7f7851cd9c7c228fc7797a53edb34f051b48d7a6ef1d2ca988609f553fd1d",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/netlist.v": "a4a8978e3b7492a98b9d0246a80a1cd8046c69da915238677dea621e427b3b22",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/pad_setup.rpt": "02231b999ec8dba0f83601ea6726f27816c0055fbf96be0c62cec2cf8253942d",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/peer_phase.sdc": "7663133ddd357a0a4edec5111722e708342aea41556e4f5fab7d5a9bf681ae3a",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/genus/tx_credit_mmmc.tcl": "72e3b6cad568abdd1e80d4048756cb48bc7e1da14a4360287c006e40e7524f61",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/host_pad_cut.v": "1becf5150d2cf24087462ab3f4fcb0bd771f570e2f8a3a435e7e0edc20debe6e",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/mapped/console.log": "61b5903c0a1669c43575602eb45f479883411e58548357e7d19179a8a57fa0cb",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/mapped/xrun.history": "05f4f6d65887bda60b3474cdf75b57646b18f4964cc057f816dd5d8603ae1675",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/mapped_tb.sv": "c7ea25880ae5898f43d97493dba303f435c98afedb6c66b922209a3876e29dd3",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/peer_assembler.sv": "dca87e7d0ee1258cfa3133788ac0a496c0ff609d96f69f9d78903bfa87472a8c",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/rtl/console.log": "a12a9370c0d0cd1dedd5db5ff2ed23215d8e5464467e14deef0ee9d259b29cd7",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/rtl/xrun.history": "d8e7d3c919dbf415aba5c617077b0324cb3291dd887c88ab77a3e622100ffefa",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/sta/console.log": "634dfe38f14ba44f5cad11509197a986e40a2294e6c1a8fe4aa6ba6a854dd0d6",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/top_wrapper.v": "63687ebec5f419f9172cfbbdb4c764f23162370b81949010a468caa5361b717f",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/trained/console.log": "6618d86b5d8d81057cb38c6b8f06e9cc5e4b98f6ba6efe78f50f3927547abfe1",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/trained/xrun.history": "0a7e15110ffaf742f18e41afad9a61f29432558099ef06058b27ea83680b69ee",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/trained_tb.sv": "34b98b1f5160000279c03fe75fd4536e5d184cc953618bcc3283accdb6584772",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/wrong_phase/console.log": "31d6d29d36eb90713b6c3fe03ea8929fd50df200480ff81a1eb049121933708f",
+    ".cache/physical/whole_chip_xcelium_speed/credit_request_link/wrong_phase/tb.sv": "3e303da32658ba308b8b94e31feb74a4b4845146e6eb08254ea9009eb371d1dd",
+    "records/tri_oracle_bonded_pad_timing.json": "a0d8343e51fcf88a5fa08e82b4e0ce37ac012401fc17f88c8906c78efc9aae6c",
+    "records/tri_oracle_combined_serial_memory.json": "be52944d89bf990f142a080d1c00c6a8fcd9071a03e713d3a6f7261fab765fc8",
+    "records/tri_oracle_shared_edge_metadata.json": "43e6955cce56d119af1b841b35950adc6d7309fbbcd1b66a6e1b288f4e065ed0",
+    "syn/measure_tri_oracle_credited_request_link.py": "428be1c85fbc4cbdb5681c055bb68df6f5071ff8ff0aa939df6fc1b699b35a5f",
+    "syn/tri_oracle_check_memory_tx_credit_timing.tcl": "e9458f14d6316d8fb4c58c9836d5de7e84029e1d43673a7cf82a8d83ef999c25",
+    "syn/tri_oracle_synthesize_memory_tx_credit.tcl": "7e592900d8e35f8b8d5732e5d29b34d7fd433b63f7e0604d904bd32cf5a647e1",
+    "verilog/tri_oracle_credit_bypass_fifo.sv": "eb94fee060acfd4a60a79abdae6fdace17ff1e6cf02f26ab9fceb6cd71086e65",
+    "verilog/tri_oracle_memory_tx_credit.sv": "efccd7b0bffb6809e020826af198a89e886ef782bbc0149dce3a100079a3405a",
+    "verilog/tri_oracle_memory_tx_credit_tb.sv": "4a66c81c6f39bdb835957823a505f226ab9a0a7ee68748813ed17d1d112d8f29",
+    "verilog/tri_oracle_serial_flit_bridge.sv": "d4507e4d2b574c98226d0fe4a7915932c3b8c1abd5622c3613b8566c740b93cc"
+  },
+  "geometric_site_margin_even_charging_the_entire_new_module": 40926,
+  "mapped_area_square_micrometers": 94.584,
+  "matched_16ma_clock_and_output_pad_envelope_by_load_limit_pf": {
+    "10": {
+      "pad_hold_skew_allowance_ps": 91.8,
+      "pad_setup_skew_allowance_ps": 173.0,
+      "remaining_hold_ps_before_package_and_board": 654.2,
+      "remaining_setup_ps_before_package_and_board": 373.0
+    },
+    "25": {
+      "pad_hold_skew_allowance_ps": 297.7,
+      "pad_setup_skew_allowance_ps": 591.0,
+      "remaining_hold_ps_before_package_and_board": 448.3,
+      "remaining_setup_ps_before_package_and_board": -45.0
+    }
+  },
+  "modeled_forward_and_return_delay_pipeline_cycles": [
+    2,
+    6
+  ],
+  "output_hold_margin_ps_at_fast_core_corner": 746.0,
+  "output_setup_margin_ps_at_slow_core_corner": 546.0,
+  "scope": "The standalone transport test uses a delayed forwarded clock, registered output data and delayed credit pulses. The trained fixture models propagation as whole-cycle pipelines. The existing ready pin carries credits in the structural wrapper, and the sender fault remains internal. Static timing uses ideal clocks and external delay budgets. The pad screen excludes package and board parasitics.",
+  "standalone_clock_phase_test": {
+    "18": {
+      "rate_bubbles": 102,
+      "stall_bubbles": 222
+    },
+    "4": {
+      "rate_bubbles": 0,
+      "stall_bubbles": 208
+    },
+    "8": {
+      "rate_bubbles": 0,
+      "stall_bubbles": 212
+    }
+  },
+  "state": "credited_request_link_mapped_and_replayed_with_delayed_peer",
+  "structural_bundle_source_files": 28,
+  "structural_bundle_unique_modules": 1920,
+  "trained_weight_tiles": 78,
+  "verified_weight_bytes": 11534336
+}
