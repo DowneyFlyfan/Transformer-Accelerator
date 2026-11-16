@@ -1,0 +1,110 @@
+{
+  "aggregate_held_upper_saving_percent_by_mask": {
+    "baseline": 5.824921873318589,
+    "fit_threshold": 8.696869779224237
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/token_batch_order/verified.json": "6bac1987aaeb3b7cbfa20c450257b03790c74ee283b1c80df931b488075a830c",
+    "records/tri_oracle_exact_zero_packed_traffic.json": "46848b24e2c683b8ed84c2b2fa607812649ca9164bea9de4d796e104113c6d49",
+    "records/wac_channel_packing_bound_result.json": "63074498af07d464cd96ea32eddc78519ed5eb1c85f892b9eb6eae425c69da59"
+  },
+  "held": {
+    "baseline": {
+      "1": {
+        "arbitrary_schedule_max_dense_bytes": 91351941120,
+        "independent_row_payload_sum_bytes": 91347451904,
+        "observed_reordered_saving_percent_vs_original_dense": -0.11072785659211881,
+        "original_dense_bytes": 91350974464,
+        "original_sparse_bytes": 91347451904,
+        "reordered_images": 0,
+        "reordered_sparse_bytes": 91347451904,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": -0.10966851801035293
+      },
+      "15": {
+        "arbitrary_schedule_max_dense_bytes": 6090129408,
+        "independent_row_payload_sum_bytes": 91347451904,
+        "observed_reordered_saving_percent_vs_original_dense": -1.7187407522490483,
+        "original_dense_bytes": 6090129408,
+        "original_sparse_bytes": 6090129408,
+        "reordered_images": 0,
+        "reordered_sparse_bytes": 6090129408,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": -1.7138265534428099
+      },
+      "4": {
+        "arbitrary_schedule_max_dense_bytes": 24360517632,
+        "independent_row_payload_sum_bytes": 91347451904,
+        "observed_reordered_saving_percent_vs_original_dense": -0.42968518806225653,
+        "original_dense_bytes": 24360517632,
+        "original_sparse_bytes": 24360517632,
+        "reordered_images": 0,
+        "reordered_sparse_bytes": 24360517632,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": 5.824921873318589
+      },
+      "8": {
+        "arbitrary_schedule_max_dense_bytes": 12180258816,
+        "independent_row_payload_sum_bytes": 91347451904,
+        "observed_reordered_saving_percent_vs_original_dense": -0.8593703761245353,
+        "original_dense_bytes": 12180258816,
+        "original_sparse_bytes": 12180258816,
+        "reordered_images": 0,
+        "reordered_sparse_bytes": 12180258816,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": 5.395236685256332
+      }
+    },
+    "fit_threshold": {
+      "1": {
+        "arbitrary_schedule_max_dense_bytes": 91351941120,
+        "independent_row_payload_sum_bytes": 88548966400,
+        "observed_reordered_saving_percent_vs_original_dense": 2.9527156593857407,
+        "original_dense_bytes": 91350974464,
+        "original_sparse_bytes": 88548966400,
+        "reordered_images": 0,
+        "reordered_sparse_bytes": 88548966400,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": 2.9537425816223317
+      },
+      "15": {
+        "arbitrary_schedule_max_dense_bytes": 6090129408,
+        "independent_row_payload_sum_bytes": 88548966400,
+        "observed_reordered_saving_percent_vs_original_dense": -1.7187407522490483,
+        "original_dense_bytes": 6090129408,
+        "original_sparse_bytes": 6090129408,
+        "reordered_images": 0,
+        "reordered_sparse_bytes": 6090129408,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": 1.3495845461898748
+      },
+      "4": {
+        "arbitrary_schedule_max_dense_bytes": 24360517632,
+        "independent_row_payload_sum_bytes": 88548966400,
+        "observed_reordered_saving_percent_vs_original_dense": -0.299745880211022,
+        "original_dense_bytes": 24360517632,
+        "original_sparse_bytes": 24351948800,
+        "reordered_images": 168,
+        "reordered_sparse_bytes": 24328863744,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": 8.696869779224237
+      },
+      "8": {
+        "arbitrary_schedule_max_dense_bytes": 12180258816,
+        "independent_row_payload_sum_bytes": 88548966400,
+        "observed_reordered_saving_percent_vs_original_dense": -0.8444394618683182,
+        "original_dense_bytes": 12180258816,
+        "original_sparse_bytes": 12180242432,
+        "reordered_images": 162,
+        "reordered_sparse_bytes": 12178440192,
+        "sign_bytes": 104673536,
+        "upper_saving_percent_any_token_order": 8.26718459116198
+      }
+    }
+  },
+  "paper_external_memory_reduction_percent": 57,
+  "paper_skip_goal_percent": 56,
+  "rows_per_split": 2640,
+  "scope": "Same fixed 8-lane weight transaction format, token capacities, models and masks on archived prefill rows. Token reordering uses gate and up requests available before their projections. The upper bound covers arbitrary order under the existing aligned payload model. Controller, read latency and model answer quality require additional evidence.",
+  "state": "token_mask_scheduling_and_all_order_packed_traffic_bound_verified"
+}
