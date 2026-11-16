@@ -1,0 +1,52 @@
+{
+  "burst_delivery_cycles": 64,
+  "characterized_minimum_pad_output_delays_ns": {
+    "ffg0p99v1p98vm40c": 0.8792,
+    "ssg0p81v1p62v125c": 1.918,
+    "tt0p9v1p8v25c": 1.248
+  },
+  "complete_beats_per_lane": 56,
+  "direct_capture_minimum_setup_slack_ps": 29,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/compact_responses/tri_oracle_compact_response_lane.sv": "421ee41e79e647aa145f5bc1dd29c5be297a4b853c313344373354252e3ca236",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/coupled_tb.sv": "822f2d21a3ff44cc824625858a2cf2138bfa4334b98df5f36ae843091ea9ffdc",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/direct_genus/timing.rpt": "4b7e59b1da1b7eef17e6d72a22d76210978e755697be29d24f67fc15ca7de962",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/direct_ingress.json": "893b8a6fc5a9ca1f031612cc38ccf7ef369b6a7c9290c1411e366d9db68637ec",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/direct_ingress.sv": "b0c56e0d35e75f38e45be0c4e15b4a5cc90ae1e437b80169c2f8ae0b7ade0e00",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_burst/console.log": "c431d4266899087e63b036c109bdc3f3642ef9c37d2e3f451d04fbb816017e4a",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_burst/xrun.history": "e03b336ce3fcfcc4476be0f027aede4d7de5a99ef9e99ed5b6c1ba0ad897fd51",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/area.rpt": "9ff171b806e679c65616c7dd6162ef65ce6fd78e44379f97cd241004cf832dfd",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/console.log": "94778a08448fd1ff17343a9a75a8cfcb591d8c7566a3ae71ebc59f5c93c051db",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/constraints.sdc": "83efea71a04bb9efdd16cb62fac56e48b144af0e9d05bca69a6f858d1a194e01",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/falling_ready_timing.rpt": "637233731c6bb882f697223ef335e6c2a3a7b6831ae8f1da90444a04484c5625",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/mapped_check.rpt": "ecfd5ad9dd6ba26b41f3c63595780271988014f080015f37b8c704cc27db239f",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/netlist.v": "2bbd60f72abbcba125f4ea0518773ec7282c5f159ee24c19bbc626c5bc41cc05",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_genus/timing.rpt": "7bfaacb82beeebfb1d4a4f8ff37ef010f3af9685290a9127b0eebab9d68a8545",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_mapped/console.log": "f0c8d59d3c3d4c7a176ea5894c5ad0716e30fcb7569d6ca255018911eef9cd1e",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_mapped/xrun.history": "ee548a77fcaff04b0803061385e8998baed8b285254473258ad33ed82da461e0",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/joint_tb.sv": "639e80d4c16ce79573be99d2147e4fb0fe2f93613de3b423153487d10e7fa0cb",
+    ".cache/physical/whole_chip_xcelium_speed/dual_edge_capture/pad_arcs_recheck.json": "81b1c77ee46f287b0d6686de35aa9c1ebc057c43fe3a585c1ac210f7398048c4",
+    ".cache/physical/whole_chip_xcelium_speed/memory_io_link/genus/netlist.v": "7f1b67a16ace2d83482bd6666a246297025247a89124174ebc6ec640ceb86f96",
+    "records/tri_oracle_compact_response_lane.json": "60d160553f03fb952d1c72c96c2e421ce41fe0daa1da27a5f28fd99c8105d29e",
+    "records/tri_oracle_dual_edge_memory_capture.json": "1500762a1cb558f7ebb95dbe7ea123881a4930b347b7ef0e97fc302e80a688f7",
+    "records/tri_oracle_installed_pad_timing.json": "81b1c77ee46f287b0d6686de35aa9c1ebc057c43fe3a585c1ac210f7398048c4",
+    "syn/tri_oracle_synthesize_dual_edge_memory_ingress.tcl": "eb914c38e88174e30e4b1cb1c665b956566b4ae01b0d62cfec38de9c2ff51a86",
+    "syn/verify_tri_oracle_dual_edge_memory_ingress.py": "31f86ddee8e5d04a9ccb77905e9477a037dda25c77333890ba5b2c42d2b5b96c",
+    "verilog/tri_oracle_dual_edge_memory_capture.sv": "a0fe029fafd8bab1b185825980f528cfb2517e57891d4f62876ab6e237b1cff3",
+    "verilog/tri_oracle_dual_edge_memory_ingress.sv": "12e996d6db84784e0dfd46266c3069847815d54a900e4d4d467a6b44ec5fce91",
+    "verilog/tri_oracle_dual_edge_memory_ingress_burst_tb.sv": "7839219e16a3b873d63dd7dd2873e94688a8cd6176aac5e37209660e3e24adfc",
+    "verilog/tri_oracle_memory_response_gearbox.sv": "26a28ff5042d8ceee75c7106e4f5591e413791306320e7ff6d87cc8f929e7dd5"
+  },
+  "mapped_cell_area_um2": 16171.344,
+  "mapped_cells": 9222,
+  "overlapping_ack_and_read_cycles": 4,
+  "scope": "Joint capture and response decoder synthesis and functional simulation against the existing endpoint. Pad loading, board timing, hold timing across corners, and full-chip routed clock skew remain open.",
+  "simultaneous_response_cycles": 48,
+  "standalone_setup_slack_ps": {
+    "falling_ready_timing": 502,
+    "timing": 290
+  },
+  "state": "joint_mapped_dual_edge_ingress_replayed_with_existing_memory_endpoint",
+  "uninterrupted_chunks_per_edge": 64
+}
