@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "input_output_ready_transitions": 12,
+      "reachable_states": 3,
+      "required_completion_queue_depth": 1,
+      "stages": 1
+    },
+    {
+      "input_output_ready_transitions": 32,
+      "reachable_states": 8,
+      "required_completion_queue_depth": 2,
+      "stages": 2
+    },
+    {
+      "input_output_ready_transitions": 108,
+      "reachable_states": 27,
+      "required_completion_queue_depth": 3,
+      "stages": 3
+    },
+    {
+      "input_output_ready_transitions": 368,
+      "reachable_states": 92,
+      "required_completion_queue_depth": 4,
+      "stages": 4
+    },
+    {
+      "input_output_ready_transitions": 1256,
+      "reachable_states": 314,
+      "required_completion_queue_depth": 5,
+      "stages": 5
+    },
+    {
+      "input_output_ready_transitions": 4288,
+      "reachable_states": 1072,
+      "required_completion_queue_depth": 6,
+      "stages": 6
+    },
+    {
+      "input_output_ready_transitions": 14640,
+      "reachable_states": 3660,
+      "required_completion_queue_depth": 7,
+      "stages": 7
+    },
+    {
+      "input_output_ready_transitions": 49984,
+      "reachable_states": 12496,
+      "required_completion_queue_depth": 8,
+      "stages": 8
+    }
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/broad_setup_training/tri_oracle_pe_array_verified_bank0_2/native/broader_setup.rpt": "b794e9c401fa54103c2c1a5625c2fc3d66f7979cbbfd1415376b880aa9e71d2c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/decoupled_stall_model/check_schedule.py": "387ac1b37a19ae4b2236961e24cb7dbe7944cf2fae5999374f55859e1cc8f1a8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/decoupled_stall_model/verified.json": "e827301fbd5e5228090795ebb14a61afc839b5769b71bdce8bd7f004ba6311b0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/refreshed_timing_assignment/physical/tri_oracle_pe_array_verified_bank0_2/native/broader_setup.rpt": "566ee7d4ff1d87185dc0f45eb33697249d6a561af7c24a59c4f0b347f0692b92"
+  },
+  "experiment_trigger": "Same global valid register was the launch point for all 1,400 sampled paths before placement refinement.",
+  "scope": "Exhaustive finite control-state enumeration with symbolic ordered payload tokens and a reset to empty. Assumes a fixed-latency in-order arithmetic pipeline with one completion per cycle. The shadow retains the reference valid/ready state. This is a software schedule-model experiment.",
+  "state": "free_running_data_schedule_matches_stalled_pipeline_in_abstract_model"
+}

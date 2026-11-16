@@ -1,0 +1,80 @@
+{
+  "array": "tri_oracle_pe_array_verified_bank0_2",
+  "clock_rate_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/broad_setup_training/tri_oracle_pe_array_verified_bank0_2/native/broader_setup.rpt": "b794e9c401fa54103c2c1a5625c2fc3d66f7979cbbfd1415376b880aa9e71d2c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/broad_setup_training/verified.json": "a8f539d2ae0cd4ef6c7901dbc2259bd06c53b568b2bc5913aff6931210040826",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/broad_timing_assignment/compare_reports.py": "7c9ee11528eb1ced39ee5bcde58e11ac6daa7d5c01911caee35374b4c06695fb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/broad_timing_assignment/physical/tri_oracle_pe_array_verified_bank0_2/native/broader_setup.rpt": "64b6348dfcbe07152a2c48cf9da16f414b1847fe00edc927c4b926ec0fcf5b64",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/broad_timing_assignment/verified.json": "8bccb3c14ed23111d20fc6967ff1e7e06bedf039caf7c041ebca9df4abc1f96b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/refreshed_timing_assignment/physical/tri_oracle_pe_array_verified_bank0_2/native/broader_setup.rpt": "566ee7d4ff1d87185dc0f45eb33697249d6a561af7c24a59c4f0b347f0692b92",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/receiving_legalization/refreshed_timing_assignment/verified.json": "d7fa1bbabf8d838b8a7d5bc2c15de6d54e22f9791379e80f96c21fda317ac7aa"
+  },
+  "native_report_samples": {
+    "after": {
+      "endpoint_group_count": {
+        "product": 376,
+        "reduction": 1024
+      },
+      "median_ns": -0.2714015,
+      "paths": 1400,
+      "startpoints": {
+        "reduction[1].row[8].sum[1].value_reg[0]/CP": 1,
+        "valid_reg[3]/CP": 1399
+      },
+      "worst_ns": -1.728278
+    },
+    "before": {
+      "endpoint_group_count": {
+        "product": 1159,
+        "reduction": 241
+      },
+      "median_ns": -1.1385735000000001,
+      "paths": 1400,
+      "startpoints": {
+        "valid_reg[3]/CP": 1400
+      },
+      "worst_ns": -2.409763
+    },
+    "refresh": {
+      "endpoint_group_count": {
+        "product": 816,
+        "reduction": 584
+      },
+      "median_ns": -0.2893285,
+      "paths": 1400,
+      "startpoints": {
+        "valid_reg[3]/CP": 1400
+      },
+      "worst_ns": -0.939642
+    }
+  },
+  "paired_sample": {
+    "common_endpoints": 248,
+    "improved": 222,
+    "median_delta_ns": 0.737924,
+    "worsened": 26
+  },
+  "refreshed_paired_sample": {
+    "common_endpoints": 646,
+    "improved": 299,
+    "median_delta_ns": -0.012714,
+    "worsened": 347
+  },
+  "refreshed_timing_arcs": 4519,
+  "same_legal_cell_slots": 65763,
+  "scope": "Three cold Innovus runs of one optimized receiver netlist under identical reserved hard blockages, pin placement and occupied cell sites. Reports sample the worst 1400 internal setup endpoints separately in each run. Full-chip clock distribution and timing closure require separate evidence.",
+  "selected_training_arcs": 2905,
+  "setup_impact_ns": 0.681485,
+  "state": "broad_gpu_assignment_and_early_setup_measured",
+  "tracked_edges": 122287,
+  "worst_setup_before_after_ns": [
+    -2.409763,
+    -1.728278
+  ],
+  "worst_setup_sequence_ns": [
+    -2.409763,
+    -1.728278,
+    -0.939642
+  ]
+}
