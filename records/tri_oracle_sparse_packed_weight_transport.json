@@ -1,0 +1,73 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/sparse_packed_weights/receipt.json": "142ec6c24b853e8e904b3133c16b9bb58957f43844058b59e3d104eb73972402",
+    ".cache/model_reference/sparse_packed_weights_verified/receipt.json": "4abb7d08330ee870e79be3dd5c01ac77d637f3da76fa37cad6e74c9c30714aef",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_sparse_weight_predictor.json": "efaee4ee8bf6407d0603febbf179ed1a4782fb975ac7423608a517f24bd03983",
+    "records/wac_packed_trained_weight_traffic_result.json": "2c51943ece69e10070ce7c9381b7627e8ad9be4ab3b873789462b32dbaaf5745",
+    "syn/measure_tri_oracle_sparse_packed_weights.py": "4b03b829bdfed889e24201a142cb348b60f5922223dc225a6bd90cad8a1d3bfa"
+  },
+  "held_images": 8,
+  "held_layer_rows": 2640,
+  "original_layout_hardware_control_bytes": 34603008,
+  "paper_feed_forward_external_memory_access_reduction_percent": 57,
+  "results": {
+    "sparse_three_sigma": {
+      "1": {
+        "candidate_bytes_with_probe_reuse": 85341442432,
+        "candidate_bytes_without_probe_reuse": 88490033152,
+        "dense_bytes": 91350974464,
+        "saved_percent_with_probe_reuse": 6.57851,
+        "saved_percent_without_probe_reuse": 3.13181
+      },
+      "15": {
+        "candidate_bytes_with_probe_reuse": 6087040256,
+        "candidate_bytes_without_probe_reuse": 7023083520,
+        "dense_bytes": 6090129408,
+        "saved_percent_with_probe_reuse": 0.05072,
+        "saved_percent_without_probe_reuse": -15.31912
+      },
+      "correct_answers_in_separate_67_question_run": 0
+    },
+    "sparse_top512": {
+      "1": {
+        "candidate_bytes_with_probe_reuse": 90663124864,
+        "candidate_bytes_without_probe_reuse": 144873201664,
+        "dense_bytes": 91350974464,
+        "saved_percent_with_probe_reuse": 0.75297,
+        "saved_percent_without_probe_reuse": -58.58966
+      },
+      "15": {
+        "candidate_bytes_with_probe_reuse": 6090129408,
+        "candidate_bytes_without_probe_reuse": 10150215680,
+        "dense_bytes": 6090129408,
+        "saved_percent_with_probe_reuse": 0.0,
+        "saved_percent_without_probe_reuse": -66.66667
+      },
+      "correct_answers_in_separate_67_question_run": 29
+    },
+    "sparse_top64": {
+      "1": {
+        "candidate_bytes_with_probe_reuse": 89298459264,
+        "candidate_bytes_without_probe_reuse": 102627794944,
+        "dense_bytes": 91350974464,
+        "saved_percent_with_probe_reuse": 2.24685,
+        "saved_percent_without_probe_reuse": -12.3445
+      },
+      "15": {
+        "candidate_bytes_with_probe_reuse": 6090129408,
+        "candidate_bytes_without_probe_reuse": 9707945984,
+        "dense_bytes": 6090129408,
+        "saved_percent_with_probe_reuse": 0.0,
+        "saved_percent_without_probe_reuse": -59.40459
+      },
+      "correct_answers_in_separate_67_question_run": 20
+    }
+  },
+  "scope": "Host graphics processor replay of archived activations using the current eight-channel packed layout. Overlapping probe words have ideal reuse. The native hardware trace validates the original packing model. Candidate transfers are modeled and exclude command overhead. The paired text accuracy comes from a separate software benchmark.",
+  "shared_rows_tested": [
+    1,
+    15
+  ],
+  "state": "packed_sparse_predictor_transfer_model_crosschecked"
+}
