@@ -1,0 +1,92 @@
+{
+  "by_question_type": {
+    "choose": {
+      "certified_incompatible_prefix": 292,
+      "clipped_hits": 827,
+      "clipped_only_hits": 73,
+      "dense_hits": 863,
+      "dense_only_errors": 109,
+      "dense_only_with_certified_incompatible_prefix": 105,
+      "dense_only_with_changed_first_token": 107,
+      "questions": 1129
+    },
+    "compare": {
+      "certified_incompatible_prefix": 334,
+      "clipped_hits": 255,
+      "clipped_only_hits": 82,
+      "dense_hits": 355,
+      "dense_only_errors": 182,
+      "dense_only_with_certified_incompatible_prefix": 182,
+      "dense_only_with_changed_first_token": 182,
+      "questions": 589
+    },
+    "logical": {
+      "certified_incompatible_prefix": 734,
+      "clipped_hits": 1069,
+      "clipped_only_hits": 283,
+      "dense_hits": 1268,
+      "dense_only_errors": 482,
+      "dense_only_with_certified_incompatible_prefix": 482,
+      "dense_only_with_changed_first_token": 482,
+      "questions": 1803
+    },
+    "query": {
+      "certified_incompatible_prefix": 3813,
+      "clipped_hits": 2561,
+      "clipped_only_hits": 319,
+      "dense_hits": 2909,
+      "dense_only_errors": 667,
+      "dense_only_with_certified_incompatible_prefix": 567,
+      "dense_only_with_changed_first_token": 606,
+      "questions": 6805
+    },
+    "verify": {
+      "certified_incompatible_prefix": 717,
+      "clipped_hits": 1535,
+      "clipped_only_hits": 224,
+      "dense_hits": 1768,
+      "dense_only_errors": 457,
+      "dense_only_with_certified_incompatible_prefix": 457,
+      "dense_only_with_changed_first_token": 457,
+      "questions": 2252
+    }
+  },
+  "clipped_accuracy_percent": 49.666083638098264,
+  "dense_accuracy_percent": 56.948640483383684,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/dense_reference/receipt.json": "ef066ab2aa923a5d472559ea1917c0efcc170c049007b58ce0f6c526dfba94e4",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/inputs.json": "a332fd6e1403b202b8080b08138de61b8585e9afa95a71cccaccaad405e8b3f9",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/predictions.jsonl": "078467331feca85071b4325f6642b1a16aed90f642bc30d49c1ba41884ec308a",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/receipt.json": "8ea2849d487a76762e722f9c93125da6bb5de3331d9bdd006bee3a9744d4af0a",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/gqa_testdev_dense_reference_result.json": "947105e40edb5dc10581a85c7e56aba17c1e048fdcdba3642a71ef6ef37b1e88",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/verify_tri_oracle_gqa_first_token_floor.py": "b0ef3c5f9375aba6d761d9cee66b934b4214804233f85875fea5227823d5ce66"
+  },
+  "extra_answers_for_paper_absolute_target": 676,
+  "extra_answers_for_paper_loss_target": 706,
+  "local_loss_percentage_points": 7.282556845285419,
+  "paper_inferred_dense_accuracy_percent": 56.71,
+  "paper_reported_clipped_accuracy_percent": 55.04,
+  "paper_reported_loss_percentage_points": 1.67,
+  "scope": "Conservative bound on accuracy when the first answer token is held fixed. Counts use frozen software runs on the same locally labeled questions. Paper protocol and chip accuracy remain open.",
+  "state": "gqa_first_token_error_floor_independently_rescored",
+  "totals": {
+    "certified_incompatible_prefix": 5890,
+    "clipped_hits": 6247,
+    "clipped_only_hits": 981,
+    "dense_hits": 7163,
+    "dense_only_errors": 1897,
+    "dense_only_with_certified_incompatible_prefix": 1793,
+    "dense_only_with_changed_first_token": 1834,
+    "questions": 12578
+  },
+  "unchanged_first_token_accuracy_upper_bound_percent": 53.17220543806646,
+  "unchanged_first_token_correct_answer_upper_bound": 6688
+}
