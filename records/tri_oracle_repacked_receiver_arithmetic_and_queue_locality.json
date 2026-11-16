@@ -1,0 +1,413 @@
+{
+  "carry_spans_by_row": {
+    "10": {
+      "longest_um": [
+        223.8,
+        211.22
+      ],
+      "sum_um": [
+        1165.06,
+        1037.52
+      ]
+    },
+    "2": {
+      "longest_um": [
+        469.3,
+        183.4
+      ],
+      "sum_um": [
+        1785.9,
+        778.54
+      ]
+    },
+    "5": {
+      "longest_um": [
+        522.7,
+        183.4
+      ],
+      "sum_um": [
+        2201.06,
+        782.98
+      ]
+    }
+  },
+  "cells_moved_by_carry_placement": 660,
+  "cells_moved_by_queue_branch_placement": 37,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/accumulator_locality/assignment.json": "9f4342fdfeff5694a4cecb9bd8fe72a040dba86ede54900ffa6f6ae377702997",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/accumulator_locality/tri_oracle_pe_array/native/broader_setup.rpt": "fc2f3e03edb929ec53c45af418553baa7960667449de7d1b596171d3580c8afd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/accumulator_locality/tri_oracle_pe_array/native/hold_fast_broader.rpt": "18bff82909074c908cc142d7db07dbb738738275d618c98b6b9beb487eca7310",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/accumulator_locality/tri_oracle_pe_array/native/hot_negative_setup.rpt": "eed186f555ed26adabd0233d5b68229d99f6533b6218e520d048bcec7fce25df",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/accumulator_locality/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "c6a329c427fe3030fe9248760784d88fc924c4b464de2bb297dd6865b88793f3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/accumulator_locality/verified.json": "158eead43699ad4a880f019e12e2aca58255217a6729a0ea9fdeaa86bbfd05fc",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/buffered_outputs/ready.v": "e8054256c3622614d90198e91cfebf036ed505df0f8fd5b58490d6ab2a431996",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/buffered_outputs/tri_oracle_pe_array/native/broader_setup.rpt": "89208e2be0f3613afc848bdd419414fd67bd2ef6c1bbe76d2ce14e28278eb0e8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/buffered_outputs/tri_oracle_pe_array/native/hold_fast_broader.rpt": "4a98e8abcce8aa3c8f164848e4a7dd39168e8f4f8df540948e9dc3f095ef7cd2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/buffered_outputs/tri_oracle_pe_array/native/hot_negative_setup.rpt": "d12369da05eda17a769d96a6ba633e9fe15a1e156908390d790894e6b2b3bfdf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/buffered_outputs/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "8b13f7faf08b0d255425923ca0581f90e21ab92a119937d21fbc35c8c254781d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/buffered_outputs/verified.json": "4fb44632abca58eb618dd1adc544cba599758231699557610bf61d1daf79687f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/publish_repacked_locality.py": "5ac1b01a7af4d02d21ca383afe2221805224382224d4774e2719debdd499d12d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/queue_branch_locality/assignment.json": "309d80a627b13efedc9efc2175a58993a7eff0d3d85c4e9ece6c22f1463c7166",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/queue_branch_locality/tri_oracle_pe_array/native/broader_setup.rpt": "37568165e8bd3dad7b542eb64ee9508e3715ee155c22f43c0e55ce0280476cd2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/queue_branch_locality/tri_oracle_pe_array/native/hold_fast_broader.rpt": "2bd3a0a5bfd43359c0f4721c5f57e1438ef5fc8b9d96e7141f95fae05a64ce1a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/queue_branch_locality/tri_oracle_pe_array/native/hot_negative_setup.rpt": "d1bf24fa4c4c2c333ea3e22f5ec229e97549e3acd0e7720ed5ddd161ff85338b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/queue_branch_locality/tri_oracle_pe_array/native/setup_typ_broader_setup.rpt": "e561c9b7c418c329fa873b36c9d8f112eeb1713000db3c7d8f309794a0dbb57b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/queue_branch_locality/verified.json": "35e2577738735998e88d9bcd422dbcdc09ca576020f3a1d7751e360711481266"
+  },
+  "exact_boundary_clock_and_occupied_sites_preserved": true,
+  "mapped_cells": 54143,
+  "previous_mapped_replay_transactions": 786,
+  "region": "tri_oracle_pe_array_verified_bank4_1",
+  "register_to_register_timing": {
+    "carry_and_queue_locality": {
+      "hold_fast": {
+        "capture": "completed_results_reg[0][265]/DA",
+        "launch": "completed_results_reg[0][265]/CP",
+        "slack_ns": -0.012664
+      },
+      "setup_fast": {
+        "capture": "carry_save.row[10].value_reg[14]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.463241
+      },
+      "setup_fast_hot": {
+        "capture": "carry_save.row[10].value_reg[14]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.499012
+      },
+      "setup_slow": {
+        "capture": "carry_save.row[10].value_reg[14]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.876393
+      },
+      "setup_typ": {
+        "capture": "carry_save.row[10].value_reg[14]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.426288
+      }
+    },
+    "carry_locality": {
+      "hold_fast": {
+        "capture": "completed_results_reg[2][349]/DA",
+        "launch": "completed_results_reg[2][349]/CP",
+        "slack_ns": -0.012287
+      },
+      "setup_fast": {
+        "capture": "completed_results_reg[0][262]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.564333
+      },
+      "setup_fast_hot": {
+        "capture": "completed_results_reg[0][262]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.690098
+      },
+      "setup_slow": {
+        "capture": "completed_results_reg[0][262]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -1.07394
+      },
+      "setup_typ": {
+        "capture": "carry_save.row[10].value_reg[14]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.411551
+      }
+    },
+    "prior": {
+      "hold_fast": {
+        "capture": "completed_results_reg[0][265]/DA",
+        "launch": "completed_results_reg[0][265]/CP",
+        "slack_ns": -0.012287
+      },
+      "setup_fast": {
+        "capture": "completed_results_reg[0][262]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.554528
+      },
+      "setup_fast_hot": {
+        "capture": "completed_results_reg[0][262]/SA",
+        "launch": "shadow_valid_reg[3]/CP",
+        "slack_ns": -0.678994
+      },
+      "setup_slow": {
+        "capture": "carry_save.row[5].value_reg[18]/DB",
+        "launch": "carry_save.row[5].carry_reg[2]/CP",
+        "slack_ns": -1.39746
+      },
+      "setup_typ": {
+        "capture": "carry_save.row[5].value_reg[18]/DB",
+        "launch": "carry_save.row[5].carry_reg[2]/CP",
+        "slack_ns": -0.722923
+      }
+    }
+  },
+  "relocated_queue_branches": {
+    "TRI_ARRAY_CTL_0_27": {
+      "exchanged_cells": [
+        "mul_98_69_I236_g1535",
+        "mul_98_69_I221_g1517",
+        "mul_98_69_I20_g1438"
+      ],
+      "new_xy_um": [
+        617.38,
+        213.8
+      ],
+      "old_xy_um": [
+        702.64,
+        659.0
+      ],
+      "root_leg_um": [
+        96.54,
+        570.72
+      ],
+      "score_before_after": [
+        3000595.6104,
+        1427012.498
+      ],
+      "worst_child_leg_um": [
+        1117.53,
+        587.07
+      ]
+    },
+    "TRI_ARRAY_CTL_0_28": {
+      "exchanged_cells": [
+        "mul_98_69_I245_g1492",
+        "mul_98_69_I188_g1526",
+        "mul_98_69_I144_g1467"
+      ],
+      "new_xy_um": [
+        608.28,
+        290.6
+      ],
+      "old_xy_um": [
+        543.0400000000001,
+        690.2
+      ],
+      "root_leg_um": [
+        168.66,
+        503.02
+      ],
+      "score_before_after": [
+        1665706.2052,
+        1047391.0135
+      ],
+      "worst_child_leg_um": [
+        806.92,
+        472.56
+      ]
+    },
+    "TRI_ARRAY_CTL_0_29": {
+      "exchanged_cells": [
+        "mul_98_69_I128_g1501",
+        "mul_98_69_I7_g1537",
+        "mul_98_69_I3_g1481",
+        "mul_98_69_I42_g1517"
+      ],
+      "new_xy_um": [
+        492.64,
+        709.4
+      ],
+      "old_xy_um": [
+        149.64000000000001,
+        689.0
+      ],
+      "root_leg_um": [
+        563.26,
+        199.86
+      ],
+      "score_before_after": [
+        854251.1683,
+        113568.8847
+      ],
+      "worst_child_leg_um": [
+        337.6,
+        100.96
+      ]
+    },
+    "TRI_ARRAY_CTL_1_26": {
+      "exchanged_cells": [
+        "mul_98_69_I25_g1538",
+        "mul_98_69_I25_g1501",
+        "mul_98_69_I153_g1438"
+      ],
+      "new_xy_um": [
+        418.58,
+        383.0
+      ],
+      "old_xy_um": [
+        375.17999999999995,
+        690.2
+      ],
+      "root_leg_um": [
+        271.72,
+        535.52
+      ],
+      "score_before_after": [
+        1878355.8406,
+        1400423.0439
+      ],
+      "worst_child_leg_um": [
+        834.01,
+        570.21
+      ]
+    },
+    "TRI_ARRAY_CTL_1_27": {
+      "exchanged_cells": [
+        "mul_98_69_I218_g1543",
+        "mul_98_69_I141_g1539",
+        "mul_98_69_I75_g1438"
+      ],
+      "new_xy_um": [
+        487.74,
+        275.0
+      ],
+      "old_xy_um": [
+        454.84,
+        651.8000000000001
+      ],
+      "root_leg_um": [
+        230.46,
+        574.36
+      ],
+      "score_before_after": [
+        1969703.658,
+        1326992.7208
+      ],
+      "worst_child_leg_um": [
+        871.35,
+        527.45
+      ]
+    },
+    "TRI_ARRAY_CTL_1_28": {
+      "exchanged_cells": [
+        "mul_98_69_I213_g1500",
+        "mul_98_69_I254_g1525",
+        "mul_98_69_I190_g1471"
+      ],
+      "new_xy_um": [
+        795.74,
+        459.8
+      ],
+      "old_xy_um": [
+        909.14,
+        711.8000000000001
+      ],
+      "root_leg_um": [
+        319.84,
+        458.44
+      ],
+      "score_before_after": [
+        1066535.6729,
+        699844.1663
+      ],
+      "worst_child_leg_um": [
+        580.52,
+        326.82
+      ]
+    },
+    "TRI_ARRAY_CTL_2_26": {
+      "exchanged_cells": [
+        "mul_98_69_I180_g1523",
+        "mul_98_69_I213_g1489",
+        "mul_98_69_I212_g1434"
+      ],
+      "new_xy_um": [
+        251.0,
+        575.0
+      ],
+      "old_xy_um": [
+        381.61999999999995,
+        717.8000000000001
+      ],
+      "root_leg_um": [
+        211.98,
+        485.4
+      ],
+      "score_before_after": [
+        1777277.5755,
+        1358354.4715
+      ],
+      "worst_child_leg_um": [
+        851.39,
+        577.97
+      ]
+    },
+    "TRI_ARRAY_CTL_2_27": {
+      "exchanged_cells": [
+        "mul_98_69_I16_g1517",
+        "mul_98_69_I32_g1515",
+        "mul_98_69_I111_g1470"
+      ],
+      "new_xy_um": [
+        531.28,
+        506.6
+      ],
+      "old_xy_um": [
+        431.88,
+        690.2
+      ],
+      "root_leg_um": [
+        189.32,
+        273.52
+      ],
+      "score_before_after": [
+        1382768.4887,
+        1001314.8283
+      ],
+      "worst_child_leg_um": [
+        706.69,
+        575.64
+      ]
+    },
+    "TRI_ARRAY_CTL_2_28": {
+      "exchanged_cells": [
+        "mul_98_69_I222_g1499",
+        "mul_98_69_I223_g1501",
+        "mul_98_69_I222_g1470"
+      ],
+      "new_xy_um": [
+        745.76,
+        362.6
+      ],
+      "old_xy_um": [
+        743.1,
+        690.2
+      ],
+      "root_leg_um": [
+        198.7,
+        528.96
+      ],
+      "score_before_after": [
+        1240502.8237,
+        774149.7302
+      ],
+      "worst_child_leg_um": [
+        677.14,
+        346.88
+      ]
+    }
+  },
+  "sampled_negative_path_counts": {
+    "carry_and_queue_locality": {
+      "fast": 38,
+      "fast_hold": 56,
+      "hot": 69,
+      "typical": 34
+    },
+    "carry_locality": {
+      "fast": 253,
+      "fast_hold": 59,
+      "hot": 150,
+      "typical": 80
+    },
+    "prior": {
+      "fast": 253,
+      "fast_hold": 57,
+      "hot": 150,
+      "typical": 80
+    }
+  },
+  "scope": "Matched isolated receiver measurements using ideal clocks and early extracted wire estimates. Consecutive experiments retain the mapped circuit and occupied sites. Queue branch relocation is tested while preserving the already moved arithmetic locations.",
+  "state": "repacked_core_carry_and_queue_locality_compared",
+  "target_mhz": 580
+}
