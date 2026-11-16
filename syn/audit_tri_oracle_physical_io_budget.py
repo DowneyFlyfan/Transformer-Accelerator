@@ -1,5 +1,6 @@
 """Bind Tri-Oracle's current signal boundary to pad geometry and workload traffic."""
 
+import argparse
 from collections import Counter
 from decimal import Decimal
 from fractions import Fraction
@@ -112,6 +113,20 @@ def pressure(payload_bytes, cycles, clear_sites):
     }
 
 
+def indexed_weight_beats(transport, encoding):
+    """Count payload and one full index response per gate/up block."""
+    lanes = transport["fixed_lane_traffic"]
+    index_beats = sum(lane["gate_blocks"] for lane in lanes)
+    payload_beats = sum(lane["encoded_gate_payload_beats"] + lane["unencoded_down_beats"] for lane in lanes)
+    total = payload_beats + index_beats
+    assert total == sum(lane["encoded_weight_response_beats"] for lane in lanes)
+    assert total == transport["encoded_weight_response_beats"]
+    normalized = encoding["normalized_traffic"]
+    assert index_beats == normalized["gate_up_index_beats"]
+    assert total == normalized["total_weight_beats_if_only_gate_up_encoded"]
+    return total
+
+
 def ingress_trial(receive_pads, clear_sites, cycles, ports, payloads):
     control_roles = ("command_and_response", "clock_and_reset")
     unswitched_control = sum(sum(ports[role].values()) for role in control_roles)
@@ -131,11 +146,14 @@ def ingress_trial(receive_pads, clear_sites, cycles, ports, payloads):
 
 
 def main():
-    assert __debug__ and Path("/.dockerenv").is_file()
+    assert __debug__
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pad-archive", type=Path, default=PAD_ARCHIVE)
+    args = parser.parse_args()
     evidence = {}
 
-    def pin(path, expected=None):
-        name = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+    def pin(path, expected=None, *, label=None):
+        name = label or (str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path))
         if name not in evidence:
             evidence[name] = sha(path)
         assert expected is None or evidence[name] == expected, name
@@ -183,7 +201,7 @@ def main():
     sizes = dimensions(libraries, units)
     assert macro_names <= sizes.keys()
     bodies, halos = macro_boxes(fixed, sizes)
-    _, _, pad_width, corner, abstract = pad_views(pin(PAD_ARCHIVE))
+    _, _, pad_width, corner, abstract = pad_views(pin(args.pad_archive, label=str(PAD_ARCHIVE)))
     assert abstract == prior_pad["pad_abstract_sha256"]
     body_sites = screen(units, outline, bodies, pad_width, corner, PAD_DEPTH_UM)
     halo_sites = screen(units, outline, halos, pad_width, corner, PAD_DEPTH_UM)
@@ -209,8 +227,9 @@ def main():
     assert weight["with_predictor_weight_bytes"] == 64 * encoded["original_weight_beats"]
     sign_bytes = 64 * ranked["modeled_sign_line_reads"]
     assert ranked["modeled_weight_plus_sign_read_bytes"] == weight["with_predictor_weight_bytes"] + sign_bytes
-    index_beats = sum(lane["gate_blocks"] for lane in encoded["fixed_lane_traffic"])
-    encoded_bytes = 64 * (encoded["encoded_weight_response_beats"] + index_beats) + sign_bytes
+    encoding_receipt = TRANSPORT / "receipt.json"
+    encoding = read(pin(encoding_receipt, encoded["input_sha256"][str(encoding_receipt.relative_to(ROOT))]))
+    encoded_bytes = 64 * indexed_weight_beats(encoded, encoding) + sign_bytes
     minimum = {
         "archived_weight_and_sign": pressure(ranked["modeled_weight_plus_sign_read_bytes"], cycles, usable),
         "conditional_exact_weight_encoding_plus_full_index_and_sign": pressure(encoded_bytes, cycles, usable),
