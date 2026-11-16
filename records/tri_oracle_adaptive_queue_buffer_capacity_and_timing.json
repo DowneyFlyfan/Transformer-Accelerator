@@ -1,0 +1,62 @@
+{
+  "adaptive_pilot_setup_ns": [
+    -4.006948,
+    -1.840653
+  ],
+  "adaptive_tightest_region_remaining_sites": 6272,
+  "adaptive_tightest_region_setup_ns": [
+    -7.368955,
+    -2.94539
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/adaptive_width_screen.json": "fca87456711fc8a24f382114841486380116049ddae2007df7011ccd0b84919d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/archive_compact_evidence.py": "fad0a2b2458d7a12e929913b8c419ee36ec4d58086ce439ed3b5eaa9ca40c8b4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/buffer_trial/verified.json": "b881fb89332e0eacdb00f0e0e48d3ceeffb0033a490653efdf1154645cbf7daf",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_24_8_6/prepared.json": "905a1b1070a91e83cddcbf5af0b499221e585e9a26e7f76c7cd82e18a96b1598",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_24_8_6/verified.json": "e1dfc2ad3a7212b85ee027752da77e66bee1435169ee328ec1a0957dd4e95121",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_30_8_8/gpu_refinement/verified.json": "f8bcc35e1ddb9a688cda246dc16bd7a83baa7bedc36f7e3196de476391eab581",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_30_8_8/prepared.json": "87aa0fe8a8262958e3024e4c340f44e89472a79d737fe61f7ff1e671bff3a15a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_30_8_8/verified.json": "a6a362f73e4c5cf0d35b1f31716981664abb4d27f7baa84d5066771c1ff55d90",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_adaptive_leaves/gpu_refinement/verified.json": "6524982999e0c84fe99eb8f82684177e4867d6179bed4ce927da8715c9c55f2c",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_adaptive_leaves/prepared.json": "aae913d50f766da21dad7cc1e150400320716b3ca5bdd0aca83244a0dec223ec",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_adaptive_leaves/verified.json": "a699aff2631076c281c80ee73b5697f2e7738d465c3d22acdb8d9b5ffd5084ce",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_pilot/compact_width_screen.json": "7271c2653da9a627f1e6e7727d976fe04ee0c4ea6955a70fc49b8515265db5f7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_tight_probe/gpu_refinement/physical/prepared.json": "097e3b95ccee9dd86e719e323861888de2a4e12714fde5f51ad894de6f92aa34",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_tight_probe/gpu_refinement/verified.json": "bbad0b577923e3e9899b0420e955435a34078cbe7b79118d6896a9ed8f6fa435",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_tight_probe/prepared.json": "348116e710297e3c7c6d481e0cba0ff0409b04c9fbaede983cc04c2eb1bbc29f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/physical_tight_probe/verified.json": "a765af7e3041a63ac93a436c6e283a7d574e65a6cb92f8d4239f0e5660aaff49"
+  },
+  "larger_leaf_pilot_setup_ns": [
+    -3.912933,
+    -1.832497
+  ],
+  "mapped_gate_replay_transactions_per_topology": 786,
+  "original_uniform_buffer_sites": 4686,
+  "original_uniform_buffered_slack_ns": -3.710087,
+  "scope": "Exact row-width capacity screens for the same 20 regions of the current full-chip seed. Native Innovus reloaded two standalone adaptive-array fences and measured early extracted timing with ideal clocks. Full-chip placement and meeting the clock target remain open.",
+  "state": "compact_queue_site_screen_two_native_fences_and_clock_gap_verified",
+  "target_mhz": 580,
+  "topology_cases": {
+    "compact_24_8_6": {
+      "buffers_added": 248,
+      "ideal_clock_setup_ns": -3.988637,
+      "new_sites": 2442,
+      "regions_with_width_only_assignment": 19,
+      "worst_modeled_capacitance_fraction": 0.7378232291549259
+    },
+    "compact_30_8_8": {
+      "buffers_added": 201,
+      "ideal_clock_setup_ns": -3.912933,
+      "new_sites": 2502,
+      "regions_with_width_only_assignment": 19,
+      "worst_modeled_capacitance_fraction": 0.5390864378748538
+    },
+    "compact_adaptive_leaves": {
+      "buffers_added": 248,
+      "ideal_clock_setup_ns": -4.006948,
+      "new_sites": 1563,
+      "regions_with_width_only_assignment": 20,
+      "worst_modeled_capacitance_fraction": 0.7482364002027111
+    }
+  }
+}
