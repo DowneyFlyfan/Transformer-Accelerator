@@ -1,0 +1,37 @@
+{
+  "compared_reference_paths": 90,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/local_swap_trial/timing_weighted/seed.def": "7229d9a30ea04bc8aeee193a2bbd8242179f7caade29fc5517841d2f79c3f013",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/local_swap_trial/trial.py": "bc41350091241422f92f75515d5151f75c791151bd81f741976a28838bf068f0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/local_swap_trial/verified.json": "934875433418490774db46b62339ecfbaeb34000ad996bec4efc83cb16f6893e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/local_swap_trial/wire_only/seed.def": "2cf7fdde4ece9bff6e5a2932d369c1c49a0c8284306959dedf0833eff1d6d3b5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/measure_bank2_2.py": "19744bf71e6e6c72c262fa47e1ec4afe57ac2d6f9daad50a218af24afc1327b4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/prepared.json": "c0a21657ad550036308dbad7c16e8371bdc0f8d82aa8b93ec7aa663f89019117"
+  },
+  "fixed_boundary_and_high_fanout_instances": 21095,
+  "geometric_trials": {
+    "timing_weighted": {
+      "internal_net_half_perimeter_change_percent": -5.2295,
+      "moved_instances": 3737,
+      "p95_path_estimated_length_changes_percent": {
+        "fast_hot_setup.rpt": -6.995,
+        "setup_slow_broader_setup.rpt": -30.58,
+        "typ_setup.rpt": -71.694
+      }
+    },
+    "wire_only": {
+      "internal_net_half_perimeter_change_percent": -5.3757,
+      "moved_instances": 3761,
+      "p95_path_estimated_length_changes_percent": {
+        "fast_hot_setup.rpt": 0.583,
+        "setup_slow_broader_setup.rpt": -11.856,
+        "typ_setup.rpt": -34.49
+      }
+    }
+  },
+  "scope": "Exact placement slots and unchanged logical nets. The path distances use pin centers, and net half-perimeters use cell centers. Delay and timing closure require native measurement.",
+  "selected_for_native_comparison": "timing_weighted",
+  "state": "bank2_repacked_regional_equal_width_swap_candidates_verified",
+  "target": "tri_oracle_pe_array_verified_bank2_2",
+  "total_cells": 54141
+}
