@@ -1,0 +1,49 @@
+{
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/expected.hex": "46945cc491896981ca121c5b4de6b4ab0e4f0b2395a857a7a28fff6838cfc730",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/cache_reused.hex": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/native/reused_xrun.log": "7dbe4d1ae888446fcd5b2d75eff19ef5b06863d0ce4d42035906dd8cd439c3ef",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/native/xrun.log": "06d07fe3fe274e5c4288e4bc870b1045ee5f830de911be26a53004f8120b3188",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/reused_samples.jsonl": "b5b81f31d24e90431ece54bbb246b8679f01245ee443b6fb30a12bdcb6655c91",
+    ".cache/physical/whole_chip_xcelium_speed/multicore/reused_status.json": "3d3a582a2a800fd7f9f85288ced23b47711fd43e9ace2be75c0f11868db85cbe",
+    ".cache/physical/whole_chip_xcelium_speed/prepared.json": "c7b8b4626e0d2301f2cb4095a26f732310fd683a26dc10cb4a772004c73b63ab",
+    ".cache/physical/whole_chip_xcelium_speed/replay_compiled_prefix.py": "6775eab904cb380578c0e829b8f51b057f6fcb01abd452437580d7864a312543",
+    ".cache/physical/whole_chip_xcelium_speed/sample_reuse.py": "ed4c7a3d8cb1d86b6f64595fc2786aac5daa701c7cd12fac6b9b11eda9a6f7d9",
+    ".cache/physical/whole_chip_xcelium_speed/single/cache_reused.hex": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+    ".cache/physical/whole_chip_xcelium_speed/single/native/reused_xrun.log": "8a456acb8e00236cc39034a828f1da7b2aebb19cda2d37ca34b138c58d37278f",
+    ".cache/physical/whole_chip_xcelium_speed/single/native/xrun.log": "537716a1b99677f7019a2543c00027fc2997ee04bf1a6d72586c0c18ec33b61b",
+    ".cache/physical/whole_chip_xcelium_speed/single/reused_samples.jsonl": "1712bed07faf11a8d1453da8944e7089a78b88924e3e377bd5574125e15d850a",
+    ".cache/physical/whole_chip_xcelium_speed/single/reused_status.json": "03b1cb2cd2103e42650e93ebcadf49836cdae669c95b5c9da6a068549b0a5f05",
+    ".cache/physical/whole_chip_xcelium_speed/verify_prefix.py": "023241e01de1a48adaa36ac6b32ba1baf417f13bfeabc66df3900a00711a8fb9"
+  },
+  "failed_projection_writes": 2,
+  "independent_cache_vectors": 16,
+  "modes": {
+    "multicore": {
+      "cache_sha256": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+      "elapsed_seconds": 70.18993285903707,
+      "observed_tools": {
+        "xmsim": 10
+      },
+      "xmsim_max_sampled_running_threads": 4,
+      "xmsim_observed_interval_seconds": 36.225,
+      "xmsim_sample_count": 10
+    },
+    "single": {
+      "cache_sha256": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+      "elapsed_seconds": 137.05087613593787,
+      "observed_tools": {
+        "xmsim": 34
+      },
+      "xmsim_max_sampled_running_threads": 1,
+      "xmsim_observed_interval_seconds": 132.858,
+      "xmsim_sample_count": 34
+    }
+  },
+  "multicore_reused_snapshot_speed_ratio": 1.9525716944505147,
+  "reset_and_merge_maps": 576,
+  "scope": "Matched integrated projection prefix on the current cold netlist in one Cadence container. Wall time includes startup and simulation from existing compiled snapshots. Core activity is sampled over four-second intervals. This prefix omits the remaining projection vectors and downstream attention, so full replay speed and equivalence require separate verification.",
+  "simulation_progress_at_finish": "990080.00 ns",
+  "state": "matched_cold_chip_xcelium_multicore_prefix_independently_verified"
+}
