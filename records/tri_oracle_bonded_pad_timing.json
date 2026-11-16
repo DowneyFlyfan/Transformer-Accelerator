@@ -1,0 +1,190 @@
+{
+  "characterized_pad_input_slew_ps": 500,
+  "evidence_sha256": {
+    "/home/downeyflyfan/Documents/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_110a_sefu10lm.tar.gz": "dce3bc9a92da187e23450e5e3913f318fa793137c2c161e0e9716b5a3999a3cc",
+    "/home/downeyflyfan/Documents/pdks/tsmc28hpc/IO/tphn28hpcpgv18_170a/AN61001_20180125/tphn28hpcpgv18_170a_nldm.tar.gz": "a342b0ecadcd3f542e6bcb89c426a5104d3607ad03d16eb85914b6faafca31d6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/genus/constraints.sdc": "6b0d2f8839351dd974f01cf6b7fcc4db6c8e304d97728dbc2528d70400212383",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_bonded_pad_capacity.json": "8125c3e10d15ae8dd492e22ad7c122ad6b898d6f3de69ea9fb29c8efc2db8910",
+    "records/tri_oracle_shared_edge_metadata.json": "43e6955cce56d119af1b841b35950adc6d7309fbbcd1b66a6e1b288f4e065ed0",
+    "syn/audit_tri_oracle_bonded_pad_timing.py": "0923578cdd9d71f6822862df08551a30588ddfa7fc15edc4443d31f69ec17d51"
+  },
+  "load_sweeps": {
+    "50": {
+      "assumed_load_range_femtofarads": [
+        10,
+        50
+      ],
+      "minimum_clock_half_period_ps_by_corner": {
+        "ffg0p99v1p98vm40c": 852.469,
+        "ssg0p81v1p62v125c": 665.269,
+        "tt0p9v1p8v25c": 804.069
+      },
+      "pad_delay_envelope_ps_by_corner": {
+        "ffg0p99v1p98vm40c": 15.0,
+        "ssg0p81v1p62v125c": 203.3,
+        "tt0p9v1p8v25c": 64.0
+      },
+      "projected_hold_margin_at_200ps_ps": 143.0,
+      "projected_peer_launch_window_after_clock_ps": [
+        57.0,
+        275.7
+      ],
+      "projected_setup_margin_at_200ps_ps": 75.7
+    },
+    "500": {
+      "assumed_load_range_femtofarads": [
+        10,
+        500
+      ],
+      "minimum_clock_half_period_ps_by_corner": {
+        "ffg0p99v1p98vm40c": 852.469,
+        "ssg0p81v1p62v125c": 665.269,
+        "tt0p9v1p8v25c": 804.069
+      },
+      "pad_delay_envelope_ps_by_corner": {
+        "ffg0p99v1p98vm40c": 43.6,
+        "ssg0p81v1p62v125c": 239.0,
+        "tt0p9v1p8v25c": 92.5
+      },
+      "projected_hold_margin_at_200ps_ps": 114.4,
+      "projected_peer_launch_window_after_clock_ps": [
+        85.6,
+        240.0
+      ],
+      "projected_setup_margin_at_200ps_ps": 40.0
+    }
+  },
+  "pad_cells": [
+    "PDDW04DGZ_H_G",
+    "PDDW04DGZ_V_G"
+  ],
+  "pad_library_member_sha256": {
+    "TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tphn28hpcpgv18_170a/tphn28hpcpgv18ffg0p99v1p98vm40c.lib": "c879a446bb9321600faa5703c74302bfb2adc744454790c528ac405addd1c618",
+    "TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tphn28hpcpgv18_170a/tphn28hpcpgv18ssg0p81v1p62v125c.lib": "99266b8a11189a269533e5fb3e2f2903abb162f44dba1dfea2a42b1316d75571",
+    "TSMCHOME/digital/Front_End/timing_power_noise/NLDM/tphn28hpcpgv18_170a/tphn28hpcpgv18tt0p9v1p8v25c.lib": "2e382a49e976e46de74638eb56db380e57924f19c787e7142de6c7e632c3efb6"
+  },
+  "scope": "Analytic screen using nonlinear delay tables for two physical pad orientations. The clock and data pad transitions and core-side loads are allowed to differ within each sweep. Pad and core library voltages differ, and the model omits clock-tree skew, package, board, interconnect and voltage variation. The launch window is a conditional budget.",
+  "single_cycle_output_screen": {
+    "best_worst_polarity_delay_at_5pf_ns": 1.922,
+    "core_input_transition_ps": 100,
+    "drivers": {
+      "PDDW04DGZ_H_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.668,
+          "worst_pad_transition_ns": 2.362
+        },
+        "25": {
+          "worst_pad_delay_ns": 4.173,
+          "worst_pad_transition_ns": 5.49
+        },
+        "5": {
+          "worst_pad_delay_ns": 2.163,
+          "worst_pad_transition_ns": 1.322
+        }
+      },
+      "PDDW04DGZ_V_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.663,
+          "worst_pad_transition_ns": 2.362
+        },
+        "25": {
+          "worst_pad_delay_ns": 4.168,
+          "worst_pad_transition_ns": 5.486
+        },
+        "5": {
+          "worst_pad_delay_ns": 2.158,
+          "worst_pad_transition_ns": 1.322
+        }
+      },
+      "PDDW08DGZ_H_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.217,
+          "worst_pad_transition_ns": 1.238
+        },
+        "25": {
+          "worst_pad_delay_ns": 2.971,
+          "worst_pad_transition_ns": 2.784
+        },
+        "5": {
+          "worst_pad_delay_ns": 1.955,
+          "worst_pad_transition_ns": 0.7314
+        }
+      },
+      "PDDW08DGZ_V_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.212,
+          "worst_pad_transition_ns": 1.238
+        },
+        "25": {
+          "worst_pad_delay_ns": 2.966,
+          "worst_pad_transition_ns": 2.784
+        },
+        "5": {
+          "worst_pad_delay_ns": 1.95,
+          "worst_pad_transition_ns": 0.7309
+        }
+      },
+      "PDDW12DGZ_H_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.118,
+          "worst_pad_transition_ns": 0.9053
+        },
+        "25": {
+          "worst_pad_delay_ns": 2.637,
+          "worst_pad_transition_ns": 1.922
+        },
+        "5": {
+          "worst_pad_delay_ns": 1.923,
+          "worst_pad_transition_ns": 0.5672
+        }
+      },
+      "PDDW12DGZ_V_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.112,
+          "worst_pad_transition_ns": 0.9056
+        },
+        "25": {
+          "worst_pad_delay_ns": 2.632,
+          "worst_pad_transition_ns": 1.922
+        },
+        "5": {
+          "worst_pad_delay_ns": 1.922,
+          "worst_pad_transition_ns": 0.5679
+        }
+      },
+      "PDDW16DGZ_H_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.094,
+          "worst_pad_transition_ns": 0.7637
+        },
+        "25": {
+          "worst_pad_delay_ns": 2.512,
+          "worst_pad_transition_ns": 1.524
+        },
+        "5": {
+          "worst_pad_delay_ns": 1.937,
+          "worst_pad_transition_ns": 0.5201
+        }
+      },
+      "PDDW16DGZ_V_G": {
+        "10": {
+          "worst_pad_delay_ns": 2.091,
+          "worst_pad_transition_ns": 0.7645
+        },
+        "25": {
+          "worst_pad_delay_ns": 2.507,
+          "worst_pad_transition_ns": 1.523
+        },
+        "5": {
+          "worst_pad_delay_ns": 1.937,
+          "worst_pad_transition_ns": 0.5202
+        }
+      }
+    },
+    "period_ns": 1.724138,
+    "scope": "A single-cycle link sampled by an unshifted remote clock cannot accommodate these characterized slow-corner output delays, even before adding internal logic and board delay. A phase-aligned forwarded clock or a multicycle interface changes this constraint.",
+    "slow_corner": "ssg0p81v1p62v125c"
+  },
+  "state": "bonded_input_skew_and_output_delay_screened_against_580mhz"
+}
