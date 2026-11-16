@@ -1,0 +1,74 @@
+{
+  "accuracy": {
+    "baseline": {
+      "correct": 40,
+      "percent": 59.701492537313435
+    },
+    "fractional": {
+      "correct": 40,
+      "percent": 59.701492537313435
+    }
+  },
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "correction_active_rows": {
+    "baseline": 29026,
+    "fractional": 29060
+  },
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "elapsed_seconds": 60.18990221899003,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/final_prompt_skip/inputs.json": "99a201a95bf8ce3228aba943fb0bb40e49aeab32d57c9b2c611104109278d259",
+    ".cache/model_reference/gqa_testdev/fractional_correction/flow.pdf": "307072387569c6424019325f990e5579d5605f8451e4a972755af064dc6ba813",
+    ".cache/model_reference/gqa_testdev/fractional_correction/inputs.json": "90d3a76eec78cc172f8e30505738cce786905333af60bf23b27b6cf4ea1cd3d8",
+    ".cache/model_reference/gqa_testdev/fractional_correction/predictions.jsonl": "749dae318508e7d6cc545de7f0e0dc2866533d41d2a64946907f226f21a44a0a",
+    ".cache/model_reference/gqa_testdev/fractional_correction/receipt.json": "beecf8e9a09d23232187d107838536064bbf62e2478a5e40f2cdbae325f88249",
+    ".cache/model_reference/gqa_testdev/fractional_correction/run.py": "43efe8b918dc194aa11110b178798cc1e2e5e57ff3cf5b1cdcbde4396cc15020",
+    ".cache/model_reference/gqa_testdev/fractional_correction/verify.py": "1325a28b651a09a5c828bef81374dac08529e6143b03739dc3e9b3d48ae56871",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/predictions.jsonl": "078467331feca85071b4325f6642b1a16aed90f642bc30d49c1ba41884ec308a",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "fractional_workload": {
+    "active_rows": 29060,
+    "eligible_rows": 20804,
+    "nonzero_baseline": 58986,
+    "nonzero_candidate": 52765224,
+    "removed_active_rows": 0,
+    "rows": 109527
+  },
+  "image_bootstrap_95_percent_interval_pp": [
+    0.0,
+    0.0
+  ],
+  "nonzero_correction_codes": {
+    "baseline": 58834,
+    "fractional": 52765224
+  },
+  "paired": {
+    "gained": 0,
+    "lost": 0,
+    "net_correct": 0
+  },
+  "paired_exact_two_sided_p": 1.0,
+  "peak_gpu_bytes": 7952927232,
+  "questions": 67,
+  "scope": "Host TinyLLaVA inference on one fixed question per image. Only late prompt rows already eligible for the second correction pass can use the finer scale. Skipped-channel and nonzero-code counts describe this software workload. Hardware execution, energy, and the paper's benchmark protocol remain unverified.",
+  "selected_fractional_eligibility_percent": 71.58981417756367,
+  "skipped_channels": {
+    "baseline": 235766164,
+    "fractional": 235743481
+  },
+  "state": "host_paired_fractional_prompt_correction_independently_scored",
+  "token_changes": {
+    "changed_answer_tokens": 0,
+    "changed_first_token": 0
+  },
+  "types": {
+    "choose": 8,
+    "compare": 2,
+    "logical": 10,
+    "query": 31,
+    "verify": 16
+  }
+}
