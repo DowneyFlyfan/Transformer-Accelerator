@@ -93,32 +93,76 @@ module tri_oracle_memory_request_rx (
   output logic [17:0] req_length,
   output logic req_wide
 );
+  tri_oracle_memory_forward_rx read_only (
+    .clk, .rst_n, .rx_valid, .rx_ready, .rx_data,
+    .req_valid, .req_ready, .req_address, .req_length, .req_wide,
+    .write_valid(), .write_ready(1'b1), .write_address(), .write_length(),
+    .word_valid(), .word_ready(1'b1), .write_data(), .write_strobe(), .write_last()
+  );
+endmodule
+
+module tri_oracle_memory_forward_rx (
+  input logic clk, rst_n,
+  input logic rx_valid,
+  output logic rx_ready,
+  input logic [21:0] rx_data,
+  output logic [2:0] req_valid,
+  input logic [2:0] req_ready,
+  output logic [191:0] req_address,
+  output logic [17:0] req_length,
+  output logic req_wide,
+  output logic write_valid,
+  input logic write_ready,
+  output logic [63:0] write_address,
+  output logic [4:0] write_length,
+  output logic word_valid,
+  input logic word_ready,
+  output logic [63:0] write_data,
+  output logic [7:0] write_strobe,
+  output logic write_last
+);
+  localparam logic [1:0] READ = 0, WRITE_HEADER = 1, WRITE_WORD = 2;
   logic [1:0] offset;
   logic [21:0] header_flit, middle_flit, upper_flit;
-  logic [63:0] address, incoming_address, selected_address;
-  logic [5:0] length;
-  logic [5:0] selected_length;
-  logic [1:0] lane, incoming_lane;
-  logic wide, incoming_wide, pending, compact, final_flit, retire_request, receive_flit, capture_request;
+  logic [63:0] payload, incoming_payload, selected_payload;
+  logic [7:0] attributes, selected_attributes;
+  logic [1:0] lane, incoming_lane, selected_lane;
+  logic [1:0] kind, incoming_kind, selected_kind;
+  logic wide, incoming_wide, last, pending, compact, final_flit, retire_request, receive_flit, capture_request;
+  logic incoming_ready, selected_ready, packet_valid;
 
   assign compact = header_flit[0];
   assign incoming_wide = !header_flit[2];
   assign incoming_lane = !header_flit[1] ? 2'd0 : (incoming_wide ? 2'd1 : 2'd2);
+  assign incoming_kind = compact ? READ : rx_data[8:7];
   assign final_flit = offset == 3 || (offset == 1 && compact);
-  assign retire_request = pending && req_ready[lane];
+  assign incoming_ready = incoming_kind == WRITE_HEADER ? write_ready :
+                          incoming_kind == WRITE_WORD ? word_ready : req_ready[incoming_lane];
+  assign selected_ready = selected_kind == WRITE_HEADER ? write_ready :
+                          selected_kind == WRITE_WORD ? word_ready : req_ready[selected_lane];
+  assign retire_request = pending && selected_ready;
   assign rx_ready = rst_n && (!final_flit || !pending || retire_request);
   assign receive_flit = rx_valid && rx_ready;
-  assign capture_request = receive_flit && final_flit && (pending || !req_ready[incoming_lane]);
-  assign req_valid = !rst_n ? '0 : pending ? (3'b001 << lane) :
-                     (rx_valid && final_flit ? (3'b001 << incoming_lane) : '0);
-  assign incoming_address = !compact ? {rx_data[6:0], upper_flit, middle_flit, header_flit[21:9]} :
+  assign capture_request = receive_flit && final_flit && (pending || !incoming_ready);
+  assign packet_valid = rst_n && (pending || (rx_valid && final_flit));
+  assign selected_lane = pending ? lane : incoming_lane;
+  assign selected_kind = pending ? kind : incoming_kind;
+  assign req_valid = packet_valid && selected_kind == READ ? 3'b001 << selected_lane : '0;
+  assign write_valid = packet_valid && selected_kind == WRITE_HEADER;
+  assign word_valid = packet_valid && selected_kind == WRITE_WORD;
+  assign incoming_payload = !compact ? {rx_data[6:0], upper_flit, middle_flit, header_flit[21:9]} :
                             incoming_wide ? {23'd0, rx_data, header_flit[21:9], 6'd0} :
                                             {26'd0, rx_data, header_flit[21:9], 3'd0};
-  assign selected_address = pending ? address : incoming_address;
-  assign selected_length = pending ? length : header_flit[8:3];
-  assign req_address = {3{selected_address}};
-  assign req_length = {3{selected_length}};
+  assign selected_payload = pending ? payload : incoming_payload;
+  assign selected_attributes = pending ? attributes : header_flit[8:1];
+  assign req_address = {3{selected_payload}};
+  assign req_length = {3{selected_attributes[7:2]}};
   assign req_wide = pending ? wide : incoming_wide;
+  assign write_address = selected_payload;
+  assign write_length = selected_attributes[4:0];
+  assign write_data = selected_payload;
+  assign write_strobe = selected_attributes;
+  assign write_last = pending ? last : rx_data[9];
 
   always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -146,9 +190,11 @@ module tri_oracle_memory_request_rx (
       endcase
     end
     if (capture_request) begin
-      length <= header_flit[8:3];
-      address <= incoming_address;
+      attributes <= header_flit[8:1];
+      payload <= incoming_payload;
       wide <= incoming_wide;
+      kind <= incoming_kind;
+      last <= rx_data[9];
     end
   end
 endmodule

@@ -1,0 +1,90 @@
+{
+  "cold_chip_write_ports": {
+    "address_bits": 64,
+    "length_bits": 5,
+    "strobe_bits": 8,
+    "word_bits": 64
+  },
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "evidence_sha256": {
+    ".cache/compact_index_io/genus/netlist.v": "fd8d5a3e5c45a985d985fd8aad2eb6d1b4a27fcad92dce9472c3b1768359f19d",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_index.bin": "a245522580c1ee548b57246e5b498e38ef1ac7d9da931b12317edeb914729013",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/compact_index_replay_tb.sv": "0363e0abc6a7b902e5c8306cdf360566b0ed3518a99c372a00d29f9edf1b57d4",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/fixture/console.log": "c4a7ba27ad084266ba7d93d135a29ea6c8daf6b9b0078f71dafd7790b1387252",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/fixture/xrun.history": "044524cba9b2229463136c43706af5e83264f3a729a7360091164afb0c0baddb",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_read_only/netlist.v": "6139e9e8514eb4fbd02677da33c83c0947ec116945ec690c48c747adffdeb5f2",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/area.rpt": "9fa8e80d415c30bc833477365ca288b3f92272ad58b89707e2b5f8f8aff5c406",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/console.log": "2b936b38743cbe5e807526c0b0b91e33c252500a48fe23a113f93e977b59aa78",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/constraints.sdc": "d8b3b2c7cb280e82194909738eca0b380d3623573e93cec06c163f9d27687ef1",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/mapped_check.rpt": "29241533a76fabe44801a78e954097d0f599362f2d6dcdd73c49a3912605fc5d",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/netlist.v": "9cbe51570042aee9e19621f70b885ca0837cf43d20f68479116a73ca1aa04aaa",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/timing.rpt": "c08cfe52e8f1fd5057e93a7d87fbd52d8fd6634686144c35da82212f92d1feba",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_tx/area.rpt": "474b43457e508e3482ef4e068c3cf6f614e2dea545e61c09d754ae081d6b03c2",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_tx/console.log": "2b0d84ffeca70e995789dc4e098b1c07e0b1f844b2ddb2ba19231af08906b7dc",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_tx/constraints.sdc": "1c3f44481b86f88696f587d6acf95128a1fd23d56917cd8eab2ec341523973d6",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_tx/mapped_check.rpt": "522c0714c6f5b2e1c6f73c5b503ebfe7f39d1636f275438c07ab8fdb42ce83b0",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_tx/netlist.v": "87e0200f9323a49255d49e6797a34aeb69c2c36fd81e37932ea2f958bfa27a4a",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_tx/timing.rpt": "5b4f960776e309a15195a974fa6ffe9e0465e68f96dc84165519e623f4da950f",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/mapped/console.log": "b659eaba71177b50e43e81da81823430518023510ce4918798743396ea8290d0",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/mapped/xrun.history": "0beb550dd73a5dda2de47c98772daac47f09fdede09745f43f6ee1bbfee9f3c3",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/read_only_mapped/console.log": "0f72d130663db3376f5744d6bce4c4c61d2afac28ecf1303ced876c22694b07d",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/read_only_mapped/xrun.history": "f1c428f50599c7a6f5b67024acd8400768da1361c434de4bd27ebd23a32fe9a0",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/rtl/console.log": "4c6189e81d8ea6c56f952394afe30534355ccf770f6fe46deb9a51b76b395339",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/rtl/xrun.history": "91f7750e3aed0acf349f356caabf59de0d451e06d830b4e8536fe8bba87247b7",
+    ".cache/physical/whole_chip_xcelium_speed/memory_request_all_reads/genus_tx/netlist.v": "a032ae9cfbe7da187b6ed7ffa1b943abde902e654f052e37d5bc162442739f01",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/packed_weight_cut.v": "03ccaa5f177371e7fd12c9571352bece57886fd8fa9295a5e68b324203488e85",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/compact_index_replay_tb.sv": "a9e9bd6cbd876b0dc65f426e1f286284d69ccd2e45aa2edba455e136fea93797",
+    ".cache/physical/whole_chip_xcelium_speed/shared_read_link/genus/netlist.v": "cb79481459c569dcf712129ee48949c5badec9e2406b9ef2ef55a6f2cf7a7dd0",
+    ".cache/physical/whole_chip_xcelium_speed/single/cache_reused.hex": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/syn/verify_tri_oracle_memory_forward_link.py": "c83c76a7ec3c0936d1aa4dae63252b690f84210df2f4b8ca0c12dba4e8a0568f",
+    "records/tri_oracle_full_chip_xcelium_multicore_prefix.json": "d6e63bb9e6c2ae701c27c5984056a922f79dfe32e604606f11c92c0f278bdce5",
+    "records/tri_oracle_mapped_memory_request_link.json": "cfe915d0efe232ff262fb5f8e231c3e14e03c7d6cc2e66c16acc7d4e11f4e3d0",
+    "records/tri_oracle_repacked_whole_chip_cold_reload.json": "9ab38bed952ec1de1a794b2fa882c1d98e99001f64f11e3cbdf1240e04559fac",
+    "records/tri_oracle_shared_read_link.json": "18deb87ddb5cb3ec3c926202c106212ec6002354e6ce2d008b52eb10d33ef91a",
+    "syn/tri_oracle_synthesize_memory_request_link.tcl": "7e5bbc5e7f74adaa1d5b43d45116ce4a99179f594a205419556308acde24b772",
+    "verilog/tri_oracle_memory_forward_link_tb.sv": "f54f44e8e72d5e2decd5e3cfa43671abb240fb152c2c0bfac2d630c1c27f3325",
+    "verilog/tri_oracle_memory_request_link.sv": "9e4ae7395a87c2c8bc498674df35856359dd46fa7be4260f979175dd40bbd0eb",
+    "verilog/tri_oracle_memory_request_link_tb.sv": "94fab62aab06120e5145d4948bbf02b6da3ec11388f987f55ed5fdd1ca1a2635",
+    "verilog/tri_oracle_memory_write_link_tx.sv": "922ebdd973c561f0cfd5e3308eef9b9fe248a6271f18ec4d05f1acce25b4b9c4"
+  },
+  "forward_data_bits": 22,
+  "mixed_replay": {
+    "added_cycles_vs_read_only": 60,
+    "captured_write_commands": 16,
+    "cycles": 90013,
+    "exact_trained_weight_read_bytes": 11534336,
+    "exact_write_bytes": 1024,
+    "read_requests": 4352,
+    "reads_during_writes": 25
+  },
+  "new_forward_signal_pads": 0,
+  "read_only_regression_packets": 369,
+  "scope": "Mapped endpoints serialized captured projection writes concurrently with the current trained weight-read fixture. Write commands and payloads share existing forward pins. The write acknowledgment path, physical pads, external controller and full model remain unverified.",
+  "state": "shared_forward_link_verified_with_mapped_weight_reads_and_captured_projection_writes",
+  "synthesis": {
+    "corner": "0.9 V, 125 C",
+    "endpoints": {
+      "rx": {
+        "cell_area_um2": 653.688,
+        "cells": 358,
+        "setup_slack_ps": 834
+      },
+      "tx": {
+        "cell_area_um2": 492.576,
+        "cells": 406,
+        "setup_slack_ps": 1008
+      }
+    },
+    "target_period_ns": 1.72414
+  },
+  "unit_replay": {
+    "headers": 6,
+    "overlap": 21,
+    "reads": 36,
+    "stalled_flits": 109,
+    "words": 21
+  }
+}

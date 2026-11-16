@@ -1,7 +1,8 @@
 # Map the request endpoints or shared link with the project's slow timing corner.
 set root [file dirname [file dirname [file normalize [info script]]]]
 set top $::env(TRI_ORACLE_REQUEST_ENDPOINT)
-if {$top ni {tri_oracle_memory_request_tx tri_oracle_memory_request_rx tri_oracle_shared_read_link}} {
+if {$top ni {tri_oracle_memory_request_tx tri_oracle_memory_request_rx tri_oracle_shared_read_link
+             tri_oracle_memory_write_link_tx tri_oracle_memory_forward_rx}} {
     error "Unknown memory request endpoint $top"
 }
 set out [file normalize $::env(TRI_ORACLE_REQUEST_OUTPUT)]
@@ -12,6 +13,9 @@ read_libs [file join $root .cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0
 set files [list [file join $root verilog/tri_oracle_memory_request_link.sv]]
 if {$top eq "tri_oracle_shared_read_link"} {
     lappend files [file join $root verilog/tri_oracle_shared_read_link.sv]
+}
+if {$top eq "tri_oracle_memory_write_link_tx"} {
+    lappend files [file join $root verilog/tri_oracle_memory_write_link_tx.sv]
 }
 read_hdl -sv $files
 elaborate $top
