@@ -1,0 +1,43 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/baseline/tri_oracle_pe_array/seed.def": "18d16cd666218c618f93018bffa0883d36ef0a37558b6eb9265c5a5c738ea873",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/bank2_2_probe/prepared.json": "c0a21657ad550036308dbad7c16e8371bdc0f8d82aa8b93ec7aa663f89019117",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/rank.py": "69f4864df61ddbd6a520e66f37fd97483298cd3064eb3929cdd4ded6e94adf86",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/region_capacity/path_geometry/verified.json": "9fd4a56b845839c76ce893ef60658f36de1ba3e53b5a7ee1001983274707f5b7"
+  },
+  "p95_added_path_span_um": {
+    "tri_oracle_pe_array_verified_bank0": 4420.417,
+    "tri_oracle_pe_array_verified_bank0_1": 2028.092,
+    "tri_oracle_pe_array_verified_bank0_2": 3831.31,
+    "tri_oracle_pe_array_verified_bank1": 4718.025,
+    "tri_oracle_pe_array_verified_bank1_1": 4322.912,
+    "tri_oracle_pe_array_verified_bank1_2": 3002.886,
+    "tri_oracle_pe_array_verified_bank1_3": 3441.018,
+    "tri_oracle_pe_array_verified_bank2": 3390.35,
+    "tri_oracle_pe_array_verified_bank2_1": 1689.433,
+    "tri_oracle_pe_array_verified_bank2_2": 4723.653,
+    "tri_oracle_pe_array_verified_bank2_3": 2689.511,
+    "tri_oracle_pe_array_verified_bank3": 3291.86,
+    "tri_oracle_pe_array_verified_bank3_1": 4721.984,
+    "tri_oracle_pe_array_verified_bank3_2": 4356.713,
+    "tri_oracle_pe_array_verified_bank3_3": 4725.241,
+    "tri_oracle_pe_array_verified_bank4": 4209.245,
+    "tri_oracle_pe_array_verified_bank4_2": 3775.17,
+    "tri_oracle_pe_array_verified_bank4_3": 2931.15
+  },
+  "prepared_region": "tri_oracle_pe_array_verified_bank2_2",
+  "prepared_region_cells": 54141,
+  "prepared_region_reserved_rectangles": 34278,
+  "prepared_region_selection": "Within 4 micrometres of the highest-priority region and uses the measured reference reset interface.",
+  "reference_path_counts": {
+    "fast_hot_setup.rpt": 5,
+    "setup_slow_broader_setup.rpt": 80,
+    "typ_setup.rpt": 5
+  },
+  "reference_pin_pairs": 222,
+  "regions_ranked": 18,
+  "rigid_translation_control": "tri_oracle_pe_array_verified_bank0_3",
+  "rigid_translation_control_p95_added_path_span_um": 0,
+  "scope": "Host comparison of named pin-pair distances and exact regional coordinate extraction. Whole-chip or regional timing requires native verification.",
+  "state": "measured_critical_paths_ranked_and_next_region_probe_prepared"
+}
