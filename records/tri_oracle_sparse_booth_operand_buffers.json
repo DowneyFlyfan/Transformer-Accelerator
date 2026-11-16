@@ -1,0 +1,60 @@
+{
+  "added_buffers": 64,
+  "added_sites": 768,
+  "after_slack_ns": {
+    "gate_hold": 0.02,
+    "gate_setup": 0.345,
+    "hold": -0.021,
+    "setup": -1.674
+  },
+  "before_slack_ns": {
+    "gate_hold": 0.019,
+    "gate_setup": 0.344,
+    "hold": -0.021,
+    "setup": -1.793
+  },
+  "clock_megahertz": 580,
+  "comparison_to_earlier_buffered_booth": {
+    "earlier_row_sites": 490595,
+    "earlier_setup_slack_ns": -1.408,
+    "row_sites_saved": 11264,
+    "setup_slack_change_ns": -0.266,
+    "sparse_row_sites": 479331,
+    "sparse_setup_slack_ns": -1.674
+  },
+  "delivered_lockstep_transactions": 786,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/emitted.sdc": "e7b2830b4c1f6cbf6b8999b8bd0fa7c3a58acd4429b6ebf81b4da0b1b229ebb6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/netlist.v": "523cee650ba40dc296979f2167f74307467eea9e762567ff79e721e753455cb9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/console.log": "076398e5bda20bd5a0ecbaf53350ba2451d7d9311cee471e9e5aa08e9c226c8e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/native_gate_hold.rpt": "c2336061ac85da6eff19250c449048fddac3568ad950feda62b6ad9102836498",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/native_gate_setup.rpt": "78ded006e3d41d7b0e9061b079846b71bf60080c3f0e230d3dae4857f9833f5d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/native_hold.rpt": "e0c93ca3b61a47e51150b11c6502ab82905a92308a6df24bda3abacc79f77998",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/native_setup.rpt": "a6c01f1a29df8eaa76278cbaf3efb4c791978eb510e59b8812c2b961e33e2daf",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/netlist.v": "886d5dc659ecdbaf867645adf57a81eb79e0ade77e4767ea4698aabe03d99fcc",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/place.tcl": "c3ed56fd48310a00a24d4f273542df34127d4c3362027c9a956d162246082dc7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/placed.def": "53da26e49afd00174e8c0eb202395ca234aa83fb5e6461a99a03c6bfad9680b6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/placement.rpt": "e502800cb6fb2f9271e8eebb0fcd8250ad59a7f2e3929c957586d67ecef7269d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/replay/console.log": "83c006ccf424523d85d97ed6416eaf4fa567644110e970a5e206a982cd93a966",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/replay/decoupled_mapped.v": "103580849495c06b1e641d7c02d753ac041eb50004af9c5143d3b89baa97315e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/replay/xrun.history": "ad09d169552438eaf18fd1efee185418fe4fb07198f614ddab71e71d4bc8676e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/seed.def": "441cb26ad22089ed23763eb4d2171f444eba17b32e5cc3571c04143f62302ed9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/trial.py": "553dd2fb2d6569fd724e33593791c59f69944e0a2b36a305f19ef8ca5ee65a67",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/edges.tsv": "eb02d10977b9c8e9da1108a9ff54225df779e96f5faa9470f2f81ce04dce7608",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/native_setup.rpt": "fd85851a7fd03ac00025aafd7b858e7a7369a2d177c48d78eb67cf578fd8f6d5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/operand_setup.rpt": "3919fcafd955ae042429ffdb01d5aa87e562f6d5d120effc3234c36251d8403c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/place.tcl": "c743b976723d20a3f0659dd797f4cdd6b5cb01bbcf156ba3482932025a4b4efd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/placed.def": "2fc7add6ddbfed8a239d3e9716b19d32a98f36fa982f3d093020db92cd25e3f0",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    "records/tri_oracle_booth_array.json": "40e840e17ada502ac33a7ee679582e5b33267defff23dc569d139c2a0a3b84c9",
+    "records/tri_oracle_booth_chip_geometry.json": "140997f8aca52afac976db0a1f9aad832e1f8a1fc387f2101eb352739e52cf18",
+    "records/tri_oracle_booth_control_buffers.json": "f1bd17b876070620281782c595e7f414f5274bdf1ce65aa52994c844064b34ee",
+    "records/tri_oracle_booth_operand_buffers.json": "432ca04fa05619752ff208fd700650686d28097518cfcb417446141930920cbb",
+    "records/tri_oracle_sparse_booth_array_placement.json": "92766d24bbe0e07a1f51269fbc6c73c5dc7893d6aab7e9a825bbeb4cf820c103",
+    "records/tri_oracle_sparse_booth_control_buffers.json": "c35c812b11a5747b8f05bc104a0630c0c5e624d5ae885ba6de48ed4c5fe2353d",
+    "records/tri_oracle_sparse_booth_timing_swaps.json": "cb1308d9f910c1be1b791c20d20c0e7e87ffbf72023192d2e082c2b8384340c1"
+  },
+  "scope": "One compute array with fixed boundary pins and unchanged original cell locations. Timing uses ideal clocks and pre-route wire estimates.",
+  "setup_change_ns": 0.119,
+  "state": "targeted_booth_operand_buffers_placed_and_lockstep_tested"
+}
