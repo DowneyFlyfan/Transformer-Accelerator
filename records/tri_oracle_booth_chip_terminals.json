@@ -1,0 +1,34 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/497_pad_floorplan/pad_slots.tsv": "e09eccdd7c6b18839d33e67627a5bf36d9624896d18042388be4a2eedbf6ffab",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/placement_seed.def": "1a8172ef4489ae48ba7241afa56e2cf5815f3e83cdc65a5a7a9c200c110d5cbc",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/placement_with_terminal_seed.def": "77acffca243b18ae6b86ae2d10c0c5322400ecbaf1e63e23b842cd06ccc93d64",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/terminal_import_fixture/console.log": "a2c9f809478d5a8a7aa47f36a0fa8cc52166b91216795655c553909c5e1483f9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/terminal_import_fixture/fixture.def": "bae37263610b29334edc157bb8eba6a7217ff2c0cf724242c128f3306c8cbb18",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/terminal_import_fixture/fixture.v": "07314c13adad630e186027a92e758a3331271d1631136afcbfa546e988f13fa9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/terminal_import_fixture/import.tcl": "755ee2ba6568a34c9adf3df3b153cd3b595d0a98f70cbd0fa3e6dc88e1706180",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/terminal_import_fixture/observed.def": "4912bff6a455fcbaf2de148898162f534baa6c366abe78867b9f8ab39634c4f2",
+    "records/tri_oracle_497_pad_floorplan.json": "9aeeb2960a173844b8fa84887de204eab986880f6e12ccbad39dc67ae2493030",
+    "records/tri_oracle_bonded_pad_capacity.json": "8125c3e10d15ae8dd492e22ad7c122ad6b898d6f3de69ea9fb29c8efc2db8910",
+    "records/tri_oracle_booth_chip_geometry.json": "140997f8aca52afac976db0a1f9aad832e1f8a1fc387f2101eb352739e52cf18",
+    "records/tri_oracle_linked_booth_chip.json": "edd2622df13ab3dc8ee6c23a57f038d10fb33d1fa1d20fed695666e1a0f1e386",
+    "syn/prepare_tri_oracle_booth_chip_terminals.py": "c0faccd4c81ded347450eabd288754115ce61f018edef436e05c657856822024"
+  },
+  "native_fixture_scope": "The exact full-chip terminal section was imported and exported using a small netlist with the same port interface. Every signal name, direction, net, layer, coordinate, shape, and orientation matched. The complete linked design was not loaded for this check.",
+  "native_fixture_terminals_preserved": 484,
+  "scope": "The placed signal terminals use track-aligned metal shapes inside the reserved slots. The allocation preserves the component and blockage sections byte for byte. The slot allocation is a placement seed. Bond pad cells, power and ground connectivity, and signal timing have separate physical requirements.",
+  "signal_terminals": 484,
+  "state": "whole_chip_signal_terminals_fit_verified_perimeter_slots",
+  "terminal_counts_by_edge": {
+    "bottom": 89,
+    "left": 132,
+    "right": 132,
+    "top": 131
+  },
+  "unassigned_supply_and_ground_reservations": {
+    "core_supply": 3,
+    "corner_ground": 8,
+    "io_supply": 2
+  }
+}
