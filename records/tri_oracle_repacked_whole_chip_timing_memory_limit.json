@@ -1,0 +1,44 @@
+{
+  "checkpoint_control": {
+    "alternating_slots_verified": true,
+    "first_value_after_restore": 105,
+    "last_value_before_save": 104,
+    "post_restore_values_verified": 5
+  },
+  "clock_period_ns": 1.72414,
+  "cold_netlist_sha256": "72127f16a8ab122472f9e32b023f1934671a060f9340ca3e83a5c7f3de4e38e1",
+  "database_fingerprint_sha256": "a5505e949c7443b42ff6f6222da4ac38afd47a388be7d6f925b330726b1a52cd",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/wire_free_slow/before.sdc": "ec9894b5176b6b1d8e696ced9f0a92e6b928a9ee18ab6b1909bc163c59b65653",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/wire_free_slow/console.log": "f725a5d95e2d0ffd99696d7db875b82a28398cf0b5141a1743ec93c9b21bdac6",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/wire_free_slow/run_timing.py": "fc5c5de79baf0b3a89df1dfaa6b990c8e9649a786809efc2fd3df23215b17950",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/wire_free_slow/setup.rpt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/wire_free_slow/status.json": "887fe3015f816a2ae50377791119ac721d567c45ef5b36e8ead055e85bed3def",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/wire_free_slow/timing.tcl": "d1c9e5505c3a21d77e7befd9dfec113880659a409887f9de9bc2f2a8103e10b5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/candidate_attention/attention/console.log": "d66c1da971e2faf1e11ad8d2bb107aca4b8f57dde7a774f27a5ef3e603c93e5d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/candidate_attention/native_driver.log": "7f678c875efba7ffea7cbdf802185520ed1fc5998f415a27fc77e4dacf8e0a89",
+    ".cache/physical/carry_lookahead_comparison/checkpoint_control/checkpoint_probe.sv": "7bd9b33efed9ae6e64c1e1ed9d17917906d446249e0cab13410868ed8d6ee66f",
+    ".cache/physical/carry_lookahead_comparison/checkpoint_control/restart_exact.log": "ba01655fcc064801c3a69d416c6c1d36ac74e5ccfb5328c7c1bf24cbf7a3be50",
+    ".cache/physical/carry_lookahead_comparison/checkpoint_control/restart_exact.tcl": "c729ba224a56546718b0b1f71f97eb16ade640c1d772281219f1791dc5701bb0",
+    ".cache/physical/carry_lookahead_comparison/checkpoint_control/save.log": "d529d9959cdbf15b25d5cbb259a367cc6554a7453d371b7471c0ffbb897a921e",
+    ".cache/physical/carry_lookahead_comparison/checkpoint_control/save.tcl": "74dd2f563360b10a584bdef251b46c89adc78e13f0e78ba21413a16b239b2ad2",
+    ".cache/physical/carry_lookahead_comparison/checkpoint_control/save_cycle.log": "0bc0afcef6152638c89c93814f1dc5e01015c58cc6a2149902bf7c34e6d9807e",
+    "records/tri_oracle_repacked_whole_chip_cold_reload.json": "9ab38bed952ec1de1a794b2fa882c1d98e99001f64f11e3cbdf1240e04559fac"
+  },
+  "native": {
+    "exit_status": -15,
+    "minimum_host_available_bytes": 6391439360,
+    "peak_container_anonymous_bytes": 16088797184,
+    "stop_reason": "resource guard at 6391439360 host bytes, 16088797184 container anonymous bytes",
+    "wall_seconds": 225.09801737894304
+  },
+  "previous_replay": {
+    "groups_required": 40,
+    "projection_groups_checked": 15,
+    "simulator_terminated_by_replay_memory_guard": true
+  },
+  "reported_paths": 0,
+  "scope": "Whole-chip setup diagnostic with net loads ignored, before routing. Checkpoint behavior was measured on a simulator control that retains an open input file.",
+  "state": "repacked_chip_wire_free_slow_timing_memory_limited",
+  "timing_view": "setup_slow"
+}
