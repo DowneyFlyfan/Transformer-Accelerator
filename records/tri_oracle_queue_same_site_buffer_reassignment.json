@@ -1,0 +1,92 @@
+{
+  "cases": {
+    "combined_shortcut_and_load_reassignment": {
+      "pilot": {
+        "changed_hold_tree_root_inputs": 1,
+        "setup_slack_ns_before_after": [
+          -1.221514,
+          -0.668962
+        ],
+        "worst_capture_after": "carry_save.row[3].value_reg[5]/SA",
+        "worst_launch_after": "shadow_valid_reg[3]/CP"
+      },
+      "tightest": {
+        "changed_hold_tree_root_inputs": 1,
+        "setup_slack_ns_before_after": [
+          -1.656768,
+          -0.869436
+        ],
+        "worst_capture_after": "carry_save.row[0].carry_reg[18]/D",
+        "worst_launch_after": "carry_save.row[0].compressor[1].carry_reg[17]/CP"
+      }
+    },
+    "hold_root_shortcut": {
+      "pilot": {
+        "changed_hold_tree_root_inputs": 1,
+        "setup_slack_ns_before_after": [
+          -1.221514,
+          -0.664739
+        ],
+        "worst_capture_after": "carry_save.row[7].value_reg[6]/SA",
+        "worst_launch_after": "shadow_valid_reg[3]/CP"
+      }
+    },
+    "leaf_loads": {
+      "pilot": {
+        "loads_reassigned_to_existing_leaf_buffers": 2172,
+        "setup_slack_ns_before_after": [
+          -1.221514,
+          -1.250434
+        ],
+        "worst_capture_after": "carry_save.row[3].value_reg[5]/SA",
+        "worst_launch_after": "shadow_valid_reg[3]/CP"
+      },
+      "tightest": {
+        "loads_reassigned_to_existing_leaf_buffers": 3381,
+        "setup_slack_ns_before_after": [
+          -1.656768,
+          -0.880132
+        ],
+        "worst_capture_after": "carry_save.row[0].carry_reg[18]/D",
+        "worst_launch_after": "carry_save.row[0].compressor[1].carry_reg[17]/CP"
+      }
+    },
+    "leaf_loads_and_branches": {
+      "pilot": {
+        "buffers_connected_to_new_parents": 44,
+        "loads_reassigned_to_existing_leaf_buffers": 2172,
+        "setup_slack_ns_before_after": [
+          -1.221514,
+          -1.910369
+        ],
+        "worst_capture_after": "carry_save.row[3].value_reg[5]/SA",
+        "worst_launch_after": "shadow_valid_reg[3]/CP"
+      },
+      "tightest": {
+        "buffers_connected_to_new_parents": 74,
+        "loads_reassigned_to_existing_leaf_buffers": 3381,
+        "setup_slack_ns_before_after": [
+          -1.656768,
+          -0.875657
+        ],
+        "worst_capture_after": "carry_save.row[0].carry_reg[18]/D",
+        "worst_launch_after": "carry_save.row[0].compressor[1].carry_reg[17]/CP"
+      }
+    }
+  },
+  "cells_retained_in_each_run": 53862,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/archive_buffer_leaf_reassignment.py": "ec6659b8be70760953d12d016cab778fbb4940060da2ceb76771f4305823680d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/buffer_leaf_and_branch_reassignment/pilot/verified.json": "0306aea43ad6090079b78fe5f81f914d765034a5468cd3b22aafbafcf4326658",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/buffer_leaf_and_branch_reassignment/tightest/verified.json": "5c0f6a2f9300f6f0d25922b10a4e6cc08137cb9eeb9964570af62aea6a77ece5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/buffer_leaf_reassignment/pilot/verified.json": "63fdd570930b0a0639112e42bc1073ac799651ccee8caaabc35236e14658e837",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/buffer_leaf_reassignment/tightest/verified.json": "fdff70068e6ff7f624db2a4cfe57fa253062cc45a332cce0385473124a2af0b4",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_and_leaf/pilot/verified.json": "3a4817ed7c34239c881feae5fb8eafe7412dc77888e86019c947e5c0f22ad209",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_and_leaf/tightest/verified.json": "8fc750dcb5a480f8958454c6f1c3436aa946a685433496f243691b26a765d7e8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/verified.json": "0d8604018c144001681653606b5f5be37ace9eed0bd0124e262baa7ff9371c9f"
+  },
+  "ideal_clock_mhz": 580,
+  "mapped_replay_results_per_variant": 786,
+  "scope": "Two isolated array regions. The baseline for each variant kept all standard-cell masters, orientations, coordinates and reserved geometry. Leaf and branch assignments preserve pin load class counts. The hold control shortcut bypasses two series inverters and one transparent leaf stage, preserving polarity. Innovus measured early wire-extracted timing with an ideal clock.",
+  "state": "same_site_buffer_redistribution_and_timing_checked"
+}
