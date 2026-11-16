@@ -1,0 +1,467 @@
+{
+  "bank4_native_comparison": {
+    "matched_placement_cells": 54265,
+    "region": "tri_oracle_pe_array_verified_bank4_1",
+    "slow": {
+      "earlier_isolated_innovus_ns": -0.574608,
+      "estimated_ns": -1.627195
+    },
+    "typical": {
+      "earlier_isolated_innovus_ns": -0.080539,
+      "estimated_ns": -0.907335
+    }
+  },
+  "clock_period_ns": 1.72414,
+  "clock_uncertainty_ns": 0.05,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/bank4_1_native_pilot/receiver_hold_residual/verified.json": "b291cf4d1cdae88deb8f5272796b321e4b4659985176cd0b4df6aacc72300eba",
+    ".cache/physical/host_opensta/calibration/latest_twenty/archive.py": "31ea971ba8aed269f52c1226aee37e05365b9baf0cf3617f8929fb63e711f34b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/measure.tcl": "aa533b02dc2b67d33b6e03d854ce0c10b10724753b8e549883173e0e2ae859f9",
+    ".cache/physical/host_opensta/calibration/latest_twenty/screen.log": "77940216c99a80862d939dfd98bfb9fb56b045aead9d6e3708cccc903b57c98c",
+    ".cache/physical/host_opensta/calibration/latest_twenty/screen.py": "4e823e786679853c00cfcb314eb0f96902207e89cbbafa345f3aa0608693e16f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/verified.json": "8115b64cc6e5853fd0ad32a52dd9b99d4513f7ef47de1435a4d8d57876458e57",
+    "records/tri_oracle_latest_seed_compute_and_memory.json": "75a016e25fdbc55407c8560243d7ecd7334fabe60671d46aa704ca23847a5c52",
+    "records/tri_oracle_repacked_receiver_control_and_hold_repair.json": "0ac0fc2f818c47a6777bc0ea3e78b90e3bbc02fdf65c9ee300213e6e83e41ce4"
+  },
+  "latest_layout_sha256": "26ffd08d7d54fd8d1bea9a2e24508b6e22a2a5d70eff5152540606d4ab6a475b",
+  "latest_logic_sha256": "99555a2fc35d80b8c32872c38baef869adc83c0d79e1541c8dde92f9a95f98c7",
+  "overlap_between_worst_five": [
+    "tri_oracle_pe_array_verified_bank1_3",
+    "tri_oracle_pe_array_verified_bank4_2",
+    "tri_oracle_pe_array_verified_bank4_3"
+  ],
+  "regions": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "carry_save.row[25].value_reg[18]",
+          "geometric_setup_ns": -9.476938,
+          "start": "carry_save.row[25].sum_reg[2]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "carry_save.row[25].value_reg[18]",
+          "geometric_setup_ns": -8.567229,
+          "start": "carry_save.row[25].sum_reg[2]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank0_1": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][356]",
+          "geometric_setup_ns": -6.910731,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][356]",
+          "geometric_setup_ns": -5.125412,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][579]",
+          "geometric_setup_ns": -9.347886,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][579]",
+          "geometric_setup_ns": -6.971912,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank0_3": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "carry_save.row[13].carry_reg[2]",
+          "geometric_setup_ns": -1.805586,
+          "start": "carry_save.row[13].compressor[1].sum_reg[1]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "carry_save.row[13].carry_reg[2]",
+          "geometric_setup_ns": -1.068609,
+          "start": "carry_save.row[13].compressor[1].sum_reg[1]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][376]",
+          "geometric_setup_ns": -8.281028,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][376]",
+          "geometric_setup_ns": -6.49025,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_1": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][429]",
+          "geometric_setup_ns": -10.32019,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][429]",
+          "geometric_setup_ns": -8.060054,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_2": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[0][347]",
+          "geometric_setup_ns": -9.025708,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[0][347]",
+          "geometric_setup_ns": -6.813415,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][430]",
+          "geometric_setup_ns": -10.807474,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[2][266]",
+          "geometric_setup_ns": -8.761945,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[2][73]",
+          "geometric_setup_ns": -8.730677,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "carry_save.row[18].value_reg[18]",
+          "geometric_setup_ns": -7.198021,
+          "start": "carry_save.row[18].sum_reg[2]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2_1": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][152]",
+          "geometric_setup_ns": -8.093614,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][152]",
+          "geometric_setup_ns": -6.310604,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2_2": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "carry_save.row[13].carry_reg[18]",
+          "geometric_setup_ns": -9.760945,
+          "start": "carry_save.row[13].compressor[0].carry_reg[17]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "carry_save.row[25].value_reg[18]",
+          "geometric_setup_ns": -8.564331,
+          "start": "carry_save.row[25].sum_reg[2]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank2_3": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][372]",
+          "geometric_setup_ns": -9.290366,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][372]",
+          "geometric_setup_ns": -7.034914,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][160]",
+          "geometric_setup_ns": -7.37079,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "carry_save.row[14].value_reg[10]",
+          "geometric_setup_ns": -5.675443,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3_1": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[0][319]",
+          "geometric_setup_ns": -10.578784,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[0][500]",
+          "geometric_setup_ns": -8.081405,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3_2": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[0][107]",
+          "geometric_setup_ns": -9.170823,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][112]",
+          "geometric_setup_ns": -7.162441,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank3_3": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[1][351]",
+          "geometric_setup_ns": -8.619053,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[1][351]",
+          "geometric_setup_ns": -6.740315,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[0][534]",
+          "geometric_setup_ns": -10.164836,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[0][534]",
+          "geometric_setup_ns": -8.231847,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4_1": {
+      "instances": 54265,
+      "modeled_internal_nets": 68292,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[0][42]",
+          "geometric_setup_ns": -1.627195,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[0][245]",
+          "geometric_setup_ns": -0.907335,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4_2": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[2][506]",
+          "geometric_setup_ns": -12.073009,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[2][506]",
+          "geometric_setup_ns": -9.63671,
+          "start": "shadow_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "instances": 54141,
+      "modeled_internal_nets": 68168,
+      "timing": {
+        "slow": {
+          "end": "completed_results_reg[0][408]",
+          "geometric_setup_ns": -10.331083,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 0.989002
+        },
+        "typical": {
+          "end": "completed_results_reg[0][408]",
+          "geometric_setup_ns": -8.242894,
+          "start": "running_valid_reg[3]",
+          "wire_free_ns": 1.164096
+        }
+      }
+    }
+  },
+  "scope": "Exact coordinates and mapped cells from the latest seed, ideal clock, straight Manhattan wire geometry and original typical and slow standard-cell libraries. A ranking diagnostic for internal setup paths. Paths through parent logic, regional boundaries, and extracted route timing are outside scope. The archived Innovus comparison uses the same bank 4 cell placements but the native boundary and wire estimation options.",
+  "state": "latest_twenty_region_setup_screen_independently_rechecked",
+  "timing_summary": {
+    "slow": {
+      "estimate_range_ns": [
+        -12.073009,
+        -1.627195
+      ],
+      "minimum_wire_free_slack_ns": 0.989002,
+      "ranked": [
+        "tri_oracle_pe_array_verified_bank4_2",
+        "tri_oracle_pe_array_verified_bank1_3",
+        "tri_oracle_pe_array_verified_bank3_1",
+        "tri_oracle_pe_array_verified_bank4_3",
+        "tri_oracle_pe_array_verified_bank1_1",
+        "tri_oracle_pe_array_verified_bank4",
+        "tri_oracle_pe_array_verified_bank2_2",
+        "tri_oracle_pe_array_verified_bank0",
+        "tri_oracle_pe_array_verified_bank0_2",
+        "tri_oracle_pe_array_verified_bank2_3",
+        "tri_oracle_pe_array_verified_bank3_2",
+        "tri_oracle_pe_array_verified_bank1_2",
+        "tri_oracle_pe_array_verified_bank2",
+        "tri_oracle_pe_array_verified_bank3_3",
+        "tri_oracle_pe_array_verified_bank1",
+        "tri_oracle_pe_array_verified_bank2_1",
+        "tri_oracle_pe_array_verified_bank3",
+        "tri_oracle_pe_array_verified_bank0_1",
+        "tri_oracle_pe_array_verified_bank0_3",
+        "tri_oracle_pe_array_verified_bank4_1"
+      ],
+      "worst_path_launch_groups": {
+        "carry_save": 3,
+        "running_valid_reg": 7,
+        "shadow_valid_reg": 10
+      }
+    },
+    "typical": {
+      "estimate_range_ns": [
+        -9.63671,
+        -0.907335
+      ],
+      "minimum_wire_free_slack_ns": 1.164096,
+      "ranked": [
+        "tri_oracle_pe_array_verified_bank4_2",
+        "tri_oracle_pe_array_verified_bank1_3",
+        "tri_oracle_pe_array_verified_bank0",
+        "tri_oracle_pe_array_verified_bank2_2",
+        "tri_oracle_pe_array_verified_bank4_3",
+        "tri_oracle_pe_array_verified_bank4",
+        "tri_oracle_pe_array_verified_bank3_1",
+        "tri_oracle_pe_array_verified_bank1_1",
+        "tri_oracle_pe_array_verified_bank2",
+        "tri_oracle_pe_array_verified_bank3_2",
+        "tri_oracle_pe_array_verified_bank2_3",
+        "tri_oracle_pe_array_verified_bank0_2",
+        "tri_oracle_pe_array_verified_bank1_2",
+        "tri_oracle_pe_array_verified_bank3_3",
+        "tri_oracle_pe_array_verified_bank1",
+        "tri_oracle_pe_array_verified_bank2_1",
+        "tri_oracle_pe_array_verified_bank3",
+        "tri_oracle_pe_array_verified_bank0_1",
+        "tri_oracle_pe_array_verified_bank0_3",
+        "tri_oracle_pe_array_verified_bank4_1"
+      ],
+      "worst_path_launch_groups": {
+        "carry_save": 4,
+        "running_valid_reg": 6,
+        "shadow_valid_reg": 10
+      }
+    }
+  }
+}
