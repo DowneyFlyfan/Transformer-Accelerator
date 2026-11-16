@@ -1,0 +1,44 @@
+{
+  "current_netlist_self_comparison": {
+    "modules": 914,
+    "named_instances": 3185284,
+    "physical_leaf_instances": 4104527,
+    "scope": "Self-comparison of the exact linked top exercises every reachable module before the native export is available.",
+    "state": "linked_netlist_comparator_self_check"
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/cold/layout.def": "0aecf99d8b5869cda885e167649bd823dba00534f9af6b2c2483e85bc33f57ee",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/import/layout.def": "7fca745ba5181496c698c4ac9fd3e1b08f1ecc177afe88a04683c7d2d4fda25d",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/seed.def": "36ae68689697c291290feb6c09cb17b7887a497567ed942657a351d73802a4df",
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/audit_second_cluster_innovus_nets.py": "547141f739e8671e46a9fc4805bd0709570f110f71685fc1a2e4e4d5856c0c58",
+    ".cache/physical/wac_budgeted_parent_boundary/verify_linked_placed_topology.py": "0ae41e960b53d9251bd5d0d9ff3bb0c353e8908bdfa11efc5157dc3e994cc69c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/verify_reachable.py": "1905d9bf0f7e8b2b832a2080cff28261cbe56672a3c79aff9894fae1984b2105",
+    "records/tri_oracle_booth_chip_native_inputs.json": "6cd106d59205ddee664e1bf0f3bff0e455094e63a003f1bf10da9d14a4440618",
+    "syn/audit_tri_oracle_wac_parent_hdl_export.py": "78a9d71398062ac88b086fb6f30e7f00f1d37cc2898ae7674900091c23cbd4a2",
+    "syn/link_tri_oracle_parallel_chip.py": "5f5f72f3ec9bee7255db968adf6ca9999146b1bdfb6e0191eced61477f19680f",
+    "syn/verify_tri_oracle_booth_chip_native_connectivity.py": "b2e5de69550c02f9380cf630d903b13a425d02b89f42aa4f0de5e09f46903583",
+    "syn/verify_tri_oracle_booth_chip_native_layout.py": "9dffec038bfbb6ac1b75920aa8c8c515a1eead70d28f3b7818816e36d1954af1",
+    "syn/verify_tri_oracle_placement_connectivity.py": "2528c309997a4461233fcaa683357160ac87800cf335d42f2dbd83a4c115e34a"
+  },
+  "predecessor_native_connectivity_comparison": {
+    "modules": 573,
+    "named_instances": 3854726,
+    "physical_leaf_instances": 3859878
+  },
+  "predecessor_native_layout_comparison": {
+    "fixed_memory_macros": 631,
+    "groups": 20,
+    "placement_blockages": 4,
+    "placement_rows": 2966,
+    "pose_sha256_sum": "e7c8273c1152882eee17d41ec8c42d42685fcb1fb6b7b22f9fcf837c21028524",
+    "regions": 20,
+    "scope": "Die, rows, component positions, memory halos, signal terminals, blockages, and groups agree across both exports. Connectivity and static timing are checked separately.",
+    "signal_terminals": 7945,
+    "standard_cells": 3859247,
+    "state": "native_import_and_cold_reload_match_placement_seed",
+    "top": "tri_oracle_chip_command_layer_parallel_chip"
+  },
+  "scope": "The previous candidate supplies the real Innovus export pair. The current candidate was checked for parser compatibility. Its import and cold export must still pass both comparisons.",
+  "state": "booth_chip_native_roundtrip_verifiers_checked_against_reference"
+}
