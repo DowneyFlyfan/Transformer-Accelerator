@@ -1,0 +1,267 @@
+{
+  "added_fast_hot_cell_models": [
+    "OR2D4BWP12T40P140",
+    "MUX2D4BWP12T40P140"
+  ],
+  "binary_truth_table": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "control_gate_slow_setup_paths": {
+    "previous": {
+      "g395608/A1": {
+        "appears_in_sample": 49
+      },
+      "g395609/A1": {
+        "appears_in_sample": 18,
+        "worst_path_cell_delay_ns": 0.2715,
+        "worst_path_transition_ns": 1.1601
+      },
+      "g395622/Z": {
+        "appears_in_sample": 67,
+        "worst_path_cell_delay_ns": 0.1656,
+        "worst_path_transition_ns": 0.6048
+      },
+      "g395665/Z": {
+        "appears_in_sample": 67,
+        "worst_path_cell_delay_ns": 0.1543,
+        "worst_path_transition_ns": 0.0808
+      }
+    },
+    "resized": {
+      "g395608/A1": {
+        "appears_in_sample": 30
+      },
+      "g395609/A1": {
+        "appears_in_sample": 1
+      },
+      "g395622/Z": {
+        "appears_in_sample": 31
+      },
+      "g395665/Z": {
+        "appears_in_sample": 0
+      }
+    }
+  },
+  "early_route_overflow_percent": {
+    "horizontal": {
+      "previous": 0.02,
+      "resized": 0.02
+    },
+    "vertical": {
+      "previous": 0.0,
+      "resized": 0.0
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "a16ea8d4eee26c04a1098aeecb4d05fdd70988ff0a1ae746a816057a63fef8e2",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/feedback_shortcut/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "384d78ff02ef13ee003820aab657e63908851db44a8b2bd026f4d8917e32843b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/archive.py": "3a4827b468353ead8a4233b6dfaff19530833f42fa2ce708c2c386d8cd385c08",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/overlap.json": "fc0ead05f05cc7b119ee653257ff27c6d8cec6552acae5a026959e7ad835357c",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/prepared.json": "c8fbce9f58e5d9d231950d1648c6689b64b2b7a956a5e85a940061d173adae56",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "4a80fd37ad4d69fa16af7d1971be7bb2dc7c141890b8df429b5f296ebaba1bc5",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "f6698eac76e579d57ac4abd34641138dec02086d890f66b0d7f913e5c7eff194",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/native_candidate/verified.json": "d4d1982d14512edba54bbfc04b2c6cc63e4cb8ff4e5752580c2069ee63b3a374",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/prepared.json": "e9a7e887968b01b4a8cf349bf4a92b907df722abac53f0a862fd46962f8dfc27",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/queue_mux/replay/verified.json": "b3a89c369d3ea3a8391583009754349755d79d39137341574063a5fd22476b35",
+    "records/tri_oracle_bank4_2_feedback_shortcut_native.json": "47daa617d4a8b9b27ef3690f6ae3fc7b31b2265edb0f1c993c09242377d8cedf"
+  },
+  "matched_boundary_pins": 4967,
+  "no_setup_or_hold_regressions": true,
+  "paper_clock_mhz": 580,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "resized_cells": {
+    "g395622": {
+      "center_geometry_cost_after": 313897.72853633336,
+      "center_geometry_cost_before": 692507.1703616667,
+      "internal_incoming_cells": 3,
+      "internal_outgoing_cells": 6,
+      "manhattan_move_um": 384.08,
+      "previous_dbu": [
+        1283480,
+        959200
+      ],
+      "previous_master": "AO22D1BWP12T40P140",
+      "previous_orientation": "N",
+      "resized_dbu": [
+        1016920,
+        1460800
+      ],
+      "resized_master": "MUX2D4BWP12T40P140",
+      "resized_orientation": "FS",
+      "width_increase_dbu": 1960
+    },
+    "g395665": {
+      "center_geometry_cost_after": 124568.1558796667,
+      "center_geometry_cost_before": 143641.013225,
+      "internal_incoming_cells": 2,
+      "internal_outgoing_cells": 3,
+      "manhattan_move_um": 85.52,
+      "previous_dbu": [
+        1281800,
+        1141600
+      ],
+      "previous_master": "OR2D2BWP12T40P140",
+      "previous_orientation": "N",
+      "resized_dbu": [
+        1223560,
+        1254400
+      ],
+      "resized_master": "OR2D4BWP12T40P140",
+      "resized_orientation": "FS",
+      "width_increase_dbu": 1120
+    }
+  },
+  "scope": "Binary-equivalent queue selector with a driven multiplexer and resized OR gate, both moved to legal sites. Identical boundary pins, reserved sites, clock constraints, and analysis views. Isolated early global routing for a compute region with ideal clocks.",
+  "state": "bank4_2_queue_mux_xcelium_and_innovus_measured",
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_ns": 0.0,
+      "launch": "completed_results_reg[1][534]/CP",
+      "previous_ns": -0.012664,
+      "queue_mux_ns": -0.012664
+    },
+    "fast_hot_setup": {
+      "capture": "completed_results_reg[0][67]/SA",
+      "change_ns": 0.093427,
+      "launch": "running_valid_reg[3]/CP",
+      "previous_ns": -1.146394,
+      "queue_mux_ns": -1.052967
+    },
+    "fast_setup": {
+      "capture": "completed_results_reg[0][200]/SA",
+      "change_ns": 0.130738,
+      "launch": "occupancy_onehot_reg[3]/CP",
+      "previous_ns": -1.121291,
+      "queue_mux_ns": -0.990553
+    },
+    "slow_setup": {
+      "capture": "carry_save.row[21].value_reg[18]/DB",
+      "change_ns": 0.136744,
+      "launch": "carry_save.row[21].carry_reg[2]/CP",
+      "previous_ns": -1.675556,
+      "queue_mux_ns": -1.538812
+    },
+    "typical_setup": {
+      "capture": "carry_save.row[21].value_reg[18]/DB",
+      "change_ns": 0.049191,
+      "launch": "carry_save.row[21].carry_reg[2]/CP",
+      "previous_ns": -0.878479,
+      "queue_mux_ns": -0.829288
+    }
+  },
+  "unchanged_cell_placements": 54139,
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.346
+}
