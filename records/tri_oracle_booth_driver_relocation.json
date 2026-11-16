@@ -1,0 +1,94 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/operand_geometry/incident.json": "311066a8763e5778b7cca3df8c3cbc2bc5e081ecdb5411e12c477ad46cbafa6d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/operand_geometry/placement_with_driver_relocation.def": "4d91665160bc3bb20c15d84b47caa48919e3b2c47a33e1067c8ba6ded93b5330",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/placement_with_terminal_seed.def": "77acffca243b18ae6b86ae2d10c0c5322400ecbaf1e63e23b842cd06ccc93d64",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/edges.tsv": "1c494608c981497c1684ca7b162b56fef2c49ecf011c371d184eef51855a3a06",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/residual_bank_command_binding/physical/buffered_grant/native/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    "records/tri_oracle_497_pad_floorplan.json": "9aeeb2960a173844b8fa84887de204eab986880f6e12ccbad39dc67ae2493030",
+    "records/tri_oracle_booth_chip_terminals.json": "6b6c2df0766fee71f856a0e6c6eaec34e1b491f79c436e821b6d23c94991180c",
+    "records/tri_oracle_booth_operand_spans.json": "fafe79dee24cc79328ee147dc022afaa79b4ccbd02bfdc3f7d55e15193ad8e7a",
+    "records/tri_oracle_booth_timing_swaps.json": "a97c0c1ba5b2b824550ef79033167aca0a979b600b46d88a759495b5b7e90f96",
+    "records/tri_oracle_linked_booth_chip.json": "edd2622df13ab3dc8ee6c23a57f038d10fb33d1fa1d20fed695666e1a0f1e386",
+    "syn/place_tri_oracle_booth_operand_drivers.py": "c6857b45eefd5982f82efc62233cb0a65ef0c793db64a0d125a986a9ec424419",
+    "syn/trace_tri_oracle_booth_driver_connections.py": "1bc084fbf766199c68c700dc71208b216c6c36c6a6cf5ed2f90e1af17b84ea7a"
+  },
+  "independent_file_comparison": "Exactly three component poses changed. All other bytes of the placement file match.",
+  "moves": [
+    {
+      "after_origin": [
+        2609840,
+        1374400,
+        "FS"
+      ],
+      "before_origin": [
+        5903200,
+        5531200,
+        "FS"
+      ],
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/g93974",
+      "incident_net_count": 2,
+      "incident_net_hpwl_change_um": -6434.453,
+      "longest_output_span_after_um": 936.827,
+      "longest_output_span_before_um": 4661.908,
+      "positions_examined": 199206,
+      "region": "tri_array_region_8"
+    },
+    {
+      "after_origin": [
+        2652400,
+        1374400,
+        "FS"
+      ],
+      "before_origin": [
+        6079880,
+        4801600,
+        "FS"
+      ],
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/g94029",
+      "incident_net_count": 2,
+      "incident_net_hpwl_change_um": -3459.84,
+      "longest_output_span_after_um": 958.513,
+      "longest_output_span_before_um": 4385.712,
+      "positions_examined": 199164,
+      "region": "tri_array_region_8"
+    },
+    {
+      "after_origin": [
+        6194960,
+        222400,
+        "FS"
+      ],
+      "before_origin": [
+        3136800,
+        4129600,
+        "FS"
+      ],
+      "driver": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/g93908",
+      "incident_net_count": 2,
+      "incident_net_hpwl_change_um": -4940.925,
+      "longest_output_span_after_um": 979.275,
+      "longest_output_span_before_um": 3841.852,
+      "positions_examined": 199156,
+      "region": "tri_array_region_12"
+    }
+  ],
+  "output_sha256": "4d91665160bc3bb20c15d84b47caa48919e3b2c47a33e1067c8ba6ded93b5330",
+  "peak_gpu_allocated_bytes": 22168064,
+  "placement_checks": {
+    "array_regions": 20,
+    "cells": 4104527,
+    "remaining_row_sites": 393972
+  },
+  "retained_resolved_drivers": [],
+  "scope": "For each moved driver, every traced incident net had no larger half-perimeter in the candidate check, and the largest driver-to-load span fell. These are geometric proxies. Full-chip static timing is pending.",
+  "skipped_unresolved_drivers": 9,
+  "state": "traced_parent_driver_relocations_geometrically_verified"
+}
