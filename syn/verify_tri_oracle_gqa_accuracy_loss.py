@@ -1,5 +1,6 @@
-"""Rescore frozen GQA results, preserving question pairing and image grouping."""
+"""Rescore frozen GQA results on the host, preserving paired questions and images."""
 
+import argparse
 from collections import Counter, defaultdict
 from decimal import Decimal, ROUND_CEILING
 from hashlib import file_digest
@@ -67,7 +68,10 @@ def delta_pair(before, after):
 
 
 def main():
-    assert __debug__ and Path("/.dockerenv").exists()
+    assert __debug__ and not Path("/.dockerenv").exists()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=DATA / "accuracy_loss_audit_host.json")
+    args = parser.parse_args()
     protocol_path = ROOT / "records/wac_gqa_accuracy_protocol_result.json"
     proof_path = ROOT / "records/wac_gqa_frozen_down_scale_result.json"
     targets_path = ROOT / "records/paper_result_targets.json"
@@ -83,9 +87,9 @@ def main():
         assert expected is None or expected == actual, path
         inputs[str(path.relative_to(ROOT))] = actual
 
-    for path in (protocol_path, proof_path, targets_path, Path(__file__).resolve()):
+    for path in (protocol_path, proof_path, Path(__file__).resolve()):
         pin(path)
-    for path in (labels_path, tokenizer_path, ROOT / targets["source"]):
+    for path in (labels_path, tokenizer_path, targets_path, ROOT / targets["source"]):
         pin(path, protocol["input_sha256"][str(path)])
     labels = read(labels_path)
     tokenizer = Tokenizer.from_file(str(tokenizer_path))
@@ -163,10 +167,11 @@ def main():
         return [round(float(v), 3) for v in np.quantile(samples, [0.025, 0.975])]
 
     ablation_path = DATA / "paired_ablation"
-    ablation_receipt = read(ablation_path / "independent_receipt.json")
+    ablation_receipt_path = ablation_path / "independent_receipt.json"
+    ablation_receipt = read(ablation_receipt_path)
     ablation_pred = ablation_path / "predictions.jsonl"
-    for path in (ablation_path / "independent_receipt.json", ablation_pred):
-        pin(path, ablation_receipt.get("input_sha256", {}).get(str(path)))
+    pin(ablation_receipt_path)
+    pin(ablation_pred, ablation_receipt["evidence_sha256"][str(ablation_pred)])
     rows = jsonl(ablation_pred)
     assert len(rows) == 160 and rows.keys() <= labels.keys()
     stages = {
@@ -214,8 +219,7 @@ def main():
         scope="Local software comparisons on balanced GQA Test-Dev. The full runs pair every identical question and use image-cluster resampling. The component ablation covers a separate 160-question panel and informs experiment selection. The paper's exact prompts and split and mapped hardware accuracy remain unverified.",
         input_sha256=inputs,
     )
-    path = DATA / "accuracy_loss_audit.json"
-    path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+    args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     print(
         json.dumps(
             {key: value for key, value in result.items() if key != "input_sha256"},
