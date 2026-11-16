@@ -129,7 +129,16 @@ def connections(names, master, placed):
     return edges, critical, positions
 
 
-def assignment(widths, slots, ports, edges, critical):
+def assignment(
+    widths,
+    slots,
+    ports,
+    edges,
+    critical,
+    *,
+    active_cells=None,
+    displacement_penalty=0.10,
+):
     n = len(slots)
     graph = [dict() for _ in slots]
     for (a, b), weight in edges.items():
@@ -165,7 +174,7 @@ def assignment(widths, slots, ports, edges, critical):
         coeff = torch.where(nbr < n, 0.5, 1.0)
         cost = ((xy[nbr] - xy[:n, None]).abs().sum(-1) * w * coeff).sum().item()
         drift = (xy[:n] - original).abs().sum().item()
-        return cost + 0.10 * drift
+        return cost + displacement_penalty * drift
 
     start = previous = objective()
     for epoch in range(20):
@@ -177,13 +186,16 @@ def assignment(widths, slots, ports, edges, critical):
         )
         options = []
         for group, tree in trees:
+            active = group if active_cells is None else group[active_cells[group]]
+            if not len(active):
+                continue
             count = min(12, len(group))
-            nearby = tree.query(centers[group], k=count, workers=4)[1]
+            nearby = tree.query(centers[active], k=count, workers=4)[1]
             neighbors = tree.query(
-                slot_um[here[group]], k=min(5, len(group)), workers=4
+                slot_um[here[active]], k=min(5, len(group)), workers=4
             )[1]
             candidate = holder[group[np.concatenate((nearby, neighbors), axis=1)]]
-            a = np.broadcast_to(group[:, None], candidate.shape)
+            a = np.broadcast_to(active[:, None], candidate.shape)
             options.append(
                 (
                     np.minimum(a, candidate).reshape(-1),
@@ -210,7 +222,13 @@ def assignment(widths, slots, ports, edges, critical):
                 xy[b] - original[a]
             ).abs().sum(1)
             gain.append(
-                (benefit(a, b) + benefit(b, a) + 0.10 * (drift - swapped)).cpu().numpy()
+                (
+                    benefit(a, b)
+                    + benefit(b, a)
+                    + displacement_penalty * (drift - swapped)
+                )
+                .cpu()
+                .numpy()
             )
         gain = np.concatenate(gain)
         good = np.flatnonzero(gain > 0.08)

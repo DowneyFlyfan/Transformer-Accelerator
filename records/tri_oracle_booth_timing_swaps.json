@@ -1,0 +1,58 @@
+{
+  "assignment": {
+    "active_cells": 1421,
+    "edges": 158074,
+    "graph_score_after": 23195281.04765625,
+    "graph_score_before": 23365376.0,
+    "measured_critical_edges": 1425,
+    "moved_cells": 1617,
+    "peak_gpu_bytes": 36391936,
+    "seed_sha256": "c28782ae3609ee345cebe1adeb3aa44dba9f01546bacb0854f44262cd651324b",
+    "swaps": 1178
+  },
+  "clock_megahertz": 580,
+  "early_congestion": {
+    "estimated_wire_length_um": 4788279,
+    "horizontal_overflow_percent": 0.0,
+    "vertical_overflow_percent": 0.0
+  },
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/emitted.sdc": "90a57f69480991ed0f1e975935669a64faf6b404ceaa06454556cb8c973bd92d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/netlist.v": "4bdd1314a4d8c1bf09ea83eecc1b1d95de6c0e2f473e57b051380a1e259f1661",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/placed.def": "2f4df84fd3d65b3f089d6b02b424034c199ac5d60983920353b9bf2a6a05320d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/assignment.json": "45834406a745a04ec5c8123abac46b337e9d9d8d5f4c8e592e11e3e11e9ecb00",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/console.log": "c9e7efd3b6d8e58271347fb5d9a4d8d7f44a934028296202ab1fc1359d1809a7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/edges.tsv": "1c494608c981497c1684ca7b162b56fef2c49ecf011c371d184eef51855a3a06",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/export.log": "cd89eb61dfff20b86d6a1e26de8393595bddee6fe15ec941aac882738ad76637",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/export.tcl": "259adb94280404ecb95629046368bc48fa123a4370878f01c272bb037c45ccaf",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/native_gate_hold.rpt": "44dd48992d59886d5c6adadf9af3c338e5828dc66e9b000f3c0c85e274eda6ba",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/native_gate_setup.rpt": "fff2cd2fec0e727dcf08e82d669f722789760f54ec24e81bbc1a6d58e064664a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/native_hold.rpt": "bafa2d6975fe2bb035df3985ac9f10dacc0d8bf3a7bfb1958bd77df9e55bd688",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/native_setup.rpt": "837819c97c0f55752ad7c39eebb925812ed28aa11ce333e30daa97b9312a6e79",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/operand_setup.rpt": "2b2b85278c5c23fd3184853896fb860ba9dbea1ff4b2e2b13e70a9def492d572",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/place.tcl": "83bbc116b9d17dc900b152cc170207bbb80d06c0f4851b7b8c97965ba2e57cfa",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/placed.def": "4874b40ffa7cad5792659a3d26e831e1df10547793c521f6db3fae1c36357250",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/placement.rpt": "ac0823bfece4e9cc6ce69cefb80682390491b8ecef2b0283cdce68d8928f89e1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/array/native_placement/control_buffers/timing_swaps/seed.def": "c28782ae3609ee345cebe1adeb3aa44dba9f01546bacb0854f44262cd651324b",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    "records/tri_oracle_booth_control_buffers.json": "f1bd17b876070620281782c595e7f414f5274bdf1ce65aa52994c844064b34ee",
+    "syn/prepare_tri_oracle_booth_timing_swaps.py": "728cf03a43c285e7212ac8202ca3e71d54c280532fad185990295959e76170d2",
+    "syn/prepare_tri_oracle_gpu_array_placement.py": "5bb6d525e3185f25d8069ea95fb5786ba6bf801944978c7d318de1b6bf989667"
+  },
+  "pre_route_slack_after_ns": {
+    "gate_hold": 0.034,
+    "gate_setup": 0.256,
+    "hold": -0.021,
+    "setup": -1.522
+  },
+  "pre_route_slack_before_ns": {
+    "gate_hold": 0.034,
+    "gate_setup": 0.254,
+    "hold": -0.021,
+    "setup": -1.685
+  },
+  "remaining_row_sites": 40021,
+  "scope": "Same standard cells and signal connectivity, same occupied site widths and fixed boundary pins. Native timing uses early wire estimates and an ideal clock.",
+  "state": "booth_array_gpu_ranked_slot_swaps_legally_placed"
+}
