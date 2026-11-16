@@ -1,0 +1,83 @@
+{
+  "answer_generation": {
+    "baseline": {
+      "at_limit": 0,
+      "tokens": 148
+    },
+    "high_rate_calibrated_sign": {
+      "at_limit": 2,
+      "tokens": 621
+    },
+    "high_rate_magnitude": {
+      "at_limit": 0,
+      "tokens": 150
+    },
+    "high_rate_weighted_sign": {
+      "at_limit": 2,
+      "tokens": 511
+    }
+  },
+  "calibration_entries_per_predictor": 5555264,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/high_rate_weighted_sign/inputs.json": "b73ba4bbafc912875d4c656be7171a4219922af99781f263aa6948e4ebfb17ba",
+    ".cache/model_reference/gqa_testdev/high_rate_weighted_sign/paired_runner.py": "a31ad712f2008cc1fbb6cd14e3e0f0abb50e082029aa56603c4a463436ba4fe8",
+    ".cache/model_reference/gqa_testdev/high_rate_weighted_sign/predictions.jsonl": "a03cedbf743b1f489b6f9e0fc1dae7709858d611ac83cf503f1b2a109e37f94c",
+    ".cache/model_reference/gqa_testdev/high_rate_weighted_sign/receipt.json": "f7291314d8045efbe1a22908440231f1a5be9b27a7555a2dcccfe47d4a76ae7c",
+    ".cache/model_reference/gqa_testdev/high_rate_weighted_sign/sign_rank_table.json": "30219aa7bbb6409ceca325416642d8aaee5ae6b0098ec33de9bffde4fda6f7c3",
+    ".cache/model_reference/gqa_testdev/prompt_mask_rate_trials/inputs.json": "4dd99e351a6c81e774c98539689e5104e57c13bbe4dc98aae39ab42bcc3722f4",
+    ".cache/model_reference/gqa_testdev/prompt_mask_rate_trials/predictions.jsonl": "b0bced4c2f26614e949cac9b58c5a65e556b185b68be2825b7ed073c3f145423",
+    ".cache/model_reference/gqa_testdev/prompt_mask_rate_trials/sign_rank_table.json": "638460eff50ebcf50ddd3893dc0e60c65443668d310d88ede4323fcfee14308d",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_prompt_mask_rates.json": "b9fd161b54042b3c8841311cc65fce832122db2f2b72649d9414a31c19f82493",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "syn/evaluate_tri_oracle_weighted_sign_mask.py": "802e1f985030ae6055e3345ed1f8aa9f084a4ff34f7870a1d40cc32d54de9b4d",
+    "syn/verify_tri_oracle_weighted_sign_mask.py": "09f12952ede8715bb14ac35de1608fbee2de808fb1a44b8f26a3af223017979e"
+  },
+  "held_out_questions": 67,
+  "label_free_calibration_images": 16,
+  "paired": {
+    "high_rate_calibrated_sign": {
+      "baseline": 34,
+      "candidate": 0,
+      "first_token_changed": 67,
+      "gained": 0,
+      "lost": 34,
+      "paired_exact_two_sided_p_value": 1.1641532182693481e-10,
+      "prompt_skip_percent": 57.82438180145502
+    },
+    "high_rate_magnitude": {
+      "baseline": 34,
+      "candidate": 35,
+      "first_token_changed": 13,
+      "gained": 3,
+      "lost": 2,
+      "paired_exact_two_sided_p_value": 1,
+      "prompt_skip_percent": 57.823702874266644
+    },
+    "high_rate_weighted_sign": {
+      "baseline": 34,
+      "candidate": 0,
+      "first_token_changed": 67,
+      "gained": 0,
+      "lost": 34,
+      "paired_exact_two_sided_p_value": 1.1641532182693481e-10,
+      "prompt_skip_percent": 57.825285121682725
+    }
+  },
+  "peak_device_bytes": 7953058816,
+  "scope": "The sign-based scores use weight signs independently of the full gate and up products. The weighted mode adds two-bit residual magnitudes for outliers. The software replay applies each predicted mask and keeps the first prompt row's archived skip count. Mapped predictor cost, memory traffic, full-benchmark accuracy and paper protocol remain open.",
+  "state": "high_rate_weighted_sign_independently_rescored",
+  "two_bit_outlier_levels": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "weighted_vs_unweighted_on_same_questions": {
+    "different_token_sequences": 65,
+    "gained": 0,
+    "lost": 0
+  }
+}
