@@ -1,0 +1,49 @@
+{
+  "added_buffers": 175,
+  "added_row_sites": 2100,
+  "buffered_sparse_array_slack_ns": {
+    "gate_hold": 0.019,
+    "gate_setup": 0.349,
+    "hold": -0.021,
+    "setup": -2.456
+  },
+  "clock_megahertz": 580,
+  "delivered_lockstep_transactions": 786,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/console.log": "cc55646b552f768c0becbe5b39a6e00e11ca255037dfa2555d5800c3d6ca35bb",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/emitted.sdc": "e7b2830b4c1f6cbf6b8999b8bd0fa7c3a58acd4429b6ebf81b4da0b1b229ebb6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/native_gate_hold.rpt": "7a8b979862b60d1edc293ba34a0053b285fad5bce05b14e6da42c2b450d2ba17",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/native_gate_setup.rpt": "d7a41105207344e63636f4f21dc63d552f907f78ddaa4ebf832c9f7fbab21d07",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/native_hold.rpt": "90c32f40c86eacb79625d2505cf4e49aae4467603b05b43cce07b2a1439631ee",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/native_setup.rpt": "3c6fac7a1450baa5cb4373ca23df1e49a125bd60443099c9ae7974b1b1ce2cd2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/netlist.v": "523cee650ba40dc296979f2167f74307467eea9e762567ff79e721e753455cb9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/place.tcl": "c743b976723d20a3f0659dd797f4cdd6b5cb01bbcf156ba3482932025a4b4efd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/placed.def": "f65d7bb03967b65f8e3b99879ec3ec3ebae7755d619b6e6f5b63967b92a26f13",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/placement.rpt": "11c594a0044b4b23676e87f21c1402e5b0c689dbc4931e817e84af5dd89f0da2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/replay/console.log": "e31157e258a948f340183d5bfe2f172e38c12ef43e493db92ae0b3463581bbd8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/replay/decoupled_mapped.v": "c43ba99a204a9a9fb2491dead52af7b0c39cc5b6afed0980a3890010b37a5191",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/replay/xrun.history": "7fe2f67759d2e294228416977265eff13aafdc1f77bc456cc221e6a9b9221315",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/seed.def": "a8c5a7fabc6156f7f007148e083e499f9452846b1525c7f8fe5575ce01c666da",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/native_placement/placed.def": "b81bc9e3057c4a395328d1bfb380cdb67f7596adc9042df5bc4d779373f9341a",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    "records/tri_oracle_booth_control_buffers.json": "f1bd17b876070620281782c595e7f414f5274bdf1ce65aa52994c844064b34ee",
+    "records/tri_oracle_sparse_booth_array_placement.json": "92766d24bbe0e07a1f51269fbc6c73c5dc7893d6aab7e9a825bbeb4cf820c103",
+    "syn/verify_tri_oracle_array_control_buffers.py": "c34b4e82b5107026180930e4595223fcfe84cf36a9b2d3044a800961e91b3085",
+    "syn/verify_tri_oracle_sparse_booth_control_buffers.py": "f1a2b383272e64c897d6c192a72767d5542ecc2f01557918b0fce52cd86ab166"
+  },
+  "prior_booth_with_same_buffer_recipe_slack_ns": {
+    "gate_hold": 0.034,
+    "gate_setup": 0.254,
+    "hold": -0.021,
+    "setup": -1.685
+  },
+  "remaining_sites": 51285,
+  "same_array_unbuffered_slack_ns": {
+    "gate_hold": 0.019,
+    "gate_setup": 0.353,
+    "hold": -0.021,
+    "setup": -3.668
+  },
+  "scope": "One 32-by-8 array with the verified queue-control buffer recipe. Original placements and boundary ports are preserved. Early wire estimates and ideal clocks are used.",
+  "state": "sparse_booth_control_buffers_placed_and_lockstep_verified"
+}
