@@ -1,0 +1,55 @@
+{
+  "after_slack_ns": {
+    "gate_hold": 0.019,
+    "gate_setup": 0.344,
+    "hold": -0.021,
+    "setup": -1.793
+  },
+  "assignment": {
+    "active_cells": 1266,
+    "displacement_penalty": 0.25,
+    "edges": 143482,
+    "graph_score_after": 24020356.751953125,
+    "graph_score_before": 24580668.0,
+    "measured_critical_edges": 1270,
+    "moved_cells": 2050,
+    "peak_gpu_bytes": 32628736,
+    "seed_sha256": "e2ab84c5b13820b932174f364c9447bf4b9547c61a1abbe12eaf9bb3c6766b91",
+    "swaps": 1750
+  },
+  "before_slack_ns": {
+    "gate_hold": 0.019,
+    "gate_setup": 0.349,
+    "hold": -0.021,
+    "setup": -2.456
+  },
+  "clock_megahertz": 580,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/netlist.v": "523cee650ba40dc296979f2167f74307467eea9e762567ff79e721e753455cb9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/placed.def": "f65d7bb03967b65f8e3b99879ec3ec3ebae7755d619b6e6f5b63967b92a26f13",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/assignment.json": "569290b04af0d3dde44999e30febed50e28693b0803125bea664ee1bfa5ee419",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/console.log": "9cd7f67232c465da77eebe87439d3cce98dab8712af1f90e20cba909db4bf4a1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/edges.tsv": "eb02d10977b9c8e9da1108a9ff54225df779e96f5faa9470f2f81ce04dce7608",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/export.log": "6d751cd9cda7d81ac2c54388e4625358d125fb62deacacc748d8be658c64d9bd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/export.tcl": "cb24d596ea8be20a41959f5b7036d56f49de6ce2b9f172650ed8bd586c3585a1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/native_gate_hold.rpt": "a0245d03adcdabbaa413d2a30d1c846630bf0aeb259eb63147e092e87e26131e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/native_gate_setup.rpt": "ef107e22284ae5ca86bccbd0c26b648668de01d174d5e51de46a7094136f98ce",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/native_hold.rpt": "7e2e9f2fcbfeb9649f1aaf1180ac92e499c760c4d17b37efa1b347de1345fe11",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/native_setup.rpt": "fd85851a7fd03ac00025aafd7b858e7a7369a2d177c48d78eb67cf578fd8f6d5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/operand_setup.rpt": "3919fcafd955ae042429ffdb01d5aa87e562f6d5d120effc3234c36251d8403c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/place.tcl": "c743b976723d20a3f0659dd797f4cdd6b5cb01bbcf156ba3482932025a4b4efd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/placed.def": "2fc7add6ddbfed8a239d3e9716b19d32a98f36fa982f3d093020db92cd25e3f0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/placement.rpt": "a272111d32b6204d199e2d6a8b476de9e1070d18239281dabd580065161791c8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/timing_swaps/seed.def": "e2ab84c5b13820b932174f364c9447bf4b9547c61a1abbe12eaf9bb3c6766b91",
+    ".cache/physical/whole_chip_xcelium_speed/gated_array_placement/region.def": "8398f065948b088b999ba1d4663806dc4166e378eea1ee7e5a5ec0048a988d61",
+    "records/tri_oracle_sparse_booth_control_buffers.json": "c35c812b11a5747b8f05bc104a0630c0c5e624d5ae885ba6de48ed4c5fe2353d",
+    "syn/prepare_tri_oracle_booth_timing_swaps.py": "728cf03a43c285e7212ac8202ca3e71d54c280532fad185990295959e76170d2",
+    "syn/prepare_tri_oracle_gpu_array_placement.py": "5bb6d525e3185f25d8069ea95fb5786ba6bf801944978c7d318de1b6bf989667",
+    "syn/prepare_tri_oracle_sparse_booth_timing_swaps.py": "a541cfcb7460e8fd89261bac82a126d6dc2a6467bf1a0ec741e7b3461bc3b8c1"
+  },
+  "remaining_row_sites": 51285,
+  "same_netlist_and_row_sites": true,
+  "scope": "One array. The mapped netlist, occupied site dimensions, boundary geometry and earlier lockstep result are preserved. Innovus uses early wire estimates and ideal clocks.",
+  "state": "sparse_booth_array_timing_weighted_slot_swaps_measured"
+}
