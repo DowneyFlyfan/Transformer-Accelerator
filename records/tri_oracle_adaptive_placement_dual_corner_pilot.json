@@ -1,0 +1,49 @@
+{
+  "cases": {
+    "tri_oracle_pe_array_verified_bank0": {
+      "changed_cells": 31384,
+      "fixed_cells": 17257,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.36187,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.470779,
+          "setup_slack_ns": -0.108909
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.469487,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.670129,
+          "setup_slack_ns": -1.200642
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1": {
+      "changed_cells": 32553,
+      "fixed_cells": 17257,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.105693,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.38395,
+          "setup_slack_ns": -0.278257
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.156175,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.6347,
+          "setup_slack_ns": -1.478525
+        }
+      }
+    }
+  },
+  "clock_target_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/dual_corner_locality/prepared.json": "1505c798e196b72ead142f42c3cfdc6c12ae5d2989b95d874104efee11dc72c1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/dual_corner_locality/run.py": "63ee52ad69964057730ab91d2bb18f152c2cc2ac533ba4469b54d9864123613a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/dual_corner_locality/verified.json": "bc9908b63aaafcf691eace0635d2c61336986d78220429524f7633fceb9f289c",
+    "records/tri_oracle_adaptive_placement_fast_corner_timing.json": "c09e1714e966a3d39a36ebdc6253d7499877853cdaee38c166eef156992eaf00"
+  },
+  "scope": "Two most limiting fast-corner array regions. Identical netlist, occupied slots and estimated wiring method. Real routing and clock distribution are outside the measurement.",
+  "state": "same_sites_dual_corner_critical_path_placement_measured"
+}
