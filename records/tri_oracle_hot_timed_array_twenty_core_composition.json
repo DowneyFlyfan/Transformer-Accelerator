@@ -1,0 +1,212 @@
+{
+  "component_replay_transactions_per_partition": 786,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/verified.json": "161059c5f24802bfcf7b8b7d4a77a0b5889d369e3548b0d597943c889f3c1184",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/publish_chip_candidate.py": "a2a36b624c539b9c2f1c62cd9851ac8a02bfee0599093e68f01a10920999817a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/verified.json": "426b463b0c155943b1e8fa9d9555dc27cc91c6a687b0b517a939579e32c0d9a7",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/verified_reset_replays.json": "856b34f6f2bbf7484fca945d7d0cff173c4e0ecc5c00537af19f4ec12494dd52",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd"
+  },
+  "exact_timing_layout_translations": 1,
+  "fixed_macros": 631,
+  "legal_row_assignments": 20,
+  "mapped_array_cells": 54141,
+  "nominal_die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "original_nonarray_def_content_sha256": "e9dd6cb2c7689ea69a2eb9f248be83449ea51f68b6fac81d6665c6acc8eed71d",
+  "original_parent_modules_preserved": 673,
+  "placement_methods": {
+    "exact_rigid_copy": 1,
+    "greedy_0": 16,
+    "greedy_5": 1,
+    "integer_patterns": 2
+  },
+  "regions": [
+    {
+      "maximum_displacement_um": 1349.86,
+      "median_displacement_um": 368.2,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank0",
+      "rigid_invalid_cells": 41449,
+      "sites_available": 607560,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1142.32,
+      "median_displacement_um": 321.28,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank0_1",
+      "rigid_invalid_cells": 41468,
+      "sites_available": 532784,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1406.16,
+      "median_displacement_um": 339.12,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank0_2",
+      "rigid_invalid_cells": 46922,
+      "sites_available": 539039,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 0.0,
+      "median_displacement_um": 0.0,
+      "method": "exact_rigid_copy",
+      "name": "tri_oracle_pe_array_verified_bank0_3",
+      "rigid_invalid_cells": 0,
+      "sites_available": 529848,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1204.32,
+      "median_displacement_um": 328.36,
+      "method": "integer_patterns",
+      "name": "tri_oracle_pe_array_verified_bank1",
+      "rigid_invalid_cells": 41968,
+      "sites_available": 535887,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1354.84,
+      "median_displacement_um": 401.3,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank1_1",
+      "rigid_invalid_cells": 44725,
+      "sites_available": 541061,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1359.12,
+      "median_displacement_um": 319.12,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank1_2",
+      "rigid_invalid_cells": 45955,
+      "sites_available": 533857,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1344.62,
+      "median_displacement_um": 296.08,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank1_3",
+      "rigid_invalid_cells": 39298,
+      "sites_available": 577716,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1190.36,
+      "median_displacement_um": 355.14,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank2",
+      "rigid_invalid_cells": 45246,
+      "sites_available": 582349,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1288.62,
+      "median_displacement_um": 229.9,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank2_1",
+      "rigid_invalid_cells": 40617,
+      "sites_available": 556601,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1381.52,
+      "median_displacement_um": 368.28,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank2_2",
+      "rigid_invalid_cells": 44210,
+      "sites_available": 541803,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1095.16,
+      "median_displacement_um": 302.5,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank2_3",
+      "rigid_invalid_cells": 44951,
+      "sites_available": 540032,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1148.1,
+      "median_displacement_um": 299.52,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank3",
+      "rigid_invalid_cells": 44612,
+      "sites_available": 535016,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1404.74,
+      "median_displacement_um": 377.16,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank3_1",
+      "rigid_invalid_cells": 42909,
+      "sites_available": 560726,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1389.3,
+      "median_displacement_um": 325.86,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank3_2",
+      "rigid_invalid_cells": 43489,
+      "sites_available": 549754,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1431.92,
+      "median_displacement_um": 311.98,
+      "method": "greedy_5",
+      "name": "tri_oracle_pe_array_verified_bank3_3",
+      "rigid_invalid_cells": 47734,
+      "sites_available": 536732,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1426.64,
+      "median_displacement_um": 289.92,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank4",
+      "rigid_invalid_cells": 42887,
+      "sites_available": 547681,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1299.26,
+      "median_displacement_um": 239.18,
+      "method": "integer_patterns",
+      "name": "tri_oracle_pe_array_verified_bank4_1",
+      "rigid_invalid_cells": 41149,
+      "sites_available": 530649,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1246.1,
+      "median_displacement_um": 304.46,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank4_2",
+      "rigid_invalid_cells": 44425,
+      "sites_available": 549212,
+      "sites_per_core": 524405
+    },
+    {
+      "maximum_displacement_um": 1364.04,
+      "median_displacement_um": 275.64,
+      "method": "greedy_0",
+      "name": "tri_oracle_pe_array_verified_bank4_3",
+      "rigid_invalid_cells": 42043,
+      "sites_available": 587541,
+      "sites_per_core": 524405
+    }
+  ],
+  "reset_partitions_verified": 8,
+  "scope": "The constructed chip retains the original nonarray placement, macros, region and group declarations, and parent logic. The host checked every regional assignment and parent reset lineage. Exact replacement definitions passed mapped array replays for each reset partition. Repacked neighboring regions and the integrated candidate still require native placement reload and timing verification.",
+  "state": "whole_chip_host_replacement_and_reset_variant_replays_verified",
+  "total_placed_standard_cells": 3859247
+}
