@@ -1,0 +1,146 @@
+{
+  "control_gate_slow_setup_paths": {
+    "previous": {
+      "TRI_ARRAY_CTL_0_25/I": {
+        "appears_in_sample": 9
+      },
+      "TRI_ARRAY_CTL_0_28/Z": {
+        "appears_in_sample": 29
+      },
+      "TRI_ARRAY_CTL_2_1/I": {
+        "appears_in_sample": 20
+      },
+      "TRI_ARRAY_CTL_2_27/Z": {
+        "appears_in_sample": 40
+      }
+    },
+    "resized": {
+      "TRI_ARRAY_CTL_0_25/I": {
+        "appears_in_sample": 0
+      },
+      "TRI_ARRAY_CTL_0_28/Z": {
+        "appears_in_sample": 0
+      },
+      "TRI_ARRAY_CTL_2_1/I": {
+        "appears_in_sample": 0
+      },
+      "TRI_ARRAY_CTL_2_27/Z": {
+        "appears_in_sample": 0
+      }
+    }
+  },
+  "early_route_overflow_percent": {
+    "horizontal": {
+      "previous": 0.02,
+      "strengthened": 0.02
+    },
+    "vertical": {
+      "previous": 0.0,
+      "strengthened": 0.0
+    }
+  },
+  "equivalent_output_bits": 610,
+  "equivalent_primitive_input_pins": 135958,
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/archive.py": "fd8fb805abc58e4765de7a4a7ee58092391b33eae634524c2b940f0fd86ab6eb",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/native_candidate/overlap.json": "2e41548585549b8ef22fb7bdfaa401a4f4f6591d8c834db16d77dbdc7965a9ec",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/native_candidate/prepared.json": "54c733d3f21e6a0fe46653263b57ddc8ad34e9782a09d13459fa68d677043af1",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "5636c65f3c7e6317357ebecc589d118eeb4c8bcd091211581823590f16f3804e",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "4d0f18ce54066b4e059273fea72b2491045ae69dc24efa226dc2f0477c31a35f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/native_candidate/verified.json": "754d97439a6fdbae01c02752d4b5383c017192eda18baaa9f6f0d88efb0499b8",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/prepared.json": "0a5a259fd0b09fc21297e6330abe3eb0e50710abb42656d427941f5ca9c976cf",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/replay/verified.json": "312fbe19be0d99ccdebde641f80afa38b70b49fe331e91c59d52168d7b462aef",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "86b572f1ece52e12d733b76733971660a09a473a0f39669169e065db57345c20",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "d46b4022fc33b972c8b4a7d59bb1f6c8a8cbac148a0000d06cccb8cc241be767",
+    "records/tri_oracle_bank4_2_control_drive_native.json": "e870b4ac35d4c0c1175e7bceb31e039b4d71b28c3ea772ac2cab5abd83453794",
+    "records/tri_oracle_bank4_2_control_repeat_native.json": "0c3709b9fdc1c75f4c2d855a398853bf01f70985013e40595753d2eb74ed8643"
+  },
+  "matched_boundary_pins": 4967,
+  "paper_clock_mhz": 580,
+  "qualifies_as_preferred_regional_candidate": false,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "resized_cells": {
+    "TRI_ARRAY_CTL_0_28": {
+      "center_geometry_cost_after": 591511.5498825,
+      "center_geometry_cost_before": 1529992.4848825,
+      "internal_incoming_cells": 1,
+      "internal_outgoing_cells": 8,
+      "manhattan_move_um": 797.1,
+      "previous_dbu": [
+        1411440,
+        697600
+      ],
+      "previous_master": "BUFFD8BWP12T40P140",
+      "previous_orientation": "FS",
+      "resized_dbu": [
+        374040,
+        1254400
+      ],
+      "resized_master": "BUFFD16BWP12T40P140",
+      "resized_orientation": "FS",
+      "width_increase_dbu": 2800
+    },
+    "TRI_ARRAY_CTL_2_27": {
+      "center_geometry_cost_after": 701121.2970570001,
+      "center_geometry_cost_before": 1152565.334025,
+      "internal_incoming_cells": 1,
+      "internal_outgoing_cells": 8,
+      "manhattan_move_um": 772.78,
+      "previous_dbu": [
+        1414240,
+        755200
+      ],
+      "previous_master": "BUFFD8BWP12T40P140",
+      "previous_orientation": "FS",
+      "resized_dbu": [
+        367880,
+        1254400
+      ],
+      "resized_master": "BUFFD16BWP12T40P140",
+      "resized_orientation": "FS",
+      "width_increase_dbu": 2800
+    }
+  },
+  "scope": "Two queue buffer drive-strength changes and relocations to legal free sites. Identical boundary pins, reserved sites, clock constraints, and analysis views. Isolated early global routing for a compute region with ideal clocks.",
+  "state": "bank4_2_two_queue_branch_drive_substitutions_xcelium_and_innovus_measured",
+  "timing": {
+    "fast_hold": {
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_ns": 0.0,
+      "launch": "completed_results_reg[1][534]/CP",
+      "previous_ns": -0.012664,
+      "strengthened_ns": -0.012664
+    },
+    "fast_hot_setup": {
+      "capture": "carry_save.row[30].value_reg[12]/SA",
+      "change_ns": 0.000666,
+      "launch": "running_valid_reg[3]/CP",
+      "previous_ns": -1.412719,
+      "strengthened_ns": -1.412053
+    },
+    "fast_setup": {
+      "capture": "running_valid_reg[3]/D",
+      "change_ns": 0.004379,
+      "launch": "running_valid_reg[3]/CP",
+      "previous_ns": -1.355542,
+      "strengthened_ns": -1.351163
+    },
+    "slow_setup": {
+      "capture": "carry_save.row[5].value_reg[17]/DB",
+      "change_ns": -0.009381,
+      "launch": "carry_save.row[5].carry_reg[2]/CP",
+      "previous_ns": -1.875586,
+      "strengthened_ns": -1.884967
+    },
+    "typical_setup": {
+      "capture": "carry_save.row[5].value_reg[18]/DB",
+      "change_ns": -0.00286,
+      "launch": "carry_save.row[5].carry_reg[2]/CP",
+      "previous_ns": -1.101604,
+      "strengthened_ns": -1.104464
+    }
+  },
+  "unchanged_cell_placements": 54139,
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.331
+}

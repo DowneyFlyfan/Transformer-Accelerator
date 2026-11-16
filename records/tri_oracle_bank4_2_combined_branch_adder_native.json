@@ -1,0 +1,89 @@
+{
+  "adder_swap": {
+    "donor": "mul_98_69_I65_g1474",
+    "primary": "add_150_34_I6_g2606"
+  },
+  "early_route_overflow_percent": {
+    "horizontal": 0.02,
+    "vertical": 0.0
+  },
+  "equivalence_source_netlist_sha256": "951cb55733c740dca89c3798ac1e7d592e16c963bae6dbfe64c87a59c972620c",
+  "evidence_sha256": {
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/adder_site/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "af33d8364907cd811e3871b2a51ad6b87b8578992e22633f5d78ea5f3153aff9",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/archive.py": "3cc3cc6a772653e658a27ceabaa7dbfa991d1f87020496341d42471a08ee1e25",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/native_candidate/overlap.json": "8a678e32d99a992dd907fb91b2d98765f306bc387bb0541019de853c7f42d43a",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/native_candidate/prepared.json": "d3c1ed55f26964a525607f6789efa016fd865170a48129ceab3af9ac1392688f",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "709835f1583643b2f4b02eba34b3d0ad2d16a99fe19c2da47f8dc3ce8cdbc0e7",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_slow_broader_setup.rpt": "3bf336e17f59a5d424a8c53c33b55c65164b89162f638203103571d2dea15332",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/setup_typ_broader_setup.rpt": "0d5d66e8b4b170ddee3b35bc12618a8d48edcb554bba8529481d62995e858099",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/native_candidate/verified.json": "9f9b976512a1e40ad419bc4f775c30ee55652424e60f36ab58c9b95e60b0ac1b",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/prepared.json": "1b85909b30b844dfa5772a3e500c1e8de48c83d864b0a1441d2a2a8d6172043d",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_adder/replay/verified.json": "c8751c7f36d3944aef11288243793e4cdae1c8c99a16ca05d07b03a28cb06c81",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/branch_strengthen/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "5636c65f3c7e6317357ebecc589d118eeb4c8bcd091211581823590f16f3804e",
+    ".cache/physical/host_opensta/calibration/latest_twenty/native_bank4_2/control_drive/native_candidate/tri_oracle_pe_array_verified_bank4_2/native/after.def": "86b572f1ece52e12d733b76733971660a09a473a0f39669169e065db57345c20",
+    "records/tri_oracle_bank4_2_adder_site_native.json": "5ce025abebab8b4c714eb860b20c520866a6fd0b4dc8e5663ecb5ca40fcf15ba",
+    "records/tri_oracle_bank4_2_control_drive_native.json": "e870b4ac35d4c0c1175e7bceb31e039b4d71b28c3ea772ac2cab5abd83453794",
+    "records/tri_oracle_bank4_2_control_repeat_native.json": "0c3709b9fdc1c75f4c2d855a398853bf01f70985013e40595753d2eb74ed8643",
+    "records/tri_oracle_bank4_2_queue_branch_drive_native.json": "ae40577d2eea049a285ef6c2a319543198c1dc8ab4960442b60cba8f7a6b7bb6"
+  },
+  "matched_boundary_pins": 4967,
+  "paper_clock_mhz": 580,
+  "qualifies_as_preferred_regional_candidate": false,
+  "region": "tri_oracle_pe_array_verified_bank4_2",
+  "scope": "Exact union of two local physical changes at matched clock constraints and boundary pins. Native regional early global routing and timing use ideal clocks.",
+  "state": "bank4_2_combined_queue_drive_and_adder_sites_measured",
+  "strengthened_buffers": [
+    "TRI_ARRAY_CTL_0_28",
+    "TRI_ARRAY_CTL_2_27"
+  ],
+  "timing": {
+    "fast_hold": {
+      "adder_swap": -0.012664,
+      "capture": "completed_results_reg[1][534]/DA",
+      "change_from_preferred_ns": 0.0,
+      "combined": -0.012664,
+      "launch": "completed_results_reg[1][534]/CP",
+      "preferred": -0.012664,
+      "queue_buffers": -0.012664
+    },
+    "fast_hot_setup": {
+      "adder_swap": -1.662713,
+      "capture": "carry_save.row[14].value_reg[3]/SA",
+      "change_from_preferred_ns": -0.006138,
+      "combined": -1.418857,
+      "launch": "running_valid_reg[3]/CP",
+      "preferred": -1.412719,
+      "queue_buffers": -1.412053
+    },
+    "fast_setup": {
+      "adder_swap": -1.604843,
+      "capture": "running_valid_reg[3]/D",
+      "change_from_preferred_ns": 0.029492,
+      "combined": -1.32605,
+      "launch": "running_valid_reg[3]/CP",
+      "preferred": -1.355542,
+      "queue_buffers": -1.351163
+    },
+    "slow_setup": {
+      "adder_swap": -2.125341,
+      "capture": "carry_save.row[14].value_reg[3]/SA",
+      "change_from_preferred_ns": 0.086252,
+      "combined": -1.789334,
+      "launch": "shadow_valid_reg[3]/CP",
+      "preferred": -1.875586,
+      "queue_buffers": -1.884967
+    },
+    "typical_setup": {
+      "adder_swap": -1.192824,
+      "capture": "carry_save.row[26].value_reg[17]/SA",
+      "change_from_preferred_ns": 0.160047,
+      "combined": -0.941557,
+      "launch": "shadow_valid_reg[3]/CP",
+      "preferred": -1.101604,
+      "queue_buffers": -1.104464
+    }
+  },
+  "unchanged_component_placements": 54137,
+  "xcelium_lockstep_transactions": 786,
+  "xcelium_seconds": 5.233
+}
