@@ -1,0 +1,34 @@
+{
+  "cases": {
+    "tri_oracle_pe_array_verified_bank0_2": {
+      "delta_early_route_slack_ns": 0.089856,
+      "moved_cells": 1301,
+      "native_early_route_setup_slack_ns": -1.82982,
+      "path_link_span_um_before_after": [
+        16734.16,
+        8645.62
+      ],
+      "source_early_route_slack_ns": -1.919676
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "delta_early_route_slack_ns": 0.078897,
+      "moved_cells": 1296,
+      "native_early_route_setup_slack_ns": -1.526712,
+      "path_link_span_um_before_after": [
+        16764.68,
+        10912.02
+      ],
+      "source_early_route_slack_ns": -1.605609
+    }
+  },
+  "clock_rate_mhz": 580,
+  "control_seed_sha256": "3d2c31e3db201c57e6f4384f6152aba2f32dbbf511f293cd3fdb257a8a504dd8",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/extracted_path_swaps/prepared.json": "956f7291552ece8056c7003bf937c5f5c6fb539ca575630f99bc104004662cd1",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/extracted_path_swaps/verified.json": "dd0d9f25b08ff172756304b7f0a38afa0dfd84c36a08957fd500386b9b171831",
+    "records/tri_oracle_isolated_early_route_timing_gap.json": "588b6376b9c893db3c91fb6b0dda3ca0251041f52c97f7b3cc97c47f9b6497c3",
+    "records/tri_oracle_remaining_regions_timing_and_seed.json": "11b6d4bc4ca0759c8049fe0290204e528d1429b6a2f02e2813fb06e37843cb34"
+  },
+  "scope": "Placement trial on two isolated compute arrays. The moves used reported net delays from early global routing and kept the occupied placement sites. Both arrays still violate setup and these changes remain experimental.",
+  "state": "isolated_extracted_critical_path_region_placement_trial_verified"
+}
