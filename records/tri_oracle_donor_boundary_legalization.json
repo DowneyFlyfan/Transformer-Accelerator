@@ -1,0 +1,68 @@
+{
+  "boundary_shift_um": 9.6,
+  "donor": {
+    "control": {
+      "avg_move_um": 0.0,
+      "instances": 55520,
+      "max_move_um": 0.0,
+      "physical_pins": 4968,
+      "relocated": 0,
+      "setup_slack_ns": -3.432944
+    },
+    "recut": {
+      "avg_move_um": 183.5176376146789,
+      "instances": 55520,
+      "max_move_um": 427.76,
+      "physical_pins": 4968,
+      "relocated": 872,
+      "setup_slack_ns": -3.07256
+    }
+  },
+  "donor_array": "tri_oracle_pe_array_verified_bank0",
+  "donor_native_legalization_trials": {
+    "native": {
+      "relocated": 872,
+      "remaining_placement_violations": 0
+    },
+    "native_search_150": {
+      "relocated": 692,
+      "remaining_placement_violations": 180
+    },
+    "native_short_search": {
+      "relocated": 41,
+      "remaining_placement_violations": 831
+    }
+  },
+  "donor_slack_improvement_ns": 0.360384,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/logic_identity.json": "7edda07b1c1460ccf2880185b2d19a468582a4f3753e130272f82491cb70bc5a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/receiving_capacity.json": "bcad99d59d3d87aab3061c94678e29becd461b65da02d74ec517be876459d17f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native/before.rpt": "3e54283eeb55cf4335a9b797f68d3dfeb7cd68cbc0f2354cae25b205acf790a3",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native/console.log": "d5dec3e0736682c8d8cc270e9417f6466951e38f83eff722d70ae8982c152443",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native/status.json": "5fc0749695a60455e7f6473d4385f1e2fce3534f73f370dc9a916214fd17a260",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native_search_150/before.rpt": "d0304152e9c5de99e3c9efea18319df22876e83471663a041636dca66abdf0ff",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native_search_150/console.log": "d1b74110f268c53315a5219f5f9d58a3ee7d7800477b6f3863daeba1d2104824",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native_search_150/status.json": "c37a9631fe72e39b37550d4ab1aa9a4ac2d46332371914318eefb468c00bc285",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native_short_search/before.rpt": "dad817531730b298f666bd443a6cd7c83d7d4bb167a5aaafca365cf7282ed3a5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native_short_search/console.log": "453e6b8c977d757183d60d28cd3dcb1a30430069e98d9b5e5eb8b16fbb6de559",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/recut/tri_oracle_pe_array_verified_bank0/native_short_search/status.json": "1a19d88be5a3abd09f2469fd3a93c1981d7b18046a6fbf8334c9bfc89458ab1a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/recut_legalization/verified.json": "29fe7a9e6e4c39a610433b392742ea0675f74e2550de677fc0f4c5683f889d60"
+  },
+  "ideal_clock_rate_mhz": 580,
+  "receiving_array_site_balance": {
+    "availability_before_donor_move": 550052,
+    "available_sites": 559168,
+    "optimized_array_requested_sites": 549786,
+    "overlaps_to_legalize": 14717,
+    "surplus_sites": 9382,
+    "target_region_bounds_dbu": [
+      1819960,
+      5713600,
+      3599920,
+      7158400
+    ],
+    "vacated_sites": 9116
+  },
+  "scope": "The donor matches the whole-chip netlist and retains its original boundary pins in a paired regional diagnostic. Only the 872 cells crossing the 9.6 micrometer cut moved. The receiving array still needs legalization and timing verification. Whole-chip timing was not measured.",
+  "state": "donor_boundary_shift_legalized_receiving_array_fit_counted"
+}
