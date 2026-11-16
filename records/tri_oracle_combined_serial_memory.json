@@ -1,0 +1,27 @@
+{
+  "additional_matrix_cycles": 10400,
+  "aligned_read_requests": 4352,
+  "eight_bit_forward_matrix_cycles": 107096,
+  "evidence_sha256": {
+    ".cache/physical/serialized_memory_controls/genus/netlist.v": "3d8bec83af7aae95131743d7d7cfce9f3c171e7c2000f14d2e207822cdc6ebe5",
+    ".cache/physical/whole_chip_xcelium_speed/combined_serial_memory/bundle.sv": "d13a47620c0e019dd5d203ce9237184f60d424c8569eb012f642fc06181af3ab",
+    ".cache/physical/whole_chip_xcelium_speed/combined_serial_memory/full/console.log": "0c7f102062af171e3838ba55e077659280a9d58da5e0dba19a119dce449bf8fb",
+    ".cache/physical/whole_chip_xcelium_speed/combined_serial_memory/full/xrun.history": "bbde1b8b1d69f00a5ba77d5d4da422b81c521dfcc5e1af4c71c9190bbc265031",
+    ".cache/physical/whole_chip_xcelium_speed/combined_serial_memory/trained_tb.sv": "9450cf945de15365499f7b9c811e4989ef1fb12701f69007102bdef47519a2f6",
+    ".cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/genus/netlist.v": "507383750dfc9ac7bbd88678eb2123d88cb30f4ed89801d9d1352e21e139dde2",
+    ".cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/trained_mapped/console.log": "619f920a2ff46e5e082726fd981a1c29a4c9fd27d7863c1696db1546e2f40b0a",
+    "records/tri_oracle_serial_control_pads.json": "c2557d339f7ccbf9a61c380e25d45d5bee7d29c88c636bccfe1715a07de46745",
+    "records/tri_oracle_shared_edge_metadata.json": "43e6955cce56d119af1b841b35950adc6d7309fbbcd1b66a6e1b288f4e065ed0",
+    "syn/compare_tri_oracle_serial_memory_boundary.py": "b7266acff29b8dcaabf3faaab9e46d638b2f55f6d38361634f202030977723f1",
+    "verilog/tri_oracle_serial_flit_bridge.sv": "d4507e4d2b574c98226d0fe4a7915932c3b8c1abd5622c3613b8566c740b93cc"
+  },
+  "forward_link_active_flits": 27840,
+  "forward_link_stalled_cycles": 0,
+  "full_address_read_requests": 0,
+  "matrix_cycle_increase_percent": 10.755356995118722,
+  "scope": "The mapped memory-control cut uses the same archived trained weights and simulated peer as the original run. The outgoing memory requests use eight pins and incoming metadata is shared across clock edges. The measured cycle difference applies to the fixture. The whole chip latency, physical package and report workload remain unverified.",
+  "state": "combined_mapped_memory_links_replayed_exactly",
+  "training_tiles": 78,
+  "twenty_two_bit_forward_matrix_cycles": 96696,
+  "verified_weight_bytes": 11534336
+}
