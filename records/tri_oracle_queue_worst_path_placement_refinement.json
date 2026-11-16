@@ -1,0 +1,39 @@
+{
+  "state": "matched_setup_slack_improvement_after_focused_equal_width_swaps",
+  "scope": "Two isolated buffered one-hot array placements. Host graphics processing ranked equal-width slot exchanges using the most critical early extracted path arcs. Each region retained its occupied slots, reserved geometry, and previously replayed gate netlist. Innovus repeated extraction at the 580 MHz ideal clock target. Whole-chip timing and signoff remain separate.",
+  "occupied_sites_by_cell_count_unchanged": 53862,
+  "clock_mhz": 580,
+  "regions": {
+    "pilot": {
+      "moved_cells": 82,
+      "setup_slack_ns_before_after": [
+        -0.664739,
+        -0.507162
+      ],
+      "gain_picoseconds": 157.577,
+      "worst_launch_pin": "shadow_valid_reg[3]/CP",
+      "worst_capture_pin": "completed_results_reg[2][4]/SA"
+    },
+    "tightest": {
+      "moved_cells": 230,
+      "setup_slack_ns_before_after": [
+        -0.869436,
+        -0.54564
+      ],
+      "gain_picoseconds": 323.796,
+      "worst_launch_pin": "running_valid_reg[3]/CP",
+      "worst_capture_pin": "occupancy_onehot_reg[2]/D"
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/archive_worst_path_refinement.py": "d2fa5bbe2de392adc42c6b8164d7aeda91fc34dd0fe9da82f0dbe1b059e20b2b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/verified.json": "0d8604018c144001681653606b5f5be37ace9eed0bd0124e262baa7ff9371c9f",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/verified.json": "14efe21fda2815bd772af97b98bc06a26a953d53972a7d2e27f206606dfa782b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/physical/prepared.json": "5ab179b1a1ee3d5c4c8a2ac1b5014cd05a71ac8bf818961cda85daa4374847fd",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_shortcut/pilot/worst_path_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "b44eeddf2ea28c2e16908297b3d57a340c555cc866210b16abd95ae90650977a",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_and_leaf/tightest/verified.json": "8fc750dcb5a480f8958454c6f1c3436aa946a685433496f243691b26a765d7e8",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_and_leaf/tightest/worst_path_refinement/verified.json": "600a42a82b91f06c863748ebc0cece6ff59591013d4d72f159b8bebfaa307818",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_and_leaf/tightest/worst_path_refinement/physical/prepared.json": "2c82974f0fb0f0f5af6c28082f6fd1270a5a0cb27a8b572f913a2345b3aadcf2",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/hold_root_and_leaf/tightest/worst_path_refinement/physical/tri_oracle_pe_array/native/timing.rpt": "9f62ddc823bb5e6361d36c0ada3488ae8711ad9f156b6fea27bfc3ca5422532d"
+  }
+}

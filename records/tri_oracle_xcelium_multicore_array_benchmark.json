@@ -1,0 +1,29 @@
+{
+  "compiled_snapshot_median_speedup": 2.7964,
+  "compiled_snapshot_median_wall_seconds": {
+    "eight_workers": 5.631,
+    "single": 15.746500000000001
+  },
+  "compiled_snapshot_run_seconds": {
+    "eight_workers": [
+      5.623,
+      5.639
+    ],
+    "single": [
+      15.569,
+      15.924
+    ]
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/paired_xcelium_multicore/comparison.json": "3865994c59059e478f94ce27cb694724dde68e67291dc3004f48b368ecca4f7e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/paired_xcelium_multicore/snapshot_comparison.json": "12fcf7f5a15bf75eeabf297c9fb1af5f53654acbd4c4b0184de568957fa5fffa"
+  },
+  "fresh_build_and_run_wall_seconds": {
+    "eight_requested_simulation_threads": 22.881,
+    "single": 19.794
+  },
+  "gate_results_checked_per_run": 14452,
+  "scope": "Single mapped array running the same deterministic exact-output comparison in each mode. First-run times include compilation, elaboration, and simulation. Snapshot times include tool startup and simulation and exclude compilation and elaboration. The full-chip run's multicore runtime and peak memory remain to be measured.",
+  "state": "paired_single_and_multicore_xcelium_array_runtime_verified",
+  "timed_clock_edges_per_run": 22058
+}
