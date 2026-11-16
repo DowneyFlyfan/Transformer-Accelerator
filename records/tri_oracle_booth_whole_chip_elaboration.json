@@ -1,0 +1,18 @@
+{
+  "elapsed_seconds": 312,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/elaborate/console.log": "b6661e9f4a531ffab9935cc13f7841fb2effb124bd3e0a38c3406ad1548c5556",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/elaborate/launch.bash": "a24c2e470e20d028858908f709526c8ac6e304d5374ad126c639df91bc8d390b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/elaborate/xrun.log": "1115969d034a335a33dcc13fe1edc52447eef96eec14be4d25b1da9068d516a1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/simulation.sv": "ca34a210540b0b67c3d3e3c9a286bf65952513ddaa919325735e72603f1201e2"
+  },
+  "native_error_or_fatal_diagnostics": 0,
+  "scope": "Xcelium wrote the initial snapshot of the complete linked top. This invocation elaborated the design without executing a functional testbench.",
+  "snapshot_bytes": 4254709466,
+  "snapshot_view": "v",
+  "state": "linked_booth_whole_chip_simulation_snapshot_written",
+  "supervisor_observation": "The wrapper exited at its view-name check because the simulator emitted :v and the check expected :sv. Both native transcripts independently report the same top and regular end of elaboration.",
+  "top": "tri_oracle_chip_credited_request",
+  "xcelium_version": "25.03-s001"
+}

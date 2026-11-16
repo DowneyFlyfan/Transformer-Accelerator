@@ -1,5 +1,6 @@
 """Check exact row-site capacity for the buffered Booth chip geometry."""
 
+import argparse
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
 from contextlib import ExitStack
@@ -30,6 +31,7 @@ ARRAY = Path("records/tri_oracle_booth_array.json")
 PLACEMENT = Path("records/tri_oracle_booth_control_buffers.json")
 REFINED = Path("records/tri_oracle_booth_timing_swaps.json")
 TARGET = Path("records/paper_result_targets.json")
+PACK_OUTPUT = None
 
 
 def read_table(path):
@@ -82,6 +84,7 @@ def prove_region(entry):
         result.update(exact_width_assignment=False)
         return name, result, None
     certificate = sha256()
+    positions = bytearray() if PACK_OUTPUT else None
     assert Counter({width: len(poses) for width, poses in slots.items()}) == DEMAND
     for width, poses in sorted(slots.items()):
         for px, py, _ in sorted(poses):
@@ -94,15 +97,22 @@ def prove_region(entry):
             )
             assert not any(grid[row][col : col + width]), (name, width, px, py)
             grid[row][col : col + width] = b"\x01" * width
-            certificate.update(struct.pack("<III", width, px, py))
+            entry = struct.pack("<III", width, px, py)
+            certificate.update(entry)
+            if positions is not None:
+                positions.extend(entry)
     assert sum(line.count(0) for line in grid) == available - REQUIRED
     result.update(
         exact_width_assignment=True, assigned_widths_sha256=certificate.hexdigest()
     )
+    if positions is not None:
+        (PACK_OUTPUT / f"{name}.bin").write_bytes(positions)
     return name, result, b"".join(grid)
 
 
-def release_parent_cells(cold, sizes, owner, name, region, initial, displaced_widths):
+def release_parent_cells(
+    cold, sizes, owner, name, region, initial, displaced_widths, displaced_locations
+):
     row0, row1, col0, col1 = region_indices(region)
     candidates = []
     for instance, (master, status, x, y, _, _) in components(cold):
@@ -113,7 +123,7 @@ def release_parent_cells(cold, sizes, owner, name, region, initial, displaced_wi
             continue
         width = sizes[master][0] // PITCH
         if col + width <= col1 and np.all(BOARD[row, col : col + width] == 2):
-            candidates.append((width, row, col, instance))
+            candidates.append((width, row, col, instance, master))
     candidates.sort(key=lambda cell: (-cell[0], cell[1], cell[2], cell[3]))
     needed = -initial["raw_site_margin"]
     assert sum(cell[0] for cell in candidates) >= needed
@@ -124,10 +134,14 @@ def release_parent_cells(cold, sizes, owner, name, region, initial, displaced_wi
     )
     cursor = 0
     for stop in [*range(start, len(candidates), 512), len(candidates)]:
-        for width, row, col, _ in candidates[cursor:stop]:
+        for width, row, col, instance, master in candidates[cursor:stop]:
             assert np.all(BOARD[row, col : col + width] == 2)
             BOARD[row, col : col + width] = 0
             displaced_widths[width] += 1
+            if displaced_locations is not None:
+                displaced_locations.append(
+                    (instance, master, LEFT + col * PITCH, BOTTOM + row * HEIGHT)
+                )
         cursor = stop
         _, result, packed = prove_region((name, region))
         if packed is not None:
@@ -173,6 +187,7 @@ def global_assignment(rows, demand):
         return None
     assert Counter({width: len(records) for width, records in slots.items()}) == demand
     signature = sha256()
+    locations = bytearray() if PACK_OUTPUT else None
     for width, positions in sorted(slots.items()):
         for x, y, _ in sorted(positions):
             row, ry = divmod(y - BOTTOM, HEIGHT)
@@ -184,15 +199,25 @@ def global_assignment(rows, demand):
             )
             assert not any(grid[row][col : col + width])
             grid[row][col : col + width] = b"\x01" * width
-            signature.update(struct.pack("<III", width, x, y))
+            entry = struct.pack("<III", width, x, y)
+            signature.update(entry)
+            if locations is not None:
+                locations.extend(entry)
+    if locations is not None:
+        (PACK_OUTPUT / "parent.bin").write_bytes(locations)
     return dict(
         assigned_widths_sha256=signature.hexdigest(),
         remaining_sites=sum(line.count(0) for line in grid),
     )
 
 
-def run():
-    global BOARD, LEFT, BOTTOM, PITCH, HEIGHT, DEMAND, REQUIRED
+def run(export_packing=None):
+    global BOARD, LEFT, BOTTOM, PITCH, HEIGHT, DEMAND, REQUIRED, PACK_OUTPUT
+    PACK_OUTPUT = export_packing
+    if PACK_OUTPUT is not None:
+        PACK_OUTPUT = PACK_OUTPUT.resolve()
+        assert PACK_OUTPUT.is_relative_to(ROOT / ".cache")
+        PACK_OUTPUT.mkdir(parents=True)
     evidence = {}
 
     def pin(path, expected=None):
@@ -293,6 +318,7 @@ def run():
     owner = re.compile(prefix + rb".*?/cores\\\[\d+\\\]/compute/compute/")
     freed = Counter()
     displaced_widths = Counter()
+    displaced_locations = [] if PACK_OUTPUT else None
     previous_population = Counter()
     displaced_cells = displaced_sites = fixed_parent = fixed_parent_sites = 0
     for name, (master, status, x, y, _, _) in components(cold):
@@ -316,6 +342,8 @@ def run():
             displaced_cells += 1
             displaced_sites += sites
             displaced_widths[sites] += 1
+            if displaced_locations is not None:
+                displaced_locations.append((name, master, x, y))
             continue
         row[:] = 2
         fixed_parent += 1
@@ -366,7 +394,14 @@ def run():
         region = regions[name]
         if packed is None:
             result, packed = release_parent_cells(
-                cold, sizes, owner, name, region, first, displaced_widths
+                cold,
+                sizes,
+                owner,
+                name,
+                region,
+                first,
+                displaced_widths,
+                displaced_locations,
             )
             result["raw_site_margin_before_relocation"] = first["raw_site_margin"]
         else:
@@ -461,6 +496,42 @@ def run():
     )
     if floating_placement is not None:
         assert floating_placement["remaining_sites"] == margin
+    if PACK_OUTPUT is not None:
+        assert (
+            floating_placement is not None
+            and len(displaced_locations) == total_relocated_cells
+        )
+        with (PACK_OUTPUT / "displaced.tsv").open("wb") as output:
+            for name, master, x, y in displaced_locations:
+                output.write(
+                    b"\t".join(
+                        (name, master.encode(), str(x).encode(), str(y).encode())
+                    )
+                    + b"\n"
+                )
+        with (PACK_OUTPUT / "fences.tsv").open("wb") as output:
+            for name, region in sorted(prefixes.items()):
+                assert name.endswith(b"/")
+                output.write(region.encode() + b"\t" + name.removesuffix(b"/") + b"\n")
+        with (PACK_OUTPUT / "keepouts.tsv").open("w") as output:
+            boxes = blockages + [
+                tuple(
+                    int(row["keepout_" + field]) for field in ("x1", "y1", "x2", "y2")
+                )
+                for row in pads
+            ]
+            for box in boxes:
+                output.write("\t".join(map(str, box)) + "\n")
+        for artifact in sorted(PACK_OUTPUT.iterdir()):
+            checksum = None
+            if artifact.suffix == ".bin":
+                receipt = (
+                    floating_placement
+                    if artifact.stem == "parent"
+                    else by_region[artifact.stem]
+                )
+                checksum = receipt["assigned_widths_sha256"]
+            pin(artifact.relative_to(ROOT), checksum)
     for helper in (layout, pack, catalog, run):
         pin(Path(helper.__code__.co_filename).resolve().relative_to(ROOT))
     return dict(
@@ -504,4 +575,6 @@ if __name__ == "__main__":
             )
             >= 8 * 1024**2
         )
-    print(json.dumps(run(), indent=2, sort_keys=True))
+    cli = argparse.ArgumentParser(description=__doc__)
+    cli.add_argument("--export-packing", type=Path)
+    print(json.dumps(run(cli.parse_args().export_packing), indent=2, sort_keys=True))
