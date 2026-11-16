@@ -1,0 +1,117 @@
+{
+  "additional_moved_cells": 1675,
+  "candidate_netlist_sha256": "76afde070aa9f536bebb08c6b86a282fd4f73360d6581339abf9dea9bfefdb5c",
+  "cases": {
+    "tri_oracle_pe_array_verified_bank1": {
+      "adopted": true,
+      "changed_cells": 452,
+      "critical_link_span_um": [
+        13319.0,
+        8433.58
+      ],
+      "eligible_cells": 862,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.111059,
+          "prior_setup_slack_ns": -0.278257,
+          "setup_slack_ns": -0.167198
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.184985,
+          "prior_setup_slack_ns": -1.478525,
+          "setup_slack_ns": -1.29354
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank1_3": {
+      "adopted": true,
+      "changed_cells": 602,
+      "critical_link_span_um": [
+        14000.07,
+        6492.23
+      ],
+      "eligible_cells": 1084,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.140814,
+          "prior_setup_slack_ns": -0.201055,
+          "setup_slack_ns": -0.060241
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.287282,
+          "prior_setup_slack_ns": -1.309361,
+          "setup_slack_ns": -1.022079
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4": {
+      "adopted": true,
+      "changed_cells": 621,
+      "critical_link_span_um": [
+        11165.86,
+        4933.48
+      ],
+      "eligible_cells": 1054,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": 0.161683,
+          "prior_setup_slack_ns": -0.201394,
+          "setup_slack_ns": -0.039711
+        },
+        "slow": {
+          "delta_setup_slack_ns": 0.210457,
+          "prior_setup_slack_ns": -1.314762,
+          "setup_slack_ns": -1.104305
+        }
+      }
+    },
+    "tri_oracle_pe_array_verified_bank4_3": {
+      "adopted": false,
+      "changed_cells": 693,
+      "critical_link_span_um": [
+        10799.56,
+        5196.94
+      ],
+      "eligible_cells": 1124,
+      "timing": {
+        "fast": {
+          "delta_setup_slack_ns": -0.032835,
+          "prior_setup_slack_ns": -0.209757,
+          "setup_slack_ns": -0.242592
+        },
+        "slow": {
+          "delta_setup_slack_ns": -0.07175,
+          "prior_setup_slack_ns": -1.328626,
+          "setup_slack_ns": -1.400376
+        }
+      }
+    }
+  },
+  "clock_target_mhz": 580,
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/limited_path_swaps/chip/prepared.json": "4de98a875b3688789c8ecdbb0e164f14b71b6ba543e1eaf036a043556796839b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/limited_path_swaps/chip/seed.def": "4440d8359409636c59fac4a9a5f3cdadf6b33c6f37f0f1c5fb6344971083a32e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/limited_path_swaps/prepared.json": "dcedf0091e08c3c8168aa87f239484587d349514fbb2bc4978704bd4a1e011cb",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/limited_path_swaps/verified.json": "b67bab81a6408392bbbd36e56be4db5704a09ab1ab67bd8d371d22a16cfab015",
+    "records/tri_oracle_dual_corner_placement_selection.json": "fb03fa3aea481f045698ab329d9728bc5a79b36a2211090bf26bcf519864a6bb"
+  },
+  "placement_seed_sha256": "4440d8359409636c59fac4a9a5f3cdadf6b33c6f37f0f1c5fb6344971083a32e",
+  "scope": "Four targeted placement trials with frozen netlist and site occupancy. Three were selected using both timing corners under the original local wire model and incorporated into the full-chip seed. Native reload and routed timing remain separate.",
+  "selected_regions": 3,
+  "selected_timing_ns": {
+    "fast": {
+      "maximum_ns": 0.131841,
+      "median_ns": -0.09651399999999999,
+      "minimum_ns": -0.209757,
+      "regions_meeting_clock": 6
+    },
+    "slow": {
+      "maximum_ns": -0.596799,
+      "median_ns": -1.0065055,
+      "minimum_ns": -1.328626,
+      "regions_meeting_clock": 0
+    }
+  },
+  "state": "additional_same_site_path_swaps_verified_on_whole_chip_seed",
+  "tested_regions": 4
+}

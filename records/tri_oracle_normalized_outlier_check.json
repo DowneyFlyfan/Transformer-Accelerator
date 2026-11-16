@@ -1,0 +1,44 @@
+{
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "evidence_sha256": {
+    ".cache/model_reference/format320/captured_rows.pt": "3569905e763143ec61458315db2014da3a399e18d4d87d561eeed1ff40ebcfea",
+    ".cache/model_reference/three_sigma_outlier_check/measure.py": "a638d4f0a47fcb2c26dde18b3a1725918f63554b0d3bfd29f7283cba043759b1",
+    ".cache/model_reference/three_sigma_outlier_check/verified.json": "1129cc12416f860bc54a094f00686b3d4dbfb9dd8a1e3cd9021194c2cc519870",
+    ".cache/model_reference/tiny_llava_v1/config.json": "60bfce5e16030e01f373023539a96458b764063abe8ca2333fc1f947f053e249",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/format320_multi_image_range_audit.json": "f7040e04f3af6776ae0495343d7ef8b06667d3f46c99eb5ad1c53ded45dba36f"
+  },
+  "paper_figure": "31.6.5",
+  "paper_normalized_std_illustrated": 0.998,
+  "paper_outlier_rate_upper_bound_illustrated_percent": 1,
+  "peak_graphics_memory_bytes": 15730688,
+  "scope": "Signed fixed-point three-sigma detector audited on frozen normalized-input rows from 22 trained layers. This checks input outlier classification against Figure 31.6.5 and floating reference masks. The predicted weight skip rate, model accuracy, and hardware execution remain separately unqualified.",
+  "splits": {
+    "calibration": {
+      "features": 5406720,
+      "fixed_mark_percent": 0.7084517045454546,
+      "fixed_marks": 38304,
+      "fixed_vs_measured_disagreements": 142,
+      "fixed_vs_unit_disagreements": 88,
+      "measured_sigma_marks": 38446,
+      "measured_sigma_mean": 0.9993710515276906,
+      "measured_sigma_sum": 2638.339576033103,
+      "rows": 2640,
+      "unit_sigma_marks": 38392
+    },
+    "held": {
+      "features": 5406720,
+      "fixed_mark_percent": 0.6929154829545454,
+      "fixed_marks": 37464,
+      "fixed_vs_measured_disagreements": 140,
+      "fixed_vs_unit_disagreements": 88,
+      "measured_sigma_marks": 37604,
+      "measured_sigma_mean": 0.9993520951066203,
+      "measured_sigma_sum": 2638.2895310814774,
+      "rows": 2640,
+      "unit_sigma_marks": 37552
+    }
+  },
+  "state": "prompt_residual_three_sigma_and_fixed_point_outliers_cross_checked"
+}

@@ -1,0 +1,164 @@
+{
+  "clock_target_mhz": 580,
+  "conditions": {
+    "fast_half_parasitics": {
+      "factor": 0.5,
+      "maximum_slack_ns": 0.612872,
+      "minimum_slack_ns": 0.460724,
+      "regions": {
+        "tri_oracle_pe_array_verified_bank0_3": {
+          "carry_arcs_on_limiting_path": 16,
+          "delta_setup_slack_ns": 0.690741,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.141404,
+          "setup_slack_ns": 0.549337
+        },
+        "tri_oracle_pe_array_verified_bank1": {
+          "carry_arcs_on_limiting_path": 16,
+          "delta_setup_slack_ns": 0.738981,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.278257,
+          "setup_slack_ns": 0.460724
+        },
+        "tri_oracle_pe_array_verified_bank1_3": {
+          "carry_arcs_on_limiting_path": 14,
+          "delta_setup_slack_ns": 0.741224,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.201055,
+          "setup_slack_ns": 0.540169
+        },
+        "tri_oracle_pe_array_verified_bank4": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 0.727918,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.201394,
+          "setup_slack_ns": 0.526524
+        },
+        "tri_oracle_pe_array_verified_bank4_1": {
+          "carry_arcs_on_limiting_path": 16,
+          "delta_setup_slack_ns": 0.812705,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.199833,
+          "setup_slack_ns": 0.612872
+        },
+        "tri_oracle_pe_array_verified_bank4_3": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 0.727696,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.209757,
+          "setup_slack_ns": 0.517939
+        }
+      },
+      "regions_meeting_clock": 6
+    },
+    "fast_pin_dominated": {
+      "factor": 1e-05,
+      "maximum_slack_ns": 1.239611,
+      "minimum_slack_ns": 1.239411,
+      "regions": {
+        "tri_oracle_pe_array_verified_bank0_3": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 1.380815,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.141404,
+          "setup_slack_ns": 1.239411
+        },
+        "tri_oracle_pe_array_verified_bank1": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 1.517668,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.278257,
+          "setup_slack_ns": 1.239411
+        },
+        "tri_oracle_pe_array_verified_bank1_3": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 1.440666,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.201055,
+          "setup_slack_ns": 1.239611
+        },
+        "tri_oracle_pe_array_verified_bank4": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 1.440905,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.201394,
+          "setup_slack_ns": 1.239511
+        },
+        "tri_oracle_pe_array_verified_bank4_1": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 1.439244,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.199833,
+          "setup_slack_ns": 1.239411
+        },
+        "tri_oracle_pe_array_verified_bank4_3": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 1.449168,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -0.209757,
+          "setup_slack_ns": 1.239411
+        }
+      },
+      "regions_meeting_clock": 6
+    },
+    "slow_pin_dominated": {
+      "factor": 1e-05,
+      "maximum_slack_ns": 0.956109,
+      "minimum_slack_ns": 0.956109,
+      "regions": {
+        "tri_oracle_pe_array_verified_bank0_3": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 2.178074,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.221965,
+          "setup_slack_ns": 0.956109
+        },
+        "tri_oracle_pe_array_verified_bank1": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 2.434634,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.478525,
+          "setup_slack_ns": 0.956109
+        },
+        "tri_oracle_pe_array_verified_bank1_3": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 2.26547,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.309361,
+          "setup_slack_ns": 0.956109
+        },
+        "tri_oracle_pe_array_verified_bank4": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 2.270871,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.314762,
+          "setup_slack_ns": 0.956109
+        },
+        "tri_oracle_pe_array_verified_bank4_1": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 2.150867,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.194758,
+          "setup_slack_ns": 0.956109
+        },
+        "tri_oracle_pe_array_verified_bank4_3": {
+          "carry_arcs_on_limiting_path": 15,
+          "delta_setup_slack_ns": 2.284735,
+          "modeled_internal_nets": 69439,
+          "prior_setup_slack_ns": -1.328626,
+          "setup_slack_ns": 0.956109
+        }
+      },
+      "regions_meeting_clock": 6
+    }
+  },
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/selected_wire_sensitivity/archive.py": "3f5669648840b9d3c86c480095ac3b8b79371b30b0d898694f2a9945e5b3707b",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/selected_wire_sensitivity/prepared.json": "474d2f58b90d2f10a5cb491a4850cad9d76586330e4493cbd60f27d091dc5eb0",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/selected_wire_sensitivity/verified.json": "65fb09364a4d6d76173735c6840078d84ecc1fdf497841b9fb99e61c35af3512",
+    "records/tri_oracle_dual_corner_placement_selection.json": "fb03fa3aea481f045698ab329d9728bc5a79b36a2211090bf26bcf519864a6bb"
+  },
+  "placement_seed_sha256": "d30bb5d4c82a40f7cd119f138991c1f317bbd8dcce25f27e6d4e0804d514ae3d",
+  "scope": "Six limiting fast-corner regions using the same selected placement and netlist. Estimated internal wire resistance and capacitance were scaled numerically, keeping cell pin loads and the clock assumption fixed. The modified values are diagnostic controls.",
+  "state": "selected_region_internal_parasitic_sensitivity_measured"
+}
