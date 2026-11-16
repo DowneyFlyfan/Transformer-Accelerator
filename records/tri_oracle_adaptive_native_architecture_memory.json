@@ -1,0 +1,96 @@
+{
+  "array_count_by_cluster": [
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "candidate_layout_sha256": "dae03a0d0839fc6b7de3671ec9d0bbad5d4c07050e7a0129752006404e1b55cd",
+  "candidate_netlist_sha256": "76afde070aa9f536bebb08c6b86a282fd4f73360d6581339abf9dea9bfefdb5c",
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/physical/integrated_chip/region_timing/dual_corner_chip/paper_architecture/verified.json": "1dc746242a931e3059c57e91786c00131f6e7beda4ecf1a2ed3b89e97ccde770",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_adaptive_placement_fast_corner_timing.json": "c09e1714e966a3d39a36ebdc6253d7499877853cdaee38c166eef156992eaf00"
+  },
+  "fixed_sram_macros": 631,
+  "geometry": {
+    "array_instances": 20,
+    "array_lanes": 8,
+    "array_rows": 32,
+    "nominal_operations_per_second_at_paper_clock": 5939200000000,
+    "operand_bits": 8,
+    "registered_final_sum_bits_per_array": 608,
+    "registered_product_bits_per_array": 4096,
+    "unique_array_masters": 20
+  },
+  "loaded_sram_timing_views": 18,
+  "memory_role_bytes": {
+    "aggregator_io_bytes": 10240,
+    "aggregator_io_bytes_per_cluster": 2048,
+    "core_memory_bytes": 389120,
+    "core_memory_bytes_per_core": {
+      "inputs": 8192,
+      "masks": 1024,
+      "outputs": 2048,
+      "weights": 8192
+    },
+    "local_support_bytes_by_cluster": {
+      "0": {
+        "surviving_token_signs": 1536,
+        "token_merge_table": 160
+      },
+      "1": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "2": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "3": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 160
+      },
+      "4": {
+        "surviving_token_signs": 1152,
+        "token_merge_table": 80
+      }
+    },
+    "support_bytes_by_role": {
+      "prediction_metadata": 6656,
+      "shared_weight_signs": 2048,
+      "surviving_token_signs": 6144,
+      "token_merge_table": 720
+    },
+    "support_macro_count_by_role": {
+      "prediction_metadata": 6,
+      "shared_weight_signs": 4,
+      "surviving_token_signs": 16,
+      "token_merge_table": 5
+    },
+    "support_memory_bytes": 15568
+  },
+  "memory_total_bytes": 414928,
+  "rounded_memory_kib": 405,
+  "scope": "Compute array, predictor and compiled memory checks on the exact saved native placement used in the fast-corner timing profile. SRAM sizes are checked against the compiler views. Model execution and timing closure require separate evidence.",
+  "shared_prediction": {
+    "attention_tile_scheduler": {
+      "score_ready_response_bit": 71,
+      "score_valid_request_bit": 393,
+      "streaming_decision_response_bit": 68
+    },
+    "feedforward_metadata_and_sign_replay": {
+      "metadata_capacity_bytes": 6656,
+      "metadata_macros": 6,
+      "response_bits_wired_to_masks_and_count": 109,
+      "shared_sign_key_capacity_bytes": 2048,
+      "shared_sign_key_macros": 4
+    }
+  },
+  "state": "adaptive_native_compute_predictors_and_compiled_memory_verified"
+}
