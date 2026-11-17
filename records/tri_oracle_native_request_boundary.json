@@ -1,4 +1,15 @@
 {
+  "connected_narrow_request_timing": {
+    "address_bits_with_timed_receiver_capture": 64,
+    "receiver_register_data_pins": 82,
+    "scope": "The clock and port constraints are unchanged from the standalone fixture. Only the narrow scheduler request is internalized against the exact placed transmitter. The other transmitter inputs are driven by fixture ports. Pre-placement ideal clocks and no extracted routing.",
+    "worst_slack_ps": {
+      "fast_address_hold": 31,
+      "fast_all_receiver_register_hold": 16,
+      "slow_address_setup": 1255,
+      "typical_address_setup": 1366
+    }
+  },
   "evidence_sha256": {
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/interface_hold_audit/boundary.sdc": "329e70448c34121ba99776df96c55381ae1937f6dea86f9e5f406f1a3d215ff7",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/interface_hold_audit/console.log": "bad211423cb5c6006fd207951575629247fd51764b414db8ccc2c41f1755e90f",
@@ -7,6 +18,16 @@
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/interface_hold_audit/output_setup.rpt": "059bb5fcb79e0d2f6964ccdc2528df886282f061e063d10c3557298d51e2b911",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/interface_hold_audit/output_violations.rpt": "8a74f7b741c96452e0a62b8d8fa22f087209d7aa222729e7f86a2b163e93c3db",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/interface_hold_audit/timing.tcl": "bafeefd15ab6a57a7f6f460cfbe65427201509c9be1a7c2164e9283e43eaaa47",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/boundary.sdc": "329e70448c34121ba99776df96c55381ae1937f6dea86f9e5f406f1a3d215ff7",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/console.log": "08409b797e2ab65d796ce00dc32ee1615657c87621e08b6a3a6da17afd2a9cc1",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/fast_address_receiver_hold.rpt": "68425865ca502f5c435274704c87c8a798a754d02f931b29642b5306ccf4ee1f",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/fast_receiver_hold.rpt": "eae8039b15e3ac217cb674174764f15c8007c82e16d149dfa822873689fa8821",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/macro_boundary.v": "0a74bcdbedc14d3718dab70f3175b9d8cfae50482c170eac432e62daad36c0ac",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/slow_address_receiver_setup.rpt": "234ad7ab0ad9ea335cde56bfcbea17dedb5daa01662f67685e4f479c5a8d2c23",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/timing.tcl": "3eaf8729af119deae391ebd85ce981be902238f331d43a5d1bbf769e0473f452",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/typical_address_receiver_setup.rpt": "7d048fbaae329e5188e95c5767f17e5018e8da01c9eea5fcecac4fc31e015716",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/address_capture/views.tcl": "46c9b7b4c52e1242ae7162e102cbb40d3de86d93b5da88e87fdae94bbb850e4f",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/protocol_mapped/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/protocol_mapped/xrun.log": "fa89544e457b0ab36ebbd794a9e0bf29b62af59447e0884a6bc798874a4a7514",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/protocol_source/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
