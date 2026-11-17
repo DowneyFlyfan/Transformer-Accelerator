@@ -1,0 +1,42 @@
+{
+  "added_sites": 15,
+  "after_slack_ns": {
+    "gate_hold": 0.019,
+    "gate_setup": 0.346,
+    "hold": -0.021,
+    "setup": -1.575
+  },
+  "before_slack_ns": {
+    "gate_hold": 0.02,
+    "gate_setup": 0.345,
+    "hold": -0.021,
+    "setup": -1.674
+  },
+  "clock_megahertz": 580,
+  "delivered_lockstep_transactions": 786,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/console.log": "1e9054e1730173ccfc6030d00f58595f940d17cef6d6942756766c986a690ec4",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/emitted.sdc": "e7b2830b4c1f6cbf6b8999b8bd0fa7c3a58acd4429b6ebf81b4da0b1b229ebb6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/native_gate_hold.rpt": "4ff5d8c3a6b72c37c301530d150bd8e473dd39cdccedaee87b1c7b5b01a2d698",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/native_gate_setup.rpt": "1964c8c1a200e4a8d29b1812e623c9db4698067be2037ca67c0b011764e25359",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/native_hold.rpt": "89e2e35cff44d6137224494c97633cfc6f569a0a3dab918adad4289bbfb4a652",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/native_setup.rpt": "273b84a446edfda86d784d50a0c67462da169ce9dcf57c78907e26c6dd4328c4",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/netlist.v": "3f933e94945dd97a6b0ee209feda749409e64d3632b2d8b74b81b42924b75541",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/place.tcl": "c3ed56fd48310a00a24d4f273542df34127d4c3362027c9a956d162246082dc7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/placed.def": "31a7b8f6ef1700ca6f042e992c9bd4694cd11a6465dcc91e7112c7f97be53ce2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/replay/console.log": "775b57534beab0ece80a50e3a142c8518f71e6e48c31c996daca9521710b9df6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/replay/decoupled_mapped.v": "93a118ef3afe48d4ccbd02cc82f8cbf163caa026f5ab911000ec6d948a85503d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/replay/xrun.history": "255b738f2ad56691ddbc9fad55cdff86846f643b7c51baddaa6cab06c94b897f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/control_buffers/operand_buffers/driver_sizing/seed.def": "27b270766a00305188cb707cb667f581a4cfb93c65d4c1496be576bad4ee2e7a",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_sparse_booth_operand_buffers.json": "8b9c854117aeb9121792b597fd0240cb492e8f754c2ad004d7e0e0cbb9904289",
+    "syn/verify_tri_oracle_sparse_booth_driver_sizing.py": "e98c0d649b8f87cfd17dfbc4dda2b4e7b6892135d78919805ffeca9f3d298c35"
+  },
+  "moves": 6,
+  "scope": "Equivalent combinational drive variants on one array, with the original timing and physical boundary. Early wire estimates and ideal clocks are used.",
+  "state": "targeted_sparse_array_driver_sizing_measured",
+  "worst_setup_change_ns": 0.099
+}
