@@ -1,0 +1,121 @@
+{
+  "archived_rows_per_split": 2640,
+  "best_nominal_packed_weight_fetch_savings_by_token_group": {
+    "1": {
+      "best_fit_thresholds": [
+        0,
+        0,
+        0
+      ],
+      "net_savings_percent_fit": 34.183249950319485,
+      "net_savings_percent_held": 33.3591224076206
+    },
+    "3": {
+      "best_fit_thresholds": [
+        0,
+        0,
+        0
+      ],
+      "net_savings_percent_fit": 11.494069165106325,
+      "net_savings_percent_held": 9.95406305822788
+    },
+    "5": {
+      "best_fit_thresholds": [
+        0,
+        0,
+        0
+      ],
+      "net_savings_percent_fit": 5.240362778620722,
+      "net_savings_percent_held": 4.4244140961281815
+    },
+    "15": {
+      "best_fit_thresholds": [
+        0,
+        0,
+        0
+      ],
+      "net_savings_percent_fit": -1.19415787625905,
+      "net_savings_percent_held": -1.2495603114776932
+    }
+  },
+  "cases": {
+    "both_branches_active": {
+      "held_row_gate_only_skips": 84433,
+      "held_row_group15_net_savings_percent": -1.7187407522490483,
+      "held_row_relative_projection_error": 0.20314269562977605,
+      "held_row_skip_percent": 10.091744415030991,
+      "held_row_up_only_skips": 1405982,
+      "holdout_answers_correct": {
+        "control": 57,
+        "dense": 66,
+        "figure_intersection": 54
+      },
+      "holdout_control_to_candidate": {
+        "gained": 2,
+        "lost": 5,
+        "net_correct": -3
+      },
+      "holdout_skip_percent": 10.386416895052301,
+      "paired_exact_p_value": 0.453125,
+      "thresholds": [
+        -16,
+        0,
+        0
+      ]
+    },
+    "least_fit_projection_error": {
+      "held_row_gate_only_skips": 0,
+      "held_row_group15_net_savings_percent": -1.7187407522490483,
+      "held_row_relative_projection_error": 0.18273551405597122,
+      "held_row_skip_percent": 9.523878701790633,
+      "held_row_up_only_skips": 1416056,
+      "holdout_answers_correct": {
+        "control": 57,
+        "dense": 66,
+        "figure_intersection": 60
+      },
+      "holdout_control_to_candidate": {
+        "gained": 5,
+        "lost": 2,
+        "net_correct": 3
+      },
+      "holdout_skip_percent": 9.932839558173248,
+      "paired_exact_p_value": 0.453125,
+      "thresholds": [
+        -64,
+        0,
+        0
+      ]
+    }
+  },
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/figure_3165_calibrated_holdout/evaluate.py": "eea6549ed6f376f5a0873c31982873c8b453f772e70877a6fda5cd236238abe5",
+    ".cache/model_reference/gqa_testdev/figure_3165_calibrated_holdout/holdout_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/gqa_testdev/figure_3165_calibrated_holdout/paired_predictions.jsonl": "36e2a53d6ac3d1a476d1757f3fcc421063c7f1194d17398972ba1aa55b97b14b",
+    ".cache/model_reference/gqa_testdev/figure_3165_calibrated_holdout/receipt.json": "e3577688b3b0043127d139c5b23908fd34333b2f171cd16e3324ab8f848f6282",
+    ".cache/model_reference/gqa_testdev/figure_3165_calibrated_holdout/verified.json": "a65b28042a75ee20cb65c85cd91cac48076b94aa3cb62da66af4ea00fa249876",
+    ".cache/model_reference/gqa_testdev/figure_3165_calibrated_holdout/verifier_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/gqa_testdev/figure_3165_calibrated_holdout/verify.py": "c166b2acfc54990a12578d9acf444cc5c55df4a77aca923daff3395e7a13068f",
+    ".cache/model_reference/gqa_testdev/figure_3165_dual_branch_holdout/evaluate.py": "dad3bb9b1f9d2255661fbe31e05d51faf17b240344685a974327e4b21d45f2e8",
+    ".cache/model_reference/gqa_testdev/figure_3165_dual_branch_holdout/holdout_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/gqa_testdev/figure_3165_dual_branch_holdout/paired_predictions.jsonl": "8a0c3c5de6d3283baffc27841615be0468117ab7ce6f6d2e00bda356ec0eba51",
+    ".cache/model_reference/gqa_testdev/figure_3165_dual_branch_holdout/receipt.json": "ef5b4c3a8c23419dd5028a7aad13ef736e8c40e06fb4b5f7db097b47bb8c2f0b",
+    ".cache/model_reference/gqa_testdev/figure_3165_dual_branch_holdout/verified.json": "17eaec50fcacfa0932a1e299caaf1f55e8ecd3682dc8328aff1e023412473690",
+    ".cache/model_reference/gqa_testdev/figure_3165_dual_branch_holdout/verifier_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/gqa_testdev/figure_3165_dual_branch_holdout/verify.py": "adf6ea648dbc1c89a5ab73226a3dca9e2ef0a09ea3476300f8a7fced26896e9b",
+    ".cache/model_reference/gqa_testdev/figure_3165_threshold_calibration/qualify_calibrated_holdout.py": "8b1ead78443b2e1d21479f4d03ca551fec892469a12a71e095aef92ad21ef33a",
+    ".cache/model_reference/gqa_testdev/figure_3165_threshold_calibration/receipt.json": "cccab64760ba7b69a191feb6e53a8c173c30ea14418a7b8dd5a10add700d1c97",
+    ".cache/model_reference/gqa_testdev/figure_3165_threshold_calibration/sweep.log": "cfedb69bfaf91550d95b02d5568cbde55efeb697c55b2a2da21962c04a0701a5",
+    ".cache/model_reference/gqa_testdev/figure_3165_threshold_calibration/sweep.py": "43013d518d7d9a25b0eaf553755cbca06f7649fd1ea40f4bdbe46284f5e5cbc9",
+    ".cache/model_reference/gqa_testdev/figure_3165_threshold_calibration/sweep_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_figure_3165_mask_accuracy.json": "7e815c6bc6c4dbfe1c4ead1cbdbadb3d2b523484bb9d3190e8d931c4e2bcf927",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "fit_settings": 38,
+  "holdout_vision_questions": 100,
+  "scope": "Software on separate archived fit and held prompts and on a frozen, image-disjoint local question panel. Packed coefficient bytes include modeled sign reads. The paper measured memory accesses and model accuracy using its expressed conditions. Current mapped hardware keeps its original predictor.",
+  "state": "paper_nonzero_mask_thresholds_host_gpu_calibrated_and_heldout_scored",
+  "two_branch_selection_scope": "Both branch-exclusive zero decisions must each cover at least 1% of the fit skips among candidate thresholds preserving the local fit skip count. This is a diagnostic selection constraint."
+}
