@@ -1,6 +1,18 @@
 {
+  "checkpoint_completion": {
+    "corrected_driver_completed_without_simulator_errors": true,
+    "corrected_driver_saved_snapshots": [
+      "checkpoint_a",
+      "checkpoint_b",
+      "checkpoint_a"
+    ],
+    "old_driver_attempted_save_after_finish": true
+  },
   "evidence_sha256": {
-    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint.tcl": "f352c1066871fe05e2989ec9415d222749f851260052b82456afc68195db9bcf",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/finish_fixed/output.txt": "c2a336f6b264e897d84c6577092ddff3ae1fa83a3cfae5b73df89d8956e43809",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/finish_fixed/run.log": "3dd7e06507fcd8bdd337b53b1c54fc28d999edbe67148e76dca04ccf5ce437a8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/finish_fixed/short_checkpoint.tcl": "9d56e66d2bb82927afef06fe5f5d71bf0b60d739de9b1db62fa9fb20969936f9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/finish_in_loop/run.log": "ed729c6e510141327eff02cc1c14b1bb95bcff4e7953dcfdd3a50b7d2804f67a",
     ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/recovery_function/discarded.txt": "45080860abd6d79b808dbd71836bf29e41918f1bf1f05f7ce732ada7674cc816",
     ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/recovery_function/output.txt": "c2a336f6b264e897d84c6577092ddff3ae1fa83a3cfae5b73df89d8956e43809",
     ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/recovery_function/resume.log": "9ed978962f8d8d965fa5117a8e61eab6a724c6837271809ac7f77c20428c5c7b",
@@ -13,7 +25,9 @@
     ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/stream_tb.sv": "31bc8da3e4cd0c8870f95112f42b851dacdcf5a7c0d822c3c9fd4ba6d9710c51",
     ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/dense_weight_expectation_failure/first_checkpoint_prefix.log": "849661d895f06f0d9c83759886ec6666ba0a27f3bdcdac13fe8671d8844a0289",
     ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/dense_weight_expectation_failure/native/prepared_native.json": "ec1bda588788812e6cf48d74f3f866e1aed3b8b45e6187b897efd0e560365bbb",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/early_driver_restart/checkpoint.tcl": "f352c1066871fe05e2989ec9415d222749f851260052b82456afc68195db9bcf",
     "records/tri_oracle_corrected_booth_placement_roundtrip.json": "355fbbbad0a712e67e3c5298c7fee837f3d9d07aab4ef52d8da4a1431a6fc57a",
+    "syn/tri_oracle_booth_attention_checkpoint.tcl": "74622eeedf523bad5068f1f1e3a4636c8001db340d3900a0415bb73077acc5cd",
     "syn/verify_tri_oracle_booth_attention_checkpoint.py": "7b159389baf60f083f0f118d75969046aa3202886e94515417a226afd98a75bf"
   },
   "mapped_checkpoint": {
