@@ -35,6 +35,17 @@
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/console.log": "50e377ef8fc22d589aef68f5cc68d96c2f9d14d37f42a2ab70063bf9ee76faac",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/fast_hold.rpt": "6b42e6abc70ab55701c043bb326782cfba7a17231a0f64fe2e6cc66d41a405ff",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/console.log": "933e1ebed555c77632cc69d71c61bde2ba66bd33c74c3c8876db7a52affe3844",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_hold.rpt": "68a6846924caa19e7a666364195cfff639236c31eed7aa215ebc18327aebb894",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_internal_hold.rpt": "54a8e6553a756f26f0264b0b72b978efa01f867eb041e2592fd167fb7cffb67a",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_memory_A_hold.rpt": "ad3976401e461f05f446403518e6e6e043fd6550d82008e133f03cd9e5e6d6af",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_memory_BWEB_hold.rpt": "10856f2e218965fe53fe88ad88284543e330dbfffd795fd6cb35962642743632",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_memory_CEB_hold.rpt": "fd4ba0106649c4a42ea3037e9209648a247f31eb767d721eec29a5fcab468ac4",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_memory_D_hold.rpt": "15abbcafd91c2f34a473ece42a5340a9a51f6617337495a96bfcfd2613f20ccc",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_memory_WEB_hold.rpt": "a4aad76a0459fa030295cd69ce8a8ddf5f1c9786a1cedd294b41bf7d666d3c84",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/fast_output_hold.rpt": "6d81890d2a5b7b92baddcb1be63178d281da97d0757141ebf82a6fa37b02f660",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/hold_diagnostics/timing.tcl": "6b3cc64640d9f8bd6f4c033bfdb4825eff67e8b11345aa9b07344472cfe46130",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/macro_boundary.v": "0606432e77aa3fec06bd08e64f762136d83b07abf3f2de21429d6af4465c3860",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/prepare.py": "3c5d01620ce759b03480dad842d0d738de61fd84a05a6497a4dcaf5a7ba6e1d5",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/replay/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
@@ -65,6 +76,43 @@
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/upsized_driver/timing.tcl": "aeafab36ff99a8d8c19d0ee485f1c7219c101df4f8807a85b116b8f3702ca84c",
     ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/upsized_driver/typical_setup.rpt": "6d92552ba94491d4d75cb2d96390ff4f5c9cb2784b5221c3136ce6dfabe9b4ef",
     "records/tri_oracle_registered_tile_timing.json": "45027c3bfe456260cc571e3fcbd0d6bc66ae6808192145492194b6dbf08c307f"
+  },
+  "fast_hold_groups": {
+    "internal_register_data_pins": 104581,
+    "worst_by_group": {
+      "all": {
+        "check": "Early Output Delay Assertion",
+        "slack_ps": -99
+      },
+      "outputs": {
+        "check": "Early Output Delay Assertion",
+        "slack_ps": -99
+      },
+      "register_data": {
+        "check": "Hold Check with Pin scheduler/packed_loader/read_lane[0].schedule_schedule_load_cfg_address_reg[5]/CP->D",
+        "slack_ps": 4
+      },
+      "weight_bank_A": {
+        "check": "Hold Check with Pin scheduler/fabric/weights/weight_bank_0_0_4/CLK->A[0]",
+        "slack_ps": 406
+      },
+      "weight_bank_BWEB": {
+        "check": "Hold Check with Pin scheduler/fabric/weights/weight_bank_0_0_0/CLK->BWEB[127]",
+        "slack_ps": 442
+      },
+      "weight_bank_CEB": {
+        "check": "Hold Check with Pin scheduler/fabric/weights/weight_bank_0_0_14/CLK->CEB",
+        "slack_ps": 405
+      },
+      "weight_bank_D": {
+        "check": "Hold Check with Pin scheduler/fabric/weights/weight_bank_0_0_0/CLK->D[117]",
+        "slack_ps": 394
+      },
+      "weight_bank_WEB": {
+        "check": "Hold Check with Pin scheduler/fabric/weights/weight_bank_0_0_14/CLK->WEB",
+        "slack_ps": 430
+      }
+    }
   },
   "scope": "Static timing of the unplaced 320-bank fixture with ideal clocks and unchanged constraints. Both driver variants preserve two command replays with timed memory models. The output-boundary hold and physical clock loading remain open.",
   "state": "linked_weight_boundary_setup_passes_slow_and_typical",
