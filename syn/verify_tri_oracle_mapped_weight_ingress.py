@@ -1,6 +1,7 @@
 """Qualify the mapped reservation and write buffer with timed memory writes."""
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 from pathlib import Path
@@ -8,6 +9,8 @@ import re
 
 from prepare_tri_oracle_backpressured_weight_transport import RAW
 from prepare_tri_oracle_phase_macro_boundary import REPAIRED_CLOCK_BOUNDARY, boundary
+from link_tri_oracle_indexed_whole_chip import module_at, spans
+from verify_tri_oracle_booth_chip_link import named_bindings
 from verify_tri_oracle_mapped_weight_prefetch import (
     BUNDLE, INCLUDE, LIBRARY, ROOT, RUN, WORK as LOADER_WORK, invocation, synthesis_script,
 )
@@ -81,6 +84,55 @@ def mapped_replay_inputs(source, netlist, cut, wrapper):
     return {gate_path: mapped, adapter_path: adapter, WORK / "mapped/bundle.sv": mapped_bundle}
 
 
+def divider_clock_load(candidate):
+    source = candidate.read_bytes()
+    definitions = spans(source)
+    branches = {}
+    counts = Counter()
+    instance = re.compile(rb"(?ms)^\s+(\w+)\s+(\\[^\s]+|\w+)\s*\(([^;]+)\);")
+    for branch, module, clock in (
+        ("clock_source", "tri_oracle_phase_chip_clock", b"core_clk"),
+        ("bank_controller", "tri_oracle_weight_phase_fabric", b"core_clk"),
+        ("ingress", CONTROL, b"clk"),
+    ):
+        loads = Counter()
+        code = module_at(source, definitions, module)
+        for cell, name, fields in instance.findall(code):
+            if not fields.lstrip().startswith(b"."):
+                continue
+            for pin, net in named_bindings(fields).items():
+                if net == clock and (name, pin) != (b"divider_core_clk_reg", "Q"):
+                    loads[(cell.decode(), pin)] += 1
+        counts.update(loads)
+        branches[branch] = loads.total()
+
+    pin_caps = {}
+    cell = pin = None
+    with LIBRARY.open() as stream:
+        for line in stream:
+            if match := re.match(r"^cell\s*\((\w+)\)", line):
+                cell, pin = match[1], None
+            if match := re.match(r"^  pin\s*\((\w+)\)", line):
+                pin = match[1]
+            if (cell, pin) in counts and (match := re.match(r"\s+capacitance\s*:\s*([0-9.eE+\-]+)", line)):
+                require((cell, pin) not in pin_caps, f"repeated capacitance for {cell}/{pin}")
+                pin_caps[cell, pin] = float(match[1])
+    require(pin_caps.keys() == counts.keys(), "clock sinks missing from the standard-cell library")
+    load = sum(count * pin_caps[key] for key, count in counts.items())
+    hold = (TIMING / "fast_hold.rpt").read_text()
+    fanouts = re.findall(r"(?m)^\s+ingress/\S+/CP .*?\(arrival\)\s+(\d+)", hold)
+    require(set(fanouts) == {str(counts.total())}, "native divider fanout differs from the linked netlist")
+    electrical_report = (TIMING / "slow_electrical.rpt").read_text()
+    limit, observed = re.search(
+        r"(?m)^\s+clock_source/divider_core_clk_reg/Q\s+([0-9.]+)\s+([0-9.]+)\s+-[0-9.]+\s+slow$",
+        electrical_report,
+    ).groups()
+    require(abs(load - float(observed)) < 0.001 and load > float(limit),
+            "the summed pin load did not reproduce the native clock-load violation")
+    return {"fanout": counts.total(), "sinks_by_branch": branches, "summed_pin_capacitance_pf": round(load, 6),
+            "native_capacitance_pf": float(observed), "native_limit_pf": float(limit)}
+
+
 def verify_timing(netlist, evidence):
     previous = REPAIRED_CLOCK_BOUNDARY / "macro_boundary.v"
     original = previous.read_text()
@@ -141,6 +193,7 @@ def verify_timing(netlist, evidence):
         checks[f"{view}_electrical"] = electrical(path, view)
         evidence.append(path)
     return {"compiled_weight_memory_banks": 320, "checks": checks, "clock_periods_ps": {"memory": 862, "core": 1724},
+            "divider_load": divider_clock_load(candidate),
             "scope": "Combined ingress, mapped clock, bank controller and compiled weight memory before placement."
                      " The boundary outputs use an assumed external hold budget of 100 ps."}
 

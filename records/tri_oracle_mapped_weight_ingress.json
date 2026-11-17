@@ -193,6 +193,17 @@
       "memory": 862
     },
     "compiled_weight_memory_banks": 320,
+    "divider_load": {
+      "fanout": 1132,
+      "native_capacitance_pf": 0.91,
+      "native_limit_pf": 0.091,
+      "sinks_by_branch": {
+        "bank_controller": 6,
+        "clock_source": 2,
+        "ingress": 1124
+      },
+      "summed_pin_capacitance_pf": 0.910206
+    },
     "scope": "Combined ingress, mapped clock, bank controller and compiled weight memory before placement. The boundary outputs use an assumed external hold budget of 100 ps."
   },
   "disabled_reservation_rejected": {
@@ -266,7 +277,7 @@
     "records/tri_oracle_mapped_weight_prefetch_loader.json": "56becece758bf9f6cce147651433edfc9b7a9eb1d058cb789274006b821834bf",
     "syn/tri_oracle_phase_macro_boundary.sdc": "b93bc299d93b9bb9075ade6194f57c4353e55a1d564f2cf345174e07e2f9ec55",
     "syn/tri_oracle_time_phase_macro_boundary.tcl": "e1cdbddf9c250f188e73de69a7cabc45be7b1a23d71df29dae449f64b14d61ab",
-    "syn/verify_tri_oracle_mapped_weight_ingress.py": "5081c5b62c21852074a19dc37d19ceafd24af3d8dfe430d04749321ac7b57e0b",
+    "syn/verify_tri_oracle_mapped_weight_ingress.py": "47154fdbca63e4bcc1f46fb45ff7f7369d13876de1624605307369394a947941",
     "verilog/tri_oracle_projection_weight_reuse.sv": "6df1085ea1c9a01a7c48dfec61a1d277d2f0d9e87210f4505f4038d5ef8f1109",
     "verilog/tri_oracle_weight_write_buffer.sv": "18ba5d95f81acc3f54226dabd715327f40493bc6285890b6eb2a3a3eaa6cd845",
     "verilog/weight_stream_write_arbiter.sv": "409e06e9ed35d5c9f660b5c57d4e3933fa214b7380347539d3bab88eb2a2b861"
