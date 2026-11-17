@@ -1,0 +1,38 @@
+{
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "encoded_flits_per_read": {
+    "compact": 2,
+    "full": 4
+  },
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/request_encoder/mapped_tx.v": "732765e801ec2ed0d6d7e6a60772c7def847f11aa69f2c47c00862616fdcc503",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/request_encoder/reference_receiver.sv": "eedea9a0c6c265720e6a5e11d62ecb6234efa4bbe86e65dca05dbb332adceeb3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/request_encoder/xrun.log": "b212e3181386f79b827da6c5abe3919f5814ed88f0234120f22ff2f49e6cc362",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_corrected_booth_memory_interconnect.json": "5ad381e91fc6584923bc705b36e3d13ad8615938068ad21e564b392d6178e7d7",
+    "records/tri_oracle_mapped_memory_request_link.json": "cfe915d0efe232ff262fb5f8e231c3e14e03c7d6cc2e66c16acc7d4e11f4e3d0",
+    "records/tri_oracle_memory_forward_link.json": "779cbb69ff92fc4ea625a58c68976dcaf719847b2e6c268e709c05813a7c00ff",
+    "syn/verify_tri_oracle_booth_request_encoder.py": "77f0eb6195587605321042ad8c44339c8bb73e7ec81405623becdb62f98599c8",
+    "verilog/tri_oracle_memory_request_link.sv": "9e4ae7395a87c2c8bc498674df35856359dd46fa7be4260f979175dd40bbd0eb",
+    "verilog/tri_oracle_memory_request_link_tb.sv": "94fab62aab06120e5145d4948bbf02b6da3ec11388f987f55ed5fdd1ca1a2635"
+  },
+  "flit_data_bits": 22,
+  "ideal_pad_data_cycles_per_read": {
+    "compact": 6,
+    "full": 12
+  },
+  "native_replay": {
+    "compact": 251,
+    "flit_stalls": 404,
+    "full": 118,
+    "narrow": 147,
+    "output_stalls": 352,
+    "packets": 369,
+    "projection": 122
+  },
+  "pad_data_bits": 8,
+  "scope": "Xcelium replay of the mapped encoder extracted from the current placed export with the reference receive model under stalls. The pad cycle counts are serialization minima.",
+  "state": "placed_booth_memory_request_encoder_replayed_with_reference_receiver"
+}
