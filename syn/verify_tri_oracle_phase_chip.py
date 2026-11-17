@@ -1,6 +1,7 @@
 """Verify the two-phase SRAM path using chip command and recovery replays."""
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 import re
@@ -123,6 +124,22 @@ def verify(include_scalar, include_trained, buffered=False, include_attention=Fa
         files.add(source / "trained_bench.sv")
         files.update(run / "trained" / log for log in ("xrun.log", "progress.log", "exit_status"))
         files.update(trained_reference / log for log in ("xrun.log", "progress.log"))
+        receipt_path = run / "trained/recovered_exit_status.json"
+        if receipt_path.is_file():
+            receipt = json.loads(receipt_path.read_text())
+            event = receipt["event"]
+            terminal = datetime.fromtimestamp(event["time"], timezone.utc).strftime("%b %d, %Y at %H:%M:%S UTC")
+            block = output.split("\nxrun\n", 1)[1].split("\n\n", 1)[0]
+            invocation = [argument for line in block.splitlines() for argument in line.split()]
+            require(receipt["native_arguments"] == invocation and str(source / "trained_bench.sv") in invocation
+                    and event["Action"] == "exec_die" and receipt["exit_status"] == 0
+                    and event["Actor"]["ID"] == receipt["container_id"]
+                    and event["Actor"]["Attributes"]["execID"] == receipt["exec_id"]
+                    and event["Actor"]["Attributes"]["exitCode"] == "0"
+                    and f"Exiting on {terminal}" in output.splitlines()[-1],
+                    "recorded Docker exit did not match the native trained execution")
+            results["trained"]["native_exit_status_source"] = "matched Docker execution and completion event"
+            files.add(receipt_path)
 
     if include_attention:
         output, path_metrics = verify_case(run, "attention")
