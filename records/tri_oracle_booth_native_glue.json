@@ -1,0 +1,40 @@
+{
+  "added_row_sites": 27,
+  "binary_vectors": 4096,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/after/console.log": "3912bcc4e7e0bf3d96301f42435a516b1e265aaed54fd2a759dad5d17d2ce7dd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/before/console.log": "021bd6c5f3c66ff552c8a42f958216cea0eb105b1a1686cb65dd054107891727",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/before/source.v": "b12e12c7016dccbde192e1486d5e1bd5a0767d3587743672f507bdf7ddf20dc2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/mapped/console.log": "06a797e5214281131386255de6c843e47b0b39296e1556354b0038f9ab0dda00",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/mapped/netlist.v": "e42f6ab94db13b9e0ec4dd37920c690ee1cb9b8ab418e502bf15c8d6c14b3249",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/replay/lockstep.sv": "ec449327d66ac70bb76951c94dd51dc217588c9b8c9abebdbe8ccfe7888380e4",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/replay/reference.v": "9b0fa7e096142c388dc4ece59b5f4f9d8b0163561948f038b4aa797e12a41ae9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/replay/xrun.log": "9c051cf6772700b998610c2406845f04fceb151e994531e5cbc251fda57064ca",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/linked.v": "d48c7d4e22fa4df56cd14a299aa05585e12bff9c09260198889979fcbc708062",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/parse/console.log": "a57ebe03ce3e3659b426f23db4901868bb566906122b7f9d1e3e3ab75606b621",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/parse/status.json": "34f4ca99c2eeeb0042cf8c63b43ce1d28be5e98a575763bce67bcf1afe2b1d5b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/plan.tcl": "363444bbb731a0e1ec0c6ca61e0214d5842ec4b860b9ac856d5843215ea0a2df",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/prepared.json": "5282952d4999bcf007d44a9b49167b04b718b2f0a364c0b354881dd344bd73e3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/seed.def": "ee3d79f5b245e62b6060ce9f627aa16584e11c4a1c8cc8383d112e0945c3b929",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/placement_with_terminal_seed.def": "77acffca243b18ae6b86ae2d10c0c5322400ecbaf1e63e23b842cd06ccc93d64",
+    "records/tri_oracle_booth_chip_native_inputs.json": "6cd106d59205ddee664e1bf0f3bff0e455094e63a003f1bf10da9d14a4440618",
+    "syn/prepare_tri_oracle_booth_native_glue.py": "31776251d99a839502ead9cc474cb4fa3ad198fe3f52d7e82448dfd05f18c759",
+    "syn/tri_oracle_synthesize_booth_native_glue.tcl": "3e4a0a379cc89d54d5f0c1d57e3d002607712fe457e895447d82deb4eb0803b9",
+    "verilog/tri_oracle_boundary_control_tb.sv": "ec449327d66ac70bb76951c94dd51dc217588c9b8c9abebdbe8ccfe7888380e4"
+  },
+  "fixed_macros": 631,
+  "free_row_sites": 393945,
+  "full_linked_read_wall_seconds": 37.127,
+  "inserted_cells": [
+    "chip/chip/normalization/chip/chip/chip/boundary_control/g143__2398",
+    "chip/chip/normalization/chip/chip/chip/boundary_control/g146__5107",
+    "chip/chip/normalization/chip/chip/chip/boundary_control/g145__6260",
+    "chip/chip/normalization/chip/chip/chip/boundary_control/g144__4319",
+    "chip/chip/normalization/chip/chip/chip/boundary_control/g147__8428"
+  ],
+  "logical_top": "tri_oracle_chip_credited_request",
+  "placement_leaves": 4104532,
+  "scope": "Genus mapped the four wrapper equations. Xcelium exhaustively checked binary inputs. The seed adds five standard cells at legal sites. Innovus read the entire linked netlist. Native placement reload and timing qualification are pending.",
+  "state": "booth_chip_mapped_boundary_control_passed_innovus_netlist_read"
+}
