@@ -1,0 +1,50 @@
+{
+  "cases_by_threads": {
+    "20": {
+      "baseline_container_anon_bytes": 7392833536,
+      "completed_timing_paths": 0,
+      "exit_status": -15,
+      "incremental_peak_anon_bytes": 6517108736,
+      "last_observed_phase": "early_global_route",
+      "minimum_host_available_bytes": 5501538304,
+      "peak_container_anon_bytes": 13909942272,
+      "stop_reason": "Memory guard",
+      "wall_seconds": 52.68664645892568
+    },
+    "4": {
+      "baseline_container_anon_bytes": 7393624064,
+      "completed_timing_paths": 0,
+      "exit_status": -15,
+      "incremental_peak_anon_bytes": 6534852608,
+      "last_observed_phase": "early_global_route",
+      "minimum_host_available_bytes": 5529268224,
+      "peak_container_anon_bytes": 13928476672,
+      "stop_reason": "Memory guard",
+      "wall_seconds": 51.825067432946526
+    }
+  },
+  "control_incremental_anonymous_memory_limit_bytes": 6442450944,
+  "control_minimum_host_reserve_bytes": 5368709120,
+  "control_standard_cells": 2171383,
+  "database": ".cache/physical/wide_weight_loader/joined_chip_partition/placement/place/placed.db",
+  "database_fingerprint_sha256": "1e5031fb99515fc7b0e7365af922e8f774583e7b2b4c9fda2e351cd7554686ed",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_20/before.sdc": "ee1af6758d02809d6ba4b50e424243d5258ac6b965e0bec79e00913ebb4c0411",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_20/console.log": "08ca0a9a12750cfe26a2169ea64e5f4c5b936bb0f4029d5939412bd0b9c98b79",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_20/status.json": "323b0745b16a67effaf217de6f3c198e01b5594aa8283ef4ab86411550a44f46",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_20/timing.rpt": "b8a0e82ce1099cf98268aa80ea13503b46f125802b72fefa3cbad457185570c6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_4/before.sdc": "cf03d1e2d2b2b3b9dac1b143517104afff33f87704fde532ff376ec67a1600ec",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_4/console.log": "a8d8ca8761734c63ce7c439e1302cfe4be463507502dce0294435c59e518d7d0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_4/status.json": "c32e6a52e8451766cfcccd358db496e710c21d10d9675818459ba397e9192632",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/cpu_4/timing.rpt": "9ad2bb38314a889fb25878ded9e8e7cb30ce75ff8e91416c45afafe8205c639f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/measure.py": "6483ec7d078275107f37f1f3728b0474631851d95c9977c7259a05760f571e98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/measure_low.py": "60a3eb52d812e75e36851febde3e5f5bf8ba8fc17f7421da3e4d531c3da33387",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_thread_control/timing.tcl": "4f8377d3f1e52510b7600100b811ae680e7aa757b6f685208384f244e28dd8de",
+    "records/tri_oracle_corrected_booth_setup_slow_memory_limit.json": "a0765032c01437c4e313717bd31f34b97effbec30206dcf1e3185bf45f3fc911"
+  },
+  "pre_run_constraint_commands_identical": true,
+  "restored_nets": 2599600,
+  "scope": "Pre-route slow setup diagnostic on the same earlier placed control design and technology models.",
+  "state": "early_global_route_memory_guard_reproduced_at_20_and_4_threads",
+  "view": "setup_slow"
+}

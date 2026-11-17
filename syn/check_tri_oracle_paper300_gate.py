@@ -57,6 +57,7 @@ BOOTH_REDUNDANCY = Path("records/tri_oracle_corrected_booth_redundancy_topology.
 BOOTH_MODELS = Path("records/tri_oracle_corrected_booth_physical_models.json")
 BOOTH_BUFFERED_MODELS = Path("records/tri_oracle_corrected_booth_buffered_models.json")
 BOOTH_BUFFER_REPAIR = Path("records/tri_oracle_corrected_booth_pin_load_repair.json")
+BOOTH_STREAMING = Path("records/tri_oracle_corrected_booth_streaming_packet.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -304,6 +305,18 @@ def buffered_booth_facts(root, facts, identities):
             text = pin_booth(root, identities, constraints, proofs[str(constraints)]).read_text()
             (period,) = re.findall(r"(?m)^create_clock .* -name core_clock -period ([\d.]+)\b", text)
             assert float(period) == prior["clock_period_ns"]
+
+    if (root / BOOTH_STREAMING).is_file():
+        streaming = booth_record(root, identities, BOOTH_STREAMING,
+                                 "repaired_booth_trained_streaming_rows_verified_through_physical_ports")
+        assert streaming["cold_netlist_sha256"] == proofs[cold]
+        assert streaming["native"]["exit_status"] == 0 and streaming["native"]["stop_reason"] is None
+        assert streaming["prediction"]["streaming"] is True
+        assert streaming["external_value_requests"] == sum(row["selected_keys"] for row in streaming["output_rows"])
+        prior["streaming_attention_replay"] = {
+            key: streaming[key] for key in (
+                "layer", "head", "token_merge_maps", "external_value_requests", "exact_output_values", "scope")
+        }
 
     facts.update(prior, candidate_sha256=proofs[candidate], cold_netlist_sha256=proofs[cold],
                  evidence_stage="buffer-repaired Booth placement imported and cold-reloaded in Innovus",
