@@ -14,6 +14,7 @@ from prepare_tri_oracle_booth_packet_replay import ROOT, WORK as ATTENTION, dige
 WORK = ROOT / ATTENTION.parent / "unseeded_packet_layer"
 NATIVE = WORK / "native"
 LOCK = ROOT / ".cache/physical/carry_lookahead_comparison/placed_drive_strength/native_lane.lock"
+DRIVER = ROOT / "syn/tri_oracle_booth_attention_checkpoint.tcl"
 CHECKPOINT = re.compile(r"(?m)^TRI_UNSEEDED_PACKET_CHECKPOINT (checkpoint_[ab])$")
 SAVED = re.compile(r"(?m)^Saved snapshot worklib\.(checkpoint_[ab]):sv$")
 TIME = re.compile(r"(?m)^Ran until (\d+(?:\.\d+)?) (FS|PS|NS|US|MS|S) \+ 0$")
@@ -108,6 +109,24 @@ def checkpoint_artifacts():
     return facts, prefix, validated
 
 
+def restore_invocation(prepared, facts, log):
+    """Use the original simulator and limits with a new log and the saved state."""
+    checkpoint_index = facts["checkpoint_count"] - 1
+    slot = "checkpoint_b" if checkpoint_index % 2 else "checkpoint_a"
+    assert facts["snapshot"] == f"worklib.{slot}:sv"
+    assert 0 <= checkpoint_index < 140
+    command = prepared["command"]
+    launcher = command[:command.index("-64bit")]
+    assert launcher[-1] == "/opt/cadence/bin/xrun"
+    assert not log.exists(), log
+    return {
+        "command": [*launcher, "-64bit", "-r", facts["snapshot"],
+                    "-input", str(DRIVER), "-log", str(log)],
+        "environment": {"TRI_ORACLE_REPLAY_FROM_CHECKPOINT": str(checkpoint_index)},
+        "driver_sha256": digest(DRIVER),
+    }
+
+
 def prepare_recovery():
     """Prepare files for a stopped run. Preserve the full trace and unsaved output."""
     with LOCK.open("r") as lane:
@@ -119,6 +138,8 @@ def prepare_recovery():
         assert not re.search(r"\*[EF],", log.read_text()), "Diagnose the simulator error before resuming"
         facts, prefix, rows = checkpoint_artifacts()
         recovery = WORK / f"recovery_after_{facts['checkpoint_time_ns']}ns"
+        prepared = json.loads((NATIVE / "prepared_native.json").read_text())
+        facts["restore"] = restore_invocation(prepared, facts, recovery / "resume.log")
         recovery.mkdir()
         (recovery / "checkpoint_prefix.log").write_text(prefix)
         discarded = trim_output(NATIVE / "attention.hex", rows, recovery / "unsaved_attention.hex")

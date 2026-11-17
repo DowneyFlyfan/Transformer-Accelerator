@@ -15,10 +15,20 @@ proc advance_or_checkpoint {duration slot overwrite} {
     puts "TRI_UNSEEDED_PACKET_CHECKPOINT $slot"
     return 0
 }
-if {[advance_or_checkpoint 1200000ns checkpoint_a 0]} {
-    exit
+set index 1
+if {[info exists ::env(TRI_ORACLE_REPLAY_FROM_CHECKPOINT)]} {
+    set saved_index $::env(TRI_ORACLE_REPLAY_FROM_CHECKPOINT)
+    if {![string is entier -strict $saved_index] || $saved_index < 0 || $saved_index >= 140} {
+        error "Invalid saved checkpoint index"
+    }
+    set index [expr {$saved_index + 1}]
+    puts "TRI_UNSEEDED_PACKET_RESTORE $saved_index"
+} else {
+    if {[advance_or_checkpoint 1200000ns checkpoint_a 0]} {
+        exit
+    }
 }
-for {set index 1} {$index <= 140} {incr index} {
+for {} {$index <= 140} {incr index} {
     set slot [expr {$index % 2 ? "checkpoint_b" : "checkpoint_a"}]
     if {[advance_or_checkpoint 15000000ns $slot 1]} {
         exit
