@@ -1,0 +1,86 @@
+{
+  "archives": {
+    "bitstream_roundtripped_selected_narrow_words": 2545586,
+    "bitstream_roundtripped_signed_coefficients": 162917504,
+    "signed_weight_bytes": 761266176,
+    "trained_layers": 22
+  },
+  "decoder_constraints": {
+    "codeword_alignment_bytes": 4,
+    "explored_word_width_bits": [
+      1,
+      8
+    ],
+    "external_beat_bytes": 64,
+    "maximum_literals_per_word": 32,
+    "original_word_width_bits": [
+      4,
+      8
+    ],
+    "selected_added_width_counts": {
+      "1": 0,
+      "2": 44751,
+      "3": 2500835
+    }
+  },
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/cpu_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/cpu_inventory.txt": "2787eb420012cc0bff8de2e6d014a9d4830b60e62c67298517afffb297ddbc31",
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/measure.log": "26fd3034c57c05a9ddd6c16a59a2b03e489ac3b24de0d1d017a7e5f84b06bcd6",
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/measure.py": "3ad5b287c30bf2627569115ac397935c0e0768f1efe13522b2b5f09e34b64001",
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/receipt.json": "c5da1e31b4416a953d71fc56c10a823a6de0d132e13ab9090a1e4cc08bc40f4e",
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/reconcile.py": "930f6dbd87f16000965d714dcbf91f34447d8f62e07cbf886817b14a67ff8efc",
+    ".cache/model_reference/lossless_weight_burst_probe/indexed_low_width_calibration/verify_archive.cpp": "69bf40c21d131520eedf60eb5b189eb890250443fa17fe6eba486084196073bc",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_indexed_workload_write_width.json": "21186de7cba8514e037d0da333397252a2d630083258f6e63b28e0a3e6c9a400"
+  },
+  "hardware_scope": "A lossless software bitstream and count comparison under the pinned workload and existing indexed tile schedule. It keeps the original output payload width, transport headers and lane ownership. Modeled service excludes additional timing, controller and routing effects. The mapped decoder accepts widths four through eight.",
+  "phase_occupancy_weight_traffic": {
+    "legacy": {
+      "cycles_1024": 309663394,
+      "cycles_2048": 309663394,
+      "cycles_512": 487163648,
+      "read_beats": 591157967,
+      "requests": 22860800
+    },
+    "narrow": {
+      "cycles_1024": 306484659,
+      "cycles_2048": 306041022,
+      "cycles_512": 487163648,
+      "read_beats": 584086440,
+      "requests": 22757120
+    }
+  },
+  "projected_weight_service_difference_by_write_width_bits": {
+    "512": {
+      "cycles_removed": 0,
+      "milliseconds_at_paper_clock": 0.0
+    },
+    "1024": {
+      "cycles_removed": 3178735,
+      "milliseconds_at_paper_clock": 5.480577586206897
+    },
+    "2048": {
+      "cycles_removed": 3622372,
+      "milliseconds_at_paper_clock": 6.245468965517241
+    }
+  },
+  "projection_read_and_request_counts": {
+    "down": {
+      "legacy_requests": 7772672,
+      "legacy_response_beats": 178058446,
+      "narrow_requests": 7668992,
+      "narrow_response_beats": 173137284
+    },
+    "paired": {
+      "legacy_requests": 15088128,
+      "legacy_response_beats": 413099521,
+      "narrow_requests": 15088128,
+      "narrow_response_beats": 410949156
+    }
+  },
+  "response_beat_reduction_percent": 1.196216137606414,
+  "response_beats_avoided": 7071527,
+  "state": "narrow_indexed_escape_encoding_exact_archive_cpu_gpu_reconciled"
+}
