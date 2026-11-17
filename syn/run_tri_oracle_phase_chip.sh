@@ -15,7 +15,12 @@ fi
 if [[ ${ACTIVATION_PREFETCH:-0} == 1 ]]; then
   experiment="$repo/.cache/phase_chip_prefetch"
 fi
+if [[ ${WEIGHT_PREFETCH:-0} == 1 ]]; then
+  experiment="$repo/.cache/phase_chip_weight_prefetch"
+fi
 source_dir="$experiment/source"
+probe=("$repo/verilog/tri_oracle_phase_chip_probe.sv")
+if [[ ${WEIGHT_PREFETCH:-0} == 1 ]]; then probe=(); fi
 name="${1:?run name is required}"
 shift
 case "$name" in (*[!a-zA-Z0-9_-]*|source) exit 2;; esac
@@ -50,6 +55,15 @@ if [[ "$name" == prefetch_fault ]]; then
   bench="$source_dir/prefetch_fault_bench.sv"
   arguments+=(-defparam "$top.FAULT=17" -defparam "$top.HIDDEN=1152")
 fi
+case "$name" in
+  weight_stall|weight_guard_disabled|weight_prefetch_fault*)
+    [[ ${WEIGHT_PREFETCH:-0} == 1 ]]
+    bench="$source_dir/weight_prefetch_stress_bench.sv"
+    arguments+=(-defparam "$top.HIDDEN=1056" +STALL_FIRST_PROJECTION)
+    if [[ "$name" == weight_guard_disabled ]]; then arguments+=(+IGNORE_WEIGHT_REUSE); fi
+    if [[ "$name" == weight_prefetch_fault* ]]; then arguments+=(-defparam "$top.FAULT=18"); fi
+    ;;
+esac
 progress=(+PROGRESS=progress.log)
 if [[ "$name" == attention ]]; then
   duration=2700
@@ -63,10 +77,10 @@ run_replay() {
   docker exec -w "$work" tri-oracle-eda timeout -k 5 "$duration" prlimit --as=5368709120 -- \
     /opt/cadence/bin/xrun -64bit -sv -sequdp_nba_delay -xmerror RECOME -top "$top" -log xrun.log \
     "${arguments[@]}" "$source_dir/bundle.sv" "$bench" \
-    "$repo/verilog/tri_oracle_phase_chip_probe.sv" \
+    "${probe[@]}" \
     "${progress[@]}" "$@" >"$work/console.log" 2>&1 || rc="$?"
   printf '%s\n' "$rc" >"$work/exit_status"
-  rg '^(BATCH408_PASS|PACKED_DECODER_PASS|PHASE_CHIP|CHIP_ACTIVATION_PREFETCH)|\*[EF],' "$work/xrun.log" | head -18 || true
+  rg '^(BATCH408_PASS|PACKED_DECODER_PASS|PHASE_CHIP|CHIP_ACTIVATION_PREFETCH|CHIP_WEIGHT_)|\*[EF],' "$work/xrun.log" | head -18 || true
   return "$rc"
 }
 run_replay "$@"

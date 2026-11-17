@@ -1,0 +1,132 @@
+{
+  "cases": {
+    "commanded": {
+      "control_cycles": 5459,
+      "exact_outputs": 504,
+      "overlap": {
+        "alongside_reads": 0,
+        "loads": 0,
+        "requests": 0
+      },
+      "prefetch_cycles": 5459
+    },
+    "early_gate": {
+      "control_cycles": 26414,
+      "exact_outputs": 504,
+      "overlap": {
+        "alongside_reads": 85,
+        "loads": 256,
+        "requests": 256
+      },
+      "prefetch_cycles": 25699
+    },
+    "multitile_down": {
+      "control_cycles": 19264,
+      "exact_outputs": 504,
+      "overlap": {
+        "alongside_reads": 51,
+        "loads": 169,
+        "requests": 43
+      },
+      "prefetch_cycles": 19077
+    },
+    "multitile_gate": {
+      "control_cycles": 28009,
+      "exact_outputs": 504,
+      "overlap": {
+        "alongside_reads": 127,
+        "loads": 511,
+        "requests": 132
+      },
+      "prefetch_cycles": 27393
+    },
+    "scalar": {
+      "control_cycles": 48062,
+      "exact_outputs": 504,
+      "overlap": {
+        "alongside_reads": 0,
+        "loads": 0,
+        "requests": 0
+      },
+      "prefetch_cycles": 48062
+    },
+    "weight_prefetch_fault_lane0": {
+      "exact_retry_outputs": 504,
+      "output_prefix_packets": 0
+    },
+    "weight_prefetch_fault_lane1": {
+      "exact_retry_outputs": 504,
+      "output_prefix_packets": 0
+    },
+    "weight_stall": {
+      "exact_outputs": 504,
+      "protected_cycles": 50
+    }
+  },
+  "evidence_sha256": {
+    ".cache/phase_chip_prefetch/commanded/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_prefetch/commanded/progress.log": "5a9a6c470270fc7599d0c95b2972dfb92414cdcec74b42bb61da7b04134610e7",
+    ".cache/phase_chip_prefetch/commanded/xrun.log": "4c1d0197b4dd193cf7c7431c1619a3e2632f9554269a1fbb8997c1b7f5654cb5",
+    ".cache/phase_chip_prefetch/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_prefetch/early_gate/progress.log": "79c8cb76b97cb2f6752b223f6f4efed00970c6451b1e3f451b875678bac1f8e6",
+    ".cache/phase_chip_prefetch/early_gate/xrun.log": "521978c494b48c3213e4324d73774f9244b8edaaef57076a6dba59303022a3b5",
+    ".cache/phase_chip_prefetch/multitile_down/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_prefetch/multitile_down/progress.log": "06dc995826cb4138263f9b8f9752b8b3e80b4db13e290d88839700527fb5c2b2",
+    ".cache/phase_chip_prefetch/multitile_down/xrun.log": "1ee50df56af15d5a71caa3f72df0e5814ade1688d859c180b07c94dd00c69e06",
+    ".cache/phase_chip_prefetch/multitile_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_prefetch/multitile_gate/progress.log": "ec01b5455151ce1c89eeebbeda506c9133f71e861bb1ad8eac049d249185b9fa",
+    ".cache/phase_chip_prefetch/multitile_gate/xrun.log": "3f68567b657131680bb9c85062c2c5da62055b2ec797f0a941db944ed4e79263",
+    ".cache/phase_chip_prefetch/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_prefetch/scalar/progress.log": "27de1b12d2637459c200cde4bdf608b8d7eeed4d8b8241b63f68bf2dcb51a23a",
+    ".cache/phase_chip_prefetch/scalar/xrun.log": "b66589ea6b1b1de01ff13a8599674712f87a0a9e7c163564610f11884564242f",
+    ".cache/phase_chip_prefetch/source/tri_oracle_batched_tensor390.sv": "7f4e164412929026e6a739e6ac0e102f7fb85a0793dc5b66930717d88cc0b022",
+    ".cache/phase_chip_prefetch/source/tri_oracle_compute_fabric.sv": "50767839e442e69d587b58358ec51aa826fbd2744bf7cabfbfcd2d3047b565a5",
+    ".cache/phase_chip_weight_prefetch/commanded/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/commanded/progress.log": "5a9a6c470270fc7599d0c95b2972dfb92414cdcec74b42bb61da7b04134610e7",
+    ".cache/phase_chip_weight_prefetch/commanded/xrun.log": "376b91cb96c2bec34fd314061ec95568f677bce445a92b5ee9f2af443882ef0f",
+    ".cache/phase_chip_weight_prefetch/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/early_gate/progress.log": "a1e9f6162a6846004a1275770d3cb43a919ae5fd5811ee6a5f0537ca71f77807",
+    ".cache/phase_chip_weight_prefetch/early_gate/xrun.log": "1d244d38cb803637b3e9c9f86429a348a3519ab43d4122a6819ac076089dc4e0",
+    ".cache/phase_chip_weight_prefetch/multitile_down/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/multitile_down/progress.log": "08f4455c9b6660817658cbb232bdb6b39f2cbfb0477aa22181be49a9ee471d59",
+    ".cache/phase_chip_weight_prefetch/multitile_down/xrun.log": "47447b0204b03c45b7cb8b8b7847f10a323bb10ca6e5bc8993df4b09ecdff56d",
+    ".cache/phase_chip_weight_prefetch/multitile_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/multitile_gate/progress.log": "74945c2b4dba68b97a208b60f009301629dca5a1c26edc40c4cd6ab9f6a1fc55",
+    ".cache/phase_chip_weight_prefetch/multitile_gate/xrun.log": "feb7c6818cf141655a3d86c4f86e053b053e54687dc231a031be27631cc24e7d",
+    ".cache/phase_chip_weight_prefetch/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/scalar/progress.log": "27de1b12d2637459c200cde4bdf608b8d7eeed4d8b8241b63f68bf2dcb51a23a",
+    ".cache/phase_chip_weight_prefetch/scalar/xrun.log": "baeba9f9aab76ac4ee785b7297906569031d5f564d374aaef4a5f2985a5f6b8d",
+    ".cache/phase_chip_weight_prefetch/source/bench.sv": "018252f73bda8ce55835cf23481aff5a82faf60d342a94e8177ddea4130b3f7e",
+    ".cache/phase_chip_weight_prefetch/source/bundle.sv": "f4838d5645308ac68de2caf25e84afc079fc42d3ccd8283f5294fc4803da60b6",
+    ".cache/phase_chip_weight_prefetch/source/guarded_weight_probe.sv": "34cd8bbc7836852cd3e89f50384e7876a67d305960118609f6be31349292949d",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_backpressured_raw_weight_loader.sv": "7425ab7fbdfbead2431a3f72daa06fb9bc43ad5a3c92a71f6e951230a7cc5a72",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_batched_tensor390.sv": "776e7f240c8f63dcac80ed8ff66da4d9a5dda7bdbac73603243adf84bf6e5784",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_compute_fabric.sv": "948d5268ac176b4ae8ff6011e338eb69682581655f80d1fc85129c265c5cc400",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_phase_weight_ingress.sv": "26a692903dfc6015aa6e008f5327ac4f5d17942f6622ccca67a97d2e44ca7269",
+    ".cache/phase_chip_weight_prefetch/source/weight_prefetch_stress_bench.sv": "d11da20134206dd69bd46d16d0f9616f82d1c4bea068da7d444febff6eac5133",
+    ".cache/phase_chip_weight_prefetch/weight_guard_disabled/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/phase_chip_weight_prefetch/weight_guard_disabled/progress.log": "5d5d700dd89ed7bf3f39cce4eb0cdbe3d818a571d71fd0eb2982c1a44d281bd9",
+    ".cache/phase_chip_weight_prefetch/weight_guard_disabled/xrun.log": "b0869cc32acdb401b3af04e87a6d6a072afef8a42ab60f25f3012f8fd8dbe97d",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/xrun.log": "9195ca8a0832edaa7e1d687530ec7543a537ecf96119d5012ef3effdc7521dd7",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/xrun.log": "3b81c1a3146a1a3f7c7890879f5e92a181f1388c6b482c8d68ac9c880a7b6075",
+    ".cache/phase_chip_weight_prefetch/weight_stall/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/weight_stall/progress.log": "8b18738ef080450144bb54a2dc572556bfc338f8af563a7d65bc4a4fcbabb9aa",
+    ".cache/phase_chip_weight_prefetch/weight_stall/xrun.log": "3b5e4c5a9d594bd72ab369496b23c1f4a52936468320f261d1083da98ca00904",
+    "syn/prepare_tri_oracle_phase_chip.py": "b3fa0fe74e955f7816196c8994bff54065eac53920cc3ee5b9fb6631a69b71dd",
+    "syn/prepare_tri_oracle_weight_tile_prefetch.py": "0dd2c2a47823cea4b1b6bb6bee59fdc1bcfc92b124d20c77eefa41ab492fafa9",
+    "syn/run_tri_oracle_phase_chip.sh": "0ed5bca8dd402edcc8317a9bf9111cb682c7382f41069541ac5c757acb8ebce9",
+    "verilog/tri_oracle_projection_weight_reuse.sv": "6df1085ea1c9a01a7c48dfec61a1d277d2f0d9e87210f4505f4038d5ef8f1109",
+    "verilog/tri_oracle_weight_tile_prefetch_probe.sv": "de001d3aad09404e32432e11409379bd05350aa01043d63793855615b4395712"
+  },
+  "scope": "Directed chip command cases at the typical memory corner. Backpressured weight lanes stage the next tile while the current projection runs. Independent monitors check each physical commit against unread words. Whole-chip synthesis, physical timing, and model validation remain open.",
+  "state": "integrated_packed_weight_prefetch_and_reservation_verified",
+  "unguarded_overwrite": {
+    "cluster": 0,
+    "native_exit_status": 2,
+    "word": 0
+  }
+}

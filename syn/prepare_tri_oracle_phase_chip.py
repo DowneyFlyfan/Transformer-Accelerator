@@ -13,6 +13,11 @@ from prepare_tri_oracle_cluster_weight_phase import (
     prepare_mapped_fabric_adapter,
 )
 from prepare_tri_oracle_phase_macro_boundary import REPAIRED_CLOCK_BOUNDARY
+from prepare_tri_oracle_backpressured_weight_transport import RAW, raw_loader
+from prepare_tri_oracle_weight_tile_prefetch import (
+    bind_weight_guards, check_guarded_weight_writes, guard_weight_ingress, prepare_guard_stress_bench,
+    schedule_weight_prefetch,
+)
 
 
 INCLUDE = re.compile(r'(?m)^`include "([^"]+)"$')
@@ -174,7 +179,8 @@ def transform_chip(sources, buffered):
     return sources
 
 
-def prepare(output, buffered=False, derived_clock=False, activation_broadcast=False, activation_prefetch=False):
+def prepare(output, buffered=False, derived_clock=False, activation_broadcast=False, activation_prefetch=False,
+            weight_prefetch=False):
     bundle = (JOINED / "bundle.sv").read_text()
     paths = [Path(name) for name in INCLUDE.findall(bundle)]
     prepared_names = (
@@ -203,6 +209,9 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         work_sources[cluster] = prepare_activation_cluster(work_sources[cluster])
         if activation_prefetch:
             work_sources[tensor] = schedule_next_activation_tile(work_sources[tensor])
+        if weight_prefetch:
+            work_sources[tensor] = schedule_weight_prefetch(work_sources[tensor])
+            work_sources[fabric] = bind_weight_guards(work_sources[fabric])
     for name, contents in work_sources.items():
         (output / name).write_text(contents)
     pe, = (path for path in paths if path.name == "tri_oracle_pe_array.sv")
@@ -227,9 +236,12 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         adapter = output / "mapped_fabric_adapter.sv"
         adapter.write_text(prepare_mapped_fabric_adapter(fabric.read_text()))
         bound = output / ingress.name
-        bound.write_text(edit(ingress.read_text(), [
+        ingress_source = edit(ingress.read_text(), [
             ("tri_oracle_weight_phase_fabric weight_port (", "tri_oracle_weight_phase_fabric_adapter weight_port ("),
-        ]))
+        ])
+        if weight_prefetch:
+            ingress_source = guard_weight_ingress(ingress_source)
+        bound.write_text(ingress_source)
         sources += [mapped, adapter, bound]
     else:
         sources += [fabric, ingress]
@@ -247,6 +259,13 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         activation_model.write_text(text.replace(ACTIVATION_MACRO, TIMED_ACTIVATION_MACRO).replace(
             "`ifdef UNIT_DELAY", "`ifdef TRI_ORACLE_ACTIVATION_UNIT_DELAY"), encoding="latin-1")
         sources.extend((activation_model, rtl / "tri_oracle_activation_tile_prefetch_probe.sv"))
+    if weight_prefetch:
+        raw = output / (RAW + ".sv")
+        raw.write_text(raw_loader((rtl / "tri_oracle_parallel_weight_loader.sv").read_text()))
+        probe = output / "guarded_weight_probe.sv"
+        probe.write_text(check_guarded_weight_writes((rtl / "tri_oracle_phase_chip_probe.sv").read_text()))
+        sources.extend((raw, rtl / "tri_oracle_projection_weight_reuse.sv",
+                        rtl / "tri_oracle_weight_tile_prefetch_probe.sv", probe))
     (output / "bundle.sv").write_text(bundle + "".join(f'`include "{path}"\n' for path in sources))
     clock_peer = DERIVED_CLOCK_PEER if derived_clock else CLOCK_SOURCE
     command_clock_ports = ("    .weight_memory_clk,\n    .rst_n(external_rst_n)," if derived_clock
@@ -259,6 +278,9 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         bench_changes.append(("endmodule\n", RESET_PEER_CHECK))
     for source, target in (("trained_tb.sv", "bench.sv"), ("full_native/trained_tb.sv", "trained_bench.sv")):
         (output / target).write_text(edit((JOINED / source).read_text(), bench_changes))
+    if weight_prefetch:
+        test = prepare_guard_stress_bench((output / "bench.sv").read_text())
+        (output / "weight_prefetch_stress_bench.sv").write_text(test)
     if activation_prefetch:
         bench = (output / "bench.sv").read_text()
         fault = edit(bench, [
@@ -301,6 +323,7 @@ if __name__ == "__main__":
     parser.add_argument("--derived-clock", action="store_true")
     parser.add_argument("--activation-broadcast", action="store_true")
     parser.add_argument("--activation-prefetch", action="store_true")
+    parser.add_argument("--weight-prefetch", action="store_true")
     args = parser.parse_args()
     if args.derived_clock and not args.buffered_boundary:
         parser.error("use the verified buffered weight boundary with the derived clock")
@@ -308,5 +331,7 @@ if __name__ == "__main__":
         parser.error("the activation broadcast uses the internally divided chip clock")
     if args.activation_prefetch and not args.activation_broadcast:
         parser.error("tile prefetch uses the verified activation broadcast")
+    if args.weight_prefetch and not args.activation_prefetch:
+        parser.error("early weight fetch uses the next activation tile")
     prepare(args.output.resolve(), args.buffered_boundary, args.derived_clock,
-            args.activation_broadcast, args.activation_prefetch)
+            args.activation_broadcast, args.activation_prefetch, args.weight_prefetch)
