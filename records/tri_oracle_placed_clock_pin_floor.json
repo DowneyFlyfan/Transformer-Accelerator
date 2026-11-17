@@ -1,0 +1,83 @@
+{
+  "buffer_scenario": {
+    "master": "CKBD8BWP12T40P140",
+    "max_output_capacitance_pf_by_corner": {
+      "fast": "0.721895",
+      "slow": "0.577017",
+      "typical": "0.595302"
+    },
+    "minimum_leaf_outputs_across_all_regions": 976,
+    "regions_initially_without_geometric_slots": 7,
+    "verified_simultaneous_row_compaction": {
+      "checked_rows": 282,
+      "maximum_single_cell_shift_um": 1.54,
+      "moved_standard_cells": 49088,
+      "regions": {
+        "tri_array_region_10": {
+          "affected_rows": 45,
+          "largest_cell_shift_um": 1.54,
+          "moved_standard_cells": 10081,
+          "slots_created": 54
+        },
+        "tri_array_region_11": {
+          "affected_rows": 37,
+          "largest_cell_shift_um": 1.54,
+          "moved_standard_cells": 3587,
+          "slots_created": 45
+        },
+        "tri_array_region_15": {
+          "affected_rows": 48,
+          "largest_cell_shift_um": 1.54,
+          "moved_standard_cells": 5358,
+          "slots_created": 57
+        },
+        "tri_array_region_17": {
+          "affected_rows": 45,
+          "largest_cell_shift_um": 1.54,
+          "moved_standard_cells": 10036,
+          "slots_created": 53
+        },
+        "tri_array_region_18": {
+          "affected_rows": 59,
+          "largest_cell_shift_um": 1.54,
+          "moved_standard_cells": 10283,
+          "slots_created": 62
+        },
+        "tri_array_region_3": {
+          "affected_rows": 45,
+          "largest_cell_shift_um": 1.54,
+          "moved_standard_cells": 6617,
+          "slots_created": 49
+        },
+        "tri_array_region_6": {
+          "affected_rows": 32,
+          "largest_cell_shift_um": 1.54,
+          "moved_standard_cells": 3126,
+          "slots_created": 35
+        }
+      },
+      "slots": 355
+    }
+  },
+  "database_fingerprint_sha256": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+  "direct_external_clock_pins_with_placed_coordinates": 805764,
+  "evidence_sha256": {
+    ".cache/placement_clock_demand/audit.py": "332b0825ad685de7f03ed43f2f69b4c646c19b4951f1d23206f187b81f6e7fd3",
+    ".cache/placement_clock_demand/clock_window_candidates.json": "8a6e5a92d65cde98449244bd14bde7d6169c150da3a0e8a5aa25a25138381baa",
+    ".cache/placement_clock_demand/pack_clock_windows.py": "70e0cbdbade4f82d012c50a592418ed19f28d645297475e4c443b21463afcb86",
+    ".cache/placement_clock_demand/packing_report.json": "271d9159ea9e3b4a7f172543bcdc44fb4c015ddf7343abdcd84d8881f4c3a8a2",
+    ".cache/placement_clock_demand/report.json": "617218e76407616e17e2e02edd6c1105684d33d780623b55c61fe68952ec8005",
+    ".cache/placement_clock_demand/validate_packing.py": "cd78426678fc3790ee93026c032ee07ae70ed15cd8dc3d1bc0b67f606534785f",
+    ".cache/placement_clock_demand/verified_packing.json": "ebd1e2541afb5bae79de190bf7f48310a195ada63da581a0f74fa6505b25812b",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_corrected_booth_clock_loads.json": "c714e16bd2d14d356a3985aa6535fd7a2c7b792000bedaefc85d92f802a2e652",
+    "records/tri_oracle_placed_row_capacity.json": "e28181b577d6bd25fd518769495550f230920a4c740e8b04a77b15b6d4017860"
+  },
+  "scope": "Uses nominal clock-terminal capacitances and output limits from the exact three timing views. The floor assumes each region uses the same leaf-buffer master and locally serves its own direct clock pins. Geometric trials were independently checked against every affected row and macro keepout. Electrical checks after moving cells, clock tree implementation, and routing remain pending.",
+  "state": "repaired_placement_three_corner_clock_pin_floor_and_local_row_fit_verified",
+  "total_direct_clock_pin_capacitance_pf_by_corner": {
+    "fast": "561.784790998",
+    "slow": "558.391223336",
+    "typical": "556.524259534"
+  }
+}
