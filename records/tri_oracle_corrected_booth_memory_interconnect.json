@@ -1,0 +1,34 @@
+{
+  "database_fingerprint_sha256": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "syn/verify_tri_oracle_booth_memory_interconnect.py": "8746693f19774e56d6681f0f15a6f25b3490c16870475268f197e0c1000861f6"
+  },
+  "grouped_memory_clients": 5,
+  "grouped_response_lanes_bits": [
+    512,
+    512
+  ],
+  "memory_wrapper_masters": [
+    "tri_oracle_chip_host_status_io",
+    "tri_oracle_chip_projection_packet_io",
+    "tri_oracle_chip_attention_packet_io",
+    "tri_oracle_chip_rotary_packet_io"
+  ],
+  "packed_memory_boundary_bits": {
+    "response_data": 448,
+    "response_metadata": 7,
+    "transmit_data": 8
+  },
+  "paper_figure": "31.6.2",
+  "paper_network_on_chip_equivalence_verified": false,
+  "projection_response_bits": 64,
+  "rejected_negative_controls": {
+    "cluster_address_swap": "client_req_address[0]",
+    "memory_response_lane_swap": "mem_rsp_data[0]"
+  },
+  "scope": "Named port associations and payload widths of the grouped read clients and external memory wrappers on the cold-placed netlist. This does not trace cell-level steering inside the memory arbiter. Figure 31.6.2 shows a network serving all clusters and a local network serving the cores and aggregator. The figure does not specify the packet format or arbitration.",
+  "state": "placed_booth_memory_interconnect_verified"
+}
