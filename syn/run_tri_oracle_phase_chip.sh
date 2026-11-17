@@ -9,6 +9,9 @@ fi
 if [[ ${DERIVED_PHASE_CLOCK:-0} == 1 ]]; then
   experiment="$repo/.cache/phase_chip_clock"
 fi
+if [[ ${ACTIVATION_BROADCAST:-0} == 1 ]]; then
+  experiment="$repo/.cache/phase_chip_activation"
+fi
 source_dir="$experiment/source"
 name="${1:?run name is required}"
 shift
@@ -45,12 +48,15 @@ if [[ "$name" == attention ]]; then
   arguments=(-defparam "$top.INTEGRATE=1" "+FIXTURE=$repo/.cache/physical/shared437/fixture" +DUMP=attention.hex)
   progress=()
 fi
-rc=0
-docker exec -w "$work" tri-oracle-eda timeout -k 5 "$duration" prlimit --as=5368709120 -- \
-  /opt/cadence/bin/xrun -64bit -sv -sequdp_nba_delay -xmerror RECOME -top "$top" -log xrun.log \
-  "${arguments[@]}" "$source_dir/bundle.sv" "$bench" \
-  "$repo/verilog/tri_oracle_phase_chip_probe.sv" \
-  "${progress[@]}" "$@" >"$work/console.log" 2>&1 || rc="$?"
-printf '%s\n' "$rc" >"$work/exit_status"
-rg '^(BATCH408_PASS|PACKED_DECODER_PASS|PHASE_CHIP)|\*[EF],' "$work/xrun.log" | head -18 || true
-exit "$rc"
+run_replay() {
+  local rc=0
+  docker exec -w "$work" tri-oracle-eda timeout -k 5 "$duration" prlimit --as=5368709120 -- \
+    /opt/cadence/bin/xrun -64bit -sv -sequdp_nba_delay -xmerror RECOME -top "$top" -log xrun.log \
+    "${arguments[@]}" "$source_dir/bundle.sv" "$bench" \
+    "$repo/verilog/tri_oracle_phase_chip_probe.sv" \
+    "${progress[@]}" "$@" >"$work/console.log" 2>&1 || rc="$?"
+  printf '%s\n' "$rc" >"$work/exit_status"
+  rg '^(BATCH408_PASS|PACKED_DECODER_PASS|PHASE_CHIP)|\*[EF],' "$work/xrun.log" | head -18 || true
+  return "$rc"
+}
+run_replay "$@"

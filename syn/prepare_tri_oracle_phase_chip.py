@@ -4,6 +4,9 @@ import argparse
 import re
 from pathlib import Path
 
+from prepare_tri_oracle_activation_bank_overlap import (
+    broadcast_chip_activation, prepare_activation_cluster, prepare_activation_core,
+)
 from prepare_tri_oracle_cluster_weight_phase import (
     ROOT, TIMED_MACRO, TS5_MACRO, distribute_weight_macro_inputs, edit, prepare_cluster, prepare_core,
     prepare_mapped_fabric_adapter,
@@ -170,7 +173,7 @@ def transform_chip(sources, buffered):
     return sources
 
 
-def prepare(output, buffered=False, derived_clock=False):
+def prepare(output, buffered=False, derived_clock=False, activation_broadcast=False):
     bundle = (JOINED / "bundle.sv").read_text()
     paths = [Path(name) for name in INCLUDE.findall(bundle)]
     prepared_names = (
@@ -189,6 +192,13 @@ def prepare(output, buffered=False, derived_clock=False):
     if derived_clock:
         top = "tri_oracle_chip_command_layer.sv"
         work_sources[top] = derive_chip_clock(work_sources[top])
+    if activation_broadcast:
+        tensor, fabric = "tri_oracle_batched_tensor390.sv", "tri_oracle_compute_fabric.sv"
+        work_sources[tensor], work_sources[fabric] = broadcast_chip_activation(
+            work_sources[tensor], work_sources[fabric])
+        for name, transform in (("tri_oracle_sram_memory_compute.sv", prepare_activation_core),
+                                ("tri_oracle_sram_compute_cluster.sv", prepare_activation_cluster)):
+            work_sources[name] = transform(work_sources[name])
     for name, contents in work_sources.items():
         (output / name).write_text(contents)
     pe, = (path for path in paths if path.name == "tri_oracle_pe_array.sv")
@@ -262,7 +272,10 @@ if __name__ == "__main__":
     parser.add_argument("output", type=Path)
     parser.add_argument("--buffered-boundary", action="store_true")
     parser.add_argument("--derived-clock", action="store_true")
+    parser.add_argument("--activation-broadcast", action="store_true")
     args = parser.parse_args()
     if args.derived_clock and not args.buffered_boundary:
         parser.error("use the verified buffered weight boundary with the derived clock")
-    prepare(args.output.resolve(), args.buffered_boundary, args.derived_clock)
+    if args.activation_broadcast and not args.derived_clock:
+        parser.error("the activation broadcast uses the internally divided chip clock")
+    prepare(args.output.resolve(), args.buffered_boundary, args.derived_clock, args.activation_broadcast)

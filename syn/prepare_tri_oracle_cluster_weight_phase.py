@@ -3,6 +3,10 @@
 import argparse
 from pathlib import Path
 
+from prepare_tri_oracle_activation_bank_overlap import (
+    ACTIVATION_MACRO, TIMED_ACTIVATION_MACRO, prepare_activation_bench, prepare_activation_cluster,
+    prepare_activation_core,
+)
 from prepare_tri_oracle_early_weight_pairs import edit
 
 
@@ -334,11 +338,17 @@ def main():
     parser.add_argument("--all-clusters", action="store_true")
     parser.add_argument("--mapped-fabric", action="store_true")
     parser.add_argument("--distributed-macros", action="store_true")
+    parser.add_argument("--activation-prefetch", action="store_true")
+    parser.add_argument("--activation-model", type=Path)
     args = parser.parse_args()
     if args.mapped_fabric and not args.all_clusters:
         parser.error("the mapped controller requires the five-cluster fixture")
     if args.distributed_macros and not args.mapped_fabric:
         parser.error("distributed drivers require the mapped controller")
+    if args.activation_prefetch and not args.all_clusters:
+        parser.error("activation prefetch uses the five-cluster fixture")
+    if args.activation_model and not args.activation_prefetch:
+        parser.error("the timed activation model requires the activation prefetch test")
     macro = args.macro.read_text(encoding="latin-1")
     if macro.count(f"module {TS5_MACRO} (") != 1 or "`ifdef UNIT_DELAY" not in macro:
         parser.error("expected the original compiler weight memory model")
@@ -357,9 +367,21 @@ def main():
     core = prepare_core(args.core.read_text())
     if args.distributed_macros:
         core = distribute_weight_macro_inputs(core)
+    cluster = prepare_cluster(args.cluster.read_text())
+    if args.activation_prefetch:
+        core = prepare_activation_core(core, timed=bool(args.activation_model))
+        cluster = prepare_activation_cluster(cluster)
+        bench = prepare_activation_bench(bench)
+    if args.activation_model:
+        model = args.activation_model.read_text(encoding="latin-1")
+        if model.count(f"module {ACTIVATION_MACRO} (") != 1 or "`ifdef UNIT_DELAY" not in model:
+            parser.error("expected the original compiler activation memory model")
+        model = model.replace(ACTIVATION_MACRO, TIMED_ACTIVATION_MACRO).replace(
+            "`ifdef UNIT_DELAY", "`ifdef TRI_ORACLE_ACTIVATION_UNIT_DELAY")
+        (args.output / "activation_timed.v").write_text(model, encoding="latin-1")
     for path, source in (
         ("core.sv", core),
-        ("cluster.sv", prepare_cluster(args.cluster.read_text())),
+        ("cluster.sv", cluster),
         ("bench.sv", bench),
     ):
         (args.output / path).write_text(source)

@@ -138,6 +138,16 @@ def verify(include_scalar, include_trained, buffered=False, include_attention=Fa
         results["attention"] = {"command": metrics, "physical_phase": path_metrics}
         files.update((source / "attention_bench.sv", original))
         files.update(run / "attention" / log for log in ("xrun.log", "exit_status"))
+        recovery = run / "attention/recovered_exit_status.json"
+        if recovery.is_file():
+            events = json.loads(recovery.read_text())
+            start, stop = events["start"], events["stop"]
+            require(str(source / "attention_bench.sv") in start["Action"]
+                    and start["Actor"]["Attributes"]["execID"] == stop["Actor"]["Attributes"]["execID"]
+                    and stop["Action"] == "exec_die" and stop["Actor"]["Attributes"]["exitCode"] == "0",
+                    "Docker exit event did not match the attention process")
+            results["attention"]["native_exit_status_source"] = "matched Docker execution events"
+            files.add(recovery)
 
     hashes = {}
     for path in sorted(files):
