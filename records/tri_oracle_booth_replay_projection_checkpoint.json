@@ -1,0 +1,30 @@
+{
+  "checkpoint_count": 2,
+  "checkpoint_time_ns": 16200000,
+  "cold_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "committed_output_bytes": 0,
+  "committed_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "input_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/activation.hex": "c4c11493a6e556626ce3b21d4bf81e64d09c471fb60b70c96b7ce0de3d6e577c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/layer_tb.sv": "89c45cf6d7e00f841da938ed3219b682dde364935451a2dd27f4242e1ef46cd7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/prepared_schedule.json": "69962beafbd8ab7c75ff6d827b8b969786df943d7e3992b9cf5996f2096abb6b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/projection_commands.txt": "93df63f6547ea9f3adb2a9d37dd35e07c03458404e9943d686a0ed4fcfe5153d",
+    "syn/verify_tri_oracle_booth_attention_checkpoint.py": "b1983180012ceb82b57e522b6c3586f4f99492485428c0c2c26eda114d168cdb"
+  },
+  "projection_batches_at_checkpoint": 16,
+  "projection_groups_at_checkpoint": 0,
+  "projection_skipped_columns_at_checkpoint": 20,
+  "projection_vectors_at_checkpoint": 256,
+  "projection_weight_reads_at_checkpoint": 260864,
+  "rejected_trace_mutations": [
+    "inflated sparse weight reads",
+    "omitted batch",
+    "premature complete-group marker"
+  ],
+  "replay_prefix_sha256": "eb3d20939df780474785f94a967bf573c2856ce5750a02428a620503c433aaea",
+  "rows_at_checkpoint": 0,
+  "scope": "Checkpoint-prefix testbench receipt and weight-read counts on the corrected placed netlist. Output accuracy requires complete replay.",
+  "snapshot": "worklib.checkpoint_b:sv",
+  "state": "trained_sparse_projection_batch_checkpoint_verified_on_placed_netlist",
+  "total_projection_batches": 1040
+}

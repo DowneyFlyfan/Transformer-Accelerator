@@ -19,6 +19,9 @@ CHECKPOINT = re.compile(r"(?m)^TRI_UNSEEDED_PACKET_CHECKPOINT (checkpoint_[ab])$
 SAVED = re.compile(r"(?m)^Saved snapshot worklib\.(checkpoint_[ab]):sv$")
 TIME = re.compile(r"(?m)^Ran until (\d+(?:\.\d+)?) (FS|PS|NS|US|MS|S) \+ 0$")
 GROUP = re.compile(r"(?m)^UNSEEDED_PACKET_PROJECTION_GROUP_PASS group=(\d+) vectors=409$")
+BATCH = re.compile(r"^UNSEEDED_PACKET_PROJECTION_BATCH_PASS group=(\d+) slot=(\d+) tokens=(\d+)"
+                   r" weights=(\d+) skipped_columns=(\d+)$")
+PROJECTION = re.compile(r"(?m)^UNSEEDED_PACKET_PROJECTION_(?:BATCH|GROUP)_PASS[^\n]*$")
 ROW = re.compile(r"(?m)^UNSEEDED_PACKET_ATTENTION_ROW_PASS head=(\d+) rank=(\d+) value_reads=(\d+)$")
 TO_NS = {"FS": Decimal("0.000001"), "PS": Decimal("0.001"), "NS": Decimal(1),
          "US": Decimal(10**3), "MS": Decimal(10**6), "S": Decimal(10**9)}
@@ -83,6 +86,47 @@ def trim_output(path, expected, discarded):
     return len(remainder)
 
 
+def projection_prefix(plan, fixture, prefix):
+    """Verify the chronological batch and group prefix, including sparse reads."""
+    schedule = WORK / "projection_commands.txt"
+    activation = fixture / "activation.hex"
+    assert digest(schedule) == plan["schedule_sha256"]
+    assert digest(activation) == plan["evidence_sha256"][str(activation.relative_to(ROOT))]
+    words = [bool(int(word, 16)) for word in activation.read_text().splitlines()]
+    words_per_token = 256
+    assert len(words) == 409 * words_per_token
+    commands = schedule.read_text().splitlines()
+    assert len(commands) == plan["projection_commands"]
+
+    expected = []
+    skipped_by_batch = {}
+    for command in commands:
+        group, first, count = map(int, command.split()[:3])
+        if first == 0 and group > 0:
+            expected.append(f"UNSEEDED_PACKET_PROJECTION_GROUP_PASS group={group - 1} vectors=409")
+        key = first, count
+        if key not in skipped_by_batch:
+            active = words[first * words_per_token:(first + count) * words_per_token]
+            skipped_by_batch[key] = sum(not any(active[column::words_per_token])
+                                        for column in range(words_per_token))
+        skipped = skipped_by_batch[key]
+        reads = 64 * (words_per_token - skipped)
+        expected.append(f"UNSEEDED_PACKET_PROJECTION_BATCH_PASS group={group} slot={first}"
+                        f" tokens={count} weights={reads} skipped_columns={skipped}")
+    expected.append(f"UNSEEDED_PACKET_PROJECTION_GROUP_PASS group={group} vectors=409")
+
+    observed = PROJECTION.findall(prefix)
+    if observed != expected[:len(observed)]:
+        raise ValueError("Saved projection batch or group trace disagrees with the trained schedule")
+    batches = [tuple(map(int, match.groups())) for line in observed if (match := BATCH.fullmatch(line))]
+    return {
+        "projection_batches_at_checkpoint": len(batches),
+        "projection_vectors_at_checkpoint": sum(count for _, _, count, _, _ in batches),
+        "projection_weight_reads_at_checkpoint": sum(reads for _, _, _, reads, _ in batches),
+        "projection_skipped_columns_at_checkpoint": sum(skipped for _, _, _, _, skipped in batches),
+    }
+
+
 def checkpoint_artifacts():
     prepared = json.loads((NATIVE / "prepared_native.json").read_text())
     plan_path = WORK / "prepared_schedule.json"
@@ -93,8 +137,11 @@ def checkpoint_artifacts():
     assert digest(source) == plan["evidence_sha256"][str(source.relative_to(ROOT))]
     driver = WORK / "checkpoint.tcl"
     assert digest(driver) == prepared["evidence_sha256"][str(driver.relative_to(ROOT))]
+    testbench = WORK / "layer_tb.sv"
+    assert digest(testbench) == prepared["evidence_sha256"][str(testbench.relative_to(ROOT))]
     log = NATIVE / "xrun.log"
     facts, rows, prefix = checkpoint_prefix(log.read_text())
+    facts.update(projection_prefix(plan, fixture, prefix))
     expected = list(expected_rows(source))
     assert rows == [key for key, _ in expected[:len(rows)]]
     output = NATIVE / "attention.hex"
