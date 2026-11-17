@@ -1,0 +1,115 @@
+{
+  "archived_weight_and_sign_fragments": 883548841,
+  "cases": {
+    "8_credits_delay_4": {
+      "lane_credit_reuse_periods": [
+        7,
+        6
+      ],
+      "lane_fragment_capacity": [
+        508660000,
+        508660000
+      ],
+      "optimistic_response_cycles": 441774421,
+      "optimistic_response_ms_at_paper_clock": 761.6800362068966,
+      "total_fragment_margin": 133771159
+    },
+    "8_credits_delay_5": {
+      "lane_credit_reuse_periods": [
+        8,
+        7
+      ],
+      "lane_fragment_capacity": [
+        508660000,
+        508660000
+      ],
+      "optimistic_response_cycles": 441774421,
+      "optimistic_response_ms_at_paper_clock": 761.6800362068966,
+      "total_fragment_margin": 133771159
+    },
+    "8_credits_delay_6": {
+      "lane_credit_reuse_periods": [
+        9,
+        8
+      ],
+      "lane_fragment_capacity": [
+        452142223,
+        508660000
+      ],
+      "optimistic_response_cycles": 467761151,
+      "optimistic_response_ms_at_paper_clock": 806.4847431034483,
+      "total_fragment_margin": 77253382
+    },
+    "8_credits_delay_7": {
+      "lane_credit_reuse_periods": [
+        10,
+        9
+      ],
+      "lane_fragment_capacity": [
+        406928000,
+        452142223
+      ],
+      "optimistic_response_cycles": 523153918,
+      "optimistic_response_ms_at_paper_clock": 901.9895137931035,
+      "total_fragment_margin": -24478618
+    },
+    "8_credits_delay_8": {
+      "lane_credit_reuse_periods": [
+        11,
+        10
+      ],
+      "lane_fragment_capacity": [
+        369934546,
+        406928000
+      ],
+      "optimistic_response_cycles": 578514121,
+      "optimistic_response_ms_at_paper_clock": 997.4381396551724,
+      "total_fragment_margin": -106686295
+    },
+    "9_credits_delay_7": {
+      "lane_credit_reuse_periods": [
+        10,
+        9
+      ],
+      "lane_fragment_capacity": [
+        457794000,
+        508660000
+      ],
+      "optimistic_response_cycles": 465025706,
+      "optimistic_response_ms_at_paper_clock": 801.7684586206897,
+      "total_fragment_margin": 82905159
+    },
+    "9_credits_delay_8": {
+      "lane_credit_reuse_periods": [
+        11,
+        10
+      ],
+      "lane_fragment_capacity": [
+        416176364,
+        457794000
+      ],
+      "optimistic_response_cycles": 514234774,
+      "optimistic_response_ms_at_paper_clock": 886.6116793103448,
+      "total_fragment_margin": -9578477
+    }
+  },
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_limit/credit_limit_tb.sv": "ee5a58f600e7874f1c2a7ed2ffc8e0da9f3b9d629f2478f74eb13fabde035ed4",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_limit/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_limit/xrun.log": "ecaa5a8440518fe5bf4ccc1c6b5b3b137f7389ed982ad43c7560ca01f9eb8b37",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit7/xrun.log": "451b0dcc4ac96551057e9444e68c9a6da808c025209c76b23693e1d04b65ca3d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit_tb.sv": "1cdfa76ac287d318dbd3e60a12c4d3cb0d4e1f8385b0f5b3987a2142d299c9a2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/placed_receiver.v": "4c01fdf26769f0e5c80f5a7c26eba2e03db13b237f9307ff2f47db5a09256a66",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_bonded_system_budget.json": "d9f2e029aaf318d9504d01366d7e2b61bf084cf157618014b0dc6193e938bb61",
+    "records/tri_oracle_corrected_booth_response_credit_window.json": "d6909db62d1713c0e6b41c64a3b2e45181c1b2f56d0f926f5a7e3a4ac07d007c",
+    "records/tri_oracle_corrected_booth_response_packing.json": "85a5f56a4da057ffdf1e6cc0d568449cff417d3971b5e1513387472991a49d78",
+    "syn/verify_tri_oracle_booth_receive_credit_limit.py": "7da7d02572ba34a93d9b3873283fdb6090626fb86660f628e1d0f42a2a6f5802"
+  },
+  "paper_window_cycles": 508660000,
+  "scope": "The placed receiver is coupled to modeled credit return delays. Bounds allow ideal fragment steering across the two lanes and omit computation, turnaround and all other traffic. Passing the bound only establishes response capacity under these assumptions.",
+  "state": "placed_response_credit_reuse_bounds_checked_against_native_bursts"
+}
