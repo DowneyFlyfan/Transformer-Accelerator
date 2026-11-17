@@ -1,0 +1,28 @@
+{
+  "evidence_sha256": {
+    ".cache/model_reference/batch429/reference.json": "8ff47a3b2633cb15f95506e4f05e9cea552b2851c0f05fafb8ba0000a863987b",
+    ".cache/model_reference/batch429/weights.bin": "a4ef9400cf304f8c8a4f8706889f5bd2b553d7b4c6cbb73186e42102fa78f528",
+    ".cache/model_reference/batch430/activation.bin": "aca36922f9e41e84862abad034468cec9f2e5d02bda14f1baaef4c5d477c1299",
+    ".cache/model_reference/batch430/cos.bin": "447ad9cdb62ce8be072485af7b0b71e8368c5f286bbc23ec9ec9d5f385d99c0b",
+    ".cache/model_reference/batch430/reference.json": "81ddd0d6952665d8e3763336240947268792653b326c9959b31231d577077dfa",
+    ".cache/model_reference/batch430/sin.bin": "756114619877b2aeb593087254718898e23e1d9c9800e2a80b7feda0de8f5f26",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/activation.hex": "c4c11493a6e556626ce3b21d4bf81e64d09c471fb60b70c96b7ce0de3d6e577c",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/biases.hex": "f3cbb8dfe4d3f0e4649fa0306ff3286bb35c4f94f979d47e3f03dd251b86f107",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/cos.hex": "a1d608e684003c41136bb19b8ff86aa86d874d7496078c2cff728616a69e0596",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/expected.hex": "46945cc491896981ca121c5b4de6b4ab0e4f0b2395a857a7a28fff6838cfc730",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/shifts.hex": "29ef25b27f59a3bb4a85c29856614d8dec75c5a3b832b9884be4000f330f5c46",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/sin.hex": "5c15f50b63d8b7165cf07f5e9a02faed219f2e119c2746ae65f697862b6e402e",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/weights.hex": "41c61122ba6540fec4ae0e29c76d218caa193bb117671fe454c165509d24ed35",
+    ".cache/physical/whole_chip_xcelium_speed/prepared.json": "c7b8b4626e0d2301f2cb4095a26f732310fd683a26dc10cb4a772004c73b63ab",
+    "syn/verify_tri_oracle_booth_projection_reference.py": "ac77ab6d59f3feace194fbf8c6b81808cc164a8fa24f5afa43426ec8fb53d7c5"
+  },
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "groups": 40,
+  "matched_int8_outputs": 1047040,
+  "outputs_sha256": "28b87963400c9e4c597717cef8df0f737e91e65e2bec15b2bad77ffa0307726f",
+  "peak_gpu_tensor_bytes": 107056128,
+  "question": 42000,
+  "retained_tokens": 409,
+  "scope": "One trained software projection fixture, including rotary arithmetic for query and key groups.",
+  "state": "trained_projection_fixture_verified_with_independent_gpu_arithmetic"
+}
