@@ -1,0 +1,30 @@
+{
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "cycles": 1716240,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/host_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/native_status.json": "f9e6e52042c545e6f99c37a014d67766fa94ca534adb835cc139690f8171de3b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/observed_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/prepared.json": "db8b11beeb42d78f648ae4375097a1aac50d62ab0625e58fcb7809e965dad41c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/xrun.log": "b1b324a985c618ee100cb70b0cfd03cf39d84e8183a2ff7f0ecd7fec98b79da1",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_corrected_booth_feedforward_replay_preflight.json": "874ec7a43f67ff5fa3b53b03af4ddaa4d236a24bd2da91b5981feb04e962f545",
+    "syn/verify_tri_oracle_booth_feedforward_replay.py": "c8db18db0c7c7bfe143168a1c883e0319ba30c2a50099b51ad283dd25a2249ab"
+  },
+  "exact_writeback_values": 4096,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9893265408,
+    "peak_container_anonymous_bytes": 9604292608,
+    "stop_reason": null,
+    "wall_seconds": 3431.5564281799598
+  },
+  "physical_writeback_packets": 512,
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "Functional hardware replay of two trained layer 10 tokens with pad-level command, external memory and writeback checks. The replay uses archived projection inputs.",
+  "simulator_finish_time": "17162480 NS + 0",
+  "state": "repaired_booth_trained_feedforward_replayed_through_physical_ports"
+}

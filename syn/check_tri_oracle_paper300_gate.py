@@ -58,6 +58,7 @@ BOOTH_MODELS = Path("records/tri_oracle_corrected_booth_physical_models.json")
 BOOTH_BUFFERED_MODELS = Path("records/tri_oracle_corrected_booth_buffered_models.json")
 BOOTH_BUFFER_REPAIR = Path("records/tri_oracle_corrected_booth_pin_load_repair.json")
 BOOTH_STREAMING = Path("records/tri_oracle_corrected_booth_streaming_packet.json")
+BOOTH_FEEDFORWARD = Path("records/tri_oracle_corrected_booth_feedforward_replay.json")
 BOOTH_CLOCK_BOUNDARY = Path("records/tri_oracle_corrected_booth_clock_boundary.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
@@ -343,6 +344,18 @@ def buffered_booth_facts(root, facts, identities):
         prior["streaming_attention_replay"] = {
             key: streaming[key] for key in (
                 "layer", "head", "token_merge_maps", "external_value_requests", "exact_output_values", "scope")
+        }
+
+    if (root / BOOTH_FEEDFORWARD).is_file():
+        feedforward = booth_record(root, identities, BOOTH_FEEDFORWARD,
+                                   "repaired_booth_trained_feedforward_replayed_through_physical_ports")
+        assert feedforward["cold_netlist_sha256"] == proofs[cold]
+        assert feedforward["native"]["exit_status"] == 0 and feedforward["native"]["stop_reason"] is None
+        assert feedforward["positions"] == [607, 608]
+        assert feedforward["physical_writeback_packets"] == 512 and feedforward["exact_writeback_values"] == 4096
+        prior["feedforward_replay"] = {
+            key: feedforward[key] for key in (
+                "positions", "physical_writeback_packets", "exact_writeback_values", "cycles", "scope")
         }
 
     if (root / BOOTH_CLOCK_BOUNDARY).is_file():
