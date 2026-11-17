@@ -1,0 +1,365 @@
+{
+  "bottom_edge_anchor_span_um": 1818.3,
+  "clock_and_data_load_scenarios_pf": {
+    "c10_d10": {
+      "hold_clock_pulses": {
+        "high": {
+          "margin_ps": 798,
+          "pad_reference_width_ps": 889,
+          "receiver_minimum_ps": 235,
+          "receiver_width_ps": 1083
+        },
+        "low": {
+          "margin_ps": 356,
+          "pad_reference_width_ps": 835,
+          "receiver_minimum_ps": 235,
+          "receiver_width_ps": 641
+        }
+      },
+      "hold_fall_margin_ps": 901,
+      "hold_fall_worst_pin": "memory_tx_data[0]",
+      "hold_rise_margin_ps": 678,
+      "hold_rise_worst_pin": "memory_tx_data[0]",
+      "minimum_hold_margin_ps": 678,
+      "minimum_setup_margin_ps": 243,
+      "setup_clock_pulses": {
+        "high": {
+          "margin_ps": 726,
+          "pad_reference_width_ps": 881,
+          "receiver_minimum_ps": 477,
+          "receiver_width_ps": 1253
+        },
+        "low": {
+          "margin_ps": -55,
+          "pad_reference_width_ps": 843,
+          "receiver_minimum_ps": 477,
+          "receiver_width_ps": 471
+        }
+      },
+      "setup_fall_margin_ps": 243,
+      "setup_fall_worst_pin": "memory_tx_valid",
+      "setup_rise_margin_ps": 647,
+      "setup_rise_worst_pin": "memory_tx_valid"
+    },
+    "c10_d5": {
+      "hold_clock_pulses": {
+        "high": {
+          "margin_ps": 798,
+          "pad_reference_width_ps": 889,
+          "receiver_minimum_ps": 235,
+          "receiver_width_ps": 1083
+        },
+        "low": {
+          "margin_ps": 356,
+          "pad_reference_width_ps": 835,
+          "receiver_minimum_ps": 235,
+          "receiver_width_ps": 641
+        }
+      },
+      "hold_fall_margin_ps": 787,
+      "hold_fall_worst_pin": "memory_tx_data[0]",
+      "hold_rise_margin_ps": 628,
+      "hold_rise_worst_pin": "memory_tx_data[0]",
+      "minimum_hold_margin_ps": 628,
+      "minimum_setup_margin_ps": 469,
+      "setup_clock_pulses": {
+        "high": {
+          "margin_ps": 726,
+          "pad_reference_width_ps": 881,
+          "receiver_minimum_ps": 477,
+          "receiver_width_ps": 1253
+        },
+        "low": {
+          "margin_ps": -55,
+          "pad_reference_width_ps": 843,
+          "receiver_minimum_ps": 477,
+          "receiver_width_ps": 471
+        }
+      },
+      "setup_fall_margin_ps": 469,
+      "setup_fall_worst_pin": "memory_tx_valid",
+      "setup_rise_margin_ps": 745,
+      "setup_rise_worst_pin": "memory_tx_valid"
+    },
+    "c25_d25": {
+      "hold_clock_pulses": {
+        "high": {
+          "margin_ps": 804,
+          "pad_reference_width_ps": 906,
+          "receiver_minimum_ps": 417,
+          "receiver_width_ps": 1271
+        },
+        "low": {
+          "margin_ps": -13,
+          "pad_reference_width_ps": 819,
+          "receiver_minimum_ps": 417,
+          "receiver_width_ps": 453
+        }
+      },
+      "hold_fall_margin_ps": 1088,
+      "hold_fall_worst_pin": "memory_tx_data[0]",
+      "hold_rise_margin_ps": 679,
+      "hold_rise_worst_pin": "memory_tx_data[0]",
+      "minimum_hold_margin_ps": 679,
+      "minimum_setup_margin_ps": -140,
+      "setup_clock_pulses": {
+        "high": {
+          "margin_ps": 750,
+          "pad_reference_width_ps": 937,
+          "receiver_minimum_ps": 835,
+          "receiver_width_ps": 1635
+        },
+        "low": {
+          "margin_ps": -796,
+          "pad_reference_width_ps": 787,
+          "receiver_minimum_ps": 835,
+          "receiver_width_ps": 89
+        }
+      },
+      "setup_fall_margin_ps": -140,
+      "setup_fall_worst_pin": "memory_tx_valid",
+      "setup_rise_margin_ps": 647,
+      "setup_rise_worst_pin": "memory_tx_valid"
+    },
+    "c25_d5": {
+      "hold_clock_pulses": {
+        "high": {
+          "margin_ps": 804,
+          "pad_reference_width_ps": 906,
+          "receiver_minimum_ps": 417,
+          "receiver_width_ps": 1271
+        },
+        "low": {
+          "margin_ps": -13,
+          "pad_reference_width_ps": 819,
+          "receiver_minimum_ps": 417,
+          "receiver_width_ps": 453
+        }
+      },
+      "hold_fall_margin_ps": 677,
+      "hold_fall_worst_pin": "memory_tx_data[0]",
+      "hold_rise_margin_ps": 518,
+      "hold_rise_worst_pin": "memory_tx_data[0]",
+      "minimum_hold_margin_ps": 518,
+      "minimum_setup_margin_ps": 688,
+      "setup_clock_pulses": {
+        "high": {
+          "margin_ps": 750,
+          "pad_reference_width_ps": 937,
+          "receiver_minimum_ps": 835,
+          "receiver_width_ps": 1635
+        },
+        "low": {
+          "margin_ps": -796,
+          "pad_reference_width_ps": 787,
+          "receiver_minimum_ps": 835,
+          "receiver_width_ps": 89
+        }
+      },
+      "setup_fall_margin_ps": 688,
+      "setup_fall_worst_pin": "memory_tx_valid",
+      "setup_rise_margin_ps": 965,
+      "setup_rise_worst_pin": "memory_tx_valid"
+    },
+    "c5_d10": {
+      "hold_clock_pulses": {
+        "high": {
+          "margin_ps": 803,
+          "pad_reference_width_ps": 884,
+          "receiver_minimum_ps": 166,
+          "receiver_width_ps": 1020
+        },
+        "low": {
+          "margin_ps": 489,
+          "pad_reference_width_ps": 841,
+          "receiver_minimum_ps": 166,
+          "receiver_width_ps": 705
+        }
+      },
+      "hold_fall_margin_ps": 952,
+      "hold_fall_worst_pin": "memory_tx_data[0]",
+      "hold_rise_margin_ps": 729,
+      "hold_rise_worst_pin": "memory_tx_data[0]",
+      "minimum_hold_margin_ps": 729,
+      "minimum_setup_margin_ps": 145,
+      "setup_clock_pulses": {
+        "high": {
+          "margin_ps": 734,
+          "pad_reference_width_ps": 865,
+          "receiver_minimum_ps": 341,
+          "receiver_width_ps": 1126
+        },
+        "low": {
+          "margin_ps": 208,
+          "pad_reference_width_ps": 859,
+          "receiver_minimum_ps": 341,
+          "receiver_width_ps": 599
+        }
+      },
+      "setup_fall_margin_ps": 145,
+      "setup_fall_worst_pin": "memory_tx_valid",
+      "setup_rise_margin_ps": 549,
+      "setup_rise_worst_pin": "memory_tx_valid"
+    },
+    "c5_d25": {
+      "hold_clock_pulses": {
+        "high": {
+          "margin_ps": 803,
+          "pad_reference_width_ps": 884,
+          "receiver_minimum_ps": 166,
+          "receiver_width_ps": 1020
+        },
+        "low": {
+          "margin_ps": 489,
+          "pad_reference_width_ps": 841,
+          "receiver_minimum_ps": 166,
+          "receiver_width_ps": 705
+        }
+      },
+      "hold_fall_margin_ps": 1249,
+      "hold_fall_worst_pin": "memory_tx_data[0]",
+      "hold_rise_margin_ps": 840,
+      "hold_rise_worst_pin": "memory_tx_data[0]",
+      "minimum_hold_margin_ps": 840,
+      "minimum_setup_margin_ps": -456,
+      "setup_clock_pulses": {
+        "high": {
+          "margin_ps": 734,
+          "pad_reference_width_ps": 865,
+          "receiver_minimum_ps": 341,
+          "receiver_width_ps": 1126
+        },
+        "low": {
+          "margin_ps": 208,
+          "pad_reference_width_ps": 859,
+          "receiver_minimum_ps": 341,
+          "receiver_width_ps": 599
+        }
+      },
+      "setup_fall_margin_ps": -456,
+      "setup_fall_worst_pin": "memory_tx_valid",
+      "setup_rise_margin_ps": 330,
+      "setup_rise_worst_pin": "memory_tx_valid"
+    },
+    "c5_d5": {
+      "hold_clock_pulses": {
+        "high": {
+          "margin_ps": 803,
+          "pad_reference_width_ps": 884,
+          "receiver_minimum_ps": 166,
+          "receiver_width_ps": 1020
+        },
+        "low": {
+          "margin_ps": 489,
+          "pad_reference_width_ps": 841,
+          "receiver_minimum_ps": 166,
+          "receiver_width_ps": 705
+        }
+      },
+      "hold_fall_margin_ps": 837,
+      "hold_fall_worst_pin": "memory_tx_data[0]",
+      "hold_rise_margin_ps": 678,
+      "hold_rise_worst_pin": "memory_tx_data[0]",
+      "minimum_hold_margin_ps": 678,
+      "minimum_setup_margin_ps": 370,
+      "setup_clock_pulses": {
+        "high": {
+          "margin_ps": 734,
+          "pad_reference_width_ps": 865,
+          "receiver_minimum_ps": 341,
+          "receiver_width_ps": 1126
+        },
+        "low": {
+          "margin_ps": 208,
+          "pad_reference_width_ps": 859,
+          "receiver_minimum_ps": 341,
+          "receiver_width_ps": 599
+        }
+      },
+      "setup_fall_margin_ps": 370,
+      "setup_fall_worst_pin": "memory_tx_valid",
+      "setup_rise_margin_ps": 648,
+      "setup_rise_worst_pin": "memory_tx_valid"
+    }
+  },
+  "core_clock_megahertz": 580,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/genus/netlist.v": "6cbc3ca7f4f80bdfa676881e17175149e0206760af9b4418fb9f99c12583fab2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d10.sdc": "488e89e99288525dd16ec8f9aed999bc368526da697708a212bbed83dba66e13",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d10_hold_fall.rpt": "c2826af4c823d1712842c3ddf4f191dd8248f14dd5f155da0dd040dcbfc43398",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d10_hold_pulse.rpt": "d9b7210ee1513fb46a68374c85239993e060503f0a76ab240b6f75b6f212e472",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d10_hold_rise.rpt": "aa90a97d3f6b63091bef3534d949f3f056583ee14405997f6756eeaadd590b9f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d10_setup_fall.rpt": "b71dbfd951b06a94d6819d0da0d390ab5188c6d1b2a353372edd9935459565ad",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d10_setup_pulse.rpt": "6cfcb2d0bca5739f12ae4662dc78d15c3b223b1cad83cf0c0009d8b3c2ada448",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d10_setup_rise.rpt": "d2b6c25bb2e2ff651a711e5d14650620ebdde921818c65011bc7d8c93a2de6e8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d5.sdc": "5b4f2f5fb71af3cf9767d382b9ee925a427cb2ca278cafa1fa048d979787b2bb",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d5_hold_fall.rpt": "87fb4c737e5ff6a68772079869a0de585a6894415e978a4b15fc97ce829e1924",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d5_hold_pulse.rpt": "ff8013b0d503e4d95def76aa39110788dbfbb6cd9eea8e49dcaad59ed5bd56a6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d5_hold_rise.rpt": "d2bb9d7c3c29bdce99ce4b8dc188d9819227e41c8fc7a98f9d20b76bf8e2a53b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d5_setup_fall.rpt": "cb32aedabb9d6777482f3091645d3de0cd361c2ed83162f79e6ade13240a39f7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d5_setup_pulse.rpt": "a823ddec097c8292fb83790115feedfb0c527b7afb49689b9f6eec97e132f606",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c10_d5_setup_rise.rpt": "2707be4ca176cdb09e7a2294b397fb78d485d2ee3ec9b33b8fa86aa32b6740e7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d25.sdc": "1fdf583b371af058bb7477bc49a89b57d0fe6f8ba647e4a1b754636939d35cb8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d25_hold_fall.rpt": "b4f97c8fdf2dde7ed2b2912ab90f90a6d4e4cdb4109640fc716a21322d8ab41a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d25_hold_pulse.rpt": "178a417df7f7da477a30670adcbab82d6fced41297d8143989fecab9034f3ee7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d25_hold_rise.rpt": "b03a74e1673a940d6a593dcb125a237c15f461ee132cb83dd6bc476eb5ffcb17",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d25_setup_fall.rpt": "7d9bb2be077c2d99aa4890b2e8fd8ea69d013f7e359e06a710482db9d4b4098e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d25_setup_pulse.rpt": "7a9b0173fe2208ca8d10694b9e61712e70ba283ea84b87156ca990f0d2f749f1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d25_setup_rise.rpt": "46997a5ec0d59afc005817a8b15116514df2c5c361a8c4e6d3a7982ceb202988",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d5.sdc": "ddc22d39d20b71e1b726151132dbfdb8c15ad0889c0b73ad5f479f4bae78d4be",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d5_hold_fall.rpt": "19bc9efc82acb056ac193630bd5341342955312bb3f290029f834739aa593364",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d5_hold_pulse.rpt": "28a9c90ab931b6c2af74061450b39fdd2ddf064aa1a2f613d756191e613b5243",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d5_hold_rise.rpt": "fed2c75748cb4c3d03ea317d532e6f73a5ba37ebfa2375287921da8474083312",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d5_setup_fall.rpt": "577fd4c56c90666ec117d8a3f5ceb4a481f930ac25822856ea21fdad2cd7f23f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d5_setup_pulse.rpt": "1fef6b214cc97274ec310f5c671513e8cd4b4653041c9aced480b298a6fa2379",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c25_d5_setup_rise.rpt": "5ce87e1d7c2e3a73b75e7a4a66e9a3748bb529287b21bd3debdc278350010e77",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d10.sdc": "483cb4f1fa9c7f0ed9c92e43336217d2c31f1c105a933f7238cb4d47b7901843",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d10_hold_fall.rpt": "398157549d710cb171a9c49a0d64ffaeacb9f6dfb10c4330ab7656e5709dec9a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d10_hold_pulse.rpt": "9b39cb563dbb4e49976614c3f81dd7feb464c1decb148e4e797ccec1573ad105",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d10_hold_rise.rpt": "a91719d1115b98435e21ff815b48285f13644cc088981bf28d7c917705e11adf",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d10_setup_fall.rpt": "31e6fe746ca4626d4e627cc5b743e7ad829e0a8ff56cb3608daa068f3b094697",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d10_setup_pulse.rpt": "4fbdc9a1cd24f92a70c3a1d62a7facf46161487b9112a918263e309d5eab5143",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d10_setup_rise.rpt": "b6e91421b68ffb4b9f7da4b1afa15a0015ab8d00583838ebbb2b659df52343e8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d25.sdc": "e867144fd1a6171786515416188536e967924f540348bdfb1daca852cdc42b43",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d25_hold_fall.rpt": "aff4efbf7c5972a71f7ed59f98cd40f5eb546ab38fb759261a8799055d17ea16",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d25_hold_pulse.rpt": "695810e2a6654f2d3ec81e9c86aabe4b24aea60ebfcdd0116158ec31e1d1e82b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d25_hold_rise.rpt": "faa3e095ccac3dde47766bb59ba90910e65441b4c985daaf1d3e084dadb65061",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d25_setup_fall.rpt": "c0f2e81ec7e917d505bf589d09e3e9e25c299012cee8d14546c26263d676a020",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d25_setup_pulse.rpt": "20cd6be7f26ee497f9975673f8ddf5228f99401b149a228eba671d250419d20f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d25_setup_rise.rpt": "4905437cfa0c083f5eddb5070d4fda6e719ca1bda447f766330bc7b5b18291ad",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d5.sdc": "4649292f51e7c62ac2363750ee04b006a9aea6e21130df897066f73bd4d2f988",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d5_hold_fall.rpt": "89f8e6a3a2bbcc5eb41b98bcac3914e8f433815aafbfa3c76f5b6d185bf55d66",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d5_hold_pulse.rpt": "d62009e33b35354a980bc2063b144d841886c6065f324ac731294544298606b8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d5_hold_rise.rpt": "4036058fa9284d7b165bb9ceb647dda254d58d3d8f21ae32757a595abdc4f46c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d5_setup_fall.rpt": "b34354186a31a2ec21f50d65b6dc79826576d456b5213e0a7ef68f1ac1968782",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d5_setup_pulse.rpt": "b7bd26cd2fab282475aaa239e204521899d21f6a4e9d2724549f80e21f2fe29c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/c5_d5_setup_rise.rpt": "f0c59ce8fe4ec6946a2e1843601f0966cfab58fe66116e26a5e921e1f0547e10",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/console.log": "a939c5d769f1a5a69d02e5f789097202ce3daa67b612b5a6e5aa5f14ad5ff6d2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/measure.tcl": "8cc7e77c9a73253a8dad20bad995d46e42904e95605bc672ad995f38c2790d4d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/native_status.json": "299ca17d6d55d255886bae1a4aff8b676424a303c84741a79fbceb488a176292",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/netlist.v": "e1a360e295cd7c09efe07ffb00602ddbd77ac162303bc0edc0da5e64e5f85dd5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/loaded_horizontal_pads/tx_load_mmmc.tcl": "4a4572cf35f143ecd42dc95929ff0e7de7923df70037c1be8d01ddd7459e1835",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/placement_seed/native_import/pad_assignment.json": "fc6dd5038319103444c311cf42eedf70616a49df18e01c1ac2c6881d4a32cbfc",
+    ".cache/physical/whole_chip_xcelium_speed/loaded_forwarded_pads/pad_fast.lib": "c879a446bb9321600faa5703c74302bfb2adc744454790c528ac405addd1c618",
+    ".cache/physical/whole_chip_xcelium_speed/loaded_forwarded_pads/pad_slow.lib": "99266b8a11189a269533e5fb3e2f2903abb162f44dba1dfea2a42b1316d75571",
+    ".cache/physical/whole_chip_xcelium_speed/loaded_forwarded_pads/pads.lef": "58608b1b0a791906a6f7982a4afa544fe835ff7290dee36c50ea01e0d6d242f0",
+    "records/tri_oracle_loaded_forwarded_pads.json": "b042773d31f9de10f6905b57a4f18136ea041ca7face1fc4d13ea529906b51e1",
+    "records/tri_oracle_wide_request_native_import_inputs.json": "4e975d66cbaf83615be209934e59f099d783a6c82a007dac02344bbb581419f1",
+    "records/tri_oracle_wide_request_trial.json": "fb3d673437ed497605e952b9268905a8311b86906de0dc04be089ec7eb3270fb",
+    "syn/tri_oracle_load_forwarded_pads.tcl": "1f3c72871d9debe93df6726e996558cb12035634bf4a42176a751e4890df2b9d",
+    "syn/verify_tri_oracle_forwarded_clock_pulse.py": "e11adb49521ccac90227ae2fe69cfd68225567760445d7a524c57a80a00ebfb2",
+    "syn/verify_tri_oracle_wide_loaded_pads.py": "d368f97a715a63d70c5b4c977ce035cb370a7ee0c07e6e8b0edaf206838d0fe7"
+  },
+  "modeled_peers": 23,
+  "native_resource_status": {
+    "elapsed_seconds": 29.892283742083237,
+    "exit_status": 0,
+    "minimum_available_bytes": 10511523840,
+    "stop_reason": null
+  },
+  "pad_cell": "PDDW16DGZ_H_G",
+  "peer_hold_requirement_ps": 100,
+  "peer_setup_requirement_ps": 200,
+  "scope": "Actual mapped widened sender and horizontal 16 mA library pads driving lumped loads and peer flip-flop probes. Clock and data setup, hold and pulse-width evidence uses the installed libraries. Routing, package, board and simultaneous switching are excluded.",
+  "state": "wide_forwarded_clock_and_horizontal_data_pads_timed"
+}
