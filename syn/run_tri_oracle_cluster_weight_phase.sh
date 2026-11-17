@@ -16,6 +16,13 @@ name="${2:?run name is required}"
 shift 2
 case "$name$corner" in (*[!a-zA-Z0-9_-]*) exit 2;; esac
 here="$repo/.cache/cluster_weight_phase/$name"
+setup_options=()
+address_space=4294967296
+if [[ ${ALL_CLUSTERS:-0} == 1 ]]; then
+  setup_options+=(--all-clusters)
+  fixtures="$repo/.cache/cluster_weight_phase/five_cluster_reference"
+  address_space=6442450944
+fi
 weight="$memory/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_$corner.v"
 activation="$memory/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_$corner.v"
 result="$memory/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_$corner.v"
@@ -23,10 +30,10 @@ result="$memory/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcps
 # Source preparation runs on the host. Cadence and vendor simulation models run
 # together in the project's existing container.
 python3 -B "$repo/syn/prepare_tri_oracle_cluster_weight_phase.py" \
-  "$core/tri_oracle_sram_memory_compute.sv" "$overlap/cluster_candidate.sv" "$weight" "$here"
+  "$core/tri_oracle_sram_memory_compute.sv" "$overlap/cluster_candidate.sv" "$weight" "$here" "${setup_options[@]}"
 ln -sfn -t "$here" "$fixtures/"*.hex "$data/down_index.bin" "$data/down_payload.bin"
 rc=0
-docker exec -w "$here" tri-oracle-eda timeout -k 5 140 prlimit --as=4294967296 -- \
+docker exec -w "$here" tri-oracle-eda timeout -k 5 180 prlimit --as="$address_space" -- \
   /opt/cadence/bin/xrun -64bit -sv -define UNIT_DELAY -sequdp_nba_delay \
   -xmerror RECOME -l xrun.log -top tri_oracle_compiled_cluster_weight_overlap_tb \
   "$weight" "$activation" "$result" "$here/weight_timed.v" \
@@ -37,7 +44,7 @@ docker exec -w "$here" tri-oracle-eda timeout -k 5 140 prlimit --as=4294967296 -
   "$rtl/tri_oracle_wac_outlier_sign.sv" "$rtl/tri_oracle_wac_imem_owner.sv" "$rtl/tri_oracle_wac_softmax_imem.sv" \
   "$here/core.sv" "$here/cluster.sv" \
   "$rtl/tri_oracle_weight_phase_clock.sv" "$rtl/tri_oracle_weight_phase_port.sv" \
-  "$rtl/tri_oracle_cluster_weight_phase.sv" \
+  "$rtl/tri_oracle_cluster_weight_phase.sv" "$rtl/tri_oracle_weight_phase_fabric.sv" \
   "$rtl/weight_stream_write_arbiter.sv" "$rtl/tri_oracle_weight_write_buffer.sv" \
   "$rtl/tri_oracle_packed_weight_schedule.sv" "$rtl/tri_oracle_paired_weight_schedule.sv" \
   "$rtl/tri_oracle_wide_weight_loader.sv" "$rtl/weight_decode_flush.sv" \

@@ -176,10 +176,126 @@ def prepare_bench(source):
     ])
 
 
+def expand_to_five_clusters(source):
+    prior_phase_check = """  always @(posedge memory_clk) if (rst_n && (phase_ce_n != '1)) begin
+    if (phase_we_n) begin
+      if (!clk || phase_ce_n != 0) $fatal(1, "CLUSTER_WEIGHT_BAD_READ_PHASE");
+      physical_reads++;
+    end else begin
+      if (clk) $fatal(1, "CLUSTER_WEIGHT_BAD_WRITE_PHASE");
+      if (unread_words[phase_address])
+        $fatal(1, "CLUSTER_WEIGHT_PHYSICAL_OVERWRITE word=%0d", phase_address);
+      if (!weight_init) physical_writes++;
+    end
+  end"""
+    phase_check = """  always @(posedge memory_clk) if (rst_n) begin
+    int writes_this_edge;
+    writes_this_edge = 0;
+    for (int cluster = 0; cluster < 5; cluster++) begin
+      if (phase_ce_n[cluster] != '1) begin
+        if (phase_we_n[cluster]) begin
+          if (!clk || phase_ce_n[cluster] != 0)
+            $fatal(1, "CLUSTER_WEIGHT_BAD_READ_PHASE cluster=%0d", cluster);
+          physical_reads++;
+        end else begin
+          if (clk) $fatal(1, "CLUSTER_WEIGHT_BAD_WRITE_PHASE cluster=%0d", cluster);
+          if (unread_words[phase_address[cluster]])
+            $fatal(1, "CLUSTER_WEIGHT_PHYSICAL_OVERWRITE cluster=%0d word=%0d",
+                   cluster, phase_address[cluster]);
+          if (!weight_init) begin
+            physical_writes++;
+            writes_this_edge++;
+            cluster_writes[cluster]++;
+          end
+        end
+      end
+    end
+    if (writes_this_edge == 2) parallel_writes++;
+    if (writes_this_edge > 2) $fatal(1, "CLUSTER_WEIGHT_DUPLICATE_WRITE");
+  end"""
+    return edit(source, [
+        ("  logic [3:0] phase_read_cores;", "  logic [4:0][3:0] phase_read_cores;"),
+        ("  logic [4:0] phase_address;", "  logic [4:0][4:0] phase_address;"),
+        ("  logic [63:0] phase_ce_n;", "  logic [4:0][63:0] phase_ce_n;"),
+        ("  logic phase_we_n;", "  logic [4:0] phase_we_n;"),
+        ("  logic [31:0] phase_rows;", "  logic [4:0][31:0] phase_rows;"),
+        ("  logic [2047:0] phase_data;", "  logic [4:0][2047:0] phase_data;"),
+        ("  int physical_reads = 0, physical_writes = 0;",
+         "  int physical_reads = 0, physical_writes = 0, parallel_writes = 0, cluster_writes[5];"),
+        ("initial_weights[128]", "initial_weights[640]"),
+        ("logic [1023:0] expected[1024]", "logic [5119:0] expected[1024]"),
+        ("  logic cluster_load_valid, cluster_load_error, cluster_cmd_ready, cluster_out_valid;",
+         "  logic cluster_load_valid;\n  logic [4:0] cluster_load_error, cluster_cmd_ready, cluster_out_valid;"),
+        ("  logic [1:0] init_core = '0, init_kind = '0;",
+         "  logic [4:0] init_core = '0;\n  logic [1:0] init_kind = '0;"),
+        ("  logic [1023:0] cluster_out_data;", "  logic [4:0][1023:0] cluster_out_data;"),
+        ("  logic [3:0] cluster_out_slot;", "  logic [4:0][3:0] cluster_out_slot;"),
+        (".cfg_count(8'd96), .cfg_tile_start(8'd32), .cfg_keep(160'hffff_ffff << 64)",
+         ".cfg_count(8'd160), .cfg_tile_start(8'd32), .cfg_keep('1)"),
+        ("assign cluster_load_core = init_core;", "assign cluster_load_core = init_core[1:0];"),
+        ("  tri_oracle_cluster_weight_phase #(.CLUSTER_ID(3'd2)) weight_port (",
+         "  tri_oracle_weight_phase_fabric weight_port ("),
+        (prior_phase_check, phase_check),
+        ("assign cmd_ready = allow_issue && cluster_cmd_ready;", "assign cmd_ready = allow_issue && (&cluster_cmd_ready);"),
+        (""".backend_out_valid({5{cluster_out_valid}}), .backend_out_ready,
+    .backend_out_output({5{cluster_out_slot}}), .backend_out_data({4096'b0, cluster_out_data})""",
+         """.backend_out_valid(cluster_out_valid), .backend_out_ready,
+    .backend_out_output(cluster_out_slot), .backend_out_data(cluster_out_data)"""),
+        ("""  tri_oracle_sram_compute_cluster cluster (
+    .clk, .memory_clk, .phase_address, .phase_ce_n, .phase_we_n,
+    .phase_rows, .phase_data, .phase_read_cores, .rst_n(projection_rst_n), .load_valid(cluster_load_valid), .load_core(cluster_load_core),""",
+         """  for (genvar c = 0; c < 5; c++) begin : clusters
+    tri_oracle_sram_compute_cluster cluster (
+    .clk, .memory_clk, .phase_address(phase_address[c]), .phase_ce_n(phase_ce_n[c]),
+    .phase_we_n(phase_we_n[c]), .phase_rows(phase_rows[c]), .phase_data(phase_data[c]),
+    .phase_read_cores(phase_read_cores[c]), .rst_n(projection_rst_n),
+    .load_valid(cluster_load_valid && init_core[4:2]==3'(c)), .load_core(cluster_load_core),"""),
+        (""".load_row_enable(cluster_load_rows), .load_error(cluster_load_error),
+    .cmd_valid(allow_issue && cmd_valid), .cmd_ready(cluster_cmd_ready),""",
+         """.load_row_enable(cluster_load_rows), .load_error(cluster_load_error[c]),
+    .cmd_valid(cmd_accepted), .cmd_ready(cluster_cmd_ready[c]),"""),
+        ("""    .out_valid(cluster_out_valid), .out_ready(backend_out_ready[0]),
+    .out_output(cluster_out_slot), .out_data(cluster_out_data),""",
+         """    .out_valid(cluster_out_valid[c]), .out_ready(backend_out_ready[c]),
+    .out_output(cluster_out_slot[c]), .out_data(cluster_out_data[c]),"""),
+        ("""    .strip_rst_n(rst_n), .strip_request('0), .strip_response(), .head_request('0), .head_response()
+  );""", """    .strip_rst_n(rst_n), .strip_request('0), .strip_response(), .head_request('0), .head_response()
+    );
+  end"""),
+        ("if (cluster_load_error ||", "if ((|cluster_load_error) ||"),
+        ("|| (&staged_valid) ||", "|| ((&staged_valid) && staged_core[0][4:2]==staged_core[1][4:2]) ||"),
+        ("staged_core[lane] < 8 || staged_core[lane] > 11", "staged_core[lane] >= 20"),
+        ("if (cluster_out_valid && backend_out_ready[0]) begin",
+         "if ((&cluster_out_valid) && (&backend_out_ready)) begin"),
+        ("cluster_out_slot !== 4'(retired%16)", "cluster_out_slot !== {5{4'(retired%16)}}"),
+        ("for (int row = 0; row < 32 && retired", "for (int row = 0; row < 160 && retired"),
+        ("if (cluster_out_data[32*row+:32] !==", "if (cluster_out_data[row/32][32*(row%32)+:32] !=="),
+        ("retired, row, cluster_out_data[32*row+:32],", "retired, row, cluster_out_data[row/32][32*(row%32)+:32],"),
+        ("out_data[1023:0] !== expected", "out_data !== expected"),
+        ("init_core = 2'(core);", "init_core = 5'(core);"),
+        ("    for (int core = 0; core < 4; core++)\n", "    for (int core = 0; core < 20; core++)\n"),
+        ("seed_core[0] = 5'(8+core);", "seed_core[0] = 5'(core);"),
+        ("    for (int core = 0; core < 4; core++) begin", "    for (int core = 0; core < 20; core++) begin"),
+        ("*4+core]", "*4+core%4]"),
+        ("staged_writes != 256", "staged_writes != 1280"),
+        ("physical_reads != reads", "physical_reads != 5*reads || parallel_writes == 0"),
+        ("32*retired, 32*final_outputs", "160*retired, 160*final_outputs"),
+        ("""    $display("COMPILED_CLUSTER_WEIGHT_FLOW out_stall=%0d requests=%0d,%0d",
+             output_stall_cycles, request_count[0], request_count[1]);""",
+         """    foreach (cluster_writes[c])
+      if (cluster_writes[c] != 256) $fatal(1, "CLUSTER_WEIGHT_CLUSTER_WRITES cluster=%0d", c);
+    $display("COMPILED_CLUSTER_WEIGHT_FLOW out_stall=%0d requests=%0d,%0d",
+             output_stall_cycles, request_count[0], request_count[1]);
+    $display("COMPILED_CLUSTER_WEIGHT_FABRIC clusters=5 cores=20 dual_cluster_writes=%0d",
+             parallel_writes);"""),
+    ])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("core", "cluster", "macro", "output"):
         parser.add_argument(name, type=Path)
+    parser.add_argument("--all-clusters", action="store_true")
     args = parser.parse_args()
     macro = args.macro.read_text(encoding="latin-1")
     if macro.count(f"module {TS5_MACRO} (") != 1 or "`ifdef UNIT_DELAY" not in macro:
@@ -188,10 +304,13 @@ def main():
                                                           "`ifdef TRI_ORACLE_WEIGHT_UNIT_DELAY")
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "weight_timed.v").write_text(macro, encoding="latin-1")
+    bench = prepare_bench((ROOT / "verilog/tri_oracle_compiled_cluster_weight_overlap_tb.sv").read_text())
+    if args.all_clusters:
+        bench = expand_to_five_clusters(bench)
     for path, source in (
         ("core.sv", prepare_core(args.core.read_text())),
         ("cluster.sv", prepare_cluster(args.cluster.read_text())),
-        ("bench.sv", prepare_bench((ROOT / "verilog/tri_oracle_compiled_cluster_weight_overlap_tb.sv").read_text())),
+        ("bench.sv", bench),
     ):
         (args.output / path).write_text(source)
 
