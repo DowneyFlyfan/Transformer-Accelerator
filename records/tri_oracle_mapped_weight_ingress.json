@@ -1,0 +1,276 @@
+{
+  "block_setup_slack_ps": 984,
+  "cases": {
+    "early_gate": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 0
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 85,
+        "loads": 256,
+        "requests": 256
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 25699,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    },
+    "scalar": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 64,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 78592,
+        "read_requests": 2872,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 0
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 0,
+        "loads": 0,
+        "requests": 0
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 48062,
+        "outputs": 504,
+        "packed": 0,
+        "scalar_down_beats": 5376,
+        "trained": 0,
+        "wide_beats": 0,
+        "wide_bursts": 0
+      }
+    },
+    "weight_prefetch_fault_lane0": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 18,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 44
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 97,
+        "loads": 296,
+        "requests": 297
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 39702,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    },
+    "weight_prefetch_fault_lane1": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 18,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 50
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 95,
+        "loads": 296,
+        "requests": 297
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 39702,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    },
+    "weight_stall": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 50
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 80,
+        "loads": 256,
+        "requests": 256
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 25875,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    }
+  },
+  "combined_memory_timing": {
+    "checks": {
+      "fast_hold": {
+        "check": "Early Output Delay Assertion",
+        "endpoint": "error",
+        "slack_ps": -99
+      },
+      "slow_electrical": {
+        "max_capacitance": 1,
+        "max_transition": 0
+      },
+      "slow_setup": {
+        "check": "Setup Check with Pin ingress/buffer_write_payload_reg[1][319]/CP->SA",
+        "endpoint": "ingress/buffer_write_payload_reg[1][319]/SA",
+        "slack_ps": 7
+      },
+      "typical_electrical": {
+        "max_capacitance": 1,
+        "max_transition": 0
+      },
+      "typical_setup": {
+        "check": "Setup Check with Pin ingress/buffer_write_payload_reg[1][319]/CP->SA",
+        "endpoint": "ingress/buffer_write_payload_reg[1][319]/SA",
+        "slack_ps": 102
+      }
+    },
+    "clock_periods_ps": {
+      "core": 1724,
+      "memory": 862
+    },
+    "compiled_weight_memory_banks": 320,
+    "scope": "Combined ingress, mapped clock, bank controller and compiled weight memory before placement. The boundary outputs use an assumed external hold budget of 100 ps."
+  },
+  "disabled_reservation_rejected": {
+    "cluster": 0,
+    "native_status": 2,
+    "word": 0
+  },
+  "evidence_sha256": {
+    ".cache/phase_chip_clock/macro_boundary_repaired/macro_boundary.v": "d5e5aeeefab71a41fd76e009fc9b6e51b8238588e79ebb6bfabdd51c179449b6",
+    ".cache/phase_chip_weight_prefetch/cycle_bound_loader/adapter.sv": "392ba5953e0ea0087ed28f764dad64dfe3660be175bae44371df51b733798411",
+    ".cache/phase_chip_weight_prefetch/cycle_bound_loader/bundle.sv": "09ab7fd38784bebc16f49bc5d2ea50cde7453fca75a8d45545f9a5f6ec4aabcd",
+    ".cache/phase_chip_weight_prefetch/cycle_bound_loader/gates.v": "d6dd4b4d369b0c4947af597ec8ecc3f59a100eee5f6d82da4775754efecf0147",
+    ".cache/phase_chip_weight_prefetch/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/early_gate/progress.log": "a1e9f6162a6846004a1275770d3cb43a919ae5fd5811ee6a5f0537ca71f77807",
+    ".cache/phase_chip_weight_prefetch/early_gate/xrun.log": "1d244d38cb803637b3e9c9f86429a348a3519ab43d4122a6819ac076089dc4e0",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/adapter.sv": "9c1bd3967f28695ff067b10b009bcd5f0ae1aed2b02ab583caded577580cd219",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/check.rpt": "f9cca56d7bf84ac59313f28b9d64478a21baec1608aaa8369eea4c2fddc728ec",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/console.log": "c6476d0baae592b53b2cb0627d97de10b4877fb68909baa1b77adb34b12f531e",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/gates.v": "f15345e1e0626d890ccc21c9f1394def508c7512ca9287581d489f357413f890",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/bundle.sv": "235e7d16aaa251b1d1dbf328015ee44e975fed4aea701e91187aac2b2fdcd8ab",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/early_gate/progress.log": "a1e9f6162a6846004a1275770d3cb43a919ae5fd5811ee6a5f0537ca71f77807",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/early_gate/xrun.log": "c3a3f776372acac80b9268cb2e40ea9fb28a2ff7df174a6208739c91afcda8d4",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/scalar/progress.log": "27de1b12d2637459c200cde4bdf608b8d7eeed4d8b8241b63f68bf2dcb51a23a",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/scalar/xrun.log": "2c24f54061530fc8be28f8b41e5e31002b8a2d30adce4c68c24847973f9241c9",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_guard_disabled/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_guard_disabled/xrun.log": "692bdfbeeea9ba8a3f488032ef3933edcb77db6039f31d7036e301dc2815e62e",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_prefetch_fault_lane0/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_prefetch_fault_lane0/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_prefetch_fault_lane0/xrun.log": "885383c99489c56476f6974218f2d0e9e1aa145ad7d4c86fae7a3f412b27206a",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_prefetch_fault_lane1/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_prefetch_fault_lane1/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_prefetch_fault_lane1/xrun.log": "4de191e9d193bc54e9ffdbbf33e4ced9082a22f086fe2622fd9763fad3ab7c01",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_stall/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_stall/progress.log": "8b18738ef080450144bb54a2dc572556bfc338f8af563a7d65bc4a4fcbabb9aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/weight_stall/xrun.log": "8da616661d2355140e6f3522baf613f089c5d579920624c295ca410a392056ee",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/netlist.v": "16c31d3c1c11ecc42fcd9eec5c7ae0dc7fa5df9ca1a8d8c63079a8b9e184d5fa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/phase_wrapper.sv": "37ca7755db76d5c4e756abd9d5b7a199f56d5e8f388ca284283d887d3830b777",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/boundary.sdc": "7d07a1c85601fe4ab940ae1d89d8d0da5c2d4afbf78867bd8aeb0a3f48a4ffd8",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/console.log": "e7bff73a841df6c577832b391a3718456b3da8f65a9a989c227f4b45261bd400",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/fast_hold.rpt": "24fbd48e94fb3e4a2e09f08deadb46f71a371a4d22d25206ed79bfd175e771bd",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/macro_boundary.v": "e002cb4fcfa7cff702bfea9548f9a89bcfa9b288c44b7782824e96679ecf7a2a",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/slow_electrical.rpt": "90742b200b171f6de40f0e4973cf0b112682926d13a4fee8ac1317df8d504d3b",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/slow_setup.rpt": "d3c25242ac47143b0bf1d1f5974922bac5bd8750a494f6585477fa0d1eaf7f20",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/timing.tcl": "1eaeef5b3e866636f95a3b1aec8180c733ecebf3cd9a3b96b34c49ca2df80e2b",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/typical_electrical.rpt": "50c79d619913f34126dce2623b2fc8e9771af9e82beaa25545ef57333a1ba64e",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/typical_setup.rpt": "6da6f1e318fc444e52abd47268e96ea506d0e03661941d1ecceefe9ddadfd41c",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/sram_timing/views.tcl": "46c9b7b4c52e1242ae7162e102cbb40d3de86d93b5da88e87fdae94bbb850e4f",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/synthesize.tcl": "0ddf05a9e5eb31167705f670fbbfaec4c8a5dcf7cbdc61679dce02ad847b0272",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/timing.rpt": "13aec91de0099fb1f4447db02662a61e639dc80a8d0cc590066317a2fc776eca",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/tri_oracle_phase_weight_ingress_control.sv": "98cde646398b39e209f16592faa7d505984b091edb27f5e30206d554cc77bf3b",
+    ".cache/phase_chip_weight_prefetch/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/scalar/progress.log": "27de1b12d2637459c200cde4bdf608b8d7eeed4d8b8241b63f68bf2dcb51a23a",
+    ".cache/phase_chip_weight_prefetch/scalar/xrun.log": "baeba9f9aab76ac4ee785b7297906569031d5f564d374aaef4a5f2985a5f6b8d",
+    ".cache/phase_chip_weight_prefetch/source/bundle.sv": "f4838d5645308ac68de2caf25e84afc079fc42d3ccd8283f5294fc4803da60b6",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_phase_weight_ingress.sv": "26a692903dfc6015aa6e008f5327ac4f5d17942f6622ccca67a97d2e44ca7269",
+    ".cache/phase_chip_weight_prefetch/weight_guard_disabled/xrun.log": "b0869cc32acdb401b3af04e87a6d6a072afef8a42ab60f25f3012f8fd8dbe97d",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/xrun.log": "9195ca8a0832edaa7e1d687530ec7543a537ecf96119d5012ef3effdc7521dd7",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/xrun.log": "3b81c1a3146a1a3f7c7890879f5e92a181f1388c6b482c8d68ac9c880a7b6075",
+    ".cache/phase_chip_weight_prefetch/weight_stall/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/weight_stall/progress.log": "8b18738ef080450144bb54a2dc572556bfc338f8af563a7d65bc4a4fcbabb9aa",
+    ".cache/phase_chip_weight_prefetch/weight_stall/xrun.log": "3b5e4c5a9d594bd72ab369496b23c1f4a52936468320f261d1083da98ca00904",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    "records/tri_oracle_mapped_weight_prefetch_loader.json": "56becece758bf9f6cce147651433edfc9b7a9eb1d058cb789274006b821834bf",
+    "syn/tri_oracle_phase_macro_boundary.sdc": "b93bc299d93b9bb9075ade6194f57c4353e55a1d564f2cf345174e07e2f9ec55",
+    "syn/tri_oracle_time_phase_macro_boundary.tcl": "e1cdbddf9c250f188e73de69a7cabc45be7b1a23d71df29dae449f64b14d61ab",
+    "syn/verify_tri_oracle_mapped_weight_ingress.py": "5081c5b62c21852074a19dc37d19ceafd24af3d8dfe430d04749321ac7b57e0b",
+    "verilog/tri_oracle_projection_weight_reuse.sv": "6df1085ea1c9a01a7c48dfec61a1d277d2f0d9e87210f4505f4038d5ef8f1109",
+    "verilog/tri_oracle_weight_write_buffer.sv": "18ba5d95f81acc3f54226dabd715327f40493bc6285890b6eb2a3a3eaa6cd845",
+    "verilog/weight_stream_write_arbiter.sv": "409e06e9ed35d5c9f660b5c57d4e3933fa214b7380347539d3bab88eb2a2b861"
+  },
+  "scope": "Chip command simulation using the mapped loader, reservation, write buffer and bank controller. Compiled memory timing checks were enabled. Reported setup slack covers the isolated ingress cut.",
+  "state": "mapped_ingress_matches_source_chip_with_timed_memories"
+}
