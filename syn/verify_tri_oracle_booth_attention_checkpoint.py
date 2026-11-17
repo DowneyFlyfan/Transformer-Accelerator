@@ -127,7 +127,35 @@ def projection_prefix(plan, fixture, prefix):
     }
 
 
-def checkpoint_artifacts():
+def resumed_checkpoint_text(recovery, initial_text, prepared):
+    """Reconstruct the committed transcript after an observed snapshot load."""
+    initial, _, prefix = checkpoint_prefix(initial_text)
+    assert recovery.resolve() == WORK / f"recovery_after_{initial['checkpoint_time_ns']}ns"
+    definition = json.loads((recovery / "prepared_recovery.json").read_text())
+    assert definition["state"] == "checkpoint_output_prepared_for_restore"
+    assert all(definition[key] == value for key, value in initial.items())
+    assert definition["cold_netlist_sha256"] == prepared["cold_netlist_sha256"]
+    archived = recovery / "checkpoint_prefix.log"
+    assert digest(archived) == definition["replay_prefix_sha256"] == sha256(prefix.encode()).hexdigest()
+    status = json.loads((NATIVE / "native_status.json").read_text())
+    assert status["exit_status"] != 0 or status["stop_reason"]
+    assert status["log_sha256"] == sha256(initial_text.encode()).hexdigest()
+
+    plan = definition["restore"]
+    assert plan["driver_sha256"] == digest(DRIVER)
+    snapshot = initial["snapshot"]
+    expected_index = str(initial["checkpoint_count"] - 1)
+    assert plan["environment"] == {"TRI_ORACLE_REPLAY_FROM_CHECKPOINT": expected_index}
+    log = recovery / "resume.log"
+    tail = log.read_text()
+    assert re.findall(r"(?m)^Loading snapshot (\S+)\s+\.+ Done$", tail) == [snapshot]
+    assert re.findall(r"(?m)^TRI_UNSEEDED_PACKET_RESTORE (\d+)$", tail) == [expected_index]
+    assert f"\t-r {snapshot}\n" in tail and f"\t-input {DRIVER}\n" in tail
+    assert f"\t-log {log.resolve()}\n" in tail
+    return prefix + tail, initial["checkpoint_time_ns"]
+
+
+def checkpoint_artifacts(recovery=None):
     prepared = json.loads((NATIVE / "prepared_native.json").read_text())
     plan_path = WORK / "prepared_schedule.json"
     assert digest(plan_path) == prepared["schedule_receipt_sha256"]
@@ -140,7 +168,12 @@ def checkpoint_artifacts():
     testbench = WORK / "layer_tb.sv"
     assert digest(testbench) == prepared["evidence_sha256"][str(testbench.relative_to(ROOT))]
     log = NATIVE / "xrun.log"
-    facts, rows, prefix = checkpoint_prefix(log.read_text())
+    transcript = log.read_text()
+    if recovery is not None:
+        transcript, restored_at = resumed_checkpoint_text(recovery, transcript, prepared)
+    facts, rows, prefix = checkpoint_prefix(transcript)
+    if recovery is not None:
+        facts["restored_from_time_ns"] = restored_at
     facts.update(projection_prefix(plan, fixture, prefix))
     expected = list(expected_rows(source))
     assert rows == [key for key, _ in expected[:len(rows)]]
@@ -198,14 +231,17 @@ def prepare_recovery():
         return facts
 
 
-def verify():
-    facts, _, _ = checkpoint_artifacts()
+def verify(recovery=None):
+    facts, _, _ = checkpoint_artifacts(recovery)
     return facts
 
 
 if __name__ == "__main__":
     assert __debug__ and Path.cwd() == ROOT and not Path("/.dockerenv").exists()
     parser = ArgumentParser(description=__doc__)
-    parser.add_argument("--prepare-recovery", action="store_true", help="Trim outputs of a stopped run")
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--prepare-recovery", action="store_true", help="Trim outputs of a stopped run")
+    modes.add_argument("--resume-directory", type=Path, help="Check the latest checkpoint across a restart")
     args = parser.parse_args()
-    print(json.dumps(prepare_recovery() if args.prepare_recovery else verify(), indent=2, sort_keys=True))
+    print(json.dumps(prepare_recovery() if args.prepare_recovery else verify(args.resume_directory),
+                     indent=2, sort_keys=True))

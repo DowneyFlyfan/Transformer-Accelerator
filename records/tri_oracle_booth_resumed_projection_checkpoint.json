@@ -1,0 +1,26 @@
+{
+  "checkpoint_count": 4,
+  "checkpoint_time_ns": 46200000,
+  "cold_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "committed_output_bytes": 0,
+  "committed_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/native/native_status.json": "f67f1e05931e115e022807547620f4fc9a811c375b863791406c87828bf656b9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/native/prepared_native.json": "9d412a78c24e40c88e0862d1487e49cde9cf372f9d274029884d6b7a2edc72bd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/prepared_schedule.json": "69962beafbd8ab7c75ff6d827b8b969786df943d7e3992b9cf5996f2096abb6b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/recovery_after_31200000ns/prepared_recovery.json": "088dec7438cb782f959ddbc646cf53a4bc6936de42cff5e6efa03be70bc2f92d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/recovery_after_31200000ns/verified_checkpoint_46200000ns.log": "3a600b8c988074b4a6c6f6bba203ba5e5d2b148d8edfcce4cb22529cc0b96324",
+    "syn/verify_tri_oracle_booth_attention_checkpoint.py": "25c99b17c06a776e07cab17245f8d4fd080579c2b4363be8000a87c8267c0eb3"
+  },
+  "projection_batches_at_checkpoint": 48,
+  "projection_groups_at_checkpoint": 1,
+  "projection_skipped_columns_at_checkpoint": 95,
+  "projection_vectors_at_checkpoint": 761,
+  "projection_weight_reads_at_checkpoint": 780352,
+  "replay_prefix_sha256": "3a600b8c988074b4a6c6f6bba203ba5e5d2b148d8edfcce4cb22529cc0b96324",
+  "restored_from_time_ns": 31200000,
+  "rows_at_checkpoint": 0,
+  "scope": "Verified projection batch and sparse weight-request counts through the latest saved checkpoint.",
+  "snapshot": "worklib.checkpoint_b:sv",
+  "state": "physically_mapped_projection_checkpoint_verified_across_restart"
+}
