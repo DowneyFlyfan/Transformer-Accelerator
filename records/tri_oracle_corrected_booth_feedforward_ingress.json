@@ -1,0 +1,92 @@
+{
+  "archived_input_sha256": {
+    "fixture/raw.hex": "2877f5908ada54d175aaeabb35afacff550ba840dc365683f09efeeb6f36e71c",
+    "fixture/shifts.hex": "2c50dfadd2f157a9cda9bf7cdd1b02a03de859a7fa6608a450b497841650f1f6",
+    "learned/gamma.hex": "e8cc5f318b91835242ed239ec0fff3a3561894f8ccdb0a93c25ec13ede8f1041",
+    "learned/shifts.hex": "85796d03773c73e923df38859dbedc4d219f734a2888e47d601d25cd6131a849",
+    "prepared.json": "72b50a7874d0df81392e7ce75f6e7e86229a0f3d1d641506fe02cfcebc44c267",
+    "trained_tb.sv": "ed975cca45d5eb57fe0ef51724846181c9ffcabe0f7e6f349d3442522bf41ac9"
+  },
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "command_descriptor_words": 15,
+  "earlier_feedforward_receipt_sha256": "1a5a1189f633d716a708ccce6f8a4b417c9eda86b96518a5561b52b7b458017f",
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_ingress/console.log": "11103aa3110255a74c54b491b1b95e201fc324e29142708cd3a586ecd8ac320a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_ingress/prepared.json": "b10b6dd25334af18ece0c9ab21e63d37df1631fbdf425b5eb738f9cff29e0a6c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/serial_peers.sv": "04be4de31c2fa73830da5931eab05fc5c55021f00e6fd7c8904ee13ea14bfc56",
+    "syn/prepare_tri_oracle_booth_feedforward_ingress.py": "e1ea80a1ec380ef607b8d9ee7a0161a9524c0d3ffa24b6e5587c584978c2bf9a",
+    "verilog/tri_oracle_booth_feedforward_ingress_tb.sv": "4bcd48d12df298d44daabaa37d84d12b2029cc5eb15d4c26e31929002336fb8f"
+  },
+  "fixture_counts": {
+    "descriptor.hex": 1,
+    "flits.hex": 13375,
+    "replay.hex": 512,
+    "stats.hex": 512
+  },
+  "mapped_modules": [
+    "tri_oracle_host_serial_pads",
+    "tri_oracle_flit_from_pads_WORD_BITS18_PAD_BITS4",
+    "tri_oracle_flit_to_pads_WORD_BITS17_PAD_BITS4",
+    "tri_oracle_host_boundary_rx",
+    "tri_oracle_host_command_link",
+    "tri_oracle_indexed_chip_dispatch"
+  ],
+  "negative_controls": {
+    "descriptor": {
+      "bit_mask": 32,
+      "exit_status": 2,
+      "failure_marker": "FEEDFORWARD_INGRESS_DESCRIPTOR",
+      "flit_index": 3,
+      "log_sha256": "1968634a76ab494a51fa71fc872bd01c0e9b1efd46005e4532dba36490a1ca53"
+    },
+    "replay_gamma": {
+      "bit_mask": 1,
+      "exit_status": 2,
+      "failure_marker": "FEEDFORWARD_INGRESS_REPLAY strip=0",
+      "flit_index": 2376,
+      "log_sha256": "3e8a667cc98f71d89183520f5c836eb6c1e1f79f606cf90640d3653513cb430d"
+    },
+    "stats": {
+      "bit_mask": 1,
+      "exit_status": 2,
+      "failure_marker": "FEEDFORWARD_INGRESS_STATS strip=0",
+      "flit_index": 64,
+      "log_sha256": "c7c2de4a7b25cfe62df99b36fa8a8ee8d83e46424bcf6586c0e35b739488b105"
+    }
+  },
+  "output_sha256": {
+    "descriptor.hex": "26daf593c7228fdb0da9188e9aebd014b094716df5d17ed0786366f5c0fac745",
+    "flits.hex": "6feb63f3918ddd34eccb1e4d6378473d3095ba7c390040566984f14ef9ec9162",
+    "mapped_ingress.v": "5adcc3179a8193e5f1f5ac610ea41d935649a1b25b1c6c1f1f0b760f0d0e76c5",
+    "replay.hex": "a081db185e49550bab18ed65433ac8428fef5dc30be887a33521425700d47099",
+    "stats.hex": "072d048c7817a1500398055be8f6e754730789cc02e189a4b484b2a46e3ebe4b"
+  },
+  "positions": [
+    607,
+    608
+  ],
+  "replay_backpressure_cycles": 1284,
+  "scope": "Extracted mapped pad wrapper, boundary receive, command link and dispatcher from the repaired placed design. A harness supplies downstream handshakes. Feed-forward arithmetic, writeback and timing are outside this test.",
+  "state": "trained_layer10_mapped_feedforward_ingress_verified",
+  "stats_backpressure_cycles": 1025,
+  "stimulus_wire_width_bits": 4,
+  "xcelium": {
+    "exit_status": 0,
+    "flags": [
+      "-64bit",
+      "-sv",
+      "-timescale",
+      "1ns/1ps",
+      "-nospecify",
+      "-notimingchecks",
+      "-sequdp_nba_delay",
+      "-top",
+      "tri_oracle_booth_feedforward_ingress_tb"
+    ],
+    "peak_rss_kib": 76640,
+    "simulated_ns": 671850,
+    "version": "25.03-s001",
+    "wall_seconds": 2.09
+  }
+}
