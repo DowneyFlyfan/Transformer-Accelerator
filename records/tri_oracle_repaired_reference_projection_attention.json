@@ -1,0 +1,24 @@
+{
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention_key_count/attention.hex": "33c2870522d6bbb6fc766bd833918d91ac8bc95f982a6d1fb9a173142a7ed8c2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention_key_count/native_status.json": "e80061421378236ad25a463536261e04da3501ae6ec9a1e017abe7c515094773",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention_key_count/prepared.json": "30a684ffd32f52d1bbf5b4169eb5f7d8f88ed6d422f380171af1a60a88d27998",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention_key_count/xrun.log": "b00e538516fc8ad44d49f0b888f14c717302ee3f9fc6a39a14e4a565b718c5aa",
+    "syn/prepare_tri_oracle_reference_projection_attention.py": "d09655e7747263cd477852bcf1c05f3cc56a7ff83dcbb7ec1f043f72a3140f02",
+    "syn/verify_tri_oracle_reference_projection_attention.py": "29bb52323753901de5ea94680f7605ec7c28d526b5d62901e34a8294e2eeeda8"
+  },
+  "exact_accumulator_values": 8192,
+  "heads": 32,
+  "matched_attention_rows": 128,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 9736704000,
+    "peak_container_anonymous_bytes": 10957246464,
+    "stop_reason": null,
+    "wall_seconds": 13669.741862173076
+  },
+  "scope": "Physical host and memory ports of the repaired placed chip, with an externally supplied reference projection cache. This replay exercises token merging, context restore, head prediction and attention output.",
+  "state": "repaired_chip_all_head_attention_replayed_with_reference_projections",
+  "value_requests": 32736
+}
