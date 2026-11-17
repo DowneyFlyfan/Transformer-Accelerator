@@ -1,0 +1,32 @@
+{
+  "clock_period_ns": 1.72414,
+  "database_fingerprint_sha256": "236a57a99d2012c1d02e7d0e6dca7ce21a1b298eee3854b604e2ce4118426eba",
+  "evidence_sha256": {
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/attention_checkpointed/timing_handoff/handoff.json": "0ce3e77537969ec0511dbc8830bd4f092bed60a0a7e4fba77a6c1652c9eb6d5e",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/attention_checkpointed/timing_handoff/resume_supervisor.log": "ddd201de853983c468df0257b4770aebbaf72033dbaaa8e20556ff7addb740e5",
+    ".cache/physical/carry_lookahead_comparison/carry_save_pipeline/decoupled_valid_trial/reuse_result_stage/onehot_queue_trial/electrical_guided_queue_placement/focused_buffer_placement/feedback_compaction/carry_chain_placement/fast_buffer_placement/multicorner_guarded/typical_queue_placement/typical_arithmetic_placement/physical_hold_repair/residual_repair/queue_setup_trim/slow_arithmetic_only/single_hold_repair/twenty_core_fit/chip/native_reload/attention_checkpointed/timing_handoff/supervisor.log": "5589b051ca14fef827add185fef04e54942e61ac0636ad9649737c353d36f323",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/timing/prepared_timing.json": "d46a05af46f641813bdc25416d124de59249d62149809feba46803e229edd6dd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/timing/report_setup_slow.tcl": "6af7220491099a6ec308f0eb05c9c58a172afc7609cf5ace8027224f0884e246",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/timing/run_timing.py": "92f1358f096d4d0ef94c841eb5fde88ff364fb2b495d0513448a7c0ccaa51456",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/timing/serialized/setup_slow/before.sdc": "02deab9ce107f728475c2b9cdef875fad5a759bec8dd83dadbd1c54ac6775122",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/timing/serialized/setup_slow/console.log": "25ba67df11e2de880f89bfdbe1516c6aa7d9f43d73caec05da4cbf2d5041ca19",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/timing/serialized/setup_slow/status.json": "631aafe216fdf122d1fe3223265a9acee14d774e0e194bafed463ff5dec025e3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/timing/serialized/setup_slow/timing.rpt": "87757aa2e8298b37ccafa3e3b08d29c7c6cba5b27bbf62198bd08eaf40cdc2ff",
+    "records/tri_oracle_corrected_booth_placement_roundtrip.json": "355fbbbad0a712e67e3c5298c7fee837f3d9d07aab4ef52d8da4a1431a6fc57a"
+  },
+  "host_memory_reserve_bytes": 5368709120,
+  "native": {
+    "exit_status": -15,
+    "minimum_host_available_bytes": 5303296000,
+    "peak_container_anonymous_bytes": 14215725056,
+    "stop_reason": "Memory guard: 5303296000 available, 14215725056 anonymous",
+    "wall_seconds": 90.89312220003922
+  },
+  "reported_timing_paths": 0,
+  "scope": "Single-corner pre-route timing diagnostic with Xcelium paused. The host guard stopped Innovus during parasitic estimation. No setup slack was produced. The placement database is unchanged and replay resumed from its verified checkpoint.",
+  "starting_host_available_bytes": 19398868992,
+  "state": "corrected_full_booth_slow_timing_stopped_during_estimation_by_memory_guard",
+  "verified_projection_groups_before_pause": 31,
+  "view": "setup_slow",
+  "xcelium_checkpoint_ns": 452500000
+}

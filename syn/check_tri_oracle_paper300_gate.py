@@ -53,6 +53,7 @@ BOOTH_PLACEMENT = Path("records/tri_oracle_corrected_booth_placement_roundtrip.j
 BOOTH_COMPUTE = Path("records/tri_oracle_booth_chip_compute_geometry.json")
 BOOTH_MEMORY = Path("records/tri_oracle_booth_compiled_memory.json")
 BOOTH_REDUNDANCY = Path("records/tri_oracle_corrected_booth_redundancy_topology.json")
+BOOTH_MODELS = Path("records/tri_oracle_corrected_booth_physical_models.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -172,6 +173,12 @@ def corrected_booth_facts(root, facts, identities):
     fingerprint = artifact_fingerprint(root / database)
     encoded = json.dumps(fingerprint, sort_keys=True, separators=(",", ":")).encode()
     assert hashlib.sha256(encoded).hexdigest() == placed["database_fingerprint_sha256"]
+    if (root / BOOTH_MODELS).is_file():
+        models = checked_record(BOOTH_MODELS, "corrected_booth_full_models_loaded_from_pinned_sources")
+        assert models["database_fingerprint_sha256"] == placed["database_fingerprint_sha256"]
+        assert models["linked_netlist_sha256"] == candidate and models["cold_netlist_sha256"] == proofs[cold_name]
+        assert models["compiled_memory_instances"] == placed["geometry"]["fixed_memory_macros"]
+        facts["original_full_models_verified"] = True
 
     width, height = dimensions(root / stage / "cold/layout.def")
     assert [width, height] == placed["die_dimensions_mm"] == compute["die_dimensions_mm"]
