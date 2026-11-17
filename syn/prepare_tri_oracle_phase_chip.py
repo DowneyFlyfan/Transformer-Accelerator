@@ -16,7 +16,7 @@ from prepare_tri_oracle_phase_macro_boundary import REPAIRED_CLOCK_BOUNDARY
 from prepare_tri_oracle_backpressured_weight_transport import RAW, raw_loader
 from prepare_tri_oracle_weight_tile_prefetch import (
     bind_weight_guards, check_guarded_weight_writes, guard_weight_ingress, prepare_guard_stress_bench,
-    schedule_weight_prefetch,
+    register_scheduler_tile_length, schedule_weight_prefetch,
 )
 
 
@@ -180,7 +180,7 @@ def transform_chip(sources, buffered):
 
 
 def prepare(output, buffered=False, derived_clock=False, activation_broadcast=False, activation_prefetch=False,
-            weight_prefetch=False):
+            weight_prefetch=False, registered_tile_length=False):
     bundle = (JOINED / "bundle.sv").read_text()
     paths = [Path(name) for name in INCLUDE.findall(bundle)]
     prepared_names = (
@@ -212,6 +212,8 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         if weight_prefetch:
             work_sources[tensor] = schedule_weight_prefetch(work_sources[tensor])
             work_sources[fabric] = bind_weight_guards(work_sources[fabric])
+        if registered_tile_length:
+            work_sources[tensor] = register_scheduler_tile_length(work_sources[tensor])
     for name, contents in work_sources.items():
         (output / name).write_text(contents)
     pe, = (path for path in paths if path.name == "tri_oracle_pe_array.sv")
@@ -324,6 +326,7 @@ if __name__ == "__main__":
     parser.add_argument("--activation-broadcast", action="store_true")
     parser.add_argument("--activation-prefetch", action="store_true")
     parser.add_argument("--weight-prefetch", action="store_true")
+    parser.add_argument("--registered-tile-length", action="store_true")
     args = parser.parse_args()
     if args.derived_clock and not args.buffered_boundary:
         parser.error("use the verified buffered weight boundary with the derived clock")
@@ -333,5 +336,7 @@ if __name__ == "__main__":
         parser.error("tile prefetch uses the verified activation broadcast")
     if args.weight_prefetch and not args.activation_prefetch:
         parser.error("early weight fetch uses the next activation tile")
+    if args.registered_tile_length and not args.weight_prefetch:
+        parser.error("registered tile length requires the weight-prefetch scheduler")
     prepare(args.output.resolve(), args.buffered_boundary, args.derived_clock,
-            args.activation_broadcast, args.activation_prefetch, args.weight_prefetch)
+            args.activation_broadcast, args.activation_prefetch, args.weight_prefetch, args.registered_tile_length)

@@ -37,9 +37,14 @@ def module_body(source, master):
     return source[definition.end():end.start()]
 
 
+def named_instance(body, master, instance):
+    prefix = re.escape(master.encode()) + rb"\s+" + re.escape(instance.encode())
+    match, = re.finditer(rb"(?m)^[ \t]*(" + prefix + rb")\s*\(([^;]*)\);", body)
+    return match
+
+
 def pins(body, master, instance):
-    prefix = re.escape(f"{master} {instance}".encode())
-    fields, = re.findall(rb"(?m)^[ \t]*" + prefix + rb"\s*\(([^;]*)\);", body)
+    fields = named_instance(body, master, instance)[2]
     pairs = PIN.findall(fields)
     result = {name.decode().lstrip("\\"): b"".join(value.split()) for name, value in pairs}
     if len(result) != len(pairs) or PIN.sub(b"", fields).strip(b" \r\n\t,"):

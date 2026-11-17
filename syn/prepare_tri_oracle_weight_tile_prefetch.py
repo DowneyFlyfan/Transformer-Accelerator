@@ -37,6 +37,19 @@ def schedule_weight_prefetch(source):
     ])
 
 
+def register_scheduler_tile_length(source):
+    extent = "9'(part_words)-9'(tile_start)>32 ? 6'd32 : 6'(part_words-tile_start)"
+    return edit(source, [
+        (f"    tile_words={extent};\n", ""),
+        ("chunk_word<=0;selected_channel<=0;", "chunk_word<=0;selected_channel<=0;tile_words<=0;"),
+        ("        ACT_PREPARE:begin activation_mode<=1;state<=ADDRESS_OFFSET;end",
+         f"""        ACT_PREPARE:begin
+          tile_words<={extent};
+          activation_mode<=1;state<=ADDRESS_OFFSET;
+        end"""),
+    ])
+
+
 def bind_weight_guards(source):
     return edit(source, [
         ("    input wire [1:0] wide_load_valid,", """    input wire [1:0] wide_load_valid,

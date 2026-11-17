@@ -1,0 +1,51 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/console.log": "2452d86551d11e6648de5ec33f941553ed1b201adf351be645bd91f9188a36c3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/layout.def": "d6128e45d7211fac8ba969ede5c3310309511e35ef4667e209d5bc37bdc6d10f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/placement.rpt": "9dc43bcb30b08ebc17d33966ecb91c7aa6088ce1f4eba12a1b5c76bfa7f75727",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/placed_logic_area/audit.py": "d80b9593507afcd5c25dde7109dd8254acf3a35ef091f11d20b36b3f48de7d61",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/placed_logic_area/grouped_attention.py": "9710a59b249855acc9ba2a1d766a606a39747d36c67d21e6d19265ca5dbed5eb",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/placed_logic_area/receipt.json": "f0681c948761ed58ce0031b63e832ac137dfd4a8c68350b8640264b17a199641",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697"
+  },
+  "grouped_attention_probability_controllers": {
+    "children": {
+      "controller": {
+        "area_mm2": 0.78668352,
+        "cell_count": 365240
+      },
+      "reader": {
+        "area_mm2": 0.06616848,
+        "cell_count": 37060
+      },
+      "score_scaling": {
+        "area_mm2": 0.0563976,
+        "cell_count": 75080
+      },
+      "writer": {
+        "area_mm2": 0.26320224,
+        "cell_count": 222420
+      }
+    },
+    "instances": 20,
+    "logic_area_mm2": 1.17245184,
+    "score_scaler_instances": 80
+  },
+  "scope": "Exact library footprints reduced from the cold physical export. The 20 core-local attention probability controllers remain separate from the compute-array and feed-forward normalization paths. Place density is a geometry check.",
+  "state": "candidate_bound_placement_whitespace_and_attention_controller_footprints_reconciled",
+  "whole_chip": {
+    "database_fingerprint_sha256": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+    "fixed_memory_area_mm2": 3.7704761158,
+    "logic_area_mm2": 6.008623992,
+    "native_placement_density_percent": 98.91,
+    "native_remaining_logic_area_mm2": 0.066013,
+    "native_usable_logic_area_mm2": 6.074637
+  }
+}

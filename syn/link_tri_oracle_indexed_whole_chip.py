@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 from audit_tri_oracle_mapped_redundancy import ENDMODULE, MODULE, TOP, hierarchy
-from audit_tri_oracle_packed_weight_path import LOADER, STAGE, PIN, loader_paths, pins
+from audit_tri_oracle_packed_weight_path import LOADER, STAGE, PIN, loader_paths, named_instance, pins
 from audit_tri_oracle_placed_chip_boundary import digest
 
 
@@ -57,8 +57,7 @@ def signature(module):
 
 
 def update_instance(source, master, name, *, replacement=None, add=None, update=None):
-    start = re.escape(f"{master} {name}".encode())
-    match, = re.finditer(rb"(?m)^[ \t]*(" + start + rb")\s*\(([^;]*)\);", source)
+    match = named_instance(source, master, name)
     before = pins(source, master, name)
     add = {} if add is None else add
     update = {} if update is None else update

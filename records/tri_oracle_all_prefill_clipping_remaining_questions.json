@@ -1,0 +1,72 @@
+{
+  "accuracy_change_percentage_points": -1.0,
+  "baseline_layers": [
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "candidate_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "correction_dot_product_rows": {
+    "baseline": 86889,
+    "candidate": 343455
+  },
+  "correction_rows_multiplier": 3.9528018506370195,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "distinct_images": 67,
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_remaining_questions/inputs.json": "1d9ed3dd3b54ae7a773ca1b812a8ae31e37cd3e1281989c07fa0f4a8f7aee914",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_remaining_questions/predictions.jsonl": "0bb6123b992dfee2aab060c1014af90d9c101e7df093523c8fafc08c894a2301",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_remaining_questions/receipt.json": "dcc77c522e53dc14a4fef8b127f29d1b3def710d4748c4251d8390cc940cce13",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_remaining_questions/run.py": "2de656d028da470b5729f2ce3b04ec8804a946e247645d0f244b54cfbe70263e",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_remaining_questions/verify.py": "1b56ffb45c5bf30eefabc49bb2a56f41dc7f3da2a241e9f767d77810297e065b",
+    ".cache/model_reference/gqa_testdev/all_prefill_clipping_trial/inputs.json": "c7cff36b1391038bb4da32efb314080bda0d557cfc8ffaef1231bbbe24739b2e",
+    ".cache/model_reference/gqa_testdev/calibrated_clip_holdout/predictions.jsonl": "cc8918692dae7df77737cad97fc9e0da93342e595ee3f6a8162913af72d1adc4",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "records/tri_oracle_calibrated_clipping_holdout.json": "aa366ecf1b269d6d2bc3b85bafa8041de948c9ffb0f5ba72bca3ad072d32ee8b",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024"
+  },
+  "exact_matches": {
+    "baseline": 103,
+    "candidate": 101
+  },
+  "image_bootstrap_95_percent_interval_pp": [
+    -5.025125628140704,
+    3.0
+  ],
+  "paired": {
+    "first_token_changed": 37,
+    "gained": 10,
+    "lost": 12
+  },
+  "paired_exact_two_sided_p": 0.8318119049072266,
+  "peak_gpu_bytes": 7705890816,
+  "questions": 200,
+  "scope": "Paired software evaluation of 200 previously unevaluated questions from the same 67 images held out from calibration. Correction work counts extra signed-eight-bit down-projection rows. End-to-end mapped execution and energy under the paper's workload remain unmeasured for this experiment.",
+  "state": "all_prefill_signed8_clipping_panel_independently_verified"
+}
