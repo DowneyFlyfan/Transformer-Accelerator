@@ -200,7 +200,7 @@ def verify_worst_locations(source, layout, top, reachable, nets, library):
                 assert all(entry[-1] is not None for entry in loads)
                 assert sum(entry[-1] for entry in loads) / CAPACITANCE_SCALE == row["pin_load_lower_pf"]
                 assert driver[-1] / CAPACITANCE_SCALE == row["driver_limit_pf"]
-                endpoints[module, row["net"]] = (driver[0], [item[0] for item in loads])
+                endpoints[module, row["net"]] = (driver, loads)
 
     @cache
     def paths(module):
@@ -213,26 +213,36 @@ def verify_worst_locations(source, layout, top, reachable, nets, library):
         parents_for_row = paths(row["module"])
         assert len(parents_for_row) == row["physical_occurrences"]
         driver, sinks = endpoints[row["module"], row["net"]]
-        placed_names.update((prefix + ident).encode() for prefix in parents_for_row for ident in (driver, *sinks))
+        placed_names.update((prefix + entry[0]).encode() for prefix in parents_for_row for entry in (driver, *sinks))
     locations = {name.replace(b"\\", b""): pose for name, pose in components(layout)
                  if name.replace(b"\\", b"") in placed_names}
     assert locations.keys() == placed_names
     with layout.open("rb") as stream:
         (units,) = re.findall(rb"(?m)^UNITS DISTANCE MICRONS (\d+) ;$", stream.read(4096))
+    physical_nets = []
     for row in nets:
         driver, sinks = endpoints[row["module"], row["net"]]
         distance = 0
         for prefix in paths(row["module"]):
-            master, status, x, y, _, _ = locations[(prefix + driver).encode()]
-            assert master == row["master"] and status == "PLACED"
-            for sink in sinks:
-                _, _, sx, sy, _, _ = locations[(prefix + sink).encode()]
-                distance = max(distance, abs(x - sx) + abs(y - sy))
-        row["driver_hierarchy"] = paths(row["module"])[0] + driver
+            def details(entry):
+                name, master, pin, _, _ = entry
+                physical_name = prefix + name
+                placed_master, status, x, y, _, _ = locations[physical_name.encode()]
+                assert master == placed_master and status == "PLACED", physical_name
+                return dict(name=physical_name, master=master, pin=pin, x=x, y=y)
+
+            physical_driver = details(driver)
+            physical_sinks = [details(sink) for sink in sinks]
+            distance = max(distance, max(abs(physical_driver["x"] - sink["x"]) + abs(physical_driver["y"] - sink["y"])
+                                         for sink in physical_sinks))
+            physical_nets.append(dict(module=row["module"], net=row["net"], driver=physical_driver,
+                                      sinks=physical_sinks))
+        row["driver_hierarchy"] = paths(row["module"])[0] + driver[0]
         row["furthest_sink_origin_manhattan_um"] = distance / int(units)
+    return physical_nets
 
 
-def verify(workers):
+def verify(workers, endpoint_inventory=None):
     evidence = {}
 
     def pin(path, expected=None):
@@ -271,12 +281,20 @@ def verify(workers):
                 for name, count in reachable.items() for net in scanned[name][2]]
     distinct.sort(key=lambda net: (-net["lower_bound_ratio"], net["module"], net["net"]))
     worst = distinct[:12]
-    verify_worst_locations(source, layout, placed["top"], reachable, worst, models)
+    physical_nets = verify_worst_locations(source, layout, placed["top"], reachable,
+                                            distinct if endpoint_inventory else worst, models)
     grouping = {name: len(scanned[name][2]) * count for name, count in reachable.items() if scanned[name][2]}
     assert sum(grouping.values()) == violated
     for function in (read_library, normalize_module, read_module, bits, named_bindings, components):
         pin(Path(function.__code__.co_filename))
     pin(Path(__file__).resolve())
+    if endpoint_inventory:
+        assert len(physical_nets) == violated
+        with endpoint_inventory.open("x") as stream:
+            json.dump(dict(cold_netlist_sha256=physical["cold_netlist_sha256"],
+                           layout_sha256=evidence[str(layout.relative_to(ROOT))],
+                           overloaded_nets=physical_nets, evidence_sha256=evidence), stream, sort_keys=True)
+            stream.write("\n")
     return dict(state="corrected_booth_pin_only_load_lower_bounds_screened",
                 cold_netlist_sha256=physical["cold_netlist_sha256"],
                 slow_corner="ssg0p9v125c", minimum_direct_sinks=MINIMUM_SINKS, workers=workers,
@@ -292,6 +310,9 @@ if __name__ == "__main__":
     available_cores = int(subprocess.check_output(["nproc"], text=True))
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("--workers", type=int, default=available_cores)
+    parser.add_argument("--endpoint-inventory", type=Path)
     options = parser.parse_args()
     assert 1 <= options.workers <= available_cores
-    print(json.dumps(verify(options.workers), indent=2, sort_keys=True))
+    if options.endpoint_inventory:
+        assert options.endpoint_inventory.resolve().is_relative_to(ROOT / ".cache")
+    print(json.dumps(verify(options.workers, options.endpoint_inventory), indent=2, sort_keys=True))

@@ -1,0 +1,33 @@
+{
+  "added_buffers": 84,
+  "baseline_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "buffer_master": "BUFFD8BWP12T40P140",
+  "changed_modules": 30,
+  "check_after_insertion": {
+    "layout_sha256": "5c393b4cff3038fa54edb0420dd388e826f44161f119a86696161749a7af49e7",
+    "modified_modules": 30,
+    "netlist_sha256": "dc6b72091ae35b48a99c50067b562555ce2e3c24aa22f044bbc9203b05c1456c",
+    "pin_only_slow_corner_violations_after": 0,
+    "pin_only_slow_corner_violations_before": 40
+  },
+  "consumed_placement_sites": 1008,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/buffer_plan.json": "9443b9b371f8e0ee5a576cab5078706e26c71aa9e04407505e4937bf953bd8a0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/buffered.v": "dc6b72091ae35b48a99c50067b562555ce2e3c24aa22f044bbc9203b05c1456c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/layout.def": "5c393b4cff3038fa54edb0420dd388e826f44161f119a86696161749a7af49e7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/receipt.json": "231ddd027b4b68b2c214a446fc7a71d3c30a48c6e1e8515f62f9e96a76d24acb",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/endpoints.json": "75f6ae3eba0d61295654a0350d7557f451b33d0ed88034f5c8d20a6263327014",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/final_static_load_recheck.json": "f5ff7a2175362268801a75edcd9380f0d6d1d00d2b558961df0d46bf27ced0bd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/recheck_loads.py": "d010ee75ea8f7606bde5e475eb13ce162ebc9f430fb8a5773b667fbdbf3cc947",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/repair_plan_receipt.json": "60575d678913f965efee975dce89680c990e6ced373eadd6f00f79b6614d0def",
+    "records/tri_oracle_corrected_booth_pin_load_screen.json": "6ed02400c826cfb6ad96806ef24041cb001e82df84f2c191e3913ca9cee6a2dd",
+    "syn/plan_tri_oracle_booth_pin_load_repair.py": "ca5f6194de3afaf9fb2aa560797c43fcd998286571b84cbf545db60ad4d3399b",
+    "syn/stage_tri_oracle_booth_pin_load_candidate.py": "8f4cf314082b5fc49a38fb7555c36971edd637c3010ae18ddb55f8c303573a05"
+  },
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "planned_pin_limit_fraction": 0.48669411381843614,
+  "preserved_existing_placed_components": 4104532,
+  "rewired_sink_pins": 33905,
+  "scope": "Offline repair candidate with exact transparent buffer connectivity and no original cell movement. Placement constraints and pin-only capacitance were verified. Cadence import, wire timing, and routing remain pending.",
+  "state": "corrected_booth_overload_repair_staged_and_reproduced"
+}
