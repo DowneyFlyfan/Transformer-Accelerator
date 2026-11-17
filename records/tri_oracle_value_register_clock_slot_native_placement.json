@@ -1,0 +1,60 @@
+{
+  "cold_netlist_sha256": "4f4803f45d055b1f044be69cce2d5e6fad34136f89d398a55baab5f9e496a5ee",
+  "component_inventory_sha256": "42c47d38c4f99c6970262c8b0a10c08cafb6201db95e45da33b2e71ba12e6601",
+  "coordinates_changed": 10448,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_connected/native/cold.v": "dd7fab755a60c7b85fb1a29e1f44ee30722446fe089dfbb38f6881ba1890388f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_connected/native/layout.def": "cd76b5ad30be9c7f8f7fd3106f9195a9f90e50974ee430c958db25f22ef79b57",
+    ".cache/value_register_clock_windows/check_native_export.py": "f15f45d10e6a2df916ed394a2a06ce4744f678d7194d7efa498ed36d66e41392",
+    ".cache/value_register_clock_windows/expected_native_inventory.json": "3539d0f3b73d4e403f53c3682b50e278679e0719ce0490f521f33b9d5e8ca7b0",
+    ".cache/value_register_clock_windows/export_verifier_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/value_register_clock_windows/native_compaction/cold.v": "4f4803f45d055b1f044be69cce2d5e6fad34136f89d398a55baab5f9e496a5ee",
+    ".cache/value_register_clock_windows/native_compaction/console.log": "4a1b3c81838794961889f79efc630d7a3b5c9d69844c30218d4db4e17dca4d7a",
+    ".cache/value_register_clock_windows/native_compaction/geometry.rpt": "209ef95383efddc2baccf6f690e427fa7cc153cf5cca035e1759f832275e626f",
+    ".cache/value_register_clock_windows/native_compaction/layout.def": "d4912bd9b86e286d8c32543e211605a18f1f5df1d8510954be61fe2b9b110b9d",
+    ".cache/value_register_clock_windows/native_compaction/status.json": "f467ab13e5bad51147204fc71a6302c26d5ed13fd2cb2909aa1d82e571468019",
+    ".cache/value_register_clock_windows/native_preflight.json": "4da7e7caf186705ff6b0d4a61affe874691baff0761ba608a992ab718d662c22",
+    ".cache/value_register_clock_windows/plan_bounded.json": "e9308ca39dd176db0f8a078bb3ff45ff86add3843d96a6e6faad11516b18fabc",
+    ".cache/value_register_clock_windows/run_native.py": "4b96e561a7e825a84232c0d68173b99add0d5ea3939f314dec0ff2031034687e",
+    "records/tri_oracle_value_register_clock_windows.json": "f2a66a4c60c42d5858e153b7a96bed6bae8b45aa8b74f44f8e9961ad61b066d7"
+  },
+  "identical_module_definitions": 693,
+  "native": {
+    "elapsed_seconds": 79.06210813298821,
+    "exit_status": 0,
+    "minimum_disk_bytes": 15026225152,
+    "minimum_host_available_bytes": 6838489088,
+    "peak_container_anonymous_bytes": 13946802176,
+    "stop_reason": null
+  },
+  "proposed_plan_sha256": "e9308ca39dd176db0f8a078bb3ff45ff86add3843d96a6e6faad11516b18fabc",
+  "regions": {
+    "tri_array_region_17": {
+      "affected_rows": 46,
+      "max_shift_um": 1.54,
+      "moved_array_cells": 1402,
+      "moved_cells": 2549,
+      "required": 54,
+      "slots": 54
+    },
+    "tri_array_region_3": {
+      "affected_rows": 45,
+      "max_shift_um": 1.54,
+      "moved_array_cells": 1372,
+      "moved_cells": 5198,
+      "required": 50,
+      "slots": 50
+    },
+    "tri_array_region_4": {
+      "affected_rows": 39,
+      "max_shift_um": 1.54,
+      "moved_array_cells": 1261,
+      "moved_cells": 2701,
+      "required": 49,
+      "slots": 49
+    }
+  },
+  "reserved_clock_buffer_locations": 153,
+  "scope": "Native whole-chip Innovus location update preserves every mapped module, all unmodified instance coordinates, 20 array fences, 631 fixed memories, hard placement blockages and power/ground definitions. It reserves 153 empty CKBD8 sites through 10,448 same-row cell shifts. Clock distribution, loaded-clock timing, and routing remain unqualified.",
+  "state": "wide_write_clock_slot_native_placement_and_complete_inventory_verified"
+}
