@@ -1,0 +1,23 @@
+{
+  "checkpoint_time_ns": 76200000,
+  "cold_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/recovery_after_31200000ns/resume.log": "c95647ff342e7548a082c7226604741bcd799f3003ff29a03f0607cd1dd3bc00",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/recovery_after_31200000ns/resume_status.json": "4b332f22f0cd3ba3de156a5ab92221f57ceaccd671aac7426ac7687fb837645e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/recovery_after_76200000ns/checkpoint_prefix.log": "552a8cd92c592f442ae677bcb7803b4b51c0bc73298bfbd473cdfd341e1dad03",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/recovery_after_76200000ns/prepared_recovery.json": "5a5e06bde58f009582509d9b41c97eb88f134a17f6d2df6265610ae051d6af2f",
+    "syn/resume_tri_oracle_booth_packet_replay.py": "0544259b71273caa4a6c0e76a45c308feeea330927a241d95566744c7c08852f",
+    "syn/test_tri_oracle_booth_checkpoint_chain.py": "db6e398dcffaed7258827b2f5c7ee0b676201cc725019c578df5c010d4cdf198",
+    "syn/verify_tri_oracle_booth_attention_checkpoint.py": "63fc622e71eee1397e0054e596c4fee62e8b4aa719774e9dcca72493723c6641"
+  },
+  "feedforward_worker_started": true,
+  "projection_batches_at_checkpoint": 79,
+  "projection_groups_at_checkpoint": 3,
+  "projection_restore_observed": false,
+  "projection_vectors_at_checkpoint": 1243,
+  "projection_weight_reads_at_checkpoint": 1284160,
+  "scope": "The second checkpoint passed chronological transcript and fixture validation before releasing the native slot. Full feed-forward simulation launched on the repaired chip. A subsequent projection restore is scheduled and has yet to be observed.",
+  "snapshot": "worklib.checkpoint_b:sv",
+  "source_recovery": "recovery_after_31200000ns",
+  "state": "verified_chained_projection_checkpoint_released_native_lane_for_feedforward"
+}

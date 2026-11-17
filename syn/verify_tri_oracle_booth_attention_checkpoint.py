@@ -23,6 +23,7 @@ BATCH = re.compile(r"^UNSEEDED_PACKET_PROJECTION_BATCH_PASS group=(\d+) slot=(\d
                    r" weights=(\d+) skipped_columns=(\d+)$")
 PROJECTION = re.compile(r"(?m)^UNSEEDED_PACKET_PROJECTION_(?:BATCH|GROUP)_PASS[^\n]*$")
 ROW = re.compile(r"(?m)^UNSEEDED_PACKET_ATTENTION_ROW_PASS head=(\d+) rank=(\d+) value_reads=(\d+)$")
+RECOVERY_FOLDER = re.compile(r"recovery_after_(\d+)ns")
 TO_NS = {"FS": Decimal("0.000001"), "PS": Decimal("0.001"), "NS": Decimal(1),
          "US": Decimal(10**3), "MS": Decimal(10**6), "S": Decimal(10**9)}
 
@@ -127,20 +128,51 @@ def projection_prefix(plan, fixture, prefix):
     }
 
 
+def recovery_time(folder):
+    match = RECOVERY_FOLDER.fullmatch(folder.name)
+    assert folder.resolve() == WORK / folder.name and match is not None
+    return int(match[1])
+
+
+def previous_recovery(recovery, definition):
+    name = definition.get("source_recovery")
+    if name is None:
+        return None
+    assert RECOVERY_FOLDER.fullmatch(name), name
+    previous = WORK / name
+    assert recovery_time(previous) < recovery_time(recovery)
+    return previous
+
+
+def verify_stopped_log(status_path, text, status_hash=None):
+    content = status_path.read_bytes()
+    if status_hash is not None:
+        assert sha256(content).hexdigest() == status_hash
+    status = json.loads(content)
+    assert status["exit_status"] != 0 or status["stop_reason"], "Preserve the successful run"
+    assert status["log_sha256"] == sha256(text.encode()).hexdigest()
+    assert not re.search(r"\*[EF],", text), "Diagnose the simulator error before resuming"
+
+
 def resumed_checkpoint_text(recovery, initial_text, prepared):
-    """Reconstruct the committed transcript after an observed snapshot load."""
-    initial, _, prefix = checkpoint_prefix(initial_text)
-    assert recovery.resolve() == WORK / f"recovery_after_{initial['checkpoint_time_ns']}ns"
+    """Reconstruct all committed segments before the most recent snapshot load."""
+    when = recovery_time(recovery)
     definition = json.loads((recovery / "prepared_recovery.json").read_text())
+    previous = previous_recovery(recovery, definition)
+    if previous is None:
+        verify_stopped_log(NATIVE / "native_status.json", initial_text)
+        source_text = initial_text
+    else:
+        source_text, _ = resumed_checkpoint_text(previous, initial_text, prepared)
+        verify_stopped_log(previous / "resume_status.json", (previous / "resume.log").read_text(),
+                           definition["source_status_sha256"])
+    initial, _, prefix = checkpoint_prefix(source_text)
+    assert initial["checkpoint_time_ns"] == when
     assert definition["state"] == "checkpoint_output_prepared_for_restore"
     assert all(definition[key] == value for key, value in initial.items())
     assert definition["cold_netlist_sha256"] == prepared["cold_netlist_sha256"]
     archived = recovery / "checkpoint_prefix.log"
     assert digest(archived) == definition["replay_prefix_sha256"] == sha256(prefix.encode()).hexdigest()
-    status = json.loads((NATIVE / "native_status.json").read_text())
-    assert status["exit_status"] != 0 or status["stop_reason"]
-    assert status["log_sha256"] == sha256(initial_text.encode()).hexdigest()
-
     plan = definition["restore"]
     assert plan["driver_sha256"] == digest(DRIVER)
     snapshot = initial["snapshot"]
@@ -207,17 +239,23 @@ def restore_invocation(prepared, facts, log):
     }
 
 
-def prepare_recovery():
+def prepare_recovery(previous=None):
     """Prepare files for a stopped run. Preserve the full trace and unsaved output."""
     with LOCK.open("r") as lane:
         fcntl.flock(lane, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        status = json.loads((NATIVE / "native_status.json").read_text())
-        log = NATIVE / "xrun.log"
-        assert status["exit_status"] != 0 or status["stop_reason"], "Preserve the successful run"
-        assert status["log_sha256"] == digest(log)
-        assert not re.search(r"\*[EF],", log.read_text()), "Diagnose the simulator error before resuming"
-        facts, prefix, rows = checkpoint_artifacts()
+        if previous is None:
+            status = NATIVE / "native_status.json"
+            log = NATIVE / "xrun.log"
+        else:
+            recovery_time(previous)
+            status = previous / "resume_status.json"
+            log = previous / "resume.log"
+        verify_stopped_log(status, log.read_text())
+        facts, prefix, rows = checkpoint_artifacts(previous)
         recovery = WORK / f"recovery_after_{facts['checkpoint_time_ns']}ns"
+        if previous is not None:
+            assert recovery_time(previous) < recovery_time(recovery), "No newer saved checkpoint to resume"
+            facts.update(source_recovery=previous.name, source_status_sha256=digest(status))
         prepared = json.loads((NATIVE / "prepared_native.json").read_text())
         facts["restore"] = restore_invocation(prepared, facts, recovery / "resume.log")
         recovery.mkdir()
@@ -242,6 +280,9 @@ if __name__ == "__main__":
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--prepare-recovery", action="store_true", help="Trim outputs of a stopped run")
     modes.add_argument("--resume-directory", type=Path, help="Check the latest checkpoint across a restart")
+    parser.add_argument("--source-recovery", type=Path, help="Prepare a new restore after this stopped segment")
     args = parser.parse_args()
-    print(json.dumps(prepare_recovery() if args.prepare_recovery else verify(args.resume_directory),
+    if args.source_recovery is not None and not args.prepare_recovery:
+        parser.error("--source-recovery requires --prepare-recovery")
+    print(json.dumps(prepare_recovery(args.source_recovery) if args.prepare_recovery else verify(args.resume_directory),
                      indent=2, sort_keys=True))
