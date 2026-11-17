@@ -1,0 +1,92 @@
+{
+  "candidate_sha256": "47881bbfc06002e0dd36c56008672bc5bff48c1ffbca1b42ddce80aaa8b24e7a",
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/physical/shared437/aggregator_local_merge/cluster_native/audit_second_cluster_innovus_nets.py": "547141f739e8671e46a9fc4805bd0709570f110f71685fc1a2e4e4d5856c0c58",
+    ".cache/physical/wac_budgeted_parent_boundary/verify_linked_placed_topology.py": "0ae41e960b53d9251bd5d0d9ff3bb0c353e8908bdfa11efc5157dc3e994cc69c",
+    ".cache/wide_packaged_host_link/placement/independent_seed.json": "d9740d25952d7012f9c063f5f28632b879b5aaac1a2e8d78351527118f9ad31b",
+    ".cache/wide_packaged_host_link/placement/native/cold.v": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+    ".cache/wide_packaged_host_link/placement/native/console.log": "35b9acf60a644352e8d2ae0acbee286c298730de71e24fd77035ea79af6fe17a",
+    ".cache/wide_packaged_host_link/placement/native/geometry.rpt": "ed3b5bdfa7e8028be87c045a12f7d4b8ec6592519eee499989af697faf2b1205",
+    ".cache/wide_packaged_host_link/placement/native/layout.def": "00e19c9debe38544cf3aad292871d84c3104247bcd745ed3509117c01425b2c9",
+    ".cache/wide_packaged_host_link/placement/native/status.json": "3834e9762438288471a91ab7ba671d597397433eacabd213292796005b483e0e",
+    ".cache/wide_packaged_host_link/placement/native/verified.json": "52bc6df4a3b505956fd5c9d2dc4774edb85a526c5938475c62bf3d0c8609abb6",
+    ".cache/wide_packaged_host_link/placement/native_preflight.json": "9e9f33f3d905767f8dd6d4b380a83b5ef88777babb2e51975119cc6200cb2c93",
+    ".cache/wide_packaged_host_link/placement/padded_prepared.json": "b70cdfe7cdbc3c81e7abd4ab76c55ab9963b969c8da8cbf98afac9777292ac26",
+    ".cache/wide_packaged_host_link/placement/padded_seed.def": "6ee94aef8fc55d477f31d175ab3a19fe96afe0bfca19c54b689150cb5fdd6ee2",
+    ".cache/wide_packaged_host_link/placement/run_native.py": "c29695fe7432da768e5171e1a3d0ff6c1fb959774abfc038b164be42f7aba3a2",
+    ".cache/wide_packaged_host_link/placement/verify.py": "be145d245433e8e37641654bbe41e3228f3e76cd3f8bd9d23b1e53eb9dd99960",
+    "records/tri_oracle_resized_chip_native_indexed.json": "286183536d995e725ab965a0c40e80d840a2aaf71479bbabfb377af85ccbb2a1",
+    "records/tri_oracle_wide_packetized_attention_replay.json": "6fc50561d99793e3f1617642db65427dc9d30ba10bc7190f8009ad27910a8b09"
+  },
+  "full_component_inventory": {
+    "array_cells_by_region": {
+      "tri_array_region_0": 54580,
+      "tri_array_region_1": 54580,
+      "tri_array_region_10": 54580,
+      "tri_array_region_11": 54580,
+      "tri_array_region_12": 54580,
+      "tri_array_region_13": 54580,
+      "tri_array_region_14": 54580,
+      "tri_array_region_15": 54580,
+      "tri_array_region_16": 54580,
+      "tri_array_region_17": 54580,
+      "tri_array_region_18": 54580,
+      "tri_array_region_19": 54580,
+      "tri_array_region_2": 54580,
+      "tri_array_region_3": 54580,
+      "tri_array_region_4": 54580,
+      "tri_array_region_5": 54580,
+      "tri_array_region_6": 54580,
+      "tri_array_region_7": 54580,
+      "tri_array_region_8": 54580,
+      "tri_array_region_9": 54580
+    },
+    "component_inventory_sha256": "4b2dcdf657ea43fe2216cc047b549ebdbe0c1939400d5aa8340e11abf9a35093",
+    "components": {
+      "FIXED": 631,
+      "PLACED": 3899401
+    },
+    "occupied_sites": 36229531,
+    "remaining_sites": 445585,
+    "usable_sites": 36675116
+  },
+  "full_module_definitions_preserved": 771,
+  "functional_scope": "Full-chip packet replay covers two attention rows. The underlying core has a separate two-token feed-forward replay. Full model accuracy and performance are unqualified.",
+  "horizontal_halo_reduction_um_per_side": 0.28,
+  "modules_verified_by_parsed_bit_connections": [
+    "tri_oracle_chip_command_layer_parallel_chip"
+  ],
+  "native": {
+    "exit_status": 0,
+    "minimum_free_disk_bytes": 18600554496,
+    "minimum_host_available_bytes": 7368450048,
+    "peak_container_anonymous_bytes": 13782740992,
+    "stop_reason": null,
+    "wall_seconds": 117.58780971704982
+  },
+  "native_cold_netlist_sha256": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+  "packaging_standard_cells": 31374,
+  "placement_density_percent": 98.78,
+  "process": "TSMC 28 nm HPC+",
+  "rejected_netlist_mutations": [
+    "grouped_output_bit_swap",
+    "grouped_ready_bypass"
+  ],
+  "relocated_core_standard_cells": 2797227,
+  "scope": "Native connected placement of the functionally replayed wide packaged chip. Horizontal memory padding uses the recorded reduction on each side. All 501 pad and placement obstructions and 20 array fences are checked. Timing closure, clock distribution, bonded pad cells and routing remain unqualified.",
+  "source_packaged_attention_replay": {
+    "exact_accumulator_words": 128,
+    "native_wall_seconds": 671.9754613869591,
+    "trained_rows": 2
+  },
+  "state": "qualified_packetized_wide_chip_native_placement_verified",
+  "underlying_core_feedforward_replay": {
+    "exact_feedforward_outputs": 4096,
+    "exact_writeback_outputs": 4096,
+    "tokens": 2
+  }
+}
