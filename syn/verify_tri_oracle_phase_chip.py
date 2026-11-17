@@ -8,6 +8,7 @@ from pathlib import Path
 
 from prepare_tri_oracle_cluster_weight_phase import distribute_weight_macro_inputs
 from prepare_tri_oracle_phase_chip import INCLUDE, JOINED, ROOT
+from prepare_tri_oracle_phase_macro_boundary import REPAIRED_CLOCK_BOUNDARY
 
 
 RUN = ROOT / ".cache/phase_chip"
@@ -53,20 +54,28 @@ def verify_case(run, name):
     return output, path_metrics
 
 
-def verify(include_scalar, include_trained, buffered=False, include_attention=False):
+def verify(include_scalar, include_trained, buffered=False, include_attention=False, derived_clock=False):
     results = {}
-    run = RUN.with_name("phase_chip_buffered") if buffered else RUN
+    run = RUN.with_name("phase_chip_clock" if derived_clock else "phase_chip_buffered") if buffered else RUN
     source = run / "source"
     bundle = source / "bundle.sv"
     includes = {Path(name) for name in INCLUDE.findall(bundle.read_text())}
     if buffered:
-        controller = ROOT / ".cache/cluster_weight_phase/macro_boundary_distributed/controller.v"
+        controller = (REPAIRED_CLOCK_BOUNDARY / "controller.v" if derived_clock else
+                      ROOT / ".cache/cluster_weight_phase/macro_boundary_distributed/controller.v")
         require(controller in includes and ROOT / "verilog/tri_oracle_weight_phase_fabric.sv" not in includes,
                 "buffered timing controller was not selected")
         core = "tri_oracle_sram_memory_compute.sv"
         require((source / core).read_text() ==
                 distribute_weight_macro_inputs((RUN / "source" / core).read_text()),
                 "buffered memory drivers were not selected")
+    if derived_clock:
+        top = (source / "tri_oracle_chip_command_layer.sv").read_text()
+        require(REPAIRED_CLOCK_BOUNDARY / "clock.v" in includes
+                and "input logic weight_memory_clk," in top and "input logic clk" not in top
+                and "tri_oracle_phase_chip_clock clock_source" in top
+                and top.count(".clk(core_clk)") == top.count(".rst_n(core_rst_n)") == 2,
+                "chip bypassed the mapped internal clock or reset")
     files = {bundle, source / "bench.sv", ROOT / "verilog/tri_oracle_phase_chip_probe.sv",
              ROOT / "syn/prepare_tri_oracle_phase_chip.py", ROOT / "syn/run_tri_oracle_phase_chip.sh",
              *includes}
@@ -142,6 +151,7 @@ def verify(include_scalar, include_trained, buffered=False, include_attention=Fa
                   "Native weight timing checks are enabled for the typical library. Chip placement and routing remain pending."),
         "clock_periods_ps": {"weight": 862, "core": 1724},
         "buffered_weight_boundary": buffered,
+        "derived_core_clock": derived_clock,
         "cases": results,
         "evidence_sha256": hashes,
     }
@@ -154,8 +164,12 @@ if __name__ == "__main__":
     parser.add_argument("--include-trained", action="store_true")
     parser.add_argument("--buffered-boundary", action="store_true")
     parser.add_argument("--include-attention", action="store_true")
+    parser.add_argument("--derived-clock", action="store_true")
     args = parser.parse_args()
-    report = verify(args.include_scalar, args.include_trained, args.buffered_boundary, args.include_attention)
+    if args.derived_clock and not args.buffered_boundary:
+        parser.error("the derived clock uses the buffered weight boundary")
+    report = verify(args.include_scalar, args.include_trained, args.buffered_boundary, args.include_attention,
+                    args.derived_clock)
     if args.record:
         args.record.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     print(f"Verified {len(report['cases'])} chip-command Xcelium replays.")

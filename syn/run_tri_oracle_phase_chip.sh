@@ -6,6 +6,9 @@ experiment="$repo/.cache/phase_chip"
 if [[ ${BUFFERED_PHASE_CHIP:-0} == 1 ]]; then
   experiment="$repo/.cache/phase_chip_buffered"
 fi
+if [[ ${DERIVED_PHASE_CLOCK:-0} == 1 ]]; then
+  experiment="$repo/.cache/phase_chip_clock"
+fi
 source_dir="$experiment/source"
 name="${1:?run name is required}"
 shift

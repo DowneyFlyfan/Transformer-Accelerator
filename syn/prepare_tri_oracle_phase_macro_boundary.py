@@ -9,9 +9,11 @@ from prepare_tri_oracle_cluster_weight_phase import ROOT, TS5_MACRO
 
 MAPPING = ROOT / ".cache/cluster_weight_phase/fabric_mapping/mapped.v"
 CLUSTERS, CORES, BANKS_PER_CORE = 5, 4, 16
+CLOCK_MAPPING = ROOT / ".cache/phase_chip_clock/mapping/mapped.v"
+REPAIRED_CLOCK_BOUNDARY = ROOT / ".cache/phase_chip_clock/macro_boundary_repaired"
 
 
-def boundary(distribute):
+def boundary(distribute, derived_clock=False):
     top = """module tri_oracle_phase_macro_boundary(
   input memory_clk, core_clk, rst_n,
   input [19:0] read_cores,
@@ -29,6 +31,14 @@ def boundary(distribute):
         "memory_clk", "core_clk", "rst_n", "read_address", "write_pending",
         "write_allowed", "write_retired", "memory_we_n",
     )]
+    if derived_clock:
+        top = top.replace("input memory_clk, core_clk, rst_n,", "input memory_clk, rst_n,")
+        top += """  wire core_clk, core_rst_n;
+  tri_oracle_phase_chip_clock clock_source (
+    .memory_clk(memory_clk), .rst_n(rst_n), .core_clk(core_clk), .core_rst_n(core_rst_n)
+  );
+"""
+        connections[2] = ".rst_n(core_rst_n)"
     for port, count, width in (
         ("read_cores", CLUSTERS, CORES), ("write_core", 2, 5), ("write_address", 2, 10),
         ("write_rows", 2, 32), ("write_payload", 2, 1024),
@@ -99,21 +109,74 @@ def delay_phase_logic(netlist):
     return header + cells + "endmodule\n"
 
 
+def distribute_cluster_reset(netlist):
+    counts = [0] * CLUSTERS
+    cell = re.compile(r"(?ms)^(  [A-Z0-9]+\s+\\phase_cluster\[([0-4])\][^(]+\()(.*?\);)")
+    reset_pin = r"\.(CDN|SDN)\s*\(\s*rst_n\s*\)"
+
+    def rewire(match):
+        header, cluster, pins = match.groups()
+        updated, count = re.subn(reset_pin, rf".\1 (cluster_rst_n[{cluster}])", pins)
+        counts[int(cluster)] += count
+        return header + updated
+
+    netlist = cell.sub(rewire, netlist)
+    if counts != [75] * CLUSTERS or re.search(reset_pin, netlist):
+        raise ValueError(f"unexpected reset fanout by cluster: {counts}")
+    declaration = "  wire phase_delay_0, phase_delay_1, phase_select;\n"
+    if netlist.count(declaration) != 1:
+        raise ValueError("expected the buffered phase controller")
+    netlist = netlist.replace(declaration, declaration + "  wire [4:0] cluster_rst_n;\n")
+    cells = "".join(f"  BUFFD8BWP12T40P140 reset_buf_{cluster} (.I(rst_n), .Z(cluster_rst_n[{cluster}]));\n"
+                    for cluster in range(CLUSTERS))
+    return netlist.replace("endmodule\n", cells + "endmodule\n")
+
+
+def delay_clock_hold_paths(netlist):
+    for net, delayed in (("n_0", "divider_feedback"), ("memory_release[0]", "memory_sync_data"),
+                         ("core_release[0]", "core_sync_data")):
+        old = f".D ({net})"
+        if netlist.count(old) != 1:
+            raise ValueError(f"unexpected clock-mapping path: {net}")
+        netlist = netlist.replace(old, f".D ({delayed})")
+    declaration = "  wire n_0;\n"
+    if netlist.count(declaration) != 1:
+        raise ValueError("expected the original clock-mapping wires")
+    netlist = netlist.replace(declaration, declaration + "  wire divider_feedback, memory_sync_data, core_sync_data;\n")
+    cells = """  BUFFD1BWP12T40P140 divider_hold (.I(n_0), .Z(divider_feedback));
+  BUFFD1BWP12T40P140 memory_sync_hold (.I(memory_release[0]), .Z(memory_sync_data));
+  BUFFD1BWP12T40P140 core_sync_hold (.I(core_release[0]), .Z(core_sync_data));
+"""
+    return netlist.replace("endmodule\n", cells + "endmodule\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     parser.add_argument("--distribute", action="store_true")
     parser.add_argument("--delay-phase", action="store_true")
+    parser.add_argument("--derived-clock", action="store_true")
+    parser.add_argument("--repair-reset", action="store_true")
     args = parser.parse_args()
+    if args.repair_reset and not (args.derived_clock and args.delay_phase and args.distribute):
+        parser.error("the reset repair requires the derived clock and buffered memory interface")
     output = args.output
     output.mkdir(parents=True, exist_ok=True)
-    top = boundary(args.distribute)
+    top = boundary(args.distribute, args.derived_clock)
     if top.count(" weight_bank_") != 320:
         raise ValueError("incorrect SRAM inventory")
     mapped = MAPPING.read_text()
     if args.delay_phase:
         mapped = delay_phase_logic(mapped)
+    if args.repair_reset:
+        mapped = distribute_cluster_reset(mapped)
     (output / "controller.v").write_text(mapped)
+    if args.derived_clock:
+        clock = CLOCK_MAPPING.read_text()
+        if args.repair_reset:
+            clock = delay_clock_hold_paths(clock)
+        (output / "clock.v").write_text(clock)
+        mapped += "\n" + clock
     (output / "macro_boundary.v").write_text(mapped + "\n" + top)
 
 

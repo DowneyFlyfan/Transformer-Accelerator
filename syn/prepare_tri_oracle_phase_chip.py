@@ -8,6 +8,7 @@ from prepare_tri_oracle_cluster_weight_phase import (
     ROOT, TIMED_MACRO, TS5_MACRO, distribute_weight_macro_inputs, edit, prepare_cluster, prepare_core,
     prepare_mapped_fabric_adapter,
 )
+from prepare_tri_oracle_phase_macro_boundary import REPAIRED_CLOCK_BOUNDARY
 
 
 INCLUDE = re.compile(r'(?m)^`include "([^"]+)"$')
@@ -31,6 +32,20 @@ CLOCK_SOURCE = """  logic clk, weight_memory_clk=1, divider_reset_n=0;
   tri_oracle_weight_phase_clock divider (
     .memory_clk(weight_memory_clk), .rst_n(divider_reset_n), .core_clk(clk)
   );"""
+DERIVED_CLOCK_PEER = """  logic weight_memory_clk=1, external_rst_n=1;
+  wire clk = dut.core_clk;
+  always #431ps weight_memory_clk=~weight_memory_clk;
+  initial begin
+    #1ps;
+    external_rst_n=0;
+    repeat (2) @(posedge weight_memory_clk);
+    #17ps;
+    external_rst_n=1;
+  end"""
+RESET_PEER_CHECK = """  always @(posedge clk) if (rst_n && dut.core_rst_n !== 1'b1)
+    $fatal(1, "PHASE_CHIP_COMMAND_BEFORE_CORE_RESET_RELEASE");
+endmodule
+"""
 
 
 def clock_port(source, declaration, connection=None, copies=1):
@@ -102,6 +117,22 @@ endmodule
 """
 
 
+def derive_chip_clock(source):
+    source = edit(source, [
+        ("  input logic clk, weight_memory_clk,\n", "  input logic weight_memory_clk,\n"),
+        ("  logic [5:0] layer_command_valid;", """  logic core_clk, core_rst_n;
+  tri_oracle_phase_chip_clock clock_source (
+    .memory_clk(weight_memory_clk), .rst_n(rst_n), .core_clk, .core_rst_n
+  );
+  logic [5:0] layer_command_valid;"""),
+    ])
+    for bound, internal in ((".clk(clk)", ".clk(core_clk)"), (".rst_n(rst_n),\n", ".rst_n(core_rst_n),\n")):
+        if source.count(bound) != 2:
+            raise ValueError(f"expected clock or reset binding at both command sinks: {bound}")
+        source = source.replace(bound, internal)
+    return source
+
+
 def transform_chip(sources, buffered):
     command_layer = "tri_oracle_chip_command_layer.sv"
     sources[command_layer] = clock_port(sources[command_layer], "  input logic clk,\n",
@@ -139,7 +170,7 @@ def transform_chip(sources, buffered):
     return sources
 
 
-def prepare(output, buffered=False):
+def prepare(output, buffered=False, derived_clock=False):
     bundle = (JOINED / "bundle.sv").read_text()
     paths = [Path(name) for name in INCLUDE.findall(bundle)]
     prepared_names = (
@@ -154,7 +185,11 @@ def prepare(output, buffered=False):
         path, = (path for path in paths if path.name == name)
         work_sources[name] = path.read_text()
         bundle = edit(bundle, [(str(path), str(output / name))])
-    for name, contents in transform_chip(work_sources, buffered).items():
+    transform_chip(work_sources, buffered)
+    if derived_clock:
+        top = "tri_oracle_chip_command_layer.sv"
+        work_sources[top] = derive_chip_clock(work_sources[top])
+    for name, contents in work_sources.items():
         (output / name).write_text(contents)
     pe, = (path for path in paths if path.name == "tri_oracle_pe_array.sv")
     booth = ROOT / ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/array.sv"
@@ -173,7 +208,8 @@ def prepare(output, buffered=False):
         "tri_oracle_weight_phase_fabric", "tri_oracle_phase_weight_ingress",
     ))
     if buffered:
-        mapped = ROOT / ".cache/cluster_weight_phase/macro_boundary_distributed/controller.v"
+        mapped = (REPAIRED_CLOCK_BOUNDARY / "controller.v" if derived_clock else
+                  ROOT / ".cache/cluster_weight_phase/macro_boundary_distributed/controller.v")
         adapter = output / "mapped_fabric_adapter.sv"
         adapter.write_text(prepare_mapped_fabric_adapter(fabric.read_text()))
         bound = output / ingress.name
@@ -183,11 +219,21 @@ def prepare(output, buffered=False):
         sources += [mapped, adapter, bound]
     else:
         sources += [fabric, ingress]
+    if derived_clock:
+        mapped_clock = REPAIRED_CLOCK_BOUNDARY / "clock.v"
+        if not mapped_clock.is_file():
+            raise ValueError("run the clock mapping before building the single-clock candidate")
+        sources.append(mapped_clock)
     (output / "bundle.sv").write_text(bundle + "".join(f'`include "{path}"\n' for path in sources))
+    clock_peer = DERIVED_CLOCK_PEER if derived_clock else CLOCK_SOURCE
+    command_clock_ports = ("    .weight_memory_clk,\n    .rst_n(external_rst_n)," if derived_clock
+                           else "    .clk(clk),\n    .weight_memory_clk,\n    .rst_n(rst_n),")
     bench_changes = [
-        ("  logic clk=0;always #5 clk=~clk;", CLOCK_SOURCE),
-        ("    .clk(clk),\n    .rst_n(rst_n),", "    .clk(clk),\n    .weight_memory_clk,\n    .rst_n(rst_n),"),
+        ("  logic clk=0;always #5 clk=~clk;", clock_peer),
+        ("    .clk(clk),\n    .rst_n(rst_n),", command_clock_ports),
     ]
+    if derived_clock:
+        bench_changes.append(("endmodule\n", RESET_PEER_CHECK))
     for source, target in (("trained_tb.sv", "bench.sv"), ("full_native/trained_tb.sv", "trained_bench.sv")):
         (output / target).write_text(edit((JOINED / source).read_text(), bench_changes))
     scalar = JOINED.parent / "parallel_chip_load_address/trained_tb.sv"
@@ -198,15 +244,25 @@ def prepare(output, buffered=False):
          "dut.layer.layer.feedforward.scalar_signs.predictor.activation_path.cfg_ready"),
     ]))
     attention = JOINED.parent / "parallel_chip_v3/attention_tb.sv"
-    (output / "attention_bench.sv").write_text(edit(attention.read_text(), [
-        ("    logic clk=0,rst_n=0;\n    always #5 clk=~clk;", "    logic rst_n=0;\n" + CLOCK_SOURCE),
-        ("    tri_oracle_chip_command_layer dut (\n", "    tri_oracle_chip_command_layer dut (\n    .weight_memory_clk,\n"),
-    ]))
+    attention_clock_ports = "    .weight_memory_clk,\n"
+    if derived_clock:
+        attention_clock_ports += "    .rst_n(external_rst_n),\n"
+    attention_changes = [
+        ("    logic clk=0,rst_n=0;\n    always #5 clk=~clk;", "    logic rst_n=0;\n" + clock_peer),
+        ("    tri_oracle_chip_command_layer dut (\n",
+         "    tri_oracle_chip_command_layer dut (\n" + attention_clock_ports),
+    ]
+    if derived_clock:
+        attention_changes.append(("endmodule\n", RESET_PEER_CHECK))
+    (output / "attention_bench.sv").write_text(edit(attention.read_text(), attention_changes))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     parser.add_argument("--buffered-boundary", action="store_true")
+    parser.add_argument("--derived-clock", action="store_true")
     args = parser.parse_args()
-    prepare(args.output.resolve(), args.buffered_boundary)
+    if args.derived_clock and not args.buffered_boundary:
+        parser.error("use the verified buffered weight boundary with the derived clock")
+    prepare(args.output.resolve(), args.buffered_boundary, args.derived_clock)
