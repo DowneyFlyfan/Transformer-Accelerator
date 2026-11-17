@@ -1,0 +1,74 @@
+{
+  "best_pruned_loss_against_local_dense_percentage_points": 7.282556845285419,
+  "best_pruned_run": "full_calibrated_clip",
+  "best_pruned_shortfall_percentage_points": 5.373916361901733,
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "evidence_sha256": {
+    ".cache/model_reference/gqa_testdev/dense_reference/inputs.json": "028d09248c532c31b2b13917462b8551908b7b9f19e3756f63ff6e26c73b4b2f",
+    ".cache/model_reference/gqa_testdev/dense_reference/predictions.jsonl": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd",
+    ".cache/model_reference/gqa_testdev/down_scale_full/inputs.json": "6c0a1460e03dfeb51feb348266a4e9bf00f625303887ccef18f6e2e65d584cdf",
+    ".cache/model_reference/gqa_testdev/down_scale_full/predictions.jsonl": "12814bbe839a9874f22ab5fcd1c3ecae82854aa7626d60eccb96941e40f3404d",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/inputs.json": "a332fd6e1403b202b8080b08138de61b8585e9afa95a71cccaccaad405e8b3f9",
+    ".cache/model_reference/gqa_testdev/full_calibrated_clip/predictions.jsonl": "078467331feca85071b4325f6642b1a16aed90f642bc30d49c1ba41884ec308a",
+    ".cache/model_reference/gqa_testdev/full_down_code/inputs.json": "7c1b4244a37ed67407bd254990a49f6936cd92065274c0f86092996564de6551",
+    ".cache/model_reference/gqa_testdev/full_down_code/predictions.jsonl": "1fc767433ddcea7f036a1b0e614073c4a1d3c24760f877ea430c717ff71cf2b9",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/inputs.json": "38d658feeca843b41e228c6dc30858d1d5495dd4d729f6affcd206e243ada836",
+    ".cache/model_reference/gqa_testdev/full_joint_late_clip/predictions.jsonl": "298d20fdefd25c9f1781ed8bb49db2e7438d4d587fc928921cb38e76d55bea6b",
+    ".cache/model_reference/gqa_testdev/official_scorer/convert.py": "016cea68c91cbc141c276e9e7568420e2f5db5aba90c4f594701663c72929932",
+    ".cache/model_reference/gqa_testdev/official_scorer/testdev_eval.py": "787ca40d8c06d09e4e4a053259f84a4ca3ca431a6fdd8d6fb3003109f013fbdf",
+    ".cache/model_reference/gqa_testdev/pruned_reference/inputs.json": "f4f27cde9000da4c862d531da71a09733320ea813cdc307bb26542add742cf45",
+    ".cache/model_reference/gqa_testdev/pruned_reference/predictions.jsonl": "68394aff6c8360f7cc671382a01157b2f727a3a962f84969a7f2c4a30ef7081f",
+    ".cache/model_reference/gqa_testdev/testdev_balanced_questions.json": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+    ".cache/model_reference/tiny_llava_v1/tokenizer.json": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/gqa_testdev_dense_reference_result.json": "947105e40edb5dc10581a85c7e56aba17c1e048fdcdba3642a71ef6ef37b1e88",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c",
+    "records/tri_oracle_full_down_code_accuracy.json": "18ee996dff68c114fd6641f5a95b06871a0f199c31800c0b672b90b63546aff7",
+    "records/tri_oracle_full_joint_late_clip_accuracy.json": "92f3f0b92a944ebd2990979cf1fcefc34e25939eed825acf074f610e59945541",
+    "records/wac_gqa_accuracy_protocol_result.json": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+    "records/wac_gqa_frozen_down_scale_result.json": "b1d1ef9c253ee04cbfcc72776f062ad4ba17fe0cd7939ec5d2961a4c221f6f34",
+    "syn/verify_tri_oracle_gqa_upstream_scoring.py": "3c16022fd532bb3349fc84a47f3768d5a90462af9c6447395ad1645ab80e8c75"
+  },
+  "images": 398,
+  "paper_accuracy_loss": 1.67,
+  "paper_accuracy_percent": 55.04,
+  "questions": 12578,
+  "questions_short_of_both_targets_if_loss_means_percentage_points": 706,
+  "results": {
+    "dense_reference": {
+      "accuracy_percent": 56.948640483383684,
+      "evaluator_display_percent": "56.95",
+      "exact_matches": 7163
+    },
+    "down_scale_full": {
+      "accuracy_percent": 47.38432183176975,
+      "evaluator_display_percent": "47.38",
+      "exact_matches": 5960
+    },
+    "full_calibrated_clip": {
+      "accuracy_percent": 49.666083638098264,
+      "evaluator_display_percent": "49.67",
+      "exact_matches": 6247
+    },
+    "full_down_code": {
+      "accuracy_percent": 47.62283351884243,
+      "evaluator_display_percent": "47.62",
+      "exact_matches": 5990
+    },
+    "full_joint_late_clip": {
+      "accuracy_percent": 49.61838130068374,
+      "evaluator_display_percent": "49.62",
+      "exact_matches": 6241
+    },
+    "pruned_reference": {
+      "accuracy_percent": 47.50357767530609,
+      "evaluator_display_percent": "47.50",
+      "exact_matches": 5975
+    }
+  },
+  "scope": "Exact-match accuracy of the archived software answers on the balanced Test-Dev split. The LLaVA converter reproduced each saved prediction from its token IDs and its GQA evaluator agreed with the independent exact counts. Tri-Oracle's checkpoint revision, prompt, labeled split and execution of the benchmark on the mapped accelerator remain unconfirmed.",
+  "state": "upstream_gqa_evaluator_rescored_local_full_runs",
+  "upstream_converter": "https://raw.githubusercontent.com/haotian-liu/LLaVA/ce1aa08d129bd7df931a7067bcb79cf3cb3a1af5/scripts/convert_gqa_for_eval.py",
+  "upstream_evaluator": "https://gist.githubusercontent.com/haotian-liu/db6eddc2a984b4cbcc8a7f26fd523187/raw/1ac7a1aab0c631845c645722082789977850ace0/1_eval.py"
+}
