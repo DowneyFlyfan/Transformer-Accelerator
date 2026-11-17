@@ -1,0 +1,257 @@
+{
+  "affected_regions_free_sites": 66090,
+  "affected_unrepaired_nets": [
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[1]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[0]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[1]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[0]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[1]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[2]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[0]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[1]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[2]/compute/compute/n_16898",
+    "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/compute/n_16898"
+  ],
+  "all_floorplan_disjoint_slots_by_width": {
+    "12": 28589,
+    "17": 20177,
+    "22": 15588,
+    "3": 114387,
+    "4": 85787,
+    "5": 68628,
+    "7": 49017,
+    "9": 38121
+  },
+  "array_regions": 20,
+  "drivers_by_master": {
+    "CKND12BWP12T40P140": 1,
+    "CKND16BWP12T40P140": 1,
+    "INVD15BWP12T40P140": 2,
+    "INVD18BWP12T40P140": 20
+  },
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/import/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/wide_packaged_host_link/drive_repair/buffer_analysis/control_checks.log": "494713abe1933afb235e3de9d9119a205003c21d790e54b69475a5b6fbe00fbc",
+    ".cache/wide_packaged_host_link/drive_repair/buffer_analysis/endpoints.json": "4183de014afddb9f8898d85bb265a53a37613732d6de045c20b8807c488963eb",
+    ".cache/wide_packaged_host_link/drive_repair/buffer_analysis/free_gap_probe.json": "2bc22055301361611a5a847839e636739c4f499d50a1f5a656d951f8e456e8e6",
+    ".cache/wide_packaged_host_link/drive_repair/prepared.json": "1b940c4c465fa88bf9e26180eecb2497583c80a6cf80f1fbe0bfb73d3c27cb4d",
+    ".cache/wide_packaged_host_link/pin_load/inventory/native/sink_types.tsv": "e624d57541a3c3247abc51301b1847d2334905a2d6caaa9051afd4e7615523a0",
+    ".cache/wide_packaged_host_link/pin_load/inventory/native/topology.tsv": "f72142da735fbb0cefa3eb86bfce2a2d859727f654b430d86bd37213283f9856",
+    ".cache/wide_packaged_host_link/placement/native/cold.v": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+    ".cache/wide_packaged_host_link/placement/native/layout.def": "00e19c9debe38544cf3aad292871d84c3104247bcd745ed3509117c01425b2c9",
+    ".cache/wide_packaged_host_link/placement/padded_prepared.json": "b70cdfe7cdbc3c81e7abd4ab76c55ab9963b969c8da8cbf98afac9777292ac26",
+    "records/tri_oracle_wide_packetized_pin_loads.json": "78d6ab001c893e656fc0cea0e4292e298e5a379c9c7a4fa2f0b28c4b53d3901a",
+    "syn/audit_tri_oracle_booth_operand_spans.py": "f2b88654c2eb91dcf29820ddb7ca2354ffe22411b69b0fd505f003dc33f15ce8",
+    "syn/audit_tri_oracle_packaged_buffer_space.py": "d54d1654798de47142d70d12e46587dac163b74a061a81b479f596593bf761c1",
+    "syn/audit_tri_oracle_packed_weight_path.py": "627560ffee8b2041ddc3f76e1bb634c34afa09138d70a4a749dec262ac35e003",
+    "syn/audit_tri_oracle_pad_ring_clearance.py": "ca0db9195f243df30909f91579d1b20085b59d25bdcb95ee0d72ce4dd63d3416",
+    "syn/audit_tri_oracle_physical_io_budget.py": "5b977d926daf7e3a9fea612475fd09b26c29ac27c1862fd97fa8ac0cbbcb1ec1",
+    "syn/build_tri_oracle_booth_chip_seed.py": "ed7feb9cd6d1c8859bfe01717d8fcb9cc1cd9fdc849f17380803265dec9c0a3f",
+    "syn/link_tri_oracle_indexed_whole_chip.py": "a821d99fc947f7df45cb39c9f72fc1d6167465713ca2095070ec566de52e2a86",
+    "syn/plan_tri_oracle_booth_pin_load_repair.py": "ca5f6194de3afaf9fb2aa560797c43fcd998286571b84cbf545db60ad4d3399b",
+    "syn/verify_tri_oracle_booth_chip_geometry.py": "2c93bd3d8367c45c821d9e5c19a53de95bfe87e52b1d66a1ff264c249d59f156",
+    "syn/verify_tri_oracle_booth_chip_link.py": "367c30e3cdd3b1aee835d1dfeda874f35466a47c700ce5f0f39c8f97fda3372c",
+    "syn/verify_tri_oracle_pad_cold_reload.py": "11c2d716c33f4dd1223a3a69898c3080fa3b135be58d0543fbe75019e12d717f",
+    "syn/verify_tri_oracle_serialized_placement_transfer.py": "f934088e2f1499249c2c032af243e5916c8d3d1eadfbeb6180f8d503dab0f694"
+  },
+  "examined_buffer_widths_sites": {
+    "BUFFD0BWP12T40P140": 3,
+    "BUFFD12BWP12T40P140": 17,
+    "BUFFD16BWP12T40P140": 22,
+    "BUFFD1BWP12T40P140": 3,
+    "BUFFD2BWP12T40P140": 4,
+    "BUFFD3BWP12T40P140": 5,
+    "BUFFD4BWP12T40P140": 7,
+    "BUFFD6BWP12T40P140": 9,
+    "BUFFD8BWP12T40P140": 12
+  },
+  "regions_requiring_cell_movement_for_examined_buffers": {
+    "tri_array_region_1": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 3050,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_10": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 8472,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_11": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 6014,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_12": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 4391,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_13": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 7820,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_14": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 6062,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_15": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 5652,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_2": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 4262,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_5": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 2832,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_6": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 3548,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_8": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 7170,
+      "maximum_gap_sites": 1
+    },
+    "tri_array_region_9": {
+      "disjoint_slots_by_width": {
+        "12": 0,
+        "17": 0,
+        "22": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "7": 0,
+        "9": 0
+      },
+      "free_sites": 6817,
+      "maximum_gap_sites": 1
+    }
+  },
+  "rejected_measurement_mutations": [
+    "changed_native_sink_type_histogram",
+    "dropped_logical_sink",
+    "changed_native_driver"
+  ],
+  "scope": "Read-only original placement diagnosis. Twenty-four local nets reproduce every native sink-type histogram and driver; all 27,851 sinks and 24 drivers have matching placed origins. Twelve affected fenced arrays contain only isolated single-site gaps. The nine examined noninverting buffer variants require at least three adjacent sites, so these variants cannot be added in those regions without cell movement. No insertion or repaired placement is qualified. The separate 620-cell sizing candidate requires a new physical census after legalization. Timing, accuracy, clock distribution and routing remain unqualified.",
+  "sink_pins": 27851,
+  "source_cold_netlist_sha256": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+  "source_layout_sha256": "00e19c9debe38544cf3aad292871d84c3104247bcd745ed3509117c01425b2c9",
+  "state": "native_pin_inventory_recounted_and_original_array_buffer_space_measured",
+  "unrepaired_nets": 24
+}
