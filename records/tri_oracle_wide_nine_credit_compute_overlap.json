@@ -1,0 +1,47 @@
+{
+  "candidate_sha256": "2dbd3986120865e133889eba0d5c6e2fb61dfa06a465078a9f91bdd1260b1c6b",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_index.bin": "a245522580c1ee548b57246e5b498e38ef1ac7d9da931b12317edeb914729013",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/placed_receiver.v": "4c01fdf26769f0e5c80f5a7c26eba2e03db13b237f9307ff2f47db5a09256a66",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/bundle.sv": "c3df011fa5d74a79fedc15d7b5f698f37552976529d8d862d8174e035b08b1b3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/genus/netlist.v": "6cbc3ca7f4f80bdfa676881e17175149e0206760af9b4418fb9f99c12583fab2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/placed_receiver_nine_credits/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/placed_receiver_nine_credits/xrun.log": "fb470c4f51c0a19f5df7532c1ba376b47e4d7e31cbcec41d7c153c6b26bb55fd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/placement_seed/candidate.v": "2dbd3986120865e133889eba0d5c6e2fb61dfa06a465078a9f91bdd1260b1c6b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/trained_tb.sv": "3cdbac138d95733f451e1f41a2fdc665863249523758b6f1dd5b4626b0c1962e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/xrun.log": "c9bf969dc3f90b978f69943b8133231d87f66ec440e1a83c2e4c34688a28a91d",
+    ".cache/physical/whole_chip_xcelium_speed/memory_forward_link/genus_rx/netlist.v": "9cbe51570042aee9e19621f70b885ca0837cf43d20f68479116a73ca1aa04aaa",
+    ".cache/physical/whole_chip_xcelium_speed/memory_io_link/genus/netlist.v": "7f1b67a16ace2d83482bd6666a246297025247a89124174ebc6ec640ceb86f96",
+    ".cache/physical/whole_chip_xcelium_speed/request_serialization/packed_weight_cut.v": "03ccaa5f177371e7fd12c9571352bece57886fd8fa9295a5e68b324203488e85",
+    ".cache/physical/whole_chip_xcelium_speed/single/cache_reused.hex": "642e30f61c744e102387ea39a25fb13195a87248dd3a276744387e905e7e68f5",
+    "records/tri_oracle_wide_request_trial.json": "fb3d673437ed497605e952b9268905a8311b86906de0dc04be089ec7eb3270fb",
+    "records/tri_oracle_wide_seed_paper_resources.json": "5e81a659466fae756ed278092a4540fd51be5486efe9a96bd66942869550cebf",
+    "records/tri_oracle_wide_split_receive.json": "4bb3983ad106929464d8b77ed3987f35189731417cb6741b1e534b87f2ade526",
+    "syn/verify_tri_oracle_wide_compute_overlap.py": "c0d46eaf478e0f8f3245be5616dded16291d9506fd26607b05e0dea6b29bd090",
+    "verilog/tri_oracle_credit_bypass_fifo.sv": "eb94fee060acfd4a60a79abdae6fdace17ff1e6cf02f26ab9fceb6cd71086e65",
+    "verilog/tri_oracle_serial_flit_bridge.sv": "d4507e4d2b574c98226d0fe4a7915932c3b8c1abd5622c3613b8566c740b93cc"
+  },
+  "exact_weight_bytes": 11534336,
+  "fixture_cycles_by_initial_credits": {
+    "8": 105556,
+    "9": 105556
+  },
+  "independent_weight_addresses_per_core": 1,
+  "mapped_cores_checked": 20,
+  "mapped_handshake_truth_table": {
+    "accepted_compute_assignments": 3,
+    "accepted_load_assignments": 16,
+    "checked_input_assignments": 64,
+    "simultaneous_assignments": 0
+  },
+  "modeled_credit_return_cycles": 7,
+  "required_overlap_cycles_under_archived_model": 42768517,
+  "scope": "The nine-credit wide-link fixture uses the placed receiver and archived modeled external memory. The gate check proves local acceptance exclusion and counts the common weight address. Already-issued operations can remain in flight during a load. Scheduling across cores and whole-chip latency still require verification.",
+  "state": "wide_candidate_nine_credit_replay_and_core_load_exclusion_verified",
+  "trained_tiles": 78,
+  "weight_macros_per_core": 16
+}
