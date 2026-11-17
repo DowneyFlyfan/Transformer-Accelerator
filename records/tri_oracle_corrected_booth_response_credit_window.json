@@ -1,0 +1,153 @@
+{
+  "abstract_storage_transitions_by_credit_count_and_return_stages": {
+    "10": {
+      "1": {
+        "overflow_transitions": 4,
+        "transitions": 288
+      },
+      "10": {
+        "overflow_transitions": 4,
+        "transitions": 90008
+      },
+      "2": {
+        "overflow_transitions": 4,
+        "transitions": 568
+      },
+      "3": {
+        "overflow_transitions": 4,
+        "transitions": 1104
+      },
+      "4": {
+        "overflow_transitions": 4,
+        "transitions": 2120
+      },
+      "5": {
+        "overflow_transitions": 4,
+        "transitions": 4032
+      },
+      "6": {
+        "overflow_transitions": 4,
+        "transitions": 7608
+      },
+      "7": {
+        "overflow_transitions": 4,
+        "transitions": 14256
+      },
+      "8": {
+        "overflow_transitions": 4,
+        "transitions": 26536
+      },
+      "9": {
+        "overflow_transitions": 4,
+        "transitions": 49056
+      }
+    },
+    "9": {
+      "1": {
+        "overflow_transitions": 0,
+        "transitions": 280
+      },
+      "10": {
+        "overflow_transitions": 0,
+        "transitions": 73728
+      },
+      "2": {
+        "overflow_transitions": 0,
+        "transitions": 536
+      },
+      "3": {
+        "overflow_transitions": 0,
+        "transitions": 1016
+      },
+      "4": {
+        "overflow_transitions": 0,
+        "transitions": 1912
+      },
+      "5": {
+        "overflow_transitions": 0,
+        "transitions": 3576
+      },
+      "6": {
+        "overflow_transitions": 0,
+        "transitions": 6648
+      },
+      "7": {
+        "overflow_transitions": 0,
+        "transitions": 12280
+      },
+      "8": {
+        "overflow_transitions": 0,
+        "transitions": 22520
+      },
+      "9": {
+        "overflow_transitions": 0,
+        "transitions": 40952
+      }
+    }
+  },
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit10_delay7/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit10_delay7/xrun.log": "2199b16dd628c493a40841bd47429d6f2bd26bb690fb3081f9e5d1be3a59c001",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit8_delay7/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit8_delay7/xrun.log": "8f1c42d2a6272ced3a201a4419dba0fb00fc25075fe9c6aeb36d83273c92df7f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit9_delay7/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit9_delay7/xrun.log": "f4e965493c428707b1ccdde0773fb96d16fc37dc653f1792c00c0d389f1cd574",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit9_delay8/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit9_delay8/xrun.log": "537784143d047013c9b7c64eea71dd1fb11ebe8ce3af62d00d84cb26af4c7cc0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_window/credit_window_tb.sv": "8513d39a40a412a3e748ab6fd039a1418a304bacf097ec75f66785e268cdd641",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/placed_receiver.v": "4c01fdf26769f0e5c80f5a7c26eba2e03db13b237f9307ff2f47db5a09256a66",
+    ".cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/credit_tb.sv": "329f7551adb230c937e46bbcc674602be3b3c48f8137606ac0b1f39695f385a7",
+    "records/tri_oracle_corrected_booth_response_packing.json": "85a5f56a4da057ffdf1e6cc0d568449cff417d3971b5e1513387472991a49d78",
+    "syn/verify_tri_oracle_booth_response_credit_window.py": "003f3216873bed962cf4c5b8092acfed218dab425109b74c797cab863932f462"
+  },
+  "fifo_slots_per_lane": 8,
+  "modeled_payload_edge_utilization_target": 0.8685063126646483,
+  "scope": "Directed placed-receiver tests with altered peer initial credit counts. The host proof checks abstract storage and delayed pulse conservation with one capture slot per lane. The project full-chip peers continue to use eight credits.",
+  "simulation": {
+    "10_credits_delay_7": {
+      "continuous_offer_stall_cycles": [
+        0,
+        0
+      ],
+      "initial_credits": 10,
+      "overflow_reported_in_stall_test": true,
+      "payload_edge_utilization": 1.0,
+      "return_delay_cycles": 7
+    },
+    "8_credits_delay_7": {
+      "continuous_offer_stall_cycles": [
+        126,
+        63
+      ],
+      "initial_credits": 8,
+      "overflow_reported_in_stall_test": false,
+      "payload_edge_utilization": 0.8025078369905956,
+      "return_delay_cycles": 7
+    },
+    "9_credits_delay_7": {
+      "continuous_offer_stall_cycles": [
+        56,
+        0
+      ],
+      "initial_credits": 9,
+      "overflow_reported_in_stall_test": false,
+      "payload_edge_utilization": 0.9014084507042254,
+      "return_delay_cycles": 7
+    },
+    "9_credits_delay_8": {
+      "continuous_offer_stall_cycles": [
+        112,
+        56
+      ],
+      "initial_credits": 9,
+      "overflow_reported_in_stall_test": false,
+      "payload_edge_utilization": 0.8205128205128205,
+      "return_delay_cycles": 8
+    }
+  },
+  "state": "placed_booth_nine_credit_receive_window_verified_in_directed_replay",
+  "verification_device": "NVIDIA GeForce RTX 5070 Ti"
+}
