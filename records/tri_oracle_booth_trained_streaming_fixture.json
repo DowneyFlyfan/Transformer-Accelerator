@@ -1,0 +1,57 @@
+{
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "cuda_peak_device_bytes": 10737664,
+  "evidence_sha256": {
+    ".cache/model_reference/batch422/map_1.hex": "8779ceafbf036eb058ceec3cf8c9d5557e9398dd7d6a45f7ee96f8bf50e7b09b",
+    ".cache/model_reference/batch422/signs_1.hex": "36e1d96104e975d665b1990d06b0380863d11fb1850487a4da42298ecb154641",
+    ".cache/model_reference/batch426/operands.json": "ffe3c7453f6a9f49f29c62d50c2318b69288c5805d9e4eabe023c1b0a928e6ef",
+    ".cache/model_reference/batch427/heads.json": "6c6426fe9f885af9f7a73745dfac596c8c112068febb8f6ab096238c5a068b70",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_fixture/expected.hex": "8ac55233793cea14b08dd1c5aa15436b96e3d0af4341f4df4e9e30c3267cf812",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_fixture/map.hex": "aa1c2adf1566432223a3af582316f3c59f75b0c29a502079e76dfee2a6e2590c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_fixture/rows.txt": "94addb9cf366f33160f5b147466558613dba92fcf8c74e4a6506bb9e60766ed6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_fixture/sign_counts.hex": "27695da3c3908344d4ef53d9b8d1c073f52b000a0e235ed2d3e5b601ae14620d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_fixture/signs.hex": "e4ecdd198373d232302f095aeb24966640d7730251006feb5cd8f4e2f53d471b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_fixture/value_order.hex": "6a997365130c379fcb7ca1ab3e83a4b1122c974a7c245cc1fdd62581745db094",
+    "records/batch422_compact_decoder_result.json": "ca17f5877a80f01dc9027d57a2b924534ef36eb7e8cfeca733d8ba53c2ace734",
+    "records/batch427_attention_layer_result.json": "622d098fe9c99afc38dd85575e1a4738f38fdb8f711496621e618a88107db1d3",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "syn/prepare_tri_oracle_booth_streaming_fixture.py": "4915bfde8baece84c075ddd01819574b2af271013399811bd66426af12bd88ef"
+  },
+  "head": 2,
+  "layer": 10,
+  "output_rows": [
+    {
+      "original_position": 316,
+      "rank": 187,
+      "selected_keys": 64
+    },
+    {
+      "original_position": 607,
+      "rank": 373,
+      "selected_keys": 64
+    }
+  ],
+  "prediction": {
+    "inner": 15,
+    "recent": 745,
+    "streaming": true
+  },
+  "question": 42000,
+  "retained_prefill_tokens": 374,
+  "scope": "Archived signed operands for two streaming rows and eleven live merge commands.",
+  "sign_vectors_per_layer": [
+    576,
+    376,
+    371,
+    366,
+    366,
+    365,
+    359,
+    352,
+    343,
+    342,
+    342
+  ],
+  "state": "trained_streaming_fixture_verified_on_host_gpu"
+}
