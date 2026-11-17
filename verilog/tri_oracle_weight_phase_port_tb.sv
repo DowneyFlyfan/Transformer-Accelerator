@@ -61,7 +61,7 @@ module tri_oracle_weight_phase_port_tb;
   end
 
   tri_oracle_weight_phase_port port_control (
-    .memory_clk, .core_clk, .rst_n, .read_valid, .read_address,
+    .memory_clk, .core_clk, .rst_n, .read_valid, .read_address, .read_banks('1),
     .write_select(selected), .write_address(buffered_address[selected_lane][4:0]),
     .write_banks(bank_enables),
     .active_write_lane(active_lane), .write_retired(retired),

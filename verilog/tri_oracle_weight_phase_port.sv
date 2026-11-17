@@ -10,6 +10,7 @@ module tri_oracle_weight_phase_port #(
   input logic memory_clk, core_clk, rst_n,
   input logic read_valid,
   input logic [4:0] read_address,
+  input logic [BANKS-1:0] read_banks,
   input logic [1:0] write_select,
   input logic [4:0] write_address,
   input logic [BANKS-1:0] write_banks,
@@ -32,7 +33,7 @@ module tri_oracle_weight_phase_port #(
     end else if (!core_clk) begin
       active_write_lane <= '0;
       memory_address <= read_address;
-      memory_ce_n <= {BANKS{!read_valid}};
+      memory_ce_n <= ~(read_banks & {BANKS{read_valid}});
       memory_we_n <= 1;
     end else begin
       active_write_lane <= valid_write ? write_select : 2'b00;
