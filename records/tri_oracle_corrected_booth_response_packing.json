@@ -1,0 +1,98 @@
+{
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "continuous_test_bursts": {
+    "4": {
+      "balanced_finite_burst_payload_edge_utilization": 1.0,
+      "chunks_per_lane": 512,
+      "credit_return_delay_cycles": 4,
+      "idle_cycles_while_offering_chunks": [
+        0,
+        0
+      ],
+      "reaches_archived_workload_utilization_target": true,
+      "reconstructed_512_bit_words_per_lane": 448
+    },
+    "5": {
+      "balanced_finite_burst_payload_edge_utilization": 1.0,
+      "chunks_per_lane": 512,
+      "credit_return_delay_cycles": 5,
+      "idle_cycles_while_offering_chunks": [
+        0,
+        0
+      ],
+      "reaches_archived_workload_utilization_target": true,
+      "reconstructed_512_bit_words_per_lane": 448
+    },
+    "6": {
+      "balanced_finite_burst_payload_edge_utilization": 0.8904347826086957,
+      "chunks_per_lane": 512,
+      "credit_return_delay_cycles": 6,
+      "idle_cycles_while_offering_chunks": [
+        63,
+        0
+      ],
+      "reaches_archived_workload_utilization_target": true,
+      "reconstructed_512_bit_words_per_lane": 448
+    },
+    "7": {
+      "balanced_finite_burst_payload_edge_utilization": 0.8025078369905956,
+      "chunks_per_lane": 512,
+      "credit_return_delay_cycles": 7,
+      "idle_cycles_while_offering_chunks": [
+        126,
+        63
+      ],
+      "reaches_archived_workload_utilization_target": false,
+      "reconstructed_512_bit_words_per_lane": 448
+    },
+    "8": {
+      "balanced_finite_burst_payload_edge_utilization": 0.7303851640513552,
+      "chunks_per_lane": 512,
+      "credit_return_delay_cycles": 8,
+      "idle_cycles_while_offering_chunks": [
+        189,
+        126
+      ],
+      "reaches_archived_workload_utilization_target": false,
+      "reconstructed_512_bit_words_per_lane": 448
+    }
+  },
+  "control_replays": {
+    "credit4": [
+      "CREDIT_FULL_RATE_PASS chunks=64,64 responses=56,56 delay=4",
+      "CREDIT_STALL_PASS chunks=64,64 responses=56,56 credit_stalls=54,78"
+    ],
+    "credit8": [
+      "CREDIT_DELAY_WINDOW_PASS chunks=64,64 responses=56,56 delay=8 credit_stalls=21,14",
+      "CREDIT_STALL_PASS chunks=64,64 responses=56,56 credit_stalls=78,84"
+    ]
+  },
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit4/xrun.log": "55052dfa4a81fe3eaa16b2479add22373200bc63935f0cc04acbbe6a51a9b5cd",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit5/xrun.log": "0deb2a3dde38d5f3b85fc79adca9c29cc66c5388004cd448a4a83b1198c92c95",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit6/xrun.log": "33bf95670c11d7c9041f965a5123d7a7801aede8ad927e8bfe1424cc6cc79c20",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit7/xrun.log": "451b0dcc4ac96551057e9444e68c9a6da808c025209c76b23693e1d04b65ca3d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit8/xrun.log": "943db77d4cd90936638042f0c31aaeecef1b0ae2e2d2168a65002387e4bde05d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/continuous_credit_tb.sv": "1cdfa76ac287d318dbd3e60a12c4d3cb0d4e1f8385b0f5b3987a2142d299c9a2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/credit4/xrun.log": "fe6dcdb5826d32a9dac58d70b8e8fa8fb65a68eb998656976f3b99f2ff444e76",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/credit8/xrun.log": "7f02d26bb45018ca3a1e59211a58ce4e9abcb721fe2f9717950102598e65cd67",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_packing/placed_receiver.v": "4c01fdf26769f0e5c80f5a7c26eba2e03db13b237f9307ff2f47db5a09256a66",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/credit_tb.sv": "329f7551adb230c937e46bbcc674602be3b3c48f8137606ac0b1f39695f385a7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/mapped4/console.log": "da736ad64ca9ce53ad3bcede858c06e217fae3e2b4156b0f5e50663baf2d51b4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/whole_chip_xcelium_speed/shared_edge_metadata/mapped8/console.log": "6ee89d40551955aa22a4fb7ce858a17207bcf64cbb22a766553691f874c68020",
+    "records/tri_oracle_bonded_system_budget.json": "d9f2e029aaf318d9504d01366d7e2b61bf084cf157618014b0dc6193e938bb61",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_corrected_booth_memory_interconnect.json": "5ad381e91fc6584923bc705b36e3d13ad8615938068ad21e564b392d6178e7d7",
+    "records/tri_oracle_shared_edge_metadata.json": "43e6955cce56d119af1b841b35950adc6d7309fbbcd1b66a6e1b288f4e065ed0",
+    "syn/verify_tri_oracle_booth_response_packing.py": "83922a6889b5a49794be2e034d9b8c4a21f16b1b39aa1952d70757b4f919ae24"
+  },
+  "full_burst_input_chunks_per_lane": 64,
+  "full_burst_output_words_per_lane": 56,
+  "input_data_bits_per_edge": 448,
+  "minimum_payload_edge_utilization_for_archived_reads_in_paper_window": 0.8685063126646483,
+  "parallel_credit_lanes": 2,
+  "scope": "Xcelium replay of the exact mapped receiver extracted from the placed export. It checks dense packing across word boundaries, both sampled edges, output backpressure and multiple credit return delays. The 512-chunk test checks continuous offers on both lanes. The required utilization comes from the archived workload under the paper's time budget. These finite synthetic bursts are functional tests at a modeled clock.",
+  "state": "placed_booth_memory_receiver_burst_packing_verified"
+}
