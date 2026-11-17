@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-from prepare_tri_oracle_weight_tile_prefetch import bind_weight_guards, schedule_weight_prefetch
+from prepare_tri_oracle_weight_tile_prefetch import bind_weight_guards, check_guarded_weight_writes, schedule_weight_prefetch
 from verify_tri_oracle_cluster_weight_phase import ROOT, require
 from verify_tri_oracle_phase_chip import summary, verify_case
 
@@ -54,7 +54,81 @@ def verify_attention(evidence):
     return {"command": command, "physical_phase": phase}
 
 
-def verify(include_attention=False):
+def verify_trained(evidence):
+    """Compare activation and weight overlap on the same trained layer replay."""
+    runs = {
+        "broadcast": BASELINE.with_name("phase_chip_activation"),
+        "activation_prefetch": BASELINE,
+        "weight_prefetch": RUN,
+    }
+    original_probe = ROOT / "verilog/tri_oracle_phase_chip_probe.sv"
+    guarded_probe = RUN / "source/guarded_weight_probe.sv"
+    require(guarded_probe.read_text() == check_guarded_weight_writes(original_probe.read_text())
+            and f'`include "{guarded_probe}"' in (RUN / "source/bundle.sv").read_text(),
+            "trained candidate used an unexpected memory monitor")
+    evidence.update((original_probe, guarded_probe))
+    logs, phase_counts, commands, traces, benches = {}, {}, [], [], []
+    for name, folder in runs.items():
+        source = folder / "source"
+        work = folder / "trained"
+        logs[name], phase = verify_case(folder, "trained")
+        phase_counts[name] = {key: value for key, value in phase.items() if key != "double"}
+        _, _, args = logs[name].partition("\nxrun\n")
+        args = args.partition("\n\n")[0].splitlines()
+        for file in ("bundle.sv", "trained_bench.sv"):
+            require(f"\t{source / file}" in args, f"{name}: missing simulator source argument {file}")
+            evidence.add(source / file)
+        monitor = f"\t{original_probe}"
+        require(args.count(monitor) == (0 if name == "weight_prefetch" else 1), f"{name}: unexpected monitor argument")
+        commands.append([arg.replace(str(source), "<source>") for arg in args if arg != monitor])
+        progress = (work / "progress.log").read_text()
+        require(progress.splitlines()[-1:] == ["BATCH408_DONE"], f"{name}: incomplete trained trace")
+        traces.append(re.sub(r" cycle=\d+$", "", progress, flags=re.M))
+        benches.append((source / "trained_bench.sv").read_bytes())
+        evidence.update(work / file for file in ("xrun.log", "exit_status", "progress.log"))
+
+    require(all(commands[0] == command for command in commands[1:]), "trained run arguments differ")
+    require(all(benches[0] == bench for bench in benches[1:]), "trained reference testbench changed")
+    require(all(traces[0] == trace for trace in traces[1:]), "trained ordered command trace changed")
+    require(all(phase_counts["broadcast"] == phase for phase in phase_counts.values()),
+            "trained physical memory transaction totals changed")
+
+    first = logs["broadcast"]
+    command = summary(first, "BATCH408_PASS")
+    require(command["trained"] == 1 and command["exact_outputs"] == 32768, "trained arithmetic replay incomplete")
+    markers = ("BATCH408_PASS", "BATCH408_ACTIVATION_PASS", "UNIFIED_CHIP_FEEDFORWARD_PASS", "PACKED_PAIR_BRANCHES")
+    cycles = {}
+    transport = summary(first, "PACKED_DECODER_PASS")
+    transport.pop("cycles")
+    sign = summary(first, "DUAL_LANE_PACKED_SIGN_PASS")
+    sign_counts = {key: sign[key] for key in ("requests", "responses")}
+    for name, log in logs.items():
+        for marker in markers:
+            require(summary(first, marker) == summary(log, marker), f"{name}: changed trained {marker}")
+        decoded = summary(log, "PACKED_DECODER_PASS")
+        cycles[name] = decoded.pop("cycles")
+        observed_sign = summary(log, "DUAL_LANE_PACKED_SIGN_PASS")
+        require(transport == decoded and all(observed_sign[key] == value for key, value in sign_counts.items()),
+                f"{name}: changed trained weight or sign traffic")
+    activation = {name: summary(logs[name], "CHIP_ACTIVATION_PREFETCH")
+                  for name in ("activation_prefetch", "weight_prefetch")}
+    require(all(counts["windows"] == counts["retired"] > 0 and counts["parallel"] > 0
+                for counts in activation.values()), "trained activation prefetch did not retire cleanly")
+    return {
+        "cycles": cycles,
+        "activation_saved_cycles": cycles["broadcast"] - cycles["activation_prefetch"],
+        "incremental_weight_saved_cycles": cycles["activation_prefetch"] - cycles["weight_prefetch"],
+        "exact_outputs": command["exact_outputs"],
+        "weight_payload_bytes": 64 * transport["wide_beats"],
+        "sign_traffic": sign_counts,
+        "physical_memory": phase_counts["broadcast"],
+        "activation_overlap": activation,
+        "weight_overlap": summary(logs["weight_prefetch"], "CHIP_WEIGHT_PREFETCH"),
+        "scope": "One trained 16-token layer replay with the same packet workload and reference testbench in every run.",
+    }
+
+
+def verify(include_attention=False, include_trained=False):
     source = RUN / "source"
     evidence = {
         source / "bundle.sv", source / "bench.sv", source / "guarded_weight_probe.sv",
@@ -133,6 +207,8 @@ def verify(include_attention=False):
     cluster, word = map(int, overwritten[0])
     if include_attention:
         result["attention"] = verify_attention(evidence)
+    if include_trained:
+        result["trained"] = verify_trained(evidence)
     hashes = {}
     for path in sorted(evidence):
         with path.open("rb") as stream:
@@ -152,8 +228,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", type=Path)
     parser.add_argument("--include-attention", action="store_true")
+    parser.add_argument("--include-trained", action="store_true")
     args = parser.parse_args()
-    report = verify(args.include_attention)
+    report = verify(args.include_attention, args.include_trained)
     if args.record:
         args.record.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     print("Verified chip weight overlap, reservation stalls, lane fault recovery, and overwrite rejection.")
