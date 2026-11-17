@@ -1,0 +1,130 @@
+"""Verify the two-phase SRAM path using chip command and recovery replays."""
+
+import argparse
+import hashlib
+import json
+import re
+from pathlib import Path
+
+from prepare_tri_oracle_phase_chip import INCLUDE, JOINED, ROOT
+
+
+RUN = ROOT / ".cache/phase_chip"
+CASES = {
+    "commanded": ("positive", 0),
+    "sign_fault": ("sign_fault", 4),
+    "weight_fault_lane0": ("weight_fault_lane0", 2),
+    "weight_fault_lane1": ("weight_fault_lane1", 2),
+}
+MARKERS = ("BATCH408_PASS", "PACKED_DECODER_PASS", "DUAL_LANE_PACKED_SIGN_PASS",
+           "UNIFIED_CHIP_FEEDFORWARD_PASS")
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def summary(output, marker):
+    matches = re.findall(rf"^{marker} (.+)$", output, re.M)
+    require(len(matches) == 1, f"expected one {marker} summary")
+    return {key: int(value) for item in matches[0].split() for key, value in [item.split("=")]}
+
+
+def verify_case(name, expected_outputs):
+    work = RUN / name
+    output = (work / "xrun.log").read_text()
+    require((work / "exit_status").read_text().strip() == "0"
+            and "Simulation complete via $finish(1)" in output,
+            f"{name}: Xcelium replay incomplete")
+    require(not re.search(r"\*[EF],|timing violation|-nospecify|-notimingchecks|"
+                          r"TRI_ORACLE_WEIGHT_UNIT_DELAY", output, re.I),
+            f"{name}: simulator or weight-model timing error")
+    timing = re.search(r"^\s*Timing checks:\s+([\d,]+)", output, re.M)
+    require(timing and int(timing[1].replace(",", "")) >= 337600,
+            f"{name}: missing timing checks for the 320 weight models")
+    replay_metrics = summary(output, "BATCH408_PASS")
+    path_metrics = summary(output, "PHASE_CHIP_PASS")
+    require(replay_metrics["exact_outputs"] == expected_outputs and path_metrics["read_clusters"] == 5
+            and path_metrics["write_clusters"] == 5 and path_metrics["reads"] > 0
+            and path_metrics["writes"] > 0
+            and path_metrics["commits"] == path_metrics["writes"] == path_metrics["scalar"] + path_metrics["packed"],
+            f"{name}: incomplete output or physical write inventory")
+    return output, path_metrics
+
+
+def verify(include_scalar, include_trained):
+    results = {}
+    source = RUN / "source"
+    bundle = source / "bundle.sv"
+    files = {bundle, source / "bench.sv", ROOT / "verilog/tri_oracle_phase_chip_probe.sv",
+             ROOT / "syn/prepare_tri_oracle_phase_chip.py", ROOT / "syn/run_tri_oracle_phase_chip.sh",
+             *(Path(name) for name in INCLUDE.findall(bundle.read_text()))}
+    for name, (reference, fault) in CASES.items():
+        output, path_metrics = verify_case(name, 504)
+        work = RUN / name
+        previous = JOINED / reference
+        original = (previous / "xrun.log").read_text()
+        for marker in MARKERS:
+            require(summary(output, marker) == summary(original, marker), f"{name}: changed {marker} result")
+        require((work / "progress.log").read_bytes() == (previous / "progress.log").read_bytes(),
+                f"{name}: changed the ordered command trace")
+        if fault:
+            require(summary(output, "BATCH408_FAULT_DRAINED") == {"fault": fault, "output_prefix_packets": 0},
+                    f"{name}: injected fault did not drain safely")
+        require(path_metrics["packed"] > 0 and path_metrics["double"] > 0, f"{name}: missing packed write coverage")
+        results[name] = {"command": summary(output, "BATCH408_PASS"),
+                         "transport": summary(output, "PACKED_DECODER_PASS"), "physical_phase": path_metrics}
+        for directory in (work, previous):
+            files.update(directory / log for log in ("xrun.log", "progress.log"))
+        files.add(work / "exit_status")
+
+    if include_scalar:
+        output, path_metrics = verify_case("scalar", 504)
+        require(path_metrics["scalar"] > 0 and path_metrics["packed"] == 0,
+                "scalar command did not use scalar weight writes")
+        results["scalar"] = {"command": summary(output, "BATCH408_PASS"),
+                             "transport": summary(output, "PACKED_DECODER_PASS"), "physical_phase": path_metrics}
+        files.add(source / "scalar_bench.sv")
+        files.update(RUN / "scalar" / log for log in ("xrun.log", "progress.log", "exit_status"))
+
+    if include_trained:
+        output, path_metrics = verify_case("trained", 32768)
+        trained_reference = JOINED / "full_native/trained"
+        require((RUN / "trained/progress.log").read_bytes() == (trained_reference / "progress.log").read_bytes(),
+                "trained layer changed the ordered command trace")
+        for marker in MARKERS:
+            require(summary(output, marker) == summary((trained_reference / "xrun.log").read_text(), marker),
+                    f"trained layer changed {marker}")
+        results["trained"] = {"command": summary(output, "BATCH408_PASS"),
+                              "transport": summary(output, "PACKED_DECODER_PASS"), "physical_phase": path_metrics}
+        files.add(source / "trained_bench.sv")
+        files.update(RUN / "trained" / log for log in ("xrun.log", "progress.log", "exit_status"))
+        files.update(trained_reference / log for log in ("xrun.log", "progress.log"))
+
+    hashes = {}
+    for path in sorted(files):
+        with path.open("rb") as stream:
+            hashes[str(path.relative_to(ROOT))] = hashlib.file_digest(stream, "sha256").hexdigest()
+    return {
+        "state": "two_phase_weight_storage_verified_through_chip_command_interface",
+        "scope": ("The joined register-transfer-level source with packet commands, narrow and packed memory responses, "
+                  "and 20 Booth arithmetic cores. The existing chip scheduler still loads weights between projections. "
+                  "An additional boundary clock drives the weight memory and the test bench derives the core clock. "
+                  "Native weight timing checks are enabled for the typical library. Chip placement and routing remain pending."),
+        "clock_periods_ps": {"weight": 862, "core": 1724},
+        "cases": results,
+        "evidence_sha256": hashes,
+    }
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--record", type=Path)
+    parser.add_argument("--include-scalar", action="store_true")
+    parser.add_argument("--include-trained", action="store_true")
+    args = parser.parse_args()
+    report = verify(args.include_scalar, args.include_trained)
+    if args.record:
+        args.record.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    print(f"Verified {len(report['cases'])} chip-command Xcelium replays.")
