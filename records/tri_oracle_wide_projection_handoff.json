@@ -1,0 +1,166 @@
+{
+  "candidate_sha256": "2dbd3986120865e133889eba0d5c6e2fb61dfa06a465078a9f91bdd1260b1c6b",
+  "checked_decodes": {
+    "load_configuration": 19,
+    "projection_configuration": 12,
+    "projection_retire_ready": 13
+  },
+  "checked_weight_write_and_projection_command_fabric_bindings": true,
+  "completion_stage_master": "tri_oracle_native_reset_copy_33",
+  "controller_master": "tri_oracle_native_token_map_copy_5",
+  "drain_and_flush_state_encodings": [
+    14,
+    15
+  ],
+  "enumerated_state_encodings": 32,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/wide_request_trial/placement_seed/candidate.v": "2dbd3986120865e133889eba0d5c6e2fb61dfa06a465078a9f91bdd1260b1c6b",
+    "records/tri_oracle_wide_seed_paper_resources.json": "5e81a659466fae756ed278092a4540fd51be5486efe9a96bd66942869550cebf",
+    "syn/verify_tri_oracle_wide_projection_handoff.py": "7a6c2f2f5fa6dff54d363c04d14a3d909a4c7882234d5e106f6898fc76194054"
+  },
+  "physical_controller_bits": 5,
+  "projection_weight_base_at_launch": 0,
+  "scope": "Static proof from the standard-cell gates and Liberty truth functions with reset released. Boundary inputs outside the selected cone are free Boolean values. The result applies to the widened chip's controller with the existing weight and projection interfaces.",
+  "state": "wide_tensor_controller_projection_handoff_verified",
+  "verified_combinational_cell_types": [
+    "AN2D1BWP12T40P140",
+    "AN3D1BWP12T40P140",
+    "AN4D0BWP12T40P140",
+    "AN4D1BWP12T40P140",
+    "AN4D2BWP12T40P140",
+    "AO211D1BWP12T40P140",
+    "AO21D1BWP12T40P140",
+    "AO221D1BWP12T40P140",
+    "AO222D1BWP12T40P140",
+    "AO22D0BWP12T40P140",
+    "AO31D1BWP12T40P140",
+    "AOI211D1BWP12T40P140",
+    "AOI21D0BWP12T40P140",
+    "AOI21D1BWP12T40P140",
+    "AOI221D1BWP12T40P140",
+    "AOI222D0BWP12T40P140",
+    "AOI222D1BWP12T40P140",
+    "AOI22D0BWP12T40P140",
+    "AOI22D1BWP12T40P140",
+    "AOI31D1BWP12T40P140",
+    "AOI32D1BWP12T40P140",
+    "AOI33D1BWP12T40P140",
+    "CKAN2D1BWP12T40P140",
+    "CKND0BWP12T40P140",
+    "CKND1BWP12T40P140",
+    "CKND2D1BWP12T40P140",
+    "CKXOR2D1BWP12T40P140",
+    "IAO21D0BWP12T40P140",
+    "IAO21D1BWP12T40P140",
+    "IINR4D0BWP12T40P140",
+    "IND2D1BWP12T40P140",
+    "IND3D1BWP12T40P140",
+    "IND4D1BWP12T40P140",
+    "INR2D0BWP12T40P140",
+    "INR2D1BWP12T40P140",
+    "INR2D2BWP12T40P140",
+    "INR3D0BWP12T40P140",
+    "INR3D1BWP12T40P140",
+    "INR4D0BWP12T40P140",
+    "INVD1BWP12T40P140",
+    "INVD2BWP12T40P140",
+    "INVD6BWP12T40P140",
+    "IOA21D1BWP12T40P140",
+    "MAOI222D0BWP12T40P140",
+    "MAOI222D1BWP12T40P140",
+    "MAOI22D1BWP12T40P140",
+    "MOAI22D1BWP12T40P140",
+    "MUX2ND0BWP12T40P140",
+    "ND2D1BWP12T40P140",
+    "ND3D1BWP12T40P140",
+    "ND4D0BWP12T40P140",
+    "ND4D1BWP12T40P140",
+    "NR2D0BWP12T40P140",
+    "NR2D1BWP12T40P140",
+    "NR2OPTPAD1BWP12T40P140",
+    "NR3D0BWP12T40P140",
+    "NR4D0BWP12T40P140",
+    "OA211D1BWP12T40P140",
+    "OA21D1BWP12T40P140",
+    "OA221D1BWP12T40P140",
+    "OA222D1BWP12T40P140",
+    "OA22D1BWP12T40P140",
+    "OA31D1BWP12T40P140",
+    "OAI211D1BWP12T40P140",
+    "OAI21D0BWP12T40P140",
+    "OAI21D1BWP12T40P140",
+    "OAI221D1BWP12T40P140",
+    "OAI222D1BWP12T40P140",
+    "OAI22D1BWP12T40P140",
+    "OAI31D0BWP12T40P140",
+    "OAI31D1BWP12T40P140",
+    "OAI32D0BWP12T40P140",
+    "OAI32D1BWP12T40P140",
+    "OAI33D1BWP12T40P140",
+    "OR2D0BWP12T40P140",
+    "OR2D1BWP12T40P140",
+    "OR2D2BWP12T40P140",
+    "OR3D1BWP12T40P140",
+    "OR4D1BWP12T40P140",
+    "XNR2D1BWP12T40P140",
+    "XOR2D1BWP12T40P140",
+    "XOR4D1BWP12T40P140"
+  ],
+  "verified_transitions": {
+    "accepted_load_offer_waits_for_data": {
+      "allowed_successors": [
+        20,
+        14,
+        15
+      ],
+      "from": 19
+    },
+    "accepted_projection_waits_for_retirement": {
+      "allowed_successors": [
+        13,
+        14,
+        15
+      ],
+      "from": 12
+    },
+    "completed_load_enters_projection_or_cancels": {
+      "allowed_successors": [
+        12,
+        14,
+        15
+      ],
+      "from": 20
+    },
+    "hold_load_offer_under_backpressure": {
+      "allowed_successors": [
+        19,
+        14,
+        15
+      ],
+      "from": 19
+    },
+    "hold_load_until_staged_write_completion": {
+      "allowed_successors": [
+        20
+      ],
+      "from": 20
+    },
+    "hold_projection_offer_under_backpressure": {
+      "allowed_successors": [
+        12,
+        14,
+        15
+      ],
+      "from": 12
+    },
+    "hold_projection_until_completion": {
+      "allowed_successors": [
+        13,
+        14,
+        15
+      ],
+      "from": 13
+    }
+  }
+}
