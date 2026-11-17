@@ -1,0 +1,136 @@
+{
+  "cases": {
+    "8_credits_delay_4": {
+      "maximum_margins_by_lane": [
+        85116697,
+        93541647
+      ],
+      "minimum_margins_by_lane": [
+        60347016,
+        68771966
+      ],
+      "optimistic_fixed_steering_ms": 744.3373603448276,
+      "optimistic_flexible_steering_ms": 744.3373603448276
+    },
+    "8_credits_delay_5": {
+      "maximum_margins_by_lane": [
+        85116697,
+        93541647
+      ],
+      "minimum_margins_by_lane": [
+        60347016,
+        68771966
+      ],
+      "optimistic_fixed_steering_ms": 744.3373603448276,
+      "optimistic_flexible_steering_ms": 744.3373603448276
+    },
+    "8_credits_delay_6": {
+      "maximum_margins_by_lane": [
+        28598920,
+        93541647
+      ],
+      "minimum_margins_by_lane": [
+        3829239,
+        68771966
+      ],
+      "optimistic_fixed_steering_ms": 821.5279568965517,
+      "optimistic_flexible_steering_ms": 788.1219103448276
+    },
+    "8_credits_delay_7": {
+      "maximum_margins_by_lane": [
+        -16615303,
+        37023870
+      ],
+      "minimum_margins_by_lane": [
+        -41384984,
+        12254189
+      ],
+      "optimistic_fixed_steering_ms": 912.8088396551724,
+      "optimistic_flexible_steering_ms": 881.4521344827587
+    },
+    "8_credits_delay_8": {
+      "maximum_margins_by_lane": [
+        -53608757,
+        -8190353
+      ],
+      "minimum_margins_by_lane": [
+        -78378438,
+        -32960034
+      ],
+      "optimistic_fixed_steering_ms": 1004.0897224137931,
+      "optimistic_flexible_steering_ms": 974.7274931034483
+    },
+    "9_credits_delay_7": {
+      "maximum_margins_by_lane": [
+        34250697,
+        93541647
+      ],
+      "minimum_margins_by_lane": [
+        9481016,
+        68771966
+      ],
+      "optimistic_fixed_steering_ms": 811.3856362068966,
+      "optimistic_flexible_steering_ms": 783.5130103448275
+    },
+    "9_credits_delay_8": {
+      "maximum_margins_by_lane": [
+        -7366939,
+        42675647
+      ],
+      "minimum_margins_by_lane": [
+        -32136620,
+        17905966
+      ],
+      "optimistic_fixed_steering_ms": 892.5241982758621,
+      "optimistic_flexible_steering_ms": 866.4244379310345
+    }
+  },
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "compact_index_fragments": 20117504,
+  "evidence_sha256": {
+    ".cache/memory_response_gearbox/workload_serial.json": "6a0821baa468472cf23095b6042c99d33908cc1dfc273ba0c9cf6b8f737f50d7",
+    ".cache/model_reference/lossless_weight_burst_probe/receipt.json": "26975c527e5138d87f1626c1281821823d859ff310eed29ed39362da2bf68dae",
+    ".cache/model_reference/lossless_weight_burst_probe/transport_receipt.json": "110fcdd200e519527ccbfc162428bf729d151c612dd5dbe3abb5951ffc5e5109",
+    ".cache/model_reference/normalized_weight_burst_schedule_v2/receipt.json": "94793a844459fded4f2c7568f4f9b0cc5c71a6191605a40eb5dd71f59c8357ea",
+    ".cache/model_reference/normalized_workload_trace/receipt.json": "e6a075d71af924c1c8a284c1b7503bfbfb6a05788c40fda8512ea4c3e03300d2",
+    ".cache/model_reference/packed_gate_up_export/v1/manifest.json": "cec6265adaf4cbec8a71afa3b1815b359e8c3127700e877565511c9867dbb063",
+    ".cache/model_reference/packed_gate_up_export/v1/weights.bin": "63d4fdb8100df478f44a852614a91ffcb670c0d444e4871293e1912a7d301164",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/response_credit_trained/credit8/xrun.log": "4c86dced18cd9282673b800ff240cc75fea85693d44a54d237af326e5d550515",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_bonded_system_budget.json": "d9f2e029aaf318d9504d01366d7e2b61bf084cf157618014b0dc6193e938bb61",
+    "records/tri_oracle_compact_index_ingress.json": "53a10c7918c309c81553e35070b7e448d06e234479eccc7140729cb7c80c5bca",
+    "records/tri_oracle_corrected_booth_receive_credit_limit.json": "4b5e60926824298a36827b9f2fa8c67a449df41ccc77cd91f70e437c9c517e2d",
+    "records/tri_oracle_corrected_booth_trained_credit_window.json": "03d3cd64314558c61f9e9e833417bcca2f41df52234595cb1f05d4c943d96070",
+    "records/tri_oracle_physical_io_budget.json": "0b3efc498f02b53c4bbcc84164f4ded26ed27c91a02ad3a28c911377971f451a",
+    "syn/verify_tri_oracle_booth_fixed_lane_credit_budget.py": "1b4cec63ccb35a21255298d460ad4304e841b5a201b578bae7b51177bbbf79dc"
+  },
+  "gate_up_by_lane": [
+    {
+      "down_payload_beats": 163385716,
+      "gate_blocks": 10115904,
+      "gate_fragments": 226700866,
+      "gate_payload_beats": 195647715
+    },
+    {
+      "down_payload_beats": 158359692,
+      "gate_blocks": 10001600,
+      "gate_fragments": 224134247,
+      "gate_payload_beats": 193438222
+    }
+  ],
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "peak_gpu_bytes": 117744640,
+  "scope": "Archived fixed steering and compact indexes with the placed receiver's modeled credit delays. Gate/up burst padding is exact. Lane-level down padding and sign placement are bounded. Latency floors exclude requests, computation and other traffic.",
+  "state": "archived_fixed_lane_credit_budget_with_compact_indexes_verified_on_host_gpu",
+  "weight_and_sign_fragment_bounds_by_lane": [
+    [
+      423543303,
+      448312984
+    ],
+    [
+      415118353,
+      439888034
+    ]
+  ],
+  "weight_and_sign_fragments": 863431337
+}
