@@ -50,10 +50,13 @@ BOUNDED_PROBABILITY_SEED = Path("records/tri_oracle_bounded_decoder_probability_
 BOUNDED_TOKEN_MAP_PLACEMENT = Path("records/tri_oracle_bounded_decoder_token_map_native_placement.json")
 BOUNDED_RESIZED_PLACEMENT = Path("records/tri_oracle_whole_chip_value_register_placement.json")
 BOOTH_PLACEMENT = Path("records/tri_oracle_corrected_booth_placement_roundtrip.json")
+BOOTH_BUFFERED_PLACEMENT = Path("records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json")
 BOOTH_COMPUTE = Path("records/tri_oracle_booth_chip_compute_geometry.json")
 BOOTH_MEMORY = Path("records/tri_oracle_booth_compiled_memory.json")
 BOOTH_REDUNDANCY = Path("records/tri_oracle_corrected_booth_redundancy_topology.json")
 BOOTH_MODELS = Path("records/tri_oracle_corrected_booth_physical_models.json")
+BOOTH_BUFFERED_MODELS = Path("records/tri_oracle_corrected_booth_buffered_models.json")
+BOOTH_BUFFER_REPAIR = Path("records/tri_oracle_corrected_booth_pin_load_repair.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -67,7 +70,8 @@ SCALAR_PLACEMENT_STAGES = {
 def qualification_source(root, requested, *previous):
     if requested is not None:
         return requested.resolve()
-    for candidate in (BOOTH_PLACEMENT, BOUNDED_RESIZED_PLACEMENT, BOUNDED_TOKEN_MAP_PLACEMENT, BOUNDED_PROBABILITY_PLACEMENT,
+    for candidate in (BOOTH_BUFFERED_PLACEMENT, BOOTH_PLACEMENT, BOUNDED_RESIZED_PLACEMENT,
+                      BOUNDED_TOKEN_MAP_PLACEMENT, BOUNDED_PROBABILITY_PLACEMENT,
                       BOUNDED_RESET_PLACEMENT, BOUNDED_MAPPED_STRUCTURE,
                       TOKEN_TREE_PLACEMENT, REDUCED_PORT_PLACEMENT,
                       *SCALAR_PLACEMENT_STAGES, REPEATER_PLACEMENT):
@@ -134,24 +138,32 @@ def dimensions(path):
     return ((die[2]-die[0])/units/1000, (die[3]-die[1])/units/1000)
 
 
+def pin_booth(root, identities, name, expected=None):
+    path = root / name
+    key = str(path)
+    if key not in identities:
+        identities[key] = sha(path)
+    assert expected is None or identities[key] == expected, f"Changed Booth evidence: {path}"
+    return path
+
+
+def booth_record(root, identities, path, state):
+    evidence = json.loads(pin_booth(root, identities, path).read_text())
+    assert evidence["state"] == state
+    for name, checksum in evidence["evidence_sha256"].items():
+        pin_booth(root, identities, name, checksum)
+    return evidence
+
+
 def corrected_booth_facts(root, facts, identities):
     """Bind the cold placement and structural checks to the same Booth candidate."""
     from tri_oracle_artifact_fingerprint import artifact_fingerprint
 
     def pin(name, expected=None):
-        path = root / name
-        key = str(path)
-        if key not in identities:
-            identities[key] = sha(path)
-        assert expected is None or identities[key] == expected, f"Changed Booth evidence: {path}"
-        return path
+        return pin_booth(root, identities, name, expected)
 
     def checked_record(path, state):
-        evidence = json.loads(pin(path).read_text())
-        assert evidence["state"] == state
-        for name, checksum in evidence["evidence_sha256"].items():
-            pin(name, checksum)
-        return evidence
+        return booth_record(root, identities, path, state)
 
     placed = checked_record(BOOTH_PLACEMENT, "corrected_booth_placement_reload_and_connectivity_verified")
     compute = checked_record(BOOTH_COMPUTE, "corrected_full_chip_compute_geometry_bound_to_mapped_replay")
@@ -238,6 +250,66 @@ def corrected_booth_facts(root, facts, identities):
         return dict(compiled_macros=compiled_macros, compiled_bytes=installed_bytes,
                     paper_label_kb=label, reconciliation="rounded binary kilobytes")
     return None
+
+
+def buffered_booth_facts(root, facts, identities):
+    """Bind the prior architecture inventory to the native buffer-only revision."""
+    from tri_oracle_artifact_fingerprint import artifact_fingerprint
+
+    prior = {}
+    memory = corrected_booth_facts(root, prior, identities)
+    placed = booth_record(root, identities, BOOTH_BUFFERED_PLACEMENT,
+                          "corrected_buffer_repair_placement_and_cold_reload_verified")
+    repair = booth_record(root, identities, BOOTH_BUFFER_REPAIR,
+                          "corrected_booth_overload_repair_staged_and_reproduced")
+    models = booth_record(root, identities, BOOTH_BUFFERED_MODELS,
+                          "booth_buffered_candidate_models_and_memory_verified")
+    database = Path(placed["database"])
+    assert database.name == "placed.db" and database.parent.name == "import"
+    stage = database.parents[1]
+    fingerprint = artifact_fingerprint(root / database)
+    encoded = json.dumps(fingerprint, sort_keys=True, separators=(",", ":")).encode()
+    database_hash = hashlib.sha256(encoded).hexdigest()
+    assert database_hash == placed["database_fingerprint_sha256"] == models["database_fingerprint_sha256"]
+
+    proofs = placed["evidence_sha256"]
+    candidate, seed, cold = (str(path) for path in (
+        stage.parent / "buffered.v", stage.parent / "layout.def", stage / "cold/cold.v"))
+    change = repair["check_after_insertion"]
+    assert repair["baseline_netlist_sha256"] == prior["cold_netlist_sha256"]
+    assert proofs[candidate] == models["linked_netlist_sha256"] == change["netlist_sha256"]
+    assert proofs[seed] == models["seed_sha256"] == change["layout_sha256"]
+    assert proofs[cold] == models["cold_netlist_sha256"]
+    assert memory is not None
+    assert models["memory_instances"] == memory["compiled_macros"] == prior["fixed_memory_macros"]
+    assert models["memory_bytes"] == memory["compiled_bytes"]
+
+    geometry = placed["geometry"]
+    assert geometry["fixed_memory_macros"] == models["memory_instances"]
+    leaves = geometry["standard_cells"] + geometry["fixed_memory_macros"]
+    assert leaves == placed["connectivity"]["physical_leaf_instances"]
+    assert leaves == repair["preserved_existing_placed_components"] + repair["added_buffers"]
+    assert prior["cores"] == geometry["regions"] == geometry["groups"]
+    layout = stage / "cold/layout.def"
+    width, height = dimensions(pin_booth(root, identities, layout, proofs[str(layout)]))
+    assert placed["die_dimensions_mm"] == [width, height] == [prior["die_width_mm"], prior["die_height_mm"]]
+    assert set(placed["views"]) == VIEWS
+    for phase in ("import", "cold"):
+        receipt = stage / phase / "status.json"
+        status = json.loads(pin_booth(root, identities, receipt, proofs[str(receipt)]).read_text())
+        assert status["exit_status"] == 0 and status["stop_reason"] is None
+        assert status["wall_seconds"] == placed["native_stages"][phase]["wall_seconds"]
+        for corner in VIEWS:
+            constraints = stage / phase / f"{corner}.sdc"
+            text = pin_booth(root, identities, constraints, proofs[str(constraints)]).read_text()
+            (period,) = re.findall(r"(?m)^create_clock .* -name core_clock -period ([\d.]+)\b", text)
+            assert float(period) == prior["clock_period_ns"]
+
+    facts.update(prior, candidate_sha256=proofs[candidate], cold_netlist_sha256=proofs[cold],
+                 evidence_stage="buffer-repaired Booth placement imported and cold-reloaded in Innovus",
+                 original_full_models_verified=True, added_buffers=repair["added_buffers"],
+                 pin_only_load_violations=change["pin_only_slow_corner_violations_after"])
+    return memory
 
 
 def bounded_structure_facts(root, facts, identities):
@@ -1133,7 +1205,9 @@ def main():
         assert sha(root/PAPER_RELATIVE) == PAPER_SHA256, "Paper edition changed"
         identities[str(root/PAPER_RELATIVE)] = PAPER_SHA256
         relative_qualification = qualification_path.relative_to(root) if qualification_path.is_relative_to(root) else None
-        if relative_qualification == BOOTH_PLACEMENT:
+        if relative_qualification == BOOTH_BUFFERED_PLACEMENT:
+            memory = buffered_booth_facts(root, facts, identities)
+        elif relative_qualification == BOOTH_PLACEMENT:
             memory = corrected_booth_facts(root, facts, identities)
         elif relative_qualification in {BOUNDED_RESIZED_PLACEMENT, BOUNDED_TOKEN_MAP_PLACEMENT,
                                        BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT}:

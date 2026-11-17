@@ -80,6 +80,17 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None), latest)
             self.assertEqual(qualification_source(root, older), older)
 
+    def test_buffer_repair_supersedes_the_original_booth_placement(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            baseline = root / "records/tri_oracle_corrected_booth_placement_roundtrip.json"
+            baseline.parent.mkdir()
+            baseline.touch()
+            repaired = baseline.with_name("tri_oracle_corrected_booth_buffered_placement_roundtrip.json")
+            repaired.touch()
+            self.assertEqual(qualification_source(root, None), repaired)
+            self.assertEqual(qualification_source(root, baseline), baseline)
+
     def test_corrected_booth_roundtrip_is_the_default_candidate(self):
         with TemporaryDirectory(dir=".cache") as directory:
             root = Path(directory).resolve()
