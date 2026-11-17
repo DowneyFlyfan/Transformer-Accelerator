@@ -1,0 +1,65 @@
+{
+  "database_fingerprint_sha256": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/layout.def": "d6128e45d7211fac8ba969ede5c3310309511e35ef4667e209d5bc37bdc6d10f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/tcbn28hpcplusbwp12t40p140.lef": "192a4b10a3de4344b24251689ed19009c4a76da6da0b69fba3dc034a30995aa0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta16x80m2fw_130a.lef": "ff0fb61b490525e468122162f5570723d3d43caf3eb76ee2824a6f71fa029061",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta24x128m2fw_130a.lef": "a3ce9ef1d489cf6873422be7053d0717e6e2d375508c1679d413430633349210",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta32x128m2fw_130a.lef": "6b314e453249fc12d94b743f95991fbc179e587b7a4c00c8385102856de349ce",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta512x64m4f_130a.lef": "3d59abd94c3f35415176310c7557eb3552f22f444f65d63792e61e6b385b6310",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts5n28hpcpsvta8x80m2fw_130a.lef": "d3584f694dbc1d314ecb11fe2023963d4407bf56312f9a3e60c1e310c664bab0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/lef/ts6n28hpcpsvta16x128m2f_130a.lef": "c3321f7705d07afbd47d8c71352cdfa4ba592edd49f2892114e17201196e6269",
+    ".cache/placement_row_capacity/audit.py": "be81c97a0097249ee8030b9d96487cd54a9151d743e9a3f2db76d1d1f3a09cd2",
+    ".cache/placement_row_capacity/compaction_examples.json": "679eaf37dbe20971bd3f610f38feac9906bbe238624427a08123e7712799d856",
+    ".cache/placement_row_capacity/geometry.json": "9216ac63134fd0e480e756f0c724eaf0cd2eae9e8581f9f38c20558d9fa5b5ce",
+    ".cache/placement_row_capacity/verified_moves.json": "f226a74656feb5b2beec42e64bd126f6022862efc5268aa155b9abe328f4c885",
+    ".cache/placement_row_capacity/verify_moves.py": "a4f3aa5d6904a45e4f6a292a914676839468c49e4bbdb6456b2060724484b39b",
+    "records/tri_oracle_booth_placed_area_budget.json": "817dfae054a8b242b7eaa9da7e4da51afaa0e3e0bb90f4686969f55555df425a",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_repaired_native_compute_and_memory.json": "0f3f2155226110367c8eb106ced567208a145e6ece1115d089536c11c7ea03d0"
+  },
+  "fixed_memory_macros": 631,
+  "independently_validated_relocation_trials": 21,
+  "placed_standard_cells": 4103985,
+  "placement_regions": 20,
+  "reconciled_free_site_area_mm2": 0.066013416,
+  "reconciled_standard_cell_area_mm2": 6.008623992,
+  "regions_without_direct_minimum_clock_buffer_gap": {
+    "tri_array_region_10": 1,
+    "tri_array_region_11": 1,
+    "tri_array_region_15": 1,
+    "tri_array_region_17": 1,
+    "tri_array_region_18": 2,
+    "tri_array_region_3": 1,
+    "tri_array_region_6": 1
+  },
+  "relocation_trial_summary": {
+    "CKBD0": {
+      "buffer_width_um": 0.42,
+      "largest_cell_shift_um": 0.28,
+      "moved_cells_per_region_range": [
+        1,
+        5
+      ]
+    },
+    "CKBD4": {
+      "buffer_width_um": 0.98,
+      "largest_cell_shift_um": 0.84,
+      "moved_cells_per_region_range": [
+        13,
+        42
+      ]
+    },
+    "CKBD8": {
+      "buffer_width_um": 1.68,
+      "largest_cell_shift_um": 1.54,
+      "moved_cells_per_region_range": [
+        41,
+        106
+      ]
+    }
+  },
+  "row_site_width_um": 0.14,
+  "scope": "Geometric checks on the exact cold-exported placement. The trials preserve each affected cell row and relative order and check overlap against unmoved cells, macro halos, placement obstructions, and array regions. Each buffer and region is a separate trial. Timing and routing after these moves remain unevaluated.",
+  "state": "repaired_full_placement_whitespace_and_clock_buffer_windows_verified"
+}
