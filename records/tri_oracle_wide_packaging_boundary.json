@@ -1,0 +1,64 @@
+{
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/array_wire_free_setup/array_region_row_seed/connected/net_geometry/retained_seed/refine/fanout_repair/expanded_connected/native/cold.v": "dd7fab755a60c7b85fb1a29e1f44ee30722446fe089dfbb38f6881ba1890388f",
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/cold/cold.v": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_value_register_clock_rows.json": "3daa2bf255388bd8fa5a14c8a4f83c91c323274ca8f9ebceb826153acba154a5",
+    "syn/audit_tri_oracle_packed_weight_path.py": "627560ffee8b2041ddc3f76e1bb634c34afa09138d70a4a749dec262ac35e003",
+    "syn/link_tri_oracle_indexed_whole_chip.py": "a821d99fc947f7df45cb39c9f72fc1d6167465713ca2095070ec566de52e2a86",
+    "syn/verify_tri_oracle_booth_chip_link.py": "367c30e3cdd3b1aee835d1dfeda874f35466a47c700ce5f0f39c8f97fda3372c",
+    "syn/verify_tri_oracle_booth_memory_interconnect.py": "8746693f19774e56d6681f0f15a6f25b3490c16870475268f197e0c1000861f6",
+    "syn/verify_tri_oracle_value_register_clock_rows.py": "e29cc3073c19eeacd3a4fbd4f8380050197430d450323f94a03b4d8d398cc09c",
+    "syn/verify_tri_oracle_wide_packaging_boundary.py": "2e4121c0b2aeed86932266cea88a7fcca6cc0f03307f04d4676a06511e4bbc51"
+  },
+  "grouped_transport_signals_missing_from_both_wide_accelerator_boundaries": [
+    "group_valid",
+    "group_ready",
+    "group_last",
+    "group_tag",
+    "group_cluster",
+    "group_lane",
+    "group_values"
+  ],
+  "packetized_accelerator_port_declarations": 113,
+  "packetized_candidate_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "paper_figure": "31.6.2",
+  "scope": "Exact logic and named wires on three native placement exports. The packaged candidate has a separate grouped-result host transmitter. The two wider candidates expose shared writeback and a direct result bus. A direct substitution loses the grouped host handshake. Packaged wide-lane operation, the paper network protocol, and physical timing remain unqualified.",
+  "state": "native_wide_placement_and_existing_package_boundary_gap_verified",
+  "wide_candidates": {
+    "control_buffered": {
+      "cold_netlist_sha256": "dd7fab755a60c7b85fb1a29e1f44ee30722446fe089dfbb38f6881ba1890388f",
+      "common_accelerator_port_declarations": 106,
+      "external_write_data_bits": 64,
+      "grouped_read_clients": 5,
+      "internal_write_lane_bits": [
+        1024,
+        1024
+      ],
+      "rejected_controls": [
+        "cluster_address_swap",
+        "memory_response_lane_swap",
+        "grouped_writeback_data_bit_swap"
+      ],
+      "same_index_grouped_data_paths_to_direct_result_and_writeback_input": 2048
+    },
+    "resized": {
+      "cold_netlist_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+      "common_accelerator_port_declarations": 106,
+      "external_write_data_bits": 64,
+      "grouped_read_clients": 5,
+      "internal_write_lane_bits": [
+        1024,
+        1024
+      ],
+      "rejected_controls": [
+        "cluster_address_swap",
+        "memory_response_lane_swap",
+        "grouped_writeback_data_bit_swap"
+      ],
+      "same_index_grouped_data_paths_to_direct_result_and_writeback_input": 2048
+    }
+  }
+}
