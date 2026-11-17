@@ -1,0 +1,62 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/sram/dual_port_weight_probe_01/ts6n28hpcpsvta32x128m2fw_130a/VERILOG/ts6n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.v": "98c1f6c6c3cce1d0b463b17ae33066e2ddcb327dcb38d04ed046a366a6c41fe2",
+    ".cache/physical/sram/dual_port_weight_probe_01/ts6n28hpcpsvta32x128m2fw_130a/VERILOG/ts6n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.v": "cfe1456a5aac9d2abcf8d39184923d6911a2ed0fd239f5fb57bed165dbe8fc90",
+    ".cache/physical/sram/dual_port_weight_probe_01/ts6n28hpcpsvta32x128m2fw_130a/VERILOG/ts6n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "af5ea95883e38bf56faa06b8b9f2ab6dc842dbfb42487687f605addf7c6dee3c",
+    ".cache/projection_weight_reuse/early_release/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/projection_weight_reuse/early_release/tri_oracle_projection_weight_reuse_tb.sv": "21e27e841df6ae1e3348bd918e4ba9492dc937e0993bd73af57614bac3f3a5a7",
+    ".cache/projection_weight_reuse/early_release/xrun.log": "ef85bdbc9084755f8174c7ba4285ec4db283453b005c013bade01daf95cf694b",
+    ".cache/projection_weight_reuse/ffg1p05vm40c/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/projection_weight_reuse/ffg1p05vm40c/xrun.log": "dd7e38cbabb1f2df6e73692e9718bb7370d2d1af9bfaf7cf694405568dba1802",
+    ".cache/projection_weight_reuse/red/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/projection_weight_reuse/red/unguarded.sv": "e4f68eb9db293c2a4ec94338ceed26c3ec62ba93f950a18e96ad9cfb940e1ea8",
+    ".cache/projection_weight_reuse/red/xrun.log": "6361c737db496289534f47392901ab536611a3e02170898cd75c19be11b76613",
+    ".cache/projection_weight_reuse/ssg0p9v125c/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/projection_weight_reuse/ssg0p9v125c/xrun.log": "321660d2cc05baee410a57c4ae8aeb43287510372e48ceb2f15dfd31fa8c79e8",
+    ".cache/projection_weight_reuse/tt1v25c/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/projection_weight_reuse/tt1v25c/xrun.log": "273c20ca99349539005311760df33157771fe528ca8dfa253603e5de5b6767e3",
+    "records/tri_oracle_wide_projection_handoff.json": "b3c764cb5109e7af006102d16352b3dbf156dac6aab04ef4dd05d9b741b26556",
+    "verilog/tri_oracle_batched_projection356.sv": "06ded16e6a328a4a86a0a4161742fed467de7668c55c3ccc47dc7e3cf68cc5e4",
+    "verilog/tri_oracle_projection_weight_reuse.sv": "6df1085ea1c9a01a7c48dfec61a1d277d2f0d9e87210f4505f4038d5ef8f1109",
+    "verilog/tri_oracle_projection_weight_reuse_tb.sv": "fc5bdeb5d6db46803253998f07c790f5ba4fa77c6b4a0d364d9ca14238f1ab36"
+  },
+  "mapped_loader_stage": {
+    "candidate_sha256": "2dbd3986120865e133889eba0d5c6e2fb61dfa06a465078a9f91bdd1260b1c6b",
+    "master": "tri_oracle_native_reset_copy_33",
+    "module_sha256": "c53daa09aaaac0d463bae440b63b8054cfca3a13b8ddd1725bd24917ead45b47",
+    "scope": "Existing chip stage accepts two write pulses and has only completion handshaking. Concurrent integration requires storage and source backpressure for unsafe writes.",
+    "weight_write_lanes": 2,
+    "write_ready_ports": []
+  },
+  "results": {
+    "early_release": {
+      "exit_status": 2,
+      "macro_corner": "tt1v25c",
+      "marker": "PROJECTION_WEIGHT_GUARD word=0 token=15 write_word=0 got=1 expected=0"
+    },
+    "ffg1p05vm40c": {
+      "exit_status": 0,
+      "macro_corner": "ffg1p05vm40c",
+      "marker": "PROJECTION_WEIGHT_REUSE_PASS reads=516 concurrent=31 writes=66 blocked=488"
+    },
+    "red": {
+      "exit_status": 2,
+      "macro_corner": "tt1v25c",
+      "marker": "PROJECTION_WEIGHT_GUARD word=0 token=-1 write_word=0 got=1 expected=0"
+    },
+    "ssg0p9v125c": {
+      "exit_status": 0,
+      "macro_corner": "ssg0p9v125c",
+      "marker": "PROJECTION_WEIGHT_REUSE_PASS reads=516 concurrent=31 writes=66 blocked=488"
+    },
+    "tt1v25c": {
+      "exit_status": 0,
+      "macro_corner": "tt1v25c",
+      "marker": "PROJECTION_WEIGHT_REUSE_PASS reads=516 concurrent=31 writes=66 blocked=488"
+    }
+  },
+  "rtl_top": "tri_oracle_projection_weight_reuse_tb",
+  "scope": "Standalone guard with the existing projection sequencer and one compiler memory model. The fixture checks exact weight reads at 1.724 ns with 250 ps of testbench-only delay on synchronous control outputs. The test does not measure mapped control timing or whole-chip throughput.",
+  "state": "in_order_projection_releases_resident_weight_addresses_in_xcelium",
+  "xcelium_version": "25.03-s001"
+}
