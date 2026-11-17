@@ -1,0 +1,114 @@
+{
+  "address_path_timing": {
+    "auxiliary": {
+      "address_bits_with_fast_hold_capture_paths": 64,
+      "fast_hold_ps": 63,
+      "slow_setup_ps": 1185,
+      "typical_setup_ps": 1316
+    },
+    "narrow": {
+      "address_bits_with_fast_hold_capture_paths": 64,
+      "fast_hold_ps": 45,
+      "slow_setup_ps": 1226,
+      "typical_setup_ps": 1345
+    },
+    "wide": {
+      "address_bits_with_fast_hold_capture_paths": 64,
+      "fast_hold_ps": 61,
+      "slow_setup_ps": 1194,
+      "typical_setup_ps": 1322
+    }
+  },
+  "candidate_cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "candidate_database_fingerprint_sha256": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+  "evidence": [
+    {
+      "directory": ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/owned_request_timing/full_packet_parent",
+      "sha256": {
+        "auxiliary_fast_hold.rpt": "d2cd420606392b703c80c5dfe861e5ca983865cdd3769ac511794ecacba7191c",
+        "auxiliary_slow_setup.rpt": "fc4dabac2ed8be31453cad10ec4194ccc98b379b7bad53abfa196f62f2a0a46a",
+        "auxiliary_typical_setup.rpt": "8e03be21771c54c936be4bca9cebe026484d528cde38524a1c4150c219d164b5",
+        "boundary.sdc": "329e70448c34121ba99776df96c55381ae1937f6dea86f9e5f406f1a3d215ff7",
+        "console.log": "4c3cf441619d09be58debb7738bf25ac501c9ef1100d1bf55b89c9cf26ae9e77",
+        "exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "macro_boundary.v": "a808a6d4938e3dbd46e3059831883e7ef808ff69ee7ac5681e66d67876806eba",
+        "narrow_fast_hold.rpt": "d56f7614bf2c0dda5b3df3eae656cb9640748d483e77d418a38f2c6017bae691",
+        "narrow_slow_setup.rpt": "f17e819754dc0d7b77e19b07863259ed400282d5cbfd99b42ed7fdb6dce2f585",
+        "narrow_typical_setup.rpt": "6ccbdd947f76c02c32295c779d4021d22337a390022bab7a061dff3071f131d6",
+        "native_components.v": "7ae1a5b359472a09d8750e6b66f7f4c077c0614437d9cbfbc10dd66e472076cc",
+        "prepare.py": "2071bddb24886f4379adcd9b41ad733a4de1f87bf87b9f8b8218673ede3c13d3",
+        "source_bindings.json": "eb18b0e97768bcd3488c4187a8ef4ba69f52911c0147ce528bb244df01494c8f",
+        "timing.tcl": "b397b9fb658e76daac468f3c68b9c30ade40f048a21ba589102eee519de03415",
+        "views.tcl": "46c9b7b4c52e1242ae7162e102cbb40d3de86d93b5da88e87fdae94bbb850e4f",
+        "wide_fast_hold.rpt": "3baf8eb45ba8dd4a5f4f50b6f478222dbba6f9cab6cf18aab39099ebd9419dfd",
+        "wide_slow_setup.rpt": "e61a62f539154e6b320f68cf3c793f6f37fe1803dc0e347d1133edaea0005e91",
+        "wide_typical_setup.rpt": "a69ef6253e4551b66d065c17be2db19c2a0b42322e100444fda4c5e0c4a343dc"
+      }
+    },
+    {
+      "directory": ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/owned_request_timing/memory_io_replay",
+      "sha256": {
+        "mapped/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "mapped/xrun.log": "f4a84597b5e5d03db64038cb4f2fc8a39cc3fff2bca639b93a7eeef4af55bc53",
+        "native_memory_io.v": "f0c3f822e66560dfdd3e96f3cd253ac79a2276b0db221653c686472c5b94156d",
+        "source/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "source/xrun.log": "8736b9481cc7c8fd62be0c249639254b4a71b2ecc5482e5e3807bbf3c58f940c"
+      }
+    },
+    {
+      "directory": ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/owned_request_timing",
+      "sha256": {
+        "native_components.v": "28e0c6c109085396f95fa0e178d800a23f837ed3d9e7735b39a4149512ec6315",
+        "protocol/packed_read_mux/mapped/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+        "protocol/packed_read_mux/mapped/xrun.log": "f343eed2682956b8e0c460205391eb3adc7d5facc3c08c0bc2d4dc1d29eb5400",
+        "protocol/shared_read_link/mapped/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+        "protocol/shared_read_link/mapped/xrun.log": "b16168a043b6b8e2cbd40a3ca5312f0e926db85c92c634cca0fe166068fa3180",
+        "protocol/token_sign_dma/mapped/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "protocol/token_sign_dma/mapped/xrun.log": "d93687ff7899d5f8ca8abadbc8d7cd9aa3c6ce145dafbfd239231ea521b1b2a2",
+        "protocol/token_sign_dma/source/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "protocol/token_sign_dma/source/xrun.log": "f9db18589c0de0d285e81078821b3a395723c7a8c62d2e4d167775086167c606",
+        "protocol/wide_read_arbiter/mapped/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+        "protocol/wide_read_arbiter/mapped/xrun.log": "2a2064f7f48c8eed7408743f585fd39f44448b884e15d8db5ba000871e656c9b",
+        "replay_components.py": "459055a46e79d00b06d03cc1132ae96278d48ee1acad43d1dd0ce9b3e2b8a8f2",
+        "replay_memory_io.py": "dde1988f8a325be76d518e151ad18311de61e279f069e69db937f732ab23cf36"
+      }
+    },
+    {
+      "directory": ".",
+      "sha256": {
+        ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/registered_tile_length/local_ack_driver/native_request_receiver/request_receiver_rtl.sv": "eedea9a0c6c265720e6a5e11d62ecb6234efa4bbe86e65dca05dbb332adceeb3",
+        "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+        "records/tri_oracle_native_request_boundary.json": "f3511d6f8cac9d9bbf8a53d4c5cf4dc6012cfccce17ba0a4146afc89a546c1a0",
+        "verilog/tri_oracle_memory_io_link.sv": "359c144c6dc00db0be97e44f713bd38ad56b82676119494628b64d1959552062",
+        "verilog/tri_oracle_memory_io_link_tb.sv": "855d20ec9864be25e99d021179fadf993cc029360b41505a07344e43af4c5d59",
+        "verilog/tri_oracle_token_sign_dma.sv": "4f5ba491af2fcf734b99c87bdd6e588240b93ec7d41a0cccf3177ecd9b0f31d7",
+        "verilog/tri_oracle_token_sign_dma_tb.sv": "30ecb9d68ae490679a4ebca67acaa29779d55a9a39bbd123a189f838d35f8baf"
+      }
+    }
+  ],
+  "protocol_checks": {
+    "full_memory_io_parent_unit_delay": {
+      "acks": 2,
+      "auxiliary_on_ack": 1,
+      "failed": 1,
+      "reads": 5,
+      "stalled": 5,
+      "words": 3,
+      "writes": 3
+    },
+    "isolated_source_test_response_mismatches": {
+      "packed_read_mux": "PACKED_READ_MUX_NARROW_DATA_MISMATCH",
+      "shared_read_link": "LOGICAL_RESPONSE_MISMATCH",
+      "wide_read_arbiter": "WIDE_READ_FULL_WIDTH_RESPONSE"
+    },
+    "scope": "The isolated child tests reached checks for response fields that are open or bypassed in the placed parent. The native memory I/O parent preserves the response wires and passed the unmodified source testbench. The full transport from scheduler through the chip pads still requires its own replay.",
+    "token_sign_dma_unit_delay": {
+      "native": 2,
+      "reads": 5,
+      "retries": 1,
+      "vectors": 2
+    }
+  },
+  "state": "native_request_ownership_paths_timed_and_memory_io_parent_replayed",
+  "timing_scope": "Native scheduling context. Key/value, projection, write requests and decoded narrow response payload are fixture ports. The mapped memory I/O parent includes write arbitration and actual memory response routing. Grouped command selection and the outbound credit link are outside the cut. Ideal clocks, 1.724 ns core clock, and no extracted routing parasitics. All three source lanes use the separately mapped scheduler fixture."
+}
