@@ -86,6 +86,51 @@ def broadcast_chip_activation(tensor, fabric):
     return tensor, fabric
 
 
+def schedule_next_activation_tile(source):
+    return edit(source, [
+        ("WEIGHT_CHUNK,PACK_START,PACK_WAIT\n", "WEIGHT_CHUNK,PACK_START,PACK_WAIT,WAIT_PREFETCH\n"),
+        ("  state_t state;", "  state_t state;\n  logic activation_bank, prefetch_inflight, next_tile;"),
+        ("  assign first_cluster", """  assign next_tile = 9'(tile_start)+9'(tile_words) < 9'(part_words);
+  assign first_cluster"""),
+        (".in_activation_base(10'b0)", ".in_activation_base({activation_bank, 9'b0})"),
+        (".done_ready(state==WAIT_EXECUTE)", ".done_ready(state==WAIT_EXECUTE || state==WAIT_PREFETCH)"),
+        ("      activation_word<=0;activation_mode<=0;activation_buffer<=0;broadcast_cluster<=0;",
+         """      activation_word<=0;activation_mode<=0;activation_buffer<=0;broadcast_cluster<=0;
+      activation_bank<=0;prefetch_inflight<=0;"""),
+        ("          activation_word<=0;weight_core<=0;weight_row<=0;tile_start<=0;chunk_word<=0;",
+         """          activation_word<=0;weight_core<=0;weight_row<=0;tile_start<=0;chunk_word<=0;
+          activation_bank<=0;prefetch_inflight<=0;"""),
+        ("load_addr=10'(activation_token)*10'd32+10'(activation_word)+10'(beat_index);",
+         """load_addr={activation_bank,9'b0}
+          +10'(activation_token)*10'd32+10'(activation_word)+10'(beat_index);"""),
+        ("                  activation_mode<=0;weight_core<=first_core;clear_word<=0;state<=CLEAR_WEIGHTS;",
+         """                  activation_mode<=0;weight_core<=first_core;clear_word<=0;
+                  state<=prefetch_inflight ? WAIT_PREFETCH : CLEAR_WEIGHTS;"""),
+        ("        EXECUTE:if(sequence_ready)state<=WAIT_EXECUTE;",
+         """        EXECUTE:if(sequence_ready)begin
+          // The sequencer captures the old bank and extent on this edge.
+          // Fetch into the other bank while the old tile retires its results.
+          if(packed_weights && !local_scores && next_tile)begin
+            prefetch_inflight<=1;activation_bank<=!activation_bank;
+            tile_start<=tile_start+8'(tile_words);
+            activation_token<=0;activation_part<=0;activation_word<=0;active_words<=0;
+            state<=ACT_PREPARE;
+          end else state<=WAIT_EXECUTE;
+        end
+        WAIT_PREFETCH:if(sequence_done_valid)begin
+          prefetch_inflight<=0;
+          if(sequence_done_error || sequence_done_tag!=tag)begin
+            done_error<=1;flush_second<=0;state<=FLUSH;
+          end else state<=CLEAR_WEIGHTS;
+        end"""),
+        ("        FLUSH:if(flush_second)state<=DONE;else flush_second<=1;",
+         """        FLUSH:begin
+          prefetch_inflight<=0;
+          if(flush_second)state<=DONE;else flush_second<=1;
+        end"""),
+    ])
+
+
 def prepare_activation_bench(source):
     return edit(source, [
         ("  logic init_valid = 0, reload = 0;", """  logic init_valid = 0, reload = 0, prefetch_done = 0;

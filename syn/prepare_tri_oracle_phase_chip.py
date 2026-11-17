@@ -5,7 +5,8 @@ import re
 from pathlib import Path
 
 from prepare_tri_oracle_activation_bank_overlap import (
-    broadcast_chip_activation, prepare_activation_cluster, prepare_activation_core,
+    ACTIVATION_MACRO, TIMED_ACTIVATION_MACRO, broadcast_chip_activation, prepare_activation_cluster,
+    prepare_activation_core, schedule_next_activation_tile,
 )
 from prepare_tri_oracle_cluster_weight_phase import (
     ROOT, TIMED_MACRO, TS5_MACRO, distribute_weight_macro_inputs, edit, prepare_cluster, prepare_core,
@@ -173,7 +174,7 @@ def transform_chip(sources, buffered):
     return sources
 
 
-def prepare(output, buffered=False, derived_clock=False, activation_broadcast=False):
+def prepare(output, buffered=False, derived_clock=False, activation_broadcast=False, activation_prefetch=False):
     bundle = (JOINED / "bundle.sv").read_text()
     paths = [Path(name) for name in INCLUDE.findall(bundle)]
     prepared_names = (
@@ -196,9 +197,12 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         tensor, fabric = "tri_oracle_batched_tensor390.sv", "tri_oracle_compute_fabric.sv"
         work_sources[tensor], work_sources[fabric] = broadcast_chip_activation(
             work_sources[tensor], work_sources[fabric])
-        for name, transform in (("tri_oracle_sram_memory_compute.sv", prepare_activation_core),
-                                ("tri_oracle_sram_compute_cluster.sv", prepare_activation_cluster)):
-            work_sources[name] = transform(work_sources[name])
+        core = "tri_oracle_sram_memory_compute.sv"
+        cluster = "tri_oracle_sram_compute_cluster.sv"
+        work_sources[core] = prepare_activation_core(work_sources[core], timed=activation_prefetch)
+        work_sources[cluster] = prepare_activation_cluster(work_sources[cluster])
+        if activation_prefetch:
+            work_sources[tensor] = schedule_next_activation_tile(work_sources[tensor])
     for name, contents in work_sources.items():
         (output / name).write_text(contents)
     pe, = (path for path in paths if path.name == "tri_oracle_pe_array.sv")
@@ -234,6 +238,15 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         if not mapped_clock.is_file():
             raise ValueError("run the clock mapping before building the single-clock candidate")
         sources.append(mapped_clock)
+    if activation_prefetch:
+        model, = (path for path in paths if path.name == "ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v")
+        text = model.read_text(encoding="latin-1")
+        if text.count(f"module {ACTIVATION_MACRO} (") != 1 or "`ifdef UNIT_DELAY" not in text:
+            raise ValueError("expected the original activation memory timing model")
+        activation_model = output / "activation_timed.v"
+        activation_model.write_text(text.replace(ACTIVATION_MACRO, TIMED_ACTIVATION_MACRO).replace(
+            "`ifdef UNIT_DELAY", "`ifdef TRI_ORACLE_ACTIVATION_UNIT_DELAY"), encoding="latin-1")
+        sources.extend((activation_model, rtl / "tri_oracle_activation_tile_prefetch_probe.sv"))
     (output / "bundle.sv").write_text(bundle + "".join(f'`include "{path}"\n' for path in sources))
     clock_peer = DERIVED_CLOCK_PEER if derived_clock else CLOCK_SOURCE
     command_clock_ports = ("    .weight_memory_clk,\n    .rst_n(external_rst_n)," if derived_clock
@@ -246,6 +259,20 @@ def prepare(output, buffered=False, derived_clock=False, activation_broadcast=Fa
         bench_changes.append(("endmodule\n", RESET_PEER_CHECK))
     for source, target in (("trained_tb.sv", "bench.sv"), ("full_native/trained_tb.sv", "trained_bench.sv")):
         (output / target).write_text(edit((JOINED / source).read_text(), bench_changes))
+    if activation_prefetch:
+        bench = (output / "bench.sv").read_text()
+        fault = edit(bench, [
+            ("      sign_fault_address(read_address));", """      (FAULT==17 && activation_address(read_address)
+       && dut.layer.layer.feedforward.compute.compute.tensor.prefetch_inflight)
+      || sign_fault_address(read_address));"""),
+            ("      if(rsp_error)fault_seen<=1;",
+             """      if(rsp_error)begin
+        if(FAULT==17 && rsp_last) $fatal(1,"CHIP_PREFETCH_FAULT_REQUIRED_DRAIN");
+        fault_seen<=1;
+      end"""),
+            ("FAULT<=4 || FAULT==7 || FAULT==11", "FAULT<=4 || FAULT==7 || FAULT==11 || FAULT==17"),
+        ])
+        (output / "prefetch_fault_bench.sv").write_text(fault)
     scalar = JOINED.parent / "parallel_chip_load_address/trained_tb.sv"
     (output / "scalar_bench.sv").write_text(edit(scalar.read_text(), bench_changes + [
         ("dut.layer.layer.feedforward.predictor.activation_path.cfg_valid && "
@@ -273,9 +300,13 @@ if __name__ == "__main__":
     parser.add_argument("--buffered-boundary", action="store_true")
     parser.add_argument("--derived-clock", action="store_true")
     parser.add_argument("--activation-broadcast", action="store_true")
+    parser.add_argument("--activation-prefetch", action="store_true")
     args = parser.parse_args()
     if args.derived_clock and not args.buffered_boundary:
         parser.error("use the verified buffered weight boundary with the derived clock")
     if args.activation_broadcast and not args.derived_clock:
         parser.error("the activation broadcast uses the internally divided chip clock")
-    prepare(args.output.resolve(), args.buffered_boundary, args.derived_clock, args.activation_broadcast)
+    if args.activation_prefetch and not args.activation_broadcast:
+        parser.error("tile prefetch uses the verified activation broadcast")
+    prepare(args.output.resolve(), args.buffered_boundary, args.derived_clock,
+            args.activation_broadcast, args.activation_prefetch)

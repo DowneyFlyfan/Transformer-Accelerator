@@ -12,6 +12,9 @@ fi
 if [[ ${ACTIVATION_BROADCAST:-0} == 1 ]]; then
   experiment="$repo/.cache/phase_chip_activation"
 fi
+if [[ ${ACTIVATION_PREFETCH:-0} == 1 ]]; then
+  experiment="$repo/.cache/phase_chip_prefetch"
+fi
 source_dir="$experiment/source"
 name="${1:?run name is required}"
 shift
@@ -20,8 +23,10 @@ work="$experiment/$name"
 mkdir -p "$work"
 top=tri_oracle_batched406_learned_tb
 bench="$source_dir/bench.sv"
-duration=180
-arguments=(-defparam "$top.INTERMEDIATE=256")
+duration=240
+intermediate="${PHASE_CHIP_INTERMEDIATE:-256}"
+[[ "$intermediate" =~ ^[0-9]+$ ]]
+arguments=(-defparam "$top.INTERMEDIATE=$intermediate")
 if [[ "$name" == scalar ]]; then
   bench="$source_dir/scalar_bench.sv"
   arguments+=(-defparam "$top.PACKED=0")
@@ -40,6 +45,11 @@ if [[ "$name" == trained ]]; then
     "+LEARNED_FIXTURE=$fixtures/batch403" "+INTERMEDIATE_FIXTURE=$fixtures/batch407"
   )
 fi
+if [[ "$name" == prefetch_fault ]]; then
+  [[ ${ACTIVATION_PREFETCH:-0} == 1 ]]
+  bench="$source_dir/prefetch_fault_bench.sv"
+  arguments+=(-defparam "$top.FAULT=17" -defparam "$top.HIDDEN=1152")
+fi
 progress=(+PROGRESS=progress.log)
 if [[ "$name" == attention ]]; then
   duration=2700
@@ -56,7 +66,7 @@ run_replay() {
     "$repo/verilog/tri_oracle_phase_chip_probe.sv" \
     "${progress[@]}" "$@" >"$work/console.log" 2>&1 || rc="$?"
   printf '%s\n' "$rc" >"$work/exit_status"
-  rg '^(BATCH408_PASS|PACKED_DECODER_PASS|PHASE_CHIP)|\*[EF],' "$work/xrun.log" | head -18 || true
+  rg '^(BATCH408_PASS|PACKED_DECODER_PASS|PHASE_CHIP|CHIP_ACTIVATION_PREFETCH)|\*[EF],' "$work/xrun.log" | head -18 || true
   return "$rc"
 }
 run_replay "$@"
