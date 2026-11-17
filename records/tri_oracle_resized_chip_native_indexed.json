@@ -1,0 +1,70 @@
+{
+  "candidate_sha256": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+  "compiled_memory_paths": 631,
+  "compiled_payload_registers": 2048,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_token_map_buffer_candidate/value_register_drive_check/native_proxy_relinked/cold/cold.v": "9239318453fd8c250f1f0ba5fa4a5ac125ec259e30bf4e39a94df7d36e4452b7",
+    ".cache/value_register_indexed_candidate_check/indexed/bundle.sv": "4220df8cee8ad62191a861964b831b40636f8e6c636253e2fb5cddd533004caa",
+    ".cache/value_register_indexed_candidate_check/indexed/inputs.json": "64a765fd013d5f143426e48ac4f02e016f41e398452ed3b77e7774bc92c4e2e4",
+    ".cache/value_register_indexed_candidate_check/indexed/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    ".cache/value_register_indexed_candidate_check/indexed/status.json": "883cb928850dddb3861e0968fb1d771adeb19e54eaaee13d4874c30a1fc7f5b5",
+    ".cache/value_register_indexed_candidate_check/indexed/verified.json": "d47ae5b1cff02707acaba293b89fa3efb7401c7a88b673c45ac66e2dba25b5cf",
+    ".cache/value_register_indexed_candidate_check/indexed/xrun.history": "571f7c0011234423c21e0b5079f94daab53d208aacdb82805019512669b0902a",
+    ".cache/value_register_indexed_candidate_check/indexed/xrun.log": "12fa097d331d7183bd7038a24fb4720e948059f785980889c9a2fa84fbd5bf7d",
+    ".cache/value_register_indexed_candidate_check/run.py": "b4125a31f5fdbc25518118d322eb2872ba961417997f2120c3d6f1cec964fa14",
+    ".cache/value_register_indexed_candidate_check/supervisor_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/value_register_indexed_candidate_check/verify_terminal.py": "144e62f3978f169aa8afe629de88a44e46b7eee69eb586858e0a36540fbf2ac3",
+    "records/tri_oracle_resized_chip_native_attention.json": "3e078b0d6b2d4fba14168e68cb9264e3be2d0412bd5e0ecfee381dc33ffa3eb3",
+    "records/tri_oracle_token_map_native_indexed_replay.json": "3ef6447495da403363d8bc098166c4590a96b2c96cba957c3d9591049b7c74f5",
+    "records/tri_oracle_whole_chip_value_register_placement.json": "6da3816c6818d6821741c26e19508a7fee0da6cc77a57a59352004a664a02746"
+  },
+  "exact_feedforward_outputs": 4096,
+  "exact_indexed_transaction_and_cycle_trace_equal_to_predecessor": true,
+  "exact_writeback_outputs": 4096,
+  "functional_checkpoints": 90,
+  "indexed": {
+    "cycles": 846486,
+    "weight_requests": 12800,
+    "weight_response_beats": 338207
+  },
+  "indexed_payload_width_per_lane": 1024,
+  "indexed_response_beats_by_lane": [
+    {
+      "down_index": 780,
+      "down_payload": 49416,
+      "pair_index": 1416,
+      "pair_payload": 118925
+    },
+    {
+      "down_index": 756,
+      "down_payload": 47897,
+      "pair_index": 1400,
+      "pair_payload": 117617
+    }
+  ],
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 10439344128,
+    "peak_container_anonymous_bytes": 9312993280,
+    "wall_seconds": 2933.335867191083
+  },
+  "ported_attention_replay_same_cold_netlist": {
+    "exact_accumulator_words": 640,
+    "exact_grouped_cluster_outputs": 704,
+    "rows": 10
+  },
+  "raw": {
+    "cycles": 973270,
+    "weight_requests": 17408,
+    "weight_response_beats": 540672
+  },
+  "scope": "Functional indexed feed-forward and writeback on the resize-legalized wider cold export. The fixture exercises two trained tokens from one layer with timing checks disabled. This specific placed export also passed the prior attention fixture. Persistent memory timing, full model accuracy and routing require independent evidence.",
+  "state": "resized_cold_indexed_trained_feedforward_and_writeback_verified",
+  "transcript_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/progress.log": "5a0c59f6b8faf8e8e33c9e18ed1b0dedd1dd5ca0863b2fa278f1888ebaf1c253",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/verified.json": "02a510fdcf33fb0cbff1aedb09029e30fe36c1d3b8c971c07267fbbbed981122",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/indexed_whole_chip/dual_group_probe/bounded_decoder/native_replay/raw/xrun.log": "76c3d5ef25888ea39e5158d9ab4ba2b08810bd0e3105738c2a2d1bdaabe80ab1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/value_register_indexed_candidate_check/indexed/progress.log": "e382b42c6020e20171806e4932fb83e702331589501e89c4fc76119a9352dd10",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/value_register_indexed_candidate_check/indexed/xrun.log": "12fa097d331d7183bd7038a24fb4720e948059f785980889c9a2fa84fbd5bf7d"
+  }
+}
