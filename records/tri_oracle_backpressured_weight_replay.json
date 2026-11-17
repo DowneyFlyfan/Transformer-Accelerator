@@ -1,0 +1,168 @@
+{
+  "earlier_mapped_parser_directed_tiles": 3,
+  "evidence_sha256": {
+    ".cache/indexed_whole_chip/dual_group_probe/controller/indexed_tb.sv": "b18b13f4b86b495290e81d1f1c636a40aaa6e8fc74ac57dbacb01b722791140d",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/raw/xrun.log": "e2df8e4dca60990713fae43f942effa0aa5a53e34180b50de9f9dba73a0cde6f",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/raw_tb.sv": "95bc30a3bbafae752fca2c8e776119cd8cbe4c8f58352ed7e7eba5742f8f83ff",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/trained/xrun.log": "4b3bc3f0f7b3acffd01d5dd934761dece386bee78a0caa87093a008bb7f07bb9",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/wide.sv": "e288266e9954433c8f314b67333f6cdaa011894dc9c2f50b488ad70353961ea8",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/wide_lane.sv": "bd1fd3c03986a6c2a667d2d702eb3378ec14d15e9e6dd145c7319e13a0baef09",
+    ".cache/indexed_whole_chip/dual_group_probe/controller/wide_loader.sv": "8f99be2013ebeb002bca835ae994f08f5ea1984eeab69494868728d9192248ee",
+    ".cache/indexed_whole_chip/dual_group_probe/linked.v": "8cb6405e1e74d5b55d82ba58dbe76ca0ae604c0e7f5f4bd109ab22f23b94858a",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_index.bin": "a245522580c1ee548b57246e5b498e38ef1ac7d9da931b12317edeb914729013",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/down_payload.bin": "0c6f9d16d87bbe0cd88a088bf73c0a7f2bf1eb1a565c977382c4adb942a07e23",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/weight_stream_schedule.sv": "b57f0e8f8b336f0d6a8a07d411f1638cac9962be39d6c4bd01d1501500c54681",
+    ".cache/model_reference/packed_down_export/v1/weights.bin": "7501c965e9933828b492fb089d2ced89bb24a896610e73d17dbed8904605d16b",
+    ".cache/overlapped_weight_write/directed_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/directed_gate/xrun.log": "c4c9810f35309e7ec97aeb02152879f86090420d88be2a4c1fca5786a9d830cb",
+    ".cache/overlapped_weight_write/full/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/full/xrun.log": "3070640c8c3991073ae0daba3cb4035acf6d55302c0399a971f2943396661cb9",
+    ".cache/overlapped_weight_write/full_control/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/full_control/xrun.log": "4bcbd8d5a601ebd8dd616bea03ac149678eeae819e64b00d2848b55b4e86baee",
+    ".cache/overlapped_weight_write/ignore_guard/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/overlapped_weight_write/ignore_guard/xrun.log": "fed80f09fb48a268aaaa67d08c80eea4ea5f5a0b89d4fd5a206859a829058ff8",
+    ".cache/overlapped_weight_write/ignore_ready/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/overlapped_weight_write/ignore_ready/xrun.log": "0f0064422e99a593104d51206ca1707a16bb29077e461e8adfecc11bf94b9e02",
+    ".cache/overlapped_weight_write/immediate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/immediate/xrun.log": "3547cf80f88ce5863fbc9e71edbe43eb1954f3eff5b44666c10f12219580539a",
+    ".cache/overlapped_weight_write/negative/ignore_ready.sv": "5445c75fcb8e0b85e9a44dd2d09c429ccd71ea650c83536ee84d49f2e5200bb9",
+    ".cache/overlapped_weight_write/negative/unprotected_tb.sv": "a2a0c55fc6667cecdb9f010e0ddddabacc20f77c015cae1ad4462d9492bc0e07",
+    ".cache/overlapped_weight_write/raw/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/raw/xrun.log": "003970c55a9e4a89d9aebef24ffb007300b9da47dbf78e5b3bc587dbfd2700a2",
+    ".cache/overlapped_weight_write/red/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/overlapped_weight_write/red/overwrite.sv": "4acce72a510c5d5593a5ccef7834da3bffa309ff950511f35c9f75af3c8946d9",
+    ".cache/overlapped_weight_write/red/xrun.log": "d33430537d4c183e023517b67b61747277d0757df306cb7b3266aaeee24f9b38",
+    ".cache/overlapped_weight_write/rolling/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/rolling/xrun.log": "69c45ac53eb7d57f3878b173cf75ab937846b446d167d4dc13ba3251984722bd",
+    ".cache/overlapped_weight_write/serial/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/serial/xrun.log": "a8acce3aa3cd65ce4e133441d42624ed3d8584ca202f46abf327a1392797fad8",
+    ".cache/overlapped_weight_write/single_immediate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/single_immediate/xrun.log": "e1a08f48fdb3ea379cc1d59022983d1075e98a9e7a86836b39c35fbd8586443c",
+    ".cache/overlapped_weight_write/single_serial/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/single_serial/xrun.log": "28132e1106ab07ccb568f5608ebaedf0602754631ade6d36f4f9f1f7b760a493",
+    ".cache/overlapped_weight_write/source/indexed_tb.sv": "d88f48df8fe7b2ac9c7be168dcf6d00e45a05ac70e3f5f4ae7c248b705c3ea7e",
+    ".cache/overlapped_weight_write/source/raw_tb.sv": "7280b68d091dea49cd70531293161585dc1a519964477e05500cedc8687e467c",
+    ".cache/overlapped_weight_write/source/rolling_tb.sv": "737b87efeab847ba8029a642eed5420178c945f9461d680cb80da8693f22f549",
+    ".cache/overlapped_weight_write/source/tri_oracle_backpressured_raw_weight_loader.sv": "7425ab7fbdfbead2431a3f72daa06fb9bc43ad5a3c92a71f6e951230a7cc5a72",
+    ".cache/overlapped_weight_write/source/tri_oracle_backpressured_weight_transport.sv": "4f4b4616c270574c321786fb09c74072667a5357de278db0a36b0a512a227c51",
+    ".cache/overlapped_weight_write/unit/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/overlapped_weight_write/unit/xrun.log": "a78008cc20c8e1b37cac80b68ab0ca7cba47377aba99852e3630a316dd00e05d",
+    "records/tri_oracle_dual_group_weight_transport.json": "32bfba6667eda1c082c1b87c0691fb1b5f1d7ee0b6f11e14e3cfc71b9d793667",
+    "records/tri_oracle_projection_weight_reuse.json": "8317d04a76957486dd8713d29125c08f60d946fdaea8fba7448ba161140923af",
+    "syn/prepare_tri_oracle_backpressured_weight_replay.py": "44064ac6d687b2790c268aae164782473e50f54036ba9d6d2335e77c38bd7351",
+    "syn/prepare_tri_oracle_backpressured_weight_transport.py": "437fa6abd4708a4ae7d623a216373a008e49c51cc384533621b78f2ede927746",
+    "verilog/tri_oracle_batched_projection356.sv": "06ded16e6a328a4a86a0a4161742fed467de7668c55c3ccc47dc7e3cf68cc5e4",
+    "verilog/tri_oracle_controlled_weight_transport.sv": "5705631b63dcef84937c3988a5190c0b4a13498a9c238dd14c7ae2edf3f36111",
+    "verilog/tri_oracle_packed_weight_schedule.sv": "069e2c8b4c58c5a6784fe2cb82fab884d83ee7e7152badb8827f1d150a6e7f93",
+    "verilog/tri_oracle_paired_weight_schedule.sv": "6e8d9db150427a5a7cd0c164a5c2d2f86b9196706ed1482602f690b1b891b40e",
+    "verilog/tri_oracle_parallel_weight_loader.sv": "595ea250bb91ee929f264d64e3d9b43d0d45eb722bb88f87eed0e1778835ae23",
+    "verilog/tri_oracle_projection_weight_reuse.sv": "6df1085ea1c9a01a7c48dfec61a1d277d2f0d9e87210f4505f4038d5ef8f1109",
+    "verilog/tri_oracle_weight_write_buffer.sv": "18ba5d95f81acc3f54226dabd715327f40493bc6285890b6eb2a3a3eaa6cd845",
+    "verilog/tri_oracle_weight_write_buffer_tb.sv": "a5e42182236fb13047524452247fb641806479204987d7c3808933b0290e26d9",
+    "verilog/tri_oracle_wide_weight_loader.sv": "41d1bc4df3efd02634b117217eccb22f04b2c983c198f277f3d5f81135d74823",
+    "verilog/weight_decode_flush.sv": "1fc5c0d950f5a4c9d47a9e979b0ee9524dac8232fe47060230d3f1ae8bbe3d78",
+    "verilog/weight_stream_write_arbiter.sv": "409e06e9ed35d5c9f660b5c57d4e3933fa214b7380347539d3bab88eb2a2b861"
+  },
+  "fixture_cycle_reduction_by_tokens": {
+    "1": {
+      "fraction_saved": 0.03727673125569809,
+      "overlapped_cycles": 74974,
+      "saved_cycles": 2903,
+      "serial_cycles": 77877
+    },
+    "16": {
+      "fraction_saved": 0.06413833459128031,
+      "overlapped_cycles": 110354,
+      "saved_cycles": 7563,
+      "serial_cycles": 117917
+    }
+  },
+  "indexed_stall_controls": {
+    "full": {
+      "blocked0": 80618,
+      "blocked1": 23015,
+      "cycles": 152990,
+      "ideal": 0,
+      "independent0": 6643,
+      "independent1": 24991
+    },
+    "full_control": {
+      "blocked0": 0,
+      "blocked1": 0,
+      "cycles": 74974,
+      "ideal": 1,
+      "independent0": 0,
+      "independent1": 0
+    }
+  },
+  "negative_controls": {
+    "ignore_guard": "ROLLING_PROJECTION_OVERWRITE lane=0 word=0",
+    "ignore_ready": "WEIGHT_STAGE_OVERFLOW",
+    "red": "WEIGHT_BUFFER_HANDSHAKE got=11/10/11/0 expected=11/10/10/0"
+  },
+  "projection_cases": {
+    "immediate": {
+      "blocked_cycles": 38364,
+      "cycles": 110354,
+      "immediate": 1,
+      "projections": 80,
+      "read_write_cycles": 3861,
+      "reads": 37632,
+      "serial": 0,
+      "tokens": 16
+    },
+    "rolling": {
+      "blocked_cycles": 39347,
+      "cycles": 111293,
+      "immediate": 0,
+      "projections": 80,
+      "read_write_cycles": 3800,
+      "reads": 37632,
+      "serial": 0,
+      "tokens": 16
+    },
+    "serial": {
+      "blocked_cycles": 0,
+      "cycles": 117917,
+      "immediate": 1,
+      "projections": 80,
+      "read_write_cycles": 0,
+      "reads": 37632,
+      "serial": 1,
+      "tokens": 16
+    },
+    "single_immediate": {
+      "blocked_cycles": 0,
+      "cycles": 74974,
+      "immediate": 1,
+      "projections": 80,
+      "read_write_cycles": 1543,
+      "reads": 2352,
+      "serial": 0,
+      "tokens": 1
+    },
+    "single_serial": {
+      "blocked_cycles": 0,
+      "cycles": 77877,
+      "immediate": 1,
+      "projections": 80,
+      "read_write_cycles": 0,
+      "reads": 2352,
+      "serial": 1,
+      "tokens": 1
+    }
+  },
+  "raw_protocol_tiles": 6,
+  "raw_stall_counters": {
+    "blocked0": 428,
+    "blocked1": 186,
+    "independent0": 64,
+    "independent1": 96
+  },
+  "scope": "Existing raw and indexed loader with ready-controlled write lanes and existing projection issue logic. All 80 archived matrix and directed tile records agree, with the full matrix counted over the first 78. Projection read hazards use an independent address scoreboard. Projection result handshakes use a testbench peer. The staged bytes are checked directly. The cycle comparison omits the external physical link and full arithmetic pipeline and is not a whole-chip latency result.",
+  "state": "two_lane_backpressure_and_projection_overlap_verified_on_trained_weight_replay",
+  "trained_tiles": 78,
+  "verified_weight_bytes": 11534336,
+  "verified_wide_writes": 90112,
+  "xcelium_version": "25.03-s001"
+}
