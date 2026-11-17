@@ -1,0 +1,97 @@
+{
+  "corners": {
+    "hold_fast": {
+      "check": "hold",
+      "detailed_analysis_skipped_nets": [],
+      "externally_annotated_nets": 0,
+      "high_fanout_substitution": false,
+      "ignore_net_load": false,
+      "native": {
+        "baseline_container_anon_bytes": 7868526592,
+        "exit_status": 0,
+        "incremental_peak_anon_bytes": 2836451328,
+        "minimum_host_available_bytes": 8775491584,
+        "peak_container_anon_bytes": 10704977920,
+        "stop_reason": null,
+        "wall_seconds": 33.91965063102543
+      },
+      "pre_route_extraction_completed": true,
+      "real_complete_nets": 73646,
+      "reported_path_count": 20,
+      "violating_reported_paths": 20,
+      "worst_check": "Hold Check with Pin reduction[0].row[0].sum[0].value_reg[16]/CP->DA",
+      "worst_slack_ns": -0.012168
+    },
+    "setup_slow": {
+      "check": "setup",
+      "detailed_analysis_skipped_nets": [],
+      "externally_annotated_nets": 0,
+      "high_fanout_substitution": false,
+      "ignore_net_load": false,
+      "native": {
+        "baseline_container_anon_bytes": 7394750464,
+        "exit_status": 0,
+        "incremental_peak_anon_bytes": 3394818048,
+        "minimum_host_available_bytes": 8623034368,
+        "peak_container_anon_bytes": 10789568512,
+        "stop_reason": null,
+        "wall_seconds": 33.62296483293176
+      },
+      "pre_route_extraction_completed": true,
+      "real_complete_nets": 73646,
+      "reported_path_count": 20,
+      "violating_reported_paths": 0,
+      "worst_check": "Setup Check with Pin product[10].value_reg[14]/CP->D",
+      "worst_slack_ns": 0.862192
+    },
+    "setup_typ": {
+      "check": "setup",
+      "detailed_analysis_skipped_nets": [],
+      "externally_annotated_nets": 0,
+      "high_fanout_substitution": false,
+      "ignore_net_load": false,
+      "native": {
+        "baseline_container_anon_bytes": 7395336192,
+        "exit_status": 0,
+        "incremental_peak_anon_bytes": 3450351616,
+        "minimum_host_available_bytes": 8623751168,
+        "peak_container_anon_bytes": 10845687808,
+        "stop_reason": null,
+        "wall_seconds": 38.93064357410185
+      },
+      "pre_route_extraction_completed": true,
+      "real_complete_nets": 73646,
+      "reported_path_count": 20,
+      "violating_reported_paths": 0,
+      "worst_check": "Setup Check with Pin product[10].value_reg[14]/CP->D",
+      "worst_slack_ns": 1.017446
+    }
+  },
+  "database": ".cache/physical/pnr/tri_oracle_pe_array/placed.db",
+  "database_fingerprint_sha256": "4a04936897597034e538b8c07661ff1764800a4af4fbc87d2b4080428029008b",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/hold_fast/after.sdc": "12bc445a6fed97df0601a07996300f759ba3d38bd6ddf057142c282430b77b7e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/hold_fast/annotation.rpt": "bb9e3807f18316f017b7a0d9d8a6701912b0fcad535004e75c3bf21fc21881c2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/hold_fast/before.sdc": "fa9cf5c458b0775722270cfd6a981827e8162b71467678e53a85afe6a70d1ba2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/hold_fast/console.log": "3eb61e76c0d3beb5e4fc215f591f01f97a6b16ee0c99e3f3f54888cfa464cb1d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/hold_fast/status.json": "23a88dbd6b9d0324034148a060d1d70ec5a097c6c685b797286bdb23635fb976",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/hold_fast/timing.rpt": "70cc3c1ed421b02595175b8b4b137100174b869062770504cb4ef0d1f5b83a2a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/measure.py": "680103e7a1cfe859cc98d22b6f7c690035dc9f28807892b70e31f74ae0716b7e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_slow/after.sdc": "8dee3d784119bf7430513b93276599d7f75d13c9c188acc8f06ecfadb042df52",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_slow/annotation.rpt": "ee9d5723351828e61833408cb476de2339bcfd9499875af3127480e8e0a647d0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_slow/before.sdc": "5b651fc13c1dc8aa279542e20442c5c4cfd16ec55bf107b4d8ad31a0e50302bb",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_slow/console.log": "b1c72bc5a13ff655d8f88d08a968af4f635ca328b74f12c54bbbbbd66d404753",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_slow/status.json": "99a36659454720400ae792bfadee12c795db86abfb2452732009379b490970b3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_slow/timing.rpt": "7d40a7c128757220f4ea03cdee58786ad1f3f87ef9f9851d83f7492d77029999",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_typ/after.sdc": "ddad3a36ae71ca65801529b58b9a33ec929844a61390d5676ceaeceaa7abbe6a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_typ/annotation.rpt": "2cea09a7fce7c299004f062c2e99b9212406af6765604526a4ea77f4c66ba0d7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_typ/before.sdc": "c688d8db93de38496e292729e06179840de4033c73968c33dc77c9df2eed95b4",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_typ/console.log": "fda965faa1e96c59d8e3d2843a31190998432260c4ead6d451b6f968b8993da9",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_typ/status.json": "90d3e4f302ebfc8f8254c285632611267e82bd0cdf04d575c7c9b48e64b6086c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/timing_three_corner_control/setup_typ/timing.rpt": "f4de167725db7dfd69d591d4548d5d6e56310004763357245b12afa263b34d7b",
+    "syn/tri_oracle_report_booth_placement_timing.tcl": "aa7446fbf0d42177d7b80ba484455d440924fd5e189968d348c705db6eaabc44",
+    "syn/verify_tri_oracle_booth_placement_timing.py": "cf7bd55cc1f936b457dd3fe77f6a83153f7fdb5366348224638b340dde14ecb0"
+  },
+  "scope": "Timing-driver calibration on the existing isolated processing-element array.",
+  "state": "booth_three_view_timing_driver_control_verified"
+}
