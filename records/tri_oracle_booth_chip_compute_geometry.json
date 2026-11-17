@@ -1,0 +1,36 @@
+{
+  "arrays_per_cluster": 4,
+  "clusters": 5,
+  "die_dimensions_mm": [
+    3.6,
+    3.6
+  ],
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/array_reset_replay/arrays.v": "d07c6d35c884c6862916027764810b2afc1067ed548241032ae6d0f7075ee616",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/array_reset_replay/console.log": "8b07bbf9a736547fd5af9a74821637552e9d2fd52d0d10deddf462e1ed32ab03",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/array_reset_replay/xrun.history": "e9095f965a0dc8f018db8f622c8843468f599bfbb293bb5d13de1d849fd943f5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/link_proof.json": "edd2622df13ab3dc8ee6c23a57f038d10fb33d1fa1d20fed695666e1a0f1e386",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/linked.v": "6cfa4bccfbc9e7105de8153fb50edde1d89cd1dd330865a95b348d51e59d3672",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/linked.v": "d48c7d4e22fa4df56cd14a299aa05585e12bff9c09260198889979fcbc708062",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/seed.def": "ee3d79f5b245e62b6060ce9f627aa16584e11c4a1c8cc8383d112e0945c3b929",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_booth_native_glue.json": "b91b888ba0f4db61816d86548b5f328559fa410c3274f2c5e50ecf37c13cb021",
+    "records/tri_oracle_linked_booth_chip.json": "edd2622df13ab3dc8ee6c23a57f038d10fb33d1fa1d20fed695666e1a0f1e386",
+    "records/tri_oracle_linked_booth_resets.json": "9f09c99e7e132ea0d54612b0ba26521f7bee7512a3c9be30ae002df27c8bd01c",
+    "syn/verify_tri_oracle_booth_chip_compute_geometry.py": "5e2b54f3b65467dd1b79696b024e61b2100d1a84bb2a13f969e27ef60557ae31",
+    "syn/verify_tri_oracle_linked_booth_resets.py": "142c4dc3fdf254b1f23c8fbaaa06f4dab9ab5adb3d14da924186b0fa3ad06076"
+  },
+  "ideal_peak_clock_megahertz": 580,
+  "ideal_peak_trillion_operations_per_second": 5.9392,
+  "inherited_array_lockstep_transactions": 786,
+  "multiplier_modules_verified": 256,
+  "multipliers": 5120,
+  "processing_element_geometry": [
+    32,
+    8
+  ],
+  "scope": "Compute hierarchy, multiplier lane slices, result register shape, placement group membership and the unchanged mapped array replay are bound to the corrected netlist. Ideal peak assumes one multiply and one add per lane per cycle at the target frequency. Whole-chip timing and measured throughput remain pending.",
+  "signed_operand_bits": 8,
+  "state": "corrected_full_chip_compute_geometry_bound_to_mapped_replay"
+}
