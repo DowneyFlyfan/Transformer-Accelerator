@@ -1,0 +1,67 @@
+{
+  "additional_shared_prediction_instances": {
+    "tri_oracle_chip_credited_request.chip.chip.normalization.chip.chip.chip.accelerator.layer.layer.attention_pipeline.attention.predictor": "tri_oracle_attention_head_predictor415_CORE_HEAD_PREDICTOR1_context_partition",
+    "tri_oracle_chip_credited_request.chip.chip.normalization.chip.chip.chip.accelerator.layer.layer.feedforward.packed_signs.predictor.replay_table": "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1"
+  },
+  "candidate_sha256": "d48c7d4e22fa4df56cd14a299aa05585e12bff9c09260198889979fcbc708062",
+  "clusters": [
+    {
+      "bank": 0,
+      "cores": 4,
+      "instance": "tri_oracle_chip_credited_request.chip.chip.normalization.chip.chip.chip.accelerator.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[0].unit.selected_bank0.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 1,
+      "cores": 4,
+      "instance": "tri_oracle_chip_credited_request.chip.chip.normalization.chip.chip.chip.accelerator.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[1].unit.selected_bank1.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 2,
+      "cores": 4,
+      "instance": "tri_oracle_chip_credited_request.chip.chip.normalization.chip.chip.chip.accelerator.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[2].unit.selected_bank2.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 3,
+      "cores": 4,
+      "instance": "tri_oracle_chip_credited_request.chip.chip.normalization.chip.chip.chip.accelerator.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[3].unit.selected_bank3.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    },
+    {
+      "bank": 4,
+      "cores": 4,
+      "instance": "tri_oracle_chip_credited_request.chip.chip.normalization.chip.chip.chip.accelerator.layer.layer.feedforward.compute.compute.tensor.fabric.clusters[4].unit.selected_bank4.block_instance.source_cluster.implementation",
+      "local_head_predictors": 4,
+      "local_strip_predictors": 4,
+      "local_token_mergers": 1
+    }
+  ],
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/redundancy_geometry.json": "59680d3ed2d3d5d349f88cebe128fccf8307a121492db000b01e5e9c691847c8",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_booth_native_glue.json": "b91b888ba0f4db61816d86548b5f328559fa410c3274f2c5e50ecf37c13cb021",
+    "records/tri_oracle_mapped_redundancy_and_timing_limit.json": "70c6b7deda488717b24a614f4ac61a2011a1314cb143fbcdc9499e2e974ecef1",
+    "syn/audit_tri_oracle_mapped_redundancy.py": "cbe5b2ee8589e2e8111fae25713ca1177c9355fffc7da59e46ca6d3469aaa69e"
+  },
+  "legacy_audit_output_unchanged": true,
+  "logical_top": "tri_oracle_chip_credited_request",
+  "paper_figure": "31.6.2",
+  "rejected_mutations": [
+    "detached copied token merger",
+    "missing copied token-size unit",
+    "detached attention-head predictor",
+    "detached weight-strip predictor"
+  ],
+  "scope": "Reachable hierarchy and cluster ownership of the paper's three redundancy functions. Shared predictors remain present. This audit covers structure, with workload accuracy and timing requiring separate measurements.",
+  "state": "corrected_linked_chip_redundancy_ownership_verified"
+}
