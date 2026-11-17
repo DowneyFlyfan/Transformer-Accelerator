@@ -1,0 +1,43 @@
+{
+  "cold_linked_candidate_sha256": "47881bbfc06002e0dd36c56008672bc5bff48c1ffbca1b42ddce80aaa8b24e7a",
+  "compared_packetized_predecessor_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/trained_attention_output_reference/attention_accumulators.bin": "12771aa5bed9295321c6be43b693a76c75b48586343dd2f9b4a86ebec0e49196",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/verified.json": "3ee1fdc6d1aa1646549c49c649ae3eea1bfddf508e23092ca290726473a7d4f6",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/attention.hex": "8f2b8d2cf39b10e13437ecc34ec380d171c60daacebfa67d4068527a08be2ec3",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/prepared.json": "aef7a352942c13f3ca752a3782ce1a3e11b65dc1135c9b8575e3dd6816c62bb3",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/run_host.py": "504731c554781fdf64b29c3e50cfe53b4cfcfbd39e6a1ef37155a26cfd71f7a0",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/status.json": "1e727693495350152da9d00aa70868d8e684544fc97cfbfc48db1d770fdbee31",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/supervisor_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/verified.json": "8a52838d0296543487c23bd3fbd53f2e2a6e5b422478a1097d15bfa656905d6f",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/verify.py": "9e450809d9f676ef1e4fc35dbd2dd80d8f01b54ef51cf82df7085d8b39ddfb6b",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/xrun.history": "4114bae1ddd7fe0963e4b64ae3c5a9cdeac859376c5ee2bb94e6a19c8c806bdb",
+    ".cache/wide_packaged_host_link/physical_packet_smoke/xrun.log": "96eec3fe211c2e69f7cf1f5ed22f29580590fd02bb3b70ae78da4ad4a3fbab21",
+    "records/tri_oracle_trained_attention_output_reference.json": "f842b4bf5d610372cdc3f128a0062e62d242cb8b6aa5311e9ab72ece227f1c32",
+    "records/tri_oracle_wide_packetized_host_link.json": "0191ef34ae65a46d43933dd060bf18fb851c87563ee4b50e9becb16c258f60ea"
+  },
+  "exact_accumulator_words": 128,
+  "external_value_requests": 206,
+  "native": {
+    "exit_status": 0,
+    "minimum_free_disk_bytes": 15435427840,
+    "minimum_host_available_bytes": 11416580096,
+    "peak_container_anonymous_bytes": 9388371968,
+    "stop_reason": null,
+    "wall_seconds": 671.9754613869591
+  },
+  "receive_chunks_rising_falling": [
+    17096,
+    5028
+  ],
+  "replayed_token_maps": 576,
+  "request_pad_bytes": 57048,
+  "restored_context_words": 90,
+  "same_fixture_protocol_event_trace_equal_to_predecessor": true,
+  "scope": "Two trained attention rows through the complete linked chip host and memory ports. The test fixture supplies precomputed projected keys and values. The simulation disables timing annotation.",
+  "state": "linked_wide_chip_trained_attention_verified_through_full_physical_packet_boundary",
+  "trained_attention_row_ranks": [
+    0,
+    204
+  ]
+}
