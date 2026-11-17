@@ -1,0 +1,25 @@
+{
+  "capture_prefix_bytes": 2052,
+  "capture_prefix_sha256": "c0c44d4cd557a39dfd68d0ad4a62756d3c7ff8da41689ee9a8719ae257d2eaad",
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "decode_rank": 408,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/rows.txt": "7394593387ed84a42ab6decb03c8e4abd25daa316af8770d53eee3e2f2339f22",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention/attention.hex": "98f435d90477673ec127bdbd9dbfb62a8d583b03b31a77c843cf04bff715a6d8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention/native_status.json": "f85b4aae2074af230675cb8056e1d5caa80cbb55ae892a0e005878df5c8cc116",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention/prepared.json": "6fa9edf316c31b2f5089910681e9ff5a469c7713537c6d382fde0c165739ac43",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention/xrun.log": "0ac39313c9e532c58aebc8ced981aa7a49683ba5adfb233ace228e3166c92266",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention_key_count/prepared.json": "30a684ffd32f52d1bbf5b4169eb5f7d8f88ed6d422f380171af1a60a88d27998",
+    "syn/prepare_tri_oracle_reference_projection_attention.py": "d09655e7747263cd477852bcf1c05f3cc56a7ff83dcbb7ec1f043f72a3140f02",
+    "syn/verify_tri_oracle_reference_projection_attention.py": "29bb52323753901de5ea94680f7605ec7c28d526b5d62901e34a8294e2eeeda8"
+  },
+  "exact_accumulator_values": 256,
+  "first_decode_keys": 409,
+  "head": 0,
+  "live_capture": ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/reference_projection_attention_key_count/attention.hex",
+  "matched_attention_rows": 4,
+  "prompt_keys": 408,
+  "scope": "Red-green hardware replay of the first decode descriptor with a reference projection cache. The verified prefix covers one query head.",
+  "simulator_startup_sha256": "92f4720d0dec0f72a014c1d4797a1430ee925b94eda94b057841efdd967b3d5e",
+  "state": "placed_chip_first_decode_attention_key_count_verified"
+}
