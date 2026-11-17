@@ -1,0 +1,40 @@
+{
+  "cache_bytes_matched": 3072,
+  "cold_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "counts": {
+    "acks": 48,
+    "activation_words": 12288,
+    "read_bursts": 3840,
+    "stalls": 1044,
+    "vectors": 48,
+    "weight_words": 49152,
+    "writes": 384
+  },
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/bundle.sv": "9d67ee26be37aed74cbcc2825d998715bbbf3d93b526cfa7f188e90f1c650c06",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/native_status.json": "3a314337a9c385a2d4a51adecd710d0d8726719a2ae95fc66bae8f0ee9672c8c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/prepare.py": "f534fee7bddf8088a1fa3858de9d8413aa809d98ca83326aa9e387140afba724",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/prepared.json": "adf79cdb4bebdbc533f638a87589020b41c065b280bd12e2061daf13d20bf90d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/projection.hex": "cc691c9a017b5ac005f8d7f589d537322cc363053e6a75834b58f76ddde8cd62",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/projection_tb.sv": "9303c676dcc8784d966ba2aea6a3e20f8d386d085070d609475722827e44398c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/run.py": "c2dba7e199be3d757bde274190cea6209bf74a6a2b200d3296c28d2eb5994d2e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/xrun.history": "4c48fbcadc39577b39dac4b07b223e99ccf6839ef628cbf1e9627287836c49e6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/projection_replay/xrun.log": "7c39bfd5d7fb2d0f9c6cddf9fdf75e3ac905e86add1a55449ac0f756c5723b74",
+    "records/tri_oracle_corrected_booth_placement_roundtrip.json": "355fbbbad0a712e67e3c5298c7fee837f3d9d07aab4ef52d8da4a1431a6fc57a",
+    "records/tri_oracle_trained_projection_gpu_reference.json": "00d58fd5ffe6d4da51ccfd8ed2ef22f5868a63e123e893a437cca256b474f2cc",
+    "syn/verify_tri_oracle_booth_projection_replay.py": "67149be80ba5f1bac2a4e5068899f8d941b22517c2e5cb80059194a25f8f3fac",
+    "verilog/tri_oracle_booth_packet_peer.svh": "f449b77ab929f3d6a44fbcfc2e719931e18c8d334393401797652f53c28902d4",
+    "verilog/tri_oracle_booth_packet_projection_tb.svh": "a4bdcac30dc6920820fb92090f7cae635fe310e383bfb9bd2c006946ed7bceb5"
+  },
+  "first_retained_tokens_per_group": 16,
+  "incoming_scalar_chunks": 61488,
+  "native_wall_seconds": 687.3952604989754,
+  "outgoing_request_bytes": 28224,
+  "query_key_value_groups": [
+    0,
+    32,
+    36
+  ],
+  "scope": "Three trained projection groups sent via the chip's physical host and memory ports. All rotary inputs are host records. Data-level simulation on the verified placed export.",
+  "state": "trained_query_key_value_projections_verified_on_corrected_physical_ports"
+}
