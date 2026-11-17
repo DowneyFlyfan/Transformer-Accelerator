@@ -1,0 +1,143 @@
+"""Validate a saved Xcelium checkpoint and the output prefix it commits."""
+
+from argparse import ArgumentParser
+from decimal import Decimal
+import fcntl
+from hashlib import sha256
+import json
+from pathlib import Path
+import re
+
+from prepare_tri_oracle_booth_packet_replay import ROOT, WORK as ATTENTION, digest
+
+
+WORK = ROOT / ATTENTION.parent / "unseeded_packet_layer"
+NATIVE = WORK / "native"
+LOCK = ROOT / ".cache/physical/carry_lookahead_comparison/placed_drive_strength/native_lane.lock"
+CHECKPOINT = re.compile(r"(?m)^TRI_UNSEEDED_PACKET_CHECKPOINT (checkpoint_[ab])$")
+SAVED = re.compile(r"(?m)^Saved snapshot worklib\.(checkpoint_[ab]):sv$")
+TIME = re.compile(r"(?m)^Ran until (\d+(?:\.\d+)?) (FS|PS|NS|US|MS|S) \+ 0$")
+GROUP = re.compile(r"(?m)^UNSEEDED_PACKET_PROJECTION_GROUP_PASS group=(\d+) vectors=409$")
+ROW = re.compile(r"(?m)^UNSEEDED_PACKET_ATTENTION_ROW_PASS head=(\d+) rank=(\d+) value_reads=(\d+)$")
+TO_NS = {"FS": Decimal("0.000001"), "PS": Decimal("0.001"), "NS": Decimal(1),
+         "US": Decimal(10**3), "MS": Decimal(10**6), "S": Decimal(10**9)}
+
+
+def checkpoint_prefix(transcript):
+    markers = list(CHECKPOINT.finditer(transcript))
+    if not markers:
+        raise ValueError("Xcelium has yet to report a saved checkpoint")
+    previous = 0
+    for index, marker in enumerate(markers):
+        step = transcript[previous:marker.start()]
+        times = list(TIME.finditer(step))
+        saves = list(SAVED.finditer(step))
+        assert len(times) == len(saves) == 1 and times[0].end() < saves[0].start()
+        time, unit = times[0].groups()
+        assert Decimal(time) * TO_NS[unit] == 1_200_000 + index * 15_000_000
+        slot = "checkpoint_b" if index % 2 else "checkpoint_a"
+        assert marker[1] == saves[0][1] == slot
+        previous = marker.end()
+    prefix = transcript[:previous] + "\n"
+    assert not re.search(r"\*[EF],", prefix)
+    groups = [int(group) for group in GROUP.findall(prefix)]
+    assert groups == list(range(len(groups))) and len(groups) <= 40
+    rows = [tuple(map(int, fields)) for fields in ROW.findall(prefix)]
+    assert len(rows) <= 128 and (not rows or len(groups) == 40)
+    return {
+        "snapshot": f"worklib.{slot}:sv",
+        "checkpoint_time_ns": int(Decimal(time) * TO_NS[unit]),
+        "checkpoint_count": len(markers),
+        "projection_groups_at_checkpoint": len(groups),
+    }, rows, prefix
+
+
+def expected_rows(reference):
+    lines = iter(reference.read_text().splitlines())
+    next(lines)
+    for head in range(32):
+        assert int(next(lines).split()[0]) == head
+        for _ in range(4):
+            rank, _, count, value = next(lines).split()
+            yield (head, int(rank), int(count)), value.encode() + b"\n"
+    assert next(lines, None) is None
+
+
+def checked_output_prefix(path, rows):
+    expected = b"".join(rows)
+    with path.open("rb") as source:
+        assert source.read(len(expected)) == expected, path
+    return expected
+
+
+def trim_output(path, expected, discarded):
+    """Retain only saved rows. Xcelium reopens an existing output in append mode."""
+    with path.open("r+b") as stream:
+        assert stream.read(len(expected)) == expected, path
+        remainder = stream.read()
+        if remainder:
+            with discarded.open("xb") as archive:
+                archive.write(remainder)
+            stream.truncate(len(expected))
+    return len(remainder)
+
+
+def checkpoint_artifacts():
+    prepared = json.loads((NATIVE / "prepared_native.json").read_text())
+    plan_path = WORK / "prepared_schedule.json"
+    assert digest(plan_path) == prepared["schedule_receipt_sha256"]
+    plan = json.loads(plan_path.read_text())
+    fixture = ROOT / plan["prepared_fixture"]
+    source = fixture / "rows.txt"
+    assert digest(source) == plan["evidence_sha256"][str(source.relative_to(ROOT))]
+    driver = WORK / "checkpoint.tcl"
+    assert digest(driver) == prepared["evidence_sha256"][str(driver.relative_to(ROOT))]
+    log = NATIVE / "xrun.log"
+    facts, rows, prefix = checkpoint_prefix(log.read_text())
+    expected = list(expected_rows(source))
+    assert rows == [key for key, _ in expected[:len(rows)]]
+    output = NATIVE / "attention.hex"
+    validated = checked_output_prefix(output, (value for _, value in expected[:len(rows)]))
+    if facts["projection_groups_at_checkpoint"] == 40:
+        assert digest(NATIVE / "attention.hex.projections") == plan["evidence_sha256"][
+            str((fixture / "expected.hex").relative_to(ROOT))]
+    facts.update(cold_netlist_sha256=prepared["cold_netlist_sha256"],
+                 replay_prefix_sha256=sha256(prefix.encode()).hexdigest(),
+                 rows_at_checkpoint=len(rows), committed_output_bytes=len(validated),
+                 committed_output_sha256=sha256(validated).hexdigest())
+    return facts, prefix, validated
+
+
+def prepare_recovery():
+    """Prepare files for a stopped run. Preserve the full trace and unsaved output."""
+    with LOCK.open("r") as lane:
+        fcntl.flock(lane, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        status = json.loads((NATIVE / "native_status.json").read_text())
+        log = NATIVE / "xrun.log"
+        assert status["exit_status"] != 0 or status["stop_reason"], "Preserve the successful run"
+        assert status["log_sha256"] == digest(log)
+        assert not re.search(r"\*[EF],", log.read_text()), "Diagnose the simulator error before resuming"
+        facts, prefix, rows = checkpoint_artifacts()
+        recovery = WORK / f"recovery_after_{facts['checkpoint_time_ns']}ns"
+        recovery.mkdir()
+        (recovery / "checkpoint_prefix.log").write_text(prefix)
+        discarded = trim_output(NATIVE / "attention.hex", rows, recovery / "unsaved_attention.hex")
+        projections = NATIVE / "attention.hex.projections"
+        if facts["projection_groups_at_checkpoint"] < 40 and projections.exists():
+            projections.rename(recovery / "unsaved_projection.hex")
+        facts.update(discarded_attention_bytes=discarded, state="checkpoint_output_prepared_for_restore")
+        (recovery / "prepared_recovery.json").write_text(json.dumps(facts, indent=2, sort_keys=True) + "\n")
+        return facts
+
+
+def verify():
+    facts, _, _ = checkpoint_artifacts()
+    return facts
+
+
+if __name__ == "__main__":
+    assert __debug__ and Path.cwd() == ROOT and not Path("/.dockerenv").exists()
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--prepare-recovery", action="store_true", help="Trim outputs of a stopped run")
+    args = parser.parse_args()
+    print(json.dumps(prepare_recovery() if args.prepare_recovery else verify(), indent=2, sort_keys=True))

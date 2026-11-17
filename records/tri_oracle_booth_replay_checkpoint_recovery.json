@@ -1,0 +1,47 @@
+{
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint.tcl": "f352c1066871fe05e2989ec9415d222749f851260052b82456afc68195db9bcf",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/recovery_function/discarded.txt": "45080860abd6d79b808dbd71836bf29e41918f1bf1f05f7ce732ada7674cc816",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/recovery_function/output.txt": "c2a336f6b264e897d84c6577092ddff3ae1fa83a3cfae5b73df89d8956e43809",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/recovery_function/resume.log": "9ed978962f8d8d965fa5117a8e61eab6a724c6837271809ac7f77c20428c5c7b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/recovery_function/save.log": "700f68aca693be8c889937f74df576c2b91407e9a5050a086d16970ce43283e3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/resume.tcl": "5d5927572ee904a5ab2847ff845333097f268d7d2dcc07806b20e1fdb452cd4e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/rewind/output.txt": "1cc2045cab6d666354abbdcdf2b112e12ef49c4f7f03cf6a58f929fb2436ad61",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/rewind/resume.log": "078abef1f1fb92c51de5c88019bd894baba7bbc2d12f64b75302c580498625e2",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/rewind/save.log": "a6a92ad4f372fc9a3fe9436afa2212542b5133683dec2c984b8516fdfc43c605",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/rewind/save.tcl": "6a7a31e4191e43f2d16f09351fe5865248f3cad643caaf55d52fc3b06b4dd8ae",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/checkpoint_io_probe/stream_tb.sv": "31bc8da3e4cd0c8870f95112f42b851dacdcf5a7c0d822c3c9fd4ba6d9710c51",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/dense_weight_expectation_failure/first_checkpoint_prefix.log": "849661d895f06f0d9c83759886ec6666ba0a27f3bdcdac13fe8671d8844a0289",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/dense_weight_expectation_failure/native/prepared_native.json": "ec1bda588788812e6cf48d74f3f866e1aed3b8b45e6187b897efd0e560365bbb",
+    "records/tri_oracle_corrected_booth_placement_roundtrip.json": "355fbbbad0a712e67e3c5298c7fee837f3d9d07aab4ef52d8da4a1431a6fc57a",
+    "syn/verify_tri_oracle_booth_attention_checkpoint.py": "7b159389baf60f083f0f118d75969046aa3202886e94515417a226afd98a75bf"
+  },
+  "mapped_checkpoint": {
+    "checkpoint_count": 1,
+    "checkpoint_time_ns": 1200000,
+    "cold_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+    "projection_groups_at_checkpoint": 0,
+    "replay_prefix_sha256": "849661d895f06f0d9c83759886ec6666ba0a27f3bdcdac13fe8671d8844a0289",
+    "rows_at_checkpoint": 0,
+    "snapshot": "worklib.checkpoint_a:sv"
+  },
+  "scope": "A four-value Xcelium workload verifies checkpoint file recovery. The first full-chip attempt saved its initial checkpoint before stopping on a weight-read expectation.",
+  "snapshot_io": {
+    "archived_unsaved_output_bytes": 4,
+    "input_position_restored": true,
+    "outputs_after_verified_trim": [
+      101,
+      102,
+      103,
+      104
+    ],
+    "outputs_without_trim": [
+      101,
+      102,
+      103,
+      103,
+      104
+    ]
+  },
+  "state": "xcelium_checkpoint_input_cursor_and_output_recovery_verified"
+}
