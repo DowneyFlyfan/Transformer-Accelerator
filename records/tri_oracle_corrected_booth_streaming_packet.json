@@ -1,0 +1,44 @@
+{
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_packet/attention.hex": "a542421138ecf733b98aad5ee400329aece1fd4438e1a7a51ca907e448101358",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_packet/native_status.json": "260d4e3aee3163beb12ff157be5dcf1e9908b8f31e3314bd38c86f4401b52da6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_packet/prepared.json": "63c42b02f1f83f6ab7f800cf955afc703821a768e7b3aee6ccd33f91d91cd4ee",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/streaming_packet/xrun.log": "8a4b3e6dbf20fde9eac6e9ff463e0b0d9a79b2f362890a142d99482e8eead40d",
+    "records/tri_oracle_booth_trained_streaming_fixture.json": "92e268e1bd06122c7f9b282bb3f78719f7c3b7a2d312ec98245c4175e8b9b376",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "syn/verify_tri_oracle_booth_streaming_packet.py": "c2468605cdce864b13ca411137b56abf40e285b47b54f592abffbb28f6d83683"
+  },
+  "exact_output_values": 128,
+  "external_value_requests": 128,
+  "head": 2,
+  "layer": 10,
+  "native": {
+    "exit_status": 0,
+    "minimum_host_available_bytes": 10148298752,
+    "peak_container_anonymous_bytes": 9325989888,
+    "stop_reason": null,
+    "wall_seconds": 738.4154977380531
+  },
+  "output_rows": [
+    {
+      "original_position": 316,
+      "rank": 187,
+      "selected_keys": 64
+    },
+    {
+      "original_position": 607,
+      "rank": 373,
+      "selected_keys": 64
+    }
+  ],
+  "prediction": {
+    "inner": 15,
+    "recent": 745,
+    "streaming": true
+  },
+  "restored_context_words": 90,
+  "scope": "Eleven live token-merge frames followed by head prediction and attention with externally supplied projections.",
+  "state": "repaired_booth_trained_streaming_rows_verified_through_physical_ports",
+  "token_merge_maps": 6336
+}
