@@ -16,7 +16,7 @@ PERIOD = Decimal("1.72414")
 RECEIVER = "peer_capture_0/CP"
 
 
-def verify_pulses(report, view, prefix="", clock_cell="PDDW16DGZ_H_G"):
+def verify_pulses(report, view, prefix="", clock_cell="PDDW16DGZ_H_G", *, complementary=True):
     pulses = {}
     receiver_pin = prefix + RECEIVER
     for path in re.split(r"(?m)(?=^Path \d+:)", report.read_text())[1:]:
@@ -52,7 +52,8 @@ def verify_pulses(report, view, prefix="", clock_cell="PDDW16DGZ_H_G"):
     for quantity in ("receiver_width_ps", "pad_reference_width_ps"):
         widths = [pulse[quantity] for pulse in pulses.values()]
         assert all(0 < width < PERIOD * 1000 for width in widths), report
-        assert abs(sum(widths) - PERIOD * 1000) <= REPORT_ROUNDING * 1000, report
+        if complementary:
+            assert abs(sum(widths) - PERIOD * 1000) <= REPORT_ROUNDING * 1000, report
     return pulses
 
 
