@@ -1,0 +1,53 @@
+{
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "corrected_native_name_rejections": 0,
+  "evidence_sha256": {
+    ".cache/wide_packaged_host_link/drive_repair/canonical_scope_argument_tests.log": "c0dd72562865e8209cc4345a072b1c6328c523e4f87219c4a486d37a9abc5309",
+    ".cache/wide_packaged_host_link/drive_repair/scope_format_checks.log": "f6c5bd775eec7b1eb9ca22a59a14c52ae1219da4cb941af1d4356553fd93f4f1",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scope_names/native/console.log": "53d0a43b4351eb3bc081cb849e540840f35242ab1d0f7b742485f847cc45dcc6",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scope_names/native/geometry.rpt": "f697e6ca8550a99596c30584c63a4b89e11865e53f2d911ae46fd071d494d23f",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scope_names/native/post_resize_geometry.rpt": "3aa66206083516b3717bb3daa3d0ce72a9890144e43b6ea03f005c73168cc3ea",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scope_names/native/status.json": "e6d8e9593b1edd4dd6073d34bbfa310cafaaf32fcfb303988763fbe812fd731e",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scope_names/pin_load.tcl": "959a1aef68665a3aa75b43885c02fbd886527b439c020dc3e6e285d4786ea987",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scope_names/prepared.json": "bbd44a1643847a5a0767c7e82a983eb43d388b500740e6680ff3c9207d6eae4e",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scope_names/run.py": "386d0c45042c948ae9aee96a53b7c7a073c1703277abc3f979e1ff1de0c74cd3",
+    ".cache/wide_packaged_host_link/drive_repair/trial_scoped/scope.txt": "d4f6c941686b7ef83c3f6c152af0b325f0e60013b72b377a5215b1bf6a50fdd0",
+    "syn/test_tri_oracle_place_detail_argument.tcl": "3529f7320e1de720feb8a08967ef07baf1162aaef8ca54858790f89b1b744152",
+    "syn/tri_oracle_artifact_fingerprint.py": "148c3a8e04caebf987d99da39936c5f75794a5a50ed01a289cc06214c1cb1d2c",
+    "syn/tri_oracle_place_detail_argument.tcl": "979c1854d8bb4fda2f5827d0b3caff6469397ffc0aeea1f6dd7a425eb4410d00"
+  },
+  "host_validation_commands": [
+    [
+      "tclsh",
+      "syn/test_tri_oracle_place_detail_argument.tcl"
+    ],
+    [
+      "tclsh",
+      "syn/test_tri_oracle_place_detail_argument.tcl",
+      ".cache/wide_packaged_host_link/drive_repair/trial_scoped/scope.txt"
+    ]
+  ],
+  "invalid_placement_exported": false,
+  "maximum_displacement_um": 23.2,
+  "moved_instances": 14592,
+  "native": {
+    "exit_status": 1,
+    "minimum_disk_bytes": 17889030144,
+    "minimum_host_available_bytes": 8833077248,
+    "peak_container_anonymous_bytes": 11654860800,
+    "stop_reason": null,
+    "wall_seconds": 121.58675772498827
+  },
+  "native_movable_instances": 205210,
+  "native_resolved_scope_instances": 205210,
+  "placement_qualified": false,
+  "post_legalization_overlap_violations": 5165,
+  "previous_native_name_rejections": 181130,
+  "requested_scope_instances": 205210,
+  "resized_cells_with_same_signal_bindings": 620,
+  "scope": "The native retry used an inline whitespace join. All requested indexed names resolved and all 205,210 instances were accepted as movable. The new reusable formatter produces that same argument in host Tcl regression checks and rejects empty, duplicate, whitespace-bearing and brace-bearing names. Single-threaded database import and 620 original-equivalent substitutions completed. Local placement still failed with overlaps, so no candidate was exported and the placement remains unqualified.",
+  "source_cold_netlist_sha256": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+  "source_database_fingerprint_sha256": "591b8f9e7552cd39c096be508142b5279cb1f85b325e0ea2f77dbf4da9a78e58",
+  "state": "native_scoped_instance_name_format_corrected_geometry_unqualified",
+  "unlegalized_instances": 2829
+}
