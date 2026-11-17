@@ -1,0 +1,138 @@
+{
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "cell_identifier_substitutions": 620,
+  "distinct_cell_type_pairs": 22,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/wide_packaged_host_link/drive_repair/hierarchy.json": "151c17c553ed53a011bd43fa26be5feea40c31db20c4f5590d4734fa650fde1d",
+    ".cache/wide_packaged_host_link/drive_repair/host_legalized/candidate.v": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+    ".cache/wide_packaged_host_link/drive_repair/host_legalized/prepared.json": "a64149d5c46412b9d1bb34acedf941854d7c61152f1b394b9570e629b23404c3",
+    ".cache/wide_packaged_host_link/drive_repair/logic_control_tests.log": "5cb45268ee9d3427a8d6bd92bdeca3c9047c51375d213313e019491ef4d2cf59",
+    ".cache/wide_packaged_host_link/drive_repair/prepared.json": "1b940c4c465fa88bf9e26180eecb2497583c80a6cf80f1fbe0bfb73d3c27cb4d",
+    ".cache/wide_packaged_host_link/drive_repair/verified_logic.json": "84e02fe689207dca0ebdb39e9cd2fe410ed17274d0fb028f9b96f37ac3d7d8d1",
+    ".cache/wide_packaged_host_link/placement/native/cold.v": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+    "syn/link_tri_oracle_indexed_whole_chip.py": "a821d99fc947f7df45cb39c9f72fc1d6167465713ca2095070ec566de52e2a86",
+    "syn/verify_tri_oracle_packaged_resize_logic.py": "a7f56f8fc104b712555e896e317eab976f6af65724e4b4a0d7e318ab9bed2b26",
+    "syn/verify_tri_oracle_serialized_placement_transfer.py": "f934088e2f1499249c2c032af243e5916c8d3d1eadfbeb6180f8d503dab0f694"
+  },
+  "model_body_comparisons": {
+    "AN2D4BWP12T40P140 -> AN2D16BWP12T40P140": {
+      "common_model_body_bytes": 148,
+      "common_model_body_sha256": "1d0540b8c5f399a802b51845be1a433c79aa8026974e72a3e8b9b533cc9aa799",
+      "instances": 2
+    },
+    "AN3D0BWP12T40P140 -> AN3D4BWP12T40P140": {
+      "common_model_body_bytes": 184,
+      "common_model_body_sha256": "9ad1aca38fdf66a7d7450466a3606ec217d5b8b27a2e9615a73d4137d43b9153",
+      "instances": 1
+    },
+    "BUFFD4BWP12T40P140 -> BUFFD6BWP12T40P140": {
+      "common_model_body_bytes": 108,
+      "common_model_body_sha256": "68cbf1d53405bd2b70e67793d1d5ee9f053d0feec74d123e6ddd67c036abc9ef",
+      "instances": 20
+    },
+    "CKAN2D8BWP12T40P140 -> CKAN2D16BWP12T40P140": {
+      "common_model_body_bytes": 148,
+      "common_model_body_sha256": "1d0540b8c5f399a802b51845be1a433c79aa8026974e72a3e8b9b533cc9aa799",
+      "instances": 10
+    },
+    "CKLHQD1BWP12T40P140 -> CKLHQD4BWP12T40P140": {
+      "common_model_body_bytes": 2720,
+      "common_model_body_sha256": "592cfcac8a1c045e17b373f42c8116677de24f74d908b0b4cd436e762fe8daad",
+      "instances": 1
+    },
+    "CKLNQD1BWP12T40P140 -> CKLNQD6BWP12T40P140": {
+      "common_model_body_bytes": 2618,
+      "common_model_body_sha256": "63b2bd3d01d4a00fab28d84a4036e5761eaca0ed280179d20bcdadc1bd5a7180",
+      "instances": 20
+    },
+    "CKLNQD1BWP12T40P140 -> CKLNQD8BWP12T40P140": {
+      "common_model_body_bytes": 2618,
+      "common_model_body_sha256": "63b2bd3d01d4a00fab28d84a4036e5761eaca0ed280179d20bcdadc1bd5a7180",
+      "instances": 2
+    },
+    "CKND0BWP12T40P140 -> CKND2BWP12T40P140": {
+      "common_model_body_bytes": 112,
+      "common_model_body_sha256": "e5414abd0566872c27bf3b124b6491fc6936f0d4eb551b83e26b6761acc3a891",
+      "instances": 1
+    },
+    "DFCND1BWP12T40P140 -> DFCND2BWP12T40P140": {
+      "common_model_body_bytes": 3444,
+      "common_model_body_sha256": "c147cb4fe9b55c1a1a7edfe4be63cc2e92a38987d9598dd91069781aeaae1a5e",
+      "instances": 10
+    },
+    "DFCNQD1BWP12T40P140 -> DFCNQD4BWP12T40P140": {
+      "common_model_body_bytes": 3048,
+      "common_model_body_sha256": "237de17a89ba57e2d86a0e7204204148c356a6edaf8592f9f05a2537bef3ec01",
+      "instances": 5
+    },
+    "DFMQD1BWP12T40P140 -> DFMQD2BWP12T40P140": {
+      "common_model_body_bytes": 5309,
+      "common_model_body_sha256": "7670d8b54d26c7e4e3f7b3a325b05ba374e3b0b8dedd7957e6827b5be779afd3",
+      "instances": 6
+    },
+    "EDFCNQD1BWP12T40P140 -> EDFCNQD2BWP12T40P140": {
+      "common_model_body_bytes": 5666,
+      "common_model_body_sha256": "5d361de728c86f7cd10506094528c2ed8c2b31f5aa938d243bfa4d8827620b22",
+      "instances": 320
+    },
+    "INVD6BWP12T40P140 -> INVD12BWP12T40P140": {
+      "common_model_body_bytes": 112,
+      "common_model_body_sha256": "e5414abd0566872c27bf3b124b6491fc6936f0d4eb551b83e26b6761acc3a891",
+      "instances": 2
+    },
+    "INVD8BWP12T40P140 -> INVD12BWP12T40P140": {
+      "common_model_body_bytes": 112,
+      "common_model_body_sha256": "e5414abd0566872c27bf3b124b6491fc6936f0d4eb551b83e26b6761acc3a891",
+      "instances": 2
+    },
+    "INVD9BWP12T40P140 -> INVD15BWP12T40P140": {
+      "common_model_body_bytes": 112,
+      "common_model_body_sha256": "e5414abd0566872c27bf3b124b6491fc6936f0d4eb551b83e26b6761acc3a891",
+      "instances": 21
+    },
+    "MUX2ND4BWP12T40P140 -> MUX2ND8BWP12T40P140": {
+      "common_model_body_bytes": 491,
+      "common_model_body_sha256": "80247c6980a441a664df5e4fc6e364be3db3d817c7f8fc068e70b7e281d5fa18",
+      "instances": 1
+    },
+    "ND4D1BWP12T40P140 -> ND4D8BWP12T40P140": {
+      "common_model_body_bytes": 253,
+      "common_model_body_sha256": "3acc333cd80384a10110f4fd1e6cb355bb1a55fa87c77cf7ccc1dc3a72380883",
+      "instances": 188
+    },
+    "NR2D1BWP12T40P140 -> NR2D2BWP12T40P140": {
+      "common_model_body_bytes": 178,
+      "common_model_body_sha256": "1f3926e61408e08f03157236fb31981cff4e77071099bce05bb612e705bbc3a4",
+      "instances": 2
+    },
+    "OAI31D1BWP12T40P140 -> OAI31D2BWP12T40P140": {
+      "common_model_body_bytes": 754,
+      "common_model_body_sha256": "682128ae452929336481c51e6052dcfbf089a9cc815d8f2114d83cc0fd24da87",
+      "instances": 1
+    },
+    "OR2D1BWP12T40P140 -> OR2D2BWP12T40P140": {
+      "common_model_body_bytes": 147,
+      "common_model_body_sha256": "49bcdffcf0568982364071ad86a1cd089058513bd5b7d31c85bc27553c6739d7",
+      "instances": 2
+    },
+    "OR2D4BWP12T40P140 -> OR2D16BWP12T40P140": {
+      "common_model_body_bytes": 147,
+      "common_model_body_sha256": "49bcdffcf0568982364071ad86a1cd089058513bd5b7d31c85bc27553c6739d7",
+      "instances": 2
+    },
+    "SDFCNOPTBD2BWP12T40P140 -> SDFCNOPTBD4BWP12T40P140": {
+      "common_model_body_bytes": 15101,
+      "common_model_body_sha256": "e7bc4aec23b083ddc8f75868aa5fb293d259817d1a5c8ab637bc4ccf31f637ef",
+      "instances": 1
+    }
+  },
+  "module_count": 771,
+  "rejected_mutations": [
+    "unapproved_replacement_cell_type",
+    "changed_foundry_buffer_function"
+  ],
+  "scope": "Whole candidate bytes equal the original cold export with exactly the 620 mapped cell identifiers replaced. Every old/new foundry Verilog module has an identical body, including ports, state primitives, notifier logic and preprocessor branches. Cell declarations do not contain self-name references. This establishes preservation of modeled digital behavior under the same elaboration settings and initial states. Physical library delay, placement, wire timing, complete trained execution and model accuracy remain separate checks.",
+  "source_cold_netlist_sha256": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+  "state": "exact_620_mapped_cell_substitutions_with_identical_foundry_verilog_bodies"
+}
