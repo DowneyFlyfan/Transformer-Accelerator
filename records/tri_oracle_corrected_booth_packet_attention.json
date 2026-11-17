@@ -1,0 +1,39 @@
+{
+  "cold_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/attention.hex": "8f2b8d2cf39b10e13437ecc34ec380d171c60daacebfa67d4068527a08be2ec3",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/native_status.json": "6d2d28edcfc1c43aa93eb32e76f75db51d0180f524e7918dc1a48cd2f7050637",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/prepared.json": "0b30929e3cebe2f72fc838402cecd67a76162caaa025a68e167dc404442a0801",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/scalar_protocol/mapped_receiver.v": "63344596d20a5f44b30f2372b26ef9eff1f25bd027108713492f4530daaaf1ed",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/scalar_protocol/scalar_tb.sv": "92126edeb09531339fc9d2bccae858b5716e2e5b6f08da0ecfb9b2fbd2d093b6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/scalar_protocol/verified.log": "a03f2b481af8072ac70c01d1e812c42fcad248a4dab214746104c71b7c1cc34f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/scalar_word_count_failure/prepared.json": "06b06a39eccfb04e92217cb93d2677764582ba37295812b71251b05f03749e9e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/scalar_word_count_failure/xrun.log": "0bd6866c5619de202b5a70099c15fceb9d07bdc4d135bc2b38752ef32930b8d5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/xrun.history": "3d22d1ba218aa23cfbfeee2c64bd9af6fa81d9962a9666752dc6d178b33c0c21",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/xrun.log": "5912e24eb4e534b07943fba05c10ec81194340551ab5eae0ed89abff5b22319f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/trained_attention_output_reference/attention_accumulators.bin": "12771aa5bed9295321c6be43b693a76c75b48586343dd2f9b4a86ebec0e49196",
+    "records/tri_oracle_trained_attention_output_reference.json": "f842b4bf5d610372cdc3f128a0062e62d242cb8b6aa5311e9ab72ece227f1c32",
+    "syn/prepare_tri_oracle_booth_packet_replay.py": "0402da20828b5b801d52910a92005cbb2ae5bb2bfa98ff8e45665af297a22d39",
+    "syn/verify_tri_oracle_booth_packet_replay.py": "1d084f417f408575d41fbf430a2c075829ab0de7ada1d3232591b292a5a3aab1",
+    "verilog/tri_oracle_booth_packet_peer.svh": "f449b77ab929f3d6a44fbcfc2e719931e18c8d334393401797652f53c28902d4"
+  },
+  "exact_trained_row_ranks": [
+    0,
+    204
+  ],
+  "external_value_requests": 206,
+  "mapped_scalar_probe": {
+    "word_count_0_response_error": false,
+    "word_count_1_response_error": true
+  },
+  "native_wall_seconds": 654.354,
+  "outgoing_memory_request_bytes": 57048,
+  "received_memory_chunks": [
+    17096,
+    5028
+  ],
+  "restored_context_words": 90,
+  "scope": "Two trained reference attention rows with externally supplied, already projected keys and values. The exact cold export handles external host and credit ports.",
+  "state": "corrected_cold_chip_trained_attention_rows_verified_over_physical_ports",
+  "token_maps": 576
+}
