@@ -1,0 +1,43 @@
+{
+  "additional_predictor_sign_payload_bytes": 585728,
+  "dense_weight_payload_bytes": 34603008,
+  "evidence_sha256": {
+    ".cache/model_reference/batch389/down.hex": "32138fca066db7316dea7033937ac3c504b7de2b0059edf31ae28de1855f6ec5",
+    ".cache/model_reference/batch389/keep.hex": "855eaca5c698bdc668af269eaa490e2e9a7b5098c4b028869df810f2882313c8",
+    ".cache/model_reference/batch396/branch_masks.hex": "b62f99a1054dc13a8e8df38603e2cd147ad08c246d96f0ae485aab0becf204f0",
+    ".cache/model_reference/batch403/activation.hex": "bb4bb6890bbf22a1dfe152db46a2abe52d3f31a2c87d251fc2ffb647324f42d5",
+    ".cache/model_reference/batch403/expected.hex": "2784e5457ce13dcfb6b074a479477364bb97d2bed73e908a1981d39404cedbe8",
+    ".cache/model_reference/batch407/intermediate.hex": "d68b43f39e39006389182b2bf606f67092f64c309d9605045eed1c32119a914a",
+    ".cache/phase_chip/source/bundle.sv": "9c557852e7f5e2dba559db54e8e76d73fce7f6908d85f47343075d2405488720",
+    ".cache/phase_chip/trained/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip/trained/xrun.log": "032a3166f9af7690bf719d9c652a53ec9b36f191a5b5ec8076ceb178d496fd24",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/batch389_fixture_preparation.json": "ad1bf3d82179359699edd43becae7602a8e762192b78dc419dcf793b29365771",
+    "records/batch396_mask_fixture.json": "a7cdd3265f67d7bd6ace480653beeccc0e9f8933b09f1390eff0514b5e57a556",
+    "records/batch403_activation_precision.json": "8e3bed3df859e8c3141d3279d0bbef5ed92a9d2e372136881879a74081550b59",
+    "records/batch407_learned_fixture.json": "78beb29f4cd27dcbaa11db52c93cbbf5b859aca6e5fe75ef4be84f46b4876dfd",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_archived_weight_batching_bounds.json": "a4c79d9d0ef8172b9e9b45698c108b6f7b7f13fa91aeb62c9f1c7be13afeb5d2",
+    "records/tri_oracle_phase_chip_trained.json": "f6b7a31d2dd33a54c3be8327b113c623c8fefafeaa4033a839054d82e5964b49",
+    "syn/prepare_tri_oracle_batch407_learned_fixture.py": "7f823ebfa8dcf706552e819351391c15070b17eeb9603dc00773bf31c470c2ac",
+    "syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "syn/verify_tri_oracle_phase_chip_traffic.py": "4704d44c4309092a02f8f71ad2c9afbbd8ae9f772740e7527e13ebf918464a28",
+    "verilog/tri_oracle_strip_predictor.sv": "ea9f70a6a507c65379e0ad4df15e1170947c5065ed09a54903d6feff5e3d48f8"
+  },
+  "exact_outputs": 32768,
+  "figure_31_6_5_mask_rule_comparison": {
+    "changed_integer_outputs": 32749,
+    "projected_weight_payload_bytes": 34603008,
+    "scope": "Host counterfactual with the archived branch thresholds and weights. Figure 31.6.5 supplies the Boolean combination. Model accuracy has a separate benchmark.",
+    "skipped_token_channels": 56147
+  },
+  "gate_up_skipped_token_channels": 5231,
+  "gate_up_token_channels": 90112,
+  "graphics_card": "NVIDIA GeForce RTX 5070 Ti",
+  "paper_feedforward_external_access_reduction_percent": 57,
+  "scope": "Weight and predictor-sign read payloads of one trained layer over 16 tokens. The paper reports feedforward external-memory accesses under its own workload and reduction settings.",
+  "state": "trained_two_phase_weight_payload_reconciled",
+  "tokens": 16,
+  "weight_payload_bytes": 34603008,
+  "weight_payload_reduction_percent": 0.0
+}
