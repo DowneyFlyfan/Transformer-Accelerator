@@ -58,6 +58,7 @@ BOOTH_MODELS = Path("records/tri_oracle_corrected_booth_physical_models.json")
 BOOTH_BUFFERED_MODELS = Path("records/tri_oracle_corrected_booth_buffered_models.json")
 BOOTH_BUFFER_REPAIR = Path("records/tri_oracle_corrected_booth_pin_load_repair.json")
 BOOTH_STREAMING = Path("records/tri_oracle_corrected_booth_streaming_packet.json")
+BOOTH_CLOCK_BOUNDARY = Path("records/tri_oracle_corrected_booth_clock_boundary.json")
 BOUNDED_STAGE = Path(".cache/indexed_whole_chip/dual_group_probe/bounded_decoder")
 REPAIRED_NATIVE_RESOURCES = Path("records/tri_oracle_repaired_native_compute_and_memory.json")
 REDUCED_PORT_STAGE = Path(".cache/residual_command_request/descriptor_fields/physical/command_repeaters/internal_probes")
@@ -342,6 +343,18 @@ def buffered_booth_facts(root, facts, identities):
         prior["streaming_attention_replay"] = {
             key: streaming[key] for key in (
                 "layer", "head", "token_merge_maps", "external_value_requests", "exact_output_values", "scope")
+        }
+
+    if (root / BOOTH_CLOCK_BOUNDARY).is_file():
+        clock = booth_record(root, identities, BOOTH_CLOCK_BOUNDARY, "repaired_booth_external_clock_boundary_verified")
+        assert clock["cold_netlist_sha256"] == proofs[cold]
+        assert clock["database_fingerprint_sha256"] == database_hash
+        assert clock["directly_clocked_arrays"] == prior["array_instances"]
+        assert clock["paper_clock_generator_equivalence_verified"] is False
+        prior["clock_boundary"] = {
+            key: clock[key] for key in ("external_core_clock_port", "forwarded_pad_clock_port",
+                                        "directly_clocked_arrays", "clock_constraints_by_view",
+                                        "paper_clock_generator", "paper_clock_generator_equivalence_verified")
         }
 
     facts.update(prior, candidate_sha256=proofs[candidate], cold_netlist_sha256=proofs[cold],

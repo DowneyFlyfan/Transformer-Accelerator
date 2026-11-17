@@ -1,0 +1,99 @@
+{
+  "clock_constraints_by_view": {
+    "hold_fast": {
+      "core_clock_period_ns": 1.72414,
+      "pad_clock_edges": [
+        2,
+        3,
+        4
+      ]
+    },
+    "setup_slow": {
+      "core_clock_period_ns": 1.72414,
+      "pad_clock_edges": [
+        2,
+        3,
+        4
+      ]
+    },
+    "setup_typ": {
+      "core_clock_period_ns": 1.72414,
+      "pad_clock_edges": [
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "compute_clusters": {
+    "0": {
+      "clock_edges_to_cluster": 18,
+      "directly_clocked_arrays": 4,
+      "directly_clocked_cores": [
+        "cores[0]",
+        "cores[1]",
+        "cores[2]",
+        "cores[3]"
+      ]
+    },
+    "1": {
+      "clock_edges_to_cluster": 18,
+      "directly_clocked_arrays": 4,
+      "directly_clocked_cores": [
+        "cores[0]",
+        "cores[1]",
+        "cores[2]",
+        "cores[3]"
+      ]
+    },
+    "2": {
+      "clock_edges_to_cluster": 18,
+      "directly_clocked_arrays": 4,
+      "directly_clocked_cores": [
+        "cores[0]",
+        "cores[1]",
+        "cores[2]",
+        "cores[3]"
+      ]
+    },
+    "3": {
+      "clock_edges_to_cluster": 18,
+      "directly_clocked_arrays": 4,
+      "directly_clocked_cores": [
+        "cores[0]",
+        "cores[1]",
+        "cores[2]",
+        "cores[3]"
+      ]
+    },
+    "4": {
+      "clock_edges_to_cluster": 18,
+      "directly_clocked_arrays": 4,
+      "directly_clocked_cores": [
+        "cores[0]",
+        "cores[1]",
+        "cores[2]",
+        "cores[3]"
+      ]
+    }
+  },
+  "database_fingerprint_sha256": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+  "directly_clocked_arrays": 20,
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/hold_fast.sdc": "0d91dc16b00ad338e66466374ae8a9bf24c0a3b4d6cc774bd48c5e9847286aa5",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/setup_slow.sdc": "9eac2f376739f148bc5f4c9f2469d3b11e2162e236702bb3cdde34478f6ea8c8",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/setup_typ.sdc": "1607bdb46c31866318961f9db56b49bafacbe38598f9667c7b4d5b30c4bd28bd",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_corrected_booth_redundancy_topology.json": "9a0df2e299d38e5d54c40450937b66ae3b9edf820cc1be817de18835fa3a2a53",
+    "syn/verify_tri_oracle_booth_clock_boundary.py": "52d420e4331580a85a21ecb8e8ee351e620706b5e17497f61bdf440500e253dd"
+  },
+  "external_core_clock_port": "clk",
+  "forwarded_pad_clock_port": "memory_tx_clock",
+  "paper_clock_generator": "On-chip all-digital phase-locked loop",
+  "paper_clock_generator_equivalence_verified": false,
+  "scope": "Direct clock connections from the external port through every cluster and core to its compute array. The external pad sample clock is derived from that port. This verifies connectivity and constraints before clock-tree synthesis and routing.",
+  "state": "repaired_booth_external_clock_boundary_verified"
+}
