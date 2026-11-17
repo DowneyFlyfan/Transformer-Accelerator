@@ -107,7 +107,8 @@ def replay(work, name):
     case.mkdir()
     baseline = (RUN / name / "xrun.log").read_text().replace(str(BUNDLE), str(work / "bundle.sv"))
     arguments = [arg for line in invocation(baseline) for arg in line.split()]
-    command = ["docker", "exec", "-w", str(case), "tri-oracle-eda", "timeout", "-k", "5", "240",
+    duration = "10800" if name == "trained" else "240"
+    command = ["docker", "exec", "-w", str(case), "tri-oracle-eda", "timeout", "-k", "5", duration,
                "prlimit", "--as=5368709120", "--", "/opt/cadence/bin/xrun", *arguments]
     with (case / "console.log").open("w") as console:
         status = subprocess.run(command, stdout=console, stderr=subprocess.STDOUT, check=False).returncode
@@ -115,7 +116,7 @@ def replay(work, name):
     require(status == 0, f"{name}: Xcelium returned {status}")
 
 
-def verify(work, sources):
+def verify(work, sources, include_trained=False):
     evidence = [BUNDLE, *sources, LIBRARY, Path(__file__).resolve(), *mapping_evidence(work, sources)]
     for path, contents in mapped_sources(work, sources[-1]).items():
         require(path.read_text() == contents, f"changed mapped replay input {path}")
@@ -125,20 +126,31 @@ def verify(work, sources):
     require(path is not None, "missing mapped setup report")
     evidence.append(timing_report)
     cases = {}
-    for name in CASES:
+    for name in (*CASES, "trained") if include_trained else CASES:
         source, expected_phase = verify_case(RUN, name)
         mapped, phase = verify_case(work, name)
         require(invocation(mapped) == invocation(source.replace(str(BUNDLE), str(work / "bundle.sv")))
                 and phase == expected_phase, f"{name}: changed simulator input or physical counts")
         results = {}
         markers = (*MARKERS, "BATCH408_FAULT_DRAINED") if "fault" in name else MARKERS
+        if name == "trained":
+            markers = (*markers, "BATCH408_ACTIVATION_PASS", "CHIP_ACTIVATION_PREFETCH",
+                       "DUAL_LANE_PACKED_SIGN_PASS", "PACKED_PAIR_BRANCHES", "UNIFIED_CHIP_FEEDFORWARD_PASS")
+            bench = BUNDLE.with_name("trained_bench.sv")
+            require(f"\t{bench}" in invocation(mapped), "trained replay used an unexpected reference bench")
+            evidence.append(bench)
         for marker in markers:
             result = summary(mapped, marker)
             require(result == summary(source, marker), f"{name}: changed {marker}")
             results[marker] = result
         baseline_trace, mapped_trace = RUN / name / "progress.log", work / name / "progress.log"
         require(baseline_trace.read_bytes() == mapped_trace.read_bytes(), f"{name}: changed command cycles")
-        require(results["BATCH408_PASS"]["exact_outputs"] == 504, f"{name}: incomplete output check")
+        expected_outputs = 32768 if name == "trained" else 504
+        require(results["BATCH408_PASS"]["exact_outputs"] == expected_outputs, f"{name}: incomplete output check")
+        if name == "trained":
+            require(results["BATCH408_PASS"]["trained"] == 1
+                    and mapped_trace.read_text().endswith("BATCH408_DONE\n"),
+                    "trained replay did not finish the complete layer fixture")
         evidence.extend(folder / name / item for folder in (RUN, work)
                         for item in ("xrun.log", "progress.log", "exit_status"))
         cases[name] = results
@@ -149,7 +161,8 @@ def verify(work, sources):
     return {"state": "mapped_loader_matches_source_chip_cycles", "cases": cases, "evidence_sha256": pins,
             "synthesis_setup_slack_ps": int(path[2]),
             "scope": "Mapped weight loader in chip command simulation with timed memory models. "
-                     "Setup estimate uses block-level constraints before placement."}
+                     "Setup estimate uses block-level constraints before placement."
+                     + (" The trained fixture covers 16 tokens in one feed-forward layer." if include_trained else "")}
 
 
 def main():
@@ -160,6 +173,8 @@ def main():
     action.add_argument("--replay", action="store_true")
     action.add_argument("--check-mapping", action="store_true")
     parser.add_argument("--record", type=Path)
+    parser.add_argument("--include-trained", action="store_true",
+                        help="include the complete trained 16-token layer replay")
     args = parser.parse_args()
     work = args.work.resolve()
     sources = synthesis_inputs(BUNDLE.read_text())
@@ -176,11 +191,12 @@ def main():
         for path, contents in mapped_sources(work, sources[-1]).items():
             path.write_text(contents)
         with ThreadPoolExecutor(max_workers=2) as pool:
-            list(pool.map(lambda case: replay(work, case), CASES))
-    result = verify(work, sources)
+            cases = (*CASES, "trained") if args.include_trained else CASES
+            list(pool.map(lambda case: replay(work, case), cases))
+    result = verify(work, sources, args.include_trained)
     if args.record:
         args.record.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
-    print("Verified cycle-for-cycle agreement in all four mapped-loader chip replays.")
+    print(f"Verified cycle-for-cycle agreement in {len(result['cases'])} mapped-loader chip replays.")
 
 
 if __name__ == "__main__":
