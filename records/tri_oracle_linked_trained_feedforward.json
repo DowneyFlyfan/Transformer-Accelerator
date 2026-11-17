@@ -1,0 +1,164 @@
+{
+  "closure": {
+    "include_count": 96,
+    "include_path_content_sha256": "78100325ba96d371288641b5bb281bf766e74e0da48348ba05ca12468eee4e65"
+  },
+  "evidence_sha256": {
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/adapter.sv": "9c1bd3967f28695ff067b10b009bcd5f0ae1aed2b02ab583caded577580cd219",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/early_commit_timing/bundle.sv": "79c5f41b87c2ccb2c66b7db273d24984db854a67fad16277f47d8b64bb0a1ceb",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/early_commit_timing/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/early_commit_timing/early_gate/progress.log": "a1e9f6162a6846004a1275770d3cb43a919ae5fd5811ee6a5f0537ca71f77807",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/early_commit_timing/early_gate/xrun.log": "3108b56e4a429ee252ffafbdb36904f2a50317a04beb9c998852247296a31b28",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/bundle.sv": "f8267c928137cbe4205258fa97875bed7d2105564de149d3b3d15c265767240f",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/closure_sha256.json": "16202476fddd6b43b76c5d6864db27646421fb22077741f7e163b3b1460d20df",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/early_gate/progress.log": "a1e9f6162a6846004a1275770d3cb43a919ae5fd5811ee6a5f0537ca71f77807",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/early_gate/xrun.log": "52033c7adf9ff803fb1ab7b02eda5bbbb31f27e0805b2b4343b44ca9982da27c",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/input_sha256.json": "237f9522c8bbfbb269c8b73b9fc949cbeaa9aa02296267475ad443f0f8b0bfd3",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/mapped_ingress.v": "28bf7037465a461bc15a0b85a43504e0bffeb4fc083c307450c80b204b8efec3",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/replay.py": "04b8aa041f3313b04401ac3a11450604f0bceafb5a89f7aa832e8185052a6fb8",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/trained/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/trained/progress.log": "b70a638efd2c602116e78fbf4eb362d8cb8308e0e62c77931d18e4d6356cbb87",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/linked_trained/trained/xrun.log": "fb5f8aa8ef4ba25c1a001cbb68e49e7ce5373444cf2ab4f4d1b5938f81cd6e68",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/retire_passthrough/netlist.v": "29d34f5696c9840ded619bd9fc4aabea71ad98590f7f1ec4cb6c5ccad7993038",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/retire_passthrough/synth_console.log": "63205da6d915b287fc1df214c1785e12ebd1b7869cdda7f5a5cf99cd3c3c15b2",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/linked_timing/reset_distribution/retire_passthrough/synth_exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/trained/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/trained/progress.log": "b70a638efd2c602116e78fbf4eb362d8cb8308e0e62c77931d18e4d6356cbb87",
+    ".cache/phase_chip_weight_prefetch/trained/xrun.log": "ff12bccdb802bc47f08c51ae9f551e5d8baf94fce5238de89acc7035547470bc",
+    "records/tri_oracle_mapped_trained_weight_loader.json": "9c28b3be62a7215c991229dd08bf53eff55eb5f6b8eef03a5f5d774c3e4871b0"
+  },
+  "result": {
+    "early_gate": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_ACTIVATION_PREFETCH": {
+        "parallel": 9,
+        "retired": 4,
+        "windows": 4,
+        "writes": 48
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 0
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 85,
+        "loads": 256,
+        "requests": 256
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 25699,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      },
+      "UNIFIED_CHIP_FEEDFORWARD_PASS": {
+        "commands": 1,
+        "descriptor_words": 15,
+        "responses": 1
+      },
+      "elaborated_timing_check_instances": 711660,
+      "physical_write_inventory": {
+        "commits": 9120,
+        "double": 3754,
+        "packed": 9120,
+        "read_clusters": 5,
+        "reads": 2220,
+        "scalar": 0,
+        "write_clusters": 5,
+        "writes": 9120
+      },
+      "xcelium_wall_time": "00:00:56"
+    },
+    "trained": {
+      "BATCH408_ACTIVATION_PASS": {
+        "bursts": 256,
+        "bytes": 32768,
+        "normalizations": 16
+      },
+      "BATCH408_PASS": {
+        "exact_outputs": 32768,
+        "fault": 0,
+        "hidden": 2048,
+        "intermediate": 5632,
+        "intermediate_bytes": 90112,
+        "output_packets": 208,
+        "outputs": 2048,
+        "read_bytes": 3497984,
+        "read_requests": 27328,
+        "tokens": 16,
+        "trained": 1
+      },
+      "CHIP_ACTIVATION_PREFETCH": {
+        "parallel": 28525,
+        "retired": 136,
+        "windows": 136,
+        "writes": 265216
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 0
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 0,
+        "loads": 0,
+        "requests": 0
+      },
+      "DUAL_LANE_PACKED_SIGN_PASS": {
+        "mixed_response_cycles": 1502,
+        "overlap_cycles": 3594,
+        "requests": 9152,
+        "responses": 9152
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 1859587,
+        "outputs": 32768,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 1,
+        "wide_beats": 540672,
+        "wide_bursts": 17408
+      },
+      "PACKED_PAIR_BRANCHES": {
+        "down_narrow": 0,
+        "down_wide": 180224,
+        "gate_narrow": 0,
+        "gate_wide": 180224,
+        "up_narrow": 0,
+        "up_wide": 180224
+      },
+      "UNIFIED_CHIP_FEEDFORWARD_PASS": {
+        "commands": 1,
+        "descriptor_words": 15,
+        "responses": 1
+      },
+      "elaborated_timing_check_instances": 711660,
+      "physical_write_inventory": {
+        "commits": 540672,
+        "double": 245087,
+        "packed": 540672,
+        "read_clusters": 5,
+        "reads": 546560,
+        "scalar": 0,
+        "write_clusters": 5,
+        "writes": 540672
+      },
+      "xcelium_wall_time": "01:04:42"
+    }
+  },
+  "scope": "One trained 16-token feed-forward fixture, linked mapped tensor scheduler, packed loader, sequencer and ingress control, compiled memory models with timing checks, and existing register-transfer-level testbench and compute wrappers. The result covers this fixture's numerical and command trace; full-model and routed-chip qualification remain separate.",
+  "state": "trained_feedforward_replayed_through_linked_mapped_controls"
+}
