@@ -1,0 +1,267 @@
+{
+  "cases": {
+    "early_gate": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_ACTIVATION_PREFETCH": {
+        "parallel": 9,
+        "retired": 4,
+        "windows": 4,
+        "writes": 48
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 0
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 85,
+        "loads": 256,
+        "requests": 256
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 25699,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    },
+    "scalar": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 64,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 78592,
+        "read_requests": 2872,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_ACTIVATION_PREFETCH": {
+        "parallel": 0,
+        "retired": 0,
+        "windows": 0,
+        "writes": 0
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 0
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 0,
+        "loads": 0,
+        "requests": 0
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 48062,
+        "outputs": 504,
+        "packed": 0,
+        "scalar_down_beats": 5376,
+        "trained": 0,
+        "wide_beats": 0,
+        "wide_bursts": 0
+      }
+    },
+    "weight_guard_disabled": {
+      "rejected_unread_word": 0
+    },
+    "weight_prefetch_fault_lane0": {
+      "BATCH408_FAULT_DRAINED": {
+        "fault": 18,
+        "output_prefix_packets": 0
+      },
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 18,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_ACTIVATION_PREFETCH": {
+        "parallel": 9,
+        "retired": 4,
+        "windows": 5,
+        "writes": 60
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 44
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 97,
+        "loads": 296,
+        "requests": 297
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 39702,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    },
+    "weight_prefetch_fault_lane1": {
+      "BATCH408_FAULT_DRAINED": {
+        "fault": 18,
+        "output_prefix_packets": 0
+      },
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 18,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_ACTIVATION_PREFETCH": {
+        "parallel": 9,
+        "retired": 4,
+        "windows": 5,
+        "writes": 60
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 50
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 95,
+        "loads": 296,
+        "requests": 297
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 39702,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    },
+    "weight_stall": {
+      "BATCH408_PASS": {
+        "exact_outputs": 504,
+        "fault": 0,
+        "hidden": 1056,
+        "intermediate": 256,
+        "intermediate_bytes": 768,
+        "output_packets": 6,
+        "outputs": 168,
+        "read_bytes": 14208,
+        "read_requests": 168,
+        "tokens": 3,
+        "trained": 0
+      },
+      "CHIP_ACTIVATION_PREFETCH": {
+        "parallel": 7,
+        "retired": 4,
+        "windows": 4,
+        "writes": 48
+      },
+      "CHIP_WEIGHT_GUARD": {
+        "blocked": 50
+      },
+      "CHIP_WEIGHT_PREFETCH": {
+        "alongside_reads": 80,
+        "loads": 256,
+        "requests": 256
+      },
+      "PACKED_DECODER_PASS": {
+        "cycles": 25875,
+        "outputs": 504,
+        "packed": 1,
+        "scalar_down_beats": 0,
+        "trained": 0,
+        "wide_beats": 9120,
+        "wide_bursts": 596
+      }
+    }
+  },
+  "evidence_sha256": {
+    ".cache/phase_chip_weight_prefetch/cycle_bound_loader/gates.v": "d6dd4b4d369b0c4947af597ec8ecc3f59a100eee5f6d82da4775754efecf0147",
+    ".cache/phase_chip_weight_prefetch/early_gate/progress.log": "a1e9f6162a6846004a1275770d3cb43a919ae5fd5811ee6a5f0537ca71f77807",
+    ".cache/phase_chip_weight_prefetch/early_gate/xrun.log": "1d244d38cb803637b3e9c9f86429a348a3519ab43d4122a6819ac076089dc4e0",
+    ".cache/phase_chip_weight_prefetch/mapped_ingress/mapped/bundle.sv": "235e7d16aaa251b1d1dbf328015ee44e975fed4aea701e91187aac2b2fdcd8ab",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/activation_prefetch_probe.sv": "37907a4e6d0e97e8a6776e62b282b2848051f9a555a1d9f095a902cd8d54ecb9",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/bundle.sv": "354d8194cea2e5cf49a4cd50c4ef5593130f7f4bdb378bd8ec301ceb49760cdc",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/console.log": "27b5123ecec29b591c874bb6a1e2b791852ca6c0e6761d9edc0f92e882342da6",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/early_gate/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/early_gate/progress.log": "a1e9f6162a6846004a1275770d3cb43a919ae5fd5811ee6a5f0537ca71f77807",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/early_gate/xrun.log": "6481f1d1deb021d96f730f0f5b3e9f6b76c386be9a8e6a203ca542d87d381fdb",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/exit_status": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/fabric_adapter.sv": "e8be4e4f205661c379be75b8652f682bd7f897c8836514301e1f943cf8d85905",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/fv/tri_oracle_batched_tensor390_AGGREGATOR_SIGN_BANK1_AGGREGATOR_MERGE_TABLE1_LOCAL_TOKEN_SIZES1_LOCAL_TOKEN_MERGE1_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1/fv_map.v.gz": "c2fde28ab64181d8bc8d151966b4f2531a17889e3c5cf223c0d1039f89e1a73a",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/preserved.sv": "8030ab23898963e1469036de4f4d7fde197be40574f7d2c593d9bb4159f9255f",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/scalar/progress.log": "27de1b12d2637459c200cde4bdf608b8d7eeed4d8b8241b63f68bf2dcb51a23a",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/scalar/xrun.log": "182323c8bfe3db9d0027d2f1ec98fa663ae571e051446b285363244b379249a7",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/scheduler.v": "0195cad8d14329a4716a02233b1f00561a90ca6a33183e08852ab92fac5cc20f",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/scheduler_adapter.sv": "4cb8fc789179203de3b81b48b130f410048e000864c5a8c682b1cd436cb62610",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/synthesis_inputs.json": "42e8cba925a93f0db3df5b9ae11a8f2ee15854e6e89279e7a5f040c2407c50a0",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/synthesize.tcl": "01333c4c35928cd57e1235f44a95d7b55c7bf92854b79a59aaeebd7b09ab80e7",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/tri_oracle_weight_tile_prefetch_probe.sv": "8352dcf789ef7b84002d5ba9b614f7d2d08d9ecb7d57a4a032dae3833217fccf",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_guard_disabled/exit_status": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_guard_disabled/weight_prefetch_stress_bench.sv": "2e2b12f73f85267a68d846ba483af2d8309761bbf0b3dec46c70e3aabd0b7cd8",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_guard_disabled/xrun.log": "49ed95b1b040a56459dd67de9964120e0395ea94fa7c563965e7ca43ea95fd6b",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_loader.v": "c9d90ff1af6287a300a66431fde8e71e93b08223e90bcb2ebfb933ab9a6867a1",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane0/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane0/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane0/weight_prefetch_stress_bench.sv": "2e2b12f73f85267a68d846ba483af2d8309761bbf0b3dec46c70e3aabd0b7cd8",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane0/xrun.log": "f4ce8523b3ef872afa471843cf2e95977f6f4aba7e81b243fc4f8ca91a3e5491",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane1/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane1/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane1/weight_prefetch_stress_bench.sv": "2e2b12f73f85267a68d846ba483af2d8309761bbf0b3dec46c70e3aabd0b7cd8",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_prefetch_fault_lane1/xrun.log": "e1388eaa01f64c50ba951d06e1664fc7b81555cf7db22230e3a39f10db668e8c",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_stall/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_stall/progress.log": "8b18738ef080450144bb54a2dc572556bfc338f8af563a7d65bc4a4fcbabb9aa",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_stall/weight_prefetch_stress_bench.sv": "2e2b12f73f85267a68d846ba483af2d8309761bbf0b3dec46c70e3aabd0b7cd8",
+    ".cache/phase_chip_weight_prefetch/mapped_tensor_scheduler/weight_stall/xrun.log": "29273e4da12d3d52390882c6de18b3595f9be7c4588a5c7d327dc6704dc4cf4a",
+    ".cache/phase_chip_weight_prefetch/scalar/progress.log": "27de1b12d2637459c200cde4bdf608b8d7eeed4d8b8241b63f68bf2dcb51a23a",
+    ".cache/phase_chip_weight_prefetch/scalar/xrun.log": "baeba9f9aab76ac4ee785b7297906569031d5f564d374aaef4a5f2985a5f6b8d",
+    ".cache/phase_chip_weight_prefetch/source/bundle.sv": "f4838d5645308ac68de2caf25e84afc079fc42d3ccd8283f5294fc4803da60b6",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_backpressured_raw_weight_loader.sv": "7425ab7fbdfbead2431a3f72daa06fb9bc43ad5a3c92a71f6e951230a7cc5a72",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_batched_tensor390.sv": "776e7f240c8f63dcac80ed8ff66da4d9a5dda7bdbac73603243adf84bf6e5784",
+    ".cache/phase_chip_weight_prefetch/source/tri_oracle_compute_fabric.sv": "948d5268ac176b4ae8ff6011e338eb69682581655f80d1fc85129c265c5cc400",
+    ".cache/phase_chip_weight_prefetch/weight_guard_disabled/xrun.log": "b0869cc32acdb401b3af04e87a6d6a072afef8a42ab60f25f3012f8fd8dbe97d",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane0/xrun.log": "9195ca8a0832edaa7e1d687530ec7543a537ecf96119d5012ef3effdc7521dd7",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/progress.log": "7dd64e291d1cf62e146e98466226af6063b1907783d1a7840f0ed9cc892a2b00",
+    ".cache/phase_chip_weight_prefetch/weight_prefetch_fault_lane1/xrun.log": "3b81c1a3146a1a3f7c7890879f5e92a181f1388c6b482c8d68ac9c880a7b6075",
+    ".cache/phase_chip_weight_prefetch/weight_stall/progress.log": "8b18738ef080450144bb54a2dc572556bfc338f8af563a7d65bc4a4fcbabb9aa",
+    ".cache/phase_chip_weight_prefetch/weight_stall/xrun.log": "3b5e4c5a9d594bd72ab369496b23c1f4a52936468320f261d1083da98ca00904",
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/shared437/aggregator_local_merge/layer/rtl/tri_oracle_local_merge_fabric.sv": "e7ee7995d125d078e0c3541d234f16c55c51a9a4b98fae7cd3e68dd3a04bdc33",
+    ".cache/physical/shared437/local_token_size_integrated/portable/tri_oracle_cluster_token_sizes_with_layer_ports.sv": "7672b35c7895bb37266598e4a1a78ac71c5102539af9172b426a2a888a1d9db9",
+    ".cache/physical/wac_cluster_local_scores/tri_oracle_batched_projection356.sv": "7717ba36cb34f2a0aa3f323f8cf7b1f74ce776d1f9deed523da37dc27485d263",
+    ".cache/physical/wac_core_local_outlier_v2/wac_softmax_types.sv": "77ea87622f05271971d9ef76a486665e6d16fdd96a64da2019133dc7937d1e1d",
+    "syn/verify_tri_oracle_mapped_tensor_scheduler.py": "6cba15b0d6fdc74fe989d04f38cdd375e70f0b2afcdf73ca096d6a7e1255f073"
+  },
+  "genus_exit_status": 124,
+  "scope": "The mapped scheduler comes from the saved technology-mapping checkpoint. The final Genus export timed out. The chip replay uses the mapped weight loader and ingress, the source projection sequencer, and timed compiler memory models.",
+  "state": "mapped_tensor_scheduler_matches_source_cycles"
+}
