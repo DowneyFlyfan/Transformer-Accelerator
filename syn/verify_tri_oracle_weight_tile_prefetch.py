@@ -15,7 +15,46 @@ RUN = ROOT / ".cache/phase_chip_weight_prefetch"
 BASELINE = ROOT / ".cache/phase_chip_prefetch"
 
 
-def verify():
+def verify_attention(evidence):
+    physical = ROOT / ".cache/physical"
+    fixture = physical / "shared437/fixture"
+    archive_path = physical / "wide_weight_loader/parallel_chip_weight_handoff/full_native/attention_receipt.json"
+    archive = json.loads(archive_path.read_text())
+    archived_log = archive_path.parent / "attention/xrun.log"
+    require(archive["native"]["native_exit_status"] == 0
+            and hashlib.sha256(archived_log.read_bytes()).hexdigest() == archive["native"]["log_sha256"],
+            "archived attention run changed")
+    evidence.update((archive_path, archived_log, Path(__file__).resolve()))
+    files = list(fixture.iterdir())
+    require(len(files) == 13, "attention fixture inventory changed")
+    for path in files:
+        require(hashlib.sha256(path.read_bytes()).hexdigest()
+                == archive["input_sha256"][str(path.relative_to(ROOT))], f"attention fixture changed: {path.name}")
+        evidence.add(path)
+
+    control, old_phase = verify_case(BASELINE, "attention")
+    output, phase = verify_case(RUN, "attention")
+    require(old_phase == phase, "attention physical phase counters changed")
+    for directory, text in ((BASELINE, control), (RUN, output)):
+        bundle, bench = (directory / "source" / name for name in ("bundle.sv", "attention_bench.sv"))
+        require(all(f"\t{item}\n" in text for item in (bundle, bench, f"+FIXTURE={fixture}")),
+                "attention used different simulator inputs")
+        evidence.update((bundle, bench, directory / "attention/xrun.log", directory / "attention/exit_status"))
+    require((BASELINE / "source/attention_bench.sv").read_bytes()
+            == (RUN / "source/attention_bench.sv").read_bytes(), "attention check changed")
+    for marker in ("CHIP_COMMAND_COUNTS", "DECODER_CONTEXT_SHARED_PORT_PASS",
+                   "COMPOSE430_SHARED_WRITE_PASS", "COMPOSE430_SHARED_READ_PASS", "COMPOSE430_PASS"):
+        require(summary(control, marker) == summary(output, marker), f"attention changed {marker}")
+    command = summary(output, "COMPOSE430_PASS")
+    require({key: value for key, value in command.items() if key != "stalls"} ==
+            {key: value for key, value in archive["counters"].items() if key != "stalls"},
+            "attention changed the archived workload result")
+    require(command["rows"] == 4 and command["values"] == 1023 and command["maps"] == 576,
+            "attention replay incomplete")
+    return {"command": command, "physical_phase": phase}
+
+
+def verify(include_attention=False):
     source = RUN / "source"
     evidence = {
         source / "bundle.sv", source / "bench.sv", source / "guarded_weight_probe.sv",
@@ -92,13 +131,15 @@ def verify():
             "disabling the guard did not reject an overwrite of an unread weight")
     pin_case(RUN, "weight_guard_disabled")
     cluster, word = map(int, overwritten[0])
+    if include_attention:
+        result["attention"] = verify_attention(evidence)
     hashes = {}
     for path in sorted(evidence):
         with path.open("rb") as stream:
             hashes[str(path.relative_to(ROOT))] = hashlib.file_digest(stream, "sha256").hexdigest()
     return {
         "state": "integrated_packed_weight_prefetch_and_reservation_verified",
-        "scope": ("Directed chip command cases at the typical memory corner. Backpressured weight lanes stage the "
+        "scope": ("Chip command cases at the typical memory corner. Backpressured weight lanes stage the "
                   "next tile while the current projection runs. Independent monitors check each physical commit "
                   "against unread words. Whole-chip synthesis, physical timing, and model validation remain open."),
         "cases": result,
@@ -110,8 +151,9 @@ def verify():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", type=Path)
+    parser.add_argument("--include-attention", action="store_true")
     args = parser.parse_args()
-    report = verify()
+    report = verify(args.include_attention)
     if args.record:
         args.record.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     print("Verified chip weight overlap, reservation stalls, lane fault recovery, and overwrite rejection.")
