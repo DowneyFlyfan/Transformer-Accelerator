@@ -80,6 +80,17 @@ END COMPONENTS
             self.assertEqual(qualification_source(root, None), latest)
             self.assertEqual(qualification_source(root, older), older)
 
+    def test_corrected_booth_roundtrip_is_the_default_candidate(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            older = root / BOUNDED_TOKEN_MAP_PLACEMENT
+            older.parent.mkdir()
+            older.touch()
+            latest = older.with_name("tri_oracle_corrected_booth_placement_roundtrip.json")
+            latest.touch()
+            self.assertEqual(qualification_source(root, None), latest)
+            self.assertEqual(qualification_source(root, older), older)
+
     def test_scalar_cold_placement_supersedes_the_repeater_by_default(self):
         with TemporaryDirectory(dir=".cache") as directory:
             root = Path(directory).resolve()
