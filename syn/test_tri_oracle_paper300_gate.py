@@ -2,16 +2,46 @@
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 from check_tri_oracle_paper300_gate import (
     BOUNDED_MAPPED_STRUCTURE, BOUNDED_PROBABILITY_PLACEMENT, BOUNDED_RESET_PLACEMENT, BOUNDED_RESIZED_PLACEMENT,
     BOUNDED_TOKEN_MAP_PLACEMENT,
     CONCURRENT_IMPORT, LEGACY_QUALIFICATION, REPEATER_PLACEMENT, TOKEN_TREE_PLACEMENT,
-    placement_checks, qualification_source,
+    buffered_booth_timing_facts, placement_checks, qualification_source,
 )
 from verify_tri_oracle_repeater_placement_evidence import compiled_memory_inventory
 
 class PaperPlacementGateTests(unittest.TestCase):
+    def test_buffered_chip_timing_is_bound_and_reports_partial_vs_complete(self):
+        with TemporaryDirectory(dir=".cache") as directory:
+            root = Path(directory).resolve()
+            folder = root / "placed/timing_three_views"
+            folder.mkdir(parents=True)
+            (folder / "prepared_timing.json").touch()
+            corner = dict(worst_slack_ns=0.012, detailed_analysis_skipped_nets=[])
+            proof = dict(database_fingerprint_sha256="this-placement", evidence_sha256={},
+                         corners={"setup_typ": corner}, pending_views=["hold_fast"], failed_views={
+                             "setup_slow": {"exit_status": -15, "stop_reason": "Memory limit"},
+                         })
+            with patch("verify_tri_oracle_booth_placement_timing.verify", return_value=proof) as verify:
+                facts = {}
+                buffered_booth_timing_facts(root, facts, {}, folder.parent, "this-placement")
+                verify.assert_called_once_with(root, allow_incomplete=True)
+                self.assertEqual(facts["corner_slack_ns"], {"setup_typ": 0.012})
+                self.assertEqual(facts["placement_timing"]["pending_views"], ["hold_fast"])
+                self.assertFalse(placement_checks(facts)["high_fanout_substitution_disabled"])
+                self.assertFalse(placement_checks(facts)["all_three_original_corner_slacks_nonnegative"])
+                proof.update(corners=dict.fromkeys(("setup_slow", "setup_typ", "hold_fast"), corner),
+                             pending_views=[], failed_views={})
+                buffered_booth_timing_facts(root, facts, {}, folder.parent, "this-placement")
+                checks = placement_checks(facts)
+                self.assertTrue(checks["high_fanout_substitution_disabled"])
+                self.assertTrue(checks["all_three_original_corner_slacks_nonnegative"])
+                self.assertFalse(checks["trained_mapped_layer_verified"])
+                with self.assertRaises(AssertionError):
+                    buffered_booth_timing_facts(root, {}, {}, folder.parent, "different-placement")
+
     def test_placed_memory_matches_netlist_instance_and_master(self):
         verilog = """module chip (clk);
   tri_oracle_bank \\banks[0].unit  (.clk(clk));

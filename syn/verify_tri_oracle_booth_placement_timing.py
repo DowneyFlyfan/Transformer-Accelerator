@@ -72,38 +72,53 @@ def view_reports(folder, view):
     }
 
 
-def verify():
-    placement = read(PLACEMENT)
+def verify(root=ROOT, *, allow_incomplete=False):
+    placement = read(root / PLACEMENT)
     assert placement["state"] == "corrected_buffer_repair_placement_and_cold_reload_verified"
     database = Path(placement["database"])
     stage = database.parents[1]
     output = stage / "timing_three_views"
     plan_file = output / "prepared_timing.json"
-    plan = read(plan_file)
-    assert Path(plan["database"]) == ROOT / database and tuple(plan["views"]) == VIEWS
-    assert plan["driver_sha256"] == digest(DRIVER)
-    fingerprint = json.dumps(artifact_fingerprint(database), sort_keys=True, separators=(",", ":")).encode()
+    plan = read(root / plan_file)
+    assert Path(plan["database"]) == root / database and tuple(plan["views"]) == VIEWS
+    assert plan["driver_sha256"] == digest(root / DRIVER)
+    fingerprint = json.dumps(artifact_fingerprint(root / database), sort_keys=True, separators=(",", ":")).encode()
     database_hash = sha256(fingerprint).hexdigest()
     assert database_hash == placement["database_fingerprint_sha256"] == plan["database_fingerprint_sha256"]
     results = {}
+    pending, failed = [], {}
     evidence = [PLACEMENT, DRIVER, plan_file, Path(__file__).resolve().relative_to(ROOT)]
     for view in VIEWS:
         target = stage / "cold" / f"{view}.sdc"
-        assert digest(target) == placement["evidence_sha256"][str(target)]
+        assert digest(root / target) == placement["evidence_sha256"][str(target)]
         folder = output / view
-        assert constraints(folder / "before.sdc") == constraints(target)
-        results[view] = view_reports(folder, view)
+        if allow_incomplete:
+            status_path = folder / "status.json"
+            if not (root / status_path).is_file():
+                pending.append(view)
+                continue
+            status = read(root / status_path)
+            if status["exit_status"] != 0 or status["stop_reason"] is not None:
+                failed[view] = status
+                evidence.append(status_path)
+                continue
+        assert constraints(root / folder / "before.sdc") == constraints(root / target)
+        results[view] = view_reports(root / folder, view)
         evidence.extend([target, *(folder / name for name in
                                    ("before.sdc", "after.sdc", "console.log", "status.json",
                                     "annotation.rpt", "timing.rpt"))])
-    return {
-        "state": "corrected_buffered_booth_three_pre_route_timing_views_measured",
+    report = {
+        "state": ("corrected_buffered_booth_three_pre_route_timing_views_measured" if len(results) == len(VIEWS)
+                  else "corrected_buffered_booth_pre_route_timing_incomplete"),
         "scope": "Single-view early-route extraction estimates from the same repaired placement, under the original constraints and ideal clocks.",
         "top": TOP,
         "database_fingerprint_sha256": database_hash,
         "corners": results,
-        "evidence_sha256": {str(path): digest(path) for path in evidence},
+        "evidence_sha256": {str(path): digest(root / path) for path in evidence},
     }
+    if allow_incomplete:
+        report.update(pending_views=pending, failed_views=failed)
+    return report
 
 
 if __name__ == "__main__":

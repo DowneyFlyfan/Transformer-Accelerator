@@ -253,6 +253,32 @@ def corrected_booth_facts(root, facts, identities):
     return None
 
 
+def buffered_booth_timing_facts(root, facts, identities, stage, database_hash):
+    """Attach verified timing from the same placement, including unfinished views."""
+    from verify_tri_oracle_booth_placement_timing import verify
+
+    if not (root / stage / "timing_three_views/prepared_timing.json").is_file():
+        return
+    result = verify(root, allow_incomplete=True)
+    assert result["database_fingerprint_sha256"] == database_hash
+    for name, checksum in result["evidence_sha256"].items():
+        pin_booth(root, identities, name, checksum)
+    corners = result["corners"]
+    facts.update(
+        placement_timing={
+            "database_fingerprint_sha256": database_hash,
+            "verified_views": sorted(corners),
+            "pending_views": result["pending_views"],
+            "failed_views": result["failed_views"],
+        },
+        high_fanout_substitution_disabled=corners.keys() == VIEWS,
+        corner_slack_ns={view: corner["worst_slack_ns"] for view, corner in corners.items()},
+        detailed_analysis_skipped_nets={
+            view: corner["detailed_analysis_skipped_nets"] for view, corner in corners.items()
+        },
+    )
+
+
 def buffered_booth_facts(root, facts, identities):
     """Bind the prior architecture inventory to the native buffer-only revision."""
     from tri_oracle_artifact_fingerprint import artifact_fingerprint
@@ -322,6 +348,7 @@ def buffered_booth_facts(root, facts, identities):
                  evidence_stage="buffer-repaired Booth placement imported and cold-reloaded in Innovus",
                  original_full_models_verified=True, added_buffers=repair["added_buffers"],
                  pin_only_load_violations=change["pin_only_slow_corner_violations_after"])
+    buffered_booth_timing_facts(root, facts, identities, stage, database_hash)
     return memory
 
 
