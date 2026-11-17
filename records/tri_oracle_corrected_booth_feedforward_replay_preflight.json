@@ -1,0 +1,39 @@
+{
+  "archived_sign_reads_checked_by_lane": [
+    1335,
+    3417
+  ],
+  "cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "evidence_sha256": {
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/elaboration/console.log": "77fd09d4350b27b40d68e35474b0b98f85f597e354e5ce4276c9ca6ef9909c5b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/elaboration/top_ports_only.v": "66b62e66139dd8025e5c52e1195e4b56836d1fb04b77b2d35de000fab832973c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/feedforward_replay/prepared.json": "db8b11beeb42d78f648ae4375097a1aac50d62ab0625e58fcb7809e965dad41c",
+    "syn/prepare_tri_oracle_booth_feedforward_replay.py": "fff924e84c88f700c7d88d8d3d17dd4863124ef2fdd226144f94ecce1eedb316",
+    "syn/run_tri_oracle_booth_feedforward_replay.py": "23d2c2d467c27ccf4f5ce015d2e6ba3aaf6cf4a3bff50ce9a99b5c5426c566ad",
+    "verilog/tri_oracle_booth_feedforward_replay_tb.sv": "cc841d622db25338c1a7cdc8ae4c0723968c1f58c66886ec970ca57f7e92837b"
+  },
+  "exact_accumulators": 4096,
+  "exact_writeback_values": 4096,
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "gpu_peak_allocated_bytes": 21556224,
+  "host_flits": 14399,
+  "output_sha256": {
+    "bundle.sv": "dcb8ab8fa7b0ee99ee9e5b51b403ecbb35c85f2045e0f38e734d4345a12315ad",
+    "host_input.hex": "42e8f9150cf3f9915986b7798d584e3b6d10e4b6b573093e06d35b5381438475",
+    "host_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    "packed_sign.bin": "2c3e9294a7234af7209a01b1dc6b1501a21722a53dbea6c3580c7a786c60c989",
+    "tri_oracle_booth_feedforward_pad_peer.svh": "7ba74ebf9610d8bf1cdb624416ff6d0960d982ab316dd94ef260c94707d16538"
+  },
+  "positions": [
+    607,
+    608
+  ],
+  "scope": "Independent GPU integer accumulation, signed residual rounding, archived sign-line verification, and Xcelium testbench elaboration with the exact placed port declarations. Full functional native replay is pending.",
+  "state": "trained_feedforward_host_reference_verified_and_physical_replay_prepared",
+  "writeback_packets": 512,
+  "writeback_shifts": [
+    11,
+    11
+  ],
+  "xcelium_ports_only_elaboration_exit_status": 0
+}
