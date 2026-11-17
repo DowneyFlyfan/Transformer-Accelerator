@@ -1,0 +1,159 @@
+{
+  "command_replays": {
+    "commanded": {
+      "baseline_cycles": 6768,
+      "broadcast_cycles": 5459,
+      "outputs": 504,
+      "saved_cycles": 1309
+    },
+    "scalar": {
+      "baseline_cycles": 49305,
+      "broadcast_cycles": 48062,
+      "outputs": 504,
+      "saved_cycles": 1243
+    },
+    "sign_fault": {
+      "baseline_cycles": 7306,
+      "broadcast_cycles": 5987,
+      "outputs": 504,
+      "saved_cycles": 1319
+    },
+    "trained": {
+      "baseline_cycles": 3708137,
+      "broadcast_cycles": 1907535,
+      "outputs": 32768,
+      "saved_cycles": 1800602
+    },
+    "weight_fault_lane0": {
+      "baseline_cycles": 8274,
+      "broadcast_cycles": 6869,
+      "outputs": 504,
+      "saved_cycles": 1405
+    },
+    "weight_fault_lane1": {
+      "baseline_cycles": 8274,
+      "broadcast_cycles": 6869,
+      "outputs": 504,
+      "saved_cycles": 1405
+    }
+  },
+  "evidence_sha256": {
+    ".cache/cluster_weight_phase/activation_timed_fast/activation_timed.v": "4dfed70231443d3b0fb8eff680b834f4bf50319aa3ef2554a1ff691e43c740ae",
+    ".cache/cluster_weight_phase/activation_timed_fast/bench.sv": "1216388931dbafdff5c2a949f3394ecd5247aeb233b5c2af42a25c89e764572f",
+    ".cache/cluster_weight_phase/activation_timed_fast/cluster.sv": "b83f68ffaf40c4ff5acff9a1b6c5479e9e7a15123ad7a26e9a2b9b0ad151ffd7",
+    ".cache/cluster_weight_phase/activation_timed_fast/core.sv": "e623bbf2a2e0be388fce4eec0027c88b975f431c47767768e92a085c9a9a6840",
+    ".cache/cluster_weight_phase/activation_timed_fast/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/cluster_weight_phase/activation_timed_fast/weight_timed.v": "3b7e289e798f5f02d92ad728d1fdf941ba21e2cee2358f006c49ca1387b7a142",
+    ".cache/cluster_weight_phase/activation_timed_fast/xrun.log": "a225fcfe02dffd09cd233098a4c9187cf14fb34dc5913cd176ee41487f7c561a",
+    ".cache/cluster_weight_phase/activation_timed_serial/activation_timed.v": "b6f12a92ada48f00d4229c79bb3ce06eaf35011f76f0b1aed6f48ab1db59bd11",
+    ".cache/cluster_weight_phase/activation_timed_serial/bench.sv": "1216388931dbafdff5c2a949f3394ecd5247aeb233b5c2af42a25c89e764572f",
+    ".cache/cluster_weight_phase/activation_timed_serial/cluster.sv": "b83f68ffaf40c4ff5acff9a1b6c5479e9e7a15123ad7a26e9a2b9b0ad151ffd7",
+    ".cache/cluster_weight_phase/activation_timed_serial/core.sv": "e623bbf2a2e0be388fce4eec0027c88b975f431c47767768e92a085c9a9a6840",
+    ".cache/cluster_weight_phase/activation_timed_serial/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/cluster_weight_phase/activation_timed_serial/weight_timed.v": "06f32ba68652aaa5ba79d6d71ed8fd93370d96ecdd3d3c55fc2d4da0dee30a2d",
+    ".cache/cluster_weight_phase/activation_timed_serial/xrun.log": "7f8fb26267e98518436d319d9279d4f121d68c48cd84aeb946e428083cd98c86",
+    ".cache/cluster_weight_phase/activation_timed_slow/activation_timed.v": "ddcb7284e11af15e037dcccc9b052f32f66544b183d8162e835b046ef3447297",
+    ".cache/cluster_weight_phase/activation_timed_slow/bench.sv": "1216388931dbafdff5c2a949f3394ecd5247aeb233b5c2af42a25c89e764572f",
+    ".cache/cluster_weight_phase/activation_timed_slow/cluster.sv": "b83f68ffaf40c4ff5acff9a1b6c5479e9e7a15123ad7a26e9a2b9b0ad151ffd7",
+    ".cache/cluster_weight_phase/activation_timed_slow/core.sv": "e623bbf2a2e0be388fce4eec0027c88b975f431c47767768e92a085c9a9a6840",
+    ".cache/cluster_weight_phase/activation_timed_slow/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/cluster_weight_phase/activation_timed_slow/weight_timed.v": "7f795523b506bfbe0c7b3e0fe96d985c186d420285c15e6ecd197112633310f0",
+    ".cache/cluster_weight_phase/activation_timed_slow/xrun.log": "607fbf825425d304e9eab57073afe566eb7a443130146b14da86710cde46d52e",
+    ".cache/cluster_weight_phase/activation_timed_typical/activation_timed.v": "b6f12a92ada48f00d4229c79bb3ce06eaf35011f76f0b1aed6f48ab1db59bd11",
+    ".cache/cluster_weight_phase/activation_timed_typical/bench.sv": "1216388931dbafdff5c2a949f3394ecd5247aeb233b5c2af42a25c89e764572f",
+    ".cache/cluster_weight_phase/activation_timed_typical/cluster.sv": "b83f68ffaf40c4ff5acff9a1b6c5479e9e7a15123ad7a26e9a2b9b0ad151ffd7",
+    ".cache/cluster_weight_phase/activation_timed_typical/core.sv": "e623bbf2a2e0be388fce4eec0027c88b975f431c47767768e92a085c9a9a6840",
+    ".cache/cluster_weight_phase/activation_timed_typical/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/cluster_weight_phase/activation_timed_typical/weight_timed.v": "06f32ba68652aaa5ba79d6d71ed8fd93370d96ecdd3d3c55fc2d4da0dee30a2d",
+    ".cache/cluster_weight_phase/activation_timed_typical/xrun.log": "0bf331d1ed399ac9072c6f1acfb40de037ebbfede00aef670fb18394c00e65d4",
+    ".cache/cluster_weight_phase/activation_typical/xrun.log": "20af497091eeaa906717f7e9950343b8b43e8c7cd51aa3f4a0c81a5de167ed96",
+    ".cache/phase_chip_activation/commanded/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_activation/commanded/progress.log": "5a9a6c470270fc7599d0c95b2972dfb92414cdcec74b42bb61da7b04134610e7",
+    ".cache/phase_chip_activation/commanded/xrun.log": "c6d95e380790f860afcad688848dcfee1e8c96909a540d9e0a2811a4dd0ab1e7",
+    ".cache/phase_chip_activation/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_activation/scalar/progress.log": "27de1b12d2637459c200cde4bdf608b8d7eeed4d8b8241b63f68bf2dcb51a23a",
+    ".cache/phase_chip_activation/scalar/xrun.log": "c12165c1e0921d1c79c954bcc157f0ade208f1ab36f2e1be41bc8b348e1249db",
+    ".cache/phase_chip_activation/sign_fault/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_activation/sign_fault/progress.log": "45e6f7030ff681c7535bb220c1efa9373aeaefe67672022c244978cc6564b81e",
+    ".cache/phase_chip_activation/sign_fault/xrun.log": "a841f14beb65cc6d8c028862f628247c83e742a38998aa6a4017b3fd73fdc36a",
+    ".cache/phase_chip_activation/source/bundle.sv": "ace0d6e726273477d4a5e11325057e12e07eed408788e21b1f6663253ee26df8",
+    ".cache/phase_chip_activation/source/trained_bench.sv": "e0b9587a01b200918b08fa7ee349b6d14166fa6ebf9bbb9c4ea2b74a172d8a8c",
+    ".cache/phase_chip_activation/source/tri_oracle_batched_tensor390.sv": "1fd8d6d763468ad80a2699d9153ac598034402025fbf98fa105070f3034c8eb6",
+    ".cache/phase_chip_activation/source/tri_oracle_compute_fabric.sv": "50767839e442e69d587b58358ec51aa826fbd2744bf7cabfbfcd2d3047b565a5",
+    ".cache/phase_chip_activation/source/tri_oracle_sram_compute_cluster.sv": "b83f68ffaf40c4ff5acff9a1b6c5479e9e7a15123ad7a26e9a2b9b0ad151ffd7",
+    ".cache/phase_chip_activation/source/tri_oracle_sram_memory_compute.sv": "cbf9217e9a6494588c337e81f2650edc8d293118944834a96e4937831591260c",
+    ".cache/phase_chip_activation/trained/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_activation/trained/progress.log": "119e7ca119fe75e1e77c02460f62ec2867649db5581b1f6598010be0b9ecc543",
+    ".cache/phase_chip_activation/trained/xrun.log": "dddf29c123898db328d6d0a7836a38dc7f33207866f99b32535a7d0dbe6ece8f",
+    ".cache/phase_chip_activation/weight_fault_lane0/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_activation/weight_fault_lane0/progress.log": "bdcae49f3533ae0368b1633f8f6430057d3b5e9b5c7e9f02fd10cd191837eaea",
+    ".cache/phase_chip_activation/weight_fault_lane0/xrun.log": "247a781847a7913ebd0a701075efee20c90391c1ace2d48c2df5ae2c28932047",
+    ".cache/phase_chip_activation/weight_fault_lane1/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_activation/weight_fault_lane1/progress.log": "bdcae49f3533ae0368b1633f8f6430057d3b5e9b5c7e9f02fd10cd191837eaea",
+    ".cache/phase_chip_activation/weight_fault_lane1/xrun.log": "76d6750d07f017d3ad7a45b490461d6c084f034ec5e4663a346dc7a131d289a7",
+    ".cache/phase_chip_clock/commanded/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_clock/commanded/progress.log": "57218dfde4dd7c33babf6602a9a7e273158e3a9a7bbdf48a839ed1626f6726af",
+    ".cache/phase_chip_clock/commanded/xrun.log": "ef09b1fbdc115dc5526d7cdb0f0152752eeb8292a656284abd99e63665ad23b2",
+    ".cache/phase_chip_clock/scalar/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_clock/scalar/progress.log": "445ced6a7eb9d72601006bfebaa01f04e27b98da12b5f755b6e51f4f0f98823e",
+    ".cache/phase_chip_clock/scalar/xrun.log": "3825b4b10f499f58e108f066e8aa34b188db5e23ba4461194e17fae307764828",
+    ".cache/phase_chip_clock/sign_fault/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_clock/sign_fault/progress.log": "5001da1e4dcd7a4c9b436fb8da996e09a9c33bd25b20509e356fc83bc40b5551",
+    ".cache/phase_chip_clock/sign_fault/xrun.log": "e3bfb8bb687583f543cf029228cee2832c5ca35ee11deb0900f4cca90c6f5945",
+    ".cache/phase_chip_clock/source/bundle.sv": "c822528b73d0f0c2367a4e3a92bf1664c1676d8d18ef27f8e099e9455288806c",
+    ".cache/phase_chip_clock/source/trained_bench.sv": "e0b9587a01b200918b08fa7ee349b6d14166fa6ebf9bbb9c4ea2b74a172d8a8c",
+    ".cache/phase_chip_clock/source/tri_oracle_batched_tensor390.sv": "744d1034c371dfe19d8500f9536da34f8bccce397dbdf3b8b355b9736c0b474f",
+    ".cache/phase_chip_clock/source/tri_oracle_compute_fabric.sv": "480d446be77ad1a5a8237eed3b1cc053e633c96f7dbd199f15c0e8a908ec4192",
+    ".cache/phase_chip_clock/source/tri_oracle_sram_compute_cluster.sv": "9c21061044f1fa6206aff7231b4784d5ddac9ede4c113ff54d2e0573f2ad7f53",
+    ".cache/phase_chip_clock/source/tri_oracle_sram_memory_compute.sv": "ad4d9150450edaaac65ef6555e232732a4d974d6454c778b53d69c9903107925",
+    ".cache/phase_chip_clock/trained/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_clock/trained/progress.log": "71be8878440643a45306a991fa703f58da61abb00a2ff96600e3dd2cc9846549",
+    ".cache/phase_chip_clock/trained/xrun.log": "6d97d4d4994b4fc256388b26c4bb53acc3d5fd1d95f5876921b77d8da1d4a33b",
+    ".cache/phase_chip_clock/weight_fault_lane0/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_clock/weight_fault_lane0/progress.log": "5b1374530d6eeb17a7381dc965ca2746f50e4de74041e7f64796bc85e61c1d8f",
+    ".cache/phase_chip_clock/weight_fault_lane0/xrun.log": "a8adb49cd9eee1d3fadc32a6e72c6b367b2f284bfb487f611d603f53c6c54541",
+    ".cache/phase_chip_clock/weight_fault_lane1/exit_status": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    ".cache/phase_chip_clock/weight_fault_lane1/progress.log": "dba70b5f8ecda46b29369dc148abd474020fb24123d2c192d6906e1ac7b34b23",
+    ".cache/phase_chip_clock/weight_fault_lane1/xrun.log": "ff9d0ddf4792f4ba642de3ec1e7530e36d991d4c0096fe9a0d614bbf30ce83c8",
+    "syn/prepare_tri_oracle_activation_bank_overlap.py": "64ba27cded192c558d788de74d3d8debfe13ceed3ea252bc60624e05d972d376",
+    "syn/prepare_tri_oracle_cluster_weight_phase.py": "2a71b6c011a3f69e7258fadcec90c2d9e1d1098c1751dd92ee75005044321c8b",
+    "syn/prepare_tri_oracle_phase_chip.py": "b3fa0fe74e955f7816196c8994bff54065eac53920cc3ee5b9fb6631a69b71dd"
+  },
+  "scope": "Chip command tests use the broadcast path with functional activation memory delays. Separate arithmetic tests exercise timed activation and weight banks at three corners using a staged activation interface and simultaneous next-tile writes. The full chip scheduler still requires prefetch integration.",
+  "state": "activation_broadcast_and_timed_bank_prefetch_verified",
+  "trained_arithmetic_replays": {
+    "fast": {
+      "activation_bank_activity": {
+        "concurrent": 511,
+        "same_bank_stalls": 1,
+        "writes": 10240
+      },
+      "cycles": 10772
+    },
+    "serial": {
+      "activation_bank_activity": {
+        "concurrent": 0,
+        "same_bank_stalls": 0,
+        "writes": 10240
+      },
+      "cycles": 11290
+    },
+    "slow": {
+      "activation_bank_activity": {
+        "concurrent": 511,
+        "same_bank_stalls": 1,
+        "writes": 10240
+      },
+      "cycles": 10772
+    },
+    "typical": {
+      "activation_bank_activity": {
+        "concurrent": 511,
+        "same_bank_stalls": 1,
+        "writes": 10240
+      },
+      "cycles": 10772
+    }
+  },
+  "typical_prefetch_saved_cycles": 518
+}

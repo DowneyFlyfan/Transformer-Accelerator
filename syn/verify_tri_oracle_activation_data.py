@@ -10,6 +10,7 @@ from prepare_tri_oracle_activation_bank_overlap import (
     broadcast_chip_activation, prepare_activation_cluster, prepare_activation_core,
 )
 from verify_tri_oracle_cluster_weight_phase import ROOT, RUNS, require
+from verify_tri_oracle_mapped_weight_prefetch import invocation
 from verify_tri_oracle_phase_chip import CASES, summary, verify_case
 
 
@@ -18,7 +19,7 @@ CANDIDATE = ROOT / ".cache/phase_chip_activation"
 MACRO_CASES = ("typical", "slow", "fast", "serial")
 
 
-def verify_broadcast(evidence):
+def verify_broadcast(evidence, include_trained=False):
     paths = ("tri_oracle_batched_tensor390.sv", "tri_oracle_compute_fabric.sv",
              "tri_oracle_sram_memory_compute.sv", "tri_oracle_sram_compute_cluster.sv")
     before = [(BASE / "source" / name).read_text() for name in paths]
@@ -29,15 +30,28 @@ def verify_broadcast(evidence):
         require(changed.read_text() == contents, f"changed logic outside the activation boundary: {name}")
         evidence.update((original, changed))
     results = {}
-    for name in (*CASES, "scalar"):
+    names = (*CASES, "scalar", "trained") if include_trained else (*CASES, "scalar")
+    for name in names:
         reference, reference_phase = verify_case(BASE, name)
         output, phase = verify_case(CANDIDATE, name)
         for marker in ("BATCH408_PASS", "BATCH408_ACTIVATION_PASS", "UNIFIED_CHIP_FEEDFORWARD_PASS"):
             require(summary(reference, marker) == summary(output, marker), f"{name}: changed {marker}")
         if name != "scalar":
-            require(summary(reference, "DUAL_LANE_PACKED_SIGN_PASS") == summary(output, "DUAL_LANE_PACKED_SIGN_PASS"),
-                    f"{name}: changed sign data traffic")
-            if CASES[name][1]:
+            sign_control, sign_candidate = (summary(log, "DUAL_LANE_PACKED_SIGN_PASS") for log in (reference, output))
+            if name == "trained":
+                require(invocation(reference) == invocation(output.replace(str(CANDIDATE / "source"),
+                                                                            str(BASE / "source"))),
+                        "trained replays used different workload arguments")
+                require(all(sign_control[key] == sign_candidate[key] for key in ("requests", "responses")),
+                        "trained replay changed predictor sign traffic")
+                require(summary(output, "BATCH408_PASS")["exact_outputs"] == 32768
+                        and summary(reference, "PACKED_PAIR_BRANCHES") == summary(output, "PACKED_PAIR_BRANCHES"),
+                        "trained replay changed packed weight traffic or lacked full output coverage")
+                evidence.update(folder / "source" / file for folder in (BASE, CANDIDATE)
+                                for file in ("trained_bench.sv", "bundle.sv"))
+            else:
+                require(sign_control == sign_candidate, f"{name}: changed sign data traffic")
+            if name in CASES and CASES[name][1]:
                 require(summary(reference, "BATCH408_FAULT_DRAINED") == summary(output, "BATCH408_FAULT_DRAINED"),
                         f"{name}: changed fault recovery")
         require({k: v for k, v in phase.items() if k != "double"} ==
@@ -93,18 +107,19 @@ def verify_early_write(evidence):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", type=Path)
+    parser.add_argument("--include-trained", action="store_true")
     args = parser.parse_args()
     evidence = {ROOT / "syn/prepare_tri_oracle_activation_bank_overlap.py",
                 ROOT / "syn/prepare_tri_oracle_phase_chip.py",
                 ROOT / "syn/prepare_tri_oracle_cluster_weight_phase.py"}
-    broadcast, prefetch = verify_broadcast(evidence), verify_early_write(evidence)
+    broadcast, prefetch = verify_broadcast(evidence, args.include_trained), verify_early_write(evidence)
     hashes = {}
     for path in sorted(evidence):
         with path.open("rb") as stream:
             hashes[str(path.relative_to(ROOT))] = hashlib.file_digest(stream, "sha256").hexdigest()
     record = {
         "state": "activation_broadcast_and_timed_bank_prefetch_verified",
-        "scope": ("Five chip command tests use the broadcast path with functional activation memory delays. "
+        "scope": ("Chip command tests use the broadcast path with functional activation memory delays. "
                   "Separate arithmetic tests exercise timed activation and weight banks at three corners using a staged "
                   "activation interface and simultaneous next-tile writes. The full chip scheduler still requires prefetch integration."),
         "command_replays": broadcast,
@@ -114,7 +129,7 @@ def main():
     }
     if args.record:
         args.record.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n")
-    print("Verified five chip broadcast cases and four timed activation-bank replays.")
+    print(f"Verified {len(broadcast)} chip broadcast cases and four timed activation-bank replays.")
 
 
 if __name__ == "__main__":
