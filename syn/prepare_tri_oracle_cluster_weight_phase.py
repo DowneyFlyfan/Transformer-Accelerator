@@ -291,12 +291,32 @@ def expand_to_five_clusters(source):
     ])
 
 
+def prepare_mapped_fabric_adapter(source):
+    # Genus writes a separate escaped Verilog port for each outer packed index.
+    header = source.split("\n);\n", 1)[0] + "\n);\n"
+    header = edit(header, [("module tri_oracle_weight_phase_fabric (",
+                            "module tri_oracle_weight_phase_fabric_adapter (")])
+    ports = {
+        "read_cores": 5, "write_core": 2, "write_address": 2, "write_rows": 2, "write_payload": 2,
+        "memory_address": 5, "memory_ce_n": 5, "memory_rows": 5, "memory_data": 5,
+    }
+    connections = "".join(
+        f"    .\\{port}[{index}] ({port}[{index}]),\n"
+        for port, count in ports.items() for index in range(count)
+    )
+    return (header + "  tri_oracle_weight_phase_fabric implementation (\n"
+            + connections + "    .*\n  );\nendmodule\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("core", "cluster", "macro", "output"):
         parser.add_argument(name, type=Path)
     parser.add_argument("--all-clusters", action="store_true")
+    parser.add_argument("--mapped-fabric", action="store_true")
     args = parser.parse_args()
+    if args.mapped_fabric and not args.all_clusters:
+        parser.error("the mapped controller requires the five-cluster fixture")
     macro = args.macro.read_text(encoding="latin-1")
     if macro.count(f"module {TS5_MACRO} (") != 1 or "`ifdef UNIT_DELAY" not in macro:
         parser.error("expected the original compiler weight memory model")
@@ -307,6 +327,11 @@ def main():
     bench = prepare_bench((ROOT / "verilog/tri_oracle_compiled_cluster_weight_overlap_tb.sv").read_text())
     if args.all_clusters:
         bench = expand_to_five_clusters(bench)
+    if args.mapped_fabric:
+        bench = edit(bench, [("tri_oracle_weight_phase_fabric weight_port (",
+                             "tri_oracle_weight_phase_fabric_adapter weight_port (")])
+        fabric = ROOT / "verilog/tri_oracle_weight_phase_fabric.sv"
+        (args.output / "mapped_fabric_adapter.sv").write_text(prepare_mapped_fabric_adapter(fabric.read_text()))
     for path, source in (
         ("core.sv", prepare_core(args.core.read_text())),
         ("cluster.sv", prepare_cluster(args.cluster.read_text())),

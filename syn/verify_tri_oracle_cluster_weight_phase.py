@@ -133,13 +133,101 @@ def verify(all_clusters=False):
     return result
 
 
+def verify_mapped():
+    baseline = verify(all_clusters=True)
+    map_directory = RUNS / "fabric_mapping"
+    netlist = map_directory / "mapped.v"
+    masters = re.findall(r"^module (\w+)\s*\(", netlist.read_text(), re.M)
+    require(masters == ["tri_oracle_weight_phase_fabric"], "expected one flattened mapped controller")
+    area_report = (map_directory / "area.rpt").read_text()
+    area = re.search(r"^tri_oracle_weight_phase_fabric\s+NA\s+(\d+)\s+([\d.]+)", area_report, re.M)
+    require(area and int(area[1]) > 0 and float(area[2]) > 0, "mapped cell count or area missing")
+    mapping_log = (map_directory / "console.log").read_text()
+    require(re.search(r"^TRI_ORACLE_WEIGHT_PHASE_FABRIC_MAPPED$", mapping_log, re.M),
+            "Genus did not finish mapping")
+    require("No unresolved references" in (map_directory / "unresolved.rpt").read_text(),
+            "mapped controller has unresolved references")
+
+    def worst_slack(report_name):
+        report = (map_directory / report_name).read_text()
+        path = re.search(r"^Path 1: (?:MET|VIOLATED) \(([+-]?[\d.]+) ps\)", report, re.M)
+        require(path, f"missing first timing path in {report_name}")
+        return float(path[1])
+
+    evidence = [netlist, map_directory / "timing.sdc", map_directory / "area.rpt",
+                map_directory / "setup.rpt", map_directory / "retirement.rpt",
+                map_directory / "unresolved.rpt", map_directory / "console.log",
+                ROOT / "syn/tri_oracle_map_weight_phase_fabric.tcl"]
+    native_cases = {}
+    for corner, source_case in (("typical", "typical_reset"), ("slow", "slow"), ("fast", "fast")):
+        work = RUNS / f"mapped_{corner}"
+        rtl_run = RUNS / f"five_{corner}"
+        for name in ("core.sv", "cluster.sv", "weight_timed.v"):
+            require((work / name).read_bytes() == (rtl_run / name).read_bytes(),
+                    f"{corner}: logic or weight model outside the mapped controller changed")
+        require((work / "bench.sv").read_text() == (rtl_run / "bench.sv").read_text().replace(
+            "tri_oracle_weight_phase_fabric weight_port (", "tri_oracle_weight_phase_fabric_adapter weight_port ("),
+            f"{corner}: mapped replay used a different test bench")
+        for name in ("initial_weights.hex", "activations.hex", "masks.hex", "accumulators.hex",
+                     "down_index.bin", "down_payload.bin"):
+            require((work / name).resolve(strict=True) == (rtl_run / name).resolve(strict=True),
+                    f"{corner}: replay used a different trained fixture")
+        log = work / "xrun.log"
+        status = work / "exit_status"
+        output = log.read_text()
+        require(int(status.read_text()) == 0 and ": Exiting on " in output, f"{corner}: incomplete mapped replay")
+        require(f"\t{netlist}\n" in output and f"\t{work / 'mapped_fabric_adapter.sv'}\n" in output
+                and "tri_oracle_weight_phase_fabric.sv\n" not in output,
+                f"{corner}: mapped controller was not selected")
+        require(not re.search(r"\*[EF],|timing violation|-notimingchecks|-nospecify", output, re.I),
+                f"{corner}: mapped replay error or timing violation")
+        timing_count = re.search(r"^\s*Timing checks:\s+([\d,]+)", output, re.M)
+        require(timing_count and int(timing_count[1].replace(",", "")) >= 337600,
+                f"{corner}: weight memory timing checks are missing")
+        original = rtl_run / "xrun.log"
+        summary = r"^COMPILED_CLUSTER_WEIGHT_.*$"
+        require(re.findall(summary, output, re.M) == re.findall(summary, original.read_text(), re.M)
+                and len(re.findall(summary, output, re.M)) == len(METRICS)+1,
+                f"{corner}: mapped replay disagrees with the matching register-transfer-level run")
+        evidence.extend((log, status, original))
+        for path in re.findall(r"^\t(/[^\n]+\.(?:sv|v))$", output, re.M):
+            evidence.append(Path(path))
+        native_cases[corner] = baseline["native_cases"][source_case]
+    hashes = {}
+    for path in sorted(set(evidence)):
+        with path.open("rb") as handle:
+            hashes[str(path.relative_to(ROOT))] = hashlib.file_digest(handle, "sha256").hexdigest()
+    return {
+        "state": "five_cluster_weight_controller_mapped_and_replayed",
+        "scope": ("Genus-mapped weight control and data selection across five clusters. "
+                  "Xcelium tests the mapped gates with 320 timed weight-bank models, using unannotated standard-cell models "
+                  "and ideal clocks. Timing estimates use a single slow library and boundary delays with zero wire load."),
+        "mapped_cells": int(area[1]),
+        "mapped_cell_area_square_um": float(area[2]),
+        "genus_slow_boundary_slack_ps": {"setup": worst_slack("setup.rpt"),
+                                        "retirement_setup": worst_slack("retirement.rpt")},
+        "native_cases": native_cases,
+        "trained_fixture_sha256": {
+            path: digest for path, digest in baseline["evidence_sha256"].items()
+            if path.startswith(".cache/cluster_weight_phase/five_cluster_reference/")
+            or path.endswith(("down_index.bin", "down_payload.bin"))
+        },
+        "evidence_sha256": hashes,
+    }
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--record", type=Path)
     parser.add_argument("--all-clusters", action="store_true")
+    parser.add_argument("--mapped", action="store_true")
     args = parser.parse_args()
-    report = verify(args.all_clusters)
+    report = verify_mapped() if args.mapped else verify(args.all_clusters)
     if args.record:
         args.record.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
-    print(f"Verified {len(report['native_cases'])} Xcelium passes and one overwrite rejection. "
-          f"Saved {report['typical_cycles_saved_vs_serial']} typical-corner core cycles.")
+    if args.mapped:
+        print(f"Verified {len(report['native_cases'])} mapped Xcelium passes and "
+              f"{report['mapped_cells']} standard cells through Genus.")
+    else:
+        print(f"Verified {len(report['native_cases'])} Xcelium passes and one overwrite rejection. "
+              f"Saved {report['typical_cycles_saved_vs_serial']} typical-corner core cycles.")

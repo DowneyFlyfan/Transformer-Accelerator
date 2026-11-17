@@ -18,10 +18,18 @@ case "$name$corner" in (*[!a-zA-Z0-9_-]*) exit 2;; esac
 here="$repo/.cache/cluster_weight_phase/$name"
 setup_options=()
 address_space=4294967296
+phase_fabric=("$rtl/tri_oracle_weight_phase_fabric.sv")
 if [[ ${ALL_CLUSTERS:-0} == 1 ]]; then
   setup_options+=(--all-clusters)
   fixtures="$repo/.cache/cluster_weight_phase/five_cluster_reference"
   address_space=6442450944
+fi
+if [[ ${MAPPED_FABRIC:-0} == 1 ]]; then
+  [[ ${ALL_CLUSTERS:-0} == 1 ]]
+  setup_options+=(--mapped-fabric)
+  phase_fabric=("$repo/.cache/cluster_weight_phase/fabric_mapping/mapped.v"
+                "$physical/library/tcbn28hpcplusbwp12t40p140.v"
+                "$here/mapped_fabric_adapter.sv")
 fi
 weight="$memory/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_$corner.v"
 activation="$memory/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_$corner.v"
@@ -44,7 +52,7 @@ docker exec -w "$here" tri-oracle-eda timeout -k 5 180 prlimit --as="$address_sp
   "$rtl/tri_oracle_wac_outlier_sign.sv" "$rtl/tri_oracle_wac_imem_owner.sv" "$rtl/tri_oracle_wac_softmax_imem.sv" \
   "$here/core.sv" "$here/cluster.sv" \
   "$rtl/tri_oracle_weight_phase_clock.sv" "$rtl/tri_oracle_weight_phase_port.sv" \
-  "$rtl/tri_oracle_cluster_weight_phase.sv" "$rtl/tri_oracle_weight_phase_fabric.sv" \
+  "$rtl/tri_oracle_cluster_weight_phase.sv" "${phase_fabric[@]}" \
   "$rtl/weight_stream_write_arbiter.sv" "$rtl/tri_oracle_weight_write_buffer.sv" \
   "$rtl/tri_oracle_packed_weight_schedule.sv" "$rtl/tri_oracle_paired_weight_schedule.sv" \
   "$rtl/tri_oracle_wide_weight_loader.sv" "$rtl/weight_decode_flush.sv" \
