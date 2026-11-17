@@ -1,0 +1,29 @@
+{
+  "added_buffers": 84,
+  "changed_modules": 30,
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/cold/cold.v": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/buffer_plan.json": "9443b9b371f8e0ee5a576cab5078706e26c71aa9e04407505e4937bf953bd8a0",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/buffer_truth/xrun.log": "021a8fe46576913ef76a017b2b366d3f5f4f6932dbac170179c12d9eb905b42f",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/cold/cold.v": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/packet_replay/prepared.json": "0b30929e3cebe2f72fc838402cecd67a76162caaa025a68e167dc404442a0801",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/bundle.sv": "f38fe826a3b1f89c4ed0371c5982002c9ca3f8294b7dc06f8f49bfaf2838becb",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/native/prepared_native.json": "9d412a78c24e40c88e0862d1487e49cde9cf372f9d274029884d6b7a2edc72bd",
+    "records/tri_oracle_corrected_booth_buffered_placement_roundtrip.json": "04d5883d3b4e96260306d7cc4ea679b84c3d7c82b963b5cd407f4f9803aff697",
+    "records/tri_oracle_corrected_booth_physical_models.json": "95e6dfe6a37ed9b0f7f679a8f478a91414430ca6865c35e53126436a459b610b",
+    "records/tri_oracle_corrected_booth_pin_load_repair.json": "2293f8b7db8db956b8e28c04a635bdc91d76587eb901a6cdbb2dd044c0a9c9dc",
+    "records/tri_oracle_corrected_booth_placement_roundtrip.json": "355fbbbad0a712e67e3c5298c7fee837f3d9d07aab4ef52d8da4a1431a6fc57a",
+    "syn/verify_tri_oracle_booth_buffered_logic.py": "845f9e1cdf83784f44c504538f88336884125a9ac58af1da234762ed8631ec40",
+    "verilog/tri_oracle_booth_buffer_truth_tb.sv": "36960ebce0dec510d6e0fcf38df50ee94c0c73b4017f547a0b4c83842b5cb513"
+  },
+  "exhaustive_driver_input_combinations": 128,
+  "independently_checked_single_driver_nets": 40,
+  "original_cold_netlist_sha256": "18bc427f73d8c5cd867fc35fa9efd891d3374fd82f73db0824275c8dd9e01498",
+  "repaired_cold_netlist_sha256": "f705dd3f1383ab0008e1ac7f1a98ec5886d86f3fb9519776e95b878140a82f98",
+  "rewired_input_pins": 33905,
+  "scope": "Cold-exported structural comparison and settled four-state standard-cell behavior with zero-delay simulation settings.",
+  "state": "booth_buffer_repair_settled_four_state_logic_verified",
+  "unchanged_modules": 1006
+}
