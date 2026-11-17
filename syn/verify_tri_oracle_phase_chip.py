@@ -6,6 +6,7 @@ import json
 import re
 from pathlib import Path
 
+from prepare_tri_oracle_cluster_weight_phase import distribute_weight_macro_inputs
 from prepare_tri_oracle_phase_chip import INCLUDE, JOINED, ROOT
 
 
@@ -31,8 +32,8 @@ def summary(output, marker):
     return {key: int(value) for item in matches[0].split() for key, value in [item.split("=")]}
 
 
-def verify_case(name, expected_outputs):
-    work = RUN / name
+def verify_case(run, name):
+    work = run / name
     output = (work / "xrun.log").read_text()
     require((work / "exit_status").read_text().strip() == "0"
             and "Simulation complete via $finish(1)" in output,
@@ -43,9 +44,8 @@ def verify_case(name, expected_outputs):
     timing = re.search(r"^\s*Timing checks:\s+([\d,]+)", output, re.M)
     require(timing and int(timing[1].replace(",", "")) >= 337600,
             f"{name}: missing timing checks for the 320 weight models")
-    replay_metrics = summary(output, "BATCH408_PASS")
     path_metrics = summary(output, "PHASE_CHIP_PASS")
-    require(replay_metrics["exact_outputs"] == expected_outputs and path_metrics["read_clusters"] == 5
+    require(path_metrics["read_clusters"] == 5
             and path_metrics["write_clusters"] == 5 and path_metrics["reads"] > 0
             and path_metrics["writes"] > 0
             and path_metrics["commits"] == path_metrics["writes"] == path_metrics["scalar"] + path_metrics["packed"],
@@ -53,16 +53,27 @@ def verify_case(name, expected_outputs):
     return output, path_metrics
 
 
-def verify(include_scalar, include_trained):
+def verify(include_scalar, include_trained, buffered=False, include_attention=False):
     results = {}
-    source = RUN / "source"
+    run = RUN.with_name("phase_chip_buffered") if buffered else RUN
+    source = run / "source"
     bundle = source / "bundle.sv"
+    includes = {Path(name) for name in INCLUDE.findall(bundle.read_text())}
+    if buffered:
+        controller = ROOT / ".cache/cluster_weight_phase/macro_boundary_distributed/controller.v"
+        require(controller in includes and ROOT / "verilog/tri_oracle_weight_phase_fabric.sv" not in includes,
+                "buffered timing controller was not selected")
+        core = "tri_oracle_sram_memory_compute.sv"
+        require((source / core).read_text() ==
+                distribute_weight_macro_inputs((RUN / "source" / core).read_text()),
+                "buffered memory drivers were not selected")
     files = {bundle, source / "bench.sv", ROOT / "verilog/tri_oracle_phase_chip_probe.sv",
              ROOT / "syn/prepare_tri_oracle_phase_chip.py", ROOT / "syn/run_tri_oracle_phase_chip.sh",
-             *(Path(name) for name in INCLUDE.findall(bundle.read_text()))}
+             *includes}
     for name, (reference, fault) in CASES.items():
-        output, path_metrics = verify_case(name, 504)
-        work = RUN / name
+        output, path_metrics = verify_case(run, name)
+        require(summary(output, "BATCH408_PASS")["exact_outputs"] == 504, f"{name}: incomplete replay")
+        work = run / name
         previous = JOINED / reference
         original = (previous / "xrun.log").read_text()
         for marker in MARKERS:
@@ -80,18 +91,20 @@ def verify(include_scalar, include_trained):
         files.add(work / "exit_status")
 
     if include_scalar:
-        output, path_metrics = verify_case("scalar", 504)
-        require(path_metrics["scalar"] > 0 and path_metrics["packed"] == 0,
+        output, path_metrics = verify_case(run, "scalar")
+        require(summary(output, "BATCH408_PASS")["exact_outputs"] == 504
+                and path_metrics["scalar"] > 0 and path_metrics["packed"] == 0,
                 "scalar command did not use scalar weight writes")
         results["scalar"] = {"command": summary(output, "BATCH408_PASS"),
                              "transport": summary(output, "PACKED_DECODER_PASS"), "physical_phase": path_metrics}
         files.add(source / "scalar_bench.sv")
-        files.update(RUN / "scalar" / log for log in ("xrun.log", "progress.log", "exit_status"))
+        files.update(run / "scalar" / log for log in ("xrun.log", "progress.log", "exit_status"))
 
     if include_trained:
-        output, path_metrics = verify_case("trained", 32768)
+        output, path_metrics = verify_case(run, "trained")
+        require(summary(output, "BATCH408_PASS")["exact_outputs"] == 32768, "incomplete trained replay")
         trained_reference = JOINED / "full_native/trained"
-        require((RUN / "trained/progress.log").read_bytes() == (trained_reference / "progress.log").read_bytes(),
+        require((run / "trained/progress.log").read_bytes() == (trained_reference / "progress.log").read_bytes(),
                 "trained layer changed the ordered command trace")
         for marker in MARKERS:
             require(summary(output, marker) == summary((trained_reference / "xrun.log").read_text(), marker),
@@ -99,8 +112,23 @@ def verify(include_scalar, include_trained):
         results["trained"] = {"command": summary(output, "BATCH408_PASS"),
                               "transport": summary(output, "PACKED_DECODER_PASS"), "physical_phase": path_metrics}
         files.add(source / "trained_bench.sv")
-        files.update(RUN / "trained" / log for log in ("xrun.log", "progress.log", "exit_status"))
+        files.update(run / "trained" / log for log in ("xrun.log", "progress.log", "exit_status"))
         files.update(trained_reference / log for log in ("xrun.log", "progress.log"))
+
+    if include_attention:
+        output, path_metrics = verify_case(run, "attention")
+        original = JOINED / "full_native/attention/xrun.log"
+        required_markers = ("COMPOSE430_PASS", "COMPOSE430_SHARED_WRITE_PASS", "COMPOSE430_SHARED_READ_PASS",
+                            "DECODER_CONTEXT_SHARED_PORT_PASS", "CHIP_COMMAND_COUNTS")
+        expected = original.read_text()
+        for marker in required_markers:
+            require(summary(output, marker) == summary(expected, marker), f"attention changed {marker}")
+        metrics = summary(output, "COMPOSE430_PASS")
+        require(metrics["rows"] == 4 and metrics["values"] == 1023 and metrics["maps"] == 576,
+                "incomplete attention replay")
+        results["attention"] = {"command": metrics, "physical_phase": path_metrics}
+        files.update((source / "attention_bench.sv", original))
+        files.update(run / "attention" / log for log in ("xrun.log", "exit_status"))
 
     hashes = {}
     for path in sorted(files):
@@ -113,6 +141,7 @@ def verify(include_scalar, include_trained):
                   "An additional boundary clock drives the weight memory and the test bench derives the core clock. "
                   "Native weight timing checks are enabled for the typical library. Chip placement and routing remain pending."),
         "clock_periods_ps": {"weight": 862, "core": 1724},
+        "buffered_weight_boundary": buffered,
         "cases": results,
         "evidence_sha256": hashes,
     }
@@ -123,8 +152,10 @@ if __name__ == "__main__":
     parser.add_argument("--record", type=Path)
     parser.add_argument("--include-scalar", action="store_true")
     parser.add_argument("--include-trained", action="store_true")
+    parser.add_argument("--buffered-boundary", action="store_true")
+    parser.add_argument("--include-attention", action="store_true")
     args = parser.parse_args()
-    report = verify(args.include_scalar, args.include_trained)
+    report = verify(args.include_scalar, args.include_trained, args.buffered_boundary, args.include_attention)
     if args.record:
         args.record.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     print(f"Verified {len(report['cases'])} chip-command Xcelium replays.")

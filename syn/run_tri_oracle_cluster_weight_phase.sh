@@ -31,6 +31,11 @@ if [[ ${MAPPED_FABRIC:-0} == 1 ]]; then
                 "$physical/library/tcbn28hpcplusbwp12t40p140.v"
                 "$here/mapped_fabric_adapter.sv")
 fi
+if [[ ${BUFFERED_BOUNDARY:-0} == 1 ]]; then
+  [[ ${MAPPED_FABRIC:-0} == 1 ]]
+  setup_options+=(--distributed-macros)
+  phase_fabric[0]="$repo/.cache/cluster_weight_phase/macro_boundary_distributed/controller.v"
+fi
 weight="$memory/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_$corner.v"
 activation="$memory/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_$corner.v"
 result="$memory/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_$corner.v"

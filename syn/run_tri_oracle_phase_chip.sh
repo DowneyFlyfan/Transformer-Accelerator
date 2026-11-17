@@ -3,6 +3,9 @@ set -euo pipefail
 
 repo=$(cd -- "$(dirname -- "$0")/.." && pwd)
 experiment="$repo/.cache/phase_chip"
+if [[ ${BUFFERED_PHASE_CHIP:-0} == 1 ]]; then
+  experiment="$repo/.cache/phase_chip_buffered"
+fi
 source_dir="$experiment/source"
 name="${1:?run name is required}"
 shift

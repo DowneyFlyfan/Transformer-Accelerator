@@ -4,7 +4,10 @@ import argparse
 import re
 from pathlib import Path
 
-from prepare_tri_oracle_cluster_weight_phase import ROOT, TIMED_MACRO, TS5_MACRO, edit, prepare_cluster, prepare_core
+from prepare_tri_oracle_cluster_weight_phase import (
+    ROOT, TIMED_MACRO, TS5_MACRO, distribute_weight_macro_inputs, edit, prepare_cluster, prepare_core,
+    prepare_mapped_fabric_adapter,
+)
 
 
 INCLUDE = re.compile(r'(?m)^`include "([^"]+)"$')
@@ -99,7 +102,7 @@ endmodule
 """
 
 
-def transform_chip(sources):
+def transform_chip(sources, buffered):
     command_layer = "tri_oracle_chip_command_layer.sv"
     sources[command_layer] = clock_port(sources[command_layer], "  input logic clk,\n",
         ".clk(clk),\n    .rst_n(rst_n),\n    .cfg_valid(layer_command_valid[0]),")
@@ -131,10 +134,12 @@ def transform_chip(sources):
     ]))
     core = "tri_oracle_sram_memory_compute.sv"
     sources[core] = prepare_core(sources[core])
+    if buffered:
+        sources[core] = distribute_weight_macro_inputs(sources[core])
     return sources
 
 
-def prepare(output):
+def prepare(output, buffered=False):
     bundle = (JOINED / "bundle.sv").read_text()
     paths = [Path(name) for name in INCLUDE.findall(bundle)]
     prepared_names = (
@@ -149,7 +154,7 @@ def prepare(output):
         path, = (path for path in paths if path.name == name)
         work_sources[name] = path.read_text()
         bundle = edit(bundle, [(str(path), str(output / name))])
-    for name, contents in transform_chip(work_sources).items():
+    for name, contents in transform_chip(work_sources, buffered).items():
         (output / name).write_text(contents)
     pe, = (path for path in paths if path.name == "tri_oracle_pe_array.sv")
     booth = ROOT / ".cache/physical/whole_chip_xcelium_speed/booth_multiplier/sparse_reduce_trial/array/array.sv"
@@ -159,11 +164,25 @@ def prepare(output):
     timed = output / "weight_timed.v"
     timed.write_text(model.replace(TS5_MACRO, TIMED_MACRO).replace(
         "`ifdef UNIT_DELAY", "`ifdef TRI_ORACLE_WEIGHT_UNIT_DELAY"), encoding="latin-1")
-    sources = [timed] + [ROOT / "verilog" / (name + ".sv") for name in (
+    rtl = ROOT / "verilog"
+    sources = [timed] + [rtl / (name + ".sv") for name in (
         "tri_oracle_weight_phase_clock", "tri_oracle_weight_phase_port", "tri_oracle_cluster_weight_phase",
-        "tri_oracle_weight_phase_fabric", "weight_stream_write_arbiter", "tri_oracle_weight_write_buffer",
-        "tri_oracle_phase_weight_ingress",
+        "weight_stream_write_arbiter", "tri_oracle_weight_write_buffer",
     )]
+    fabric, ingress = (rtl / (name + ".sv") for name in (
+        "tri_oracle_weight_phase_fabric", "tri_oracle_phase_weight_ingress",
+    ))
+    if buffered:
+        mapped = ROOT / ".cache/cluster_weight_phase/macro_boundary_distributed/controller.v"
+        adapter = output / "mapped_fabric_adapter.sv"
+        adapter.write_text(prepare_mapped_fabric_adapter(fabric.read_text()))
+        bound = output / ingress.name
+        bound.write_text(edit(ingress.read_text(), [
+            ("tri_oracle_weight_phase_fabric weight_port (", "tri_oracle_weight_phase_fabric_adapter weight_port ("),
+        ]))
+        sources += [mapped, adapter, bound]
+    else:
+        sources += [fabric, ingress]
     (output / "bundle.sv").write_text(bundle + "".join(f'`include "{path}"\n' for path in sources))
     bench_changes = [
         ("  logic clk=0;always #5 clk=~clk;", CLOCK_SOURCE),
@@ -188,4 +207,6 @@ def prepare(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
-    prepare(parser.parse_args().output.resolve())
+    parser.add_argument("--buffered-boundary", action="store_true")
+    args = parser.parse_args()
+    prepare(args.output.resolve(), args.buffered_boundary)

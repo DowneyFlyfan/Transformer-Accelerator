@@ -44,6 +44,25 @@ def prepare_core(source):
     ])
 
 
+def distribute_weight_macro_inputs(source):
+    return edit(source, [
+        ("  logic [2047:0] weight_q, weight_bweb;", """  logic [2047:0] weight_q, weight_bweb;
+  logic [4:0] local_address;
+  logic local_we_n;
+  for (genvar bit_index = 0; bit_index < 5; bit_index++) begin : weight_address_drive
+    BUFFD4BWP12T40P140 drive (.I(phase_address[bit_index]), .Z(local_address[bit_index]));
+  end
+  BUFFD8BWP12T40P140 weight_enable_drive (.I(phase_we_n), .Z(local_we_n));
+  for (genvar row = 0; row < 32; row++) begin : weight_mask_drive
+    logic disabled;
+    INVD8BWP12T40P140 drive (.I(phase_rows[row]), .ZN(disabled));
+    assign weight_bweb[row*64+:64] = {64{disabled}};
+  end"""),
+        ("    for (integer row = 0; row < 32; row++)\n      weight_bweb[row*64+:64] = {64{!phase_rows[row]}};\n", ""),
+        (".WEB(phase_we_n), .A(phase_address)", ".WEB(local_we_n), .A(local_address)"),
+    ])
+
+
 def prepare_cluster(source):
     cluster, public = source.split("`ifdef TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC\n")
     _, core = public.split("`endif\n", 1)
@@ -314,9 +333,12 @@ def main():
         parser.add_argument(name, type=Path)
     parser.add_argument("--all-clusters", action="store_true")
     parser.add_argument("--mapped-fabric", action="store_true")
+    parser.add_argument("--distributed-macros", action="store_true")
     args = parser.parse_args()
     if args.mapped_fabric and not args.all_clusters:
         parser.error("the mapped controller requires the five-cluster fixture")
+    if args.distributed_macros and not args.mapped_fabric:
+        parser.error("distributed drivers require the mapped controller")
     macro = args.macro.read_text(encoding="latin-1")
     if macro.count(f"module {TS5_MACRO} (") != 1 or "`ifdef UNIT_DELAY" not in macro:
         parser.error("expected the original compiler weight memory model")
@@ -332,8 +354,11 @@ def main():
                              "tri_oracle_weight_phase_fabric_adapter weight_port (")])
         fabric = ROOT / "verilog/tri_oracle_weight_phase_fabric.sv"
         (args.output / "mapped_fabric_adapter.sv").write_text(prepare_mapped_fabric_adapter(fabric.read_text()))
+    core = prepare_core(args.core.read_text())
+    if args.distributed_macros:
+        core = distribute_weight_macro_inputs(core)
     for path, source in (
-        ("core.sv", prepare_core(args.core.read_text())),
+        ("core.sv", core),
         ("cluster.sv", prepare_cluster(args.cluster.read_text())),
         ("bench.sv", bench),
     ):
