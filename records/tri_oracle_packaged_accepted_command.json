@@ -1,0 +1,244 @@
+{
+  "state": "mapped_accepted_tensor_command_transport_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "component": {
+    "absolute_contexts": {
+      "parent": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention/predictor",
+      "tile": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention/predictor/tile",
+      "pipeline": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline",
+      "layer": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention",
+      "frame": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward",
+      "arbiter": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute",
+      "wrapper": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute",
+      "owner": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor"
+    },
+    "module_sha256": {
+      "parent": "333e409bd0ae8a14dc655bc611a90f450c2c57b56fce8b9e75d48ea2cbc46c67",
+      "tile": "81e1784557e7603c06f89d9e229d65908e8cd084d171c258811b9174e3a664fb",
+      "pipeline": "6aecf18e15060fd4396d3789f5277e2f7ff13d1e3c06c9222cbe8d5dc4e3dd10",
+      "layer": "fa01dd8069a14cf53d33b67af436b9774ccd4658fcdcc0c04b68e6ae2bbf4174",
+      "frame": "697eadd4e2392c1f16c46082a2366d2ee022146f0672d6e942c950249cbd4ab5",
+      "arbiter": "15411d4698fe145fcfd41503cdfd7ae41324454dbd71a2b7fa7bdc96592cbdcb",
+      "wrapper": "b9614fc9b9ac5ace047f1d321ba010ee7991124d91706985df90c7f4addfd596",
+      "owner": "4bc7d21c2780fed15a5deb7c7efcdffe9c2c9334349e75a22810105d3b2d5f94"
+    },
+    "boundary_cuts": {
+      "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/projection": 5888,
+      "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention/attention": 7618
+    },
+    "graph_nodes": 70662,
+    "sequential_cut_bits": 4886
+  },
+  "acceptance_and_payload_queries": [
+    {
+      "label": "actual_producer_valid_is_submit",
+      "result": "unsat",
+      "seconds": 0.0001579849049448967,
+      "outputs": 1
+    },
+    {
+      "label": "accepted_producer_implies_actual_attention_mode",
+      "result": "unsat",
+      "seconds": 0.0009297470096498728,
+      "outputs": 5
+    },
+    {
+      "label": "accepted_producer_selects_unpaired_idle_receiver",
+      "result": "unsat",
+      "seconds": 0.0009749920573085546,
+      "outputs": 4
+    },
+    {
+      "label": "accepted_producer_implies_actual_receiver_handshake",
+      "result": "unsat",
+      "seconds": 0.0008092010393738747,
+      "outputs": 2
+    },
+    {
+      "label": "actual_accepted_producer_receiver_common_clock_reset",
+      "result": "unsat",
+      "seconds": 5.494896322488785e-05,
+      "outputs": 6
+    },
+    {
+      "label": "actual_acceptance_discharges_prior_route_mode_conditions",
+      "result": "unsat",
+      "seconds": 0.030806574039161205,
+      "outputs": 9
+    },
+    {
+      "label": "all2560_accepted_owner_channel_bits",
+      "result": "unsat",
+      "seconds": 0.3122829608619213,
+      "outputs": 1
+    },
+    {
+      "label": "all2560_accepted_owner_keep_bits",
+      "result": "unsat",
+      "seconds": 0.8291271200869232,
+      "outputs": 1
+    },
+    {
+      "label": "all8_accepted_owner_command_headers",
+      "result": "unsat",
+      "seconds": 0.03117372398264706,
+      "outputs": 8
+    }
+  ],
+  "receiver_capture": {
+    "owner_module_sha256": "4bc7d21c2780fed15a5deb7c7efcdffe9c2c9334349e75a22810105d3b2d5f94",
+    "register_bits": 5120,
+    "channels_bits": 2560,
+    "keep_bits": 2560,
+    "queries": [
+      {
+        "label": "all5120_receiver_command_reset_bindings",
+        "result": "unsat",
+        "seconds": 0.0001840831246227026,
+        "outputs": 5120
+      },
+      {
+        "label": "all5120_receiver_command_exact_capture_or_hold",
+        "result": "unsat",
+        "seconds": 25.695147860096768,
+        "outputs": 5120
+      },
+      {
+        "label": "all5120_receiver_command_accepted_payload",
+        "result": "unsat",
+        "seconds": 0.41011800803244114,
+        "outputs": 5120
+      },
+      {
+        "label": "all5120_receiver_command_retained_without_acceptance",
+        "result": "unsat",
+        "seconds": 13.267782647861168,
+        "outputs": 5120
+      }
+    ],
+    "reset_and_capture_verified": true,
+    "conditional_accepted_payload_verified": true
+  },
+  "accepted_state_witnesses": [
+    {
+      "query": 96,
+      "queries": 1,
+      "total": 97,
+      "result": "sat",
+      "full_clock_history_reachability_verified": false
+    },
+    {
+      "query": 96,
+      "queries": 16,
+      "total": 112,
+      "result": "sat",
+      "full_clock_history_reachability_verified": false
+    },
+    {
+      "query": 2032,
+      "queries": 15,
+      "total": 2047,
+      "result": "sat",
+      "full_clock_history_reachability_verified": false
+    }
+  ],
+  "rejected_corruptions": [
+    {
+      "control": "producer_ready_bypasses_all_admission",
+      "result": "sat",
+      "query": "accepted_producer_implies_actual_attention_mode",
+      "activation": "mode",
+      "instance": "tile",
+      "pin": "tensor_cfg_ready",
+      "altered_module_sha256": "e4961cd0116699c1a5587b382509ed0463c7894157e8449f1ca5f77daade6183"
+    },
+    {
+      "control": "accepted_receiver_valid_dropped",
+      "result": "sat",
+      "query": "accepted_producer_implies_actual_receiver_handshake",
+      "activation": "handshake",
+      "instance": "tensor",
+      "pin": "cfg_valid",
+      "altered_module_sha256": "9792d3a2d9c31af75c8f6a3fa22b4c6e2b5c5aca75e532a738b05e416302f343"
+    },
+    {
+      "control": "accepted_receiver_wrong_paired_mode",
+      "result": "sat",
+      "query": "accepted_producer_selects_unpaired_idle_receiver",
+      "activation": "paired",
+      "instance": "tensor",
+      "pin": "cfg_paired",
+      "altered_module_sha256": "3709faae41b2304820ca526701035aacae25428673c0d504bff678de4f2a70b0"
+    },
+    {
+      "control": "accepted_count_wrong",
+      "result": "sat",
+      "query": "all8_accepted_owner_command_headers",
+      "activation": "payload",
+      "instance": "tensor",
+      "pin": "cfg_count",
+      "altered_module_sha256": "44248de9c3fc42b3abf5fda4274bd60305a0e0e5172100f626ef9cc129b3114b"
+    },
+    {
+      "control": "accepted_cross_token_keep_stride",
+      "result": "sat",
+      "query": "all2560_accepted_owner_keep_bits",
+      "activation": "keep",
+      "instance": "tensor",
+      "pin": "cfg_keep",
+      "altered_module_sha256": "7ea1644c7388ec58432d2cfba6678184d4b8c8684298d29252c9f08513be1e34"
+    },
+    {
+      "control": "accepted_owner_reset_disconnected",
+      "result": "sat",
+      "query": "actual_accepted_producer_receiver_common_clock_reset",
+      "activation": "reset",
+      "instance": "tensor",
+      "pin": "rst_n",
+      "altered_module_sha256": "d3470aabbb3e3b9f4ecbf0b96a9eec77911f1e8429dc12c8bbe1f9f4ec72af0d"
+    },
+    {
+      "control": "accepted_selector_forced_inactive",
+      "result": "sat",
+      "query": "accepted_producer_selects_unpaired_idle_receiver",
+      "activation": "selector",
+      "instance": "g361830",
+      "pin": "I",
+      "altered_module_sha256": "8b9a165643a8818f65852c4f0c42502ec3472d8bdcd197102bf28a312757c95f"
+    }
+  ],
+  "accepted_event": "rst_n && producer_valid && producer_ready",
+  "prior_operational_modes_discharged_for_actual_accepted_commands": true,
+  "qualified_scalar_and_initialized_producer_invariants_required": true,
+  "full_clock_history_reachability_verified": false,
+  "eventual_command_acceptance_verified": false,
+  "returned_score_and_tag_correctness_verified": false,
+  "full_head_prediction_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "wall_seconds": 173.23429281287827,
+  "peak_host_resident_bytes": 2107834368,
+  "related_logic_tests_passed": 122,
+  "positive_accepted_mode_and_payload_queries": 9,
+  "positive_receiver_capture_queries": 4,
+  "independent_review": {
+    "reviewer": "/root/review_accepted_command",
+    "findings_fixed": 2,
+    "accepted_event_regressions_failed_then_passed": 2,
+    "focused_tests_after_fixes": 6,
+    "independent_post_fix_review_claimed": false,
+    "final_full_proof_rerun_passed": true
+  },
+  "evidence_sha256": {
+    "records/tri_oracle_packaged_tile_command.json": "6c8267c00f7b77cd80c7688b94e18ae92480a9654fbedc55ec1f1871180ce607",
+    "records/tri_oracle_packaged_pipeline_layer_epoch.json": "6b08411e6ba9305bfd7706c4505dc5566143bed1d334aabe0afba1f6742c32a7",
+    ".cache/wide_packaged_host_link/head_ratio_proof/accepted_command_qualified.json": "4beca0c0df3edd9672e28a9e07dbea2803605347c5b22a03dde871e7d7923b3f",
+    "syn/prove_tri_oracle_accepted_command.py": "39dae62208eceae5f522bdac5f5f7120490a35e13857d0e3ef271c25e9cca587",
+    "syn/test_tri_oracle_accepted_command_logic.py": "ab95fc09cffa0ed3c672f969bd4703794953b23c21702d6e5e173f7cc929bc1b",
+    "verilog/tri_oracle_batched_frame393.sv": "bb3393a10309539bc2ef7a17520ef1f7e5ae3fcc109d523941b0c730e856dcc4",
+    ".cache/wide_packaged_host_link/head_ratio_proof/accepted_command_review_green.log": "0f3c9ab3b8e403c27a50489f165d41992c1f42bafdb13a1edba98de0194eebff"
+  },
+  "scope": "Exact mapped reset-released producer valid/ready acceptance implies the prior available-attention arbitration conditions and an unpaired idle receiver handshake. Independently inductive scalar geometry and initialized producer storage remain required. All5120 routed input payload bits, eight input header fields and5120 physical receiver payload reset/capture/retention bits are rechecked under actual acceptance. State satisfiability witnesses are not complete clock histories. Full-model prediction, returned score arithmetic/tags, eventual acceptance/completion, accuracy, physical timing and paper matching remain unqualified."
+}
