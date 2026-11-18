@@ -1,0 +1,96 @@
+{
+  "state": "bounded_discrete_gate_up_code_calibration_diagnostic_improved_without_promotion",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "torch_version": "2.11.0+cu130",
+  "layers": 22,
+  "fit_images": 8,
+  "reused_diagnostic_images": 8,
+  "rows_per_split_per_layer": 120,
+  "method": "Greedy per-output coordinate updates maximize exact normalized projection squared-error reduction, using only fit rows. Original-code plus or minus one and signed8 limits are enforced at every update; stop after at most16 iterations. Fit pruned feed-forward error chooses baseline or candidate per layer.",
+  "maximum_code_step": 1,
+  "maximum_coordinate_iterations": 16,
+  "selected_layers": [
+    3,
+    6,
+    12,
+    15,
+    17,
+    18,
+    19,
+    20
+  ],
+  "fit_mean_row_relative_error": {
+    "dense": {
+      "baseline": 0.10789880965392658,
+      "calibrated": 0.10982180231454564
+    },
+    "pruned": {
+      "baseline": 0.1575440848988456,
+      "calibrated": 0.17060511537638137
+    }
+  },
+  "diagnostic_summary": {
+    "dense": {
+      "baseline": 0.11210387439021688,
+      "calibrated": 0.10892892376427872,
+      "selected": 0.10875025526820745
+    },
+    "pruned": {
+      "baseline": 0.21777779223885513,
+      "calibrated": 0.21626871221957347,
+      "selected": 0.21573295085264005
+    }
+  },
+  "relative_pruned_diagnostic_error_reduction": 0.009389577170349495,
+  "fixed_scalar_exponents_and_format_policies_retained": true,
+  "calibrated_down_weights_retained": true,
+  "prediction_signs_recomputed_from_actual_new_codes": true,
+  "late_layer_correction_retained": true,
+  "current_calibrated_baselines_exactly_reproduced": 22,
+  "independent_exact_dot_cells": 2112,
+  "related_helper_tests_passed": 10,
+  "unchanged_numeric_repeat_layers": 22,
+  "worker_wall_seconds": 14.38151899096556,
+  "guard_elapsed_seconds": 15.959980502026156,
+  "native_exit_status": 0,
+  "peak_device_bytes": 862190080,
+  "worker_peak_host_resident_bytes": 1949024256,
+  "minimum_sampled_available_bytes": 12881784832,
+  "guard_peak_resident_bytes": 1909563392,
+  "independent_review": {
+    "state": "no_blocking_findings",
+    "reviewer": "/root/review_gate_up_code_calibration",
+    "critical_findings": 0,
+    "important_findings": 0,
+    "minor_findings": 1,
+    "metadata_file_count_label_clarified": true,
+    "focused_tests_independently_rerun": 5,
+    "published_evidence_file_hashes_independently_verified": 10,
+    "unchanged_numeric_layer_records_independently_verified": 22,
+    "graphics_processor_experiment_independently_rerun": false,
+    "review_scope": "Bounded coordinate algorithm, fit/diagnostic separation, fixed formats and calibrated Down, actual sign metadata, source/tests and layer-local diagnostic records. Task outputs, new transport, mapped execution, timing, paper matching and global discrete optimality are outside this verdict."
+  },
+  "hardware_format_extensions_used": false,
+  "new_weight_transport_verified": false,
+  "task_accuracy_verified": false,
+  "mapped_execution_verified": false,
+  "paper_results_matched": false,
+  "baseline_weights_changed": false,
+  "weights_exported_or_promoted": false,
+  "untouched_holdout": false,
+  "evidence_sha256": {
+    ".cache/model_reference/ff_gate_up_discrete_code_calibration_qualified/receipt.json": "e783e9e13d4591f7e81de94c881b19f5e8b8639129309ade3adc0078cb1defab",
+    ".cache/model_reference/ff_gate_up_discrete_code_calibration_qualified/native_receipt.json": "70fbef1e967fedfa1ef848e3853ee9a90f2ef6602dace1405fa2c28c23a8b34c",
+    ".cache/model_reference/ff_gate_up_discrete_code_calibration_qualified/all_logic.log": "92c887bd322cce28d3b7149ec7e4183c8e48fffabc7f809095c299ff52992b14",
+    ".cache/model_reference/ff_gate_up_discrete_code_calibration_qualified/architecture.pdf": "453980d71b11165f55c2d8331c503d1cee3ef164dc04a655ee75a840102732af",
+    ".cache/model_reference/ff_gate_up_discrete_code_calibration_qualified/architecture.dot": "9ca003e739ae9de06934f9ed7d16858a64f91281d45477d07dde6ef4ec81083a",
+    ".cache/model_reference/ff_gate_up_discrete_code_calibration_qualified/guard.py": "17a98c88bf0905caa06f6e2438d5b73c11b4425e3200dbfd39b8a17bded80459",
+    "syn/measure_tri_oracle_gate_up_code_calibration.py": "01a17f1a967642fdaab95bf972f2f8e9acc17f3d99193e7844a26c920de25753",
+    "syn/test_tri_oracle_gate_up_code_calibration.py": "39e989be6b95575cded7b0029cfa21c664b1276350cc8866d32aa5353552413d",
+    "records/tri_oracle_reciprocal_weight_balance_diagnostic.json": "1fca9a05e2b38412e3bfac2b8145b865ad68128c58778e3569c63256982c3e4a",
+    "records/tri_oracle_down_code_calibration.json": "c27f66ec4045302d800ee66b3ecd7fda870f127c2b95194bcc4e8e1e8a0a0363"
+  },
+  "scope": "Layer-local host graphics-processor diagnostic on frozen ordinary feed-forward rows, with8fit images and8image-disjoint reused diagnostic images. Current calibrated Down weights, policies, scalar Gate/Up scales and late correction are exact controls. Candidate signs and masks are recomputed. A fit-only choice improves diagnostic layer error; no answer generation, task accuracy, specific new packed transport, mapped execution, timing or paper matching is established.",
+  "verified_input_files": 70
+}
