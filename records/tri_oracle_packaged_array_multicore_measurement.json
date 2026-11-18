@@ -1,0 +1,197 @@
+{
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "arrays": [
+    "tri_oracle_pe_array_verified_bank0",
+    "tri_oracle_pe_array_verified_bank0_1",
+    "tri_oracle_pe_array_verified_bank0_2",
+    "tri_oracle_pe_array_verified_bank0_3"
+  ],
+  "build_wall_seconds": {
+    "multi": 60.58788106683642,
+    "single": 14.770804686937481
+  },
+  "elapsed_scope": "Run-only wall measurements include snapshot startup. Multi-core build took longer; these numbers do not establish whole-chip acceleration or faster total time for short tests.",
+  "input_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/wide_packaged_host_link/drive_repair/host_legalized/candidate.v": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/arrays.v": "a2deb9855d9085903d3d57f4b1fcdde28d553f4b1eab82853c6994f495e660d4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/bench.sv": "16023553a1f6b258c8626372f261c4bb31bf64a865122267f096ab2e271f3636",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/prepared.json": "08b42b6fbda49807e7a83ced631029a80b15598a26a6e3216bedfc5f4ccd1972",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/run_benchmark.py": "b2884ccce72501993c871e27dae5ac7d3e533302847f61264c8b888bf8f9ec01",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/records/tri_oracle_packaged_valid_next_states.json": "6e83a85405295e61d61fb01d0e335ca333500092a9b02cc9a50ad2bfaed08751",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf"
+  },
+  "known_runner_limitation": "The archived monitoring runner lacks guaranteed owned-child cleanup on exceptional monitor exit. Completed measurements were reviewed; the archived runner is not published or approved for reuse.",
+  "modes": {
+    "multi": {
+      "build": {
+        "arguments": [
+          "-64bit",
+          "-sv",
+          "-elaborate",
+          "-top",
+          "array_benchmark_tb",
+          "-nospecify",
+          "-notimingchecks",
+          "-delay_mode",
+          "zero",
+          "+define+FUNCTIONAL",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/bench.sv",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/arrays.v",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv",
+          "-v",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v",
+          "-mce",
+          "-mce_sim_thread_count",
+          "4",
+          "-mce_build_thread_count",
+          "2"
+        ],
+        "delivered_per_array": null,
+        "exit_status": 0,
+        "log_sha256": "359739e6910d39555a7ead800926690a0c81aa3bf08cf0015edbb2fac10aa66b",
+        "markers": [],
+        "minimum_host_available_bytes": 12138176512,
+        "passed": true,
+        "peak_container_anonymous_bytes": 4398170112,
+        "stop_reason": null,
+        "wall_seconds": 60.58788106683642
+      },
+      "run_0": {
+        "arguments": [
+          "-64bit",
+          "-R",
+          "+TXNS=2048",
+          "-mce_sim_thread_count",
+          "4"
+        ],
+        "delivered_per_array": 2048,
+        "exit_status": 0,
+        "log_sha256": "9a5a11c90faa526574b345cfe63538d13f617a20eb0ce874e7c64d5b605a3ebe",
+        "markers": [
+          [
+            "2048",
+            "262144",
+            "2881"
+          ]
+        ],
+        "minimum_host_available_bytes": 13021573120,
+        "passed": true,
+        "peak_container_anonymous_bytes": 3420164096,
+        "stop_reason": null,
+        "wall_seconds": 5.008297787979245
+      },
+      "run_1": {
+        "arguments": [
+          "-64bit",
+          "-R",
+          "+TXNS=2048",
+          "-mce_sim_thread_count",
+          "4"
+        ],
+        "delivered_per_array": 2048,
+        "exit_status": 0,
+        "log_sha256": "0cae0347647d629c53e6cb7604ea77e0f81ac54d56162ea2ff02e51c7c5c39d3",
+        "markers": [
+          [
+            "2048",
+            "262144",
+            "2881"
+          ]
+        ],
+        "minimum_host_available_bytes": 13067206656,
+        "passed": true,
+        "peak_container_anonymous_bytes": 3420164096,
+        "stop_reason": null,
+        "wall_seconds": 4.757655250839889
+      }
+    },
+    "single": {
+      "build": {
+        "arguments": [
+          "-64bit",
+          "-sv",
+          "-elaborate",
+          "-top",
+          "array_benchmark_tb",
+          "-nospecify",
+          "-notimingchecks",
+          "-delay_mode",
+          "zero",
+          "+define+FUNCTIONAL",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/bench.sv",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/xcelium_multicore/array_benchmark/arrays.v",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_pe_array.sv",
+          "-v",
+          "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/physical/library/tcbn28hpcplusbwp12t40p140.v"
+        ],
+        "delivered_per_array": null,
+        "exit_status": 0,
+        "log_sha256": "10a9a8f7e99fa9b67814a95d58c50702b3c2ab9fb478ed42a96ec7333526fd40",
+        "markers": [],
+        "minimum_host_available_bytes": 12821766144,
+        "passed": true,
+        "peak_container_anonymous_bytes": 3516059648,
+        "stop_reason": null,
+        "wall_seconds": 14.770804686937481
+      },
+      "run_0": {
+        "arguments": [
+          "-64bit",
+          "-R",
+          "+TXNS=2048"
+        ],
+        "delivered_per_array": 2048,
+        "exit_status": 0,
+        "log_sha256": "6ce3583b905ae512c7b7a07c07f277825409f65480f62272c5400644cf3440f8",
+        "markers": [
+          [
+            "2048",
+            "262144",
+            "2881"
+          ]
+        ],
+        "minimum_host_available_bytes": 12859928576,
+        "passed": true,
+        "peak_container_anonymous_bytes": 3393392640,
+        "stop_reason": null,
+        "wall_seconds": 13.520163889043033
+      },
+      "run_1": {
+        "arguments": [
+          "-64bit",
+          "-R",
+          "+TXNS=2048"
+        ],
+        "delivered_per_array": 2048,
+        "exit_status": 0,
+        "log_sha256": "ad6149a1ad131ee13793299d95bccc6226216661ffb04f459258c43e8ab5c565",
+        "markers": [
+          [
+            "2048",
+            "262144",
+            "2881"
+          ]
+        ],
+        "minimum_host_available_bytes": 12981850112,
+        "passed": true,
+        "peak_container_anonymous_bytes": 3393257472,
+        "stop_reason": null,
+        "wall_seconds": 13.520044705132023
+      }
+    }
+  },
+  "multicore_runtime_configuration": {
+    "mce_sim_thread_count": 4,
+    "path": ".cache/xcelium_multicore/array_benchmark/multicore_used_config.txt",
+    "sha256": "cc811f81007ac5417d0ab1c85cc659b7cdc42325e3e285f0a808e8caf8bf8748"
+  },
+  "native_multicore_warning": "The container denied NUMA memory binding. Native four-thread execution completed and all payload/handshake checks passed.",
+  "per_array_transactions_per_run": 2048,
+  "recorded_measurement_only": true,
+  "repeats_per_mode": 2,
+  "run_wall_speedup": 2.7688243519799545,
+  "scope": "Four current mapped arrays against the original behavioral array, with common test resets. Run-only elapsed time includes snapshot load and simulator startup. No whole-chip speedup, parent reset distribution, timing, or routing is established.",
+  "source_result_sha256": "fb41d7a01d5606a66d346420becfc7e2fa16f36101908df95cc99b13f39ea5af",
+  "state": "current_four_array_native_simulation_modes_compared"
+}
