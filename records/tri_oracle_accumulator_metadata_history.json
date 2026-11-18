@@ -1,0 +1,349 @@
+{
+  "state": "mapped_accepted_command_metadata_trace_refinement_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "core_count": 20,
+  "physical_metadata_register_bits": 820,
+  "queue_stages": 7,
+  "positive_mapped_unsat_queries": 560,
+  "local_event_state_witnesses": 140,
+  "activated_actual_body_sat_faults": 9,
+  "exact_wrong_clock_rejections": 1,
+  "related_unit_tests_passed": 147,
+  "verified_direct_input_files": 106,
+  "transitively_imported_local_source_files": 29,
+  "provenance_scope": "All inputs directly listed by the published accumulator summary and full report, plus transitively imported local proof sources; arbitrary older evidence JSON descendants are not recursively rehashed.",
+  "published_predecessor_sha256": "243e63667471d75d1ce2282cad14553b79ccf130cd87877742100985de17e8e1",
+  "reset_basis_and_arbitrary_state_successor_equality_verified": true,
+  "core_modules": [
+    {
+      "bank": 0,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_1",
+      "core_module_sha256": "d5b92412f700f392f2b25ea671e84f3fe54228e2d83b82fdc9867e0c5a425d5e",
+      "array_module": "tri_oracle_pe_array_verified_bank0_1",
+      "array_module_sha256": "697172ec982b37e6124f3db93f026d91bddcd0af640cc47caeecf497b2558141",
+      "verified_reset_aliases": 163
+    },
+    {
+      "bank": 0,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_2",
+      "core_module_sha256": "efb34dca6af5c2a6d34b38c1281839b50dbc411b796d407c57267dd8cdbe5448",
+      "array_module": "tri_oracle_pe_array_verified_bank0_2",
+      "array_module_sha256": "8dc1881191a4eb1524ed94e457f9e5a8d1955133ee2600d7790da385f0f958a4",
+      "verified_reset_aliases": 165
+    },
+    {
+      "bank": 0,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_3",
+      "core_module_sha256": "c75d1a670ca07ada3bc52b710cbe66832c181c139c4634519a0d121588194b22",
+      "array_module": "tri_oracle_pe_array_verified_bank0_3",
+      "array_module_sha256": "3a29cca0a1372a047369831a3e68b0388a3aa505a5491951bdf386c5f95bbfcf",
+      "verified_reset_aliases": 166
+    },
+    {
+      "bank": 0,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0",
+      "core_module_sha256": "c1dd87b436ff18ae2aa638020f7feeeeadc0228cd9a31e6e9ad7968c79bb800f",
+      "array_module": "tri_oracle_pe_array_verified_bank0",
+      "array_module_sha256": "c394f4503e11bf46b0de3135633d680b6bb25f362a1d10d04e7a93ab6dde9c23",
+      "verified_reset_aliases": 165
+    },
+    {
+      "bank": 1,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_1",
+      "core_module_sha256": "1070a98a20da7e2d9122b90b5250c7d7a77fc9ebdf9c31b68402677067484e38",
+      "array_module": "tri_oracle_pe_array_verified_bank1_1",
+      "array_module_sha256": "64bc014dea7603b3306aa27944b36c4deec0fc46b2fc4a5f86c597f06e7baa81",
+      "verified_reset_aliases": 165
+    },
+    {
+      "bank": 1,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_2",
+      "core_module_sha256": "18c7d912036e53427b56ae4aae67865dcc7836edd0f35843bbeb9f6aed85d1f9",
+      "array_module": "tri_oracle_pe_array_verified_bank1_2",
+      "array_module_sha256": "815291151b4b596bf9012e4dddfae7a755b296396a42201d325ec16a8645d187",
+      "verified_reset_aliases": 166
+    },
+    {
+      "bank": 1,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_3",
+      "core_module_sha256": "e08f1b8ff4f23545b8bf5d77effb2d2a468b852bd2cb9cf600f8ebdc6b90cc20",
+      "array_module": "tri_oracle_pe_array_verified_bank1_3",
+      "array_module_sha256": "164575b6ce791dbb1b96c52d07d116e1f68d39ee50be8940698dd82567916cf7",
+      "verified_reset_aliases": 167
+    },
+    {
+      "bank": 1,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1",
+      "core_module_sha256": "225a2b81acfc9bdee3ee71eefab9160e2ac75bfadac560d3b9b7a918773e515f",
+      "array_module": "tri_oracle_pe_array_verified_bank1",
+      "array_module_sha256": "13abcfbb28415238a72af3fabcb9334ddd475d955361cffcc011d276d20267d7",
+      "verified_reset_aliases": 166
+    },
+    {
+      "bank": 2,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_1",
+      "core_module_sha256": "1aa1ff2fdaf706838557e44bc7b4995404bbb2815c36a8efa3406a85d750278b",
+      "array_module": "tri_oracle_pe_array_verified_bank2_1",
+      "array_module_sha256": "e6180af9f138a7af20b9aa3bb2a113780101fa2f35f55d1d7d4ff4206e275e70",
+      "verified_reset_aliases": 167
+    },
+    {
+      "bank": 2,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_2",
+      "core_module_sha256": "d65f98642a9dfab32756284971e08b0fe5458ed1c4c43fc1746d8aea99b68e19",
+      "array_module": "tri_oracle_pe_array_verified_bank2_2",
+      "array_module_sha256": "4720c11cd6f704915477fbfd54d9b7ad4c7cb5e2ff34df567900ae2da363bb85",
+      "verified_reset_aliases": 172
+    },
+    {
+      "bank": 2,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_3",
+      "core_module_sha256": "fdeccd69c0b70ffc43793d4237b39f038e909f7fc2a4513bf508afc4af10fb0d",
+      "array_module": "tri_oracle_pe_array_verified_bank2_3",
+      "array_module_sha256": "17111bfd26b9cc86a6e3c69f2ab8b457e30bcc9eb04b89d98379bcf4db66ab22",
+      "verified_reset_aliases": 166
+    },
+    {
+      "bank": 2,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2",
+      "core_module_sha256": "1b475a3f338e352a42b95828aef6529ef668e95a13a6c14f4bb700de34c330c5",
+      "array_module": "tri_oracle_pe_array_verified_bank2",
+      "array_module_sha256": "150b9ce1ced7fc6a219bbc1152cadcfecddd8c01e64dd0f466e7350eaa65b1d2",
+      "verified_reset_aliases": 166
+    },
+    {
+      "bank": 3,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_1",
+      "core_module_sha256": "431e1c964cd142774add1f4f5819726635d7b00e0fbec39d39b0fce31f21fa3e",
+      "array_module": "tri_oracle_pe_array_verified_bank3_1",
+      "array_module_sha256": "560e0e441c0b2beca374dd1b98cacc1a2a819f9ac1937b44ff319c7ece3d8850",
+      "verified_reset_aliases": 169
+    },
+    {
+      "bank": 3,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_2",
+      "core_module_sha256": "0df9a5daeb71a1a3eb68ab8a11a16b0bf171149bd6a5bf36f0b789b29f04646b",
+      "array_module": "tri_oracle_pe_array_verified_bank3_2",
+      "array_module_sha256": "1fc274f6361b4c4ab2b86075301d2fc307b1adfead6c787c6f513cbc8cf10684",
+      "verified_reset_aliases": 169
+    },
+    {
+      "bank": 3,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_3",
+      "core_module_sha256": "b6b5fa3405313de27823563d825144b3c550d195f3daec478755efd95071d6ac",
+      "array_module": "tri_oracle_pe_array_verified_bank3_3",
+      "array_module_sha256": "73d274e8e8748f1b40a20fc41e57179c8bb12f27d59e22967ee8d9fb0aa28ae8",
+      "verified_reset_aliases": 164
+    },
+    {
+      "bank": 3,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3",
+      "core_module_sha256": "4fd305372845c17003e2507d35ac5eb3fa8641bb7ea1d70eea37e22035f261ea",
+      "array_module": "tri_oracle_pe_array_verified_bank3",
+      "array_module_sha256": "56b004808e82b9fc5d562419d0005947d9e4cf9553307ad4081af7989130c9ef",
+      "verified_reset_aliases": 163
+    },
+    {
+      "bank": 4,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_1",
+      "core_module_sha256": "279709305369d2cbb3af7e5bae8aa55846d4c12c3e883850cd56ec1b3ed1a9b7",
+      "array_module": "tri_oracle_pe_array_verified_bank4_1",
+      "array_module_sha256": "bb1df3d384b8dd7918b89434e0bb7cc303f70bed71f6d0fde5c92c1cd811bf24",
+      "verified_reset_aliases": 161
+    },
+    {
+      "bank": 4,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_2",
+      "core_module_sha256": "c86d29ffd0498dcc065b43d41c7c2a72a9c8fcbfbce38c49b6fc7430bd61e0fc",
+      "array_module": "tri_oracle_pe_array_verified_bank4_2",
+      "array_module_sha256": "4f9688c12ae6f866387e1c4099a1d08b725b7e3ed525a8ced76618ae2333b39e",
+      "verified_reset_aliases": 167
+    },
+    {
+      "bank": 4,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_3",
+      "core_module_sha256": "f32d3069d7f162234ad76cd9b6c3f4ab844396330dcd9b19f0ef41c6682a4b13",
+      "array_module": "tri_oracle_pe_array_verified_bank4_3",
+      "array_module_sha256": "a4aa2608d9addd7dafe545478fc1e69d2d60b7c31ff595325bdbaa2c7aca2501",
+      "verified_reset_aliases": 168
+    },
+    {
+      "bank": 4,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4",
+      "core_module_sha256": "c83089def2292321219918af9fe3051300a465b80abc3017f6192bd7b2da1352",
+      "array_module": "tri_oracle_pe_array_verified_bank4",
+      "array_module_sha256": "b43d5478a5eccc16a852e87b6628cfada7391ef0ab6d95ae068fde34b4200be8",
+      "verified_reset_aliases": 168
+    }
+  ],
+  "rejected_mutations": [
+    {
+      "control": "accepted_pending_valid_lost",
+      "query": "actual_seven_stage_valid_queue_next_states",
+      "result": "sat",
+      "activation": "admit",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "36445ca9576db3fbe28a923a0f9565d8fbc66ac5df9c125140d379e7d5ede863"
+      }
+    },
+    {
+      "control": "accepted_slot_bit_lost",
+      "query": "actual_seven_stage_slot_queue_next_states",
+      "result": "sat",
+      "activation": "admit",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "06da0c40c1664d9bf2ba6f7fb71973391e4790d81bac56a5475307afe57cc7bb"
+      }
+    },
+    {
+      "control": "array_slot_advances_during_stall",
+      "query": "actual_seven_stage_slot_queue_next_states",
+      "result": "sat",
+      "activation": "stall",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "a40bc9b8f5371a6659416d828e7862326e863b2e2759332c34aafb9cefd95284"
+      }
+    },
+    {
+      "control": "array_accumulation_flag_lost",
+      "query": "actual_seven_stage_accumulate_queue_next_states",
+      "result": "sat",
+      "activation": "advance",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "b69d3ddccd82fd8a8b7c02717fb60859714abbdafeee0aad70e88e5fb6fa466a"
+      }
+    },
+    {
+      "control": "array_valid_stage_lost",
+      "query": "actual_seven_stage_valid_queue_next_states",
+      "result": "sat",
+      "activation": "advance",
+      "altered_modules_sha256": {
+        "tri_oracle_pe_array_verified_bank0_1": "a59184fb5695fe042b88e3ce9aad7c609a8efa9a872883086f312cee58c75f53"
+      }
+    },
+    {
+      "control": "array_output_backpressure_disconnected",
+      "query": "actual_seven_stage_valid_queue_next_states",
+      "result": "sat",
+      "activation": "external_miss",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "d4a6bc9d3c548aa864e9265a6f5408f7e4c75a82bc7e83677196f5f2b08651c7"
+      }
+    },
+    {
+      "control": "completion_slot_bit_lost",
+      "query": "actual_seven_stage_slot_queue_next_states",
+      "result": "sat",
+      "activation": "complete",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "7277350eb864d8df1e371aec9541ff1ca72190ec7c17b121efb3424c2adef540"
+      }
+    },
+    {
+      "control": "prefetch_uses_wrong_command_slot",
+      "query": "physical_memory0_accepted_array_prefetch_metadata_ownership",
+      "result": "sat",
+      "activation": "prefetch",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "8712f30612f8bba0d81bf151f9b03e8fb5f7c4251450df47aa829332d9ab3adb"
+      }
+    },
+    {
+      "control": "pending_reset_disconnected",
+      "query": "all41_metadata_register_reset_bindings",
+      "result": "sat",
+      "activation": "reset",
+      "altered_modules_sha256": {
+        "tri_oracle_sram_memory_compute_verified_bank0_1": "b5003f518ce84fc2c6984822695391d7b4bbfcfa8620b5534582015c56425854"
+      }
+    },
+    {
+      "control": "array_metadata_wrong_clock",
+      "rejection": "Epoch register clock differs",
+      "altered_modules_sha256": {
+        "tri_oracle_pe_array_verified_bank0_1": "3f8f5a869ea60b005588be5c2a4a5c086b7e316a21839a65ea249bc095066d86"
+      }
+    }
+  ],
+  "conditional_prefetch_lemma": {
+    "result": "unsat",
+    "seconds": 0.0026019439101219177,
+    "word_bits": 32,
+    "address_bits": 4,
+    "assumption": "Enabled settled noncolliding synchronous read yields the pre-edge memory word; writes commit atomically. Compiler-model timing and unknown-state behavior are NOT certified here.",
+    "compiler_memory_contract_verified": false
+  },
+  "compiler_model_reference_only": ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v",
+  "compiler_memory_contract_verified": false,
+  "complete_memory_history_verified": false,
+  "complete_tensor_scores_verified": false,
+  "complete_paper_architecture_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "independent_review": {
+    "reviewer": "/root/review_accumulator_metadata",
+    "important_findings_fixed": 1,
+    "predecessor_substitution_regression_red_to_green": true,
+    "one_fix_pass": true,
+    "full_post_fix_mapped_proof_rerun": true,
+    "post_fix_independent_review_claimed": false
+  },
+  "wall_seconds": 159.98262682300992,
+  "peak_resident_bytes": 2207715328,
+  "scope": "Actual 20 cores: common-reset and next-state refinement of41physical metadata/valid bits to a seven-stage elastic queue. Accepted commands are actual cmd_valid/cmd_ready handshakes; ready must respect array backpressure and compute grant, and a granted idle-load interface admits an available array. Input-owner grant/load policy is an explicit upstream boundary. Array ready/valid are traced through its actual four registers; only sum-data ports remain cut. All states and external input assignments are quantified, proving reset-epoch metadata trace equivalence by reset basis and successor equality. SAT mode witnesses are local assignments only. Read-or-forward lemma assumes an enabled settled synchronous memory read; the compiler contract, external-read service, data/command alignment, complete memory/tensor histories, accuracy and physical timing remain separate.",
+  "evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/metadata_review_fixed.json": "1409fdcce2b6709e65b840a9ca24bfaf8312f0553ccd94da3d34813ab2a92658",
+    ".cache/wide_packaged_host_link/owner_score_proof/metadata_all_logic_review_fixed.log": "6a26f6b842ce9f66d3836c2ca6dc7e8464acb681cf43337ff654b537af1db287",
+    "records/tri_oracle_packaged_accumulator_next_states.json": "243e63667471d75d1ce2282cad14553b79ccf130cd87877742100985de17e8e1",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    ".cache/wide_packaged_host_link/owner_score_proof/publish_metadata.py": "adf2e269bb092d70fa4c1f01d231d506a94b51ac30d7424dae847c0735433ead",
+    "syn/prove_tri_oracle_accumulator_metadata.py": "3adc1ea3faf099973d26c2242363fe18f869bf73535f03e8a02b1892450c8024",
+    "syn/test_tri_oracle_accumulator_metadata_logic.py": "c2ffcca3e0ff3fdecc7a7f7a64e6d0cb1fdc0a3fd417ce8130a36ca8937f552a",
+    ".cache/wide_packaged_host_link/owner_score_proof/metadata_admission_red.log": "756a941ae4803f6ee552db638ad0c45852348093edc5ace9c1ba60e816b30870",
+    ".cache/wide_packaged_host_link/owner_score_proof/metadata_admission_green.log": "01a9685662dd091542f57d04ab773327f3b73808b6e936ae22a8c54a52bb647c",
+    ".cache/wide_packaged_host_link/owner_score_proof/metadata_review_root_red.log": "88a7f053495f429f9ead6082298faec197e8da97c763613ca91abc5d2928f14c",
+    ".cache/wide_packaged_host_link/owner_score_proof/metadata_review_root_green.log": "745bbba0cf3d94ac2e1fc7c3dd0a4132332a884f53d054a71852201f028dfe03"
+  }
+}
