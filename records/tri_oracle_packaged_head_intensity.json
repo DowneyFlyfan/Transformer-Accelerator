@@ -1,0 +1,213 @@
+{
+  "state": "mapped_local_head_score_packet_intensity_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "classifiers": 20,
+  "registered_score_packet_bits_per_classifier": 122,
+  "registered_score_packet_bits_total": 2440,
+  "encoded_state_cases_per_classifier": 8,
+  "positive_solver_queries": 200,
+  "three_corner_boolean_and_primary_sequential_models_identical": true,
+  "numerical_properties": [
+    "Masked signed32 sink maximum, including the final sink beat.",
+    "Signed34 cutoff equals sink maximum minus zero-extended unsigned32 alpha.",
+    "Strict enabled-lane comparison against the cutoff, including below signed32 minimum.",
+    "Inner/outer modular18 accumulators, row/beat progress, stalls and malformed packet handling.",
+    "Actual asynchronous reset/clock bindings and ready/valid/error-masked intensity outputs."
+  ],
+  "numeric_invariants": {
+    "cutoff_write_minimum": -6442450943,
+    "cutoff_write_maximum": 2147483647,
+    "cutoff_upper_bound_preserved": true,
+    "maximum_configured_rows": 4096,
+    "beats_per_region_per_row": 4,
+    "lanes_per_beat": 8,
+    "maximum_region_intensity": 131072,
+    "count_bits": 18,
+    "count_wrap_impossible_for_valid_packets": true,
+    "remaining_rows_one_applies_only_to_successful_classify_and_hold": true,
+    "malformed_or_invalid_hold_uses_zero_configuration_or_frozen_prior_count_bound": true
+  },
+  "integer_budget_steps": 15,
+  "numerical_range_solver_queries": 2,
+  "rejected_controls": [
+    {
+      "control": "cutoff_sign_data_stuck_zero",
+      "rejection_query": "all_score_packet_next_fields_state1",
+      "result": "sat",
+      "activated_state": 1,
+      "preconditions": {
+        "in_valid": true,
+        "in_region": 0,
+        "in_last": false,
+        "in_lanes": 1,
+        "cfg_valid": false,
+        "cfg_ratio_den": 1,
+        "cfg_ratio_num": 1,
+        "cfg_rows": 1,
+        "beat_index": 3,
+        "rows_left": 1,
+        "row_has_sink": true
+      },
+      "counterexample_sha256": "cf0e4dbf69a223d457e310ca80a3083c7cc0578922f9e20acc1096a70a9b4631"
+    },
+    {
+      "control": "sink_maximum_bit_frozen",
+      "rejection_query": "all_score_packet_next_fields_state1",
+      "result": "sat",
+      "activated_state": 1,
+      "preconditions": {
+        "in_valid": true,
+        "in_region": 0,
+        "in_last": false,
+        "in_lanes": 1,
+        "cfg_valid": false,
+        "cfg_ratio_den": 1,
+        "cfg_ratio_num": 1,
+        "cfg_rows": 1,
+        "beat_index": 0,
+        "rows_left": 1,
+        "row_max": -2147483648,
+        "row_has_sink": false
+      },
+      "counterexample_sha256": "41d3e78e5c38c41d68c0f6ae44adba1a5efc6bfa09da3e9795d2a141ea25f4e8"
+    },
+    {
+      "control": "inner_intensity_bit_frozen",
+      "rejection_query": "all_score_packet_next_fields_state2",
+      "result": "sat",
+      "activated_state": 2,
+      "preconditions": {
+        "in_valid": true,
+        "in_region": 1,
+        "in_last": false,
+        "in_lanes": 1,
+        "cfg_valid": false,
+        "cfg_ratio_den": 1,
+        "cfg_ratio_num": 1,
+        "cfg_rows": 1,
+        "beat_index": 0,
+        "rows_left": 1,
+        "row_max": 1,
+        "cutoff": 0,
+        "total_inner": 0,
+        "total_outer": 0,
+        "row_has_sink": true,
+        "cfg_alpha": 1
+      },
+      "counterexample_sha256": "86a24c56dcf969a61ae8b65b97d60d220c8bd38f3ccd2903120865ccd909c8f4"
+    },
+    {
+      "control": "beat_index_bit_frozen",
+      "rejection_query": "all_score_packet_next_fields_state1",
+      "result": "sat",
+      "activated_state": 1,
+      "preconditions": {
+        "in_valid": true,
+        "in_region": 0,
+        "in_last": false,
+        "in_lanes": 1,
+        "cfg_valid": false,
+        "cfg_ratio_den": 1,
+        "cfg_ratio_num": 1,
+        "cfg_rows": 1,
+        "beat_index": 0,
+        "rows_left": 1,
+        "row_max": -2147483648,
+        "row_has_sink": false
+      },
+      "counterexample_sha256": "c89dd898ba4ac9217b5494e125c7fa04bd4bf1d3b06bd46a4c4a71f89708890c"
+    },
+    {
+      "control": "row_count_decrement_frozen",
+      "rejection_query": "all_score_packet_next_fields_state3",
+      "result": "sat",
+      "activated_state": 3,
+      "preconditions": {
+        "in_valid": true,
+        "in_region": 2,
+        "in_last": false,
+        "in_lanes": 1,
+        "cfg_valid": false,
+        "cfg_ratio_den": 1,
+        "cfg_ratio_num": 1,
+        "cfg_rows": 2,
+        "beat_index": 3,
+        "rows_left": 2,
+        "row_max": 1,
+        "cutoff": 0,
+        "total_inner": 0,
+        "total_outer": 0,
+        "row_has_sink": true,
+        "cfg_alpha": 1
+      },
+      "counterexample_sha256": "f29b169898da28b16d76f5f2db332d223574af38489392cdc85f201daa4ed16a"
+    },
+    {
+      "control": "cutoff_reset_disconnected",
+      "rejection_query": "all_actual_async_reset_bindings",
+      "result": "sat",
+      "activated_state": null,
+      "preconditions": {},
+      "counterexample_sha256": "bf2a91058be8099b09233862dfbb6233e92a7442ade31176da8bc85ea3861ef6"
+    },
+    {
+      "control": "cutoff_register_wrong_clock",
+      "rejection": "Register clock differs"
+    }
+  ],
+  "related_logic_tests_passed": 57,
+  "optimized_python_mode_explicitly_rejected": true,
+  "targeted_numerical_update_counterexamples_required": true,
+  "z3_solver_version": "5.4.1.0",
+  "z3_dependency": "z3-solver==5.4.1.0",
+  "solver_reference": "https://microsoft.github.io/z3guide/docs/theories/Bitvectors/",
+  "host_proof_wall_seconds": 102.46023230603896,
+  "host_proof_peak_resident_bytes": 1356820480,
+  "all54_final_input_hashes_reverified": true,
+  "gpu_crosscheck": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "row_maximum_boundaries": 9,
+    "unsigned_alpha_boundaries": 8,
+    "score_patterns": 13,
+    "exhaustive_lane_masks": 256,
+    "cases": 239616,
+    "lane_comparisons": 1916928,
+    "output_sha256": "37b7fef94918121c704d4ba43cadfe2079dbdd73b9275e948cedec01e83dc1f7",
+    "wall_seconds": 2.556659839116037,
+    "peak_device_bytes": 49840640,
+    "scope": "Independent host CPU scalar reference versus GPU optimized cutoff detection and wide signed comparison at32-bit score/unsigned-alpha boundaries and all256 lane masks. No mapped execution, native simulation, task accuracy, timing or paper matching claim."
+  },
+  "paper_method_reference": {
+    "path": "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf",
+    "sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "figure": "31.6.4",
+    "disclosed_method": "Obtain row-wise attention-sink maximum, count inner/outer tile results exceeding max-alpha, accumulate intensity and threshold the ratio.",
+    "undisclosed_or_reconstructed": "Alpha/logit scaling and head-ratio threshold values are not established by this proof; serial cross-multiplication is a local implementation choice."
+  },
+  "evidence_sha256": {
+    "syn/prove_tri_oracle_head_intensity.py": "61fda9fd11410957b430070425c2f217c228df9ddac5ad071ebe5fcf8692b0f1",
+    "syn/test_tri_oracle_head_intensity_logic.py": "d47788487ec36efa063c20523c790361411ef44d7fca97a169b1212f4fff8590",
+    "records/tri_oracle_packaged_head_configuration.json": "a1b3183083d74eb3b7a7e046992bf82366b08d8eab64a2285641f17afd554879",
+    "records/tri_oracle_packaged_head_ratio_sequence.json": "717637ea17b941e014ff8cfe9f01a318d92a834aa0692cf6756fb02505b6ce35",
+    ".cache/wide_packaged_host_link/head_ratio_proof/intensity_qualified.json": "2d47b141e6e8cc4e8e0f9e8ce1573e4f80571f5110a0baf4ea520e34ea9b9be6",
+    ".cache/wide_packaged_host_link/head_ratio_proof/intensity_gpu_qualified.json": "97656f90430b2a1fb656d40374c5ea90e2d488d0c282c0c7dd43df1983397397",
+    ".cache/wide_packaged_host_link/head_ratio_proof/intensity_gpu_qualified.py": "75a7748c1a6eb8c51424688f5b4b48940db14a391897239cdd190c7d47511668"
+  },
+  "review": "Independent read-only review verified the original positive20-classifier result, all54 input hashes and all20 bodies against the candidate/prior proofs. It found an optimized-mode fail-open guard and mutation checks caught during Idle clears. Both were fixed with tests observed failing then passing. The final full rerun, all54 current hashes and state-activated fault receipts were then checked directly; no claim of a separate post-fix independent re-review.",
+  "assumptions": [
+    "A common reset establishes the verified register basis before a transaction; reset interruptions abort it.",
+    "Binary state is sampled on settled positive clock edges, with reset deasserted during uninterrupted packet processing.",
+    "Valid-packet accumulation starts from an accepted nonerror configuration with1..4096 rows; malformed packets freeze prior counts and mask outputs.",
+    "The remaining-rows-one budget at Classify/Hold concerns successful packets. Invalid/malformed Hold paths use zeroed or frozen prior count bounds."
+  ],
+  "scope": "All20 candidate-local score-packet controllers and numerical intensity paths, bound to the previously verified parent configuration/clock/reset and local ratio records. Actual122 register bits match an independent word-level specification for all8 encoded states: masked signed32 sink maxima, final-beat signed34 cutoff with unsigned32 alpha, strict enabled-lane threshold counts, modular18 accumulation, row/beat progression, stalls, malformed/error retirement, asynchronous reset and ready/valid/error-masked count outputs. A reset/write/hold cutoff upper-bound invariant justifies the optimized signed comparison. Ghost beat budgets establish at most131072 hits per region on valid packets, so18-bit modular updates equal integer sums. Error and invalid-configuration paths preserve or zero that bound. Parent score/tag correctness, end-to-end actual score generation, complete prediction, eventual completion, task accuracy, timing and paper-result matching remain unqualified. The paper does not disclose the head-ratio threshold; configured threshold values and serial comparison are reconstruction choices.",
+  "full_head_prediction_verified": false,
+  "task_accuracy_verified": false,
+  "complete_paper_architecture_verified": false,
+  "physical_timing_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "upstream_score_generation_verified": false,
+  "parent_score_tag_correctness_verified": false,
+  "complete_response_tag_behavior_verified": false,
+  "eventual_completion_verified": false
+}
