@@ -1,0 +1,122 @@
+{
+  "state": "mapped_parent_score_guard_and_classifier_payload_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "classifiers": 20,
+  "payload_bits": 5600,
+  "payload_bits_per_classifier": 280,
+  "payload_fields": {
+    "scores": 256,
+    "lane_mask": 8,
+    "region": 2,
+    "last": 1,
+    "rows": 13
+  },
+  "parent_positive_equivalence_queries": 11,
+  "local_parent_configuration_bounds": {
+    "saved_token_bits": 11,
+    "minimum_accepted_tokens": 97,
+    "maximum_represented_tokens": 2047,
+    "minimum_rows": 1,
+    "maximum_rows": 1951,
+    "endpoint_acceptance_witnesses": [
+      97,
+      2047
+    ],
+    "scope": "Bounds on the local parent configuration and stored representation. Whole-chip supported context capacity remains unverified."
+  },
+  "parent_score_tag_guard_verified": true,
+  "selected_ready_feedback_verified": true,
+  "owned_classifier_payload_forwarding_verified": true,
+  "shared_classifier_row_upper_bits_from_request": [
+    327,
+    327
+  ],
+  "unused_bindings": {
+    "parent_request326_internal_driver_count": 0,
+    "unused_high_cfg_token_bindings": [
+      {
+        "input": "cfg_tokens[11]",
+        "source_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention",
+        "source_net": "UNCONNECTED_HIER_Z5280",
+        "source_kind": "undriven_internal_net",
+        "source_port_direction": null,
+        "internal_driver_count": 0,
+        "source_module_sha256": "fa01dd8069a14cf53d33b67af436b9774ccd4658fcdcc0c04b68e6ae2bbf4174"
+      },
+      {
+        "input": "cfg_tokens[12]",
+        "source_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention",
+        "source_net": "UNCONNECTED_HIER_Z5281",
+        "source_kind": "undriven_internal_net",
+        "source_port_direction": null,
+        "internal_driver_count": 0,
+        "source_module_sha256": "fa01dd8069a14cf53d33b67af436b9774ccd4658fcdcc0c04b68e6ae2bbf4174"
+      }
+    ]
+  },
+  "inherited_common_reset_and_parent_ownership_contracts": true,
+  "tile_outputs_are_arbitrary_binary_cutpoints": true,
+  "rejected_controls": [
+    {
+      "control": "permuted_score_data",
+      "rejection_query": "parent_score_data_forwarding",
+      "result": "sat"
+    },
+    {
+      "control": "permuted_lane_mask",
+      "rejection_query": "parent_score_lanes_forwarding",
+      "result": "sat"
+    },
+    {
+      "control": "wrong_selected_ready",
+      "rejection_query": "parent_selected_classifier_ready_feedback",
+      "result": "sat"
+    },
+    {
+      "control": "frozen_saved_token_load",
+      "rejection_query": "parent_saved11_token_load_and_hold",
+      "result": "sat"
+    },
+    {
+      "control": "lost_mismatched_tag_rejection",
+      "instance": "g4586",
+      "pin": "B1",
+      "stuck": 1,
+      "rejection_query": "parent_score_tag_invalid_region_guard",
+      "result": "sat",
+      "mismatched_tag_and_source_region_zero_required": true
+    },
+    {
+      "control": "disconnected_classifier_rows",
+      "rejection": "Mapped sequence transition differs"
+    },
+    {
+      "control": "disconnected_classifier_last",
+      "rejection": "Mapped sequence transition differs"
+    }
+  ],
+  "related_logic_tests_passed": 62,
+  "optimized_python_mode_explicitly_rejected": true,
+  "all60_final_evidence_hashes_reverified": true,
+  "host_proof_wall_seconds": 126.53561282390729,
+  "host_proof_peak_resident_bytes": 2384080896,
+  "evidence_sha256": {
+    "syn/prove_tri_oracle_head_score_frontend.py": "26f56c5e4401aca67eefb9d02fb3bd1d75edb7d338f8aac6da9e33a920470419",
+    "syn/test_tri_oracle_head_score_frontend_logic.py": "fae8ac3c1f996326643491e3e110bca5f02348606948908bf0f78a0e556a4144",
+    "records/tri_oracle_packaged_head_intensity.json": "7891410d0280b8df79dbccdaef8f8d956feb7bf24c057d4705dce2c2cbd0d454",
+    "records/tri_oracle_packaged_head_configuration.json": "a1b3183083d74eb3b7a7e046992bf82366b08d8eab64a2285641f17afd554879",
+    ".cache/wide_packaged_host_link/head_ratio_proof/score_frontend_qualified.json": "0169bcaf4620ebd08d69691004dcf4431c5754098acdcf6ee2705beca8705a27"
+  },
+  "review": "Independent review verified all60 final input hashes, all20 owners/5600 payloads,11 equivalence queries, both local acceptance witnesses and seven intended fault rejections. It checked actual zero-driver bindings for both unused token inputs and request326. No important findings remain in this scope. An earlier full attempt failed at final rehash because a local pin label shadowed its hash helper; an independent streamed rehash function and focused unchanged/changed/missing/empty evidence tests fixed it, and the complete run was repeated successfully.",
+  "scope": "Actual tile-port score/lanes/LAST/valid forwarding and selected ready feedback through parent and all20 owned classifier payload paths. A mismatched binary score tag forces invalid region3, composing with the independently proved local packet rejection rule in active input states. Eleven actual saved token bits and valid configuration acceptance establish represented tokens97..2047 and rows1..1951. Both upper classifier row bits share request327; unused undriven request326 is not read or coerced. No source13-bit token-capacity claim. Common-reset/settled-binary-edge and parent ownership assumptions are inherited from the pinned earlier proofs. Tile score generation, upstream tensor/tag validity, complete response tags, eventual completion, full prediction, accuracy, timing and paper matching remain unqualified.",
+  "complete_response_tag_behavior_verified": false,
+  "tile_score_production_verified": false,
+  "full_head_prediction_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "eventual_completion_verified": false,
+  "upstream_tensor_tag_validity_verified": false,
+  "whole_chip_context_capacity_verified": false
+}
