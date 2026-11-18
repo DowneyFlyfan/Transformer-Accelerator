@@ -1,0 +1,205 @@
+{
+  "state": "mapped_parent_tile_geometry_and_causal_limits_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "parent_sha256": "333e409bd0ae8a14dc655bc611a90f450c2c57b56fce8b9e75d48ea2cbc46c67",
+  "tile_sha256": "81e1784557e7603c06f89d9e229d65908e8cd084d171c258811b9174e3a664fb",
+  "parent_solver_queries": 11,
+  "tile_solver_queries": 10,
+  "related_logic_tests_passed": 79,
+  "parent_physical_scalar_register_bits": 155,
+  "tile_physical_scalar_register_bits": 233,
+  "coupled_geometry_induction": {
+    "actual_state_equation_induction_verified": true,
+    "reset_basis_verified": true,
+    "scalar_fields_parent": 5,
+    "scalar_fields_tile": 12,
+    "qualified_parent_tokens_minimum": 97,
+    "qualified_parent_tokens_maximum": 2047,
+    "query_start": 96,
+    "maximum_batch_queries": 16,
+    "key_prepare_index_maximum": 95,
+    "score_beat_maximum": 11,
+    "causal_row_limit_maximum": 32,
+    "common_reset_aborts_epoch": true,
+    "eventual_completion_verified": false
+  },
+  "parent_tile_epoch": {
+    "state_pairs": 13,
+    "checked_edges": 31,
+    "reset_pair": [
+      0,
+      0
+    ],
+    "active_tile_implies_parent_wait": true,
+    "parent_query_held_during_active_tile": true,
+    "eventual_completion_verified": false
+  },
+  "parent_batch_alignment_queries": 16,
+  "properties": [
+    "Actual parent query pointer resets to96, offers min(16,tokens-query), advances only before the final batch, and stays aligned to16.",
+    "Actual query/key address snapshot/load/hold and query-stride updates match64-bit modular arithmetic.",
+    "Saved13-bit first-query and8-bit inner-start fields use the retained physical parent inputs; consumed floating wires are rejected and unused nominal upper ports are never coerced.",
+    "All18 causal row-limit bits update from three clipped region spans only on accepted tensor capture, and hold otherwise.",
+    "Actual mapped reset basis and next-state equations establish parent/tile ownership, geometry coherence, bounded limits even inIdle, key index0..95 and score beat0..11."
+  ],
+  "invariant_consistent_capture_satisfiability_witnesses": [
+    {
+      "query": 96,
+      "batch_queries": 1,
+      "token_index": 0,
+      "parent_tokens": 97
+    },
+    {
+      "query": 96,
+      "batch_queries": 16,
+      "token_index": 15,
+      "parent_tokens": 112
+    },
+    {
+      "query": 112,
+      "batch_queries": 16,
+      "token_index": 15,
+      "parent_tokens": 128
+    },
+    {
+      "query": 2032,
+      "batch_queries": 15,
+      "token_index": 14,
+      "parent_tokens": 2047
+    }
+  ],
+  "witness_scope": "Satisfiability under the old-state geometry invariant and actual ready-wire identity, not native hardware execution or a complete generated clock history.",
+  "rejected_controls": [
+    {
+      "control": "parent_query_advance_frozen",
+      "instance": "query_position_reg[4]",
+      "pin": "D",
+      "result": "sat",
+      "rejection_query": "parent_query_pointer_load_hold_advance",
+      "activation": "advance"
+    },
+    {
+      "control": "parent_final_batch_count_stuck16",
+      "instance": "tile",
+      "pin": "batch_queries",
+      "result": "sat",
+      "rejection_query": "parent_batch_size_last_and_valid",
+      "activation": "last_batch"
+    },
+    {
+      "control": "parent_query_base_capture_bit_stuck",
+      "instance": "query_addr_reg[6]",
+      "pin": "D",
+      "result": "sat",
+      "rejection_query": "parent_query_key_base_updates",
+      "activation": "config_load"
+    },
+    {
+      "control": "tile_shared_first_query_bit_lost",
+      "instance": "first_query_reg[5]",
+      "pin": "D",
+      "result": "sat",
+      "rejection_query": "tile_shared_geometry_snapshot_load_and_hold",
+      "activation": "batch_load"
+    },
+    {
+      "control": "tile_inner_alias_bit_wrong",
+      "instance": "tile_start_reg[22]",
+      "pin": "D",
+      "result": "sat",
+      "rejection_query": "tile_shared_geometry_snapshot_load_and_hold",
+      "activation": "batch_load"
+    },
+    {
+      "control": "recent_causal_limit_capture_bit_lost",
+      "instance": "row_limits_reg[12]",
+      "pin": "D",
+      "result": "sat",
+      "rejection_query": "all18_causal_row_limit_updates",
+      "activation": "capture"
+    },
+    {
+      "control": "recent_causal_limit_saturates_prematurely",
+      "instance": "row_limits_reg[17]",
+      "pin": "D",
+      "result": "sat",
+      "rejection_query": "all18_causal_row_limit_updates",
+      "activation": "capture"
+    },
+    {
+      "control": "row_limit_stall_retention_lost",
+      "instance": "row_limits_reg[12]",
+      "pin": "D",
+      "result": "sat",
+      "rejection_query": "all18_causal_row_limit_updates",
+      "activation": "stall"
+    },
+    {
+      "control": "row_limit_capture_enable_frozen",
+      "instance": "row_limits_reg[17]",
+      "pin": "E",
+      "result": "sat",
+      "rejection_query": "all18_causal_row_limit_updates",
+      "activation": "capture_boundary"
+    },
+    {
+      "control": "tile_geometry_reset_disconnected",
+      "instance": "first_query_reg[0]",
+      "pin": "CDN",
+      "result": "sat",
+      "rejection_query": "tile_geometry_reset_bindings",
+      "activation": "reset"
+    },
+    {
+      "control": "tile_geometry_wrong_clock",
+      "rejection": "Tile register clock differs"
+    }
+  ],
+  "input_hashes_verified": 74,
+  "host_proof_wall_seconds": 15.297067142091691,
+  "host_peak_resident_bytes": 1183772672,
+  "gpu_reference": {
+    "token_counts": 1951,
+    "complete_batches": 119926,
+    "query_rows": 1904176,
+    "region_limits": 5712528,
+    "explicit_key_predicates": 182800896,
+    "limits_sha256": "811c9034479d07dd255585f9d5cb0e2578e665de13baa40c278bfdfd25d70f65",
+    "wall_seconds": 1.9309260270092636,
+    "peak_device_bytes": 4915200,
+    "peak_host_resident_bytes": 1174913024,
+    "minimum_sampled_host_available_bytes": 12944482304,
+    "scope": "Integer CPU batch walk and explicit causal-key counts versus independent GPU batch reconstruction and clipped-span formula. No mapped execution, task-accuracy, timing or whole-chip context-capacity claim."
+  },
+  "review": "Independent review verified74 pre-fix evidence hashes, three Liberty corners, all21 positive queries and the actual induction. It found unaligned local witness examples and missing hold/enable fault controls. One fix pass added alignment regression/actual induction, invariant-consistent witness conditions and two activated controls. Final79-test suite and complete21-query/11-control proof passed; no independent post-fix re-review claimed.",
+  "verifier_regressions": [
+    "Initial induction model allowed139189 stale row-limit bits inIdle, carried intoPrepare. Counterexample isolated the missing global bound; regression failed then passed after adding it, and actual reset/next-state induction passed.",
+    "A new capture-control numeric variable shadowed its query label. The campaign failed closed; selector-type and exact targeted-query-count guards now reject skipped proof requests, regression failed then passed."
+  ],
+  "assumptions": [
+    "Common reset is asserted before operation; reset interruption aborts the epoch.",
+    "Inputs and control are binary and sampled at settled positive edges of the proved common clock.",
+    "Parent token representation is11 bits with accepted local counts97..2047; this is not a whole-chip capacity claim."
+  ],
+  "reconstruction_choices": "Query start96, sixteen-query batching, three32-key regions and local packet/threshold details belong to this reconstruction. The verified causal sampling supports the disclosed sink/inner/recent method; absolute paper results remain unqualified.",
+  "evidence_sha256": {
+    "syn/prove_tri_oracle_tile_geometry.py": "c7f6cfcccae9ff7fce4ec52d938b339551d9ea43363efc849928d02e44f80fe6",
+    "syn/test_tri_oracle_tile_geometry_logic.py": "7e15de9612cadf71105d8a02beeb2b033c1b82643643c697537150e35c3d46e1",
+    "records/tri_oracle_packaged_tile_score_packet.json": "5b7ae9e72268a8fda2795661b70eacd5270f9373f7f20fa1ef1373e5d16b3e9b",
+    ".cache/wide_packaged_host_link/head_ratio_proof/geometry_final_checked.json": "d652eec3e23bc9c3c7d68c8c00c9973d15abb82e470c276d0a06a27a1fdedc59",
+    ".cache/wide_packaged_host_link/head_ratio_proof/geometry_gpu_crosscheck.py": "5e4aecf1abbfad11efb3c859cf969cc2cdd166942a3c59993132b0db0d4e2a71",
+    ".cache/wide_packaged_host_link/head_ratio_proof/geometry_gpu_crosscheck.json": "162202b8c7f1c3f82c8646fe3f0edecde69e0cfe1526e1677289b97f3659abc7"
+  },
+  "corruption_controls_verified": true,
+  "parent_batch_geometry_verified": true,
+  "causal_limit_generation_verified": true,
+  "tensor_command_generation_verified": false,
+  "upstream_completion_ready_routing_verified": false,
+  "tile_score_production_verified": false,
+  "full_head_prediction_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "scope": "Mapped parent batch geometry, stored tile geometry and causal row-limit components. Full channel/keep production, observed consumer routing, upstream tensor arithmetic/tags, complete prediction, task accuracy and physical timing remain separate obligations."
+}
