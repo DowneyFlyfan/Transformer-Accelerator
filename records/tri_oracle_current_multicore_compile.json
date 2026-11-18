@@ -1,0 +1,51 @@
+{
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "build_options": {
+    "build_threads_requested": 4,
+    "mce_build_opt": "minimize_memory",
+    "multicore": true,
+    "nospecify": true,
+    "notimingchecks": true,
+    "sequdp_nba_delay": true,
+    "simulation_threads_requested_but_not_executed": 20,
+    "xmerror": "RECOME"
+  },
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "console_sha256": "827f7e7e9e7b7daa05ae79b3d724624f48604d4906f895319a4002dac7979f58",
+  "initial_snapshot": "worklib.tri_oracle_chip_packet_io_tb:sv",
+  "input_manifest_sha256": "afba2088b37950c8598f1b95bdc46e2e6a1ae486fe0b81bd3bef7cd8049eeb62",
+  "local_artifacts": {
+    "native_receipt": ".cache/wide_packaged_host_link/trained_current_multicore/serialized/elaboration/status.json",
+    "package_manifest": ".cache/wide_packaged_host_link/trained_current_multicore/prefix_check/serialized/package_manifest.json",
+    "runtime": ".cache/wide_packaged_host_link/trained_current_multicore/serialized/elaboration_runtime.json"
+  },
+  "native_result": {
+    "exit_status": 0,
+    "minimum_free_disk_bytes": 26518257664,
+    "minimum_host_available_bytes": 10189139968,
+    "multicore_elaboration_seen": true,
+    "multicore_link_finished": true,
+    "owned_group_terminal": true,
+    "passed": true,
+    "peak_container_anonymous_bytes": 8697737216,
+    "snapshot_written": true,
+    "stop_reason": null,
+    "supervisor_error": null,
+    "wall_seconds": 762.5801214701496,
+    "warnings": []
+  },
+  "package": {
+    "entries": 929,
+    "manifest_sha256": "494ea9e445b7b2ac0163f0d4d764cab682b472bed1b463d7767b83ca7c54909d",
+    "post_compile_original_verified_unchanged": true,
+    "regular_file_bytes": 5464822208
+  },
+  "pinned_input_files": 217,
+  "runtime_sha256": "2300c5f6a48ea0353c55a652b30b453eaf37883d441428e6c7b47ec5a68edb97",
+  "scope": "Compile and elaboration only. This is not trained execution, simulation speedup, timing, accuracy, routing or paper-performance qualification.",
+  "simulation_speedup_demonstrated": false,
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "current_mapped_multicore_compile_qualified",
+  "technology": "TSMC 28 nm HPC+ adaptation; not the paper foundry operating points",
+  "trained_execution_demonstrated": false
+}
