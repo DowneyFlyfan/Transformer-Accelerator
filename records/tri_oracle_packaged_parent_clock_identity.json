@@ -1,0 +1,703 @@
+{
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "all_array_clocks_equal_top_clock": true,
+  "array_count": 20,
+  "arrays": [
+    {
+      "array_module_sha256": "697172ec982b37e6124f3db93f026d91bddcd0af640cc47caeecf497b2558141",
+      "module": "tri_oracle_pe_array_verified_bank0_1",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute/compute"
+    },
+    {
+      "array_module_sha256": "8dc1881191a4eb1524ed94e457f9e5a8d1955133ee2600d7790da385f0f958a4",
+      "module": "tri_oracle_pe_array_verified_bank0_2",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[1]/compute/compute"
+    },
+    {
+      "array_module_sha256": "3a29cca0a1372a047369831a3e68b0388a3aa505a5491951bdf386c5f95bbfcf",
+      "module": "tri_oracle_pe_array_verified_bank0_3",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[2]/compute/compute"
+    },
+    {
+      "array_module_sha256": "c394f4503e11bf46b0de3135633d680b6bb25f362a1d10d04e7a93ab6dde9c23",
+      "module": "tri_oracle_pe_array_verified_bank0",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[3]/compute/compute"
+    },
+    {
+      "array_module_sha256": "64bc014dea7603b3306aa27944b36c4deec0fc46b2fc4a5f86c597f06e7baa81",
+      "module": "tri_oracle_pe_array_verified_bank1_1",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[0]/compute/compute"
+    },
+    {
+      "array_module_sha256": "815291151b4b596bf9012e4dddfae7a755b296396a42201d325ec16a8645d187",
+      "module": "tri_oracle_pe_array_verified_bank1_2",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[1]/compute/compute"
+    },
+    {
+      "array_module_sha256": "164575b6ce791dbb1b96c52d07d116e1f68d39ee50be8940698dd82567916cf7",
+      "module": "tri_oracle_pe_array_verified_bank1_3",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[2]/compute/compute"
+    },
+    {
+      "array_module_sha256": "13abcfbb28415238a72af3fabcb9334ddd475d955361cffcc011d276d20267d7",
+      "module": "tri_oracle_pe_array_verified_bank1",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[3]/compute/compute"
+    },
+    {
+      "array_module_sha256": "e6180af9f138a7af20b9aa3bb2a113780101fa2f35f55d1d7d4ff4206e275e70",
+      "module": "tri_oracle_pe_array_verified_bank2_1",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[0]/compute/compute"
+    },
+    {
+      "array_module_sha256": "4720c11cd6f704915477fbfd54d9b7ad4c7cb5e2ff34df567900ae2da363bb85",
+      "module": "tri_oracle_pe_array_verified_bank2_2",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[1]/compute/compute"
+    },
+    {
+      "array_module_sha256": "17111bfd26b9cc86a6e3c69f2ab8b457e30bcc9eb04b89d98379bcf4db66ab22",
+      "module": "tri_oracle_pe_array_verified_bank2_3",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[2]/compute/compute"
+    },
+    {
+      "array_module_sha256": "150b9ce1ced7fc6a219bbc1152cadcfecddd8c01e64dd0f466e7350eaa65b1d2",
+      "module": "tri_oracle_pe_array_verified_bank2",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute/compute"
+    },
+    {
+      "array_module_sha256": "560e0e441c0b2beca374dd1b98cacc1a2a819f9ac1937b44ff319c7ece3d8850",
+      "module": "tri_oracle_pe_array_verified_bank3_1",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[0]/compute/compute"
+    },
+    {
+      "array_module_sha256": "1fc274f6361b4c4ab2b86075301d2fc307b1adfead6c787c6f513cbc8cf10684",
+      "module": "tri_oracle_pe_array_verified_bank3_2",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[1]/compute/compute"
+    },
+    {
+      "array_module_sha256": "73d274e8e8748f1b40a20fc41e57179c8bb12f27d59e22967ee8d9fb0aa28ae8",
+      "module": "tri_oracle_pe_array_verified_bank3_3",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[2]/compute/compute"
+    },
+    {
+      "array_module_sha256": "56b004808e82b9fc5d562419d0005947d9e4cf9553307ad4081af7989130c9ef",
+      "module": "tri_oracle_pe_array_verified_bank3",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute/compute"
+    },
+    {
+      "array_module_sha256": "bb1df3d384b8dd7918b89434e0bb7cc303f70bed71f6d0fde5c92c1cd811bf24",
+      "module": "tri_oracle_pe_array_verified_bank4_1",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[0]/compute/compute"
+    },
+    {
+      "array_module_sha256": "4f9688c12ae6f866387e1c4099a1d08b725b7e3ed525a8ced76618ae2333b39e",
+      "module": "tri_oracle_pe_array_verified_bank4_2",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[1]/compute/compute"
+    },
+    {
+      "array_module_sha256": "a4aa2608d9addd7dafe545478fc1e69d2d60b7c31ff595325bdbaa2c7aca2501",
+      "module": "tri_oracle_pe_array_verified_bank4_3",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[2]/compute/compute"
+    },
+    {
+      "array_module_sha256": "b43d5478a5eccc16a852e87b6628cfada7391ef0ab6d95ae068fde34b4200be8",
+      "module": "tri_oracle_pe_array_verified_bank4",
+      "path": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[3]/compute/compute"
+    }
+  ],
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "evidence_sha256": {
+    ".cache/physical/shared437/merge455/compiler/16x80m2f/ts5n28hpcpsvta16x80m2fw_130a/VERILOG/ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.v": "ccf723afb843be99519a3cb5fe2cf8c5d46ebce84a62dd1246f0f7bf397237a7",
+    ".cache/physical/shared437/merge455/compiler/24x128m2f/ts5n28hpcpsvta24x128m2fw_130a/VERILOG/ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.v": "35ea57a9268155751bd00d7087fd068fb1d5d9c575e2e52f61780c725a7acd54",
+    ".cache/physical/shared437/merge455/compiler_inplace/8x80m2f/ts5n28hpcpsvta8x80m2fw_130a/VERILOG/ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.v": "f23baa3b8e4b7e078a89899ff0e2194dd9022dc0dc7d6fbed71c8c98f21b5e41",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ffg1p05vm40c.lib": "45c9e4f27a6285bae84cb44a150ff4570e24de0911558d0dcbbf5010d538209e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140ssg0p9v125c.lib": "3a4effdca0a668c5f5da6a579b0cb585c4c0b008b4833123d5018138ac9f1d75",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/tcbn28hpcplusbwp12t40p140tt1v25c.lib": "ffd920511a8ed253ccc3b8894597d600525de5ebe8fccce8dfb5368612c58bf7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta16x80m2fw_130a_ffg1p05vm40c.lib": "43ca26bd67075741dec771327a4fb98f5b36858c01df2f93168d1721a7b27c49",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta16x80m2fw_130a_ssg0p9v125c.lib": "883b5eaa7e9e6ff7cc8e68934757ac3d3a07f4789abc3c2c3c6d1d443e63956b",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.lib": "7815cf0540054f6612021a2c2c02d94a786001e5dbc0b8a13db8a7f0372f0790",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta24x128m2fw_130a_ffg1p05vm40c.lib": "f35574c834b9ac99053056da4f8e5435d6a2e385f6cbd85a3633f5f3b3da3165",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta24x128m2fw_130a_ssg0p9v125c.lib": "76bb9629e84978e2fe499f665280e62de5a3bfa59b9364b05a1d2cac794861a4",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.lib": "6c8ce7d7aee1325d7595bb5f249c232f91e03343765e03709b1df6e6c3bc61ac",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_ffg1p05vm40c.lib": "4fe75de30dd7d720e74004776720037dc06daab560b531776d1f9655d967b6ce",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_ssg0p9v125c.lib": "ab7fcb0c7c4be089074b40e46722c925717e5e4251ee3c4cb4ac004533fa0d7a",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.lib": "2f1c8d8810530a75a291d00a91e779da57f43865febdfc0f375309dd83cd7d32",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_ffg1p05vm40c.lib": "4738640b8d478399ddda2e37d1f62530a833e24a89e5751118039402d6292f75",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_ssg0p9v125c.lib": "c23271fe010db935868909e8873c3e9f13c11c14a99fe9275428707165c7c945",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.lib": "382947ea1d22a7dacb9111bd2d3cebe35bb6232302d4f0598938a6db12c52d5e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta8x80m2fw_130a_ffg1p05vm40c.lib": "697b174d83df4d5b1df2f1671ed04dc79453bf67b3f9c085c01ab164f72b13d7",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta8x80m2fw_130a_ssg0p9v125c.lib": "67050271d3c684b9fefb5c6f62d64736f06d7b12e9dcdb6f2fbb52a37ed86e3e",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.lib": "5505b2ee2dc12fecc1b9103a2e25c13b59138a721f48a76848592f7f76857748",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts6n28hpcpsvta16x128m2f_130a_ffg1p05vm40c.lib": "7e0d83ad9eafe090e70a0a7db5a3a75bdae731f2c6a90e530945492cb3101d84",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts6n28hpcpsvta16x128m2f_130a_ssg0p9v125c.lib": "e862ab320bae1d92b32922444fdbb42f20efbab92fc15bd473311ca4a387380c",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/overloaded_net_repair/candidate/native_validation/import/placed.db/libs/mmmc/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.lib": "40f5cf939d4ffbac0a9273b8b6d3cf769fee1b9514bebb548ce83363c4ed8a72",
+    ".cache/wide_packaged_host_link/architecture_check/control_checks.log": "c82342bc1655608f5d1efc46424e2bbe21cb1dcbc36a8050f8f69ef7f1ab2762",
+    ".cache/wide_packaged_host_link/architecture_check/product_controls.json": "bb80c0945ca3dc554fd78281a2982214d0060a7536b0e5fbe2f4e5afe1261ba9",
+    ".cache/wide_packaged_host_link/architecture_check/product_final_complete.log": "119636cb3047a7b13c6541fd6187480ea9941a1305818aa2717438c27a7a7e3c",
+    ".cache/wide_packaged_host_link/architecture_check/product_final_controls.log": "503e34720d1366895ff2bc3731adb3129d3d7e8910ecede32272af5a7414bd32",
+    ".cache/wide_packaged_host_link/architecture_check/product_final_tests.log": "fc4c2931d826fdf9b0e86ffa1cfe8c0853740785be8422229562ca76e7ef3774",
+    ".cache/wide_packaged_host_link/architecture_check/reduction_controls.json": "d544eac94f6a2f8bda8d29a3e835138fcfdfc93e46862e12fb1e5cb4485a244b",
+    ".cache/wide_packaged_host_link/architecture_check/reduction_verified_complete.log": "7c9bc01d42a979b02116d461bae1c52a0a1ca4ea81ffb79af688370534957a8a",
+    ".cache/wide_packaged_host_link/architecture_check/reduction_verified_controls.log": "8d4df4e0d76d97395811ac37fc55e6963bd4670e62654945eb796ce26d7eb251",
+    ".cache/wide_packaged_host_link/architecture_check/reduction_verified_tests.log": "32d26914b54c8d87a0a4dc9642670e3454750b7670c5d10ff190fd9e648991c0",
+    ".cache/wide_packaged_host_link/architecture_check/valid_controls.json": "5df6cdbfba0fff1a8ae171465b069f562ed0750be6da4109f755b4a16422bcff",
+    ".cache/wide_packaged_host_link/architecture_check/verified_structure.json": "e19196b7d5688d0f9b5de7a8a6377c9d77ba0bf46379bce0c279e213d5d7719e",
+    ".cache/wide_packaged_host_link/drive_repair/host_legalized/candidate.v": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+    ".cache/wide_packaged_host_link/drive_repair/prepared.json": "1b940c4c465fa88bf9e26180eecb2497583c80a6cf80f1fbe0bfb73d3c27cb4d",
+    ".cache/wide_packaged_host_link/placement/native/cold.v": "d84d7760a2ba6a201af7b10310f2060c066453a8411c868942e0230eb4a7c902",
+    ".cache/wide_packaged_host_link/placement/native/layout.def": "00e19c9debe38544cf3aad292871d84c3104247bcd745ed3509117c01425b2c9",
+    ".cache/wide_packaged_host_link/storage_accounting/control_checks.log": "39269357d13eacc3a413d8167d57628713c94af55b8da89d83fe1c32b03d0b67",
+    ".cache/wide_packaged_host_link/storage_accounting/verified.json": "be7250753ba293166e130f3682e67c8c86b6db9a1845626a02c3baf97bcf50eb",
+    "Paper/Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction.pdf": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "records/paper_result_targets.json": "a78ffe5c68817a99dfb418387dde2aa2fb2273ecf7af1c121892ac72fda129fd",
+    "records/tri_oracle_booth_compiled_memory.json": "e5965c114954b7205f75d98dfd6d11f8c953de775e3dfbd79c18e53d87e1e479",
+    "records/tri_oracle_packaged_compute_structure.json": "9c45481f5927257b1da8bc5552134e2e0a4ef7edaee4b8d806e7097d808f1084",
+    "records/tri_oracle_packaged_parent_reset_distribution.json": "c09bd6b76169bb965a46b460b251e431fdc2189c947b107e34acf4c748f02fa7",
+    "records/tri_oracle_packaged_product_next_states.json": "a8304c395845b4da35a4a2ea21e486e85eaac567ad8305adae8b924985202d2e",
+    "records/tri_oracle_packaged_reduction_next_states.json": "a419fcf207ec8f572a207ebc7e6f336624396bd11477b1b43663acc2833914a1",
+    "records/tri_oracle_packaged_resize_logic.json": "d88e094b7f94523e2e1e4f300282598cdda9ee44d16c2457e2b8a101e5a6c5fb",
+    "records/tri_oracle_packaged_storage_accounting.json": "e37d6ba47dbaa665b5a576a8685f32620092f9e25065740b96c62562bb08d622",
+    "records/tri_oracle_packaged_valid_next_states.json": "6e83a85405295e61d61fb01d0e335ca333500092a9b02cc9a50ad2bfaed08751",
+    "records/tri_oracle_wide_packetized_native_placement.json": "6d8eeeef8b0bad19476797f9134afa5b3391f11149b250b3f6ca65271e934f23",
+    "syn/audit_tri_oracle_booth_operand_spans.py": "f2b88654c2eb91dcf29820ddb7ca2354ffe22411b69b0fd505f003dc33f15ce8",
+    "syn/audit_tri_oracle_mapped_redundancy.py": "cbe5b2ee8589e2e8111fae25713ca1177c9355fffc7da59e46ca6d3469aaa69e",
+    "syn/audit_tri_oracle_packaged_compute_structure.py": "6c993193f282c03c1150b983286583f465aa61dc14f09ce5a8e8550b96f7032c",
+    "syn/audit_tri_oracle_packaged_storage.py": "946406fb7bc5942ca7b48974945f1b06ce3695fe644438db498a6d629d6ee224",
+    "syn/audit_tri_oracle_shared_prediction_roles.py": "ed237d0dae2f6bb982890fd09fd1e9fa54d537a548caad17262477392ea58349",
+    "syn/audit_tri_oracle_wide_packaged_pin_inventory.py": "92161169cf040ea23d427bc148a1f46a208057868b4acde85c164726bafb1f57",
+    "syn/link_tri_oracle_indexed_whole_chip.py": "a821d99fc947f7df45cb39c9f72fc1d6167465713ca2095070ec566de52e2a86",
+    "syn/plan_tri_oracle_grouped_reset.py": "2c97c2ca9aa4c6e1b6ecc5ce4e2a65565aef7f2f7e8a1786954b8edf1477d3cf",
+    "syn/prove_tri_oracle_packaged_products.py": "94f6aecd4176bd60fdfc27817bf353db33c4f5a1d1600ef4591c2bd9766a8c2f",
+    "syn/prove_tri_oracle_packaged_reductions.py": "18396220e1a361ceb6a20359f77a61e792c5752b1465a4d18ee96812df54631e",
+    "syn/prove_tri_oracle_packaged_valid.py": "462b015bbe557ef0e032277a405af1661a88d887778ca4531876466e91642ac5",
+    "syn/prove_tri_oracle_parent_clock.py": "063090daf77989f2a5c7ec2747786ae9fbec33108e5f2310cb4e113990766434",
+    "syn/prove_tri_oracle_parent_reset.py": "021882814ce185bfda2d806cd9cb3b851449a4e80a077fa4bb4dbf47d9157d37",
+    "syn/test_tri_oracle_packaged_product_logic.py": "cb954b1ab1171b0a754f838aa7ab283a83a9ec2fd46463b75aab1c0ecb1638dd",
+    "syn/test_tri_oracle_packaged_reduction_logic.py": "bafd7f4f153c4c5e1f653379a3050ba62d4f19c90c467e8661798dd78a382369",
+    "syn/test_tri_oracle_packaged_valid_logic.py": "a958b19237232b7f1548da3c3c31e69442c5ec486635b9b0b8b8f42b07dc435c",
+    "syn/test_tri_oracle_parent_clock.py": "2815d059fef55ef437144529d7a1f3b2882371b72732bc5e009458982f8b3639",
+    "syn/test_tri_oracle_parent_reset.py": "7c51a4e8ae0dad2b391881dfbae25d741b2920a56dbaaa6139bb3a8b35ea28d3",
+    "syn/verify_tri_oracle_booth_chip_compute_geometry.py": "5e2b54f3b65467dd1b79696b024e61b2100d1a84bb2a13f969e27ef60557ae31",
+    "syn/verify_tri_oracle_booth_chip_geometry.py": "2c93bd3d8367c45c821d9e5c19a53de95bfe87e52b1d66a1ff264c249d59f156",
+    "syn/verify_tri_oracle_booth_chip_link.py": "367c30e3cdd3b1aee835d1dfeda874f35466a47c700ce5f0f39c8f97fda3372c",
+    "syn/verify_tri_oracle_pad_cold_reload.py": "11c2d716c33f4dd1223a3a69898c3080fa3b135be58d0543fbe75019e12d717f",
+    "syn/verify_tri_oracle_serialized_placement_transfer.py": "f934088e2f1499249c2c032af243e5916c8d3d1eadfbeb6180f8d503dab0f694",
+    "syn/verify_tri_oracle_shared_memory.py": "cbbd16c97f8a78ab64484f674a96601ebcc63299c29d35c88671b27857568bb4"
+  },
+  "integer_assignments": 2,
+  "parent_module_sha256": {
+    "tri_oracle_batched_mask_packet399_parallel_chip": "07c46a84553c5a5efe83b16b206ca961c06bbff419d0981cf3f71d3e4496e0f9",
+    "tri_oracle_batched_nonlinear391_parallel_chip": "b2537d1bf395c235156cae178f207a147d9dfad61870ef18cbdfc310f894943c",
+    "tri_oracle_chip_attention_packet_io": "7f4f945c0ca77d2a06b852bc8cd413c5d71c0bcdd9524a047a69d130052ee95a",
+    "tri_oracle_chip_command_layer_parallel_chip": "11f1a389d269c8b6cabb060b8bdd5fa7c0fe500c0cf7942fbef5899073d2c55a",
+    "tri_oracle_chip_credited_metadata": "dbc69e765a251e7e9fe05ab71865852af91e00d6835a657b635419e5950706fb",
+    "tri_oracle_chip_credited_request": "c06ecf5c61300e2d10cb5a199f5828a243384728c145d6f34c47a73642a0e780",
+    "tri_oracle_chip_host_status_io": "9d8b8935d1be8f904044dcc6b9e6b24e835d290bb6fb5d89672a07e83c286e1d",
+    "tri_oracle_chip_packet_io": "8a2a65a1ac66504dd3d276f038e5ec08c61b1b82cd83d8aaef88d3cfe2ad1922",
+    "tri_oracle_chip_projection_packet_io": "be1345c73b5e68d5b5de86c72a5ef25b8b7118f660f62011118e4bf37986cdcf",
+    "tri_oracle_chip_rotary_packet_io": "bbbbfea6f323e187c9b5e3ffb03031f4822b15819d5d246bbcac2cc899a87ec0",
+    "tri_oracle_context_attention_pipeline": "6aecf18e15060fd4396d3789f5277e2f7ff13d1e3c06c9222cbe8d5dc4e3dd10",
+    "tri_oracle_context_memory_fabric": "657e75e7b09822840ff51ea4ee425affee90a0ceb953af099a520e60e89a39a8",
+    "tri_oracle_core_head450_12552_verified_bank4": "e768ac95660644fa3bcc9760b282ba4705bbfa5994b54de8e0a4b60966d1d14b",
+    "tri_oracle_core_head450_12553_verified_bank4": "feff0ed7e06f352bcb7f60c3249b4a2981ffe934117b1b2a93df3c27a0e3b3be",
+    "tri_oracle_core_head450_12554_verified_bank4": "51f80abdb2c4612d13d693bfdc0bbc064c1d684bcb498c6b10d2d07713ea9569",
+    "tri_oracle_core_head450_12871_verified_bank3": "94c66bd2697d181a9a1b9fa98e320d0fd176df59908d39bcf3d5a81c438c1757",
+    "tri_oracle_core_head450_12872_verified_bank3": "7daed5184196dc827a8ab4c98a853475f712d8da7cb54f0d561af56921a8b310",
+    "tri_oracle_core_head450_12873_verified_bank1": "4f9dfd38a53810691f04e12106f769effcafa015d5e05588554ba50d850f113c",
+    "tri_oracle_core_head450_12873_verified_bank3": "2ad6d0252e6c11e33605c928a108085fbfc7c69a3c3ccadba77daa5b4497825f",
+    "tri_oracle_core_head450_12874_verified_bank1": "dabff17dc77f4f6fc3d2c3f14a8ab80c816d27bce52e33ee2dc0f58b906b82a8",
+    "tri_oracle_core_head450_12875_verified_bank1": "c7feb805c95427803262c35af4df2b642caceb5a33d0ed7a79fa8ca1234e1469",
+    "tri_oracle_core_head450_12877_verified_bank2": "d9f44335b38d3515180d6d8427ca0cbc8c24415a46a3b370fca28acd3c20dea4",
+    "tri_oracle_core_head450_12878_verified_bank2": "11889da87a4d53c817c8555a2a8663e882a4dfc1c09dfdad69d4d87917b19b0d",
+    "tri_oracle_core_head450_12879_verified_bank2": "54c1b6b753464bc1d1c14e1771523be4bd4d8edcf586e0f2c37732aa6e759ddf",
+    "tri_oracle_core_head450_13930_verified_bank0": "feefae7ed0be15f62065043c4b0b35a790636fc813f8666a2775a6bd80491972",
+    "tri_oracle_core_head450_13931_verified_bank0": "48cbf4473b94e8310e7bf4476ddc71995716b1eddc4e739064571b082a3cb16d",
+    "tri_oracle_core_head450_13932_verified_bank0": "00ce6ecebab6e662bf656adfbf862a22cbe90885eeb7ac18ae7b6ade7e916789",
+    "tri_oracle_core_head450_verified_bank0": "4a780490fc1272fcf8042c916f9bac05ac035ded313d8f6b4ed82bb2cd5a8913",
+    "tri_oracle_core_head450_verified_bank1": "4aa6fdeb0ce9dc2ae3c1b2f3600f341e8922a21369723be0189f38b1457d401e",
+    "tri_oracle_core_head450_verified_bank2": "e2f4150336c6d75332bcd0db7f9f813a10d208c199554cc7b1ae90ac6cad4d75",
+    "tri_oracle_core_head450_verified_bank3": "c639c82c159e016f026af23f9fcb59f445e0dc52a6ea5a1b126eca996287fddb",
+    "tri_oracle_core_head450_verified_bank4": "c4df6c4fb4c5750efbeccb534cf4a400cd4f585ac2127c94ad720a29d552baa4",
+    "tri_oracle_core_strip448_12555_verified_bank4": "59361ee4b0994de822bd52bf71ff49f929c07ddad4e6767f67e7c1095d527bb3",
+    "tri_oracle_core_strip448_12556_verified_bank4": "958566c9336f5545f1f5e5b14736038f217ad9053d8c815f2ecff86c51291a72",
+    "tri_oracle_core_strip448_12557_verified_bank4": "098fd45bdb20c87e6a1708aaddbfaa4289c9aa139e643f823d7de2bcb6bd9181",
+    "tri_oracle_core_strip448_12874_verified_bank3": "c94f827f2232c843cddb5ae79df7a59f7811bce3eb159146c3306921bccb07da",
+    "tri_oracle_core_strip448_12875_verified_bank3": "be5d9b8791e9fe3eaa8769a8e435be774e3d0fff139180d8fd31f0246e312047",
+    "tri_oracle_core_strip448_12876_verified_bank1": "a5d036e93d12df73009f95b7ff819cec394f31b1fa9332f0a466ab302ae6348a",
+    "tri_oracle_core_strip448_12876_verified_bank3": "bd0ad6c96f51c7338b3889d1d4df6d23b4003d57b59fc66b0efdf5f1cfec4bbd",
+    "tri_oracle_core_strip448_12877_verified_bank1": "6cfc6acd52f433c238d6c9cdcaaea0cf83421b67f63e0b8facfbd24b18d39136",
+    "tri_oracle_core_strip448_12878_verified_bank1": "fc1fbc897edd83285bebefbb4fec3bc4fed2d5459bb23c7c92fc364ce835366e",
+    "tri_oracle_core_strip448_12880_verified_bank2": "4d333249e741be19c17d7de939df517e81774ff6f59e91edf070c5ca48a01353",
+    "tri_oracle_core_strip448_12881_verified_bank2": "6fde17bf376ea044ee5d19376a4789715987ff76e39a917bdcce4f88b5ce4c8e",
+    "tri_oracle_core_strip448_12882_verified_bank2": "09dc9aba1dd8e92b869f40e8673e6b9a4be233b7c2edb321845693de0bd020b6",
+    "tri_oracle_core_strip448_13933_verified_bank0": "ed8b233207faa21d1136f56225f3f92b010f1573257f9499f32a468ce90a8366",
+    "tri_oracle_core_strip448_13934_verified_bank0": "3d83faebe3fafdee10067e1c6070d4dc0838e1bceac2d1bc7e8b17b41c34128c",
+    "tri_oracle_core_strip448_13935_verified_bank0": "3cb3a86207b2f973008a3ec05da7d7fd6094e82e8fd88ff0a147f309e211e50d",
+    "tri_oracle_core_strip448_verified_bank0": "688cde80d3e1110e136b7322caf508bd20c519a2e1bfe1f8e071dd910ed9089f",
+    "tri_oracle_core_strip448_verified_bank1": "d1a95880472d6b5cf0c2b961fc36a354e26bf1f4e0bcfb49e7010e969841251a",
+    "tri_oracle_core_strip448_verified_bank2": "83b9c14e907f1f44531a58bd2d950f4b2377811a1711a108b88eb8a28c71feec",
+    "tri_oracle_core_strip448_verified_bank3": "2fcf7378d3cceb653c433e5f07656d0ff607b8bb6990f752d513c67698d41460",
+    "tri_oracle_core_strip448_verified_bank4": "e9189bba148018c71600c490cbf7ab19b485afed0c6e4d1f1b429d77f5e55a71",
+    "tri_oracle_credit_metadata_ingress": "def316124da3cdf62a47309985205700dab50e4b0dd948a3b58af1f1a981c75e",
+    "tri_oracle_decoder_bank_writeback": "1a9c57b6d9530ab08a2a2b869db64389c500757a4bd77738c5b2c966a42ec373",
+    "tri_oracle_external_write_mux": "7a8fd0cb0e997391efb74fbfce580c39709b1158509a46fc65a63e5eb23fc89d",
+    "tri_oracle_grouped_cluster_batch_cells": "fb11e6aff831edcf4c0517a61244ae303edc9dce60a75b19ea8e371a299dac88",
+    "tri_oracle_grouped_read_fabric_cells": "9b10567ccb470ab19cb33e8fec8b6e6f9392cede05a5371df57622620618b3b9",
+    "tri_oracle_grouped_size_arbiter_cells": "f39b20b549af8587d7df29f6d56bca0e0439e1da8b8c5f8a0dc3d29f7fdee68e",
+    "tri_oracle_host_boundary_rx": "10e3251d8aa44e99f7443bbaa9003c4ac00024d0ab8c2c0ba4160e05c7a72615",
+    "tri_oracle_host_command_link": "4df533af5e734898fe75371b6359feed3f9220617ef7569c9a5eeea494b0de24",
+    "tri_oracle_host_control_rx": "e3f1a6610c94ff1a2ed44df94511d274a6cb632ee0e514822f48b216ebe98563",
+    "tri_oracle_host_control_tx": "be787c68f40d8abb9e4fb3f8fb02ec0786354c398c374b2ca4e5456a67691892",
+    "tri_oracle_host_grouped_tx": "3edd25719723d3888f1fec5547b9f2dd517fbe10161ce46cfdfa77d6da962d59",
+    "tri_oracle_host_serial_pads": "6473c6711781fc6e0101e98ed81f5b707b2f03c969f62eaf8b656758af76ca55",
+    "tri_oracle_host_status_link": "54ba04440b4352ee9329bdc5e772a29c6a7a49c807f0fa2b019079d57b7f9427",
+    "tri_oracle_host_writeback_tx": "2d36c7fca5b63d5d7a8f9ba3387756d59acb5d70ba479ac965b58e0b7c636dd6",
+    "tri_oracle_indexed_chip_dispatch": "4445c2d98f3d58aa9e76c7fe071348c11368ff49b2dfa5630a4d7120e6a14f01",
+    "tri_oracle_input_bank_lease": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1",
+    "tri_oracle_key_redirect": "051b26bfd49a491023bc4e490e6585fe41942da4128180eb7b5308cddc50e97c",
+    "tri_oracle_linked_writeback_control": "3f311648269bda3f1d7b311acbac50f6b34817f8bc4172eccb7abfbcc6171f8d",
+    "tri_oracle_memory_io_link": "447d72898a22e7c3a744c5601fe0be7497a3e3d677314080ee4e46b0371d0b33",
+    "tri_oracle_memory_tx_credit": "af582f36760410f65e9fb8b84f2efb8ffe3ba8790ba383fee8d40c5d1152a54e",
+    "tri_oracle_merge_range_relay_parallel_chip": "bd357b881395885bf977f8c3c4ef2d720f51b83317305576d0d1ba476ff28399",
+    "tri_oracle_native_probability_copy_0": "c5f8fedda3b0dd76f86eae281dd07fb5b364361dc4d3c035154d307e69babfba",
+    "tri_oracle_native_probability_copy_10": "28bfdebb1f9a9a9ccedebf1bdc298ca364958fb56e1146bd027d208b5acce13d",
+    "tri_oracle_native_probability_copy_15": "8a5d82308e3218a9eff07472072220aa47dd1248f67a128da3b460cad0dd334b",
+    "tri_oracle_native_probability_copy_20": "de010882de86b55f118c209c07793bd359e007001371dc982e21b0a66a9d666e",
+    "tri_oracle_native_probability_copy_5": "98f214b678e6292b297af1098999035c7c1dcc408b02d5e3aca162b68a879596",
+    "tri_oracle_native_reset_copy_0": "1610363bc54037a42d9eec000c95c2630099aa9a62f59cb053a4df750c6ac31f",
+    "tri_oracle_native_reset_copy_15": "3630226c2643f38206519f376b480027cb03d2b3a4aa43a1fca514a6f3cbdf7b",
+    "tri_oracle_native_reset_copy_33": "c53daa09aaaac0d463bae440b63b8054cfca3a13b8ddd1725bd24917ead45b47",
+    "tri_oracle_native_reset_copy_34": "a67ad75665b53a30b7dbc70802061073fc650369cc817445fc853ee72c1368f5",
+    "tri_oracle_native_token_map_copy_0": "486c064e5f3d85c6d31e044e0d507a6fd63294054ac24a9c00225d05825eda30",
+    "tri_oracle_native_token_map_copy_1": "ef115ad88c39f36437713ceb18e4c7d9838fb776fd6eeb897293cf3a99b96573",
+    "tri_oracle_native_token_map_copy_10": "a638c0b18b6dfbe0fa571b2cd6ad37194175fba8e6665e0e92f37eaeeb8f9344",
+    "tri_oracle_native_token_map_copy_11": "3c984f0167b1f27716b7824b874f09fffab13ab55b9704ffc3268d567bf2adcd",
+    "tri_oracle_native_token_map_copy_14": "ceb10f3f22a49b47164e0804679c90bd567d3b8e785cbd2173cf4bd7eb60c5d6",
+    "tri_oracle_native_token_map_copy_15": "d7debc985b466db487aeab2a3b1915a06b12dbcf0d95a7f31b736972a4e2f5df",
+    "tri_oracle_native_token_map_copy_16": "8912aa3ad89a18d03e897d107aa40c5a112b9a66db119de3a1691036db59163f",
+    "tri_oracle_native_token_map_copy_17": "9fd06fb0b2a82a02a8385d2fad5896701177ca277ca78331fca0133ef7376b20",
+    "tri_oracle_native_token_map_copy_18": "a2cb95ddaeb17745672f5ba029526c3dcc3c7b73c7e1e46989f0afe0cfa414e4",
+    "tri_oracle_native_token_map_copy_2": "697eadd4e2392c1f16c46082a2366d2ee022146f0672d6e942c950249cbd4ab5",
+    "tri_oracle_native_token_map_copy_21": "c2dd5661cd8683cf50c58bf918502efd2a19c14ee5cf2d49a38b302b5579d1d9",
+    "tri_oracle_native_token_map_copy_22": "be6a0cd669b23fae2d4f467bc5bc830fe37c6eba0a99539bb448d6831173f632",
+    "tri_oracle_native_token_map_copy_23": "1bf8fc4986f2a67ff6809bf34cf0a7f02ecf63f06e598b994d66de0f0598277e",
+    "tri_oracle_native_token_map_copy_24": "ad53d2fbd6a859c3bceea52f2d64ab6ebc9cadaf17a58f05077add0bcf725e11",
+    "tri_oracle_native_token_map_copy_25": "60732c29821b4db4b5d14fe051028a4ff9843c1ff79de1640a09a51d9d2b7e76",
+    "tri_oracle_native_token_map_copy_28": "be036be7094e8611ca2e100693f81c45c1d5030836aeed037488fd54759caaa7",
+    "tri_oracle_native_token_map_copy_29": "9ee48c056cb5cdb5e0757e1e677377599598ea8f8962fffe7bc712f0858cc2f2",
+    "tri_oracle_native_token_map_copy_3": "15411d4698fe145fcfd41503cdfd7ae41324454dbd71a2b7fa7bdc96592cbdcb",
+    "tri_oracle_native_token_map_copy_30": "beb7f16d7326510698b4930235f7bb039b6170d675dcc23d8344038adf430db8",
+    "tri_oracle_native_token_map_copy_31": "bc177901eeee8b6acb3b4a668897605badd5ab1217f6a3241efccbd1269dba49",
+    "tri_oracle_native_token_map_copy_32": "2b20a51a6da7b5800834604310de25cec608950da1b21241567e151406d4c46b",
+    "tri_oracle_native_token_map_copy_35": "0430d47ad6a3517a7ddee3f877efe3fca347ce82c85dd33f604ad02f0393ede7",
+    "tri_oracle_native_token_map_copy_36": "6b930ed6ab3076b9c428c7cce62b1537f90f3576e537dbb86e52b1c96a124437",
+    "tri_oracle_native_token_map_copy_37": "1fb03d8cd4465ac0d23098ae3f2f18d2148e2b485e7f991c16db128f826fd2ec",
+    "tri_oracle_native_token_map_copy_38": "5242be636eb8bb4853d04bc30963b4a1edae23ab4af70de816105126f2d2dbc8",
+    "tri_oracle_native_token_map_copy_39": "55d66ff5fac074a8bb392db9f84ccdc40a4a11570acf46dff76b6366b6023498",
+    "tri_oracle_native_token_map_copy_4": "b9614fc9b9ac5ace047f1d321ba010ee7991124d91706985df90c7f4addfd596",
+    "tri_oracle_native_token_map_copy_5": "4bc7d21c2780fed15a5deb7c7efcdffe9c2c9334349e75a22810105d3b2d5f94",
+    "tri_oracle_native_token_map_copy_6": "caf1342aa78658576c8a690330868275ea6e06ae75e889b9d34d121e16ae078f",
+    "tri_oracle_native_token_map_copy_7": "5cfe284088557834e668648e7ae637c8e38bc682dff91fe5e03704cf462f388e",
+    "tri_oracle_native_token_map_copy_8": "361c42a15f4f532614f4170e1e1ad3dcf8ed83c803157af8c14d1ee6c56ae90a",
+    "tri_oracle_native_token_map_copy_9": "d29d460351b2d0f7b920c346330601639156d72829d9f9a997529c7474c30865",
+    "tri_oracle_packed_normalize405_CORE_STRIP_PREDICTOR1_parallel_chip": "741edf94c1903ae7cd3d6bfface40a22c421735ce46492e50302e3fdbbd1d0ee",
+    "tri_oracle_packed_read_mux_parallel_chip": "735fc7999d5831f873c8c0ead845261435a935eed3d13300bb9fcfa732f81577",
+    "tri_oracle_pe_array_verified_bank0": "c394f4503e11bf46b0de3135633d680b6bb25f362a1d10d04e7a93ab6dde9c23",
+    "tri_oracle_pe_array_verified_bank0_1": "697172ec982b37e6124f3db93f026d91bddcd0af640cc47caeecf497b2558141",
+    "tri_oracle_pe_array_verified_bank0_2": "8dc1881191a4eb1524ed94e457f9e5a8d1955133ee2600d7790da385f0f958a4",
+    "tri_oracle_pe_array_verified_bank0_3": "3a29cca0a1372a047369831a3e68b0388a3aa505a5491951bdf386c5f95bbfcf",
+    "tri_oracle_pe_array_verified_bank1": "13abcfbb28415238a72af3fabcb9334ddd475d955361cffcc011d276d20267d7",
+    "tri_oracle_pe_array_verified_bank1_1": "64bc014dea7603b3306aa27944b36c4deec0fc46b2fc4a5f86c597f06e7baa81",
+    "tri_oracle_pe_array_verified_bank1_2": "815291151b4b596bf9012e4dddfae7a755b296396a42201d325ec16a8645d187",
+    "tri_oracle_pe_array_verified_bank1_3": "164575b6ce791dbb1b96c52d07d116e1f68d39ee50be8940698dd82567916cf7",
+    "tri_oracle_pe_array_verified_bank2": "150b9ce1ced7fc6a219bbc1152cadcfecddd8c01e64dd0f466e7350eaa65b1d2",
+    "tri_oracle_pe_array_verified_bank2_1": "e6180af9f138a7af20b9aa3bb2a113780101fa2f35f55d1d7d4ff4206e275e70",
+    "tri_oracle_pe_array_verified_bank2_2": "4720c11cd6f704915477fbfd54d9b7ad4c7cb5e2ff34df567900ae2da363bb85",
+    "tri_oracle_pe_array_verified_bank2_3": "17111bfd26b9cc86a6e3c69f2ab8b457e30bcc9eb04b89d98379bcf4db66ab22",
+    "tri_oracle_pe_array_verified_bank3": "56b004808e82b9fc5d562419d0005947d9e4cf9553307ad4081af7989130c9ef",
+    "tri_oracle_pe_array_verified_bank3_1": "560e0e441c0b2beca374dd1b98cacc1a2a819f9ac1937b44ff319c7ece3d8850",
+    "tri_oracle_pe_array_verified_bank3_2": "1fc274f6361b4c4ab2b86075301d2fc307b1adfead6c787c6f513cbc8cf10684",
+    "tri_oracle_pe_array_verified_bank3_3": "73d274e8e8748f1b40a20fc41e57179c8bb12f27d59e22967ee8d9fb0aa28ae8",
+    "tri_oracle_pe_array_verified_bank4": "b43d5478a5eccc16a852e87b6628cfada7391ef0ab6d95ae068fde34b4200be8",
+    "tri_oracle_pe_array_verified_bank4_1": "bb1df3d384b8dd7918b89434e0bb7cc303f70bed71f6d0fde5c92c1cd811bf24",
+    "tri_oracle_pe_array_verified_bank4_2": "4f9688c12ae6f866387e1c4099a1d08b725b7e3ed525a8ced76618ae2333b39e",
+    "tri_oracle_pe_array_verified_bank4_3": "a4aa2608d9addd7dafe545478fc1e69d2d60b7c31ff595325bdbaa2c7aca2501",
+    "tri_oracle_residual_bank_command": "9ec3e032e96aec21c49999428fc049100c5ecc7ff5c791b101caa3fca1343d4b",
+    "tri_oracle_residual_command_request": "a5a3595f7d75e167ec988dc2d465ec111a71c9f714c71fef2d6166f0e49e5140",
+    "tri_oracle_sram_memory_compute_verified_bank0": "c1dd87b436ff18ae2aa638020f7feeeeadc0228cd9a31e6e9ad7968c79bb800f",
+    "tri_oracle_sram_memory_compute_verified_bank0_1": "d5b92412f700f392f2b25ea671e84f3fe54228e2d83b82fdc9867e0c5a425d5e",
+    "tri_oracle_sram_memory_compute_verified_bank0_2": "efb34dca6af5c2a6d34b38c1281839b50dbc411b796d407c57267dd8cdbe5448",
+    "tri_oracle_sram_memory_compute_verified_bank0_3": "c75d1a670ca07ada3bc52b710cbe66832c181c139c4634519a0d121588194b22",
+    "tri_oracle_sram_memory_compute_verified_bank1": "225a2b81acfc9bdee3ee71eefab9160e2ac75bfadac560d3b9b7a918773e515f",
+    "tri_oracle_sram_memory_compute_verified_bank1_1": "1070a98a20da7e2d9122b90b5250c7d7a77fc9ebdf9c31b68402677067484e38",
+    "tri_oracle_sram_memory_compute_verified_bank1_2": "18c7d912036e53427b56ae4aae67865dcc7836edd0f35843bbeb9f6aed85d1f9",
+    "tri_oracle_sram_memory_compute_verified_bank1_3": "e08f1b8ff4f23545b8bf5d77effb2d2a468b852bd2cb9cf600f8ebdc6b90cc20",
+    "tri_oracle_sram_memory_compute_verified_bank2": "1b475a3f338e352a42b95828aef6529ef668e95a13a6c14f4bb700de34c330c5",
+    "tri_oracle_sram_memory_compute_verified_bank2_1": "1aa1ff2fdaf706838557e44bc7b4995404bbb2815c36a8efa3406a85d750278b",
+    "tri_oracle_sram_memory_compute_verified_bank2_2": "d65f98642a9dfab32756284971e08b0fe5458ed1c4c43fc1746d8aea99b68e19",
+    "tri_oracle_sram_memory_compute_verified_bank2_3": "fdeccd69c0b70ffc43793d4237b39f038e909f7fc2a4513bf508afc4af10fb0d",
+    "tri_oracle_sram_memory_compute_verified_bank3": "4fd305372845c17003e2507d35ac5eb3fa8641bb7ea1d70eea37e22035f261ea",
+    "tri_oracle_sram_memory_compute_verified_bank3_1": "431e1c964cd142774add1f4f5819726635d7b00e0fbec39d39b0fce31f21fa3e",
+    "tri_oracle_sram_memory_compute_verified_bank3_2": "0df9a5daeb71a1a3eb68ab8a11a16b0bf171149bd6a5bf36f0b789b29f04646b",
+    "tri_oracle_sram_memory_compute_verified_bank3_3": "b6b5fa3405313de27823563d825144b3c550d195f3daec478755efd95071d6ac",
+    "tri_oracle_sram_memory_compute_verified_bank4": "c83089def2292321219918af9fe3051300a465b80abc3017f6192bd7b2da1352",
+    "tri_oracle_sram_memory_compute_verified_bank4_1": "279709305369d2cbb3af7e5bae8aa55846d4c12c3e883850cd56ec1b3ed1a9b7",
+    "tri_oracle_sram_memory_compute_verified_bank4_2": "c86d29ffd0498dcc065b43d41c7c2a72a9c8fcbfbce38c49b6fc7430bd61e0fc",
+    "tri_oracle_sram_memory_compute_verified_bank4_3": "f32d3069d7f162234ad76cd9b6c3f4ab844396330dcd9b19f0ef41c6682a4b13",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12564_verified_bank4": "a49aa9a028db7ff882a239ac1f312ea23d22764110fb9177c71c1e203de1bd73",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12565_verified_bank4": "5499328b7c206563e64f2d63bd4e85cc173cca36a00c72a1a01bef5ca8670953",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12566_verified_bank4": "e043c238c09715d77323762b425a634b0fee08f18ae0b94b1d7ac02a490daa3a",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12883_verified_bank3": "e043c55374152d9c5cd5c33320d3b838d959a5e938719a78488f8adfaae84c9d",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12884_verified_bank3": "5d7b3f8a01815a4717ab813648237a3213dcd97354f9f0203a78004e30136cca",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12885_verified_bank1": "1e80dfcdd3150014a8f4ff2ad3be8690c657d03396ce784f954c5ff5a6f0a5fc",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12885_verified_bank3": "5759a70a6a78d81001d745dde37f39ed72082bc4b2048ce4e938b1f628066bb9",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12886_verified_bank1": "e3094e04dbe17095a89a987d9821098061353b46c15264708aad799acce236cc",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12887_verified_bank1": "9bb871e19c2ed642315729bd774129a6dae8397a23c2663d80e79f1abe524e7f",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12889_verified_bank2": "cbcb78346cc21ba1803dfb0d70a91ddea9bca852a4feefd2bb9c782eb368425b",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12890_verified_bank2": "3dc55d3208ab0f1b112f161e072dd7d4f3a6946df2c5c8287cf13c3f515f4464",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_12891_verified_bank2": "070408c02e5d6f773fc7addb17ec7b380d62042395bb3a8d7aedb10761b3bdf5",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_13942_verified_bank0": "f4456f1dfef5a608db823f86729cd5db2db6290ed3569eb5e1ccc34dda7b7f68",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_13943_verified_bank0": "4da11a5ddb2c59d51cdb2852ad9e119ed0281df993128cfc7fb3ee04119c363b",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_13944_verified_bank0": "f65f9ba3a6dec839e26701325c2d6a38c286efe0b2561b3eb3ebc9308bd84f15",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank0": "62b9b1ce1f3c8b254eff43651df4320cf3a158deef5c9df18bd2a766ef5eecf9",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank1": "b432cf528eb7c2568de0f5a5e571a8e6a89d6468aef0a42931b219b7d280964d",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank2": "a79ba41208fa38b531265bc0275f5d6704a8a9c1cd6c5f3fb591a1d23e20f2a8",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank3": "fea4ef1f3213fcda8536b119eca0889ec0eaf8432a6b0997cf1e5fe5103d1643",
+    "tri_oracle_sram_strip_core448_CORE_STRIP_PREDICTOR1_CORE_HEAD_PREDICTOR1_verified_bank4": "33fc4561cc534c9ec411e7a3203a1d151dd97fffecb797fa44e4b7e96fea82ec",
+    "tri_oracle_token_sign_dma": "24460cf8543d64945a0e7f6c3ca51d79f91ff8f00ee78fb48978bccf8aa58082",
+    "tri_oracle_token_size_control_parallel_chip": "50b2c2b86bdb712ab51732b3ee6bede4f508fc89ba57eddd494d9642445809b8",
+    "tri_oracle_wac_imem_owner_verified_bank0": "1ba535f97fe8bfde30f1683d909ddca3fbca059804c0b245940d077e0aecaefa",
+    "tri_oracle_wac_imem_owner_verified_bank0_1": "7aa4a481d824642fe16065ba00a344d9bf5e3b60cfbee8e169893cc76070339d",
+    "tri_oracle_wac_imem_owner_verified_bank0_2": "b2c8b877235aec45825d6af3f27728530838d8805fc263cb614c9ad23c1b72d5",
+    "tri_oracle_wac_imem_owner_verified_bank0_3": "ded26d9bfe83e4a0342fd7927ab8a7f741bdb3134baca332d47ccc5d3768bc7c",
+    "tri_oracle_wac_imem_owner_verified_bank1": "5e17e01f6b0301be0f49db54cbcb1c0ddcdc8ce436f2a98947c1d327f317031f",
+    "tri_oracle_wac_imem_owner_verified_bank1_1": "31be09815f6df28800e014aafba735e6f7dbb0fcf218aa2ccf7b456da9078a87",
+    "tri_oracle_wac_imem_owner_verified_bank1_2": "673a3d5fc900fb8ced978d29be0978d07c7faafc21553f3d0a3660fe05f0b0f7",
+    "tri_oracle_wac_imem_owner_verified_bank1_3": "080686599ba40ab67d79104fd5e59026dd2463eda07776913e092a2c7722206c",
+    "tri_oracle_wac_imem_owner_verified_bank2": "e1f7bd727330ed18126f17cc9c7a52b62bc3e33daf8f1d276ae1179da8655816",
+    "tri_oracle_wac_imem_owner_verified_bank2_1": "655028ffc208a0c5b9742ff8c22b957ec70c837af88be06b5317c28f8748c0bf",
+    "tri_oracle_wac_imem_owner_verified_bank2_2": "c461eacf8095b4b26e6bbc67b7aeafff8221ea460f6afbdb4203b28e76ebe7c1",
+    "tri_oracle_wac_imem_owner_verified_bank2_3": "737839a0540eefbe3f4ed624d92fa84c1bef8ad776db2a7006f5bd13a7666c88",
+    "tri_oracle_wac_imem_owner_verified_bank3": "8b77726a5810d15255ee97656796b4e09a207a4d828a9bdd247c68c698631e77",
+    "tri_oracle_wac_imem_owner_verified_bank3_1": "2f609d01e5cdc39a6dc5e55def99d393955b997254407308dc69ff5c2c6e9cba",
+    "tri_oracle_wac_imem_owner_verified_bank3_2": "33aeac11caf35d6d7b53ae17a61d80a02cb3492ea6809c6a0f700672e0768e51",
+    "tri_oracle_wac_imem_owner_verified_bank3_3": "6d21d6334af77e9d36a3438de28ed8f22c22171a317c16a2bd8894b148149b6f",
+    "tri_oracle_wac_imem_owner_verified_bank4": "762cddf00851b992cfec9ba4862d2f116752e9323e9370a5f577ea12c92f6ce9",
+    "tri_oracle_wac_imem_owner_verified_bank4_1": "2f4471f73f6aab13330de4e24cb5aa63c3dc3891cecce426a1474573e5a76fa5",
+    "tri_oracle_wac_imem_owner_verified_bank4_2": "1f45ad5184460253b69b6499af07d9908224f03844809a75b8dce530791f8ca3",
+    "tri_oracle_wac_imem_owner_verified_bank4_3": "bd49f0146f96b3e57ba2bcfcb5ac583d9af42274ca6fe061036571f522e80d08",
+    "tri_oracle_wac_softmax_verified_bank0": "e0ac5a954fdab01ab167d4370111fbfc44486aa0cdf31fc6ce946cd8996c1804",
+    "tri_oracle_wac_softmax_verified_bank0_1": "b713a581e2216fcfc82086db23a78100ce7f892aa119f23c407d69dc8b79d00b",
+    "tri_oracle_wac_softmax_verified_bank0_2": "0d159d3280ae6698d72a406e2c86bce580b789d74d2d3d46583f71b794b33e47",
+    "tri_oracle_wac_softmax_verified_bank0_3": "0b58c150ee0affecb4ae050e41c3e3c6e8e30711516304122ac7d98b1ace46ef",
+    "tri_oracle_wac_softmax_verified_bank1": "f28539eb9fbf1c216ac11833ddfaf59713dc9909c159dba886b1205972b89181",
+    "tri_oracle_wac_softmax_verified_bank1_1": "4969beefe27d7341b0fd8287cd53fa78ee6f9f5fdcb650fede34880d0ca7900b",
+    "tri_oracle_wac_softmax_verified_bank1_2": "055dcb3d2665dbb401c150814f4afc37ff28cad0ef0ca88b9cefc2dcc585d966",
+    "tri_oracle_wac_softmax_verified_bank1_3": "a9482f5059bb1eed87f08a07a0f01fc152dc756a9f1a13390614bca87f8efad9",
+    "tri_oracle_wac_softmax_verified_bank2": "86340b6a1c2e557ac1c72cc08f095d5622705dca38b2b32b77ac33a8982d66dd",
+    "tri_oracle_wac_softmax_verified_bank2_1": "57f245ac4b91221330d8f58b333fc5e3daedb13ba30015ca70bdc952d90594ac",
+    "tri_oracle_wac_softmax_verified_bank2_2": "2d7de491ffadb3c25bc6b94ace5996384fdce14a0018050bdad1fe3676675419",
+    "tri_oracle_wac_softmax_verified_bank2_3": "232d9a55ba35f7959741dcd0cf9e011ad7275b5336c680869369a52b7963df61",
+    "tri_oracle_wac_softmax_verified_bank3": "4949ce52e3e3aebb78786b25e00398f0f46403d190a6dc528d7ebe4096e7a617",
+    "tri_oracle_wac_softmax_verified_bank3_1": "efa65664e4bbcdf330e6783143407eb26d11433ad1afe61f8fce6c9f47e1c340",
+    "tri_oracle_wac_softmax_verified_bank3_2": "d87fa162cae75511f4bd48bc787ebe63107e86b2ad2340191b4ae391876ef5ac",
+    "tri_oracle_wac_softmax_verified_bank3_3": "3d40a9ad418ba9b85e9cc0c2e315cd681ec16fd2586f96dfcdd9942e282193a9",
+    "tri_oracle_wac_softmax_verified_bank4": "be908e5f6e7f1de73bafb6e970ad6945f2651eea972b198fced58a16350e7a3d",
+    "tri_oracle_wac_softmax_verified_bank4_1": "22c63532b85202244e9ef1b2dbeb0f7f5214508e4124b45f4997c282f67c3403",
+    "tri_oracle_wac_softmax_verified_bank4_2": "0adde28d0f48ad31d7db52ea97017106434294362706c4f579ef0bdcb900c46d",
+    "tri_oracle_wac_softmax_verified_bank4_3": "3b7500c221bc39bb59be5d0ca2fbe965e33b5d7121679cd8ef09a7eaf471971b",
+    "tri_oracle_wide_read_arbiter_14352_parallel_chip": "334fb32ca879f9c6a5abeb9f60436935db8089fa8cd32c13b825ecaaa63e9e98",
+    "tri_oracle_wide_read_arbiter_parallel_chip": "396144905aed53ef8bcf72f1e076e0a2b56d68d1d0ef1cfec0d1ffc1a1ef364e",
+    "tri_oracle_wide_value_response": "d257789b122e9c05531d437a3dfe705ff75f62dccd3f68947134433a4634694f"
+  },
+  "peak_resident_bytes": 2978754560,
+  "rejected_actual_parent_mutations": [
+    {
+      "array": "tri_oracle_pe_array_verified_bank0_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank0_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank0_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank0_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank0_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank0_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank0",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank0",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4_1",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4_2",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4_3",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 0
+    },
+    {
+      "array": "tri_oracle_pe_array_verified_bank4",
+      "rejection": "Parent clock identity has constant or foreign dependencies",
+      "stuck_value": 1
+    }
+  ],
+  "scope": "Stable two-state parent clock identity for the twenty reachable array inputs, bound to the local product, reduction and valid-register proofs. This is logical connectivity evidence only: it does not qualify clock-tree synthesis, clock skew, glitches, timing, reset release, complete architecture, trained execution, accuracy, or routing.",
+  "state": "packaged_parent_stable_clock_identity_verified",
+  "used_library_pins": [
+    [
+      "DFCND1BWP12T40P140",
+      "CP"
+    ],
+    [
+      "DFCND2BWP12T40P140",
+      "CP"
+    ],
+    [
+      "DFCNQD1BWP12T40P140",
+      "CP"
+    ],
+    [
+      "DFCNQD2BWP12T40P140",
+      "CP"
+    ],
+    [
+      "DFMQD1BWP12T40P140",
+      "CP"
+    ],
+    [
+      "DFQD2BWP12T40P140",
+      "CP"
+    ],
+    [
+      "EDFCND1BWP12T40P140",
+      "CP"
+    ],
+    [
+      "EDFCND2BWP12T40P140",
+      "CP"
+    ],
+    [
+      "EDFCND4BWP12T40P140",
+      "CP"
+    ],
+    [
+      "EDFCNQD1BWP12T40P140",
+      "CP"
+    ],
+    [
+      "EDFCNQD2BWP12T40P140",
+      "CP"
+    ],
+    [
+      "EDFCNQD4BWP12T40P140",
+      "CP"
+    ],
+    [
+      "SDFCND1BWP12T40P140",
+      "CP"
+    ],
+    [
+      "SDFCNQD0BWP12T40P140",
+      "CP"
+    ],
+    [
+      "SDFQD1BWP12T40P140",
+      "CP"
+    ],
+    [
+      "SDFSYNCNQD2BWP12T40P140",
+      "CP"
+    ],
+    [
+      "TS5N28HPCPSVTA32X128M2FW",
+      "CLK"
+    ],
+    [
+      "TS5N28HPCPSVTA512X64M4F",
+      "CLK"
+    ],
+    [
+      "TS6N28HPCPSVTA16X128M2F",
+      "CLKR"
+    ],
+    [
+      "TS6N28HPCPSVTA16X128M2F",
+      "CLKW"
+    ]
+  ],
+  "wall_seconds": 32.95462644007057
+}
