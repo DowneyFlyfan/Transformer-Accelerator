@@ -1,0 +1,149 @@
+{
+  "state": "mapped_tile_score_buffer_and_packet_components_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "tile_master": "tri_oracle_attention_tile_batch413_context_partition",
+  "score_buffer_bits": 3072,
+  "score_buffer_reset_assumed": false,
+  "other_checked_reset_register_bits": 75,
+  "packet_and_mask_register_bits": 3147,
+  "positive_tile_solver_queries": 26,
+  "parent_clock_reset_queries": 1,
+  "score_beats": 12,
+  "scores_per_beat": 8,
+  "score_bits": 32,
+  "properties": [
+    "Every unreset score-buffer bit captures the accepted tensor row and retains its previous value otherwise.",
+    "Metadata, token/beat progression, completion priority and extra-packet errors match the reconstructed protocol.",
+    "Ordinary emission requires current-token capture; final-row emission requires clean completion.",
+    "All twelve256-bit slices and lane-mask comparisons match their stored row/limit selection.",
+    "Payload/limits/metadata hold under output backpressure; the physical ready signal and packet status outputs match the state contract."
+  ],
+  "packet_history": {
+    "abstract_modes": 69,
+    "checked_edges": 43776,
+    "common_reset_state": 0,
+    "score_buffer_reset_assumed": false,
+    "ordinary_emit_requires_capture": true,
+    "normal_emit_beat_bound_verified": true,
+    "last_row_emit_requires_completion_certification": true,
+    "token_retirement_requires_fresh_capture_for_next_ordinary_emit": true,
+    "inherited_binary_settled_clock_and_valid_tensor_data_required": true,
+    "eventual_completion_verified": false
+  },
+  "unused_ready_alias": {
+    "alias": "tensor_done_ready",
+    "tile_internal_driver_count": 0,
+    "parent_wire": "UNCONNECTED2197",
+    "parent_consumers": 0,
+    "parent_module_sha256": "333e409bd0ae8a14dc655bc611a90f450c2c57b56fce8b9e75d48ea2cbc46c67",
+    "unused_alias_not_coerced": true
+  },
+  "rejected_controls": [
+    {
+      "control": "lost_score_capture_bit",
+      "instance": "saved_scores_reg[0]",
+      "pin": "DB",
+      "rejection_query": "all3072_score_buffer_capture_and_hold",
+      "result": "sat"
+    },
+    {
+      "control": "score_stall_retention_lost",
+      "instance": "saved_scores_reg[0]",
+      "pin": "DA",
+      "rejection_query": "all3072_score_buffer_capture_and_hold",
+      "result": "sat"
+    },
+    {
+      "control": "score_beat_advance_frozen",
+      "instance": "score_beat_reg[0]",
+      "pin": "D",
+      "rejection_query": "tile_packet_control_and_metadata_updates",
+      "result": "sat"
+    },
+    {
+      "control": "uncertified_last_row_released",
+      "instance": "state_reg[0]",
+      "pin": "D",
+      "rejection_query": "tile_packet_successor_state5",
+      "result": "sat"
+    },
+    {
+      "control": "captured_tag_bit_stuck_zero",
+      "instance": "tensor_cfg_tag_reg[0]",
+      "pin": "D",
+      "rejection_query": "tile_packet_control_and_metadata_updates",
+      "result": "sat"
+    },
+    {
+      "control": "tile_state_reset_disconnected",
+      "instance": "state_reg[0]",
+      "pin": "CDN",
+      "rejection_query": "tile_packet_reset_bindings",
+      "result": "sat"
+    },
+    {
+      "control": "score_output_gate_stuck",
+      "instance": "g101742",
+      "pin": "A2",
+      "stuck": 1,
+      "rejection_query": "tile_score_slice_and_mask_beat0",
+      "result": "sat"
+    },
+    {
+      "control": "error_lane_mask_gate_stuck",
+      "instance": "g82588",
+      "pin": "A2",
+      "stuck": 1,
+      "rejection_query": "tile_error_score_payload_masking",
+      "result": "sat"
+    },
+    {
+      "control": "score_buffer_wrong_clock",
+      "rejection": "Tile register clock differs"
+    }
+  ],
+  "related_logic_tests_passed": 71,
+  "optimized_python_mode_explicitly_rejected": true,
+  "independent_final_input_hashes_reverified": 65,
+  "evidence_sha256": {
+    "syn/prove_tri_oracle_tile_score_packet.py": "9c29f5c5560175ce37fe49da8931f43da06110e3501f4b636c5476da33fe0b2d",
+    "syn/test_tri_oracle_tile_score_packet_logic.py": "588430c63280c357c48c8bc07b2a45e5634d6811b845deba42b6fc6657829ac4",
+    "verilog/tri_oracle_attention_tile_batch413.sv": "9b4536133d5834da10aea59747ff1413c7339dbf91c0a7b28e6dae640128601e",
+    "records/tri_oracle_packaged_head_score_frontend.json": "a8091187df88af56b2ab8fbda679c19dd17a85d62f1fbea74c14ce9f82940062",
+    ".cache/wide_packaged_host_link/head_ratio_proof/tile_packet_qualified.json": "59f20937d6aba4dbc1e55a73a93c4ee3aba0134e39a1c2cc92ebbb9e90b79e79",
+    ".cache/wide_packaged_host_link/head_ratio_proof/tile_mask_gpu_crosscheck.json": "92be841f842a1dd20d06fdd2a7de043f690fccb8d8dbb1f923d23692172c0f08",
+    ".cache/wide_packaged_host_link/head_ratio_proof/tile_mask_gpu_crosscheck.py": "5f02653e26edf89559f9a80daeb8160ac029e6b98b38245d9eb0bdd3fdb01d0f"
+  },
+  "host_proof_wall_seconds": 39.212326979031786,
+  "host_proof_peak_resident_bytes": 1359093760,
+  "gpu_crosscheck": {
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "row_limit_words": 262144,
+    "score_beats": 12,
+    "mask_cases": 3145728,
+    "lane_comparisons": 25165824,
+    "output_sha256": "2e4e1cd70143212dba9ce175480efbae747a021c9f95a9e4ee6c802bfbe5c500",
+    "wall_seconds": 3.552945659030229,
+    "peak_device_bytes": 102760960,
+    "scope": "Host CPU explicit lane comparisons versus GPU contiguous-prefix mask formula for all2**18 row-limit words and12 beats. This checks selection/decoding for given limits; it does not prove limit generation, mapped execution, task accuracy or physical timing."
+  },
+  "review": "Independent review stream-verified all65 final input hashes, reran all71 logic tests and checked26 tile queries plus the parent clock/reset query,69 history modes/43776 edges, eight activated counterexamples and the structural clock rejection. A whole-bus consumer gap in unused alias detection was reproduced and fixed with a RED/GREEN regression; batch readiness and the reference RTL pin were added. No remaining findings within Phase A scope.",
+  "assumptions": [
+    "Common reset establishes tile stateIdle before operation; a reset interruption aborts the transaction.",
+    "Control/tag inputs and valid tensor payloads are binary and sampled on settled positive clock edges.",
+    "Mask selection is proved for given binary stored row limits; correct limit generation is a separate obligation."
+  ],
+  "reconstruction_choices": "The3072-bit buffer and twelve eight-score packets are this reconstruction protocol; they are not claimed to disclose the paper implementation.",
+  "scope": "Mapped score-buffer capture/hold, packet control, metadata,12 score slices and lane-mask selection given binary row limits. Configuration geometry validation is conservatively abstracted at Idle; row-limit generation and tensor command/data production remain unqualified. The reset-based history invariant prevents ordinary Emit before current-token capture and requires final-row completion certification.",
+  "upstream_completion_ready_routing_verified": false,
+  "configuration_geometry_validation_verified": false,
+  "causal_limit_generation_verified": false,
+  "tensor_command_generation_verified": false,
+  "tile_score_production_verified": false,
+  "full_head_prediction_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "eventual_completion_verified": false
+}
