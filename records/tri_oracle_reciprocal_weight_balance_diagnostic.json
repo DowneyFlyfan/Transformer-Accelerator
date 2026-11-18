@@ -1,0 +1,87 @@
+{
+  "state": "bounded_reciprocal_weight_balancing_not_promoted_after_current_format_diagnostic",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "layers": 22,
+  "fit_images": 8,
+  "reused_diagnostic_images": 8,
+  "rows_per_split_per_layer": 120,
+  "method": "Center the weight-only half log-range difference; round and clamp channel powers to -2..2; reciprocally rescale Up rows and effective calibrated Down columns before current-format requantization.",
+  "selection": "Choose baseline or balanced per layer using only fit pruned error; baseline selected in all22 layers.",
+  "diagnostic_summary": {
+    "dense": {
+      "baseline": 0.11210387439021688,
+      "balanced": 0.12870726789337564,
+      "selected": 0.11210387439021688
+    },
+    "pruned": {
+      "baseline": 0.21777779223885513,
+      "balanced": 0.23000728416450558,
+      "selected": 0.21777779223885513
+    }
+  },
+  "fit_mean_row_relative_error": {
+    "dense": {
+      "baseline": 0.10789880965392658,
+      "balanced": 0.126670032511812
+    },
+    "pruned": {
+      "baseline": 0.1575440848988456,
+      "balanced": 0.17904271536122557
+    }
+  },
+  "diagnostic_layers_with_increased_pruned_error": 22,
+  "current_calibrated_baselines_exactly_reproduced": 22,
+  "float64_reciprocal_identity_layers": 22,
+  "independent_exact_dot_cells": 2112,
+  "candidate_shift_ranges": {
+    "gate_shift": [
+      3,
+      8
+    ],
+    "up_shift": [
+      0,
+      7
+    ],
+    "down_shift": [
+      0,
+      8
+    ]
+  },
+  "helper_logic_tests_passed": 8,
+  "repeat_preserved_all_pre_review_layer_statistics": true,
+  "verified_diagnostic_inputs": 66,
+  "native_exit_status": 0,
+  "guard_elapsed_seconds": 9.350693512009457,
+  "worker_elapsed_seconds": 7.741474515059963,
+  "peak_device_bytes": 573094400,
+  "worker_peak_host_resident_bytes": 1979785216,
+  "minimum_sampled_available_bytes": 12554223616,
+  "independent_review": {
+    "reviewer": "/root/review_reciprocal_equalization",
+    "findings_fixed": 2,
+    "regressions_failed_then_passed": 2,
+    "independent_post_fix_review_claimed": false
+  },
+  "hardware_format_extensions_used": false,
+  "new_weight_transport_verified": false,
+  "task_accuracy_verified": false,
+  "mapped_execution_verified": false,
+  "paper_results_matched": false,
+  "baseline_weights_changed": false,
+  "untouched_holdout": false,
+  "scope": "A rejected deterministic weight-balancing recipe on fixed archived ordinary feed-forward rows. Effective calibrated Down weights and exact current late correction are preserved before requantization. Fit selection and reused diagnostics are separate. No transformed weights were promoted or exported; specific transport, task accuracy, timing, energy and paper results remain unverified.",
+  "evidence_sha256": {
+    ".cache/model_reference/ff_reciprocal_weight_equalization_final/receipt.json": "1b707fe9a1bdd3ff0f8c466c9437bca32f06d1eec4fa986bb076b00afdfd4858",
+    ".cache/model_reference/ff_reciprocal_weight_equalization_final/native_receipt.json": "7a88d2569c53489f66fbe0c9b62c5c813d626723ebd9a82f935354219bd36bd9",
+    ".cache/model_reference/ff_reciprocal_weight_equalization_final/console.log": "406de06e29e2ab7bfad1d69d4956d20c46729ef1e9e9fa1fc4b4f9dca60fb852",
+    ".cache/model_reference/ff_reciprocal_weight_equalization_final/all_logic.log": "35649ccb7621214ac024bd31428022d326fb76b6926043ad7d6527b41cd3c0f8",
+    ".cache/model_reference/ff_reciprocal_weight_equalization_final/fit_statistics_green.log": "b27d33bed1d82a18e19cf6304ea1d10aa484df985d5bb85b6454ad5bb3b5f47c",
+    "syn/measure_tri_oracle_reciprocal_weight_equalization.py": "637616db270b5642560f980f2f49c70a70728d98a05d7fc28b9d1f8c68055d8d",
+    "syn/test_tri_oracle_reciprocal_weight_equalization.py": "1631e26113e9c91592b27dc2a6b77b21529b1c04b312f79bae2f7faa453ca494",
+    ".cache/model_reference/ff_reciprocal_weight_equalization/verify_fit_statistics.py": "5f61c8001663f1b8a2786e8f78cc0659a83779834861ade3b13f2d710ce2bbd1",
+    ".cache/model_reference/ff_reciprocal_weight_equalization_final/guard.py": "7b1317b30adc6d1a7b45de2e7e7e5b152210ede6c29a6e3b0de05a7bfbce39de",
+    ".cache/model_reference/ff_reciprocal_weight_equalization_final/architecture.pdf": "537ed34da2ab0782491120535f2da3b887d4b0fca44b108e8de76a4cc0405c73",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c",
+    "records/tri_oracle_calibrated_weight_transport.json": "9c9570c8f384d2c9f89afdc0b232742f7948dfce8839752069f7f83902084909"
+  }
+}
