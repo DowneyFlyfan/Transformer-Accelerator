@@ -1,0 +1,75 @@
+{
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "compile_runtime_sha256": "2300c5f6a48ea0353c55a652b30b453eaf37883d441428e6c7b47ec5a68edb97",
+  "console_sha256": "075c4ad3c8dd90e212e96bcd2c5467ee716f7b036a0520395fc8967ddcd47c8b",
+  "controlled_speedup_demonstrated": false,
+  "coverage": {
+    "attention_rows": 0,
+    "bits_per_vector": 512,
+    "checked_64bit_writeback_words": 128,
+    "completed_batches": 1,
+    "first_token": 0,
+    "full_workload_batches": 1040,
+    "group": 0,
+    "lease_transitions": 2,
+    "skipped_columns": 0,
+    "status_replies": 3,
+    "stop_time_ns": 1200000,
+    "trained_writeback_vectors": 16,
+    "weight_read_words": 16384
+  },
+  "full_trained_workload_demonstrated": false,
+  "initial_snapshot": "worklib.tri_oracle_chip_packet_io_tb:sv",
+  "input_manifest_sha256": "57cc57997a974098cc2ac6f96aadb1a35d15f77105b4b538ef465003f39cbe4c",
+  "local_artifacts": {
+    "console": ".cache/wide_packaged_host_link/trained_current_multicore/prefix_check/concurrent/native/run_0_20/console.log",
+    "native_used_configuration": ".cache/wide_packaged_host_link/trained_current_multicore/prefix_check/concurrent/native/run_0_20/mcesim.run/used_config.txt",
+    "runtime": ".cache/wide_packaged_host_link/trained_current_multicore/prefix_check/concurrent/elaboration_runtime.json",
+    "status": ".cache/wide_packaged_host_link/trained_current_multicore/prefix_check/concurrent/native/status.json"
+  },
+  "native": {
+    "container_average_busy_cores_including_older_replay": 18.535473487699704,
+    "container_processor_seconds_including_older_replay": 1962.959104,
+    "exit_status": 0,
+    "minimum_free_disk_bytes": 20659875840,
+    "minimum_host_available_bytes": 11271008256,
+    "native_configuration_thread_limit": 20,
+    "older_replay_concurrent": true,
+    "owned_group_terminal": true,
+    "parallel_engines_allocated": 18,
+    "parallel_engines_initially_attempted": 19,
+    "peak_container_anonymous_bytes_including_older_replay": 7623557120,
+    "thread_limit_requested": 20,
+    "wall_seconds": 105.90283033787273,
+    "warning_codes": [
+      "MC",
+      "MC",
+      "MC",
+      "MCECPU",
+      "MCECPU",
+      "MCECPU",
+      "MCECPU",
+      "MCECPU",
+      "MC"
+    ],
+    "warning_scope": "Engine allocation limit, denied NUMA placement and incomplete CPU availability retained in native logs; no controlled simulator speedup claim."
+  },
+  "package": {
+    "compiled_payloads_unchanged": true,
+    "manifest_sha256": "494ea9e445b7b2ac0163f0d4d764cab682b472bed1b463d7767b83ca7c54909d",
+    "metadata_changes": [
+      "run.lnx8664.25.03.d/mcebuild.args",
+      "xcelium_bin_paths.log"
+    ],
+    "original_unchanged": true
+  },
+  "paper_results_matched": false,
+  "physical_queue_rearmed": true,
+  "pinned_inputs": 240,
+  "primary_replay_preserved": true,
+  "runtime_sha256": "87fd9e44a570ef50481fd5dce8d59f52f8a9044d247e65fc8439f17875c05e2d",
+  "scope": "One completed trained projection batch on the whole-chip mapped candidate, with specify/timing checks disabled and static random-access memory UNIT_DELAY models. A later batch may be in flight at the bound. Full projection/attention, model accuracy, timing, routing and paper-performance qualification remain unverified.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "current_mapped_trained_first_batch_independently_verified"
+}
