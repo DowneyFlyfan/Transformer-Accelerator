@@ -1,0 +1,90 @@
+{
+  "state": "gate_up_channel_scales_deprioritized_after_current_task_panel",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "layer_diagnostic": {
+    "layers": 22,
+    "fit_images": 8,
+    "reused_diagnostic_images": 8,
+    "rows_per_split_per_layer": 120,
+    "global_dense_mean_row_relative_error": 0.10888969461149355,
+    "channel_dense_mean_row_relative_error": 0.06662422760803395,
+    "global_pruned_mean_row_relative_error": 0.22545734956733654,
+    "channel_pruned_mean_row_relative_error": 0.199428151171635,
+    "production_baseline_layers_exactly_reproduced": 22,
+    "independent_exact_dot_cells": 5632,
+    "layer_input_hashes_independently_reverified": 36,
+    "helper_logic_tests_passed": 3,
+    "elapsed_seconds": 7.716280581895262,
+    "peak_device_bytes": 518217216
+  },
+  "paired_task_panel": {
+    "questions": 67,
+    "distinct_images": 67,
+    "scores": {
+      "baseline": 34,
+      "channel": 29,
+      "gained": 3,
+      "lost": 8
+    },
+    "accuracy_change_percentage_points": -7.462686567164179,
+    "changed_answers": 20,
+    "exploratory_paired_exact_p_value": 0.2265625,
+    "exact_archived_baseline_token_and_skip_controls": 67,
+    "per_layer_replacement_coverage_checked_by_pinned_worker": true,
+    "candidate_workload_not_claimed": true,
+    "predictions_identical_across_three_attempts": true,
+    "native_exit_status": 0,
+    "guard_terminal_state": "native_exit",
+    "guard_tests_passed": 4,
+    "elapsed_seconds": 90.50845800316893,
+    "peak_device_bytes": 8969501184,
+    "minimum_sampled_host_available_bytes": 11469070336,
+    "peak_sampled_host_anonymous_bytes": 2043629568
+  },
+  "older_200_question_result": {
+    "baseline_correct": 116,
+    "channel_correct": 116,
+    "distinction": "Older version retained original prediction signs and lacked the latest calibrated down codes and bounded late correction."
+  },
+  "current_full_split_software_frontier": {
+    "correct": 6247,
+    "questions": 12578,
+    "accuracy_percent": 49.666083638098264,
+    "candidate_unchanged_by_this_diagnostic": true
+  },
+  "conclusion": "Lower isolated layer error did not improve this current task panel. Deprioritize the channel-scale hardware change; retain the current chip candidate.",
+  "supervisor_attempts": {
+    "first": "Preserved missing terminal receipt after StopIteration on omitted zombie RssAnon.",
+    "second": "Preserved observer_error with native_exit_status0 after immediate zombie poll was not yet waitable.",
+    "final": "Bounded wait for actual child termination; real delayed-exit regression RED to GREEN, all4 tests pass; clean native_exit0."
+  },
+  "review": "Independent reviewers verified the36 layer input hashes and baseline metrics, checked task substitution source/position boundaries, and independently decoded the final67 token pairs. No material numerical/source findings remain; guard failures were retained and corrected in separate attempt directories.",
+  "deferred_minor": "Global dense diagnostic mask-difference metadata is null due to evaluation order; known count1200124, no effect on outputs or error metrics.",
+  "evidence_sha256": {
+    ".cache/model_reference/ff_gate_up_channel_scale/receipt.json": "2fa4920ecea998845a6325a4b9668831913705dcf5ca3b5c5158d2453400defd",
+    ".cache/model_reference/ff_gate_up_channel_scale/native_receipt.json": "79b401092cb8a768ed4864a5d6af4feec6db6db525c25af796c6820950cd6f87",
+    ".cache/model_reference/ff_gate_up_channel_scale/audit.py": "5721bfde4c7ba321acb4aff50f9e3da8abb88cbcbc8759be35cdf67ed215ff74",
+    ".cache/model_reference/ff_gate_up_channel_scale/test_logic.py": "65fe94935a3e7e4114b5dffc96ca3ea63d6d38ca06e993373db124305a2bb1f6",
+    ".cache/model_reference/ff_gate_up_channel_scale/guard.py": "165e65bf4bd402f0f87b505f3f4ffee2ee4c6685af855a2af433ca100b78043f",
+    ".cache/model_reference/ff_gate_up_channel_scale/inputs.json": "cfb14d5ca8d3b5e366b7cba51c16d94a92fbb7f9538cc676d6cadfeadcf38adb",
+    ".cache/model_reference/ff_gate_up_channel_scale/architecture.pdf": "b8d58cce34899e3dc6c29da45747616e983b49abe5b040ff680f34c5fe211116",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/receipt.json": "fff79c9c1e09aa18ef8ce24cbdc4c619320add864455748013dc8b729446f735",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/native_receipt.json": "0f6638bb19abb82fc9fa2ee427916fb25ce4ca8f8c2bf08524f0d637ede8b050",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/independent.json": "a618b9a2e5106880d9322eb90f14f5a640766e8cdc3aee9537d1a5561832109d",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/run.py": "7335b3cc4de1013af0865d81db0af827922b83967039c9d76699f54e04e6a68b",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/verify.py": "7de6c55fc9eaa12ab0e51f77828256ec69cc2d1c43db085dff77546531b7118f",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/guard.py": "1fe57b4c4dae334ad389899a5cc25387152ea3afc2ca02fcdb0e41fe277da8d2",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/test_guard.py": "66c3ae8fb79b5130e342918da979a444015846c09bf273bbf2af01d217e51d36",
+    ".cache/model_reference/gqa_testdev/channel_scale_current_waited/inputs.json": "5931e57eaf19f6ba6a89dc24afaf3d9b739647bd3169c98c086efd55bc4db2e9",
+    "records/wac_gqa_gate_up_channel_scale_result.json": "61a1756839e40fbb7769ad122d7421ca3626a990a39aa8619e32b44ff664c328",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c"
+  },
+  "untouched_holdout": false,
+  "full_split_candidate_accuracy_verified": false,
+  "hardware_implemented": false,
+  "mapped_execution_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "paper_results_matched": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "scope": "Host software counterfactual on fixed archived rows and reused67-image question set. Same signed8 arithmetic family, compensated row gain, current calibrated down codebook and late correction, updated quantized code-sign predictor. First-position and decode behavior retained. No hardware deployment or paper-protocol match."
+}
