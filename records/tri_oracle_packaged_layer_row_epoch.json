@@ -1,0 +1,127 @@
+{
+  "state": "mapped_layer_row_ownership_induction_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "related_logic_tests_passed": 113,
+  "positive_solver_queries": 6,
+  "component": {
+    "layer_module_sha256": "fa01dd8069a14cf53d33b67af436b9774ccd4658fcdcc0c04b68e6ae2bbf4174",
+    "row_module_sha256": "7b824cc6b2ce07f50dcadf4efd5bac6fa963f0d7ec1028fd5e3362b7239aa375",
+    "absolute_layer_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention",
+    "absolute_row_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention/attention",
+    "layer_physical_state_bits": 4,
+    "row_physical_state_bits": 5,
+    "boundary_cuts": [
+      {
+        "context": "contexts.store",
+        "master": "tri_oracle_attention_context_external",
+        "output_bits": 232
+      },
+      {
+        "context": "predictor",
+        "master": "tri_oracle_attention_head_predictor415_CORE_HEAD_PREDICTOR1_context_partition",
+        "output_bits": 5777
+      }
+    ],
+    "all_component_inputs_universally_quantified": true,
+    "common_reset_state": [
+      0,
+      0
+    ],
+    "ownership_state_pairs": 51,
+    "state_satisfiability_witnesses": [
+      {
+        "layer_state": 5,
+        "row_state": 0,
+        "result": "sat",
+        "full_clock_history_reachability_verified": false
+      },
+      {
+        "layer_state": 7,
+        "row_state": 8,
+        "result": "sat",
+        "full_clock_history_reachability_verified": false
+      }
+    ],
+    "graph_nodes": 19018,
+    "sequential_cut_bits": 1915
+  },
+  "rejected_corruptions": [
+    {
+      "control": "frame_start_layer_gating_bypassed",
+      "result": "sat",
+      "query": "layer_row_epoch_actual_state_induction",
+      "activation": "head_frame",
+      "instance": "attention",
+      "pin": "frame_valid"
+    },
+    {
+      "control": "row_start_layer_gating_bypassed",
+      "result": "sat",
+      "query": "layer_row_epoch_actual_state_induction",
+      "activation": "head_row",
+      "instance": "attention",
+      "pin": "row_valid"
+    },
+    {
+      "control": "result_ready_feedback_frozen",
+      "result": "sat",
+      "query": "layer_row_epoch_actual_state_induction",
+      "activation": "row_result",
+      "instance": "attention",
+      "pin": "result_ready"
+    },
+    {
+      "control": "layer_leaves_while_row_active",
+      "result": "sat",
+      "query": "layer_row_epoch_actual_state_induction",
+      "activation": "row_active",
+      "instance": "state_reg[0]",
+      "pin": "D"
+    },
+    {
+      "control": "row_spurious_result_during_head",
+      "result": "sat",
+      "query": "layer_row_epoch_actual_state_induction",
+      "activation": "head_idle",
+      "instance": "state_reg[4]",
+      "pin": "D"
+    },
+    {
+      "control": "row_state_reset_disconnected",
+      "result": "sat",
+      "query": "all9_layer_row_state_register_reset_bindings",
+      "activation": "reset",
+      "instance": "state_reg[0]",
+      "pin": "CDN"
+    },
+    {
+      "control": "row_state_wrong_clock",
+      "rejection": "Epoch register clock differs"
+    }
+  ],
+  "verified_implication": "After common reset, actual layer state5 (RunHead) implies actual row state0 (Idle)",
+  "prior_admission_row_idle_condition_discharged_after_common_reset": true,
+  "independent_review": {
+    "reviewer": "/root/review_layer_row_epoch",
+    "actionable_findings": 0,
+    "focused_new_tests_passed": 5
+  },
+  "wall_seconds": 64.41202359995805,
+  "peak_host_resident_bytes": 2126163968,
+  "evidence_sha256": {
+    "records/tri_oracle_packaged_command_admission.json": "7672fa2629fd62725a73a3a6d040db9bc69deac8ef925e6bf18192def28c8b25",
+    ".cache/wide_packaged_host_link/head_ratio_proof/layer_row_epoch_qualified.json": "a313e3b3a6bdcb139f3e16c59f95f78fbf383be360669d2fce0d6f37f993e60a",
+    "syn/prove_tri_oracle_layer_row_epoch.py": "d207392b7cb36fe4f93f24f3687fc8b7a3f6cd7c6469cf4d1fcd63231eabc737",
+    "syn/test_tri_oracle_layer_row_epoch_logic.py": "14d972e7c3e69907a42c707a378d36fffb35bdd3b137402d327ca672512cec26",
+    ".cache/wide_packaged_host_link/head_ratio_proof/layer_row_epoch_all_logic.log": "c52e9cd943d7214bfb04a5d5282f3bfb0f68bcb24ca4bed0aabceaf82c1bebf7"
+  },
+  "eventual_head_or_row_completion_verified": false,
+  "upstream_mode_reachability_verified": false,
+  "tensor_command_generation_verified": false,
+  "full_head_prediction_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "scope": "Exact mapped layer/row state clocks, reset basis and positive-edge successor induction in a settled binary model. All component inputs, nonselected state and two declared child-output boundaries remain universally arbitrary. The resulting ownership invariant removes the actual rowIdle condition from the previously candidate-bound conditional command-admission proof. Full operational reachability, projection/shared-tensor ownership, arithmetic/returned tags, eventual completion, task accuracy and physical timing remain separate obligations."
+}
