@@ -1,0 +1,779 @@
+{
+  "state": "mapped_numeric_pipeline_and_ordered_memory_fold_verified_relative_to_operand_and_memory_contracts",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "core_count": 20,
+  "output_rows": 640,
+  "physical_numeric_state_bits_bound": 160720,
+  "physical_metadata_role_bindings": 820,
+  "numeric_and_metadata_overlap_bits": 80,
+  "fresh_mapped_binding_queries": 160,
+  "universal_theorem_families": 10,
+  "universal_theorem_case_queries": 74,
+  "complete_fold_control_cases": 65,
+  "exhaustive_partition_coverage_queries": 1,
+  "certified_metadata_projection_verified": true,
+  "semantic_model_counterexample_controls": [
+    {
+      "control": "wrong_product_lane_order",
+      "query": "pipeline_stage0_history_successor",
+      "result": "sat",
+      "fault_scope": "composition_model_not_actual_body_mutation"
+    },
+    {
+      "control": "advances_during_stall",
+      "query": "pipeline_ready_matches_available_output",
+      "result": "sat",
+      "fault_scope": "composition_model_not_actual_body_mutation"
+    },
+    {
+      "control": "negative_product_zero_extended",
+      "query": "pipeline_stage1_history_successor",
+      "result": "sat",
+      "fault_scope": "composition_model_not_actual_body_mutation"
+    },
+    {
+      "control": "pending_slot_displaced",
+      "query": "certified_metadata_projection_matches_numeric_and_writeback_successors",
+      "result": "sat",
+      "fault_scope": "composition_model_not_actual_body_mutation"
+    },
+    {
+      "control": "pending_accumulation_inverted",
+      "query": "certified_metadata_projection_matches_numeric_and_writeback_successors",
+      "result": "sat",
+      "fault_scope": "composition_model_not_actual_body_mutation"
+    }
+  ],
+  "actual_body_mutations_claimed": false,
+  "related_unit_tests_passed": 171,
+  "publisher_gate_and_report_authentication_regressions_passed": 9,
+  "verified_direct_input_files": 121,
+  "transitively_imported_local_source_files": 33,
+  "local_arithmetic_proofs_reexecuted": false,
+  "provenance_scope": "Five immutable published contract roots and fixed route configuration, all directly listed root evidence, transitive local Python sources and current mapped body/interface/state/hierarchy bindings. Arbitrary older JSON descendants are not recursively certified.",
+  "published_contract_roots": {
+    "product": {
+      "path": "records/tri_oracle_packaged_product_next_states.json",
+      "sha256": "a8304c395845b4da35a4a2ea21e486e85eaac567ad8305adae8b924985202d2e"
+    },
+    "reduction": {
+      "path": "records/tri_oracle_packaged_reduction_next_states.json",
+      "sha256": "a419fcf207ec8f572a207ebc7e6f336624396bd11477b1b43663acc2833914a1"
+    },
+    "valid": {
+      "path": "records/tri_oracle_packaged_valid_next_states.json",
+      "sha256": "6e83a85405295e61d61fb01d0e335ca333500092a9b02cc9a50ad2bfaed08751"
+    },
+    "metadata": {
+      "path": "records/tri_oracle_accumulator_metadata_history.json",
+      "sha256": "c8b10ec0944a10ea68d5d338493ce06d951ebe5be6ee853fbc43a9788a5feb66"
+    },
+    "service": {
+      "path": "records/tri_oracle_output_memory_service_history.json",
+      "sha256": "a5d46def3a3d50390aaaa1fb3dff825567e30e91671311b4c36652ff8589d7c1"
+    }
+  },
+  "core_modules": [
+    {
+      "bank": 0,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_1",
+      "core_module_sha256": "d5b92412f700f392f2b25ea671e84f3fe54228e2d83b82fdc9867e0c5a425d5e",
+      "array_module": "tri_oracle_pe_array_verified_bank0_1",
+      "array_module_sha256": "697172ec982b37e6124f3db93f026d91bddcd0af640cc47caeecf497b2558141"
+    },
+    {
+      "bank": 0,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_2",
+      "core_module_sha256": "efb34dca6af5c2a6d34b38c1281839b50dbc411b796d407c57267dd8cdbe5448",
+      "array_module": "tri_oracle_pe_array_verified_bank0_2",
+      "array_module_sha256": "8dc1881191a4eb1524ed94e457f9e5a8d1955133ee2600d7790da385f0f958a4"
+    },
+    {
+      "bank": 0,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_3",
+      "core_module_sha256": "c75d1a670ca07ada3bc52b710cbe66832c181c139c4634519a0d121588194b22",
+      "array_module": "tri_oracle_pe_array_verified_bank0_3",
+      "array_module_sha256": "3a29cca0a1372a047369831a3e68b0388a3aa505a5491951bdf386c5f95bbfcf"
+    },
+    {
+      "bank": 0,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0",
+      "core_module_sha256": "c1dd87b436ff18ae2aa638020f7feeeeadc0228cd9a31e6e9ad7968c79bb800f",
+      "array_module": "tri_oracle_pe_array_verified_bank0",
+      "array_module_sha256": "c394f4503e11bf46b0de3135633d680b6bb25f362a1d10d04e7a93ab6dde9c23"
+    },
+    {
+      "bank": 1,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_1",
+      "core_module_sha256": "1070a98a20da7e2d9122b90b5250c7d7a77fc9ebdf9c31b68402677067484e38",
+      "array_module": "tri_oracle_pe_array_verified_bank1_1",
+      "array_module_sha256": "64bc014dea7603b3306aa27944b36c4deec0fc46b2fc4a5f86c597f06e7baa81"
+    },
+    {
+      "bank": 1,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_2",
+      "core_module_sha256": "18c7d912036e53427b56ae4aae67865dcc7836edd0f35843bbeb9f6aed85d1f9",
+      "array_module": "tri_oracle_pe_array_verified_bank1_2",
+      "array_module_sha256": "815291151b4b596bf9012e4dddfae7a755b296396a42201d325ec16a8645d187"
+    },
+    {
+      "bank": 1,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_3",
+      "core_module_sha256": "e08f1b8ff4f23545b8bf5d77effb2d2a468b852bd2cb9cf600f8ebdc6b90cc20",
+      "array_module": "tri_oracle_pe_array_verified_bank1_3",
+      "array_module_sha256": "164575b6ce791dbb1b96c52d07d116e1f68d39ee50be8940698dd82567916cf7"
+    },
+    {
+      "bank": 1,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1",
+      "core_module_sha256": "225a2b81acfc9bdee3ee71eefab9160e2ac75bfadac560d3b9b7a918773e515f",
+      "array_module": "tri_oracle_pe_array_verified_bank1",
+      "array_module_sha256": "13abcfbb28415238a72af3fabcb9334ddd475d955361cffcc011d276d20267d7"
+    },
+    {
+      "bank": 2,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_1",
+      "core_module_sha256": "1aa1ff2fdaf706838557e44bc7b4995404bbb2815c36a8efa3406a85d750278b",
+      "array_module": "tri_oracle_pe_array_verified_bank2_1",
+      "array_module_sha256": "e6180af9f138a7af20b9aa3bb2a113780101fa2f35f55d1d7d4ff4206e275e70"
+    },
+    {
+      "bank": 2,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_2",
+      "core_module_sha256": "d65f98642a9dfab32756284971e08b0fe5458ed1c4c43fc1746d8aea99b68e19",
+      "array_module": "tri_oracle_pe_array_verified_bank2_2",
+      "array_module_sha256": "4720c11cd6f704915477fbfd54d9b7ad4c7cb5e2ff34df567900ae2da363bb85"
+    },
+    {
+      "bank": 2,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_3",
+      "core_module_sha256": "fdeccd69c0b70ffc43793d4237b39f038e909f7fc2a4513bf508afc4af10fb0d",
+      "array_module": "tri_oracle_pe_array_verified_bank2_3",
+      "array_module_sha256": "17111bfd26b9cc86a6e3c69f2ab8b457e30bcc9eb04b89d98379bcf4db66ab22"
+    },
+    {
+      "bank": 2,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2",
+      "core_module_sha256": "1b475a3f338e352a42b95828aef6529ef668e95a13a6c14f4bb700de34c330c5",
+      "array_module": "tri_oracle_pe_array_verified_bank2",
+      "array_module_sha256": "150b9ce1ced7fc6a219bbc1152cadcfecddd8c01e64dd0f466e7350eaa65b1d2"
+    },
+    {
+      "bank": 3,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_1",
+      "core_module_sha256": "431e1c964cd142774add1f4f5819726635d7b00e0fbec39d39b0fce31f21fa3e",
+      "array_module": "tri_oracle_pe_array_verified_bank3_1",
+      "array_module_sha256": "560e0e441c0b2beca374dd1b98cacc1a2a819f9ac1937b44ff319c7ece3d8850"
+    },
+    {
+      "bank": 3,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_2",
+      "core_module_sha256": "0df9a5daeb71a1a3eb68ab8a11a16b0bf171149bd6a5bf36f0b789b29f04646b",
+      "array_module": "tri_oracle_pe_array_verified_bank3_2",
+      "array_module_sha256": "1fc274f6361b4c4ab2b86075301d2fc307b1adfead6c787c6f513cbc8cf10684"
+    },
+    {
+      "bank": 3,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_3",
+      "core_module_sha256": "b6b5fa3405313de27823563d825144b3c550d195f3daec478755efd95071d6ac",
+      "array_module": "tri_oracle_pe_array_verified_bank3_3",
+      "array_module_sha256": "73d274e8e8748f1b40a20fc41e57179c8bb12f27d59e22967ee8d9fb0aa28ae8"
+    },
+    {
+      "bank": 3,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3",
+      "core_module_sha256": "4fd305372845c17003e2507d35ac5eb3fa8641bb7ea1d70eea37e22035f261ea",
+      "array_module": "tri_oracle_pe_array_verified_bank3",
+      "array_module_sha256": "56b004808e82b9fc5d562419d0005947d9e4cf9553307ad4081af7989130c9ef"
+    },
+    {
+      "bank": 4,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_1",
+      "core_module_sha256": "279709305369d2cbb3af7e5bae8aa55846d4c12c3e883850cd56ec1b3ed1a9b7",
+      "array_module": "tri_oracle_pe_array_verified_bank4_1",
+      "array_module_sha256": "bb1df3d384b8dd7918b89434e0bb7cc303f70bed71f6d0fde5c92c1cd811bf24"
+    },
+    {
+      "bank": 4,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_2",
+      "core_module_sha256": "c86d29ffd0498dcc065b43d41c7c2a72a9c8fcbfbce38c49b6fc7430bd61e0fc",
+      "array_module": "tri_oracle_pe_array_verified_bank4_2",
+      "array_module_sha256": "4f9688c12ae6f866387e1c4099a1d08b725b7e3ed525a8ced76618ae2333b39e"
+    },
+    {
+      "bank": 4,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_3",
+      "core_module_sha256": "f32d3069d7f162234ad76cd9b6c3f4ab844396330dcd9b19f0ef41c6682a4b13",
+      "array_module": "tri_oracle_pe_array_verified_bank4_3",
+      "array_module_sha256": "a4aa2608d9addd7dafe545478fc1e69d2d60b7c31ff595325bdbaa2c7aca2501"
+    },
+    {
+      "bank": 4,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4",
+      "core_module_sha256": "c83089def2292321219918af9fe3051300a465b80abc3017f6192bd7b2da1352",
+      "array_module": "tri_oracle_pe_array_verified_bank4",
+      "array_module_sha256": "b43d5478a5eccc16a852e87b6628cfada7391ef0ab6d95ae068fde34b4200be8"
+    }
+  ],
+  "history_theorem": {
+    "queries": [
+      {
+        "label": "pipeline_ready_matches_available_output",
+        "result": "unsat",
+        "seconds": 0.0002052239142358303,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.0002052239142358303
+          }
+        ]
+      },
+      {
+        "label": "pipeline_reset_cancels_valid_without_initializing_data",
+        "result": "unsat",
+        "seconds": 0.0001057011540979147,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.0001057011540979147
+          }
+        ]
+      },
+      {
+        "label": "certified_metadata_projection_matches_numeric_and_writeback_successors",
+        "result": "unsat",
+        "seconds": 0.000662477919831872,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.000662477919831872
+          }
+        ]
+      },
+      {
+        "label": "pipeline_stage0_history_successor",
+        "result": "unsat",
+        "seconds": 0.0006642569787800312,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.0006642569787800312
+          }
+        ]
+      },
+      {
+        "label": "pipeline_stage1_history_successor",
+        "result": "unsat",
+        "seconds": 0.029020065907388926,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.029020065907388926
+          }
+        ]
+      },
+      {
+        "label": "pipeline_stage2_history_successor",
+        "result": "unsat",
+        "seconds": 0.426964693935588,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.426964693935588
+          }
+        ]
+      },
+      {
+        "label": "pipeline_stage3_history_successor",
+        "result": "unsat",
+        "seconds": 11.182148674037308,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 11.182148674037308
+          }
+        ]
+      },
+      {
+        "label": "pipeline_final_sum_equals_accepted_eight_product_dot",
+        "result": "unsat",
+        "seconds": 0.00014198594726622105,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.00014198594726622105
+          }
+        ]
+      },
+      {
+        "label": "accepted_input_updates_ordered_pending_memory_fold",
+        "result": "unsat",
+        "seconds": 4.306384862633422,
+        "exhaustive_control_cases": 65,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.0004070778377354145
+          },
+          {
+            "case": 1,
+            "result": "unsat",
+            "seconds": 0.0003238779027014971
+          },
+          {
+            "case": 2,
+            "result": "unsat",
+            "seconds": 0.0003149870317429304
+          },
+          {
+            "case": 3,
+            "result": "unsat",
+            "seconds": 0.0003024078905582428
+          },
+          {
+            "case": 4,
+            "result": "unsat",
+            "seconds": 0.0002642078325152397
+          },
+          {
+            "case": 5,
+            "result": "unsat",
+            "seconds": 0.0003528490196913481
+          },
+          {
+            "case": 6,
+            "result": "unsat",
+            "seconds": 0.02180556603707373
+          },
+          {
+            "case": 7,
+            "result": "unsat",
+            "seconds": 0.00036738812923431396
+          },
+          {
+            "case": 8,
+            "result": "unsat",
+            "seconds": 0.024132251041010022
+          },
+          {
+            "case": 9,
+            "result": "unsat",
+            "seconds": 0.0003298728261142969
+          },
+          {
+            "case": 10,
+            "result": "unsat",
+            "seconds": 0.0002783830277621746
+          },
+          {
+            "case": 11,
+            "result": "unsat",
+            "seconds": 0.0003559661563485861
+          },
+          {
+            "case": 12,
+            "result": "unsat",
+            "seconds": 0.00037608714774250984
+          },
+          {
+            "case": 13,
+            "result": "unsat",
+            "seconds": 0.00040850392542779446
+          },
+          {
+            "case": 14,
+            "result": "unsat",
+            "seconds": 0.02314125490374863
+          },
+          {
+            "case": 15,
+            "result": "unsat",
+            "seconds": 0.00042059505358338356
+          },
+          {
+            "case": 16,
+            "result": "unsat",
+            "seconds": 0.16746581299230456
+          },
+          {
+            "case": 17,
+            "result": "unsat",
+            "seconds": 0.00037271296605467796
+          },
+          {
+            "case": 18,
+            "result": "unsat",
+            "seconds": 0.0002932380884885788
+          },
+          {
+            "case": 19,
+            "result": "unsat",
+            "seconds": 0.0003186468966305256
+          },
+          {
+            "case": 20,
+            "result": "unsat",
+            "seconds": 0.0002676350995898247
+          },
+          {
+            "case": 21,
+            "result": "unsat",
+            "seconds": 0.0003547249361872673
+          },
+          {
+            "case": 22,
+            "result": "unsat",
+            "seconds": 0.024820763850584626
+          },
+          {
+            "case": 23,
+            "result": "unsat",
+            "seconds": 0.0003733451012521982
+          },
+          {
+            "case": 24,
+            "result": "unsat",
+            "seconds": 0.2640510289929807
+          },
+          {
+            "case": 25,
+            "result": "unsat",
+            "seconds": 0.0003530669491738081
+          },
+          {
+            "case": 26,
+            "result": "unsat",
+            "seconds": 0.00030287192203104496
+          },
+          {
+            "case": 27,
+            "result": "unsat",
+            "seconds": 0.00031344499439001083
+          },
+          {
+            "case": 28,
+            "result": "unsat",
+            "seconds": 0.0002926080487668514
+          },
+          {
+            "case": 29,
+            "result": "unsat",
+            "seconds": 0.000385866966098547
+          },
+          {
+            "case": 30,
+            "result": "unsat",
+            "seconds": 0.26598409400321543
+          },
+          {
+            "case": 31,
+            "result": "unsat",
+            "seconds": 0.00042632012628018856
+          },
+          {
+            "case": 32,
+            "result": "unsat",
+            "seconds": 0.22456358303315938
+          },
+          {
+            "case": 33,
+            "result": "unsat",
+            "seconds": 0.0003649638965725899
+          },
+          {
+            "case": 34,
+            "result": "unsat",
+            "seconds": 0.00033129402436316013
+          },
+          {
+            "case": 35,
+            "result": "unsat",
+            "seconds": 0.0003024938050657511
+          },
+          {
+            "case": 36,
+            "result": "unsat",
+            "seconds": 0.0002831870224326849
+          },
+          {
+            "case": 37,
+            "result": "unsat",
+            "seconds": 0.0003882991150021553
+          },
+          {
+            "case": 38,
+            "result": "unsat",
+            "seconds": 0.022124242037534714
+          },
+          {
+            "case": 39,
+            "result": "unsat",
+            "seconds": 0.00048459297977387905
+          },
+          {
+            "case": 40,
+            "result": "unsat",
+            "seconds": 0.24052053689956665
+          },
+          {
+            "case": 41,
+            "result": "unsat",
+            "seconds": 0.0003350661136209965
+          },
+          {
+            "case": 42,
+            "result": "unsat",
+            "seconds": 0.0002834778279066086
+          },
+          {
+            "case": 43,
+            "result": "unsat",
+            "seconds": 0.000320113031193614
+          },
+          {
+            "case": 44,
+            "result": "unsat",
+            "seconds": 0.000319882994517684
+          },
+          {
+            "case": 45,
+            "result": "unsat",
+            "seconds": 0.0003818259574472904
+          },
+          {
+            "case": 46,
+            "result": "unsat",
+            "seconds": 0.8426781168673187
+          },
+          {
+            "case": 47,
+            "result": "unsat",
+            "seconds": 0.0003623019438236952
+          },
+          {
+            "case": 48,
+            "result": "unsat",
+            "seconds": 0.34189547691494226
+          },
+          {
+            "case": 49,
+            "result": "unsat",
+            "seconds": 0.0003860960714519024
+          },
+          {
+            "case": 50,
+            "result": "unsat",
+            "seconds": 0.00035578105598688126
+          },
+          {
+            "case": 51,
+            "result": "unsat",
+            "seconds": 0.00032443879172205925
+          },
+          {
+            "case": 52,
+            "result": "unsat",
+            "seconds": 0.00030341302044689655
+          },
+          {
+            "case": 53,
+            "result": "unsat",
+            "seconds": 0.0003738771192729473
+          },
+          {
+            "case": 54,
+            "result": "unsat",
+            "seconds": 0.04850282287225127
+          },
+          {
+            "case": 55,
+            "result": "unsat",
+            "seconds": 0.0005205150227993727
+          },
+          {
+            "case": 56,
+            "result": "unsat",
+            "seconds": 1.3034002070780843
+          },
+          {
+            "case": 57,
+            "result": "unsat",
+            "seconds": 0.00037088082171976566
+          },
+          {
+            "case": 58,
+            "result": "unsat",
+            "seconds": 0.00034163217060267925
+          },
+          {
+            "case": 59,
+            "result": "unsat",
+            "seconds": 0.00032318709418177605
+          },
+          {
+            "case": 60,
+            "result": "unsat",
+            "seconds": 0.0003946691285818815
+          },
+          {
+            "case": 61,
+            "result": "unsat",
+            "seconds": 0.00039878813549876213
+          },
+          {
+            "case": 62,
+            "result": "unsat",
+            "seconds": 0.15337482397444546
+          },
+          {
+            "case": 63,
+            "result": "unsat",
+            "seconds": 0.00043726409785449505
+          },
+          {
+            "case": 64,
+            "result": "unsat",
+            "seconds": 0.32067955401726067
+          }
+        ]
+      },
+      {
+        "label": "numeric_pipeline_preserves_prewrite_read_response_history",
+        "result": "unsat",
+        "seconds": 0.0011920880060642958,
+        "exhaustive_control_cases": 1,
+        "case_results": [
+          {
+            "case": 0,
+            "result": "unsat",
+            "seconds": 0.0011920880060642958
+          }
+        ]
+      }
+    ],
+    "control_partition_coverage": [
+      {
+        "label": "accepted_input_updates_ordered_pending_memory_fold",
+        "result": "unsat",
+        "reset_cases": 1,
+        "nonreset_cases": 64,
+        "variables": [
+          "numeric.valid0",
+          "numeric.valid1",
+          "numeric.valid2",
+          "numeric.valid3",
+          "numeric.in_valid",
+          "numeric.out_ready"
+        ]
+      }
+    ],
+    "pipeline_stages": 4,
+    "original_products_per_row": 8,
+    "product_bits": 16,
+    "dot_bits": 19,
+    "input_memory_contents_verified": false,
+    "unknown_state_or_analog_timing_verified": false,
+    "reference_scope": "Accepted processing-array operands/masks, typed local stage contracts and explicit two-state output-memory service contract."
+  },
+  "conditional_array_to_output_memory_refinement_verified": true,
+  "input_memory_contents_verified": false,
+  "complete_memory_history_verified": false,
+  "complete_tensor_scores_verified": false,
+  "universal_compiler_memory_semantics_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "independent_review": {
+    "reviewer": "/root/review_numeric_pipeline",
+    "status": "review_requirements_verified",
+    "report_sha256": "a7dfe4eb10c7712c54cf5b79a5914c6875b55c5582d2c7ce236d52c0a6013b60",
+    "important_findings_fixed": 2,
+    "one_fix_pass": true,
+    "metadata_projection_regression_red_to_green": true,
+    "report_authentication_regression_red_to_green": true,
+    "full_post_fix_proof_rerun": true,
+    "post_fix_independent_review_claimed": false
+  },
+  "selected_terminal_report_sha256": "8e08f0c90b92d59bcc29802582b0f1cc18b3dac03cecf8dc68e6dc375baf11c6",
+  "elapsed_seconds": 115.44585303892381,
+  "peak_resident_bytes": 2033500160,
+  "scope": "Current mapped array operand/mask acceptance through four locally chosen arithmetic stages into32-bit output-memory partial sums. Exact published local next-state contracts, freshly checked state/interface/body bindings, universal stage history and exhaustive-control ordered memory-fold induction are composed. Input-memory content/policy provenance, full tensor prediction, initialization-X/analog timing, trained accuracy and paper matching remain unqualified.",
+  "evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_all_core_review_fixed.json": "8e08f0c90b92d59bcc29802582b0f1cc18b3dac03cecf8dc68e6dc375baf11c6",
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_all_logic_review_fixed.log": "2f968bc9ea72144a76a82f1e3e2d83ab49cab99b78c4b6dfb3271218e915f63c",
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_review.md": "a7dfe4eb10c7712c54cf5b79a5914c6875b55c5582d2c7ce236d52c0a6013b60",
+    ".cache/wide_packaged_host_link/owner_score_proof/publish_numeric_pipeline.py": "1213ca85c334db0af06b4421a536356d5fc2e87f365f8680fd3f4dcbbe9e44b0",
+    ".cache/wide_packaged_host_link/owner_score_proof/test_publish_numeric_pipeline.py": "8755467f26bbbe0d428655b6ba26b5a070742cdbe8d705a5019578cd782ff083",
+    ".cache/wide_packaged_host_link/owner_score_proof/test_numeric_report_authentication.py": "aca84c5246d942e0c77a6170a94de0b3ce05038c781418720e670dfb074823e8",
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_publication_gate_green.log": "308e4b65bcadff6a75aeb07b3c1d42115528faf1014fbcbab8e8919890242777",
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_report_authentication_red.log": "ce8bb63cbf0be56fe9c4ebe97b6c9cd0dbba7d71f7fa8ca9021e67009d1a4682",
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_report_authentication_green.log": "5a7ae155973e42e16e5781220aa4f73a74708b9f47aadd12de30d1de0d1b613e",
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_metadata_projection_red.log": "a75d87177f07103abd4fb464ca0f889c85906b8cbd4bb4a3494243efad0ad720",
+    ".cache/wide_packaged_host_link/owner_score_proof/numeric_pipeline_metadata_projection_green.log": "b3e5f99f139784619808b8e52d84b88a7f60bda0d644da99780e1a6a5893c109",
+    "syn/prove_tri_oracle_numeric_pipeline_history.py": "0a8b77884391de37bb5f77af647ae230d9ed1d39ca0313e142e78e484d41e0c8",
+    "syn/test_tri_oracle_numeric_pipeline_history_logic.py": "93f207d29f6419a1abc1ad979eeaf62ac1d7caac5e509c686bd85c953ef61130",
+    "records/tri_oracle_packaged_product_next_states.json": "a8304c395845b4da35a4a2ea21e486e85eaac567ad8305adae8b924985202d2e",
+    "records/tri_oracle_packaged_reduction_next_states.json": "a419fcf207ec8f572a207ebc7e6f336624396bd11477b1b43663acc2833914a1",
+    "records/tri_oracle_packaged_valid_next_states.json": "6e83a85405295e61d61fb01d0e335ca333500092a9b02cc9a50ad2bfaed08751",
+    "records/tri_oracle_accumulator_metadata_history.json": "c8b10ec0944a10ea68d5d338493ce06d951ebe5be6ee853fbc43a9788a5feb66",
+    "records/tri_oracle_output_memory_service_history.json": "a5d46def3a3d50390aaaa1fb3dff825567e30e91671311b4c36652ff8589d7c1"
+  }
+}
