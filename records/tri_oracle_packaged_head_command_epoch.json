@@ -1,0 +1,377 @@
+{
+  "state": "mapped_accepted_head_command_epoch_induction_verified",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "component": {
+    "absolute_shared": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer",
+    "boundary_cuts": [
+      {
+        "context": "attention_pipeline/cache_writer",
+        "master": "tri_oracle_qkv_store430_context_partition",
+        "output_bits": 615
+      },
+      {
+        "context": "attention_pipeline/projection",
+        "master": "tri_oracle_qkv429_context_partition",
+        "output_bits": 5888
+      },
+      {
+        "context": "attention_pipeline/attention/attention",
+        "master": "tri_oracle_attention_row426_READ_MERGE_TABLE0_LOCAL_TOKEN_SIZES1_context_partition",
+        "output_bits": 7618
+      },
+      {
+        "context": "attention_pipeline/attention/contexts.store",
+        "master": "tri_oracle_attention_context_external",
+        "output_bits": 232
+      },
+      {
+        "context": "feedforward/packed_signs.predictor",
+        "master": "tri_oracle_packed_normalize405_CORE_STRIP_PREDICTOR1_parallel_chip",
+        "output_bits": 1710
+      },
+      {
+        "context": "feedforward/packetizer",
+        "master": "tri_oracle_batched_mask_packet399_parallel_chip",
+        "output_bits": 1373
+      },
+      {
+        "context": "feedforward/shared_wide_lanes.lanes[0].reads",
+        "master": "tri_oracle_wide_read_arbiter_parallel_chip",
+        "output_bits": 1104
+      },
+      {
+        "context": "feedforward/shared_wide_lanes.lanes[1].reads",
+        "master": "tri_oracle_wide_read_arbiter_14352_parallel_chip",
+        "output_bits": 1104
+      },
+      {
+        "context": "feedforward/compute/compute/nonlinear",
+        "master": "tri_oracle_batched_nonlinear391_parallel_chip",
+        "output_bits": 3282
+      },
+      {
+        "context": "feedforward/compute/compute/tensor",
+        "master": "tri_oracle_native_token_map_copy_5",
+        "output_bits": 16446
+      }
+    ],
+    "shared_module_sha256": "ef115ad88c39f36437713ceb18e4c7d9838fb776fd6eeb897293cf3a99b96573",
+    "absolute_contexts": {
+      "parent": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention/predictor",
+      "tile": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention/predictor/tile",
+      "pipeline": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline",
+      "layer": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/attention_pipeline/attention",
+      "frame": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward",
+      "arbiter": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute",
+      "wrapper": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute",
+      "owner": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor"
+    },
+    "module_sha256": {
+      "parent": "333e409bd0ae8a14dc655bc611a90f450c2c57b56fce8b9e75d48ea2cbc46c67",
+      "tile": "81e1784557e7603c06f89d9e229d65908e8cd084d171c258811b9174e3a664fb",
+      "pipeline": "6aecf18e15060fd4396d3789f5277e2f7ff13d1e3c06c9222cbe8d5dc4e3dd10",
+      "layer": "fa01dd8069a14cf53d33b67af436b9774ccd4658fcdcc0c04b68e6ae2bbf4174",
+      "frame": "697eadd4e2392c1f16c46082a2366d2ee022146f0672d6e942c950249cbd4ab5",
+      "arbiter": "15411d4698fe145fcfd41503cdfd7ae41324454dbd71a2b7fa7bdc96592cbdcb",
+      "wrapper": "b9614fc9b9ac5ace047f1d321ba010ee7991124d91706985df90c7f4addfd596",
+      "owner": "4bc7d21c2780fed15a5deb7c7efcdffe9c2c9334349e75a22810105d3b2d5f94"
+    },
+    "physical_register_bits": 23,
+    "physical_register_reset_values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "proof_only_auxiliary_history_bits": 1,
+    "all_component_inputs_universally_quantified": true
+  },
+  "queries": [
+    {
+      "label": "all23_head_epoch_register_clocks",
+      "result": "unsat",
+      "seconds": 0.0001568321604281664,
+      "outputs": 23
+    },
+    {
+      "label": "all23_head_epoch_register_reset_bindings",
+      "result": "unsat",
+      "seconds": 7.35048670321703e-05,
+      "outputs": 23
+    },
+    {
+      "label": "head_epoch_actual_reset_basis",
+      "result": "unsat",
+      "seconds": 6.506987847387791e-05,
+      "outputs": 4
+    },
+    {
+      "label": "parent_tile_state_domain_actual_component_induction",
+      "result": "unsat",
+      "seconds": 0.006409031106159091,
+      "outputs": 1
+    },
+    {
+      "label": "projection_layer_exclusion_actual_component_induction",
+      "result": "unsat",
+      "seconds": 0.0038639719132333994,
+      "outputs": 1
+    },
+    {
+      "label": "shared_receiver_ownership_actual_component_induction",
+      "result": "unsat",
+      "seconds": 0.0006283808033913374,
+      "outputs": 1
+    },
+    {
+      "label": "parent_wait_never_reports_prediction_completion",
+      "result": "unsat",
+      "seconds": 9.296205826103687e-05,
+      "outputs": 1
+    },
+    {
+      "label": "active_tile_holds_parent_and_head_layer",
+      "result": "unsat",
+      "seconds": 0.002582381945103407,
+      "outputs": 2
+    },
+    {
+      "label": "actual_head_request_acceptance_enters_wait_packet",
+      "result": "unsat",
+      "seconds": 0.002373156836256385,
+      "outputs": 10
+    },
+    {
+      "label": "tracked_head_terminal_matches_real_tile_ready_alias",
+      "result": "unsat",
+      "seconds": 0.0002965491730719805,
+      "outputs": 1
+    },
+    {
+      "label": "head_command_history_actual_successor_induction",
+      "result": "unsat",
+      "seconds": 0.014199015218764544,
+      "outputs": 1
+    },
+    {
+      "label": "active_head_epoch_satisfies_prior_return_modes",
+      "result": "unsat",
+      "seconds": 0.00026429700665175915,
+      "outputs": 5
+    },
+    {
+      "label": "actual_shared_component_clock_reset_anchors",
+      "result": "unsat",
+      "seconds": 0.0001040829811245203,
+      "outputs": 2
+    }
+  ],
+  "event_witnesses": [
+    {
+      "event": "producer_acquisition",
+      "result": "sat",
+      "full_clock_history_reachability_verified": false
+    },
+    {
+      "event": "nonlast_emit_terminal_stall",
+      "result": "sat",
+      "full_clock_history_reachability_verified": false
+    },
+    {
+      "event": "last_wait_done",
+      "result": "sat",
+      "full_clock_history_reachability_verified": false
+    },
+    {
+      "event": "terminal_retirement",
+      "result": "sat",
+      "full_clock_history_reachability_verified": false
+    }
+  ],
+  "rejected_corruptions": [
+    {
+      "control": "head_layer_premature_exit",
+      "result": "sat",
+      "query": "head_command_history_actual_successor_induction",
+      "activation": "layer",
+      "role": "layer",
+      "changed_instances": {
+        "state_reg[0]": {
+          "D": "1'b0"
+        }
+      },
+      "altered_module_sha256": "c16e13a2227d879391a77028be615825e88bf1d72e722c7fe9e247fb848c85b6"
+    },
+    {
+      "control": "predictor_parent_premature_exit",
+      "result": "sat",
+      "query": "head_command_history_actual_successor_induction",
+      "activation": "parent",
+      "role": "parent",
+      "changed_instances": {
+        "state_reg[2]": {
+          "D": "1'b1"
+        }
+      },
+      "altered_module_sha256": "9eb82c85d66d490078145f30c3c791126daeb3669e5b12a28f3dac25e7f55de6"
+    },
+    {
+      "control": "tile_premature_idle_or_prepare",
+      "result": "sat",
+      "query": "head_command_history_actual_successor_induction",
+      "activation": "tile",
+      "role": "tile",
+      "changed_instances": {
+        "state_reg[1]": {
+          "D": "1'b0"
+        }
+      },
+      "altered_module_sha256": "5a91641d751775de895ab3f6fb2047be0272310395f6cb7dad4b5924e38ccc3d"
+    },
+    {
+      "control": "last_score_emitted_before_terminal",
+      "result": "sat",
+      "query": "head_command_history_actual_successor_induction",
+      "activation": "last_emit",
+      "role": "tile",
+      "changed_instances": {
+        "state_reg[0]": {
+          "D": "1'b0"
+        }
+      },
+      "altered_module_sha256": "c60feb8889fe4b51a32efcfb80e835ac7d5d713a4888d69fea746189abf5baf4"
+    },
+    {
+      "control": "terminal_valid_feedback_lost",
+      "result": "sat",
+      "query": "tracked_head_terminal_matches_real_tile_ready_alias",
+      "activation": "terminal_alias",
+      "role": "parent",
+      "changed_instances": {
+        "tile": {
+          "tensor_done_valid": "1'b0"
+        }
+      },
+      "altered_module_sha256": "8959a17dd19ed5538e5a9d8aa04cb8f71c2e8c7fb6a027d2a095e61bb63e6675"
+    },
+    {
+      "control": "projection_started_during_head_epoch",
+      "result": "sat",
+      "query": "projection_layer_exclusion_actual_component_induction",
+      "activation": "projection",
+      "role": "pipeline",
+      "changed_instances": {
+        "projection_busy_reg": {
+          "D": "1'b1",
+          "E": "1'b1"
+        }
+      },
+      "altered_module_sha256": "496487a71587e91dc3a8a093750838153dca81de4040f9927856b7abc676c4f2"
+    },
+    {
+      "control": "saved_token_count_clobbered_during_emit",
+      "result": "sat",
+      "query": "head_command_history_actual_successor_induction",
+      "activation": "count",
+      "role": "tile",
+      "changed_instances": {
+        "tensor_cfg_tokens_reg[0]": {
+          "D": "1'b0",
+          "E": "1'b1"
+        }
+      },
+      "altered_module_sha256": "ab1769f384cfb6289cea2ccca4fd58388b8e8a8372cdd41a8bf2858e61327811"
+    },
+    {
+      "control": "token_index_clobbered_during_emit",
+      "result": "sat",
+      "query": "head_command_history_actual_successor_induction",
+      "activation": "token",
+      "role": "tile",
+      "changed_instances": {
+        "token_index_reg[0]": {
+          "D": "1'b1",
+          "SE": "1'b0"
+        }
+      },
+      "altered_module_sha256": "4fb5d1bb4aa90f9ad301f76f01b26b8cdfe96cd6fca5afc75164121a19003b7d"
+    },
+    {
+      "control": "tile_state_reset_disconnected",
+      "result": "sat",
+      "query": "all23_head_epoch_register_reset_bindings",
+      "activation": "reset",
+      "role": "tile",
+      "changed_instances": {
+        "state_reg[0]": {
+          "CDN": "1'b1"
+        }
+      },
+      "altered_module_sha256": "2d6ed1930cc4bbaccf73218a3d71bc1e5fc0beb8df3a8a80954effeabee148cf"
+    },
+    {
+      "control": "predictor_state_wrong_clock",
+      "rejection": "Epoch register clock differs",
+      "altered_module_sha256": "08d4cea4522884390852ae48bd9fd1e701ed4c3e70b2deb2828a65ce6596d13c"
+    }
+  ],
+  "head_command_epoch_qualified": true,
+  "prior_head_return_mode_conditions_discharged_during_tracked_epoch": true,
+  "numerical_score_production_verified": false,
+  "eventual_completion_verified": false,
+  "full_head_prediction_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "positive_solver_queries": 13,
+  "activated_counterexample_controls": 9,
+  "wrong_clock_controls": 1,
+  "distinct_mutated_module_bodies": 10,
+  "related_logic_tests_passed": 130,
+  "verified_pinned_inputs": 130,
+  "proof_wall_seconds": 111.43514339602552,
+  "proof_peak_host_resident_bytes": 2111545344,
+  "history_definition": "Proof-only history resets false, becomes true on actual tile request valid and ready, clears on actual shared attention completion valid and ready, otherwise holds; acquisition has priority.",
+  "verified_invariant": "Tracked head command implies LayerRunHead5, ParentWaitBatch3, TileRead3/nonlastEmit4/WaitDone5/Drain6, and shared attention ownership. Previously proved ownership and projection exclusion supply busy, unpaired and inactive projection.",
+  "independent_review": {
+    "state": "clean",
+    "reviewer": "/root/review_head_command_epoch",
+    "critical_findings": 0,
+    "important_findings": 0,
+    "minor_findings": 0,
+    "pinned_proof_inputs_independently_rehashed": 130,
+    "focused_tests_independently_rerun": 4,
+    "full_mapped_proof_independently_rerun": false,
+    "review_scope": "New controller proof, four tests, full proof artifact, published record, all8 component body/context bindings and all130 input hashes. No numeric, liveness, physical or paper-match qualification."
+  },
+  "evidence_sha256": {
+    "records/tri_oracle_packaged_shared_return.json": "3d04981d44691fd529fd689c29955bc9dd6532c6ce3fa82ae92b9fcec2c6603b",
+    "records/tri_oracle_packaged_accepted_command.json": "83007c2d848d0fa83edded2daacc177479a1f9bb1399517123c3a73bc8067630",
+    ".cache/wide_packaged_host_link/head_ratio_proof/head_command_epoch_alias_fixed.json": "542b88872f1062e2569efdfeac43f2a66d78c0f9bb0ad16f19b25806bba217a6",
+    "syn/prove_tri_oracle_head_command_epoch.py": "ea9dd63066a2b64569f1c5a38ccd0abdc9fd20b109448571c4bb86923fe922d9",
+    "syn/test_tri_oracle_head_command_epoch_logic.py": "dd338fb559a7a20305b9b74def6dc95cb969795440e4ab6bc66482ff30b3a4f7",
+    ".cache/wide_packaged_host_link/head_ratio_proof/head_command_epoch_alias_fixed_all_logic.log": "05827febd94e8b1d8058f8663d39e287ab616ce3de690e650c7654c008d21c05",
+    ".cache/wide_packaged_host_link/head_ratio_proof/head_command_epoch_tag_alias_green.log": "d20d2953cab735d14b85f353390c66da1cbfd4ee983a7059d05184c9814195bf"
+  },
+  "scope": "Settled binary positive-edge controller induction from actual common reset. All component inputs, unselected state and declared architectural child outputs are universally arbitrary. All23 selected physical flip-flop clock, reset, scan and enable functions are traced and three primary corner models agree. One auxiliary history Boolean is proof-only, with no new hardware. Event witnesses establish consistent event states, not complete clock histories. This discharges prior response-transport head-mode conditions during an accepted tracked command; numerical tensor scores, eventual progress, complete prediction, accuracy, timing and paper matching remain unqualified."
+}
