@@ -1,0 +1,140 @@
+{
+  "state": "frozen_current_prefix_calibration_drift_measured",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "images": 16,
+  "calibration_images": 8,
+  "reused_diagnostic_images": 8,
+  "untouched_holdout": false,
+  "protocol": "Original AI2D brief-answer calibration prompt, prefill only; all 22 layers. Identity isolates the integer feed-forward prefix. Compact/streaming uses the current accepted software path. Match surviving original token positions, exclude protected token zero, and retain terminal text token.",
+  "controls": {
+    "archived_dense_matrix_checks": 1056,
+    "archived_dense_token_checks": 16896,
+    "maximum_dense_token_relative_l2": 0.0,
+    "observer_neutrality_modes": 2,
+    "observer_logits_bit_identical": true,
+    "observer_workload_identical": true,
+    "stateless_integer_replay_bit_exact_rows": 7545,
+    "source_pins_rehashed": 538,
+    "helper_and_failure_tests_passed": 15
+  },
+  "modes": {
+    "identity": {
+      "callbacks": 352,
+      "matched_rows": 5280,
+      "current_fallback_rows": 48,
+      "archived_fallback_rows": 69,
+      "mean_image_layer_current_local_relative_l2": 0.2390223818238428,
+      "mean_image_layer_archived_local_relative_l2": 0.2173865373289716,
+      "selected_layers": [
+        {
+          "layer": 0,
+          "mean_image_activation_relative_l2": 0.0,
+          "mean_image_current_local_relative_l2": 0.17501325366975418,
+          "mean_image_archived_local_relative_l2": 0.17501325219236824
+        },
+        {
+          "layer": 5,
+          "mean_image_activation_relative_l2": 0.06894930189342724,
+          "mean_image_current_local_relative_l2": 0.22944522853025495,
+          "mean_image_archived_local_relative_l2": 0.19968345896420095
+        },
+        {
+          "layer": 10,
+          "mean_image_activation_relative_l2": 0.1477406582846082,
+          "mean_image_current_local_relative_l2": 0.2363755629393584,
+          "mean_image_archived_local_relative_l2": 0.18933982024966922
+        },
+        {
+          "layer": 15,
+          "mean_image_activation_relative_l2": 0.22289999093272228,
+          "mean_image_current_local_relative_l2": 0.24987918596304867,
+          "mean_image_archived_local_relative_l2": 0.2620416711469567
+        },
+        {
+          "layer": 21,
+          "mean_image_activation_relative_l2": 0.2954486700960057,
+          "mean_image_current_local_relative_l2": 0.12530758803752368,
+          "mean_image_archived_local_relative_l2": 0.11365132746884943
+        }
+      ]
+    },
+    "compact_and_streaming": {
+      "callbacks": 352,
+      "matched_rows": 2265,
+      "current_fallback_rows": 27,
+      "archived_fallback_rows": 48,
+      "mean_image_layer_current_local_relative_l2": 0.2499201729152289,
+      "mean_image_layer_archived_local_relative_l2": 0.21900577208400077,
+      "selected_layers": [
+        {
+          "layer": 0,
+          "mean_image_activation_relative_l2": 0.01709021518755361,
+          "mean_image_current_local_relative_l2": 0.17356094406934602,
+          "mean_image_archived_local_relative_l2": 0.17288801149569533
+        },
+        {
+          "layer": 5,
+          "mean_image_activation_relative_l2": 0.11248982587742354,
+          "mean_image_current_local_relative_l2": 0.2402515014132488,
+          "mean_image_archived_local_relative_l2": 0.18613302964375447
+        },
+        {
+          "layer": 10,
+          "mean_image_activation_relative_l2": 0.21013198272692266,
+          "mean_image_current_local_relative_l2": 0.25959517819575767,
+          "mean_image_archived_local_relative_l2": 0.19569250201119448
+        },
+        {
+          "layer": 15,
+          "mean_image_activation_relative_l2": 0.3415224711212238,
+          "mean_image_current_local_relative_l2": 0.27596395394196765,
+          "mean_image_archived_local_relative_l2": 0.2850212641178062
+        },
+        {
+          "layer": 21,
+          "mean_image_activation_relative_l2": 0.3938065181676815,
+          "mean_image_current_local_relative_l2": 0.12692042634093617,
+          "mean_image_archived_local_relative_l2": 0.1098189431464794
+        }
+      ]
+    }
+  },
+  "execution": {
+    "elapsed_seconds": 35.15659375814721,
+    "peak_device_allocated_bytes": 7814243840,
+    "minimum_host_available_bytes": 13659639808,
+    "native_xcelium_not_restarted": true
+  },
+  "interpretation": "Current inputs drift progressively from the archived floating-model calibration inputs. Local relative MLP error also rises on average. This is diagnostic association, not proof of the cause or size of task-accuracy loss; no calibration recipe or model was changed.",
+  "baseline_local_gqa_accuracy_percent": 49.666083638098264,
+  "paper_gqa_accuracy_percent": 55.04,
+  "answer_label_optimization": false,
+  "model_weights_changed": false,
+  "task_accuracy_verified": false,
+  "trained_mapped_execution_verified": false,
+  "paper_results_matched": false,
+  "limitations": [
+    "Both image groups were used by earlier diagnostics; neither is an untouched accuracy holdout.",
+    "Compact/streaming comparisons include only surviving archived token positions, with selection changing by layer.",
+    "Mean errors give equal weight to each image/layer; they are not task scores or workload-weighted errors.",
+    "Raw local controls and measurements are bound by this external record; the internal worker receipt does not itself hash output files."
+  ],
+  "evidence_sha256": {
+    ".cache/model_reference/prefix_calibration_drift_20261119/run_audit.py": "bcb2b6171dcc5ac68bf90454694cfddef5e6db4bed693216bec539ba2094faf5",
+    ".cache/model_reference/prefix_calibration_drift_20261119/guard.py": "723d621e9a92e9dbf8c13d7e386ec0dfc4ec487b239826a2b15c98a94860009e",
+    ".cache/model_reference/prefix_calibration_drift_20261119/observer.py": "f4e3375d9256f79fa4e0225595e1a0aa8c29bfc3b373e29a507c78f801f7f838",
+    ".cache/model_reference/prefix_calibration_drift_20261119/test_observer.py": "79e32b4e4282fa003d259e253457c79ae57186f465806e1137d1b61eaf29098f",
+    ".cache/model_reference/prefix_calibration_drift_20261119/test_review_findings.py": "6389324e49cbb23e4310fef8410f755aeb93b83d9dd4b2e2d1ffd64f7b6a1737",
+    ".cache/model_reference/prefix_calibration_drift_20261119/suite_green.log": "fac8b9634039984e74ef6ce055470233d1be80ed31f3624e8d8b2993ddd5c28a",
+    ".cache/model_reference/prefix_calibration_drift_20261119/receipt.json": "020704560fae7b32413837b755b745a51f6bc2663c2f8c1ec19152bd6766dfef",
+    ".cache/model_reference/prefix_calibration_drift_20261119/guard_receipt.json": "cb18077b5ce4cda7ed5d50abe98228ab04191ad3d6d50fcd6bd9e7fba333aa0b",
+    ".cache/model_reference/prefix_calibration_drift_20261119/inputs.json": "2b4ad46d7e5ad7841a4126633cc586a14978581d19b87a526350ef4d758703ad",
+    ".cache/model_reference/prefix_calibration_drift_20261119/measurements.json": "87d3d4d83e4b6980fe4ee337d7c9999b3b00c8d5bbdf6f4143929c410e046d52",
+    ".cache/model_reference/prefix_calibration_drift_20261119/dense_control.json": "bddbbe8b10b6c34d7b9f91988b128f5e9decb46abf869ef60209b1d446d807c1",
+    ".cache/model_reference/prefix_calibration_drift_20261119/observer_controls.json": "d5d1381e7e6c93afa1240983d5d9cc35891c52f99ad4b786624c6a61967fdab1",
+    ".cache/model_reference/prefix_calibration_drift_20261119/architecture.pdf": "7e5a45a78c482124a08b78e7e4cde9842f936a1e24be1c27d2b4bf54a7312a64",
+    ".cache/model_reference/prefix_calibration_drift_20261119/source_review.json": "a5b64ea8ca0d067c0d33db90008d4d18917162c88a197444bac033eb51a69446",
+    ".cache/model_reference/prefix_calibration_drift_20261119/review_resolution.json": "7b2ec4383ebbba0b40c000f4b5ce2d987598b62327aa95b8f19b2645430ab1ef",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c"
+  }
+}
