@@ -1,0 +1,175 @@
+{
+  "state": "native_current_fill_weight_memory_diagnostic_completed",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "scope": "Data accepted at each native key-controller interface is tracked through staging and physical masked weight writes during that fill and its active group lifetime. Cached reentry and upstream address/rank ownership are not verified.",
+  "model": "Two-state synchronous sampling of the mapped circuit and normal binary masked memory writes at actual compiler-macro pins; arbitrary initial storage, no reset-zero or reset-no-write assumption. This is not timing or electrical signoff.",
+  "coverage": {
+    "physical_cores": 20,
+    "physical_weight_macros": 320,
+    "rows_per_core": 32,
+    "strips_per_row": 2,
+    "piece_bits": 64,
+    "physical_cases": 1280,
+    "symbolic_key_tiles_per_case": 16,
+    "weight_macro_storage_bytes": 163840
+  },
+  "checks": {
+    "distinct_control_queries": 140,
+    "source_and_pin_binding_queries": 6400,
+    "memory_history_queries": 6400,
+    "total_distinct_positive_queries": 12940,
+    "positive_queries_have_satisfiable_domains": true,
+    "activated_memory_model_faults": 2560,
+    "satisfiable_boundary_modes": 5120
+  },
+  "physical_pin_negative_controls": {
+    "location": {
+      "bank": 0,
+      "core": 0,
+      "row": 0,
+      "strip": 0
+    },
+    "mutations": [
+      "payload_zero",
+      "address_zero",
+      "write_disabled"
+    ],
+    "method": "In-memory mapped-module body mutations; each rejected at the actual memory-history obligation."
+  },
+  "batching_validation": {
+    "original_and_batched_mathematical_case_ast_sha256": "1658c06e2c176ccbf9816d8e4ef9aa960d568072a79ddbd500940d7330e20b52",
+    "matched_formula_cases": 6,
+    "actual_differential_worker_runs": 10,
+    "comparison": "Structural formula fingerprints normalize commuting operands and Boolean association; the solver formulas are unchanged."
+  },
+  "execution": {
+    "sum_worker_seconds": 5094.759745890275,
+    "supervisor_seconds_including_pilot_wait": 5826.631339133019,
+    "max_worker_resident_bytes": 2774519808,
+    "source_inputs_independently_rehashed": 64
+  },
+  "evidence": {
+    "summary": {
+      "path": ".cache/wide_packaged_host_link/owner_score_proof/native_weight_piece_cold_batched_all20_v2_diagnostic.json",
+      "sha256": "e51cb7a83ede2594296a1d16e0722fbd81f25918860f73aa93299db2acb2c9e7"
+    },
+    "integrity": {
+      "path": ".cache/wide_packaged_host_link/owner_score_proof/native_weight_piece_cold_batched_integrity_20261119.json",
+      "sha256": "baa338122da500afad7d5f62c7cdd6bcf09fc43f48f5fb5d9bd31904c9d431eb"
+    },
+    "differential_pilot": {
+      "path": ".cache/wide_packaged_host_link/owner_score_proof/native_weight_piece_batch_pilot_v2_diagnostic.json",
+      "sha256": "0f987a73b4df13cc6f7c3b4c15150e4611c6451043fdad9eb686b33391f1abb5"
+    }
+  },
+  "per_core_reports": [
+    {
+      "bank": 0,
+      "core": 0,
+      "sha256": "415a1a26bb8d0cc756ec1472c9c3d307ac6efdaf9659e89156555e09d985f4fe"
+    },
+    {
+      "bank": 0,
+      "core": 1,
+      "sha256": "0eeb86a717d16528f314faf11aa449be1dac1d77e804a10b51ca46ca0bb88cfd"
+    },
+    {
+      "bank": 0,
+      "core": 2,
+      "sha256": "bd97dafdda62d93e70d1f54789f32e0bf8e4885355509e8384bd536cb8cf4f94"
+    },
+    {
+      "bank": 0,
+      "core": 3,
+      "sha256": "920bca0a67692ad84522ac67226e19ac1ce839c7edd2aacab4ce430a477b91a1"
+    },
+    {
+      "bank": 1,
+      "core": 0,
+      "sha256": "bc88d203cb1f34f2bef8a6da308efd73f3930e745e87d6c9033523684665dadb"
+    },
+    {
+      "bank": 1,
+      "core": 1,
+      "sha256": "4eaed4327c604184163f6886d896e9aea9ff1c5fd334a50fb475068b7c9c6824"
+    },
+    {
+      "bank": 1,
+      "core": 2,
+      "sha256": "02eec62d316ebbd7a26ab51617a90f869717e3325a1394d2ba5202cb90218548"
+    },
+    {
+      "bank": 1,
+      "core": 3,
+      "sha256": "14f85e97b5755723a9c68e4de6163b0c17f9c7ececb2d1c0048a3e5e1fe6eca7"
+    },
+    {
+      "bank": 2,
+      "core": 0,
+      "sha256": "8a124bcd0ba22fc1ae89c5e7c4963dbbaa5a9ddc005791de8df104d776e91140"
+    },
+    {
+      "bank": 2,
+      "core": 1,
+      "sha256": "785b6eb2306d7e8cf81b849ba6ffa3943aeeb640f60cb1671bcdd750564a2082"
+    },
+    {
+      "bank": 2,
+      "core": 2,
+      "sha256": "c9830cff1d0447bc3d832e22b29fc025593bf829110b4cafded87565d4f3dc34"
+    },
+    {
+      "bank": 2,
+      "core": 3,
+      "sha256": "a2d3d67083994e6c678fcf01b4a0b5a30426499d69364b8aff6e86345930ff0e"
+    },
+    {
+      "bank": 3,
+      "core": 0,
+      "sha256": "a9916ee9953e4619ddf45b479230ba9a2b5f3dd748235f25fdc6ba7e8342a7cd"
+    },
+    {
+      "bank": 3,
+      "core": 1,
+      "sha256": "56c71bd07f81d4d35e3d64ced2d2dc25e9e711c8670ba94d54c7548ba8405f8c"
+    },
+    {
+      "bank": 3,
+      "core": 2,
+      "sha256": "f85701f207339138b795ca58a74001613d6cd4111d98f0dcd1db6d424a9bf4aa"
+    },
+    {
+      "bank": 3,
+      "core": 3,
+      "sha256": "5416de0fed92eb4fca41282543d9f80ee8de03aae46e423067d482e16165e065"
+    },
+    {
+      "bank": 4,
+      "core": 0,
+      "sha256": "be97c7b7dc3c7c7fae3149280f69c7cf6d7b715d82a75634b4e3064a7028f117"
+    },
+    {
+      "bank": 4,
+      "core": 1,
+      "sha256": "ae16d4f15d542caebb1511b42490d064f838605cad219bc575ddc6a0d2e45c2c"
+    },
+    {
+      "bank": 4,
+      "core": 2,
+      "sha256": "4599a1a749e1c021b50463ece9dab5a65fba43ca72c5fbc568e6a39c48f24f61"
+    },
+    {
+      "bank": 4,
+      "core": 3,
+      "sha256": "b4312f93e0fa7c8dab54cd4e711d7b2acb9ebf17bb1d98151a7f917b6c3b4ba0"
+    }
+  ],
+  "cached_reentry_and_foreign_weight_write_coherence_verified": false,
+  "all_control_asynchronous_reset_settling_verified": false,
+  "upstream_key_stream_address_rank_epochs_verified": false,
+  "full_native_data_epochs_verified": false,
+  "trained_full_model_mapped_execution_verified": false,
+  "task_accuracy_or_paper_performance_match_verified": false,
+  "independent_final_feature_review_done": false,
+  "advance_to_clock_distribution_or_routing_allowed": false
+}
