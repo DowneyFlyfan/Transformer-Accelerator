@@ -1,0 +1,45 @@
+{
+  "state": "all20_local_key_fill_cached_idle_and_reentry_physical_weight_history_diagnostic",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "physical_cores": 20,
+  "physical_weight_macros": 320,
+  "physical_row_strip_cases": 1280,
+  "selected_physical_weight_capacity_bytes": 163840,
+  "positive_nonempty_query_checks": 25600,
+  "check_counts": {
+    "control": 8960,
+    "binding": 7680,
+    "history": 8960,
+    "model_faults": 5120,
+    "modes": 10240
+  },
+  "matched_actual_mapped_body_fault_pilot_cases": 3,
+  "negative_report_controls": 6,
+  "campaign_source_inputs_authenticated": 167,
+  "case_reports_authenticated": 1280,
+  "resumed_previous_cases": 300,
+  "missing_case_campaign_elapsed_seconds": 8358.465332492953,
+  "memory_semantics": "Actual compiler macro clock, address, data, chip/write enables and uniform64-bit mask; synchronous binary writes, arbitrary initial contents. No reset-zero or reset-no-write assumption.",
+  "verified_scope": [
+    "Accepted LOCAL key-stream snapshot through actual native fill into all320 selected weight macros.",
+    "Filled current-rank pieces remain initialized through cache-valid idle and cached native reentry.",
+    "Actual mapped-body data/address/write-enable fault pilot detects the three corruptions at one corner; four model-only faults are detected per piece."
+  ],
+  "authenticated_local_evidence": {
+    ".cache/wide_packaged_host_link/owner_score_proof/native_retained_all20_audit_v1.json": "3878401db15426d1331d754e36e93f7c312ca181b76798c864ad13cbec9bdb8b",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_retained_weight_history_all20_v3.json": "327d224bcf2826250fa831b59a34b98007abe75cb721730b2b05a319afc50679",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_retained_weight_history_pilot_v1.json": "33d8869ea7bcb75c80e19cae2325399b3ef8fb6ab6c9560c2853470f3d581602",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_retained_all20_v1.py": "1d1380cff4a2e7dc013267d9c136dcfde710064c8ec010411828b4ae8c5da1c5",
+    ".cache/wide_packaged_host_link/owner_score_proof/run_native_weight_piece_history_retained_batch_v1.py": "ddc51c33e383cab82c6b447d9918660e0058887f98f106a66ae1df28847a61e2",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_current_control_physical_facts_v1.json": "4d3d1fdba89eb63dc24b34bb526c0be3ea5f9379fb13d46800ceea1d7565ed2f",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_weight_piece_history.py": "f26e06f04c5d31dab177032d8394ab51375ffbb46d74a2f4efa5d9a0a179c7ff",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_resident_staging_history.py": "9de9bfefd7056fbe166ef66aaa211445231ad77451b8420108458d07570551e4"
+  },
+  "upstream_key_stream_address_rank_epochs_verified": false,
+  "foreign_weight_writer_and_cached_reentry_coherence_verified": false,
+  "all20_complete_key_weight_epochs_verified": false,
+  "full_native_data_epochs_verified": false,
+  "independent_final_native_feature_review_done": false,
+  "independent_solver_rerun_claimed": false,
+  "advance_to_clock_distribution_or_routing_allowed": false
+}
