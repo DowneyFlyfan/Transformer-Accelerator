@@ -1,0 +1,66 @@
+{
+  "status": "reviewed_current_prefix_integer_error_concentration_diagnostic",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "images": 398,
+  "layers": 22,
+  "selected_ordinary_token_rows_per_layer": 6368,
+  "layer_image_scalar_summaries_reproduced": 8756,
+  "error_definition": "Sum of squared differences between the frozen integer replay and the trained floating feed-forward output on the same captured input; summed over selected tokens and output channels.",
+  "concentration_definition": "Energy in the32 output channels with largest accumulated squared error divided by energy in all2048 output channels.",
+  "layers2_and7_fraction_of_total_measured_squared_error": 0.6939932442405026,
+  "selected_layers": [
+    {
+      "layer": 2,
+      "mean_row_relative_l2": 0.31031504187292264,
+      "relative_root_squared_error": 0.8476934162884056,
+      "top32_output_channels_error_fraction": 0.9584329621375672,
+      "largest_two_output_channels": [
+        624,
+        1661
+      ],
+      "largest_two_output_channels_error_fraction": 0.9359936339857865
+    },
+    {
+      "layer": 7,
+      "mean_row_relative_l2": 0.2359109839341113,
+      "relative_root_squared_error": 0.9691415655292926,
+      "top32_output_channels_error_fraction": 0.9876310403421269,
+      "largest_two_output_channels": [
+        624,
+        1661
+      ],
+      "largest_two_output_channels_error_fraction": 0.9566886104762621
+    }
+  ],
+  "method": "Read verified current-prefix captures, reconstruct one trained layer at a time from checkpoint shards and frozen calibrated down codes/scales, and apply the unchanged ordinary-row exponent policy and late bounded correction. Every saved scalar summary and correction count reproduced. No fitting or inference change.",
+  "elapsed_seconds": 154.5158599598799,
+  "peak_graphics_memory_bytes": 389701632,
+  "peak_host_resident_bytes": 4938145792,
+  "helper_regression_tests": 13,
+  "independent_implementation_review_completed": true,
+  "important_review_findings_fixed_and_verified": true,
+  "reused_diagnostic_data": true,
+  "fit_performed": false,
+  "limitations": [
+    "Saved integer output vectors were unavailable; independently reproduced scalar diagnostics do not establish vector equality.",
+    "These are reused question-answering TestDev diagnostic inputs. Error concentration does not establish which mechanism causes task-accuracy loss.",
+    "No new task-accuracy improvement, mapped-hardware qualification or paper match was demonstrated."
+  ],
+  "deferred_minor": [
+    "A stop/deadline/disk change exactly at admission can briefly start a worker before the original guard cancels it."
+  ],
+  "integer_output_vectors_independently_compared": false,
+  "new_accuracy_improvement_verified": false,
+  "hardware_verified": false,
+  "paper_match_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "authenticated_local_evidence": {
+    ".cache/model_reference/current_prefix_error_spectrum_20261119_v2/receipt.json": "7fd99e44a62d10f9b8243c34d79c7ff3f17096dfe6f734edcc731e5100bc0acc",
+    ".cache/model_reference/current_prefix_error_spectrum_20261119_v2/guard_receipt.json": "f8de291c71969209313816287c4e98e1f54dfc7c5be24bb6f7b8960df7bef08f",
+    ".cache/model_reference/current_prefix_error_spectrum_20261119_v2/final_acceptance.json": "d73a35600a3d2000688515a7a8e783e2e343db40be7b90e89a98d82dcf2228af",
+    ".cache/model_reference/current_prefix_error_spectrum_20261119_v2/final_tests.log": "f85520c98939999ee69d5476007fbf5626190608f25b515f2260bbc1d23ef312",
+    ".cache/model_reference/current_prefix_error_spectrum_20261119_v2/capture_provenance.py": "37de89ceb33b2159ac24f5b1b51f795513e81dd0cf1bd013b5db5dd25803fbbd",
+    ".cache/model_reference/current_prefix_error_spectrum_20261119_v2/await_headroom.py": "65745bad7420b89edc9847b914df4c010f696142e011129271bde8d86c1b6ce5",
+    ".cache/model_reference/current_prefix_error_spectrum_20261119_v2/test_review_fixes.py": "09d7d684857c6ed73c494aa9e53e2e66f1d5ca52e68c0a5a0eccd9fe4b3e8c87"
+  }
+}
