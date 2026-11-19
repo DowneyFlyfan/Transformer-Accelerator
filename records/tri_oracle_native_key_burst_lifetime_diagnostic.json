@@ -1,0 +1,49 @@
+{
+  "state": "all5_actual_key_burst_counter_parent_lifetimes_verified_diagnostic",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "groups": 5,
+  "selected_physical_registers_per_group": 50,
+  "distinct_group_key_actor_and_counter_registers": 250,
+  "method": "Property-directed reachability learns unbounded inductive invariants from actual mapped equations. The original unexpanded physical equations then independently check reset, clock, asynchronous reset settling and safety. No guessed counter relationship is assumed.",
+  "property": "Whenever a key loader is in Request, Receive or Drain, its own parent group retains AwaitFill ownership. ReportError can outlive AwaitFill and is explicitly covered as a nonempty mode.",
+  "actual_register_roles": [
+    "Group phase",
+    "Key-loader phase, remaining count, received count and failed flag",
+    "Resident actor phase, fill target, key index and part counter"
+  ],
+  "fresh_original_certificate_checks": 20,
+  "nonempty_phase_modes": 25,
+  "model_only_stuck_next_bit_fault_controls": 5,
+  "learning_seconds_by_group": [
+    17.233767963945866,
+    37.16915667708963,
+    36.22394445701502,
+    32.330016129184514,
+    5.468779574846849
+  ],
+  "composed_current_state_guarantees": {
+    "components": 21,
+    "distinct_physical_registers": 333,
+    "derived_observers": 1,
+    "fresh_positive_checks": 78,
+    "property": "Each active key bus also retains native dispatcher execution, batch ownership, pending completion and no pending relaunch. All prior scalar/staged legacy-writer exclusions remain included."
+  },
+  "helper_tests_passed": 19,
+  "earlier_phase_only_counterexample_eliminated_by_actual_counter_history": true,
+  "scope": "Local mapped key-source and parent-control lifetime only. Other unselected state and external inputs stay arbitrary. No shared-lane reservation/address/data epoch, external response owner, complete native execution, accuracy or physical-signoff claim.",
+  "independent_final_native_feature_review_done": false,
+  "upstream_memory_response_owner_verified": false,
+  "full_native_data_epochs_verified": false,
+  "mapped_execution_accuracy_verified": false,
+  "paper_match_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "authenticated_local_evidence": {
+    ".cache/wide_packaged_host_link/owner_score_proof/native_key_burst_counter_all5_v1.json": "9d4c321de3ac5f4921f640f2be3ae85a743984c0b0de2da86fa756cad1b0a7fa",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_current_control_physical_facts_v2.json": "790e896dda1fa95404b61defc71a8cf71427408df823270b861ab485daba3628",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_current_control_physical_facts_v2.smt2": "99bff241dbe35c136d504fb7bdb375b223e595ecdf91cc174ab9e7e6d809dbeb",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_key_burst_counter_trace_v1.json": "597f4d90685400d858ea80302c82c7e04022bf3f1f61870fffaf0bfb3aedf6c9",
+    ".cache/wide_packaged_host_link/owner_score_proof/key_counter_helper_tests_20261119.log": "cb6945ce56fddb332763c8f55ec954c7c86341d5b234eb3a9ca84932932ea9ce"
+  },
+  "preserved_previous_physical_fact_source": "native_current_control_physical_facts_v1.smt2 remains unchanged for the existing retained-cache campaign.",
+  "reset_scope": "After common register reset, while global reset is released; conservative local asynchronous-reset settling is included. This is not reset-transition timing signoff."
+}
