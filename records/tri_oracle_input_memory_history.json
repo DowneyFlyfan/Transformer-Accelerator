@@ -1,0 +1,395 @@
+{
+  "state": "mapped_input_memory_ports_ownership_and_pending_snapshot_history_verified_under_normal_memory_contract",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "core_count": 20,
+  "physical_input_macro_count": 400,
+  "physical_input_q_bits": 48640,
+  "controller_and_metadata_role_bindings": 980,
+  "fresh_equivalence_queries": 820,
+  "conditional_input_word_snapshot_history_verified": true,
+  "residual_noninterference_verified_for_current_parent_bank0_commands": true,
+  "elapsed_seconds": 206.1674581130501,
+  "peak_resident_bytes": 2576396288,
+  "truthful_reload_acknowledgement_verified": false,
+  "correct_task_operand_epoch_verified": false,
+  "input_memory_contents_verified": false,
+  "complete_memory_history_verified": false,
+  "complete_tensor_scores_verified": false,
+  "universal_compiler_memory_semantics_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "complete_paper_architecture_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "scope": "Actual400 compiled input macros and980 physical controller/metadata roles across20 numeric-root-matched cores. Weight/mask byte order, row masks, load/error guards, admission/ownership transitions and pending read-snapshot history are conditional on the stated normal binary synchronous memory contract. The actual parent selects activation bank0, whose reset/next-state invariant excludes interference from bank1 residual clients. Truthful reload acknowledgement and correct task/tile data epochs, initialized-content provenance, compiler timing/X behavior, full tensor prediction and paper matching remain unqualified. Existing numeric proofs are composed at their original operand boundary, not reexecuted.",
+  "pending_snapshot_history": {
+    "queries": [
+      {
+        "label": "input_reset_drops_pending_without_initializing_memory",
+        "result": "unsat",
+        "seconds": 0.00011838902719318867
+      },
+      {
+        "label": "accepted_command_captures_preedge_memory_words",
+        "result": "unsat",
+        "seconds": 0.0017837609630078077
+      },
+      {
+        "label": "pending_snapshot_history_successor",
+        "result": "unsat",
+        "seconds": 0.006207592086866498
+      },
+      {
+        "label": "parent_bank0_commands_preserve_bank0_selection_history",
+        "result": "unsat",
+        "seconds": 0.00015931716188788414
+      },
+      {
+        "label": "processing_array_consumes_previous_snapshot_before_new_reads",
+        "result": "unsat",
+        "seconds": 0.00010807509534060955
+      }
+    ],
+    "memory_contract": "Known binary inputs and initialized requested words; normal power/test configuration and stable common rising clock. Enabled reads settle Q to the pre-edge selected word; enabled writes atomically update unmasked bits and retain Q; disabled ports retain memory and Q. Foundry timing, initialization-X propagation and injected faults are outside this contract.",
+    "snapshot_scope": "One arbitrary128-bit weight or mask bank and both64-bit activation banks; instantiated by checked routes for every physical bank.",
+    "universal_compiler_memory_semantics_verified": false,
+    "upstream_residual_lease_contract_verified": false,
+    "truthful_reload_acknowledgement_verified": false
+  },
+  "core_modules": [
+    {
+      "bank": 0,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_1",
+      "core_module_sha256": "d5b92412f700f392f2b25ea671e84f3fe54228e2d83b82fdc9867e0c5a425d5e",
+      "array_module": "tri_oracle_pe_array_verified_bank0_1",
+      "array_module_sha256": "697172ec982b37e6124f3db93f026d91bddcd0af640cc47caeecf497b2558141",
+      "controller_module_sha256": {
+        "input_owner": "7aa4a481d824642fe16065ba00a344d9bf5e3b60cfbee8e169893cc76070339d",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1",
+        "residual_input_bank_lease": "2981aaeb0c6900449d45ea9dbb37d6e44f6e4fd8e29a8b19f5468618d1c6ec7c"
+      },
+      "residual_client_present": true
+    },
+    {
+      "bank": 0,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_2",
+      "core_module_sha256": "efb34dca6af5c2a6d34b38c1281839b50dbc411b796d407c57267dd8cdbe5448",
+      "array_module": "tri_oracle_pe_array_verified_bank0_2",
+      "array_module_sha256": "8dc1881191a4eb1524ed94e457f9e5a8d1955133ee2600d7790da385f0f958a4",
+      "controller_module_sha256": {
+        "input_owner": "b2c8b877235aec45825d6af3f27728530838d8805fc263cb614c9ad23c1b72d5",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1",
+        "residual_input_bank_lease": "2981aaeb0c6900449d45ea9dbb37d6e44f6e4fd8e29a8b19f5468618d1c6ec7c"
+      },
+      "residual_client_present": true
+    },
+    {
+      "bank": 0,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0_3",
+      "core_module_sha256": "c75d1a670ca07ada3bc52b710cbe66832c181c139c4634519a0d121588194b22",
+      "array_module": "tri_oracle_pe_array_verified_bank0_3",
+      "array_module_sha256": "3a29cca0a1372a047369831a3e68b0388a3aa505a5491951bdf386c5f95bbfcf",
+      "controller_module_sha256": {
+        "input_owner": "ded26d9bfe83e4a0342fd7927ab8a7f741bdb3134baca332d47ccc5d3768bc7c",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1",
+        "residual_input_bank_lease": "2981aaeb0c6900449d45ea9dbb37d6e44f6e4fd8e29a8b19f5468618d1c6ec7c"
+      },
+      "residual_client_present": true
+    },
+    {
+      "bank": 0,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[0].unit/selected_bank0.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank0",
+      "core_module_sha256": "c1dd87b436ff18ae2aa638020f7feeeeadc0228cd9a31e6e9ad7968c79bb800f",
+      "array_module": "tri_oracle_pe_array_verified_bank0",
+      "array_module_sha256": "c394f4503e11bf46b0de3135633d680b6bb25f362a1d10d04e7a93ab6dde9c23",
+      "controller_module_sha256": {
+        "input_owner": "1ba535f97fe8bfde30f1683d909ddca3fbca059804c0b245940d077e0aecaefa",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1",
+        "residual_input_bank_lease": "2981aaeb0c6900449d45ea9dbb37d6e44f6e4fd8e29a8b19f5468618d1c6ec7c"
+      },
+      "residual_client_present": true
+    },
+    {
+      "bank": 1,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_1",
+      "core_module_sha256": "1070a98a20da7e2d9122b90b5250c7d7a77fc9ebdf9c31b68402677067484e38",
+      "array_module": "tri_oracle_pe_array_verified_bank1_1",
+      "array_module_sha256": "64bc014dea7603b3306aa27944b36c4deec0fc46b2fc4a5f86c597f06e7baa81",
+      "controller_module_sha256": {
+        "input_owner": "31be09815f6df28800e014aafba735e6f7dbb0fcf218aa2ccf7b456da9078a87",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 1,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_2",
+      "core_module_sha256": "18c7d912036e53427b56ae4aae67865dcc7836edd0f35843bbeb9f6aed85d1f9",
+      "array_module": "tri_oracle_pe_array_verified_bank1_2",
+      "array_module_sha256": "815291151b4b596bf9012e4dddfae7a755b296396a42201d325ec16a8645d187",
+      "controller_module_sha256": {
+        "input_owner": "673a3d5fc900fb8ced978d29be0978d07c7faafc21553f3d0a3660fe05f0b0f7",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 1,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1_3",
+      "core_module_sha256": "e08f1b8ff4f23545b8bf5d77effb2d2a468b852bd2cb9cf600f8ebdc6b90cc20",
+      "array_module": "tri_oracle_pe_array_verified_bank1_3",
+      "array_module_sha256": "164575b6ce791dbb1b96c52d07d116e1f68d39ee50be8940698dd82567916cf7",
+      "controller_module_sha256": {
+        "input_owner": "080686599ba40ab67d79104fd5e59026dd2463eda07776913e092a2c7722206c",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 1,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[1].unit/selected_bank1.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank1",
+      "core_module_sha256": "225a2b81acfc9bdee3ee71eefab9160e2ac75bfadac560d3b9b7a918773e515f",
+      "array_module": "tri_oracle_pe_array_verified_bank1",
+      "array_module_sha256": "13abcfbb28415238a72af3fabcb9334ddd475d955361cffcc011d276d20267d7",
+      "controller_module_sha256": {
+        "input_owner": "5e17e01f6b0301be0f49db54cbcb1c0ddcdc8ce436f2a98947c1d327f317031f",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 2,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_1",
+      "core_module_sha256": "1aa1ff2fdaf706838557e44bc7b4995404bbb2815c36a8efa3406a85d750278b",
+      "array_module": "tri_oracle_pe_array_verified_bank2_1",
+      "array_module_sha256": "e6180af9f138a7af20b9aa3bb2a113780101fa2f35f55d1d7d4ff4206e275e70",
+      "controller_module_sha256": {
+        "input_owner": "655028ffc208a0c5b9742ff8c22b957ec70c837af88be06b5317c28f8748c0bf",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 2,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_2",
+      "core_module_sha256": "d65f98642a9dfab32756284971e08b0fe5458ed1c4c43fc1746d8aea99b68e19",
+      "array_module": "tri_oracle_pe_array_verified_bank2_2",
+      "array_module_sha256": "4720c11cd6f704915477fbfd54d9b7ad4c7cb5e2ff34df567900ae2da363bb85",
+      "controller_module_sha256": {
+        "input_owner": "c461eacf8095b4b26e6bbc67b7aeafff8221ea460f6afbdb4203b28e76ebe7c1",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 2,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2_3",
+      "core_module_sha256": "fdeccd69c0b70ffc43793d4237b39f038e909f7fc2a4513bf508afc4af10fb0d",
+      "array_module": "tri_oracle_pe_array_verified_bank2_3",
+      "array_module_sha256": "17111bfd26b9cc86a6e3c69f2ab8b457e30bcc9eb04b89d98379bcf4db66ab22",
+      "controller_module_sha256": {
+        "input_owner": "737839a0540eefbe3f4ed624d92fa84c1bef8ad776db2a7006f5bd13a7666c88",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 2,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[2].unit/selected_bank2.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank2",
+      "core_module_sha256": "1b475a3f338e352a42b95828aef6529ef668e95a13a6c14f4bb700de34c330c5",
+      "array_module": "tri_oracle_pe_array_verified_bank2",
+      "array_module_sha256": "150b9ce1ced7fc6a219bbc1152cadcfecddd8c01e64dd0f466e7350eaa65b1d2",
+      "controller_module_sha256": {
+        "input_owner": "e1f7bd727330ed18126f17cc9c7a52b62bc3e33daf8f1d276ae1179da8655816",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 3,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_1",
+      "core_module_sha256": "431e1c964cd142774add1f4f5819726635d7b00e0fbec39d39b0fce31f21fa3e",
+      "array_module": "tri_oracle_pe_array_verified_bank3_1",
+      "array_module_sha256": "560e0e441c0b2beca374dd1b98cacc1a2a819f9ac1937b44ff319c7ece3d8850",
+      "controller_module_sha256": {
+        "input_owner": "2f609d01e5cdc39a6dc5e55def99d393955b997254407308dc69ff5c2c6e9cba",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 3,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_2",
+      "core_module_sha256": "0df9a5daeb71a1a3eb68ab8a11a16b0bf171149bd6a5bf36f0b789b29f04646b",
+      "array_module": "tri_oracle_pe_array_verified_bank3_2",
+      "array_module_sha256": "1fc274f6361b4c4ab2b86075301d2fc307b1adfead6c787c6f513cbc8cf10684",
+      "controller_module_sha256": {
+        "input_owner": "33aeac11caf35d6d7b53ae17a61d80a02cb3492ea6809c6a0f700672e0768e51",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 3,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3_3",
+      "core_module_sha256": "b6b5fa3405313de27823563d825144b3c550d195f3daec478755efd95071d6ac",
+      "array_module": "tri_oracle_pe_array_verified_bank3_3",
+      "array_module_sha256": "73d274e8e8748f1b40a20fc41e57179c8bb12f27d59e22967ee8d9fb0aa28ae8",
+      "controller_module_sha256": {
+        "input_owner": "6d21d6334af77e9d36a3438de28ed8f22c22171a317c16a2bd8894b148149b6f",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 3,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[3].unit/selected_bank3.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank3",
+      "core_module_sha256": "4fd305372845c17003e2507d35ac5eb3fa8641bb7ea1d70eea37e22035f261ea",
+      "array_module": "tri_oracle_pe_array_verified_bank3",
+      "array_module_sha256": "56b004808e82b9fc5d562419d0005947d9e4cf9553307ad4081af7989130c9ef",
+      "controller_module_sha256": {
+        "input_owner": "8b77726a5810d15255ee97656796b4e09a207a4d828a9bdd247c68c698631e77",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 4,
+      "core": 0,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[0]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_1",
+      "core_module_sha256": "279709305369d2cbb3af7e5bae8aa55846d4c12c3e883850cd56ec1b3ed1a9b7",
+      "array_module": "tri_oracle_pe_array_verified_bank4_1",
+      "array_module_sha256": "bb1df3d384b8dd7918b89434e0bb7cc303f70bed71f6d0fde5c92c1cd811bf24",
+      "controller_module_sha256": {
+        "input_owner": "2f4471f73f6aab13330de4e24cb5aa63c3dc3891cecce426a1474573e5a76fa5",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 4,
+      "core": 1,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[1]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_2",
+      "core_module_sha256": "c86d29ffd0498dcc065b43d41c7c2a72a9c8fcbfbce38c49b6fc7430bd61e0fc",
+      "array_module": "tri_oracle_pe_array_verified_bank4_2",
+      "array_module_sha256": "4f9688c12ae6f866387e1c4099a1d08b725b7e3ed525a8ced76618ae2333b39e",
+      "controller_module_sha256": {
+        "input_owner": "1f45ad5184460253b69b6499af07d9908224f03844809a75b8dce530791f8ca3",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 4,
+      "core": 2,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[2]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4_3",
+      "core_module_sha256": "f32d3069d7f162234ad76cd9b6c3f4ab844396330dcd9b19f0ef41c6682a4b13",
+      "array_module": "tri_oracle_pe_array_verified_bank4_3",
+      "array_module_sha256": "a4aa2608d9addd7dafe545478fc1e69d2d60b7c31ff595325bdbaa2c7aca2501",
+      "controller_module_sha256": {
+        "input_owner": "bd49f0146f96b3e57ba2bcfcb5ac583d9af42274ca6fe061036571f522e80d08",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    },
+    {
+      "bank": 4,
+      "core": 3,
+      "absolute_context": "chip/chip/normalization/chip/chip/chip/accelerator/layer/layer/feedforward/compute/compute/tensor/fabric/clusters[4].unit/selected_bank4.block_instance/source_cluster/implementation/cores[3]/compute",
+      "module": "tri_oracle_sram_memory_compute_verified_bank4",
+      "core_module_sha256": "c83089def2292321219918af9fe3051300a465b80abc3017f6192bd7b2da1352",
+      "array_module": "tri_oracle_pe_array_verified_bank4",
+      "array_module_sha256": "b43d5478a5eccc16a852e87b6628cfada7391ef0ab6d95ae068fde34b4200be8",
+      "controller_module_sha256": {
+        "input_owner": "762cddf00851b992cfec9ba4862d2f116752e9323e9370a5f577ea12c92f6ce9",
+        "grouped_input_banks": "33432d5f85b56d258b231901e90e56c4fcb3222bf1574609ab0c6a6ac581f2c1"
+      },
+      "residual_client_present": false
+    }
+  ],
+  "related_host_logic_tests_passed": 186,
+  "publication_regressions_passed": 20,
+  "actual_body_counterexamples": 11,
+  "exact_structural_fault_rejections": 4,
+  "verified_direct_input_files": 136,
+  "transitively_imported_local_source_files": 33,
+  "published_numeric_predecessor": {
+    "path": "records/tri_oracle_numeric_pipeline_memory_history.json",
+    "sha256": "9136b47883d63d188fc48132a427880236b296ab8577456ca5b35e6c5b92757d"
+  },
+  "selected_terminal_report_sha256": "010f4c48ef0680cb2e0c2c2b6fdc3ca6bb413a329d2a0787df29dba50dc1ea2a",
+  "independent_review": {
+    "reviewer": "/root/review_input_memory",
+    "status": "review_requirements_verified",
+    "report_sha256": "1d5b8c0c901d616447aef81e8f2bb81f65989bdd5386c3418b02e4ad4a9b713f",
+    "important_findings_fixed": 6,
+    "one_fix_pass": true,
+    "post_fix_independent_review_claimed": false
+  },
+  "deferred_minors": [
+    "Complete input-master instance inventory is not enforced; reviewer independently confirmed all current400 selected macros.",
+    "Preedge consumption is composed through mapped ports and the published numeric capture contract; no separate consumer-sampling mutant was added."
+  ],
+  "evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_all_core_review_fixed_final.json": "010f4c48ef0680cb2e0c2c2b6fdc3ca6bb413a329d2a0787df29dba50dc1ea2a",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_all_logic_review_fixed_final.log": "b4701fa192b6fcc8be5bac2b3c19c1ec05289c0876809c43ba7592315c441a79",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_review.md": "1d5b8c0c901d616447aef81e8f2bb81f65989bdd5386c3418b02e4ad4a9b713f",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_review_publication_green.log": "22839ccfa56bf277d1b63c2138f8f45c881a71d0e62da419824a7e41b55f27ae",
+    ".cache/wide_packaged_host_link/owner_score_proof/publish_input_memory.py": "bc5931c221f62493272989d49e1b88584cedf8f2285417540b6a6d101bf02986",
+    ".cache/wide_packaged_host_link/owner_score_proof/test_publish_input_memory.py": "b16b1b4c65326344ce0791dc8083ee68061fe3a4a8f5e9bd21812237645610d9",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_review_publication_red.log": "eee5f5214deb7b40be49266409076fd847494ecc97bcd9165c3ec3edaac05e5d",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_optional_controller_red.log": "cacb7b0d842776fe3ee2bd6f79ec8b39afe936dfbe457dbba0e73bf5077d80a9",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_optional_controller_green.log": "6542cfa23588d4af4daf63616bca8620905d5eaafa2553b28a1b909d41dc65b8",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_snapshot_red.log": "ec3183b7cbfd6c414cd2f825a26b1ea987cf55bcaf5184038f61fd9268265889",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_snapshot_green.log": "5cd53a53d04023de114b2eeda7623449bed3d63b39f9d54d792ddacfe315b8e9",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_body_controls_red.log": "e6e2de722056f3a9490163107e321dfee5ae7bee7e770a7fbe5bd774a49af4fb",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_body_controls_green.log": "e7c48c516b0cec8065bc4fc909c5c05b4ad704129c6a94faa7910eb6265a99c2",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_liberty_review_red.log": "1fe1cea1c8cda1c20e7c1868db3a074c81620c23427d84fca38bb5e7bcbb0cd5",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_liberty_review_green.log": "cafe0cfabdd0bd5bea908831e74de4d6c4620d36c19330ef2b0207e7625435a9",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_pin_merge_review_red.log": "dfc099fc90576f85dd213a7514738684c511b06891632f3ae3e1c17e7c09bacc",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_pin_merge_review_green.log": "7e529ed12b10140305bdeba95dc48ed67cc0ca2a1fbb7cad279a7021ad0a0470",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_liberty_quotes_review_red.log": "177eb740b59c232ce4d7fcfece1c53726aea0df958b2e6922c08e07db660436f",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_liberty_quotes_review_green.log": "530b220f35b09b3731b632d1fbbe96fe11b2e8a73dc4e5491e1295f720b78b49",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_atomic_read_review_green.log": "feabb4add9e2ca3374e538560634d1ec97dc4f4ce89aab12f3d726e36ea9b2f6",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_frozen_bundle_check.json": "7dcc3d104f7899df300bec08240ae728e87d3434fd671d653a58a075a5cfe280",
+    ".cache/wide_packaged_host_link/owner_score_proof/input_memory_frozen_bundle_check.log": "c5b97981edc101695789d7b8a2a62242340ec17e1cc98e8894854cd4324cf57b",
+    "syn/prove_tri_oracle_input_memory_history.py": "554c7e1e3a2a6ea2aa11cd912e4758ce07871cb8017e33dc2ef435128800a823",
+    "syn/tri_oracle_input_memory_routes.py": "53583ecfa3557da90f7251acfc16d7a4cf6839527052fcde3328f78f174cad27",
+    "syn/test_tri_oracle_input_memory_logic.py": "d6515bb58fcf566a63a60a12da6f839a09467a84c671e3358c54d59258899d83",
+    "records/tri_oracle_numeric_pipeline_memory_history.json": "9136b47883d63d188fc48132a427880236b296ab8577456ca5b35e6c5b92757d"
+  }
+}
