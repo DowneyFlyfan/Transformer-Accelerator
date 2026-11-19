@@ -1,0 +1,42 @@
+{
+  "status": "independently_verified_current_prefix_diagnostic_capture",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "checkpoint": "bczhou/tiny-llava-v1-hf",
+  "diagnostic_questions": 12578,
+  "layers": 22,
+  "layer_measurements_checked": 276716,
+  "captured_images": 398,
+  "floating_targets_reproduced_bit_exact": 8756,
+  "ordinary_rows_per_image_layer_at_most": 16,
+  "protected_token_zero_excluded": true,
+  "data": "Actual current normalized activations, matching pre-normalization residuals and original trained floating feed-forward outputs evaluated on those same inputs. Captured for the first ordered question of each image; scalar measurements cover every question and layer.",
+  "controls": "Original tokens, predictions, skipped channels and workload checked against the frozen baseline during capture; observer on/off control passed. Every selected integer row replayed bit-for-bit during capture. A separate process re-read complete artifact coverage and independently recomputed every saved floating target.",
+  "capture_elapsed_seconds": 8205.579623850062,
+  "independent_verification_elapsed_seconds": 19.940752766793594,
+  "capture_peak_graphics_memory_bytes": 7718809600,
+  "capture_peak_host_resident_bytes": 6776303616,
+  "helper_regression_tests": 11,
+  "implementation_review_completed": true,
+  "important_review_followup_completed": true,
+  "diagnostic_data_accepted": true,
+  "limitations": [
+    "These are reused question-answering TestDev diagnostic data, not an untouched accuracy holdout.",
+    "No codebook fitting, weight update or new task-accuracy improvement was performed.",
+    "Generated answer traces were checked during execution but were not persisted for independent reconstruction.",
+    "This validates the captured software reference data; mapped hardware execution and paper matching remain separate."
+  ],
+  "baseline_answer_trace_independently_reconstructed": false,
+  "new_accuracy_improvement_verified": false,
+  "hardware_verified": false,
+  "paper_match_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "authenticated_local_evidence": {
+    ".cache/model_reference/gqa_current_prefix_capture_20261119_v2/receipt.json": "621747c6b9bd459f0b87a3c23dc81222c2f57b75b17191a31caf0e1b59ced74f",
+    ".cache/model_reference/gqa_current_prefix_capture_20261119_v2/guard_receipt.json": "0f502ce7b29fb3bb3318c09cb54035c775838ca157b723fff19c4854a328ad20",
+    ".cache/model_reference/gqa_current_prefix_capture_20261119_v2/verification/verified_status.json": "84f80752587b3302ddebe99648691f40181be4179ee503a631d8fd0bc3f5a560",
+    ".cache/model_reference/gqa_current_prefix_capture_20261119_v2/verification/guard_receipt.json": "a02c50f78cdceb15a7ef3cdf70ce6ec01a16e83b3c8fbfacf2c71a3072557a8b",
+    ".cache/model_reference/gqa_current_prefix_capture_20261119_v2/verification/anchor.json": "7e79402461ef86d4d7ee4ad5be9132949567f136938a65212dda01ee99c4ab76",
+    ".cache/model_reference/gqa_current_prefix_capture_20261119_v2/verification/final_data_acceptance.json": "c5e0982e5bd711a99c01f6168e26a8fd03ad9f63e51540c85294343f486e1d6b",
+    ".cache/model_reference/gqa_current_prefix_capture_20261119_v2/verification/final_helper_tests.log": "89da8a3a4a2279edb2c87fc8d59b449966b2a60e84b943ec45ccabe01f18f36e"
+  }
+}
