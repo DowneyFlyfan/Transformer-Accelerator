@@ -1,0 +1,67 @@
+{
+  "status": "scoped_cached_legacy_writer_exclusion_diagnostic",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28HPC+ adaptation",
+  "claim": "For each of five actual native cache-valid bits, validity implies an idle legacy tensor controller and inactive actual legacy scalar-load and staged-write inputs.",
+  "method": "Compose eleven reset-reachable local control invariants from original candidate equations. Match shared physical primary-Q identities; keep the exact last-token observer separate from physical registers. Freshly check initialization, synchronous steps, optional asynchronous settling and the final exclusions against the original definition-only equations.",
+  "physical_registers_in_composition": 98,
+  "derived_counter_predicates": 1,
+  "physical_counter_registers_supporting_predicate": 9,
+  "added_hardware": false,
+  "component_invariants": 11,
+  "cache_bank_checks": [
+    {
+      "bank": 0,
+      "reachable_projected_states": 156
+    },
+    {
+      "bank": 1,
+      "reachable_projected_states": 156
+    },
+    {
+      "bank": 2,
+      "reachable_projected_states": 156
+    },
+    {
+      "bank": 3,
+      "reachable_projected_states": 156
+    },
+    {
+      "bank": 4,
+      "reachable_projected_states": 156
+    }
+  ],
+  "fresh_all5_cache_component_queries": 25,
+  "fresh_composition_certificate_and_exclusion_queries": 38,
+  "all_positive_queries_unsatisfiable_with_nonempty_domains": true,
+  "activated_idle_native_and_legacy_writer_modes": 13,
+  "omitted_proof_fact_model_controls_detected": 7,
+  "model_controls_are_hardware_body_mutations": false,
+  "current_helper_regression_tests": 15,
+  "composition_elapsed_seconds": 64.60210225521587,
+  "composition_peak_resident_bytes": 597745664,
+  "authenticated_local_evidence": {
+    ".cache/wide_packaged_host_link/owner_score_proof/native_cache_region_all5_v1.json": "0c4f82d9fe11b0efe7c6339f447b55157774f74eda25fd88c99ff47d35c0f0fb",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_compact_legacy_writer_phase_v2.json": "4731501a92cae22431f98f232d9789eedf986debc9b8db79c047ef24b6a55986",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_attention_region_reachability_v1.json": "0b732fe46ddb221cd39b9315e25af0fe8ec517c173e2a47ec50d23908c993e4d",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_attention_lifecycle_reachability_v2.json": "83454ac5f1cf7ce72c1392483eebd3e7e0b3a5b8d41edef09dea32df57ecc85b",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_legacy_writer_lease_composition_v3.json": "7488537771aeeab93e23f2448ba49b67872497bbe5b11bfe5eb855f6ac173474",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_control_binding_audit_v2.py": "d7c69f20840ebdfb5d461e7827ea97c734964e357ffb8e0fe903d99e69191ab2",
+    ".cache/wide_packaged_host_link/owner_score_proof/test_native_control_binding_audit_v2.py": "a085faf67db98c0c47061a9633136dd100dccc062616f7a1ee12a21c12723030",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_current_control_helper_suite_20261119.log": "e28ab8ee96a71b23a64ca640d702ed2c29f50b291130ee18e0aecf897f5c016b"
+  },
+  "limitations": [
+    "This is a local control safety diagnostic, not retained physical memory content provenance.",
+    "Native actor writes and upstream key-response address/rank epochs remain separate obligations.",
+    "A rejected checker naming assumption was corrected to the actual context plus primary-Q naming; it was not a hardware failure.",
+    "This diagnostic does not qualify trained full-model execution, task accuracy, physical timing, energy, or paper matching."
+  ],
+  "native_foreign_writer_coherence_verified": false,
+  "cached_physical_weight_history_verified": false,
+  "all_control_asynchronous_reset_settling_verified": false,
+  "full_native_data_epochs_verified": false,
+  "trained_full_model_mapped_execution_verified": false,
+  "hardware_mapped_task_accuracy_verified": false,
+  "independent_final_feature_review_done": false,
+  "advance_to_clock_distribution_or_routing_allowed": false
+}
