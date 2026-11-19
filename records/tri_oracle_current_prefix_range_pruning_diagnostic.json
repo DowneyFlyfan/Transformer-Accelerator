@@ -1,0 +1,243 @@
+{
+  "state": "reviewed_local_current_prefix_range_and_pruning_diagnostic",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "layers": [
+    2,
+    7
+  ],
+  "images": 398,
+  "ordinary_rows_per_layer": 6368,
+  "predeclared_arms": [
+    {
+      "name": "current_pruned",
+      "prune": true,
+      "maximum_up_gain_bits": null,
+      "down_shift_offset": null
+    },
+    {
+      "name": "current_unpruned",
+      "prune": false,
+      "maximum_up_gain_bits": null,
+      "down_shift_offset": null
+    },
+    {
+      "name": "gain_cap_0_offset_6_pruned",
+      "prune": true,
+      "maximum_up_gain_bits": 0,
+      "down_shift_offset": 6
+    },
+    {
+      "name": "gain_cap_0_offset_6_unpruned",
+      "prune": false,
+      "maximum_up_gain_bits": 0,
+      "down_shift_offset": 6
+    },
+    {
+      "name": "gain_cap_minus4_offset_6_pruned",
+      "prune": true,
+      "maximum_up_gain_bits": -4,
+      "down_shift_offset": 6
+    },
+    {
+      "name": "gain_cap_minus4_offset_6_unpruned",
+      "prune": false,
+      "maximum_up_gain_bits": -4,
+      "down_shift_offset": 6
+    }
+  ],
+  "baseline_scalar_comparisons": 796,
+  "raw_output_consistency_checks": 4776,
+  "helper_tests_passed": 20,
+  "method": "Same saved current activation/residual/float target rows. Existing exact integer reference and frozen calibrated per-output Down codes. Six fixed arms chosen before this run: current input-exponent policy, gain cap0/Down offset6, gain cap-4/Down offset6; each with and without pruning. True clipping counts compare pre-saturation values with signed representable bounds, before pruning.",
+  "metrics": {
+    "squared_error": "Sum over rows and output channels of (integer interpreted output - same-input trained float target)^2.",
+    "mean_row_relative_l2": "Mean across rows of Euclidean error / max(Euclidean target norm,1e-20)."
+  },
+  "results": [
+    {
+      "layer": 2,
+      "rows_per_arm": 6368,
+      "arms": [
+        {
+          "name": "current_pruned",
+          "squared_error": 4959.2583364779375,
+          "mean_row_relative_l2": 0.31031504187292264,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 2912,
+            "pruned_elements": 2875418
+          }
+        },
+        {
+          "name": "current_unpruned",
+          "squared_error": 4841.994239242796,
+          "mean_row_relative_l2": 0.22436096819666027,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 2912,
+            "pruned_elements": 0
+          }
+        },
+        {
+          "name": "gain_cap_0_offset_6_pruned",
+          "squared_error": 2025.6562442535078,
+          "mean_row_relative_l2": 0.9472582070634166,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 0,
+            "pruned_elements": 2875418
+          }
+        },
+        {
+          "name": "gain_cap_0_offset_6_unpruned",
+          "squared_error": 1871.2397615137183,
+          "mean_row_relative_l2": 0.9455558673208935,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 0,
+            "pruned_elements": 0
+          }
+        },
+        {
+          "name": "gain_cap_minus4_offset_6_pruned",
+          "squared_error": 1980.6012852134065,
+          "mean_row_relative_l2": 0.9364309736559168,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 0,
+            "pruned_elements": 2875418
+          }
+        },
+        {
+          "name": "gain_cap_minus4_offset_6_unpruned",
+          "squared_error": 1824.8068316460538,
+          "mean_row_relative_l2": 0.9344577644090579,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 0,
+            "pruned_elements": 0
+          }
+        }
+      ]
+    },
+    {
+      "layer": 7,
+      "rows_per_arm": 6368,
+      "arms": [
+        {
+          "name": "current_pruned",
+          "squared_error": 278960.7841248413,
+          "mean_row_relative_l2": 0.2359109839341113,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 157,
+            "gated_clipped": 82,
+            "down_clipped": 4973,
+            "pruned_elements": 3305120
+          }
+        },
+        {
+          "name": "current_unpruned",
+          "squared_error": 277986.3729100595,
+          "mean_row_relative_l2": 0.10934120566683211,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 157,
+            "gated_clipped": 82,
+            "down_clipped": 4973,
+            "pruned_elements": 0
+          }
+        },
+        {
+          "name": "gain_cap_0_offset_6_pruned",
+          "squared_error": 132293.35587971946,
+          "mean_row_relative_l2": 0.9427480128366037,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 23,
+            "pruned_elements": 3305120
+          }
+        },
+        {
+          "name": "gain_cap_0_offset_6_unpruned",
+          "squared_error": 132210.8232905196,
+          "mean_row_relative_l2": 0.940927870071627,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 23,
+            "pruned_elements": 0
+          }
+        },
+        {
+          "name": "gain_cap_minus4_offset_6_pruned",
+          "squared_error": 132313.84957570728,
+          "mean_row_relative_l2": 0.9497792844069964,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 23,
+            "pruned_elements": 3305120
+          }
+        },
+        {
+          "name": "gain_cap_minus4_offset_6_unpruned",
+          "squared_error": 132244.76064190423,
+          "mean_row_relative_l2": 0.9484624342971516,
+          "clipping_before_pruning": {
+            "elements": 35864576,
+            "up_clipped": 0,
+            "gated_clipped": 0,
+            "down_clipped": 23,
+            "pruned_elements": 0
+          }
+        }
+      ]
+    }
+  ],
+  "conclusion": "Disabling pruning reduces mean row-relative error in these two layers. The coarse fixed range settings reduce total squared error but sharply worsen mean row-relative error. No replacement policy selected or installed; neither local metric establishes task-accuracy improvement.",
+  "review": {
+    "independent_feature_review_done": true,
+    "important_pre_import_source_anchor_and_shadow_gap_fixed": true,
+    "new_real_subprocess_regressions": 3,
+    "full_same_case_rerun_identical": true,
+    "deferred_minors": [
+      "No dedicated exact-endpoint clipping regression; implementation uses strict inequalities.",
+      "Stop/deadline/disk change at admission can briefly launch worker before guard stops it."
+    ]
+  },
+  "reused_diagnostic_data": true,
+  "fit_performed": false,
+  "inference_policy_modified": false,
+  "independent_original_raw_vectors_available": false,
+  "task_accuracy_improvement_verified": false,
+  "hardware_verified": false,
+  "paper_match_verified": false,
+  "advance_to_clock_distribution_or_routing_allowed": false,
+  "authenticated_local_evidence": {
+    ".cache/model_reference/current_prefix_range_pruning_20261119_v2/receipt.json": "b7aa53c8d16520ec11b3089e078f571e22fdd64058b7bd06b584c7d0506dab58",
+    ".cache/model_reference/current_prefix_range_pruning_20261119_v2/case_metrics.json": "e7df7093772d51ac15234883a4fae32f7b2ac718a77fa81057054fe82a299196",
+    ".cache/model_reference/current_prefix_range_pruning_20261119_v2/guard_receipt.json": "187da39084ee0b1f3bcb400c029daef94f578ffee84bf4af84ec113948111798",
+    ".cache/model_reference/current_prefix_range_pruning_20261119_v2/final_acceptance.json": "17cb4a3327a6052ef8af7b7190e9944bb8f1c65c72e720661484f44ab3963cac",
+    ".cache/model_reference/current_prefix_range_pruning_20261119_v2/source_anchor.json": "6c4ba8841c69a14b0eb2b1cc7ded97d379f085d55060b2cf35535bbd24cc4e07",
+    ".cache/model_reference/current_prefix_range_pruning_20261119_v2/helper_tests.log": "0bd4266df212778f6a8006e0c213d09b9d5a426bab0fa7f51233ee6e1b0071f0",
+    ".cache/model_reference/current_prefix_range_pruning_20261119_v2/architecture_check.json": "e73c67ac12f0c6cdee25dfaa7f9050dbe0c8afc157eb772b0886863abaf4a407",
+    "records/tri_oracle_current_prefix_capture_diagnostic.json": "bea14be09405b9b9146aa875e427d46968a990e02e5fde49f71632cec6736934"
+  }
+}
