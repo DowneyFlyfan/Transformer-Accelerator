@@ -1,0 +1,242 @@
+{
+  "state": "current_software_prefix_ordered_operation_error_decomposition_verified",
+  "benchmark_scope": {
+    "captured_images": 398,
+    "captured_questions": 398,
+    "selected_layers": [
+      2,
+      7
+    ],
+    "total_decoder_layers": 22,
+    "ordinary_rows_per_image_layer": 16,
+    "rows_per_selected_layer": 6368,
+    "reused_diagnostic_data": true,
+    "new_task_inference_performed": false,
+    "answer_labels_used_for_parameter_choice": false,
+    "weights_or_policy_changed": false
+  },
+  "method": "Replay a frozen cumulative order of 11 operation stages on identical saved software-prefix inputs. Check each trained float target and final current integer endpoint bit-for-bit. Project each consecutive stage difference onto the final error vector; those projections telescope to final squared error. This is ordered local accounting, not order-independent causal attribution.",
+  "layers": [
+    {
+      "layer": 2,
+      "ordinary_token_rows": 6368,
+      "stages": [
+        {
+          "stage": "trained_float",
+          "squared_error": 0.0,
+          "mean_row_relative_l2": 0.0,
+          "ordered_projection_fraction": 0.0
+        },
+        {
+          "stage": "gate_weight_quantization",
+          "squared_error": 85.7779849400694,
+          "mean_row_relative_l2": 0.19909438609477365,
+          "ordered_projection_fraction": 0.012797928466990408
+        },
+        {
+          "stage": "up_weight_quantization",
+          "squared_error": 92.52031515494168,
+          "mean_row_relative_l2": 0.20674839892616295,
+          "ordered_projection_fraction": 0.0012418891822231321
+        },
+        {
+          "stage": "down_weight_quantization",
+          "squared_error": 90.02700601292081,
+          "mean_row_relative_l2": 0.1897112906429187,
+          "ordered_projection_fraction": 4.117578380453672e-05
+        },
+        {
+          "stage": "input_quantization",
+          "squared_error": 90.88456594719467,
+          "mean_row_relative_l2": 0.19066338695438728,
+          "ordered_projection_fraction": -0.0008678208172326682
+        },
+        {
+          "stage": "gate_fixed_point",
+          "squared_error": 91.06820603814664,
+          "mean_row_relative_l2": 0.1909140929273362,
+          "ordered_projection_fraction": 5.5375992925587004e-05
+        },
+        {
+          "stage": "up_fixed_point",
+          "squared_error": 91.09851959594053,
+          "mean_row_relative_l2": 0.19095286635594463,
+          "ordered_projection_fraction": -5.559349813950109e-05
+        },
+        {
+          "stage": "silu_lookup",
+          "squared_error": 92.257030935235,
+          "mean_row_relative_l2": 0.1924988396406931,
+          "ordered_projection_fraction": -2.836141245338093e-05
+        },
+        {
+          "stage": "gated_fixed_point",
+          "squared_error": 94.11458765254851,
+          "mean_row_relative_l2": 0.19552864989473492,
+          "ordered_projection_fraction": 0.00031106402966715724
+        },
+        {
+          "stage": "down_input_fixed_point",
+          "squared_error": 4841.994239242796,
+          "mean_row_relative_l2": 0.22436096819666027,
+          "ordered_projection_fraction": 0.9614549012439685
+        },
+        {
+          "stage": "pruning",
+          "squared_error": 4959.2583364779375,
+          "mean_row_relative_l2": 0.31031504187292264,
+          "ordered_projection_fraction": 0.02504944102824534
+        }
+      ]
+    },
+    {
+      "layer": 7,
+      "ordinary_token_rows": 6368,
+      "stages": [
+        {
+          "stage": "trained_float",
+          "squared_error": 0.0,
+          "mean_row_relative_l2": 0.0,
+          "ordered_projection_fraction": 0.0
+        },
+        {
+          "stage": "gate_weight_quantization",
+          "squared_error": 19.039283643839354,
+          "mean_row_relative_l2": 0.036858481426373275,
+          "ordered_projection_fraction": -6.471487104740702e-05
+        },
+        {
+          "stage": "up_weight_quantization",
+          "squared_error": 60.760132303919626,
+          "mean_row_relative_l2": 0.0647885532120267,
+          "ordered_projection_fraction": -0.0021329093244719646
+        },
+        {
+          "stage": "down_weight_quantization",
+          "squared_error": 438.22056874424015,
+          "mean_row_relative_l2": 0.09011904917487369,
+          "ordered_projection_fraction": 0.00240346825083148
+        },
+        {
+          "stage": "input_quantization",
+          "squared_error": 442.4834610146773,
+          "mean_row_relative_l2": 0.09124511668792767,
+          "ordered_projection_fraction": -0.0006364484071677842
+        },
+        {
+          "stage": "gate_fixed_point",
+          "squared_error": 442.7298580868508,
+          "mean_row_relative_l2": 0.0913338041677676,
+          "ordered_projection_fraction": -5.184642282696331e-07
+        },
+        {
+          "stage": "up_fixed_point",
+          "squared_error": 101254.9120230133,
+          "mean_row_relative_l2": 0.09325629567244374,
+          "ordered_projection_fraction": 0.599328683917321
+        },
+        {
+          "stage": "silu_lookup",
+          "squared_error": 101254.83400553132,
+          "mean_row_relative_l2": 0.09433593152490997,
+          "ordered_projection_fraction": -8.83892089552924e-06
+        },
+        {
+          "stage": "gated_fixed_point",
+          "squared_error": 265844.52873489656,
+          "mean_row_relative_l2": 0.09579268149503882,
+          "ordered_projection_fraction": 0.37527700274212056
+        },
+        {
+          "stage": "down_input_fixed_point",
+          "squared_error": 277986.3729100595,
+          "mean_row_relative_l2": 0.10934120566683211,
+          "ordered_projection_fraction": 0.022315228199799055
+        },
+        {
+          "stage": "pruning",
+          "squared_error": 278960.7841248413,
+          "mean_row_relative_l2": 0.2359109839341113,
+          "ordered_projection_fraction": 0.0035190468777386015
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "layer2_largest_squared_error_step": "Down input conversion to signed 8-bit precision; ordered projected fraction 0.961455.",
+    "layer7_largest_squared_error_steps": "Up and gated-product conversion to signed 16-bit precision; ordered projected fractions 0.599329 and 0.375277.",
+    "pruning_relative_error": "Mean row-relative Euclidean error rises from 0.224361 to 0.310315 in layer 2 and 0.109341 to 0.235911 in layer 7 after the prediction mask.",
+    "metric_tradeoff": "Large squared-error terms and average relative error highlight different operations. These local results do not establish which change improves task accuracy.",
+    "next_step": "Test precision/range handling and pruning separately on current-model task outputs before selecting a hardware change. Do not repeat unchanged rejected format refitting."
+  },
+  "verification": {
+    "helper_tests_passed": 7,
+    "trained_float_target_cases_bit_exact": 796,
+    "current_integer_endpoint_cases_bit_exact": 796,
+    "current_baseline_scalar_cases_reproduced": 796,
+    "independent_scalar_aggregate_checks": 1724,
+    "independent_canary_stage_vectors": 88,
+    "independent_canary_numeric_terms": 440,
+    "sensitivity_controls": [
+      "changed_saved_projection_rejected",
+      "changed_actual_canary_vector_rejected"
+    ],
+    "independent_scope": "Python scalar fsum aggregation and saved-vector arithmetic without importing producer replay/account helpers. This checks accounting and vector provenance, not an independently implemented full matrix-stage simulator.",
+    "worker_seconds": 37.21873658313416,
+    "guard_seconds": 49.743473167996854,
+    "peak_device_bytes": 392606208,
+    "peak_host_resident_bytes": 2019778560
+  },
+  "limitations": [
+    "Only layers 2 and 7 and one previously selected question per image are examined; this is not the full 12,578-question accuracy benchmark.",
+    "The fixed-point scales and arithmetic belong to the current reproduction; the paper does not disclose those exact numerical formats.",
+    "Component norms are not additive and ordered projected fractions may be negative.",
+    "The input captures are software tensors, not measured native-chip traces.",
+    "No new accuracy improvement, mapped execution, paper matching, wire timing, clock distribution or routing qualification."
+  ],
+  "qualifications": {
+    "ordered_software_error_accounting": true,
+    "blind_generalization": false,
+    "new_accuracy_improvement": false,
+    "policy_installed": false,
+    "mapped_hardware_verified": false,
+    "paper_protocol_matching": false,
+    "paper_performance_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "local_evidence_sha256": {
+    "records/tri_oracle_current_prefix_capture_diagnostic.json": "bea14be09405b9b9146aa875e427d46968a990e02e5fde49f71632cec6736934",
+    "syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
+    "syn/tri_oracle_format335_policy.py": "8da88a07d4416bb6176d4188fd49c5878bc73067c97b96bed1896a48de5f3e83",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/protocol.json": "7775d7da91b5c2a708ad9107db70aa9852e14ebb65f031e0370d83bb47910443",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/source_anchor.json": "ed7b01ad918981bfef8e82083e7169f86e363f55b178564c1629a31b0d088732",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/run_diagnostic.py": "6be2674c4946d89daa58ddcf5f1f7edf5eea10fef3af847b428b672a2b46dabc",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/decomposition.py": "c1ed7b2a8ece19e0b1ccf361db6ed0a7b7137683fde3eccd8997c2955c7a4a3e",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/test_decomposition.py": "cecc087ae7b484612e8a21abc1a3caad736650785a85f72cb8d06e8f65730ecd",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/tests_green.log": "4f86395f0f4ac41f022379a6d5f9f4a6e2bb771b1e082f714e92d8176be5ff3d",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/architecture.pdf": "ef1823d2fb3aab5f96b17f7706a0868a9f32539fad6316462866767e1dbf8373",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/architecture_check.json": "01c67b832f99cc2e6627545ccb5ced5f7d0774ccc12d4766aba3fd661382b554",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/inputs.json": "e1664f7a55ea592edee61d739e6ea0e3872d7af5efe6762cfe548a6b3bb354d1",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/receipt.json": "d2859eeece84df7314484935c9ddabad090cc7b747e4f59ab08d7666f9ce6a4a",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/guard_receipt.json": "1e464a6b15c2b5b32df70aa6eabe1c8a6c0a3b92d4da2998527313f79b72cd27",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/console.log": "b47bb978fd393ae5e299780a200e5a77470a636b406297946ba0260e109d39be",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/case_metrics.json": "8b7b4031159c4b6c2977a20cc32fb966aab6811c0c5eb508792997fca27babe9",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/verify_accounting.py": "39c64ba032d275a51f99f2ba6e0de1db97c46cd48c02c2f3003c63daa221a0fd",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/verification/source_anchor.json": "bf0647cbf73a5a14858a93f329da10b74580175acc879823250bbf2960f4cdb3",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/verification/independent_verified.json": "45eaaa3c2fc5a622993c252cd83d329ac6bf9a532f9cc4ddb76a9bf90161523e",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/verification/guard_receipt.json": "54550b393ee383de55cc511723401c5c8c40285e313f504367619e683564540d",
+    ".cache/model_reference/current_stage_error_decomposition_20261120/verification/console.log": "212762c62c5c04720f8ad0dffee78e3e41359487c2132dd76b8fd6a66aed6d14"
+  },
+  "independent_review": {
+    "completed_scoped_feature_review": true,
+    "reviewer": "/root/review_stage_decomposition",
+    "critical_findings": 0,
+    "important_findings": 0,
+    "minor_findings": 0,
+    "direct_evidence_hashes_verified": 21,
+    "helper_tests_repeated_without_skips": 7,
+    "all_published_stage_values_matched_receipt": true,
+    "ready_to_publish": true,
+    "full_native_or_paper_review": false
+  }
+}
