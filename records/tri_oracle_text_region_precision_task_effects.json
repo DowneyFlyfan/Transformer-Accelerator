@@ -1,0 +1,214 @@
+{
+  "state": "two_fixed_text_region_precision_task_effects_independently_verified",
+  "scope": "Two diagnostic trained-floating-output interventions on original ordinary prompt text, across all22layers. On the reused160question panel, post-image text reached102correct versus91integer baseline, while pre-image prefix reached90. These are software causal interventions; no floating hardware or installed policy is proposed.",
+  "method": {
+    "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+    "questions_per_mode": 160,
+    "images": 131,
+    "new_complete_answers": 320,
+    "reused_reference_answers": 320,
+    "complete_archival_controls": 16,
+    "fixed_modes": [
+      "float_prefix_text",
+      "float_post_image_text"
+    ],
+    "region_definitions": {
+      "prefix": "Original positions1..image_start-1; exclude first0.",
+      "post_image_text": "Original positions image_start+576..prefill_length-1; includes question/instruction/answer-prefix text."
+    },
+    "selection": "Original token positions, preserving compaction holes. First0, original576image interval and all incremental decoding remain integer.",
+    "numerics": "Original integer callback always runs as a shadow. Original trained floating MLP receives the same complete hidden[1,M_l,2048] tensor; only selected region outputs replace the shadow. Weights, calibrated codes, formats and late correction17..21 unchanged.",
+    "controls": "8complete integer and8all-text-floating controls reproduce archived tokens/predictions/original-shadow workload exactly. All-text controls reproduce every original coverage field after omitting only two new subregion counters.",
+    "design_fixed_before_outcomes": true,
+    "fit_performed": false,
+    "reused_panel": true,
+    "blind_generalization": false
+  },
+  "results": {
+    "current_integer_correct": 91,
+    "alltext_floating_archived_reference_correct": 102,
+    "mode_results": [
+      {
+        "mode": "float_prefix_text",
+        "correct": 90,
+        "gains": 6,
+        "losses": 7,
+        "net_correct": -1,
+        "by_type": {
+          "choose": 20,
+          "compare": 13,
+          "logical": 21,
+          "query": 14,
+          "verify": 22
+        }
+      },
+      {
+        "mode": "float_post_image_text",
+        "correct": 102,
+        "gains": 26,
+        "losses": 15,
+        "net_correct": 11,
+        "by_type": {
+          "choose": 24,
+          "compare": 21,
+          "logical": 25,
+          "query": 13,
+          "verify": 19
+        }
+      }
+    ],
+    "paired_correctness_patterns_bit_order": [
+      "baseline",
+      "prefix_float",
+      "post_image_float",
+      "alltext_float"
+    ],
+    "paired_correctness_patterns": {
+      "0000": 40,
+      "0001": 2,
+      "0010": 2,
+      "0011": 19,
+      "0100": 1,
+      "0111": 5,
+      "1000": 2,
+      "1011": 5,
+      "1100": 12,
+      "1101": 1,
+      "1110": 1,
+      "1111": 70
+    },
+    "correctness_interaction_total": 1,
+    "archive_comparisons": {
+      "float_prefix_text": {
+        "tokens_identical_to_baseline": 145,
+        "predictions_identical_to_baseline": 145,
+        "tokens_identical_to_alltext_float": 119,
+        "predictions_identical_to_alltext_float": 119,
+        "aggregate_selected_callback_rows": {
+          "prefix": 14080,
+          "post_image_text": 0,
+          "ordinary_text": 14080,
+          "first": 0,
+          "vision": 0,
+          "decode": 0
+        }
+      },
+      "float_post_image_text": {
+        "tokens_identical_to_baseline": 115,
+        "predictions_identical_to_baseline": 115,
+        "tokens_identical_to_alltext_float": 154,
+        "predictions_identical_to_alltext_float": 154,
+        "aggregate_selected_callback_rows": {
+          "prefix": 0,
+          "post_image_text": 104258,
+          "ordinary_text": 104258,
+          "first": 0,
+          "vision": 0,
+          "decode": 0
+        }
+      }
+    }
+  },
+  "independent_verification": {
+    "complete_token_traces_reconstructed": 656,
+    "original_prompt_geometries_retokenized": 160,
+    "controls_verified": 16,
+    "scope_corruptions_rejected": [
+      "disabled_integer_shadow",
+      "wrong_decoder_mode",
+      "wrong_region_mode",
+      "extra_prefix_row",
+      "extra_post_image_row",
+      "floating_first_row",
+      "floating_decode_row",
+      "wrong_original_image_start",
+      "missing_text_row_with_consistent_counts"
+    ],
+    "scope": "Independent archive decoding, fixed panel, retokenized original geometry, first/image/text/decode/prefix/post role counts and layer0 retained-slot/root COUNT consistency. No root-map/head-identity/activation equality or second neural-model execution.",
+    "independent_neural_model_execution": false
+  },
+  "repair": {
+    "first_attempt_terminal_exit": 1,
+    "first_attempt_diagnostic_archive_created": false,
+    "cause": "Complete all-text control coverage comparison found missing integer_shadow_enabled and decoder_mode metadata. Original numerical masks unchanged; retry adds actual22callback enabled states/decoder mode and explicit every-row flag checks.",
+    "original_failure_preserved": true,
+    "region_numerical_source_identical_between_attempts": true,
+    "helper_tests_passed": 18,
+    "missing_helper_and_flag_scope_red_failures_preserved": true
+  },
+  "resources": {
+    "producer_elapsed_seconds": 217.94387857499532,
+    "producer_guard_elapsed_seconds": 225.35690997587517,
+    "peak_gpu_bytes": 7709459456,
+    "process_highwater_resident_bytes": 6786461696,
+    "guard_sampled_peak_resident_bytes": 4523151360,
+    "minimum_available_bytes": 13365682176,
+    "independent_elapsed_seconds": 7.971994650084525,
+    "independent_guard_elapsed_seconds": 8.64741428103298,
+    "timeout_qualification": {
+      "protocol_declared_seconds": 3600,
+      "actual_producer_guard_limit_seconds": 7200,
+      "actual_independent_guard_limit_seconds": 7200,
+      "note": "The sealed protocol declared3600seconds, while the reused guard and retained launch records enforce7200seconds. Successful225.36sproducer/8.65saudit finish below both. Original sealed sources and failure evidence are preserved; no rerun or result changes."
+    }
+  },
+  "qualifications": {
+    "current_full_integer_baseline_correct": 6247,
+    "current_full_integer_baseline_questions": 12578,
+    "current_full_integer_baseline_percent": 49.66608363809827,
+    "policy_installed": false,
+    "new_full12578_candidate_run_launched": false,
+    "floating_hardware_proposed": false,
+    "mapped_hardware_or_paper_improvement_verified": false,
+    "advance_to_clock_distribution_or_routing_allowed": false,
+    "interpretation": "Post-image precision is the stronger corrective target on this reused panel. Equal aggregate102scores do not imply post-only and all-text outputs are identical. Do not assume additive effects, population generalization, measured chip work/energy, or a deployable floating proposal."
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/plan.md": "0243cceff3ca8a316fc7e2862f9458eaec7cab8c825dbe202f17823aad951bd4",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/protocol.json": "b9ca379d471340ffd080f380c0e10bf7aead72f5cac713986aece3e889b1bf99",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/run_probe.py": "d665ee1bb45b999ab43a1298d36193577d9543448db04f0472779ecabf52b035",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verify_probe.py": "3b1a89a2a9647f43586739c71032135c0496ce0761654649dc35cb31987bc7b3",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/text_regions.py": "095ca896c962d546843e82d9bf2beb2a894bd6999189bd0a456f3c6d7f4055aa",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/control_metadata.py": "126d0628bfece29cc0bb9557875c4f304f1599acf1dfd4fd41402c7315bf4072",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/scope_checks.py": "42d629ab9fecb896f778c5bfd7ee35b177901529de21fd1410139fda741777fb",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/guard.py": "092000517191020c1bf6b55e0643b520fe8f4cbfa0c45f71ed9270156e1e44da",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/guard_entry.py": "753425ce4d1f75813e27fcaf47841dadab80aaa60a26137e06e3e664bf94a7c9",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/source_anchor.json": "22573f3ba86eb28acf408922d74ce828a2084dbfad3f92078e38fae62fe49ef4",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/architecture_source_audit.json": "b6d8232c2fc6998c7e19cd34d55b2d2f6f26a6a597b713fa2a8e71acd17c942a",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/architecture.pdf": "1bca26646b68efe85ac867ffbb6ae5d07c2b409b0ea694caa20ca14b4f5f83f8",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/test_text_regions.py": "12285256095306043e6c5cf8963effe445d55aaac4304e2677ab308e03b8b06a",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/test_scope.py": "2d10642de990e3ee8aae92d042782fada6395e17cac5feeb67ad4bf4cafd7c9c",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/test_control_metadata.py": "ee29eb418ff41552907a42f88a5426978fea283da3ba2a1bf15130d8ead3168d",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/metadata_red.log": "9fedce80625478268177ec09b75a079f06c94be622f9d39f130df94b38e33fd8",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/flag_scope_red.log": "41fc0d1e2569634d0d52a35acb7920f0053338614bd056ac9fbd81b4faeb676d",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/helpers_final_green.log": "f86c25b7653b39935cc588e2447ef9cf875dcedc593adb85ffb9aaac3133f78b",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/bootstrap_preflight.json": "a933b9e514954765f95fe2c2e28ac602cd71463c1b62471e27082d06ab3b5160",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/inputs.json": "f52fd5c514b5ab6d3fd0539c1208ce92ac730e77ab538e7096cfc6d67d6bbdb7",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/launch.json": "dcbf9cea0e8002a5f37dae9d1a6b039c87233b4c5911a095e7f6569b5d3905b5",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/supervisor_launch.json": "333ef60746cd8f8ebe5babd21ba91572c4990c55683cfd5ce587769004ca98f5",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/guard_receipt.json": "0a934a049edf13d13f2ec4f3acf3b36486f94a0f56ac83972c015fd8a3aa8109",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/console.log": "359751f89f819a657fadd696f429dbdf79f3a96f1414becfc20806c3660086eb",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/receipt.json": "f189207db68aaaeaccdcca7bee846474511e9729ae60d4874d25dc7a60736fa3",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/controls.json": "45bb3b274e3338c322f36e31b4bdead71c403995c0ce797648df5747067ae642",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/archived_controls.json": "2f05324772db1e115eb97fd043c6e14383d20833b336be303876ccf8b3db8a4f",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/predictions.jsonl": "503af414d4bea4da94a72037784b4b9f9f44f2bfa0028c2a9412d2c36e169df1",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/archive_comparisons.json": "6f6137c7905e62a07090a67f97b420ce4d952b017e7f21d5f2efcc064bb076b9",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verification/source_anchor.json": "67b9621b897ff1ccdc250299b9770028a6e42f5a804e1ad03442287b3537a732",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verification/guard_entry.py": "70107236a5a436c9682e17419768bdc686897258610e06d2c1203f3786d67d08",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verification/launch.json": "66c24b79576d071b9dcd524c362478cd9d0a6bf34ef7234c5794d5199c2ed4bb",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verification/supervisor_launch.json": "f39466796cc27e3590e97d2131fbbdca241dbee6dfada8f981fe4233e874e32b",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verification/guard_receipt.json": "6b701030d03d5666b861457aec4d565eb6b97f865d74903b8f6f0cf755d515d1",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verification/console.log": "051b0e8acc890102eff492cd09805a929580d3da3d98172c3229e9a3b4c8a169",
+    ".cache/model_reference/text_region_precision_probe_v2_20261120/verification/independent_verified.json": "2c5eb81a171af3286b802ccb9f9c8ea03f211bdd6ad771d1534a05c548bc35a8",
+    ".cache/model_reference/text_region_precision_probe_20261120/source_anchor.json": "a70740da6934cc6f0d956d885dcb625f8564a930081c42c6e03685a07a75ce5f",
+    ".cache/model_reference/text_region_precision_probe_20261120/run_probe.py": "208ac96f327e4e7f92cb39a902f2400173506d4e87f318e07984383a4418c3dc",
+    ".cache/model_reference/text_region_precision_probe_20261120/text_regions.py": "095ca896c962d546843e82d9bf2beb2a894bd6999189bd0a456f3c6d7f4055aa",
+    ".cache/model_reference/text_region_precision_probe_20261120/guard_receipt.json": "51d88e2649b6da45900bce05560d74e0641dff6058dec039957ecc77663e66ae",
+    ".cache/model_reference/text_region_precision_probe_20261120/failure.json": "52e2d6106f9460f64ec027ba359e454cd63f4d13521872e7fd6e74c6d5184bbf",
+    ".cache/model_reference/text_region_precision_probe_20261120/console.log": "c624dff49bd84548796e8fd273b59020347761d93eece8090aea98384623e1ba",
+    ".cache/model_reference/text_region_precision_probe_20261120/launch.json": "3761f354bd0216dcb38398234a760255db215edefc8a0fd4c517cdffc1482fc0",
+    ".cache/model_reference/text_region_precision_probe_20261120/supervisor_launch.json": "6a4769ff33e5d937d78a738123c912b5d912b82870d99c0b5ad93ac20d9307d8",
+    ".cache/model_reference/text_region_precision_probe_20261120/regions_red.log": "7a1191fbaa75f5c2e42bb696aa3b8d2794cb4c2715b5ebb781d232d0cd1f0645",
+    ".cache/model_reference/text_region_precision_probe_20261120/scope_red.log": "21292563de87754899fd9baea9a923ed316373211a1bb5b516576ea482a33871"
+  }
+}
