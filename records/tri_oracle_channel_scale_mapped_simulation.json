@@ -1,0 +1,88 @@
+{
+  "state": "tsmc28_mapped_channel_controls_functionally_verified",
+  "native_tool": "Cadence Xcelium25.03",
+  "container": "tri-oracle-eda",
+  "runtime_sha256": "89ab532c3436c4ff744ed9c653f1bb2f9bf68550018926c27555c3ecd4db3d18",
+  "simulator_threads_configured": 20,
+  "simulator_engines_reported": 18,
+  "component_results": {
+    "component_dispatch": {
+      "native_seconds": 7.353802185039967,
+      "peak_container_anonymous_bytes": 469663744,
+      "warning_codes": [
+        "MC"
+      ],
+      "source_compiler_errors": 0,
+      "source_compiler_warnings": 0
+    },
+    "component_writer": {
+      "native_seconds": 9.360906454967335,
+      "peak_container_anonymous_bytes": 416657408,
+      "warning_codes": [
+        "MC"
+      ],
+      "source_compiler_errors": 0,
+      "source_compiler_warnings": 0
+    }
+  },
+  "dispatcher": {
+    "legacy_commands": 13,
+    "legacy_after_channel_modes": 3,
+    "channel_modes": 2,
+    "malformed_extensions": 6,
+    "reset_pending": 1
+  },
+  "writer": {
+    "output_values": 130,
+    "output_strips": 17,
+    "accepted_frames": 5,
+    "projection_requests": 37,
+    "projection_beats": 296,
+    "successful_channel_frame_scale_reads": 4,
+    "abort_extended_response_beats": 3,
+    "recovered_scalar_values": 8,
+    "nonzero_residual_or_saturation": false
+  },
+  "mapped_testbench_adaptation": "Three two-dimensional arbiter ports were flattened by Genus. Only their formal-port bindings changed; reversing those edits reproduces the source testbench byte for byte.",
+  "original_failed_elaboration_preserved": true,
+  "prelaunch_review_fixes": [
+    "Packed-weight metadata is pinned before preparation and again in the native runtime.",
+    "All three new qualification entrypoints explicitly reject optimized Python."
+  ],
+  "qualifications": {
+    "mapped_component_regressions": true,
+    "new_whole_chip_functional": false,
+    "complete_trained_layer": false,
+    "whole_model_accuracy": false,
+    "placed": false,
+    "routed": false,
+    "paper_matching": false,
+    "routing_release": false
+  },
+  "evidence_sha256": {
+    ".cache/channel_scale_integration_20261120/replay_v2/component_dispatch/qualified.json": "a9df2a431e328fb4019d81e0b3e4741b01508e7730927a498eaad24453395e1e",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_dispatch/status.json": "b8e833263f5cba7f6ebb5a3a9dcdc7ef6748671beadfad018c82e4211bb180dd",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_dispatch/xrun.log": "d1670301bba677785090631a9911fee08ed5b701c9421b43bf7968e99be98ba1",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_dispatch/console.log": "d3e8b7009e92433fa4c209c40de2f87678323b647a2121f64b95fe44e3b87969",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_dispatch/bundle.sv": "8dc407a15008bf0079ce037bff38c95c326fea9c977030bb951104602b8cefde",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_writer/qualified.json": "3d9bc46607e1961328861d5902b45d564ed7b1e029f62cbd813476d728d585b6",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_writer/status.json": "efd358673e17840a2d914431c0e9eba0ae042835507d0dfc20fdb875c7f08c3c",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_writer/xrun.log": "b4e2b45374ab8d5913c6aba14673948f73f5e1e683f722ad0ea16db2f1bbde68",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_writer/console.log": "039c6e37172562ba37d0630a5f5b662b905b17dcf912a490012ab51cc68c6ff5",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_writer/bundle.sv": "c2c5529018ff6189a2dfbc79b2288815d673f4124cd40e85c17eb688290f5d07",
+    ".cache/channel_scale_integration_20261120/replay_v2/runtime.json": "89ab532c3436c4ff744ed9c653f1bb2f9bf68550018926c27555c3ecd4db3d18",
+    ".cache/channel_scale_integration_20261120/replay_v2/run_replay.py": "ff9657595f0a29122551fa79500f851d1a52404c5f96452b630f557af359ed86",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_writer/mapped_writer_tb.sv": "bdd7340b62fcfefb7b5ae15a24ae7c3a5ae0f7c44887f769b4e99dac8a1e85f2",
+    ".cache/channel_scale_integration_20261120/replay_v2/component_writer/binding_adaptation.json": "38c8b0dd14ba5d9713f91f7f508ece68e61a6f1fa2fda9e834c907a42a5b949f",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/netlist.v": "452a86495931c86fc7e16e5d8b0e67512a61af0e88a723eb7f5048a9626a995e",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/netlist.v": "1e1766e91b6335a6adde6f40cd19b1eafaad8920bf6167c21e28576937c026c3",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/netlist.v": "e548b1a394ace361d719ad4ac5b2beb5cb5e20b121c4ee61fa5cd9364ffb6acd",
+    ".cache/channel_scale_integration_20261120/replay_v1/component_writer/status.json": "a5c4374dac4508a518f5c7f7114d44f1b40a3908f85f3fce7119e07f2b905335",
+    ".cache/channel_scale_integration_20261120/replay_v1/component_writer/xrun.log": "d10304d7ebab5d414bf1cb79f130294dd4b7a4daa2a6d6743d670f1b65450055",
+    ".cache/channel_scale_integration_20261120/optimized_entrypoints_red.log": "8d060efaf538bab5067414504daeb2207ec5cc3ffb33b93fa63089d4248a9aa9",
+    ".cache/channel_scale_integration_20261120/optimized_entrypoints_green.log": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+    ".cache/channel_scale_integration_20261120/fixture_metadata_binding_red.log": "5839d8fea4a9cef06e0e4774f7ad8b4ffb6c96c083dfcbe6dbe178384a421f4b",
+    ".cache/channel_scale_integration_20261120/fixture_metadata_binding_green.log": "a6707d4eff38012da33ddc34bc6dc076a3b17151cfc9aef223c8790cbe64c3da",
+    ".cache/channel_scale_integration_20261120/fixture_v2/prepared.json": "6e0cc7df91a26503e940646511a2cc31e65039cfa6f76097a08882690d2e44aa"
+  }
+}
