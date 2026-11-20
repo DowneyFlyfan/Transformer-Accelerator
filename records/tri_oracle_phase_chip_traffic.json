@@ -1,5 +1,15 @@
 {
   "additional_predictor_sign_payload_bytes": 585728,
+  "attribution_correction": {
+    "current_placed_candidate_or_full_paper_qualification": false,
+    "host_arithmetic_and_traffic_recomputed": true,
+    "native_simulation_repeated": false,
+    "numerical_results_unchanged": true,
+    "previous_record_sha256": "d5712f1148bfd4951e7abf67e19d9a46a4544c7073ffb0e92a767b5c6f104481",
+    "previous_verifier_sha256": "4704d44c4309092a02f8f71ad2c9afbbd8ae9f772740e7527e13ebf918464a28",
+    "reason": "The previous label incorrectly attributed the union of predicted near-zero masks to Figure31.6.5. The page-one weight-prediction paragraph instead requires near-zero locations shared by both weight matrices; the existing intersection implementation agrees.",
+    "source_review": "Complete page-one weight-prediction paragraph and rendered page-three Figure31.6.5 checked against the archived mask planes and current source."
+  },
   "dense_weight_payload_bytes": 34603008,
   "evidence_sha256": {
     ".cache/model_reference/batch389/down.hex": "32138fca066db7316dea7033937ac3c504b7de2b0059edf31ae28de1855f6ec5",
@@ -21,16 +31,10 @@
     "records/tri_oracle_phase_chip_trained.json": "f6b7a31d2dd33a54c3be8327b113c623c8fefafeaa4033a839054d82e5964b49",
     "syn/prepare_tri_oracle_batch407_learned_fixture.py": "7f823ebfa8dcf706552e819351391c15070b17eeb9603dc00773bf31c470c2ac",
     "syn/tri_oracle_integer_reference.py": "8a61793403dacf6439e6e326e9b572cdc1ffd794aea3b41173e06787d1778d8a",
-    "syn/verify_tri_oracle_phase_chip_traffic.py": "4704d44c4309092a02f8f71ad2c9afbbd8ae9f772740e7527e13ebf918464a28",
+    "syn/verify_tri_oracle_phase_chip_traffic.py": "adfebc51a0761d4e1e7eac1b86518cd960a072d0737b95f972b06809c01a263d",
     "verilog/tri_oracle_strip_predictor.sv": "ea9f70a6a507c65379e0ad4df15e1170947c5065ed09a54903d6feff5e3d48f8"
   },
   "exact_outputs": 32768,
-  "figure_31_6_5_mask_rule_comparison": {
-    "changed_integer_outputs": 32749,
-    "projected_weight_payload_bytes": 34603008,
-    "scope": "Host counterfactual with the archived branch thresholds and weights. Figure 31.6.5 supplies the Boolean combination. Model accuracy has a separate benchmark.",
-    "skipped_token_channels": 56147
-  },
   "gate_up_skipped_token_channels": 5231,
   "gate_up_token_channels": 90112,
   "graphics_card": "NVIDIA GeForce RTX 5070 Ti",
@@ -39,5 +43,14 @@
   "state": "trained_two_phase_weight_payload_reconciled",
   "tokens": 16,
   "weight_payload_bytes": 34603008,
-  "weight_payload_reduction_percent": 0.0
+  "weight_payload_reduction_percent": 0.0,
+  "zero_mask_union_counterfactual": {
+    "changed_integer_outputs": 32749,
+    "counterfactual_skip_rule": "gate_nearzero OR up_nearzero",
+    "paper_rule_agrees_with_archived_hardware": true,
+    "paper_skip_rule": "gate_nearzero AND up_nearzero",
+    "projected_weight_payload_bytes": 34603008,
+    "scope": "Host counterfactual with the archived branch thresholds and weights. The union of near-zero masks is a local alternative, not the paper's rule. The page-one weight-prediction paragraph requires near-zero locations shared by both branches. Model accuracy has a separate benchmark.",
+    "skipped_token_channels": 56147
+  }
 }

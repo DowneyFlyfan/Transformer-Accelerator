@@ -33,7 +33,7 @@ def demand(keep, activation, intermediate, output_features):
     return int(gate.sum()), int(down_words.sum()) * (output_features // 8)
 
 
-def compare_fig_3165_mask_rule(arrays, archives, evidence):
+def compare_zero_mask_union_counterfactual(arrays, archives, evidence):
     keep, activation, _ = arrays
     tokens, channels = keep.shape
     paper = ROOT / PAPER_RELATIVE
@@ -55,13 +55,16 @@ def compare_fig_3165_mask_rule(arrays, archives, evidence):
                                     for plane in (gate_zero, up_zero, old_skip))
     require(np.array_equal(old_skip, gate_zero & up_zero) and np.array_equal(~old_skip, keep),
             "archived keep mask differs from the implemented branch intersection")
-    # Figure 31.6.5 intersects the branch nonzero masks. Keep the archived thresholds fixed.
-    paper_keep = ~gate_zero & ~up_zero
-    require(not np.any(paper_keep & ~keep), "counterfactual would require unarchived gated values")
+    # The page-one weight-prediction paragraph identifies near-zero locations
+    # shared by BOTH branches. The archived skip intersection follows that rule.
+    # This alternative instead skips either branch's near-zero prediction; it
+    # is a local counterfactual, not the paper's rule. Thresholds stay frozen.
+    union_keep = ~gate_zero & ~up_zero
+    require(not np.any(union_keep & ~keep), "counterfactual would require unarchived gated values")
     hidden = activation.shape[1]
     intermediate_path, down_path, expected_path = archives
     original = byte_codes(intermediate_path, keep.shape)
-    alternate = np.where(paper_keep, original, 0).astype(np.int8)
+    alternate = np.where(union_keep, original, 0).astype(np.int8)
     weights = byte_codes(down_path, (hidden, channels))
     frozen = word_codes(expected_path)
     baseline = _dot(torch.as_tensor(original, device="cuda"), torch.as_tensor(weights, device="cuda"))
@@ -69,16 +72,21 @@ def compare_fig_3165_mask_rule(arrays, archives, evidence):
     require(np.array_equal(baseline.cpu().numpy(), frozen), "archived arithmetic did not reproduce the replay")
     require(np.array_equal(alternate.astype(np.int32) @ weights.astype(np.int32).T, changed),
             "processor and graphics-card counterfactual dot products disagreed")
-    gate, down = demand(paper_keep, activation, alternate != 0, hidden)
-    require(demand(*(torch.as_tensor(a, device="cuda") for a in (paper_keep, activation, alternate != 0)),
+    gate, down = demand(union_keep, activation, alternate != 0, hidden)
+    require(demand(*(torch.as_tensor(a, device="cuda") for a in (union_keep, activation, alternate != 0)),
                    hidden) == (gate, down), "counterfactual traffic accounting disagreed")
     evidence.extend((paper, bundle, predictor, branch, receipt, *archives,
                      ROOT / "syn/prepare_tri_oracle_batch407_learned_fixture.py",
                      ROOT / "syn/tri_oracle_integer_reference.py"))
-    return {"skipped_token_channels": int((~paper_keep).sum()), "changed_integer_outputs": int((frozen != changed).sum()),
+    return {"skipped_token_channels": int((~union_keep).sum()), "changed_integer_outputs": int((frozen != changed).sum()),
             "projected_weight_payload_bytes": (2 * gate + down) * 64,
+            "counterfactual_skip_rule": "gate_nearzero OR up_nearzero",
+            "paper_skip_rule": "gate_nearzero AND up_nearzero",
+            "paper_rule_agrees_with_archived_hardware": True,
             "scope": "Host counterfactual with the archived branch thresholds and weights. "
-                     "Figure 31.6.5 supplies the Boolean combination. Model accuracy has a separate benchmark."}
+                     "The union of near-zero masks is a local alternative, not the paper's rule. "
+                     "The page-one weight-prediction paragraph requires near-zero locations shared by both branches. "
+                     "Model accuracy has a separate benchmark."}
 
 
 def verify():
@@ -135,7 +143,7 @@ def verify():
                                            "batch403_activation_precision.json"), strict=True):
         require(digest(path) == json.loads((RECORDS / record).read_text())["files_sha256"][str(path)],
                 f"archived arithmetic input changed: {path.name}")
-    alternative = compare_fig_3165_mask_rule(arrays, archive_paths, evidence)
+    alternative = compare_zero_mask_union_counterfactual(arrays, archive_paths, evidence)
     dense_bytes = 2 * hidden * channels + output_features * channels
     return {
         "state": "trained_two_phase_weight_payload_reconciled",
@@ -150,7 +158,7 @@ def verify():
         "paper_feedforward_external_access_reduction_percent":
             target["disclosed_method_gains"]["feed_forward_external_memory_access_reduction_percent"],
         "graphics_card": torch.cuda.get_device_name(),
-        "figure_31_6_5_mask_rule_comparison": alternative,
+        "zero_mask_union_counterfactual": alternative,
         "evidence_sha256": {str(path.relative_to(ROOT)): digest(path) for path in sorted(set(evidence))},
         "scope": "Weight and predictor-sign read payloads of one trained layer over 16 tokens. "
                  "The paper reports feedforward external-memory accesses under its own workload and reduction settings.",
