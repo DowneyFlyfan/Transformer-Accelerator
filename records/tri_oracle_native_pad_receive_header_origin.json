@@ -1,0 +1,89 @@
+{
+  "state": "current_physical_receive_frame_to_accepted_command_and_response_fields_verified",
+  "scope": "Two-state Boolean safety proof after global reset of the actual five-nibble receive framing and lower35-bit forwarded command history. The tag/opcode observer is constructed directly from accepted physical input nibbles. This is implementation transport verification, not a paper performance result.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "parent_internal_header_record": "records/tri_oracle_native_host_command_provenance.json",
+    "actual_chip_state_added": 0,
+    "circuit_changed": false
+  },
+  "receive_format": {
+    "physical_data_pins": 4,
+    "accepted_pad_transfers_per_logical_word": 5,
+    "logical_word_bits": 18,
+    "first_four_transfers": "Four4-bit data nibbles, least significant first, become data15:0.",
+    "fifth_transfer": "Physical data0 is payload-kind; data1 is payload-last. Current data3:2 are unused padding.",
+    "command": "The two forwarded16-bit tag words plus opcode bits2:0 in the third forwarded word.",
+    "routing": "Other router words may be accepted between forwarded command words. No claim that a command is15consecutive physical transfers.",
+    "reserved_bits_validated": false
+  },
+  "method": {
+    "tracked_physical_register_bits": 96,
+    "physical_receiver_register_bits": 19,
+    "host_receiver_register_bits": 39,
+    "dispatcher_register_bits": 38,
+    "resetless_data_bits_in_contract": 51,
+    "software_observer_bits": 94,
+    "physical_nibble_observer_bits": 20,
+    "header_observer_bits": 74,
+    "physical_history": "A four-bit observer mask records accepted early nibbles. Actual receiver index0..4 and mask progression0,1,3,7,15 are reset-based clock invariants. The final input handshake equals the logical output handshake; partial frames cannot become valid.",
+    "composition": "Every actual forwarded-host transfer implies a final physical-pad transfer. Its data equals the observed early nibbles; this value directly updates the header observer. One combined certificate proves physical framing and accepted-command response-field origin together.",
+    "initialization": "Only observer masks and accepted-seen validity reset. Physical early data, receive record and software data snapshots are initially arbitrary.",
+    "source_behavior": "History observes only accepted handshakes. No source-quiescence premise and no unconditional stability claim for externally driven valid/data during stalls.",
+    "accepted_snapshot": "Captured only at command valid/ready acceptance, retained through retirement until another acceptance or reset. A merely visible queued command cannot relabel it."
+  },
+  "verification": {
+    "producer_positive_queries": 17,
+    "producer_model_fault_controls": 6,
+    "independent_positive_queries": 16,
+    "independent_model_fault_controls": 6,
+    "independent_fresh_symbols": 8455,
+    "independent_certificate_equivalence": true,
+    "actual_next_function_faults": [
+      "saved-tag bit0 inverted",
+      "second header-word bit17 write held",
+      "fourth physical nibble bit13 write held",
+      "first physical-index bit0 step held"
+    ],
+    "observer_faults": [
+      "accepted-seen asserted during reset",
+      "queued header captured before ready"
+    ],
+    "fault_interpretation": "Deliberate model changes test sensitivity; witnesses do not establish reset-reachable faults in the unchanged hardware.",
+    "independent_reconstruction": "Separate equation reader and sum-based fields; mask-overwrite nibble assembly and arithmetic/shift history recurrence differ from the producer. Both use the same authenticated actual-cell export; no independent netlist re-extraction.",
+    "producer_guard_seconds": 4.6093271700665355,
+    "producer_peak_resident_bytes": 119566336,
+    "independent_guard_seconds": 9.11057130806148,
+    "independent_peak_resident_bytes": 152666112,
+    "minimum_available_host_bytes": 14257430528
+  },
+  "qualifications": {
+    "physical_receive_word_framing": true,
+    "forwarded_host_word_physical_origin": true,
+    "accepted_command_tag_opcode_physical_origin": true,
+    "response_field_accepted_header_echo": true,
+    "complete_return_packet_and_physical_transmit_delivery": false,
+    "reserved_bit_validation": false,
+    "appended_payload_numerical_origin": false,
+    "command_service_liveness": false,
+    "current_trained_fixture_complete": false,
+    "full_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_pad_receive_header_origin_v1.py": "9258460bbf6cb324d06eb1e7a472d0a4e5cedf52939d0738ef13dfb3bbb3bd6a",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_pad_receive_header_origin_v1.py": "622b64b4ddc38e58da92aa857f0a0e4f49ec1473455570d24b6c6a1e2a1eb028",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_pad_receive_header_origin_v1.json": "23217736be1db60120b08f6cf349388fac0548cac714079282e772a7dd2e3a94",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_pad_receive_header_origin_v1_invariant.smt2": "4b2f695261fd0c8fdeb7abd69ee63f28d8af19e297bc256b9d60a07b85fc86bb",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_pad_receive_header_origin_v1_independent_audit.json": "ea55da3ac6fd5cd0b444a2730b0a96832323a2f424274c6683be10a44ac785fd",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_receive_header_origin_guard_v1/source_anchor.json": "625a22fb54bbc67cf5b0cc0c8ad2ee90d869afa3e1e93ef93bf84def20aeb1ed",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_receive_header_origin_guard_v1/guard_receipt.json": "713ae226322af30d40d186f088006e8b011afbb842e8c2339678847327f9fad4",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_receive_header_origin_audit_guard_v1/source_anchor.json": "65453f1d2d9beebe333c3cbb12b8ae153f7128132ec649512997111c6307c51f",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_receive_header_origin_audit_guard_v1/guard_receipt.json": "92071c8f67fd137e3ed4f966075fc7bc7bf7b4cfe1c681ac944db76d6f11280d",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_host_router_functions_v3.json": "d28677d24be17e2c716f16aa7ed80bcc4a8b5e695dd0b83edff2dbf7070c4741",
+    "records/tri_oracle_native_host_command_provenance.json": "fbef0d9decc8f59eaa554f4c22488ac5923329ce55d5f5b0507de4684b12c2fb"
+  }
+}
