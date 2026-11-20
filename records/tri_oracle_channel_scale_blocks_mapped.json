@@ -1,0 +1,102 @@
+{
+  "state": "tsmc28_channel_scale_control_blocks_synthesized_and_linked_not_simulated",
+  "blocks": {
+    "dispatcher": {
+      "top": "tri_oracle_channel_indexed_dispatch",
+      "mapped_leaf_cells": 2289,
+      "reported_library_cell_area": 6090.672,
+      "native_seconds": 77.98500651284121,
+      "peak_container_anonymous_bytes": 1343041536,
+      "unresolved_references": 0,
+      "first_reported_timing_path": "Path 1: MET (754 ps) Setup Check with Pin channel_descriptor_reg/CP->SE"
+    },
+    "writer": {
+      "top": "tri_oracle_selectable_bank_writeback",
+      "mapped_leaf_cells": 18934,
+      "reported_library_cell_area": 16953.048,
+      "native_seconds": 393.121069004992,
+      "peak_container_anonymous_bytes": 2579701760,
+      "unresolved_references": 0,
+      "first_reported_timing_path": "Path 1: MET (0 ps) Late External Delay Assertion at pin out_data[31]"
+    },
+    "arbiter": {
+      "top": "tri_oracle_narrow_read_arbiter",
+      "mapped_leaf_cells": 99,
+      "reported_library_cell_area": 100.968,
+      "native_seconds": 26.629510812927037,
+      "peak_container_anonymous_bytes": 1192538112,
+      "unresolved_references": 0,
+      "first_reported_timing_path": "Path 1: MET (962 ps) Late External Delay Assertion at pin mem_rsp_ready"
+    }
+  },
+  "technology_library": "tcbn28hpcplusbwp12t40p140ssg0p9v125c",
+  "clock_constraint_ns": 1.72414,
+  "configured_native_cpu_threads": 20,
+  "original_placed_candidate_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+  "linked_unplaced_candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
+  "preservation": {
+    "state": "linked_candidate_preservation_and_compiled_memory_verified",
+    "candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
+    "original_modules_byte_identical": 770,
+    "only_changed_old_module": "tri_oracle_chip_command_layer_parallel_chip",
+    "added_modules": 19,
+    "memory_macros": 631,
+    "compiled_memory_bytes": 414928,
+    "all_memory_owner_paths_identical": true,
+    "leaf_instances": 3891185,
+    "elapsed_seconds": 21.773112109862268,
+    "placed_or_routed": false,
+    "source_sha256": "95f3bb6b6db672f4ea1a2c270c5c8062e0437e3b98350242c6db45729e6b12cc"
+  },
+  "source_closure_negative_controls": 6,
+  "startup_failure": "First attempt lacked USER in the Docker environment; preserved under mapping_v1. Retried with USER and LOGNAME=downeyflyfan.",
+  "qualifiers": {
+    "mapped_components": true,
+    "linked_candidate": true,
+    "new_candidate_functional_verification": false,
+    "new_candidate_placed": false,
+    "routed": false,
+    "paper_matching": false,
+    "routing_release": false
+  },
+  "limitations": [
+    "Timing reports use ideal clocks and wireload estimates. They do not establish a routed operating frequency.",
+    "Component synthesis and preserved memory ownership do not establish correct whole-chip behavior."
+  ],
+  "evidence_sha256": {
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/native_status.json": "dea1321cdcc2474ff29c03f6ed41ebf51d6827e8c0e227cedb8f1979eda4262f",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/sources.json": "ba338f60c3fb7ad055bee1a402631e403a788646136175c10f7b2ccd18424bd2",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/netlist.v": "452a86495931c86fc7e16e5d8b0e67512a61af0e88a723eb7f5048a9626a995e",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/area.rpt": "d4c3eedc7751e87bfeddcc91bda3f952efac4997bca696677327291e1d38c93a",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/timing.rpt": "252887f9ad4592888339623e2c0d62cc4600dbee5fcc4643b033fffc590e21d8",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/unresolved.rpt": "b37d94b80fe00ae392c22d130b2d7aafb4fe4e796141b656fb3a29933f2cf244",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/timing_intent.rpt": "61e361575bdf180a946e52d89557b1086cd08a25c483fd91e4b1203cc884c5e3",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/constraints.sdc": "9e7b195626140d4be6c479b19f85e3d58da4d31f159c0704cdb42e126020f01f",
+    ".cache/channel_scale_integration_20261120/mapping_v2/dispatcher/console.log": "93cf30d3dd23a2333831295586e6df5181b37e4bd6dfb66e7b6cfd04dc1bc5cd",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/native_status.json": "a648238852401b141c013ebee43511662aaff29a7ca2edc36d3f931c41c658cb",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/sources.json": "345fbbaecaad8434e30bac134a1b26f323735eb4d4ea4bea2a6821e609e830c7",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/netlist.v": "1e1766e91b6335a6adde6f40cd19b1eafaad8920bf6167c21e28576937c026c3",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/area.rpt": "5a5d5fa3806f15306dcf31ced0b631c7149008c8929bfc41754c37477b7dc332",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/timing.rpt": "0d16d279173c7a4e8b29f88325967cba61f5a0138906441ab9bccb9db2ef0c1a",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/unresolved.rpt": "121ea46b21194182ddee7004b33ce5a1eb568734bf84ed4562e2d1a6f7c9e5f8",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/timing_intent.rpt": "669b79ad8245a10116e6c045051a3ee53362118d88bc7e8f12711f5a5a8b31d7",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/constraints.sdc": "1d992d31ea34abacd6ef96eaaa267dad3152ed54ae2a6494d4c2fd95ea13f014",
+    ".cache/channel_scale_integration_20261120/mapping_v2/writer/console.log": "d62f35790e68627085bee72928c2be53d661b9516302de81448e22b7c6468699",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/native_status.json": "3014aa1aafc6fc05c71b600baa1a1ef5e71e3cb536462e8593aad41f63dd4c93",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/sources.json": "16e353c5ac646f06688085b95bc7f2244270befebae6ff06847e9ae686871e7a",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/netlist.v": "e548b1a394ace361d719ad4ac5b2beb5cb5e20b121c4ee61fa5cd9364ffb6acd",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/area.rpt": "9297708112a6f046b45f44797d08d4ab6d66dfc18d1504a993dec20814a916b3",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/timing.rpt": "c7754433c9ca2ed3b962f7037b0ff1a6694e9dee4b845e3d457c3108b7e8dfd6",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/unresolved.rpt": "5cff34975a0a941436a2bab97aa2b730d7b8d0c13b37c04a2b11750ae51449c9",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/timing_intent.rpt": "9fa9359b918c804fece5e0c6db42df37640135c6b80b0146a66062b245d602c3",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/constraints.sdc": "c5a59c14685bcb24bb2a23dfc7918548cd85f13d5048b5df51bf620586f445de",
+    ".cache/channel_scale_integration_20261120/mapping_v2/arbiter/console.log": "bd1babd421cda79336e92b896f5ab949dc5b8c98aa97c83de509aae077c7d38f",
+    ".cache/channel_scale_integration_20261120/linked_v1/linkage.json": "d826059505a2133ecce7d06a58973a72233cd52afd50a1f843e0384e18aa6f4f",
+    ".cache/channel_scale_integration_20261120/linked_v1/preservation.json": "ce61b32de6b5294703ae5671945b04fcfc2cd3cf2378d04721a9f13175593f87",
+    ".cache/channel_scale_integration_20261120/link_current.py": "0ff9a0ee0475406428588f6ea2322fd35caad70234455413363a222e87a080d1",
+    ".cache/channel_scale_integration_20261120/check_linked_v2.py": "95f3bb6b6db672f4ea1a2c270c5c8062e0437e3b98350242c6db45729e6b12cc",
+    ".cache/channel_scale_integration_20261120/test_link_closure.py": "2dffafea17daa0890f57a0a199555e962dae1c5b773ec534dbf84822c2698fc4",
+    ".cache/channel_scale_integration_20261120/link_closure_red.log": "6c2f48c60fa285a70597d2aae7336af67f3980f76fe1bf45e17e022c958e8ec7",
+    ".cache/channel_scale_integration_20261120/link_closure_green.log": "dcd2147edfda2291b456dfb6d9f3021f0fed07760d5a1c8869fc5446f30e28fe"
+  }
+}
