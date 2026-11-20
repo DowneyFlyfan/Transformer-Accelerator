@@ -1,0 +1,94 @@
+{
+  "state": "all_nine_ordinary_host_link_response_source_packet_epochs_verified",
+  "scope": "Two-state Boolean safety proof of the reproduction's three-word ordinary response SOURCE at the host command link. It proves packet order and tag/status lifetime after a response becomes visible. Appended result payloads, physical-pad delivery, service liveness and numerical inference remain separate unfinished work.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "parent_word_stability_record": "records/tri_oracle_native_completion_word_stability.json",
+    "actual_chip_state_added": 0,
+    "circuit_changed": false
+  },
+  "response_format": {
+    "word_bits": 16,
+    "words": 3,
+    "order": [
+      "dispatcher-latched tag bits15:0",
+      "dispatcher-latched tag bits31:16",
+      "12zero reserved bits, error bit,3-bit opcode"
+    ]
+  },
+  "method": {
+    "cases": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "error"
+    ],
+    "software_observer_bits": 49,
+    "snapshot_initialization": "arbitrary, with only the observer owner flag reset",
+    "capture": "first valid appearance, including a stalled first word",
+    "counter": "Actual physical counter holds or advances0->1->2->0 only on accepted words.",
+    "retirement": "The accepted third word clears dispatcher ownership and resets the counter.",
+    "lifetime": "Every visible word and last flag matches the original48-bit snapshot through all subsequent accepted-word and stall patterns.",
+    "untracked_values": "No input or storage zeroing premise. Universal equality checks prove actual valid/tag/status match a state-only reference for every untracked value. The independent audit uses opposite reference assignments and a tag-first packet construction.",
+    "serialized_certificates": 9,
+    "certificate_physical_register_bits_by_case": {
+      "0": 104,
+      "1": 110,
+      "2": 176,
+      "3": 176,
+      "4": 213,
+      "5": 113,
+      "6": 43,
+      "7": 43,
+      "error": 40
+    }
+  },
+  "verification": {
+    "producer_positive_queries": 108,
+    "producer_fault_scenarios": 12,
+    "independent_positive_queries": 99,
+    "independent_fault_scenarios": 12,
+    "independent_fresh_symbols": 55871,
+    "actual_fault_scenarios": "Nine saved-tag next-bit corruptions across the nine cases, plus one real writeback-status bit corruption while the first tag word stalls.",
+    "observer_fault_scenarios": "Corrupted first capture and incorrectly asserted observer owner during reset.",
+    "independent_certificate_equivalence": true,
+    "arbitrary_untracked_input_and_storage_variation": true,
+    "producer_guard_seconds": 27.173293181927875,
+    "producer_peak_resident_bytes": 288669696,
+    "independent_guard_seconds": 132.79405263089575,
+    "independent_peak_resident_bytes": 593203200
+  },
+  "qualifications": {
+    "ordinary_three_word_source_packet_epoch": true,
+    "dispatcher_latched_tag_and_opcode_echo": true,
+    "source_status_lifetime": true,
+    "received_host_command_tag_origin": false,
+    "appended_head_grouped_writeback_status_payload_epochs": false,
+    "physical_pad_packet_delivery": false,
+    "complete_host_memory_data_epochs": false,
+    "command_service_liveness": false,
+    "current_trained_fixture_complete": false,
+    "full_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    "records/tri_oracle_native_completion_word_stability.json": "3cb08b9e6d376c0ca63542fe12674b73ad478e5c6e33d7ecf567399c0b3d85a9",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_completion_model_v1.py": "b1e5ca116a6b95a7234e93fb4a1664bf160bbc8c605a339b432718d6b1d6a9a1",
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_response_packet_epoch_v3.py": "36b00ecaeab51d9d88506134bdd5d81a55d3fa574cd2342ce34a3183c79d97c8",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_response_packet_epoch_v3.json": "bdca9fd0e91b3fa161152bb0009e86f62caf6c186ce778df08d046b48cfce2cc",
+    ".cache/wide_packaged_host_link/owner_score_proof/response_packet_epoch_guard_v3/source_anchor.json": "e49fd4b4b2cc56e35cbbdd24f2b6737bf921661989b1ed536abb83cd9c209015",
+    ".cache/wide_packaged_host_link/owner_score_proof/response_packet_epoch_guard_v3/guard_receipt.json": "7119deb11585ac554ca9e55a2530e0c410291033aee36015851528b44fb83d05",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_response_packet_epoch_v1.py": "88804df85a610e0db0cb3c26b2cf4e036e63cd2b2d529714417fd37c1dd3f11b",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_response_packet_epoch_v1_independent_audit.json": "8a60406be670880ffd68b45a6607220ba22ad2566204f4cf0d37597457c4d581",
+    ".cache/wide_packaged_host_link/owner_score_proof/response_packet_epoch_independent_guard_v1/source_anchor.json": "48f6ef3a8af2075fc7b07f78630da0f1d5938a76aba70b7b8f972f0848686033",
+    ".cache/wide_packaged_host_link/owner_score_proof/response_packet_epoch_independent_guard_v1/guard_receipt.json": "e6f6b1d845c9b80ad7fb9ba5723060f4bcf7554efc7d978cb7e01fecd783e9bd"
+  }
+}
