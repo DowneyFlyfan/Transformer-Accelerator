@@ -1,0 +1,32 @@
+{
+  "state": "tracked_linker_reproduces_current_channel_candidate_byte_for_byte",
+  "candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
+  "inner_command_sha256": "fd84b6332671393f8e534497eec367bd25ed23ae12866a1fd6f07474c524033a",
+  "source_baseline_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+  "output_file_bytes": 914342892,
+  "tests": 9,
+  "candidate_and_inner_module_byte_hashes_identical": true,
+  "scope": "Reproduction of the already tested legacy-compatible candidate assembly. Adds output-path controls and complete local linkage provenance; not a new model, placement or routing qualification.",
+  "limitations": [
+    "Requires the existing pinned baseline, mapped blocks, saved parent snapshot and library bundle under .cache.",
+    "No full-model, paper, timing, power or routing qualification."
+  ],
+  "qualifiers": {
+    "candidate_reproduced": true,
+    "channel_scaled_functional_verified": false,
+    "placed": false,
+    "routed": false,
+    "paper_matching": false,
+    "routing_release": false
+  },
+  "evidence_sha256": {
+    "syn/link_tri_oracle_channel_scale.py": "6b156229e7c951f606545417ab08211f6491f8b47d92339096a839106764656c",
+    "syn/test_tri_oracle_channel_link.py": "b5043d12c57c3df8c96cc569de2b3e4be81b1b1f703a13eca5d319201251c2c1",
+    ".cache/channel_scale_integration_20261120/public_linker_controls.log": "1ebdce91439e9bfc7a21d0017ff6adf6c8480a0f84b52a3bd00476c3ff1911d8",
+    ".cache/channel_scale_integration_20261120/tracked_linker_reproduction.log": "37bc2fcd5a00df441e2d91b20d9a3bc744028b0cf621f7d27deffe95719dc440",
+    ".cache/channel_scale_integration_20261120/tracked_linker_launch.json": "2e742fd6b7574bcbbf4d74ac4de7e39280507b11272a2ee82e6fe35274662e63",
+    ".cache/channel_scale_integration_20261120/tracked_linker_reproduction_v1/linkage.json": "685da87302ff209cf7c4d8d9ef63888808619010028fc392b09fec51895c4a86",
+    ".cache/channel_scale_integration_20261120/linked_v1/linkage.json": "d826059505a2133ecce7d06a58973a72233cd52afd50a1f843e0384e18aa6f4f"
+  },
+  "reproduction_changes_design_logic_or_ports": false
+}
