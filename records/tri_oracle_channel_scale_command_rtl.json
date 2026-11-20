@@ -1,0 +1,52 @@
+{
+  "configuration": "Default grouped-batch configuration, eight command operations.",
+  "evidence_sha256": {
+    ".cache/channel_scale_integration_20261120/green/xrun.log": "5a62e821d6075929167993cf0d526d88b0954934851a2bcffd44e5ed0b541844",
+    ".cache/channel_scale_integration_20261120/plan.md": "4aa19d661ab913ed7ca250b4f680c0fcd1125679e692975c3b60fceef05bf2f8",
+    ".cache/channel_scale_integration_20261120/red_v2/xrun.log": "2212e3b7ff70cb39c920342a8800bc26051a0e11dbcb9681d08ff1101fa6108e",
+    ".cache/indexed_dispatch/indexed.sv": "895de23a4174da89bebbb089a14d4d8b23c1efe5c760a888e4374b16193f2b7d",
+    "verilog/tri_oracle_channel_dispatch_tb.sv": "aef6a44ee9054e4560627c07caf1fb0fac596132b9b4773bd2fd800872c3a0d7",
+    "verilog/tri_oracle_channel_indexed_dispatch.sv": "251d71cc54614ba969253ffcbe4a70f2d0cbf10043f771e5519a6ae2c395b88f"
+  },
+  "module": "tri_oracle_channel_indexed_dispatch",
+  "native": {
+    "channel_modes": 2,
+    "compiler_errors": 0,
+    "compiler_warnings": 0,
+    "container": "tri-oracle-eda",
+    "issue_and_completion_backpressure_checked": true,
+    "legacy_after_channel_modes": 3,
+    "legacy_cases": 13,
+    "malformed_extension_cases": 6,
+    "new_dispatcher_exit_status": 0,
+    "old_dispatcher_expected_failure": true,
+    "reset_during_extension": 1,
+    "tool": "Cadence Xcelium25.03",
+    "verible_syntax_exit_status": 0
+  },
+  "protocol": {
+    "base_descriptor_bits": 960,
+    "legacy_indexed_format": 1,
+    "legacy_indexed_words": 16,
+    "legacy_scalar_words": 15,
+    "new_channel_format": 2,
+    "new_channel_indexed_format": 3,
+    "new_channel_words": 17,
+    "scale_address_bits": 64,
+    "scale_table_alignment_bytes": 8,
+    "scale_table_bytes": 1024
+  },
+  "qualifications": {
+    "backward_compatibility_formally_proven": false,
+    "calibrated_full_model_hardware_verified": false,
+    "channel_writer_and_memory_arbiter_integrated": false,
+    "current_placed_chip_integrated": false,
+    "new_control_unit_simulated": true,
+    "new_control_unit_synthesized": false,
+    "paper_matching": false,
+    "routing_release": false
+  },
+  "setup_failure_preserved": "The first private test setup duplicated constant drivers; its failed compile and source remain under.cache. The corrected test has no compiler warnings and was used for both functional red and green runs.",
+  "source_scope": "Register-transfer-level command decoding only. Tested old dispatcher rejects the first new channel format after passing the legacy cases; new dispatcher passes the same test plus malformed and reset cases. No current placed-design modification.",
+  "state": "channel_scale_command_extension_rtl_verified"
+}
