@@ -1,0 +1,132 @@
+{
+  "state": "reviewed_buffer_branch_repair_placement_and_screened_three_corner_pin_loads_verified",
+  "technology": "Taiwan Semiconductor Manufacturing Company28HPC+",
+  "tool": "Cadence Innovus25.10 / Xcelium25.03",
+  "problem": "The previous legally placed candidate retained24raw-library slow-corner pin-load violations. Fragmented free sites prevented direct insertion of the selected17-site buffers.",
+  "change": {
+    "buffer_master": "BUFFD12BWP12T40P140",
+    "added_noninverting_buffers": 94,
+    "repaired_internal_nets": 24,
+    "rewired_sink_pins": 27851,
+    "modified_modules": 23,
+    "physical_occurrences_per_modified_module": 1,
+    "added_state_bits": 0,
+    "same_row_compaction_moved_cells": 11276,
+    "maximum_extra_displacement_um": 2.38,
+    "vertical_transfers": 0,
+    "added_occupied_sites": 1598
+  },
+  "candidate": {
+    "previous_cold_netlist_sha256": "420ef2b45a62373d2ce63fa65bd6fa73a2eeddd891652305aa3df02f9333d12f",
+    "staged_netlist_sha256": "a05306c6159a5467f363d2c69650df6d55d20c7cf41d8f2e333a13638cbb4b74",
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "native_layout_sha256": "972c00ebcfecfa5b2f374fe36d9cd7bca2f06ff84a92c516f66cbc57af0ac54f",
+    "saved_database_fingerprint_sha256": "c31413536defb012d91058002c8eed701a8d60eb0112aff9aeb0d738c63ba141",
+    "module_count": 771,
+    "all_original_component_poses_match_compaction_seed": true
+  },
+  "physical": {
+    "total_instances": 3900126,
+    "standard_cells": 3899495,
+    "fixed_memories": 631,
+    "array_regions": 20,
+    "members_per_array_region": 54584,
+    "unplaced": 0,
+    "site_overlaps": 0,
+    "remaining_sites": 440610,
+    "all_fences_memory_halos_pins_and_501_obstructions_preserved": true
+  },
+  "pin_load_screen": {
+    "minimum_default_sink_count": 64,
+    "explicit_repaired_root_nets_below_threshold_retained": 24,
+    "new_branches_independently_confirmed_in_each_table": 94,
+    "operating_corners": {
+      "setup_slow": "0.90V125C",
+      "setup_typ": "1.00V25C",
+      "hold_fast": "1.05Vminus40C"
+    },
+    "corners": {
+      "hold_fast": {
+        "screened_nets": 15573,
+        "raw_library_pin_limit_exceedances": 0
+      },
+      "setup_slow": {
+        "screened_nets": 15573,
+        "raw_library_pin_limit_exceedances": 0
+      },
+      "setup_typ": {
+        "screened_nets": 15573,
+        "raw_library_pin_limit_exceedances": 0
+      }
+    },
+    "scope": "Raw Liberty input-pin capacitance sums for the eligible single-driver population plus24named repaired roots. This is not an extracted-wire, slew, all-net or timing-closure check."
+  },
+  "verification": {
+    "native_exit_status": 0,
+    "native_seconds": 386.28000302403234,
+    "minimum_host_available_bytes": 7723642880,
+    "peak_container_anonymous_bytes": 11882717184,
+    "independent_export_proof_seconds": 76.17840366112068,
+    "native_export_module_semantics_and_full_component_geometry_preserved": true,
+    "central_and_graphics_processor_plan_sites_agree": 94,
+    "public_helper_tests_with_unpublished_sources_denied": 18,
+    "public_parser_source_definitions_equal_executed_parser": true,
+    "public_checker_actual_modified_module_proofs": 23,
+    "public_checker_unchanged_bodies": 748,
+    "foundry_model_four_state_driver_cases": 16,
+    "buffer_depths": [
+      1,
+      2
+    ],
+    "original_cell_truth_positive_exit": 0,
+    "wrong_polarity_cell_control_exit": 2,
+    "public_cell_bench_marker_and_finish_verified": true,
+    "public_cell_bench_controller_exit_independently_captured": false
+  },
+  "review": {
+    "final_feature_reviews": 1,
+    "critical_issues": 0,
+    "important_issues_found": 1,
+    "important_issues_resolved": 1,
+    "fix": "Made the published logic parser self-contained using exactly the executed pure definitions. The proof function remains unchanged; all18tests pass with unpublished sources denied, and all23actual modified modules pass the public checker.",
+    "resolution_sha256": "77313eaca60364ac620b6ae4ec4d5190c38af67d60c606262f3b6534b58b5d40"
+  },
+  "qualifications": {
+    "settled_four_state_buffer_composition": true,
+    "saved_database_fresh_reload": false,
+    "new_candidate_whole_chip_trained_replay": false,
+    "full_model_accuracy": false,
+    "wire_timing_closure": false,
+    "clock_distribution_or_whole_chip_routing_started": false,
+    "paper_results_matched": false,
+    "paper300_advancement_allowed": false
+  },
+  "source_sha256": {
+    "syn/tri_oracle_row_pack.py": "b992226914b0fa942c99032a51356aab9bda6fa4d9041b3a4ec3489f1c0d6f04",
+    "syn/tri_oracle_buffer_branch_logic.py": "4650f4bbb09c632e43016de5f8bc36b962d3ac072313745b86abf09f92d21c39",
+    "syn/tri_oracle_explicit_pin_tables.py": "15ad50b96f568cacdb17e776116977f7b318499f01cb82a813d9c0d97727a694",
+    "syn/tri_oracle_mapped_module.py": "9653b6321e6b354f98b3a2e1e9722d4f77b2baf25e936d58165432598a9cec42",
+    "syn/test_tri_oracle_row_pack.py": "98ae1cd261b634662b908863327978a240eb8c8e70d5619a2610328d59278101",
+    "syn/test_tri_oracle_buffer_branch_logic.py": "2561cf47c925776fe3ad63b1749bd7539b356f4b05222df38262e8f4cf17e117",
+    "syn/test_tri_oracle_explicit_pin_tables.py": "8569fc8447dae1c1e72067c9329402f66d03f730da03831e3ddf532ec0a6a5c4",
+    "verilog/tri_oracle_buffer_branch_truth_tb.sv": "5811d768bd47cd91343ccd005d8e3c9b37492bddb53c8d32185848a48c1aed07"
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/compaction/prepared.json": "4b4e5ad5594a8f0be467b0bdd3a41c7127a1b2f080e08ebc8f9e921cae8bc3f4",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/buffer_plan/verified_plan.json": "512e4feb4ba6cddbb40df868fb814e0a6a7830383048cc88f385e376cc2be268",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/candidate_v2/prepared.json": "48652cf28635903acf19562f27d299f8880065a3dc842e51b4c07c55e40f51ab",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/truth/verified.json": "9c9efe1ed7557117c857795b4a197f39606ea3511cfbf2eadec76766607a58bc",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/truth/published_verified.json": "27ede7d5bc727cb1e7b0cacfb93b5863c4f99d07cc914990635a9b782ab991e3",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/status.json": "42326c1ecb0fe24bf020cbbf85220a84ac53751e65ef7e07c8b95ea868dd0c1d",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/verified_exports.json": "b62e57b125cdb501f887983c9c86c45a6d6e1fc3a55a2af9b10e7a6a0d15aea4",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/verified.json": "d708e36cb9b699ba981b67b49a4c389e803c42c134fceba02dea0ea55a3b9c76",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/violations.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/postrun_v2/verified.json": "749241175010edd0789b9e3e93ed059d113a19eedac998167e8a059f8278ed55",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/buffer_review.md": "fcbf7a632a7f45f047388fc83351a49b1da3f4fdd79563a82ce5b738076434d2",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/review_resolution.json": "77313eaca60364ac620b6ae4ec4d5190c38af67d60c606262f3b6534b58b5d40",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/public_imports_verified.json": "5f6d326d36b2eeae03fbc024205b62ffb18c649394cbe1e6ebae14c5d4cccede",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/public_logic_actual_candidate_verified.json": "d9983f14d04da7a3415d24d682c657d4e5bc115b9d3c4aa10bbe2befc3609dfa",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/public_parser_extraction.json": "13b8d6d3f9e6431527ac71461d0d6df2f7844260657b9610038542c23aa89c29"
+  },
+  "scope": "Verified static noninverting-buffer repair, full legal placement, native export identity and screened three-corner pin loads on this TSMC adaptation. The earlier trained whole-chip fixture predates these buffers; its pass is not credited to this candidate. The paper300 hold remains in force."
+}
