@@ -1,0 +1,59 @@
+{
+  "state": "native_serial_dispatch_current_header_payload_history_independently_verified_scoped_diagnostic",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "technology": "TSMC28HPC+ local reconstruction",
+  "boundary": "Actual native single-group and batch dispatcher serial command interface.",
+  "physical_control_register_bits": 12,
+  "physical_resetless_payload_register_bits": 1664,
+  "ghost_history_bits": 1700,
+  "physical_payload_initial_values_unconstrained": true,
+  "native_payload_words_by_opcode": {
+    "6": 5,
+    "7": 26
+  },
+  "proven_behavior": [
+    "Native issue/complete requires a current accepted dispatcher header with matching opcode.",
+    "Every required64-bit payload word matches an accepted word captured since that header, in its original position.",
+    "A final marker is required on the final word; short or missing-final-marker frames cannot issue normally.",
+    "Global reset invalidates logical history without assuming zero contents in resetless payload registers.",
+    "The certificate is preserved by actual mapped clock updates and optional local-asynchronous reset updates."
+  ],
+  "binding_checks": 3,
+  "native_protocol_transition_checks": 14,
+  "original_history_checks": 6,
+  "independent_fresh_namespace_checks": 6,
+  "all_check_domains_nonempty": true,
+  "nonempty_mode_domains": 10,
+  "full_host_reachability_from_mode_domains_claimed": false,
+  "model_only_history_fault_controls_detected": 7,
+  "wrong_certificate_controls_rejected": 3,
+  "helper_regression_tests_passed": 8,
+  "independent_audit": "Reparsed actual mapped equations in a fresh namespace, checked the exact intended invariant and all1664 physical payload bits in order, independently rebuilt history successors, and rechecked reset/clock/local-asynchronous preservation and complete native issue.",
+  "protocol_probe_correction": "Initial probe used the wrong state-code interpretation. Actual payload readiness covers states1,2,6; native epochs exclude special indexed-receive state6, and malformed native frames enter state5. Corrected14-query probe passed. No circuit change was made.",
+  "elapsed_seconds": {
+    "state_extraction": 19.670228719012812,
+    "corrected_protocol_probe": 8.119962489930913,
+    "history": 9.089921613922343,
+    "independent_audit": 5.404756325064227
+  },
+  "scope": "Component-local two-state command framing and payload provenance on the frozen mapped candidate. Mode witnesses are satisfiable domains. Model-only faults test the proof checks; this result does not establish complete host/router or batch/group delivery, full mapped workload correctness, timing, energy, accuracy or paper matching.",
+  "authenticated_local_evidence": {
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_payload_v1.json": "fdf5410b74d72062401ec84a7a572940f60e566c4d59d839463f675c54097ab2",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_protocol_v3.json": "93bf61f09694c472adc2a62d9139911bcab407da05970292704ee1af187f9ac4",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_history_v1.json": "26832e55d75cb429377d7b58c7b800e948123bf2ccd0661d640ef40cfe0d1b0a",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_history_audit_v1.json": "23532b77e6699d20ba9addd4fe266bbae82f4a12fcf8aeae5dbb9a2a54e52643",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_payload_v1_guard_receipt.json": "aedc1102d8db67637b4a145bdbdd8fd46373669de70b479563147df394067420",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_protocol_v3_guard_receipt.json": "69382500d8af6ef28f108d5f08a66393e96f3f0758927c1f781602c4e1d7898a",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_history_v1_guard_receipt.json": "2f93b42ef26ba9cc77999e265baefcc7b3affc7a1ecd4199f71e02deb1d20583",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_history_audit_v1_guard_receipt.json": "941dc6c095e2f426c0c09247f9087acfceff2958e131ea298595cfc412d58f18",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_dispatch_payload_framing_green.log": "ef1311928ab11fb82d8bacec3c5cb33b0c9d4fd6d8b7b1a650bea2b2a5520af0"
+  },
+  "accepted_serial_command_payload_history_verified": true,
+  "host_router_delivery_verified": false,
+  "command_tag_return_mapping_verified": false,
+  "batch_group_descriptor_selection_verified": false,
+  "full_native_data_epochs_verified": false,
+  "independent_final_native_feature_review_done": false,
+  "paper_performance_matching_established": false,
+  "advance_to_clock_distribution_or_routing_allowed": false
+}
