@@ -1,0 +1,480 @@
+{
+  "state": "all22_single_layer_prompt_text_precision_task_interventions_completed_and_independently_scored",
+  "scope": "Software diagnostic on the reused160-question panel. At one fixed layer per run, only original ordinary prompt-text rows return the original trained32-bit floating MLP output; all integer work still executes as a shadow. This identifies observed task consequences of replacing one integer approximation. It proposes no floating chip and establishes no mapped-hardware or paper-accuracy result.",
+  "model": {
+    "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+    "layers": 22,
+    "normalization_and_trained_weights_unchanged": true,
+    "original_integer_formats_unchanged": true
+  },
+  "protocol": {
+    "questions_per_layer": 160,
+    "unique_images": 131,
+    "new_answers": 3520,
+    "complete_integer_controls": 8,
+    "complete_all_text_float_controls": 8,
+    "fixed_layer_order": [
+      7,
+      15,
+      16,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "original_roles_remaining_integer": [
+      "first row",
+      "original image interval",
+      "all decoding rows"
+    ],
+    "all_other_layers_remaining_integer": true,
+    "generation": "Greedy complete answers, end token2 or maximum128 new tokens; exact baseline prompt and string normalization.",
+    "original_integer_path_executed_as_shadow": true,
+    "all22_targets_fixed_before_execution": true,
+    "no_early_stop_or_design_change_from_partial_scores": true,
+    "fit_performed": false,
+    "policy_installed": false,
+    "reused_panel": true,
+    "blind_generalization": false,
+    "upstream_validation": "Retained-slot and vision-root COUNT vectors through target layer inclusive, from original all-integer prefill archive. No per-token root map, selected-head identity or prefix-activation equality claim."
+  },
+  "results": {
+    "current_integer_correct": 91,
+    "all22_text_float_reference_correct": 102,
+    "layer_results": [
+      {
+        "layer": 0,
+        "correct": 90,
+        "gains": 7,
+        "losses": 8,
+        "net_correct": -1,
+        "by_type": {
+          "choose": 23,
+          "compare": 13,
+          "logical": 17,
+          "query": 14,
+          "verify": 23
+        },
+        "predictions_sha256": "0c546440b9fe5296fb5a20793eed9a4f233aa1e314287564b4811c9d2155752e"
+      },
+      {
+        "layer": 1,
+        "correct": 91,
+        "gains": 9,
+        "losses": 9,
+        "net_correct": 0,
+        "by_type": {
+          "choose": 22,
+          "compare": 13,
+          "logical": 21,
+          "query": 10,
+          "verify": 25
+        },
+        "predictions_sha256": "4f55a16886d2e85915579859983ab2b40a9abc73d223971030b1987ff090dfb8"
+      },
+      {
+        "layer": 2,
+        "correct": 94,
+        "gains": 11,
+        "losses": 8,
+        "net_correct": 3,
+        "by_type": {
+          "choose": 22,
+          "compare": 14,
+          "logical": 21,
+          "query": 14,
+          "verify": 23
+        },
+        "predictions_sha256": "148c7ccca031e0c0bf7950b08b98ddd90142a54af170153833a069a986482ea0"
+      },
+      {
+        "layer": 3,
+        "correct": 94,
+        "gains": 10,
+        "losses": 7,
+        "net_correct": 3,
+        "by_type": {
+          "choose": 22,
+          "compare": 14,
+          "logical": 23,
+          "query": 12,
+          "verify": 23
+        },
+        "predictions_sha256": "e059694efec52039b00c15e513455a3cef6e4d015e6694a41af60d5cb88ade00"
+      },
+      {
+        "layer": 4,
+        "correct": 89,
+        "gains": 6,
+        "losses": 8,
+        "net_correct": -2,
+        "by_type": {
+          "choose": 21,
+          "compare": 14,
+          "logical": 22,
+          "query": 11,
+          "verify": 21
+        },
+        "predictions_sha256": "53e68d5979dec5d8a4367c12b3d7b6f6ab6fd8b559faba530d5273ac76bf1ad3"
+      },
+      {
+        "layer": 5,
+        "correct": 90,
+        "gains": 6,
+        "losses": 7,
+        "net_correct": -1,
+        "by_type": {
+          "choose": 20,
+          "compare": 13,
+          "logical": 22,
+          "query": 13,
+          "verify": 22
+        },
+        "predictions_sha256": "fdb351977aef3161801b20567916a393b7e7f045ed00657dcd9a7fbac8fb5f61"
+      },
+      {
+        "layer": 6,
+        "correct": 91,
+        "gains": 6,
+        "losses": 6,
+        "net_correct": 0,
+        "by_type": {
+          "choose": 22,
+          "compare": 14,
+          "logical": 20,
+          "query": 13,
+          "verify": 22
+        },
+        "predictions_sha256": "179dfa8dddbdb5c6abd1987a283b0c47d4dd70fe646f9cd1abb6e88f19472f32"
+      },
+      {
+        "layer": 7,
+        "correct": 91,
+        "gains": 8,
+        "losses": 8,
+        "net_correct": 0,
+        "by_type": {
+          "choose": 23,
+          "compare": 13,
+          "logical": 20,
+          "query": 13,
+          "verify": 22
+        },
+        "predictions_sha256": "d6f7b1025505a48afe64dcd6cabad3ea969efdf143fc666b8e994706c9a2739d"
+      },
+      {
+        "layer": 8,
+        "correct": 92,
+        "gains": 6,
+        "losses": 5,
+        "net_correct": 1,
+        "by_type": {
+          "choose": 22,
+          "compare": 14,
+          "logical": 20,
+          "query": 13,
+          "verify": 23
+        },
+        "predictions_sha256": "7b04c8301539e61b053055a128836c6aa3ff6a5dcc3e5a774d57ef26c300b78c"
+      },
+      {
+        "layer": 9,
+        "correct": 93,
+        "gains": 5,
+        "losses": 3,
+        "net_correct": 2,
+        "by_type": {
+          "choose": 21,
+          "compare": 14,
+          "logical": 22,
+          "query": 13,
+          "verify": 23
+        },
+        "predictions_sha256": "e4b6fcec51d7b49c87f634a48f7ddce8dd59f951aedebf08a42b23e6b4f823a4"
+      },
+      {
+        "layer": 10,
+        "correct": 92,
+        "gains": 6,
+        "losses": 5,
+        "net_correct": 1,
+        "by_type": {
+          "choose": 20,
+          "compare": 15,
+          "logical": 21,
+          "query": 14,
+          "verify": 22
+        },
+        "predictions_sha256": "f017b76be8bd435cc937ed009344b7a7a6e4ebe5e6ce7ef7ab916a7fa55f9c05"
+      },
+      {
+        "layer": 11,
+        "correct": 84,
+        "gains": 3,
+        "losses": 10,
+        "net_correct": -7,
+        "by_type": {
+          "choose": 19,
+          "compare": 14,
+          "logical": 17,
+          "query": 13,
+          "verify": 21
+        },
+        "predictions_sha256": "8116adde340d4683764f229624da45ef013452803c3b904bce13d935cb123b2d"
+      },
+      {
+        "layer": 12,
+        "correct": 86,
+        "gains": 3,
+        "losses": 8,
+        "net_correct": -5,
+        "by_type": {
+          "choose": 20,
+          "compare": 15,
+          "logical": 18,
+          "query": 11,
+          "verify": 22
+        },
+        "predictions_sha256": "1c4e3e47a7a6f8f2f35f9936be21e2d431a05969ab1212ae722fb6059b4dbc63"
+      },
+      {
+        "layer": 13,
+        "correct": 92,
+        "gains": 6,
+        "losses": 5,
+        "net_correct": 1,
+        "by_type": {
+          "choose": 21,
+          "compare": 14,
+          "logical": 24,
+          "query": 11,
+          "verify": 22
+        },
+        "predictions_sha256": "99ba846a0fe97bc74f85924ac98d9b28eded7a981d9369d09493a30bbd4ba623"
+      },
+      {
+        "layer": 14,
+        "correct": 93,
+        "gains": 6,
+        "losses": 4,
+        "net_correct": 2,
+        "by_type": {
+          "choose": 21,
+          "compare": 14,
+          "logical": 20,
+          "query": 15,
+          "verify": 23
+        },
+        "predictions_sha256": "178ec0f625a68d3116c2e7fa388607afe90e1a923a6c044fe091520ea51e3dda"
+      },
+      {
+        "layer": 15,
+        "correct": 85,
+        "gains": 2,
+        "losses": 8,
+        "net_correct": -6,
+        "by_type": {
+          "choose": 20,
+          "compare": 13,
+          "logical": 17,
+          "query": 13,
+          "verify": 22
+        },
+        "predictions_sha256": "67a68057920699e2caa9b7f70733aef0725b3eceb1277dd5511471f6200bf7a4"
+      },
+      {
+        "layer": 16,
+        "correct": 92,
+        "gains": 4,
+        "losses": 3,
+        "net_correct": 1,
+        "by_type": {
+          "choose": 21,
+          "compare": 16,
+          "logical": 19,
+          "query": 14,
+          "verify": 22
+        },
+        "predictions_sha256": "bc62c0d90fd7d6dbc73108c719a0f01716120ff18dc0acffeb31646885fe136c"
+      },
+      {
+        "layer": 17,
+        "correct": 90,
+        "gains": 2,
+        "losses": 3,
+        "net_correct": -1,
+        "by_type": {
+          "choose": 20,
+          "compare": 15,
+          "logical": 21,
+          "query": 12,
+          "verify": 22
+        },
+        "predictions_sha256": "70c59707fd860636e14785ac68d4342629eca68a62595fe8d1238f8734dffbdc"
+      },
+      {
+        "layer": 18,
+        "correct": 91,
+        "gains": 2,
+        "losses": 2,
+        "net_correct": 0,
+        "by_type": {
+          "choose": 20,
+          "compare": 16,
+          "logical": 20,
+          "query": 13,
+          "verify": 22
+        },
+        "predictions_sha256": "19546291b3d96f85bc827637df42b50a8ea06997681e88650e567b890b484389"
+      },
+      {
+        "layer": 19,
+        "correct": 95,
+        "gains": 15,
+        "losses": 11,
+        "net_correct": 4,
+        "by_type": {
+          "choose": 22,
+          "compare": 16,
+          "logical": 20,
+          "query": 14,
+          "verify": 23
+        },
+        "predictions_sha256": "ce3f4c8e389ddb920e89bcf30b25e1a32b65d52f13a25cfe0f50a8a7cb7ad524"
+      },
+      {
+        "layer": 20,
+        "correct": 93,
+        "gains": 2,
+        "losses": 0,
+        "net_correct": 2,
+        "by_type": {
+          "choose": 21,
+          "compare": 15,
+          "logical": 21,
+          "query": 14,
+          "verify": 22
+        },
+        "predictions_sha256": "218c44bd1de7411876331799297a2734643c27543acd7e065faed6fa768f0bba"
+      },
+      {
+        "layer": 21,
+        "correct": 92,
+        "gains": 4,
+        "losses": 3,
+        "net_correct": 1,
+        "by_type": {
+          "choose": 19,
+          "compare": 16,
+          "logical": 21,
+          "query": 13,
+          "verify": 23
+        },
+        "predictions_sha256": "bc7d945e2464c5f8c662c9466cbed1964ca6b154d5125668230426a822760117"
+      }
+    ],
+    "best_observed_single_layer": {
+      "layer": 19,
+      "correct": 95,
+      "gains": 15,
+      "losses": 11,
+      "net_correct": 4
+    },
+    "layer7": {
+      "correct": 91,
+      "gains": 8,
+      "losses": 8,
+      "net_correct": 0
+    },
+    "effects_nonadditive": true,
+    "full12578_current_integer_baseline_unchanged": {
+      "correct": 6247,
+      "total": 12578
+    },
+    "full12578_new_candidate_executed": false
+  },
+  "interpretation": {
+    "local_activation_error_is_not_a_task_effect": "Despite its previously large pooled local text error, floating Layer7 alone gives zero net correct answers on this panel. Floating Layer15 loses6 and Layer11 loses7. No single-layer result reproduces the all22-text reference gain11.",
+    "selection_limits": "Layer19 has the largest observed net gain4 among22 tested targets on a reused small panel;15 gains and11 losses show substantial answer churn. This is a screening result, not a blind estimate or evidence that a calibrated integer alternative will improve.",
+    "next_corrective_direction": "Test integer-preserving Layer19 ordinary-text calibration using separate calibration/diagnostic images before a complete task check. Preserve the original candidate unless an actual integer correction passes its task gate."
+  },
+  "verification": {
+    "independent_complete_token_traces": 3856,
+    "independent_original_prompt_geometries": 160,
+    "independent_controls": 16,
+    "independent_scope_corruptions_rejected": [
+      "wrong_target_layer",
+      "floating_first_row",
+      "floating_decode_row",
+      "extra_target_text_row",
+      "wrong_original_image_start"
+    ],
+    "producer_guard_seconds": 2009.8717838600278,
+    "scalar_audit_seconds": 8.168095540022478,
+    "scalar_guard_seconds": 8.655289123067632,
+    "peak_gpu_bytes": 7713929216,
+    "peak_host_resident_bytes": 6768791552,
+    "minimum_available_host_bytes": 11856908288,
+    "primary_source_anchor_paths": 657,
+    "verification_source_anchor_paths": 666,
+    "independent_scope": "Independent raw-archive/token decoding, role/phase counts and upstream retained-slot/root COUNT consistency. No root-map/head-identity/prefix-activation equality or independent neural-model execution.",
+    "guard_sampled_peak_host_resident_bytes": 4883316736
+  },
+  "qualifications": {
+    "software_panel_diagnostic": true,
+    "formats_or_weights_changed": false,
+    "policy_installed": false,
+    "floating_hardware_proposed": false,
+    "integer_correction_improved": false,
+    "blind_generalization": false,
+    "new_full_benchmark": false,
+    "trained_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "paper_matching": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/layer_text_precision_scan_20261120/run_scan.py": "0a710f7a81e286d6310a81338ca1e691e4db6c3056ed4dccadc6e754a2fd5d8e",
+    ".cache/model_reference/layer_text_precision_scan_20261120/scope_checks.py": "20b2ba33be31cc95d036e687681befd93e3911d45068d25f27256d6a676ea8ad",
+    ".cache/model_reference/layer_text_precision_scan_20261120/verify_scan.py": "70eb5d50273f75c54e64c7fb09b6df7b8be0326e1e63fb475d6393031df8ad04",
+    ".cache/model_reference/layer_text_precision_scan_20261120/protocol.json": "dbacddb8c9acf4378ed9ac1e8fe24a5dd38780601cdd6132b66541bc31826d43",
+    ".cache/model_reference/layer_text_precision_scan_20261120/inputs.json": "44d9246bed5b17030a835db858f782b9981bcaab33d6f39dfd1066dd90713a4f",
+    ".cache/model_reference/layer_text_precision_scan_20261120/source_anchor.json": "606a465d7512c6389e85f8756d8f5feb82a671e62b1b18f3f67eb66857d31d16",
+    ".cache/model_reference/layer_text_precision_scan_20261120/guard.py": "092000517191020c1bf6b55e0643b520fe8f4cbfa0c45f71ed9270156e1e44da",
+    ".cache/model_reference/layer_text_precision_scan_20261120/guard_entry.py": "be01cee8e5447733c4ec3259d44009500133cdb8256db61362840e237c7843ec",
+    ".cache/model_reference/layer_text_precision_scan_20261120/launch.json": "dd83292ca94b4ea8e7a8d8de958ea94172acb78df02d9733ab518871e76ed82e",
+    ".cache/model_reference/layer_text_precision_scan_20261120/guard_receipt.json": "d639803220beed4c7c596c7e64f2278ad086b275760c3b75fa3034a10cde9483",
+    ".cache/model_reference/layer_text_precision_scan_20261120/receipt.json": "87ed99345404ae4d22dd28c2eb45b323eea85772f1898c940d0eac791c7189b7",
+    ".cache/model_reference/layer_text_precision_scan_20261120/controls.json": "8704e298189149efe9843a48284d42202b26c6d5b022fa8c9356ee998f3f2c3c",
+    ".cache/model_reference/layer_text_precision_scan_20261120/archived_controls.json": "2f05324772db1e115eb97fd043c6e14383d20833b336be303876ccf8b3db8a4f",
+    ".cache/model_reference/layer_text_precision_scan_20261120/completed_layers.json": "50884e04a42d5de08486d438adb5e4bf15cbef341e8626e21d7c7c89df050485",
+    ".cache/model_reference/layer_text_precision_scan_20261120/source_readiness_review.json": "60cee863dce40389ad55952c093559edbd9cf044b0a08599036af73beb87a5f3",
+    ".cache/model_reference/layer_text_precision_scan_20261120/postrun_waiter.py": "0c8fe81b9d50bdf383c25d14a21a432d0a76ce1a8fc0217418714461cfc9e645",
+    ".cache/model_reference/layer_text_precision_scan_20261120/postrun_launch.json": "c525d48444d55743929b4471777bf5d474e81c4532d60d9d2c114e8e271e5722",
+    ".cache/model_reference/layer_text_precision_scan_20261120/postrun_receipt.json": "f1e0dbe933b165eca18f98eb49d635f909fb867b05584c6562c79a756f60c38a",
+    ".cache/model_reference/layer_text_precision_scan_20261120/postrun_source_review.json": "b3ab0777f6bceee60275845f2e00c7522eee25f3aa84a654651e5c08c0ccac09",
+    ".cache/model_reference/layer_text_precision_scan_20261120/verification/source_anchor.json": "602d852879fe27540a35e8e81d06d5e967b119ecf112db4b19871a30ca5b8d59",
+    ".cache/model_reference/layer_text_precision_scan_20261120/verification/guard.py": "e4e93b04759ba76f9298288fcb1d41a5b29b219588ac9d4ff81b8054c2c26132",
+    ".cache/model_reference/layer_text_precision_scan_20261120/verification/guard_entry.py": "4466e828a89ba0ae70005c268c4485d788b829c7a672ca0edcde9163893cee17",
+    ".cache/model_reference/layer_text_precision_scan_20261120/verification/launch.json": "290cf7b0a0c10a76737fcc812ce3669a72b978d38ea3a3dfbfb02cf0f4cfe97f",
+    ".cache/model_reference/layer_text_precision_scan_20261120/verification/guard_receipt.json": "ffb1a8b1514af7dcdbab37b06facbdc5ceb8c0f6d49baeb7d57aad73b4c431b5",
+    ".cache/model_reference/layer_text_precision_scan_20261120/verification/independent_verified.json": "f4c6b1198f1a898491f61b481ceafe8fe7a2e41e013cd178472762587768fb8e"
+  }
+}

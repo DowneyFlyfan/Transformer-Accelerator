@@ -1,0 +1,118 @@
+{
+  "state": "current_mapped_buffered_physical_packet_order_safety_verified",
+  "scope": "Two-state Boolean safety proof on the current mapped candidate. Buffered grouped, writeback and status packets retain provider identity and exact accepted-word order across arbitrary stalls, through five physical four-bit parts per logical word. This proves conditional transfer ordering and terminal-flag placement, not eventual delivery or complete numerical payload provenance. Ordinary host responses and successful opcode4/5 append packets remain outside this increment.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "native_cold_netlist": ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/cold.v",
+    "actual_case_union_register_bits": {
+      "0": 2330,
+      "1": 2332,
+      "2": 2398,
+      "3": 2398,
+      "4": 2435,
+      "5": 2335,
+      "6": 2265,
+      "7": 2265,
+      "error": 2262
+    },
+    "circuit_modified": false
+  },
+  "framing": {
+    "logical_word_bits": 17,
+    "physical_data_pins": 4,
+    "accepted_parts_per_word": 5,
+    "final_part_padding_bits": 3,
+    "packet_lengths_words": {
+      "grouped": 132,
+      "writeback": 13,
+      "status": 4
+    },
+    "packet_markers_hex": {
+      "grouped": "a680",
+      "writeback": "a67e",
+      "status": "a684"
+    },
+    "terminal_flag": "Exactly at accepted-word offsets131,12,3 respectively; the final physical part carries this flag and three zero bits."
+  },
+  "method": {
+    "existing_software_observer_bits": 88,
+    "additional_software_observer_bits": 11,
+    "added_chip_state_bits": 0,
+    "new_observer_fields": {
+      "active": 1,
+      "provider_family": 2,
+      "accepted_words": 8
+    },
+    "capture": "First visible buffered-family word, even during a stall. No word-index or part-index capture guard.",
+    "capture_alignment": "Word0 and physical part0 follow from reset and clock induction of the stronger packet relation, rather than an assumed starting boundary.",
+    "word_count": "Advances only after the accepted fifth physical part, remains fixed during all other clocks, and clears on the accepted terminal word or reset.",
+    "cross_provider_phase": "A progressed grouped packet owns the downstream writeback/status source paths; a progressed writeback packet owns the status source path. These clauses are checked as part of reset/clock induction.",
+    "independent_auditor": "Reconstructs actual equations with completion-priority shared registers, 128-expression port substitution chunks, bitwise counter reconstruction, separate packet relation and recurrences, finite part-selection mux, and fresh solver symbols. Shared exports and the equation reader are reused.",
+    "red_to_green": "The word-only predicate fails the new complete-packet clock objective with a retained satisfiable witness. The stronger packet relation passes the unchanged objective on all nine actual case unions. This was missing proof state, not a chip fault."
+  },
+  "verification": {
+    "producer_positive_queries": 162,
+    "independent_positive_queries": 225,
+    "producer_corruption_controls": 36,
+    "independent_corruption_controls": 36,
+    "independent_fresh_symbols": 100539,
+    "all_condition_domains_nonempty": true,
+    "nonempty_domains_are_not_reachability_claims": true,
+    "model_only_corruption_controls": "Per case: observer word-count next bit, initial provider-family capture, physical terminal-part flag bit, and actual grouped formatter counter next bit.",
+    "producer_guard_seconds": 116.33866636198945,
+    "independent_guard_seconds": 305.50978504517116,
+    "minimum_available_host_bytes": 11863846912,
+    "guard_live_reserve_bytes": 11542724608,
+    "process_address_limit_bytes": 1610612736,
+    "solver_memory_limit_mebibytes": 512,
+    "producer_guard_sampled_peak_resident_bytes": 438079488,
+    "independent_guard_sampled_peak_resident_bytes": 543588352
+  },
+  "qualifications": {
+    "buffered_physical_packet_order_safety": true,
+    "ordinary_host_and_control_append_packet_order": false,
+    "accepted_command_tag_to_complete_wire_response": false,
+    "whole_packet_numerical_payload_provenance": false,
+    "eventual_delivery": false,
+    "independent_netlist_extraction": false,
+    "current_trained_fixture_complete": false,
+    "full_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "paper_matching": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_buffered_packet_order_red_v1.py": "e0a86daa57bf897d240cfabaf880a64dc7f46a2df3d10fc312ba86915332fab6",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_red_v1_failure.json": "e47f0263ffa9dafdd0f992e7ec3590f839bbcb8072748a0bbab8001fa057163d",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_red_v1/guard_receipt.json": "883468f11978c8788ce9959bd5b03003df4d112601804fedb873b9e1512cdb14",
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_buffered_packet_order_v1.py": "f1bf07fd676e190c80a8941279ab00512fe6412d248a30a1003d27c2b29dda0f",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1.json": "8f4f8ffeada8c83a890f7ae4f37a777252a68e067f53cf9058c73108af97ea41",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_v1/source_anchor.json": "c8d537b0fb874b8fb8cb9824e7fcc8942dba387d8d9bce4e3f5f5d41e0bc9ba2",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_v1/guard.py": "ea899a6f576c39b76c98a1ea7d18084be199a4de6ead8085f1cb7b79ac85542a",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_v1/guard_entry.py": "37747590d78d9cb192058ba611a27d5afde2c73b20042231524983041febc173",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_v1/launch.json": "75544b08b650b9af19f66560ff7271282573e5f619ff12800e9824a415819629",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_v1/guard_receipt.json": "adfc2da911400298228da927b98a8cc090a549a4ce51b419a545f267dda80674",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_buffered_packet_order_v1.py": "e2043d76a07bb439e17ae4f29de6c4e77800ad2d39e8762ea3881c2ff182034c",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_independent_audit.json": "fd2cc5775a7111c28003e55c8d54b5fddbcd64e1faac7b30116eccc07781c1f7",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_audit_v1/source_anchor.json": "b372c195b043d483c20193ad4b95a0c3a8ac63d0c48d1d97e658b88d64f8c9b3",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_audit_v1/guard.py": "ea899a6f576c39b76c98a1ea7d18084be199a4de6ead8085f1cb7b79ac85542a",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_audit_v1/guard_entry.py": "d799cab7a457fd967981ffcfc0b5d10e1b5e25dad48b17a695bfcb77e4a9ba7a",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_audit_v1/launch.json": "ee2aefac174c112e7c0e7191b3c48fbae11b23cb1ceda3a84ca188e4efe77154",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_audit_v1/guard_receipt.json": "159febae7d6e06a6c558fbfb02f80264f9dc1d331d4c1dc97b6ec2e1717e457f",
+    ".cache/wide_packaged_host_link/owner_score_proof/buffered_packet_order_plan_20261120.md": "8be0699b2a3ec73ccb23d7ff56606bba30a40cfbf9054b7638497ecf78157475",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_union_model_v2.py": "9c854f04f3746596b76784487fe2d0e8a139f75b6fd531937d7fd3e07b02f9ed",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case0_invariant.smt2": "9d3704f0d6f598a7d7b8f68ef675a2f8dd85f3cf360a47187327c4c501dd237d",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case1_invariant.smt2": "11adb7fe602b48c925bab3b614d690a24b1d725354f7c89da1af2d62b97e4fc2",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case2_invariant.smt2": "d6525e99d58b1e5869b775697d315d7c6da2798c2f97236df8344f4b5fe5412e",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case3_invariant.smt2": "f95006d75c97a54fe493b41772bfc42aa28d1f695de4c9b595ebd8bd168e8294",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case4_invariant.smt2": "1f970aabb4f2ab5e08bbf001d3147d4cd4398c05e52e850665da87345606b8ee",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case5_invariant.smt2": "1a64402fec9579a3ada0ff212ee53b9181ab4661ef479b021ef80230d6f3245f",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case6_invariant.smt2": "3a122338894049083665e16ed6cc2eb6fa93ed4b86bd6e8291e69238835d91a0",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_case7_invariant.smt2": "42ac0e0a34baab9a19ad3ee762f10be8e1925f88df19fdc85b46caf861d6ae61",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_buffered_packet_order_v1_caseerror_invariant.smt2": "420e48f2dc39f2c8ed9b434cc4d5ccbf20a299560982f88e448dab0d7b771f08",
+    "records/tri_oracle_native_pad_word_epoch.json": "6126372e8720847f0d6418504bbedb6f5777b7376369856404cbb33b03e02522",
+    "records/tri_oracle_native_return_union_induction.json": "1b4ef6a03261f3f9c7820c41ee65a4760f59fbdb6bbe82fd1fc7a7f6813c677a"
+  }
+}
