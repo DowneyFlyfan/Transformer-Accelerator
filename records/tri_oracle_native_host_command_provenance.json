@@ -1,0 +1,86 @@
+{
+  "state": "current_internal_received_command_header_to_response_fields_verified",
+  "scope": "Two-state Boolean safety proof after global reset for the lower35 command bits of the current placed reproduction at its internal16-bit receive boundary. Verifies header assembly, valid/ready acceptance, queue stalls and the accepted tag/opcode echoed by response fields. This transport is reproduction infrastructure; it is not a paper performance result.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "actual_chip_state_added": 0,
+    "circuit_changed": false
+  },
+  "command_format": {
+    "word_bits": 16,
+    "words": 3,
+    "order": [
+      "tag bits15:0",
+      "tag bits31:16",
+      "opcode bits2:0 in third word"
+    ],
+    "reserved_third_word_bits": 13,
+    "reserved_bits_validated": false
+  },
+  "method": {
+    "tracked_physical_register_bits": 77,
+    "resetless_receive_data_bits": 35,
+    "software_observer_bits": 74,
+    "receive_snapshot_bits": 35,
+    "receive_word_mask_bits": 3,
+    "accepted_snapshot_bits": 35,
+    "accepted_seen_bits": 1,
+    "history": "The receive observer updates only on an actual valid/ready receive transfer. The accepted snapshot updates only on an actual valid/ready command transfer. A queued command cannot relabel the last accepted command.",
+    "reset": "Only observer validity and write history reset. Receive data and both software data snapshots remain initially arbitrary.",
+    "lifetime": "The most recently accepted tag/opcode is retained through response retirement until another actual command acceptance or reset. The accepted-seen flag is not an active-service flag.",
+    "induction": "Reset basis and actual-cell clock induction use the same77 physical current/next register equations. Untracked inputs and storage remain arbitrary.",
+    "future_input_immunity": "The two command/response field expressions depend on70 tracked physical bits and no input or untracked-state symbols. The independent audit also varies all nontracked equation symbols."
+  },
+  "verification": {
+    "producer_positive_queries": 10,
+    "producer_fault_scenarios": 4,
+    "independent_positive_queries": 9,
+    "independent_fault_scenarios": 4,
+    "independent_fresh_symbols": 8453,
+    "independent_certificate_equivalence": true,
+    "physical_faults": [
+      "invert actual dispatcher saved-tag next bit0 on command acceptance",
+      "hold actual receive-record bit17 during the second received word"
+    ],
+    "observer_faults": [
+      "assert accepted-seen during reset",
+      "capture a merely visible queued command while ready is false"
+    ],
+    "fault_interpretation": "Deliberate model corruptions test proof sensitivity. Their witnesses are not claims of reset-reachable faults in the unchanged hardware.",
+    "independent_reconstruction": "Separate definition reader, sum-based field assembly, differently structured history contract and fresh symbols; shares the authenticated actual-cell equation export, not an independent netlist re-extraction.",
+    "producer_guard_seconds": 5.615181209053844,
+    "producer_peak_resident_bytes": 126197760,
+    "independent_guard_seconds": 8.643623686861247,
+    "independent_peak_resident_bytes": 181854208,
+    "minimum_available_host_bytes": 14335725568
+  },
+  "qualifications": {
+    "internal_received_header_origin": true,
+    "queued_header_stall_stability": true,
+    "accepted_header_response_field_echo": true,
+    "complete_packet_composition": false,
+    "physical_pad_framing_and_delivery": false,
+    "reserved_header_bit_validation": false,
+    "payload_numeric_origin": false,
+    "command_service_liveness": false,
+    "current_trained_fixture_complete": false,
+    "full_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_host_command_provenance_v1.py": "e6a1e4da77d6ce255d23f59d464aa475807996a69659e2f8cb04d5fe44527280",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_host_command_provenance_v2.py": "ca72bfab594f89f8bdd6f97453a52f7b3a40726679067709490b803c4c17cce6",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_host_command_provenance_v1.json": "133f2501e139e471cce68a137ce020d9095ad96872a395e12a6e46e784e5903f",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_host_command_provenance_v1_invariant.smt2": "5220e418a732022d044d644b289bd115f7eb0e4c526c526c47223f43d85884d6",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_host_command_provenance_v2_independent_audit.json": "27a780aaca31c393c726eeb17350e7a28271adf9e15c6d96f1958f89540f8a61",
+    ".cache/wide_packaged_host_link/owner_score_proof/host_command_provenance_guard_v1/source_anchor.json": "9412d6486e6966e91dbe85d77a1b0ef57a6cedee4897e60647d39949c7af4f83",
+    ".cache/wide_packaged_host_link/owner_score_proof/host_command_provenance_guard_v1/guard_receipt.json": "cc10a430cabacdc8d61622e328c706d199dcd6b6655666426241898f5ebefd6c",
+    ".cache/wide_packaged_host_link/owner_score_proof/host_command_provenance_audit_guard_v2/source_anchor.json": "5f3fc6ff7f17d8c4759d0057f732999961c1e3fb636460fcd87f96508117f6a9",
+    ".cache/wide_packaged_host_link/owner_score_proof/host_command_provenance_audit_guard_v2/guard_receipt.json": "620762591b47c28da5e5cc7cd2a5e523aa642cd4a470c0197f7274c307fb8404",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_host_router_functions_v3.json": "d28677d24be17e2c716f16aa7ed80bcc4a8b5e695dd0b83edff2dbf7070c4741",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_host_origin_single_rename_test.json": "cbf19efbc5599bb6abba17cb1f982f0344379591cc7e5b1cd6aba5fa06069e7a"
+  }
+}
