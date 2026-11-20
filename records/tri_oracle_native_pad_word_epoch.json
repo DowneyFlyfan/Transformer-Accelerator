@@ -1,0 +1,116 @@
+{
+  "state": "physical_output_word_safety_and_accepted_reconstruction_independently_verified",
+  "scope": "Two-state Boolean safety proof on the current mapped reproduction. In each of nine ordinary-response cases, its host/append family and the buffered grouped, writeback and status providers retain each eligible first-visible logical word through stalls and part transfers. On acceptance of the fifth part, the observed pin values reconstruct that exact captured word. This is conditional transfer safety, not guaranteed eventual delivery or a complete packet proof.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "parent_joint_state_record": "records/tri_oracle_native_return_union_induction.json",
+    "actual_chip_state_added": 0,
+    "circuit_changed": false
+  },
+  "framing": {
+    "logical_word_bits": 17,
+    "payload_data_bits": 16,
+    "terminal_flag_bit": 16,
+    "physical_transfer_bits": 4,
+    "accepted_transfers_per_word": 5,
+    "order": "least significant4-bit part first",
+    "final_part": "Original terminal flag in bit0; bits3..1 are zero.",
+    "serializer_word_acknowledgement": "Equals acceptance of the fifth physical part. This is the serializer input acknowledgement; original host-source acknowledgement can remain delayed across appended payload words.",
+    "successful_append_status": "The control formatter clears the physical final-word flag on successful ordinary status0004/0005 before appended data. It forwards the16data bits unchanged. This masking is explicitly checked."
+  },
+  "method": {
+    "case_specific_union_register_bits": {
+      "0": 2330,
+      "1": 2332,
+      "2": 2398,
+      "3": 2398,
+      "4": 2435,
+      "5": 2335,
+      "6": 2265,
+      "7": 2265,
+      "error": 2262
+    },
+    "existing_software_observer_bits_per_case": 52,
+    "new_software_observer_bits_per_case": 36,
+    "new_observer_layout": {
+      "owner": 1,
+      "first_visible_word": 17,
+      "provider_family": 2,
+      "accepted_low_parts": 16
+    },
+    "provider_families": [
+      "ordinary_host_and_control_append",
+      "grouped",
+      "writeback",
+      "status"
+    ],
+    "capture": "First eligible valid appearance, including a stalled first physical part. First-part alignment is proved, not imposed as a capture guard.",
+    "initial_snapshot_family_and_prefix_data": "Arbitrary; reset clears ownership without assuming data initialization.",
+    "induction": "Actual simultaneous mapped-register updates preserve combined source/formatter invariants, chained forwarding ownership, dispatch/physical-part phase and captured-word/provider/prefix relationships.",
+    "arbitrary_untracked_inputs": "Actual eligible output validity and word value are proved equal to a state-only mathematical reference for every untracked value. No source-data stability premise is added.",
+    "independent_reconstruction": "Completion-priority actual functions, an alternative conditional owner-chain expression, concat-based prefix updates, a finite five-way nibble selector and fresh symbols. Producer uses router priority, dynamic shifts and masked prefix updates.",
+    "extraction_limit": "Both checkers use the authenticated mapped-cell exports and original equation reader. Independent reconstruction is not a second independent netlist extraction."
+  },
+  "verification": {
+    "producer_positive_queries": 162,
+    "independent_positive_queries": 180,
+    "producer_corruption_controls": 22,
+    "independent_corruption_controls": 22,
+    "independent_fresh_symbols": 100512,
+    "all_condition_domains_nonempty": true,
+    "nonempty_provider_domains_are_not_reachability_or_liveness_claims": true,
+    "per_case_positive_queries": {
+      "dispatch_and_part_phase_reset_clock": 2,
+      "eligible_value_immunity": 2,
+      "full_word_relation_reset_clock": 2,
+      "first_part_alignment": 1,
+      "serializer_acknowledgement": 1,
+      "actual_part_counter_and_valid": 1,
+      "each_part_value": 1,
+      "terminal_flag_and_padding": 1,
+      "accepted_word_reconstruction": 1,
+      "selected_provider_matches": 5,
+      "append_status_flag_mask": 1
+    },
+    "independent_additional_queries": "Nine serialized-invariant equivalences and nine shared actual-function comparisons.",
+    "corruption_controls": "Nine first-word snapshot corruptions and nine provider-family corruptions, plus one real part-counter next-bit inversion, one output data-bit inversion, one final-padding-bit inversion and one accepted-prefix corruption. Model-only controls demonstrate sensitivity without claiming faults in unchanged hardware.",
+    "producer_guard_seconds": 81.72162868105806,
+    "producer_peak_resident_bytes": 474357760,
+    "independent_guard_seconds": 231.4020248078741,
+    "independent_peak_resident_bytes": 514547712,
+    "minimum_available_host_bytes": 15375265792
+  },
+  "qualifications": {
+    "first_visible_physical_word_safety": true,
+    "accepted_fifth_part_reconstructs_original_word": true,
+    "provider_family_and_stall_safety": true,
+    "complete_packet_delivery": false,
+    "eventual_delivery": false,
+    "appended_or_fetched_payload_numerical_provenance": false,
+    "trained_mapped_execution": false,
+    "full_model_accuracy": false,
+    "paper_protocol_matching": false,
+    "timing_or_physical_signoff": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_union_model_v2.py": "9c854f04f3746596b76784487fe2d0e8a139f75b6fd531937d7fd3e07b02f9ed",
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_pad_word_epoch_v3.py": "11ff1092a5377397eb2c9d51ebb0fe2ef2bf3ed7db7879514e107d4119ee85d4",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_pad_word_epoch_v1.py": "17bec39b9ec96c9d004c648ca732cd92fa2ca578369784cbd27222d188364d0e",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_pad_word_epoch_v3.json": "58cafbf50dfb51776c289cb73cf2a38b7dc91602ceb8c06e94fa6bb43103ba09",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_pad_word_epoch_v1_independent_audit.json": "4d798bec4ee71e2d9c140996956b660e7a8bf6bb7dabefd3b21fdacf7a356e3a",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_guard_v3/source_anchor.json": "e3180a389ed5494001ab03a3d3a9986cca63b161716e97a8f0ed5c180d576a40",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_guard_v3/supervisor_launch.json": "38dd96753332239ffe5332afc487fa360244a275361547c9e2ac76b98070fe31",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_guard_v3/launch.json": "a93a5ab4617032e31c504be38de4a4aa4adadc00f79a26baefd1d9dab74d7549",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_guard_v3/guard_receipt.json": "9d6a2d8a8639f3eadca527fbe19ef3fc44b581f10fc7ebc4fc5286edd0000277",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_guard_v3/console.log": "b0f7afa35a49ed88e245d178dfec95120d159bbca066172fad1b85e4dd2056a7",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_audit_guard_v1/source_anchor.json": "f6e547127cb330cf5402b067f886ef02c6cc836c4c315d8eb2515486b636e0ce",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_audit_guard_v1/supervisor_launch.json": "abca627450af3ceeeabd5d329bba0d473bebd20ed1fcca47172e4b99d84a75a5",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_audit_guard_v1/launch.json": "615c1041059b9ef30a4cc36d0f26560485d261076b2c244b8b8304ee65513f3f",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_audit_guard_v1/guard_receipt.json": "6a15f9cabf8cabef5800bf3c7b06b0799d12936719256b43f0f7b7eb8a77490e",
+    ".cache/wide_packaged_host_link/owner_score_proof/pad_word_epoch_audit_guard_v1/console.log": "2c5002a0992bc5afc0815c907548455924a39ce70e43bdad69e307c05f5cb052",
+    "records/tri_oracle_native_return_union_induction.json": "1b4ef6a03261f3f9c7820c41ee65a4760f59fbdb6bbe82fd1fc7a7f6813c677a",
+    "records/tri_oracle_native_return_path_view_bindings.json": "5ae19398357b002e761fb007270456fa1520952aa81db8d532f474a9ae6a2362"
+  }
+}
