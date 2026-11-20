@@ -1,0 +1,135 @@
+{
+  "state": "physical_received_command_to_selected_response_header_safety_verified",
+  "scope": "Conditional two-state safety after global reset, joining accepted physical input-command history with the actual complete selected response packet. Covers ordinary tag/opcode header fields through physical output nibbles, including successful head/row append stalls. Numerical payload identity and eventual delivery remain unqualified.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "cases": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "error"
+    ],
+    "actual_register_bits_by_case": {
+      "0": 2330,
+      "1": 2332,
+      "2": 2398,
+      "3": 2398,
+      "4": 2435,
+      "5": 2335,
+      "6": 2265,
+      "7": 2265,
+      "error": 2262
+    },
+    "prior_software_observer_bits_per_case": 193,
+    "new_hardware_bits": 0,
+    "new_software_observer_bits": 0
+  },
+  "format": {
+    "physical_data_pins": 4,
+    "accepted_parts_per_word": 5,
+    "input_logical_word_bits": 18,
+    "output_logical_word_bits": 17,
+    "accepted_command_tag_bits": 32,
+    "accepted_command_opcode_bits": 3,
+    "response_header": "First two16bit words carry the accepted tag; low3bits of the third word carry the accepted opcode and bits15..4are zero. Bit3is the actual response status/error bit and its numerical correctness is not newly qualified.",
+    "packet_lengths": {
+      "ordinary_host": 3,
+      "successful_head": 6,
+      "successful_row": 131,
+      "grouped_tx": 132,
+      "writeback_tx": 13,
+      "status": 4
+    }
+  },
+  "method": {
+    "composition": "Conjoin the reviewed receive-history and complete-packet state certificates, using one simultaneous native physical next-state assignment for each case. Prove reset basis and clock induction of that joint relation; no unrelated passing-record inference.",
+    "input_origin": "Receiver observers assemble four accepted early physical nibbles and the final flag transfer; the forwarded command header uses two16bit tag words and low3opcode bits. Saved command identity updates only on actual command acceptance.",
+    "output_origin": "At visible ordinary response header words, prove accepted tag/opcode equality, actual physical nibble equality and no new command acceptance. Preserve delayed source retirement through append until the final physical packet word.",
+    "assumptions": "No input assumptions, zeroed resetless storage, data-quiescence premise, additional index/part guards on first-visible response ownership capture, or independent shared-register next-state assignments.",
+    "prior_scope_counterexamples": "All nine packet-only certificates admit a counterexample to the stronger accepted-input identity objective when the receive history is omitted. These are missing-proof demonstrations, not hardware counterexamples.",
+    "independent_reconstruction": "Auditor independently closes128-expression chunks and uses completion functions for shared state; producer uses router functions. Auditor checks all174old/reset/next shared-function equalities per case, renames every physical/input/observer symbol and reconstructs observer updates separately. Definition exports, low-level equation reader and prior reviewed certificates are shared; independent native-netlist extraction is not claimed."
+  },
+  "verification": {
+    "producer_positive_queries": 90,
+    "producer_prior_scope_counterexamples": 9,
+    "independent_positive_queries": 108,
+    "independent_faults_and_prior_scope_controls": 45,
+    "independent_fresh_symbols": 129012,
+    "all_condition_domains_satisfiable": true,
+    "all_proof_counterexample_queries_unsatisfiable": true,
+    "all_corruption_counterexamples_satisfiable": true,
+    "successful_worker_exits": 2,
+    "resources": {
+      "producer": {
+        "elapsed_seconds": 74.23132320214063,
+        "minimum_available_bytes": 15394390016,
+        "peak_host_rss_bytes": 481222656
+      },
+      "independent_auditor": {
+        "elapsed_seconds": 205.89647163986228,
+        "minimum_available_bytes": 13462528000,
+        "peak_host_rss_bytes": 656601088
+      }
+    },
+    "producer_model_and_output_corruptions": 36
+  },
+  "qualifications": {
+    "external_physical_accepted_command_tag_and_opcode_composition": true,
+    "complete_selected_wire_packet_order_safety": true,
+    "ordinary_header_first_two_words_and_opcode_origin": true,
+    "append_delayed_retirement_preserved": true,
+    "full_response_error_status_semantics": false,
+    "appended_numerical_payload_identity": false,
+    "eventual_delivery": false,
+    "reachable_witness_trace": false,
+    "independent_native_netlist_extraction": false,
+    "trained_mapped_whole_layer": false,
+    "full_model_accuracy": false,
+    "paper_protocol_match": false,
+    "physical_timing_or_power": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_accepted_wire_header_v1.py": "10b370a0fef1b242a3ef8c57fb71869819f704a570256341b72e2f11b41b77b1",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_accepted_wire_header_v1.py": "bf2277e722128b365e661293d3f19943493f1d5e86ae1995c0d8537adb7d981b",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_plan_20261120.md": "81d4dfcdd7abc6923244233e4932908fbe691b32492ff9dc198d584ce87f11ff",
+    ".cache/wide_packaged_host_link/owner_score_proof/write_native_accepted_wire_header_record_v1.py": "3bdc1d63a31c44cfa502cc2cdb6f45ca2c9db8513ea1bb3de7a937837320d5f6",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1.json": "3ad6ee594aec062e2f645ce0928ca5a98eb6e6899f9597c8aebbaa90ebdca730",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_independent_audit.json": "105dc0660124ff36afff4250792eef0937a3851b046b81b86760872aa9fbb56d",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_union_model_v2.py": "9c854f04f3746596b76784487fe2d0e8a139f75b6fd531937d7fd3e07b02f9ed",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_completion_model_v1.py": "b1e5ca116a6b95a7234e93fb4a1664bf160bbc8c605a339b432718d6b1d6a9a1",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_complete_packet_order_v1.py": "189070262cd5633777509f75b0e096dbf5a502cbbb5b81d5d024e1ab018029df",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_guard_v1/source_anchor.json": "6fb002a20254152f9d2d0e78c877238ec014e3df872e31f0bffe8e5fc17315b5",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_guard_v1/guard.py": "00d855b708f45c1323b9b06fea0962af08e6621dd54913f613522b11404534a1",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_guard_v1/guard_entry.py": "20fe0b8c05850b2c6315f212c877f7b79ad89d70e61800777eecc82e4d35e51e",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_guard_v1/launch.json": "9afb3c080e6ec0f5537c1e4295bc6f3d020d6526803373b317566f1be43db31b",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_guard_v1/supervisor_launch.json": "b19365538879198f3e8cbe4f369308399fb012d8d3817561cfca84d45d854dc3",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_guard_v1/guard_receipt.json": "93d3a3654e09664fd06003488276ef8d7439d127624412d60edf8844d0e1c33e",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_guard_v1/console.log": "47da6369666cc41ed88915451ac92761aac9ffd6e4990b995a464b1f07b82a9d",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_audit_guard_v1/source_anchor.json": "811b703d9fcae4e76dc07c1f90d74893f27a141d1cbf16500f145b64fea26dff",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_audit_guard_v1/guard.py": "00d855b708f45c1323b9b06fea0962af08e6621dd54913f613522b11404534a1",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_audit_guard_v1/guard_entry.py": "7c9d0d0186055150630b6b5f13186de6301480c9f0d7c412174e06563f476ddb",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_audit_guard_v1/launch.json": "34b80bf315a0d3453c2d759cfaf3aecdb4bb841c512ef6b20a8d508cdfebd6ee",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_audit_guard_v1/supervisor_launch.json": "0859c0d0fadf607f9eeba9e87006a446c56a38ed8eafe3c0102dd2b466a3dc9f",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_audit_guard_v1/guard_receipt.json": "d6e814964192602c160e20dca3986ccfe02c60d0c126b34efbe39f1c2e925c36",
+    ".cache/wide_packaged_host_link/owner_score_proof/accepted_wire_header_audit_guard_v1/console.log": "435af8033f30c557ed6839a5bc56904833d9d10fe3bd3086cc3a115423a0a578",
+    "records/tri_oracle_native_complete_wire_packet_order.json": "5468507e52bdc63b16ac59f3ace5961168fd243536835f8978d85269c9fb1244",
+    "records/tri_oracle_native_pad_receive_header_origin.json": "029a8486a4f3f0d0c25cf707a52537dd568462f297dfb97661a0e0ffa86eb004",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case0_invariant.smt2": "93521708431a2e14dcae1610393410f05c9ca043defeb4daf5a11e2101727c52",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case1_invariant.smt2": "35ea6c63060d4f69d69001e0f69299a81250c83d3b8e3935a1643f4e98638d3a",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case2_invariant.smt2": "872eba9c00cece4bde95ea294491d6940da593189a847f44834bc8c798a5a05a",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case3_invariant.smt2": "4b5813f6ca6dfd26a8f25f7f59bd8fb3e7886d80e7d84093c76d81d9b1c193b5",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case4_invariant.smt2": "7db788260831c708b0008166a93ed7d1d6fdd524da45f88d2c321762e89f6410",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case5_invariant.smt2": "8ae564538d8122042fd74cfdf47fcf4bfa65428b7b17821664e02d0881fd2a20",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case6_invariant.smt2": "69d6c130ef9f75cd86d0291197c5bb753c7509562eb1a7ec962177e3eeb9f5cf",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_case7_invariant.smt2": "02f23f88f57e229377fe2e36cac1d5ec640447895d114e96d21027a6bfbf9bed",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_accepted_wire_header_v1_caseerror_invariant.smt2": "a89f9577f6423ba328d8ef0cf41eb0c72f15bf441f21da093ac1d92d629c06db",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/cold.v": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846"
+  }
+}
