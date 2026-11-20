@@ -1,0 +1,528 @@
+{
+  "state": "joint_all_layer_existing_text_integer_formats_rejected_by_complete_task_panel",
+  "scope": "One uninstalled integer-format candidate assembled from frozen calibration profiles for all22layers and12locally qualified layers. Local row-error improvements failed to preserve complete-answer accuracy on the reused160question panel. Original model, formats, calibrated codes and mapped candidate remain unchanged.",
+  "method": {
+    "capture": "records/tri_oracle_all_layer_complete_text_capture.json",
+    "capture_questions": 128,
+    "calibration_images": 64,
+    "reused_local_diagnostic_images": 64,
+    "task_panel_images_excluded_from_calibration": 131,
+    "text_rows_per_layer": 4159,
+    "calibration_rows_per_layer": 2076,
+    "diagnostic_rows_per_layer": 2083,
+    "original_format_pairs_per_layer": 170,
+    "grid_evaluations": 3740,
+    "selection": "Per-exponent calibration grid only;>=32rows/16images and>=1%gain; fallback, ties and ineligible settings preserved. Freeze all22profiles before diagnostics.",
+    "local_acceptance": "Genuine changed setting,>=1%diagnostic mean row-relative Euclidean error improvement and>=32/64images not worse.",
+    "selected_layers": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "runtime_scope": "Only ordinary prompt-text rows of selected layers; preserve original first0/image/decode behavior and late correction ONLY17..21.",
+    "arithmetic": "Existing signed8 dot inputs/codes and signed16 rounded intermediates; no new arithmetic, learned weights, codebooks or correction mode.",
+    "fixed_prefix_rows_repeat": true,
+    "answer_labels_used_for_fitting": false,
+    "policies_installed": false
+  },
+  "layers": [
+    {
+      "layer": 0,
+      "changed_exponents": [
+        -7,
+        -6
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -7,
+          "maximum_up_gain_bits": 7,
+          "down_shift_offset": -1
+        },
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": -1
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.32236902773728104,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 1,
+      "changed_exponents": [
+        -8
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -8,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.09943098691260442,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 2,
+      "changed_exponents": [
+        -8,
+        -7
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -8,
+          "maximum_up_gain_bits": 7,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -7,
+          "maximum_up_gain_bits": 7,
+          "down_shift_offset": -1
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.03173020638873955,
+      "diagnostic_images_not_worse": 61,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 3,
+      "changed_exponents": [
+        -6
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 2,
+          "down_shift_offset": -6
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.0011993657171184985,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 4,
+      "changed_exponents": [
+        -7,
+        -6
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -7,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": -1
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.07127564726013773,
+      "diagnostic_images_not_worse": 63,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 5,
+      "changed_exponents": [
+        -7
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -7,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.031202611275608555,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 6,
+      "changed_exponents": [
+        -7,
+        -6
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -7,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        },
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.11020821218225542,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 7,
+      "changed_exponents": [
+        -7
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -7,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.010449076160560797,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 8,
+      "changed_exponents": [],
+      "changed_formats": [],
+      "diagnostic_relative_l2_improvement": 0.0,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 9,
+      "changed_exponents": [
+        -7
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -7,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 0
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.0012215672665441264,
+      "diagnostic_images_not_worse": 61,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 10,
+      "changed_exponents": [
+        -6
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 1
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.008545619916008093,
+      "diagnostic_images_not_worse": 39,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 11,
+      "changed_exponents": [],
+      "changed_formats": [],
+      "diagnostic_relative_l2_improvement": 0.0,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 12,
+      "changed_exponents": [],
+      "changed_formats": [],
+      "diagnostic_relative_l2_improvement": 0.0,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 13,
+      "changed_exponents": [],
+      "changed_formats": [],
+      "diagnostic_relative_l2_improvement": 0.0,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 14,
+      "changed_exponents": [],
+      "changed_formats": [],
+      "diagnostic_relative_l2_improvement": 0.0,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 15,
+      "changed_exponents": [
+        -6,
+        -5
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -5,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 2
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.08498120962030338,
+      "diagnostic_images_not_worse": 61,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 16,
+      "changed_exponents": [
+        -5
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -5,
+          "maximum_up_gain_bits": 6,
+          "down_shift_offset": 3
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.010506604796460569,
+      "diagnostic_images_not_worse": 41,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 17,
+      "changed_exponents": [
+        -6
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.020914916757154317,
+      "diagnostic_images_not_worse": 63,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 18,
+      "changed_exponents": [
+        -6,
+        -4
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -4,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.047394385477656814,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 19,
+      "changed_exponents": [
+        -6,
+        -4
+      ],
+      "changed_formats": [
+        {
+          "activation_exponent": -6,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        },
+        {
+          "activation_exponent": -4,
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        }
+      ],
+      "diagnostic_relative_l2_improvement": 0.029169087613326695,
+      "diagnostic_images_not_worse": 50,
+      "selected_for_joint": true
+    },
+    {
+      "layer": 20,
+      "changed_exponents": [],
+      "changed_formats": [],
+      "diagnostic_relative_l2_improvement": 0.0,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    },
+    {
+      "layer": 21,
+      "changed_exponents": [],
+      "changed_formats": [],
+      "diagnostic_relative_l2_improvement": 0.0,
+      "diagnostic_images_not_worse": 64,
+      "selected_for_joint": false
+    }
+  ],
+  "independent_fit": {
+    "original_capture_rows_reconstructed": 91498,
+    "scalar_loss_rows_checked": 182996,
+    "canary_losses_checked": 14960,
+    "corruptions_rejected": 44,
+    "scope": "Independent original capture geometry/exponents/scalar losses, grid selection/ties/fallbacks, dispatch metrics and joint acceptance. Shares producer vectors/curves; not a second3740pair matrix execution, full-model or hardware proof."
+  },
+  "task_panel": {
+    "questions": 160,
+    "images": 131,
+    "complete_archived_controls_verified": 16,
+    "complete_token_traces_reconstructed": 336,
+    "original_prompt_geometries_retokenized": 160,
+    "baseline_correct": 91,
+    "candidate_correct": 86,
+    "gains": 5,
+    "losses": 10,
+    "net_correct_gain": -5,
+    "by_type": {
+      "choose": {
+        "current": 19,
+        "candidate": 21
+      },
+      "compare": {
+        "current": 15,
+        "candidate": 15
+      },
+      "logical": {
+        "current": 21,
+        "candidate": 17
+      },
+      "query": {
+        "current": 14,
+        "candidate": 12
+      },
+      "verify": {
+        "current": 22,
+        "candidate": 21
+      }
+    },
+    "scope_corruptions_rejected": [
+      "wrong_original_image_start",
+      "correction_applied_to_extra_row",
+      "extra_decode_observer_count",
+      "unbounded_correction_count",
+      "missing_text_row_with_consistent_local_count"
+    ],
+    "full12578_gate": {
+      "minimum_net_correct_gain": 3,
+      "passed": false,
+      "run_launched": false
+    },
+    "independent_model_execution": false,
+    "reused_panel": true,
+    "blind_generalization": false
+  },
+  "resources": {
+    "fit_elapsed_seconds": 107.601605291944,
+    "fit_guard_elapsed_seconds": 113.27261584880762,
+    "fit_peak_gpu_bytes": 1248463872,
+    "fit_process_highwater_resident_bytes": 1548353536,
+    "fit_audit_elapsed_seconds": 63.18446702300571,
+    "panel_elapsed_seconds": 121.38261424307711,
+    "panel_guard_elapsed_seconds": 130.7705100539606,
+    "panel_peak_gpu_bytes": 7710662144,
+    "panel_process_highwater_resident_bytes": 6786650112,
+    "panel_audit_elapsed_seconds": 4.50439305906184
+  },
+  "qualifications": {
+    "current_full_baseline_correct": 6247,
+    "current_full_baseline_questions": 12578,
+    "current_full_baseline_percent": 49.66608363809827,
+    "policy_installed": false,
+    "new_full12578_run_launched": false,
+    "task_accuracy_improved": false,
+    "mapped_hardware_or_paper_improvement_verified": false,
+    "advance_to_clock_distribution_or_routing_allowed": false,
+    "reason": "Reject net-5complete-answer candidate despite local loss gains. Further calibration must address the task-level mismatch; do not infer additive layer gains or generalization from repeated-prefix local losses."
+  },
+  "helper_tests": {
+    "fit": 20,
+    "panel": 12,
+    "expected_red_missing_scope_helper": true,
+    "expected_red_missing_adapter_and_scope": true,
+    "corrected_test_import_provenance_failure": true,
+    "corrected_auditor_fault_control_typo": true,
+    "all_final_checks_passed": true
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/plan.md": "aea86f68d287b6f3450c8aec858b6eba73b99715d329411aadfb28dcf4fa2327",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/protocol.json": "548f4a9be062ff26e510ef8300659be73d9f9667e36a918efd858d08535f9bd9",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/source_anchor.json": "24e0ccdad1a140a806c6e895c8c108563bbf6342a7eff62366f6f4726f440d96",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/architecture_source_audit.json": "146ab34e89a85e5f89e6adcea81701a3802e8b89527ac157d0c417ace08d2e3c",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/architecture.pdf": "ab3c88e99c3393795431e95fe74bd77b94e5d37e3363c227bbd0d5c09213e67c",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/run_fit.py": "addd3338e3e418651f4a82a6166b64e24dc06aef44a9f5c9ae336dd9af28f220",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/verify_fit.py": "aff677505ff34179e96c753ea628579d55fa95d829c7370236e11d24c4b37cc7",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/guard.py": "00d855b708f45c1323b9b06fea0962af08e6621dd54913f613522b11404534a1",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/guard_entry.py": "0cea9e7c27f80dbb5881ed879626c141b2a1b89bca5e16c032d1f9f30cf5f00a",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/inputs.json": "25aaa762de5ee48f36eb905cff025582e7f3be810730a16ca5b1ec3fb2cfa41a",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/launch.json": "d9641211c44e377489270a8bb2e4f890326a96de0e44e2cc7e064251c2a9feb1",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/supervisor_launch.json": "2225fbaeb604cdf588ccb34a155a4f0578337003fd07a7dd5b8814a527457595",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/guard_receipt.json": "e0d347138ef44c8a8cd89c668d3e102e1a54d1e933743a31c8ed464052601822",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/console.log": "2f0dcf0acab76e545da3cd5222fe278cf33f8c5346076dab2067ece74fcbc12a",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/independent_verified.json": "947676e73a79896ef3988dab5c32ed38e900d2cb510c8405e2addaae1c04d346",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/verification/source_anchor.json": "c17857f5a74135a5f3f6ed40dec7e547fd4152fc6cead30dc2eddf822a423195",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/verification/guard_entry.py": "339595779c59fbfcf94a2e1027d7e2cbc7c680cde9ccddaa8f0370e006e8e79a",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/verification/launch.json": "a176220c1225d5e0526dbf43623f27f69b76cf28cdbb2ce3375a244353b23664",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/verification/supervisor_launch.json": "8a580ac88add26c31d51ec855be7d1694db48978764256cd2605be5c938afd17",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/verification/guard_receipt.json": "1eb7b772f06ec34f4452c0969eb46fffd11b27be0800a811f9e49d3b2471fe0e",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/verification/console.log": "3f2c18462eb4762b57644ff956a4861493bdec32fcc144610e156ba0b5fad3a4",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/receipt.json": "4525432c3ad69f526223237e775960ec496e77a8dd46ebb7f2b7a22e25eeccd6",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/plan.md": "65f9c8591c41b26d216b34447a8a3e1657ff371a00c3a1cefa3aed1d151c59fe",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/protocol.json": "10d25b7041a460bba4355f164131f3af0ce9aecb889d4a16e4d65b04861b7742",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/source_anchor.json": "45d764a5ca273083ff7ad48ce0176cdca979afc3196ee3c26b58490dda41fde5",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/architecture_source_audit.json": "71563ba49aa9e16a3b6235bc183a5752a28efc94772cc18ab1e216303f430cd4",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/architecture.pdf": "225890d3aab19e4e60fc3e6ae26d6c8f96114add6af70f6ccdbe3cc8339e92d7",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/run_panel.py": "dc6298ed5a5946e69ab358585ae00ed8e7e7b9621defcc093a37c2a59dbbbd04",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/verify_panel.py": "00f2eef7c5ef2fdcfe6579f397f5c9d14e133043837b8926179da41af0a45c7e",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/guard.py": "00d855b708f45c1323b9b06fea0962af08e6621dd54913f613522b11404534a1",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/guard_entry.py": "c6568d59ec989213cbd3d5a1a8eb3ba380ed0fcb75df27ef89a5ff0c1c060a5c",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/inputs.json": "52616cb5e685df8f12c405ea1f1c0b24c9898896fc6e88e32c584ef477de2ec0",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/launch.json": "366319adff1a1c08eeed2bc06bedfc55afb979a26c83f068e6f31d5b291a6ab9",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/supervisor_launch.json": "873453716a812741bc1ed37fbbe0751f2bb194e3176f640caba00a2984feed48",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/guard_receipt.json": "6661eca10b27a020b458f76266332089a816180cd589f45c4e90932f42cafcc9",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/console.log": "430d1afcfe493434801629b4c7b95696d3a520f5afe9eb5e2fa6502377f7737a",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/independent_verified.json": "c5971bbddb7a0bc4e71a5405ee7b8a088815a4fb9f569288e2f1458baf747462",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/verification/source_anchor.json": "ce3d7a5e1e1ce605417c4c57554071028fccf26278f89b9fe71476a6232df516",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/verification/guard_entry.py": "d356d37487aca88b5bf459413dc2ab8928bd8fecbb47c8cfa988f86ac2f239d6",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/verification/launch.json": "2320ff8f496ecfa3bbbbf8636085140877d6e62363cf33e78453f08b94c2d2ba",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/verification/supervisor_launch.json": "723725f7997d7ac4b89f83002e2c5fadb45294def48512ac41c93fb3b82b81f8",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/verification/guard_receipt.json": "472a2ed8238493a1d590c4951ecbf84df1774e1d47c445cf9f3a619d327da87e",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/verification/console.log": "c5971bbddb7a0bc4e71a5405ee7b8a088815a4fb9f569288e2f1458baf747462",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/receipt.json": "14114cb31e015b7a9d3e31db563556ef5c9d4791fbb9e564672f0df7cd7b5733",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/split.json": "a5901f075ba7757d426d744318006b9ca84b3a614d9ab2d637a5afad43bb440d",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/joint_scope.py": "d8dc0fdb00b8d17aee38bef6ee46fc8fcbd53cbfe14123e9e6dff7aaf2c2f555",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/selection.py": "ce26440eb8826d1d243594189973fd32c7fbd930925d7cb270f6eec7e078069c",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/proposals.json": "8c2dc79cc4d545dda03a4196156e8d8b4f6d456ae4d8a0181f914a709821c5f7",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/fit_frozen.json": "20c463385be66d420a804d44a2aa176c792cb17855b8a1eb1461b02e2c35bb67",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/joint_candidate.json": "e39fc063387c2ae6d265de914e3cf6bbc9668b8c5d7ba3ce621be60752edfff8",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/all_helpers_green.log": "93a2f135ece9fb410e80da036e9155fd095a090dcde213e64868a6550efa79cc",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/scope_red.log": "cdab264f01ab46117020325812d77a59e2e935c99ada5e8fc19dbc3b37a92402",
+    ".cache/model_reference/all_layers_text_integer_refit_20261120/auditor_fault_red.log": "59698d4f6d7f00ccafa9da902729357ef092ec33061a378d0ac0d2fbba7513a5",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/text_adapter.py": "aa43a04ee2a86e2d338ad14d20a385e31ec57b33a2ab66097e0f5c7988be6e02",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/scope_checks.py": "737b3c3a13cfd312a74778b959dfa3c9247c7404421674ff10dec86a6d1a1e84",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/controls.json": "e54e4520aa3a2e6bfba8bdaa3054f1d6c40c0326d27fcbfedea0a0f194c13d1f",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/archived_baseline.json": "5eaf1097a8102026490354d9e56ddd17216f412e55ad5b8f3010ad74f7ce5cc0",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/predictions.jsonl": "37f1ce77954d378cd8ad857d7631b89d13c041cd43955bbfe26d9a6fd8a3d950",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/all_helpers_final_green.log": "bb8c22ad0b1190eb46c5f7bee415e1dc73dc0f4b6a7e7b04d2b8599a7f48ea67",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/adapter_red.log": "4a716d671f0a86f7330e42947d9d881ea3bc38dbee9d5277ab74b37b32adf263",
+    ".cache/model_reference/all_layers_text_refit_panel_20261120/scope_red.log": "6b182bc246102fdf1b78527780d818c062c6a09380415b343e76a82406f2acd0"
+  }
+}
