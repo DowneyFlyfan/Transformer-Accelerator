@@ -1,0 +1,239 @@
+{
+  "state": "fixed_all22_post_image_power2_integer_equalization_rejected_at_task_gate",
+  "scope": "One fixed software integer candidate on reused GQA compositional visual question-answering test-development panel. No deployment or physical qualification.",
+  "method": {
+    "inspiration_url": "https://github.com/mit-han-lab/smoothquant/blob/main/smoothquant/smooth.py",
+    "attribution": "Official magnitude-balancing methodology inspired the local binary-scale variant. Upstream source was cached, never imported/executed. This quantizer is not claimed to be disclosed by Tri-Oracle.",
+    "layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "input_channels": 2048,
+    "intermediate_channels": 5632,
+    "formula": "For positive a_j,w_j:raw_j=floor(0.5*(log2(a_j)-log2(w_j))+0.5); subtract lower median across positive channels, clamp[-4,+4]; zero channels0.",
+    "fit_images": 64,
+    "reused_diagnostic_images": 64,
+    "fit_post_rows_per_layer": 1820,
+    "diagnostic_post_rows_per_layer": 1827,
+    "changed_channel_powers": 10769,
+    "profiles_frozen_before_diagnostic": true,
+    "local_loss_used_for_layer_selection": false,
+    "answer_labels_used_for_fitting": false,
+    "runtime_scope": "Only original post-image prompt-text outputs. All22layers use the candidate. First token, pre-image prefix, image and incremental decoding retain the original integer callback under the actual candidate context.",
+    "coefficient_changes": "Gate/Up input columns rescaled, then newly quantized signed8 with scalar exponents; activation input reciprocally rescaled. Down codes and scalar format tables remain original. Late correction remains layers17..21.",
+    "function_preservation": "Reciprocal input/column scaling preserves the original real-valued dense function algebraically;44 observed floating hash/equality controls passed. This is not a guarantee for every finite-precision input.",
+    "original_integer_shadow_always_runs": true
+  },
+  "component_audit": {
+    "layers": 22,
+    "capture_post_rows_checked": 80234,
+    "scalar_row_losses_checked": 160468,
+    "coefficient_tables_reconstructed": 44,
+    "dense_equivalence_hash_controls": 44,
+    "changed_features": 10769,
+    "scope": "Independent original-position capture identity, fixed magnitude recipe, coefficient quantization, stored identity output and scalar candidate losses. Producer uses canonical integer helper; this is not a second integer dot execution or mapped/on-chip normalization proof."
+  },
+  "component_corruptions_rejected": 44,
+  "task_panel": {
+    "questions": 160,
+    "images": 131,
+    "controls_verified": 16,
+    "complete_token_traces_reconstructed": 336,
+    "original_prompt_geometries_retokenized": 160,
+    "baseline_correct": 91,
+    "candidate_correct": 92,
+    "gains": 8,
+    "losses": 7,
+    "net_correct_gain": 1,
+    "by_type": {
+      "choose": {
+        "current": 19,
+        "candidate": 23
+      },
+      "compare": {
+        "current": 15,
+        "candidate": 13
+      },
+      "logical": {
+        "current": 21,
+        "candidate": 19
+      },
+      "query": {
+        "current": 14,
+        "candidate": 15
+      },
+      "verify": {
+        "current": 22,
+        "candidate": 22
+      }
+    },
+    "scope_corruptions_rejected": [
+      "wrong_original_image_start",
+      "correction_applied_to_extra_row",
+      "extra_decode_observer_count",
+      "unbounded_correction_count",
+      "missing_text_row_with_consistent_local_count"
+    ],
+    "selected_post_image_callback_rows": 104258,
+    "selected_callback_retained_correction_codes": 102676,
+    "full12578_gate_passed": false
+  },
+  "acceptance": {
+    "minimum_net_correct_gain": 3,
+    "observed_net_correct_gain": 1,
+    "result": "Rejected; no full12578 run, installation, or hardware change."
+  },
+  "controls": {
+    "baseline_complete_answers": 8,
+    "active_identity_complete_answers": 8,
+    "identity_semantics": "Active zero-power encoder uses original coefficient bytes already checked by the component stage. Full-answer identity does not use nonidentity candidate coefficient tables.",
+    "unselected_semantics": "Per-call output values preserved under the actual candidate context. No globally identical activation, root-map, or attention-head trajectory claimed."
+  },
+  "preserved_failures": [
+    {
+      "directory": ".cache/model_reference/post_text_pow2_equalization_20261120",
+      "cause": "Checkpoint omitted hidden_act; direct lookup failed before calibration. The installed LlamaConfig schema default was independently verified as silu, then metadata and weight-name validation moved before allocation in a new sealed version.",
+      "numerical_outcomes_before_failure": false
+    },
+    {
+      "directory": ".cache/model_reference/post_text_pow2_panel_20261120",
+      "cause": "Initial secure-import preflight lacked the existing text_regions.py source pin. Original source/anchor/log retained; v2 changes dependency pin and source/anchor filenames only.",
+      "target_answers_before_repair": false
+    }
+  ],
+  "software_verification_limits": [
+    "Component auditor independently reconstructs capture identity, channel powers,44coefficient tables and160468scalar losses; canonical integer arithmetic helper is shared. No second integer dot execution.",
+    "Task auditor independently decodes336complete token traces, retokenizes160original geometries, checks controls/counts/scopes and scores archives. No second model execution.",
+    "Panel and local diagnostic have been reused; this is not blind generalization. Selected callback counts describe extra software work, not measured chip throughput or energy."
+  ],
+  "deployment": {
+    "state": "payload_and_scheduling_caveats_not_implementation_qualification",
+    "new_gate_up_coefficient_bytes_if_dual_encodings_retained": 507510784,
+    "additional_onchip_capacity_required_by_encoded_shapes": false,
+    "external_storage_and_bandwidth_measured": false,
+    "role_specific_weight_encoding": "Original weights are still used for first/prefix/image/decode. Proposed post-only encoding may require separate external coefficient sets and token batches split at role boundaries; neither schedule nor throughput/energy is qualified.",
+    "normalization": "Software applies reciprocal per-input scale before quantization; actual folding into learned on-chip normalization is unverified.",
+    "whole_mapped_candidate_changed": false
+  },
+  "resources": {
+    "component": {
+      "elapsed_seconds": 38.226007163058966,
+      "minimum_available_bytes": 13910290432,
+      "peak_host_rss_bytes": 1679609856
+    },
+    "component_auditor": {
+      "elapsed_seconds": 76.73490960383788,
+      "minimum_available_bytes": 14687698944,
+      "peak_host_rss_bytes": 950611968
+    },
+    "panel": {
+      "elapsed_seconds": 142.79446383402683,
+      "minimum_available_bytes": 13785702400,
+      "peak_host_rss_bytes": 6274895872
+    },
+    "panel_auditor": {
+      "elapsed_seconds": 6.661792607977986,
+      "minimum_available_bytes": 16092512256,
+      "peak_host_rss_bytes": 109056000
+    }
+  },
+  "helper_tests": {
+    "component": 13,
+    "panel": 12,
+    "total": 25,
+    "no_skips": true
+  },
+  "qualifications": {
+    "current_full_integer_correct": 6247,
+    "current_full_integer_questions": 12578,
+    "current_full_integer_accuracy_percent": 49.666083638098264,
+    "current_full_integer_result_unchanged": true,
+    "new_full12578_run": false,
+    "policy_installed": false,
+    "whole_mapped_candidate_changed": false,
+    "onchip_normalization_verified": false,
+    "external_coefficient_schedule_verified": false,
+    "trained_mapped_whole_layer_verified": false,
+    "paper_protocol_match_verified": false,
+    "paper_accuracy_or_energy_improvement_verified": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/post_text_pow2_equalization_20261120/source_anchor.json": "94e9a814af2ed4d0e325eb20a9fcb190b62ee993f7a9000ac9cb568d7d246896",
+    ".cache/model_reference/post_text_pow2_equalization_20261120/guard_receipt.json": "2620d5bab7350f62f9a42151a1378bb7a3743fa908bb97386735ffc8dc07d46a",
+    ".cache/model_reference/post_text_pow2_equalization_20261120/failure.json": "65d834787affddd16a93a8e9ee3447fe5bb1444abab7cfb43136b264dc66a8d2",
+    ".cache/model_reference/post_text_pow2_equalization_20261120/console.log": "a4c5e63640378933c28caa5d3ef49085f09fa48d18dc879dd9fc988bdbc226c2",
+    ".cache/model_reference/post_text_pow2_equalization_20261120/method_source.json": "6f903f644a3525b8962908e08c9a957f74d0313d88a693e9d4cec016892e8571",
+    ".cache/model_reference/post_text_pow2_equalization_20261120/architecture.pdf": "a30aded591030ed3f6cec576ba5767ee25199cb8b57c40f26c3f3c0acd3790d1",
+    ".cache/model_reference/post_text_pow2_equalization_20261120/architecture_source_audit.json": "52179e59c01e485464d655faa940b2067e625628807d26733c997c3337fed771",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/source_anchor.json": "a05565a8c17c2bb14ea1ceebd76b3e3062cc478def311340ebcd6d4bc17a571e",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/run_components.py": "5e88a4659767730592bd5189747e8ff0faf2abb10a1cc04f1996bdf45c896b30",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/verify_components.py": "c416f2ddeb235b83af281a07cdc5a52b10ea300b26817026e197a168925a085d",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/equalization.py": "94e17615cae3c6ccc75a520c34e263bbc844ec97a90df61fe4c21d66917d4d37",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/checkpoint_metadata.py": "7848eb656b673d126fab61d1f3b26e56f6b0a0f0b1592291adc5ab2eef2fd343",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/protocol.json": "a8f40a287eb490052b805447d9bfa08fb893954e3ddef2115ccad6654d7533c2",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/checkpoint_schema.json": "0d306c3d3a5ec478ad00d68fc5acac2eb4d8a0f1512a48d966b386a92709c8a2",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/deployment_caveats.json": "cf7e6e60db36dd6cbd73a99e4d41f04a3468ca475c24f15344c78e446b59a0db",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/profiles.json": "6804fe2f9217f99a73cb7f6b777b1c098338bb285afcc0423dcc501fcf64166a",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/profiles_frozen.json": "5e7a2c2b26caaf8fdfd10e8e73651a381194ad01182f16ea82fbc652a3e7e58b",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/receipt.json": "854a05859ef63729e4ffff7182c02e46410bca18847dd33e0fd07d23384312e2",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/guard_receipt.json": "516dbc585ed35fe25459a6d5dd8e6da63e7c4d6197857d835b0dad1844d5a494",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/console.log": "a046978116b25f235910d6340fcae5be8617e75ca2147fd902e77449e0b5614c",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/helpers_final_green.log": "64d1e771b324e0442ff8d41d6413fb537bc468b0df4cb394c66d17d163a5d4c5",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/verification/source_anchor.json": "c8ff2a6e20b79e8729beb301519c023058668ac0054476c2c7542fd93eed85cb",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/verification/independent_verified.json": "cb54c78aa1f276c30304d6ff624fd46fe7a921fe5b9f94873e0cdf0ea93bac84",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/verification/guard_receipt.json": "3454263e0a0912edd1ea7e44f590c5c16209b77c8c3d72154d24e9f1d8310848",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/verification/console.log": "034026a5fc8a685d9343ddd20c1b45b770159e87c09483c707969e5efb218dac",
+    ".cache/model_reference/post_text_pow2_panel_20261120/source_anchor.json": "3b521e49982f9c1da3843282484f837efcf4d65ea44059690fa6c7a43af99cc3",
+    ".cache/model_reference/post_text_pow2_panel_20261120/preflight.log": "e0290dcdc9625fd0040101c7e13d40e633ea4e1e36889c38c0c34a1dec21634e",
+    ".cache/model_reference/post_text_pow2_panel_20261120/dependency_repair_v2.json": "9eb21054cea89b3441f0c5c2cd7d10de12f69f7f555a51bd8315112447f82808",
+    ".cache/model_reference/post_text_pow2_panel_20261120/source_anchor_v2.json": "cd4e315bd4f5572cb6fcc68190a54b46748f9f1758188c44b3fec4c7e2d146b7",
+    ".cache/model_reference/post_text_pow2_panel_20261120/run_panel_v2.py": "25718039194274f0be03182235ec528e239371d7c56445bbb80ee949f07cfed1",
+    ".cache/model_reference/post_text_pow2_panel_20261120/verify_panel.py": "14dd11ed0ca2b6506d914906433a542148cb5e374fa43d6908358a8d3273dd35",
+    ".cache/model_reference/post_text_pow2_panel_20261120/text_adapter.py": "e241132b663ba364f1f59defda128f9bdb99886d4ca75bb2fd0725f5215280e8",
+    ".cache/model_reference/post_text_pow2_panel_20261120/scope_checks.py": "6a22e0be15492587e90a66c1560eb30356db938afa0402dfb10c305fc302290d",
+    ".cache/model_reference/post_text_pow2_panel_20261120/protocol.json": "e3676be9aba811073ff55ea36a53873c6558b6f9d54aa2b5b33257fe812c3345",
+    ".cache/model_reference/post_text_pow2_panel_20261120/architecture.pdf": "e91a73e298777cde55f22e2ff5a27aa0c4cee427e481871d5a350917b375f3d5",
+    ".cache/model_reference/post_text_pow2_panel_20261120/architecture_source_audit.json": "b60c2fb082a0507273f529a55aa880f98f61e16582abe5812eb142dfdab46a4e",
+    ".cache/model_reference/post_text_pow2_panel_20261120/helpers_final_green.log": "c76ad596527b5f13cbd13df322182f97f426d36d9e2737312f44ba4063299251",
+    ".cache/model_reference/post_text_pow2_panel_20261120/receipt.json": "75da170e54fb45ad4ac04723b6f3267154d43791fccae0b417e3b9e6e057cb96",
+    ".cache/model_reference/post_text_pow2_panel_20261120/inputs.json": "065966227e593c69bfcf41b4ae5f32f2273a00dfa553399ebac40d4014c6354a",
+    ".cache/model_reference/post_text_pow2_panel_20261120/archived_baseline.json": "5eaf1097a8102026490354d9e56ddd17216f412e55ad5b8f3010ad74f7ce5cc0",
+    ".cache/model_reference/post_text_pow2_panel_20261120/predictions.jsonl": "0b35ac13d94b462f56eb1c620365f32f1251e462b1fd91f2441e1502ebcb0e6e",
+    ".cache/model_reference/post_text_pow2_panel_20261120/controls.json": "3b2683d5c3b8e26dc42059e3ea248dedc1c0b385894f9eb3a9331207ee630df1",
+    ".cache/model_reference/post_text_pow2_panel_20261120/guard_receipt.json": "f017fc7c19d0c1e58124baf730013c43ce44c3c9bd70d7d549ead7dfadaaf63e",
+    ".cache/model_reference/post_text_pow2_panel_20261120/console.log": "1a9c4fe787872ef06a390093c51d9b5932cab87d32d3ed49a4f99c67a077212c",
+    ".cache/model_reference/post_text_pow2_panel_20261120/verification/source_anchor.json": "ed9ec2f72b4dcba4563d3972070f2755e71ed458d573566d406d1a8f23be949d",
+    ".cache/model_reference/post_text_pow2_panel_20261120/verification/guard_receipt.json": "ffc6232c613b1f4be6817f55b4bc0680de55db583e9e9a2d08bb715a23d94b68",
+    ".cache/model_reference/post_text_pow2_panel_20261120/verification/console.log": "b8810f1aba2d74635f44e220e2a1e2787bd149dc8e8363c195d60e0b36521fdd",
+    ".cache/model_reference/post_text_pow2_panel_20261120/independent_verified.json": "b8810f1aba2d74635f44e220e2a1e2787bd149dc8e8363c195d60e0b36521fdd",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/launch.json": "ca20f9c7a6cbd9ef0de772224f415e1c1add8c1f77879482cb3cd32657c85039",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/supervisor_launch.json": "bf1c328b7f9bd18d72022e0c3df19072653eb569f82e7881f48fe427b976a3d6",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/verification/launch.json": "0c20ce9f47d3d6a7b486601e99bbc53942409681266d2c688e2870484ca04474",
+    ".cache/model_reference/post_text_pow2_equalization_v2_20261120/verification/supervisor_launch.json": "afde7b755f3a3a50899493fe9ece8ac6fc9f184763202bd91d727a246951f900",
+    ".cache/model_reference/post_text_pow2_panel_20261120/launch.json": "dd844cd76a972dd8d8f671e01f3c7d9ccb7ba53777190d5313c8890b5472828c",
+    ".cache/model_reference/post_text_pow2_panel_20261120/supervisor_launch.json": "fac3ff57b514082aa18f9ef296d22c6a79ec8d8bca2623348368bb128d4bafbd",
+    ".cache/model_reference/post_text_pow2_panel_20261120/verification/launch.json": "873aae7c61b12b9ab7a0af940a1333338b92a984a29ce36f650325acad446f73",
+    ".cache/model_reference/post_text_pow2_panel_20261120/verification/supervisor_launch.json": "31ce82d630d828584244967b2beb9bc5ff4ee09739cc3dc85251dd35cf8dd0ed"
+  }
+}
