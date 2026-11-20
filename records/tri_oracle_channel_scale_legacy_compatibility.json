@@ -1,0 +1,66 @@
+{
+  "state": "linked_channel_capable_candidate_preserves_legacy_fullwidth_fixture",
+  "candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
+  "original_placed_baseline_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+  "runtime_sha256": "89ab532c3436c4ff744ed9c653f1bb2f9bf68550018926c27555c3ecd4db3d18",
+  "functional_fixture": {
+    "cycles": 1716240,
+    "exact_writeback_values": 4096,
+    "input_features": 2048,
+    "intermediate_channels": 5632,
+    "output_features": 2048,
+    "physical_writeback_packets": 512,
+    "request_bytes": 178968,
+    "response_chunks": [
+      603548,
+      542642
+    ],
+    "simulator_finish_time": "17162480 NS + 0",
+    "snapshot": "worklib.tri_oracle_channel_feedforward_tb:sv",
+    "tokens": 2
+  },
+  "all512physical_packets_byte_identical_to_old_baseline": true,
+  "all4096output_values_equal": true,
+  "cycle_and_traffic_counts_identical": true,
+  "scale_table_requests": 0,
+  "scale_table_bytes": 0,
+  "fresh_build_seconds": 763.4404241750017,
+  "native_simulation_seconds": 955.9278414838482,
+  "owned_legacy_group_terminal": true,
+  "configured_simulator_threads": 20,
+  "simulator_engines_reported": 18,
+  "warning_codes": [
+    "MC",
+    "MCECPU"
+  ],
+  "qualifications": {
+    "legacy_fixture_pass": true,
+    "channel_scaled_fixture_pass": false,
+    "complete_trained_layer": false,
+    "current_full_model_accuracy": false,
+    "placed": false,
+    "routed": false,
+    "paper_matching": false,
+    "routing_release": false
+  },
+  "scope": "Full widths2048/5632/2048 for two archived layer10tokens through physical ports, using legacy scalar commands. New per-output-scale mode is a separate pending run. Not complete chained layer/model, physical qualification, or paper matching.",
+  "evidence_sha256": {
+    ".cache/channel_scale_integration_20261120/replay_v2/runtime.json": "89ab532c3436c4ff744ed9c653f1bb2f9bf68550018926c27555c3ecd4db3d18",
+    ".cache/channel_scale_integration_20261120/replay_v2/run_replay.py": "ff9657595f0a29122551fa79500f851d1a52404c5f96452b630f557af359ed86",
+    ".cache/channel_scale_integration_20261120/replay_v2/elaboration/status.json": "6ece1f45faaeeafee8e1a3b81d94a4151bafd76622e2df0c96c42cc3a0ddd1a1",
+    ".cache/channel_scale_integration_20261120/replay_v2/elaboration/qualified.json": "7eed16267edb85dbfcfa9fb6fbb8797df8443846561c9f9b1ac531c8ac0f44f0",
+    ".cache/channel_scale_integration_20261120/replay_v2/elaboration/xrun.log": "47b883849ba6280d1faa25f135907fadb0164177399c5f5a4cd975380de7e265",
+    ".cache/channel_scale_integration_20261120/replay_v2/compiled_manifest.json": "e8e52b90320be692ab06e6ba8573a28d638650ec95ba06a5f5be13b3ea6d8e03",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/status.json": "d7aefac5916b64422be3c55ee6818ece760f1f7a6f3707b6c87642e54004ef68",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/qualified.json": "9d174362a01c1a4d368574877a8c84cc866352b97df92f4bbd244b8c11ca93d4",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/xrun.log": "d05b8c1fa047db1deac93bbf1a70cbc5059c2cd019affc9b595f01e73eb6e374",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/console.log": "65b3c1776ee568c769acb580968a2fd91c660ff99b6da697483f71671a196cf4",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/used_config.txt": "2b98a3ec8cbcbabe781523eb01ed042f4a5b8b6d0af440a729c866970b25512c",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/runtime_package_changes.json": "70b688b4412c706534d1356502f259f4315c4589c74d7047ad19cab4411ac8f0",
+    ".cache/channel_scale_integration_20261120/fixture_v2/scalar/observed_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/channel_scale_integration_20261120/fixture_v2/scalar/host_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/channel_scale_integration_20261120/linked_v1/linkage.json": "d826059505a2133ecce7d06a58973a72233cd52afd50a1f843e0384e18aa6f4f",
+    ".cache/channel_scale_integration_20261120/linked_v1/preservation.json": "ce61b32de6b5294703ae5671945b04fcfc2cd3cf2378d04721a9f13175593f87",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/postverify_v2.json": "e492fc72a981d8f1ac4bbdd758e5ed30e6fa50ddae928af7434a75875a84f937"
+  }
+}
