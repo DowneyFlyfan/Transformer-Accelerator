@@ -1,0 +1,105 @@
+{
+  "all20physicalcores_present_separately_verified": true,
+  "candidate_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+  "controls": {
+    "invocation_parser_tests": 8,
+    "transcript_and_packet_tests": 12
+  },
+  "evidence_sha256": {
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/bundle.sv": "414226dffd8d83962a1b705af30f8c492a6b61aff587596e9ba19e3f842debfd",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/feedforward_tb.sv": "448525cb504536699e97ad28c59404f003f1fa1e7c683da9daa141d6051cc74b",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/host_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/invocation_v2.py": "6f91f706ed89b945c1e74ccb58753145d316d35a4ebb591b3d574367777d70a2",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/native/elaboration/status.json": "212e5c36712387f5d9b018cd1728a7ef7da6d6a24c33b43045b4f9b3c5d178b1",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/native/elaboration/xrun.log": "67ed6531cf9e4069086fa226a0a2502c09db6bdb952b3073bc916237d84f80e5",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/native/run_0_20/console.log": "91be09030dbf4888cbb6f37a00ac61354006034746e2331ec5f9d1a0dc59f2ca",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/native/run_0_20/mcesim.run/used_config.txt": "44ca055d106d6ae1e1ef693e25450e649bf3890676e77b64aaea844832cec1e0",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/native/run_0_20/xrun.log": "6fca50d6094bb23bb18b0b1827fd7847473d9ec3a91251fbbafa49c2a3b3f21c",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/native/status.json": "93a808c3b6f0fcc8f07d9f2c054523a4eaf643a6f5c794fc27b1c7120ac52ec5",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/observed_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/postverify_v2.json": "e492fc72a981d8f1ac4bbdd758e5ed30e6fa50ddae928af7434a75875a84f937",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/postverify_v2.py": "3c9424e74f34921c1f220eb714bbb7bacc0cf9a3dea0117367a22bee348b57f4",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/postverify_v2_anchor.json": "88c1ffaa60c8e5d5b38aa410a1467226c5f77546f94fb07dd641c3de741ebae7",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/replay.py": "ea420c8f266208a27d11ef519176321d847b658935c333413ed09e643715f290",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/runtime.json": "cf871d0a602a2684e4f0f46f74cf0652ea039fd7e9784829190e4a22b2627779",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/runtime_package_changes_v2.json": "baa9f29635c5c6f87ba983e917f12f3851672b61e7ccd89039a8bb225c768e88",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/test_invocation_v2.py": "e57466e228c946195453eedfa06a070f8afede1516db99d57f7c60da0c8e9897",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/test_validation.py": "a315a4d6b576ec0160d0e506f3f9b9dda07732abbe37743c5cdf82c1317c4931",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/verified_status.json": "c64d540c24571f6a60daeed7cb217b5d8eade7f7307751c1e9c837793f151389",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/verify_result.py": "43b13907ed38ff6ce3fde5b177650b922fc679afdec4523a6b2225acfe6944b9",
+    "records/tri_oracle_current_candidate_compiled_memory.json": "e224c8a001443ce8e69ab0b2d0a57d050de84fda7624000c98d8ef2b0b151f0a"
+  },
+  "fresh_elaboration": {
+    "exit_status": 0,
+    "minimum_free_disk_bytes": 221139812352,
+    "minimum_host_available_bytes": 11827924992,
+    "owned_group_terminal": true,
+    "peak_container_anonymous_bytes": 8703840256,
+    "stop_reason": null,
+    "supervisor_error": null,
+    "wall_seconds": 750.088301604148
+  },
+  "functional_fixture": {
+    "cycles": 1716240,
+    "exact_writeback_values": 4096,
+    "input_features": 2048,
+    "intermediate_channels": 5632,
+    "output_features": 2048,
+    "physical_writeback_packets": 512,
+    "request_bytes": 178968,
+    "response_chunks": [
+      603548,
+      542642
+    ],
+    "simulator_finish_time": "17162480 NS + 0",
+    "snapshot": "worklib.tri_oracle_current_feedforward_tb:sv",
+    "tokens": 2
+  },
+  "host_postverification_seconds": 12.715978381922469,
+  "limitations": [
+    "Two archived layer10tokens and projection inputs, not a complete chained trained layer.",
+    "Global/scalar Down weight scaling, not the calibrated per-output-scale full-accuracy reference.",
+    "Functional unit-delay gate simulation with timing checks disabled.",
+    "No clock distribution, routing, measured frequency, energy or paper matching."
+  ],
+  "native_simulation": {
+    "exit_status": 0,
+    "minimum_free_disk_bytes": 221122224128,
+    "minimum_host_available_bytes": 15386177536,
+    "owned_group_terminal": true,
+    "peak_container_anonymous_bytes": 4163796992,
+    "stop_reason": null,
+    "supervisor_error": null,
+    "wall_seconds": 894.8158728040289
+  },
+  "native_warnings": [
+    "MC",
+    "MCECPU"
+  ],
+  "original_host_failure": {
+    "cause": "The old checker required the library path on its own tabbed line; native xrun reports the option and value together. The new checker compares every command argument in order.",
+    "correction": "Parse exactly one native command block and compare every option/value in order for build and simulation; all numerical and terminal checks are unchanged.",
+    "native_rerun": false,
+    "preserved": true
+  },
+  "postverification_inputs_pinned": 330,
+  "qualifications": {
+    "advance_to_clock_distribution_or_routing_allowed": false,
+    "calibrated_per_output_scale_model": false,
+    "complete_chained_trained_layer": false,
+    "complete_paper_architecture_and_access": false,
+    "fullwidth_archived_two_token_scalar_feedforward": true,
+    "measured_timing": false,
+    "paper_matching": false,
+    "power_or_energy": false,
+    "routed_result": false,
+    "whole_model_accuracy": false
+  },
+  "resource_measurements": "Native memory/disk extrema are guard polling samples, not operating-system high-water marks.",
+  "runtime_sha256": "cf871d0a602a2684e4f0f46f74cf0652ea039fd7e9784829190e4a22b2627779",
+  "scope": "All2048inputs,5632intermediatechannels and2048outputs for each of two archived trainedlayer10tokens, through the full current mapped chip and physical ports. Uses scalar/global Down quantization; not the calibrated per-output-scale software model or a complete chained layer.",
+  "simulator_engines_reported": 18,
+  "simulator_threads_configured": 20,
+  "source_inputs_pinned": 316,
+  "state": "current_placed_fullwidth_two_token_scalar_feedforward_verified"
+}
