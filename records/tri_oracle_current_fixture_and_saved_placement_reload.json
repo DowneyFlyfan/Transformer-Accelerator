@@ -1,0 +1,205 @@
+{
+  "state": "current94buffer_trained_fixture_and_saved_placement_reload_verified",
+  "candidate": {
+    "current_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "original_layout_sha256": "972c00ebcfecfa5b2f374fe36d9cd7bca2f06ff84a92c516f66cbc57af0ac54f",
+    "technology": "TSMC28HPC+adaptation",
+    "buffer_cells_added": 94,
+    "whole_model_or_paper_result": false
+  },
+  "functional_fixture": {
+    "scope": "One complete fresh-reset trained physical-port fixture on the94buffer candidate. Not full-model accuracy, timing closure, routing or paper qualification.",
+    "complete_fixture": {
+      "attention_heads": 32,
+      "attention_rows": 128,
+      "projected_vectors": 16360,
+      "projection_batches": 1040,
+      "scope": "Full Q/K/V caches on one trained prompt,32head decisions and128 selected attention rows; not whole-model accuracy or physical qualification.",
+      "totals": {
+        "auxiliary": 33313,
+        "context_words": 90,
+        "host_words": 20101,
+        "maps": 576,
+        "reads": 1784115,
+        "rows": 128,
+        "value_reads": 32736,
+        "wide": 66049
+      },
+      "value_requests": 32736
+    },
+    "fresh_reset": true,
+    "all20physical_cores_elaborated": true,
+    "multicore_simulation_threads": 20,
+    "complete_host_fixture_verification": true,
+    "native_worker_exit_status": 0,
+    "owned_native_group_terminal": true,
+    "native_simulation_wall_seconds": 56109.755215731915,
+    "fresh_elaboration": {
+      "exit_status": 0,
+      "minimum_free_disk_bytes": 240691810304,
+      "minimum_host_available_bytes": 11410239488,
+      "owned_group_terminal": true,
+      "peak_container_anonymous_bytes": 8703094784,
+      "stop_reason": null,
+      "supervisor_error": null,
+      "wall_seconds": 740.7337883608416
+    },
+    "immutable_runtime_inputs": 283,
+    "used_configuration_sha256": "c9914ac61bd75eb5ea835440ae56822a93f96ad05ee41227ea6e242e0f7d6aa6",
+    "simulation_does_not_establish": [
+      "whole-model accuracy",
+      "all trained layers",
+      "timing closure",
+      "routed operation",
+      "power or energy",
+      "paper matching"
+    ]
+  },
+  "saved_database_reload": {
+    "scope": "Read-only fresh restoration of the complete current placed candidate with original models and constraints. No measured timing, clock distribution, routing, power, accuracy or paper matching.",
+    "native_tool": "Innovus25.10in existing single tri-oracle-eda container",
+    "native_wall_seconds": 136.83990610507317,
+    "native_exit_status": 0,
+    "native_runs": 1,
+    "semantically_identical_modules": 771,
+    "reformatted_module_bodies": [],
+    "identical_component_poses": 3900126,
+    "component_inventory_sha256": "5ac86dadd5644b00ca603ce1363eb833d43a388c710c34181b71f4ddf4ff6816",
+    "identical_blockages": 501,
+    "original_group_and_region_associations_preserved": true,
+    "original_constraint_views": [
+      "setup_slow",
+      "setup_typ",
+      "hold_fast"
+    ],
+    "constraint_comparison": "All noncomment command lines are identical; exported file hashes can differ because of comments.",
+    "timing_libraries_loaded": 21,
+    "physical_abstracts_loaded": 8,
+    "unique_extraction_models": 3,
+    "complete_original_view_reports": [
+      {
+        "setup_slow": {
+          "corner": "rc_slow",
+          "technology_file": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/full_models.db/libs/mmmc/rc_slow/qrc_rcworst"
+        },
+        "setup_typ": {
+          "corner": "rc_typ",
+          "technology_file": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/full_models.db/libs/mmmc/rc_typ/qrc_typical"
+        },
+        "hold_fast": {
+          "corner": "rc_fast",
+          "technology_file": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/full_models.db/libs/mmmc/rc_fast/qrc_rcbest"
+        }
+      },
+      {
+        "setup_slow": {
+          "corner": "rc_slow",
+          "technology_file": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/full_models.db/libs/mmmc/rc_slow/qrc_rcworst"
+        },
+        "setup_typ": {
+          "corner": "rc_typ",
+          "technology_file": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/full_models.db/libs/mmmc/rc_typ/qrc_typical"
+        },
+        "hold_fast": {
+          "corner": "rc_fast",
+          "technology_file": "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/full_models.db/libs/mmmc/rc_fast/qrc_rcbest"
+        }
+      }
+    ],
+    "original_database_unchanged": true,
+    "reloaded_netlist_sha256": "09febaf2b1f357d0cf99a417674b8340c09bfdbae5dd1dfbc9d01fb4b70b73aa",
+    "reloaded_layout_sha256": "39d8e9d870c4dab468c4d86a733c64f0d6d3daef06d4a93ab2c095b957b2fc2c",
+    "native_guard_sampled_peak_container_anonymous_bytes": 11017764864,
+    "native_guard_sampled_minimum_available_bytes": 8468779008
+  },
+  "verification": {
+    "preflight_tests": 30,
+    "postrun_model_epoch_tests": 6,
+    "host_postverification_seconds": 46.74027874902822,
+    "all_successful_workers_exit_zero": true,
+    "definitions_and_module_parsers_shared_with_prior_checks": true,
+    "independent_native_netlist_extraction": false,
+    "host_postverification_guard_sampled_peak_rss_bytes": 2340925440,
+    "host_postverification_guard_sampled_minimum_available_bytes": 19056074752,
+    "resource_measurements": "Resource extrema are controller/guard polling samples, not operating-system high-water marks."
+  },
+  "preserved_failure": {
+    "scope": "First host qualification only; native reload already passed and exports were retained.",
+    "cause": "Generic input observer expected one resistance/capacitance corner summary; read_db and explicit analysis-view selection emitted two complete summaries.",
+    "correction": "New source-bound checker validates both complete view/corner/file epochs and rejects wrong files, swapped view mappings, missing/duplicate views and unexpected epoch counts.21timing and8physical input checks are unchanged.",
+    "native_rerun": false,
+    "failed_host_exit_status": 1,
+    "successful_postcheck_exit_status": 0,
+    "failed_sources_and_logs_preserved": true
+  },
+  "qualifications": {
+    "current_one_prompt_qkv_cache_and_selected_attention_fixture": true,
+    "current_saved_database_fresh_restoration": true,
+    "complete_trained_mapped_layer": false,
+    "complete_paper_architecture_and_memory_access": false,
+    "paper_memory_unit_convention_reconciled": false,
+    "paper_accuracy_protocol_match": false,
+    "current_full_integer_correct": 6247,
+    "current_full_integer_questions": 12578,
+    "current_full_accuracy_unchanged": true,
+    "measured_timing": false,
+    "routed_result": false,
+    "measured_power_or_energy": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/runtime.json": "801d2d347ac1889a5b5e20e408df72a96882776fca486d0e489d58527e525390",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/replay.py": "493a3dffa48c3a20ec36f338013e189f0d9c1b57764663bad99b79407d0f3666",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/bundle.sv": "29cfa0a6be99268a9fe848afac7101cdfdeb9a2206b853e8435d5d02724e763c",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/launch.json": "2aee23e5fbb378a664003649ba9f6db61fed896e168a196fac305d8c61af3670",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/verified_status.json": "17cd5b7021b38fa01403a2eb61b5dc0d59444fbc82ed50d4b6d610808642026c",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/native/status.json": "5252f7090823d6f15c490917ec4934b0184ef0300b3da38197f77bc262525dd1",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/native/compiled_manifest.json": "a0c73b64ab0260df8ebd9e8e2cb616339ebdac8f1aafce9966e2f9e51edca1b0",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/native/runtime_package_changes.json": "cb09cd6e6a12c25e4613cd51148e35ada46fe58e1d2ed99ee21ba02271accab8",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/native/run_0_20/console.log": "854cbef2a4d525b84bb16c0875fb58e8e9f505ed9bd2d06e455cd05022248ab8",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/native/run_0_20/xrun.log": "da16d1da636a1ce2941dc141bd4982921f944ec89d2b2727a823f0c2697b606f",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/trained_replay/native/run_0_20/mcesim.run/used_config.txt": "c9914ac61bd75eb5ea835440ae56822a93f96ad05ee41227ea6e242e0f7d6aa6",
+    ".cache/physical/whole_chip_xcelium_speed/booth_joined_chip/native_glue/retry/unseeded_packet_layer/projection_commands.txt": "93df63f6547ea9f3adb2a9d37dd35e07c03458404e9943d686a0ed4fcfe5153d",
+    ".cache/wide_packaged_host_link/trained_current_multicore/unattended_current_retry/queue_run.py": "09f982caf8430b71e2179e468c8358b5d5665caed89703f397171cbf47a18547",
+    ".cache/model_reference/ai2d_current_prefix_capture_20261119_v2/verified_project_imports.py": "b225a7331e3d5c8fa39468c83738412540c6402e126d2ca668d19d503a933534",
+    ".cache/model_reference/current_prefix_refit_full_gqa_20261119/verified_entrypoint_v2.py": "841ce8347dc4b7ddb12c4f810d2679d92eb0c74f0bdbb62fc8b099337d4d9dc1",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/config_v3.json": "7e44de34c0a0d3c5033985686dcfd12084c4fce6e4f6dee2b500f88bd7d6fdcf",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/run_queue_v3.py": "7fef967b26e659e66db53dc52c0be7c4f7abacc1d7f860d13c428e79cfcf2816",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/verify_reload_v3.py": "9a374652dfd8709b725421a6dcbaabdd307323de25f6acb223d2680b413e962b",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/reload_helpers_v3.py": "89b4106f6efc734a94dcb128c98ee78bf78b408a047fe6674bac02ff56cc660f",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/reload_v5.tcl": "0ae0ec2cbafb05f309bdbfb3021910525e0c37ca2a19491819a311b6dff95b0b",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/preflight_v3_verified.json": "fb6466e1f6daaa745096f622451ca5e62db4b1e2c41603cd440555b4f6e658bb",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/all_v3_tests.log": "a78826761c00b3ee14b99ecf753c0d9f242a3462bc2bedbd2964ada7878c1971",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/imports_v3_receipt.json": "ac5fc056b889c162e42b7a093bc11655544c8b0df7ecc17afab9d42b5cb1734d",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/group_records_v3_preflight.json": "bf4fba30a58b1e714bb88f842a6ffe6f83543af56418cb9e226ab0ee9a0d620f",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/queue_prelaunch_review_v3.json": "c61f0fc82014e965d518df0e02e770d54fcd47f12b678b839fbe76e9088a8841",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/supervisor_launch.json": "08ceaea2c3d9bd1b086e3c6e1fd4812f8935c4f12e915a813d4268af8bafe239",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native_launch.json": "95fd7352e1ca257ac52122fae203468383524bfb577ba198e03fe568884422f6",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native_status.json": "7e458cb8253ee8f6b10440b59e24f85daae315e952ac272a2253230f0d375b4a",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/qualification_status.json": "d2f9d0f0118a5d4ce56e8b2dffb92860d0f056c0e4baa7eeaf31a22d56a99bf1",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/failure.json": "75b77c07d9d63885be3e708ec9c724a26f82b164f010715cfa2c578db51ec770",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/verification.log": "fa124b56be84411ffbb538521c2e040d00385a47117b18c63dc03183f41409c5",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/supervisor.log": "e8840d34d5d7144bd379f92eba4304096a8551d04c5c672eb825bb7a85c2e41a",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/verify_reload_v4.py": "aadc57ae3b68a82d4cdb7b2fc887236b6cc9f34c1cd39c5cb4e324fa57532b1a",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/rc_epochs_v4.py": "1f535ab313b020be57155fc7ecc50450fe6d304430bc1621ad1001e8ab918e8b",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/test_rc_epochs_v4.py": "a8fee2e03439125732c702cee10e62ff522bb5e773138ccd3790ef1c9fc52f2f",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/rc_epochs_v4_red.log": "38a918b5f1e75e688af1e9ffa5759bb631eb45ebd143693c51eff5203d23e2c8",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/rc_epochs_v4_green.log": "dcd2147edfda2291b456dfb6d9f3021f0fed07760d5a1c8869fc5446f30e28fe",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/verified.json": "63d1b1291a01c008d23221248315b589943fc09f56377370c8cee81ede92c86d",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native/console.log": "d23577cad34cc09131b914dcef652769fd2d9b14b6af98372ebf92ed130a1f11",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native/geometry.rpt": "093f8c4d6777a0a2e8af8d547cf92a51423344d5ff0334c65d76e526c99a4911",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native/cold.v": "09febaf2b1f357d0cf99a417674b8340c09bfdbae5dd1dfbc9d01fb4b70b73aa",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native/layout.def": "39d8e9d870c4dab468c4d86a733c64f0d6d3daef06d4a93ab2c095b957b2fc2c",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native/setup_slow.sdc": "123d1086e918a6240382aebfb2788ae0ec0a32ac924eaa3fe3b44ce1577703f4",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native/setup_typ.sdc": "b37e5d4249b51e54a332a7b11918e95040c1d620ae6f7540a38938416d353be2",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/native/hold_fast.sdc": "f56e71159527c30bb419be6c06dc97d7d7402073095f1ca802c4c2c9702490c2",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/postverify_v4/source_anchor.json": "d6d623c0770ecb5202880ac85fadf62be38a403decf1c6c7a91ccaae7f5ec380",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/postverify_v4/guard.py": "00d855b708f45c1323b9b06fea0962af08e6621dd54913f613522b11404534a1",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/postverify_v4/guard_entry.py": "cd38442f7dd7a6a00ca045fbdf18d546a359daad9f79611ad1259e3a1e1ca4dc",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/postverify_v4/launch.json": "93b4c1fd1623a89328935c98093dd24dc1718b5f20c9a01a8e7ed9346b823422",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/postverify_v4/supervisor_launch.json": "31ed2f621aa102feca666d1098c8651d1e1c19504d4e9fba08e7f16702ca630f",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/postverify_v4/guard_receipt.json": "c6c5c6b769658212ddcb402f3c8bc8936914b42405ef8998da76ff90a44c563d",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/cold_reload_v1/postverify_v4/console.log": "86b2400c8286d9406416e7bd8d80799e6dbc9e4f96185cd202037a22273ef5e1"
+  }
+}
