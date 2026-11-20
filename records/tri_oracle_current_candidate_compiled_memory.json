@@ -1,0 +1,137 @@
+{
+  "candidate_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+  "clusters": 5,
+  "compiled_memory_bytes": 414928,
+  "compiled_memory_decimal_kilobytes": 414.928,
+  "compiled_memory_kibibytes": 405.203125,
+  "compiler_geometries": {
+    "TS5N28HPCPSVTA16X80M2FW": {
+      "bits_per_word": 80,
+      "bytes": 640,
+      "macros": 4,
+      "words": 16
+    },
+    "TS5N28HPCPSVTA24X128M2FW": {
+      "bits_per_word": 128,
+      "bytes": 6144,
+      "macros": 16,
+      "words": 24
+    },
+    "TS5N28HPCPSVTA32X128M2FW": {
+      "bits_per_word": 128,
+      "bytes": 188928,
+      "macros": 369,
+      "words": 32
+    },
+    "TS5N28HPCPSVTA512X64M4F": {
+      "bits_per_word": 64,
+      "bytes": 167936,
+      "macros": 41,
+      "words": 512
+    },
+    "TS5N28HPCPSVTA8X80M2FW": {
+      "bits_per_word": 80,
+      "bytes": 80,
+      "macros": 1,
+      "words": 8
+    },
+    "TS6N28HPCPSVTA16X128M2F": {
+      "bits_per_word": 128,
+      "bytes": 51200,
+      "macros": 200,
+      "words": 16
+    }
+  },
+  "cores_per_cluster": 4,
+  "each_core_compiled_bytes": {
+    "inputs": 8192,
+    "masks": 1024,
+    "outputs": 2048,
+    "weights": 8192
+  },
+  "evidence_sha256": {
+    ".cache/physical/library/tcbn28hpcplusbwp12t40p140.v": "b928fadca0f95d8ec8a9f6cd6967e272ab887b1f2e330a56d39611d1c321652d",
+    ".cache/physical/shared437/merge455/compiler/16x80m2f/ts5n28hpcpsvta16x80m2fw_130a/VERILOG/ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.v": "ccf723afb843be99519a3cb5fe2cf8c5d46ebce84a62dd1246f0f7bf397237a7",
+    ".cache/physical/shared437/merge455/compiler/24x128m2f/ts5n28hpcpsvta24x128m2fw_130a/VERILOG/ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.v": "35ea57a9268155751bd00d7087fd068fb1d5d9c575e2e52f61780c725a7acd54",
+    ".cache/physical/shared437/merge455/compiler_inplace/8x80m2f/ts5n28hpcpsvta8x80m2fw_130a/VERILOG/ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.v": "f23baa3b8e4b7e078a89899ff0e2194dd9022dc0dc7d6fbed71c8c98f21b5e41",
+    ".cache/physical/sram/activation_cache_banks_01/ts5n28hpcpsvta512x64m4f_130a/VERILOG/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    ".cache/physical/sram/core_outputs_01/ts6n28hpcpsvta16x128m2f_130a/VERILOG/ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+    ".cache/physical/sram/core_weights_masks_01/ts5n28hpcpsvta32x128m2fw_130a/VERILOG/ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/current_feedforward_20261120_v1/bundle.sv": "414226dffd8d83962a1b705af30f8c492a6b61aff587596e9ba19e3f842debfd",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/cold.v": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    ".cache/wide_packaged_host_link/drive_repair/branch_repair/native_trial_runtime_guarded/native/layout.def": "972c00ebcfecfa5b2f374fe36d9cd7bca2f06ff84a92c516f66cbc57af0ac54f",
+    ".cache/wide_packaged_host_link/owner_score_proof/current_memory_inventory_20261120/inventory.py": "aad72bb465217c1eccb36ae8b310e3341835adecd170f71232c9d9e2875dff1c",
+    ".cache/wide_packaged_host_link/owner_score_proof/current_memory_inventory_20261120/run_inventory.py": "394bf00a0558e3146f69e63d3da06d93119543a389a3b9e1897f7580e4207889",
+    ".cache/wide_packaged_host_link/owner_score_proof/current_memory_inventory_20261120/test_inventory.py": "fb674974411514987e6aa557f0ca87fd7af28bf3d05ed831bb245b5bb3d08b9d",
+    ".cache/wide_packaged_host_link/owner_score_proof/current_memory_inventory_20261120/verified_inventory.json": "fc79a5347ac05ef25f393e4ea6073b86c1034f6cc710134e251b5447fcd3fe15",
+    "records/tri_oracle_current_fixture_and_saved_placement_reload.json": "1f3930b566b2c1e54fa2eec433a2f760a27f3c811b998021191130361d281315"
+  },
+  "layout_sha256": "972c00ebcfecfa5b2f374fe36d9cd7bca2f06ff84a92c516f66cbc57af0ac54f",
+  "memory_macro_count": 631,
+  "memory_unit_note": "The implementation contains405.203125kibibytes or414.928decimal kilobytes. The paper label405KB is consistent with rounded binary units; this census does not establish the authors unit convention or exact equality.",
+  "qualifications": {
+    "advance_to_clock_distribution_or_routing_allowed": false,
+    "complete_paper_architecture_and_memory_access": false,
+    "complete_trained_mapped_layer": false,
+    "current_compiled_memory_geometry": true,
+    "measured_power_or_energy": false,
+    "measured_timing": false,
+    "model_accuracy": false,
+    "paper_matching": false,
+    "paper_memory_unit_convention_reconciled": false,
+    "routed_result": false
+  },
+  "roles_compiled_bytes": {
+    "aggregator_io": 10240,
+    "inputs": 163840,
+    "masks": 20480,
+    "outputs": 40960,
+    "prediction_metadata": 6656,
+    "shared_weight_signs": 2048,
+    "surviving_token_signs": 6144,
+    "token_merge_table": 720,
+    "weights": 163840
+  },
+  "scope": "Reachable current-candidate compiled-memory geometry and ownership, independently counted from the mapped netlist and matched against the saved native placement per cell master. Role names describe hierarchy ownership; they do not prove access behavior or paper performance.",
+  "state": "current_placed_candidate_compiled_memory_geometry_and_ownership_verified",
+  "structural_checks": {
+    "all_memory_instances_owned_and_classified": true,
+    "compiler_model_dimensions_checked": true,
+    "exact_per_master_histogram_matches_native_placement": true,
+    "leaf_instance_count": 3900126,
+    "module_definitions": 771,
+    "parser_contract_tests": 13,
+    "reachable_module_definitions": 651,
+    "unreachable_definitions_excluded": 120
+  },
+  "verification": {
+    "address_space_limit_bytes": 268435456,
+    "elapsed_seconds": 18.289007253944874,
+    "host_only": true,
+    "native_tool_rerun": false,
+    "process_status_vm_hwm_bytes": 30683136,
+    "resource_scope": "VmHWM is the Linux process-status high-water mark after execution started; inherited raw getrusage maxima are retained privately and not used as this measurement."
+  },
+  "verified_core_owners": [
+    "0:0",
+    "0:1",
+    "0:2",
+    "0:3",
+    "1:0",
+    "1:1",
+    "1:2",
+    "1:3",
+    "2:0",
+    "2:1",
+    "2:2",
+    "2:3",
+    "3:0",
+    "3:1",
+    "3:2",
+    "3:3",
+    "4:0",
+    "4:1",
+    "4:2",
+    "4:3"
+  ]
+}
