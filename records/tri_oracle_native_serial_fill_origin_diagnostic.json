@@ -1,0 +1,71 @@
+{
+  "state": "native_serial_command_to_persistent_key_fill_and_retained_weight_origin_verified_scoped_diagnostic",
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28-nanometer local reconstruction",
+  "boundary": "Accepted native serial header and payload, all five group admissions, original key fills and the labels on existing retained-weight contracts.",
+  "dispatcher_batch_parent_arbiter_control_bits": 55,
+  "resetless_dispatcher_payload_bits": 1664,
+  "distinct_group_key_actor_control_bits": 965,
+  "distinct_selected_physical_state_bits": 2664,
+  "new_logical_group_header_history_bits": 375,
+  "new_logical_persistent_fill_history_bits": 375,
+  "physical_storage_added": false,
+  "initial_payload_contents_unconstrained": true,
+  "proven_behavior": [
+    "Valid actual group admissions capture key address and count from the correct current serial-command descriptor slice.",
+    "Each actual memory fill snapshots those original accepted serial key fields; fill-source base and count agree with that snapshot.",
+    "For an arbitrary valid resident key rank, the captured source address equals original serial fill base plus64 times rank, with the original fill count.",
+    "Later accepted commands and cached reuse preserve the old fill origin until another actual fill occurs. A later command must not relabel retained cached weights.",
+    "Original physical reset, canonical clock updates and optional local asynchronous-reset updates preserve the coupled serial, batch, group, source-address and persistent-fill histories.",
+    "The previously verified retained-weight contracts for all20 cores inherit this original serial-fill label. Their1280 physical row/strip cases were not rerun in this step."
+  ],
+  "upstream_serial_to_stored_key_field_checks": 36,
+  "persistent_fill_coupled_checks": 56,
+  "all_positive_check_domains_nonempty": true,
+  "upstream_model_only_origin_faults_detected": 20,
+  "persistent_fill_model_only_origin_faults_detected": 20,
+  "persistent_fill_fault_types": [
+    "missing origin flag",
+    "corrupted original address",
+    "corrupted original count",
+    "cached origin wrongly changed to a later command"
+  ],
+  "nonempty_fill_and_cached_count_domains": 60,
+  "key_count_boundaries": [
+    1,
+    32,
+    33,
+    63,
+    64,
+    512
+  ],
+  "full_host_reachability_from_mode_domains_claimed": false,
+  "related_history_helper_tests_passed": 17,
+  "canonical_state_update_method": "Shared physical registers use the original193-register source view in each group. Its actual group/address/key-field updates drive every overlapping invariant. Current fields and full admission/descriptor routing are rechecked against the original72-register group view, and the original source-address invariant is independently reconstructed exactly. No inconsistent parallel next value is assigned to a shared register.",
+  "elapsed_seconds": {
+    "serial_to_stored_key_origin": 48.53119524102658,
+    "serial_to_persistent_fill_origin": 99.11168784787878
+  },
+  "scope": "Component-local two-state provenance on the frozen mapped candidate. This joins accepted native serial words to original key fills and to the origin labels of previously qualified retained-memory contracts. It does not prove host packet/router delivery, command-tag return, external memory response data or ordering, the full mapped workload, model accuracy, timing, energy or paper matching. The final complete-native-feature review remains pending.",
+  "authenticated_local_evidence": {
+    ".cache/wide_packaged_host_link/owner_score_proof/native_serial_group_key_origin_all5_v1.json": "8d85bb882c2c27b6cf0b766f9f78076585794ae9bfd34e126a149b6e369005c4",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_serial_group_key_origin_all5_v1_guard_receipt.json": "58b5bcf6e352186f2012dc6ad4649ba946829b38550b89fbb0b89819fc932451",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_serial_fill_origin_all5_v1.json": "85767001e1301f3fe9b2059df6334d847e84e166ff0c9450fc7ddf561a7637a6",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_serial_fill_origin_all5_v1_guard_receipt.json": "54c0a078c02a0d12e1ee8cf8fd825cebcaea2c3c444e02625a150243e9122878",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_batch_descriptor_v4.json": "f632000960edb40be1aba99138166db2298bb0da0b316f08c5ea7fda5c6b64b3",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_batch_descriptor_v4_guard_receipt.json": "de94aa84be5b9b07d08cb9affaeef88d969cf9a764e0b317669351e0c3171de4",
+    "records/tri_oracle_native_batch_serial_header_diagnostic.json": "636281c184ad33552ffadeff889e6e5d6dc734c4692f2481a1db1bc401c36a77",
+    "records/tri_oracle_native_group_descriptor_origin_diagnostic.json": "e58c6208ef6572ea93d9bf5a9d1bb4a92c797dc3f292d9efe8239c813346afa2",
+    "records/tri_oracle_native_key_weight_provenance_diagnostic.json": "1f3ba3b91676cbc2a86612d3c0f17c5b7126e12481febadd2fd6baa86e2e0a39"
+  },
+  "current_serial_header_to_persistent_fill_history_composed": true,
+  "existing_all20_retained_memory_contracts_labelled_by_original_serial_fill": true,
+  "all1280_memory_contracts_rerun_in_this_step": false,
+  "host_router_delivery_verified": false,
+  "command_tag_return_mapping_verified": false,
+  "external_memory_contents_or_order_verified": false,
+  "full_native_data_epochs_verified": false,
+  "independent_final_native_feature_review_done": false,
+  "paper_performance_matching_established": false,
+  "advance_to_clock_distribution_or_routing_allowed": false
+}
