@@ -1,0 +1,91 @@
+{
+  "state": "ordinary_completion_word_stability_and_local_transmit_framing_verified",
+  "scope": "Two-state Boolean proofs on the current mapped TSMC28HPC+ candidate. These establish ordinary response-word retention and local formatter contracts, not complete packet data provenance or physical timing.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "parent_record": "records/tri_oracle_native_buffer_branch_repair.json",
+    "added_state_bits": 0,
+    "circuit_changed": false
+  },
+  "ordinary_completion_words": {
+    "cases": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "error"
+    ],
+    "checks": "Every valid ordinary response word retains its valid indication,16-bit data and last flag while stalled, across an actual clock step and arbitrary changes of external inputs and untracked storage between clocks.",
+    "reset_condition": "Global reset is released; source control invariants are established by actual reset and preserved by the original next-state functions.",
+    "transmitter_protocol": {
+      "physical_control_bits": 5,
+      "counter_range": [
+        0,
+        2
+      ],
+      "nonzero_counter_requires_dispatch_complete_or_format_error": true,
+      "response_valid_case_partition_verified": true
+    },
+    "opcode0": {
+      "tracked_physical_register_bits": 126,
+      "inductive_control_bits": 32,
+      "actual_parent_interface_bindings": 148,
+      "untracked_source_storage_bits_with_arbitrary_future_values": 4073,
+      "producer_positive_queries": 7,
+      "actual_next_register_bit_fault_controls": 2
+    },
+    "independent_audit": {
+      "positive_queries": 36,
+      "model_fault_controls": 4,
+      "fresh_symbols": 61348,
+      "cases": 9,
+      "guard_wall_seconds": 54.18535227607936,
+      "peak_resident_bytes": 420249600
+    }
+  },
+  "local_transmit_formatters": {
+    "roles": [
+      "control_tx",
+      "grouped_tx",
+      "writeback_tx",
+      "status"
+    ],
+    "checks": "Actual framing counters, packet ownership, stored metadata, emitted owned-word formatting and retention of an owned word during a stall.",
+    "positive_queries": 22,
+    "actual_next_payload_bit_fault_controls": 4,
+    "independent_audit_queries": 10,
+    "independent_fresh_symbols": 6715,
+    "whole_upstream_row_lifetime_verified": false
+  },
+  "corrected_abstraction": "Earlier opcode0 failures were arbitrary-state or free-interface counterexamples. The qualified proof binds all148 original parent-interface cuts to actual functions, keeps the real command handshakes, and proves the shared-controller invariant. It imposes no restriction on the retained grouped-operation flag.",
+  "qualifications": {
+    "ordinary_response_words": true,
+    "local_formatter_contracts": true,
+    "complete_three_word_response_data_epoch": false,
+    "complete_host_to_memory_data_epochs": false,
+    "current_trained_fixture_complete": false,
+    "full_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    "records/tri_oracle_native_buffer_branch_repair.json": "9a6a3d303456b33c8a6b5a046ab6608e73e586cef3fe8f59668ad32582140630",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_host_router_functions_v3.json": "d28677d24be17e2c716f16aa7ed80bcc4a8b5e695dd0b83edff2dbf7070c4741",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_tx_router_framing_v1.json": "d2b7ffd13feaacf54b50c4558ccbeb9f363cdffc5d6ce54a121a0000532de93e",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_tx_router_framing_v1_independent_audit.json": "9340722da880cc68bc7f74b1fff433d7c469a531477b6c0b11fd2d2dc53a3603",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_completion_case0_hold_v7.json": "a4333ba1154a9eddc696430c333faeda2b0087e916c2fa90b8d61061e3e7a39c",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_completion_case0_hold_v7_source_anchor.json": "7d4a698670b21ac9fd23cc0ff4f4c00a4a1c11ed0d136cbed3b83d0ca38c94d9",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_opcode0_batch_bindings_v2.json": "9b724ff514b5720635dcab36a824278106c1b7b26ab34df612db93182766cd47",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_opcode0_completion_invariant_v7.json": "b9548fbfc3cd42030bfce4ff67e873eb791b9a7c4904c3524aeae5a870acf4fc",
+    ".cache/wide_packaged_host_link/owner_score_proof/opcode0_completion_invariant_guard_v7/guard_receipt.json": "f41b12bb47fd2261182444015d8277e5b42af66798605020761643923d49331b",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_completion_words_v2_independent_audit.json": "2f15ab14ab0c1e5a8417251cc439b19c0839f11b1fb3f47d6f1ccb8160080809",
+    ".cache/wide_packaged_host_link/owner_score_proof/completion_words_independent_guard_v2/guard_receipt.json": "dec7053168fc26cacb645da9e8b731447caa475ff95ddb485746068d874d545f",
+    ".cache/wide_packaged_host_link/owner_score_proof/completion_words_independent_guard_v2/source_anchor.json": "71657b4cee7c3826e3998077a00174b9074f9110439501136d62c9a3b8c8682c"
+  }
+}
