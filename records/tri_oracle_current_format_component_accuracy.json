@@ -1,0 +1,169 @@
+{
+  "state": "current_format_six_stage_software_component_accuracy_diagnostic_verified",
+  "scope": "Frozen reused160-question Graph Question Answering diagnostic panel,32questions in each of five structural types, spanning131images. Five existing mode archives are reused and one new mode is executed. Equal category weighting and prior panel reuse prevent treating these counts as the full benchmark or blind generalization.",
+  "configuration": {
+    "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+    "dtype": "float32",
+    "maximum_new_tokens": 128,
+    "greedy_end_of_sequence_token": 2,
+    "parameters_updated": false,
+    "new_weight_or_format_fitting": false,
+    "policy_installed": false,
+    "new_mode": "current_calibrated_integer_no_skip",
+    "new_mode_pruning": "Disabled in protected first row, ordinary prompt rows and every decoding call.",
+    "new_mode_late_correction": false,
+    "preserved": "Original model, prompt, tokenizer, numerical format and codebook-selection policies. Calibrated Down codes remain limited to ordinary prompt rows; first-row and decode numerical policies retain their previous codebook choices."
+  },
+  "accuracy": {
+    "questions": 160,
+    "images": 131,
+    "exact_matches_in_order": {
+      "dense_float32": 106,
+      "token_merging": 105,
+      "streaming_heads": 106,
+      "current_calibrated_integer_no_skip": 88,
+      "current_calibrated_integer_skip": 90,
+      "current_calibrated_skip_and_late_correction": 91
+    },
+    "adjacent_paired_changes": {
+      "token_merging": {
+        "previous": "dense_float32",
+        "gains": 5,
+        "losses": 6,
+        "net_correct": -1
+      },
+      "streaming_heads": {
+        "previous": "token_merging",
+        "gains": 8,
+        "losses": 7,
+        "net_correct": 1
+      },
+      "current_calibrated_integer_no_skip": {
+        "previous": "streaming_heads",
+        "gains": 16,
+        "losses": 34,
+        "net_correct": -18
+      },
+      "current_calibrated_integer_skip": {
+        "previous": "current_calibrated_integer_no_skip",
+        "gains": 6,
+        "losses": 4,
+        "net_correct": 2
+      },
+      "current_calibrated_skip_and_late_correction": {
+        "previous": "current_calibrated_integer_skip",
+        "gains": 3,
+        "losses": 2,
+        "net_correct": 1
+      }
+    },
+    "by_structural_type": {
+      "choose": {
+        "dense_float32": 24,
+        "token_merging": 23,
+        "streaming_heads": 25,
+        "current_calibrated_integer_skip": 20,
+        "current_calibrated_skip_and_late_correction": 19,
+        "current_calibrated_integer_no_skip": 20
+      },
+      "compare": {
+        "dense_float32": 19,
+        "token_merging": 22,
+        "streaming_heads": 22,
+        "current_calibrated_integer_skip": 14,
+        "current_calibrated_skip_and_late_correction": 15,
+        "current_calibrated_integer_no_skip": 13
+      },
+      "logical": {
+        "dense_float32": 26,
+        "token_merging": 26,
+        "streaming_heads": 26,
+        "current_calibrated_integer_skip": 20,
+        "current_calibrated_skip_and_late_correction": 21,
+        "current_calibrated_integer_no_skip": 19
+      },
+      "query": {
+        "dense_float32": 15,
+        "token_merging": 15,
+        "streaming_heads": 14,
+        "current_calibrated_integer_skip": 14,
+        "current_calibrated_skip_and_late_correction": 14,
+        "current_calibrated_integer_no_skip": 14
+      },
+      "verify": {
+        "dense_float32": 22,
+        "token_merging": 19,
+        "streaming_heads": 19,
+        "current_calibrated_integer_skip": 22,
+        "current_calibrated_skip_and_late_correction": 22,
+        "current_calibrated_integer_no_skip": 22
+      }
+    }
+  },
+  "interpretation": {
+    "largest_observed_adjacent_drop": "Enabling the current calibrated integer feed-forward path reduces106correct answers to88, with16gains and34losses relative to the streaming floating-point stage.",
+    "pruning_comparison": "Enabling pruning on that integer path changes88to90correct, with6gains and4losses.",
+    "late_correction_comparison": "The current late correction changes90to91correct, with3gains and2losses.",
+    "limits": "These are ordered whole-answer comparisons on a reused stratified panel. They do not isolate a single arithmetic operation, prove population-wide causes, or imply that local squared-error improvement restores task accuracy.",
+    "decision": "Keep the installed baseline policy. Prioritize numerical formats and software-to-hardware feed-forward arithmetic alignment before another pruning-off full benchmark."
+  },
+  "verification": {
+    "new_modes_executed": 1,
+    "new_mode_questions_executed": 160,
+    "reused_mode_archives": 5,
+    "reused_answers_compared": 800,
+    "fresh_archived_mode_control_executions": 40,
+    "all_used_token_traces_independently_reconstructed": 1000,
+    "new_mode_actual_skips": 0,
+    "independent_phase_and_workload_accounting": true,
+    "actual_independent_scope_corruptions_rejected": 5,
+    "primary_scope_tests": 7,
+    "prediction_archive_bytes": 175195,
+    "prediction_archive_sha256": "7cd03f280426053e1a22ccc62ef51a686db42d89e862c4f764fc749665e79c7c",
+    "producer_seconds": 117.34233791101724,
+    "guard_seconds": 124.82689046789892,
+    "independent_verification_seconds": 7.629281759262085,
+    "peak_graphics_processor_bytes": 7702394880,
+    "peak_host_resident_bytes": 6792409088,
+    "minimum_host_available_bytes": 14139748352,
+    "torch_version": "2.11.0+cu130",
+    "tokenizer_backend_version": "0.22.2",
+    "independent_scope": "Separate scalar phase validation, reconstruction of all reused answers from original archives, exact token decoding and paired scoring. This is not a second independent neural-model execution."
+  },
+  "qualifications": {
+    "complete_local_component_diagnostic": true,
+    "blind_generalization": false,
+    "new_policy_improvement_established": false,
+    "full12578question_benchmark_rerun": false,
+    "mapped_hardware_accuracy": false,
+    "paper_evaluation_protocol": false,
+    "paper_accuracy_matching": false,
+    "measured_chip_performance_or_energy": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/current_component_accuracy_panel_20261120/protocol_v2.json": "f8a19b5cd9fe772b0232f7152536eb0c235df5fad1e4843933c6f796603155ba",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/run_benchmark_v2.py": "32658701e5f2481aff0dab2a4e94ad178ac562939b54b4256c113da1240747b5",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/component_helpers.py": "ef2b4ba7c3394e9ec01e889841f313724e5886f7c770872592164762d7865408",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/test_component_helpers.py": "87e5e1a578467a143bc5a1bde556232b5eb07f0500b6810046bba68f735585f6",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/architecture_v2.pdf": "3ef88bdf927c1695e36602b3a7e94724265125670b523098584b7c29127b4423",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/architecture_source_audit_v2.json": "d4b9bdf095b470a6b659e4dc8092d964f5e076fa2477ac92943cc22ea571738d",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/source_anchor_v2.json": "5bbf5c84318e6387329b8fc02d92a52715961edfebb0486702c591963372813a",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/guard.py": "03ee1f73f277166b70997631b5fb032da287a12a7c696590e4a2885f0b6931e8",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/guard_entry_v2.py": "f7a26618cf0a24777c0e74b7950453cccf96218c76236d9c99f4a5cd791238e0",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/launch.json": "8b0312f00ae37adf26343131e645fc9a4fdb27f4cbefdd7546f6e29ef79f5ced",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/supervisor_launch.json": "2e95e6a124d34750fb901f480997b20e72fcdf9ece3522b9a373b29bcbf4ab5b",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/guard_receipt.json": "2a0678a1e3dbe1916beb488058d1107f4e185680920b09140517fbfcc69f0a6d",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/inputs.json": "f75fb56a0c498dfe6084559a4dc68de70b3cb3b4ac26a86a11213e93f4b26a8e",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/controls.json": "e347af3adfb58bf8b11cf0467e5f26395df979ebf9a6ecd5440614319977a6ba",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/archived_modes.json": "7732f625e4124c07216bba2c952e7b22a68b50e3bddb05388f7f89e3e7e9e585",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/receipt.json": "a4e16549aa701c8c1d1f6e13a5b02811da0e47495a63617eb2fcdab5366429ca",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/verify_panel.py": "5565421b5ad6a1b05c54dcf30564157906f5fa2d27ee989049d7883ce5ddd57a",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/verifier_scope_controls.json": "5bd8364fe7fa35f9a3913bdcea82e4d7afc9b367a9033f65009410ec1b2bcad1",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/verification_source_anchor.json": "cffdc7fca43c8d6dc3a821123bb44520b9212900c1d8229ac6b8d191029d8b68",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/verification_launch.json": "867dadd0bc2b5208aa4eee5cdb8e913f25d2aee63a2019353602aa3316d0e0b2",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/verification_receipt.json": "20a53388b2aaa5b6ee7ae2e0ac966002383c00391f6efaa9983fe1da31918f7a",
+    ".cache/model_reference/current_component_accuracy_panel_20261120/independent_verified.json": "5d7af1b94766aace99f6af3380bec14776e40b3fbdf78d0a0866c676e661012c"
+  }
+}
