@@ -1,0 +1,87 @@
+{
+  "state": "nine_case_specific_joint_response_and_formatter_invariants_independently_verified",
+  "scope": "Actual mapped cells of the current placed reproduction. Each of nine case-specific unions combines an ordinary three-word response-source invariant with transmit-formatter counter and owner invariants. The actual reset and clock functions preserve their conjunction. This establishes state composition; complete physical output transmission is still unfinished.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "parent_binding_record": "records/tri_oracle_native_return_path_view_bindings.json",
+    "actual_chip_state_added": 0,
+    "circuit_changed": false
+  },
+  "method": {
+    "case_specific_union_register_bits": {
+      "0": 2330,
+      "1": 2332,
+      "2": 2398,
+      "3": 2398,
+      "4": 2435,
+      "5": 2335,
+      "6": 2265,
+      "7": 2265,
+      "error": 2262
+    },
+    "shared_physical_register_bits_per_case": 58,
+    "software_observer_bits_per_case": 52,
+    "simultaneous_state_update": true,
+    "selected_actual_output_functions_substituted": true,
+    "output_definitions_added_as_solver_premises": false,
+    "unselected_service_outputs": "Arbitrary, with shared physical context and net identities; no future data stability is assumed.",
+    "producer_shared_state_choice": "Router-priority actual functions, whole-table syntax-only substitution.",
+    "independent_shared_state_choice": "Completion-priority actual functions, separate128-expression chunks and fresh state/input/observer symbols.",
+    "actual_equation_extraction": "Both implementations use the authenticated original mapped-cell exports and equation reader. This is independent composition and reconstruction, not a second independent netlist extraction."
+  },
+  "verification": {
+    "producer_positive_queries": 72,
+    "independent_positive_queries": 81,
+    "producer_corruption_controls": 10,
+    "independent_corruption_controls": 10,
+    "independent_fresh_symbols": 56668,
+    "all_domains_nonempty": true,
+    "positive_query_breakdown": {
+      "producer_shared_function_comparisons": 9,
+      "producer_reset_and_clock_induction": 18,
+      "producer_packet_or_formatter_nonempty_domains": 45,
+      "independent_serialized_certificate_equivalences": 9,
+      "independent_shared_function_comparisons": 9,
+      "independent_reset_and_clock_induction": 18,
+      "independent_packet_or_formatter_nonempty_domains": 45
+    },
+    "corruptions": "Nine saved-command-tag next-bit inversions, one per case, plus one corrupted first-visible software packet-snapshot capture. Each checker rejects every corruption in a nonempty domain. Model corruption tests do not claim reset-reachable faults in unchanged hardware.",
+    "producer_guard_seconds": 77.24961347994395,
+    "producer_peak_resident_bytes": 387661824,
+    "independent_guard_seconds": 103.26231974596158,
+    "independent_peak_resident_bytes": 487976960,
+    "minimum_available_host_bytes": 15659450368
+  },
+  "qualifications": {
+    "joint_response_source_and_formatter_reset_and_clock_induction": true,
+    "physical_output_word_capture_and_serialization": false,
+    "complete_packet_delivery": false,
+    "appended_or_fetched_payload_numerical_provenance": false,
+    "service_liveness": false,
+    "trained_mapped_execution": false,
+    "full_model_accuracy": false,
+    "paper_protocol_matching": false,
+    "timing_or_physical_signoff": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_union_model_v2.py": "9c854f04f3746596b76784487fe2d0e8a139f75b6fd531937d7fd3e07b02f9ed",
+    ".cache/wide_packaged_host_link/owner_score_proof/prove_native_return_union_induction_v2.py": "1ff5d507e8436568ed5dc74ff7236142df03d040d30b85594c06beff50027aef",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_return_union_induction_v2.py": "c288448f4e9634331b1a5745d590f393230ba8087d4b2619b824e6d410d5f9af",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_union_induction_v2.json": "1761f17f453359b3244a4ccbbc61b77b83a48c3b491b3887ed94d3029938605a",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_union_induction_v2_independent_audit.json": "55954e96e4e9523ed6f8bbef3f8388d292a5f0e7a342e341b0d17b2013df92b9",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_guard_v2/source_anchor.json": "8cbe271c88ffdd72e437d14426dd2ef505ed83da52ceaffd523abcbd0c2b6751",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_guard_v2/supervisor_launch.json": "fed383d0031195a4aaa6628ef6175d6c097bf5c806004088a83f92336a3c0215",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_guard_v2/launch.json": "8aed09eeccb6fde210995e6e079df5279d21684f449db18a1523abb177e9fd00",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_guard_v2/guard_receipt.json": "cd69c287d06080c160a116b62324740da9ee891efb9134d260706ba71322d1d3",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_guard_v2/console.log": "6c78d9729ca84103bf5572aff63bc2324fb0f464cbc94da2940f3548dde214a6",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_audit_guard_v2/source_anchor.json": "271275313e1db3d56329f501386c934ce3bcbae44dfed648e54cf44081678c18",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_audit_guard_v2/supervisor_launch.json": "4064f34f862d417de876aa0a8242587b98a8ff0be3cc94b3ea8fbc2199c050b1",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_audit_guard_v2/launch.json": "a47665d64081191dbedc3d6a953358132ed08aba0a834574060403146b6d1890",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_audit_guard_v2/guard_receipt.json": "81bc6bb8d21f5bb3e7bef8472740a6ed860b7237d4d99e0770cb4cb9b7cc41ca",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_union_induction_audit_guard_v2/console.log": "9655321f3547791a21198dae376ad1d31818fc32d8bdb3b911eb0f35d6c2b50d",
+    "records/tri_oracle_native_return_path_view_bindings.json": "5ae19398357b002e761fb007270456fa1520952aa81db8d532f474a9ae6a2362",
+    "records/tri_oracle_native_response_packet_epoch.json": "496a2b6b2ebb52ca393b4b81c17a5d998429547808a471e3454e1125e748b61a"
+  }
+}
