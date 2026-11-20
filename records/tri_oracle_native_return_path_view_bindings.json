@@ -1,0 +1,107 @@
+{
+  "state": "current_response_and_router_shared_register_update_bindings_verified",
+  "scope": "Current placed reproduction: reconcile existing completion/source-response proof views with the transmit-router model. This prerequisite establishes consistent current/reset/next functions for their58 shared physical bits in each of nine cases. Combined packet lifetime and output-pin transmission still need proof.",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "parent_source_packet_record": "records/tri_oracle_native_response_packet_epoch.json",
+    "actual_chip_state_added": 0,
+    "circuit_changed": false
+  },
+  "method": {
+    "cases": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "error"
+    ],
+    "shared_physical_bits_per_case": 58,
+    "shared_bits_by_role": {
+      "status": 2,
+      "tx": 3,
+      "writeback_tx": 2,
+      "grouped_tx": 2,
+      "dispatch": 38,
+      "control_tx": 9,
+      "host": 2
+    },
+    "identity": "Exact physical context, instance, cell master, output pin, reset kind/value and current-state expression.",
+    "abstract_outputs": "Case-local marker names identify the same real output context/net. Selected exported functions are substituted; unselected output ports stay arbitrary with the same physical identities in both views. No port function is asserted as an extra solver premise.",
+    "additional_actual_writeback_control_bits": 5,
+    "additional_layer_sideband_fields": 6,
+    "additional_layer_sideband_bits": 31,
+    "selected_actual_port_bits_by_case": {
+      "0": 218,
+      "1": 39,
+      "2": 7,
+      "3": 7,
+      "4": 40,
+      "5": 39,
+      "6": 7,
+      "7": 7,
+      "error": 5
+    },
+    "imported_functions": "Authenticated existing completion ports and opcode0 parent bindings; new current-candidate writeback/direct-projection controls and layer sideband exports. Explicit core/memory boundaries remain.",
+    "independent_method": "Rebuild each port/bit binding from its original source descriptor, resolve dependencies recursively, compare all serialized function certificates and duplicate exports, then alpha-rename proof claims into fresh symbols.",
+    "shared_infrastructure": "Both implementations use the authenticated equation reader and original mapped-cell exports. This is independent binding reconstruction, not a second netlist extraction."
+  },
+  "verification": {
+    "producer_positive_queries": 28,
+    "producer_corruption_controls": 1,
+    "independent_positive_queries": 36,
+    "independent_corruption_controls": 9,
+    "independent_fresh_symbols": 11871,
+    "all_domains_nonempty": true,
+    "functions_compared": [
+      "current",
+      "reset",
+      "next"
+    ],
+    "fault": "Deliberately invert one saved-tag next function in comparisons. Controls establish checker sensitivity, not reset-reachable faults in unchanged hardware.",
+    "producer_guard_seconds": 79.3002517039422,
+    "producer_peak_resident_bytes": 281411584,
+    "independent_guard_seconds": 149.28565145283937,
+    "independent_peak_resident_bytes": 272691200,
+    "minimum_available_host_bytes": 13443031040
+  },
+  "qualifications": {
+    "common58_register_current_reset_next_functions": true,
+    "selected_actual_port_binding_certificates": true,
+    "combined_state_reset_clock_induction": false,
+    "complete_return_packet": false,
+    "physical_output_framing": false,
+    "appended_payload_numerical_origin": false,
+    "service_liveness": false,
+    "current_trained_fixture_complete": false,
+    "full_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/wide_packaged_host_link/owner_score_proof/close_native_return_path_views_v8.py": "01c4ee8ae2ee5a06fb05fadeee228cddc42845818f2d430fee4915250590ba9b",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_return_path_views_v1.py": "f08247b15c68fe37fca64c72fbc7a2a6dd22d6b901f0d3ee784f0e32cec9f922",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_completion_model_v1.py": "b1e5ca116a6b95a7234e93fb4a1664bf160bbc8c605a339b432718d6b1d6a9a1",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_path_views_v8.json": "86016deadb4e4462d91e8a6e0e6deff9adaf61b280730275eb03eab286d50f29",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_path_views_v1_independent_audit.json": "adb0289972c70c650437cd8397c878c5eb492fd2fbcc14977dd55c8e739811ec",
+    ".cache/wide_packaged_host_link/owner_score_proof/export_native_return_writeback_valid_v3.py": "a583ad2fabdb8a2ecaa24b80015220fe088cf92c0d5124a2dfd61e9ca06318f3",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_writeback_environment_v2.py": "1f8b6b1b8c85a0306fcc1cb81b720df1e2fd71107a13fe6fb3f86e01f0c6c55e",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_writeback_valid_v3.json": "bbce8e964d7e35712f850813379a6ce52a0266e93b95bdefa99916509d7bfca8",
+    ".cache/wide_packaged_host_link/owner_score_proof/export_native_return_layer_sidebands_v1.py": "1c5e5eacc7ead3ad21e4c7211d91dba292a5a1539d394a09858647e1de596e11",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_return_layer_sidebands_v1.json": "b26afe30eca8078bb80d1e9c7459acfb34a5052861817b70dcf549de1dda8a7b",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_path_views_guard_v8/source_anchor.json": "c6d4e792acf6cf3e108d24bd1b3d035e167c651e7da577bb193e6f4bab986b41",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_path_views_guard_v8/guard_receipt.json": "24c07553b0a17f446ae308edd4a0062d69bdff1b193bebceee55393c4d730be6",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_path_views_audit_guard_v1/source_anchor.json": "7d4d78b5c080e91722b12a37b5aec9bbb8c5eafe929035053d1fb3e550521854",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_path_views_audit_guard_v1/guard_receipt.json": "94379861e5ea4c66b00694fb36322afc01036aa42a911cb5f03626d9cb3d24d3",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_writeback_valid_guard_v3/source_anchor.json": "bf793fc44cfc14d8e41165917d0b95b6cb10ce4d53f5f8d44e4176cbde57fde5",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_writeback_valid_guard_v3/guard_receipt.json": "ab1e0af70402eacb6c25c2c1609040a3c95daa95e847f3d63a3b548d56174758",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_layer_sidebands_guard_v1/source_anchor.json": "20c23e8aa6f129b6a806ceca5393253e81bccb9aa82620d2fb40332cafb224d6",
+    ".cache/wide_packaged_host_link/owner_score_proof/return_layer_sidebands_guard_v1/guard_receipt.json": "73f5ca23e67b135f3ae820e05eed060e2ae033fb9f610a99f73db407353efff1",
+    "records/tri_oracle_native_response_packet_epoch.json": "496a2b6b2ebb52ca393b4b81c17a5d998429547808a471e3454e1125e748b61a"
+  }
+}
