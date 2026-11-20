@@ -1,0 +1,177 @@
+{
+  "state": "current_native_storage_inventory_verified_with_conditional_paper_label_comparison",
+  "candidate": {
+    "native_cold_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+    "native_layout_sha256": "972c00ebcfecfa5b2f374fe36d9cd7bca2f06ff84a92c516f66cbc57af0ac54f",
+    "circuit_changed": false
+  },
+  "inventory": {
+    "module_definitions": 771,
+    "instantiated_module_types": 651,
+    "unused_module_definitions": 120,
+    "physical_instances": 3900126,
+    "compiled_memory_macros": 631,
+    "compiled_memory_bytes": 414928,
+    "compiled_memory_binary_kibibytes": 405.203125,
+    "compiled_memory_by_master": {
+      "TS5N28HPCPSVTA16X80M2FW": {
+        "words": 16,
+        "word_bits": 80,
+        "bytes_per_instance": 160,
+        "instances": 4,
+        "bytes": 640
+      },
+      "TS5N28HPCPSVTA24X128M2FW": {
+        "words": 24,
+        "word_bits": 128,
+        "bytes_per_instance": 384,
+        "instances": 16,
+        "bytes": 6144
+      },
+      "TS5N28HPCPSVTA32X128M2FW": {
+        "words": 32,
+        "word_bits": 128,
+        "bytes_per_instance": 512,
+        "instances": 369,
+        "bytes": 188928
+      },
+      "TS5N28HPCPSVTA512X64M4F": {
+        "words": 512,
+        "word_bits": 64,
+        "bytes_per_instance": 4096,
+        "instances": 41,
+        "bytes": 167936
+      },
+      "TS5N28HPCPSVTA8X80M2FW": {
+        "words": 8,
+        "word_bits": 80,
+        "bytes_per_instance": 80,
+        "instances": 1,
+        "bytes": 80
+      },
+      "TS6N28HPCPSVTA16X128M2F": {
+        "words": 16,
+        "word_bits": 128,
+        "bytes_per_instance": 256,
+        "instances": 200,
+        "bytes": 51200
+      }
+    },
+    "standard_cell_state_bits": {
+      "ff": 828630,
+      "clock_gate": 44
+    },
+    "standard_cell_state_total_bits": 828674,
+    "register_state_included_in_sram_capacity": false
+  },
+  "partition": {
+    "clusters": 5,
+    "cores": 20,
+    "bytes_per_core": {
+      "input": 8192,
+      "weight": 8192,
+      "output": 2048,
+      "skip_mask": 1024
+    },
+    "bytes_per_cluster_input_output_bank": 2048,
+    "total_bytes_by_role": {
+      "core_banks": 389120,
+      "cluster_input_output": 10240,
+      "support": 15568
+    },
+    "all_support_memory_counted": true
+  },
+  "paper_comparison": {
+    "source_figures": [
+      "31.6.2",
+      "31.6.7"
+    ],
+    "published_label_KB": 405,
+    "exact_byte_count_disclosed": false,
+    "byte_convention_disclosed": false,
+    "binary_kibibytes": 405.203125,
+    "difference_from_405_binary_kibibytes": 208,
+    "decimal_kilobytes": 414.928,
+    "difference_from_405_decimal_kilobytes": 9928,
+    "rounded_binary_kibibytes": 405,
+    "rounded_decimal_kilobytes": 415,
+    "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+    "interpretation": "Consistent with the published405KB label if it denotes rounded binary kilobytes. This is not exact byte-for-byte agreement; the paper does not specify the byte convention or individual support-table capacities.",
+    "labeled_bank_capacity_comparison": "Core8/8/2/1KB banks and cluster2KB input/output banks agree when interpreted as binary kilobytes."
+  },
+  "verification": {
+    "new_behavioral_tests": 19,
+    "related_existing_tests": 17,
+    "total_focused_tests_passed": 36,
+    "complete_logical_leaf_counts_equal_native_physical_counts": true,
+    "all631_memory_paths_and_masters_equal": true,
+    "unused_definitions_excluded_from_capacity": true,
+    "vendor_verilog_exact_depth_and_width_used": true,
+    "three_liberty_corners_agree_on_ram_type_address_width_and_word_width": true,
+    "liberty_address_width_alone_does_not_establish_exact_non_power_of_two_depth": true,
+    "independent_hierarchy_and_physical_recount": true,
+    "independent_vendor_capacity_parser": true,
+    "prior57_stateful_master_multiplicities_preserved": true,
+    "shared_liberty_state_parser_disclosed": true,
+    "guarded_runs": {
+      "native_storage_guard_v5": {
+        "seconds": 77.72716442495584,
+        "peak_resident_bytes": 1985671168,
+        "minimum_host_available_bytes": 15038185472
+      },
+      "native_storage_independent_guard_v2": {
+        "seconds": 46.72234933194704,
+        "peak_resident_bytes": 962056192,
+        "minimum_host_available_bytes": 15753752576
+      }
+    },
+    "review_regressions_failed_before_correction": 7,
+    "supported_non_ansi_headers_and_named_pin_lists_validated": true,
+    "canonical_pin_duplicates_rejected": true,
+    "module_boundaries_ignore_comment_examples": true
+  },
+  "qualifications": {
+    "current_candidate_storage_inventory": true,
+    "published_memory_label_consistent_if_rounded_binary": true,
+    "exact_paper_bytes_confirmed": false,
+    "complete_memory_access_methodology": false,
+    "complete_paper_architecture": false,
+    "current_trained_fixture_complete": false,
+    "full_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "scope": "Inventory and disclosed-capacity comparison only. This adds no circuit state and does not establish trained inference, accuracy, timing or routing. The hold-only paper300 gate remains unchanged.",
+  "local_evidence_sha256": {
+    "records/tri_oracle_native_buffer_branch_repair.json": "9a6a3d303456b33c8a6b5a046ab6608e73e586cef3fe8f59668ad32582140630",
+    "records/tri_oracle_packaged_storage_accounting.json": "e37d6ba47dbaa665b5a576a8685f32620092f9e25065740b96c62562bb08d622",
+    "syn/tri_oracle_native_storage.py": "135ef67e4ed3f65a0f656085425a2aa94a1d2915144a4df302e8041386511067",
+    "syn/test_tri_oracle_native_storage.py": "51b234d6af7cf479e99e99a025765c0a543c7d0d69c0d14c78bd46028c40113a",
+    ".cache/wide_packaged_host_link/owner_score_proof/run_native_storage_accounting_v5.py": "dcd8cda1216c78c3a052ac095e5407c0ba817ab97021ba1718e829d66e45f6fd",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_accounting_v5.json": "850dea9d8cdeb62bfcc3e2d8656115d38642260354e558b8d274de0d2143bb7b",
+    ".cache/wide_packaged_host_link/owner_score_proof/audit_native_storage_accounting_v2.py": "3e820459b1e449e0e1975e8dd23b31335815f72ce0003e87feeb0eb8b1e1e1b0",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_accounting_v2_independent_audit.json": "a75743883adc3d7746319ef81c1d73ccced75b6c6383963255db6574d794fae3",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_review_fixed_tests_green_20261120.log": "ce5308d858942ce49074f18328125043b4facff15079101db2657a03d363a141",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_review_regressions_red.log": "e2490fd72324487be07ec51285632a9b743ed9400e2783bfb8779dbef06578e6",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_guard_v5/source_anchor.json": "2f60ef15b05bf232cb1b3af8bd279af563d81783785991e1ab9933819c96bfb4",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_guard_v5/guard_receipt.json": "557682d61bf0984ef626760901706bceabcebfd014f1b33ff9f63924010ed864",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_guard_v5/console.log": "4aa35d1319546514788f2eb34de51750ea577b7fc7d0b183fb5934278e568f41",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_independent_guard_v2/source_anchor.json": "f2795f5587feacd4b8ac1782512c3a32dd5bbf0d0c759dc344482872b6c72983",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_independent_guard_v2/guard_receipt.json": "fc2d164c80eb635e6328086c087b9b1f4dbe60847efc37d2c35f60f25b7cc23a",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_storage_independent_guard_v2/console.log": "6edee74df323ce5e0f02198a8ceaab19651a29ec909a0d214c5f4886b58d3441"
+  },
+  "review": {
+    "scoped_feature_reviews": 1,
+    "same_reviewer_corrective_check": true,
+    "critical_findings": 0,
+    "important_findings_found": 1,
+    "important_findings_resolved": 1,
+    "minor_findings_found": 1,
+    "minor_findings_resolved": 1,
+    "remaining_findings": 0,
+    "corrective_evidence_files_hashed": 161,
+    "result": "Ready to publish for current native storage inventory and conditional paper-capacity comparison."
+  }
+}
