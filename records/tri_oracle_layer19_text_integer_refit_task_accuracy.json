@@ -1,0 +1,250 @@
+{
+  "state": "layer19_text_integer_refit_locally_improved_but_full_benchmark_gate_failed",
+  "scope": "Uninstalled software calibration and complete-answer diagnostic. Preserve the already-enabled Layer19 bounded correction and all original integer widths/rounding; refit only ordinary prompt-text gain/shift buckets. This adds no circuit state and establishes no mapped-hardware or paper result.",
+  "selection_context": {
+    "source_record": "records/tri_oracle_single_layer_text_precision_scan.json",
+    "selected_layer": 19,
+    "best_observed_float_text_panel_correct": 95,
+    "current_integer_panel_correct": 91,
+    "reused_panel": true,
+    "blind_generalization": false,
+    "effects_nonadditive": true,
+    "answer_scores_used_to_choose_layer": true,
+    "answer_labels_used_to_fit_integer_formats": false
+  },
+  "capture": {
+    "images": 128,
+    "calibration_images": 64,
+    "reused_local_diagnostic_images": 64,
+    "complete_text_rows": 4159,
+    "calibration_rows": 2076,
+    "diagnostic_rows": 2083,
+    "task_panel_images_excluded": 131,
+    "original_roles": "All original ordinary text positions: prefix1..image_start-1 and post-image text. Exclude first0 and576image positions.",
+    "original_model_outputs_replaced": false,
+    "complete_answers_generated": false,
+    "unchanged_first_token_controls": 128,
+    "legacy16row_input_residual_and_trained_target_controls": 128,
+    "legacy_integer_endpoint_scalar_controls": 128,
+    "independent_complete_trained_targets": 128,
+    "independent_complete_current_integer_outputs": 128,
+    "independent_old_text_input_rows": 379,
+    "independent_corruption_controls": [
+      "missing_original_prefix_position",
+      "changed_saved_trained_target",
+      "changed_saved_integer_output"
+    ],
+    "independent_scope": "Direct checkpoint targets and standalone current integer component output replay; shares canonical integer arithmetic, not a second full model or mapped hardware.",
+    "primary_guard_seconds": 93.77552637504414,
+    "primary_process_highwater_bytes": 6771662848,
+    "guard_sampled_peak_resident_bytes": 4452884480,
+    "peak_gpu_bytes": 7709935616
+  },
+  "calibration": {
+    "arithmetic": "Both current and candidate use unchanged current_output(late=True), original signed16 rounding and signed8 bounded residual pass. Correction was already enabled; only changed format settings count as a candidate.",
+    "existing_pairs": 170,
+    "minimum_bucket_rows": 32,
+    "minimum_bucket_images": 16,
+    "minimum_fit_improvement": 0.01,
+    "loss": "Mean per-row Euclidean output error divided by target Euclidean norm, denominator clamped to1e-20.",
+    "fit_before_diagnostic": true,
+    "fallback_preserved": true,
+    "changed_buckets": {
+      "-6": {
+        "original": {
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 1
+        },
+        "candidate": {
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        },
+        "fit_rows": 702,
+        "fit_images": 64
+      },
+      "-4": {
+        "original": {
+          "maximum_up_gain_bits": -1,
+          "down_shift_offset": -6
+        },
+        "candidate": {
+          "maximum_up_gain_bits": 4,
+          "down_shift_offset": 2
+        },
+        "fit_rows": 82,
+        "fit_images": 33
+      }
+    },
+    "unchanged_bucket_minus5": true,
+    "current_mean_row_relative_l2": 0.21502084926326684,
+    "candidate_mean_row_relative_l2": 0.2087488872724147,
+    "relative_improvement": 0.029169087613326695,
+    "diagnostic_images_not_worse": 50,
+    "diagnostic_images_total": 64,
+    "local_gate_passed": true,
+    "independent_capture_rows": 4159,
+    "independent_scalar_loss_rows": 6235,
+    "independent_canary_losses": 680,
+    "independent_corruptions_rejected": [
+      "changed_fallback_rejected",
+      "changed_loss_rejected"
+    ],
+    "independent_scope": "Independent capture identity, exponent and scalar-loss calculations, selection/acceptance gates,680canary losses per mode. Shares frozen producer vectors/curves; not another170pair matrix execution.",
+    "primary_guard_seconds": 15.171278892783448,
+    "primary_process_highwater_bytes": 1525366784,
+    "guard_sampled_peak_resident_bytes": 1525145600,
+    "peak_gpu_bytes": 1107408384
+  },
+  "complete_answer_panel": {
+    "questions": 160,
+    "images": 131,
+    "disabled_original_controls": 8,
+    "active_original_format_late_true_controls": 8,
+    "controls_match": "Exact complete tokens, normalized predictions, skipped-channel counts and original shadow workload.",
+    "candidate_scope": "Only Layer19 original ordinary prompt-text positions. First0, images, all decoding calls and all other21layers preserve original arithmetic/formats.",
+    "original_shadow_format_table_unchanged": true,
+    "selected_text_formats_changed": true,
+    "baseline_correct": 91,
+    "candidate_correct": 92,
+    "gains": 1,
+    "losses": 0,
+    "net_correct_gain": 1,
+    "by_type": {
+      "choose": {
+        "current": 19,
+        "candidate": 19
+      },
+      "compare": {
+        "current": 15,
+        "candidate": 15
+      },
+      "logical": {
+        "current": 21,
+        "candidate": 22
+      },
+      "query": {
+        "current": 14,
+        "candidate": 14
+      },
+      "verify": {
+        "current": 22,
+        "candidate": 22
+      }
+    },
+    "independent_complete_token_traces": 336,
+    "independent_original_prompt_geometries": 160,
+    "independent_scope_corruptions_rejected": [
+      "wrong_original_image_start",
+      "correction_applied_to_extra_row",
+      "extra_decode_observer_count",
+      "unbounded_correction_count",
+      "missing_text_row_with_consistent_local_count"
+    ],
+    "selected_text_rows": 5379,
+    "selected_callback_retained_correction_codes": 4177,
+    "code_count_scope": "Software selected-callback count; no extra hardware operation, traffic or energy improvement inferred.",
+    "reused_panel": true,
+    "blind_generalization": false,
+    "independent_neural_model_execution": false,
+    "primary_guard_seconds": 120.33447057707235,
+    "primary_process_highwater_bytes": 6750781440,
+    "guard_sampled_peak_resident_bytes": 4507889664,
+    "peak_gpu_bytes": 7707810304,
+    "independent_scalar_seconds": 3.4256883028429
+  },
+  "acceptance": {
+    "required_panel_net_correct_gain": 3,
+    "observed_panel_net_correct_gain": 1,
+    "full12578_gate_passed": false,
+    "new_full12578_run": false,
+    "policy_installed": false,
+    "current_full12578_baseline": {
+      "correct": 6247,
+      "total": 12578
+    },
+    "decision": "Keep original formats and baseline. Local2.9169%error improvement produced only one additional correct answer on the reused panel, below the frozen full-benchmark gate. No full candidate run or installation."
+  },
+  "verification": {
+    "format_selection_tests": 7,
+    "new_acceptance_gate_tests": 5,
+    "adapter_and_scope_tests": 9,
+    "red_cases": "Five missing acceptance-gate tests failed first; five adapter target tests and two scope tests failed against the oldLayer7/mode rules. Final21helpercases pass.",
+    "all_primary_and_auditor_guards_exit_zero": true,
+    "source_execution": "All model and scalar workers authenticated and executed the same source buffers under retained guard/launch manifests.",
+    "independent_guard_seconds": {
+      "capture": 13.653425615979359,
+      "fit": 7.158325593918562,
+      "panel": 3.6393014430068433
+    },
+    "minimum_available_host_bytes": 13340004352
+  },
+  "qualifications": {
+    "read_only_capture_verified": true,
+    "local_integer_format_improvement_verified": true,
+    "reused_panel_net_one_observed": true,
+    "full_benchmark_gate_passed": false,
+    "new_full_accuracy_improvement": false,
+    "policy_installed": false,
+    "circuit_changed": false,
+    "trained_mapped_layer": false,
+    "paper_accuracy_protocol": false,
+    "paper_matching": false,
+    "wire_timing": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/layer19_all_text_capture_20261120/run_capture.py": "fcf6df3b5643f658e9669aa95e5e15fdc9c4e1389d79c26409138ebe8893e216",
+    ".cache/model_reference/layer19_all_text_capture_20261120/verify_capture.py": "f138c532e52d88f2325112beb989f2e875a7dda941c0ff30c12645667bd0399b",
+    ".cache/model_reference/layer19_all_text_capture_20261120/protocol.json": "d82b57aa8a20198577a5de88a838bed0537badc398acb8c26ed70065b9c89bdb",
+    ".cache/model_reference/layer19_all_text_capture_20261120/plan.md": "905b6d494a50b076b3209ea6985c89c6d3968a78cab4198265dadb6e7eccb5af",
+    ".cache/model_reference/layer19_all_text_capture_20261120/source_anchor.json": "f896cdecb17610df6b217979f59c62f952bc879b209a0f2faaef17da4b0e60e7",
+    ".cache/model_reference/layer19_all_text_capture_20261120/architecture.pdf": "e68cf9711901fb19975d7575816b79d428558ea20def4874d2d964d7b3dcadc4",
+    ".cache/model_reference/layer19_all_text_capture_20261120/architecture_source_audit.json": "dfe7ece9915ad3cf1e0db438bd0fd97130faa2695c8c8785964170c7220cda15",
+    ".cache/model_reference/layer19_all_text_capture_20261120/receipt.json": "254fe40a85abb9661a33b5c60aad25948600e5f43a278f4c5ecb469d0188f830",
+    ".cache/model_reference/layer19_all_text_capture_20261120/guard_receipt.json": "58a44ccc8c468cfba5accd704dca8566f8d44c1c2b777cd6f24477add02e39c8",
+    ".cache/model_reference/layer19_all_text_capture_20261120/launch.json": "36911b39fe18d2206a4745b37412cd9e484c077328cacfdc9800b21dbd5ac34f",
+    ".cache/model_reference/layer19_all_text_capture_20261120/verification/source_anchor.json": "b47d46729b86902e8c55c3480fe030c17ca5bba6bb68477091740c8090117e9f",
+    ".cache/model_reference/layer19_all_text_capture_20261120/verification/guard_receipt.json": "09c3ef07973901e9746a76a58dfcf0b0ff4ebce8b505257cbc77f5d1de084811",
+    ".cache/model_reference/layer19_all_text_capture_20261120/verification/launch.json": "c9899686e6a80783b3dc8d492e4e1f9d03ceaee82879e04acd573fd054bb72d9",
+    ".cache/model_reference/layer19_all_text_capture_20261120/verification/independent_verified.json": "f1aedc7cfcb7a8ff73b7cbe586d8a3edef145acc3ffa12b162ca64bf901398e5",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/run_fit.py": "52ba9a5dec4fc5356df1777d11f23d7b2cd73c7e3b58cbd50dc052a8cfe64779",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/verify_fit.py": "d17dac0ddcb52b5c9b1ce095dc417c9cee4df122507518bffaa4dae1e6e117ea",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/selection.py": "ce26440eb8826d1d243594189973fd32c7fbd930925d7cb270f6eec7e078069c",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/tests_gate_red.log": "b43b9b51a50e13c364fad55df524369c87432c789ea2067a304b9642a2a68e17",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/tests_green.log": "d4fd5cad2680759980b8e45a5ce1c4219f4efb2733578b900b6cde8086a4bbf1",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/protocol.json": "3c33c592557f00517b55c2d37bbd5ab73462388074a23df6d64009f5baef3d09",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/plan.md": "766653d1e9a91bf86b408721d2369fcddd168b1f06a45177440cb0b487899c86",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/source_anchor.json": "1fee994b7af29dee825d3e9fdd553d7ca1a946f3d9e53e55b0aea29d9510ae3f",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/architecture.pdf": "5d6d7602f23a12fec0f852fa9bb856882720e90efe076f046008a01f6dcee67d",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/architecture_source_audit.json": "a9bf449d161bd3763b2d868e858e81f57a34aaaac3e08004f623ea9f0078bd8f",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/receipt.json": "68662d456ae1f71ce3e2bd33fcc38290df49d17d2bcb333f6b7466aab0204f31",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/guard_receipt.json": "bcd61f459841bc00c1cd5f3222d6f65bab36bf95dfe4d2f152a4419e83c27925",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/launch.json": "04d01096206012fd11117a60fe58621bbf18dccc0cdf669713c7f27d0fc501c9",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/verification/source_anchor.json": "631abf73a651d020ad48134c13880c55da3a2c7bb0a7194bd092d61839eff1ff",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/verification/guard_receipt.json": "4a71d117d90862a359afbb9bec9f17a8e652af6d6a3d37a98eac79818b47b071",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/verification/launch.json": "ed655486dd2940fa4a56156c2020a5df7e5a1a8f0d61d921bcb3f955de1394cb",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/independent_verified.json": "5376b671d903d2667d884a4426400a5e713babf0689c33bbc84b5168a1f26255",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/proposals.json": "56eb41c7a95794ee62f2594439f19f9df4abc8d0d31ea07a2f1e74e7a60b6b13",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/fit_frozen.json": "fdc1bfa3ea6c40f6cfbd9dc9036542e37435c260a06f9d2c2de61a8c35f03321",
+    ".cache/model_reference/layer19_text_integer_refit_20261120/local_diagnostic.json": "72b7cf10a6561d8049486a634c4259033bbd11e6f1d734af550486241bbe7014",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/run_panel.py": "2f6bf839f53ac24593a8d9c50c51e48bbf6041550d4ca60080cf2d7b77faf217",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/verify_panel.py": "46912427e513a48982248cb71958e6443196e0fe2f06f2821ec626f36b5f63a4",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/text_adapter.py": "f9cdde8fe506f883ada6417278b356ecd171d2247ac5deb548e23bdf4cfd77fd",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/scope_checks.py": "636f4e5d586e46cbd1dee0744071ad25913188496f942c2f71fec9b607a33a21",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/tests_red.log": "7636f7246ac2661e1d7e18618937c32d32a89552ed1e9d6ffc4cd07b41e3c897",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/tests_green.log": "a1d1fcaa64314da6bc14e0ee4708f5bc9808e44be6caf48c4552e24229a3a4b1",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/protocol.json": "50bc142cbe745af5be3548224dc20c4573bd481ac82fa2367df64cd13da8893e",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/plan.md": "097b88bf0e950cac786be241564389e13045bb746821263f51d5b8029ac0931b",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/source_anchor.json": "f61f1cbb57041a55e8763fb693c4cd5db1ac1e911951fdad86e7fd3fa97e925a",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/architecture.pdf": "613cde8742df38b59897ab442c8e92183f3c5a6402636b651e831c09f4c2c3ca",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/architecture_source_audit.json": "aeee8d671e976b26bf0527e0b3b7def1b614772659ec0ef3b79ae7f7b772b725",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/receipt.json": "e2a65712dfc1bccd45728eebd50a0ab8713fff20ab4c247ffde6034a1348eace",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/guard_receipt.json": "5fc312bad02bd1ff439e1e5ca45023ee5aec748a5595d70742bf4f41f4ac1564",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/launch.json": "fbb3f6c7e6ba3b93e017e1d9c7252d604dbd72f7485b83caa91b4d1927a65dcd",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/verification/source_anchor.json": "8d0e30a03a877195c9bd3aaa560eba08968bcefb3d2c7bbfdc7269c8dee839b8",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/verification/guard_receipt.json": "77f0acdb05e29c289c62a17a1afcdbae80b48e9be5c5fce84aa0a637fa37a3da",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/verification/launch.json": "1f0d23c61fb5eac03994ca5c78aeb47df185f7717aa1028ae8cce37a23732d20",
+    ".cache/model_reference/layer19_text_refit_panel_20261120/independent_verified.json": "b5ab0e464b5e8d6777d454c9499d25ba644b2c8535ad3b839ff91d2b3c689c4d"
+  }
+}
