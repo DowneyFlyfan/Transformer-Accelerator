@@ -1,0 +1,104 @@
+{
+  "state": "complete_frozen_layer2_layer7_pruning_software_diagnostic_verified",
+  "scope": "Full local balanced GQA test-development software diagnostic on the same12578 questions and398images as the archived baseline. Layer selection came from a reused diagnostic; this is not a blind generalization result or mapped-chip accuracy measurement.",
+  "intervention": {
+    "selected_decoder_layers": [
+      2,
+      7
+    ],
+    "changed_scope": "Disable pruning only for ordinary prompt-processing numerical calls in these two layers. The protected first row and all token-generation policies retain original pruning.",
+    "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+    "parameters_or_formats_changed": false,
+    "weights_fitted": false,
+    "labels_used_for_parameter_choice": false,
+    "maximum_new_tokens": 128,
+    "baseline_controls": 8,
+    "policy_installed": false
+  },
+  "accuracy": {
+    "questions": 12578,
+    "images": 398,
+    "baseline_correct": 6247,
+    "candidate_correct": 6214,
+    "baseline_exact_match_percent": 49.666083638098264,
+    "candidate_exact_match_percent": 49.40372078231833,
+    "change_percentage_points": -0.26236285577993357,
+    "net_correct_change": -33,
+    "paired_gains": 591,
+    "paired_losses": 624,
+    "identical_predictions": 10262
+  },
+  "verification": {
+    "all_candidate_and_baseline_token_traces_reconstructed": true,
+    "all_candidate_phase_and_counter_records_checked": true,
+    "baseline_controls_reproduced": 8,
+    "actual_terminal_decode_bound_corruption_rejected": true,
+    "producer_and_independent_prediction_digests_equal": true,
+    "prediction_archive_sha256": "8e55035802e8a3d62d2e84b30a85052b290b24b54c7b861fde7118f6a338eff2",
+    "prediction_archive_bytes": 17272448,
+    "worker_seconds": 6996.7230110638775,
+    "guard_seconds": 7007.014527658001,
+    "independent_scoring_seconds": 7.932815873995423,
+    "peak_graphics_processor_bytes": 7718907392,
+    "peak_host_resident_bytes": 6753648640,
+    "minimum_host_available_bytes": 12557500416
+  },
+  "workload": {
+    "disabled_ordinary_rows": 8610216,
+    "disabled_predicted_channel_skips": 4495148902,
+    "candidate_counters": {
+      "rows": 20479804,
+      "codes": 115342256128,
+      "active_rows": 5552799,
+      "saturated_codes": 12561125,
+      "retained_corrections": 12145335,
+      "skipped_saturated_codes": 415790
+    },
+    "baseline_counters": {
+      "rows": 20501114,
+      "codes": 115462274048,
+      "active_rows": 5549428,
+      "saturated_codes": 12431515,
+      "retained_corrections": 12017039,
+      "skipped_saturated_codes": 414476
+    },
+    "interpretation": "Counters retain their original reference definitions. They are not measured chip latency, energy or total multiply-accumulate operations."
+  },
+  "decision": {
+    "local_reused_benchmark_improved": false,
+    "uninstalled_diagnostic_outcome": "no_improvement_over_archived_baseline",
+    "install_policy": false,
+    "next_requirement": "Keep the archived policy; use this completed negative diagnostic to select a different supported correction."
+  },
+  "qualifications": {
+    "full_local_software_archive": true,
+    "paired_local_accuracy_comparison": true,
+    "blind_generalization": false,
+    "mapped_hardware_accuracy": false,
+    "paper_evaluation_protocol": false,
+    "paper_accuracy_matching": false,
+    "measured_chip_performance_or_energy": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/protocol.json": "ba776bec08708eb71a8f4a42dc40d5f3622f0b8f92ca84b96278231a20461801",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/run_benchmark.py": "cf0cff1058dfc73c77c928738f82268a880e15dffe51cc82d20c619c0451405d",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/phase_adapter.py": "b8d26101d8cbb5b514ecafaeaea9f4802b6236a35f723dbb70bffc72f4817768",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/test_adapter.py": "0765481e9f0f244509566ea34e681ec3880cd4040a0760bc88e94da6630444a3",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/controls.json": "e62725bb3ced6d6c0c2e3354f472df1209b560eac3311b0e97703170b02cc873",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/inputs.json": "8345a6f2a1b13fa184235b70821dd53dbd4a31e17d092f77dd7cb89329346d82",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/receipt.json": "70e290dab03fc83b8e34cfe73f2edf89455308a77c208f351d3aeaafd155cbc5",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/guard_receipt.json": "14abe6c463d571a66f1be061b2151dae543dc573a714402cb3ec63ee25f35154",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/verify_task.py": "d4e86ead22cc588778b1e5d9f0e86c767984a5d13e73ecb3fd04f455fda7849f",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/terminal_decode_bound_control.json": "02cf249dda02013fe8877afcb0945c0584e25adef1b83e7c415adb995aa7b755",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/verification_source_anchor.json": "19bd32c39b96f850b04e8fff4c45eeb8a8c5cfb200efdf78cd92bc16827ba06e",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/independent_verified.json": "5900a844066b4695905ff185f72a17e8f7af60eaddf07c2853257f04f1eacfbd",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/await_and_verify.py": "e57ed2b992d41f57703287eb3debf1b6615ca40098db582170d25cf4c0b4d324",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/postrun_receipt.json": "05e699189a369c57325e16aeb80b70e833c7c8001aa3ecc3ecadcdc101512d2e",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/postrun_source_anchor.json": "6b6c270330badfd9925b87438b527888f70f8d326869f2fd99b03c6c7f00e28d",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/source_anchor.json": "25e26314a54e6235b070aeca2bb57168cfea655fc0183175e24e0a54106688d6",
+    ".cache/model_reference/current_l2_l7_pruning_task_20261120/architecture.pdf": "37a9ff2764adee6902c4a21590ccc3bfd7a67821745adfae82aa9b3b4cf6fbb0",
+    "records/tri_oracle_full_calibrated_clipped_accuracy.json": "1f666d1f063ad7895eb1a3d29d8add12eaf4b92d522e62c1b63701bc6b176d6c"
+  }
+}
