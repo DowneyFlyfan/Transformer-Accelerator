@@ -1,0 +1,120 @@
+{
+  "state": "fullwidth_two_token_scalar_and_calibrated_down_modes_verified",
+  "candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
+  "runtime_sha256": "89ab532c3436c4ff744ed9c653f1bb2f9bf68550018926c27555c3ecd4db3d18",
+  "runtime_input_files_verified": 352,
+  "scopes": {
+    "scalar": "Legacy archived layer10tokens607/608, full2048input5632intermediate2048output dimensions.",
+    "channel": "Same archived Gate/Up/input operations; frozen calibrated per-output Down codes and exponents from the current software reference."
+  },
+  "fixtures": {
+    "scalar": {
+      "cycles": 1716240,
+      "exact_writeback_values": 4096,
+      "input_features": 2048,
+      "intermediate_channels": 5632,
+      "output_features": 2048,
+      "physical_writeback_packets": 512,
+      "request_bytes": 178968,
+      "response_chunks": [
+        603548,
+        542642
+      ],
+      "simulator_finish_time": "17162480 NS + 0",
+      "snapshot": "worklib.tri_oracle_channel_feedforward_tb:sv",
+      "tokens": 2
+    },
+    "channel": {
+      "cycles": 1716515,
+      "exact_writeback_values": 4096,
+      "input_features": 2048,
+      "intermediate_channels": 5632,
+      "output_features": 2048,
+      "physical_writeback_packets": 512,
+      "request_bytes": 180504,
+      "response_chunks": [
+        603804,
+        542642
+      ],
+      "simulator_finish_time": "17165230 NS + 0",
+      "snapshot": "worklib.tri_oracle_channel_feedforward_tb:sv",
+      "tokens": 2
+    }
+  },
+  "total_exact_values": 8192,
+  "calibrated_values_different_from_legacy": 4058,
+  "channel_scale_reads": 256,
+  "channel_scale_logical_data_bytes": 2048,
+  "table_storage_bytes": 1024,
+  "incremental_cycle_count": 275,
+  "incremental_memory_request_bytes": 1536,
+  "incremental_response_fragments": [
+    256,
+    0
+  ],
+  "native_seconds": {
+    "build": 763.4404241750017,
+    "scalar": 955.9278414838482,
+    "channel": 920.5281006689183
+  },
+  "all_native_groups_terminal": true,
+  "simulator_threads_configured": 20,
+  "simulator_engines_reported": 18,
+  "native_warning_codes": [
+    "MC",
+    "MCECPU"
+  ],
+  "qualifications": {
+    "archived_fullwidth_scalar_fixture": true,
+    "archived_fullwidth_calibrated_down_fixture": true,
+    "complete_current_trained_layer": false,
+    "complete_model_accuracy": false,
+    "current_candidate_placed": false,
+    "routed": false,
+    "measured_frequency": false,
+    "energy": false,
+    "paper_matching": false,
+    "routing_release": false
+  },
+  "limitations": [
+    "Only two archived layer10inputs; not a complete chained trained layer or complete model.",
+    "Late-layer17..21 correction-pass scheduling remains unimplemented in this candidate.",
+    "Functional unit-delay simulation with timing checks disabled; no physical timing, power or paper qualification."
+  ],
+  "evidence_sha256": {
+    ".cache/channel_scale_integration_20261120/replay_v2/runtime.json": "89ab532c3436c4ff744ed9c653f1bb2f9bf68550018926c27555c3ecd4db3d18",
+    ".cache/channel_scale_integration_20261120/replay_v2/run_replay.py": "ff9657595f0a29122551fa79500f851d1a52404c5f96452b630f557af359ed86",
+    ".cache/channel_scale_integration_20261120/replay_v2/verified_status.json": "f22877d1ec0cfce12f79365df26c68f4156a123d8e2c6754aed23c10519cebfe",
+    ".cache/channel_scale_integration_20261120/replay_v2/elaboration/status.json": "6ece1f45faaeeafee8e1a3b81d94a4151bafd76622e2df0c96c42cc3a0ddd1a1",
+    ".cache/channel_scale_integration_20261120/replay_v2/elaboration/qualified.json": "7eed16267edb85dbfcfa9fb6fbb8797df8443846561c9f9b1ac531c8ac0f44f0",
+    ".cache/channel_scale_integration_20261120/replay_v2/elaboration/xrun.log": "47b883849ba6280d1faa25f135907fadb0164177399c5f5a4cd975380de7e265",
+    ".cache/channel_scale_integration_20261120/replay_v2/compiled_manifest.json": "e8e52b90320be692ab06e6ba8573a28d638650ec95ba06a5f5be13b3ea6d8e03",
+    ".cache/channel_scale_integration_20261120/linked_v1/linkage.json": "d826059505a2133ecce7d06a58973a72233cd52afd50a1f843e0384e18aa6f4f",
+    ".cache/channel_scale_integration_20261120/linked_v1/preservation.json": "ce61b32de6b5294703ae5671945b04fcfc2cd3cf2378d04721a9f13175593f87",
+    ".cache/channel_scale_integration_20261120/fixture_v2/prepared.json": "6e0cc7df91a26503e940646511a2cc31e65039cfa6f76097a08882690d2e44aa",
+    ".cache/channel_scale_integration_20261120/prepare_channel_fixture.py": "e31e9e65e8c6d77ccb739160ffdbd2c72f7e77d8c4620ef37fd7cfd70dbe4c0e",
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/down.bin": "addfd1faeb937e09ac5c0df5f74ac68c98c88b21c728a0be9445eac1f645e282",
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/scales.bin": "4c49be38c427bacd2e90735565d689f938cd40587e714f3cfb0088163585efc2",
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/scales.hex": "5ab036164e342b58e4659c60a3153463ea702e6a4c9dc80712e30db16153f4df",
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/scale_requests.hex": "e6f30facbb662db03fa44f3aea168e092b3a8b585fc65fd87ec406c267838c9d",
+    "records/tri_oracle_channel_scale_domain.json": "44a658e23723cc84a5aa8721d3041b8d881eec6676f378b8d7d6fd43abfc948f",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/status.json": "d7aefac5916b64422be3c55ee6818ece760f1f7a6f3707b6c87642e54004ef68",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/qualified.json": "9d174362a01c1a4d368574877a8c84cc866352b97df92f4bbd244b8c11ca93d4",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/xrun.log": "d05b8c1fa047db1deac93bbf1a70cbc5059c2cd019affc9b595f01e73eb6e374",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/console.log": "65b3c1776ee568c769acb580968a2fd91c660ff99b6da697483f71671a196cf4",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/used_config.txt": "2b98a3ec8cbcbabe781523eb01ed042f4a5b8b6d0af440a729c866970b25512c",
+    ".cache/channel_scale_integration_20261120/replay_v2/scalar/runtime_package_changes.json": "70b688b4412c706534d1356502f259f4315c4589c74d7047ad19cab4411ac8f0",
+    ".cache/channel_scale_integration_20261120/fixture_v2/scalar/host_input.hex": "42e8f9150cf3f9915986b7798d584e3b6d10e4b6b573093e06d35b5381438475",
+    ".cache/channel_scale_integration_20261120/fixture_v2/scalar/host_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/channel_scale_integration_20261120/fixture_v2/scalar/observed_writeback.hex": "e82281a1ad3a4205ea31b2e840680deffb87e632a2157ac8a2d8aae5f2024768",
+    ".cache/channel_scale_integration_20261120/replay_v2/channel/status.json": "f727bf13d052dac4b44b92cb9bfa4d9aeb8dc26f06fd6985a56c38c8b69e039a",
+    ".cache/channel_scale_integration_20261120/replay_v2/channel/qualified.json": "c387bde5dbe53c1368f2c2da2e9f7b2f9c505ed3e3b2a5f4afa655c18f6d0d4b",
+    ".cache/channel_scale_integration_20261120/replay_v2/channel/xrun.log": "e0b57812f5dca48939da85396eb06c9a6d11c21aa6ed4ab1e54feaf202b026bb",
+    ".cache/channel_scale_integration_20261120/replay_v2/channel/console.log": "1e65e80ee10e36765a8bbd078ae5166cd60085df921b07097775157bd85afc21",
+    ".cache/channel_scale_integration_20261120/replay_v2/channel/used_config.txt": "2b98a3ec8cbcbabe781523eb01ed042f4a5b8b6d0af440a729c866970b25512c",
+    ".cache/channel_scale_integration_20261120/replay_v2/channel/runtime_package_changes.json": "70b688b4412c706534d1356502f259f4315c4589c74d7047ad19cab4411ac8f0",
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/host_input.hex": "a2607b6cd7fc4609864ebdb00d37b2c8ae0f924b0cc83721f0ee68a3942d2bb4",
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/host_writeback.hex": "0531cf2189b09b97b716095c86a14a305af95d449cc6446ba1356e5e83b6d805",
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/observed_writeback.hex": "0531cf2189b09b97b716095c86a14a305af95d449cc6446ba1356e5e83b6d805"
+  }
+}
