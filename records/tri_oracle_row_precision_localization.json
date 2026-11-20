@@ -1,0 +1,226 @@
+{
+  "state": "row_role_precision_localization_software_diagnostic_verified",
+  "scope": "Reused160-question Graph Question Answering stratified diagnostic panel,32questions per structural type across131images. Five uninstalled output-precision interventions are evaluated with the current compact-and-streaming decoder. Floating outputs are a diagnostic reference, not a proposed chip implementation.",
+  "configuration": {
+    "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+    "dtype": "float32",
+    "maximum_new_tokens": 128,
+    "end_of_sequence_token": 2,
+    "new_fitting": false,
+    "parameters_updated": false,
+    "policy_installed": false,
+    "shadow_integer_path": "Every new mode still evaluates the frozen calibrated/pruned integer feed-forward path on all rows, including late-prefill correction17..21. Its skipped-channel and correction counters include discarded outputs and imply no hardware savings.",
+    "returned_output": "Selected complete rows use the original learned floating multilayer-perceptron output at the SAME full normalized input tensor. Unselected rows preserve the original integer output. Normalization itself is unchanged from the existing reference.",
+    "row_roles": {
+      "first": "prefill originalposition0",
+      "vision": "prefill original positions image_start through image_start+575 inclusive",
+      "ordinary_text": "prefill positions outside original vision interval, excluding0",
+      "decode": "all incremental decoding calls"
+    },
+    "all_prefill_role": "Union of first, vision and ordinary-text prompt rows. Original global positions classify roles despite compaction holes."
+  },
+  "accuracy": {
+    "questions": 160,
+    "images": 131,
+    "exact_matches": {
+      "integer_baseline": 91,
+      "float_all_rows_control": 106,
+      "float_first_prompt_row": 94,
+      "float_vision_prefill_rows": 90,
+      "float_ordinary_text_prefill_rows": 102,
+      "float_decode_rows": 91,
+      "float_all_prefill_rows": 106
+    },
+    "paired_against_current_integer": {
+      "float_all_rows_control": {
+        "gains": 30,
+        "losses": 15,
+        "net_correct": 15,
+        "same_first_generated_token": 112
+      },
+      "float_first_prompt_row": {
+        "gains": 9,
+        "losses": 6,
+        "net_correct": 3,
+        "same_first_generated_token": 140
+      },
+      "float_vision_prefill_rows": {
+        "gains": 8,
+        "losses": 9,
+        "net_correct": -1,
+        "same_first_generated_token": 141
+      },
+      "float_ordinary_text_prefill_rows": {
+        "gains": 26,
+        "losses": 15,
+        "net_correct": 11,
+        "same_first_generated_token": 117
+      },
+      "float_decode_rows": {
+        "gains": 0,
+        "losses": 0,
+        "net_correct": 0,
+        "same_first_generated_token": 160
+      },
+      "float_all_prefill_rows": {
+        "gains": 30,
+        "losses": 15,
+        "net_correct": 15,
+        "same_first_generated_token": 112
+      }
+    },
+    "by_structural_type": {
+      "choose": {
+        "integer_baseline": 19,
+        "float_all_rows_control": 25,
+        "float_first_prompt_row": 24,
+        "float_vision_prefill_rows": 22,
+        "float_ordinary_text_prefill_rows": 23,
+        "float_decode_rows": 19,
+        "float_all_prefill_rows": 25
+      },
+      "compare": {
+        "integer_baseline": 15,
+        "float_all_rows_control": 22,
+        "float_first_prompt_row": 14,
+        "float_vision_prefill_rows": 13,
+        "float_ordinary_text_prefill_rows": 21,
+        "float_decode_rows": 15,
+        "float_all_prefill_rows": 22
+      },
+      "logical": {
+        "integer_baseline": 21,
+        "float_all_rows_control": 26,
+        "float_first_prompt_row": 21,
+        "float_vision_prefill_rows": 22,
+        "float_ordinary_text_prefill_rows": 25,
+        "float_decode_rows": 21,
+        "float_all_prefill_rows": 26
+      },
+      "query": {
+        "integer_baseline": 14,
+        "float_all_rows_control": 14,
+        "float_first_prompt_row": 12,
+        "float_vision_prefill_rows": 11,
+        "float_ordinary_text_prefill_rows": 15,
+        "float_decode_rows": 14,
+        "float_all_prefill_rows": 14
+      },
+      "verify": {
+        "integer_baseline": 22,
+        "float_all_rows_control": 19,
+        "float_first_prompt_row": 23,
+        "float_vision_prefill_rows": 22,
+        "float_ordinary_text_prefill_rows": 18,
+        "float_decode_rows": 22,
+        "float_all_prefill_rows": 19
+      }
+    }
+  },
+  "interpretation": {
+    "largest_single_disjoint_role_effect": "Ordinary prompt-text floating outputs change91to102correct:26gains and15losses. These rows include pre-image prompt text and post-image question/instruction text, excluding the first row.",
+    "first_row_effect": "91to94correct:9gains and6losses.",
+    "vision_row_effect": "91to90correct:8gains and9losses.",
+    "decoding_effect": "91correct remains91, with zero correctness gains or losses in this panel.",
+    "all_prefill_effect": "91to106correct:30gains and15losses; this equals the all-floating accuracy count.",
+    "next_requirement": "Prioritize label-free calibration and validation of integer scaling/saturation for ordinary prompt-text rows. Preserve the current baseline until a fixed-point candidate passes independent evaluation.",
+    "limits": "Role interventions propagate through later hidden states, compaction and head decisions. Their effects are coupled and non-additive; all-prefill overlaps three roles. Equal accuracy alone does not establish identical complete outputs. This reused panel does not prove full-benchmark, population, paper or hardware improvement."
+  },
+  "verification": {
+    "new_modes_executed": 5,
+    "new_answers_executed": 800,
+    "reused_reference_answers": 320,
+    "fresh_reference_control_executions": 16,
+    "decoded_token_traces_independently_checked": 1136,
+    "original_prompt_geometries_independently_retokenized": 160,
+    "all_text_retained_and_vision_root_monotonicity_checked": true,
+    "role_and_integer_shadow_accounting_checked": true,
+    "first_token_phase_checks": 320,
+    "actual_independent_scope_and_phase_corruptions_rejected": 7,
+    "small_cpu_tensor_tests": 9,
+    "all_prefill_floating_archived_geometry_summary_equality": {
+      "questions": 160,
+      "fields": [
+        "total_retained_slots",
+        "total_attention_pairs",
+        "streaming_head_count",
+        "final_image_root_count"
+      ],
+      "scope": "Four archived aggregate summaries only; identical per-layer compaction maps or selected-head identities are not established."
+    },
+    "additional_reference_trace_comparison": {
+      "float_decode_rows": {
+        "reference": "integer_baseline",
+        "questions": 160,
+        "identical_normalized_predictions": 158,
+        "identical_generated_token_traces": 158
+      },
+      "float_all_prefill_rows": {
+        "reference": "float_all_rows_control",
+        "questions": 160,
+        "identical_normalized_predictions": 159,
+        "identical_generated_token_traces": 159
+      }
+    },
+    "floating_returned_rows": {
+      "float_first_prompt_row": 3520,
+      "float_vision_prefill_rows": 1040890,
+      "float_ordinary_text_prefill_rows": 118338,
+      "float_decode_rows": 4290,
+      "float_all_prefill_rows": 1166783
+    },
+    "prediction_archive_bytes": 4127521,
+    "prediction_archive_sha256": "6f66fc34f4c86e84eba516ca0686c800553157afa5bdf9c4224f9349aab814bc",
+    "producer_seconds": 498.1647807098925,
+    "guard_seconds": 506.1318927858956,
+    "independent_verification_seconds": 7.673205852508545,
+    "peak_graphics_processor_bytes": 7709492736,
+    "peak_host_resident_bytes": 6794354688,
+    "minimum_host_available_bytes": 13765574656,
+    "torch_version": "2.11.0+cu130",
+    "tokenizer_backend_version": "0.22.2",
+    "independent_scope": "Separate scalar geometry/role/shadow validation, original archive reconstruction, token decoding and paired scoring; not a second neural-model execution. Additional complete-trace/geometry comparison performs no new model execution or ground-truth scoring."
+  },
+  "qualifications": {
+    "complete_local_precision_diagnostic": true,
+    "blind_generalization": false,
+    "fixed_point_accuracy_fix": false,
+    "floating_hardware_proposed": false,
+    "measured_hardware_savings": false,
+    "full12578question_benchmark_rerun": false,
+    "mapped_hardware_accuracy": false,
+    "paper_evaluation_protocol": false,
+    "paper_accuracy_matching": false,
+    "chip_performance_or_energy": false,
+    "clock_distribution_or_routing": false,
+    "paper300_release": false
+  },
+  "local_evidence_sha256": {
+    ".cache/model_reference/current_row_precision_probe_20261120/protocol.json": "22006c3b78e0e19546daf37afe778cac55c7afdef77a902051f13702be9eb78d",
+    ".cache/model_reference/current_row_precision_probe_20261120/run_benchmark.py": "07a299e5165d2dbf709263e509c768512e58da7b8d4d3b7bcc3c0376b18ed0af",
+    ".cache/model_reference/current_row_precision_probe_20261120/row_precision.py": "f42d35f74ced3a7982fa13e5c9bf25ca5f08ece40e37f1241e491bef21e7bd90",
+    ".cache/model_reference/current_row_precision_probe_20261120/scope_checks.py": "d474608bb4bae878e021b8dc1160170c10663349f9e9077ad0b917e65c8b229a",
+    ".cache/model_reference/current_row_precision_probe_20261120/test_row_precision.py": "230682fd8b47497f704c5777d4a0c1aa753a484c82f31d12d34be8b095f0cc43",
+    ".cache/model_reference/current_row_precision_probe_20261120/unit_tests.log": "e2f0d1e3b2d47a977aca5a4f84df56967ee671f5857520afc7b79df9d7519e59",
+    ".cache/model_reference/current_row_precision_probe_20261120/architecture.pdf": "157008eab0c60affeb121a0d41faef176be9afae69deb0ced09b6e16edbdecdd",
+    ".cache/model_reference/current_row_precision_probe_20261120/architecture_source_audit.json": "bc019efa82e87605e57f902c197742d624560d7159515cffa7e21d29d6b5efba",
+    ".cache/model_reference/current_row_precision_probe_20261120/source_anchor.json": "c06973e910c0ddbe1a4fa01a5dcb5413a26f163954e15f5b1ff421a307e59a9e",
+    ".cache/model_reference/current_row_precision_probe_20261120/guard.py": "00d855b708f45c1323b9b06fea0962af08e6621dd54913f613522b11404534a1",
+    ".cache/model_reference/current_row_precision_probe_20261120/guard_entry.py": "b27ee2fc99ba4bccd3f00accc9dfea99c2c72ec717abb5c84fb8217032443fad",
+    ".cache/model_reference/current_row_precision_probe_20261120/launch.json": "9db41732739c1f666be1b8219b37096ae7b645634a6678c9dd077291862cf73b",
+    ".cache/model_reference/current_row_precision_probe_20261120/supervisor_launch.json": "0e7777ca7daaa9bedcd4b0a531d34fd5a7702ee8d66861a3dd291970032c3466",
+    ".cache/model_reference/current_row_precision_probe_20261120/guard_receipt.json": "99cbdae57e6f86139e7c6cc1011d7dcb1dd600aa3d941956be2597f7eff772d3",
+    ".cache/model_reference/current_row_precision_probe_20261120/inputs.json": "44d0ea66f65709aa2ba8316434d5ef07c4718508a64e0cc9c12b0f326742d0d9",
+    ".cache/model_reference/current_row_precision_probe_20261120/controls.json": "7e64efc16f2d1e564df938da91c3af3d2c7b471060ca0f0d7b6cc42ded7908f8",
+    ".cache/model_reference/current_row_precision_probe_20261120/archived_modes.json": "18f76eb0834ea3ea80c44100bfe938d790b3447202b580cecc8650817c7aa8b4",
+    ".cache/model_reference/current_row_precision_probe_20261120/receipt.json": "f651c578d04caa761afe3e984155c5eb45cb3fd93cdcb56399f914879130cb9e",
+    ".cache/model_reference/current_row_precision_probe_20261120/verify_probes.py": "e144abb93b1dd2ca653a1b8fc1e2662bc1391ac25b4323868cfa6b999940122b",
+    ".cache/model_reference/current_row_precision_probe_20261120/verifier_scope_controls.json": "2f5e07ea0fd004e110e2ddd4a2a87d10de30943c3663be370aa6919823dc5771",
+    ".cache/model_reference/current_row_precision_probe_20261120/verification_source_anchor.json": "841467db448c143be45beb38983a7ce6770d95e4a523de29d592f81eb747139d",
+    ".cache/model_reference/current_row_precision_probe_20261120/verification_launch.json": "a76e711a515fccb1baf6ae4a97875c97eb187a4f194e15f1b20d3e06e35d29e8",
+    ".cache/model_reference/current_row_precision_probe_20261120/verification_receipt.json": "e7421ae16bb41eb5258f2232bd1b016b791b21fcd3e3a00080e88734a087648e",
+    ".cache/model_reference/current_row_precision_probe_20261120/independent_verified.json": "b8db26db922d703cf70d3bb48d7d3a7d3daa2414d7c8fa4388175bf4ff01f8f8",
+    ".cache/model_reference/current_row_precision_probe_20261120/compare_reference_traces.py": "090bb36152858d966cbab877cfef99fd8bf99abb22f4afce4c78974be72a2684",
+    ".cache/model_reference/current_row_precision_probe_20261120/reference_trace_comparison.json": "889692340fe3cfbc17d72251332788b7332a4e379099203f019e03ce959c8aad"
+  }
+}
