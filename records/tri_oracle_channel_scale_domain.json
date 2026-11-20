@@ -1,0 +1,716 @@
+{
+  "state": "frozen_22_layer_scale_domain_representable",
+  "valid_reference_format_states": 2795,
+  "excluded_reference_invalid_shift_states": 21,
+  "enumerated_gate_states": 2816,
+  "minimum_lane_shift": 3,
+  "maximum_base_shift": 20,
+  "maximum_table_decrement": 5,
+  "full_reference_inputs_sha256": "a332fd6e1403b202b8080b08138de61b8585e9afa95a71cccaccaad405e8b3f9",
+  "elapsed_seconds": 6.124766982160509,
+  "candidate_functional_execution": false,
+  "full_model_accuracy_qualification": false,
+  "paper_matching": false,
+  "routing_release": false,
+  "scope": "All activation exponent states accepted by the current scalar/reference shift limits, under frozen first/ordinary policy selection. First/global and ordinary/per-output weight scales are independently recomputed from checkpoint weights. Not mapped execution or equivalence of rounding/saturation to the floating model.",
+  "layers": [
+    {
+      "layer": 0,
+      "gate_exponent": -8,
+      "up_exponent": -9,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            10
+          ],
+          "lane_shift_range": [
+            9,
+            10
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            7,
+            10
+          ],
+          "lane_shift_range": [
+            3,
+            10
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 1,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            11,
+            11
+          ],
+          "lane_shift_range": [
+            11,
+            11
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            7,
+            11
+          ],
+          "lane_shift_range": [
+            3,
+            11
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 2,
+      "gate_exponent": -6,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 54,
+          "base_shift_range": [
+            20,
+            20
+          ],
+          "lane_shift_range": [
+            20,
+            20
+          ],
+          "negative_gain_states": 54
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            20
+          ],
+          "lane_shift_range": [
+            5,
+            20
+          ],
+          "negative_gain_states": 1
+        }
+      }
+    },
+    {
+      "layer": 3,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            10,
+            11
+          ],
+          "lane_shift_range": [
+            10,
+            11
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            11
+          ],
+          "lane_shift_range": [
+            5,
+            11
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 4,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            10,
+            11
+          ],
+          "lane_shift_range": [
+            10,
+            11
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            7,
+            11
+          ],
+          "lane_shift_range": [
+            3,
+            11
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 5,
+      "gate_exponent": -7,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            10,
+            10
+          ],
+          "lane_shift_range": [
+            10,
+            10
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            7,
+            10
+          ],
+          "lane_shift_range": [
+            3,
+            10
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 6,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            11,
+            11
+          ],
+          "lane_shift_range": [
+            11,
+            11
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            11
+          ],
+          "lane_shift_range": [
+            5,
+            11
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 7,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            14,
+            14
+          ],
+          "lane_shift_range": [
+            14,
+            14
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            11,
+            15
+          ],
+          "lane_shift_range": [
+            6,
+            15
+          ],
+          "negative_gain_states": 1
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "gate_exponent": -7,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            11,
+            11
+          ],
+          "lane_shift_range": [
+            11,
+            11
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 63,
+          "base_shift_range": [
+            9,
+            11
+          ],
+          "lane_shift_range": [
+            5,
+            11
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 9,
+      "gate_exponent": -7,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            11,
+            11
+          ],
+          "lane_shift_range": [
+            11,
+            11
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            11
+          ],
+          "lane_shift_range": [
+            6,
+            11
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 10,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            11,
+            11
+          ],
+          "lane_shift_range": [
+            11,
+            11
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            11
+          ],
+          "lane_shift_range": [
+            5,
+            11
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 11,
+      "gate_exponent": -7,
+      "up_exponent": -9,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            12,
+            12
+          ],
+          "lane_shift_range": [
+            12,
+            12
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 62,
+          "base_shift_range": [
+            9,
+            12
+          ],
+          "lane_shift_range": [
+            5,
+            12
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "gate_exponent": -7,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            13,
+            13
+          ],
+          "lane_shift_range": [
+            13,
+            13
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 62,
+          "base_shift_range": [
+            9,
+            12
+          ],
+          "lane_shift_range": [
+            5,
+            12
+          ],
+          "negative_gain_states": 60
+        }
+      }
+    },
+    {
+      "layer": 13,
+      "gate_exponent": -7,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 62,
+          "base_shift_range": [
+            12,
+            12
+          ],
+          "lane_shift_range": [
+            12,
+            12
+          ],
+          "negative_gain_states": 62
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            11,
+            12
+          ],
+          "lane_shift_range": [
+            7,
+            12
+          ],
+          "negative_gain_states": 1
+        }
+      }
+    },
+    {
+      "layer": 14,
+      "gate_exponent": -7,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            14,
+            14
+          ],
+          "lane_shift_range": [
+            14,
+            14
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            12
+          ],
+          "lane_shift_range": [
+            5,
+            12
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 15,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            13,
+            13
+          ],
+          "lane_shift_range": [
+            13,
+            13
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            12
+          ],
+          "lane_shift_range": [
+            5,
+            12
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "gate_exponent": -7,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            14,
+            14
+          ],
+          "lane_shift_range": [
+            14,
+            14
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            13
+          ],
+          "lane_shift_range": [
+            5,
+            13
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 17,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            13,
+            13
+          ],
+          "lane_shift_range": [
+            13,
+            13
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            9,
+            13
+          ],
+          "lane_shift_range": [
+            5,
+            13
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 18,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            14,
+            14
+          ],
+          "lane_shift_range": [
+            14,
+            14
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            10,
+            13
+          ],
+          "lane_shift_range": [
+            6,
+            13
+          ],
+          "negative_gain_states": 0
+        }
+      }
+    },
+    {
+      "layer": 19,
+      "gate_exponent": -8,
+      "up_exponent": -8,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            14,
+            14
+          ],
+          "lane_shift_range": [
+            14,
+            14
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            12,
+            13
+          ],
+          "lane_shift_range": [
+            8,
+            13
+          ],
+          "negative_gain_states": 1
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "gate_exponent": -7,
+      "up_exponent": -9,
+      "policies": {
+        "first_global": {
+          "valid_states": 64,
+          "base_shift_range": [
+            13,
+            13
+          ],
+          "lane_shift_range": [
+            13,
+            13
+          ],
+          "negative_gain_states": 0
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            13,
+            14
+          ],
+          "lane_shift_range": [
+            9,
+            14
+          ],
+          "negative_gain_states": 1
+        }
+      }
+    },
+    {
+      "layer": 21,
+      "gate_exponent": -7,
+      "up_exponent": -7,
+      "policies": {
+        "first_global": {
+          "valid_states": 60,
+          "base_shift_range": [
+            18,
+            18
+          ],
+          "lane_shift_range": [
+            18,
+            18
+          ],
+          "negative_gain_states": 60
+        },
+        "ordinary_per_output": {
+          "valid_states": 64,
+          "base_shift_range": [
+            14,
+            18
+          ],
+          "lane_shift_range": [
+            10,
+            18
+          ],
+          "negative_gain_states": 1
+        }
+      }
+    }
+  ],
+  "controls": {
+    "exact_quantizer_boundary": true,
+    "negative_gain": true,
+    "source_invalid_state_excluded": true,
+    "unencodable_base_or_delta_rejected": true,
+    "lane_underflow_rejected": true,
+    "tests": 6
+  },
+  "verifier_sha256": "a5ee729cc221a9f9cf8ed374c097ac1f049d3761fe1642a2d5f65f46c2bd9aca",
+  "evidence_sha256": {
+    ".cache/channel_scale_integration_20261120/all22_scale_domain_verified.json": "9d0fc9a0259c6bad081ce0caea9d52f0c3a09e16a94731bbe5b253ed96cfec99",
+    ".cache/channel_scale_integration_20261120/scale_domain_public_console.log": "604ee559f64f72a438f3c5ed1c667df3c69159837b9608f5ccf4d06f39ce3263",
+    "syn/verify_tri_oracle_channel_scale_domain.py": "a5ee729cc221a9f9cf8ed374c097ac1f049d3761fe1642a2d5f65f46c2bd9aca",
+    "syn/test_tri_oracle_channel_scale_domain.py": "d01b30852a93b9ca90f605bec9748094fa08568a81510501b868dd9f96c208b3"
+  },
+  "frozen_source_input_count": 59
+}
