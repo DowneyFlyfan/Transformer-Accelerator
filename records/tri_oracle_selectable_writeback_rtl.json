@@ -1,0 +1,63 @@
+{
+  "evidence_sha256": {
+    ".cache/channel_scale_integration_20261120/writer_green/xrun.log": "5266114d9bde89973e5f96fd836780c9f8330117de65c740a0a99201b3052d5d",
+    ".cache/channel_scale_integration_20261120/writer_red_v2/xrun.log": "fc70cb82f988cbd031cff1598681fa2193140073b4dcb91fe3df134b3e87e669",
+    ".cache/physical/wide_weight_loader/unified_decoder/tri_oracle_scalar_request_owner.sv": "6b33242307d924b83414677863cc6df9ee0178d69f217aadf0c2123a3e895232",
+    "verilog/tri_oracle_channel_scale_reader.sv": "b03a9f428cacab74e0d0a4368bdcfffda23e7b4a8e27bac730abfcb686566552",
+    "verilog/tri_oracle_decoder_bank_writeback.sv": "cbe0388a90486ebb6df3c5733ec0e48ea8d675401a86528daeae84090ddc7bc1",
+    "verilog/tri_oracle_decoder_channel_writeback.sv": "1a9cd470b20cfd515ccb70bebaaec12fe7ce45f444c0c42397c4f6dac8484ea5",
+    "verilog/tri_oracle_decoder_residual_writeback.sv": "3a7c2c664133c66d0e9e577618525ca5851d803aaef3b3c509abec7d23b9c384",
+    "verilog/tri_oracle_decoder_residual_writeback_per_lane.sv": "386b2f43af655269d474cf36ee598ca89868776981d824c1892e5c416a6bb0ff",
+    "verilog/tri_oracle_decoder_writeback_bridge.sv": "543d6975a658dc37571d7ab9256b0668bc129e4fb0b3577e6de92c7812da270b",
+    "verilog/tri_oracle_narrow_read_arbiter.sv": "b67b4a4dffcbe4e9f0f8eebddfc13d56c9eee2f274ef2829e3221bfb4b5c9233",
+    "verilog/tri_oracle_scalar_request_owner.sv": "6b33242307d924b83414677863cc6df9ee0178d69f217aadf0c2123a3e895232",
+    "verilog/tri_oracle_selectable_bank_writeback.sv": "076cbac7a33208b8fe24261dab59dbcaa17d38a87e20ae23dcb06c914a14305c",
+    "verilog/tri_oracle_selectable_bank_writeback_tb.sv": "4ab35083670ca4e2c17b8223b960195c718e433f77d6a5242184f7cc240d4a41"
+  },
+  "promoted_dependency": {
+    "byte_identical_to": ".cache/physical/wide_weight_loader/unified_decoder/tri_oracle_scalar_request_owner.sv",
+    "path": "verilog/tri_oracle_scalar_request_owner.sv",
+    "sha256": "6b33242307d924b83414677863cc6df9ee0178d69f217aadf0c2123a3e895232"
+  },
+  "qualifications": {
+    "advance_to_clock_distribution_or_routing_allowed": false,
+    "calibrated_full_model": false,
+    "complete_trained_mapped_layer": false,
+    "integrated_current_candidate": false,
+    "mapped": false,
+    "measured_timing": false,
+    "paper_matching": false,
+    "routing": false,
+    "rtl_component_only": true
+  },
+  "scenarios": {
+    "abort_with_extended_response_beats": 3,
+    "accepted_frame_configurations": 5,
+    "all_output_values": 130,
+    "channel_values": 48,
+    "live_configuration_offer_changed_while_frame_active": true,
+    "new_scalar_configuration_blocked_until_drain": true,
+    "output_stability_during_backpressure": true,
+    "output_strips": 17,
+    "partial_scalar_values": 26,
+    "projection_beats": 296,
+    "projection_requests": 37,
+    "recovered_scalar_values_after_abort": 8,
+    "residual_row_mapping_crosses_256_feature_boundary": true,
+    "scalar_values_without_scale_reads": 48,
+    "successful_channel_frame_scale_reads": 4
+  },
+  "scope": "Synthetic arithmetic and ownership regression of the selectable writer plus existing projection/narrow arbiter. Does not replace the current mapped/placed candidate or establish trained-model accuracy, physical timing or paper matching.",
+  "setup_failure": "The first attempt referenced the owner at a nonexistent source path. That log is preserved; actual red/green tests used the existing verified generated owner.",
+  "state": "frame_owned_scalar_channel_writeback_rtl_and_shared_projection_reads_verified",
+  "verification": {
+    "container": "tri-oracle-eda",
+    "legacy_scalar_expected_numeric_failure": true,
+    "native_tool": "Cadence Xcelium25.03",
+    "new_selector_exit_status": 0,
+    "nonzero_residual_and_saturation_cases": false,
+    "source_compiler_errors": 0,
+    "source_compiler_warnings": 0,
+    "verible_syntax_exit_status": 0
+  }
+}
