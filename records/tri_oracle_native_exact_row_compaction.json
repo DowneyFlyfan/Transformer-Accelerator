@@ -1,0 +1,108 @@
+{
+  "container": {
+    "configured_image_reference": "cadence-ddi:25.10.000-patched",
+    "immutable_image_id": "sha256:0b1be38fcfe89788508122a77766c1e39ca55f59f4be9c13fc3b430b7f2c0d36",
+    "name": "tri-oracle-eda"
+  },
+  "correction": {
+    "additional_moved_cells_relative_to_failed_trial": 300,
+    "cross_row_transfers": 1,
+    "earlier_automatic_legalizer_maximum_move_um": 1710.56,
+    "earlier_automatic_legalizer_moved_cells": 34378,
+    "exact_duplicate_origin_pairs": 7,
+    "maximum_additional_displacement_um": 1.48,
+    "original_failed_overlapping_instances": 14,
+    "overfilled_row_shortage_sites": 1
+  },
+  "evidence_sha256": {
+    ".cache/wide_packaged_host_link/drive_repair/terminal_overlap_repair/placement_review.md": "8247211313fe5a5c5f4d3050cb4e05e8321cd3c826d6099284631590300530bb",
+    ".cache/wide_packaged_host_link/drive_repair/terminal_overlap_repair/review_resolution.json": "f60cf8111b4730c662e93d4d8e562303edd872bb56faee8e0b77c77078238a6f",
+    ".cache/wide_packaged_host_link/drive_repair/terminal_overlap_repair/row_transfer_plan.json": "81867e8019c8071b842b3b7f6efa5a062f979b7a496cd1053dfe235af6b41192",
+    ".cache/wide_packaged_host_link/drive_repair/terminal_overlap_repair/seed_verified.json": "716ad02ed61958627aa01cb164a657f377f0344d4cdca236f9528d3dcace38bd",
+    ".cache/wide_packaged_host_link/drive_repair/trial_exact_row_compaction/container_identity_checked.json": "48abfe863bf41dd803b23b2f65cefbcc416ef6990cb2ffdc59ed3de555769736",
+    ".cache/wide_packaged_host_link/drive_repair/trial_exact_row_compaction/native/post_resize_geometry.rpt": "c8684a28f874626e4de281fd28483b21f6f4986cab448cecc902d51eb963b7e7",
+    ".cache/wide_packaged_host_link/drive_repair/trial_exact_row_compaction/postrun_status_v2.json": "875fb3fb4367b210c6473e17d0ea1aa2483dd8158d2cb4cce16020927bc81507",
+    ".cache/wide_packaged_host_link/drive_repair/trial_exact_row_compaction/verified.json": "403a5beec774f598d69ea9b03d5721c749e564b7a49de08e64cad298103dcead",
+    ".cache/wide_packaged_host_link/drive_repair/trial_exact_row_compaction/verified_exports.json": "8fe8e715f7e9f60a1582dfe65730f39472966e8d39f7cb3ebabdf514a5d6a88a",
+    ".cache/wide_packaged_host_link/drive_repair/trial_exact_row_compaction/violations.json": "589d67e06f9b49982f192358f193e35eb7a8e5a862538fd9b0fd87e7b9bf18a7"
+  },
+  "functional_fixture_candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "geometry": {
+    "array_regions": 20,
+    "boundary_pins": 484,
+    "cells_per_array_region": 54580,
+    "die_mm": [
+      3.6,
+      3.6
+    ],
+    "fixed_memories": 631,
+    "occupied_sites": 36232908,
+    "overlapping_cells": 0,
+    "placement_density_percent": 98.79,
+    "placement_obstructions": 501,
+    "remaining_sites": 442208,
+    "standard_cells": 3899401,
+    "unplaced_cells": 0,
+    "usable_sites": 36675116
+  },
+  "host_audit_wall_seconds": {
+    "audit_pin_loads.py": 5.503831096924841,
+    "verify_exports_v2.py": 51.52633440797217
+  },
+  "layout_sha256": "1d943d59193d2aa239fbeb5c429c997b33020af9b57a213e83d84a9960014c0c",
+  "logic_and_constraints": {
+    "all_fixed_memory_poses_and_halos_preserved": true,
+    "all_original_boundary_pins_preserved": true,
+    "all_original_obstruction_rectangles_preserved": true,
+    "array_group_memberships_and_fences_preserved": true,
+    "complete_module_bodies_matching_simulated_candidate": 771,
+    "distinct_variant_pairs": 22,
+    "intended_drive_variant_substitutions_from_original_placement": 620,
+    "native_net_inventory_preserved": true,
+    "original_noncomment_constraint_lines_equal_each_corner": 1448
+  },
+  "native_export_sha256": "420ef2b45a62373d2ce63fa65bd6fa73a2eeddd891652305aa3df02f9333d12f",
+  "native_resources": {
+    "exit_status": 0,
+    "minimum_disk_bytes": 250739417088,
+    "minimum_host_available_bytes": 6843985920,
+    "peak_container_anonymous_bytes": 12041990144,
+    "stop_reason": null,
+    "wall_seconds": 400.7786392439157
+  },
+  "native_wall_seconds": 400.7786392439157,
+  "pin_load_screen": {
+    "distinct_exceeding_nets": 24,
+    "exceedances_by_corner": {
+      "hold_fast": 0,
+      "setup_slow": 24,
+      "setup_typ": 0
+    },
+    "high_fanout_substitution_enabled": false,
+    "net_load_ignored": false,
+    "scope": "Eligible single-driver nets with at least 64 sinks and a native output limit; original Liberty maxima, no wire load",
+    "screened_nets_per_corner": 15479,
+    "worst_limit_ratio": 1.0541345149055332
+  },
+  "qualifications": {
+    "advance_to_clock_distribution_or_routing_allowed": false,
+    "all_pin_limits_met": false,
+    "clock_distribution_or_routing_started": false,
+    "entire_project_complete": false,
+    "full_model_hardware_accuracy_verified": false,
+    "new_cold_reload_performed": false,
+    "new_functional_replay_performed": false,
+    "paper_matching_verified": false,
+    "timing_closure_verified": false,
+    "wire_capacitance_and_slew_verified": false
+  },
+  "review": {
+    "accepted_geometry_correction": true,
+    "critical_findings": 0,
+    "deferred_minor_verifier_findings": 2,
+    "remaining_important_electrical_findings": 24
+  },
+  "scope": "Geometry correction accepted after native Innovus and independent host checks. All 771 complete module bodies match the already simulated mapped fixture candidate. Extra 1.48 micrometer movement is relative to the failed legalized layout, not the original placement. The 24 slow-corner pin-limit violations remain unresolved; no wire timing, full-model accuracy, routed implementation or paper-performance claim.",
+  "state": "reviewed_native_placement_overlap_correction_verified_electrical_repair_remaining",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28HPC+ adaptation"
+}
