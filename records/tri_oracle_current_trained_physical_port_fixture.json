@@ -1,0 +1,100 @@
+{
+  "candidate_sha256": "024fa9b5fa813f0c070db18a828e8c33a00c5c89d88671ea39488a8772c13b31",
+  "elaboration_wall_seconds": 691.7400402349886,
+  "evidence_sha256": {
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/expected.hex": "46945cc491896981ca121c5b4de6b4ab0e4f0b2395a857a7a28fff6838cfc730",
+    ".cache/model_reference/lossless_weight_burst_probe/streaming_probe/aligned/partial_retention/indexed_down/wide_values/fused_request/score_packet/partition/registered_load/token_merge_pipeline/all_head_attention_replay/rows.txt": "7394593387ed84a42ab6decb03c8e4abd25daa316af8770d53eee3e2f2339f22",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_long_task_input_integrity_20261119_terminal_fixture_passed.json": "a0256278d3bad3cedab0761561abcf3f9fdd7abb79236138626b6d01815ed849",
+    ".cache/wide_packaged_host_link/owner_score_proof/native_trained_fixture_terminal_independent_audit_20261120.json": "41e8c7355e205e20710fef70592039f419a7347bb26462ba2e9f1ae4cb4ad288",
+    ".cache/wide_packaged_host_link/trained_current_multicore/decode_key_count_corrected_review_fixed/native/run_0_20/attention.hex": "33c2870522d6bbb6fc766bd833918d91ac8bc95f982a6d1fb9a173142a7ed8c2",
+    ".cache/wide_packaged_host_link/trained_current_multicore/decode_key_count_corrected_review_fixed/native/run_0_20/attention.hex.projections": "46945cc491896981ca121c5b4de6b4ab0e4f0b2395a857a7a28fff6838cfc730",
+    ".cache/wide_packaged_host_link/trained_current_multicore/decode_key_count_corrected_review_fixed/native/run_0_20/console.log": "7baba48796f2074b96587bbdff4f83db1dc3c273559ab3a4d46f4fdfedc2c2f3",
+    ".cache/wide_packaged_host_link/trained_current_multicore/decode_key_count_corrected_review_fixed/native/run_0_20/xrun.log": "d4974809f01677a91f5d2a5de2478ee28f40520d0cf97618160415ef6fd07ace",
+    ".cache/wide_packaged_host_link/trained_current_multicore/decode_key_count_corrected_review_fixed/native/status.json": "24ed5d0bdacc7950b7c5c0449bb26d2e8c5d74fb772356c93e0f6af70befa391",
+    ".cache/wide_packaged_host_link/trained_current_multicore/decode_key_count_corrected_review_fixed/runtime.json": "c3f7f4c75179b54afcd331b4cabbaa7affd963e02d66458856bb235cc8c63437",
+    ".cache/wide_packaged_host_link/trained_current_multicore/decode_key_count_corrected_review_fixed/verified_status.json": "3a4fec4dc8f2c23da7c41776f6bf4ac9f5418fe3df75d01115ac23b8449a253d",
+    "records/tri_oracle_trained_attention_gpu_reference.json": "14c957ea3f2a7a9f71c558cb615ecc5a87194091db884ed1e54119e382c114df"
+  },
+  "fixture": {
+    "attention_head_decisions": 32,
+    "projected_vectors": 16360,
+    "projection_batches": 1040,
+    "prompts": 1,
+    "query_key_value_groups": 40,
+    "retained_prompt_slots": 409,
+    "selected_attention_ranks": [
+      0,
+      204,
+      407,
+      408
+    ],
+    "selected_attention_rows": 128,
+    "value_requests": 32736
+  },
+  "fresh_reset_execution": true,
+  "native_exit_status": 0,
+  "native_resources": {
+    "minimum_free_disk_bytes": 13539418112,
+    "minimum_host_available_bytes": 10022109184,
+    "peak_container_anonymous_bytes": 4102090752
+  },
+  "native_wall_seconds": 67494.34243763401,
+  "owned_process_group_terminal": true,
+  "qualifications": {
+    "advance_to_clock_distribution_or_routing_allowed": false,
+    "all_attention_rows_verified": false,
+    "entire_project_complete": false,
+    "full_model_hardware_accuracy_verified": false,
+    "paper_energy_or_throughput_matched": false,
+    "routed_design_verified": false,
+    "simulation_speedup_measured": false,
+    "timing_closure_verified": false
+  },
+  "restored_simulation_state": false,
+  "runtime_sha256": "c3f7f4c75179b54afcd331b4cabbaa7affd963e02d66458856bb235cc8c63437",
+  "scope": "One complete trained physical-port prompt fixture on the current mapped candidate, with full query/key/value projection caches, 32 head decisions and 128 selected attention rows. This proves the recorded fixture outputs and protocol sequence. It does not establish full-model hardware accuracy, exhaustive attention-row coverage, chip latency or energy, physical closure, or paper-performance matching. Corruption controls modify in-memory audit data only.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "state": "current_mapped_chip_trained_physical_port_prompt_fixture_verified",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28HPC+ adaptation; original paper uses Samsung 28FDS",
+  "terminal_totals": {
+    "auxiliary": 33313,
+    "context_words": 90,
+    "host_words": 20101,
+    "maps": 576,
+    "reads": 1784115,
+    "rows": 128,
+    "value_reads": 32736,
+    "wide": 66049
+  },
+  "verification": {
+    "actual_multicore_configuration_sha256": "f5fbefd7f52b62a1dc5b0750811159615601c9aaf78d7a3d9092a66a860f931b",
+    "attention_output_words_equal_pinned_graphics_processor_reference": true,
+    "canonical_and_console_channels_independently_recounted": true,
+    "model_only_in_memory_output_faults_rejected": [
+      {
+        "model_only_fault": "projection_data_corrupt",
+        "rejected": true
+      },
+      {
+        "model_only_fault": "attention_data_corrupt",
+        "rejected": true
+      },
+      {
+        "model_only_fault": "head_decision_corrupt",
+        "rejected": true
+      },
+      {
+        "model_only_fault": "attention_row_omitted",
+        "rejected": true
+      },
+      {
+        "model_only_fault": "normal_finish_missing",
+        "rejected": true
+      }
+    ],
+    "ordered_batch_group_head_and_row_events_compared": true,
+    "original_compiled_entries_rehashed_unchanged": 929,
+    "original_input_pins_rehashed_unchanged": 272,
+    "projected_output_bytes_equal_pinned_trained_fixture": true
+  }
+}
