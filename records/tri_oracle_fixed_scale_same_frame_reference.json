@@ -1,0 +1,114 @@
+{
+  "state": "fixed_native_attention_same_frame_feedforward_operands_verified_in_software",
+  "verified_utc": "2026-11-21T22:01:48.939143+00:00",
+  "questionId": "201030233",
+  "imageId": "n54424",
+  "layer": 19,
+  "rows": [
+    1,
+    2
+  ],
+  "original_positions": [
+    1,
+    2
+  ],
+  "selection": "First ordinary two-token frame in source order; no error or traffic selection",
+  "input_boundary": "Authenticated PRE-attention residual plus output-projection codes from the fixed native-compatible attention-scale reference on the older captured layer19 prefix.",
+  "finding": "The previously native-verified computed-projection feed-forward fixture uses a different attention-scale boundary. It cannot qualify a continuous fixed-scale chain:2678of4096projection codes and4036of4096final codes differ for the same rows.",
+  "method": "Frozen learned normalization/Gate/Up weights, frozen prediction policy and shared per-token gain, calibrated per-output Down codes, two signed8primary/correction planes, native residual/writeback formats. No fitting, training, answer labels or changed weights.",
+  "checks": {
+    "old_reference_control_final_values": 4096,
+    "new_cpu_gpu_exact_final_values": 4096,
+    "normalization_cpu_gpu_values": 8192,
+    "cpu_gpu_exact_dot_values": 53248,
+    "decoded_projection_values": 4096,
+    "decoded_pre_residual_values": 4096,
+    "decoded_activation_values": 4096,
+    "decoded_intermediate_values": 22528,
+    "decoded_final_values": 4096,
+    "host_flits": 14407,
+    "negative_decoder_controls": 8,
+    "matched_context_to_feedforward_projection_codes": 4096,
+    "attention_accumulators_fit_signed25": 4096,
+    "actual_shift_fields": [
+      [
+        5,
+        0,
+        7
+      ],
+      [
+        6,
+        2,
+        5
+      ]
+    ],
+    "affine_shifts": [
+      18,
+      17
+    ],
+    "writeback_bases": [
+      12,
+      11
+    ],
+    "changed_values_from_old_fixture": {
+      "norm_codes": 2246,
+      "activation": 1001,
+      "shifts": 0,
+      "affine_shifts": 0,
+      "keep": 0,
+      "coarse": 1844,
+      "delta": 2,
+      "primary": 4095,
+      "correction": 3951,
+      "lane_writeback_shifts": 0,
+      "final_codes": 4036,
+      "frame_residual_q32": 0,
+      "frame_residual_q26": 2145,
+      "frame_normalization_q13": 2145,
+      "frame_projection_shifts": 36,
+      "frame_row_scale": 0,
+      "frame_output_codes": 2678
+    }
+  },
+  "resources": {
+    "host_guard_seconds": 40.26923638791777,
+    "reference_seconds": 36.856956291012466,
+    "peak_host_resident_bytes": 1570664448,
+    "peak_gpu_allocated_bytes": 384344064,
+    "minimum_host_available_bytes": 13235318784,
+    "software_ran_on_host": true
+  },
+  "hardware_status": "No hardware/source netlist change or native same-token run. Existing complete credited-root3efa4042candidate and queued native jobs remain unchanged. Actual chip-written projection words must feed the future normalization/feed-forward test.",
+  "limits": "One frozen layer19 two-token numerical fixture, not a complete native layer/model, task-accuracy result, timing result, routed design or energy measurement.",
+  "native_same_token_execution_verified": false,
+  "complete_current_trained_layer": false,
+  "complete_current_trained_model": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/prepare.py": "ef5a3170004114c041bb265e8057258c4c26a82557f6843fbe4373cbcf29e06e",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/frame_arithmetic.py": "f7e8a35eeab5b012657991c89694e21cbaca91bd4fbcdd13a908e66d165ed5d9",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/test_frame_arithmetic.py": "daf9f11bf31f53e03841def4aab5b21074c5784ddf609855fa3bdc6f7f5ab79a",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/source_checks.json": "906efed866b66d9c6c89df0bef1ccf807c39844500bf5475019ccc5f0af4544e",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/architecture.pdf": "d46c58948924f15c7e2afdcf364954f50cc20bc0a555c48bc8a2b7d248e039fb",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/receipt.json": "5adebda0155b1be21df48d2917d1adc52e536f20b7f8604716ca4dd66da457c7",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/reference.npz": "4b8741c58bb80a6e7289a7c5c36aa63c0d38c54e88f865e5491f011b39c8e8bf",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/guard.py": "ed241c05dac5c7bd9260188a48558503e6340cd8b4f92defa00cc4e77b05faca",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/guard_receipt.json": "72fbfbcbcb8bf3bcf09a5cbc22417543f29cb6fcabcd54229f84fa60d6e904c1",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/console.log": "12511c1e642d56ce14a328b701f9bf8f0c8db6c149a100fc9f48975448bf6601",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/host_identity.json": "19d1863d39e153b12d020a33a49e41104d126c6abbe03820ab4d36f6d8b675a7",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/launch.json": "84c9e31f6c4a4de1acf6cc42f8b568808bd390c77431ff4969672d1478e87045",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/numerical_review.json": "12c0182a5fe0ebf162806759208efe64f7e71f4e023fd9cd55287a620572012a",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/comparison_to_old.json": "44c1a9862574456b04894a4bec7408e2a148a45c592c9aecbfc64b4dce4a8103",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/serialize_fixture.py": "e999b75b8c01e576a2687a598b5e297ed7ecfafa9301bfdcdece6fedefd9cc51",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/verify_fixture.py": "9509b503b2f396800e492bbbfef614748e3a1ef6833adecc1f9693157a04c06c",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/check_decoder.py": "e134689ffd2f422445ee431b33fab097ea0ad872b6f42b7191caa51c9920937c",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/decoder_proof.json": "b50954ec5442971ad4ebd6d4ea38ecddf3c4d463bdf61bdb0ee1eeb0ba48f8a4",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/decoder_contract_checks.log": "8b820f0965717242b6eb5874185e2ff12f6dbc7d20eca4708576621411838924",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/fixture/prepared.json": "d07f7e040f76fbb3a22741491bc657ce3a4d6ba03cc387a2303553b5c9092053",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/prepare_context_operands.py": "8cc24eda5ce93a3d292a0e453d9be50c8c2776cdeafe5f64452cf3be9bcf5501",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_same_frame_v1/context_operands/receipt.json": "1e2100b46081ed041d9acd7455595ea075b7587b1782e5d247a5b6d981d26ab6"
+  }
+}
