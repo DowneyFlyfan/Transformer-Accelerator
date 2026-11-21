@@ -9,8 +9,8 @@
     "attention_handoff_cases": 1,
     "reset_cases": 2,
     "maximum_tokens": 16,
-    "frame_test_input_features": 96,
-    "frame_test_intermediate_channels": 32,
+    "frame_test_input_features": 32,
+    "frame_test_intermediate_channels": 96,
     "frame_test_output_features": 168,
     "compute_peer": "Protocol/data model at the shared tensor command interface; not the actual mapped tensor array or trained weights.",
     "coverage": [
@@ -78,7 +78,6 @@
     ".cache/model_reference/ai2d_current_prefix_capture_20261119_v2/verified_project_imports.py": "b225a7331e3d5c8fa39468c83738412540c6402e126d2ca668d19d503a933534",
     "syn/tri_oracle_process_guard.py": "5e024eea8e26aa5a6a1f047a9e913b762b918af61b530bdb0111ec00f27d5bd6",
     "verilog/tri_oracle_clipping_write_pair.sv": "b2bed183bd3782f14d577b0ff65f3dd4d0ebce9a25c41607705d56b16d0bcac9",
-    "verilog/tri_oracle_correction_frame_control.sv": "7dc6a45d5ea9666e376577dc4128ff03861bb0fc9eebe7ebec305b3d25142a65",
     "verilog/tri_oracle_correction_frame_control_tb.sv": "0f1fa36547c0e97c9e26780c1123fa10e0d5902fecda07c9fa4c5813e40613b8",
     ".cache/late_clipping_20261121/frame_integration/green_v2/xrun.log": "d3b03baa03254c2e8b4678e7b89abaa60c249a3fc910cd69828bfbab79820efa",
     ".cache/late_clipping_20261121/frame_integration/green_v2/console.log": "716dec2a24b1e4e02e12f5b5d630b2fcebad822bea4869ac42f844fcdc930353",
@@ -114,6 +113,10 @@
     ".cache/late_clipping_20261121/frame_integration/dispatch/red/status.json": "f67c53c8c6498a8fa7c3893827125d6f80e21f78f797662326b2c18811afe522",
     "verilog/tri_oracle_channel_indexed_dispatch.sv": "251d71cc54614ba969253ffcbe4a70f2d0cbf10043f771e5519a6ae2c395b88f",
     ".cache/late_clipping_20261121/frame_integration/dispatch/red/xrun.log": "66e670d3e66a81c9bf28f9900d35dfe2dccf157bd7e4047b5e70135a1f124ebe",
-    ".cache/late_clipping_20261121/frame_integration/dispatch/red/console.log": "fc77aba62743e7efce3aaa9233ba334d4461aaabe893c3a30b0c074ef6ce049d"
-  }
+    ".cache/late_clipping_20261121/frame_integration/dispatch/red/console.log": "fc77aba62743e7efce3aaa9233ba334d4461aaabe893c3a30b0c074ef6ce049d",
+    ".cache/late_clipping_20261121/frame_integration/green_v2/source_snapshot/tri_oracle_correction_frame_control.sv": "7dc6a45d5ea9666e376577dc4128ff03861bb0fc9eebe7ebec305b3d25142a65"
+  },
+  "tested_controller_sha256": "7dc6a45d5ea9666e376577dc4128ff03861bb0fc9eebe7ebec305b3d25142a65",
+  "metadata_correction": "Input/intermediate test dimensions corrected from pinned testbench. Original tested controller bytes are archived; native execution evidence is unchanged.",
+  "tested_controller_revision": "d371b7f5c807bda48ba1c7ea65469fb2344d7be8"
 }

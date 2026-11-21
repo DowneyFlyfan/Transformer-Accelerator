@@ -115,6 +115,11 @@ module tri_oracle_correction_frame_control #(parameter bit PACKED_FEEDFORWARD_WE
   logic [16:0] remaining_outputs;
   logic gate_final,down_final,launch_paired,invalid_config,invalid_mask,gate_fault,down_fault;
   logic [64:0] activation_end,gate_end,up_end,down_end,intermediate_end;
+  logic [4:0] range_last_token;
+  logic [36:0] range_activation_span;
+  logic [31:0] range_pair_span;
+  logic [32:0] range_down_span;
+  logic [20:0] range_plane_span;
   logic [2559:0] gate_channels,down_channels,compute_keep;
   logic attention_owned, attention_window, attention_selected;
 
@@ -144,11 +149,20 @@ module tri_oracle_correction_frame_control #(parameter bit PACKED_FEEDFORWARD_WE
     return first_base<=second_end && second_base<=first_end;
   endfunction
   always_comb begin
-    activation_end={1'b0,cfg_activation_base}+(65'(cfg_tokens)-65'd1)*65'(cfg_activation_stride)+65'(cfg_input_features)-65'd1;
-    gate_end={1'b0,cfg_gate_base}+65'(cfg_intermediate_features)*65'(cfg_input_features)-65'd1;
-    up_end={1'b0,cfg_up_base}+65'(cfg_intermediate_features)*65'(cfg_input_features)-65'd1;
-    down_end={1'b0,cfg_down_base}+65'(cfg_output_features)*65'(cfg_intermediate_features)-65'd1;
-    intermediate_end={1'b0,cfg_intermediate_base}+65'(cfg_tokens)*65'(cfg_intermediate_features)*(cfg_correction_enable ? 65'd2 : 65'd1)-65'd1;
+    // Keep interface-width products before the65-bit address/carry sum.
+    // A separate5-bit subtraction avoids widening its underflow expression.
+    // Zero tokens still unconditionally reject below; every nonzero endpoint
+    // equals the original65-bit expression for all interface port values.
+    range_last_token=cfg_tokens-5'd1;
+    range_activation_span=37'(range_last_token)*37'(cfg_activation_stride);
+    range_pair_span=32'(cfg_intermediate_features)*32'(cfg_input_features);
+    range_down_span=33'(cfg_output_features)*33'(cfg_intermediate_features);
+    range_plane_span=21'(cfg_tokens)*21'(cfg_intermediate_features);
+    activation_end={1'b0,cfg_activation_base}+65'(range_activation_span)+65'(cfg_input_features)-65'd1;
+    gate_end={1'b0,cfg_gate_base}+65'(range_pair_span)-65'd1;
+    up_end={1'b0,cfg_up_base}+65'(range_pair_span)-65'd1;
+    down_end={1'b0,cfg_down_base}+65'(range_down_span)-65'd1;
+    intermediate_end={1'b0,cfg_intermediate_base}+(cfg_correction_enable ? (65'(range_plane_span)<<1) : 65'(range_plane_span))-65'd1;
     invalid_config=cfg_tokens==0 || cfg_tokens>16 || cfg_input_features<32 || cfg_input_features>8160 ||
       cfg_intermediate_features<32 || cfg_intermediate_features>8160 || cfg_input_features[4:0]!=0 ||
       cfg_intermediate_features[4:0]!=0 || cfg_output_features==0 || cfg_output_features>65536 ||
