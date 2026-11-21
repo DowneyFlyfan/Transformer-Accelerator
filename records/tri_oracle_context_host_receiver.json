@@ -1,0 +1,89 @@
+{
+  "state": "context_host_record_receiver_component_native_verified",
+  "source_sha256": "e29fae4ce7805ad1b67f5ff047e050af0baf5480afb5fccf25a9d9d4a65a0bde",
+  "testbench_sha256": "fd3cbb7dc227462d92349adedb0154a5066232ae2331486929e542b4e051156f",
+  "protocol": {
+    "poll_header": "0xa685",
+    "finish_header": "0xa686",
+    "auxiliary_header_flags": "rx_is_payload=0 and rx_payload_last=1",
+    "recognition": "RecordStart only",
+    "unchanged_legacy_control_headers": [
+      "0xa67e",
+      "0xa682",
+      "0xa683"
+    ]
+  },
+  "native": {
+    "green": {
+      "exit_status": 0,
+      "wall_seconds": 1.2038786050397903
+    },
+    "baseline": {
+      "exit_status": 2,
+      "wall_seconds": 1.0045178709551692
+    },
+    "body_intercept": {
+      "exit_status": 2,
+      "wall_seconds": 1.0035950460005552
+    },
+    "lost_backpressure": {
+      "exit_status": 2,
+      "wall_seconds": 1.002667092019692
+    },
+    "missing_auxiliary_guard": {
+      "exit_status": 2,
+      "wall_seconds": 1.003612901084125
+    }
+  },
+  "verification": {
+    "accepted_context_requests": 4,
+    "accepted_legacy_controls": 3,
+    "forwarded_words": 30,
+    "statistics_frames": 1,
+    "reset_phases": 2,
+    "non_auxiliary_flag_combinations_per_new_header": 3,
+    "both_marker_values_checked_at_record_start_and_inside_bodies": true,
+    "legacy_receiver_recovered_byte_exact_by_reversing_seven_routing_edits": true
+  },
+  "runtime_unique_inputs_reverified": 9,
+  "scope": "Receiver RTL boundary test in Xcelium. Header decoding, forwarding, one statistics frame and reset are executed; other preserved legacy paths are source-preserved. The serializer, actual memory controller, mapped netlist and full credited root are not connected by this test.",
+  "qualification": {
+    "component_native_functional_verified": true,
+    "mapped_component_verified": false,
+    "serial_context_link_connected": false,
+    "actual_context_memory_finish_chain_verified": false,
+    "whole_chip_verified": false,
+    "full_model_accuracy_verified": false,
+    "physical_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_green/status.json": "4520636dd56912fb14c4ae6919c6531d5ee17599dc949367807b46142982bba9",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_green/invocation.json": "405fba0bcd2117e03a6eafb4a1667bf3eea55716ed0ba18cde44b177c7b85447",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_green/console.log": "a53d5fc89a4c6ccd9937134d6219ae96362438b3860323e60451b423100a15fe",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_baseline/status.json": "e27b387b5a5b01a861a73713fec75e5a2455c2f65b407fcda93dacc6ac7475d7",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_baseline/invocation.json": "d38ab4d699348b3683edcd2e04f5689ab344a61c002ec94166d7a3097748d0cc",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_baseline/console.log": "b05c01c4cee906b289b452f9c7510a0f915009656b6a4cc7c8032917ee21a9f0",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_body_intercept/status.json": "cdb3fa002d13488112bc15e07deb9bc2e50e30f9d82f7b221c7f815973e22de7",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_body_intercept/invocation.json": "b12475c64f13076768dcb88955224dacdb0630947a6469239e459e96bdf71547",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_body_intercept/console.log": "2a547069af951b8304dacbee2ed2d054556e282a33c2a5cc079bf37e13b7d69c",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_lost_backpressure/status.json": "e287c69cfbf323cea98646fb53ff6551b2aa3e8f27c07df02e484eb559cfec16",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_lost_backpressure/invocation.json": "7aab389761be7fb5dd7a4fb346b1f53cb53ab645915b0169e54756651f63c359",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_lost_backpressure/console.log": "33ba1b1907cc813e4dba5451fc239dd72c77bb124cc0d0cdee3daddabfcd6d00",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_missing_auxiliary_guard/status.json": "4b40b98e3751a6a145b31a111f53e84db5d7151101b9c55b690ef8fea8018250",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_missing_auxiliary_guard/invocation.json": "7b5f7413047ae5577b6978904d587d2808d28bde821403e4410e73ba2797e133",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_missing_auxiliary_guard/console.log": "5deb9692f57663a895e4aab9a405a963a2d42b87a24a3011efabec9f918f33be",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/original_receiver.sv": "5b296356122568ef9aa1e7aa64c8086d5644d593aafc7279ba2a631c528f8f87",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/legacy_receiver.sv": "1cceb2e56b539849feb41c4911376fd660d23a2385943be87aed3343b4a86f25",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/receiver_prepared.json": "53dfd85998542a50b481533dd0313424173061f56c01c6afed0c2a66945c89e3",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/run_public_receiver.py": "a86b1122b9c2c28f086509afc0d752b692b7ba909c4895ed6520c8c9f5a069d2",
+    "syn/prepare_tri_oracle_host_boundary_rx.py": "a952f9ed4aa14c07a97a136673f8ee814d0de529b1b65747ee00b4de750d8ce6",
+    "verilog/tri_oracle_host_normalization_rx.sv": "eb99b8fea7b353bf9ded6f420f83837cd10e471d9ca5fad89ead5064a3d69c1d",
+    "records/tri_oracle_host_normalization_packets.json": "13b1fc54d1c4f275b8d7e7189323c7b32e489e3dca032bb82e7c0337d9480184",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_body_intercept/receiver.sv": "ad651a9ac50fa3d7894855b91b1a097674b46d5cb5f467a3211e635a62e74efb",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_lost_backpressure/receiver.sv": "ea9e8d5c973debcc72675f06ade1100763f011b660654c76b4db3c9b350a3463",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_receiver_missing_auxiliary_guard/receiver.sv": "065e9e1d0fada0b5a31b53abc5d1333134463485629bf862f6abc577082a4ee3"
+  }
+}
