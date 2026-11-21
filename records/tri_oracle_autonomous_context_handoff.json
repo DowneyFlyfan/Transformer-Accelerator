@@ -1,0 +1,158 @@
+{
+  "state": "reviewed_autonomous_six_bank_context_handoff_component",
+  "behavior": "Acquire after metadata drain, consume32 held signed32 attention rows losslessly as signed25, compute the common token exponent in hardware, convert in place and serve256signed8 projection words before releasing the same6metadata memories.",
+  "storage": {
+    "macros": 6,
+    "lower_words": 512,
+    "lower_word_bits": 64,
+    "upper_macros": 5,
+    "upper_words_per_macro": 32,
+    "upper_word_bits": 128,
+    "total_bits": 53248,
+    "total_bytes": 6656,
+    "raw_context_bits": 51200,
+    "fixed_value_unit_words": 32,
+    "projection_words": 256,
+    "projection_word_bits": 64,
+    "additional_static_random_access_memory_macros": 0,
+    "physical_relink_verified": false
+  },
+  "interface_contract": {
+    "input_row": "row_query, row_head, row_error, row_data and row_value_exponent remain stable from row_valid assertion until row_ready. Error status is final before assertion; late producer-error cancellation is unsupported. Reset cancels the transaction.",
+    "metadata": "metadata_block prevents new metadata work; prior work drains while acquisition waits for metadata_idle and all6client chip-enables idle. The client must rebuild after acquisition destroys its contents. Rebuild notifications during the lease are ignored.",
+    "projection": "One outstanding request. Addresses0..255 return held64-bit responses. An out-of-range request returns a held error and sets the tagged terminal error; the consumer must still issue finish to release the lease. finish blocks a new read and waits until every outstanding response is consumed.",
+    "errors": "Wrong query, producer error, duplicate head, signed25 overflow and unsupported transfer units release automatically and hold a terminal error. A terminal error invalidates earlier reads of that tag.",
+    "reset": "Mid-pack and held-read resets clear the lease and all valid state, invalidate metadata and allow fresh complete-frame recovery."
+  },
+  "tests": {
+    "portable": {
+      "complete_frames": 3,
+      "compared_projection_words": 768,
+      "recovery_endpoint_words": 2,
+      "malformed_frames": 5,
+      "invalid_projection_reads": 1,
+      "active_reset_phases": 2
+    },
+    "trained_saved_operands": {
+      "complete_frames": 2,
+      "compared_projection_words": 512,
+      "compared_context_bytes": 4096,
+      "common_units": [
+        -8,
+        -9
+      ],
+      "recovery_endpoint_words": 2,
+      "malformed_frames": 5,
+      "invalid_projection_reads": 1,
+      "active_reset_phases": 2,
+      "scope": "Saved actual layer2/query0and1 operands; no native attention producer is connected in this component test."
+    },
+    "mapped_metadata_rebuild": {
+      "compared_projection_words": 512,
+      "compared_masks": 2816,
+      "skipped_channels": 5231,
+      "logical_reads": 27808,
+      "external_reads": 9152,
+      "primary_reads": 2569,
+      "auxiliary_reads": 6583,
+      "scope": "Current mapped metadata owner and sign/key bank;20predictor peers and new controller are behavioral RTL. Exact original trained masks and request-address trace retained."
+    },
+    "behavioral_faults_rejected": [
+      "premature_finish_with_held_read_response",
+      "acquire_without_metadata_quiescence",
+      "preserve_active_lease_through_reset"
+    ],
+    "test_first_initial_failure": "The pre-implementation test failed elaboration for a missing controller module. This is not counted as a behavioral mutation test."
+  },
+  "current_owner_binding": {
+    "current_candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+    "extracted_owner_sha256": "a11a39182d2dedfee78b280c380fd399fb556b3fc624839977bac2d22db0c807",
+    "mapped_test_source_owner_sha256": "3c650917cbee63eecda0cafb9bcda43a81e9bef1cf3fa216361afcd5d9f106de",
+    "source_equivalence": "The mapped-test original owner equals the extracted current-candidate owner byte for byte plus one trailing newline. Exported6memory ports retain the original client expressions and write masks.",
+    "complete_candidate_relinked": false
+  },
+  "independent_review": {
+    "material_findings_remaining": 0,
+    "clarifications_applied": [
+      "explicit_stable_row_metadata_contract",
+      "read_address_error_requires_finish"
+    ],
+    "coverage_added": [
+      "reset_during_partial_packing",
+      "reset_with_unconsumed_read",
+      "fresh_frame_recovery",
+      "reset_lease_mutant"
+    ]
+  },
+  "native_runs": {
+    "public_green_portable": {
+      "exit_status": 0,
+      "wall_seconds": 1.203502281801775,
+      "minimum_host_available_bytes": 15586795520
+    },
+    "public_green_trained": {
+      "exit_status": 0,
+      "wall_seconds": 1.4041160959750414,
+      "minimum_host_available_bytes": 15629021184
+    },
+    "public_early_finish_portable": {
+      "exit_status": 2,
+      "wall_seconds": 1.4039120390079916,
+      "minimum_host_available_bytes": 15488348160
+    },
+    "public_bad_quiescence_portable": {
+      "exit_status": 2,
+      "wall_seconds": 1.2038423069752753,
+      "minimum_host_available_bytes": 15462952960
+    },
+    "public_reset_lease_portable": {
+      "exit_status": 2,
+      "wall_seconds": 1.6037469650618732,
+      "minimum_host_available_bytes": 15462866944
+    },
+    "public_mapped_native": {
+      "exit_status": 0,
+      "wall_seconds": 14.014494348084554,
+      "minimum_host_available_bytes": 15190335488
+    }
+  },
+  "source_input_pins_checked": 36,
+  "qualifications": {
+    "controller_native_functional_component_verified": true,
+    "mapped_metadata_client_rebuild_verified": true,
+    "controller_synthesized_or_mapped": false,
+    "whole_chip_producer_consumer_connected": false,
+    "whole_model_execution_verified": false,
+    "whole_model_accuracy_verified": false,
+    "physical_placement_or_routing_verified": false,
+    "paper_results_matched": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_green_portable/status.json": "2209cf6c6162e4597f24e7deff38803b02e79fa81ce23da5f19636649cf25088",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_green_portable/console.log": "1e1c49024dfe353e88719d15a2d2de8cee3f38c142f32adf8de330da60177c69",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_green_portable/invocation.json": "a3f1c9c698350fa2a080c3089491a38ccbb9fcc7541a2385fe2bb138afc24611",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_green_trained/status.json": "436885e9e920ec4df7bbf82507b799ed32965146a7292441e76bdf3670461038",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_green_trained/console.log": "612cd72f8f686f19d18a9ee7f34539d9a287adce13287af2e1b4b34fa43cc7d6",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_green_trained/invocation.json": "24bf93ed0a99a5bbfbc1a2d7fdf748520ea984e1b5894d9900144ae0aa11bf80",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_early_finish_portable/status.json": "ac9f46f735090bbc92435403b15b80cba0d012239a9f2354f5ba248cadf51796",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_early_finish_portable/console.log": "b0ac197f9f1d75804d028ec2f9a14921305caa5f206ca674c8f20beaf19cae7a",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_early_finish_portable/invocation.json": "46890bcd29d740fde114e2b914cf8e353a89af19c6a3e0cff7f5402f917b18c4",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_bad_quiescence_portable/status.json": "a4d5a198a4d772650017357af10805046479e176255dced259f651e3d4f66314",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_bad_quiescence_portable/console.log": "9f37ea740ff8271e5c8b2114582dd449736b6d5be28ac3f3287f5f272a5a17d5",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_bad_quiescence_portable/invocation.json": "1e875dce750308ee43c0458bfa961b06c5f81699cf42b38b62f92729b48d65a6",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_reset_lease_portable/status.json": "5db19df860b8337901688ad806384866356165228c97539ffccfe3e9f136ebcd",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_reset_lease_portable/console.log": "4c9ffabb05deb48990fc3706b3fc4a913a525ba592fa5d11aad33ab86c847c0f",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_reset_lease_portable/invocation.json": "a655830fff175cc5598a7be1675b7fd79441d130db7fe69d3e49ffcb6a238bba",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_mapped_native/status.json": "bfe551b8cdf5ba4e44dac88f18d264f6d0272cdd07de71cd3e695652179fe681",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_mapped_native/console.log": "e987fa0f7ac5a44b2e6a9faa270001e5ed7370d22111f09e101892b8ac59737e",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/public_mapped_native/invocation.json": "1b18ad65445849984e4830be45f7ce728e73f188f6c5a601b5c3e380719ddd02",
+    "verilog/tri_oracle_context_handoff.sv": "2af6f83cd1cef210de51e95e085c23c52bcbc8dffaf98013fdf2db237dd7cf50",
+    "verilog/tri_oracle_context_handoff_tb.sv": "ffa20ff5eb1502b5f709f92afbc2eeaeae8c1e751ced5125fcbc01f49cee82ef",
+    "records/tri_oracle_lossless_raw_context_buffer.json": "103614652f22f9ec0ac7cafc6799217d8a2ebe1a7699e170cbe4f46cd9870bad",
+    "syn/generate_tri_oracle_raw_context_vectors.py": "37c5aaee8e4386a831098ded78fc8aa5add086c3fb1692f5809dff9730b71de9",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/prepare_mapped.py": "2288c92b91098469435c60013ad07053d667eb887f0847432f3acdd6466df28c",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapped_prepared.json": "18416ce1df2518e88078806c79cfc6a44566194818a815d1034c4e14fa2ff02f",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapped_tb.sv": "fd141e99d9bbe340000a55660d0d472214109e8c821740ed75a708c079730768"
+  }
+}
