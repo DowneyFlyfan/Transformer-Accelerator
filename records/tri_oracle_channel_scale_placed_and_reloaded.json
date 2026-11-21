@@ -1,0 +1,125 @@
+{
+  "state": "tsmc28_channel_scale_control_placement_and_fresh_saved_database_reload_verified",
+  "technology": "TSMC 28 nm HPC+ adaptation",
+  "candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
+  "placed_netlist_sha256": "5df10b40be96132807ca716bc2f7e82fba9359c367d9ffd405698d0629aab5a4",
+  "reloaded_netlist_sha256": "3de5632d202e3186a6878eaa8af65603b7690661bbcc6e12c83fdee2169354dd",
+  "change": "The mapped channel-scale command, selectable writeback and shared read-port controls are placed into existing free row intervals. All original components outside the replaced controls retain their positions.",
+  "inventory": {
+    "reachable_modules": 666,
+    "physical_leaf_instances": 3910739,
+    "replacement_control_cells": 21322,
+    "preserved_original_component_poses": 3889417,
+    "reloaded_exact_component_identities_masters_and_poses": 3910739,
+    "compiled_memory_macros": 631,
+    "compiled_memory_bytes": 414928,
+    "physical_boundary_pins": 484,
+    "placement_blockages": 501,
+    "array_regions": 20
+  },
+  "geometry": {
+    "die_micrometers": [
+      3600,
+      3600
+    ],
+    "native_placement_violations": 0,
+    "native_unplaced_instances": 0,
+    "placement_density_percent": 98.96,
+    "usable_sites": 36675116,
+    "remaining_sites": 380186
+  },
+  "implementation": {
+    "method": "Best-fit decreasing packing of new cell widths into verified empty row intervals; preserve the already legal native-imported positions.",
+    "public_packer_byte_identical_to_executed_helper": true,
+    "packing_unit_controls": 6,
+    "def_identity_fault_controls": 5,
+    "boundary_order_fault_controls": 5,
+    "saved_database_files": 86,
+    "identical_non_sdc_model_files": 32,
+    "observed_loaded_timing_libraries": 21,
+    "observed_loaded_physical_abstracts": 8,
+    "observed_loaded_extraction_models": 3,
+    "complete_observed_view_reports": 2,
+    "timing_views": [
+      "setup_slow",
+      "setup_typ",
+      "hold_fast"
+    ],
+    "clock_constraint_ns": 1.72414,
+    "configured_native_cpu_threads": 20,
+    "container": "tri-oracle-eda"
+  },
+  "timings_seconds": {
+    "native_save": 142.91038435697556,
+    "native_fresh_reload": 144.61953120795079,
+    "host_export_verification": 130.2893395149149,
+    "host_fresh_reload_verification": 80.2080166300293
+  },
+  "resources": {
+    "guard_sampled_minimum_native_host_available_bytes": 9723326464,
+    "guard_sampled_peak_native_container_anonymous_bytes": 11298729984,
+    "guard_sampled_peak_host_verifier_worker_rss_bytes": 3802349568,
+    "measurement": "Half-second guard polling; verifier resident memory covers the worker process and excludes its sort descendants. These are sampled values, not operating-system high-water statistics."
+  },
+  "qualified": {
+    "current_control_update_placed": true,
+    "saved_database_fresh_reload": true,
+    "exported_logical_connectivity": true,
+    "all_component_pose_preservation_on_reload": true,
+    "loaded_model_and_view_relations": true,
+    "complete_current_trained_layer": false,
+    "complete_model_accuracy": false,
+    "clock_distribution": false,
+    "routing": false,
+    "measured_frequency": false,
+    "energy": false,
+    "paper_matching": false,
+    "routing_release": false
+  },
+  "limitations": [
+    "Placement-only geometric and circuit-preservation qualification; physical timing, routing and energy remain unmeasured.",
+    "Functional reference covers two archived layer10inputs in scalar and calibrated per-output Down modes. It does not qualify a complete chained current trained layer or complete model.",
+    "The paper300 advancement hold remains in force."
+  ],
+  "retained_attempts": [
+    "placement_update_v1: 19975 overlaps; bracketed detail-placement names were serialized incorrectly and centroid-placed cells failed legalization.",
+    "placement_update_v2:19878overlaps after all replacement names resolved.",
+    "placement_update_v3:72overlaps introduced by an extra detail pass; same-seed pre-detail native import was clean.",
+    "Fresh reload host verifier v1 rejected reordered but unchanged unnamed blockages. Version2 compares counted geometry and keeps pin records exact; no native data changed."
+  ],
+  "evidence_sha256": {
+    "syn/tri_oracle_control_row_packing.py": "b6669a26830074a9feed83e543f4f27053fafcf3e664db8ba3cc82830502a180",
+    "syn/test_tri_oracle_control_row_packing.py": "422227a6f135878da982a996bd78b14976641461543215b734bebf81a8a79beb",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/public_packing_controls.log": "dcd2147edfda2291b456dfb6d9f3021f0fed07760d5a1c8869fc5446f30e28fe",
+    "records/tri_oracle_fullwidth_channel_scale_result.json": "d188fc55184097a65d8e936cfd42e954f0081897a059b744ff97bbe05b62729c",
+    "records/tri_oracle_channel_scale_blocks_mapped.json": "443542fc6442ebc4f2513c00af7fef4a253cb32138aef4615d2ba426aa6d7260",
+    ".cache/channel_scale_integration_20261120/linked_v1/preservation_v4.json": "9acf0ae66abce5bd0ea1a9a71f35ad092b25c978d7fdaa79859fb4f101e544be",
+    ".cache/channel_scale_integration_20261120/placement_update_v3/prepared_seed_v2.json": "ee5db2916f55ca70561787fcfb4c1e5607edc643b3ba2371e609b8c1ee9fbe52",
+    ".cache/channel_scale_integration_20261120/placement_update_v3/build_seed_v2.py": "f8a1548fb577d2cea957209a15cc63346403f9d312c2921826924b9b88ce8bf0",
+    ".cache/channel_scale_integration_20261120/placement_update_v3/packing_controls.log": "dcd2147edfda2291b456dfb6d9f3021f0fed07760d5a1c8869fc5446f30e28fe",
+    ".cache/channel_scale_integration_20261120/seed_import_diagnostic_v1/verified_import.json": "1355227c67f0f7023060c6f35dbd71844e5ee10dee927382b57f1e1d02e16118",
+    ".cache/channel_scale_integration_20261120/seed_import_diagnostic_v1/native/imported_geometry.rpt": "7dfaeee46615fafb44541ee7dc07a2714eea0d9c95515bc410de6b7e073d84c3",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/prepared.json": "73da0d656fdf249f9e82c82ee35e9995d46f41c2ab82bb4e24764279a601d6f5",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/place.tcl": "96819659cca604fbd04be4369dc1eb533a5359a187d1c6ed9830e56186bf63d2",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/native_status.json": "737af36d85e3386e7c2ea917304d5f3e1c287e0f0130f219e1898785b16d30f1",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/native_complete.json": "3be01a0b5bdf4e508bc5438cef6f91b1fa2b332a986aa9188fa7712475859ca6",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/native/geometry.rpt": "b28f06885b11ad2ab6cf505d0650c8da90ef29b479793eda2cca9dea6a361fbf",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/native/console.log": "685882acae967ad1ea9c35a7faf2a748c0bfe6eceb02650f27cf1a371987b130",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/host_proof_anchor.json": "4a6248693e7655256c80a5f578da5252bf333dd94e350add2a834d9f062b97ea",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/verified_outputs.json": "0af8733267b205a8d5a8c61478215aef6c95339f108becab27d234cd68b52d73",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/host_proof/guard_receipt.json": "581f82b71e384f4806a66b735616b0b91711d09c04a84a341ba1ec4dadff24b2",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/host_proof/launch.json": "f2334c037c03a457e0a96e86411725a18732b55adde761c8c9c70089d877c58e",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/host_proof/console.log": "3a55ecbee2170aef7e19a886ef67164fbd39dca9229aa910e9943f027a7449b2",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/prepared.json": "9d607a1b872d6ef1757f5b5bc19f007c6f0f9b96a63a989b310b0feaa4d754e1",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/reload.tcl": "5a603fb27ce2c24a6317dcdac30be72f08b6f7573532948fe859ccf3b1d5d9f0",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/native_status.json": "6259772834c012499222d1ea76e28d6da9fed21fbe6119ee46a2427b9ae02fe5",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/native/geometry.rpt": "5952374805458a038b2b7bc42e32a899194b4ac212f3481278d699a23babd45f",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/native/console.log": "b994800fe280ad82f07dbd29b0b1e1e29f24d93986c184ed136c384ce9c63abe",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/host_proof_anchor_v2.json": "426314788fc71ce88674142bedb513d3cbdef14deb0bddd5119667399beaaf90",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/verified_reload_v2.json": "51bf0af0a8995c5269c8a6c58dcea4b4eb90353277b8f3146d646f7402424055",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/host_proof_v2/guard_receipt.json": "c4ae0f827bda281dee98f4c98f60ef831b74c41bf4b920fa900329690e7c2886",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/host_proof_v2/launch.json": "47cdf745b33e5f684498ea16a9b47efae584411a1119b594c03358b3f58159de",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/host_proof_v2/console.log": "b7e06b78a34179d3f920beb80d9893d2de05f855738a6f92a39f49eedad3931d",
+    ".cache/channel_scale_integration_20261120/placement_update_v4/cold_reload_v1/boundary_record_controls.log": "888a0c0ed615e57d32cf72be501b0c355f33b8613c81dfdaa99db33d7959487e"
+  }
+}
