@@ -1,0 +1,143 @@
+{
+  "state": "lossless_single_token_raw_context_storage_and_inplace_projection_bytes_verified",
+  "candidate_binding": {
+    "candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+    "owner_module": "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1",
+    "owner_source_sha256": "3c650917cbee63eecda0cafb9bcda43a81e9bef1cf3fa216361afcd5d9f106de",
+    "export": "All six original direct memory interfaces, including full upper-memory bit-write masks, are exported without changing client logic. The current mapped shared sign/key bank remains unchanged in normal sign-owner mode."
+  },
+  "memory": {
+    "compiled_memories": 6,
+    "instances": "one512x64 plus five32x128",
+    "capacity_bits": 53248,
+    "capacity_bytes": 6656,
+    "logical_words_64bit": 832,
+    "extra_memory_instances": 0,
+    "one_token_heads": 32,
+    "lanes_each": 64,
+    "lossless_raw_lane_bits": 25,
+    "raw_words": 800,
+    "fixed_value_exponent_words": 32,
+    "raw_metadata_word_format": "words800..831 contain the signed8 per-head value exponent in the low byte, with upper56bits zero",
+    "post_conversion_projection_words": 256,
+    "projection_code_bits": 8,
+    "buffered_tokens_at_a_time": 1,
+    "scope": "Same six physical memories at component level; complete-chip placement/capacity accounting and scheduling remain unverified."
+  },
+  "arithmetic_and_control": {
+    "range": "Reject any signed32 lane that is not sign-extended signed25 before issuing a write. Native K<=1024 softmax accumulation is bounded by8454016 in magnitude, within this format.",
+    "units": "Eight-lane scan and exact rational peak thresholds derive one signed9 common exponent from all32heads; no host-derived per-query scale is injected.",
+    "frame": "Commit only after32distinct complete head rows; duplicate/range/memory errors invalidate the frame until clear. Upstream retains head/data/value-unit until row_ready.",
+    "conversion": "Read each head unit and25rawwords through a256bit window, convert eight sign-extended lanes with the public quotient-first primitive, and write eight compacted words. Process heads in increasing order to preserve unread source data.",
+    "lease": "Acquire only when metadata_idle and all original enables are idle; park metadata during ownership, hold each response until accepted, reject addresses832..1023, and give release priority over a new request. The external controller must block metadata configuration and drain row/conversion/read clients before release; all six metadata memories must be rebuilt afterward."
+  },
+  "functional_verification": {
+    "simulator": "Cadence Xcelium25.03",
+    "memory_views": "Actual compiled-memory functional views, UNIT_DELAY/no timing checks",
+    "all_word_stress": {
+      "writes": 832,
+      "reads": 832,
+      "invalid_requests": 2,
+      "held_response_cycles": 3329
+    },
+    "trained_frames": {
+      "selection": "First two saved layer2 query rows, fixed before this storage experiment; no fitting",
+      "frames": 2,
+      "raw_lanes": 4096,
+      "raw_and_unit_words_checked": 1664,
+      "computed_common_units": [
+        -8,
+        -9
+      ],
+      "projection_bytes_checked": 4096,
+      "metadata_unit_words_preserved": 64,
+      "endpoint_duplicate_and_range_controls": true
+    },
+    "metadata_rebuild": {
+      "actual_mapped_client": true,
+      "predictor_peers": "existing behavioral predictor units",
+      "masks": 2816,
+      "skipped_channels": 5231,
+      "logical_reads": 27808,
+      "external_reads": 9152
+    },
+    "portable": {
+      "model_data": false,
+      "frames": 3,
+      "includes_zero_frame": true,
+      "raw_words_checked": 2496,
+      "projection_words_checked": 768,
+      "unit_words_preserved": 96,
+      "role": "Portable synthetic inactive-metadata-client test; the real mapped-client rebuild is qualified separately."
+    },
+    "negative_controls": [
+      {
+        "mutation": "write both upper-memory halves",
+        "observed_failure": "word512 contains word513 data"
+      },
+      {
+        "mutation": "drop signed25 bit24",
+        "observed_failure": "signed25 minimum endpoint lost at word0"
+      },
+      {
+        "mutation": "convert heads in descending order",
+        "observed_failure": "unread source overwritten; first wrong projection word2",
+        "original_harness_accepted": false,
+        "expected_fault_independently_verified": true,
+        "classifier_note": "The original classifier incorrectly required word0. Status is preserved; separate pinned fault verification documents the actual word2 mismatch without changing RTL or golden data."
+      }
+    ]
+  },
+  "qualification": {
+    "component_rtl_dataflow_verified": true,
+    "original_metadata_client_rebuild_verified": true,
+    "native_attention_producer_connected": false,
+    "native_output_projection_consumer_connected": false,
+    "autonomous_whole_chip_controller_verified": false,
+    "mapped_component_verified": false,
+    "whole_chip_memory_accounting_verified": false,
+    "complete_trained_mapped_execution_verified": false,
+    "accuracy_verified": false,
+    "routed_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false
+  },
+  "remaining": "Attach the six-bank ports and native attention result to the chip control path, serialize raw capture/conversion/projection/release, verify ordinary projection reads and full-layer execution, then synthesize and qualify physical results. Paper-level accuracy remains below target in the separate local benchmark.",
+  "source_sha256": {
+    "verilog/tri_oracle_raw_context_shared_storage.sv": "138aab08fd74a53c89ab9f53ef4836399b2532e5c1398669b3c403b19225d478",
+    "verilog/tri_oracle_raw_context_row_packer.sv": "44aa498969967f3933718db88360a163790c130a41bb88e35352c00ae9d837ff",
+    "verilog/tri_oracle_raw_context_inplace_convert.sv": "f35c799196757a6eb88bfc1e3b7681fd36eaab4e390eddd6ef16d71444923bd7",
+    "verilog/tri_oracle_raw_context_buffer_tb.sv": "42e61a6d167e3b45ee802eb0518b886b7e81d06fa92d04e3c5a5949b8b363c38",
+    "syn/generate_tri_oracle_raw_context_vectors.py": "37c5aaee8e4386a831098ded78fc8aa5add086c3fb1692f5809dff9730b71de9"
+  },
+  "public_dependencies_sha256": {
+    "verilog/tri_oracle_attention_projection_scale.sv": "23cf537bb2e377e45cb4d7c7bbeb744a5ec3dce03bf157a99647ce6c97a973e6",
+    "verilog/tri_oracle_attention_projection_scale_quotient_first.sv": "32bdcd277ebdc0a26fb3310b7dcd762cb4d471b9f36b9f21073b0fbcc33514f3",
+    "records/tri_oracle_native_context_common_unit.json": "507766271c5e2af3a38acd0fbf23fb894475d48910d222407912bb8676680129"
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/prepared.json": "639cf8724ffafeb83ee1d62251408331a0a9b4bc2a47567fd1774d1dbd689b5d",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/prepare.py": "0d13348b8b9bb13413c4559ed986702597a545a5f1d660af7586a86eac24ac8a",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/owner.v": "ad92b6fc2617ba0662eb3fd13f32e11a61731e4d144ea73a7ab7a22088a8dbab",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/current_shared_key_bank.v": "f4d99948dd9d36cc337b0f8d58b49d3dad181845a1bacb5eee13e785aec7b631",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/mapped_predictor.sv": "525e05fdf233eaa5cfe636f6f0516fc6228af2ec065c8bb1ede6928a05246b86",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/stimulus.svh": "7afb6b14b873fd4548864fd8c03c9fecd3bf4b7ae92f65cb06aba57a26497e05",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/packed_stimulus.svh": "ef09a355924ac7c8ebe8177f06affb6386acedf25a11040e31131d479d84c26c",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/converted_stimulus.svh": "4e6e0cdc9aaa995dc030f7371bf7032b0488f12c85f2a9e6e48eeb4f34c8a4ca",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/tb.sv": "f5e7729763fa711117b8b98a674164778a746137b0b50aed43095b6e2a66a6a9",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/packed_tb.sv": "9b319a8ad19c00fb7ddb0e60b0dbae4f1c552b3d93443149de0bb7933525fb2e",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/converted_tb.sv": "042ce7cc90a793e08da5513277bd93aabe4298756c40aa710439a4b29a67f907",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/packed_vectors.json": "89bb696ef6a6818d9ecb793eae8ec3ff30144ea42629729659d9ca4c475119b3",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/converted_vectors.json": "754a45774be1ef88d035053728c1c70192e0b6fec43ca18c59cc8d57ccf4814d",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/red/status.json": "77dbd2606a70f6d1307e57b1da672ac89ad5646bb6df7185f7ee5eff3125f56c",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/green/status.json": "ba7bac59896e7e737a2502ca7b67532d05d71a1d35858661b570dc5207c985b5",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/packed_red/status.json": "8dfb1b6d4ed79719c27e5d11ad027e7f1010544d08c5fe03cc0c0b27fbd03dce",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/packed_green/status.json": "1df4531c1d7c6003ba1e113b39b20e4d7203a34b5f6464e6dff8558fe73c9ba5",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/converted_red/status.json": "739fe8933e61b0a10ae0ad5d854e3c07fefdc6000d03397725c9bba75a1a8d7d",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/converted_red/verified_expected_fault.json": "cb3d100304cacbad12352bebb6fb6281d9647e5adb6049ea520c77272800a3a4",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/converted_green/status.json": "8e36548bfad56bc50603862718b71b8d0f7b42dd10309967cdef421f483ee480",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/public_native/status.json": "bcb1d5a05a218e8330986531df482e4b257a1756fc3a6a799ba1a89dc199cb0b",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/public_vectors/vectors.json": "a8ca89ff84ec892f4a5c6b890d8422c76d7f1c0c6033ef9b69b8a066fb36d12f",
+    ".cache/late_clipping_20261121/frame_integration/raw_context_scratch_v2/diagnosis.json": "9c918e82f272dc6a28991dd477215eb7240091eecf88fe1a7288251aa68a7259"
+  }
+}
