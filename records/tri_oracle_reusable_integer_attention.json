@@ -1,0 +1,78 @@
+{
+  "state": "reusable_integer_attention_sources_and_current_fixture_verified",
+  "source_modules": [
+    "syn/tri_oracle_integer_attention.py",
+    "syn/tri_oracle_attention_arithmetic.py"
+  ],
+  "portable_tests": "syn/test_tri_oracle_integer_attention.py",
+  "purpose": "Reusable physical-format attention functions for the pending22layer model driver; preserve checked layer19 equations and frozen output scales.",
+  "input_boundary": "Normalized current software-prefix input, encoded trained head weights, original positions/cumulative origins and frozen disjoint output exponents.",
+  "fixed_scales": {
+    "parameters_sha256": "d523c11d8453740bfcf6f35e87e285572512e25b4e51307059ac490dba81f491",
+    "fit_record_sha256": "4be4fa30f8ea2aa03e684d3a1fdfe709da6a9441243c46e9e207f1cccb1921cc",
+    "fit_images": 8,
+    "held_images": 8,
+    "targets_select_no_parameters": true
+  },
+  "current_trained_fixture": {
+    "questionId": "201030233",
+    "imageId": "n54424",
+    "layer": 19,
+    "retained_tokens": 281,
+    "exact_input_activation_codes": 575488,
+    "exact_projected_vectors": 11240,
+    "exact_projected_codes": 719360,
+    "head_classifiers": 32,
+    "streaming_heads": 21,
+    "exact_attention_rows": 8992,
+    "exact_attention_accumulator_values": 575488,
+    "exact_output_projection_codes": 575488,
+    "complete_probability_arrays_bit_exact": true,
+    "query_subsets_bit_exact": true
+  },
+  "additional_contract_checks": {
+    "appended_cache_query": "Synthetic appended actual-format vectors, cached prefill flags,32rows compared against independently compiled original scalar softmax; not a trained autoregressive decode pass.",
+    "short_prefill": "Single-visible-key and grouped-value controls; prefill below prediction window retains zero decisions.",
+    "zero_context": "Reproduced rejection before fix. Exactly-zero rows now choose a feasible physical exponent without changing nonzero equations, frozen parameters or output codes.",
+    "portable_cpu_tests": 5,
+    "fixture_and_graphics_contract_tests": 10,
+    "total_tests": 15,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "resources": {
+    "worker_seconds": 12.954903497127816,
+    "guard_seconds": 24.19870742596686,
+    "processor_threads": 1,
+    "maximum_graphics_tensor_bytes": 345117184,
+    "peak_host_resident_bytes": 1669390336,
+    "minimum_host_available_bytes": 14889730048,
+    "concurrent_native_replay_untouched": true
+  },
+  "review": "Independent source review and one focused zero-context/public-namespace fix/result pass found no remaining material issue; source/configuration/log/receipt/terminal checks match.",
+  "limits": "All22layer model integration, native upstream normalization, residual/feed-forward continuation, trained autoregressive decode, task accuracy, timing/routing and paper matching remain unverified. Nonzero contexts outside existing native transfer/output shift ranges are rejected explicitly.",
+  "complete_model_verified": false,
+  "native_current_attention_verified": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    "syn/tri_oracle_integer_attention.py": "46f8c375bd6b5763dcbee37498257d647fa13995883263c8eb1741087db23f2e",
+    "syn/tri_oracle_attention_arithmetic.py": "f0692df08d0d28b59c12c6bfa6a8a4a925074fae38ac939ecc154d69bcb20ea5",
+    "syn/test_tri_oracle_integer_attention.py": "a5428000525e053149e9669b1480ff06b6f32ae8fe8fbb40d5e79acf614685e5",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/test_attention_operator.py": "bfa2c94e7dca4fe375ba442e30a594c2c666b8d891b7b31c895ff0803d9c0f96",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/prepare.py": "c0af480cffaca85aab1d4fac57209a76b1613437739082a5943e2ae62077d22f",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/bootstrap.py": "dd906f855680438dd4e0ad9c3916733b91da2e5c57c95c61dfada5dab3579aab",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/guard.py": "5c4e6af0879530b29e077b8a6528b4a0de886de84032c83bd3bcdcbca2edd73d",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/queue_config.json": "a59374d216a0862d4efaf1cf3e88d77aec6a00c94a39c3dccdd1422633e1d6d9",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/receipt.json": "882d5a750f58864730981ec35fdf5bb0ead80cd822e03210d1822aaef7517a15",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/guard_receipt.json": "f24963a3329e09f90535baa656043b5d5e96c9e4ed2142949184a16bff67e050",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/verified_status.json": "d59dd0a94875ffbcc147e17a92a9c825e56d510d96f280abbabb96f4f5e54d24",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/architecture.pdf": "0d0b238c9cfef41c927112f3720abf872d14c6030fb90d32252dacb08aea7f07",
+    ".cache/late_clipping_20261121/frame_integration/full_model_integer_attention_v2/diagram_review.json": "b44f258c5f3d1a3aac842243e7ea8f00cfced2e84a26ee816b0c391abc3a4685",
+    "records/tri_oracle_fixed_scale_integer_chain.json": "6ad553d3b311bd10697ce36f86dd09c1c6d54bd1798b4e1d9164ff699a4dd44c",
+    "records/tri_oracle_frozen_attention_scale_parameters.json": "d523c11d8453740bfcf6f35e87e285572512e25b4e51307059ac490dba81f491",
+    "records/tri_oracle_disjoint_attention_scale_fit.json": "4be4fa30f8ea2aa03e684d3a1fdfe709da6a9441243c46e9e207f1cccb1921cc"
+  }
+}
