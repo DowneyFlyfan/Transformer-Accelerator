@@ -1,0 +1,155 @@
+{
+  "state": "reviewed_frozen_same_input_feedforward_precision_diagnosis",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "population": {
+    "dataset": "AI2D",
+    "calibration_images": 8,
+    "reused_diagnostic_images": 8,
+    "ordinary_rows_per_image_per_layer": 16,
+    "decoder_layers": 22,
+    "hidden_features": 2048,
+    "intermediate_channels": 5632,
+    "source_prefix": "Reviewed floating-attention plus then-current integer-feed-forward captures. These are not captures from the new integer-attention prefix.",
+    "untouched_holdout": false,
+    "answer_labels_used": false
+  },
+  "statistic": "For each layer and split: mean over128token rows of ||computed-saved trained floating target||2 / ||target||2; then arithmetic mean over22layers. These numbers are local numerical errors, not task accuracies.",
+  "operand_isolation": {
+    "mean_row_relative_euclidean_error": {
+      "floating_reconstruction": {
+        "calibration": 5.412408812871189e-07,
+        "reused_diagnostic": 5.391672424716687e-07
+      },
+      "input_only": {
+        "calibration": 0.019062191517203207,
+        "reused_diagnostic": 0.018856279145277363
+      },
+      "gate_up_weights_only": {
+        "calibration": 0.08284575351692877,
+        "reused_diagnostic": 0.08226319995509244
+      },
+      "input_and_gate_up_weights": {
+        "calibration": 0.08576704538663818,
+        "reused_diagnostic": 0.08515933097949487
+      },
+      "folded_global_gate_up": {
+        "calibration": 0.09697688384575778,
+        "reused_diagnostic": 0.09627240006208143
+      },
+      "output_row_gate_up": {
+        "calibration": 0.025142792294041694,
+        "reused_diagnostic": 0.024949149372601554
+      },
+      "folded_output_row_gate_up": {
+        "calibration": 0.05091406693570053,
+        "reused_diagnostic": 0.05013389526583877
+      },
+      "current_pruned_integer": {
+        "calibration": 0.2280838615871793,
+        "reused_diagnostic": 0.2282954236765442
+      }
+    },
+    "worker_seconds": 9.424900481011719,
+    "supervised_wall_seconds": 9.939612700138241,
+    "peak_graphics_allocated_bytes": 607813632,
+    "peak_host_resident_bytes": 1787990016,
+    "minimum_host_available_bytes": 15006199808
+  },
+  "complete_integer": {
+    "mean_row_relative_euclidean_error": {
+      "global_pruned": {
+        "calibration": 0.2280838615871793,
+        "reused_diagnostic": 0.2282954236765442
+      },
+      "global_dense": {
+        "calibration": 0.12192983843246438,
+        "reused_diagnostic": 0.12162387742185671
+      },
+      "row_pruned": {
+        "calibration": 0.21754205250092173,
+        "reused_diagnostic": 0.2160207406533596
+      },
+      "row_dense": {
+        "calibration": 0.1036173541935907,
+        "reused_diagnostic": 0.10088354687655415
+      }
+    },
+    "worker_seconds": 7.728605981916189,
+    "supervised_wall_seconds": 8.17753874999471,
+    "peak_graphics_allocated_bytes": 461979648,
+    "peak_host_resident_bytes": 1662181376,
+    "minimum_host_available_bytes": 15010385920
+  },
+  "controls": {
+    "saved_normalized_inputs_rebuilt_bit_exact": 22,
+    "saved_integer_image_layer_error_triples_reproduced": 352,
+    "original_float_control_mean_error": {
+      "calibration": 5.412408812871189e-07,
+      "reused_diagnostic": 5.391672424716687e-07
+    },
+    "gamma_folded_float_identity_checked_all22": true,
+    "half_input_corruption_rejected_all22": true,
+    "complete_integer_baseline_outputs_bit_exact_all22": true,
+    "all_owned_workers_terminal": true,
+    "independent_read_only_review": "No material findings; source/input/receipt/log pins, split aggregation, original error totals, physical scale derivation and terminal identities checked."
+  },
+  "row_scale_alignment": {
+    "formula": "shift_row = shift_global + exponent_global - exponent_row",
+    "shared_gain": "Original per-token up gain and down shift remain shared across all intermediate channels; original physical down-output units retained.",
+    "gate_maximum_delta": 5,
+    "up_maximum_delta": 4,
+    "shifts_fit_unsigned_six_bits": true,
+    "prediction_rule": "Unchanged intersection, with signs from the actual chosen quantized weights."
+  },
+  "findings": {
+    "floating_downstream_relative_error_reduction": 0.7070297630848116,
+    "complete_integer_pruned_relative_error_reduction": 0.05376666262296936,
+    "complete_integer_dense_relative_error_reduction": 0.17052844379696908,
+    "row_scaling_improves_pruned_layers": 22,
+    "row_scaling_improves_dense_layers": 22,
+    "gamma_folding": "Both gamma-folded quantized arms worsen their comparable aggregate errors; reject this as the next numerical change.",
+    "next_causal_question": "The pruned-versus-dense error gap is larger than the row-scale improvement. Investigate prediction confidence and numerical thresholds before deploying a new weight format."
+  },
+  "paper_method_review": {
+    "figure": "31.6.5",
+    "gate_near_zero_mask": "111010",
+    "up_near_zero_mask": "101010",
+    "illustrated_intersection": "101010",
+    "combiner": "Explicit circled AND symbol; replacing this with OR contradicts the illustration.",
+    "outlier_domain": "Pre-learned-scale root-mean-square normalization, consistent with existing local detector.",
+    "numeric_prediction_thresholds": "Three threshold labels are shown, but their numerical values are undisclosed. Local thresholds remain reconstruction choices.",
+    "weight_scale_granularity": "Not disclosed; per-output-row gate/up scales remain a counterfactual."
+  },
+  "qualifications": {
+    "complete_model_accuracy_improvement_verified": false,
+    "row_scaled_hardware_implemented": false,
+    "candidate_architecture_memory_qualified": false,
+    "trained_mapped_whole_model_verified": false,
+    "physical_timing_or_routing_verified": false,
+    "paper_results_matched": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/study.py": "d99de21ecf845b613d74a45054fb6012150ea504a0f33c039c9e383e64471e1b",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/guard.py": "1bda1adf543134c1c2e1bf3d8eece9487f804714b6cf69685fdf4f8688f18228",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/architecture.pdf": "b2374e921fb890e065f4af9e3b28cc925df8fa9bd93e38208515894ee7ef85b6",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/source_checks.json": "c5ef1aa2b6971ff9194fb87bc5fff2041596a30c27c0d68281364e21d75fb608",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/inputs.json": "cc32b2df91e948b532b5724d992767d8441c9fd8c19917bbd93fcd6529807e15",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/receipt.json": "cebc53cecf8e0ea87cd4e7a5d444967c9a2361f5cf08ac5d07eddeb0fc7f7bb4",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/guard_receipt.json": "99b517a83fdfcfd84f0da2982a23d9cdfd2f23593932e9bdd81e0c90e8348580",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/launch.json": "e54c0c956ad88e43571f337625b2967dc77db3a1de6f6c8700cd3b9d3442f340",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/guard_launch.json": "567c30df9712ebc31ab9929527739e740bd8fcf7279b43c7dc4c886b653cbd2a",
+    ".cache/late_clipping_20261121/frame_integration/ff_precision_diagnosis_v1/console.log": "d6912ec576d2149c681cebfa64a02a172edf21db7c1a9f24e9a629bcab6d2afd",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/study.py": "00910927c6f0db6f232273949bbd1aead762cd75e20f25ecd39dd506c81de870",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/guard.py": "1bda1adf543134c1c2e1bf3d8eece9487f804714b6cf69685fdf4f8688f18228",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/architecture.pdf": "3e035aeb735928b9a9f97bef2397d4c1d413b87629143b1f989b155262f03c86",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/source_checks.json": "77930060ab0f0e5cb45a7c4305bbfed624f990f14501dca695ef1e2419481f73",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/inputs.json": "6c9d3e19ba094936b3ded32c571630bd2d870d742e0f5060a6be3136146ce0f4",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/receipt.json": "f6018d0914f9d49301bfa9b86a9d7de458100ef761d81398d5d80eef83bde4d6",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/guard_receipt.json": "dcb0473d69821ae622f397c48d65f6cdbdf9198cc11e4cfc8cc9d5539957212b",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/launch.json": "73a65608dcfd463fb2aab9b4256d0efa06268297221ac3c8566d7325cb96a4fd",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/guard_launch.json": "25cab11fa04358a5c78815191e0ba60243cac78abf71c9d6ff82a2c8f563f83e",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_integer_v1/console.log": "c92c538f9a38c21cd79c03c2eb90dd3e075c20b6615bc97e451e252cbedf7517"
+  },
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f"
+}
