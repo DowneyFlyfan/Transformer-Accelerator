@@ -1,0 +1,82 @@
+{
+  "state": "mapped_projection_read_window_and_context_controller_functional_verified",
+  "source_sha256": "3de955a2a024b66bf33bc713ae85ebfb5528369b840f7bad21416bc70e92fbcc",
+  "netlist_sha256": "f21a8e66dfdac3a5ba11617943d99148ce6f823d132647e9b6067e5a4905987c",
+  "synthesis": {
+    "tool": "Cadence Genus25.10-p002_1",
+    "library_corner": "TSMC28HPC+ssg0.90V125C",
+    "clock_period_ns": 1.72414,
+    "native_cpu_limit": 2,
+    "wall_seconds": 40.151251998962834,
+    "standard_cells": 728,
+    "memory_macros": 0,
+    "library_cell_area_square_micrometers": 563.64,
+    "reported_paths": 16,
+    "reported_worst_setup_slack_ps": 1001,
+    "wireload": "ZeroWireload; pre-placement timing-library estimate",
+    "unresolved_references": 0,
+    "empty_modules": 0
+  },
+  "mapped_native": {
+    "portable": {
+      "exit_status": 0,
+      "wall_seconds": 3.606297521851957,
+      "pass_markers": [
+        "CONTEXT_PROJECTION_WINDOW_PASS frames=3 code_words=768 recovery_words=1 bursts=61 invalid_bursts=24 external_bursts=6 word_error_bursts=3 reset_phases=1"
+      ]
+    },
+    "trained": {
+      "exit_status": 0,
+      "wall_seconds": 3.610600878018886,
+      "pass_markers": [
+        "CONTEXT_PROJECTION_WINDOW_PASS frames=2 code_words=512 recovery_words=1 bursts=41 invalid_bursts=16 external_bursts=4 word_error_bursts=2 reset_phases=1"
+      ]
+    }
+  },
+  "runtime_inputs_reverified": 14,
+  "resources": {
+    "admission_available_GiB": 14,
+    "host_stop_reserve_GiB": 10.5,
+    "container_anonymous_stop_GiB": 7.5,
+    "process_address_space_GiB": 6,
+    "minimum_host_available_bytes": 13889167360,
+    "peak_container_anonymous_bytes": 5280743424,
+    "scope": "Container-wide anonymous memory includes the concurrent whole-chip attention replay.",
+    "old_waiter_stopped_before_native_launch": true
+  },
+  "scope": "Both projection read window and context controller use synthesized netlists with six real compiled memory views. Bus requests are test stimuli, not an executed whole-chip projection engine. Saved trained rows are layer2queries0and1. No delay annotation.",
+  "qualifications": {
+    "mapped_component_connection_verified": true,
+    "actual_native_output_projection_consumer_verified": false,
+    "whole_chip_verified": false,
+    "full_model_accuracy_verified": false,
+    "physical_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/fully_mapped_bounded_green_portable/status.json": "c7fece63bdfaf87a8bde91d2b2e9596a2362462f315108cc47c3fc7b24897371",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/fully_mapped_bounded_green_portable/console.log": "8237fbbd2ea085d7bdd3a3202574d80f261d6929a3af2684cd17109f9b08cecc",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/fully_mapped_bounded_green_portable/invocation.json": "55612f3857d1f4b24f9fe50979d266a26bc61ab0d10df9e9e1c112a93abf2e69",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/fully_mapped_bounded_green_trained/status.json": "b96a8adb48cb80f1a44c4cde0c61d67d6ea01e9ffa166dbbb8e896954f19b334",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/fully_mapped_bounded_green_trained/console.log": "fdf679fe60e5335fa62f9042009236b5df0bf0957637f3d8d38081692a7276dc",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/fully_mapped_bounded_green_trained/invocation.json": "9cfdc3d474a8d1f36d7bb49fb613654d7604b9500e49e71033d213900018755c",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/receipt.json": "b649ce66c770e1c4defd9082ff47338ca23efc829e0ebecf0f3b4dac1757733a",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis/status.json": "33f8faf0cc2b37db58af71c4522e59040fc4494ab8691e91e78cc1f30412e337",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis/console.log": "8e6f699af65b61b4a8fa1505ce4ac5cf58745f54367903ca285d4932e93bad8b",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis/netlist.v": "f21a8e66dfdac3a5ba11617943d99148ce6f823d132647e9b6067e5a4905987c",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis/area.rpt": "4646fa697890416a48f96a721f7f0959cf2342cf84d83d0c44e11f3c187a91aa",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis/timing.rpt": "0b0a270ef59c8bc15eae3f6f36e510e50c9e7913a7a235c24c8f5390f9de2e44",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis/unresolved.rpt": "a2e23a0e08de3cdfa5be1647e83aa2ce2cf9806162a0233020a131d613385339",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/map.tcl": "570baddbcfa2a20e9416354df179f8f23ddd87b64d4f2af5f06a2825cc73af4a",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis_inputs.json": "bbea06cbcd5799fd2675ef684fef6cf0b885ffcf19ba540dc30f1bfce5ed738c",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/queue.json": "067ff0132d9b8d2cf5abbecf6c1690970492ca453f22b049aa69796b26b80968",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/controller.py": "b53f831d53845e86f48f5ef212b7bbc2dcf7b8d02678a4bb4470d849ccdf9e8f",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping_bounded/synthesis_guard.py": "020e6e7c8d7232d04b5b1543f68baefb01c4641fa1d0b376c8485593f509ce5d",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/run_fully_mapped_bounded.py": "ed94831f378e80edf1f92b6f0c537073598a938ab91f6a02d3e460fb85adb195",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/mapping/superseded_before_native_launch.json": "99cb739b1f234fc4b3481a3e7e6d363a453324f3511b97ccfed74629a4caf0ab",
+    "records/tri_oracle_context_projection_read_window.json": "5cd38ca361f8b60e62266020c6e5fbcbe684cf6b2b5eeb56ae9b19f58a249895",
+    "records/tri_oracle_mapped_context_handoff.json": "0a757ad09e05dc54fab02c7891c68dfa6a4e8c9a9a96da7eb91150f74986e5bb"
+  }
+}
