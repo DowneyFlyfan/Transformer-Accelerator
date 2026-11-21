@@ -1,0 +1,146 @@
+{
+  "state": "exact_current_mapped_projection_normalizer_memory_handoff_verified",
+  "scope": "Unchanged mapped store and fixed-base projection reader only. Actual external-memory write capture and acknowledgement precede readback; caller aliases/constants reproduce the exact current chip wiring.",
+  "candidate_sha256": "3efa4042b776bf0a879b0bb0682eaace3a54a68f1fbaf0e0ed08ace37b4a7f5b",
+  "mapped_modules": {
+    "tri_oracle_qkv_store430_context_partition": {
+      "bytes": 137508,
+      "sha256": "de73766a025c3233febae46c44ffbfa0bb6576ea1e1b16263ccf41c0587a2a79"
+    },
+    "tapped_tri_oracle_projection_packet_dma_CACHE_BASEx0000000002000000": {
+      "bytes": 120453,
+      "sha256": "e5f3d5beb5fd44fdd5ea15971eca4d65360a31641035d9027e67eb575f3cbe47"
+    }
+  },
+  "positive": {
+    "context_frames": 2,
+    "attention_heads_per_frame": 32,
+    "write_bursts": 64,
+    "write_acknowledgements": 64,
+    "read_bursts": 64,
+    "read_response_beats": 512,
+    "exact_signed_8bit_values": 4096,
+    "reset_releases": 1,
+    "write_request_packet_stalls": [
+      15,
+      11,
+      192
+    ]
+  },
+  "fixture": {
+    "source_vector_sha256": "4bdc58f6d1b87702367d99617944f1e4a42b3179f923411c5a55f6f7a9a53cf7",
+    "head_major_packet_sha256": "48bf42971d3d979582f4ffbdf0891b42aaebf02eb485035c7d81063c0d387ebc"
+  },
+  "caller_contract": {
+    "candidate_sha256": "3efa4042b776bf0a879b0bb0682eaace3a54a68f1fbaf0e0ed08ace37b4a7f5b",
+    "parent_definitions": {
+      "tri_oracle_context_attention_pipeline": {
+        "sha256": "6aecf18e15060fd4396d3789f5277e2f7ff13d1e3c06c9222cbe8d5dc4e3dd10",
+        "current_offset": 526016818
+      },
+      "tri_oracle_projection_bus_normalize": {
+        "sha256": "2108bf250e477a05ed832c103e5e5620f1ddd3b188fcd0ed71f6a11a00e74082",
+        "current_offset": 673625259
+      },
+      "tri_oracle_native_reset_copy_0": {
+        "sha256": "1610363bc54037a42d9eec000c95c2630099aa9a62f59cb053a4df750c6ac31f",
+        "current_offset": 688871579
+      }
+    },
+    "store_zero_address_bits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "store_stream_tag_input": "source_done_tag",
+    "producer_done_ready_uses_store_source_ready": true,
+    "leaf_source_done_ready_unused": true,
+    "reader_live_address_bits": [
+      6,
+      16,
+      17,
+      18,
+      19,
+      20,
+      25
+    ],
+    "reader_other_address_bits_zero": true,
+    "reader_constant_burst_words": 8
+  },
+  "native_cases": [
+    {
+      "case": "positive_v4",
+      "expected_error": null,
+      "native_exit_status": 0,
+      "native_seconds": 1.9727239289786667,
+      "owned_group_terminal": true,
+      "evidence_sha256": {
+        "invocation.json": "dbdc22cbfa525511125520ceffcb87afb2321f528afe973e4cdd3245bce9ab6c",
+        "native_status.json": "2e8a6dba1c0cd09183c5656092f0769f34cafc822fb70076a058c570c1c24ca8",
+        "xrun.log": "158fffd2aa3654305c6d5e20f339b796fcb3fc52481291f23ac6f87347e5b7e3",
+        "console.log": "e598407ac0dc51153aa05e96f0024552992e4a6e12e5dde9401871dd223ed42f",
+        "writes.hex": "8939901a068a5476ed3582a2b9743a1e40a73069f32c4bafa76329da51cc08b1",
+        "readback.hex": "48bf42971d3d979582f4ffbdf0891b42aaebf02eb485035c7d81063c0d387ebc",
+        "bench_source.sv": "f4fa857d2044c02bc2c35bdfbe789db5221048edfd9a3085cfa5616d634fdb6e",
+        "status.json": "6118fb3916b44d887c58b1be756de6ce8e3df57a2c02d82bf68a357d2d926d34"
+      }
+    },
+    {
+      "case": "alias_offset",
+      "expected_error": "HANDOFF_WRITE_ADDRESS",
+      "native_exit_status": 2,
+      "native_seconds": 1.9589732049498707,
+      "owned_group_terminal": true,
+      "evidence_sha256": {
+        "invocation.json": "3e8657619cd9c3ed280cb9806fb76a047cc4034b8deed527545eee7c34d23da0",
+        "native_status.json": "3c0848c410aad923d76ab88b6ebba405ce7d033a9199a2de7209e60dad819e19",
+        "xrun.log": "86a2e845d1b52b8defb69124b0e91bda55e0cf119f281c7b1ade9382fddcf8d9",
+        "console.log": "4aaa46236bb94498c86fc10b3f7da3902c7ae0eb9897fe784cb9503921036b73",
+        "writes.hex": "b9909d09b0de14dc18a8ebfba90b3fe628fe7663430bd7dfff8a9ca99c469557",
+        "readback.hex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bench_source.sv": "f4fa857d2044c02bc2c35bdfbe789db5221048edfd9a3085cfa5616d634fdb6e",
+        "status.json": "4a9b4704ef33c68cd9daad605a516443fefcfc0c687bb36389aebae2260c04c9"
+      }
+    },
+    {
+      "case": "lost_write",
+      "expected_error": "HANDOFF_PACKET_DATA",
+      "native_exit_status": 2,
+      "native_seconds": 1.957572165876627,
+      "owned_group_terminal": true,
+      "evidence_sha256": {
+        "invocation.json": "59c7414f45749b6a8a9d8730a1daca6c9aa9e8da3e0d421bafd56aedb1e19a32",
+        "native_status.json": "c963093b66187068c5193ba0aed43e19ed12b4a57085da6407f41f921cf531e0",
+        "xrun.log": "a9749741c2e8cb8560a14cc4adf544aba38fd59d0877de996ba7794ded345f79",
+        "console.log": "ae8f55e9cc2b1d923e3cadba707a9a616e92ee03926f360c13f0c2ad4866be14",
+        "writes.hex": "8939901a068a5476ed3582a2b9743a1e40a73069f32c4bafa76329da51cc08b1",
+        "readback.hex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bench_source.sv": "f4fa857d2044c02bc2c35bdfbe789db5221048edfd9a3085cfa5616d634fdb6e",
+        "status.json": "e20659ed7e059e81a1bb7ed2a045bf0dbcfd9bcedbf6973d89653c714f29c648"
+      }
+    }
+  ],
+  "local_proof_sha256": {
+    "prepared.json": "1244f97065c9e03e46d9226e9c750139aee918cd9e655be1c7f69e4111898907",
+    "caller_contract.json": "7e4b5e84f315aa2bf92f227790fd3d6bb394d753e49dee11e4af933491b5298f",
+    "handoff_tb.sv": "f4fa857d2044c02bc2c35bdfbe789db5221048edfd9a3085cfa5616d634fdb6e",
+    "run_unit.py": "71d300e03de57f2bc2ed57813e37a58079bcf52955c1cee8a4b4dd9fd291d024",
+    "terminal_status.py": "97e24cd04cb906f86d7a159fa0138c70ac4551c3a44f4605478a167297d43163",
+    "terminal_contract_checks.json": "d1d11d6b846d8d8cf4d17af2624111fb01dbdb897d18612a25e7ee153c65e1f1",
+    "independent_review.json": "c8af5b4ca5c6ef3cb97b4ea18a6329898669453ee714ad00fe37f225974c860f"
+  },
+  "independent_review_clean": true,
+  "host_cleanup_contract_tests": 7,
+  "native_component_verified": true,
+  "native_projection_matrix_verified": false,
+  "native_normalization_arithmetic_verified": false,
+  "whole_chip_same_token_chain_verified": false,
+  "whole_model_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false
+}
