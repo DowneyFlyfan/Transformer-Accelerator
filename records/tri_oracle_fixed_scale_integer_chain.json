@@ -1,0 +1,104 @@
+{
+  "state": "fixed_disjoint_scales_applied_to_current_integer_attention_feedforward_reference_verified",
+  "questionId": "201030233",
+  "imageId": "n54424",
+  "layer": 19,
+  "retained_tokens": 281,
+  "frames": 141,
+  "input_boundary": "Authenticated compact normalized attention input and cumulative merger state. Integer attention/output projection add the true PRE-attention residual; captured POST-attention operands are never substituted into the computed chain.",
+  "scale_source": {
+    "kind": "fixed_disjoint_per_layer_head",
+    "parameters_sha256": "d523c11d8453740bfcf6f35e87e285572512e25b4e51307059ac490dba81f491",
+    "fit_record_sha256": "4be4fa30f8ea2aa03e684d3a1fdfe709da6a9441243c46e9e207f1cccb1921cc",
+    "fit_images": 8,
+    "held_images": 8
+  },
+  "scale_scope": "Only the40query/key/value and32output-projection output exponents are fixed from disjoint calibration. Activation/context exponents and physical residual frame units derive from their actual source operands; native metadata generation remains unverified.",
+  "attention_checks": {
+    "projected_vectors": 11240,
+    "exact_projection_raw_values": 719360,
+    "attention_rows": 8992,
+    "exact_attention_accumulator_values": 575488,
+    "exact_output_projection_raw_values": 575488,
+    "all13_datafiles_identical_after_source_binding_fix": true
+  },
+  "feedforward_checks": {
+    "frozen_control_exact_values": 575488,
+    "normalization_and_affine_exact_values": 1150976,
+    "exact_matrix_values": 7481344,
+    "exact_final_values": 575488,
+    "protected_global_down_rows": 1,
+    "ordinary_calibrated_down_rows": 280,
+    "nonzero_correction_codes": 381,
+    "correction_active_rows": 183,
+    "skipped_channels": 112047
+  },
+  "reference_comparison": {
+    "attention": {
+      "projection_codes_vs_direct_float_relative_l2": 0.037043653617389635,
+      "projected_codes_different_from_direct_float_quantization": 201415,
+      "integer_streaming_heads": 21,
+      "frozen_streaming_heads": 20,
+      "changed_head_ids": [
+        19
+      ],
+      "attention_context_relative_l2": 0.17662050456859887,
+      "output_projection_relative_l2": 0.17336701208654148,
+      "postattention_residual_relative_l2": 0.018362349487995026
+    },
+    "final_all_rows": {
+      "relative_l2": 0.039145300602546534,
+      "mean_row_relative_l2": 0.052822952322126845,
+      "maximum_row_relative_l2": 0.20846866065143146
+    },
+    "final_ordinary_rows": {
+      "relative_l2": 0.04753720564610636,
+      "mean_row_relative_l2": 0.05300656585011345,
+      "maximum_row_relative_l2": 0.20846866065143146
+    },
+    "final_protected_row": {
+      "relative_l2": 0.0014111644858776993,
+      "mean_row_relative_l2": 0.0014111644858776993,
+      "maximum_row_relative_l2": 0.0014111644858776993
+    },
+    "baseline": "Frozen current mixed software forward; comparisons are vector differences, never task accuracy",
+    "is_task_accuracy": false
+  },
+  "resources": {
+    "attention_worker_seconds": 11.784273416968063,
+    "frame_worker_seconds": 4.465662037953734,
+    "feedforward_worker_seconds": 16.092020336072892,
+    "processor_threads": 20,
+    "maximum_graphics_tensor_bytes": 446842880
+  },
+  "review": "Source-binding and complete-receipt gaps fixed once in attentionv2;18negative receipt/terminal controls and checked-buffer change control pass. Independent review confirms data/scale/control/terminal consistency. All1073feedforward input pins rehashed.",
+  "limits": "Host arithmetic verification for one281-token layer input, not a complete native layer or model. Native token merging/input root-mean-square normalization, fixed-scale upstream execution, full-model task accuracy, timing/routing and paper matching remain unverified. One head streaming decision differs from frozen floating attention. Cached feedforward scope retains a conservative old diagnostic-scale sentence; the explicit scale_source and this record describe the fixed disjoint tables actually used.",
+  "native_current_chain_verified": false,
+  "complete_current_trained_layer": false,
+  "whole_model_verified": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_fixed_scales_v2/receipt.json": "bc296dad3c27873e1a9f7c8fd642b55c906a09e7876412793e65ffc84c597293",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_fixed_scales_v2/guard_receipt.json": "f644a73b02f567c5b6508a4707c69b4f69c2763154aa35f81985d30fae04ef50",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_fixed_scales_v2/verified_status.json": "d933200f62ba45bd2adff0385de36b5c632ba5d70eff0f295ed0cf2adbf8e6e4",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_fixed_scales_v2/verify_scale_binding.py": "185d2c891df6d5a801417679f5c2699dd557758fcaab8993cdc0c6b0d2485c4a",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_fixed_scales_v2/review_fix_proof.json": "21f3f9c1fe6396346dbd5a52c2a600348683b305a958ddd00844b0207cfe4dad",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_fixed_scales_v2/test_receipt_validation_green.log": "2429afd15a9b6b21055adf0a3c7fff459d8a9ade54b73e693e3b4e15c6aa43d9",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_fixed_scales_v2/test_checked_buffers_green.log": "dfde744de15c70b974bb6903d45dbb46f4d16a5ab2aef34372e5a32262a1aef8",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_frames_v1/receipt.json": "c5c104fb4cdb00831c7b3139e34bb2883622c4dbbb3f61101b4e46a57a81c4d5",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_frames_v1/guard_receipt.json": "ad15fc8bee40554a4dad14dbc4cf3d77896769f8173a4fd7c7d25d54cbaeee01",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_frames_v1/verified_status.json": "9b7dda079da77a6894021c35015f0226d23ce653407018382e81c7a661071d76",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_frames_v1/frames.npz": "755e73e884f70d5e38174cd6d6110df7bb438ac18330dbb5c49c623a3385cba3",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_feedforward_v1/receipt.json": "139d054c46ac41fccb905c34cea479d37987abf865692a1d1e2b29fd8633d5f8",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_feedforward_v1/guard_receipt.json": "f3674676e61b0231d02ec049ba6c3254ba6f287703611d1f62430882f6b7612d",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_feedforward_v1/inputs.json": "91a62cdc148e9d81b7cd99c771b08a006cf599cb9308bf1ec8d5fa7522de8757",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_feedforward_v1/verified_status.json": "f9a2cedc49854e8605066bbf9ca4c3edcee6dc2d4ba163d14de231cd24d37b16",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_feedforward_v1/reference.npz": "16439dce5a5f41e400f0d72dd9618b000735df39ce04fd92ac64246c5b8bdd1d",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_feedforward_v1/prepare.py": "853194c80213bbaa0f81320c76c8413e36e5fa9e1d32de82fad2967982a9f517",
+    ".cache/late_clipping_20261121/frame_integration/current_fixed_scale_feedforward_v1/cpu_arithmetic.py": "06d143faadfabbc57d1ae4636c9671a6c888549d2c261d54a6fbb30cf945d3f1",
+    "records/tri_oracle_frozen_attention_scale_parameters.json": "d523c11d8453740bfcf6f35e87e285572512e25b4e51307059ac490dba81f491",
+    "records/tri_oracle_disjoint_attention_scale_fit.json": "4be4fa30f8ea2aa03e684d3a1fdfe709da6a9441243c46e9e207f1cccb1921cc"
+  }
+}
