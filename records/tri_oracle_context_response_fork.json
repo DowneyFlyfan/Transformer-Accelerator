@@ -1,0 +1,132 @@
+{
+  "state": "native_response_fork_with_mapped_context_controller_verified",
+  "module": "tri_oracle_context_response_fork",
+  "interface": {
+    "opcode": 5,
+    "descriptor_words": 3,
+    "head_bits": "4:0",
+    "query_bits": "15:5",
+    "fixed_value_exponent_bits": "169:162",
+    "capture_enable_bit": 170,
+    "zero_context_exponent_bits": "179:171",
+    "data_source": "Held native response values, without an extra2048-bit staging register",
+    "malformed_descriptors_and_other_opcodes": "Bypass capture and retain original response fields"
+  },
+  "behavior": {
+    "autonomous_first_row_configuration": true,
+    "one_capture_per_held_response": true,
+    "hardware_common_unit_and_inplace_conversion": true,
+    "original_head_order_not_required": true,
+    "reset_cancels_before_and_after_row_acceptance": true,
+    "noncaptured_queries_can_pass_during_open_frame": true,
+    "zero_frame_uses_first_descriptor_signed_unit": true
+  },
+  "tested": {
+    "portable_frames": 3,
+    "saved_trained_frames": 2,
+    "expected_words": 1280,
+    "expected_saved_trained_bytes": 4096,
+    "additional_zero_unit_frames": 2,
+    "additional_zero_word_checks": 2,
+    "recovery_frames_after_reset": 2,
+    "host_response_transfers": 311,
+    "malformed_descriptor_lengths": [
+      2,
+      4
+    ],
+    "bypass_opcodes": [
+      1,
+      6,
+      7
+    ],
+    "producer_error_rejected": true,
+    "wrong_query_rejected": true,
+    "wrong_source_opcode_rejected": true,
+    "baseline_rejected": true,
+    "missing_row_acknowledgment_rejected": true,
+    "unaccepted_payload_sampling_rejected": true,
+    "runtime_inputs_reverified": 17
+  },
+  "native": {
+    "public_mapped_baseline_portable": {
+      "exit_status": 2,
+      "expected_failure": true,
+      "failure_class": "behavioral",
+      "wall_seconds": 3.009883171878755,
+      "minimum_host_available_bytes": 15907385344,
+      "pass_markers": []
+    },
+    "public_mapped_green_portable": {
+      "exit_status": 0,
+      "expected_failure": false,
+      "failure_class": null,
+      "wall_seconds": 3.6128068580292165,
+      "minimum_host_available_bytes": 15701405696,
+      "pass_markers": [
+        "CONTEXT_RESPONSE_FORK_PASS frames=3 code_words=768 bypasses=8 source_host_transfers=172 resets=2 zero_unit_frame=1"
+      ]
+    },
+    "public_mapped_green_trained": {
+      "exit_status": 0,
+      "expected_failure": false,
+      "failure_class": null,
+      "wall_seconds": 3.2112816250883043,
+      "minimum_host_available_bytes": 15683526656,
+      "pass_markers": [
+        "CONTEXT_RESPONSE_FORK_PASS frames=2 code_words=512 bypasses=7 source_host_transfers=139 resets=2 zero_unit_frame=1"
+      ]
+    },
+    "public_mapped_no_ack_portable": {
+      "exit_status": 2,
+      "expected_failure": true,
+      "failure_class": "behavioral",
+      "wall_seconds": 3.0076112770475447,
+      "minimum_host_available_bytes": 15660216320,
+      "pass_markers": []
+    },
+    "public_mapped_unaccepted_payload_portable": {
+      "exit_status": 2,
+      "expected_failure": true,
+      "failure_class": "behavioral",
+      "wall_seconds": 3.415221038972959,
+      "minimum_host_available_bytes": 15625809920,
+      "pass_markers": []
+    }
+  },
+  "simulation_scope": "Xcelium25.03. The new response fork is register-transfer-level code connected to the exact synthesized context-controller netlist and six compiled memory views. Command and response stimuli are a legal interface driver; the whole-chip command dispatcher and actual attention producer are not instantiated in these component tests. Saved trained frames are layer2queries0and1.",
+  "qualifications": {
+    "component_connection_functional_verified": true,
+    "response_fork_synthesized": false,
+    "actual_whole_chip_attention_producer_connected": false,
+    "actual_output_projection_consumer_connected": false,
+    "whole_chip_verified": false,
+    "full_model_accuracy_verified": false,
+    "routed_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_baseline_portable/status.json": "cd0ae2f36617665a7413fc7bb764159537e1a213fbe2c0527d2dc33a4c018ff6",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_baseline_portable/console.log": "0b4e50d387d273cf7fea4215cf4ea16fbabbdc5897d1b86be511843af6efacfb",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_baseline_portable/invocation.json": "d7a366f950fd0fdd6531a416911951dae40b9dfdb0e270ca7a44b1943574c5ed",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_green_portable/status.json": "25948b714c6eac90a7d46e22268441afa98bfee087927953db7c296d09e3d336",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_green_portable/console.log": "9d35dfe0e8d57ad56b2914a398e90e512ee89961c41d5293a95cbe3467b25739",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_green_portable/invocation.json": "bc6a05d878a6bf7fa76014ea2dfa5a16f324ef5b87f34d80b74a1559d9466f00",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_green_trained/status.json": "d39ef6805249eab8f1d53f92142ba97030006653423b5d374af16b081e1aad23",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_green_trained/console.log": "1799cb70cc2799c1c0b8a10df73b0eeebf39473f215ca51937c3b5bd313f2773",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_green_trained/invocation.json": "b04a80fceb17595f70731286b978c2143e0e3bdf5b9db29aa6e9d29f9398b04e",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_no_ack_portable/status.json": "8c9fd4923ab2b47b8ef0554decceaa9b0e867f2bb5d14c58e6d61f1862e6a7fa",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_no_ack_portable/console.log": "7aa709803e8047fb6ee9e8460654ac14fb15c88db02022be3dca3f0878004d09",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_no_ack_portable/invocation.json": "861017f04b2cfb037887a0f0d7c3f4734501d34c90daa5eccc5939323e6c5c95",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_unaccepted_payload_portable/status.json": "16915e16a7b0c1005ccecbab22254e3a3f1ceecd265093e356013e14e73e561e",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_unaccepted_payload_portable/console.log": "74d03424a4e72b2757a2ba4e574827b4089c2570e16da86282d3baeb0f2cf340",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/public_mapped_unaccepted_payload_portable/invocation.json": "69029b28926dffc8c60aa1f1b0485edd06682112dccd1b892d92539e472a7b47",
+    "verilog/tri_oracle_context_response_fork.sv": "62cd264781b3311ee97a7a4e70e0c5ea8382e77b3eda611b66e12d7720bfa5d2",
+    "verilog/tri_oracle_context_response_fork_tb.sv": "45bcbb2d29cb64c241b430602c73372a966e017a66b0dd6da1bbd41f13600659",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/design.md": "1688b5fce05ff5ce499850e48e3644206ca85b021ce36a2e49209ac2c5d40ce2",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/run_public_mapped.py": "1cc8d9e4ed5c418ea1e62ada17e2c65221def4eab49d001814388beba71cf22b",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/predecessor_diagnosis.json": "de00c7855a88e987529cecdddc2a2c3f5139cb87f8003c84aedac8de426238c9",
+    "records/tri_oracle_mapped_context_handoff.json": "0a757ad09e05dc54fab02c7891c68dfa6a4e8c9a9a96da7eb91150f74986e5bb"
+  }
+}
