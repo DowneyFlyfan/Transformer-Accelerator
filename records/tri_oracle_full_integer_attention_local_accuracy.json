@@ -1,0 +1,125 @@
+{
+  "state": "all12578_current_integer_attention_local_mixed_software_accuracy_verified",
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "questions": 12578,
+  "images": 398,
+  "exact_matches": 6143,
+  "accuracy_percent": 48.839243122913025,
+  "evaluation": {
+    "dataset": "balanced GQA test-development",
+    "prompt": "USER: <image>\n{question}\nAnswer the question using a single word or phrase.\nASSISTANT:",
+    "maximum_new_tokens": 128,
+    "answer_processing": "Trim whitespace and trailing periods, lowercase, exact match",
+    "cases_with_actual_decode": 12578,
+    "all_sequences_end_normally": true,
+    "truncated_sequences": 0,
+    "generated_token_lengths": {
+      "2": 8911,
+      "3": 2659,
+      "4": 764,
+      "5": 216,
+      "6": 23,
+      "7": 5
+    },
+    "paper_prompt_and_split_confirmed": false
+  },
+  "execution": {
+    "attention_layers": 22,
+    "attention_calls": 662376,
+    "selected_prefill_feedforward_rows": 4427456,
+    "selected_feedforward_stateless_replays_exact": true,
+    "frozen_trained_weights_and_scales": true,
+    "first_case_matches_previously_qualified_control": true,
+    "input_source_pins_checked": 1129,
+    "worker_terminal_exit": 0,
+    "independent_terminal_scoring_exit": 0,
+    "owned_processes_absent": true,
+    "worker_elapsed_seconds": 8555.465502958046,
+    "guard_elapsed_seconds": 8574.972020338988,
+    "peak_gpu_bytes": 8549208576,
+    "peak_worker_host_rss_bytes": 6795546624,
+    "guard_state": "worker_exit",
+    "guard_error": null
+  },
+  "by_question_type": {
+    "choose": {
+      "questions": 1129,
+      "correct": 797
+    },
+    "compare": {
+      "questions": 589,
+      "correct": 261
+    },
+    "logical": {
+      "questions": 1803,
+      "correct": 1058
+    },
+    "query": {
+      "questions": 6805,
+      "correct": 2504
+    },
+    "verify": {
+      "questions": 2252,
+      "correct": 1523
+    }
+  },
+  "paper_comparison": {
+    "reported_accuracy_percent": 55.04,
+    "difference_percentage_points": 6.200756877086974,
+    "evaluation_conditions_confirmed_identical": false,
+    "paper_matching": false,
+    "interpretation": "The local score is below the reported table value; the paper evaluation configuration is not established, so this is an arithmetic comparison, not a controlled reproduction."
+  },
+  "previous_local_result": {
+    "exact_matches": 6247,
+    "questions": 12578,
+    "accuracy_percent": 49.666083638098264,
+    "net_correct_change": -104,
+    "difference_percentage_points": -0.8268405151852392,
+    "causal_attribution_verified": false,
+    "scope": "The same checkpoint and question population do not establish identical calibration/policy and execution revisions. Do not attribute this net change solely to attention."
+  },
+  "qualification": {
+    "full_question_generation_verified": true,
+    "local_mixed_software_accuracy_verified": true,
+    "complete_integer_model_verified": false,
+    "complete_trained_mapped_execution_verified": false,
+    "whole_chip_verified": false,
+    "routed_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false
+  },
+  "scope": "All22 attention layers use the public integer adapter and fixed native-format operators with actual prefill/decode caches. Normalization, residual, feed-forward remainder, vision and vocabulary components retain the existing mixed software implementation. This is not an executed chip benchmark.",
+  "protocol_sha256": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+  "labels_sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+  "tokenizer_sha256": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+  "public_source_sha256": {
+    "syn/tri_oracle_integer_attention_adapter.py": "882189fd14652b23dde570cc2e338056a8eaf67c544a3fe8c3a2bb1d2a32cd8f",
+    "syn/tri_oracle_integer_attention.py": "46f8c375bd6b5763dcbee37498257d647fa13995883263c8eb1741087db23f2e",
+    "syn/tri_oracle_attention_arithmetic.py": "f0692df08d0d28b59c12c6bfa6a8a4a925074fae38ac939ecc154d69bcb20ea5",
+    "syn/tri_oracle_bidirectional_context.py": "9438996bb23b02c99e96a970b1f0659c6da1abdb64d8dbbbc7c0486bbcdcd7c6"
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/queue_config.json": "0376ebd0b769f21fad515233513fda2ea8de85c99735833d6d5ba51cdfc7d264",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/bootstrap.py": "1f68fce0c794b87275232b89a4bc1d72ad312ffc24caed3ad70987ca17533617",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/prepare.py": "c65e179550e5aaf0d1dd6c136520145ef6eb0e1cb9c4be378e18bcf3ca0f9615",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/guard.py": "781a9c89e1f205a3fec691ef0cb061be37fbc22041a5b16e9a9db14d57afc259",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/attention_bridge.py": "42affb8cd33930af144ca00eab2402ffb7c6f6c8019c80ce641ed91ab3e676e0",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/inputs.json": "eb2feb22e437ef5ab0522902cdb2e8e8cc8462507132879bbbef9a89e3e53149",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/controller_launch.json": "871aed30e5d2f1e2b2dd6e6a7f3a740b0f8019e3e053f161d86f1bb270de2baf",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/verified_live_identity.json": "d0f9ba2e4476eedbb0f8bd608678321c5b7f0c740940cb8c3bf5c698257e413a",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/launch.json": "74eea21c04710d34f96ae916be3cccb28d38988ffc851b853bd30753d44ad2e2",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/guard_receipt.json": "44e9434cb236b986e327e0f07ff3ac0b5e6bd326c8045c003ab7799130c9dbf9",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/receipt.json": "7d51c6cbeb51c78aeb848deb18d080845840e58fc7df32bb44b9814c0939c157",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/console.log": "56451ef70971ce4818baebaa729447580bb0a976503db58ff0373b6b9245f991",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/predictions.jsonl": "070fca7a1493e8fc9d87167ece2d7f87d7ba58f39951ebca8e5a38cbfee1cbe9",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/progress.json": "c5ed6471a1d4048f8392b14328ac1184428b07c68de872ecfe5369a04a636f4f",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/verify_result.py": "67559184270bb9a1d18a36b1a019a437c9b1e4c1fbce5abccbb261c49b33be46",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/verified_status.json": "f7105f928d01c79229be8c2f3ba6110f47250eeead3fe9e9d2fc9c876c084bbd",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/postprocess_receipt.json": "9b679dce58bcf4a83ffe98e42ca48b69ab04738d643715c9d0940987d832d486",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/postprocess_verification_console.log": "173ce83a06e5f976ba63df04b5559aa1dcaf149cc8ec804b6d3961fe9014fd5b",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/postprocess_invocation.json": "855233dc307933cfbe6524fd9de9062b07a551696a3697fe9b95df69f591a668",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/postprocess_review.json": "d521327ece7a47b219d63c2bb97e0ee43b4d9fa4a7e9a5fc19b24438245b1cef",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/test_terminal_identity.py": "3842854abfa388c625d1f45f1ba0efb22668296913a6c22b42e6e1cc977fc2cf"
+  }
+}
