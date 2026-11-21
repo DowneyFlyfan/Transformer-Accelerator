@@ -1,0 +1,76 @@
+{
+  "state": "saved_integer_attention_prefix_gate_up_row_scale_diagnostic_verified",
+  "scope": "352saved ordinary layer rows from one existing mixed-software integer-attention modelV3 case. Four frozen arms; exact baseline anchors. No new closed-loop inference or task-accuracy result.",
+  "questionId": "201030233",
+  "imageId": "n54424",
+  "layers": 22,
+  "rows_per_layer": 16,
+  "total_layer_rows": 352,
+  "all22_frozen_baselines_bit_exact": true,
+  "all22_captured_baseline_metric_triples_and_correction_counts_exact": true,
+  "mean_row_relative_l2": {
+    "global_pruned": 0.23568362204063245,
+    "row_pruned": 0.22002121308756914,
+    "global_dense": 0.12500875398629227,
+    "row_dense": 0.10134057921456113
+  },
+  "row_variant_relative_error_reduction_percent": {
+    "pruned": 6.645522848576668,
+    "dense": 18.93321388862611
+  },
+  "layers_improved": {
+    "pruned": 22,
+    "dense": 22
+  },
+  "row_variant_ranges": {
+    "gate_delta": [
+      0,
+      5
+    ],
+    "up_delta": [
+      0,
+      4
+    ],
+    "gate_right_shift": [
+      3,
+      11
+    ],
+    "up_right_shift": [
+      0,
+      10
+    ]
+  },
+  "preserved": "Original trained floating weights, ordinary policy, frozen calibrated Down codes/scales, original shared per-token Up gain, normalization, late signed8primary/correction planes. Sign masks use actual chosen Gate/Up weight codes.",
+  "next_action": "Check a full closed-loop model trajectory before deciding whether to add the currently absent Gate/Up row-scale metadata interface. The existing Down table cannot encode this extension.",
+  "resources": {
+    "guard_elapsed_seconds": 13.696724878856912,
+    "minimum_available_host_bytes": 13738901504,
+    "peak_host_rss_bytes": 1514913792,
+    "peak_graphics_allocated_bytes": 405410304,
+    "worker_exit_status": 0,
+    "owned_processes_terminal": true
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_current_integer_prefix_v1/inputs.json": "cd2d68544e9e645f80d628c3794e3eb8dfca821ab5da50e5ef8b776367e256cb",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_current_integer_prefix_v1/receipt.json": "1baa5b67f4dbca2a0c75e15a8244b10c9da2d7a3bffbf61706681714c983008c",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_current_integer_prefix_v1/console.log": "54d938b512d94ef744877f50d33b18f3330757e7013e0860d6531b0dbb901ccd",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_current_integer_prefix_v1/guard_receipt.json": "add61207593f2cdd4bbe04e2368fd56e4519eedc34c388ff9ffaa3147ab9ee0b",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_current_integer_prefix_v1/launch.json": "05a74de1024bf6bf163786ddef37018bf7d35ebc8a127cd952e731de557a8907",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_current_integer_prefix_v1/independent_review.json": "a3accf07c7c0fdfd373d1dec6d394a72cdbf439b4f75154c6929c9ed9f94ba34",
+    ".cache/late_clipping_20261121/frame_integration/ff_row_scale_current_integer_prefix_v1/architecture.pdf": "0fe668bc03aa4354a72c6359d2da3423deadd6b5c3ac24ca402ab98882cd1b5b",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_model_v3/integer_attention_feedforward_inputs.pt": "77f1f5d1d3705f70d5f7105c518df216c6f6f9672619cda9a4311ac4f1b8f259",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_model_v3/enabled.json": "73b6b6cdfb4b13ba9cc4021e7aef12886b51e39a2d1b66d72df5d641ef015619",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_model_v3/receipt.json": "3a82a146e2728ee1984ebee4da726b4908291583f02415630d1a8b02ef4ee36e"
+  },
+  "frozen_function_source_sha256": {
+    "kernel": "d9975fefea7b319cba3a9ba6e4f2425543b2356414d96ef6d7c328c77d971687",
+    "metrics": "546eae5a3be595bd3dacc0f3d6af38dc6ad58893dc85e4efeceb64f9ef6275a8"
+  },
+  "trained_float_weights_changed": false,
+  "row_variant_hardware_implemented": false,
+  "new_closed_loop_trajectory_verified": false,
+  "whole_model_verified": false,
+  "task_accuracy_verified": false,
+  "physical_results_verified": false,
+  "paper_matching": false
+}
