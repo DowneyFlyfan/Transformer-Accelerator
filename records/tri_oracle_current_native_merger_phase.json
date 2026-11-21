@@ -1,0 +1,80 @@
+{
+  "state": "native_current_22_merger_frames_and_layer19_restore_phase_checked",
+  "candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+  "tested_controller_boundary": "tri_oracle_chip_command_layer_parallel_chip",
+  "simulation_kind": "Native standard-cell and compiled-memory gate-level functional simulation; timing checks disabled",
+  "questionId": "201030233",
+  "imageId": "n54424",
+  "input_boundary": "Real sign inputs from unchanged current mixed-software model prefix; no native upstream normalization claim",
+  "verified": {
+    "merger_frames": 22,
+    "sign_vectors": 5764,
+    "exact_origin_entries": 12672,
+    "feature_bits_per_sign": 2048,
+    "minimum_matching_sign_bits": 1536,
+    "rejected_uninitialized_restore": true,
+    "restored_layer": 19,
+    "exact_restored_origins": 576,
+    "restored_data_source": "Actual accepted context bus writes; no forced state or golden context preloading",
+    "both_native_transcript_prefixes_independently_checked": true,
+    "native_input_pins_rehashed": 1078,
+    "host_only_input_pins_rehashed": 46
+  },
+  "compile": {
+    "seconds": 730.5792990140617,
+    "exit_status": 0,
+    "minimum_host_available_bytes": 12027564032,
+    "peak_container_anonymous_bytes": 8642801664,
+    "build_threads": 4,
+    "requested_simulation_threads": 20,
+    "effective_simulation_engines": 18,
+    "warning_codes": [
+      "BIGWIX"
+    ],
+    "warning_scope": "Two existing cache-value memory-index width warnings; native runtime also reports engine-limit and memory-affinity/performance warnings. No error or timeout-literal overflow warning."
+  },
+  "prefixes": {
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/merger_phase_xrun_log.prefix": {
+      "bytes": 3869,
+      "sha256": "137d798d1e5fbbfdf0372b0aa28f4a398fb86e74189b5cfbe0ce67740aacf5f5",
+      "live_source": ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/current/xrun.log"
+    },
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/merger_phase_console_log.prefix": {
+      "bytes": 2881,
+      "sha256": "5d61cdecefb7c134768d26bf1ea4f38e83119e59b1b80529db5cc522fa893590",
+      "live_source": ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/current/console.log"
+    }
+  },
+  "review": "Independent result-only review matched both frozen prefixes to live bytes, all22frame counters and both restore responses, and confirmed the source scoreboards and limited scope.",
+  "context_bus_inventory": {
+    "expected_write_bursts": 396,
+    "expected_write_beats": 1980,
+    "complete_inventory_verified": false,
+    "scope": "The final total-count assertions execute after attention; this intermediate phase does not yet establish that complete inventory."
+  },
+  "limits": "Projection and attention remain running and unqualified. This phase does not prove complete-layer or model execution, accuracy, physical input/output transport, timing/routing or paper matching.",
+  "whole_simulation_terminal": false,
+  "native_projection_verified": false,
+  "native_attention_verified": false,
+  "native_upstream_normalization_verified": false,
+  "complete_current_trained_layer": false,
+  "whole_model_verified": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/runtime.json": "7af069049a138bcef216f0a43b1b13ac2ccbad058fdb6e13aed97fc674a92524",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/run_replay.py": "0e2cfbe5b221adde2b919c0c0242771976f90ffe787f77e909bcb700d3b0314c",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/attention_tb.sv": "b831579ce204b14657672581a489f2f61b37c97529979ca13b13405437ddfe4e",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/bundle.sv": "293d9690d962a68904649040104c7ad13c8fe70e238e7bd11638b3a426d17d01",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/merger_phase_verified.json": "9f86782ebcfbfe53877b5a1711d2e344a52f510795808f0531c0b6c8489d5fa1",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/elaboration/status.json": "d981c0cdf676141001fcd4ae23629065032b236dcc4546e61b19715441657c88",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/elaboration/qualified.json": "3d201254eda6018657c9b25765442584edb1dd9522fba000fc9f599803f2222f",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v2/compiled_manifest.json": "b22e10e17f86d9398b5981efe9b7e47233bd078998980e784a2b0140a2489eb5",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v1/fixture/source_metadata.json": "08682291450cf44341456344632c25489d5ed83f53fc03308e6c5f6653bd7c7e",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v1/fixture/signs.hex": "65c1f84dbf101dc8039fbdafbc93466d05fc6315836b00001bc71e42455916ca",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v1/fixture/sign_counts.hex": "2898a20e7c0613e7b096c7481667c4828bf7329cb84b6c45c2ecf860f8172d79",
+    ".cache/late_clipping_20261121/frame_integration/current_native_attention_v1/fixture/map.hex": "d585553241cd1bb93cd484d877b6711fa06c180a35743fde4c6a8cee499ab2ad",
+    "records/tri_oracle_current_merger_trace.json": "dff54e1b4fa82a637669864543f6f24c52f8d5db86ef2e1cc8f81a708f76e145"
+  }
+}
