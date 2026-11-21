@@ -1,0 +1,89 @@
+{
+  "state": "current_trained_integer_attention_chain_diagnosed",
+  "candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+  "technology": "TSMC28HPC+ adaptation",
+  "input": {
+    "questionId": "201030233",
+    "imageId": "n54424",
+    "layer": 19,
+    "retained_tokens": 281,
+    "boundary": "Authenticated compact normalized layer input and cumulative merger state. No substituted post-attention residual."
+  },
+  "integer_reference": {
+    "projection_raw_values": 719360,
+    "attention_rows": 8992,
+    "attention_accumulator_values": 575488,
+    "output_projection_raw_values": 575488,
+    "old_native_fixture_control_rows": 128,
+    "cpu_threads": 20,
+    "wall_seconds": 10.450244153151289,
+    "peak_graphics_memory_bytes": 382903296
+  },
+  "difference_from_frozen_software": {
+    "projection_codes_vs_direct_float_relative_l2": 0.036404212399483514,
+    "projected_codes_different_from_direct_float_quantization": 217955,
+    "integer_streaming_heads": 21,
+    "frozen_streaming_heads": 20,
+    "changed_head_ids": [
+      19
+    ],
+    "attention_context_relative_l2": 0.17121442673153517,
+    "output_projection_relative_l2": 0.16461715983007125,
+    "postattention_residual_relative_l2": 0.017435599704921777
+  },
+  "diagnostic": {
+    "actual_context_relative_l2": 0.17121442673153517,
+    "direct_float_projection_codes_context_relative_l2": 0.11105669688429119,
+    "forced_reference_head_context_relative_l2": 0.15923672296385832,
+    "head19_actual": {
+      "head": 19,
+      "alpha": 1024,
+      "score_shift": 0,
+      "inner": 32,
+      "recent": 292,
+      "streaming": true
+    },
+    "head19_direct_float_codes": {
+      "head": 19,
+      "alpha": 1024,
+      "score_shift": 0,
+      "inner": 37,
+      "recent": 286,
+      "streaming": false
+    },
+    "forcing_head19_removes_squared_error_fraction": 0.13502062780809876,
+    "forced_reference_flag_is_not_a_production_fix": true
+  },
+  "residual_encoding": {
+    "protected_single_token_frames": 1,
+    "ordinary_two_token_frames": 140,
+    "ordinary_scale_power_range": [
+      0,
+      3
+    ],
+    "ordinary_q13_squared_error_before": 2.913592323986613,
+    "ordinary_q13_squared_error_after": 0.004428135500624635,
+    "exact_cpu_graphics_values": 1150976,
+    "protected_codes_unchanged": true,
+    "weights_and_policy_unchanged": true
+  },
+  "limitations": "Diagnostic output scales derive from this fixture and are not independent calibration. Merger context and input normalization are captured inputs. The native current chain and corrected feed-forward continuation are pending. Vector error is not task accuracy. Residual encoding improves units/packing only; it does not fix attention differences.",
+  "native_current_chain_verified": false,
+  "complete_current_trained_layer": false,
+  "full_model_accuracy_verified": false,
+  "paper_matching": false,
+  "routing_advancement_allowed": false,
+  "independent_review": "No Critical or Important findings; scalar equations, saved residual values, frame boundaries, compensated epsilon and artifact hashes checked.",
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_v1/receipt.json": "75ee4b1e2e18a89dd4dfb7431ce3e3cde812ad2d1d934078a27f57bc1fb1a781",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_v1/guard_receipt.json": "1a85d3b6e78d61bfb55a3e1fc8d9a8a7800a9ab272425b5bdb0814af14dddfd5",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_v1/prepare.py": "e1ccf97c09317f9090c5a43a7645e3ef36add4eca8f8a255a9be30eb05fd9a1b",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_v1/arithmetic.py": "f0692df08d0d28b59c12c6bfa6a8a4a925074fae38ac939ecc154d69bcb20ea5",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_v1/equation_source_binding_v1.json": "0ac95fb98cfb1db6b589aeea5349151020334e4006802fe36f0db19bee13bb75",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_diagnosis_v1/receipt.json": "8af9277372f4bda28c3d3ae46a3b63d1ac07f43137b009cd390090061f476e1e",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_diagnosis_v1/guard_receipt.json": "93e6aacdeca17b2e1354d99702704730193ef8376f716d4eb6cff49ea8505f7d",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_diagnosis_v1/run.py": "bb2e784b8713a2812557645959a5964fff66ce087fd924ebd86a5669104e9bb4",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_residual_frames_v1/receipt.json": "254d764a135f8f3dcc652e4332894c6e7abbd12243392125d0ec1dc1c9763556",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_residual_frames_v1/prepare.py": "756787eafb8763c936697355766be96b6ce68009253be052d2a7df08fa8f2fe7"
+  }
+}
