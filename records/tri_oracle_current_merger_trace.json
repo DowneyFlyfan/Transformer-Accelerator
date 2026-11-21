@@ -1,0 +1,174 @@
+{
+  "state": "actual_current_22_layer_cumulative_merger_trace_verified",
+  "questionId": "201030233",
+  "imageId": "n54424",
+  "target_layer": 19,
+  "input_boundary": "Unchanged frozen current mixed-software model prefix. Attention remains floating point and feed-forward retains the calibrated/clipped implementation.",
+  "method": {
+    "feature_bits": 2048,
+    "minimum_agreeing_sign_bits": 1536,
+    "neighbor_priority": [
+      "upper",
+      "left"
+    ],
+    "cumulative_aliases": "Prior aliases inherit the updated root; sign inputs cover exactly prior surviving roots."
+  },
+  "verified": {
+    "layers": 22,
+    "sign_vectors": 5764,
+    "origin_entries": 12672,
+    "tensor_capture_byte_identical_to_prior": true,
+    "tensor_capture_sha256": "ca2fcdb8ea0ba96c6853c8ebb39371c1facc56978c070049dafd83fa6ed2aeb3",
+    "prior_layer19_tensors": 23,
+    "prior_selected_feedforward_layers": 22,
+    "layer19_survivor_signs_independently_compared": 241,
+    "observer_enabled_disabled_tokens_and_workload_unchanged": true,
+    "independent_original_refine_function_replay_exact": true,
+    "source_pins": 1035,
+    "safe_tensor_only_readback": true,
+    "hex_json_transport_lossless": true
+  },
+  "layer_inventory": [
+    {
+      "layer": 0,
+      "input_roots": 576,
+      "output_roots": 264
+    },
+    {
+      "layer": 1,
+      "input_roots": 264,
+      "output_roots": 261
+    },
+    {
+      "layer": 2,
+      "input_roots": 261,
+      "output_roots": 257
+    },
+    {
+      "layer": 3,
+      "input_roots": 257,
+      "output_roots": 255
+    },
+    {
+      "layer": 4,
+      "input_roots": 255,
+      "output_roots": 252
+    },
+    {
+      "layer": 5,
+      "input_roots": 252,
+      "output_roots": 249
+    },
+    {
+      "layer": 6,
+      "input_roots": 249,
+      "output_roots": 249
+    },
+    {
+      "layer": 7,
+      "input_roots": 249,
+      "output_roots": 249
+    },
+    {
+      "layer": 8,
+      "input_roots": 249,
+      "output_roots": 247
+    },
+    {
+      "layer": 9,
+      "input_roots": 247,
+      "output_roots": 247
+    },
+    {
+      "layer": 10,
+      "input_roots": 247,
+      "output_roots": 245
+    },
+    {
+      "layer": 11,
+      "input_roots": 245,
+      "output_roots": 245
+    },
+    {
+      "layer": 12,
+      "input_roots": 245,
+      "output_roots": 241
+    },
+    {
+      "layer": 13,
+      "input_roots": 241,
+      "output_roots": 241
+    },
+    {
+      "layer": 14,
+      "input_roots": 241,
+      "output_roots": 241
+    },
+    {
+      "layer": 15,
+      "input_roots": 241,
+      "output_roots": 241
+    },
+    {
+      "layer": 16,
+      "input_roots": 241,
+      "output_roots": 241
+    },
+    {
+      "layer": 17,
+      "input_roots": 241,
+      "output_roots": 241
+    },
+    {
+      "layer": 18,
+      "input_roots": 241,
+      "output_roots": 241
+    },
+    {
+      "layer": 19,
+      "input_roots": 241,
+      "output_roots": 241
+    },
+    {
+      "layer": 20,
+      "input_roots": 241,
+      "output_roots": 240
+    },
+    {
+      "layer": 21,
+      "input_roots": 240,
+      "output_roots": 240
+    }
+  ],
+  "resources": {
+    "worker_seconds": 18.649110676022246,
+    "guard_seconds": 27.61524015595205,
+    "maximum_graphics_tensor_bytes": 7627675648,
+    "minimum_available_host_bytes": 18404315136
+  },
+  "review": "Independent source review and one focused serialization-fix/result pass found no remaining material issue. Eight validator/transport tests pass. Original v1 is preserved with its unsupported large-integer pickle transport; v2 stores signs as fixed-width hexadecimal JSON and leaves tensor capture byte-identical.",
+  "intended_native_candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+  "limits": "Captures and verifies actual merger inputs/maps only. Does not establish native merger execution, native input normalization, a complete integer/native model, task accuracy, timing/routing or paper matching.",
+  "native_merger_verified": false,
+  "whole_model_verified": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/prepare.py": "09cef5314b40b3627d503b6a5baaad0782840d4b3827d273b517311c101cca4c",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/layer_trace.py": "600f4f151ee4c70b60808264d77760fb43c3971d06db36a72e7433773e4ba392",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/merger_trace.py": "47759207bcc30573c8fd1974e4de188fb6782633671ecb4b460704a69c073380",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/test_merger_trace.py": "5a9af1c1b6f5db443505cb209b90a2ed57957691a47ee0151f9154f37160645b",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/bootstrap.py": "e656d92909add8e1aae12b83afc20a56607a691fa1cde0e5dc30fc9e5905e7ec",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/guard.py": "ac8d2b915b518b1dfb173448a273f0e89f6646cf0a104116effe674ad9356f4a",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/queue_config.json": "3c8d9fd33d3fb11fbcbae50ca90ece3f4f4a9772d192996357de7852f0c2d130",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/inputs.json": "41fd330fbf92dbade61c4bfeca0e4e69ac38a9fd25263a5e28f91c87b9dc790a",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/capture.pt": "ca2fcdb8ea0ba96c6853c8ebb39371c1facc56978c070049dafd83fa6ed2aeb3",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/merger_trace.json": "4e164a95229f5d6e701ac8555d65311c57f5d3d970a3997ae6d1e48fb2d3d897",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/receipt.json": "d2ea0dff0fdb462534cf61a9283135f272eeb902cbd49ff39144750f03fbe1dd",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/guard_receipt.json": "d8053ccd479255f971e52b4ecab50f232a1cfdea8e381075e72b63a90e753a39",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/verified_status.json": "0de66906381082767e919ed8780deb170c13ca29f9c8b17e74b4df9be8f17468",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/architecture.pdf": "07c7ee729501261091892dddf0addc88cb26bbbb74f56390bbaeb92cb1f9c64d",
+    ".cache/late_clipping_20261121/frame_integration/current_merger_sign_capture_v2/diagram_review.json": "3377626c441a9c8eca914f729f334b6d7a99e498f329a4d4d8610e2d4f666822"
+  }
+}
