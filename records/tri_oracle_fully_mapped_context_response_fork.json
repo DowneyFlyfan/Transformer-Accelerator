@@ -1,0 +1,73 @@
+{
+  "state": "fully_mapped_response_fork_and_context_controller_verified",
+  "source_sha256": "62cd264781b3311ee97a7a4e70e0c5ea8382e77b3eda611b66e12d7720bfa5d2",
+  "netlist_sha256": "d859b8399838bccda2139de86ded2142daa2f0f3893ecd869aac21695f60c4e3",
+  "synthesis": {
+    "tool": "Cadence Genus25.10-p002_1",
+    "library_corner": "TSMC28HPC+ssg0.90V125C",
+    "native_cpu_limit": 2,
+    "clock_period_ns": 1.72414,
+    "wall_seconds": 36.63039360707626,
+    "standard_cells": 166,
+    "memory_macros": 0,
+    "library_cell_area_square_micrometers": 364.056,
+    "reported_paths": 16,
+    "reported_worst_setup_slack_ps": 1006,
+    "wireload": "ZeroWireload; pre-placement timing-library estimate"
+  },
+  "mapped_native": {
+    "portable": {
+      "wall_seconds": 3.608382832026109,
+      "exit_status": 0,
+      "pass_markers": [
+        "CONTEXT_RESPONSE_FORK_PASS frames=3 code_words=768 bypasses=8 source_host_transfers=172 resets=2 zero_unit_frame=1"
+      ]
+    },
+    "trained": {
+      "wall_seconds": 3.4087543489877135,
+      "exit_status": 0,
+      "pass_markers": [
+        "CONTEXT_RESPONSE_FORK_PASS frames=2 code_words=512 bypasses=7 source_host_transfers=139 resets=2 zero_unit_frame=1"
+      ]
+    }
+  },
+  "resources": {
+    "minimum_host_available_bytes": 14656577536,
+    "peak_container_anonymous_bytes": 4425371648,
+    "scope": "Container-wide anonymous memory includes the concurrent whole-chip simulator."
+  },
+  "scope": "Both the response fork and context controller execute their synthesized netlists with the real six compiled memory views. Command/response boundary stimuli remain a test driver; actual whole-chip producer and output-projection consumer are not instantiated. The saved trained data covers layer2queries0and1.",
+  "qualifications": {
+    "fully_mapped_component_connection_verified": true,
+    "actual_native_attention_producer_verified": false,
+    "output_projection_consumer_verified": false,
+    "whole_chip_verified": false,
+    "physical_timing_verified": false,
+    "full_model_accuracy_verified": false,
+    "energy_verified": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/fully_mapped_green_portable/status.json": "59520f442ec5a956a197b1b9a7e408361aaa129f340399fe3db33f7645fb1f77",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/fully_mapped_green_portable/console.log": "a19c22a225536468cc7d0d2f27aba528e083903822241c260de39e57c913c835",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/fully_mapped_green_portable/invocation.json": "534a0c23d3c878170d297e52e688e0c1ccfdaf86023636e9ce94603301731451",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/fully_mapped_green_trained/status.json": "8bab2a7c58ba672370bb4b9f94c41c6a7a2d53525cb59be4377621c136ccd566",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/fully_mapped_green_trained/console.log": "28d95545295b1768f7147d15af32c7cfbe7897d46d9f2be382e137546c593273",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/fully_mapped_green_trained/invocation.json": "cdd2a36006f2eddcae06fe204705624943234895298c3c2133a37bc48441a777",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/receipt.json": "e36b56185d6347235452777989046a10f9942669e411c34971a440784d8758a1",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/queue.json": "4eeebe6472d26e6f0d59ab1b041a6964841e883d0b80f9481ca0028691d7371d",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/synthesis/status.json": "6b735a93e6c3ee91c17529ad432370114a355a5b477824eb0a1af8f39cb02d86",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/synthesis/console.log": "73af186f311a5b4b14ac1a6053e4e5e3809bdfc3b41eda43e4add1a8f8e313bc",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/synthesis/netlist.v": "d859b8399838bccda2139de86ded2142daa2f0f3893ecd869aac21695f60c4e3",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/synthesis/area.rpt": "056469431ab16224a8e5d93f091d913678836d35c852ad99efcdf649d955ffc3",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/synthesis/timing.rpt": "e483e2ff8a6d3c6a3decd18b4a569099c6770b171fac4472088a75352ba0163f",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/synthesis/unresolved.rpt": "af934034e0bc4c7ced80c8a0c896e72d32635b7564c1943341ba8959a67f61e0",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/synthesis_inputs.json": "ec68fb05b90ccb5c2bf4ae0ea484195ec33e949f3fd6b511c8969e623f36e567",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/map.tcl": "1bc8f6e40c39a6df045eda19d37972acdd309a26fe81ad471c3df945a8d64f87",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/mapping/controller.py": "f39bc4abb14d0b64cbc4a98e088e18e428046d289d34ed77c337cec9762d6950",
+    ".cache/late_clipping_20261121/frame_integration/context_response_fork_v2/run_fully_mapped.py": "19c76ceec6d6d4f0bff0baa645da2435cf3550f8f842138a3dab10c73250050e",
+    "records/tri_oracle_context_response_fork.json": "83c3cbbd256b0b022937d4f3a0f5d8c4f9222c9643851ecbfda5670dc73a8f3d",
+    "records/tri_oracle_mapped_context_handoff.json": "0a757ad09e05dc54fab02c7891c68dfa6a4e8c9a9a96da7eb91150f74986e5bb"
+  }
+}
