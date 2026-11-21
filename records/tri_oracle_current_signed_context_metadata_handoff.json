@@ -1,0 +1,92 @@
+{
+  "state": "current_mapped_metadata_client_signed_context_handoff_and_rebuild_verified",
+  "candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+  "owner_module": "tri_oracle_packed_outlier_replay_CORE_STRIP_PREDICTOR1",
+  "owner_source_sha256": "3c650917cbee63eecda0cafb9bcda43a81e9bef1cf3fa216361afcd5d9f106de",
+  "memory_instance": "metadata_memory_lower_words",
+  "memory_master": "TS5N28HPCPSVTA512X64M4F",
+  "root_instance_path": [
+    "layer",
+    "layer",
+    "feedforward",
+    "packed_signs.predictor",
+    "replay_table",
+    "metadata_memory_lower_words"
+  ],
+  "tested_connection": "Export the exact candidate owner lower-memory port and connect the verified mapped signed-context shared bank. Use the exact candidate shared sign/key-bank module in normal sign-owner mode. Fill projection, read through the native narrow-read bridge, release, then rebuild real metadata from the trained normalization fixture.",
+  "simulator": "Cadence Xcelium25.03; default1ns/1ps; functional mode with no delay-annotated timing qualification",
+  "projection": {
+    "trained_source_layer": 2,
+    "head_token_rows": 64,
+    "bytes": 4096,
+    "right_shift_rows": 8,
+    "read_words_bit_exact": 512,
+    "local_read_window_bytes": 4096,
+    "read_source": "tri_oracle_projection_read_bridge",
+    "external_projection_reads": 0
+  },
+  "metadata_rebuild": {
+    "trained_tokens": 16,
+    "feature_strips": 256,
+    "channel_groups": 176,
+    "mask_checks": 2816,
+    "mask_bits": 32,
+    "skipped_channels": 5231,
+    "logical_sign_reads": 27808,
+    "external_reads": 9152,
+    "primary_reads": 2569,
+    "auxiliary_reads": 6583,
+    "cycles_including_projection": 1006442,
+    "exact_masks_addresses_and_counts": true
+  },
+  "negative_control": {
+    "change": "Force only actual metadata-client writes to zero",
+    "projection_passed_before_failure": true,
+    "failure": "TRAINED_SIGN_CACHE_MASK check=0 group=0 token=0",
+    "exit_status": 2,
+    "elapsed_seconds": 8.013613206101581
+  },
+  "positive_control": {
+    "exit_status": 0,
+    "elapsed_seconds": 22.52612914214842,
+    "minimum_host_available_bytes": 13941440512
+  },
+  "initial_configuration_failure": {
+    "reason": "Extracted Innovus modules had no default compilation timescale; standalone elaboration rejected it before executing.",
+    "correction": "Use the same explicit1ns/1ps timescale as existing chip simulation runners; no arithmetic or control changes.",
+    "counted_as_functional_negative": false
+  },
+  "scope": "The current mapped client and mapped projection bank share the one lower memory. Core strip-predictor peers are the existing behavioral hardware modules used by the trained fixture. This is a component integration test; it does not attach the bank to the full-chip dispatcher or run a complete mapped model.",
+  "qualification": {
+    "current_metadata_client_handoff_verified": true,
+    "metadata_rebuild_verified": true,
+    "whole_chip_connection_verified": false,
+    "complete_trained_mapped_execution_verified": false,
+    "routed_timing_verified": false,
+    "accuracy_verified": false,
+    "energy_verified": false,
+    "paper_matching": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/prepared.json": "762045bd96d6bef1929d572b78ee8751203e6c3ce4f796eb81e2d171b4ac1a2c",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/current_shared_key_bank.v": "f4d99948dd9d36cc337b0f8d58b49d3dad181845a1bacb5eee13e785aec7b631",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/opened_current_owner.v": "704ee73466fffe44c1dc6e3ff75e9b305c353e905a4ba1de3630b5b89e891489",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/wrong_current_owner.v": "59ca1c355214be7742d7f4cf9e7dd55d473fbdde1596488670dea4290f4faed9",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/mapped_predictor.sv": "7ea38e23d458782193bb0104ae2f579afe448054649ce1e20c7f390542d74dfa",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/handoff_tb.sv": "b4462a899b7a1a9ec3b23e5be58e4286ac8b036b383db211d06d1c3c8c3302ed",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/run.py": "8878b12ddffd8cd60241f41e2b8c23633f5a1c329c12a72f0f810ae9296a7d47",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/diagnosis.json": "3bff767bfd2ef7395b51667f273aea7fefe1406978b02919ed70a1a77e1fb3eb",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/verified.json": "f26a07c6a9e999816e70cbbce9db44943c5a55b5f55a10a5cbb60bee8799f6be",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/wrong_metadata/status.json": "e09c23e2a5f973071441f0c8f02ef254573b72abbd842af3341468b828acda70",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/wrong_metadata/console.log": "09714e4d4a5ba3627d0b30e5c4ff94e0155248e292553a583aa9337b439ad654",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/current_metadata/status.json": "855e221da97e3b9c8f058a0e2aa821a54d27e4fcbba1760d6dcef8ed5bc3a085",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_metadata_handoff_v2/current_metadata/console.log": "dfc86c459f6c083aceb5387d978e7d663157b15c4e2712e49b7b95dd34225f79"
+  },
+  "public_dependency_sha256": {
+    "records/tri_oracle_signed_context_shared_bank.json": "497798a5c3051fd49837972a16a3de7e4ceb3519b24023003c9adbcefd2e74e0",
+    "syn/test_tri_oracle_projection_metadata_handoff.py": "b60f895aac93482d49229a8959578c5f1fe8757e64c2fa5139d4c47eb1cb855a",
+    "verilog/tri_oracle_projection_read_bridge.sv": "33ae239ed8027dfe149c1295f9960b95c01aea902a56e041c2d02df59567cb5a",
+    "verilog/tri_oracle_compact_bank_traffic.sv": "fd291e82db5521487a0fe82dd2e2f938e7800950a69c070636eca9afe1d7fddc",
+    "verilog/tri_oracle_strip_predictor.sv": "ea9f70a6a507c65379e0ad4df15e1170947c5065ed09a54903d6feff5e3d48f8"
+  }
+}
