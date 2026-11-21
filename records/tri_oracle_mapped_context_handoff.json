@@ -1,0 +1,98 @@
+{
+  "state": "source_bound_context_handoff_mapping_and_functional_replay",
+  "module": "tri_oracle_context_handoff",
+  "source_sha256": "2af6f83cd1cef210de51e95e085c23c52bcbc8dffaf98013fdf2db237dd7cf50",
+  "netlist_sha256": "fb076b1119b7102979a68ae5da06b144e519bc755f756a187e2ba8a5068d273d",
+  "synthesis": {
+    "tool": "Cadence Genus25.10-p002_1",
+    "library_corner": "TSMC28HPC+ssg0.90V125C",
+    "clock_period_ns": 1.72414,
+    "native_cpu_limit": 2,
+    "wall_seconds": 560.3182943610009,
+    "standard_cells": 14734,
+    "memory_macros": {
+      "TS5N28HPCPSVTA512X64M4F": 1,
+      "TS5N28HPCPSVTA32X128M2FW": 5
+    },
+    "total_leaf_cells": 14740,
+    "library_cell_area_square_micrometers": 49595.466,
+    "wireload": "ZeroWireload; pre-placement timing-library area including six existing metadata memories",
+    "reported_paths": 16,
+    "reported_worst_setup_slack_ps": 0,
+    "unresolved_references": 0,
+    "empty_modules": 0
+  },
+  "mapped_functional_replay": {
+    "portable": {
+      "frames": 3,
+      "code_words": 768,
+      "recovery_words": 2,
+      "malformed_frames": 5,
+      "read_address_faults": 1,
+      "active_reset_phases": 2,
+      "exit_status": 0,
+      "wall_seconds": 3.7573703159578145
+    },
+    "trained": {
+      "frames": 2,
+      "code_words": 512,
+      "recovery_words": 2,
+      "malformed_frames": 5,
+      "read_address_faults": 1,
+      "active_reset_phases": 2,
+      "exit_status": 0,
+      "wall_seconds": 3.508036368060857
+    }
+  },
+  "memory_scope": "The standalone controller contains the six metadata memories that it replaces in the original client, not six additional whole-chip memories. Whole-chip replacement and accounting remain unqualified.",
+  "resources": {
+    "minimum_host_available_bytes": 13009571840,
+    "peak_container_anonymous_bytes": 5785071616,
+    "measurement_scope": "Aggregate container anonymous memory includes the concurrent whole-chip simulator.",
+    "admission_available_GiB": 14.5,
+    "host_stop_reserve_GiB": 10.5,
+    "container_anonymous_stop_GiB": 7.5,
+    "process_address_space_GiB": 6
+  },
+  "qualifications": {
+    "mapped_component_functional_verified": true,
+    "whole_chip_producer_consumer_verified": false,
+    "full_model_accuracy_verified": false,
+    "routed_timing_verified": false,
+    "energy_verified": false,
+    "paper_results_matched": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "simulation_scope": "Xcelium25.03functional standard-cell models and exact six compiled memory views. No timing annotation. Trained vectors are two saved frames from layer2queries0and1, not full-model execution.",
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/portable_mapped/status.json": "7eed5724460122aba7996b97351f27efbdd67992b9a19ed6aebf4760cde34f73",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/portable_mapped/console.log": "887cea1306e73f3b96a43ae8f0953ba4ecc73f033cd9842d8ab659a20eb7e023",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/portable_mapped/invocation.json": "272ca92f7a9af99dade3859ef97f1df509ce86db679eb2022d6119975966d13e",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/trained_mapped/status.json": "353bf27a026e76327864f5343504b376e5bb72bec162c76644d5b25cb3ac64d4",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/trained_mapped/console.log": "80182b36eabafc23b2dd02e2e5329d67a5393d46e9e8764c20839cc114bf7538",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/trained_mapped/invocation.json": "e46701e6c9dddf19ef17ec0add6d26668ff8fbe3061f7f103327fa91b9e7c9ad",
+    "verilog/tri_oracle_attention_projection_scale.sv": "23cf537bb2e377e45cb4d7c7bbeb744a5ec3dce03bf157a99647ce6c97a973e6",
+    "verilog/tri_oracle_attention_projection_scale_quotient_first.sv": "32bdcd277ebdc0a26fb3310b7dcd762cb4d471b9f36b9f21073b0fbcc33514f3",
+    "verilog/tri_oracle_raw_context_shared_storage.sv": "138aab08fd74a53c89ab9f53ef4836399b2532e5c1398669b3c403b19225d478",
+    "verilog/tri_oracle_raw_context_row_packer.sv": "44aa498969967f3933718db88360a163790c130a41bb88e35352c00ae9d837ff",
+    "verilog/tri_oracle_raw_context_inplace_convert.sv": "f35c799196757a6eb88bfc1e3b7681fd36eaab4e390eddd6ef16d71444923bd7",
+    "verilog/tri_oracle_context_handoff.sv": "2af6f83cd1cef210de51e95e085c23c52bcbc8dffaf98013fdf2db237dd7cf50",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/map.tcl": "066523a985ee309997dee78eff62bd38c4344500432a0a839dc4fb8a1fe645b5",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis_guard.py": "b1fb07346c84c1a2c6079103474027c994630ab1d4c047e38112686f0569cb84",
+    "records/tri_oracle_autonomous_context_handoff.json": "c79ad074cb4fcdab2d890a3726fa03c21d9c31759ce0f05b4a7339c0d5cdaf44",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis_inputs.json": "d9fb8e27d9004d47245b0cf96bfdc64db9274938193ff207e9850fdf7b5402de",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/wait_then_map.py": "61e94e292fa2837d70be93b18214bf1503ecfa6c59085d4ca228b5bd62a3d845",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/replay.py": "8ea689c294399fc2437d98b140e0b4e406ab415d0b33b7468c50d48fc558f213",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/controller_launch.json": "d4cf2a02a085c582514c9005f985834cb70d71bcc6da0dc1e8860a48152ba1fc",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_full_questions_v1/postprocess.py": "45664ef1121a007b69cd73101acd0030998712e75d628e7ea7531e58360e2bc7",
+    "verilog/tri_oracle_context_handoff_tb.sv": "ffa20ff5eb1502b5f709f92afbc2eeaeae8c1e751ced5125fcbc01f49cee82ef",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/receipt.json": "4dc25d1dc52b6337d0f44755057423343c977750a5c9423e3cd56e6eddadbbb6",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis/status.json": "a48cf3585960a665a4569ba3304ba3f5b5cbe3b261fd6aa9f2ca937d00e11aad",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis/console.log": "4e8635a72052700f8f140b0f5f552d3d7b73e847ed806a4250009a7088a8fc6a",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis/area.rpt": "10604ba41060c6ad94fca30eeb661166eb1b0db6f1ff5c47db8948c9a233d5f5",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis/timing.rpt": "fa8233bc4c7808961859df9dc5b90cb6c8c434c3bf78f6a9f3459c103c8b88e2",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis/unresolved.rpt": "3b68032f4d80f6932591835c191a4a31caa15aad92f8f268cd7fded67c1fe7de",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis/netlist.v": "fb076b1119b7102979a68ae5da06b144e519bc755f756a187e2ba8a5068d273d",
+    ".cache/late_clipping_20261121/frame_integration/context_controller_v1/mapping/synthesis/constraints.sdc": "e40abf97637789dec8ce36a180f05933a6e2c6bacb61f83816a1f4e3920ea61c"
+  }
+}
