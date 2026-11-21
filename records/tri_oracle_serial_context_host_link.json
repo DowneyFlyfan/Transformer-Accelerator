@@ -1,0 +1,99 @@
+{
+  "state": "serial_context_status_and_release_component_native_verified",
+  "source_sha256": "8fe4bca071d2d5d9accfe49d76bb0707da93a9fa69ed26e39c5c575b9b9198ee",
+  "testbench_sha256": "36c04660bd4c349488a998b2060fcd2579fddbaced8cd032d44e817f4e4c408e",
+  "protocol": {
+    "control_finish_0": "coherent poll",
+    "control_finish_1": "release valid context or acknowledge pending completion; empty release reports request_error",
+    "reply_word_order": [
+      "0xa687",
+      "status[15:0]",
+      "zero_extend(status[27:16])",
+      "context_tag[15:0]",
+      "context_tag[31:16]",
+      "zero_extend(control_finish), last"
+    ],
+    "status_bits": {
+      "8:0": "signed context exponent",
+      "19:9": "original query position",
+      "20": "context_valid",
+      "21": "memory lease active",
+      "22": "metadata needs rebuild",
+      "23": "completion pending",
+      "24": "completion error",
+      "25": "empty release request error",
+      "26": "finish action",
+      "27": "reserved zero"
+    }
+  },
+  "native": {
+    "green": {
+      "exit_status": 0,
+      "wall_seconds": 0.8022836721502244
+    },
+    "baseline": {
+      "exit_status": 2,
+      "wall_seconds": 0.8028306439518929
+    },
+    "early_release": {
+      "exit_status": 2,
+      "wall_seconds": 0.8017892560455948
+    },
+    "last_control_drop": {
+      "exit_status": 2,
+      "wall_seconds": 0.8018999078776687
+    }
+  },
+  "verification": {
+    "reply_packets": 7,
+    "forwarded_source_words": 4,
+    "checked_output_words": 46,
+    "accepted_controls": 10,
+    "reset_phases": 3,
+    "finish_handshakes": 2,
+    "completion_handshakes": 3,
+    "simultaneous_source_last_and_control_acceptance": true,
+    "held_next_request_accepted_once": true,
+    "queued_source_not_consumed_by_context_reply": true,
+    "coherent_snapshot_survives_input_change": true,
+    "finish_error_race_checked": true
+  },
+  "negative_detection": {
+    "baseline": "CONTEXT_HOST_WORD expected=a687 actual=a684",
+    "early_release": "CONTEXT_HOST_UNEXPECTED_RELEASE",
+    "last_control_drop": "CONTEXT_HOST_SIMULTANEOUS_CONTROL_NOT_QUEUED"
+  },
+  "runtime_unique_inputs_reverified": 7,
+  "scope": "Actual serializer/control RTL with driven boundary peers in Xcelium. The outer record receiver and actual context-memory controller are not connected by this test. New A685/A686 receiver decoding, mapped replay and full credited-root integration remain pending. Original residual-status protocol source is unchanged.",
+  "qualification": {
+    "component_native_functional_verified": true,
+    "mapped_component_verified": false,
+    "outer_receiver_connected": false,
+    "actual_context_memory_finish_chain_verified": false,
+    "whole_chip_verified": false,
+    "full_model_accuracy_verified": false,
+    "physical_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_green/status.json": "6abe91fcc4049ccf8f196f013cad3972e707554188ed8bc12d05b1397efe1e7a",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_green/invocation.json": "32005d91865cea055c0ee8752faba89258d7d7516902ecad268fdcbec43f10bf",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_green/console.log": "599ae145e1d4b4041a28c49f2c41de77d46875830f6ada7b709193f8c5b90320",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_baseline/status.json": "8206c5b9f43518fd059bd3b67f2e52d502e50a9416ac7b935a22747a9f579539",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_baseline/invocation.json": "1636ceb2f20d30dbfd404ac6d6b60d88a36d4fb6c2aac44334e957046eac9d23",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_baseline/console.log": "577a905e966545199b88cfebee8b9dcb2470efd7556bef5f4fad3178d64b16a2",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_early_release/status.json": "7a5a364f9c6b865493a75d7db58c810c75c979251c20f192a1742a152e5df6c6",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_early_release/invocation.json": "b8f3792515ed5ff45ac5078fb0ae35bf75cde093e05560e6b25af8d91b04414c",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_early_release/console.log": "ae186f8fc43e14547044e129a48174c5e673dd8c8e6c11a79948cccb10fa91f6",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_last_control_drop/status.json": "a365db3a711a4321f0c498ffae0f667246323ef46480dea1ad632425c6198410",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_last_control_drop/invocation.json": "134ccbe42122f018ebe052a9cc9f904e3a19826915d29b9ae5bc30853510f20a",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_last_control_drop/console.log": "76346cc6859a9001a9109f22e1b78f4d9a04b124a73bbd5c119f6b1b25de5a10",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/design.md": "78003dceeeadaa4c4ffeaad9fb6f92c163ca6d1d04c879414ef853d7556d197b",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/legacy_baseline.sv": "cbed98680b6e6fe59d8dbdca03fe60a580849b8cb5ae1b3b1f4c72aa1b68eec9",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/run_public.py": "cd7bb5ef658e3875826e0ece2f7d6602815003280afe0e2ce12a405bd099316c",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_early_release/link.sv": "d23373289f70628c249007b3528428142924bee31ff3a05fe24aa39693fadbd9",
+    ".cache/late_clipping_20261121/frame_integration/host_context_control_v1/public_last_control_drop/link.sv": "80c8af3f8a3c0886a2f33a977d876ff0ea33519ee6f1bf00b5f1518dfe79d133"
+  }
+}
