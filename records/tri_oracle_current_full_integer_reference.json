@@ -1,0 +1,62 @@
+{
+  "state": "current_compact_layer_integer_reference_checked",
+  "questionId": "201030233",
+  "layer": 19,
+  "retained_tokens": 281,
+  "input_boundary": "Authenticated compact normalized layer input and merger state; computed integer attention/projection plus actual PRE-attention residual, never substituted captured post-attention residual.",
+  "checks": {
+    "frozen_feedforward_control_exact_values": 575488,
+    "normalization_and_affine_cpu_graphics_values": 1150976,
+    "integer_dot_cpu_graphics_values": 7481344,
+    "final_writeback_cpu_graphics_values": 575488,
+    "protected_global_down_rows": 1,
+    "ordinary_calibrated_down_rows": 280,
+    "frames": 141
+  },
+  "correction": {
+    "active_rows": 184,
+    "nonzero_codes": 385,
+    "skipped_channels": 112989
+  },
+  "error_against_frozen_captured_layer": {
+    "all_rows": {
+      "relative_l2": 0.03863190600160831,
+      "mean_row_relative_l2": 0.0508828341332447,
+      "maximum_row_relative_l2": 0.21850290429946867
+    },
+    "ordinary_rows": {
+      "relative_l2": 0.04691459491642496,
+      "mean_row_relative_l2": 0.05105980333259329,
+      "maximum_row_relative_l2": 0.21850290429946867
+    },
+    "protected_row": {
+      "relative_l2": 0.001331458315643668,
+      "mean_row_relative_l2": 0.001331458315643668,
+      "maximum_row_relative_l2": 0.001331458315643668
+    },
+    "is_task_accuracy": false
+  },
+  "resources": {
+    "cpu_threads": 20,
+    "wall_seconds": 10.730930201010779,
+    "peak_graphics_bytes": 446842880,
+    "peak_host_bytes": 1841823744
+  },
+  "independent_review": "Terminal/source/log/output hashes, all11savedarrays,596inputpins, counts and GLOBAL/per-output codebook selection reviewed. No new material findings.",
+  "limitations": "Host arithmetic verification only. Upstream scale exponents retain diagnostic fixture-derived conventions, not independent calibration. Native current-chain execution, current merger/input RMS, complete-model accuracy, timing/routing and paper matching remain unverified.",
+  "native_current_chain_verified": false,
+  "complete_current_trained_layer": false,
+  "model_accuracy_verified": false,
+  "paper_matching": false,
+  "routing_advancement_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/receipt.json": "c776fd67a65dfc2c133333efa8fc6503f366a0120dac7098beb28c56027b5755",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/guard_receipt.json": "015255f09c016c968676f958cc9e1a4e96697e43606f76e68e054bffed9d60ec",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/console.log": "c028b2e96341d65f68ffa76408f12988026cef25bc9dd4fa3204f790f172f4eb",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/prepare.py": "ca1f4d4963f6fd103e659402124f82d5909704578d02a458aea1842f6d81f628",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/cpu_arithmetic.py": "06d143faadfabbc57d1ae4636c9671a6c888549d2c261d54a6fbb30cf945d3f1",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/inputs.json": "2aa4bf84a9f652850b9fded77ffd31350e5246111a3fff6208ada2fb2cbc921c",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/reference.npz": "5c5c190c97763d15dc9ab08fb44529a28b6fa3143b988b2367cba99a20407811",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_feedforward_v3/architecture.pdf": "b86ad31adea2c7ad9a352f8e18f63e7fc28f1dd7bd028bc8e634e615c00705d2"
+  }
+}
