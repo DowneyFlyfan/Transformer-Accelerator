@@ -1,0 +1,55 @@
+{
+  "state": "all398_image_integer_attention_coverage_verified",
+  "scope": "One original fixed question per398images, actual22layer integer attention/current caches with existing mixed-software normalization, residual/feed-forward, vision and vocabulary projection. Coverage is not a task-accuracy measurement.",
+  "cases": 398,
+  "images": 398,
+  "language_layers": 22,
+  "attention_calls": 19602,
+  "prefill_attention_calls": 8756,
+  "decode_attention_calls": 10846,
+  "cases_with_actual_decode": 398,
+  "selected_prefill_feedforward_rows_exact": 140096,
+  "selected_prefill_feedforward_rows_per_layer_per_case": 16,
+  "first_case_exact_to_controlled_all22_case": true,
+  "ordered_case_ids_match_original_capture_index": true,
+  "weights_and_disjoint_scales_unchanged": true,
+  "public_operators_used": true,
+  "full_output_generation_required": true,
+  "resources": {
+    "worker_seconds": 288.1755922520533,
+    "supervised_seconds": 304.98002056009136,
+    "peak_gpu_bytes": 8474343424,
+    "peak_host_resident_bytes": 6794403840,
+    "minimum_host_available_bytes": 13959798784,
+    "worker_exit_status": 0,
+    "owned_processes_absent": true
+  },
+  "limits": {
+    "complete_integer_model_verified": false,
+    "complete_model_hardware_verified": false,
+    "task_accuracy_verified": false,
+    "candidate_bound_physical_integration_verified": false,
+    "timing_or_energy_match_verified": false,
+    "paper_matching": false,
+    "new_context_direction_integrated_into_whole_chip": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/verified_status.json": "f3fef79872cafded61defe0cb2347e8002b709eaa3523289062a71f1e7c2ccef",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/receipt.json": "3fe55b9684db985c674b7ac10508c7b3d71e59449caf3ff82375b3b569ca8712",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/guard_receipt.json": "4e6964cbc42560b87cc5c27cdf882a0c0cbf808db20144c54fb7cdfd7448d464",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/queue_config.json": "bc330231f1b128d95c1c676030f7a2fe45c35305b70c7fa53464b2ce5f2d39ef",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/inputs.json": "8b44ad9c6325519168cfdd2efccb731f2fb3e48a85075d4c12efddba452a148f",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/predictions.jsonl": "b602962e2e2ed3a307b779469dcf01ab6c62ec677dcb4892f916c242ce87ed8e",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/console.log": "e34741f877436739c968ade6e6689b74af6ebd47174ecbabc53d6f4228a1a6e4",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/prepare.py": "8a4b1a1a8b6f3207fbefb078cdd2870193c4eb1ac17b1c5563e755585ba5d375",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/bootstrap.py": "1f68fce0c794b87275232b89a4bc1d72ad312ffc24caed3ad70987ca17533617",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/attention_bridge.py": "42affb8cd33930af144ca00eab2402ffb7c6f6c8019c80ce641ed91ab3e676e0",
+    ".cache/late_clipping_20261121/frame_integration/current_integer_attention_coverage_v1/guard.py": "5cb2160e20d591443aadf91f89482439e1f692a272e1d5357abbe62bc4cc4a20"
+  },
+  "code_sha256": {
+    "syn/tri_oracle_integer_attention.py": "46f8c375bd6b5763dcbee37498257d647fa13995883263c8eb1741087db23f2e",
+    "syn/tri_oracle_attention_arithmetic.py": "f0692df08d0d28b59c12c6bfa6a8a4a925074fae38ac939ecc154d69bcb20ea5",
+    "syn/tri_oracle_integer_attention_adapter.py": "882189fd14652b23dde570cc2e338056a8eaf67c544a3fe8c3a2bb1d2a32cd8f",
+    "syn/tri_oracle_bidirectional_context.py": "9438996bb23b02c99e96a970b1f0659c6da1abdb64d8dbbbc7c0486bbcdcd7c6"
+  }
+}
