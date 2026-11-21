@@ -115,6 +115,27 @@
     ".cache/channel_scale_integration_20261120/replay_v2/channel/runtime_package_changes.json": "70b688b4412c706534d1356502f259f4315c4589c74d7047ad19cab4411ac8f0",
     ".cache/channel_scale_integration_20261120/fixture_v2/channel/host_input.hex": "a2607b6cd7fc4609864ebdb00d37b2c8ae0f924b0cc83721f0ee68a3942d2bb4",
     ".cache/channel_scale_integration_20261120/fixture_v2/channel/host_writeback.hex": "0531cf2189b09b97b716095c86a14a305af95d449cc6446ba1356e5e83b6d805",
-    ".cache/channel_scale_integration_20261120/fixture_v2/channel/observed_writeback.hex": "0531cf2189b09b97b716095c86a14a305af95d449cc6446ba1356e5e83b6d805"
+    ".cache/channel_scale_integration_20261120/fixture_v2/channel/observed_writeback.hex": "0531cf2189b09b97b716095c86a14a305af95d449cc6446ba1356e5e83b6d805",
+    ".cache/channel_scale_integration_20261120/linked_v1/preservation_v4.json": "9acf0ae66abce5bd0ea1a9a71f35ad092b25c978d7fdaa79859fb4f101e544be",
+    "syn/tri_oracle_streaming_netlist_inventory.py": "81e47409118de8136d78e66646c68dfeb2cb9df5e16f5482200712a3d89a301f",
+    "syn/verify_tri_oracle_channel_candidate_inventory.py": "7e2b2426feb409cf0a9575956624a20f8a11a5f8c1618fe27a518c28a73d6fa3"
+  },
+  "structural_inventory": {
+    "leaf_instances": 3910739,
+    "memory_macros": 631,
+    "compiled_memory_bytes": 414928,
+    "all_memory_owner_paths_identical": true,
+    "per_master_composition_verified": true,
+    "correction": {
+      "prior_incorrect_leaf_instances": 3891185,
+      "corrected_leaf_instances": 3910739,
+      "reason": "Prior wrapper required whitespace before opening parenthesis and skipped compact and line-wrapped Genus instance headers.",
+      "previous_receipt_retained": ".cache/channel_scale_integration_20261120/linked_v1/preservation.json",
+      "previous_receipt_sha256": "ce61b32de6b5294703ae5671945b04fcfc2cd3cf2378d04721a9f13175593f87",
+      "corrected_receipt": ".cache/channel_scale_integration_20261120/linked_v1/preservation_v4.json",
+      "corrected_receipt_sha256": "9acf0ae66abce5bd0ea1a9a71f35ad092b25c978d7fdaa79859fb4f101e544be",
+      "netlist_or_simulation_inputs_changed": false,
+      "controls": 23
+    }
   }
 }

@@ -35,7 +35,7 @@
   "original_placed_candidate_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
   "linked_unplaced_candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
   "preservation": {
-    "state": "linked_candidate_preservation_and_compiled_memory_verified",
+    "state": "linked_candidate_preservation_and_native_inventory_composition_verified",
     "candidate_sha256": "ee80e70d8e72b6685358fba0c37c87835db51bc61ea90bd370d9ed916e4172ee",
     "original_modules_byte_identical": 770,
     "only_changed_old_module": "tri_oracle_chip_command_layer_parallel_chip",
@@ -43,10 +43,21 @@
     "memory_macros": 631,
     "compiled_memory_bytes": 414928,
     "all_memory_owner_paths_identical": true,
-    "leaf_instances": 3891185,
-    "elapsed_seconds": 21.773112109862268,
-    "placed_or_routed": false,
-    "source_sha256": "95f3bb6b6db672f4ea1a2c270c5c8062e0437e3b98350242c6db45729e6b12cc"
+    "original_leaf_instances": 3900126,
+    "removed_old_control_instances": 10709,
+    "added_mapped_blocks": {
+      "dispatcher": 2289,
+      "writer": 18934,
+      "arbiter": 99
+    },
+    "leaf_instances": 3910739,
+    "per_master_composition_verified": true,
+    "prior_incorrect_leaf_instances": 3891185,
+    "correction_reason": "Prior wrapper required whitespace before opening parenthesis and skipped compact and line-wrapped Genus instance headers.",
+    "parser_sha256": "81e47409118de8136d78e66646c68dfeb2cb9df5e16f5482200712a3d89a301f",
+    "source_sha256": "7e2b2426feb409cf0a9575956624a20f8a11a5f8c1618fe27a518c28a73d6fa3",
+    "elapsed_seconds": 29.74884897400625,
+    "placed_or_routed": false
   },
   "source_closure_negative_controls": 6,
   "startup_failure": "First attempt lacked USER in the Docker environment; preserved under mapping_v1. Retried with USER and LOGNAME=downeyflyfan.",
@@ -97,6 +108,26 @@
     ".cache/channel_scale_integration_20261120/check_linked_v2.py": "95f3bb6b6db672f4ea1a2c270c5c8062e0437e3b98350242c6db45729e6b12cc",
     ".cache/channel_scale_integration_20261120/test_link_closure.py": "2dffafea17daa0890f57a0a199555e962dae1c5b773ec534dbf84822c2698fc4",
     ".cache/channel_scale_integration_20261120/link_closure_red.log": "6c2f48c60fa285a70597d2aae7336af67f3980f76fe1bf45e17e022c958e8ec7",
-    ".cache/channel_scale_integration_20261120/link_closure_green.log": "dcd2147edfda2291b456dfb6d9f3021f0fed07760d5a1c8869fc5446f30e28fe"
+    ".cache/channel_scale_integration_20261120/link_closure_green.log": "dcd2147edfda2291b456dfb6d9f3021f0fed07760d5a1c8869fc5446f30e28fe",
+    ".cache/channel_scale_integration_20261120/linked_v1/preservation_v4.json": "9acf0ae66abce5bd0ea1a9a71f35ad092b25c978d7fdaa79859fb4f101e544be",
+    "syn/tri_oracle_streaming_netlist_inventory.py": "81e47409118de8136d78e66646c68dfeb2cb9df5e16f5482200712a3d89a301f",
+    "syn/test_tri_oracle_streaming_netlist_inventory.py": "5599970f9e9e40e16a8ce2f3080290adc05123fce011f470246ede5071fbc12e",
+    "syn/verify_tri_oracle_channel_candidate_inventory.py": "7e2b2426feb409cf0a9575956624a20f8a11a5f8c1618fe27a518c28a73d6fa3",
+    ".cache/channel_scale_integration_20261120/inventory_format_red_recheck.log": "a54a40b7dbad5fc2e2b4333be359bcc88ae66474d9ade603812cb9eb5a7bbb56",
+    ".cache/channel_scale_integration_20261120/inventory_format_green_recheck.log": "888a0c0ed615e57d32cf72be501b0c355f33b8613c81dfdaa99db33d7959487e",
+    ".cache/channel_scale_integration_20261120/inventory_wrapping_red.log": "5fe08a15a9a4f55a2b6339d5f3614dfa4c772a0b4434b8a44f778f0627393db1",
+    ".cache/channel_scale_integration_20261120/inventory_wrapping_green.log": "a60e0d2d66e445b0734c0563e528ca7eae6f1b838b35a48522a62ef5a010522e",
+    ".cache/channel_scale_integration_20261120/inventory_public_controls.log": "7b7dc7b80a1526f8fbd83449d2a67622138309015a7ab0ae6c04e5a3b61eb1a8"
+  },
+  "inventory_correction": {
+    "prior_incorrect_leaf_instances": 3891185,
+    "corrected_leaf_instances": 3910739,
+    "reason": "Prior wrapper required whitespace before opening parenthesis and skipped compact and line-wrapped Genus instance headers.",
+    "previous_receipt_retained": ".cache/channel_scale_integration_20261120/linked_v1/preservation.json",
+    "previous_receipt_sha256": "ce61b32de6b5294703ae5671945b04fcfc2cd3cf2378d04721a9f13175593f87",
+    "corrected_receipt": ".cache/channel_scale_integration_20261120/linked_v1/preservation_v4.json",
+    "corrected_receipt_sha256": "9acf0ae66abce5bd0ea1a9a71f35ad092b25c978d7fdaa79859fb4f101e544be",
+    "netlist_or_simulation_inputs_changed": false,
+    "controls": 23
   }
 }
