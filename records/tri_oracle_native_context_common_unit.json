@@ -1,0 +1,116 @@
+{
+  "state": "native_context_common_unit_finder_functionally_verified_mapping_pending",
+  "problem": "A token needs one common signed-byte unit across all32attention heads. Converting each head before that reduction or importing the runtime unit from software leaves a native integration gap.",
+  "implementation": {
+    "module": "tri_oracle_context_unit_finder",
+    "accumulator_bits": 32,
+    "value_exponent_bits": 8,
+    "output_exponent_bits": 9,
+    "lanes_per_row": 64,
+    "lanes_scanned_per_cycle": 8,
+    "rows_per_frame": 64,
+    "tokens_per_frame": 2,
+    "heads_per_token": 32,
+    "row_index_order": "token-major; bit5 is token and bits4:0 are head",
+    "input_contract": "Hold data, value exponent and row index through row_ready on the eighth scan cycle.",
+    "equation": "For each nonzero head peak M, choose smallest d with M<=127*65535*2**d, then add the fixed value exponent. A token common unit is the maximum of its32per-head required units.",
+    "exact_search_range": [
+      -22,
+      9
+    ],
+    "reachable_exponent_range": [
+      -150,
+      136
+    ],
+    "zero_only_tokens": "Use configured valid zero-unit captured at frame start. The caller must supply a unit satisfying the later converter and output-shift format.",
+    "checks": [
+      "64distinct rows before result",
+      "arbitrary head/token arrival order",
+      "duplicate invalidates frame",
+      "hold complete result under backpressure",
+      "reset clears partial scan and frame",
+      "zero configuration latched at frame start"
+    ]
+  },
+  "verification": {
+    "simulator": "Cadence Xcelium25.03",
+    "actual_layer": 2,
+    "actual_saved_query_rows": 298,
+    "actual_frames": 149,
+    "main_actual_and_synthetic_frames": 217,
+    "main_head_rows": 13888,
+    "main_stalled_result_cycles": 651,
+    "extra_exact_threshold_frames": 34,
+    "extra_head_rows": 2176,
+    "public_test_stalled_result_cycles": 102,
+    "oracle": "Exact integer rational exponent calculation independently agrees with the public floating frexp criterion for all217main frames. Portable threshold expectations use the independent bit-length ratio equation.",
+    "negative_controls": [
+      "no peak-derived unit fails the first actual frame",
+      "strict rather than non-strict threshold comparison fails exact boundary frame0"
+    ],
+    "corrected_test_evidence": "The final public test holds changed zero-unit inputs across stalled sampling edges and starts a nonzero partial row before reset. Earlier insufficient coverage is preserved privately and is not current public-source qualification."
+  },
+  "scratch_capacity_analysis": {
+    "candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+    "owner_source_sha256": "3c650917cbee63eecda0cafb9bcda43a81e9bef1cf3fa216361afcd5d9f106de",
+    "maximum_key_slots": 1024,
+    "probability_sum_bound": 66047,
+    "absolute_accumulator_bound": 8454016,
+    "lossless_signed_bits": 25,
+    "one_token_raw_bits": 51200,
+    "existing_direct_metadata_memory_bits": 53248,
+    "spare_bits": 2048,
+    "existing_memories": "one512x64 and five32x128; shared sign/key cache excluded",
+    "proof": "A floored reciprocal makes total unrounded probability mass no greater than65535. Nearest rounding adds at mostK/2; signed8 values have magnitude at most128. Therefore absolute weighted sum<=128*(65535+1024/2)<2**24, so signed25bits suffice.",
+    "qualification": "Capacity feasibility for one token only. Raw packing, safe metadata lease, in-place conversion and token scheduling are not implemented or verified by this result."
+  },
+  "synthesis": {
+    "state": "stopped_at_host_memory_reserve_not_qualified",
+    "tool": "Cadence Genus25.10",
+    "requested_clock_period_ns": 1.72414,
+    "library_corner": "slow0.90V125C",
+    "elapsed_seconds": 154.93132171803154,
+    "minimum_host_available_bytes": 11247362048,
+    "stop_reserve_GiB": 10.5,
+    "cell_area_verified": false,
+    "timing_verified": false,
+    "retry": "Unchanged unit queued in the same native container after original inference exits and at least17GiBhost memory is available. No extra inference is launched."
+  },
+  "qualification": {
+    "component_functional_verified": true,
+    "mapped_component_verified": false,
+    "scratch_memory_lease_verified": false,
+    "scratch_memory_packing_verified": false,
+    "whole_chip_connection_verified": false,
+    "complete_trained_mapped_execution_verified": false,
+    "accuracy_verified": false,
+    "routed_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false
+  },
+  "scope": "The paper does not disclose this bit-level quantization implementation. This unit reproduces the current local numerical reference and enables subsequent native integration; it is not a paper-result or complete-model claim.",
+  "source_sha256": {
+    "verilog/tri_oracle_context_unit_finder.sv": "dec1c41dd38749de7b709e3ab29125c891cef9803d51b0654089ac733d5fbadd",
+    "verilog/tri_oracle_context_unit_finder_tb.sv": "edd8ddb87592ca24fe4907207dbf5f34f03ee15c4d43c79f3921509377b1272e",
+    "syn/generate_tri_oracle_context_unit_vectors.py": "2fd6e7d5ae45927d9672fafa69fa22e9c1556f5ec8ac3d65b581cffafc6dc8f1"
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/spec.md": "64b013d3ec7d3f86fba802fff3838a8ce918239dcc8250fe3db571dd59143f7e",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/export.py": "ed1a7cea91f01e095b2ab0e7f6dd0484aff7734f7f975f107fe45fb0d9d4214b",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/vectors.json": "e2c9a2453c89150d242ce86df05a33121ea9aae0be647afc5fb86c3f1304a945",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/export_boundaries.py": "f5ea015f80705e518e7c404d184594932a64f11fdfc049d469c2425f0bf5be08",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/boundary_vectors.json": "74c2c4e3cb44b210f238e24482b85a9167cb3849261ca71f788ed6a44aa5fa9d",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/verified_rtl.json": "4ae2e5bc0a29fe2f52a8da404fc6989fab00fb12d27b168dcdb3dee9b57a98f8",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/storage_feasibility.json": "e4fb02250dc9c73603776d7baf222d3518371908b1d958d0134fa4e2664f43f7",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/green/status.json": "6d452fdac32ed002199b2ddd7b896bc09c9c44975b42c95a0fdc34648f84365f",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/red/status.json": "b1889149b7211ff144dfa5832ffde5f9b37532a42129d210e5a6ccab5e74ab6f",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/boundary_green/status.json": "af63d67051a03bbb57eaba15c99cac412e8f7c4a52fb7684696be1117124c79b",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/boundary_red/status.json": "485e85061fd76526e5e70ae8fbbedae43e346fb31a8cd67305a248d6dbd22389",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/stress_green/status.json": "53d6d39a4fe7e21c80c60a79f7fb896661333a35e2db876b45a9eafce5b3bcfd",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/public_v2_green/status.json": "ea423eb9fb381b306bea099c0e7ada5095c92c671da56a1c7e662d1190f549a0",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/public_test_coverage_correction.json": "61c3a97ccb84130ea9363cfb5357c3b1805b839c8ead36a98e3f8a9100044e01",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/synthesis/status.json": "06d32ad08a1ee4740dd1fbf541adaba31d6a032845cc20a154676cecaf45ffc8",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/synthesis_inputs.json": "47701d9247e2756560f500436174457d4943babf3f6370d7183b6a42e69e30c1",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/retry_after_inference/queue.json": "07c97d7e570eba4b3b6ed8325d27047753d3fc3ec1b277a0871ce8d0bc226116"
+  }
+}
