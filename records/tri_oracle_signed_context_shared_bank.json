@@ -1,0 +1,150 @@
+{
+  "state": "signed_context_conversion_and_single_compiled_memory_component_verified",
+  "purpose": "Support exact signed binary context-to-output-projection conversion, including right shifts observed in the trained layer-2 prefill, through one shared 512-word by 64-bit memory.",
+  "source_chip_candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+  "implementation": {
+    "signed_accumulator_bits": 32,
+    "projection_code_bits": 8,
+    "denominator": 65535,
+    "shift_magnitude_bits": 5,
+    "directions": [
+      "left",
+      "right"
+    ],
+    "rounding": "nearest, ties away from zero; signed8 saturation",
+    "right_path": "Exact floor(abs(accumulator)/65535) from a 17-bit folded sum, then binary nearest rounding. Left and zero shift use the unchanged legacy converter.",
+    "stream_lanes": 8,
+    "codes_per_row": 64,
+    "words_per_row": 8,
+    "frame_rows": 64,
+    "frame_bytes": 4096,
+    "compiled_memories": 1,
+    "compiled_memory": "TS5N28HPCPSVTA512X64M4F",
+    "memory_sharing": "Metadata is parked while projection owns the bank; the controller must drain metadata before acquisition and rebuild it after release.",
+    "ordering": "The sender assigns each 64-lane block to its eventual projection row through row_index; a frame is readable only after 64 distinct accepted rows."
+  },
+  "functional_verification": {
+    "simulator": "Cadence Xcelium 25.03",
+    "scope": "Functional RTL and mapped-cell simulation using the actual compiled-memory functional view; no delay annotation or routed timing qualification.",
+    "scalar_cases": 40183,
+    "scalar_right_cases": 17040,
+    "mapped_converter_copies": 8,
+    "mapped_scalar_checks": 321464,
+    "trained_fixture": {
+      "source_layer": 2,
+      "source_current_rows": [
+        0,
+        1
+      ],
+      "head_token_rows": 64,
+      "codes": 4096,
+      "nonzero_codes": 3805,
+      "right_shift_rows": 8,
+      "context_exponents": [
+        -8,
+        -9
+      ],
+      "selection": "First two rows in order from the saved controlled-model failure operands; no fitting or outcome selection."
+    },
+    "portable_fixture": {
+      "rows": 64,
+      "codes": 4096,
+      "shift_magnitudes": [
+        0,
+        31
+      ],
+      "directions": [
+        "left",
+        "right"
+      ],
+      "contains_model_data": false,
+      "tests": [
+        "dedicated RTL bank",
+        "shared RTL bank",
+        "shared mapped bank"
+      ]
+    },
+    "read_beats_per_bank_test": 516,
+    "invalid_bursts_per_bank_test": 3,
+    "stalled_response_cycles_per_bank_test": 1035,
+    "control_checks": [
+      "no reads before complete frame",
+      "duplicate invalidates provisional frame",
+      "held response stable under stalls",
+      "invalid length and out-of-range request rejected",
+      "release wins over simultaneous request",
+      "metadata acquire blocked while busy",
+      "metadata writes blocked during projection lease",
+      "metadata writes and reads before and after lease"
+    ],
+    "negative_controls": [
+      "original forward-only converter fails the actual signed fixture",
+      "forcing right direction off fails the portable fixture"
+    ]
+  },
+  "synthesis": {
+    "tool": "Cadence Genus 25.10",
+    "process": "TSMC 28HPC+",
+    "library_corner": "slow, 0.90 V, 125 C",
+    "clock_period_ns": 1.72414,
+    "wire_model": "ZeroWireload",
+    "standard_cells": 6896,
+    "compiled_memories": 1,
+    "total_cells": 6897,
+    "cell_area_including_memory_um2": 18470.13,
+    "previous_signed_bank_cell_area_um2": 20691.258,
+    "cell_area_reduction_percent": 10.734620388958472,
+    "worst_reported_setup_slack_ps": 0,
+    "timing_margin_or_routed_timing_claim": false,
+    "unresolved_references": 0,
+    "empty_modules": 0,
+    "elapsed_seconds": 386.92074490198866
+  },
+  "qualification": {
+    "component_functional_verified": true,
+    "whole_chip_connection_verified": false,
+    "whole_chip_memory_accounting_verified": false,
+    "complete_trained_mapped_execution_verified": false,
+    "accuracy_verified": false,
+    "routed_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false
+  },
+  "remaining_integration": "The component is not connected to the full-chip dispatcher, native attention output or existing metadata owner. Candidate-bound control, exponent metadata, token-major projection ordering, overwrite scheduling and trained complete-model execution remain to be verified.",
+  "source_sha256": {
+    "verilog/tri_oracle_attention_projection_scale.sv": "23cf537bb2e377e45cb4d7c7bbeb744a5ec3dce03bf157a99647ce6c97a973e6",
+    "verilog/tri_oracle_attention_projection_scale_quotient_first.sv": "32bdcd277ebdc0a26fb3310b7dcd762cb4d471b9f36b9f21073b0fbcc33514f3",
+    "verilog/tri_oracle_attention_projection_stream_bidirectional.sv": "a6b8c3c175883ad5a09d74d5256a4643a90aef6d0ed1dbe2a1ff472d21903370",
+    "verilog/tri_oracle_projection_activation_store_bidirectional.sv": "a41163ef106fef3ea5839217911dd8def11dfb187bc65d09adcf4b192e4f91ed",
+    "verilog/tri_oracle_projection_shared_bank_bidirectional.sv": "1e72bf9be1336a82ce9fa0b3161a11498c2e6e4377ddc8d5c8b01343cddadf85",
+    "verilog/tri_oracle_projection_activation_store_bidirectional_tb.sv": "e6364217a1176ab1fa9734f88fe6749b3d949da403afd71c292296ed72a575b2",
+    "syn/generate_tri_oracle_signed_context_bank_vectors.py": "213bb70a9a7ac2708c40555ad810c7a3ea8ae2fd453005b1ef922bcc9a68162b"
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/verified_mapping.json": "45ae00422e43e5468728991cbeba523cf2145a7b6fb48897d16042353346f022",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/public_verification/verified.json": "113acc5a33f18c9c2795221ab1d9d16675fbddab4487de0345325531bb7fa51b",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/public_verification/fixture/vectors.json": "b8066831f3727cd2dcd37c1a5862f335cec414d4e94de467528cd27f691b35a2",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/formula_proof.json": "74d3b78d051fe347e51af94e79146c2bcd71fd1d1eaf4af922886afc96e7c60f",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/synthesis/status.json": "8aacf235622a25a12a0536381f9d55f06676cb615d40bbb684c6d3756cace2cf",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/synthesis_inputs.json": "502424025f6909e2230c549ec818c38b3f9db1c306603b9e026e3c8237f99b88",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/synthesis/area.rpt": "0fbbb89b603f75ab0ffe26cf6303002bfa15ab04334d85eb9afc6752cd9048ac",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/synthesis/timing.rpt": "4d693c48906dbc7050357b2d0b8e793ff64489d6c1d020c033cfd4874fdc43ff",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/synthesis/unresolved.rpt": "3d41adebe4002119a8769ecfdf68e39186dc54e513dbacf3f51261b1c7b207e3",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/synthesis/netlist.v": "5583fe408ebea94622af38cdda3dc055367bd09ccff7500003ed5060806d4af5",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/scalar/status.json": "351f3fd29edbff069cc7aae7cc7363768d309825389b974e5c1605ce00d12edf",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/shared/status.json": "2423a66b4a04b47e48731ba9d7c16a9d8ed594c56a1dcee7854942382a53cb94",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/dedicated/status.json": "c2abb6c8981b6c01284d7aebc34fc81d0d770dc7a6b111adf7aca3cdd9fc51db",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/mapped_test/status.json": "faaf7b1c2f1fa7a5e73cd0959dc3ff180c114fa3076ff566751c949b0ea47ef9",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/mapped_scalar/status.json": "1bea9d01e8ba88f3ee575ed3edbf5a3f10bc3bc32d776fcd45cc9b4d7e9088ff",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v1/vectors.json": "32c074bc9ee40fb6d2a6f33a7076688a04d7637cf15a3c087f66beaa02cc6d9f",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v1/red/status.json": "c5305e9d602f206417cfeeac4a887f57211969734c09b4b7294cb61e114ab9fb",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v1/bank_location.json": "679facf638c2595d0e3020e9d7d404d3e9b9853af2fd9b974d8e4449ae9b7a36",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v1/synthesis_with_env1/area.rpt": "3a0b6d96ba0a8718c0a0b1e651d1b438b6a223a2c88f22f856c3a50a32b0255c",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v1/synthesis_with_env1/timing.rpt": "9b96eff4b1476e35dd5ec3d60870ff8128ed398b38baa0d80e97c06d0191616d",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/public_verification/actual_shared/status.json": "17b1450c915307f5d0981f0685c2d30ce457a08c000123e6c8165c2ddd6a8464",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/public_verification/portable_shared/status.json": "1d5b22ef7c05edeade63fd25b1a102ae09fa60a49fbd4b118c81e2761becccdd",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/public_verification/portable_dedicated/status.json": "c80b4bb189224b6ee3569a39cea5151a5075e56c4a3a8fd6cd113ac7c6f34674",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/public_verification/portable_mapped/status.json": "492c682e602a99caa17146e2a1b1cd2058696eed044248ce8c34f0af15e7b473",
+    ".cache/late_clipping_20261121/frame_integration/signed_context_bank_v2/public_verification/portable_wrong_direction/status.json": "19565bfd7cf4480fc38be085dfc8b9c73bf3d8b90f7ce28ef52bd2c91e24c937"
+  }
+}
