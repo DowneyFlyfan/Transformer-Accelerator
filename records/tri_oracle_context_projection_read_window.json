@@ -1,0 +1,114 @@
+{
+  "state": "context_backed_projection_bus_window_component_verified",
+  "module": "tri_oracle_context_projection_window",
+  "interface": {
+    "activation_page": "0x10",
+    "frame_words": 256,
+    "narrow_local_word_bits": 64,
+    "local_burst_words": [
+      1,
+      16
+    ],
+    "external_response_bits": 512,
+    "external_paths": "Wide requests and addresses outside the activation page retain the external source.",
+    "release": "Wait for projection-command idle, bus idle and word-sequencer idle; finish then wins over a new request.",
+    "additional_memory_macros": 0,
+    "additional_response_data_buffer": false
+  },
+  "coverage": {
+    "portable_frames": 3,
+    "saved_trained_frames": 2,
+    "expected_context_words": 1280,
+    "recovery_word_checks": 2,
+    "local_bursts_including_recovery": 102,
+    "invalid_bursts": 40,
+    "external_bursts": 10,
+    "injected_word_interface_errors": 5,
+    "reset_phases": 2,
+    "baseline_local_leak_rejected": true,
+    "release_without_consumer_idle_rejected": true,
+    "wrong_local_word_stride_rejected": true,
+    "runtime_inputs_reverified": 18
+  },
+  "native": {
+    "public_baseline_portable": {
+      "exit_status": 2,
+      "expected_failure": true,
+      "failure_class": "behavioral",
+      "wall_seconds": 3.2071892900858074,
+      "minimum_host_available_bytes": 15558066176,
+      "pass_markers": []
+    },
+    "public_green_portable": {
+      "exit_status": 0,
+      "expected_failure": false,
+      "failure_class": null,
+      "wall_seconds": 3.409062725957483,
+      "minimum_host_available_bytes": 15397478400,
+      "pass_markers": [
+        "CONTEXT_PROJECTION_WINDOW_PASS frames=3 code_words=768 recovery_words=1 bursts=61 invalid_bursts=24 external_bursts=6 word_error_bursts=3 reset_phases=1"
+      ]
+    },
+    "public_green_trained": {
+      "exit_status": 0,
+      "expected_failure": false,
+      "failure_class": null,
+      "wall_seconds": 3.4089446461293846,
+      "minimum_host_available_bytes": 15077744640,
+      "pass_markers": [
+        "CONTEXT_PROJECTION_WINDOW_PASS frames=2 code_words=512 recovery_words=1 bursts=41 invalid_bursts=16 external_bursts=4 word_error_bursts=2 reset_phases=1"
+      ]
+    },
+    "public_early_finish_portable": {
+      "exit_status": 2,
+      "expected_failure": true,
+      "failure_class": "behavioral",
+      "wall_seconds": 4.809710806934163,
+      "minimum_host_available_bytes": 15079096320,
+      "pass_markers": []
+    },
+    "public_stride_portable": {
+      "exit_status": 2,
+      "expected_failure": true,
+      "failure_class": "behavioral",
+      "wall_seconds": 3.4154993118718266,
+      "minimum_host_available_bytes": 15308005376,
+      "pass_markers": []
+    }
+  },
+  "scope": "Xcelium25.03functional component test: new window register-transfer-level code and existing bus bridge drive the actual mapped context-controller netlist and six compiled memory views. Saved trained vectors are layer2queries0and1. Producer/consumer bus requests are test stimuli; no actual whole-chip projection engine is instantiated.",
+  "qualifications": {
+    "component_functional_verified": true,
+    "projection_window_synthesized": false,
+    "actual_output_projection_consumer_verified": false,
+    "whole_chip_verified": false,
+    "full_model_accuracy_verified": false,
+    "physical_timing_verified": false,
+    "energy_verified": false,
+    "paper_matching": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_baseline_portable/status.json": "6575a9da6fe044113700bac4d09f0a943cf833a824fcc955e354e748bfc7eaa9",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_baseline_portable/console.log": "00d4c4f648019d693ef550a89f4c931815e2a8c13b88acfbdb50d60a4d169666",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_baseline_portable/invocation.json": "84a3dd4f0784ee9dffe06d67b57fe48cd73122471da860d681adab287637f338",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_green_portable/status.json": "5d1fcb76ba3183c58ed070773e88c2e78f2176fc307352939b14178f38a02689",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_green_portable/console.log": "39ed5ed69b31d34d72f394ffaed464b88e565445b0b20c4f02ad0ec2eb07a46e",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_green_portable/invocation.json": "ea0ff17b26bc1681c3e00c3d2ed4b1803287cb1709aefc3a80d2c70a74f90860",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_green_trained/status.json": "1c0c02a32ba00f47667ccdc6f742c255a9fb7355f2450274c85c657accf3c7df",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_green_trained/console.log": "dbb613407ba1378d95c077c8c1e80560b7a70691543af3d0381f7abe3d9aba0b",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_green_trained/invocation.json": "a1a579ddd0a43539f1b34e549e144783205f98d5f13b304a671c87f62d173b24",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_early_finish_portable/status.json": "9adcfa4cfc637ac3ee5ee0d2108a7d2fefead7934b8bb6dc77d49b24e3206d85",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_early_finish_portable/console.log": "e17efee094fe6d3df9c9cb4b5a8e5af2ae7fe5862966f48d7d83e14fe0843483",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_early_finish_portable/invocation.json": "b469db1a1d7a869f01f1984c3c5d1d09a50b67ff35e754d4267642639b1e93f3",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_stride_portable/status.json": "33d56f8afa887be6ac9bc38a17250f452ab8f24049fd932ee818fdf7dc735f54",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_stride_portable/console.log": "f33fa161a5947afa29d6510f6e23e6bd1e70a186922640b633a6ded2f3ee3f88",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/public_stride_portable/invocation.json": "b1ae517ea70fbb90a63922a625b82b9ea8feafb5edebfbb9c5c31a31247a7fa2",
+    "verilog/tri_oracle_context_projection_window.sv": "3de955a2a024b66bf33bc713ae85ebfb5528369b840f7bad21416bc70e92fbcc",
+    "verilog/tri_oracle_context_projection_window_tb.sv": "851dfa25b4bf2abfb8cb1dee1ab0ecc6922058ceec0d83a7a424d6262e8b63f5",
+    "verilog/tri_oracle_projection_read_bridge.sv": "33ae239ed8027dfe149c1295f9960b95c01aea902a56e041c2d02df59567cb5a",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/design.md": "6907d40fc8b0f16ce693a00b1322ea65ca9bb6167a59e0ca4bb30ac0c5bfe55e",
+    ".cache/late_clipping_20261121/frame_integration/context_projection_window_v1/run_public.py": "2156ef7d0dfb328beb10fe67240f7e4df142d035fd196c3d42decc4f7f7e5316",
+    "records/tri_oracle_mapped_context_handoff.json": "0a757ad09e05dc54fab02c7891c68dfa6a4e8c9a9a96da7eb91150f74986e5bb"
+  }
+}
