@@ -1,0 +1,98 @@
+{
+  "state": "reviewed_source_bound_context_unit_mapping_and_functional_replay",
+  "source": {
+    "module": "tri_oracle_context_unit_finder",
+    "public_source_byte_identical_to_mapped_source": true,
+    "source_sha256": "dec1c41dd38749de7b709e3ab29125c891cef9803d51b0654089ac733d5fbadd",
+    "netlist_sha256": "f3041dfb5531208286b203baa0121219126da0ca0e667f8beadefdd2b695e0b0",
+    "scope": "Standalone2-token common-unit finder; not the complete context handoff controller or whole-chip integration."
+  },
+  "synthesis": {
+    "tool": "Cadence Genus25.10-p002_1",
+    "library_corner": "TSMC28HPC+ssg0.90V125C",
+    "clock_period_ns": 1.72414,
+    "input_delay_ns": 0.2,
+    "output_delay_ns": 0.2,
+    "input_transition_ns": 0.05,
+    "output_load_pf": 0.005,
+    "native_cpu_limit": 2,
+    "wall_seconds": 581.2370991848875,
+    "standard_cells": 5635,
+    "library_cell_area_square_micrometers": 4866.624,
+    "library_cell_area_square_millimeters": 0.004866624,
+    "wire_area_square_micrometers": 0,
+    "wireload": "ZeroWireload; pre-placement timing-library area only",
+    "reported_worst_setup_slack_ps": 0,
+    "reported_paths": 16,
+    "unresolved_references": 0,
+    "empty_modules": 0,
+    "clock_tree_or_routed_timing_claimed": false
+  },
+  "mapped_functional_replay": {
+    "actual_and_stress_frames": 217,
+    "actual_and_stress_head_rows": 13888,
+    "saved_actual_queries_covered": 298,
+    "actual_and_stress_held_output_cycles": 651,
+    "portable_boundary_frames": 34,
+    "portable_head_rows": 2176,
+    "portable_held_output_cycles": 102,
+    "simulation": "Xcelium25.03functional standard-cell models; no delay annotation",
+    "runtime_input_pins_reverified": 12,
+    "native_runs": {
+      "bounded_mapped": {
+        "exit_status": 0,
+        "wall_seconds": 13.619922045152634,
+        "minimum_host_available_bytes": 15477497856
+      },
+      "bounded_public_mapped": {
+        "exit_status": 0,
+        "wall_seconds": 1.806624751072377,
+        "minimum_host_available_bytes": 15503290368
+      }
+    }
+  },
+  "resources": {
+    "minimum_host_available_bytes": 12490932224,
+    "peak_container_anonymous_bytes": 6559555584,
+    "measurement_scope": "Container anonymous peak includes the concurrently running whole-chip simulator, not this component alone.",
+    "admission_available_GiB": 14.5,
+    "host_stop_reserve_GiB": 10.5,
+    "container_anonymous_stop_GiB": 7.5,
+    "process_address_space_limit_GiB": 6,
+    "old_unlaunched_waiters_replaced": true,
+    "active_native_jobs_killed": false
+  },
+  "qualifications": {
+    "mapped_component_functional_verified": true,
+    "physical_placement_or_routing_verified": false,
+    "complete_context_controller_mapping_verified": false,
+    "whole_chip_producer_consumer_verified": false,
+    "full_model_accuracy_verified": false,
+    "paper_results_matched": false,
+    "advance_to_clock_distribution_or_routing_allowed": false
+  },
+  "evidence_sha256": {
+    "verilog/tri_oracle_context_unit_finder.sv": "dec1c41dd38749de7b709e3ab29125c891cef9803d51b0654089ac733d5fbadd",
+    "verilog/tri_oracle_context_unit_finder_tb.sv": "edd8ddb87592ca24fe4907207dbf5f34f03ee15c4d43c79f3921509377b1272e",
+    "records/tri_oracle_native_context_common_unit.json": "507766271c5e2af3a38acd0fbf23fb894475d48910d222407912bb8676680129",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/map.tcl": "3402d6b066db99de9d32f9c7919ac48422fa15d2d83b751bf346831808d9e7df",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis_guard.py": "b1fb07346c84c1a2c6079103474027c994630ab1d4c047e38112686f0569cb84",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/controller.py": "088fe10d98b89f40fc2fffc813ec61993202ee650b764a184adf952cb8ab6246",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/controller_inputs.json": "028472ece07b71bf55fed338dcdcb316383792be8589ea0f9340048e7f86ee59",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis_inputs.json": "f1a2e17ea4c3de2d12b6b70a206e2baa7bfab5191edcfb97ebee6cbaf486ae4c",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/superseded_queue.json": "c5ed5a8709a1c6ec4f84fa1ac2d1a885fa2124a636a72d24e95de91ea118c34e",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/receipt.json": "394ccdafa15f8d2bc63f27777e96a47d205bd9f400e519f80d30901b23a05ab9",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis/status.json": "5dbcd0c375754abb42aae37209665a6ca8b4e7fe9e3ef6ba752346967dbc5d60",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis/console.log": "767e120441edd225a12fbbdc6c44c8631b350b61b25b0dbeef8994c1b54f58d8",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis/area.rpt": "be9fe172c44d92f6f9c18bb4d7aed14d3453c00d644b6f2723f1643cc2aad06f",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis/timing.rpt": "4ddd269c408e409fdf2c416c4c8d59961da3e028fa7e1ec95b436eb6b4a9b8b8",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis/unresolved.rpt": "b26cf511273694c54e7db1937f9f7fe8e29e662c0bd6b7867780a797f90ca863",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_retry/synthesis/constraints.sdc": "ceb9c35a67c86a5b7d4d2590880e45daaa671b5d427fb22e7d7b90d2c5f8e73a",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_mapped/status.json": "e0d7e5d87c6d8b40f5dad74c29f657fd6e123eac4720951a9da78607aa7fc472",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_mapped/console.log": "68a556c341eb4548e830ffad9a1c31ff71770a52b562473d317f92f5ec689622",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_mapped/invocation.json": "e34e0897992bc475ef65e847558e2b0fba136f9c4741722c6095203d16487578",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_public_mapped/status.json": "b40983891213edabf2314364f5e61a12219d7ea06af61930d0d335d4c2b0c09c",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_public_mapped/console.log": "0aaad7f544a36b014b36b3d962cdb52fff906b05e9d3b8872da569462619cb21",
+    ".cache/late_clipping_20261121/frame_integration/context_unit_finder_v1/bounded_public_mapped/invocation.json": "afdbb7813e656643d30e816a9ecf5026261689be7f89649397fbae592ae7140d"
+  }
+}
