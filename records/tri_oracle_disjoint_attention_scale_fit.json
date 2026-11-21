@@ -1,0 +1,76 @@
+{
+  "state": "disjoint_fixed_attention_scales_fit_and_held_range_verified",
+  "fit_images": 8,
+  "held_images": 8,
+  "accuracy_evaluation_images": 398,
+  "decoded_image_overlap_with_accuracy_images": 0,
+  "decoder_layers": 22,
+  "qkv_groups_per_layer": 40,
+  "output_groups_per_layer": 32,
+  "frozen_exponents_verified": 1584,
+  "unique_held_projection_metrics": [
+    {
+      "kind": "qkv",
+      "unique_projection_values": 133544960,
+      "clipped": 48,
+      "clipped_fraction": 3.5942951347621057e-07,
+      "relative_l2": 0.023313770805490255
+    },
+    {
+      "kind": "output",
+      "unique_projection_values": 106835968,
+      "clipped": 144,
+      "clipped_fraction": 1.3478606755357896e-06,
+      "relative_l2": 0.03267548567813053
+    }
+  ],
+  "fit_only_configuration_independently_reproduced": true,
+  "held_refit_counterfactual_changed_exponents": {
+    "qkv": 27,
+    "output": 73
+  },
+  "verification": "Both author and independent reviewer reproduced every frozen exponent from fit-only maxima and all unique-projection counts; actual source-loader, bytecode, reservation and fresh-cache controls passed.",
+  "resources": {
+    "worker_seconds": 28.874695983016863,
+    "guard_seconds": 40.632126863114536,
+    "peak_gpu_bytes": 7669153280,
+    "minimum_host_available_bytes": 18784845824
+  },
+  "limits": "Quantization-range/error measurement on original frozen model projection values. Pooled relative errors were independently recomputed from saved squared-error and squared-norm sums; raw held tensors were not archived for independent replay. These fixed parameters have not yet replaced diagnostic per-input scales in complete integer attention/model execution or native hardware.",
+  "weights_changed": false,
+  "native_attention_configuration_verified": false,
+  "whole_model_integer": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/receipt.json": "8a260bc77baf3476fa46f5828cb21693f59986c1445c99e7d035201c2b8b2ada",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/guard_receipt.json": "dda62aba8b790b6793ea6900c5e5ffd5c1222583cb8e4effd27462885ba50278",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/queue_result.json": "14809a64ed62bacbb0c964d9102ac8ea6ac276b0c6a6d708c0af16ca54772bb0",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/inputs.json": "d782258412704b8a7847b992476c116f258b3dd8c69a07be16347a3294a195b1",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/cases.json": "9319db3066f65e82174ecd9bb2ab417b7eefca85fa9f4e55dffae229ad477937",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/frozen_scales.json": "c1c40108f56b64b3fb6f650a95e1912b76879fa6d5543e571a38355606e959f1",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/independent_result.json": "bc5c605e3c913f13e9ff419c70c51130cedf8437fb05a1980eca9567e644ee23",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/run_capture.py": "d19f34121aac61c04ff661a5855e0b9ddd61678fac6d835e87d159bbcede9cb5",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/bootstrap.py": "5b6afb51b99efde724a646ef2b84a58061369de9d8de51b878495e8898669943",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/review_resolution.json": "832b16a783db642704e52d8af3605d20fe64b67ad1c019b2e3642a1b455b944c",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/test_scale_fit_green.log": "a0029dbc3ab6f36911773bacf4bf619cc96d2ac6163e0f4302951fe03b12ef29",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/test_observer_green.log": "13e8953c631096ad7cbc0d2cce680d4a5bb9b255035f0763269400bd2b84a518",
+    ".cache/late_clipping_20261121/frame_integration/current_disjoint_attention_scales_v1/test_preflight_green.log": "af5ca818f3e70d32881bd08c7d2cf866c46ef7bb4122109eb52623c4ffd0aa1c",
+    "syn/tri_oracle_attention_scale_fit.py": "17c6a2c3c04ae7591acb66fd0706c6e6e8abe8eed7c88e13c5dbc160d0cd9351",
+    "syn/test_tri_oracle_attention_scale_fit.py": "a53492ff4a7f2988f26db37decfcd547f61416387b163ee1f8de062a3ae7a430",
+    "records/tri_oracle_frozen_attention_scale_parameters.json": "d523c11d8453740bfcf6f35e87e285572512e25b4e51307059ac490dba81f491"
+  },
+  "observer_on_off_control": {
+    "cases": 16,
+    "exactly_compared": [
+      "greedy_token_identifiers",
+      "skip_count",
+      "workload_counters",
+      "prefill_slots",
+      "decode_steps",
+      "streaming_head_flags"
+    ],
+    "logits_or_intermediate_tensor_comparison_claimed": false
+  }
+}

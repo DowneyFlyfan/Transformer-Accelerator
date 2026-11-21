@@ -1,0 +1,72 @@
+{
+  "state": "computed_projection_to_fullwidth_feedforward_native_replay_verified",
+  "verified_utc": "2026-11-21T08:06:30.142904+00:00",
+  "candidate_sha256": "f04dba14a5a67361abe68ab54a1f7440ae8952fe302d7a8210ad06fe30e1cce1",
+  "process": "Taiwan Semiconductor Manufacturing Company 28HPC+ adaptation",
+  "simulator": "Cadence Xcelium25.03; mapped whole-chip netlist; unit-delay functional simulation",
+  "questionId": "201030233",
+  "imageId": "n54424",
+  "layer": 19,
+  "rows": [
+    1,
+    2
+  ],
+  "original_positions": [
+    1,
+    2
+  ],
+  "selection": "First ordinary frame in source order, never selected for error or simpler traffic",
+  "input_boundary": "Authenticated PRE-attention signed35/Q32 residual plus computed integer attention/output-projection packets supplied by the modeled external memory peer. No captured POST-attention residual substitution.",
+  "native_scope": "Precision/residual addition, root-mean-square normalization, learned affine quantization, full2048/5632/2048Gate-Up-Down path, two correction planes and final physical-pad protocol writeback",
+  "checks": {
+    "projection_values": 4096,
+    "nonzero_projection_values": 3679,
+    "exact_activation_bytes": 4096,
+    "exact_intermediate_bytes": 22528,
+    "exact_final16_values": 4096,
+    "physical_writeback_packets": 512,
+    "scratch_acknowledgements": 284,
+    "sign_reads": 4048,
+    "verified_expected_wide_weight_beats": 541440,
+    "scale_reads": 256,
+    "cycles": 1966215
+  },
+  "resources": {
+    "compilation_seconds": 765.1551013828721,
+    "simulation_seconds": 1051.7876842929982,
+    "simulation_threads": 20,
+    "build_threads": 4,
+    "peak_container_anonymous_bytes": 8729923584,
+    "minimum_host_available_bytes": 11419967488
+  },
+  "memory_model_scope": "On-chip compiled-memory models included. External peer checks every emitted write against reference before serving corresponding fixture data with commit/address ordering; no external memory device or its energy is verified.",
+  "limits": "Upstream attention/projection packets are host-computed and retain diagnostic per-input scales. One two-token frame; no complete native current layer/model, task accuracy, timing, routed result or paper-performance claim. Timing checks disabled.",
+  "native_computed_projection_boundary_verified": true,
+  "native_attention_verified": false,
+  "complete_current_trained_layer": false,
+  "complete_current_trained_model": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/runtime.json": "43db7bbc701b22ce277476a9f6a115c13abe38011c155fcea5ae55ab2831d59c",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/verified_status.json": "7cde30adefd3481b8a512e6c96ae8dce8c1d8eff7390ca71751cbc79edf93fa1",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/elaboration/status.json": "7d4b2f7a6bfef1d19869aa8c7ca7059e40109b5083f020fd0e89ee6b026b6668",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/elaboration/qualified.json": "c82bc3240776f127fab5736b5ddf82a40890827335c199ae62aa6b1c8533df9a",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/current/status.json": "18b7dcdee1e89569b3008ea0a119e1d5fd967dda1ef16b4f239eb471c6745f45",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/current/qualified.json": "10e5b4218b88afd6cebfbf936bba53bc596b59585e8d231cee98cef92dfced42",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/current/xrun.log": "2bdc55b74414bfec74fe867927cf716f09acff0bdce8c6f80ca2c3e764b79b21",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/current/console.log": "0509bf91ff746888aa3f6eae585ed1a2f5369025244827a6bf957e3b1a84c425",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/current/used_config.txt": "66efe55001aa26165aa8e5088ef3e8a3e6514fb0c668c3517737b86d132cd3f9",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/replay_v2/current/runtime_package_changes.json": "24bf1127bb92fa53f2e3410e47a74eab3dae20e676841809700b05009bca46f8",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/fixture/prepared.json": "a2df3e35c384760aa61ee10842d3bd31fa35cf8d61351e790611e1a5febfcad7",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/fixture/host_input.hex": "e14623fa40570adcd706521c189d638013f6ef218fe114993f39b6dd3c934954",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/fixture/projection_packets.hex": "6e6090da2a49b524003926655fd5b73a0c1c035682f53029e469e460ca0b301c",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/fixture/host_writeback.hex": "90fc269e3523546771a11838f014d8ca59fa3864d7fba9657d5d4186fa19c424",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/fixture/observed_writeback.hex": "90fc269e3523546771a11838f014d8ca59fa3864d7fba9657d5d4186fa19c424",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/decoder_proof.json": "24ea872c057cafb20ac94741b9256dff2778f3a20a3dbe14c4bdb1205dc4acb3",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/dependency_partition_proof.json": "edbf60ebd22ed6a35da2407959ec5c41b2b8d7595398065ac60a40748f7ed9a5",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/verify_fixture.py": "c2d33abf6a23d499d531d38a79df9e1e31fccedef896ff006ba3be6b29b25731",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/publish_result.py": "4742307836c012750f3f195cc45a3468d9e24303928e10542af8664a9449fd38"
+  }
+}
