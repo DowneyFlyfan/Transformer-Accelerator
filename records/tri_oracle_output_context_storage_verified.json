@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "state": "existing_output_context_storage_and_stored_score_access_verified",
+  "implementation": {
+    "transformer": "syn/prepare_tri_oracle_output_context_storage.py",
+    "testbench": "verilog/tri_oracle_output_context_tb.sv",
+    "purpose": "Preserve per-head accumulation contexts and previously produced score tiles in existing core output-memory macros while sharing arithmetic.",
+    "load_kind3_addresses": {
+      "14,15": "Write and reserve the corresponding1024-bit core output slot.",
+      "16,17": "Release the corresponding slot14/15 reservation and stored-read validity."
+    },
+    "reduce3_command": "Read a previously produced output without array computation; selected-core unicast, or four-core sum when the slot is valid in every core and no selected context ownership forbids it.",
+    "context_capacity_bytes_per_core": 256,
+    "context_slots_per_core": [
+      14,
+      15
+    ],
+    "source_added_control_bits_per_cluster": 100,
+    "source_added_control_bits_all_five_clusters": 500,
+    "additional_data_register_bits": 0,
+    "additional_compute_arrays": 0,
+    "additional_memory_macros": 0,
+    "external_port_lists_unchanged": true,
+    "current_mapped_candidate_integrated": false,
+    "context_owner_contract": "The caller retains head/query/epoch identity until the captured-owner ordered cluster result retires; context load/write/release is rejected while any cluster result remains pending."
+  },
+  "native_component": {
+    "simulator": "Cadence Xcelium25.03",
+    "container": "tri-oracle-eda",
+    "diagnostic_threads": 1,
+    "wall_seconds": 4.65307215298526,
+    "physical_arrays": 4,
+    "vendor_memory_macros": 120,
+    "exact_checked_values": 864,
+    "distinct_stored_context_values": 256,
+    "captured_trained_context_values": 128,
+    "trained_fixture_scope": "Previously captured trained heads19/20, query rank1, layer19; storage retention only, not newly computed attention accumulation.",
+    "real_core_array_issues": 14,
+    "stored_output_reads_add_no_array_issue": true,
+    "independent_input_normalization_survives_output_context_access": true,
+    "reserved_slot_overwrite_refused": true,
+    "held_write_and_release_refused": true,
+    "invalid_address_refused": true,
+    "owned_context_four_core_sum_refused": true,
+    "unwritten_slot_read_refused": true,
+    "released_context_legacy_accumulation_verified": true,
+    "reset_invalidates_ownership_and_recovery_verified": true
+  },
+  "native_five_cluster_compatibility": {
+    "wall_seconds": 13.910701354965568,
+    "source_invocation_pins": 60,
+    "physical_arrays": 20,
+    "vendor_memory_macros": 600,
+    "exact_score_lanes": 480,
+    "independently_checked_array_row_dots": 4608,
+    "trained_eight_array_overlap": {
+      "verified": true,
+      "actual_arrays": 8,
+      "first_phase_input_ticks_ps": [
+        1025000
+      ],
+      "first_array_output_tick_ps": 1065000
+    },
+    "all_twenty_array_overlap": {
+      "verified": true,
+      "actual_arrays": 20,
+      "first_phase_input_ticks_ps": [
+        3715000
+      ],
+      "first_array_output_tick_ps": 3755000
+    },
+    "scope": "Existing raw-score batch regression with the new generated core/cluster source; not complete attention-head execution."
+  },
+  "negative_controls": {
+    "original_source_context_write_rejected": true,
+    "stale_cache_mutant": "Removing recent-write invalidation returns old array results instead of newly written context data; actual native mismatch rejected."
+  },
+  "host_verification": {
+    "generator_contracts": 3,
+    "evidence_checker_contracts": 6,
+    "source_compilation_checks": 4
+  },
+  "resource_envelope": {
+    "single_cluster_admission_gib": 11.5,
+    "single_cluster_address_space_cap_gib_per_process": 1.25,
+    "five_cluster_admission_gib": 12.25,
+    "five_cluster_address_space_cap_gib_per_process": 2.0,
+    "live_host_reserve_gib": 10,
+    "total_container_anonymous_ceiling_gib": 12,
+    "free_disk_reserve_gib": 11,
+    "main_multicore_simulation_and_graphics_worker_inputs_unchanged": true
+  },
+  "complete_attention_head_concurrency_verified": false,
+  "complete32_head_execution_verified": false,
+  "trained_mapped_layer_verified": false,
+  "full_model_hardware_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "next_requirement": "Use this owned storage in the shared probability-times-value accumulator and head context broker, then execute trained heads concurrently end to end and extend through all32heads.",
+  "source_sha256": {
+    "syn/prepare_tri_oracle_output_context_storage.py": "4a6ffa185b2ed55eb3c393a27c9b29937049ed1f331d03ad97c4871d8172dbf6",
+    "verilog/tri_oracle_output_context_tb.sv": "9d5859dd325791761bf85214d67f83c80f106fc606890c0aa28bd9c276ae3bbd"
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/green_qualified.json": "72a4ffb6122ce61936c2672f7d45dcdb8294532c5404a9354890ff807c08b76b",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_qualified.json": "32068d6810791bbea6c9e9fb96ed58ef8b9c1d786237dd4887fdf299a5ec60ab",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/cache_mutant_qualified.json": "6a9167ccf7ec0be161c7d50e48ae7174b885da2a5db30fee97d33c2f2c2a41c8",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/parallel_score_qualified.json": "af6f00922d566b02b70e3f35615814ea37d2de7ea3020e38ed1db7c7398b9656",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/review_resolution.json": "3bdd7ff87f31503c3ed32cbc12e5626c2c29a7de7444a1952512190d8ed7a99e",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/host_contracts.json": "37412b6952347ea700f10a0f3ed40670abba03e9cb9ce1b5ae432503e723b037",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/terminal_cleanup.json": "fed43c99741f5c6092e2dab15e2671b8b14408aa1e513c65fcff2f2edffb7c4d",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/contexts.hex": "d58155b980e0d85dda855892e3ec26057be8cf6586e30e7d9d9d6b5004441033",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/expected.json": "b8f03c983e65e11066d80d547ffb3b4f8f2a644775d2ffb86eb2f22ae716828c",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/qualify.py": "88cc271615adc8f65ca8c9715747afdd0efe5bc4c61c45baa078552f4e38f2c7",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/test_generator.py": "b5e1332af2afaa8089ed497b435e588239bfd244295c6568111d14f15ba976a8",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/test_qualifier.py": "eedd57fc28729464aaa3e9cc16df24c29b2b5b6be355fb415185358891b6dbc6",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/run_retry1.py": "beb99431f193dacbd311243890351595b289f945a21df0f2e6b411059ec57911",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/run_parallel_score.py": "b7a0fac6a2e95722207ed008b37af61e5a7fc3d5492c446f27416fd57cb699e1",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/context_core.sv": "0e85d21c14e7e0126836ed9d053d3c8246ce568100c316d80c44c5d7ec21fd0b",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/context_cluster.sv": "6ec9885bc603eaac1ef78401b0a07ce5887ffc3ea315ecd1de2de0559c921ad3",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/invocation.json": "ccfc49e700926cba96287ef685cdcf5698ed3795fc67a5ae0f81fbc7123ecf02",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/status.json": "f2f053b4e83972992ef78974c70b9ec99f50c86ce4159d40352336b9ed2b2a1a",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/xrun.log": "073438467506240ae0ee7a3613d7e06d39d9795433435d3a841ef52881bbf0a1",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/console.log": "2e7accfee52f0739ca87504587ffb5e36dbed78b4e00538c1287b0ba41536a8d",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/green_native_retry1/invocation.json": "de3340b6b1c35fff8d4a43c36a105b38c5ce618dfe0756752eedfeb3680e357c",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/green_native_retry1/status.json": "45c66da862e9ada7da42f175db217f265649a4192d77d19c1d12b9e0e12a602b",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/green_native_retry1/xrun.log": "4d4da92beecac5a08286899d23fbb818480567cfdeda9c61d18113ef6a0eefe0",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/green_native_retry1/console.log": "fccc0e7075b9d26cb1bb251b7423ac75288e88ebe8c73c641c92bf49210df774",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/cache_mutant_native_retry1/invocation.json": "01c788a0d8bec55216c1c38decc9465927f4a3c31d183754dd466a39e39fad90",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/cache_mutant_native_retry1/status.json": "334b02816429cdff6f2b703dd99bac7db3b02f650762d1ad33145090eda2e955",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/cache_mutant_native_retry1/xrun.log": "841f253dbaf58b484d304b60100c9f8af2f2f5f50b32ace8e721dc18b93dc584",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/cache_mutant_native_retry1/console.log": "1db6295e03f61b3490ce6abf704e08b127f5fc7ccc12ba57915ad9267cd9fa78",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/parallel_score_native/invocation.json": "9e55429072806b811eb6b1d0363fcee1d5ea09f9f81b503c2193b94916fec068",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/parallel_score_native/status.json": "1f9f83393ae28f17629bc74074aa1cec1df42f1d947a8dac0dfe076e9e593f46",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/parallel_score_native/xrun.log": "ab94b14206945394ff74ac480d57cbc7f9bca627b64b0b3df58f40c4ddc19a88",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/parallel_score_native/console.log": "a2e3b8fc7e88e5f9c8321b158eb0ac7f593c7d627f8e6c37b24368e9bc267587",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/source_recovery.json": "2f2c3c535b66adffab425ced7e0c11ca5986c8d6014829e37a1c7cf7b418c726",
+    ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/executed_testbench.sv": "cbe5d1d823a4a005539e6a688b61ee52c1bb6a4d8914b0b80ae28f30541e5a6b",
+    ".cache/late_clipping_20261121/frame_integration/two_head_trained_reference.json": "8ec1ffa7beccb7a067f686da99b98998b4e445211711fcb2d7a2e29295dde77a"
+  }
+}
