@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "state": "shared_array_parallel_raw_score_tile_scheduler_verified",
+  "implementation": {
+    "module": "verilog/tri_oracle_attention_score_batch.sv",
+    "testbench": "verilog/tri_oracle_attention_score_batch_tb.sv",
+    "operation": "One64-feature query-key tile of up to32keys on each occupied cluster; five clusters share one operand-loader buffer and existing arrays/results memories.",
+    "frozen_context_fields": [
+      "cluster",
+      "head",
+      "query_rank",
+      "epoch",
+      "transaction_tag",
+      "valid_key_rows"
+    ],
+    "source_state_bits": 960,
+    "shared_operand_buffer_bytes": 64,
+    "additional_compute_arrays": 0,
+    "additional_memory_macros": 0,
+    "storage_count_scope": "Source register count, not synthesized area; excludes the previously verified125net owner-control bits per cluster.",
+    "whole_head_residency_threshold_implemented": false,
+    "integrated_into_current_mapped_candidate": false
+  },
+  "native": {
+    "simulator": "Cadence Xcelium25.03",
+    "container": "tri-oracle-eda",
+    "diagnostic_simulation_threads": 1,
+    "positive_wall_seconds": 13.91063255397603,
+    "physical_arrays": 20,
+    "vendor_memory_macros": 600,
+    "trained_pair": {
+      "heads": [
+        19,
+        20
+      ],
+      "query_rank": 1,
+      "clusters": [
+        4,
+        0
+      ],
+      "raw_signed32_scores": [
+        [
+          396,
+          -237
+        ],
+        [
+          740,
+          -1180
+        ]
+      ],
+      "fixture_scope": "Captured trained layer19 projected-cache vectors with an externally seeded old prefix; repeated directed scenarios, not fresh end-to-end model execution."
+    },
+    "trained_score_lanes": 320,
+    "synthetic_score_lanes": 160,
+    "score_count_scope": "Includes zero inactive lanes and repeated trained-pair recovery runs; not320distinct trained queries.",
+    "physical_array_transactions": 144,
+    "independently_checked_array_row_dots": 4608,
+    "enabled_array_row_dots": 328,
+    "trained_operand_pair_bindings": 1536,
+    "trained_eight_array_overlap": {
+      "verified": true,
+      "actual_arrays": 8,
+      "first_phase_input_ticks_ps": [
+        1025000
+      ],
+      "first_array_output_tick_ps": 1065000
+    },
+    "all_twenty_array_overlap": {
+      "verified": true,
+      "actual_arrays": 20,
+      "first_phase_input_ticks_ps": [
+        3715000
+      ],
+      "first_array_output_tick_ps": 3755000
+    }
+  },
+  "contracts": {
+    "descriptor_frozen_through_busy": true,
+    "independent_stalled_result_owners": true,
+    "foreign_head_operand_rejected": true,
+    "stale_query_epoch_and_tag_rejected": true,
+    "first_phase_cancel_drained": true,
+    "final_phase_cancel_with_peer_consumed_verified": true,
+    "final_output_tag_error_with_peer_consumed_verified": true,
+    "held_completion_verified": true,
+    "no_reset_recoveries": 3,
+    "result_commit_rule": "All results are provisional until successful batch completion; cancellation or detected fabric output-tag error revokes held beats and requires discarding already consumed provisional results."
+  },
+  "negative_controls": {
+    "serial_policy_baseline": "Matches64raw score lanes, then native fatal rejects missing overlap.",
+    "physical_serialized_mutant": {
+      "native_exit_status": 0,
+      "all480final_lanes_exact": true,
+      "trained_overlap_verified": false,
+      "all_cluster_overlap_verified": false,
+      "rejected_by_actual_array_timing_verifier": true
+    },
+    "stale_context_original_interface": "Native stale-epoch acceptance failure reproduced before adding per-vector context identity."
+  },
+  "review": {
+    "important_findings": 2,
+    "fixed_with_native_regressions": 2,
+    "final_byte_second_review_performed": false,
+    "host_evidence_checker_tests_passed": 8
+  },
+  "method_scope": "Implements shared-array cluster-tile progress toward paper head-wise workload balancing; whole-head capacity mapping, multi-tile score ownership and full attention-head execution remain incomplete.",
+  "complete_attention_head_concurrency_verified": false,
+  "complete32_head_execution_verified": false,
+  "trained_mapped_layer_verified": false,
+  "full_model_hardware_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "next_requirement": "Join tile scores to the existing per-core normalization engines and value/context service with retained head/query/epoch/tag ownership, then extend across whole-head tiles and all32heads.",
+  "source_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_attention_score_batch.sv": "df2560fb6a9ad5ba843ae3c0126c261a21cfda567dbfe8b6b4ceb6408b685d7d",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/verilog/tri_oracle_attention_score_batch_tb.sv": "aed5d1fffb3631da699ab3247a3439c5b192fc4c591dab867e2508bc6801b62a"
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_final_qualified.json": "5e4e694ca226d5cebf77fbc4cc47d72c3567c8f6f579ee4352877bd771183b94",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/serialized_final_qualified.json": "61ab94ee48f213cd3a60fb0928f9082fa321189f2e076bae29d815046c8ee162",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/baseline_qualified.json": "07b460226d7e4072c8f620a4150d8e5f06dfffa65a0143f08d598a889fb827c2",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/checker_contracts.json": "927d414c268e223e7ee621f8dacd48d153fefbbfcf80e13973798af2cf884cec",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/review_resolution.json": "64de654e63f74b6193abd764dc346e21bc174026071a01750f2d4c70db086b76",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/fixture.json": "6f44b3d4776dc7b8dd1be9b6b77551531812db3ea3375e6eddc9e3104839972e",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/qualify.py": "8e0f769eb3863633d6f7c03987c8143075a9c2c20a41f936c9dc94d87374b327",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/qualify_final.py": "28be00fa27687d00fb36527cc5fbef50bd3b8e463a2d980e89b49eb61e420472",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/test_qualifier.py": "78529cabf4a17c6bc45ee9819aeacadcbc78cdc9a388037ba57c4b2d6fce9284",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/run_retry2.py": "646f59bd7f9e5e614675ffe875b40f41504efa3f35ff85508fa89d59653c3bdf",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/terminal_cleanup.json": "93e1034a419744fbd62ea8c8864902f97452a3444d75140bcc193676ea90b327",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_stale_red/verified_red.json": "edc2efee979ef63bfd419b62620bb3ec99b57fe8f04364d3a9fa98ae6917b55e",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_stale_red/source_recovery.json": "10e8da2cb3d148bc4deee21a1aa0df889244468b8c8c8362412f79fa0a065227",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_stale_red/invocation.json": "fd4bc545f17e1d94b176e2b63e84cbf3805af0ceb222209404bda4960168dfd3",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_stale_red/status.json": "9a11bcf3e94dfdb6557c98185ebfed5fc1212ffa50899c0beddeec2848447f91",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_stale_red/xrun.log": "d55ffe145d827eb79e35f25985b4588a904773e25752f1ac3063d3cb9463e3a8",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_stale_red/console.log": "52019fb723634dc64d9f496e9732a9df01ae590e169e0bc54372767ae125d02d",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_serial_retry2/invocation.json": "794b4b6111f895e1ed8e38cf97897d31f4274ac2803b4bd4db6a23f6a1f770c9",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_serial_retry2/status.json": "e418741dfc59bdcb36b6c0cfbe2ddb6a4c6049450a9ce4425b2ee09a7210864a",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_serial_retry2/xrun.log": "f7034f488af15f826337b7226f7724e0a8cca89fdf951ab07a0115e02f051bc7",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/green_serial_retry2/console.log": "023079418ff7aba5c474c16ebbc901105ea2a63b7f94c969fe9ff2e0ffeae8d4",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/serialized_native_v2/invocation.json": "14a23df05711074826016ecd06ad4617b500bf140e45cfc984b576cd6c864c86",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/serialized_native_v2/status.json": "eeafca3667f9278cd370f6f87612a5b3a0cab6da036e68cdff67a24676240393",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/serialized_native_v2/xrun.log": "dbd5098264c3c8e8e9c684eccb913fee9706097b3af83732b45e988554e5c762",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/serialized_native_v2/console.log": "ae09ecaefc87428b1a69533eedfcce6f242bf3c7a4c95cb59cafc4cddfdd455d",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/baseline_serial_retry1/invocation.json": "5087b44a2f2fc013374962120a6f212a5d3cc893a7ea8130bd453124deabd10e",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/baseline_serial_retry1/status.json": "02408388398fed665cff5d5ebe0104d8a54daa323f26256a4306cbd84d5a032f",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/baseline_serial_retry1/xrun.log": "f5b0d42bb75f07a0b658bdbe3fa40bfc5b7d1cd5a7d755591eba32acae064332",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/baseline_serial_retry1/console.log": "14fe7cdb22be950d5856245583ac94409d033d6a3fe681483dee1eff409bdec6",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/baseline_serial_retry1/source_recovery.json": "0f3396a82856e105be480ef4f427d18239ca12c3ed5534bf55fd77c19918d866",
+    ".cache/late_clipping_20261121/frame_integration/parallel_score_batch_v1/baseline_serial_retry1/executed_tri_oracle_attention_score_batch_tb.sv": "dbae263d69ae23e9ed3d014a98931c5a196d08dff17cb7f76ef13af2873e33fa",
+    ".cache/late_clipping_20261121/frame_integration/two_head_trained_reference.json": "8ec1ffa7beccb7a067f686da99b98998b4e445211711fcb2d7a2e29295dde77a",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/verified.json": "f31b6c6fd9046cd2230c51924d082b9d9da8544db55cabee8364cf01250df61a"
+  }
+}
