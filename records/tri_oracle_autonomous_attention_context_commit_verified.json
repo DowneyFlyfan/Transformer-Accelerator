@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "state": "native_hardware_coordinated_trained32head_context_commit_and_release_verified",
+  "implementation": {
+    "control_module": "verilog/tri_oracle_attention_context_commit.sv",
+    "unit_testbench": "verilog/tri_oracle_attention_context_commit_tb.sv",
+    "trained_testbench": "verilog/tri_oracle_autonomous_context_handoff_tb.sv",
+    "function": "Hardware controls atomic broker/collector admission, accepted-row identities and completeness, producer completion, committed projection routing, finish and collector/window reset.",
+    "declared_sequential_control_state_bits": 109,
+    "payload_register_bits": 0,
+    "new_memory_macros": 0,
+    "declared_state_scope": "Source-declared register widths, not a synthesis or physical-area measurement.",
+    "data_path": "The existing compiled-memory32-head broker, context handoff and projection read window are unchanged. All raw context data travels through their actual ready/valid ports.",
+    "source_binding": "Public control and unit test are byte-identical to executed native inputs. Trained test differs only in its top-module name and six fixture paths resolving to the same private inputs from the project root.",
+    "fixture_scope": "Captured vectors and compiler models remain private under .cache; they are required to rerun the trained test."
+  },
+  "lifecycle": {
+    "admission": "Admit broker and collector atomically; require all32heads and a query fitting the existing11-bit collector contract. Capture query,epoch,tag.",
+    "archive_witness": "Require all_contexts_collected until the first accepted row. Its accepted-head mask retains that proof while the broker releases archives. Identity and duplicate checks apply to every row.",
+    "committed_frame": "All32matching rows, successful broker completion, and converted collector context are required before new projection commands.",
+    "finish_priority": "A pending finish suppresses new-command admission. Committed context routing stays attached while accepted projection commands and bus traffic drain.",
+    "failures": "Cancel is driven from registered Abort state to avoid valid/cancel feedback. Drain the broker and wait for projection idle, reset collector/window, then hold failed completion and reset-required until global reset.",
+    "invalid_configuration": "Reject without partially admitting either child; wait for projection idle before resetting the attached window.",
+    "positive_reuse": "Collector release and query completion are hardware-controlled. Successful completion holds until acknowledgement, then permits another query without reset.",
+    "external_idle_contract": "projection_idle must include command completion and transport idle; metadata clients must honor the existing block/rebuild contract."
+  },
+  "native_unit_controls": {
+    "simulator": "Cadence Xcelium25.03",
+    "container": "tri-oracle-eda",
+    "diagnostic_threads": 1,
+    "positive_frames": 2,
+    "forwarded_rows_including_negative_scenarios": 97,
+    "observed_local_resets": 7,
+    "wall_seconds": 0.9071555349510163,
+    "peer_behavior": "Models archive-complete withdrawal after first row acceptance and row-valid withdrawal on cancellation.",
+    "regressions": {
+      "finish_priority_red_v1": {
+        "exit_status": 2,
+        "required_marker": "COMMIT_EARLY_RELEASE",
+        "wall_seconds": 0.9005456550512463,
+        "source_pin_count": 9
+      },
+      "invalid_drain_red_v1": {
+        "exit_status": 2,
+        "required_marker": "COMMIT_INVALID_CONFIG_RESET_BEFORE_DRAIN",
+        "wall_seconds": 0.9011813239194453,
+        "source_pin_count": 9
+      },
+      "collection_release_red_v1": {
+        "exit_status": 2,
+        "required_marker": "COMMIT_ROW_BACKPRESSURE",
+        "wall_seconds": 0.9018048839643598,
+        "source_pin_count": 9
+      },
+      "cancel_feedback_red_v2": {
+        "exit_status": 124,
+        "required_marker": "xcelium> run",
+        "wall_seconds": 30.443570656934753,
+        "source_pin_count": 9
+      },
+      "early_commit_mutant_v3": {
+        "exit_status": 2,
+        "required_marker": "COMMIT_PREMATURE_FRAME",
+        "wall_seconds": 0.898455458926037,
+        "source_pin_count": 9
+      }
+    },
+    "expected_timeout_scope": "Cancellation-feedback counterexample exited124 at its30-second bound and retained rawNCTERM diagnostics. It is a rejected counterexample, not a passing functional run."
+  },
+  "native_trained_result": {
+    "exit_status": 0,
+    "wall_seconds": 101.77403045305982,
+    "layer": 19,
+    "compact_query_rank": 280,
+    "original_query_position": 615,
+    "streaming_heads": 21,
+    "retrieval_heads": 11,
+    "selected_keys": 4435,
+    "causal_token_size_range": [
+      1,
+      20
+    ],
+    "tensor_requests": 9011,
+    "physical_arrays": 20,
+    "instrumented_memory_macros": 606,
+    "memory_witness_scope": "600 core/aggregate-family macro witnesses plus6 existing collector memories; not a full-chip memory inventory.",
+    "array_transactions": 1128,
+    "independently_verified_row_dots": 36096,
+    "exact_context_values": 2048,
+    "exact_projection_code_values": 2048,
+    "projection_bus_words": 256,
+    "common_context_exponent": -7,
+    "observed_peak_leased_output_words_per_core": 7,
+    "observed_peak_total_leased_output_words": 67,
+    "output_words_available_per_core": 16,
+    "actual_archive_word_writes": 64,
+    "actual_output_lease_events": 538,
+    "producer_completed_before_commit": true,
+    "all_projection_reads_after_commit": true,
+    "collector_released_before_query_done": true,
+    "no_errors_or_warnings_in_positive_native_runs": true,
+    "raw_logs_preserved": true,
+    "source_operands": "The prior captured projected cache and fixed-scale integer reference; no fresh hardware projection is claimed for this test.",
+    "minimum_host_available_bytes": 12885368832,
+    "peak_container_anonymous_bytes": 4122558464
+  },
+  "host_negative_contracts": [
+    "commit_before_producer_completion",
+    "foreign_committed_tag",
+    "failed_producer_committed",
+    "missing_collector_release",
+    "projection_read_before_commit"
+  ],
+  "qualification_limits": {
+    "full_outer_decoder_command_data_integration_verified": false,
+    "live_metadata_client_ownership_verified": false,
+    "actual_output_projection_matrix_multiplication_verified": false,
+    "complete_paper_workload_balancing_verified": false,
+    "current_mapped_candidate_verified": false,
+    "full_model_accuracy_verified": false,
+    "routing_or_timing_verified": false,
+    "paper_matching": false,
+    "paper300_advance_allowed": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/control.sv": "b46e98311ac63a8330d8b4529d0865e5f7a03f0022902e17dd9853b55ecd764f",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/unit_qualified_v2.json": "54722c9bb4c295b5c1137ae2448e0bb908e15b00e1126dfdca3ef77a7fb465b3",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/qualify_units_v2.py": "edbe61861ab096de142c587b91b3143436d1f5692373dc02edb0aac087cb10b1",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/trained_qualified_v2.json": "e385d286c9f4bc4caaae52adee9b7b4fff1bc95d32679c3ed252e8df63c1f1b3",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/audit_trained_frozen_v1.py": "b4cad18a3c3f5b7eb7d23ca224b07f92a4a4e6f4d1b45568cf815acd3230f3e3",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/trained_flow_qualified_v1.json": "93a01454a78303445ccd6d52f3fefdd139729aa15402050caa19dd656dcd825c",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/qualify_trained_flow_v1.py": "aaafafd1acb38b6ac7487cea5c251de4370e3d7f126503e7f8fa7a4286f981d8",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/public_source_binding.json": "2f359aca024dee85ab516c0b90d74b12a7d11daac8cddb3741975d00be5bd1ad",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/prepare_trained_v2.py": "59eaf8614b92cc0f7765cb3e56ce62968a050d813a1199d269a1e95179546404",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/run_trained_sequence.py": "a8c5bb4427e852317b6e5e16fe0552cfc8ff7f6d3e075bd74699c54d21fd3467",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/run_trained_trial.py": "40b94910d657d0d780f2eed616f6ae1e5b0ed3dd82748eca0c2cc532819b4327",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/trained_v2/native/xrun.log": "5bd27cbb1fdcf397cf6438776d4166cafabd8c0b9f40bd6f0fdde2ff2ca3b29f",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/trained_v2/native/console.log": "9539c98b699006abb713ab215993375dc573d834e2f7f2be9a36e4ac13a9a278",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/trained_v2/native/invocation.json": "500c5d2593242e06f0713c7ff21156f1cbffaf22de1a2d9503411e42bb322383",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/trained_v2/native/status.json": "ec65a736d4f13c071ea3b69b6ce9138a149494cd1f159d5d8b7193e35600b8de",
+    ".cache/late_clipping_20261121/frame_integration/autonomous_attention_commit_v1/trained_v2/sequence_terminal.json": "4fc41e8b20e29f041b63a1d2007c6f5d3d149c7eb88cda697f6d22dc578a8e1f",
+    "verilog/tri_oracle_attention_context_commit.sv": "b46e98311ac63a8330d8b4529d0865e5f7a03f0022902e17dd9853b55ecd764f",
+    "verilog/tri_oracle_attention_context_commit_tb.sv": "f665fd9826ae74eb596bb071fc4db29660b7b3eb0c4a180e185762f93bcf5dd9",
+    "verilog/tri_oracle_autonomous_context_handoff_tb.sv": "1bd46d2b6ea275b5307ab4e6c599c27d8f010a31840e673eda387acc09145563"
+  }
+}
