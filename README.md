@@ -2,7 +2,9 @@
 
 SystemVerilog reproduction of the [Tri-Oracle vision-language accelerator](https://doi.org/10.1109/ISSCC49663.2026.11408987) for Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+.
 
-The placed 20-core design matched four attention rows and 32,768 trained feed-forward outputs in Xcelium. Routing, timing closure, and full-model validation are pending. [Verified results](records/tri_oracle_placed_replay_result.json)
+A 20-core Xcelium test matched 32 attention heads and 2,048 trained projection outputs using the same arrays. [Verified results](records/tri_oracle_shared_attention_projection_verified.json)
+
+The updated integration still needs mapping, full-model validation, routing, and timing closure.
 
 Run the regression inside the Cadence container.
 

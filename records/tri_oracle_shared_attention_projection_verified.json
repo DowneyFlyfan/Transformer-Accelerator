@@ -1,0 +1,62 @@
+{
+  "state": "twenty_shared_arrays_attention_context_and_trained_output_projection_functionally_verified",
+  "process_adaptation": "Taiwan Semiconductor Manufacturing Company 28HPC+",
+  "scope": "One trained layer19 query at retained rank280. Captured projected query/key/value operands enter the real broker; committed context feeds the real trained output matrix on the same twenty arrays. Raw integer output accumulators only.",
+  "actual_arrays": 20,
+  "compiled_memory_witnesses": 606,
+  "attention_heads": 32,
+  "selected_attention_keys": 4435,
+  "exact_context_values": 2048,
+  "output_projection_matrix": [
+    2048,
+    2048
+  ],
+  "exact_projection_output_values": 2048,
+  "hardware_context_word_reads": 3328,
+  "weight_word_reads": 524288,
+  "physical_array_transactions": 17768,
+  "physical_row_dots": 568576,
+  "native_seconds": {
+    "positive": 446.63793969200924,
+    "response_error": 100.02660964382812
+  },
+  "native_exit_statuses": [
+    0,
+    0
+  ],
+  "masked_held_offer_finish_verified": true,
+  "accepted_nonlast_error_response_beats_drained": 16,
+  "failed_frame_requires_reset": true,
+  "output_payload_registers_added_by_owner_and_guard": 0,
+  "additional_compute_arrays": 0,
+  "fresh_query_key_value_generation_in_this_run": false,
+  "whole_decoder_integration_verified": false,
+  "updated_integration_mapped": false,
+  "quantized_projection_outputs_verified": false,
+  "full_model_accuracy_verified": false,
+  "routed_timing_closed": false,
+  "paper_matching": false,
+  "source_sha256": {
+    "verilog/tri_oracle_fabric_owner_types.sv": "29bdea22e103061f66f36e5c5dbd8ca11393755dd39695f618b84b2cc9a647b5",
+    "verilog/tri_oracle_fabric_owner_mux.sv": "ceae4cb46b93912cf92e373c59e1b9f8a567abcd8eb996e9365775f9843bf8b6",
+    "verilog/tri_oracle_projection_frame_guard.sv": "bef0550ced9aff6136e73fc3d36bb33007fd1f8891b1feed4fd7450b21f70e16",
+    "verilog/tri_oracle_external_tensor390.sv": "6fe0a471ec10502693a7235475867004dc99ec9675fd3439440d97bf9c5aefca",
+    "verilog/tri_oracle_projection_error_burst_probe.sv": "f8319ab73618c998685bd61437e0ecfd689102dbe2dfd5b3f958493425c04c92",
+    "verilog/tri_oracle_fabric_owner_mux_tb.sv": "6836a11c6a3f3f24c07412aa8ea56bbd77aa0170e8aa73ae04b03a721f4df9d8",
+    "verilog/tri_oracle_projection_frame_guard_tb.sv": "2c46fc76ca09b056433ba3a839787c16cc87e167d6f103b5fc257c56efd3db36",
+    "verilog/tri_oracle_shared_attention_projection_tb.sv": "a610eba64e745c735f8495f4d3d5c92d793e8aedf8807befa8b09a6db14e04ee",
+    "syn/audit_tri_oracle_shared_projection.py": "dfac626ebcaacc79773f065fb8b0f4c023b3dc011799648ad08e35b47a62e236",
+    "syn/test_tri_oracle_shared_projection_audit.py": "034dde3d3ac012788fc4a74c0830b0f27282594104d0a3efce84eae0a6e6aef7"
+  },
+  "local_proof_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/positive_qualified.json": "78afe7f29f9adaf971a2a21d9eb0302d9cd2f5a826c8779798830d4453984e1b",
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/error_qualified.json": "d1263a10cfe7e4f99fe11e67e8e121bcc5e8490bbe76256d3bbbd81df533829f",
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/shared_inputs.json": "65f408309cf02f729918551840e4fc6e222a4d3c1621c7068ea38e39551ebbc0",
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/output_reference.json": "fdb57fa30ad8980d3dae0bdfdfff93c998b1cebaa9d1d8603dcc6d34841ce464",
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/audit_coverage_green.log": "1c3871c5febfd2946660539d629bfe4380a439eb182f66b06cb2c57448f1a7fb",
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/audit_error_green.log": "442469bdd2889858de7066ade441cca3464c41776c90bf1ebf3bb75078fec34d",
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/guard_native_result.json": "158ca107770569e2a76d043412569d8ede0ab2b937815b274b71893f6039fa23",
+    ".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/mux_native_result.json": "2d444f782fda06b0987777974ef7ea4b3965752b57a11989a6f08205216db137"
+  },
+  "optimized_python_verification_explicitly_refused": true
+}
