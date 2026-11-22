@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "state": "shared_value_accumulator_trained_datapath_and_context_memory_verified",
+  "implementation": {
+    "module": "verilog/tri_oracle_attention_value_accumulator.sv",
+    "testbench": "verilog/tri_oracle_attention_value_accumulator_tb.sv",
+    "function": "One shared64-feature unsigned16-probability times signed8-value accumulator; signed32 wrap preserves the existing row426arithmetic contract and65535probability scale.",
+    "resident_context_capacity": 20,
+    "context_storage": "Existing per-core output slots14/15, with no per-head accumulator-register copies.",
+    "source_state_bits": 4309,
+    "shared_data_register_bits": 2576,
+    "descriptor_and_control_bits": 1733,
+    "data_register_breakdown": {
+      "shared_staging": 2048,
+      "shared_value_vector": 512,
+      "shared_probability": 16
+    },
+    "additional_compute_arrays": 0,
+    "additional_memory_macros": 0,
+    "ownership_fields": [
+      "physical_owner",
+      "head",
+      "query_rank",
+      "epoch",
+      "transaction_tag",
+      "next_selected_key",
+      "complete",
+      "poisoned"
+    ],
+    "operations": [
+      "update",
+      "read completed context",
+      "release context"
+    ],
+    "write_protocol": "Acquire one exclusive idle cycle to clear prior registered load errors, then retain fabric_lock through both write/error checks. The arbiter must honor the lock; illegal grant withdrawal poisons the partial context.",
+    "cancellation": "Unaccepted reads may be withdrawn on cancel; accepted reads drain. Partial updates require explicit release. A response already valid remains stable through acknowledgement.",
+    "integrated_into_current_mapped_candidate": false
+  },
+  "trained_native_path": {
+    "simulator": "Cadence Xcelium25.03",
+    "container": "tri-oracle-eda",
+    "diagnostic_threads": 1,
+    "wall_seconds": 15.405586032895371,
+    "source_invocation_pins": 64,
+    "physical_arrays": 20,
+    "vendor_memory_macros": 600,
+    "heads": [
+      19,
+      20
+    ],
+    "query_rank": 1,
+    "clusters": [
+      4,
+      0
+    ],
+    "raw_scores": [
+      [
+        396,
+        -237
+      ],
+      [
+        740,
+        -1180
+      ]
+    ],
+    "scaled_signed16_scores": [
+      [
+        396,
+        -237
+      ],
+      [
+        370,
+        -590
+      ]
+    ],
+    "unsigned16_probabilities": [
+      [
+        60434,
+        5101
+      ],
+      [
+        64029,
+        1506
+      ]
+    ],
+    "final_context_values_matching_saved_native_reference": 128,
+    "trained_eight_array_overlap": {
+      "verified": true,
+      "actual_arrays": 8,
+      "first_phase_input_ticks_ps": [
+        1015000
+      ],
+      "first_array_output_tick_ps": 1055000
+    },
+    "maximum_same_clock_normalizer_memory_owners": 2,
+    "head20_finishes_while_head19_next_probability_is_held": true,
+    "scope": "Captured layer19 query/key/value operands for two causal-prefix keys. Scores, scaling, probabilities and context accumulation execute in hardware models; the testbench schedules transactions. It does not implement the production head broker, fresh full-model query/key/value projection, or the complete32-head workload.",
+    "memory_macro_count_scope": "Counts only the three instrumented core/aggregate memory-model families. This is not a complete accelerator memory inventory."
+  },
+  "independent_audit": {
+    "request_response_pairs": 364,
+    "checked_signed32_response_values": 20224,
+    "response_count_scope": "Includes repeated readbacks and synthetic protocol/overflow/capacity cases;128distinct final values are the trained comparison.",
+    "actual_memory_reads": 578,
+    "actual_memory_load_controls": 649,
+    "distinct_context_memory_words_written": 40,
+    "independent_array_row_dots": 512,
+    "enabled_array_row_dots": 32,
+    "fault_cases": 6,
+    "all_twenty_resident_contexts_verified": true,
+    "host_checker_contracts": 11
+  },
+  "negative_controls": {
+    "original_row_controller": "Real normalization/value arithmetic gives the exact64-value first partial sum, but its single active row blocks another head; baseline tensor scores are directed inputs.",
+    "foreign_error": "The pre-fix unit incorrectly rejects request33when a prior client error overlaps first grant; native failure reproduced.",
+    "skipped_context_restore": "An actual one-branch mutant retains the other head partial sum and returns45568instead of52758for head20feature0; full mixed result words independently decoded."
+  },
+  "integration_requirements": [
+    "Production broker must honor write/error lock and retain per-head request and response ownership.",
+    "Consume internal update completions independently of externally stalled head results; retain completed heads in owned memory.",
+    "Implement whole-head score tiling and the32-head schedule behind the existing outer chip interface before mapping."
+  ],
+  "production_head_broker_verified": false,
+  "complete_attention_head_concurrency_verified": false,
+  "complete32_head_execution_verified": false,
+  "trained_mapped_layer_verified": false,
+  "full_model_hardware_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "source_sha256": {
+    "verilog/tri_oracle_attention_value_accumulator.sv": "e6c9023c651407e219d23979854899d0493e5bb002837ab8aed4654dc821dc97",
+    "verilog/tri_oracle_attention_value_accumulator_tb.sv": "2f65799f856b728a988f182ed6b4e09448ad1c7e856b8d01b5e95ff432150ed5"
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/qualified.json": "2ac542980c4696e4e8d08c252fcfce1e2dfb75efb1f92597ff1d164a706870a3",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/baseline_qualified.json": "6575435818596839da1c0b1a72973e74d4c7eb26377534506539c41531c6256b",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/mutant_qualified.json": "c32b9ae9fb8f4da4cb3c18b3033b6bf0035ab2924f2c566ad0b974162ebf6011",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/checker_contracts.json": "4b268fb103f833d5269e3504f35ae83c1e4ad30361ed087d8bebceb626a039b5",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/review_resolution.json": "be2c6e4f71c25e4e84b63e208415356c27c15c1adca81ac208843283f0c91f52",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/terminal_cleanup.json": "64094e96a9ea63484e4042fa18bd430216ca32dcc8410e6970e38d3ed186b6b8",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/reference.json": "8ec1ffa7beccb7a067f686da99b98998b4e445211711fcb2d7a2e29295dde77a",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/values.hex": "425da4a75048974816839dea9f17cea0d4d77fcf8b88177f79d0fb2333c4aed7",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/contexts.hex": "d799a2cff5cf46141f77289d3bf3c207badef9793ef9c84633e906d8fb018a90",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/qualify.py": "8197243651e00c7dba3747a5db2604eab298f6c233c94388ade960bc4ebbd191",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/test_qualifier.py": "b9cce88ffd6828c229c1f075cc21db24e49a36a8aeb9e107ef20efcb541134f8",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/run_retry1.py": "153209bb24d34ca75108365535d202defc4b81a6d86e36f75cc6faedf6dc4cea",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/run_context_mutant.py": "0ae0e7ece308d8f58827133c9cbd28ea935602376bc6b4cd95b63fc37357ca9e",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/physical_probes.sv": "8f89e0755e750a3f1dba8eb14700334f17452405ce0bba76c553a9d90800b680",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/normalizer_probes.sv": "c5aa1e7e8e12dfd1f5897c3bf753763eaefb7059831f3c73a268674308da12f1",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/baseline_native/invocation.json": "f01460aae3d1096b2096e8077d0c073e63a9fed33ea2a5c3914ad2efce1fca3e",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/baseline_native/status.json": "827ce631c0064977bd2cce3776b4f5cf472ff384cf7d963372ac0adb4fddcc19",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/baseline_native/xrun.log": "f6bc6d358a0073d7c32838d7a4cf8a6a0e4beb13964bf5ddb97a3733d02edec8",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/baseline_native/console.log": "3820e6eb88f315cf876a9427d8cc961309d77db999224ae5338329abe3c0f232",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_native_retry1/invocation.json": "230bee06b9a0685f7633c96dc8a1ca475b03bf682f8de790ba21a50015a0dba9",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_native_retry1/status.json": "57eca82553db717052a6c79a0acfd0e948fab45c6c164648f08e63dcc2a23d96",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_native_retry1/xrun.log": "2cc8c360c1e4255a16631cf7c65c3631cb2a82dfc845fe7b8d696cb29d4622b4",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_native_retry1/console.log": "8c9619efda20a889264e755f1b9a4fa499259258cf2308d47f93f3c0cd0a6fae",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/context_mutant_native/invocation.json": "ee75db9d073b39f1532af8e5b8d6062f0fe20e798241bdabb412e144d49ec883",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/context_mutant_native/status.json": "c1fdd9e5b36b31be1a65e7719617c41a4c4e53bdaad3d3b8d2fcf7082984fbeb",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/context_mutant_native/xrun.log": "f7416f31cdf11a4c4ad414713f2e520848461f2b73fe286fe96dd4c7de2f6ede",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/context_mutant_native/console.log": "210d96bb25bfc872a987e5f82c9a0194257baed68394c615168431d024d01660",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/invocation.json": "7403f788ff279dd18c0f1d3a7a840a064da603f7980df88666e2355580c9afae",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/status.json": "268519ca24f36cb4c00d1990ba3161cf245fdcc2e04a18e49f376e9ec400003a",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/xrun.log": "79391e6bb07fd195f1a4569f6a6086b87e51004b2209f02f4b67155886fda0a3",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/console.log": "39e6226ccdad3f3e0e258aa135eec45b5bc9c5ece7a6400c6e137218a6b85b0d",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/verified_red.json": "0b1e0cadca07717f06644e62c088079782b65abc6d6b8795b5a61e9901b7124e",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/source_recovery.json": "142adc2524c6dd0003c9303c94af9d33a4a8948aed602afbfc9a9cdfb16b9afc",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/executed_tri_oracle_attention_value_accumulator.sv": "1c1e2b45913ae323752983b69775f70004776b95ea8c919fc16b5f399ae9d259",
+    ".cache/late_clipping_20261121/frame_integration/shared_value_accumulator_v1/green_error_red/executed_tri_oracle_attention_value_accumulator_tb.sv": "2c520d4f3cecad4e9c04b8ce036e878231b9f63cf94b1b15112946f3502bff16"
+  },
+  "complete_accelerator_memory_inventory_verified": false
+}

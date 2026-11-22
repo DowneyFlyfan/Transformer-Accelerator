@@ -44,7 +44,8 @@
     "owned_context_four_core_sum_refused": true,
     "unwritten_slot_read_refused": true,
     "released_context_legacy_accumulation_verified": true,
-    "reset_invalidates_ownership_and_recovery_verified": true
+    "reset_invalidates_ownership_and_recovery_verified": true,
+    "memory_macro_count_scope": "Counts only the three instrumented core/aggregate memory-model families. This is not a complete accelerator memory inventory."
   },
   "native_five_cluster_compatibility": {
     "wall_seconds": 13.910701354965568,
@@ -69,7 +70,8 @@
       ],
       "first_array_output_tick_ps": 3755000
     },
-    "scope": "Existing raw-score batch regression with the new generated core/cluster source; not complete attention-head execution."
+    "scope": "Existing raw-score batch regression with the new generated core/cluster source; not complete attention-head execution.",
+    "memory_macro_count_scope": "Counts only the three instrumented core/aggregate memory-model families. This is not a complete accelerator memory inventory."
   },
   "negative_controls": {
     "original_source_context_write_rejected": true,
@@ -138,5 +140,6 @@
     ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/source_recovery.json": "2f2c3c535b66adffab425ced7e0c11ca5986c8d6014829e37a1c7cf7b418c726",
     ".cache/late_clipping_20261121/frame_integration/output_context_storage_v1/baseline_native/executed_testbench.sv": "cbe5d1d823a4a005539e6a688b61ee52c1bb6a4d8914b0b80ae28f30541e5a6b",
     ".cache/late_clipping_20261121/frame_integration/two_head_trained_reference.json": "8ec1ffa7beccb7a067f686da99b98998b4e445211711fcb2d7a2e29295dde77a"
-  }
+  },
+  "complete_accelerator_memory_inventory_verified": false
 }
