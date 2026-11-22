@@ -1,0 +1,100 @@
+{
+  "state": "trained_learned_prefix_and_native_error_detection_verified",
+  "scope": "One two-token ordinary layer19 prefix through actual trained normalization, sign fetching and prediction, row metadata and Gate/Up computation. This is not a complete learned frame, whole-model execution or paper performance.",
+  "geometry": {
+    "tokens": 2,
+    "hidden_features": 2048,
+    "intermediate_channels": 5632,
+    "configured_output_features": 2048,
+    "cores": 20,
+    "clusters": 5,
+    "compiled_memory_instances": 602
+  },
+  "prefix": {
+    "normalized_values": 4096,
+    "raw_projection_values": 320,
+    "gated_values": 160,
+    "exact_predictor_margin_values": 704,
+    "plane_bytes": 320,
+    "metadata_words": 8,
+    "final_projection_outputs": 0
+  },
+  "negative_controls": [
+    {
+      "case": "corrupt_up_signs",
+      "expected_failure": "LEARNED_CORE_EXACT_MARGIN",
+      "native_exit_status": 2,
+      "seconds": 14.601944325957447
+    },
+    {
+      "case": "duplicate_raw",
+      "expected_failure": "LEARNED_DUPLICATE_RAW_COORDINATE",
+      "native_exit_status": 2,
+      "seconds": 110.9689226069022
+    },
+    {
+      "case": "duplicate_gated",
+      "expected_failure": "LEARNED_DUPLICATE_GATED_COORDINATE",
+      "native_exit_status": 2,
+      "seconds": 110.96938747982495
+    },
+    {
+      "case": "forced_all_keep",
+      "expected_failure": "BATCH406_GATED_INTERMEDIATE",
+      "native_exit_status": 2,
+      "seconds": 11.84676184807904
+    }
+  ],
+  "multicore": {
+    "same_hardware_test_inputs_and_numeric_checks": true,
+    "serial_seconds": 111.45556586189196,
+    "multicore_seconds": 157.058696269989,
+    "multicore_to_serial_wall_ratio": 1.4091597405248053,
+    "requested_simulation_threads": 20,
+    "reported_worker_engines": 18,
+    "multicore_corrupted_sign_control_also_rejected": true,
+    "retained_resource_diagnostics": [
+      "xmsim: *W,MC: Setting only 18 engines (while trying to set 19), as this is the maximal number of engines for this configuration on this machine.",
+      "xmsim: *W,MC: NUMA error - Failed to allocate memory on requested node. This may result in performance degradation. (mbind failed) (Operation not permitted)",
+      "xmsim: *W,MC: NUMA error - Failed to allocate memory on requested node. This may result in performance degradation. (mbind failed) (Operation not permitted)"
+    ],
+    "parallel_speedup_demonstrated": false,
+    "memory_placement_optimal": false,
+    "selected_full_frame_mode": "serial"
+  },
+  "full_trained_learned_frame_verified": false,
+  "closed_loop_model_verified": false,
+  "mapped_memory_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_prefix/xrun.log": "b88b8d9c69f4a45e5d047f4a7cc528205033c0caef128f829e35f8f79eb7c798",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_prefix/console.log": "077ffe7255c47a8ebd33969887c5d28178470e4ef187c1116238a7a5c7c2fca8",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_prefix/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v5_prefix.json": "3bd7950fc07bff1f88386713ebac2e6127fbfd6041568da48fb3aad3078458f3",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_corrupt_up_signs/xrun.log": "17ce4e350b108684bba34840bc176ff265f5e3b20659ea82384db3ce5b7c60dc",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_corrupt_up_signs/console.log": "84836ba4dcc792fc2e65f4713555c2b935d844b84a6e0578e5bfef6f4067c1f5",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_corrupt_up_signs/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v5_corrupt_up_signs.json": "2c3221508916b1ca7ec033b3f2fc4c7ddc72df9097c608d2feab9561bfb0a971",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_duplicate_raw/xrun.log": "30e51ca95dea76ff11f3c943c7b101063ce1c9193567f27a0c468dd97273f056",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_duplicate_raw/console.log": "e66fe5e7089f99327dd58a891d1a5d7476f161e8f23651bce5761beaef5c364f",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_duplicate_raw/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v5_duplicate_raw.json": "6e713c4a0695c22c2097bccc55e5d36089e1c124572291c549ec457a93639465",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_duplicate_gated/xrun.log": "b9c39fb9d6b47d45232011c38a960a8d556ac3e6083155560288984e42fa033b",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_duplicate_gated/console.log": "d1ddd1f8e6dc2f7696144144f42f1f57348bc00b4e8b0b2d903f78083df2f02c",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_duplicate_gated/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v5_duplicate_gated.json": "9515e3d94faa3629d09246bc5ca459929888a72e338973513198ea5879b5ddc4",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_forced_all_keep/xrun.log": "e535531d5afc97bfb418e370169b57240ed4bcc74fafe0769765c1acba05aa8f",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_forced_all_keep/console.log": "fcc41081ad582b2ba6e61f09c46472554ecf1e2a92c91ea8d909d429366f26ff",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v5_forced_all_keep/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v5_forced_all_keep.json": "a4210bc81c49e76b33a3b601f0b9557c3d0666b72786a44b51f75a36636c9374",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_prefix/xrun.log": "face48a35c5fbc57e1bf0e415a693900eec7df83cf8c0c779bbefa9b652ba6e8",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_prefix/console.log": "027fc2cee855ee82d57b8b3c95450756a81156ac1d816abf66799e4f564e3995",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_prefix/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v7_prefix.json": "8954a2fbbcebc56455e8bfbb480c502223dff15eb04f247a3500240c436e663e",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_corrupt_up_signs/xrun.log": "719b8b8a474ef4a4198c7dd320608ec7b970cc25ba1143553512686ee38fe5cb",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_corrupt_up_signs/console.log": "33fc4709c43a06bd413037f74b27fd5ded4020340f82f11c49e13536108f11c9",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_corrupt_up_signs/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v7_corrupt_up_signs.json": "6fa09ca7ba5fa0ac0c3914612d4bfa1b8cc649d2c07892c05570905e2ab35485"
+  }
+}
