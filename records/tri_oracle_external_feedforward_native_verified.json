@@ -1,0 +1,256 @@
+{
+  "state": "external_feedforward_controller_chain_native_functionality_verified",
+  "description": "Extracted controllers use the existing external tensor controller and a caller-owned twenty-array fabric. Control and nonlinear bodies are preserved. The native test uses literal reference data, not a full trained layer.",
+  "public_source_bindings": {
+    "verilog/tri_oracle_external_shared392.sv": {
+      "sha256": "034884b440145e8db67fe95663f1db37256f39bcec721fde8c5ca6a6cbb79c25",
+      "tested_private_source": ".cache/late_clipping_20261121/frame_integration/external_feedforward_v1/tri_oracle_external_shared392.sv"
+    },
+    "verilog/tri_oracle_external_frame437.sv": {
+      "sha256": "3a960504a681be00d10ecf84fc6cf256b35e0ff6550c0dd797b4addab96b79dc",
+      "tested_private_source": ".cache/late_clipping_20261121/frame_integration/external_feedforward_v1/tri_oracle_external_frame437.sv"
+    },
+    "verilog/tri_oracle_external_learned437.sv": {
+      "sha256": "821d2ad02a10a7d52db33ade789a0b1d2e87bd85ecf934138b83a7e74cbca16c",
+      "tested_private_source": ".cache/late_clipping_20261121/frame_integration/external_feedforward_v1/tri_oracle_external_learned437.sv"
+    },
+    "verilog/tri_oracle_wac_softmax_types.sv": {
+      "sha256": "cac22ed5ac6347fb495886325cb5854a082ce2dc0edb572b295ff7761d62f2bf",
+      "tested_private_source": ".cache/physical/wac_core_local_scores_verified/wac_softmax_types.sv"
+    },
+    "verilog/tri_oracle_external_ff_literal_tb.sv": {
+      "sha256": "2a45e3934e65ff3ec7c52d32af5dfd114381eeb8edbce12f35c11ccdef1be5db",
+      "tested_private_source": ".cache/late_clipping_20261121/frame_integration/external_feedforward_v1/literal_tb.sv"
+    }
+  },
+  "native_configuration_sha256": "d47d10460096a60c000b900bfcc599b703aa235565779eb5708a285ecd23d7e8",
+  "native_source_pins_checked": 101,
+  "preserved_source_modules": 3,
+  "backend_field_connections_checked": 23,
+  "cores": 20,
+  "clusters": 5,
+  "selected_compiled_memory_witnesses": 602,
+  "selected_memory_witnesses_are_complete_memory_accounting": false,
+  "cases": [
+    {
+      "fault": 0,
+      "hidden": 64,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 16.856186385033652,
+      "source_invocation_sha256": "ac5662adbb02ae5f0300537c544d5f301f454e2cf688f386dc7af3d065d7f396",
+      "native_status_sha256": "f4ffcf90b91d342e4b1f1d5518b23075fb0a903f1ae69e90ad13b9a0e5c91b9e",
+      "canonical_log_sha256": "866544bb6015fc2e888ac4f34919c2d4dfba1febfaa250c11efcaa339b380c84",
+      "console_log_sha256": "330595cc2a286fc4cd93c4623f581c060b26f8d5a8b6a6553e06db7729b80a3b"
+    },
+    {
+      "fault": 1,
+      "hidden": 64,
+      "intermediate": 192,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 23.61272254306823,
+      "source_invocation_sha256": "0eaccf124430d4cd2effde9f6129fe21923c7074b14307634aaac3a8cd33cb61",
+      "native_status_sha256": "473b8b1c5bb42a0019f152ef4341fc13d7ec0b3081e68ed1a3669f351ae8cc79",
+      "canonical_log_sha256": "067cbfac9bf5b2afcabc73449b20d7234528d7e294efa553ae884f20a496c6d7",
+      "console_log_sha256": "b530c98d58913985859e466f117ab12937097df3b557515186e5acaf384be6f0"
+    },
+    {
+      "fault": 3,
+      "hidden": 64,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 22.359077140921727,
+      "source_invocation_sha256": "41014eceeb15416faadb7ecdd854eef12cabe8bf85319045600986ed9c938079",
+      "native_status_sha256": "c81478b8b22399e79844a37891bf63b886ca463d32c9fdcaa5e6ab284fbadfc0",
+      "canonical_log_sha256": "ee8248ccf30316bed82dc8a2f4519f864fa04df8d6e122f6a3ab9621ce8a40d2",
+      "console_log_sha256": "246894cc7102d0d1e7cfb84c2b2da8020d9b4796d9e0fda8f90e7a0ff77ee3f5"
+    },
+    {
+      "fault": 4,
+      "hidden": 64,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 15.603323702001944,
+      "source_invocation_sha256": "d19c05e06b069e6080c91ca0d7892ca5ddb6fff7460a32590a197bdcd5a95864",
+      "native_status_sha256": "d1bc41e006dc6ef126a264baba0e2e563b87943677d62640bb0276abdb9fe4d9",
+      "canonical_log_sha256": "cb84d61a014cb63fd39bb42c82e0548aaf94876ccdc35adccd1e37fc7730e4d3",
+      "console_log_sha256": "2ce60dad4f8a8c123bd29dc94b863226878f711672f66e0018cdb142f99b95c3"
+    },
+    {
+      "fault": 5,
+      "hidden": 64,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 15.607143302215263,
+      "source_invocation_sha256": "6a8fac24baf100e0a81131364633c27716c748dbfd0eaa15853492e3002054af",
+      "native_status_sha256": "22ffa9be591f92625e8090e5a1071fdcff69775dcf131560b0f0828872d05817",
+      "canonical_log_sha256": "4ac4438d5547af85b2f6595e197296ba85bcfaae0ece1f2654a1ec0ab8fe7497",
+      "console_log_sha256": "f11398f87c8f04561a9bbd87afb987af81d634e89eaeab9bdb77a8a9d131dce6"
+    },
+    {
+      "fault": 7,
+      "hidden": 64,
+      "intermediate": 192,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 22.862779868999496,
+      "source_invocation_sha256": "258c3406e4e9827e5eff63807fa17a85595ad285c0b1e8b6e03ebdc40974d695",
+      "native_status_sha256": "a9eca74c3d7608deee43197f6e2a972cfcc2ad796bd2a8c73837ec97d70f4220",
+      "canonical_log_sha256": "ecc1d22dfc604a776968d5701eb322a39a7296d76513b7e966497c7d29d2ce33",
+      "console_log_sha256": "128a401c50ee38cce71a5a4f9fd2876433bcaaca91fe0c07f96ba17a83ea3dd0"
+    },
+    {
+      "fault": 11,
+      "hidden": 64,
+      "intermediate": 192,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 25.621511578094214,
+      "source_invocation_sha256": "a497c99bc1be0affaecc3e84e328ea25a36d8a6ae7553a337b3da79e12e84f89",
+      "native_status_sha256": "f2c4ab2c4812700db108eaea2d8d9be4000c231fc74daecbd96ea2f638e351af",
+      "canonical_log_sha256": "4a957bdacca646f28368ad606994c8d7ebe4bc9cf7daccb6bd126446074e84b1",
+      "console_log_sha256": "1423725ba31f7712d0250d6b2bcae2a9a4a7451741c00c4e5d5bde0e51d36809"
+    },
+    {
+      "fault": 12,
+      "hidden": 160,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 16.362155582988635,
+      "source_invocation_sha256": "8e3cfab92ef8884e03e100bd58a4345ff5925abdddacd3f5ae334181b147c40e",
+      "native_status_sha256": "b58ea46bf963a4be73d4579f84195a85add62a3c085307a0859908d166d17e25",
+      "canonical_log_sha256": "f9ec13d7810608ba0d055adba18212dec45f90c17e8f389536bf53a52007c23e",
+      "console_log_sha256": "1e89de734f4f9ac0399dc8f75b920ab678ecde97e7874a489b8fabcf413a2e0e"
+    },
+    {
+      "fault": 13,
+      "hidden": 160,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 16.361216818913817,
+      "source_invocation_sha256": "5f7d3b450c86a29e2c398c33859c1159aed1d5161354ff9b295fbce076a849cd",
+      "native_status_sha256": "14e74d5837cb5e6b6684d48fbb3c2356d7f511b115daeea3561a5f6b1048cd68",
+      "canonical_log_sha256": "4a20b2719be8d26d93d340716f9cf0404de4382f785bbfdf14fe3ffeafba5171",
+      "console_log_sha256": "93b29f800f13aadac9a59baf0e71eb2e34e18642f1654bcf55488a905e9a7df8"
+    },
+    {
+      "fault": 14,
+      "hidden": 64,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 15.608490137150511,
+      "source_invocation_sha256": "e87c3f20fa1755aa748fd97aa36d277789750b30f53b1b79a5cfcd64e973007c",
+      "native_status_sha256": "6bd4f4539afa0c26ebd51afaade86215520ff2452c4fbb1fd5739be11edb15b8",
+      "canonical_log_sha256": "5d4036ac10bdc97f2ad8e4ef2d45780a40ef2d58123ba3533e2c71e942d4d3c1",
+      "console_log_sha256": "c711612afb92eb615524277bb238bab6679370cb792ee489a45b5fc385337267"
+    },
+    {
+      "fault": 15,
+      "hidden": 64,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 15.852987702004611,
+      "source_invocation_sha256": "eb8d00139744bbdf8f66556400ac1bdc932924e5af59b71763d98dd63bf56b4b",
+      "native_status_sha256": "5fe0e3eb9626e6fdd5f59dd189c9dd64ba9ad88391b8ee7cf607addde3ebb4c9",
+      "canonical_log_sha256": "30d5adc72fabf73e6e1bb11a01bde6ce7c1407cf490749b24c2c685d87a4d097",
+      "console_log_sha256": "44c5cb7c1d00e1b1379aa5eea5902a89554557aa9fe99a62db8d0282a2048aaa"
+    },
+    {
+      "fault": 16,
+      "hidden": 160,
+      "intermediate": 96,
+      "outputs": 173,
+      "tokens": 3,
+      "exact_outputs": 519,
+      "output_packets": 6,
+      "wall_seconds": 16.60894351406023,
+      "source_invocation_sha256": "58dcc6730677f85fd063dbc465f570640c30c4ddd887520f1f90cce26c236f56",
+      "native_status_sha256": "87950147fedc7d5046c6542a16fa681563e1a0f5ebfbe9e64cf464bc39965e1b",
+      "canonical_log_sha256": "3d6403a14e29e0fdeb2c1e3a2b69a0af739b607716e2f7a9b9f6b287fe5500b6",
+      "console_log_sha256": "af26677cbf83d59f12f4d0fef28f0fa6d4ae037439ae6bd945ee1e68495aa916"
+    }
+  ],
+  "recovery_scope": "Same-instance reconfiguration after error drain; external reset is asserted only at startup.",
+  "external_reset_between_transactions_verified": false,
+  "scope": {
+    "literal_native_functionality": true,
+    "three_token_clean_frame_and_eleven_fault_reconfigurations": true,
+    "all_519_output_values_checked_per_clean_frame": true,
+    "native_testbench_bytes_identical_to_published_source": true,
+    "trained_layer_execution": false,
+    "whole_decoder_integration": false,
+    "current_per_row_weight_unit_consumption": false,
+    "timing_or_physical_verification": false,
+    "paper_matching": false
+  },
+  "independent_native_reviewer": "/root/review_external_ff_native",
+  "deferred_verification_limit": "Some done_error checks use logical negation and could accept an unknown value; no four-state-clean completion claim is made.",
+  "static_lint": {
+    "clean": false,
+    "remaining_warning_classes": [
+      "WIDTH",
+      "UNOPTFLAT"
+    ]
+  },
+  "local_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/external_feedforward_after7625_v1/native_queue_config.json": "d47d10460096a60c000b900bfcc599b703aa235565779eb5708a285ecd23d7e8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/external_feedforward_after7625_v1/publication_reverification.json": "6aba4c2f27827a7fe0a2a7e67f18d5e5c28d29ae2ee756e4cbc13fb1782f230f",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/external_feedforward_after7625_v1/native_literal_terminal.json": "1307f51b76dbea6e8ff1bfc35d16fcc569412ce6a41f7ccae3bbe6a230cd54ff",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/external_feedforward_after7625_v1/fault_suite_result.json": "a7a7a56bb28714e00467fe92dc9c24fcf88f367fa73fe24474310e743e51c89b",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/external_feedforward_v1/source_inputs.json": "3b257034c9f28be38e3973a57e9f84e3e0935e3f0842e74193f8a0d7d86f3546",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/external_feedforward_v1/test_structure.py": "6c37039a89f35577415a88acf1fe08af0810eb5afb7a6703d2d2bfde594a1cd4",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/external_feedforward_v1/extraction.json": "e1c6117496d7d2584dc93259283136f45998cc4162e7bf227728c6448db19465"
+  },
+  "physical_advancement_allowed": false,
+  "publication_scope": "Byte-identical controller and testbench reference sources, with historical native results executed against the frozen local dependency closure.",
+  "fresh_checkout_replay_ready": false,
+  "native_dependency_boundary": {
+    "tested_fabric_source": ".cache/physical/wac_core_local_scores_verified/tri_oracle_compute_fabric.sv",
+    "tested_fabric_sha256": "de273eb765866da98fd2bdbef95d3a3e50fec92fcdc085e407a9dae1a4e917ba",
+    "tracked_fabric_source": "verilog/tri_oracle_compute_fabric.sv",
+    "tracked_fabric_base_commit": "834aa70ad48ad1726771307e62495fbe6442db43",
+    "tracked_fabric_sha256": "d64ad3253cd74fa87b9ede129a986884207ffc25cc25ad5d4a5625b3d982dc13",
+    "required_parameters_and_ports_missing_from_tracked_fabric": [
+      "LOCAL_TOKEN_SIZES",
+      "LOCAL_TOKEN_MERGE",
+      "softmax_request",
+      "activation_reloaded",
+      "core_score_select"
+    ],
+    "literal_testbench_elaborates_against_tracked_fabric": false,
+    "required_for_replay": "Use the complete frozen local literal bundle and its fabric and memory dependencies; these seven published files are not a standalone replay package.",
+    "frozen_local_bundle": ".cache/late_clipping_20261121/frame_integration/external_feedforward_after7625_v1/literal_bundle.sv",
+    "frozen_local_bundle_sha256": "32bc1315eb6138181c2be29cc35edc6eae4424725d863e4dd4e15b0c1b6db8e7"
+  }
+}

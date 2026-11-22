@@ -1,0 +1,102 @@
+{
+  "state": "mapped_three_context_native_chain_completed_and_raw_outputs_reverified",
+  "candidate_sha256": "3efa4042b776bf0a879b0bb0682eaace3a54a68f1fbaf0e0ed08ace37b4a7f5b",
+  "candidate_size_bytes": 917513517,
+  "runtime_sha256": "10d61271aef99920cb849120111ffb3a56201693356fc5133902cec76617b04f",
+  "execution": {
+    "simulator": "Cadence Xcelium",
+    "container": "tri-oracle-eda",
+    "requested_and_observed_threads": 20,
+    "initialize_only": 0,
+    "exit_status": 0,
+    "job": "chain",
+    "minimum_free_disk_bytes": 128638652416,
+    "minimum_host_available_bytes": 8435240960,
+    "owned_group_terminal": true,
+    "passed": true,
+    "peak_container_anonymous_bytes": 4551688192,
+    "runtime_sha256": "10d61271aef99920cb849120111ffb3a56201693356fc5133902cec76617b04f",
+    "started_ns": 1795316239887402374,
+    "stop_reason": null,
+    "supervisor_error": null,
+    "wall_seconds": 44047.307092970004
+  },
+  "verified_inventory": {
+    "fresh_qkv_vectors": 11240,
+    "context_frames": 3,
+    "attention_rows": 96,
+    "exact_attention_accumulators": 6144,
+    "projection_groups": 96,
+    "exact_projection_codes": 6144,
+    "exact_feedforward_values": 4096
+  },
+  "attention_query_ranks": [
+    1,
+    2,
+    280
+  ],
+  "query_positions": [
+    1,
+    2,
+    615
+  ],
+  "feedforward": {
+    "cycles": 1966215,
+    "exact_writeback_values": 4096,
+    "input_features": 2048,
+    "intermediate_channels": 5632,
+    "output_features": 2048,
+    "physical_writeback_packets": 512,
+    "request_bytes": 10520262,
+    "response_chunks": [
+      17852122,
+      597806
+    ],
+    "simulator_finish_time": "892519250 NS + 0",
+    "snapshot": "worklib.tri_oracle_consolidated_native_chain_tb:sv",
+    "tokens": 2
+  },
+  "handoff": "Actual output-projection bytes from query ranks one and two occupy token slots zero and one and feed the two-token feed-forward operation without reset.",
+  "metadata_commits": 1,
+  "reset_releases": 1,
+  "source_pins_revalidated": {
+    "native": 1337,
+    "host_only": 46
+  },
+  "source_review": {
+    "reviewer": "/root/review_signed_context_conversion",
+    "review_record_sha256": "8f9562e7b69e5d7c451509afd7ed3afa34b2072acaa2e2baf7af3a18081d66b4"
+  },
+  "artifact_and_trace_checker_reexecuted": true,
+  "actual_invocation_rechecked": true,
+  "scope": {
+    "tested_mapped_chain": true,
+    "fresh_query_key_value_production": true,
+    "same_two_token_layer_handoff": true,
+    "input_boundary": "Older captured layer-nineteen prefix; this is not the current complete integer model.",
+    "whole_model_verified": false,
+    "task_accuracy_verified": false,
+    "physical_timing_verified": false,
+    "power_or_energy_verified": false,
+    "paper_matching": false
+  },
+  "warning_codes": [
+    "MC",
+    "MCECPU"
+  ],
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/completion_reverification_20261122.json": "a3a90683f3a39688033ab27698e1596484c7f386e185d0e67b9a7ac391e4a491",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/runtime.json": "10d61271aef99920cb849120111ffb3a56201693356fc5133902cec76617b04f",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/qualified.json": "c4d1c11d7bb965a7e602e46e0dbd64f7b115f42934c31f0822ad2b6fce219f9b",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/status.json": "e5a75af6ffa973ad607c25d8a7f351909f3b4388016f4bf4430c2ecb1cc752d5",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/xrun.log": "64fa50e677d0a2098acb7ab401f1aa921e7a297c9459295982cf178af0871fbf",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/console.log": "3672317c7c1df46fa8d2937c630c404249e57a3f7e9210cb0762ef5a33d7f894",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/mcesim.run/used_config.txt": "ea96f3a58e5135e395dd87a0fb012dfceb155e75f65ab0ea74d0597d91b116d9",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/cache.hex": "5f3c8a33319c5280e2725c8f154b4b2b1324ff82d70249f819f521e4434c1137",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/attention.hex": "d8893d8dbb136110d738dd094368c8a47c84a89a41be6ec15a77122bfec97ef4",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/output.hex": "51654d8d811e4768576c9cf5468136b5e1c445194b737be1be6a3cf4b932838c",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/feedforward.hex": "44be81c65d19e598238794b468535cf42c3780795fde06ae83d31188cae740d1",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/chain/rebuild_status.hex": "67f2998861fbb8ef61484429d3a15f938fdc73dcf31cf65dbde6e9e33d21703e"
+  },
+  "physical_advancement_allowed": false
+}
