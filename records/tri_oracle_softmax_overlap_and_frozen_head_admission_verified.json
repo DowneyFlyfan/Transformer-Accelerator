@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "state": "existing_core_softmax_overlap_and_current_frozen_head_admission_verified",
+  "softmax": {
+    "native_simulator": "Cadence Xcelium25.03",
+    "native_exit_status": 0,
+    "wall_seconds": 15.664702916983515,
+    "logical_physical_owners": 20,
+    "simultaneously_resident_owners": 20,
+    "maximum_same_clock_memory_owners": 17,
+    "exact_unsigned16_probabilities": 2559,
+    "other_owners_completed_while_owner0_stalled": 19,
+    "logical_to_physical_transfers_bound": true,
+    "matrix_load_and_command_fences_verified": true,
+    "explicit_activation_reload_verified": true,
+    "additional_normalizers_or_memory_macros": 0,
+    "scope": "Uniform-score directed test of the existing five-cluster source composition with vendor compiled-memory models; this is concurrent local normalization, not complete attention-head execution.",
+    "matrix_fence_checked_owner": 0,
+    "activation_reload_checked_owner": 0
+  },
+  "frozen_head_admission": {
+    "source_candidate_sha256": "3efa4042b776bf0a879b0bb0682eaace3a54a68f1fbaf0e0ed08ace37b4a7f5b",
+    "exact_mapped_master_sha256": "88da363190eef4f7337289db5f713447d3ce57d5816a7c8df1f5b0197663b4fa",
+    "known_heads": "ffffffff",
+    "streaming_heads": "fd6c64bf",
+    "checked_owner_pairs": 32,
+    "head19": {
+      "classification": "streaming",
+      "cluster_owner": 19,
+      "core_owner": 19,
+      "cluster": 4
+    },
+    "head20": {
+      "classification": "retrieval",
+      "cluster_owner": 0,
+      "core_owner": 0,
+      "cluster": 0
+    },
+    "disjoint_clusters_verified": true,
+    "native_exit_status": 0,
+    "wall_seconds": 2.4049329180270433,
+    "scope": "Exact planner master extracted unchanged from current mapped candidate, tested with the trained frozen classifier mask."
+  },
+  "execution": {
+    "short_diagnostic_simulation_threads": 1,
+    "main_multicore_run_unchanged": true,
+    "clock_presentation_only_normalized": "Native integral .00 ns values converted exactly to integer ps with factor1000;16680events per softmax trace; all non-clock payloads unchanged.",
+    "original_postprocessor_rejection_preserved": true,
+    "redundant_waiting_multicore_diagnostic_stopped_without_execution": true
+  },
+  "next_requirement": "Execute both actual trained attention heads concurrently through shared arrays, normalization and value accumulation, then extend to all20owners/32heads.",
+  "complete_attention_head_concurrency_verified": false,
+  "current_mapped_candidate_scheduler_correction_integrated": false,
+  "full_model_hardware_accuracy_verified": false,
+  "paper_workload_balancing_metrics_verified": false,
+  "physical_timing_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/verified.json": "7263883d618949b93040179240a2c9ce506e03fa694c5dfa9f48b03d216c958c",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/independent_review.json": "d707abe15a26415a1f7ac034eafc061cfecb51fcdd0e3db1842ca99bfb9369b0",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/duplicate_retirement.json": "63f732f87f52b00eb2a99a18244217d4f6430cc059f098311b0f99b05be83bb4",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/run.py": "83498cab615e8295747cbe350ae9e0394e3786bbbf7d01c89f798895487d7559",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/qualify_serial.py": "119b0e415b040af03ef0964b97d5a1f7972ad76caf0748835aee6f265b68cc78",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/verified.json": "f31b6c6fd9046cd2230c51924d082b9d9da8544db55cabee8364cf01250df61a",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/inputs.json": "20976a47bf3313cf8d56d9937a9f312847db06acaff56dc7bad109e92e496458",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/run.py": "b8ed46a59bc0b8e5039c360f4a33d69e3dcdf112b51b0187a6d1587e51bbfaef",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/planner.v": "ca600ddc636fa1e1bc7df844a413059542006da2e419ab239a22754facafcef9",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/admission_tb.sv": "568edccaeb8fcf7c9f990afed3fea7bb877aeaa4592d74cbeb68bd6030c95de4",
+    ".cache/late_clipping_20261121/frame_integration/two_head_trained_reference.json": "8ec1ffa7beccb7a067f686da99b98998b4e445211711fcb2d7a2e29295dde77a",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/softmax_serial_serial/status.json": "252ee45f6d6a90898a6ad28de87813b03636df1e1c6b9fc1706fd06f82c0157f",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/softmax_serial_serial/invocation.json": "5a416baeb9b1c51fe1a9421bd5aedbd3cf50f7eed10f6f9bfebea6e60890ae50",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/softmax_serial_serial/xrun.log": "7360720cac3c9e8d23fe9546b9ef81d3e40335f27cf174d8510fab5b665ef13c",
+    ".cache/late_clipping_20261121/frame_integration/concurrent_softmax_scalar_serial_v1/softmax_serial_serial/console.log": "b1d44e1d3bbd0ff50ad892f4ac936c17a9b8b77d0edde886f450a384d233aa8d",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/frozen_admission_serial/status.json": "d75431e10583bb7c78b3943ef194bb39a7475d53298129eb843772aab7e62d0f",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/frozen_admission_serial/invocation.json": "ec98c1267919596005a874ae8b969b099ce36ce6b81b72467f62c031f4b6aa27",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/frozen_admission_serial/xrun.log": "70ef82120feb57effe33f9147befa439ee23e16f060faa1132bc2fd51f6948d8",
+    ".cache/late_clipping_20261121/frame_integration/frozen_two_head_admission_v1/frozen_admission_serial/console.log": "a2b0cd36a517c184f182a5dfbd4f748a856120417f122c7b472c8afec861537b"
+  }
+}
