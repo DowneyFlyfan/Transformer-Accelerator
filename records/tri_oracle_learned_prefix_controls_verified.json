@@ -8,7 +8,7 @@
     "configured_output_features": 2048,
     "cores": 20,
     "clusters": 5,
-    "compiled_memory_instances": 602
+    "partial_compiled_memory_count": 602
   },
   "prefix": {
     "normalized_values": 4096,
@@ -96,5 +96,17 @@
     ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_corrupt_up_signs/console.log": "33fc4709c43a06bd413037f74b27fd5ded4020340f82f11c49e13536108f11c9",
     ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/native_learned_v7_corrupt_up_signs/tool_stderr.log": "cc9cd2fa82cb01ee8f5c902acbb88b88b3524b8fc2d98848b6302ecce6564007",
     ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_learned_v7_corrupt_up_signs.json": "6fa09ca7ba5fa0ac0c3914612d4bfa1b8cc649d2c07892c05570905e2ab35485"
+  },
+  "memory_observer_coverage": {
+    "scope": "Three bound vendor memory families; additional families are outside this observer.",
+    "bound_family_instances": {
+      "TS5N28HPCPSVTA32X128M2FW": 360,
+      "TS5N28HPCPSVTA512X64M4F": 42,
+      "TS6N28HPCPSVTA16X128M2F": 200
+    },
+    "full_design_compiled_memory_count_verified": false,
+    "mapped_capacity_verified": false,
+    "observer_source": "verilog/native_shared_array/68_hierarchy.sv",
+    "observer_sha256": "f9dc779c767c7fcc5985ed698fff0ba902d3c0df7008cd81aae6b45ac6a9782c"
   }
 }
