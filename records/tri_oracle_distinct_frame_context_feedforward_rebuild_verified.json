@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "state": "credited_root_distinct_frame_context_feedforward_rebuild_verified",
+  "candidate": {
+    "top": "tri_oracle_chip_credited_request",
+    "sha256": "3efa4042b776bf0a879b0bb0682eaace3a54a68f1fbaf0e0ed08ace37b4a7f5b",
+    "bytes": 917513517,
+    "technology": "TSMC28HPC+ adaptation"
+  },
+  "native_execution": {
+    "simulator": "Cadence Xcelium25.03",
+    "runtime_sha256": "10d61271aef99920cb849120111ffb3a56201693356fc5133902cec76617b04f",
+    "exit_status": 0,
+    "owned_group_terminal": true,
+    "wall_seconds": 2910.5269690621644,
+    "requested_simulation_threads": 20,
+    "used_configuration_sha256": "66e5d6649bde3522505f660ca90a17fbaf4895ad8fcef2b57888562e9ac7a6b2",
+    "peak_container_anonymous_bytes": 4257710080,
+    "minimum_host_available_bytes": 11297554432,
+    "warning_codes": [
+      "MC",
+      "MCECPU"
+    ]
+  },
+  "exact_feedforward": {
+    "cycles": 1966215,
+    "exact_writeback_values": 4096,
+    "input_features": 2048,
+    "intermediate_channels": 5632,
+    "output_features": 2048,
+    "physical_writeback_packets": 512,
+    "request_bytes": 1224606,
+    "response_chunks": [
+      955843,
+      588744
+    ],
+    "simulator_finish_time": "69097270 NS + 0",
+    "snapshot": "worklib.tri_oracle_context_feedforward_rebuild_tb:sv",
+    "tokens": 2
+  },
+  "context_before_distinct_feedforward": {
+    "externally_seeded_cache": true,
+    "fresh_query_key_value_vectors": 0,
+    "query_rank": 1,
+    "attention_heads": 32,
+    "exact_accumulator_values": 2048,
+    "output_projection_groups": 1,
+    "exact_projection_codes": 64,
+    "merger_layers": 22,
+    "map_words": 12672,
+    "merger_sign_vectors_consumed": 5764,
+    "external_sign_vectors_read": 5785
+  },
+  "rebuild": {
+    "real_metadata_commits": 1,
+    "initial_reset_releases": 1,
+    "additional_reset_between_stages": false,
+    "final_host_status_words": 6
+  },
+  "scope": "Seeded rank1 attention/context and one output group, followed without reset by a distinct captured current layer19 two-token feed-forward frame and real metadata rebuild. The feed-forward inputs are not the just-produced same-token attention output.",
+  "same_token_layer_chain_verified": false,
+  "whole_model_hardware_execution_verified": false,
+  "task_accuracy_verified": false,
+  "physical_timing_verified": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/runtime.json": "10d61271aef99920cb849120111ffb3a56201693356fc5133902cec76617b04f",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/status.json": "b17c5bbb9dac92324084c92708b89b206fc2d1e09f96fba4a790ba3fbe354d70",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/qualified.json": "dc727e693c44b14bbb7bcb27592b2027e14dda3c415693b75094717d40f48f0a",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/xrun.log": "1ef6cf3bc36e6b9723366d2c42320d31ba3aa018d5254fc826b7bb959dd9d707",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/console.log": "d9ba08cca26dcd92e95bc39b4c3de2feae6aa14ef0c35369a74eee987b7ec436",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/used_config.txt": "66e5d6649bde3522505f660ca90a17fbaf4895ad8fcef2b57888562e9ac7a6b2",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/feedforward.hex": "90fc269e3523546771a11838f014d8ca59fa3864d7fba9657d5d4186fa19c424",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/rebuild_status.hex": "7abf9877cc0f866043f58df4f411e3ad2dcb1c378341dada80437aa599ab7552",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/attention.hex": "184534e8ee2521aff4a7597296f1245916eb9b14aad40de008f87d8d877258e0",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/rebuild/output.hex": "cd1beeebfd5d25554010aec4c89deb38c06174889426ff37205cf741fca06191",
+    ".cache/late_clipping_20261121/frame_integration/current_computed_projection_frame_v1/fixture/host_writeback.hex": "90fc269e3523546771a11838f014d8ca59fa3864d7fba9657d5d4186fa19c424",
+    ".cache/late_clipping_20261121/frame_integration/context_feedforward_rebuild_v1/run_rebuild.py": "02d6db01d71eb818d5631fac8ce7643c622f3f40b420592b1ff89b1d7d14deef",
+    ".cache/late_clipping_20261121/frame_integration/serialized_replay_consolidation_v1/older/qualify_rebuild.py": "ebf86cfd898e7b50975e3a0cd346a999a59664e2fe55dea538371a321c50d83f"
+  }
+}
