@@ -1,0 +1,605 @@
+{
+  "state": "independently_reviewed_repository_source_controller_replays_verified",
+  "technology": "TSMC28HPC+ adaptation",
+  "baseline_commit": "581690d251a381617e5cccaf4c49c1a4a2840657",
+  "scope": "Twelve reduced controller cases from the published source dependency set, one complete source-level compiled-memory inventory and one intentional legacy arithmetic counterexample. No fresh-checkout execution, trained-current-layer execution, mapped-memory qualification, full-model hardware or paper matching.",
+  "source_package": {
+    "ordered_inputs": 69,
+    "repository_sources": 63,
+    "external_memory_models": 6,
+    "definitions": [
+      "UNIT_DELAY",
+      "TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC"
+    ],
+    "source_sequence_sha256": "af7a44686bc7ca2ee1193bcbe0187351da200f3b76c9cfc279534dfa525b0ed4",
+    "copied_sources": [
+      {
+        "source": ".cache/physical/shared437/local_token_size_integrated/portable/tri_oracle_cluster_token_sizes_with_layer_ports.sv",
+        "destination": "verilog/native_shared_array/07_tri_oracle_cluster_token_sizes_with_layer_ports.sv",
+        "sha256": "7672b35c7895bb37266598e4a1a78ac71c5102539af9172b426a2a888a1d9db9",
+        "bytes": 16067
+      },
+      {
+        "source": ".cache/physical/shared437/aggregator_local_merge/layer/rtl/tri_oracle_local_merge_fabric.sv",
+        "destination": "verilog/native_shared_array/08_tri_oracle_local_merge_fabric.sv",
+        "sha256": "e7ee7995d125d078e0c3541d234f16c55c51a9a4b98fae7cd3e68dd3a04bdc33",
+        "bytes": 9932
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_batched_frame393.sv",
+        "destination": "verilog/native_shared_array/09_tri_oracle_batched_frame393.sv",
+        "sha256": "2a53f9d64a8d5b47000bf08fe78ad593d2a86dea28963d1611084c8f4bc1787c",
+        "bytes": 20049
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_attention_head_predictor415.sv",
+        "destination": "verilog/native_shared_array/13_tri_oracle_attention_head_predictor415.sv",
+        "sha256": "60f81fdf000c67462652138fce223fdc1b317876d4198c8b99c41064457a416b",
+        "bytes": 7606
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_attention_layer427.sv",
+        "destination": "verilog/native_shared_array/14_tri_oracle_attention_layer427.sv",
+        "sha256": "4113e9398d6c70060a51256e2e37f711cb9b0730863ca7aa8152a596749b89db",
+        "bytes": 23139
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_attention_pipeline430.sv",
+        "destination": "verilog/native_shared_array/15_tri_oracle_attention_pipeline430.sv",
+        "sha256": "84d1083d1252a99dbc8729f5530e9bbe15d3613ef2177cc13ef2db7068820c9d",
+        "bytes": 13726
+      },
+      {
+        "source": ".cache/physical/wac_core_local_scores_verified/tri_oracle_attention_row426.sv",
+        "destination": "verilog/native_shared_array/16_tri_oracle_attention_row426.sv",
+        "sha256": "3e4821d8c55d8c0db0b0a1b1f4d57d1a5927d78ee611f8ba4fa6417d9e11861b",
+        "bytes": 16759
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_batched_learned406.sv",
+        "destination": "verilog/native_shared_array/18_tri_oracle_batched_learned406.sv",
+        "sha256": "23e9da315ec6929ed876b4c6c7db8636da2700e48f8e3fd37e238ed2cd463a47",
+        "bytes": 22460
+      },
+      {
+        "source": ".cache/physical/shared437/local_token_size_integrated/portable/tri_oracle_batched_outlier_replay404.sv",
+        "destination": "verilog/native_shared_array/22_tri_oracle_batched_outlier_replay404.sv",
+        "sha256": "6ca8d42b51c01769340a78f45edd8188e75a9d03adede2ecb8c643d0299174e1",
+        "bytes": 11247
+      },
+      {
+        "source": ".cache/physical/wac_cluster_local_scores/tri_oracle_batched_projection356.sv",
+        "destination": "verilog/native_shared_array/23_tri_oracle_batched_projection356.sv",
+        "sha256": "7717ba36cb34f2a0aa3f323f8cf7b1f74ce776d1f9deed523da37dc27485d263",
+        "bytes": 6908
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_batched_shared392.sv",
+        "destination": "verilog/native_shared_array/24_tri_oracle_batched_shared392.sv",
+        "sha256": "c6844ef80d94c55f3c37c7efc2086a57bb79ba5979ca43ae13f6587b69b01d99",
+        "bytes": 7044
+      },
+      {
+        "source": ".cache/physical/wac_core_local_scores_verified/tri_oracle_batched_tensor390.sv",
+        "destination": "verilog/native_shared_array/25_tri_oracle_batched_tensor390.sv",
+        "sha256": "9d19869bf92f83ec6840ebd3ffc34fe85308db0a5a6d6d103ab64745533fd91b",
+        "bytes": 19675
+      },
+      {
+        "source": ".cache/physical/shared437/otsu458/rtl/tri_oracle_causal_token_size.sv",
+        "destination": "verilog/native_shared_array/26_tri_oracle_causal_token_size.sv",
+        "sha256": "c7ef9deddf37cbefb65e97e6bf3edd04bde5dd607537d64ec648fc7c88a80c77",
+        "bytes": 8015
+      },
+      {
+        "source": ".cache/physical/wac_core_local_scores_verified/tri_oracle_compute_fabric.sv",
+        "destination": "verilog/native_shared_array/27_tri_oracle_compute_fabric.sv",
+        "sha256": "de273eb765866da98fd2bdbef95d3a3e50fec92fcdc085e407a9dae1a4e917ba",
+        "bytes": 9011
+      },
+      {
+        "source": ".cache/physical/shared437/aggregator_local_merge/tri_oracle_cumulative_token_merger423.sv",
+        "destination": "verilog/native_shared_array/28_tri_oracle_cumulative_token_merger423.sv",
+        "sha256": "e354436cdf7948d899eebf8ec4bd432cee8fab0ff9f498fb5e4f882d8d233b8b",
+        "bytes": 23569
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_wac_softmax.sv",
+        "destination": "verilog/native_shared_array/30_tri_oracle_wac_softmax.sv",
+        "sha256": "cd4759a2fc2b892849570ecf7bcf4a96d788b4687f26362bbbc34784426b3752",
+        "bytes": 9100
+      },
+      {
+        "source": ".cache/late_clipping_20261121/frame_integration/output_slot_leases_v1/cluster.sv",
+        "destination": "verilog/native_shared_array/37_cluster.sv",
+        "sha256": "6f9953f9056f322b7f1469d232b3c6344b2344793b6e5e66b59cf19b94e63047",
+        "bytes": 17739
+      },
+      {
+        "source": ".cache/late_clipping_20261121/frame_integration/output_slot_leases_v1/core.sv",
+        "destination": "verilog/native_shared_array/38_core.sv",
+        "sha256": "9026597d3d6f623ba5fa0e9f7fb3324918151408da0299c7d5de9e202887e924",
+        "bytes": 11725
+      },
+      {
+        "source": ".cache/physical/wac_layer_owned19/tri_oracle_shared_layer437.sv",
+        "destination": "verilog/native_shared_array/41_tri_oracle_shared_layer437.sv",
+        "sha256": "0be6dd17e96b99f52211c08bbd7e5d9dc8f4e02872f8a6e1e7d7d00c45570bd2",
+        "bytes": 8714
+      },
+      {
+        "source": ".cache/physical/wac_core_local_scores_verified/wrappers.sv",
+        "destination": "verilog/native_shared_array/42_wrappers.sv",
+        "sha256": "4204cf8a51b9ad86b36c0f0b99e36d79b36e8dcdb22d40e4354f6b8f6f9a09e3",
+        "bytes": 15541
+      },
+      {
+        "source": ".cache/physical/wac_core_local_scores_verified/cluster_adapter.sv",
+        "destination": "verilog/native_shared_array/43_cluster_adapter.sv",
+        "sha256": "075e5ffad5ef27a8e50f617d288458f97c4620d9b0a30b17b4765961c3fbf5b1",
+        "bytes": 3643
+      },
+      {
+        "source": ".cache/late_clipping_20261121/frame_integration/dual_mapping_scores_v1/scores.sv",
+        "destination": "verilog/native_shared_array/46_scores.sv",
+        "sha256": "bdeb3bd7094e38c81f9da209cd0c8149fa6e53bc40e2ed48e492d2e46515c14f",
+        "bytes": 11529
+      },
+      {
+        "source": ".cache/late_clipping_20261121/frame_integration/external_feedforward_v1/hierarchy.sv",
+        "destination": "verilog/native_shared_array/68_hierarchy.sv",
+        "sha256": "f9dc779c767c7fcc5985ed698fff0ba902d3c0df7008cd81aae6b45ac6a9782c",
+        "bytes": 1219
+      }
+    ],
+    "source_helper_sha256": "ac6a3c137137bf25a3a9685f4387618878dcb880b665494f86568480e1497539",
+    "source_manifest_sha256": "54f1879ddae3031442eba0df52a9096842f996f78d6dbf31a8f251b8f0013ccc",
+    "vendor_memory_contents_published": false
+  },
+  "native_positive_cases": [
+    {
+      "name": "native_literal0",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 16.60634657810442,
+        "minimum_host_available_bytes": 17147846656,
+        "peak_container_anonymous_bytes": 170770432,
+        "minimum_free_disk_bytes": 127115079680
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 0,
+        "trained": 0
+      },
+      "log_sha256": "1d15a28445b6ad9509fd0d7dea55dfb578bcd16cf5a0f0504190fa7cf9426d48",
+      "console_sha256": "901bcdd9bf26ac43c1ec1026186693001953ef29f007ad9cac666e848e0d2097",
+      "invocation_sha256": "96a77efddc91afa49fc83e6b3742396154217e964e3f4c4593785178708b3ff2"
+    },
+    {
+      "name": "native_fault1",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 23.110738839022815,
+        "minimum_host_available_bytes": 17170546688,
+        "peak_container_anonymous_bytes": 156205056,
+        "minimum_free_disk_bytes": 127038701568
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 192,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 576,
+        "output_packets": 6,
+        "read_requests": 2352,
+        "read_bytes": 59968,
+        "fault": 1,
+        "trained": 0
+      },
+      "log_sha256": "bb4ae4794a358500cee131a87a72664be602b042ae6b7114195afda7b6e3d80d",
+      "console_sha256": "7dafaf89cc1682e819449b4f7066413d76b5a304ea1b96e2d2928b87039e1c03",
+      "invocation_sha256": "e06803fe7452068b05ef8f5b0734812eb0cd013b1ad2ac72dad4567db56f94c7"
+    },
+    {
+      "name": "native_fault3",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 22.108773404965177,
+        "minimum_host_available_bytes": 17170407424,
+        "peak_container_anonymous_bytes": 156938240,
+        "minimum_free_disk_bytes": 126962331648
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 3,
+        "trained": 0
+      },
+      "log_sha256": "7980a436f12d43baba7380d44f154d98000bd716f5d2e41e87fefb71257f832a",
+      "console_sha256": "773db9addbd977a866338d08714b4fd587de016e0d5d72515525783de7133139",
+      "invocation_sha256": "f2371bc18a3c971bc94a7f681ada047cbaf186bd8a65a55d9c281997893efa66"
+    },
+    {
+      "name": "native_fault4",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 15.602474696934223,
+        "minimum_host_available_bytes": 17198632960,
+        "peak_container_anonymous_bytes": 156966912,
+        "minimum_free_disk_bytes": 126885957632
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 4,
+        "trained": 0
+      },
+      "log_sha256": "a258bf6acf52894fe700ed9713b9ccebe001890e6520e2644d999cf13bbc4224",
+      "console_sha256": "25340d1b54445b4c4bc9d603d851d1b66e4edecea7010dfeb07a6678eedd64d8",
+      "invocation_sha256": "a30d1afcd312f1cdde7b04adc25e0f7a3f9f04fa493dda6cddf35d8b09b44dbe"
+    },
+    {
+      "name": "native_fault5",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 15.855788657907397,
+        "minimum_host_available_bytes": 17141841920,
+        "peak_container_anonymous_bytes": 171585536,
+        "minimum_free_disk_bytes": 126809509888
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 5,
+        "trained": 0
+      },
+      "log_sha256": "e07bab87ea2357fa67a987a0a06ad73046a881972541f10db367daf7eb077443",
+      "console_sha256": "dae42cf650d02cb30b25ac5393425faf6b10cf9fe9cccf41a8d1ff3f11bf164d",
+      "invocation_sha256": "1bd3d08f0bf66cee4994d614a4372b68b526c2a0cd559413158ce05ca00492fb"
+    },
+    {
+      "name": "native_fault7",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 22.866173088084906,
+        "minimum_host_available_bytes": 17170444288,
+        "peak_container_anonymous_bytes": 157831168,
+        "minimum_free_disk_bytes": 126733205504
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 192,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 576,
+        "output_packets": 6,
+        "read_requests": 2352,
+        "read_bytes": 59968,
+        "fault": 7,
+        "trained": 0
+      },
+      "log_sha256": "0ce744a46b72adc3858a8c551fd87e35603f3d1ed1d175b9ba40b3c7db0819b4",
+      "console_sha256": "441f5423703fa586ef01b55fdd6b6512b8d0e36a0b1fbafccff09b6ac51be7c0",
+      "invocation_sha256": "3127245176f78ea628f18b4a600bc2f1336e96a161c2ee3e6b494a101ade7de4"
+    },
+    {
+      "name": "native_fault11",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 25.365897129988298,
+        "minimum_host_available_bytes": 17178312704,
+        "peak_container_anonymous_bytes": 162000896,
+        "minimum_free_disk_bytes": 126656851968
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 192,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 576,
+        "output_packets": 6,
+        "read_requests": 2352,
+        "read_bytes": 59968,
+        "fault": 11,
+        "trained": 0
+      },
+      "log_sha256": "44daec51f5d2d3344a5bcdad18d9e16f678eedf1f22288551a6890653f66221d",
+      "console_sha256": "5e9e1308c80707990effe9a4dcaedabcf5a632dfc35ca1df1e1fd30e8dce0711",
+      "invocation_sha256": "90d0c2da25f528f7ffea1462c8dfa6bec48652a93011dde4cce08690e8a79905"
+    },
+    {
+      "name": "native_fault12",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 16.353226275881752,
+        "minimum_host_available_bytes": 17201434624,
+        "peak_container_anonymous_bytes": 158416896,
+        "minimum_free_disk_bytes": 126580490240
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 160,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1472,
+        "read_bytes": 46272,
+        "fault": 12,
+        "trained": 0
+      },
+      "log_sha256": "45ce2151f8e4c489a34f05d28522c0026cdda3c2e511ec78314f1f0a3ffa78dd",
+      "console_sha256": "14ce23f65f69abefcdc84237adc99f73bf192284bca5c9bff073522bd3872db7",
+      "invocation_sha256": "621241e915b403b8aec72aa0b3ad15ad63db008548116c9e66d64332cd9f33ec"
+    },
+    {
+      "name": "native_fault13",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 16.605275010922924,
+        "minimum_host_available_bytes": 17183109120,
+        "peak_container_anonymous_bytes": 159485952,
+        "minimum_free_disk_bytes": 126504132608
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 160,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1472,
+        "read_bytes": 46272,
+        "fault": 13,
+        "trained": 0
+      },
+      "log_sha256": "406f2f2640aa8859e8cfd73f72cc165f75d8a33aa116e0df1cf303e561e88fd3",
+      "console_sha256": "ef968a6bb1c0bd60a5b6ebb08585ce9b6c5cd6c80f1dac66434e4195d809f732",
+      "invocation_sha256": "c3390ff7bdd875c452a5fa47863ee17e8f4f8937e46420847b6f85f8c7fb1a3f"
+    },
+    {
+      "name": "native_fault14",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 16.105673903832212,
+        "minimum_host_available_bytes": 17154830336,
+        "peak_container_anonymous_bytes": 170213376,
+        "minimum_free_disk_bytes": 126427758592
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 14,
+        "trained": 0
+      },
+      "log_sha256": "15d8f792c817a66dfee7c3ce86db791c9db1efb0825680c3ffc3de725afc7253",
+      "console_sha256": "dd65b7f1ce5de8b981c9bdb30a3b59307589d071b3a59df46377661b69983d29",
+      "invocation_sha256": "6566cbf8ef70797a377a2e2be7cab8f59f5f48965716fa861df7a5a9bad9ac7d"
+    },
+    {
+      "name": "native_fault15",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 15.604387286119163,
+        "minimum_host_available_bytes": 17179660288,
+        "peak_container_anonymous_bytes": 161927168,
+        "minimum_free_disk_bytes": 126351409152
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 64,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1536,
+        "read_bytes": 30016,
+        "fault": 15,
+        "trained": 0
+      },
+      "log_sha256": "3e54027a0e9e88bebee127b0e6fef8a2828e1ac05321a89d744f0c67161209a4",
+      "console_sha256": "26d2e7e9083a820dcda97a59b77555883fc9793fdb2c4c21edff8df40bceea27",
+      "invocation_sha256": "4188289829050cb01fc0c59fffa334c460ffd56bfb4e18d3399f9deac4af35c8"
+    },
+    {
+      "name": "native_fault16",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 16.35576862702146,
+        "minimum_host_available_bytes": 17131876352,
+        "peak_container_anonymous_bytes": 158412800,
+        "minimum_free_disk_bytes": 126275022848
+      },
+      "inventory": {
+        "tokens": 3,
+        "hidden": 160,
+        "intermediate": 96,
+        "outputs": 173,
+        "exact_outputs": 519,
+        "intermediate_bytes": 288,
+        "output_packets": 6,
+        "read_requests": 1472,
+        "read_bytes": 46272,
+        "fault": 16,
+        "trained": 0
+      },
+      "log_sha256": "03ffecfed69a1342c0004d74bb897d6e3a6c9bd276d5c67c34432a738b3f862c",
+      "console_sha256": "c5b97c14be7f94e9bc6ece957e3d3dfcd45014fb8b80ba9f8f8f005d6db03318",
+      "invocation_sha256": "d710871d76df825c2dc7d2ec587a47a46056b4d58ae0b00e714abff8cbcb3b76"
+    }
+  ],
+  "compiled_memory": {
+    "macros": 623,
+    "logical_bits": 3315328,
+    "logical_bytes": 414416,
+    "by_kind": [
+      {
+        "kind": 0,
+        "count": 4,
+        "bits": 5120
+      },
+      {
+        "kind": 1,
+        "count": 16,
+        "bits": 49152
+      },
+      {
+        "kind": 2,
+        "count": 360,
+        "bits": 1474560
+      },
+      {
+        "kind": 3,
+        "count": 42,
+        "bits": 1376256
+      },
+      {
+        "kind": 4,
+        "count": 1,
+        "bits": 640
+      },
+      {
+        "kind": 5,
+        "count": 200,
+        "bits": 409600
+      }
+    ],
+    "scope": "All six compiled memory families in the source simulation root; excludes registers and does not qualify a mapped candidate or match paper memory."
+  },
+  "legacy_counterexample": {
+    "native_status": {
+      "exit_status": 2,
+      "stop_reason": null,
+      "supervisor_error": null,
+      "owned_group_terminal": true,
+      "wall_seconds": 0.8339686580002308,
+      "minimum_host_available_bytes": 17317101568,
+      "peak_container_anonymous_bytes": 25481216,
+      "minimum_free_disk_bytes": 126114893824
+    },
+    "legacy_expected_numerical_red_observed": true,
+    "actual_gated": 902,
+    "expected_gated": 451,
+    "tool_process_exit_status": 2,
+    "canonical_and_console_agree": true,
+    "fatal_finish_number": 1,
+    "checker_sha256": "9ec3bc3afbfb6aa267e2bc3fdf011ecc44157075ee99cdcb77faa1464972e752"
+  },
+  "verification": {
+    "parent_rehashed_source_pins": {
+      "native_execution_inputs.json": 177,
+      "native_tail_inputs_v2.json": 181
+    },
+    "preparer_tests_passed": 11,
+    "operational_checker_tests_passed": 16,
+    "legacy_fatal_checker_tests_passed": 6,
+    "independent_reviewer": "/root/review_native_batch_launch",
+    "critical_or_important_findings": [],
+    "minor_findings": [
+      "Historical runner checks container name; actual single image verified separately.",
+      "Historical failed runners and logs retained unchanged."
+    ]
+  },
+  "local_evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_verified_v3.json": "ecd0f555b709ce8a61bd4d65685af09d1f484b7cbd6e43d306aa3e5621e478e6",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/prepared_after_review/receipt.json": "5848580aba992e7a28522c75501d7e67254eb58fd4f38ee04079437d95a1b2ff",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_execution_inputs.json": "5f914db5de86ba699b901c0e9984da98746151514f55eab7aed32125449a3da7",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_tail_inputs_v2.json": "7bfb7c383970b497fa7a7802d626958f83f71689f79bfe20be32d7d3ec5e1501",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_failure.json": "84a63407501618464dc39b364061fca93c5530f18edaff284d87175c3208b819",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_tail_failure_v2.json": "dd26795a1604e4cc056144ef27ec763ad1ccbf1668b7e9f9941d9f9c43f8821c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/console_interleaving_diagnosis_v2.json": "d81a693f72676efbc0ea25ea845ee8217fedaa7ab2b92d2404af04b77dc4a857",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/legacy_checker_exit_red.log": "42532265c1056cac05ff537f8eabb310e20e8ae5317ae72b89e5273ca214cb54",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/legacy_checker_exit_green.log": "62cfbeb2911bb226088bfb0918eb4b05008ea70b20bce854ee2ca8a564bd37a5",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_full_memory_inventory_flush_v2/status.json": "eac66d0f0eca7d5870236fa0193a778482c80826a7122fa73907e1d72daf84ed",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_full_memory_inventory_flush_v2/invocation.json": "9d2ceab27c656e18e76053b44e402788a2d56ea0a150ef3166b36ade957c83f1",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_full_memory_inventory_flush_v2/xrun.log": "acab1ec9f0446a2fda92de9739b1604b5408152c6e4b2e4a6383761cdee8e511",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_full_memory_inventory_flush_v2/console.log": "6f1de56d848832c334ba412e40c6d8f9f38673d8e875088553426d2cfaebbc7c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_legacy_row_red/status.json": "295572a3993f1db8412981794cc07e76f9630d1ed5c55681d5d416f5e2823c04",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_legacy_row_red/invocation.json": "0e25a5c96c53914e4038214c9973fa94decf349f46e63b73c7ab82d532da9c5c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_legacy_row_red/xrun.log": "0e8bb834462b605033eeb402d80ee2782ecccba15ae7c260ec1e3eb514ae9d58",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/native_legacy_row_red/console.log": "8fd98eb64f500e2d5234f9932be25f673a0fc5ded638df161c147698a8e761e8"
+  },
+  "fresh_checkout_execution_verified": false,
+  "trained_current_layer_verified": false,
+  "mapped_candidate_memory_verified": false,
+  "full_model_hardware_verified": false,
+  "paper_matching": false
+}

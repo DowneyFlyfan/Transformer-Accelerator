@@ -1,0 +1,78 @@
+{
+  "state": "independently_audited_complete_local_row_weight_software_benchmark",
+  "scope": "Mixed-software arithmetic and prediction policy on the locally frozen protocol. This is not full integer-model or hardware execution and does not confirm the paper prompt or split.",
+  "questions": 12578,
+  "images": 398,
+  "exact_matches": 6206,
+  "accuracy_percent": 49.340117665765625,
+  "paper_reported_reference_accuracy_percent": 55.04,
+  "raw_difference_percentage_points": 5.699882334234374,
+  "like_for_like_paper_protocol_confirmed": false,
+  "attention_calls": 663234,
+  "ordinary_feedforward_rows": 92672603,
+  "row_weight_calls": 685311,
+  "preserved_prefix_records": 7625,
+  "cold_control_indices": [
+    0,
+    7623,
+    7624
+  ],
+  "new_predictions_after_prefix": 4953,
+  "by_question_type": {
+    "choose": {
+      "questions": 1129,
+      "correct": 804
+    },
+    "compare": {
+      "questions": 589,
+      "correct": 274
+    },
+    "logical": {
+      "questions": 1803,
+      "correct": 1075
+    },
+    "query": {
+      "questions": 6805,
+      "correct": 2542
+    },
+    "verify": {
+      "questions": 2252,
+      "correct": 1511
+    }
+  },
+  "configuration_sha256": "d0efab6d8c9e5b00c7f8d8a0383c44d0510693d73cdc3285b6747eef5e8170ea",
+  "source_provenance": {
+    "current_configuration_pins_rechecked": 100,
+    "independent_checked_input_pins_excluding_unchanged_model_shards": 1243,
+    "independent_model_shards_rehashed": false
+  },
+  "independent_verification": {
+    "reviewer": "/root/review_accuracy_completion",
+    "fresh_upstream_scoring_invocations": [
+      {
+        "exit_status": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "exit_status": 0,
+        "stdout_sha256": "c4e1a8a7245208e5453eda9d4f9b4cea95add8dc1684a5b5cf33d1b72057c22a",
+        "stderr_sha256": "b500cd220ed3f99a7b4da83af44dd14886e5939e7ab47a67641d61f12ad78ad7"
+      }
+    ],
+    "critical_or_important_findings": [],
+    "scope": "All predictions, scalar audit entries, authenticated prefix and cold controls; fresh official converter/evaluator scoring without rerunning the model."
+  },
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/accuracy_resume7625_v1/run_config.json": "d0efab6d8c9e5b00c7f8d8a0383c44d0510693d73cdc3285b6747eef5e8170ea",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/accuracy_resume7625_v1/verified_status.json": "a767652fc6e27e5e729287761d9b5608ee8ac2a655ee6dc280d7a5a26bc47862",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/accuracy_resume7625_v1/completion.json": "cbe5337966601f0261d341a56112bb40229d7e079ec2d3448e39b71cc7dd0562",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/accuracy_resume7625_v1/upstream/receipt.json": "16c1f38e8f0fc3d368329cfda74a11f8d9d234eacbbbf4edd0816d8470f757ba",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/independent_accuracy_completion_review_20261122_v1/full_archive_audit.json": "238f8fd5ff3f5c1db7d9b5a0e4088f0f4a5cce2ecc3a72de9f81b0bc01b09bb8",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/independent_accuracy_completion_review_20261122_v1/receipt.json": "e5f14d31a6ab719b30f8aca0796031e55487145ea35e8561bd1f4391b8053d32",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/portable_external_ff_v1/accuracy_terminal_release.json": "fa2c9d45201f7fa032cd46e8734fc47198aa746df4dfa2e9ba412dbca554cb43"
+  },
+  "hardware_accuracy_verified": false,
+  "complete_integer_model_verified": false,
+  "paper_matching": false
+}

@@ -1,0 +1,226 @@
+{
+  "state": "standalone_row_weight_nonlinear_unit_native_verified",
+  "scope": "Unintegrated arithmetic component: add per-channel gate/up offsets to token shifts, preserve scalar rounding and saturation, emit wide/coarse/correction values. No learned controller, memory transport, full trained-layer or model qualification.",
+  "source_sha256": {
+    "verilog/tri_oracle_row_nonlinear.sv": "ab1670cd73086166abc9d4d5a41a5ac5ba64247af258158604b3e32236394140",
+    "verilog/tri_oracle_row_weight_consumer_tb.sv": "8e645d6adf30f8f35d8df7ecc0f5b5b05e727fb50150fcb49a4e718a186f1dca",
+    "verilog/tri_oracle_row_boundary_tb.sv": "fcddf874a4c30066feb3b7af823e928e46fa3dd630ec20dc14543b16080862ff",
+    "syn/prepare_tri_oracle_row_consumer.py": "80b6306b91443c3a6d08bb6ed756315dcb15cda67ce430004cf5966fc8593388"
+  },
+  "source_base_sha256": "4a341ad14a87a421c0140d060e6a14d99b420e5930b7eacb0ebb421bdd14f545",
+  "row_unit_layout": {
+    "resident_bits": 480,
+    "channels": 80,
+    "bits_per_channel": 6,
+    "gate_offset_bits": "2:0",
+    "up_offset_bits": "5:3",
+    "effective_shift": "7-bit token base plus row offset; reject sums above 63 for active tokens/channels"
+  },
+  "additional_registered_output_bits": 1920,
+  "shared_activation_pipeline_count": 1,
+  "additional_compute_arrays": 0,
+  "native": {
+    "unit": {
+      "state": "six_case_row_arithmetic_native_pass_pending_independent_review",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 1.8376720601227134,
+        "minimum_host_available_bytes": 17280823296,
+        "peak_container_anonymous_bytes": 16764928,
+        "minimum_free_disk_bytes": 126103814144
+      },
+      "cases": 6,
+      "packets": 29,
+      "gated_wide_coarse_and_correction_checked": true,
+      "native_log_sha256": "68c2cff9111ae5470050d81f38148052f467b32b6b372ad9eea2ca0c5827f983",
+      "whole_layer_integrated": false,
+      "paper_matching": false
+    },
+    "boundary": {
+      "state": "eighteen_case_row_boundary_native_pass_pending_independent_review",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 0.8366282130591571,
+        "minimum_host_available_bytes": 17261424640,
+        "peak_container_anonymous_bytes": 12816384,
+        "minimum_free_disk_bytes": 126096785408
+      },
+      "cases": 18,
+      "successful_packets": 23,
+      "error_completions": 14,
+      "gated_wide_coarse_and_correction_checked": true,
+      "native_log_sha256": "7d3b0581748ecb97625fc1196c3c93697608e1318abfe11c186fe321c4d35240",
+      "whole_layer_integrated": false,
+      "paper_matching": false
+    },
+    "public_unit": {
+      "state": "six_case_row_arithmetic_native_pass_pending_independent_review",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 1.836700791027397,
+        "minimum_host_available_bytes": 17047736320,
+        "peak_container_anonymous_bytes": 25804800,
+        "minimum_free_disk_bytes": 126052868096
+      },
+      "cases": 6,
+      "packets": 29,
+      "gated_wide_coarse_and_correction_checked": true,
+      "native_log_sha256": "d955ca706001b1608aa3447c5187dbd2316f1681216a214a9ac11aaed39b91ce",
+      "whole_layer_integrated": false,
+      "paper_matching": false
+    },
+    "public_boundary": {
+      "state": "eighteen_case_row_boundary_native_pass_pending_independent_review",
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 0.8355000140145421,
+        "minimum_host_available_bytes": 17131278336,
+        "peak_container_anonymous_bytes": 12128256,
+        "minimum_free_disk_bytes": 126048079872
+      },
+      "cases": 18,
+      "successful_packets": 23,
+      "error_completions": 14,
+      "gated_wide_coarse_and_correction_checked": true,
+      "native_log_sha256": "d7637c34729ee7aae2822db061b30bd7cc007a25fba270c9f9de4dbf45a36abf",
+      "whole_layer_integrated": false,
+      "paper_matching": false
+    }
+  },
+  "deliberately_broken_designs": [
+    {
+      "name": "gate_overflow",
+      "native": {
+        "exit_status": 2,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 0.8357012129854411,
+        "minimum_host_available_bytes": 17548951552,
+        "peak_container_anonymous_bytes": 14688256,
+        "minimum_free_disk_bytes": 126085500928
+      },
+      "previous_successful_cases": 4,
+      "expected_fatal": "ROW_BOUNDARY_REJECTED_DESCRIPTOR_EXECUTED case=4"
+    },
+    {
+      "name": "up_overflow",
+      "native": {
+        "exit_status": 2,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 0.8348170178942382,
+        "minimum_host_available_bytes": 17540313088,
+        "peak_container_anonymous_bytes": 15843328,
+        "minimum_free_disk_bytes": 126075826176
+      },
+      "previous_successful_cases": 5,
+      "expected_fatal": "ROW_BOUNDARY_REJECTED_DESCRIPTOR_EXECUTED case=5"
+    },
+    {
+      "name": "captured_units",
+      "native": {
+        "exit_status": 2,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 0.8347812700085342,
+        "minimum_host_available_bytes": 17506123776,
+        "peak_container_anonymous_bytes": 16089088,
+        "minimum_free_disk_bytes": 126071107584
+      },
+      "previous_successful_cases": 0,
+      "expected_fatal": "ROW_BOUNDARY_OUTPUT_OR_STALL_MISMATCH case=0 token=0"
+    }
+  ],
+  "fixture_sha256": {
+    "coarse.hex": "28531ae510d31059a267dd123024e85c7e438ff6fc988c41d41a462b1aea9e53",
+    "correction.hex": "8043ca84d2255acb89fe49255d7c4d99f2a3a2c9438944b0e007a3eec9223d4d",
+    "down_shifts.hex": "9cfcf605261ce398301d50e908956b720af0bbe3f4dce7d2430698b1b13fa7f5",
+    "gate_shifts.hex": "aee2b25753dae8d92bf9765570a3c1e4b289927281ea03bed2fc2708ecb66e86",
+    "gated.hex": "2bae358d6ab5d3ee7b456922d5bd5e93cb4957b3ee71170b3d9bf85c2f7f4385",
+    "raw.hex": "5f6f6132ac6d51280102de7e104d58f3aff84ae0c3723dcc0cefa63304599d42",
+    "row_units.hex": "5b26363f8917d4f32162e856555e125e9a0cf61a65a59ceab2a8c5c8571fc707",
+    "up_shifts.hex": "64b6d71e8ef6bce75183b72d76ceb7613f589e49b917e22aad762b1f4edccfc7",
+    "wide.hex": "78d6115dbac04dae597926f2ec816495ba01007a9d079b6c6942075fe9831ee9"
+  },
+  "fixture_generator": {
+    "path": "syn/prepare_tri_oracle_row_consumer.py",
+    "native_executed_from_public_paths": true,
+    "all_nine_files_byte_identical_to_independently_audited_inputs": true,
+    "synthetic_projection_inputs": true,
+    "trained_metadata_slices_only": [
+      {
+        "layer": 0,
+        "packet": 0
+      },
+      {
+        "layer": 21,
+        "packet": 70
+      }
+    ],
+    "complete_trained_layer": false
+  },
+  "independent_review": {
+    "state": "standalone_arithmetic_source_independently_reviewed_and_two_qualifier_findings_tested_fixed",
+    "reviewer": "/root/review_row_consumer_complete",
+    "critical_findings": [],
+    "important_findings": [
+      {
+        "finding": "Additional fatal termination with a different finish number was accepted",
+        "resolution": "Parse all standalone termination diagnostics and require exactly one finish number 1",
+        "red_test": "test_second_different_fatal_termination_rejected",
+        "green_suite_tests": 12
+      },
+      {
+        "finding": "Optimized Python could disable provenance assertions",
+        "resolution": "Fail on module entry when assertions are disabled",
+        "red_test": "test_optimized_interpreter_cannot_disable_provenance",
+        "green_suite_tests": 12
+      }
+    ],
+    "unresolved_critical_or_important": [],
+    "minor_findings": [],
+    "independent_active_channels": 2128,
+    "independent_gated_wide_coarse_correction_values": 8512,
+    "independent_activation_lookup_entries": 257,
+    "broader_integration_promotion_qualified": false,
+    "scope_ruling": "Publish an unintegrated standalone source component and tests only. The design note promotion gate still requires full trained-layer, transport, sign/mode selection and two-plane integration evidence before use in a mapped design. No existing controller or candidate is replaced."
+  },
+  "evidence_sha256": {
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/unit_qualified.json": "7d0afdd799317ef2b672d4f752d1d96835ee70b7b02f7a71cc31e5314509c55c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/boundary_qualified.json": "1bf6fdb95b71bb896220872e06b36c54a117a324acdc6036ab9c3824acb7a018",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/public_unit_qualified.json": "310efdf24ba04ec907c2714dffd20d9b282fff325b2a0860e0a8e6d8f19d445c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/public_boundary_qualified.json": "b80333a9c87fb8a5a7f6398f482bc11a6a4a88c71f2f791d281574bdd53b9d76",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/mutation_qualification.json": "6f55d9adea01158126686b1a8561def9350b9f1dc357ec31a1e0c7a03b702960",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/qualify_mutations.py": "b6f15a123448f80d31cd632f31926a86fb0cec5bc7486460e4c795c13c558a47",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/test_mutation_qualifier.py": "847f1ebcd95879334303408d92ae69d0f420b2f3205a0aa22a2f9b6525288451",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/mutation_checker_review_red.log": "f65b6b57d5d23144d90d780db634c697ceb7b427f4917d7703f53ec43229bd14",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/mutation_checker_review_green.log": "07964aadd1b6081340da07b678f7c8ed0b8c870c55e1b06a5a6243b244b06c7c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/public_generated/receipt.json": "8851854ebabd7cd1415522f1b2de3b0d5a18e786bfaf140c3b75964d8530202e",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/vectors.json": "28c6374659f7474817c0fd37298df53068cc283d35407087f28381db963ee845",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/implementation_preparation.json": "3974758da755311cad6840a4f791123aedada040a5a77882ce2d85f39c72cf1c",
+    "/home/downeyflyfan/Research_Projects/Hardware/Attention_Accelerator/.cache/late_clipping_20261121/frame_integration/row_weight_consumer_v1/implementation_review_resolution.json": "1a5b66e14b19b2a73ef784dcf0789b2d9983666e2c00cf188041b5c006532c89"
+  },
+  "metadata_transport_verified": false,
+  "weight_codebook_phase_selection_verified": false,
+  "layer_correction_enable_verified": false,
+  "two_plane_accumulation_integrated": false,
+  "trained_current_layer_verified": false,
+  "mapped_candidate_memory_verified": false,
+  "full_model_hardware_verified": false,
+  "paper_matching": false
+}
