@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "state": "native_complete32head_attention_functional_execution_and_output_storage_verified",
+  "implementation": {
+    "module": "verilog/tri_oracle_complete_head_broker.sv",
+    "testbench": "verilog/tri_oracle_complete_head_broker_tb.sv",
+    "boundary_testbench": "verilog/tri_oracle_complete_head_broker_boundary_tb.sv",
+    "function": "Autonomously score, normalize and accumulate all requested heads for one query, archive all results, then emit complete contexts in ascending head order.",
+    "allocation": "Capacity policy: total compact keys <=128 uses one core/head with20 resident heads/wave; larger uses one cluster/head with5 heads/wave. This128-key threshold is an implementation choice, not a disclosed paper threshold.",
+    "data_path": "Existing20 arrays and core-local normalizers, one shared value accumulator, existing compiled output memories. Query/key/value vectors are supplied by the tensor interface.",
+    "score_storage": "One32-key score/size tile per1024-bit output word; up to1024 selected keys across cluster slots1..8.",
+    "archive_storage": {
+      "total_bytes": 8192,
+      "heads": 32,
+      "bytes_per_head": 256,
+      "head0_to19": "core=head slots12/13",
+      "head20_to31": "core=head-20 slots10/11"
+    },
+    "fixed_payload_register_bits": 2576,
+    "fixed_tile_size_metadata_bits": 1600,
+    "register_accounting_scope": "Payload and tile-size metadata only. Broker control/descriptors and reused score/value submodule registers are additional; these figures are not total added state.",
+    "additional_arrays": 0,
+    "additional_memory_macros": 0,
+    "lifecycle": "Capture all batch fields at acceptance; positive completion frees leases and permits reuse without reset. Cancellation/failure drains accepted transport and requires coupled broker/fabric reset; partial normalizers cannot be reused.",
+    "source_binding": "Broker/full testbench/fixtures are byte-identical to native inputs. Boundary testbench differs only in top-module name and four fixture paths."
+  },
+  "native_regression": {
+    "simulator": "Cadence Xcelium25.03",
+    "container": "tri-oracle-eda",
+    "diagnostic_threads": 1,
+    "positive_batches": 7,
+    "exact_context_values": 8576,
+    "independently_verified_array_row_dots": 76800,
+    "cases": [
+      "back-to-back trained heads19/20 without reset",
+      "all32 core-mapped heads",
+      "all32 cluster-mapped heads",
+      "128-key all32 core-mapped heads",
+      "1024-key retrieval head with31 streaming64-key heads",
+      "accepted score-error drain",
+      "partial-normalizer cancellation/reset fence",
+      "post-reset trained recovery"
+    ],
+    "held_response_cycles": 29,
+    "all_batch_fields_poisoned_after_acceptance": true,
+    "wall_seconds": 144.08215409400873
+  },
+  "trained32_and_memory_boundary": {
+    "positive_batches": 2,
+    "exact_context_values": 4096,
+    "captured_trained_values": 2048,
+    "trained_layer": 19,
+    "trained_query_rank": 1,
+    "trained_visible_keys": 2,
+    "trained_scope": "Captured trained query/key/value vectors and gold from an older completed replay. This does not prove fresh hardware projection or whole-model execution.",
+    "independently_verified_array_row_dots": 32256,
+    "physical_arrays": 20,
+    "instrumented_fabric_memory_macros": 600,
+    "actual_output_word_writes": 6398,
+    "actual_archive_word_writes": 128,
+    "actual_lease_events": 764,
+    "observed_peak_leased_output_words_per_core": 12,
+    "output_words_available_per_core": 16,
+    "peak_lease_scope": "Output slots only; slot0 scratch is separately reserved. Observed peak is not a bound for untested schedules or total chip memory.",
+    "observed_peak_total_leased_output_words": 94,
+    "all_requested_head_archives_present_before_first_context": true,
+    "all_output_leases_empty_at_positive_batch_completion": true,
+    "wall_seconds": 74.24818177893758
+  },
+  "counterexamples": {
+    "serialized_head_policy_native": {
+      "exact_context_values_before_rejection": 128,
+      "rejection": "BROKER_SERIAL_HEAD_POLICY_REJECTED frame=0 configured=00001",
+      "expected_exit_status": 2,
+      "wall_seconds": 13.424073155969381,
+      "scope": "A deliberately one-head-per-wave variant matches arithmetic but fails the concurrent-admission contract."
+    },
+    "frozen_host_trace_auditor_rejected_defects": [
+      "wrong_array_operands",
+      "wrong_array_mask",
+      "wrong_array_output",
+      "wrong_tensor_head",
+      "wrong_tensor_data",
+      "wrong_query",
+      "wrong_normalizer_score",
+      "wrong_token_mass",
+      "wrong_probability",
+      "wrong_context_math",
+      "wrong_context_tag",
+      "wrong_context_exponent",
+      "simulator_warning",
+      "wrong_score_memory_word",
+      "wrong_physical_lease",
+      "wrong_archived_context"
+    ]
+  },
+  "raw_log_integrity": {
+    "raw_files_preserved": true,
+    "canonical_simulator_events_checked": true,
+    "literal_kernel_diagnostic_recovery": "Remove only exact inserted dmesg permission-diagnostic bytes from console in memory, then require every native-event line byte-identical to canonical simulator log. Raw logs remain unchanged.",
+    "recovered_literal_insertions_by_trial": {
+      "full_v1": 2,
+      "serial_v1": 0,
+      "boundary_v1": 2
+    },
+    "no_simulator_errors_or_warnings_in_positive_trials": true
+  },
+  "paper_method_comparison": {
+    "reference": "Figure31.6.4 and architecture Figure31.6.2",
+    "implemented_method_elements": [
+      "20 physical cores in five clusters",
+      "core-versus-cluster head mapping based on retained token count",
+      "core-local proportional normalization with token sizes",
+      "full32-head context collection before projection-facing handoff"
+    ],
+    "remaining_differences": [
+      "Coarse allocation waves do not implement the paper top-bottom/middle-middle cluster offloading or prove its utilization/latency improvements.",
+      "Broker is not yet connected to outer decoder/projection or the placed candidate.",
+      "Captured trained rank1 has only two visible keys; actual trained retrieval/streaming skipping remains to qualify."
+    ]
+  },
+  "qualification_limits": {
+    "outer_decoder_and_projection_integration_verified": false,
+    "current_mapped_candidate_verified": false,
+    "complete_paper_workload_balancing_verified": false,
+    "whole_head_key_residency_verified": false,
+    "full_trained_model_hardware_verified": false,
+    "task_accuracy_benchmark_complete": false,
+    "routing_or_timing_verified": false,
+    "paper_matching": false
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/audit_trace_frozen_v2.py": "5784d22d2d14742d8ffcef0608fcb523882920222a17268a3b860b45dbe5b7ba",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/test_auditor_v2.py": "0e7ebe9f16a396d7cf5437176571854eb7e6c336a69462ff335729d848fcd03f",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/auditor_contracts_v2.json": "93ed8a8c24ec7aa307141f4286a570707d731cf76d7879e3ef4dade270c22d87",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/public_source_binding.json": "c0652fa1274207429076dde615713ec6b168e726d55711241de83551af92f09a",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/prepare_trained32.py": "4c4dcd3bfa4470e38808efe7da186297648ea7c8274b9cf3760e6311ecd5b27b",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/trained32_reference.json": "707e4f73e2a2241b23e9c0cbd0d0d4bd4b9a3c208b41c9492e4deef97296ef2d",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/full_v1_qualified_v2.json": "4dc8844f5685569f5b0e7134cae8300de752927c26d6f74e7658f25b90a6c7e9",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/full_v1/native/invocation.json": "6bf889267305524b21995f3d5c9cfbcaef55e29e7182b4b2a8bd3d73ac227064",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/full_v1/native/status.json": "c7a3f1b6a0ca8cc403cecf554d04191ca87163741de250416166a927008ddbec",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/full_v1/native/xrun.log": "8c8ece5c0c69b67ee2484f68415ea02549c77c3d1c1d2abe2e6166ba43f1760e",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/full_v1/native/console.log": "8945f5cb2c45dde6e8086ad683dd95eab6476121e74706666d38573c816a234a",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/serial_v1_qualified_v2.json": "54b0009d9cf58bf310d958f029f45eb857e3242381100a58bc2fc7cc8cbce4a4",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/serial_v1/native/invocation.json": "ed8cf2270101a70002bf0c19b16ba68f91fb0873cc1d56c259d137441d9fd0a6",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/serial_v1/native/status.json": "235a2c7ade5342f002fcaf805881fa38cf9c32516c6bb35d6b2435b8189146e4",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/serial_v1/native/xrun.log": "1667370247bf6036cea958df486652382277ce7257806825ff7a45e3f078388c",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/serial_v1/native/console.log": "0b9c1b8f4d24e4f23005ebec590df0a0659632298cacfed3ed68917f84a5d907",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/boundary_v1_qualified_v2.json": "b5c837553511ddf591998b56e85544f727aa7525006fe15b0f0410b6cddce9b5",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/boundary_v1/native/invocation.json": "62b06b07d0496702839541206af6b7480cce19bdd4da85a9a9632d29c9db7877",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/boundary_v1/native/status.json": "f6f654a201e2e07e25996bfa7c55f1e3422e3b9a624315bcd05518c0ee1b7fcc",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/boundary_v1/native/xrun.log": "4ff582a3f5cc2a3e2dde94967b34700f966076b9d21a873e7f50ed17f3bc4445",
+    ".cache/late_clipping_20261121/frame_integration/complete_head_broker_v1/boundary_v1/native/console.log": "880f8f4575504eacbb9bf6cf6a26e65f8b8eb045fbbc3a037e7d6f155fc00e4d",
+    "verilog/tri_oracle_complete_head_broker.sv": "e36756142c9374f5fddf7d33c9895920fa249531f16e6e2faaa34989fb0df1ee",
+    "verilog/tri_oracle_complete_head_broker_tb.sv": "8c90cc55a6e84fdd0fc2d2270311cadb00e568f07f8350fea105a6ba28debdce",
+    "verilog/tri_oracle_complete_head_values.hex": "425da4a75048974816839dea9f17cea0d4d77fcf8b88177f79d0fb2333c4aed7",
+    "verilog/tri_oracle_complete_head_contexts.hex": "d799a2cff5cf46141f77289d3bf3c207badef9793ef9c84633e906d8fb018a90",
+    "verilog/tri_oracle_complete_head_trained32_q.hex": "ca4b1c270702ddec5ccc65e7a97020c017857e1b8b651e3c2ed6581681030608",
+    "verilog/tri_oracle_complete_head_trained32_k.hex": "334859e773496f44cba419beeb2aebe84392299bebf2c2dedb8523f85634f558",
+    "verilog/tri_oracle_complete_head_trained32_v.hex": "4348161ed3b39964724286e492025cbcf000507b0a8f30faef2249dea882b6e9",
+    "verilog/tri_oracle_complete_head_trained32_gold.hex": "184534e8ee2521aff4a7597296f1245916eb9b14aad40de008f87d8d877258e0",
+    "verilog/tri_oracle_complete_head_broker_boundary_tb.sv": "6236cbed5d68cc45eeb1d80d49e2a8940e45d8c0fbd407c70425ac75bdc6b780"
+  }
+}
