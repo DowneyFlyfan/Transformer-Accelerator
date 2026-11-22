@@ -55,7 +55,15 @@ module tri_oracle_shared_attention_projection_tb;
  logic [68:0] held_metadata;
  int case_id=0,frame=-1,cycle=0,received=0,requests=0,delay_count=0;
  bit serving=0;
- string qk_file,value_file,gold_file;
+ string qk_file,value_file,gold_file,fixture_root=".";
+ function automatic string fixture_path(input string relative_path);
+  string path;int handle;
+  path={fixture_root,"/",relative_path};
+  handle=$fopen(path,"r");
+  if(handle==0)$fatal(1,"SHARED_FIXTURE_MISSING file=%s",path);
+  $fclose(handle);
+  return path;
+ endfunction
 
  logic c_cfg_valid,c_cfg_ready,c_row_ready,c_metadata_idle=0;
  logic c_lease_block,c_needs_rebuild,c_lease,c_valid,c_done,c_done_ready,c_error;
@@ -87,7 +95,12 @@ module tri_oracle_shared_attention_projection_tb;
   logic [31:0] projection_cfg_tag=0;
   logic [7:0] projection_cfg_count=0;
   logic [2559:0] projection_cfg_channels=0,projection_cfg_keep=0;
-  logic projection_out_valid,projection_out_ready=0,projection_out_last;
+  logic projection_out_valid,projection_out_last;
+`ifdef QUANTIZED_PROJECTION
+  logic projection_out_ready;
+`else
+  logic projection_out_ready=0;
+`endif
   logic [31:0] projection_out_tag,projection_done_tag;
   logic [3:0] projection_out_token;
   logic [7:0] projection_out_count;
@@ -112,6 +125,51 @@ module tri_oracle_shared_attention_projection_tb;
   int context_word_inflight=0;
   logic finish_seen=0;
   bit projection_fault_case=$test$plusargs("PROJECTION_ERROR");
+
+`ifdef QUANTIZED_PROJECTION
+  logic quant_out_valid,quant_out_ready=0,quant_last,quant_packet_last,quant_idle,quant_fault;
+  logic [31:0] quant_tag;
+  logic [3:0] quant_token,quant_count;
+  logic [127:0] quant_channels;
+  logic [63:0] quant_data,quant_expected[256];
+  logic [255:0] quant_weight_units,quant_output_units;
+  int quant_values=0,quant_words=0;
+  string quant_expected_file;
+  initial begin
+    if(!$value$plusargs("EXPECTED_WORDS=%s",quant_expected_file) ||
+       !$value$plusargs("WEIGHT_EXPONENTS=%h",quant_weight_units) ||
+       !$value$plusargs("OUTPUT_EXPONENTS=%h",quant_output_units))
+      $fatal(1,"SHARED_QUANTIZED_INPUTS_MISSING");
+    $readmemh(quant_expected_file,quant_expected);
+  end
+  tri_oracle_projection_requantizer quantizer (
+    .clk,.rst_n,.cancel,.in_valid(projection_out_valid),.in_ready(projection_out_ready),
+    .in_tag(projection_out_tag),.in_token(projection_out_token),.in_last(projection_out_last),
+    .in_count(projection_out_count),.in_channels(projection_out_channels),.in_data(projection_out_data),
+    .context_exponent(c_unit),.weight_exponents(quant_weight_units),.output_exponents(quant_output_units),
+    .out_valid(quant_out_valid),.out_ready(quant_out_ready),.out_tag(quant_tag),.out_token(quant_token),
+    .out_last(quant_last),.out_packet_last(quant_packet_last),.out_count(quant_count),
+    .out_channels(quant_channels),.out_data(quant_data),.idle(quant_idle),.fault(quant_fault)
+  );
+  always @(posedge clk)if(rst_n)begin
+    if(quant_fault)$fatal(1,"SHARED_QUANTIZER_UNEXPECTED_FAULT");
+    if(quant_out_valid && quant_out_ready)begin
+      if(quant_count!=8 || quant_token!=0 || !quant_last ||
+         quant_tag!==32'h80000000+32'(quant_values/160) ||
+         quant_packet_last!==(quant_values%160==152 || quant_values==2040) ||
+         quant_data!==quant_expected[quant_values/8] || !c_lease || !co_route || finish_seen)
+        $fatal(1,"SHARED_QUANTIZED_WORD_WRONG index=%0d",quant_words);
+      for(int lane=0;lane<8;lane++)
+        if(quant_channels[lane*16+:16]!==16'(quant_values+lane))
+          $fatal(1,"SHARED_QUANTIZED_CHANNEL_WRONG");
+      $display("SHARED_QUANTIZED_WORD index=%0d tag=%08h token=%0d source_last=%0d packet_last=%0d count=%0d channels=%032h data=%016h",
+        quant_words,quant_tag,quant_token,quant_last,quant_packet_last,quant_count,quant_channels,quant_data);
+      quant_values+=8;quant_words++;
+    end
+    if(co_finish_valid && co_finish_ready && (quant_values!=2048 || !quant_idle))
+      $fatal(1,"SHARED_QUANTIZED_EARLY_FINISH");
+  end
+`endif
 
   always_comb begin
     attention_bus='0;
@@ -142,7 +200,15 @@ module tri_oracle_shared_attention_projection_tb;
   end
   tri_oracle_projection_frame_guard frame_guard (
     .frame_valid(co_frame_valid),.cfg_valid(projection_cfg_valid),.cfg_ready(projection_cfg_ready),
-    .window_idle(projection_window_idle),.outer_cancel(cancel),.done_valid(projection_done_valid),.done_error(projection_done_error),
+    .window_idle(projection_window_idle
+`ifdef QUANTIZED_PROJECTION
+      && quant_idle
+`endif
+    ),.outer_cancel(cancel
+`ifdef QUANTIZED_PROJECTION
+      || quant_fault
+`endif
+    ),.done_valid(projection_done_valid),.done_error(projection_done_error),
     .admitted_valid(projection_admitted_valid),.command_idle(projection_command_idle),
     .projection_idle(projection_complete_idle),.frame_cancel
   );
@@ -258,7 +324,16 @@ module tri_oracle_shared_attention_projection_tb;
       $display("SHARED_PROJECTION_DOT channel=%0d raw=%0d",group_index*160+row,$signed(projection_out_data[row*32+:32]));
       projection_values++;
     end
+`ifdef QUANTIZED_PROJECTION
+    for(int word_index=0;word_index<group_count/8;word_index++)begin
+      repeat(word_index%3+1)@(negedge clk);
+      if(!quant_out_valid || !c_lease || !co_route || finish_seen)
+        $fatal(1,"SHARED_QUANTIZED_OUTPUT_NOT_HELD");
+      quant_out_ready=1;@(negedge clk);quant_out_ready=0;
+    end
+`else
     projection_out_ready=1;@(negedge clk);projection_out_ready=0;
+`endif
     while(!projection_done_valid)@(negedge clk);
     if(projection_done_error || projection_done_tag!==32'h80000000+32'(group_index))
       $fatal(1,"SHARED_PROJECTION_DONE_ERROR");
@@ -314,6 +389,9 @@ module tri_oracle_shared_attention_projection_tb;
   if(co_frame_valid && !commit_reported)begin
    commit_reported=1;
    $display("COMMIT_FRAME_READY query=%0d tag=%08h exponent=%0d",c_query,c_tag,$signed(c_unit));
+`ifdef QUANTIZED_PROJECTION
+   $display("SHARED_PROJECTION_UNITS context=%0d weights=%064h outputs=%064h",$signed(c_unit),quant_weight_units,quant_output_units);
+`endif
   end
   if(co_finish_valid && co_finish_ready)$display("COMMIT_FINISH_ACCEPTED");
   if(c_done && c_done_ready)$display("COMMIT_COLLECTOR_TERMINAL error=%0d",c_error);
@@ -472,17 +550,18 @@ module tri_oracle_shared_attention_projection_tb;
   $display("BROKER_FRAME_PASS frame=%0d case=%0d values=%0d requests=%0d first_value_configured=%05h",frame,case_id,received,requests,first_value_configured);
  endtask
  initial begin
+  void'($value$plusargs("FIXTURE_ROOT=%s",fixture_root));
   if(!$value$plusargs("QK=%s",qk_file) || !$value$plusargs("VALUES=%s",value_file) || !$value$plusargs("GOLD=%s",gold_file))$fatal(1,"BROKER_FIXTURES_MISSING");
   $readmemh(qk_file,qk);$readmemh(value_file,values);$readmemh(gold_file,golden);
-  $readmemh(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/query.hex",trained_q);
-  $readmemh(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/key.hex",trained_k);
-  $readmemh(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/value.hex",trained_v);
-  $readmemh(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/contexts.hex",trained_gold);
-  $readmemh(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/sizes.hex",trained_sizes);
-  $readmemh(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/projection_words.hex",converted_words);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/query.hex"),trained_q);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/key.hex"),trained_k);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/value.hex"),trained_v);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/contexts.hex"),trained_gold);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/sizes.hex"),trained_sizes);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/complete_head_handoff_v1/projection_words.hex"),converted_words);
 
-  $readmemh(".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/output_weight_words.hex",output_weights);
-  $readmemh(".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/output_accumulators.hex",output_accumulators);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/output_weight_words.hex"),output_weights);
+  $readmemh(fixture_path(".cache/late_clipping_20261121/frame_integration/shared_attention_projection_v1/output_accumulators.hex"),output_accumulators);
   repeat(2)@(negedge clk);rst_n=1;
   @(negedge clk);cfg_valid=1;cancel=1;#1;
   if(cfg_ready || busy)$fatal(1,"BROKER_CANCELLED_CONFIGURATION_ACCEPTED");
@@ -506,6 +585,10 @@ module tri_oracle_shared_attention_projection_tb;
   if(!cfg_ready || busy || co_done_valid)$fatal(1,"COMMIT_TRAINED_REUSE_FAILED");
   $display("COMMIT_QUERY_DONE error=0");
   if(projection_values!=2048 || projection_context_words!=3328 || projection_weight_words!=524288)$fatal(1,"SHARED_PROJECTION_COVERAGE");
+`ifdef QUANTIZED_PROJECTION
+  if(quant_values!=2048 || quant_words!=256 || !quant_idle || quant_fault)$fatal(1,"SHARED_QUANTIZED_COVERAGE");
+  $display("SHARED_QUANTIZED_PROJECTION_PASS words=256 codes=2048");
+`endif
   $display("SHARED_ATTENTION_PROJECTION_PASS heads=32 query=280 context_values=2048 projection_dots=%0d context_word_reads=%0d weight_word_reads=%0d",projection_values,projection_context_words,projection_weight_words);$finish;
  end
  initial begin #150000000;$fatal(1,"BROKER_WATCHDOG state=%0d code=%02h pending_tensor=%0d pending_read=%0d",dut.state,error_code,dut.tensor_pending,dut.read_pending);end
