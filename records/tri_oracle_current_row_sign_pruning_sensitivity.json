@@ -1,0 +1,112 @@
+{
+  "state": "captured_layer_pruning_sensitivity_independently_verified",
+  "problem": "The local zero-width Up threshold cannot skip channels for odd outlier counts; simply widening it may remove substantial useful computation.",
+  "scope": "One frozen question201030233, layer19,280 ordinary positions from281retained tokens. Processor-only counterfactual computation, not native hardware or model answer accuracy.",
+  "prediction": "Actual signed8 row-codebook weight signs, strict three-standard-deviation outliers from captured pre-affine normalization, Gate margin<=0 and abs(Up margin)<=window.",
+  "oracle": "Unchanged full-precision trained Gate/Up, SiLU and Down matrices at captured normalized inputs, evaluated in float64. This differs from the current native integer datapath.",
+  "relative_output_error_definition": "Euclidean norm(pruned Down output - dense Down output) / Euclidean norm(dense Down output)",
+  "thresholds_fixed_before_outputs": [
+    0,
+    1,
+    3,
+    5
+  ],
+  "results": [
+    {
+      "local_gate_margin_max": 0,
+      "local_up_window": 0,
+      "skipped_channels": 105242,
+      "candidate_channels": 1576960,
+      "skipped_fraction": 0.0667372666396104,
+      "squared_product_energy_removed_fraction": 0.04800041245207388,
+      "relative_dense_down_l2": 0.22180821589129507,
+      "maximum_absolute_dense_down_difference": 0.38577754655860325,
+      "odd_count_rows": 151,
+      "odd_count_rows_with_any_skip": 0
+    },
+    {
+      "local_gate_margin_max": 0,
+      "local_up_window": 1,
+      "skipped_channels": 333891,
+      "candidate_channels": 1576960,
+      "skipped_fraction": 0.21173079849837662,
+      "squared_product_energy_removed_fraction": 0.14425103792555158,
+      "relative_dense_down_l2": 0.38464346482026146,
+      "maximum_absolute_dense_down_difference": 0.412252856057049,
+      "odd_count_rows": 151,
+      "odd_count_rows_with_any_skip": 151
+    },
+    {
+      "local_gate_margin_max": 0,
+      "local_up_window": 3,
+      "skipped_channels": 709315,
+      "candidate_channels": 1576960,
+      "skipped_fraction": 0.44979898031655846,
+      "squared_product_energy_removed_fraction": 0.3260656488248996,
+      "relative_dense_down_l2": 0.581349388500552,
+      "maximum_absolute_dense_down_difference": 1.1107872075309748,
+      "odd_count_rows": 151,
+      "odd_count_rows_with_any_skip": 151
+    },
+    {
+      "local_gate_margin_max": 0,
+      "local_up_window": 5,
+      "skipped_channels": 972401,
+      "candidate_channels": 1576960,
+      "skipped_fraction": 0.6166300984172078,
+      "squared_product_energy_removed_fraction": 0.46754633845408333,
+      "relative_dense_down_l2": 0.6973268498675104,
+      "maximum_absolute_dense_down_difference": 1.052805089282952,
+      "odd_count_rows": 151,
+      "odd_count_rows_with_any_skip": 151
+    }
+  ],
+  "conclusion": "The local zero window skips6.67% of channels in this capture; window5 skips61.66% but changes the dense Down output by69.73% in relative norm. No threshold is selected. The paper pruning benefit remains unverified; answer-accuracy calibration is required.",
+  "execution": {
+    "actual_service_exit": 0,
+    "service_seconds": 11.127,
+    "processor_seconds": 23.572052,
+    "configured_processor_threads": 20,
+    "process_peak_resident_bytes": 1020837888,
+    "total_kernel_memory_cap_bytes": 2147483648,
+    "actual_total_memory_peak_bytes": 2147483648,
+    "swap_peak_bytes": 0,
+    "graphics_context_created": false,
+    "exit_proof": "Actual systemd-run status0 completion capture with matching journal invocation; not default properties of an unloaded transient unit.",
+    "existing_dependency_futurewarning_retained": true
+  },
+  "validation": {
+    "scalar_math_tests": 2,
+    "scalar_margin_checks": 96,
+    "all14_source_hashes_before_and_after": true,
+    "independent_all_window_values_reproduced": true,
+    "independent_maximum_absolute_metric_difference": 8.881784197001252e-16,
+    "final_independent_source_review_pending": false,
+    "critical_findings": 0,
+    "important_findings": 0,
+    "independent_method": "Sparse sign mismatches and removed-product Down projection; no original diagnostic functions imported or original worker rerun"
+  },
+  "active_hardware_simulation_identity_preserved": true,
+  "hardware_or_threshold_changed": false,
+  "full_model_accuracy_verified": false,
+  "complete_current_trained_model": false,
+  "paper_matching": false,
+  "clock_distribution_or_routing_allowed": false,
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/inputs.json": "8f1c4dcbb346cc15287c42c75404e0e5896946eaa8511c4e3d2a5e0bd231fd44",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/run.py": "3724696ae5e493778571abe83466fa61ae19e825b17c2981bbb14bd5aaac9094",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/result.json": "6700ed9888265b7f76fb6e1fd32c7cf7e661b669d6a0c776ede652a485fe3add",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/launch.json": "a2d64aadb863158e8c567135243a9aa8c917953d378bac1fd951d47fcc63aee7",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/terminal.json": "5b9249da60c50697f6c6b910b1d0acd79d6a761461dce2637d0e2bc0e82d03d9",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/console.log": "720f9d420f2cdf752633a668e1fbe998babbb62a09276a0e30c88701b2e61ebe",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/journal.jsonl": "47b3fbf3b3994a69dfeab63a9983f44e760f0dffa1fa6a7f98b63eb608f0e13e",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/architecture.pdf": "40e0685fbb622c047f5e724935d1c016e8369ae2192a655c0e90898aebefb7d9",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/review.json": "857418413690a9af1027b5bef786f40a1db5a947c4aa8ccd7b3c70aa7ff71f73",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/independent_reproduction_source.py": "5e913ae93130b4845dfa6f3935349d97954a8bb5e8de18965f3c3cd9fd34c234",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/independent_reproduction_comparison.json": "aa67696feaa919051f9c9c819a0c4a0f2e74789ac413081e28b33bf8562015bd",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/independent_reproduction_terminal.json": "0f9fc1c9ef1f4c4d95e18a898e8d34273b23abd15490b7e85af78c9f882845a1",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/independent_reproduction_console.log": "f294c740a4d560d0a72a86eef6ea306d15c79cccb6a60f9459dc35d10289f0e0",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/independent_reproduction_journal.jsonl": "27bc636019a1bcbf58bef1eeb3f316ba6807f474b263fbbc8ecbbadda947770b",
+    ".cache/late_clipping_20261121/frame_integration/pruning_diagnostic_v1/independent_reproduction_launch.json": "29b124e21d87391f40b8dd5b5a4ccbce317c8e924ed3ccfe14ea350c8d2c903e"
+  }
+}
