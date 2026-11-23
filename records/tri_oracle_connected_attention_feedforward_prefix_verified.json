@@ -1,0 +1,242 @@
+{
+  "state": "two_trained_queries_connected_to_feedforward_prefix_with_actual_corruption_control_independently_verified",
+  "simulator": "Cadence Xcelium 25.03",
+  "scope": {
+    "layer": 19,
+    "original_positions": [
+      1,
+      2
+    ],
+    "tokens": 2,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "outputs": 2048,
+    "attention_heads": 32,
+    "shared_compute_arrays": 20,
+    "same_native_invocation": true,
+    "input_boundary": "Captured projected query/key/value vectors, fixed streaming-head configuration and scales, authentic pre-attention residuals and trained weights",
+    "dataflow": "Both actual attention/output-projection residual rows are accepted into a testbench external-memory model, then read by the feed-forward controller for statistics and replay",
+    "output_scope": "Feed-forward prefix only: first 320 coarse/correction activation bytes and 8 metadata words; zero raw Down outputs in this connected run"
+  },
+  "positive": {
+    "native": {
+      "exit_status": 0,
+      "stop_reason": null,
+      "supervisor_error": null,
+      "owned_group_terminal": true,
+      "wall_seconds": 645.1249206119683,
+      "minimum_host_available_bytes": 11849007104,
+      "peak_container_anonymous_bytes": 200458240,
+      "minimum_free_disk_bytes": 115164778496
+    },
+    "original_postprocessing_worker_exit": 1,
+    "original_postprocessing_queue_failed": true,
+    "original_failure": "Two 58-byte external kernel-log access diagnostics split an address field in the console transcript; the canonical simulator log remained intact",
+    "separate_actual_recovery_worker_exit": 0,
+    "separate_actual_recovery_queue_verified": true,
+    "original_failed_records_preserved": true,
+    "queries": [
+      {
+        "query": 1,
+        "actual_arrays": 20,
+        "partial_three_family_memory_witnesses": 602,
+        "exact_array_transactions": 16896,
+        "exact_array_row_dots": 540672,
+        "exact_attention_values": 2048,
+        "exact_projection_dots": 2048,
+        "exact_projection_codes": 2048,
+        "exact_normalization_values": 2048,
+        "exact_bypass_values": 2048,
+        "context_word_reads": 3328,
+        "weight_word_reads": 524288,
+        "zero_context_words": 0,
+        "skipped_zero_activation_weight_words": 0,
+        "tensor_requests": {
+          "0": 32,
+          "1": 64,
+          "2": 64
+        },
+        "actual_projection_stream_to_residual_verified": true,
+        "independent_sinks_and_drain_verified": true
+      },
+      {
+        "query": 2,
+        "actual_arrays": 20,
+        "partial_three_family_memory_witnesses": 602,
+        "exact_array_transactions": 16896,
+        "exact_array_row_dots": 540672,
+        "exact_attention_values": 2048,
+        "exact_projection_dots": 2048,
+        "exact_projection_codes": 2048,
+        "exact_normalization_values": 2048,
+        "exact_bypass_values": 2048,
+        "context_word_reads": 3328,
+        "weight_word_reads": 518144,
+        "zero_context_words": 3,
+        "skipped_zero_activation_weight_words": 6144,
+        "tensor_requests": {
+          "0": 32,
+          "1": 96,
+          "2": 96
+        },
+        "actual_projection_stream_to_residual_verified": true,
+        "independent_sinks_and_drain_verified": true
+      }
+    ],
+    "actual_operand_linkage": {
+      "stats_strips": 512,
+      "replay_strips": 512,
+      "values_per_pass": 4096
+    },
+    "feedforward_values": {
+      "plane_bytes_compared": 320,
+      "final_outputs_compared": 0,
+      "metadata_words_compared": 8,
+      "canonical_console_values_agree": true,
+      "full_trained_learned_path_verified": false,
+      "closed_loop_model_verified": false,
+      "paper_matching": false
+    },
+    "console_normalization": {
+      "removed_bytes": 116,
+      "original_byte_offsets": [
+        4068659,
+        4068717
+      ],
+      "raw_console_sha256": "77498bacafd6805677cff2bdd4e95679806bd7fb586a5afef6aa638f6b794f9e",
+      "normalized_console_sha256": "19de9030b1d9623464dd9ba38dee5ff589f357f20010d1b2a1e61806b72e5fa6",
+      "only_exact_known_external_diagnostic_removed": true,
+      "numeric_fields_hierarchy_names_and_native_warnings_or_errors_not_removed": true
+    }
+  },
+  "negative": {
+    "native": {
+      "exit_status": 2,
+      "stop_reason": null,
+      "supervisor_error": null,
+      "owned_group_terminal": true,
+      "wall_seconds": 541.0242794789374,
+      "minimum_host_available_bytes": 11922202624,
+      "peak_container_anonymous_bytes": 200425472,
+      "minimum_free_disk_bytes": 114844549120
+    },
+    "host_worker_exit": 0,
+    "host_queue_verified": true,
+    "mutation": "Toggle bit 12 of token 0, feature 0 residual operand after the correct attention/projection producer completes",
+    "intended_failure": "LEARNED_NORM_VALUE",
+    "actual_operand_linkage": {
+      "stats_strips": 256,
+      "replay_strips": 1,
+      "nominal_frame_values": 4096,
+      "actual_stats_values": 2048,
+      "actual_replay_values": 8
+    },
+    "both_prior_query_value_audits_passed": true,
+    "positive_feedforward_completion_rejected": true
+  },
+  "source_memory_census": {
+    "macros": 623,
+    "logical_bits": 3315328,
+    "logical_bytes": 414416,
+    "completion_marker_verified": true,
+    "simulation_clock_edges": 0,
+    "partial_three_family_macros": 602,
+    "by_kind": [
+      {
+        "kind": 0,
+        "master": "TS5N28HPCPSVTA16X80M2FW",
+        "instances": 4,
+        "logical_bits": 5120
+      },
+      {
+        "kind": 1,
+        "master": "TS5N28HPCPSVTA24X128M2FW",
+        "instances": 16,
+        "logical_bits": 49152
+      },
+      {
+        "kind": 2,
+        "master": "TS5N28HPCPSVTA32X128M2FW",
+        "instances": 360,
+        "logical_bits": 1474560
+      },
+      {
+        "kind": 3,
+        "master": "TS5N28HPCPSVTA512X64M4F",
+        "instances": 42,
+        "logical_bits": 1376256
+      },
+      {
+        "kind": 4,
+        "master": "TS5N28HPCPSVTA8X80M2FW",
+        "instances": 1,
+        "logical_bits": 640
+      },
+      {
+        "kind": 5,
+        "master": "TS6N28HPCPSVTA16X128M2F",
+        "instances": 200,
+        "logical_bits": 409600
+      }
+    ],
+    "bytes_by_role": {
+      "aggregator_io": 10240,
+      "core_inputs": 163840,
+      "core_masks": 20480,
+      "core_outputs": 40960,
+      "core_weights": 163840,
+      "prediction_metadata": 8192,
+      "surviving_sign_bank": 6144,
+      "token_merge_table": 720
+    },
+    "unique_instance_inventory_sha256": "97de9fb22c326f1a0bf46a7dc1292df413e23d757aa053d94f6922ff3b1201d9",
+    "ordinary_register_storage_included": false,
+    "mapped_memory_verified": false,
+    "paper_byte_convention_confirmed": false,
+    "paper_matching": false
+  },
+  "independent_review": {
+    "critical_findings": 0,
+    "important_findings": 0,
+    "complete_unchanged_auditor_replayed": true,
+    "prefix_review_sha256": "d999d94d11b67f794083717071298730d360aa4a9bc44f6e74c3a856dc29e20c",
+    "pair_review_sha256": "05d331f0a6ffea888baaabf5d79d61afa82d1606aa1e2ce9367cd11a64aea338"
+  },
+  "limitations": [
+    "This is the beginning of connected feed-forward execution. The complete connected frame has not yet qualified.",
+    "A separate native feed-forward result verifies 4,096 raw Down sums; it is not substituted for a complete connected invocation.",
+    "The source hierarchy contains 623 compiled memory macros totaling 414,416 logical bytes. Ordinary registers, current mapped-memory equivalence and the paper byte convention remain unqualified.",
+    "The current local integer scales/codebooks and fixed configuration do not establish equality to undisclosed paper arithmetic or calibration.",
+    "Fresh input projection, native head prediction/token merging, final writeback integration, full-model hardware, task accuracy, mapped timing/power and paper performance remain unverified."
+  ],
+  "full_connected_frame_verified": false,
+  "final_writeback_integrated": false,
+  "full_model_hardware_verified": false,
+  "task_accuracy_verified": false,
+  "current_mapping_verified": false,
+  "complete_memory_capacity_verified": false,
+  "physical_advancement_allowed": false,
+  "paper_matching": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/connected_console_recovery_v1/prefix_result.json": "e330616d54c95a7ca412577648a4dc05f776474e08bdad4243a8d99e2be48ec1",
+    ".cache/late_clipping_20261121/frame_integration/connected_console_recovery_v1/prefix_worker_terminal.json": "063c6871e4408be150520d43dfd72fb764b2108e6f480f69e8cc8dc2148d7304",
+    ".cache/late_clipping_20261121/frame_integration/connected_console_recovery_v1/prefix_queue_terminal.json": "11384ea48182b0d3c092a4f40067728dda373f23c4ded231eea7b6a5485ab633",
+    ".cache/late_clipping_20261121/frame_integration/connected_console_recovery_v1/prefix_console_normalization.json": "428888b0df63b0a1fcecd8249d392d6f3b2bc4240dbd141cf8b2aafbf2250ac0",
+    ".cache/late_clipping_20261121/frame_integration/connected_console_recovery_v1/prefix_actual_review.json": "d999d94d11b67f794083717071298730d360aa4a9bc44f6e74c3a856dc29e20c",
+    ".cache/late_clipping_20261121/frame_integration/connected_console_recovery_v1/connected_pair_review.json": "05d331f0a6ffea888baaabf5d79d61afa82d1606aa1e2ce9367cd11a64aea338",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_inputs_prefix.json": "a5179eed8045e185631d2e136ebbb2d4d792c062dd2dddcf6fedf17ce87850c2",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_prefix/status.json": "3d7dcee500eaa69b36c4d7e011cf912802c22d3f15849897d30a3a1e0dcdc080",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_prefix/xrun.log": "14976c5fdf3939a593f1943bc954453fedb532393bbe8feca1899644e951f4e4",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_prefix/console.log": "77498bacafd6805677cff2bdd4e95679806bd7fb586a5afef6aa638f6b794f9e",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_prefix/invocation.json": "47dfee7d921c6e6bbb79efb1a76d545dddc8d0d637748d37268edc2175373ade",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/prefix_worker_terminal.json": "8a4747d0f906451dfe19dd91efb8e1770a1510c8f791a750670ea55e2bc320b6",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/prefix_queue_failure.json": "a9f318747b9e27a35bf3f874aaea255aa9050f1c1ca66e408f10582577ea911d",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/corrupt_result.json": "ba443e1911a5a2dbcdcd0e4ab4b657ad57b4ce61e59684faca75943dba55455d",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/corrupt_worker_terminal.json": "56bbc1af826acbae01c71b69a33a227bd6eb14541b52a00564a8782a779aae5a",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/corrupt_queue_terminal.json": "0773aff271ac6a2246c87798d137b673c43ec9ccbbd04fd925ef91d8de8f6e58",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_corrupt/status.json": "7bbc5a6172bc6981207a7d883961f1ce4dd350ae43d9448beb23103027d4595b",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_corrupt/xrun.log": "a6e8e66d19e2da7a5182dc6f15801ae7cf54ea7cb205864216389781b06058f2",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_corrupt/console.log": "54daf6034e9fa7a4eceeec12e8ca1867cc1dc900f022bf752120a33548dd62ef",
+    ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_corrupt/invocation.json": "aaf88d19ccb2f1a491d0b7c83365837dbbdafec7adcfd5a4bd31571f4f81e4ab"
+  }
+}
