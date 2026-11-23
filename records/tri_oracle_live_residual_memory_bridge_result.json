@@ -1,0 +1,69 @@
+{
+  "state": "standalone_live_residual_producer_memory_bridge_verified",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "source_sha256": {
+    "verilog/tri_oracle_external_residual_frame.sv": "7cb037c02b093e83114442b056875585e8038bc9721e86063a0aee6b4944be71",
+    "verilog/tri_oracle_external_residual_frame_tb.sv": "05ae5501b2a701815dfee6b272038fedc32b62b031903509c991e0c6cddbad95",
+    "verilog/tri_oracle_residual_external_writer.sv": "6588f152dca8b7790f2afea755c61def9c354ab3fdcd60cad711ac92e96166ae",
+    "verilog/tri_oracle_residual_external_reader.sv": "13ce49a9269a970dcf15f9f92ee9535864f8ea73b85dfc63f85138f14ded2eae",
+    "verilog/tri_oracle_residual_external_transport.sv": "eb43ad93cf91e3121aa9fc9fe1a682b56fd8133417db8c04a898c811d5a3e1da"
+  },
+  "published_sources_identical_to_native_inputs": true,
+  "scope": "Actual residual producer through external write acknowledgments and memory readback into statistics, replay and bypass interfaces, sharing read/write buses with scalar test clients.",
+  "stimulus": "Previous verified actual quantized outputs plus genuine pre-residual and shift metadata. This test does not rerun attention, feed-forward computation or the final writer.",
+  "native_exit": 0,
+  "worker_exit": 0,
+  "queue_pass": true,
+  "native_wall_seconds": 0.9924700120463967,
+  "source_seal_sha256": "fde4e032ae8eac3280f75021485ae17af2b4052224f08fd7928b9beba11a965d",
+  "result_sha256": "9fb08339f23d33f5827e0de67895670d21d87efbab19f2e01beebb11a6ad7617",
+  "independent_review": {
+    "path": ".cache/late_clipping_20261121/frame_integration/continuous_external_residual_v6/actual_review_v1.json",
+    "sha256": "e985b4a40a737dec45b81ad1f7a967050662494d956abc52f81da1d71531462c",
+    "critical_findings": 0,
+    "important_findings": 0
+  },
+  "capture_abort_regression": {
+    "previous_native_exit": 2,
+    "previous_worker_exit": 1,
+    "previous_aggregate_qualified": false,
+    "previous_diagnostic": "HUB_CAPTURE_ABORT_RELEASE_TIMEOUT",
+    "fixed_without_reset": true,
+    "fix": "Failed capture terminals bypass clearing an unstarted replay link; normal frames still require replay completion."
+  },
+  "reproduction": {
+    "test_source": "verilog/tri_oracle_external_residual_frame_tb.sv",
+    "producer_fixture_argument": "+ROOT=<directory containing producer_residual_q32.hex, producer_codes.hex, producer_shifts.hex>",
+    "gold_argument": "+TRAINED_ROOT=<directory containing computed_normalization_q13.hex and computed_bypass_q26.hex>",
+    "local_fixtures": ".cache/late_clipping_20261121/frame_integration/continuous_external_residual_v6",
+    "fixtures_and_logs_kept_local": true
+  },
+  "limits": [
+    "Scalar clients in this test use literal payloads; real feed-forward and final-writeback bus integration is pending.",
+    "The frame owner must retain the external-memory lease through all consumers. Active replay faults require coupled reset.",
+    "No compiled static random-access memory model is added by this bridge. Ordinary register storage and complete-chip accounting still require mapping.",
+    "No paper energy, timing or accuracy result follows from this functional test."
+  ],
+  "current_chip_integration_verified": false,
+  "full_model_hardware_verified": false,
+  "full_model_accuracy_verified": false,
+  "current_mapping_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "data_checks": {
+    "producer_rows": 512,
+    "statistics_rows": 512,
+    "replay_rows": 512,
+    "bypass_rows": 512,
+    "write_beats": 2050,
+    "write_acks": 257,
+    "read_packets": 792,
+    "read_beats": 6192,
+    "scalar_requests": 24,
+    "scalar_response_beats": 48,
+    "accepted_write_ack_read_ledger_verified": true,
+    "atomic_release_observed": true,
+    "capture_abort_release_verified": true
+  },
+  "component_native_execution_qualified": true
+}

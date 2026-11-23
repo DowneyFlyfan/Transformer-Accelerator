@@ -8,6 +8,8 @@ One Xcelium run verified two early token positions through 32-head attention, ou
 
 [Residual read link](records/tri_oracle_residual_replay_link_result.json): 512-row statistics, replay and bypass delivery passed, including fault, stall and abort controls.
 
+[Shared-memory bridge](records/tri_oracle_live_residual_memory_bridge_result.json): 512 live producer rows passed acknowledged write/readback, scalar contention and failed-capture release tests.
+
 Inputs include captured projected query, key and value vectors. Writeback uses modeled external bypass and scale memory. Production bus integration, longer-context execution, full-model hardware, accuracy qualification, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
 The broader regression has 12 existing lint warnings.
