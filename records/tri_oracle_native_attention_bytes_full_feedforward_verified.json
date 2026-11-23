@@ -1,0 +1,93 @@
+{
+  "state": "two_trained_token_full_feedforward_from_native_attention_bytes_independently_verified",
+  "simulator": "Cadence Xcelium 25.03",
+  "scope": {
+    "layer": 19,
+    "original_positions": [
+      1,
+      2
+    ],
+    "tokens": 2,
+    "hidden": 2048,
+    "intermediate": 5632,
+    "outputs": 2048,
+    "arrays": 20,
+    "input": "8192 bytes serialized from the two separately verified native attention/projection/residual producers",
+    "input_sha256": "3d483315bda5ad94dfadc3498829e5c534778124f05b3e7ce7ecaacd8627c3e3",
+    "boundary": "Separate native invocations joined through an explicit external-memory model",
+    "output": "4096 signed 32-bit Down projection sums before final residual writeback"
+  },
+  "verified_values": {
+    "plane_bytes_compared": 22528,
+    "final_outputs_compared": 4096,
+    "metadata_words_compared": 568,
+    "canonical_console_values_agree": true,
+    "full_trained_learned_path_verified": true,
+    "closed_loop_model_verified": false,
+    "paper_matching": false
+  },
+  "native": {
+    "exit_status": 0,
+    "stop_reason": null,
+    "supervisor_error": null,
+    "owned_group_terminal": true,
+    "wall_seconds": 10436.51077816612,
+    "minimum_host_available_bytes": 10259632128,
+    "peak_container_anonymous_bytes": 189530112,
+    "minimum_free_disk_bytes": 115650658304
+  },
+  "host_worker_exit": 0,
+  "host_queue_verified": true,
+  "source_files_freshly_rehashed": 1453,
+  "independent_review": {
+    "critical_findings": 0,
+    "important_findings": 0,
+    "independent_parser": true,
+    "review_sha256": "66cc96d272fd3baa49dcb5ed07e725d2cce50b2bc5b0c979231954618ea09d07"
+  },
+  "method": {
+    "current_controller": "Shared row metadata, trained sign prediction, coarse/correction activation planes, trained Gate/Up and Down execution",
+    "row_metadata_words": 568,
+    "trained_weight_sources": true,
+    "local_scales_and_codebooks": true,
+    "local_gate_margin_max": 0,
+    "local_up_window": 0,
+    "skipped_intermediate_channels_in_these_two_tokens": 0,
+    "numeric_paper_thresholds_available": false
+  },
+  "limitations": [
+    "Captured projected query/key/value vectors and fixed head configuration are upstream inputs.",
+    "This verifies the current local integer method against its authenticated numerical reference, not equality to undisclosed paper arithmetic.",
+    "The attention and feed-forward executions are separate invocations; continuous decoder integration remains pending.",
+    "No final residual writeback is included in this result.",
+    "No task-accuracy, current mapped implementation, full memory-capacity, timing, power, or paper-performance qualification follows from this simulation."
+  ],
+  "continuous_single_invocation_attention_feedforward": false,
+  "final_writeback_verified": false,
+  "full_model_hardware_verified": false,
+  "current_mapping_verified": false,
+  "complete_memory_capacity_verified": false,
+  "task_accuracy_verified": false,
+  "physical_advancement_allowed": false,
+  "paper_matching": false,
+  "implementation_adaptation": "Taiwan Semiconductor Manufacturing Company 28HPC+; the paper uses Samsung 28FDS",
+  "source_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/tb.sv": "83886dc98068cdfd8f975f09ae9c7bcb02ba96d058effd844436a6c2a86a0f74",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/bundle.sv": "f7d1cdf9537db469cd38cf1fb014c374d51588683d73b8c7c767f322a2c99f07",
+    "verilog/tri_oracle_external_metadata_row_learned.sv": "3c1fb36bdbfc37f70ea6d7878a3a6955be8eb472e75fb14bc1dab928d9d1871a",
+    "verilog/tri_oracle_shared_metadata_store.sv": "eed73286ae1a674406d55f1a9cae5842fb3d28a6ed907ff0e60c3ca0f94426b4",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/run_exclusive_full_frame.py": "b182734c180654c41b5f2fa5ff448aab605381646631490d1aee575367f6a947",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/run_exclusive_queue.py": "564f49a33a534868d5f2415247005721a86557837f785118f74bfa1ed83fbac6"
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/exclusive_full_inputs.json": "17efee4b8232cf094413742c59743f6fdd7714c8caf87010bbff269e6fb5c861",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/exclusive_full_frame_result.json": "7734840bd01b7ee4a5f9dcef44a72b36ebb5d65706d1b0b00e966a3c4d72e762",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/exclusive_full_worker_terminal.json": "1d64ebbb7113b058aa49fcbfbe1d1d0b5672af10da8b8012e336cc222b20f7e9",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/exclusive_full_queue_terminal.json": "6c04a4517fd7287cde7df396aa5dfa6236e84ef0dd7051884528a00901871db2",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/exclusive_full_actual_review.json": "66cc96d272fd3baa49dcb5ed07e725d2cce50b2bc5b0c979231954618ea09d07",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/native_exclusive_full_frame/status.json": "5b7b92759a0e551526f112ec8439eb379bb5c8117e324bb1317b52415f53d91d",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/native_exclusive_full_frame/xrun.log": "413bc842fb369c53fe4799fc168e6070a3879625e4c5d041086a51e7e36ab03e",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/native_exclusive_full_frame/console.log": "98d4ec5f4ae572091c1e6831ce3f324cf9f8b5e05e4195a212f7bb9dfb5b2bc4",
+    ".cache/late_clipping_20261121/frame_integration/native_attention_feedforward_boundary_v1/native_exclusive_full_frame/invocation.json": "ecdfb05486cf169c4e4ba48975eabbaac3575bb67469313f7bb2ceb4b43611e9"
+  }
+}
