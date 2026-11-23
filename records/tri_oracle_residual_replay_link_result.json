@@ -1,0 +1,70 @@
+{
+  "state": "standalone_residual_replay_link_functionally_verified",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "sources": {
+    "verilog/tri_oracle_residual_replay_link.sv": "1f518d34255dedb2648705a16a9efa6b244cdd22da4fed8cd5abe6f808402361",
+    "verilog/tri_oracle_residual_replay_link_boundary_tb.sv": "6ad9e880035be9135464f2951780b8a70a316a0e81d0968546acf2ac91942546"
+  },
+  "published_sources_byte_identical_to_native_inputs": true,
+  "trained_delivery": {
+    "statistics_rows": 512,
+    "replay_rows": 512,
+    "bypass_rows": 512,
+    "normalization_values_compared": 8192,
+    "bypass_values_compared": 4096,
+    "row_read_requests": 1536,
+    "external_packets": 768,
+    "fault_controls": 5,
+    "native_exit": 0,
+    "worker_exit": 0,
+    "queue_pass": true,
+    "native_wall_seconds": 2.0059099020436406,
+    "result_sha256": "e5e6494e922b65721611826eee6bb5b3a7cad6381d6c71f76e2ed58e5b625734",
+    "source_seal_sha256": "e03711942eb2e7e1d073fddfa08ab6f2176c9de8e3eda0ada1425dafdeec1438"
+  },
+  "boundary_controls": {
+    "request_stall_cycles": 28,
+    "normalization_stall_cycles": 20,
+    "wrong_row_rejected": true,
+    "fault_held_until_reset": true,
+    "bank_fault_signal_before_response_ack": true,
+    "held_error_response_drained": true,
+    "connected_final_writer_abort_verified": false,
+    "native_exit": 0,
+    "worker_exit": 0,
+    "queue_pass": true,
+    "native_wall_seconds": 2.00167280388996,
+    "result_sha256": "8b89efdc9ddacf6e93652ec4669132cc6d90ce274b4fc28a69d359c7e141242e",
+    "source_seal_sha256": "ca631c2f5152824d5d37a538e38e49f8fa22252de8cc2bc295aa2fecac026dae"
+  },
+  "expected_inert_stub_control": {
+    "native_exit": 2,
+    "worker_exit": 0,
+    "queue_pass": true,
+    "intended_start_timeout": true,
+    "result_sha256": "1318fa6274fa5bd3bef41478a545530d6d72bfbddc5b6f55a8bf013b72f4aed2"
+  },
+  "independent_reviews": [
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/residual_replay_link_v3/actual_review_v1.json",
+      "sha256": "8936cc1fb407a8ac6e0b20c7fcc62d8ca58979e5347a59af2f07469bdeaeebe1"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/residual_replay_link_controls_v1/actual_review_v1.json",
+      "sha256": "c984a7075d95d89174876f46553c577c4229425d9b7e349347c0ce84b0587805"
+    }
+  ],
+  "limits": [
+    "Trained input packets come from an earlier hardware-accepted bus-write trace, not a currently connected producer.",
+    "Boundary controls use literal payloads and do not verify trained arithmetic.",
+    "The owner must hold the memory lease and connect the fault signal to consumer abort and coupled reset.",
+    "No new compiled static random-access memory is instantiated by these component tests; register storage and whole-chip memory accounting still require mapping.",
+    "Large traces, fixtures, and review records remain in .cache."
+  ],
+  "current_chip_integration_verified": false,
+  "full_model_hardware_verified": false,
+  "full_model_accuracy_verified": false,
+  "current_mapping_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
