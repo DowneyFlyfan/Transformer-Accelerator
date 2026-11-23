@@ -2,16 +2,14 @@
 
 SystemVerilog reproduction of the [Tri-Oracle vision-language accelerator](https://doi.org/10.1109/ISSCC49663.2026.11408987) for Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+.
 
-A 20-core Xcelium test matched 32 attention heads and 2,048 trained projection outputs, including eight-bit conversion, using the same arrays. [Verified results](records/tri_oracle_quantized_shared_projection_verified.json)
+Xcelium verified two tokens through 32-head attention, trained output projection and residual addition on 20 shared arrays. [Results](records/tri_oracle_fixed_same_token_projection_residual_verified.json)
 
-The test uses captured query, key and value vectors. Decoder integration, mapping, full-model validation, routing and timing closure remain unfinished.
+Inputs are captured projected query, key and value vectors. Complete decoder integration, feed-forward execution in this connected test, model accuracy, mapping and routed timing remain unfinished.
 
-The broader regression currently stops on 12 existing unused-signal lint warnings.
-
-Run the regression inside the Cadence container.
+The broader regression has 12 existing lint warnings.
 
 ```sh
 bash syn/run_tri_oracle_simulation.sh
 ```
 
-Generated files go in `.cache/`.
+Generated data, libraries and logs stay in `.cache/`.

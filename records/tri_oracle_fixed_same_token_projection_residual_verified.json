@@ -1,0 +1,103 @@
+{
+  "state": "fixed_same_token_attention_projection_residual_native_verified",
+  "process_adaptation": "Taiwan Semiconductor Manufacturing Company 28HPC+",
+  "question_id": "201030233",
+  "image_id": "n54424",
+  "layer": 19,
+  "original_positions": [
+    1,
+    2
+  ],
+  "queries": [
+    1,
+    2
+  ],
+  "selection": "First ordinary two-token frame by original order; not selected by numerical error or traffic.",
+  "actual_compute_arrays": 20,
+  "array_geometry": [
+    32,
+    8
+  ],
+  "operand_bits": 8,
+  "heads_per_query": 32,
+  "exact_attention_values": 4096,
+  "exact_trained_projection_dots": 4096,
+  "exact_projection_codes": 4096,
+  "exact_normalization_input_values": 4096,
+  "exact_residual_bypass_values": 4096,
+  "physical_array_transactions": 33792,
+  "physical_array_row_results_checked": 1081344,
+  "context_word_reads": [
+    3328,
+    3328
+  ],
+  "weight_word_reads": [
+    524288,
+    518144
+  ],
+  "zero_context_words": [
+    [],
+    [
+      48,
+      51,
+      131
+    ]
+  ],
+  "zero_activation_weight_words_skipped": 6144,
+  "shared_predictor_context_memory_cells": 2,
+  "shared_predictor_context_memory_bytes": 8192,
+  "partial_three_family_memory_witnesses_per_trial": 602,
+  "complete_memory_capacity_verified": false,
+  "native_seconds": [
+    277.86390984407626,
+    292.10277357301675
+  ],
+  "positive_native_exit_statuses": [
+    0,
+    0
+  ],
+  "owned_native_process_groups_terminal": true,
+  "native_corrupted_input_control": {
+    "exit_status": 2,
+    "seconds": 32.55475344113074,
+    "actual_failure": "FIXED_RESIDUAL_BYPASS_WRONG word=0"
+  },
+  "audit_controls": {
+    "query1_trace_corruptions_rejected": 4,
+    "query2_trace_corruptions_rejected": 5,
+    "authorization_mutations_rejected": 3
+  },
+  "source_sha256": {
+    "verilog/tri_oracle_batched_metadata_normalize.sv": "f4622efa3730c063587d908950dc0ac9a212d8cd5967a30dcc694c7948e55819",
+    "verilog/tri_oracle_external_metadata_row_learned.sv": "3c1fb36bdbfc37f70ea6d7878a3a6955be8eb472e75fb14bc1dab928d9d1871a"
+  },
+  "published_source_bytes_identical_to_native_leaves": true,
+  "public_source_cold_trial_separate_from_private_path": false,
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/actual_pair_review_v4.json": "ff925391c2f622acb73b9a17149ab6d667c9b962b4e1740b279c9babc91fbc62",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/public_source_identity.json": "c7935ab8aa0ba0a1614113b485d2bd85d3d63b1b9985fd03a5fd437b5a790603",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/fixture_receipt.json": "06170e4297cf7ef678d569c35a821f357b40ebcfb1236c20411eaa75095db36c",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/fixture_independent_checks.json": "f6bccf95307b5b20669f0e846f6598ae503086c4e7452585eacb83b38d5aea4c",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/qualified_query_1_v2_audit_v4.json": "56cc4fc8e4a0f20fcf08b536419442ffdb3ff443f3dfe0d9a18945095d300b39",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/qualified_query_2_v4_audit_v4.json": "824a6cb62797d554b8556207cfc19fc85cb0a53de1bf5f3706e5ea2ae2bc7ea9",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/corrupt_pre_1_v4_result.json": "00bdd58e0377a40f7a114fa433a795433a2d0ba0a388a8c750f8a98e6f4b3cfc",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/authentication_fix_verified_v4.json": "b4db37c3ddae09a3ed5509da1dfc83d0d00ed9b30cc9958fdac59ae979f47601",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/query2_traffic_finding.json": "901636ea32e6c0a000e019e8893315ddd2c718d454fc845586ffcc386d573941",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/resource_interruption_v3.json": "636292b6505dde75bc256160ee7b9a4a1811bf440688756aec50527ca5732dbf",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/audit_controls_query_1_v2_v2.json": "5240f3110dcb730709ce8ec1e85038dae3c1881c3ace32713b7ac92e14e0e6ac",
+    ".cache/late_clipping_20261121/frame_integration/fixed_scale_connected_projection_v1/audit_controls_query_2_v4_v4.json": "60845adaa4eccbe58f740f502c06586fc9c7527a8e7e3a4e875903decab95641"
+  },
+  "scope_limits": [
+    "Captured projected query/key/value inputs from a frozen older layer19 prefix; no fresh input projection or current full-model trajectory proof.",
+    "The two queries run as separate trials; learned feed-forward descriptors are not executed in this connected test.",
+    "Normalization inputs and residual bypass are actual accepted hardware projection outputs, not expected-output injection.",
+    "Partial memory observers do not establish complete source or mapped memory capacity.",
+    "No complete decoder, task accuracy, mapping, timing, energy or paper-equivalence qualification.",
+    "Earlier missing-observer-top, incorrect-traffic-expectation and resource-stopped trials remain unqualified."
+  ],
+  "continuous_native_feedforward_verified": false,
+  "full_model_hardware_verified": false,
+  "current_mapped_candidate_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
