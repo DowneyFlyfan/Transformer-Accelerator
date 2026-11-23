@@ -1,0 +1,74 @@
+{
+  "state": "two_trained_early_queries_continuous_attention_feedforward_raw_down_verified",
+  "implementation_technology": "Taiwan Semiconductor Manufacturing Company 28HPC+",
+  "scope": {
+    "compact_queries": [
+      1,
+      2
+    ],
+    "visible_attention_keys": [
+      2,
+      3
+    ],
+    "query_heads": 32,
+    "clusters": 5,
+    "shared_processing_arrays": 20,
+    "input_boundary": "Captured projected query/key/value vectors and incoming residual operands",
+    "connected_path": "Attention -> output projection -> residual addition -> learned normalization -> Gate/Up/coarse/correction -> raw Down",
+    "output_boundary": "4096raw Down accumulators, before final residual writeback"
+  },
+  "actual_checks": {
+    "native_exit_status": 0,
+    "host_worker_exit_status": 0,
+    "queue_completed": true,
+    "native_owned_group_terminal": true,
+    "native_seconds": 11018.847324451897,
+    "intermediate_bytes_compared": 22528,
+    "metadata_words_compared": 568,
+    "raw_down_values_compared": 4096,
+    "canonical_and_exact_normalized_console_agree": true,
+    "independent_actual_review": true,
+    "source_pins_rechecked": 1622,
+    "source_seal_rechecked": true
+  },
+  "compiled_memory_census": {
+    "macros": 623,
+    "logical_bytes": 414416,
+    "mapped_equivalence_verified": false,
+    "ordinary_register_storage_included": false,
+    "paper_kilobyte_convention_confirmed": false
+  },
+  "local_evidence": {
+    "source_seal": {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/native_inputs_full.json",
+      "sha256": "bea74d16e832464508831d32a87885f8dde333721b86a71b85d21b7f307beb18"
+    },
+    "native_result": {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/full_result.json",
+      "sha256": "9d1bc7252d29fac84fba577295df1f41135444c827dc40d58711924d5d1ea0b6"
+    },
+    "host_terminal": {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/full_worker_terminal.json",
+      "sha256": "d08baf52e5d372d4b31b0cfc360bb907eea3e5d4d5e67807e2bc8c00d6bc266c"
+    },
+    "queue_terminal": {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/full_queue_terminal.json",
+      "sha256": "659c627b0643ae677cb5bede059976daa58338b58c467f686fadc847fa6f7418"
+    },
+    "independent_actual_review": {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_attention_feedforward_v2/full_actual_review.json",
+      "sha256": "ce276268cbd07281df21daf15d098a7780447bb89abcc69f551a614fbce6efdf"
+    }
+  },
+  "final_residual_writeback_integrated": false,
+  "long_context_native_coverage_verified": false,
+  "fresh_input_projection_verified": false,
+  "native_head_prediction_verified": false,
+  "native_token_merge_verified": false,
+  "full_model_hardware_verified": false,
+  "accuracy_qualified": false,
+  "current_mapping_verified": false,
+  "routed_timing_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
