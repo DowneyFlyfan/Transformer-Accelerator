@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "scope": "Frozen native source order; preparation is not execution proof.",
+  "ordered_events": [
+    {
+      "kind": "define",
+      "name": "UNIT_DELAY"
+    },
+    {
+      "kind": "define",
+      "name": "TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_wac_softmax_types.sv",
+      "sha256": "cac22ed5ac6347fb495886325cb5854a082ce2dc0edb572b295ff7761d62f2bf"
+    },
+    {
+      "kind": "memory",
+      "path": "ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.v",
+      "sha256": "ccf723afb843be99519a3cb5fe2cf8c5d46ebce84a62dd1246f0f7bf397237a7"
+    },
+    {
+      "kind": "memory",
+      "path": "ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.v",
+      "sha256": "35ea57a9268155751bd00d7087fd068fb1d5d9c575e2e52f61780c725a7acd54"
+    },
+    {
+      "kind": "memory",
+      "path": "ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v",
+      "sha256": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1"
+    },
+    {
+      "kind": "memory",
+      "path": "ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v",
+      "sha256": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a"
+    },
+    {
+      "kind": "memory",
+      "path": "ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.v",
+      "sha256": "f23baa3b8e4b7e078a89899ff0e2194dd9022dc0dc7d6fbed71c8c98f21b5e41"
+    },
+    {
+      "kind": "memory",
+      "path": "ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v",
+      "sha256": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/07_tri_oracle_cluster_token_sizes_with_layer_ports.sv",
+      "sha256": "7672b35c7895bb37266598e4a1a78ac71c5102539af9172b426a2a888a1d9db9"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/08_tri_oracle_local_merge_fabric.sv",
+      "sha256": "e7ee7995d125d078e0c3541d234f16c55c51a9a4b98fae7cd3e68dd3a04bdc33"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/09_tri_oracle_batched_frame393.sv",
+      "sha256": "2a53f9d64a8d5b47000bf08fe78ad593d2a86dea28963d1611084c8f4bc1787c"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_affine_quantizer.sv",
+      "sha256": "41181d013bca2c5802935a98154164c5893c170551d0853e787c5fd3b2698356"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_context428.sv",
+      "sha256": "7ad5a0fdc2eab5ed20d05f048241793d757b264870c657a14e49611ce57a8690"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_head_classifier410.sv",
+      "sha256": "4d5722451a8621972aac565787469d0817bc812bc9c24a0fc5fa2f85d6cdc46f"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/13_tri_oracle_attention_head_predictor415.sv",
+      "sha256": "60f81fdf000c67462652138fce223fdc1b317876d4198c8b99c41064457a416b"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/14_tri_oracle_attention_layer427.sv",
+      "sha256": "4113e9398d6c70060a51256e2e37f711cb9b0730863ca7aa8152a596749b89db"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/15_tri_oracle_attention_pipeline430.sv",
+      "sha256": "84d1083d1252a99dbc8729f5530e9bbe15d3613ef2177cc13ef2db7068820c9d"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/16_tri_oracle_attention_row426.sv",
+      "sha256": "3e4821d8c55d8c0db0b0a1b1f4d57d1a5927d78ee611f8ba4fa6417d9e11861b"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_tile_batch413.sv",
+      "sha256": "9b4536133d5834da10aea59747ff1413c7339dbf91c0a7b28e6dae640128601e"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/18_tri_oracle_batched_learned406.sv",
+      "sha256": "23e9da315ec6929ed876b4c6c7db8636da2700e48f8e3fd37e238ed2cd463a47"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_batched_mask_packet399.sv",
+      "sha256": "351c8402f82d92454bfa9e55cebb31de9b6a421f5f619af76f531498d65175fd"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_batched_nonlinear391.sv",
+      "sha256": "4a341ad14a87a421c0140d060e6a14d99b420e5930b7eacb0ebb421bdd14f545"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_batched_normalize405.sv",
+      "sha256": "821062cd8ded32d771b6248b48656e01e80ccd1f59d166c721efc24fe90c7dcb"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/22_tri_oracle_batched_outlier_replay404.sv",
+      "sha256": "6ca8d42b51c01769340a78f45edd8188e75a9d03adede2ecb8c643d0299174e1"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/23_tri_oracle_batched_projection356.sv",
+      "sha256": "7717ba36cb34f2a0aa3f323f8cf7b1f74ce776d1f9deed523da37dc27485d263"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/24_tri_oracle_batched_shared392.sv",
+      "sha256": "c6844ef80d94c55f3c37c7efc2086a57bb79ba5979ca43ae13f6587b69b01d99"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/25_tri_oracle_batched_tensor390.sv",
+      "sha256": "9d19869bf92f83ec6840ebd3ffc34fe85308db0a5a6d6d103ab64745533fd91b"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/26_tri_oracle_causal_token_size.sv",
+      "sha256": "c7ef9deddf37cbefb65e97e6bf3edd04bde5dd607537d64ec648fc7c88a80c77"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/27_tri_oracle_compute_fabric.sv",
+      "sha256": "de273eb765866da98fd2bdbef95d3a3e50fec92fcdc085e407a9dae1a4e917ba"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/28_tri_oracle_cumulative_token_merger423.sv",
+      "sha256": "e354436cdf7948d899eebf8ec4bd432cee8fab0ff9f498fb5e4f882d8d233b8b"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_pe_array.sv",
+      "sha256": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/30_tri_oracle_wac_softmax.sv",
+      "sha256": "cd4759a2fc2b892849570ecf7bcf4a96d788b4687f26362bbbc34784426b3752"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_qkv429.sv",
+      "sha256": "a8dfb7cb2cdcdfd14b44201d3df403eced382c60bab96c36940af1bd71367a03"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_qkv_store430.sv",
+      "sha256": "4cdba3cc5de4ecf2d443983cee340463ebb18c0152a9523395b13f5564c4c930"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_rms_activation.sv",
+      "sha256": "38b33b02165bd45845597757c62042665d0582d64f1b4478966d0d0057c02494"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_sign_fetch.sv",
+      "sha256": "a87a29deacb5677c5338a113da3e44830c2e9c7f7094f96a628824725ca552f1"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_silu_gate.sv",
+      "sha256": "6b9ef0cc9828d5537533047d129aba1be3c2e7c3dd909aec7465486fdca3431d"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_cluster_return_owner.sv",
+      "sha256": "a8dc25ff591c9ea9f3dfae5b2825694051914a5e7a9a78c5378e3e1ce5e73036"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/37_cluster.sv",
+      "sha256": "6f9953f9056f322b7f1469d232b3c6344b2344793b6e5e66b59cf19b94e63047"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/38_core.sv",
+      "sha256": "9026597d3d6f623ba5fa0e9f7fb3324918151408da0299c7d5de9e202887e924"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_strip_predictor.sv",
+      "sha256": "ea9f70a6a507c65379e0ad4df15e1170947c5065ed09a54903d6feff5e3d48f8"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_token_merger.sv",
+      "sha256": "41f487a485d905f64b6bf39a568435321f4518ae4f31020ec21cb73b9aa7109f"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/41_tri_oracle_shared_layer437.sv",
+      "sha256": "0be6dd17e96b99f52211c08bbd7e5d9dc8f4e02872f8a6e1e7d7d00c45570bd2"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/42_wrappers.sv",
+      "sha256": "4204cf8a51b9ad86b36c0f0b99e36d79b36e8dcdb22d40e4354f6b8f6f9a09e3"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/43_cluster_adapter.sv",
+      "sha256": "075e5ffad5ef27a8e50f617d288458f97c4620d9b0a30b17b4765961c3fbf5b1"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_wac_imem_owner.sv",
+      "sha256": "4099968eb5c3a4bbf4a5046647d743c81c442d82aa0fd48c76483ed9279311b3"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_wac_softmax_imem.sv",
+      "sha256": "0986db9b51308973eb23ff274f07063182656dab8b763098c3b7062099a97fa0"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/46_scores.sv",
+      "sha256": "bdeb3bd7094e38c81f9da209cd0c8149fa6e53bc40e2ed48e492d2e46515c14f"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_score_scale.sv",
+      "sha256": "4c1fb3c4d085cb8a18d5510e082dc92bfd3123331b40b783130499a9f114c1e9"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_value_accumulator.sv",
+      "sha256": "e6c9023c651407e219d23979854899d0493e5bb002837ab8aed4654dc821dc97"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_complete_head_broker.sv",
+      "sha256": "e36756142c9374f5fddf7d33c9895920fa249531f16e6e2faaa34989fb0df1ee"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_projection_scale.sv",
+      "sha256": "23cf537bb2e377e45cb4d7c7bbeb744a5ec3dce03bf157a99647ce6c97a973e6"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_projection_scale_quotient_first.sv",
+      "sha256": "32bdcd277ebdc0a26fb3310b7dcd762cb4d471b9f36b9f21073b0fbcc33514f3"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_raw_context_shared_storage.sv",
+      "sha256": "138aab08fd74a53c89ab9f53ef4836399b2532e5c1398669b3c403b19225d478"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_raw_context_row_packer.sv",
+      "sha256": "44aa498969967f3933718db88360a163790c130a41bb88e35352c00ae9d837ff"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_raw_context_inplace_convert.sv",
+      "sha256": "f35c799196757a6eb88bfc1e3b7681fd36eaab4e390eddd6ef16d71444923bd7"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_context_handoff.sv",
+      "sha256": "2af6f83cd1cef210de51e95e085c23c52bcbc8dffaf98013fdf2db237dd7cf50"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_projection_read_bridge.sv",
+      "sha256": "33ae239ed8027dfe149c1295f9960b95c01aea902a56e041c2d02df59567cb5a"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_context_projection_window.sv",
+      "sha256": "3de955a2a024b66bf33bc713ae85ebfb5528369b840f7bad21416bc70e92fbcc"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_attention_context_commit.sv",
+      "sha256": "b46e98311ac63a8330d8b4529d0865e5f7a03f0022902e17dd9853b55ecd764f"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_fabric_owner_types.sv",
+      "sha256": "29bdea22e103061f66f36e5c5dbd8ca11393755dd39695f618b84b2cc9a647b5"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_fabric_owner_mux.sv",
+      "sha256": "ceae4cb46b93912cf92e373c59e1b9f8a567abcd8eb996e9365775f9843bf8b6"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_projection_frame_guard.sv",
+      "sha256": "bef0550ced9aff6136e73fc3d36bb33007fd1f8891b1feed4fd7450b21f70e16"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_tensor390.sv",
+      "sha256": "6fe0a471ec10502693a7235475867004dc99ec9675fd3439440d97bf9c5aefca"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_rmsnorm.sv",
+      "sha256": "ff1b90d6c0427a8c8f103b54b18cc3cc117726417a476b5b25f0f8f18d3a60f7"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_shared392.sv",
+      "sha256": "034884b440145e8db67fe95663f1db37256f39bcec721fde8c5ca6a6cbb79c25"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_frame437.sv",
+      "sha256": "3a960504a681be00d10ecf84fc6cf256b35e0ff6550c0dd797b4addab96b79dc"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_learned437.sv",
+      "sha256": "821d2ad02a10a7d52db33ade789a0b1d2e87bd85ecf934138b83a7e74cbca16c"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_row_metadata_reader.sv",
+      "sha256": "754335c34232f4273d55160fceb7aef09a587d94ff207b6313ca430bc8963bb2"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_row_nonlinear.sv",
+      "sha256": "ab1670cd73086166abc9d4d5a41a5ac5ba64247af258158604b3e32236394140"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_clipping_write_pair.sv",
+      "sha256": "b2bed183bd3782f14d577b0ff65f3dd4d0ebce9a25c41607705d56b16d0bcac9"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_correction_frame_control.sv",
+      "sha256": "70e22ea840065f3826248675128257d2c46b892e5758711f113385803517120f"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_row_tensor.sv",
+      "sha256": "55a7353eb9a4288968a84a82bbf3f1a1a0626eb05b4bcbb581b69c4e74408539"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_row_nonlinear_borrowed.sv",
+      "sha256": "7b700cacff5829555761dc5cd69769725e69d035b779827088808c40e1809566"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_row_shared.sv",
+      "sha256": "0edf98ef61f036d25af3a2d7294e86f2447ea0d09181833f6e4c55160580c067"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_row_frame.sv",
+      "sha256": "d68900937fe15c0be05a87547841152fe5b59665076cfc8ecce96306284a64db"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_row_learned.sv",
+      "sha256": "56e828bd5203740c17520a79bfbc2494bfea7254196eca174bd4e8f0145488ca"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/tri_oracle_external_row_ff_tb.sv",
+      "sha256": "1ca93f66a1f5449689e22645a7627ed3aa15846e344a1e300380194f1caf853f"
+    },
+    {
+      "kind": "source",
+      "path": "verilog/native_shared_array/68_hierarchy.sv",
+      "sha256": "f9dc779c767c7fcc5985ed698fff0ba902d3c0df7008cd81aae6b45ac6a9782c"
+    }
+  ],
+  "source_sequence_sha256": "edd507350a402e262214b1f3cf634ee2886308c9000aa7c38ad4d146579e62dc",
+  "vendor_memory_contents_distributed": false,
+  "native_execution_verified": false,
+  "paper_matching": false
+}

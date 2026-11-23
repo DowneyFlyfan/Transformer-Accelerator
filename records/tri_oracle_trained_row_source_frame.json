@@ -1,0 +1,157 @@
+{
+  "state": "trained_feedforward_source_frame_with_complete_source_memory_verified",
+  "technology": {
+    "implementation": "TSMC 28HPC+ adaptation",
+    "paper": "Samsung 28 nm fully depleted silicon on insulator",
+    "process_equivalence_claimed": false
+  },
+  "frame": {
+    "scope": "One trained layer-19 feedforward frame; two ordinary token rows. Attention and complete model execution are not covered.",
+    "tokens": 2,
+    "hidden_features": 2048,
+    "intermediate_features": 5632,
+    "output_features": 2048,
+    "clusters": 5,
+    "cores": 20,
+    "normalized_values": 4096,
+    "prediction_packets": 352,
+    "sign_requests": 10560,
+    "exact_sign_margins": 22528,
+    "raw_gate_up_dots": 22528,
+    "gated_products": 11264,
+    "plane_bytes_compared": 22528,
+    "final_outputs_compared": 4096,
+    "metadata_words_compared": 568,
+    "canonical_console_values_agree": true,
+    "full_trained_learned_path_verified": true,
+    "closed_loop_model_verified": false,
+    "paper_matching": false,
+    "simulator": "Xcelium 25.03-s001",
+    "canonical_tool_elapsed_seconds": 10291,
+    "original_resource_guard_qualified": false,
+    "numerical_recovery": "Original simulator finished at zero exit after its host resource guard failed; historical failure remains preserved. Numerical result was independently verified."
+  },
+  "complete_source_memory": {
+    "macros": 623,
+    "logical_bits": 3315328,
+    "logical_bytes": 414416,
+    "completion_marker_verified": true,
+    "simulation_clock_edges": 0,
+    "partial_three_family_macros": 602,
+    "by_kind": [
+      {
+        "kind": 0,
+        "master": "TS5N28HPCPSVTA16X80M2FW",
+        "instances": 4,
+        "logical_bits": 5120
+      },
+      {
+        "kind": 1,
+        "master": "TS5N28HPCPSVTA24X128M2FW",
+        "instances": 16,
+        "logical_bits": 49152
+      },
+      {
+        "kind": 2,
+        "master": "TS5N28HPCPSVTA32X128M2FW",
+        "instances": 360,
+        "logical_bits": 1474560
+      },
+      {
+        "kind": 3,
+        "master": "TS5N28HPCPSVTA512X64M4F",
+        "instances": 42,
+        "logical_bits": 1376256
+      },
+      {
+        "kind": 4,
+        "master": "TS5N28HPCPSVTA8X80M2FW",
+        "instances": 1,
+        "logical_bits": 640
+      },
+      {
+        "kind": 5,
+        "master": "TS6N28HPCPSVTA16X128M2F",
+        "instances": 200,
+        "logical_bits": 409600
+      }
+    ],
+    "bytes_by_role": {
+      "aggregator_io": 10240,
+      "core_inputs": 163840,
+      "core_masks": 20480,
+      "core_outputs": 40960,
+      "core_weights": 163840,
+      "prediction_metadata": 8192,
+      "surviving_sign_bank": 6144,
+      "token_merge_table": 720
+    },
+    "unique_instance_inventory_sha256": "64c4184b6093fdb50d93f53c03de5b004feb6105b358239cbac9a83e43b06768",
+    "ordinary_register_storage_included": false,
+    "mapped_memory_verified": false,
+    "paper_byte_convention_confirmed": false,
+    "paper_matching": false,
+    "native_guard_seconds": 12.76713543990627,
+    "paper_label_kb": 405,
+    "binary_kibibytes": 404.703125,
+    "comparison": "Rounds to 405 KiB; the paper does not disclose the byte convention. This is elaborated source capacity, not candidate-bound mapped memory."
+  },
+  "publication": {
+    "byte_identical_modules": 9,
+    "source_sha256": {
+      "verilog/tri_oracle_row_metadata_reader.sv": "754335c34232f4273d55160fceb7aef09a587d94ff207b6313ca430bc8963bb2",
+      "verilog/tri_oracle_external_row_tensor.sv": "55a7353eb9a4288968a84a82bbf3f1a1a0626eb05b4bcbb581b69c4e74408539",
+      "verilog/tri_oracle_row_nonlinear_borrowed.sv": "7b700cacff5829555761dc5cd69769725e69d035b779827088808c40e1809566",
+      "verilog/tri_oracle_external_row_shared.sv": "0edf98ef61f036d25af3a2d7294e86f2447ea0d09181833f6e4c55160580c067",
+      "verilog/tri_oracle_external_row_frame.sv": "d68900937fe15c0be05a87547841152fe5b59665076cfc8ecce96306284a64db",
+      "verilog/tri_oracle_external_row_learned.sv": "56e828bd5203740c17520a79bfbc2494bfea7254196eca174bd4e8f0145488ca",
+      "verilog/tri_oracle_external_row_ff_tb.sv": "1ca93f66a1f5449689e22645a7627ed3aa15846e344a1e300380194f1caf853f",
+      "verilog/tri_oracle_trained_row_learned_tb.sv": "3b65dd5c1781831564be473d7b9a85081af4477c100f53567b95e4e175af5419",
+      "verilog/tri_oracle_learned_margin_observer.sv": "3bfafbcf009fb28bb6be58f06f36c9ef2b4b4c6e1ce6ebb6ac821c6e4db2a1ed"
+    },
+    "source_sequence_sha256": {
+      "literal": "edd507350a402e262214b1f3cf634ee2886308c9000aa7c38ad4d146579e62dc",
+      "learned": "aface249655cd3325ab2f1898f258ec4e166569607ed6bfccca996a39e374084"
+    },
+    "external_memory_families": 6,
+    "vendor_memory_contents_distributed": false,
+    "preparer_unit_controls": 23,
+    "cold_repository_source_inventory_verified": true,
+    "native_repository_prefix": {
+      "normalized_values": 4096,
+      "raw_gate_up_dots": 320,
+      "gated_products": 160,
+      "exact_sign_margins": 704,
+      "plane_bytes_compared": 320,
+      "final_outputs_compared": 0,
+      "metadata_words_compared": 8,
+      "canonical_console_values_agree": true,
+      "full_trained_learned_path_verified": false,
+      "closed_loop_model_verified": false,
+      "paper_matching": false,
+      "guard_seconds": 111.14457477792166
+    },
+    "repository_path_complete_frame_rerun": false,
+    "independent_review_complete": true
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/recovered_full_numerical_v2.json": "f6d696ec08002b8a45492ddb192b04e9dabb1a654524c2e9bde7946b10f5dd80",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/recovered_full_qualifier_review_v2.json": "65d86b60c2c1f24b0235683029bfd5de46e35c805d225b3ea259db1c4949e257",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_complete_memory_census_v6.json": "213d8f83247a1ca16f7cf95d30d245033b8e033a6c58f3f82e1fd17ba7ad9d3b",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/complete_memory_census_review_v2.json": "257f61e2639e7d7ee78a5e08c607e6940e349cb76978a06e7fd3cd1062d42ef5",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_complete_memory_census_v7.json": "ed3204dae224a689fb5e87622ad56bde635401e7b1da5a374a50210bd57d4441",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/qualified_public_learned_prefix_v1.json": "6358bb938580f2a383a1663d178ed3aaf927fbfccfdff2a0aef50b0564efc462",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/source_publication_staged_v2/receipt.json": "d6634f4efe5c2cc91affc46d43f63872103a09695f7d6ee5c5b0d048c93c9b0b",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/source_publication_review_resolution_v2.json": "223effe79f6058270e4ecc7ca14ed0d27d19f7222907d919ad19c9eee67de36b",
+    ".cache/late_clipping_20261121/frame_integration/row_frame_integration_v1/public_source_publication_review_v1.json": "e267298fd63a6b4133310ae4cc04de061041b3fd5a90217e98c784050457978b"
+  },
+  "full_model_hardware_verified": false,
+  "trained_mapped_execution_verified": false,
+  "mapped_memory_verified": false,
+  "paper_accuracy_protocol_verified": false,
+  "routed_timing_verified": false,
+  "energy_verified": false,
+  "paper_matching": false,
+  "physical_design_hold_released": false,
+  "remaining": "Qualify complete trained attention and model feedback, investigate local accuracy loss, bind the integrated architecture and memories to a synthesized candidate, then complete timing and physical implementation."
+}
