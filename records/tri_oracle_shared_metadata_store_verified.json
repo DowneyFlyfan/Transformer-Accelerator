@@ -1,0 +1,41 @@
+{
+  "state": "standalone_shared_prediction_context_memory_verified",
+  "process": "TSMC28HPC+ adaptation",
+  "source_sha256": {
+    "verilog/tri_oracle_shared_metadata_store.sv": "eed73286ae1a674406d55f1a9cae5842fb3d28a6ed907ff0e60c3ca0f94426b4",
+    "verilog/tri_oracle_shared_metadata_store_tb.sv": "98f60f40e88e24d1f2e624ffdbfeaaebe17fc10287c161e95f2b34658a2ac0a0",
+    "verilog/tri_oracle_shared_metadata_cell_witness.sv": "cfb947579807b8962cf624fe6095f5b1c17609305b22f356ae305999d4c3ba0f"
+  },
+  "simulator": "Cadence Xcelium 25.03",
+  "vendor_cells": 2,
+  "words_per_cell": 512,
+  "bits_per_word": 64,
+  "physical_bytes": 8192,
+  "context_words_exercised": 832,
+  "predictor_words_exercised": 1024,
+  "checks": [
+    "Ownership waits for predictor idle and inactive ports",
+    "Context masks inactive predictor traffic",
+    "Held responses prevent early release",
+    "Invalid addresses preserve memory",
+    "Predictor metadata rebuild and reset with pending response"
+  ],
+  "public_native_seconds": 0.992641641991213,
+  "native_exit_status": 0,
+  "native_owned_group_terminal": true,
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/shared_prediction_metadata_v1/red_missing_module_result.json": "82694845bbaf5889b54cc776f5658e044f5c3ae44e81dbe43928fa9965580063",
+    ".cache/late_clipping_20261121/frame_integration/shared_prediction_metadata_v1/green_result.json": "6b465ddfe1e2beccb06447955c20a8fe3ee6c9b29e6a27887c178c19afd25976",
+    ".cache/late_clipping_20261121/frame_integration/shared_prediction_metadata_v1/public_result.json": "506b380e178ea24408fd4e387f7c42287ac3e2c954dc7afc84d9f4adc46e67e0",
+    ".cache/late_clipping_20261121/frame_integration/shared_prediction_metadata_v1/native_public/invocation.json": "581b2275ba06c4d32225445f8255f9e879e6e5001f82c3b3581edccdd70326c2",
+    ".cache/late_clipping_20261121/frame_integration/shared_prediction_metadata_v1/native_public/status.json": "b4097aff6e770b24528874fb674128e4feefeb37a7353b3ae8abb48a9417e3b5",
+    ".cache/late_clipping_20261121/frame_integration/shared_prediction_metadata_v1/native_public/xrun.log": "5ae14d2261d6929b6cf2685a0ba7cf777fe26a00645dbad2ce7353eb8a413dfb",
+    ".cache/late_clipping_20261121/frame_integration/shared_prediction_metadata_v1/standalone_review_v1.json": "0cacf73207e6d95e87902a3e3ee4b45e3760dc9f1f9b91d9710ae65f755dcb51"
+  },
+  "scope_limits": [
+    "Standalone memory owner only; complete attention/predictor integration is pending",
+    "No whole-chip mapped memory, accuracy, timing, power or paper-equivalence claim"
+  ],
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
