@@ -2,7 +2,9 @@
 
 SystemVerilog reproduction of the [Tri-Oracle vision-language accelerator](https://doi.org/10.1109/ISSCC49663.2026.11408987) for Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+.
 
-One Xcelium run verified two early token positions through 32-head attention, output projection, residual addition, feed-forward execution and final residual writeback using 20 shared arrays. All 4,096 final values matched; independent review passed.
+An independently reviewed Xcelium run computed query, key and value projections from supplied normalized activations and trained weights on 20 shared arrays. It verified 120 projected vectors, then two early token positions through 32-head attention, output projection, residual addition, feed-forward execution and final writeback. All 4,096 final values matched.
+
+[Live projection result](records/tri_oracle_live_qkv_complete_frame_result.json) · [Complete testbench](verilog/live_qkv_frame/tb.sv) · [Source bundle](verilog/live_qkv_frame/bundle.sv)
 
 [Connected result](records/tri_oracle_continuous_final_writeback_frame.json) · [Attention](records/tri_oracle_fixed_same_token_projection_residual_verified.json) · [Feed-forward](records/tri_oracle_native_attention_bytes_full_feedforward_verified.json)
 
@@ -10,7 +12,7 @@ One Xcelium run verified two early token positions through 32-head attention, ou
 
 [Shared-memory bridge](records/tri_oracle_live_residual_memory_bridge_result.json): 512 live producer rows passed acknowledged write/readback, scalar contention and failed-capture release tests.
 
-Inputs include captured projected query, key and value vectors. Writeback uses modeled external bypass and scale memory. Production bus integration, longer-context execution, full-model hardware, accuracy qualification, current mapping and routed timing remain unfinished. Paper performance is unverified.
+Inputs include normalized activation codes, rotary parameters and quantization units. Residual storage and writeback use modeled external memory. Native input normalization, head prediction, token merging, longer-context execution, full-model hardware, accuracy qualification, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
 The broader regression has 12 existing lint warnings.
 
