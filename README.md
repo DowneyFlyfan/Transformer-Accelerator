@@ -2,24 +2,22 @@
 
 SystemVerilog reproduction of the [Tri-Oracle vision-language accelerator](https://doi.org/10.1109/ISSCC49663.2026.11408987) for Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+.
 
-An independently reviewed Xcelium run computed query, key and value projections from supplied normalized activations and trained weights on 20 shared arrays. It verified 120 projected vectors, then two early token positions through 32-head attention, output projection, residual addition, feed-forward execution and final writeback. All 4,096 final values matched.
+An independently reviewed Xcelium run normalized three captured residual tokens, then computed query, key and value projections on 20 shared arrays. It checked 6,144 normalization codes and 120 projected vectors, followed two early token positions through attention, output projection, residual addition and feed-forward execution, and matched all 4,096 final values.
 
-[Live projection result](records/tri_oracle_live_qkv_complete_frame_result.json) · [Complete testbench](verilog/live_qkv_frame/tb.sv) · [Source bundle](verilog/live_qkv_frame/bundle.sv)
+[Normalized-input frame result](records/tri_oracle_native_input_normalization_frame_result.json) · [Testbench](verilog/live_native_input_norm_frame/tb.sv) · [Source bundle](verilog/live_native_input_norm_frame/bundle.sv)
 
-The [input normalization component](records/tri_oracle_fused_input_normalization_result.json) separately matched 575,488 activation codes and 281 scales. Its hardware derives scales from residuals and trained coefficients.
+The exported source passed a separate cold elaboration check with the same 623 compiled memories. Include-path changes are checked against the functional source.
 
-[Connected result](records/tri_oracle_continuous_final_writeback_frame.json) · [Attention](records/tri_oracle_fixed_same_token_projection_residual_verified.json) · [Feed-forward](records/tri_oracle_native_attention_bytes_full_feedforward_verified.json)
+The [standalone input normalizer](records/tri_oracle_fused_input_normalization_result.json) separately matched 575,488 activation codes and 281 scales.
 
-[Residual read link](records/tri_oracle_residual_replay_link_result.json): 512-row statistics, replay and bypass delivery passed, including fault, stall and abort controls.
+[Residual link](records/tri_oracle_residual_replay_link_result.json) · [Shared-memory bridge](records/tri_oracle_live_residual_memory_bridge_result.json) · [Previous projection frame](records/tri_oracle_live_qkv_complete_frame_result.json)
 
-[Shared-memory bridge](records/tri_oracle_live_residual_memory_bridge_result.json): 512 live producer rows passed acknowledged write/readback, scalar contention and failed-capture release tests.
+Inputs include captured residuals, trained coefficients, rotary parameters and quantization units. Earlier context operands are supplied; residual storage and writeback use modeled external memory. Head prediction, token merging and longer-context integration remain unfinished, along with complete model hardware, accuracy qualification, current mapping and routed timing. Paper performance is unverified.
 
-Inputs include normalized activation codes, rotary parameters and quantization units. Residual storage and writeback use modeled external memory. Full integration of input normalization, head prediction and token merging remains unfinished, along with longer contexts, complete model hardware, accuracy qualification, current mapping and routed timing. Paper performance is unverified.
-
-The broader regression has 12 existing lint warnings.
+Run unit regressions in the existing container:
 
 ```sh
-bash syn/run_tri_oracle_simulation.sh
+docker exec -w "$PWD" tri-oracle-eda bash syn/run_tri_oracle_simulation.sh
 ```
 
 Generated data, libraries and logs stay in `.cache/`.
