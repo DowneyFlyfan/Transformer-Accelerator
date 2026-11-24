@@ -1,0 +1,116 @@
+{
+  "state": "residual_replay_waits_for_actual_consumer_verified",
+  "problem": "The normalization consumer advances its token only after the final activation-write acknowledgment. Starting next-token residual reads immediately after replay could raise consumer-token mismatch fault4.",
+  "change": "WaitConsumer holds the next-token read until the actual consumer token advances. Pending-response tag, row, error and token checks remain unchanged.",
+  "module": "tri_oracle_residual_replay_link_wait_consumer",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "sources": {
+    "verilog/tri_oracle_residual_replay_link_wait_consumer.sv": "724b82ca684cb5ecf4b400a7f4a837e5ae36617af99e7c7c6dd03e7cb7be5df0",
+    "verilog/tri_oracle_residual_consumer_wait_tb.sv": "03d31381d300c09ae2f0fdc8bcbf619be8f7f0bec2ac49c69a138bb1c998d416",
+    "verilog/tri_oracle_residual_consumer_wait_boundary_tb.sv": "6674765b771f8c01f1062dd9cb12216ee0729d5aff2ad4cbf08bd8d7b5377783"
+  },
+  "published_source_derivation": "Identifier-only changes from the independently accepted candidate and benches; restoring the identifiers reproduces their original bytes.",
+  "tests": {
+    "consumer_delay": {
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 2.271189226070419,
+        "minimum_host_available_bytes": 17458216960,
+        "peak_container_anonymous_bytes": 16912384,
+        "minimum_free_disk_bytes": 104170811392
+      },
+      "tokens": 2,
+      "strips_per_token": 2,
+      "statistics_rows": 4,
+      "replay_rows": 4,
+      "read_requests": 8,
+      "responses": 8,
+      "consumer_held_cycles": 40,
+      "next_token_read_ahead": 0
+    },
+    "boundary": {
+      "native": {
+        "exit_status": 0,
+        "stop_reason": null,
+        "supervisor_error": null,
+        "owned_group_terminal": true,
+        "wall_seconds": 1.0027975640259683,
+        "minimum_host_available_bytes": 17377308672,
+        "peak_container_anonymous_bytes": 6230016,
+        "minimum_free_disk_bytes": 104186617856
+      },
+      "controls": 2,
+      "request_stall_cycles": 28,
+      "normalization_stall_cycles": 20,
+      "wrong_row_rejected": true,
+      "held_bank_error_response_drained": true
+    },
+    "original_defect": {
+      "expected_native_exit": 2,
+      "consumer_token_mismatch_fault": 4,
+      "actual_reproduction_independently_verified": true
+    }
+  },
+  "evidence": [
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/consumer_wait_publication_v1/result.json",
+      "sha256": "58e62826c79d485e94830ced072ca1ca283ae8e45de8356a56d551cffaaf065e"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/consumer_wait_publication_v1/actual_review_v1.json",
+      "sha256": "b7dd9203c8a5421139f5a0779e4ef50eb69c22cd227e61a9315843faab96da67"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/consumer_wait_publication_v1/source_review_v1.json",
+      "sha256": "fb09a27ae75f2862c3c3fc9d82a6f7f732eefbb9e2d94e50beb1c1d8afcd0946"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/token_consumer_handoff_v1/red_result.json",
+      "sha256": "df225804b10d182132eab87f7e201493b78e5a34fb30605582dcc07a867fc7b6"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/token_consumer_handoff_v1/red_actual_review_v1.json",
+      "sha256": "82e0f0df891947edb7208087cc37ecdc79d697709c577c5548e2a2fe96359d46"
+    },
+    {
+      "path": "records/tri_oracle_continuous_external_residual_final_frame_result.json",
+      "sha256": "30c5de1d51e0903a32a9da3d5783babc67cba4d7f7d30ce8859e9fe10eb1126e"
+    }
+  ],
+  "reproduction": {
+    "run_inside_single_container": "tri-oracle-eda",
+    "flags": [
+      "-64bit",
+      "-sv",
+      "-timescale",
+      "1ns/1ps",
+      "-nospecify",
+      "-notimingchecks",
+      "-sequdp_nba_delay",
+      "-xmerror",
+      "RECOME"
+    ],
+    "design": "verilog/tri_oracle_residual_replay_link_wait_consumer.sv",
+    "testbench_tops": [
+      "tri_oracle_residual_consumer_wait_tb",
+      "tri_oracle_residual_consumer_wait_boundary_tb"
+    ],
+    "instruction": "Compile the design with the corresponding same-named verilog testbench; put simulator logs and compilation output under .cache."
+  },
+  "limits": [
+    "This new module name must be selected explicitly by an integrating design. The earlier public tri_oracle_residual_replay_link module remains unchanged to preserve pinned historical inputs.",
+    "The representative full-frame evidence used the same corrected logic under its original private module identifier; the two new public-name unit checks are separately verified here.",
+    "These two portable tests use literal protocol data, contain no compiled memory instances and establish no trained-model arithmetic or current mapped chip result.",
+    "No full-model hardware, accuracy, routing, timing, energy or paper-performance qualification follows. Logs, compiled outputs and detailed review records remain local in .cache."
+  ],
+  "actual_independent_review_accepted": true,
+  "current_chip_integration_verified": false,
+  "full_model_hardware_verified": false,
+  "full_model_accuracy_verified": false,
+  "current_mapping_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}

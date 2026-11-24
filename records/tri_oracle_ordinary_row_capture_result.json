@@ -1,0 +1,117 @@
+{
+  "state": "one_case_ordinary_row_capture_and_same_input_scalar_arithmetic_verified",
+  "scope": "One authenticated archived question, four unchanged software inference phases, one retained actual ordinary-prefill bucket row, and three independently replayed same-input arithmetic arms. This review qualifies this completed diagnostic and its bytes/arithmetic only.",
+  "case": {
+    "questionId": "201077055",
+    "imageId": "n503626",
+    "layer": 0,
+    "call_index": 1,
+    "bucket_rows": 1,
+    "bucket_row": 0
+  },
+  "source_pins_verified": 1472,
+  "native_prerequisites_verified": 17,
+  "four_phases": {
+    "original": {
+      "tokens": [
+        11612,
+        729,
+        2
+      ],
+      "complete_case_equal_prior": true
+    },
+    "disabled": {
+      "tokens": [
+        11612,
+        729,
+        2
+      ],
+      "complete_case_equal_prior": true
+    },
+    "row": {
+      "tokens": [
+        8918,
+        979,
+        2
+      ],
+      "complete_case_equal_prior": true
+    },
+    "noskip": {
+      "tokens": [
+        317,
+        682,
+        2
+      ],
+      "complete_case_equal_prior": true
+    }
+  },
+  "raw_snapshot": {
+    "parts": 50,
+    "payload_bytes": 59304468,
+    "manifest_sha256": "1d251e5a926f7d9b34ab15b0f1a4ccf04c64e78efaf177d2e1672f7cd509744a",
+    "provenance_sha256": "f1a3c40bf7655fab7b595596afd25407841d0f7904b6ec159f07f620a7cb5097"
+  },
+  "independent_scalar_reconstruction": {
+    "arms": 3,
+    "intermediate_codes_per_arm": 45056,
+    "output_codes_and_binary32_values_per_arm": 4096,
+    "total_comparisons": 147456,
+    "all_match": true,
+    "floating_input_normalization_and_quantization_rederived": false
+  },
+  "local_observation": {
+    "global_versus_row_raw_output_differences": 2048,
+    "global_versus_row_binary32_output_differences": 2048,
+    "row_versus_noskip_all_ten_captured_arrays_identical": true,
+    "selected_predicted_skips": 0,
+    "selected_applied_skips": 0,
+    "selected_corrections": 0
+  },
+  "resources": {
+    "outer_parent_elapsed_seconds": 85.4879074729979,
+    "cgroup_memory_limit_bytes": 8589934592,
+    "cgroup_memory_peak_bytes": 8589934592,
+    "memory_limit_reclaim_events": 23678,
+    "out_of_memory_events": 0,
+    "out_of_memory_kills": 0,
+    "worker_reported_peak_graphics_memory_bytes": 8672088064,
+    "observed_one_case_budget_satisfied": true,
+    "general_runtime_capacity_margin_established": false
+  },
+  "evidence": [
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/ordinary_tensor_capture_v1/model_run/actual_review_v1.json",
+      "sha256": "760195304d64a897ead685ab7fc4f07967e4f460e15a4abdcb0bd050f362ebd1"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/ordinary_tensor_capture_v1/model_run/receipt.json",
+      "sha256": "da6e5fe6cff61293edead7d4f6e2c8ffeb7510c169b6fef0f2b54c6221009fb4"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/ordinary_tensor_capture_v1/model_run/scalar_replay_result_v1.json",
+      "sha256": "b543fc39270750b0f2bcc9601ab1fdbf508ef06664b49206883260e82707bd87"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/ordinary_tensor_capture_v1/model_run/row_difference_summary_v1.json",
+      "sha256": "cbef2efa32ce8b4bbe107f8140d991d620d8b616d8acb11ec76120c2c0f40607"
+    }
+  ],
+  "limits": [
+    "Selected first finite differing row from the first prior changed trajectory in the archived panel; no answer labels used for selection.",
+    "The selected row used no skipping. Its local difference therefore is not evidence of skip causality. Other rows/layers were not retained for this arithmetic reconstruction.",
+    "Matching prior complete cases and one raw-row reconstruction does not establish dataset accuracy, final-answer causality or hardware equivalence.",
+    "Scalar reconstruction begins at captured input/normalization/weight codes, units and lookup table. It does not rederive floating input normalization or quantization.",
+    "The enforced 8 GiB control-group limit was reached with reclaim events and no out-of-memory event. This completed case establishes no general capacity margin.",
+    "Raw arrays, weights, logs, runtime sources and detailed reviews stay local in .cache."
+  ],
+  "actual_one_case_model_execution_verified": true,
+  "independent_tensor_arithmetic_verified": true,
+  "answer_causality_verified": false,
+  "skip_causality_verified": false,
+  "task_accuracy_verified": false,
+  "full_model_accuracy_verified": false,
+  "hardware_verified": false,
+  "current_mapping_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}

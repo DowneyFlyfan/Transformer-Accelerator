@@ -1,0 +1,82 @@
+{
+  "state": "representative_continuous_external_residual_and_final_writeback_frame_verified",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28HPC+ adaptation; not original Samsung process",
+  "scope": "Two attention queries, 20 shared compute arrays, external residual transport and acknowledged modeled storage, normalization, feedforward and final writeback. Supplied query/key/value operands remain fixtures.",
+  "native": {
+    "exit_status": 0,
+    "stop_reason": null,
+    "supervisor_error": null,
+    "owned_group_terminal": true,
+    "wall_seconds": 11132.172526119975,
+    "minimum_host_available_bytes": 13006151680,
+    "peak_container_anonymous_bytes": 205385728,
+    "minimum_free_disk_bytes": 104308355072
+  },
+  "source_literal_keys_verified": 2342,
+  "queries": [
+    1,
+    2
+  ],
+  "memory": {
+    "compiled_macros": 623,
+    "compiled_macro_logical_bytes": 414416,
+    "ordinary_register_storage_included": false,
+    "mapped_memory_verified": false
+  },
+  "feedforward": {
+    "plane_bytes_compared": 22528,
+    "metadata_words_compared": 568,
+    "final_outputs_compared": 4096
+  },
+  "external_residual_bus": {
+    "write_beats_compared": 2048,
+    "write_acknowledgments": 256,
+    "read_beats_compared": 6144,
+    "read_packets_observed": 768,
+    "lossless_producer_rows_compared": 512,
+    "frame_complete": true,
+    "acknowledged_storage_corruption_observed": false,
+    "summary_scalar_contention": 0
+  },
+  "final_writeback": {
+    "final_values_compared": 4096,
+    "bypass_reads_linked": 512,
+    "final_image_words_compared": 512,
+    "raw_values_linked": 4096
+  },
+  "independent_complete_unchanged_auditor_recheck_passed": true,
+  "evidence": [
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_external_residual_full_v2/full_result.json",
+      "sha256": "199722a46e6cfd2e7a94b714b4379d5644046b4935d54a573cbae9e536137f17"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_external_residual_full_v2/full_actual_review.json",
+      "sha256": "e30feec394bc89674330e93107496ad5f32d38a50cf08a4153f0b5b940b6783f"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/continuous_external_residual_full_v2/native_inputs_full.json",
+      "sha256": "62f313946473ca963023bc499459030b890de1c42431e08acaad80bf77859145"
+    },
+    {
+      "path": ".cache/late_clipping_20261121/frame_integration/corrected_controller_exit_v1/result.json",
+      "sha256": "aa530023f200ca31d88d5c68a4435d9e70c857ad625db6067a367895715a4e10"
+    }
+  ],
+  "limits": [
+    "This representative controller is not a complete chip or complete model execution.",
+    "Current native inventory has 623 macros and 414416 logical bytes; the older placed candidate has 631 macros and 414928 bytes. Their equivalence and complete storage accounting remain unproved.",
+    "Native input projection, head prediction and token merging remain outside this run.",
+    "No current mapping, timing, energy, accuracy or paper-performance result follows. Large data, transcripts and review details remain local in .cache."
+  ],
+  "fresh_input_projection_verified": false,
+  "native_attention_head_prediction_verified": false,
+  "native_token_merge_verified": false,
+  "current_chip_integration_verified": false,
+  "full_model_hardware_verified": false,
+  "full_model_accuracy_verified": false,
+  "current_mapping_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
