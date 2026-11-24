@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "state": "fused_input_normalization_component_independently_verified",
+  "scope": "Captured trained layer19 input normalization component; complete-frame connection pending",
+  "method": {
+    "operation": "Fused root-mean-square normalization, trained coefficient multiplication and signed-eight-bit activation encoding",
+    "raw_residual_bits": 32,
+    "coefficient_bits": 16,
+    "epsilon_raw_square_fraction_bits": 16,
+    "epsilon_storage_bits": 64,
+    "activation_bits": 8,
+    "scale_source": "Actual residual/coefficient statistics; expected values are scoreboards only",
+    "input_stability": "Caller must supply stable framed statistics/replay data; energy and maximum-product checks are aggregate checks",
+    "commit_contract": "Earlier outputs provisional until non-error terminal handshake"
+  },
+  "workload": {
+    "question_id": "201030233",
+    "layer": 19,
+    "tokens": 281,
+    "features_per_token": 2048
+  },
+  "verified_counts": {
+    "activation_values": 575488,
+    "scale_exponents": 281,
+    "outlier_decisions": 4207,
+    "healthy_control_frames": 9,
+    "healthy_control_values": 4176,
+    "expected_error_frames": 9,
+    "discarded_provisional_values": 16,
+    "reset_cancellations": 2,
+    "configuration_stall_cycles": 9,
+    "rejected_trace_tamper_controls": 12
+  },
+  "native": {
+    "simulator": "Cadence Xcelium 25.03-s001",
+    "container": "tri-oracle-eda",
+    "exit_status": 0,
+    "outside_parent_exit_status": 0,
+    "native_wall_seconds": 2.4995314069092274,
+    "total_guarded_wall_seconds": 3.9501004139892757,
+    "peak_container_anonymous_bytes": 32137216,
+    "minimum_host_available_bytes": 19044392960
+  },
+  "source_sha256": {
+    "verilog/tri_oracle_fused_input_normalizer.sv": "2ff34e61cc3e63db9b356a5f36a854cb0d7d00b69fe8aef6e8d155672a2f3c5e",
+    "verilog/tri_oracle_fused_input_normalizer_tb.sv": "260d1193022174f69c84de54e6766f63fd40586654358ac7be7d90f2f292b7ab"
+  },
+  "evidence_sha256": {
+    "full_result": "84db1d0ecbc157ab5ec95fcce696355a181abb614fe5c18faf2b13597d4587ba",
+    "full_parent_terminal": "70fc6eaeb3072e48a4de7a490f905cf5993a162c21e2c7ffda7da9bfc52a75a4",
+    "short_result": "90b366f1dc9522a743bc5919fce05417ae8e47e2cb246fed6ed8d6477dfafab8",
+    "actual_review": "8c261fbd10a7d835753a27db3d333d86a740bfa0cb02e4892cdb05635736e8fd",
+    "source_review": "36a11b5647ad208feceeee6b936527528ecef3117ffbf16492cc07da04a87e76",
+    "scalar_fixture": "2ba487943e818dd33312423151d76c9adbfd656771c13798e3fce750e10cd0ea",
+    "scalar_actual_review": "7a7d2e0ed3f4a5e79cef1692da50618b4f367ddf376e7d4a58d4e88f9cffc702",
+    "actual_trace_tamper_result": "a0e528c1e5c28109ae9255f36929d0d7419dc03d8eae41d8610dae2b137a1dc9",
+    "native_log": "94b1670adeb859a40173a25025a518f107556c6a69d08e2189aa803aecf8510a",
+    "normalized_console": "39d31b8565fb3393ca264364c2ad59cc47da7553515be5cacfef32ec53948822"
+  },
+  "qualification": {
+    "native_component_verified": true,
+    "independent_actual_review_accepted": true,
+    "critical_findings_count": 0,
+    "important_findings_count": 0,
+    "public_source_body_identical_to_executed_source": true,
+    "complete_frame_integration_verified": false,
+    "full_model_hardware_verified": false,
+    "task_accuracy_verified": false,
+    "current_mapping_verified": false,
+    "routed_timing_verified": false,
+    "paper_bit_format_confirmed": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false
+  }
+}
