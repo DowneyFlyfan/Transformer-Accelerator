@@ -1,0 +1,2 @@
+localparam logic [223:0] ATTENTION_SHIFTS=224'h0000000000007ffe0007f000007f000007ffe03f8000000000000000;
+localparam logic [255:0] ATTENTION_EXPONENTS=256'hfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb;

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "state": "captured_trained_head_decisions_drive_shared_array_attention_verified",
+  "technology_target": "Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+",
+  "scope": "One captured layer19 input: signed8 query/key/value operands after rotary position encoding. Actual head decisions drive the complete-head attention controller on the same20arrays; all64context lanes of all32heads are checked for compact query280. Complete native projection, complete model and current mapped chip are unverified.",
+  "method": {
+    "profile_tile": 32,
+    "sample_first_query": 96,
+    "sampled_queries_per_head": 185,
+    "heads": 32,
+    "key_value_heads": 4,
+    "features": 64,
+    "ratio_numerator": 8,
+    "ratio_denominator": 1,
+    "cutoff": "maximum sink score minus alpha",
+    "intensity_comparison": "strict greater than cutoff",
+    "settings": "Ratio and quantization thresholds are local reconstruction settings.",
+    "atomic_mask_commit": "Every requested head must succeed once before mask publication; stale tags, duplicates, unrequested heads, classifier errors or cancellation yield a held error with no usable mask."
+  },
+  "prediction": {
+    "trained_score_values": 473760,
+    "all_enabled_raw_and_classifier_values_including_controls": 489725,
+    "successful_classifier_decisions": 33,
+    "streaming_mask": "fd6c64bf",
+    "streaming_heads": 21,
+    "complete_heads": 11
+  },
+  "attention": {
+    "compact_query": 280,
+    "actual_query_vector_requests": 141,
+    "actual_key_vector_requests": 4435,
+    "actual_value_vector_requests": 4435,
+    "actual_context_heads": 32,
+    "actual_context_values": 2048,
+    "selected_key_and_value_sequences_independently_checked": true,
+    "reference_probabilities_independently_recomputed": 4435,
+    "native_intermediate_probability_words_directly_observed": false
+  },
+  "native": {
+    "simulator": "Cadence Xcelium25.03-s001",
+    "exit_status": 0,
+    "worker_exit": 0,
+    "parent_exit": 0,
+    "wall_seconds": 752.3326560109854,
+    "outside_parent_seconds": 768.2895638209302,
+    "host_dual_transcript_verification_seconds": 405.7199375531636,
+    "independent_actual_review_accepted": true,
+    "canonical_and_normalized_console_agree": true,
+    "exact_command_and_source_bound_finish_verified": true
+  },
+  "memory": {
+    "selected_compiled_macros": 621,
+    "selected_logical_bytes": 406224,
+    "ordinary_registers_included": false,
+    "current_mapped_chip_capacity_verified": false
+  },
+  "source_export": {
+    "new_export_files": 5,
+    "expanded_hdl_files": 107,
+    "literal_include_edges": 106,
+    "include_only_rewrites": true,
+    "source_sha256": {
+      "verilog/live_predicted_attention_frame/bundle.sv": "a9e8f97fabb53d2e6202776bf8bc53938c0e8a9f9adcdfcc157d7d2ef27ef6af",
+      "verilog/live_predicted_attention_frame/shared_sources.sv": "18ae3a9c2f14a7c03e8ccd9df7448211f6a5406a0f833c6c28c52f0e4e260c26",
+      "verilog/live_predicted_attention_frame/tb.sv": "cd9b10f7e3b10a64fbb6ddea4899dbef1c057d32141c44e62378b477e710a919",
+      "verilog/live_predicted_attention_frame/connection.svh": "3da6e047ca71340af01eff42afcacf33ab9a26250fecc38db1a854fc37fd5ad8",
+      "verilog/live_predicted_attention_frame/configuration.svh": "f5d708247aaeda64b05d67a422e936f34b553b5d3c78dc59f65b4fa8f2a8bf51",
+      "verilog/tri_oracle_head_mask_commit.sv": "c15c35ffbd9fec661dc86a8b7fbd9e941e1f0f13f5b74ef9c1ad84f7baf22033",
+      "verilog/tri_oracle_head_mask_commit_tb.sv": "d05993c271ca02dfdd6cc1a86fcb2eecc9a16e76f0884fef27da2dd63aad5bb6"
+    },
+    "cold_compilation_verified": true,
+    "cold_wall_seconds": 9.016948665957898,
+    "full_functional_reexecution_of_exported_paths": false,
+    "vendor_bodies_published": false
+  },
+  "unit_checks": {
+    "new_collector_held_or_error_completions": 9,
+    "new_collector_lint_exit": 0,
+    "default_unit_xcelium_simulations_passed": 28,
+    "default_regression_script_exit": 1,
+    "failed_check": "unchanged default tri_oracle_compute_fabric Verilator lint:12UNUSED warnings",
+    "default_fabric_sources_equal_existing_commit": true,
+    "whole_repository_checks_green": false
+  },
+  "evidence_sha256": {
+    "full_result.json": "4d8a6df8466644469357270501ccfed24fdcca4cc6c79d901924c8b7e1e91204",
+    "full_parent_terminal.json": "3f049a35102778a01eafd663a2b7b3c8ef139a36c6fbd77052ae75e36f7b6c4e",
+    "source_preparation.json": "f25308a36fc8e47af821fa9884e524d729eea02119a6ea939488148fb83e2fb2",
+    "source_review_v1.json": "1e0cbe7c067b710e0d0bb1db2886a24e06c4a05d4b11d07c2481cb9dc554fa3b",
+    "proof_preparation_v3.json": "380f5710d988d8571dd62439383f36a599a0d85b7779cdc537da1126bc46b6f1",
+    "full_verified_result_v3.json": "34994e13932e788e46b351aaaebc52979a266394affd19c02c1d2ca516626629",
+    "verification_terminal_v3.json": "da921bf611b17feff553edfaa30b6bae36b044cd38c15e7c84c00612067bc80d",
+    "actual_review_v1.json": "8a66eafaf0f859d0a05b6ed377695655656f744224ad1363d9cb81e61a0b0428",
+    "independent_actual_recheck_v1.json": "d0a7402de3c0d1f02b0ae5b2d89a1bcc4147249c5e40b8c82d92bad071b942be",
+    "publication_export_preparation.json": "bb2e0a0994ec1e7874924f2e89072b06f51af3a06722277131e24ab97a7ce1f9",
+    "publication_materialization_v1.json": "30cabdd7dd325e58f5fa2afa9c7293dac9cb487538587d7938014398a6b7a36b",
+    "export_census_result_v2.json": "682b7bf4f64ac91062f9d19cd17dd54837d2acf740c1a8a6eb8fb53a623a35b1",
+    "project_regression_result.json": "da71b4adbf342bfe1d7021f90dbc2a2e77d6eb3feac9907c56d595bc98a5b44a"
+  },
+  "full_model_hardware_verified": false,
+  "current_chip_integration_verified": false,
+  "current_mapping_verified": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}

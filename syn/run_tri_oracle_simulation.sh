@@ -13,7 +13,7 @@ simulate() {
         -history_file "$build/xrun.history" "$@"
 }
 
-for unit in token_merger head_predictor snzv_predictor strip_predictor channel_compactor \
+for unit in token_merger head_predictor head_mask_commit snzv_predictor strip_predictor channel_compactor \
     proportional_normalizer pe_array word_bank silu_gate chip_dispatch; do
     simulate "tri_oracle_${unit}_tb" \
         "verilog/tri_oracle_${unit}.sv" "verilog/tri_oracle_${unit}_tb.sv"
