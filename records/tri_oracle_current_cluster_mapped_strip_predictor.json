@@ -1,0 +1,124 @@
+{
+  "state": "independently_verified_finite_current_four_core_mapped_strip_predictor",
+  "scope": "Further verification of the current four-core mapping. Predictor inputs are externally prepared signed outlier and trained weight-sign packets; this case covers the predictor circuit and public handshake.",
+  "technology": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nm High Performance Compact Plus (28HPC+) adaptation.",
+  "candidate": {
+    "mapped_netlist_sha256": "458fed1c1217c4cf8d7b83de6a187d240438e730434d0e80bc80064799025742",
+    "namespaced_simulation_netlist_sha256": "d713376460ebbce12b298e1f7d70775b01d9242ffe524d6847631be441bdeff5",
+    "mapped_cores": 4,
+    "paper_cores": 20,
+    "related_arithmetic_record": "records/tri_oracle_current_cluster_mapped_arithmetic.json"
+  },
+  "predictor": {
+    "frames": 5,
+    "accepted_input_strips": 1027,
+    "channels_per_frame": 32,
+    "held_output_observations": 20,
+    "compared_clock_cycles": 2084,
+    "trained_frames": 2,
+    "trained_layer": 19,
+    "trained_original_token_positions": [
+      1,
+      2
+    ],
+    "trained_input_features": 2048,
+    "trained_outlier_counts": [
+      13,
+      17
+    ],
+    "trained_gate_masks": [
+      "2d3f9efc",
+      "eeefbfee"
+    ],
+    "trained_up_masks": [
+      "00000000",
+      "00000000"
+    ],
+    "trained_skip_masks": [
+      "00000000",
+      "00000000"
+    ],
+    "training_input_scope": "Fixed first32 gate/up rows from authenticated signed8 codebooks and both archived normalized inputs. Every active/sign bit and archived margin/keep result were independently checked.",
+    "synthetic_boundary": {
+      "outlier_count": 2048,
+      "gate_mask": "dddddddd",
+      "up_mask": "bbbbbbbb",
+      "skip_mask": "99999999"
+    },
+    "dense_fallback_without_outliers_verified": true,
+    "overlong_257_strip_error_fallback_verified": true,
+    "method_scope": "The paper specifies a 3-sigma outlier rule after root mean square normalization (RMSNorm). This fixture uses a local fixed-point encoding of that rule. Exact near-zero thresholds and numeric encoding are not fully specified. Current logic intersects gate/up masks from sign-match counts."
+  },
+  "real_negative_control": {
+    "frame": 2,
+    "input_strip": 0,
+    "channel": 2,
+    "lane": 1,
+    "changed_dut_request_bit": 273,
+    "only_changed_response_bit": 79,
+    "response_bit_from": 1,
+    "response_bit_to": 0,
+    "correct_frames_before_mutation": 2,
+    "expected_native_comparison_failure_detected": true,
+    "fatal_time_ns": 31014
+  },
+  "native_execution": {
+    "simulator": "Cadence Xcelium 25.03-s001",
+    "container": "tri-oracle-eda",
+    "simultaneous_native_jobs": 1,
+    "simulation_clock_period_ns": 20,
+    "timing_checks_enabled": false,
+    "cases": {
+      "positive": {
+        "native_exit_status": 0,
+        "worker_exit_status": 0,
+        "root_exit_status": 0,
+        "compilation_and_simulation_wall_seconds": 27.40006738086231
+      },
+      "corrupt_sign": {
+        "native_exit_status": 2,
+        "worker_exit_status": 0,
+        "root_exit_status": 0,
+        "compilation_and_simulation_wall_seconds": 26.645258006174117
+      }
+    },
+    "maximum_container_anonymous_bytes": 457494528,
+    "all_owned_process_births_terminal": true
+  },
+  "memory_and_provenance": {
+    "memory_model_type": "compiled static random-access memory (SRAM)",
+    "models_per_root": 125,
+    "paired_instances_per_case": 250,
+    "complete_exact_scope_and_master_bijection_verified": true,
+    "native_source_inputs_checked_before_and_after": 1377,
+    "full_readback_source_and_artifact_bindings": 1426,
+    "independent_review_union_bindings": 1440,
+    "raw_transcripts_preserved": true
+  },
+  "limits": {
+    "finite_external_packet_predictor_verified": true,
+    "trained_nonzero_up_or_skip_pruning_verified": false,
+    "nonzero_pruning_verified_only_on_synthetic_boundary": true,
+    "current_onchip_normalization_verified": false,
+    "current_onchip_outlier_detection_verified": false,
+    "current_sign_fetch_verified": false,
+    "current_pruned_arithmetic_execution_verified": false,
+    "complete_cluster_functional_equivalence_verified": false,
+    "complete_trained_layer_verified": false,
+    "full_model_hardware_execution_verified": false,
+    "whole_chip_mapped_execution_verified": false,
+    "formal_equivalence_verified": false,
+    "timing_closed": false,
+    "paper_accuracy_protocol_matched": false,
+    "paper_results_matched": false,
+    "paper300_hold_only": true,
+    "physical_advancement_allowed": false
+  },
+  "evidence": {
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/strip_actual_review_v1.json": "73bfc54ab05cb5b07703555eb24829bd2007486f01aaeb4959a257e07a086fa9",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/strip_readback_v1.json": "a9ff2298440417c266b59ab9b053f3dac1ba05c903e5e8d928a7d76357e27916",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/actual_strip_artifacts_v1.json": "439f4aa53e3b44ad6df723b2dffd86aed4adf3f054e06a51f4ff7a2327ef231c",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/strip_source_review_v1.json": "3eb88c261f873e4f3b2ce454227d9f2ec90ad3b312c9582974d83b570862c348",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/strip_verifier_source_review_v1.json": "b578cd8589b6455a8c9ff5876cc118b1b42f34df77192eb3289dfaa86e1f927b"
+  }
+}
