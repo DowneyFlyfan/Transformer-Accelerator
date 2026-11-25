@@ -1,0 +1,79 @@
+{
+  "state": "full_question_row_weight_local_software_accuracy_independently_verified_paper_target_unmatched",
+  "scope": "Complete fixed local question population with ordinary-prefill Gate/Up row weight scaling. Existing protected-token and decoding policies stay fixed; learned weights were unchanged. This is a mixed software model experiment.",
+  "questions": 12578,
+  "images": 398,
+  "exact_matches": 6206,
+  "accuracy_percent": 49.340117665765625,
+  "cases_with_actual_decode": 12578,
+  "truncated_sequences": 0,
+  "attention_calls": 663234,
+  "ordinary_feedforward_rows": 92672603,
+  "row_weight_calls": 685311,
+  "source_pins": 1266,
+  "worker_source_files": 817,
+  "first_case_exact_original_row_control_verified": true,
+  "all_question_ids_and_token_ids_independently_decoded_and_rescored": true,
+  "ordinary_row_witnesses_independently_checked": true,
+  "row_numeric_evidence_scope": "Authenticated executed source asserts exact equality of every ordinary row bucket against the frozen original row kernel and original-unit reconstruction; all685311 emitted bucket witnesses and92672603 row counts independently checked. Actual hidden matrices are not retained for a new tensor arithmetic replay, and no new inference was run.",
+  "independent_hidden_tensor_reexecution_performed": false,
+  "comparison_archives": {
+    "frozen_current_integer_attention": {
+      "questions": 12578,
+      "exact_matches": 6143,
+      "accuracy_percent": 48.839243122913025,
+      "delta_exact_matches": 63,
+      "delta_percentage_points": 0.5008745428525998,
+      "paired_correctness": {
+        "both_correct": 5380,
+        "lost": 763,
+        "both_wrong": 5609,
+        "gained": 826
+      },
+      "prediction_sha256": "070fca7a1493e8fc9d87167ece2d7f87d7ba58f39951ebca8e5a38cbfee1cbe9"
+    },
+    "dense_reference": {
+      "questions": 12578,
+      "exact_matches": 7163,
+      "accuracy_percent": 56.948640483383684,
+      "delta_exact_matches": -957,
+      "delta_percentage_points": -7.608522817618064,
+      "paired_correctness": {
+        "gained": 964,
+        "both_correct": 5242,
+        "lost": 1921,
+        "both_wrong": 4451
+      },
+      "prediction_sha256": "ea61e97c6b085ec436e860a9320a3c9ab3f9eedff9008e10f1c854e6332d43bd"
+    }
+  },
+  "paper_reported_accuracy_percent": 55.04,
+  "numeric_difference_from_paper_percentage_points": 5.699882334234374,
+  "paper_prompt_and_split_confirmed": false,
+  "paper_score_is_not_a_confirmed_same_protocol_comparison": true,
+  "generation_guard_wall_seconds": 8801.735658854013,
+  "generation_worker_waited_exit_status": 0,
+  "scoring_worker_waited_exit_status": 0,
+  "separate_original_observer_root_waited_exit_statuses": {
+    "18670": 0,
+    "16779": 0
+  },
+  "internal_supervisor_self_exit_statuses_unknown": true,
+  "independent_actual_review_accepted": true,
+  "independent_corruption_controls": 12,
+  "configuration_sha256": "df710823cd84fed4bbc7f52f904dd3ff8c04af25e15f3bbcf1f07a5c907a4c5e",
+  "verified_result_sha256": "c67b6f9c5f622f65dbf91446561f750876e566fcf8b6c4adeede7b88375d136e",
+  "independent_actual_review_sha256": "4e9d4829da23780934c0e0f996a59664abcf1958e626aec77ccd859132bd8650",
+  "predictions_sha256": "fa93286c9d8e838beddc3eecd476d73dbc2eb19f9f30d44ec44e2d02a5d56524",
+  "audit_sha256": "6f62beed9775b1b36ec28db60a9786d5136f95fe6fe51862acce9aabb3a3bf3b",
+  "protocol_sha256": "b86d9d351ec38ef690ece3625e3f3e9c7903c2499dacc2b3ef18bafdc2f45024",
+  "labels_sha256": "14039069c0b3c797c7aa9bcd5f4c2aa4b5976e02c0b6773e1a584d942a03a318",
+  "tokenizer_sha256": "1d97b3e068865540c87c485c79ca6a5f7925a0a3489810c6885befcd3309a81d",
+  "local_mixed_software_accuracy_verified": true,
+  "complete_integer_model_verified": false,
+  "complete_model_hardware_verified": false,
+  "current_mapped_execution_verified": false,
+  "paper_matching": false,
+  "power_performance_area_verified": false,
+  "physical_advancement_allowed": false
+}
