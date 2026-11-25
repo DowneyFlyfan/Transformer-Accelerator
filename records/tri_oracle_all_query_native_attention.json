@@ -1,0 +1,78 @@
+{
+  "state": "native_all281_query_attention_component_independently_verified",
+  "scope": "Source-level native attention for all281 query positions and32 heads using restored, independently verified native-generated query/key/value vectors. Trained/control prediction executes before attention on the same20 compute arrays. This is a component run, separate from the prior normalization/projection collection.",
+  "technology_target": "Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+ adaptation; the paper reports Samsung28-nanometer fully depleted silicon on insulator.",
+  "native": {
+    "owned_guard_exit_status": 0,
+    "worker_waited_exit_status": 0,
+    "externally_observed_monitor_exit_status": 0,
+    "wall_seconds": 10834.822039775085,
+    "queries": 281,
+    "heads": 32,
+    "context_words": 8992,
+    "context_values": 575488,
+    "key_reads": 771159,
+    "value_reads": 771159,
+    "query_tile_reads": 26277,
+    "prediction_frames": 40,
+    "prediction_physical_transactions": 244840,
+    "prediction_raw_values": 489725,
+    "trained_prediction_scores": 473760,
+    "committed_streaming_mask": "fd6c64bf",
+    "compiled_memory_macros": 621,
+    "compiled_memory_logical_bytes": 406224
+  },
+  "independent_checks": {
+    "all_context_values_match_frozen_integer_reference": true,
+    "actual_cache_response_operands_and_query_specific_causal_sizes": true,
+    "query_head_epoch_and_tag_ownership": true,
+    "all_prediction_scores_and_physical_transactions": true,
+    "both_complete_transcripts_and_source_bound_global_completion": true,
+    "accepted_cache_origin_and_encoding": true,
+    "nine_corruption_controls_rejected": true,
+    "detailed_attention_array_arithmetic_independently_replayed": false
+  },
+  "host_verification": {
+    "waited_exit_status": 0,
+    "wall_seconds": 467.70863711996935,
+    "frozen_input_count": 1150,
+    "independent_review_findings": []
+  },
+  "memory_accounting": {
+    "modeled_external_native_generated_cache_bytes": 719360,
+    "external_cache_included_in_compiled_memory_bytes": false,
+    "compiled_inventory_is_selected_native_source_scope": true,
+    "current_placed_candidate_memory_equivalence_verified": false
+  },
+  "completion_metadata": {
+    "monitor_own_exit_status": null,
+    "monitor_own_exit_status_unknown": true,
+    "external_monitor_exit_observed_separately": true,
+    "original_projection_collection_outside_exit_status_unknown": true
+  },
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/native_preparation_v1.json": "fd20ae97d1218b04dcbe2a8f50216f6334589d4b1414a4bb3f147048a6de29bc",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/native_source_review_v1.json": "b030d802d536b2bc546ed3c958e213d6ce70ddbdfea48749d041c147c313c217",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/post_collection_source_preparation_v2.json": "7c09d995223079d2337dbdf7330aa61a93c1a6242c468161b963917d29b63b92",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/post_collection_source_review_v2.json": "8d9e59f70d6c48771eacafe674910af9999ca950483b1911394df641819473cf",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/full_native_result_v1.json": "3d65fdcde92583caf362b81a8ca184209b26c2e30c632830a420d306ab188b6b",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/native_full/status.json": "9aa6513e8b4423cd87202c35018751cdfd3374c88803c0690ed9d936c8adc4f3",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/native_full/invocation.json": "46edcc70e6d014eb9201a4699475dc0e16f03a941276ccc70e3649cc3cfc8db0",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/native_full/xrun.log": "f547dc61c747c22d72dbc283b229ca71487a39e38d0d7e2b643e1823686950dd",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/native_full/console.log": "f7cdbea5a94e39d20c9e4470318a27706fb723354e45370b59df008ac5c7e1bd",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/full_audit_preparation_v6.json": "68ec87f047653044f3c85aa4633ec143da04c4a980248aaf8606b9ff1b5e923e",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/full_verified_result_v6.json": "7ac2ea1d53feb25d2e1deb9fdc4086c5b214f2bc10095c0b43f1dde3e7d29a07",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/full_audit_terminal_v6.json": "6a38ecb8e4102a116114cb2639a8881fb86589ea7988c29de6fdf7c24503ee17",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/full_actual_review_v6.json": "15a3e54d780051278f4432b88cbaff93c97a92107c19c99974f0009e4fe62a7a",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/census_actual_review_v3.json": "9e55bfd834bd59e53b3aeca9c3982c94c62486e5e2273240c07cbf1b0cb32b6e",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/corrupt_early_size_actual_review_v3.json": "f0068e5c232ad9fe5b8c1ef3c167a8617fc6db36c48c351eac2f048763c19213",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/cache_output_actual_review_v1.json": "1801b18458961ed2df853a68a3a77396d8a8bef31d537148424b1a9ad682c31f"
+  },
+  "all_query_attention_component_verified": true,
+  "continuous_full_model_hardware_verified": false,
+  "current_mapping_verified": false,
+  "task_accuracy_verified": false,
+  "routed_timing_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}

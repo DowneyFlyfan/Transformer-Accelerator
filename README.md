@@ -7,10 +7,11 @@ Verified with Cadence Xcelium:
 - Native normalization checked all 575,488 values for 281 tokens.
 - Projection checked 719,360 dot products and 11,240 acknowledged query, key and value vectors.
 - Those generated vectors fed head prediction: all 473,760 trained scores matched. The predicted mask then drove attention on the same 20 compute arrays; all 2,048 context values for query 280 matched independent integer arithmetic.
+- A separate run restored those native vectors and verified all 575,488 context values across 281 query positions and 32 heads, including causal token sizes and memory transactions.
 
-[Native chain](records/tri_oracle_native_projection_attention_result.json) · [Testbench](verilog/live_native_projection_attention_frame/tb.sv) · [Earlier connected result](records/tri_oracle_live_predicted_attention_result.json)
+[Native chain](records/tri_oracle_native_projection_attention_result.json) · [All-query result](records/tri_oracle_all_query_native_attention.json) · [Testbench](verilog/live_native_projection_attention_frame/tb.sv)
 
-The test models normalized and projected data in external memory. Complete model and token merging integration, all-query attention verification, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
+The tests model normalized and projected data in external memory. Complete model and token merging integration, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
 Compile exported bundles with `+incdir+<project-root>`. Data, libraries and logs stay in `.cache/`.
 
