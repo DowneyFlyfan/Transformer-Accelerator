@@ -1,0 +1,113 @@
+{
+  "state": "independently_verified_finite_current_four_core_mapped_arithmetic_replay",
+  "scope": "Actual current four-core mapped circuit compared with the source at arithmetic public interfaces. Includes a finite trained matrix subset and a real loaded-weight fault. This is verification of the current mapping candidate.",
+  "technology": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nm High Performance Compact Plus (28HPC+) adaptation.",
+  "candidate": {
+    "mapped_netlist_sha256": "458fed1c1217c4cf8d7b83de6a187d240438e730434d0e80bc80064799025742",
+    "namespaced_simulation_netlist_sha256": "d713376460ebbce12b298e1f7d70775b01d9242ffe524d6847631be441bdeff5",
+    "mapped_cores": 4,
+    "paper_cores": 20,
+    "source_reference_public_port_groups": 41,
+    "source_reference_public_port_bits": 6183,
+    "structural_area_record": "records/tri_oracle_current_cluster_mapping_recovery.json"
+  },
+  "arithmetic": {
+    "accepted_and_retired_commands": 295,
+    "compared_signed32_output_lanes": 9440,
+    "directed_arithmetic_commands": 34,
+    "computed_output_readback_commands": 5,
+    "trained_commands": 256,
+    "required_activation_reload_acknowledgements": 1,
+    "load_checks": 1054,
+    "expected_invalid_load_errors": 2,
+    "queued_output_slots": 16,
+    "held_output_cycles": 619,
+    "duplicate_slot_refused_cycles": 8,
+    "compared_clock_cycles": 5907,
+    "reductions": [
+      "sum",
+      "signed maximum",
+      "arithmetic mean"
+    ],
+    "selected_core_and_four_core_ownership_exercised": true,
+    "accumulation_exercised": true
+  },
+  "trained_component": {
+    "model_layer": 19,
+    "original_token_positions": [
+      1,
+      2
+    ],
+    "tokens": 2,
+    "matrices": [
+      "gate",
+      "up"
+    ],
+    "output_rows_per_matrix": 32,
+    "input_features": 2048,
+    "signed8_products": 262144,
+    "complete_dot_output_values": 128,
+    "source": "Fixed first32 trained row-codebook rows and both archived ordinary activation vectors; all2048 columns. Independent integer recomputation and archived complete dot products agree.",
+    "scope": "Same archived inputs. These dot products were computed by the mapped circuit. Upstream normalization, nonlinear gating, the down projection and the complete model are outside this case."
+  },
+  "native_execution": {
+    "simulator": "Cadence Xcelium 25.03-s001",
+    "container": "tri-oracle-eda",
+    "simultaneous_native_jobs": 1,
+    "simulation_clock_period_ns": 20,
+    "timing_checks_enabled": false,
+    "positive": {
+      "native_exit_status": 0,
+      "worker_exit_status": 0,
+      "root_exit_status": 0,
+      "compilation_and_simulation_wall_seconds": 30.408493829891086
+    },
+    "corrupt_weight": {
+      "native_exit_status": 2,
+      "worker_exit_status": 0,
+      "root_exit_status": 0,
+      "compilation_and_simulation_wall_seconds": 26.43554189009592
+    },
+    "maximum_container_anonymous_bytes": 457588736,
+    "all_owned_process_births_terminal": true
+  },
+  "real_negative_control": {
+    "changed_dut_loaded_weight_bit": 8,
+    "first_output_lane_delta": 127,
+    "other31_lanes_unchanged": true,
+    "reference_equals_independent_first_golden": true,
+    "expected_data_comparison_failure_detected": true
+  },
+  "memory_and_provenance": {
+    "paired_memory_instances_per_case": 250,
+    "complete_exact_scope_and_master_bijection_verified": true,
+    "native_source_inputs_checked_before_and_after": 1358,
+    "full_readback_source_and_artifact_bindings": 1405,
+    "independent_actual_review_bindings": 1408,
+    "original_raw_logs_preserved": true,
+    "memory_model_type": "compiled static random-access memory (SRAM)",
+    "models_per_root": 125
+  },
+  "limits": {
+    "finite_four_core_arithmetic_verified": true,
+    "complete_cluster_functional_equivalence_verified": false,
+    "mapped_predictors_softmax_and_local_merge_verified": false,
+    "complete_trained_layer_verified": false,
+    "full_model_hardware_execution_verified": false,
+    "whole_chip_mapped_execution_verified": false,
+    "formal_equivalence_verified": false,
+    "timing_closed": false,
+    "paper_accuracy_protocol_matched": false,
+    "paper_results_matched": false,
+    "paper300_hold_only": true,
+    "physical_advancement_allowed": false
+  },
+  "evidence": {
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/arithmetic_actual_review_v2.json": "2f211e65aeb7f84d59ac4f710d8742d5015d7666da4aa5ee4964b72ce5764056",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/arithmetic_readback_v2.json": "87fe6c389dd092aac017426c94b69b96bcf06c3b8dd5c2781615d6418510b77e",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/actual_arithmetic_artifacts_v2.json": "fd0ead0d45063af0314c418835a3c6f7b414022fbe18f3582f0b04c9963c8b08",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/arithmetic_source_review_v2.json": "8a4f916087eb09115f9627008cd1a26fabff355cfd7b94c848498ddbf59ba634",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/arithmetic_verifier_source_review_v2.json": "8e0737ad779df21e2bd71103d1b88873473eed649b8e170f16b9cf6a5a66700a"
+  },
+  "history": "The first testbench omitted the required initial activation-reload acknowledgement and timed out before accepting a command. Its failed outcomes remain preserved. The corrected stimulus adds exactly one verified startup operation; all295 arithmetic golden words and data remain unchanged."
+}
