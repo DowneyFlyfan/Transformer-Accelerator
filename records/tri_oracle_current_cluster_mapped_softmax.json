@@ -1,0 +1,75 @@
+{
+  "state": "current_mapped_cluster_provided_score_softmax_preflight_verified",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "technology_scope": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nanometer High Performance Compact Plus (28HPC+) adaptation; original paper used Samsung 28 nanometer fully depleted silicon on insulator (28FDS). This record reports finite functional verification; paper-level silicon, timing and power comparisons remain unverified.",
+  "original_candidate_netlist_sha256": "458fed1c1217c4cf8d7b83de6a187d240438e730434d0e80bc80064799025742",
+  "namespaced_mapped_cluster_sha256": "d713376460ebbce12b298e1f7d70775b01d9242ffe524d6847631be441bdeff5",
+  "scope": "One current four-core cluster, compared with its source reference using independently checked supplied scores and causal token multiplicities. All 125 compiled memory instances per copy are censused.",
+  "positive": {
+    "frames": 21,
+    "provided_trained_anchor": "Layer19/head0/query5, six causal keys",
+    "synthetic_frames": 20,
+    "accepted_inputs": 4254,
+    "accepted_probability_outputs": 4254,
+    "probabilities_and_response_bits_exact": true,
+    "physical_core_owners": 4,
+    "matrix_commands": 12,
+    "signed32_matrix_lanes_per_copy": 384,
+    "softmax_probe_inputs": 24,
+    "softmax_probe_outputs": 24,
+    "invalid_configurations": 8,
+    "invalid_lengths": [
+      0,
+      1025
+    ],
+    "blocked_loads": 4,
+    "real_activation_reload_and_ack_checked": true,
+    "post_invalid_matrix_restore_checked": true,
+    "compared_cycles": 31540,
+    "native_wall_seconds": 34.483163601951674
+  },
+  "negative": {
+    "control": "Change only mapped owner0/frame0/key5 size from1 to2; preserve other input bits and all reference packets.",
+    "accepted_inputs": 6,
+    "actually_changed_size_values": 1,
+    "accepted_probability_outputs": 0,
+    "first_mismatch_key": 0,
+    "mapped_probability": 57853,
+    "reference_probability": 60249,
+    "fatal_time_ns": 13914,
+    "native_exit_status": 2,
+    "worker_exit_status": 0,
+    "root_exit_status": 0,
+    "native_wall_seconds": 27.686201841104776
+  },
+  "verification": {
+    "source_pins": 1438,
+    "independent_actual_union_bindings": 1513,
+    "native_source_review_sha256": "8c6c633065bf6d025a15b222afb9484f11fd54b35e435008401f0472cfc4ba6e",
+    "host_source_review_sha256": "291cade6e244c832d9118d96c1098a620fb492408fc8fc0275903cc544f162f0",
+    "actual_preflight_review_sha256": "efe0fe42777e2acd7ff5236ec653a4d74bb04531fcfd0c8bdb227e3855fa1674",
+    "actual_artifact_manifest_sha256": "e8d163252f81ee0f971a9bdac25a4e42014a9b99aafeed0818424c113506612d",
+    "binary_records_fully_compared": true,
+    "canonical_and_exact_console_view_events_agree": true,
+    "known_external_stderr_policy": "Zero insertions, or removal of two exact58-byte kernel permission messages. Every other byte is retained and both complete transcripts pass the same closed diagnostic and golden event checks."
+  },
+  "limits": {
+    "full_9013_frame_replay_verified": false,
+    "current_mapped_query_key_generation_verified": false,
+    "value_accumulation_verified": false,
+    "complete_trained_layer_verified": false,
+    "full20_core_execution_verified": false,
+    "full_model_hardware_verified": false,
+    "task_accuracy_verified": false,
+    "timing_closed": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "paper300_hold_only": true
+  },
+  "private_evidence": {
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_softmax_v1/preflight_actual_review_v1.json": "efe0fe42777e2acd7ff5236ec653a4d74bb04531fcfd0c8bdb227e3855fa1674",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_softmax_v1/preflight_readback_v2.json": "8f7ecb2389a87a9a5840a2a15a8e55213e00d45c0707cd4618bfac817cf24adc",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_softmax_v1/actual_preflight_artifacts_v2.json": "e8d163252f81ee0f971a9bdac25a4e42014a9b99aafeed0818424c113506612d",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_softmax_v1/host_source_review_v2.json": "291cade6e244c832d9118d96c1098a620fb492408fc8fc0275903cc544f162f0"
+  }
+}
