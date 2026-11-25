@@ -1,0 +1,74 @@
+{
+  "state": "four_core_mapping_structure_and_database_restoration_verified",
+  "technology": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nm High Performance Compact Plus (28HPC+) adaptation; the paper used Samsung 28 nm fully depleted silicon on insulator (28FDS).",
+  "scope": "One current four-core cluster. This is a synthesis and database-restoration result, with current-snapshot area reconstruction. Functional, physical and paper qualification remain incomplete.",
+  "candidate": {
+    "netlist_sha256": "458fed1c1217c4cf8d7b83de6a187d240438e730434d0e80bc80064799025742",
+    "optimized_database_sha256": "651e4cd429b0b940616c854ca7ef308424f7d470f50c096b5c01f0e38e708ea7",
+    "module_definitions": 88,
+    "hierarchical_instances": 103,
+    "physical_leaves": 359290,
+    "standard_cells": 359165,
+    "compiled_memory_macros": 125,
+    "logical_memory_bytes": 81568,
+    "imported_cores": 4,
+    "unchanged_physical_leaves_per_imported_core": 75444,
+    "root_port_groups": 41,
+    "root_port_bits": 6183,
+    "imported_core_port_groups": 36,
+    "imported_core_port_bits": 3222
+  },
+  "native_execution": {
+    "simultaneous_containers": 1,
+    "container": "tri-oracle-eda",
+    "tool": "Cadence Genus",
+    "recovery_wall_seconds": 1666.409758765949,
+    "area_query_wall_seconds": 31.202688322169706,
+    "recovery_native_worker_and_root_exit_statuses": [0, 0, 0],
+    "area_query_native_worker_and_root_exit_statuses": [0, 0, 0],
+    "owned_native_process_groups_terminal": true,
+    "recovery_peak_container_anonymous_bytes": 5698834432,
+    "recovery_minimum_host_available_bytes": 20185833472
+  },
+  "restoration": {
+    "scope": "The optimized saved database was actually restored; fingerprints alone are not a restoration test.",
+    "entire_readback_hardware_token_stream_matches": true,
+    "matching_hardware_tokens": 4603690,
+    "hardware_token_stream_sha256": "3b540cbc8aaef913b50d4cd7d34947840d3634d075177ffa60c9a3adc2a08a83",
+    "constraints_match_except_creation_timestamp": true,
+    "physical_leaf_maps_interfaces_and_memory_inventory_match": true
+  },
+  "cell_area": {
+    "unit": "square micrometers",
+    "reported": "1301984.189",
+    "weighted_native_queried_attributes": "1301984.18907600000258750",
+    "source_exact_decimal_liberty_sum": "1301984.193100",
+    "used_cell_masters": 334,
+    "queried_sum_rounds_to_both_actual_reports_at_printed_precision": true,
+    "scope": "Current native database attributes explain the displayed report. The exact source-Liberty metric is retained separately. No universal internal floating-point representation is asserted. This is cell area, not routed die area."
+  },
+  "timing": {
+    "clock_period_ns": 1.72414,
+    "worst_setup_slack_ps": -34,
+    "reported_paths": 32,
+    "scope": "Pre-placement zero-wireload estimate; timing is not closed."
+  },
+  "unresolved": {
+    "hierarchical_pins_with_zero_reported_fanout": 5617,
+    "those_pins_qualified_unused": false,
+    "current_cluster_functional_equivalence_verified": false,
+    "current_cluster_trained_execution_verified": false,
+    "whole_chip_integration_verified": false,
+    "placement_and_routing_complete": false,
+    "timing_closed": false,
+    "paper_accuracy_protocol_matched": false,
+    "paper_results_matched": false,
+    "paper300_hold_only": true,
+    "physical_advancement_allowed": false
+  },
+  "evidence": {
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_recovery_v1/completed_structure_actual_review_v1.json": "5d9d2254aee07f1d57b9be1849293a505df642826605a3574d6513b14da8de4b",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_area_probe_v1/actual_review_v1.json": "a529bffda4b622a2a278f4452e1e1b11329144e34ef830518e740fa467485a3a"
+  },
+  "history": "The earlier cluster mapping attempt exited with failure and remains recorded as such. This recovery used its intermediate structural export, restored the original packed public ports with independently checked exact edits, then completed mapping and optimization. No earlier failure was relabeled successful."
+}
