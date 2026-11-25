@@ -1,0 +1,121 @@
+{
+  "state": "independently_verified_existing_down_shift_component_calibration",
+  "problem": "Lossy signed8 Down inputs motivated testing the existing per-layer shift controls without widening the datapath.",
+  "method": {
+    "extra_layer_shifts": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "candidate_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "selection": "Minimum calibration summed squared error independently per layer; exact ties choose the smaller extra shift. All22 choices were persisted and hashed before numerical diagnostic captures were loaded.",
+    "arithmetic": "Add d after the original clamp s0=max(0,gain+offset). Round once from the fresh signed16 gated intermediate at s0+d. Preserve signed8 coarse/correction planes and mask. Add d to the output exponent; convert raw to float32 before scaling.",
+    "changed_layers": [
+      1,
+      2,
+      5,
+      6,
+      12,
+      15,
+      16
+    ],
+    "largest_selected_total_input_shift": 9,
+    "unchanged": "Trained weights, gain, exponent buckets, signed16 gated width, sign/outlier prediction and skip masks.",
+    "configuration_fitting_performed": true,
+    "model_weights_fitted": false,
+    "answer_labels_used": false
+  },
+  "fixed_workload": {
+    "layers": 22,
+    "calibration_images": 8,
+    "reused_diagnostic_images": 8,
+    "ordinary_rows_per_image": 16,
+    "rows_per_layer_per_split": 128,
+    "hidden_and_output_features": 2048,
+    "intermediate_channels": 5632,
+    "source": "Existing floating-attention-prefix component captures, not fresh integer-attention trajectories.",
+    "diagnostic_split_is_blind": false
+  },
+  "measured_component_error": {
+    "calibration": {
+      "baseline_squared_error": 2151.83237472699,
+      "selected_squared_error": 2109.4410520737065,
+      "relative_squared_error_reduction_percent": 1.9700104502174314
+    },
+    "reused_diagnostic": {
+      "baseline_squared_error": 2128.2186424590855,
+      "selected_squared_error": 2083.58217871054,
+      "relative_squared_error_reduction_percent": 2.0973626890594943
+    }
+  },
+  "independent_verification": {
+    "source_pins": 245,
+    "actual_review_union_bindings": 470,
+    "calibration_candidate_errors_and_choices_recomputed": 132,
+    "baseline_raw_integer_elements_exact": 11534336,
+    "selected_raw_integer_elements_exact": 11534336,
+    "per_image_baseline_selected_pairs_checked": 352,
+    "raw_saved_files": 176,
+    "raw_saved_bytes": 113743872,
+    "numerical_oracle": "Independent NumPy ties-away rounding and format derivation; exact integer Down products computed by binary64 matrix multiplication under the proven integer bound, followed by original float32-before-scaling interpretation.",
+    "cpu_recomputation_scope": "Down stage from saved fresh gated16/mask/unit arrays. The upstream Gate/Up/predictor source is authenticated and d0 reproduces D/E baselines; the entire upstream prefix is not freshly recomputed by this CPU audit.",
+    "graphics_worker_seconds": 6.842577086063102,
+    "cpu_audit_seconds": 36.035594439832494,
+    "cpu_blas_threads": 20,
+    "cpu_peak_resident_bytes": 938283008,
+    "graphics_peak_allocated_bytes": 409031168,
+    "graphics_external_live_snapshot_observed": false,
+    "graphics_identity": "Pinned guard self-snapshot joined to one original tool exec/wait:41259/fae802/ff0afc. Both unsuccessful external observation attempts are retained; no GPU rerun.",
+    "cpu_external_live_identity_observed": true,
+    "cpu_original_exec_wait": "77622/9b351b/3ea472"
+  },
+  "decision": "Keep production policy and hardware unchanged pending current-chain compatibility and full-model accuracy tests. This measured component-error reduction is not task-accuracy improvement.",
+  "limits": {
+    "actual_current_chain_5bit_writeback_compatibility_verified": false,
+    "production_policy_or_hardware_changed": false,
+    "complete_trained_mapped_execution_verified": false,
+    "task_accuracy_improvement_verified": false,
+    "timing_closed": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "paper300_hold_only": true
+  },
+  "temporary_cleanup": "Removed8empty graphics and8empty CPU framework-cache directories. No scientific raw outputs or proof records were deleted.",
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/inputs.json": "84550e787862f7f7bdc022f571b37adc5c0aa504bfa797f01151f4e9388fcd1f",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/source_review_v1.json": "c34315b6380cf4d788a3c51065194c5e195f3547f8859a954ae2d1963284380e",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/receipt.json": "097eeafecf3dc319aeee313fd6cb64cdb98ef4e53f04f13fadcdd1ed20b50017",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/root_tool_wait_v1.json": "5f050dbbbd96948a9b7353b6cba0e49bb9e62e1edd9ff3ea795bac89f2b257b3",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/cpu_source_review_v1.json": "cbcd6e59264eb5621360d1d493df448397c76998c6dbfc9372c7a16923ac4ad9",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/cpu_audit_receipt_v1.json": "247df5e903f4ff2cb0ee82f4504871f117c0585b395103d2cb2d29220b2b386a",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/cpu_owned_launch_v1.json": "33b1a57c3c0cbc23e9c581d12c1e058f357a82e88233abed0449fd9ed8b0777e",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/cpu_root_tool_wait_v1.json": "789bff0a331387d07997d29e248e9ce8a494970d1f51ffe1383f284665a47a86",
+    ".cache/late_clipping_20261121/frame_integration/down_shift_calibration_v1/actual_review_v1.json": "7e946868608889be2697c50f05414799abc4afa71002528154a23ec0db0f47f1"
+  }
+}
