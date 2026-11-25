@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "state": "native_attention_physical_score_array_arithmetic_independently_verified",
+  "scope": "Additional host readback of the completed source-level Xcelium attention run: all281 query positions and32 heads on20 existing array paths. Bind causal query/key tiles to native-generated cache bytes, check every signed19 array row output, and independently sum the four-core/two-strip contributions. The physical score-accumulator and score-memory contents are outside this result.",
+  "parent_native_record": "records/tri_oracle_all_query_native_attention.json",
+  "parent_native_record_sha256": "a6d537ad88a838d42062800e74115b8074c66ddf8b453e440e13e469817663d8",
+  "coverage": {
+    "queries": 281,
+    "tiles": 26277,
+    "score_dots": 771159,
+    "issues": 210216,
+    "array_inputs": 210216,
+    "array_outputs": 210216,
+    "row_sums": 6726912,
+    "completions": 210216,
+    "operand_bytes": 98708352
+  },
+  "numeric_formats": {
+    "operand_bits": 8,
+    "operand_signed": true,
+    "products_per_array_row": 8,
+    "array_rows": 32,
+    "array_row_sum_bits": 19,
+    "cores_per_score_tile": 4,
+    "strips_per_core": 2,
+    "features_per_dot_product": 64
+  },
+  "verified_checks": [
+    "Actual native-cache query/key operands for every enabled array lane",
+    "Query/head/cluster/core/strip ownership and causal masks",
+    "Accepted issue/input/output/completion ordering and timing",
+    "All observed signed array row sums",
+    "Mathematical eight-contribution reduction against independent64-feature cache dot products",
+    "Both complete transcripts agree; independent full-stream reviewer uses separate arithmetic code"
+  ],
+  "host_verification": {
+    "observed_tool_exit_status": 0,
+    "total_wall_seconds": 56.306825406849384,
+    "source_pin_count": 127,
+    "address_space_limit_bytes": 536870912,
+    "focused_tests_passed": 13,
+    "additional_independent_corruption_controls_rejected": 11,
+    "independent_full_stream_tool_exit_status": 0,
+    "independent_relevant_event_lines_per_transcript": 3389686,
+    "independent_relevant_event_stream_sha256": "1184ddac41126eb984cfa1f48f72346c017aac85f3645646cc138d0398d9a7e9",
+    "independent_review_findings": []
+  },
+  "native_simulator_rerun": false,
+  "model_job_restarted": false,
+  "original_native_outside_self_exits_preserved_unknown": true,
+  "score_accumulator_internals_verified": false,
+  "score_memory_readback_verified": false,
+  "probability_arithmetic_verified": false,
+  "value_accumulator_arithmetic_verified": false,
+  "full_model_hardware_verified": false,
+  "current_mapping_verified": false,
+  "task_accuracy_verified": false,
+  "routed_timing_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/attention_array_readback_v1/preparation_v1.json": "06c5f1f42c3e9dca68d64d158444ab4e6b4631b3aa47ab1c2a3c1f62c128e4ab",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/attention_array_readback_v1/source_review_v1.json": "6c0ffe75da18fbe948e4c57e0da1129a155a23186683f9f227f00a6272bca4c4",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/attention_array_readback_v1/full_result_v1.json": "a5acb5b0acb3980b54cced7918791314a585227e59207ee3fc1bc9b2902adc4e",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/attention_array_readback_v1/terminal_v1.json": "6d696e037d2ccbb41c373dccb5882de15b94d68f49f52719c5e1853b0b691f32",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/attention_array_readback_v1/invocation_binding_v1.json": "c15a14e9ab580512dac907f72d3a567182b852677ac5551f1381012a3ab25a5e",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/attention_array_readback_v1/actual_review_v1.json": "c72b62472ca70407378be0e7ad81a311af66234bdc9d0dd5fcafe81885ce3cc9"
+  }
+}
