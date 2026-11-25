@@ -1,0 +1,132 @@
+{
+  "state": "current_memory_compute_root_synthesis_and_finite_mapped_replay_independently_verified",
+  "scope": "Corrective verification of one current tri_oracle_sram_memory_compute root and its five-module hierarchy. This is a memory/compute component of a Weight-Attention Core, not the complete paper core, whole chip or a replacement for full-chip qualification.",
+  "technology": {
+    "implementation": "Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+",
+    "paper": "Samsung 28 nm fully depleted silicon on insulator",
+    "original_silicon_process_reproduction": false
+  },
+  "source": {
+    "top_module": "tri_oracle_sram_memory_compute",
+    "port_groups": 36,
+    "reachable_module_instances": 5,
+    "source_sha256": {
+      "verilog/tri_oracle_pe_array.sv": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+      "verilog/tri_oracle_wac_imem_owner.sv": "4099968eb5c3a4bbf4a5046647d743c81c442d82aa0fd48c76483ed9279311b3",
+      "verilog/tri_oracle_wac_softmax_imem.sv": "0986db9b51308973eb23ff274f07063182656dab8b763098c3b7062099a97fa0",
+      "verilog/native_shared_array/30_tri_oracle_wac_softmax.sv": "cd4759a2fc2b892849570ecf7bcf4a96d788b4687f26362bbbc34784426b3752",
+      "verilog/native_shared_array/38_core.sv": "9026597d3d6f623ba5fa0e9f7fb3324918151408da0299c7d5de9e202887e924"
+    },
+    "mapped_netlist_sha256": "ace4088075e4d2ff0aa725bacb84efd918a24fecb5b247dd32d15fec6f1092d5",
+    "source_reference": "Exact five-file module-identifier renaming, independently checked by inverse byte comparison."
+  },
+  "synthesis": {
+    "tool": "Cadence Genus",
+    "actual_exit_status": 0,
+    "native_wall_seconds": 900.3747363178991,
+    "physical_leaf_instances": 75444,
+    "standard_cells": 75416,
+    "compiled_memory_macros": 28,
+    "reported_cell_area_square_micrometers": 288535.593,
+    "reported_cell_area_square_millimeters": 0.288535593,
+    "independent_library_weighted_area_square_micrometers": 288535.5934,
+    "corner": "slow process, 0.9 V, 125 degrees Celsius",
+    "clock_target_nanoseconds": 1.724137931,
+    "reported_worst_setup_slack_picoseconds": -8,
+    "timing_basis": "Preplacement estimate with zero wireload net area. Clock target is not measured operating frequency; setup timing remains violated.",
+    "timing_closed": false
+  },
+  "component_storage": {
+    "logical_bytes": 19456,
+    "weights": {
+      "macros": 16,
+      "bytes": 8192
+    },
+    "inputs": {
+      "macros": 2,
+      "bytes": 8192
+    },
+    "outputs": {
+      "macros": 8,
+      "bytes": 2048
+    },
+    "sign_masks": {
+      "macros": 2,
+      "bytes": 1024
+    },
+    "complete_chip_memory_accounting": false
+  },
+  "functional_replay": {
+    "tool": "Cadence Xcelium 25.03-s001",
+    "vendor_views": "Original standard-cell functional model and three compiled-memory models at typical process, 1.0 V, 25 degrees Celsius.",
+    "timing_checks_disabled": true,
+    "positive_native_exit_status": 0,
+    "wrong_reference_native_exit_status": 2,
+    "both_owned_worker_and_root_wait_exit_status": 0,
+    "positive_native_wall_seconds": 11.32681365404278,
+    "negative_native_wall_seconds": 10.06888751219958,
+    "capacity_commands": 1024,
+    "independently_recomputed_masked_signed8_dot_products": 32768,
+    "final_signed32_capacity_rows": 512,
+    "input_addresses": 1024,
+    "weight_addresses": 32,
+    "mask_addresses": 32,
+    "output_slots": 16,
+    "matched_sampled_clock_cycles": 3542,
+    "output_readback_words": 41,
+    "interpreted32bit_output_lanes": 1312,
+    "separately_packed_signed16_scores": 1024,
+    "unique_trained_context_words": 4,
+    "unique_synthetic_context_words": 4,
+    "extra_trained_context_readback_during_normalizer": 1,
+    "context_scope": "The four trained and four synthetic context words are externally loaded into output storage and read back. This replay checks their storage and access behavior; it does not compute the trained contexts on chip.",
+    "memory_instances_in_paired_test": 56,
+    "each_root_memory_instances": 28,
+    "checks": [
+      "Every actual mapped and source-reference word matches independently derived scalar expectations.",
+      "Output-slot leases, legacy and generic releases, invalid addresses, reset/reload and equal-score normalizer/backpressure checks reach the final pass.",
+      "The deliberately wrong golden bit fails specifically at output word 0, slot 0, before any output readback word or pass marker."
+    ],
+    "console_handling": "Raw logs retained. Exactly two literal 58-byte kernel-buffer-permission stderr messages per console are removed in a separate authenticated view. Every remaining raw-console byte is preserved in order; the complete core-event sequence equals the canonical log. The two complete files are not byte-identical.",
+    "maximum_observed_container_anonymous_bytes": 210407424
+  },
+  "independent_review": {
+    "critical_findings": 0,
+    "important_findings": 0,
+    "source_and_execution_pins_checked": 1152,
+    "trained_context_words_rederived_from_captured_probabilities_and_values": true,
+    "mapping_review_sha256": "cf1768a63ac9dad64b93a8db6610349e67b4533ec88b86e600af24509104fc08",
+    "finite_replay_actual_review_sha256": "141d0f3bef165bc8b855385181db2f4daa1fbb40b2dc7e493a51d456d42489b8"
+  },
+  "qualification": {
+    "this_component_finite_mapped_replay": true,
+    "formal_equivalence": false,
+    "complete_paper_architecture": false,
+    "whole_chip_mapped_execution": false,
+    "current_placed_candidate_equivalence": false,
+    "full_model_hardware_execution": false,
+    "paper_accuracy_protocol": false,
+    "timing_closure": false,
+    "routed_design": false,
+    "original_silicon_power_performance_area": false,
+    "paper_matching": false,
+    "clock_distribution_or_routing_allowed": false
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/source_preparation_v1.json": "32a02ce8015470d6ca1d63e1af507fb8ed2d4951889a6083ce1ece8acea9915b",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/runtime_v3/preparation_v1.json": "5e37a91ad7b7285744df0adfeca7d5f8088924a1330f63bd7b064bb32dc0060a",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/runtime_v3/raw_result_v1.json": "32e9e248c919bd777d34edb48882b4e05c37478cc0a25af5546cc09e503d403b",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_structure_readback_v1.json": "2e0b2a17522572d0ce228909ef5311b21b87d909a34214186e8a0bffab0c2e92",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_actual_review_v1.json": "cf1768a63ac9dad64b93a8db6610349e67b4533ec88b86e600af24509104fc08",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/synthesis_v3/netlist.v": "ace4088075e4d2ff0aa725bacb84efd918a24fecb5b247dd32d15fec6f1092d5",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/synthesis_v3/constraints.sdc": "92c1dd4c4488fef9a56a9bf9d53fa0bfce7005ed79589bcc3e822c0c2cf40914",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_replay_v1/preparation_v1.json": "115d8b80b8fd9389fdfd04741405ffb152f3ddb63589459aa35e1462ee6d4228",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_replay_v1/source_review_v1.json": "151cfda8551fc4240a391d2dcd44ae150e0aafdb13416d906f8bc964d9d5ede0",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_replay_v1/expected_words_v1.json": "ee437e5305ded55d34373b58c511c01237e8c377204e394ddc0aeeb5260a50e4",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_replay_v1/console_normalization_v1.json": "e60d5f6ce8cdf194f3918fee76dfaf5430871df6a89bfe73ef67ce812f682d4b",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_replay_v1/numerical_readback_v1.json": "b64e6069a31fd007e8ad075349d254c7acd912f72e68e814677e2d0b587b3f9c",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_replay_v1/actual_review_v1.json": "141d0f3bef165bc8b855385181db2f4daa1fbb40b2dc7e493a51d456d42489b8",
+    ".cache/late_clipping_20261121/frame_integration/clean_boundary_core_mapping_v1/mapped_replay_v1/pre_disposal_build_inventory_v1.json": "56bd121ea0bc0eddc6898dd12700f19b0d014c24991eb6e09367b7323df6e318"
+  },
+  "large_artifacts_policy": "Libraries, compiled products, checkpoints, logs and input data remain local. Only this compact summary is published."
+}
