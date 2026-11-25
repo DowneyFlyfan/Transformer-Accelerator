@@ -1,0 +1,110 @@
+{
+  "state": "independently_verified_current_four_core_mapped_head_classifiers_on_supplied_trained_scores",
+  "scope": "Further verification of the current four-core cluster:32 trained logical-head input cases run sequentially on four physical classifier owners, with source and independent integer comparisons. Previously accepted source-native dot scores are supplied at the classifier public input.",
+  "technology": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nm High Performance Compact Plus (28HPC+) adaptation.",
+  "candidate": {
+    "mapped_netlist_sha256": "458fed1c1217c4cf8d7b83de6a187d240438e730434d0e80bc80064799025742",
+    "namespaced_simulation_netlist_sha256": "d713376460ebbce12b298e1f7d70775b01d9242ffe524d6847631be441bdeff5",
+    "mapped_cores": 4,
+    "paper_cores": 20,
+    "physical_classifier_owners": 4,
+    "related_arithmetic_record": "records/tri_oracle_current_cluster_mapped_arithmetic.json"
+  },
+  "trained_cases": {
+    "logical_heads": 32,
+    "cases_per_local_owner": 8,
+    "original_query_positions_inclusive": [
+      96,
+      280
+    ],
+    "query_rows_per_head": 185,
+    "total_query_rows": 5920,
+    "raw_signed32_score_lanes": 568320,
+    "causal_valid_signed32_score_lanes": 473760,
+    "accepted_eight_lane_score_beats": 71040,
+    "classified_streaming_heads": 21,
+    "classified_retrieval_heads": 11,
+    "held_output_observations": 128,
+    "compared_clock_cycles": 142592,
+    "method": "For each query, use the sink-tile maximum minus integer alpha as a strict threshold. Count enabled inner/recent scores above it, accumulate over185 rows and compare the configured intensity products. Future recent-tile lanes are excluded.",
+    "source_scope": "All score payloads and their causal masks were decoded and compared with both authenticated original source-native logs. This case re-executes classification; it does not re-execute upstream mapped score computation.",
+    "local_ratio_numerator": 8,
+    "local_ratio_denominator": 1,
+    "configured_integer_alpha_values": [
+      1024,
+      2048
+    ],
+    "paper_exact_ratio_unpublished": true
+  },
+  "real_negative_control": {
+    "frame": 0,
+    "score_beat": 4,
+    "changed_dut_request_bit": 31,
+    "only_changed_response_bit": 18,
+    "response_bit_from": 0,
+    "response_bit_to": 1,
+    "reference_inner_intensity": 0,
+    "corrupted_inner_intensity": 1,
+    "recent_intensity_unchanged": 197,
+    "streaming_decision_unchanged": true,
+    "retired_frames_before_failure": 0,
+    "expected_native_comparison_failure_detected": true,
+    "fatal_time_ns": 89054
+  },
+  "native_execution": {
+    "simulator": "Cadence Xcelium 25.03-s001",
+    "container": "tri-oracle-eda",
+    "simultaneous_native_jobs": 1,
+    "simulation_clock_period_ns": 20,
+    "timing_checks_enabled": false,
+    "cases": {
+      "positive": {
+        "native_exit_status": 0,
+        "worker_exit_status": 0,
+        "root_exit_status": 0,
+        "compilation_and_simulation_wall_seconds": 65.20669499202631
+      },
+      "corrupt_score": {
+        "native_exit_status": 2,
+        "worker_exit_status": 0,
+        "root_exit_status": 0,
+        "compilation_and_simulation_wall_seconds": 27.673385140951723
+      }
+    },
+    "maximum_container_anonymous_bytes": 458588160,
+    "all_owned_process_births_terminal": true
+  },
+  "memory_and_provenance": {
+    "memory_model_type": "compiled static random-access memory (SRAM)",
+    "models_per_root": 125,
+    "paired_instances_per_case": 250,
+    "complete_exact_scope_and_master_bijection_verified": true,
+    "native_source_inputs_checked_before_and_after": 1398,
+    "full_readback_source_and_artifact_bindings": 1455,
+    "independent_actual_review_union_bindings": 1468,
+    "original_raw_transcripts_preserved": true
+  },
+  "limits": {
+    "finite_supplied_score_classification_verified": true,
+    "upstream_current_mapped_score_generation_verified": false,
+    "complete_cluster_functional_equivalence_verified": false,
+    "mapped_softmax_and_local_token_merge_verified": false,
+    "complete_trained_layer_verified": false,
+    "full_model_hardware_execution_verified": false,
+    "whole_chip_mapped_execution_verified": false,
+    "formal_equivalence_verified": false,
+    "timing_closed": false,
+    "paper_accuracy_protocol_matched": false,
+    "paper_results_matched": false,
+    "paper300_hold_only": true,
+    "physical_advancement_allowed": false
+  },
+  "evidence": {
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/head_actual_review_v1.json": "cf33abba213aa078d3f1831e909fbdd9ca79779c7db72b40ed33d0fc6bb87b4d",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/head_readback_v1.json": "28c059d45e6b0e387bcbdf3240d368d4f46e3d9fb5335dd82a9bfff4d2cb20aa",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/actual_head_artifacts_v1.json": "1d6e6863fbd8661f002efcda7c69998a71ac830fb244795b512cfe204676dc03",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/head_source_review_v1.json": "7d27d1216e5b45b49d4aba2a4377f5b0a48d0e15ef5f0b0296f842d1966adef0",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/head_verifier_source_review_v1.json": "44969918bf4174fd64165d7d8e300e5e650ab67068bad2d60dabb06b965977e7",
+    ".cache/late_clipping_20261121/frame_integration/current_cluster_mapped_behavior_v1/head_fixture_source_review_v1.json": "42d98b78d53852faeeac4c0ff34f2822f4e7ce265a57ad97f883e683d329ee93"
+  }
+}
