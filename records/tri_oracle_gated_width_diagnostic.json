@@ -1,0 +1,110 @@
+{
+  "state": "one_variable_gated_intermediate_width_component_diagnostic_independently_verified",
+  "purpose": "Test whether saturating the rounded nonlinear-product intermediate to signed16 contributes to the existing numerical error, before considering a hardware change.",
+  "configuration": {
+    "layers": 22,
+    "saved_ordinary_rows_per_layer": 256,
+    "hidden_and_output_features": 2048,
+    "intermediate_channels": 5632,
+    "captured_images": 16,
+    "calibration_images": 8,
+    "reused_diagnostic_images": 8,
+    "input_scope": "Existing frozen floating-attention-prefix component captures, not current integer-attention trajectories or new full-model inference.",
+    "baseline": "Current frozen row-weight integer kernel.",
+    "diagnostic": "Only change gated intermediate saturation from 16 to 32 bits. Preserve both rounding steps, gate/up operands, row weights, calibrated Down codes, units, masks and late-correction rules.",
+    "answer_labels_used": false,
+    "fitting_performed": false,
+    "trained_checkpoint_updated": false
+  },
+  "measurements": {
+    "gated_saturated_codes": 155,
+    "gated_saturated_unskipped_codes": 150,
+    "changed_layers_zero_based": [
+      {
+        "layer": 17,
+        "changed_rows": 19,
+        "changed_integer_outputs": 37262
+      },
+      {
+        "layer": 18,
+        "changed_rows": 53,
+        "changed_integer_outputs": 104317
+      }
+    ],
+    "changed_saved_rows_across_layers": 72,
+    "changed_integer_outputs": 141579,
+    "integer_outputs_each_arm": 11534336,
+    "raw_output_bytes_checked": 92274688,
+    "summed_squared_error": {
+      "calibration": {
+        "baseline_squared_error": 2151.8323747269897,
+        "wide_squared_error": 2146.468582253538,
+        "relative_squared_error_reduction_percent": 0.24926627819382027
+      },
+      "reused_diagnostic": {
+        "baseline_squared_error": 2128.2186424590855,
+        "wide_squared_error": 2114.0802359455583,
+        "relative_squared_error_reduction_percent": 0.6643305453424024
+      }
+    },
+    "aggregation": "Simple sum of squared errors over all saved rows and22 layer output tensors in each fixed split. Layer magnitudes differ; this is not an average of relative row errors or a task-accuracy metric.",
+    "all_original_baseline_counts_and_metrics_reproduced": true
+  },
+  "independent_verification": {
+    "critical_findings": 0,
+    "important_findings": 0,
+    "complete_source_and_artifact_bindings": 155,
+    "source_preparation_pins": 97,
+    "fresh_host_integer_replay_layers_zero_based": [
+      17,
+      18
+    ],
+    "both_complete_raw_output_matrices_match_fresh_host_replay": true,
+    "all22_metrics_reconstructed_from_raw_targets_and_independent_units": true,
+    "other20_raw_output_pairs_identical": true,
+    "other20_fresh_full_dot_replays_performed": false,
+    "actual_worker_guard_and_root_wait_exit_status": 0,
+    "host_controls": 7,
+    "graphics_experiment_repeated": false
+  },
+  "runtime": {
+    "graphics_device": "NVIDIA GeForce RTX 5070 Ti",
+    "graphics_worker_seconds": 5.670106183970347,
+    "guard_seconds": 7.989523800089955,
+    "peak_graphics_allocated_bytes": 502523392,
+    "peak_host_resident_bytes": 1673424896,
+    "minimum_host_available_bytes": 24173862912,
+    "independent_host_audit_threads": 18,
+    "independent_host_audit_seconds": 11.458039521006867,
+    "independent_host_audit_peak_resident_bytes": 1135284224,
+    "framework_and_temporary_cache_paths": "Project .cache only."
+  },
+  "interpretation": "On these fixed captures, widening affects final integers in only layers 17 and 18 and reduces summed squared error by about 0.25 percent in calibration and 0.66 percent in the reused diagnostic split. Most local error remains. These reductions do not measure or predict task-accuracy improvement.",
+  "decision": "Keep the current hardware and production policy. Use this bounded result to guide further integer-format diagnosis; it does not justify selecting a wider hardware datapath.",
+  "qualification": {
+    "captured_component_diagnostic": true,
+    "blind_generalization": false,
+    "new_full_model_inference": false,
+    "new_task_accuracy_result": false,
+    "production_policy_selected": false,
+    "hardware_change_implemented": false,
+    "mapped_hardware_validation": false,
+    "paper_accuracy_matching": false,
+    "physical_advancement_allowed": false,
+    "paper300_hold_released": false
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/inputs.json": "f5d413cd88b935cb360e2b4d2ef45be6536fe5cc0ef2ac4deae18bf53731d002",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/source_review_v2.json": "10cfb403375c4a8152ac1400435398b5bbb4910bb700e32c895f6e98d9ea9e88",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/receipt.json": "586e78fafa16af15cd6d43284b36fc58b934185c00fd4f9696439b553c4b9784",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/guard_receipt.json": "a1b10c7e1630d2d44d755b541dcb892aa7dd2289f295b3cd9536a149f4dcb989",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/outside_terminal_v1.json": "4c0509852bfb9d03a0fdbf4141fa201478cb52a17f6fd3df6eaf6ea2197545b0",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/root_tool_wait_v1.json": "311069ea97965eb130fb1c9bdddc8c625547ac747f25c89ed9900dff454913c7",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/root_readback_v1.json": "685c8793150815a60304c30642c70716863a093df95555195691f881867ee694",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/actual_review_v1.json": "7dfaedd0c09b08bb2f8ba5b7ced01a17baa3495b2a5a760031666820f6ddcd60",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/actual_audit_cpu_v1.py": "6b20f4f75d0d3f644f82a95c2bedd5cc3c031acb9593fb33ed48e6f26d77b110",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/actual_audit_cpu_receipt_v1.json": "42ad87efdb675e838f660bc587adc3fb3e307cbc0d22ecde7646bfd770de6c9d",
+    ".cache/late_clipping_20261121/frame_integration/gated_width_diagnostic_v1/flow.pdf": "fbe8d1e633bf3281eb409ee4d6f2beeb4022eac63aa262ee896bad20ad90def9"
+  },
+  "large_artifacts_policy": "The 88 mebibytes of raw paired outputs, together with inputs, checkpoints and logs, remain local; publish only this compact factual record."
+}
