@@ -1,0 +1,100 @@
+{
+  "state": "one_variable_down_input_clipping_component_diagnostic_independently_verified",
+  "purpose": "Measure the contribution of down-input clipping to the existing local integer component error before choosing a format or hardware change.",
+  "configuration": {
+    "layers": 22,
+    "saved_ordinary_rows_per_layer": 256,
+    "hidden_and_output_features": 2048,
+    "intermediate_channels": 5632,
+    "captured_images": 16,
+    "calibration_images": 8,
+    "reused_diagnostic_images": 8,
+    "input_scope": "Existing frozen floating-attention-prefix component captures. These are not current integer-attention trajectories or new full-model inference.",
+    "baseline": "Original frozen row-weight kernel: down input clips to[-128,127] in layers0..16; the original extra clipped correction gives effective[-256,254] in layers17..21.",
+    "diagnostic": "Preserve masked signed16 down inputs instead of that lossy clipping. Keep original signed16 gated values, both rounding steps, weights, masks, gain, shifts and physical units.",
+    "software_projection": "Three signed8 planes weighted1,128,16384; widen exact signed32 plane products before combining in signed64. This is a counterfactual software calculation.",
+    "answer_labels_used": false,
+    "fitting_performed": false,
+    "production_policy_changed": false,
+    "hardware_changed": false
+  },
+  "measurements": {
+    "total_wide_input_codes": 31719424,
+    "down_clipped_codes": 1627,
+    "down_clipped_unskipped_codes": 1582,
+    "affected_layer_row_pairs": 926,
+    "changed_output_layer_row_pairs": 926,
+    "integer_output_elements_each_arm": 11534336,
+    "new_signed64_raw_output_bytes": 92274688,
+    "all_saved_evidence_array_bytes": 159779840,
+    "summed_squared_error": {
+      "calibration": {
+        "baseline_squared_error": 2151.83237472699,
+        "unclipped_squared_error": 2038.4016843417583,
+        "relative_squared_error_reduction_percent": 5.271353462168408
+      },
+      "reused_diagnostic": {
+        "baseline_squared_error": 2128.2186424590855,
+        "unclipped_squared_error": 1703.9347252950893,
+        "relative_squared_error_reduction_percent": 19.936105656595057
+      }
+    },
+    "aggregation": "Simple sum of squared errors over the saved rows and22 output tensors in each fixed split. Each raw output is cast to float32 before its unchanged power-of-two scale, then compared with the saved target in double precision. This is a component error measure.",
+    "all22_original_baseline_integer_outputs_counts_and_metrics_reproduced": true
+  },
+  "independent_verification": {
+    "critical_findings": 0,
+    "important_findings": 0,
+    "source_preparation_pins": 135,
+    "complete_cpu_proof_bindings": 260,
+    "independent_actual_review_union_bindings": 279,
+    "all22_complete_new_baseline_and_integer_residual_projections_bit_exact": true,
+    "all22_fixed_split_and_per_image_metrics_reconstructed": true,
+    "zero_clipping_residual_rows_unchanged": true,
+    "row_units_freshly_derived": true,
+    "column_units_checked_against_frozen_calibrated_codebook_scales": true,
+    "fresh_original_down_weight_quantizer_reexecution": false,
+    "direct_host_projection_method": "Binary64 matrix products are exact integers here: every absolute partial sum is bounded by32768*128*5632=23622320128, below2^35 and therefore below2^53.",
+    "graphics_experiment_repeated": false,
+    "upstream_gate_up_and_mask_generation_freshly_replayed_on_host": false,
+    "identity_observation_limit": "Original graphics guard identity is bound through its pinned kernel self-snapshot and one authentic tool exec/wait. An independent root live snapshot was unavailable. The CPU verifier had a separate authenticated live kernel observation."
+  },
+  "runtime": {
+    "graphics_device": "NVIDIA GeForce RTX 5070 Ti",
+    "graphics_worker_seconds": 5.783065533963963,
+    "guard_seconds": 8.01203885814175,
+    "peak_graphics_allocated_bytes": 449947648,
+    "graphics_worker_peak_host_resident_bytes": 1722245120,
+    "minimum_graphics_run_host_available_bytes": 23881555968,
+    "independent_host_audit_threads": 20,
+    "independent_host_audit_seconds": 20.450109710916877,
+    "independent_host_audit_peak_resident_bytes": 938283008,
+    "actual_worker_guard_and_root_wait_exit_status": 0,
+    "framework_and_temporary_caches": "Project .cache only; empty runtime-cache directories removed after verification."
+  },
+  "interpretation": "Down-input clipping contributes to the local error on these saved inputs. Removing it reduces summed squared error by5.27percent on calibration and19.94percent on the reused diagnostic split. Task accuracy and implementation cost remain unmeasured.",
+  "decision": "Keep the current hardware and production policy. Next test the existing eight-bit down-input shift configuration using calibration and separate validation before considering a wider datapath.",
+  "qualification": {
+    "captured_component_diagnostic": true,
+    "blind_generalization": false,
+    "new_full_model_inference": false,
+    "new_task_accuracy_result": false,
+    "production_policy_selected": false,
+    "hardware_change_implemented": false,
+    "mapped_hardware_validation": false,
+    "paper_accuracy_matching": false,
+    "paper300_hold_released": false,
+    "physical_advancement_allowed": false
+  },
+  "local_evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/inputs.json": "62c352e4924830490b87f7de133e01d36717cd959433e54c23ff3553a5021f7f",
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/source_review_v1.json": "b07f2bbbb4c8c86ca301347c10e9a3aafc91ea97ed10477d008d4083cb623b52",
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/receipt.json": "a855c240ea925c1b3ef1d00609ca9f4131502dff04bc77ac9743ea3b0283ae89",
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/cpu_verifier_source_review_v1.json": "fbf55592309b2952c9c42e268e90a240795d6076bc6a75d837ca43f4a6387637",
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/actual_audit_cpu_receipt_v1.json": "c87ea3981ad5562f925695b628af70baa924e3920e645161894815b84a9124ef",
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/actual_review_v1.json": "d929b21d5dbafc714151c8b659c95ae7eac03a8e5c52ac42b76773ea4ad61934",
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/root_tool_wait_v1.json": "9485f846a814f4c74026b4544faf793173f8c517e411bdf5152cf60a0643a8c9",
+    ".cache/late_clipping_20261121/frame_integration/down_input_clipping_diagnostic_v1/cpu_root_tool_wait_v1.json": "e98a8ce3901d8bdd64d14c81b516f6b2dfbd0430be5b82f28a9dc56ed85818fd"
+  },
+  "large_artifacts_policy": "All raw wide codes, masks, units, outputs, captures, checkpoints and logs remain local. Publish only this compact factual record."
+}
