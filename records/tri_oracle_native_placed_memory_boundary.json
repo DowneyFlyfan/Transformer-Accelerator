@@ -1,0 +1,50 @@
+{
+  "state": "native_fabric_and_saved_placement_compiled_memory_boundary_independently_verified",
+  "scope": "Structural comparison of the accepted native all-query test cold inventory and a saved placed candidate. Every native fabric memory has an exact relative owner, compiler master and geometry in that placement. The extra placed replay-table memories are outside the native test scope; their access behavior is unverified.",
+  "candidate_netlist_sha256": "5f25540c4d485d66fcfb8408b6710379160c555ad33802df5072868d3b7a5846",
+  "saved_layout_sha256": "972c00ebcfecfa5b2f374fe36d9cd7bca2f06ff84a92c516f66cbc57af0ac54f",
+  "native_compiled_memories": 621,
+  "native_compiled_bytes": 406224,
+  "placed_compiled_memories": 631,
+  "placed_compiled_bytes": 414928,
+  "exact_relative_owner_master_geometry_matches": 621,
+  "native_only_memory_instances": 0,
+  "placed_only_memory_instances": 10,
+  "placed_only_bytes": 8704,
+  "placed_only_owner": "packed_signs.predictor/replay_table",
+  "placed_only_roles": {
+    "prediction_metadata": {
+      "macros": 6,
+      "bytes": 6656
+    },
+    "shared_weight_sign_keys": {
+      "macros": 4,
+      "bytes": 2048
+    }
+  },
+  "independent_validation": {
+    "full_mapped_netlist_inventory_reconstructed": true,
+    "all_631_memory_owners_and_masters_match_saved_layout": true,
+    "both_complete_native_inventory_transcripts_checked": true,
+    "altered_input_and_collision_controls": 14,
+    "critical_findings": 0,
+    "important_findings": 0
+  },
+  "external_projected_cache_bytes": 719360,
+  "external_projected_cache_counted_as_onchip_memory": false,
+  "ordinary_register_storage_included": false,
+  "memory_access_behavior_verified": false,
+  "complete_paper_memory_capacity_reconciled": false,
+  "full_model_hardware_verified": false,
+  "current_mapping_verified": false,
+  "task_accuracy_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "evidence_sha256": {
+    "records/tri_oracle_current_candidate_compiled_memory.json": "e224c8a001443ce8e69ab0b2d0a57d050de84fda7624000c98d8ef2b0b151f0a",
+    ".cache/late_clipping_20261121/frame_integration/native_placed_memory_correspondence_v1/compare_inventory.py": "9749e4ac746b0f5e6b2ea54a9172e438f9ea52201b7e05ba9ec665516d3928da",
+    ".cache/late_clipping_20261121/frame_integration/native_placed_memory_correspondence_v1/verified_correspondence_v1.json": "4c62e0a0bba2b6111467e4b75a40de64e504c44fd1633ab92c0cc6ab39f2bcf0",
+    ".cache/late_clipping_20261121/frame_integration/native_placed_memory_correspondence_v1/actual_review_v1.json": "801c40bb9d16556cb400292e6dbbbff6a1762b593ee4c96c46270cd8577f8519",
+    ".cache/late_clipping_20261121/frame_integration/native_all_query_attention_v1/census_actual_review_v3.json": "9e55bfd834bd59e53b3aeca9c3982c94c62486e5e2273240c07cbf1b0cb32b6e"
+  }
+}
