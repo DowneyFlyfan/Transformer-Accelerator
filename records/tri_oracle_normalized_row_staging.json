@@ -1,0 +1,80 @@
+{
+  "schema": "tri_oracle_normalized_row_staging_v1",
+  "result": "Acknowledged staging of one row verified; whole-chip reproduction remains incomplete.",
+  "behavior": "Stage 256 normalized 64-bit words in the existing shared metadata memory. Admit the 2,048 product-sign bits to the token merger only after all 256 successful write-response handshakes. Sign acceptance retains the row lease until explicit drained release.",
+  "implementation": {
+    "module": "verilog/tri_oracle_normalized_row_stage.sv",
+    "sign_register_bytes": 256,
+    "new_memory_macros_in_controller": 0
+  },
+  "validation": {
+    "simulator": "Cadence Xcelium 25.03",
+    "level": "Register-transfer level with genuine Taiwan Semiconductor Manufacturing Company 28-nanometer static random-access memory models, each with 512 words of 64 bits; no gate-level or physical result.",
+    "case": "normalized_row_stage_green_task1_v1",
+    "provided_trained_rows": 1,
+    "fixture_row_ordinal": 0,
+    "synthetic_image_root": 0,
+    "statistics_words": 256,
+    "replay_words": 256,
+    "normalized_words": 256,
+    "source_asserted_successful_primary_write_responses": 256,
+    "genuine_primary_RAM_readbacks": 256,
+    "independently_reconstructed_signed48bit_products": 2048,
+    "real_merger_map": [
+      0,
+      0
+    ],
+    "controller_source_assertion_cases": 16,
+    "controller_actual_requests": 1539,
+    "controller_actual_responses": 1538,
+    "controller_coupled_reset_discards_one_response": true,
+    "controller_full_waveform_observed": false,
+    "vendor_cells_in_two_independent_test_copies": 4,
+    "primary_vendor_cells_exercised_by_address_range": 1,
+    "root_worker_native_exit_statuses": [
+      0,
+      0,
+      0
+    ],
+    "native_wall_seconds": 2.344424602109939,
+    "native_wall_scope": "Includes build, elaboration, execution and owned cleanup; not exact phase timing or physical timing.",
+    "bench_clock_ns": 10,
+    "bench_finish_ns": 38800,
+    "bench_time_is_not_accelerator_latency": true
+  },
+  "source_sha256": {
+    "verilog/tri_oracle_normalized_row_stage.sv": "46fcc683210982b8718ba06fd9794911a0887d656fe507fbb996b75d4531e9e9",
+    "verilog/tri_oracle_normalized_row_stage_tb.sv": "85f6de9ca2d28138e3be034163d1bd4ed3bdee879a1395df3df6d0be6f82a4e9",
+    "verilog/tri_oracle_normalized_row_stage_contract_tb.sv": "6481d3da54d0229c1787e8b04d0e8e51e75720a02ae674bf044ac0133f900152",
+    "verilog/tri_oracle_normalized_row_stage_memory_witness.sv": "0c3785ca0e93f7755f1ae74fde63a91045cf60dfff23a16d4e223cc0fa93c222"
+  },
+  "evidence_sha256": {
+    "source_preparation": "c8cee1a0eaffc21b4d347daa7c00abe3032cefdf6236bed6a22921ca58b26e02",
+    "source_review": "b49d6ce575d25364ecdc87edf57ccca92f14d054585a553832cf080425be7989",
+    "raw_result": "496885527e692c08059c1edb0a491fe2b9e5dfab7b764ede30647c6ba39c5496",
+    "root_original_tool_wait": "e1ba56e5419fa30f268d5be6eea2afaca5862180d2f46ae70934773b7423cd6f",
+    "actual_review": "7091959b040a92e8d07c8b4964597f9d481db2392c5b7aa9f8240a60056303ba",
+    "independent_payload_protocol": "3cb151fc0de82049670c40c949cba564622ff0f905f14618969281d5aa634772",
+    "independent_payload_readback": "74a2cc68195d5a5f7e18dd512b043c51ac99a998c2b12e11d072105432cdf214",
+    "canonical_log": "45429ef675ac8a3b29e9dbaa2d7dc182ae96cd0b5ca57df44ce8e08816346fb7",
+    "console_log": "2304de6a011f84c67dec010dd2ee3884af4d0b3401c967d3df96b61b78c3140c"
+  },
+  "replay": {
+    "public_test_sources_byte_equal_to_executed_private_sources": true,
+    "public_path_replay_executed": false,
+    "clean_checkout_replay_verified": false,
+    "requirements": "An external vendor memory model and private normalization fixtures are required. Models, inputs, raw logs and compiled files stay in .cache."
+  },
+  "limits": [
+    "The first real 0/0 map checks admission only; full mapped five-bank token-merging execution is unverified.",
+    "Controller fault/drain cases use prescribed producer/consumer inputs; full parent integration and full waveforms are unverified.",
+    "Late-error whole-epoch restart, acknowledged external compact writes, full frames and all 22 layers remain unfinished.",
+    "No timing, area, power, accuracy, paper-result matching or physical advancement is established."
+  ],
+  "acknowledged_external_writer_verified": false,
+  "full_frame_normalize_merge_verified": false,
+  "full_model_accuracy_verified": false,
+  "timing_closed": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
