@@ -1,0 +1,78 @@
+{
+  "schema": "tri_oracle_full_normalized_signs_v1",
+  "qualification": "Source-level functional wrapper unit under the provided integer fixture; no mapped integration or model-accuracy qualification.",
+  "change": "Expose all pre-rounding normalized-product negative bits alongside the unchanged normalization channels. Capture nonzero residual/coefficient sign exclusive-or on accepted replay beats; hold through output stalls and mask errors.",
+  "additional_source_state_bits": 8,
+  "source_sha256": {
+    "verilog/tri_oracle_fused_input_normalizer.sv": "2ff34e61cc3e63db9b356a5f36a854cb0d7d00b69fe8aef6e8d155672a2f3c5e",
+    "verilog/tri_oracle_fused_input_sign_normalizer.sv": "d5ee8e57eb7489f4570cc0747f1d7e8f441918db2b63bf694f98bb9164a22149",
+    "verilog/tri_oracle_fused_input_sign_normalizer_tb_v2.sv": "dce9b42d10fe845fc69f91d1d1fb81dfba983d5c68417c0d597beb5ec1ab4136"
+  },
+  "simulation": {
+    "tool": "Cadence Xcelium25.03-s001",
+    "container": "cadence-ddi",
+    "case": "fused_sign_wrapper_green281_v2",
+    "root_worker_native_exit_statuses": [
+      0,
+      0,
+      0
+    ],
+    "native_guard_wall_seconds": 4.783209644956514,
+    "wall_scope": "Includes tool startup, compilation, elaboration, simulation and cleanup; not hardware execution latency.",
+    "trained_tokens": 281,
+    "features_per_token": 2048,
+    "trained_scalar_products": 575488,
+    "total_accepted_sign_words": 72465,
+    "total_checked_sign_values": 579720,
+    "extreme_operand_classes": 25,
+    "error_controls": 9,
+    "reset_controls": 2,
+    "reference": "Independent signed32-bit residual times signed16-bit learned coefficient, with every accepted source fixture input joined to captured statistics/replay data.",
+    "original_normalization_accepted_channels_unchanged": true,
+    "stall_scope": "Frozen testbench stability assertions and logged summary counters; no complete per-stall waveform."
+  },
+  "evidence_sha256": {
+    "independent_actual_review": "c6a34b00966db88d089d7879016cd79d996449ec1117c95e216b8dba9b976f65",
+    "independent_payload_audit": "1f8cdbc522f6d9c3cc87392e076d437f66751122231bcd4b81076f94fab7024a",
+    "root_terminal_wait": "40571ea3079e7ea349666949959fbe8e0cf8daf11014a07dd8709d1d29ac8d49",
+    "native_raw_result": "67f14628ed5358c85ed6a7fcbe69c089c965df603ab74a17e34507516d33c1d5",
+    "private_data_manifest": "916f59d9aab9d620f1d8faec5ddcc836ad93f43f8a5119911bdabae1ed58ee98"
+  },
+  "replay_requirements": {
+    "public_files": "Implementation and testbench source only; complete replay is not available from a clean checkout alone.",
+    "private_hex_fixture_files": 57,
+    "private_fixture_bytes": 6408363,
+    "fixture_arguments": [
+      "+NORM_ROOT",
+      "+CONTROL_ROOT",
+      "+EXTRA_ROOT"
+    ],
+    "top": "tri_oracle_fused_input_sign_normalizer_tb",
+    "compile_source_files": [
+      "verilog/tri_oracle_fused_input_normalizer.sv",
+      "verilog/tri_oracle_fused_input_sign_normalizer.sv",
+      "verilog/tri_oracle_fused_input_sign_normalizer_tb_v2.sv"
+    ],
+    "note": "Compile only the listed version2 testbench, not the failed older benches."
+  },
+  "prior_attempts": {
+    "original_wrong_outlier_interface_native_status": 2,
+    "version1_testbench_compile_root_worker_native_statuses": [
+      1,
+      1,
+      1
+    ],
+    "version1_simulation_started": false,
+    "version1_failure_root_sha256": "375064d9338694830aae9554045b772c99a504c8ffa42e776221544da0a5a8a1"
+  },
+  "wrapper_functional_unit_verified": true,
+  "formal_equivalence_verified": false,
+  "full_sign_writer_verified": false,
+  "merge_before_projection_verified": false,
+  "mapped_layer_verified": false,
+  "whole_chip_verified": false,
+  "full_model_accuracy_verified": false,
+  "timing_closed": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
