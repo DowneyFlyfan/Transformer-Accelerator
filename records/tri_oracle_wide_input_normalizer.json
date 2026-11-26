@@ -1,0 +1,79 @@
+{
+  "binary32_bit_exact_normalization_verified": false,
+  "evidence_sha256": {
+    ".cache/late_clipping_20261121/frame_integration/wide24_default16_conformance_v1/actual_review_v1.json": "4a410ca62c3a741bcb4088f8030fcedd32727f673fa4989548af6477188ac5bc",
+    ".cache/late_clipping_20261121/frame_integration/wide24_default16_conformance_v1/reviewer_actual_postseal_v1.json": "f6cf267a89e4385b4c5295a07679a0cc87d0539f0f689e3581f8fcf9da2107b8",
+    ".cache/late_clipping_20261121/frame_integration/wide24_input_normalizer_checkpoint576_v1/actual_review_v1.json": "0783dd9ce9ff160db9649aecbce114a25db3ca0fb693864100826a5b593e680a",
+    ".cache/late_clipping_20261121/frame_integration/wide24_input_normalizer_checkpoint576_v1/reviewer_actual_postseal_v1.json": "cd5b2365035e8721d87cc303fd6cefe86184d1b72c09312ec5e393551641e6a6"
+  },
+  "full_frame_normalize_merge_verified": false,
+  "full_model_accuracy_verified": false,
+  "implementation": {
+    "additional_frame_or_memory_store": false,
+    "default_gain_bits": 16,
+    "gain_bits_supported": [
+      16,
+      24
+    ],
+    "lanes_per_strip": 8,
+    "normalizer_instances_per_wrapper": 1,
+    "outlier_definition": "Input-space squared raw value exceeds nine times the regularized raw mean square; outlier-negative uses the raw sign before learned gain.",
+    "raw_signed_bits": 32
+  },
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "power_verified": false,
+  "public_files_sha256": {
+    "verilog/tri_oracle_fused_input_default16_conformance_tb.sv": "0b8d7e0f0ac768bd7ad3978223d2bb909eff23abb6cd41c2654fce698aaa1e8e",
+    "verilog/tri_oracle_fused_input_normalizer_wide_v1.sv": "c77050304eb235a0dd13f5c7a20a94266531680f46576b5fe5356087c0e62bed",
+    "verilog/tri_oracle_fused_input_sign_normalizer_wide_v1.sv": "b65ec5a2e6cd9985549fb1b9bda1ff0cf15e1f9b431f34f6b7f51da008936ea4"
+  },
+  "raw_normalization_producer_verified": false,
+  "remaining": [
+    "Connect an actual immutable raw32 and gain24 producer with correct units and memory ownership.",
+    "Verify complete trained mapped execution, model accuracy and candidate memory accounting.",
+    "Synthesize and close whole-chip timing, clock distribution and routing after the paper gate qualifies."
+  ],
+  "schema": "tri_oracle_wide_input_normalizer_unit_result_v1",
+  "scope": "Finite register-transfer level component verification; full-chip integration and paper results remain unqualified.",
+  "timing_verified": false,
+  "trained_mapped_execution_verified": false,
+  "verification": {
+    "container": "cadence-ddi",
+    "default16": {
+      "clock_cycles": 17578,
+      "compared_output_bits": 149,
+      "configuration_handshakes": 19,
+      "expected_error_responses": 10,
+      "native_exit_status": 0,
+      "output_handshakes": 1295,
+      "pre_and_post_edge_checks": 35156,
+      "replay_handshakes": 1293,
+      "scope": "Complete source-assertion journal and native lifecycle audited; no independent reconstruction of every cycle waveform.",
+      "source_asserted_cases": 19,
+      "statistics_handshakes": 1297,
+      "wall_seconds_including_build_and_owned_cleanup": 4.039254500996321
+    },
+    "gain24": {
+      "captured_feature_values": 1179648,
+      "captured_image_rows": 576,
+      "complete_journal_records_per_transcript": 445845,
+      "complete_transcripts_independently_checked": 2,
+      "features_per_captured_row": 2048,
+      "gain24_nonzero_values_rounded_to_zero": 0,
+      "gain24_quantized_values": 36,
+      "native_exit_status": 0,
+      "raw32_quantized_values": 8114,
+      "required_shift23_boundary_code": -64,
+      "retained_float_reference_activation_code_differences": 0,
+      "retained_float_reference_exponent_differences": 0,
+      "retained_float_reference_full_sign_differences": 0,
+      "scope": "One unchanged model prompt at layer zero, image positions5 through580; integer masks checked against an independent exact-rational method. Encoded eight-bit results match the retained floating reference, not binary32 intermediate values.",
+      "synthetic_boundary_rows": 5,
+      "total_rows": 581,
+      "wall_seconds_including_build_and_owned_cleanup": 7.125034325057641,
+      "words_per_statistics_replay_output_pass": 148227
+    },
+    "simulator": "Cadence Xcelium 25.03-s001"
+  }
+}
