@@ -1,0 +1,65 @@
+{
+  "schema": "tri_oracle_memory_input_normalizer_finite_row_unit_v1",
+  "scope": "Finite simulation of the signed32 raw-activation/signed24 learned-gain reader and its wide normalization wrapper. This is a row unit, not a frame or complete-model result.",
+  "source_sha256": {
+    "verilog/tri_oracle_raw32_gamma24_reader_v1.sv": "48f83fdde5970647fe0ecc14807c39e687a370423f94a7a4ecaabb3b45bec25a",
+    "verilog/tri_oracle_memory_input_normalizer_wide_v1.sv": "fb08f9e6cbc97e1f5456d9185d67f97473d6242acc865ccdc88db53b6b18db3f",
+    "verilog/tri_oracle_raw32_memory_unit_tb.sv": "4ae6d2e1b377583a4c067e8afb3b50fc9bf251893d841bb16462a44214702a22",
+    "verilog/tri_oracle_fused_input_normalizer_wide_v1.sv": "c77050304eb235a0dd13f5c7a20a94266531680f46576b5fe5356087c0e62bed",
+    "verilog/tri_oracle_fused_input_sign_normalizer_wide_v1.sv": "b65ec5a2e6cd9985549fb1b9bda1ff0cf15e1f9b431f34f6b7f51da008936ea4"
+  },
+  "implementation": {
+    "strips_per_row": "1 through 512; eight features per strip",
+    "memory_interface": "One outstanding burst; each statistics/replay strip reads four 64-bit raw beats and three 64-bit packed-gain beats.",
+    "storage": "One reader strip buffer and one registered wrapper output skid; no full raw-row buffer.",
+    "fault_handling": "Preserves offered transfers under backpressure; drains owned reads on ordinary faults, quarantines ambiguous responses, and resets the private core only after external obligations are settled."
+  },
+  "simulation": {
+    "simulator": "Cadence Xcelium 25.03 (xrun)",
+    "container": "cadence-ddi",
+    "accepted_attempt": 2,
+    "native_exit_status": 0,
+    "collector_exit_status": 0,
+    "native_guard_wall_seconds": 2.0248881441075355,
+    "episodes_passed": 58,
+    "healthy_wrapper_rows": 9,
+    "authentic_derived_integer_image_rows": 4,
+    "arithmetic_boundary_rows": 5,
+    "healthy_wrapper_output_strips": 1795,
+    "healthy_numerical_values": 14360,
+    "cycle_records_per_complete_log": 105917,
+    "last_global_cycle": 105975,
+    "complete_logs_independently_checked": 2,
+    "coverage": "Healthy rows, address limits, invalid configurations, backpressure, aborts, malformed burst termination, response faults, quarantine, held completion, replay mismatch, and sampled live-phase coupled resets.",
+    "test_data": "The testbench reads twelve local .hex fixtures through +RAW32_ROOT. Data and learned gains remain in project .cache and are not included in Git.",
+    "public_bench_byte_identical_to_compiled_source": true
+  },
+  "verification": {
+    "finite_row_unit_verified": true,
+    "critical_findings": 0,
+    "important_findings": 0,
+    "current_bound_sources_and_artifacts": 358,
+    "source_preparation_sha256": "c8615989aa72e81e62c26086d84e4afa514d8ad03cbf42c7e9aab253011b8ce5",
+    "raw_result_sha256": "974379f8bbad058c1f553e933e58ef2e8771357383390dd154c5eb0d0c4c4ed7",
+    "complete_checker_sha256": "a409067166377a8a73d016852257311a97c8408bd319f5a574673f4996800f85",
+    "independent_functional_review_sha256": "9d12b81ba93ed85698682497138040b3b8f9eb246a7b380a9e603e422a972a64",
+    "independent_runtime_review_sha256": "e08fa9ce6a0bb10847be0a5ec80738f0308dc6c4e6ee2deb7550ca65d3550d1e",
+    "root_fresh_acceptance_sha256": "74b4c912eff6693701b133526354dffee2ae2a770b5ca6ea5d2c597479d0b92a",
+    "original_attempt1_remains_unqualified": true,
+    "attempt1_limitation": "Two resets occurred before the intended held transfer was sampled. Attempt2 adds two testbench wait clocks for those phases; production logic and checker predicates are unchanged."
+  },
+  "limitations": {
+    "finite_sample_only": true,
+    "successive_rows_without_coupled_reset_verified": false,
+    "full_frame_verified": false,
+    "full_model_verified": false,
+    "trained_mapped_execution_verified": false,
+    "accuracy_verified": false,
+    "timing_closed": false,
+    "power_verified": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "universal_behavior_verified": false,
+    "technology": "The project targets a TSMC 28 nm adaptation; this unit simulation makes no silicon process, area, timing or energy claim."
+  }
+}
