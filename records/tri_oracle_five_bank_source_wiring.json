@@ -1,0 +1,63 @@
+{
+  "domain": {
+    "authenticated_source_and_evidence_bindings": 2578,
+    "bank_interface_bits": 30403,
+    "bank_output_bits": 9445,
+    "banks": 5,
+    "essential_output_consumers": 9045,
+    "exact_unused_output_destinations": 400,
+    "exported_verilog_bytes": 290223824,
+    "roles": 15,
+    "source_adversarial_controls": 61,
+    "source_and_actual_assignment_alias_classes": 1597,
+    "top_level_interface_bits": 6960
+  },
+  "findings": {
+    "critical": 0,
+    "important": 0,
+    "routing_mismatches": 0,
+    "unproven_output_bits": 0,
+    "unsupported_role_bits": 0
+  },
+  "full_composition_verified": false,
+  "full_model_accuracy_verified": false,
+  "interpretation_profile": {
+    "defined_macros": [],
+    "maximum_boolean_support": 16,
+    "maximum_graph_depth": 256,
+    "maximum_graph_nodes": 200000,
+    "two_state": true
+  },
+  "limitations": [
+    "Two-state routing with no defined macros and bounded Boolean support; not a four-state or temporal equivalence proof.",
+    "Nonblind verifier development is disclosed. Native internal names may differ when assignment aliases and exact consumers prove the connection.",
+    "Private libraries, full exported Verilog and detailed records stay in .cache; this summary is not a self-contained clean-checkout replay.",
+    "Full mapped-bank composition, controller behavior, arithmetic, full-model accuracy, timing closure and paper performance remain unqualified."
+  ],
+  "paper": "Tri-Oracle - A 17.78\u03bcJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction",
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "provenance_sha256": {
+    "closed_native_pin_catalog_review": "7e62c1365e6e837aeec8558eafa0adadbabf2a1b326ab5fcf4b36e011e5421f7",
+    "comparison_candidate": "6764fd661c313a48c54534cf256b8c911538e3d2d0e9085775a89c8f191890d8",
+    "exported_verilog": "009ca7481d3f61a3e8ae6c6c081b9b1fc2f8be1db27af22355cd70375ca0f5e1",
+    "independent_actual_review": "cf1ebdb2885b3e2eb0f19d45758e679e861551ce260d2fb33266395dfe3bf003",
+    "independent_source_review": "d5450c320caaa3d5e69ae579cd9553eccefeae77805d1477dce64c6bae3e8912",
+    "original_host_tool_receipt": "93a9d3243c635074a274c63c0e5f02405a003e87ef19a883661901388cc4d4f3",
+    "prefrozen_actual_review_protocol": "932ac9b1b52e4587a61673207f7757b33b33cc895359c8a8030c1b5b354d42e4",
+    "source_expectations": "2849aa867399f890fef767b6c7379f2c1f0f1a81e1d8393e31abea0f64be38ed",
+    "source_model": "8cfb179f3a7c45d76db888a07c095bbdcb5a19c22255b31f3c1c47b8d072f921",
+    "source_only_alias_supplement": "71edbd5003f8ac1f070bfbe7e659c089a6a171c5ec7ea89df0e371a05d68b2c3",
+    "source_proposal": "17aa8457020d37eed5c2b16701237883af71cdbfbbe99d008c6da220345fb3aa"
+  },
+  "qualified": {
+    "all_bank_output_obligations": true,
+    "native_object_exported_verilog_correspondence": true,
+    "source_cut_boolean_routing": true
+  },
+  "schema": "tri_oracle_five_bank_source_wiring_verified_v1",
+  "scope": "Complete finite two-state source-cut routing and native-object/exported-Verilog correspondence for the closed G7 Genus elaboration. Internal behavior of bank, broker and controller blocks is excluded.",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28-nanometer High Performance Compact Plus adaptation; not the paper\u2019s Samsung 28-nanometer fully depleted silicon-on-insulator silicon.",
+  "timing_closed": false,
+  "validation": "Independent reviewer rederived the source expectations and recomputed the complete comparison; every returned field matched the original candidate. All 2578 source and evidence bindings were unchanged. Original host exit status was zero."
+}
