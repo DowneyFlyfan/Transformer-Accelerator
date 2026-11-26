@@ -1,0 +1,70 @@
+{
+  "state": "independently_verified_finite_trained_mapped_QK_anchor",
+  "paper": "Tri-Oracle: A 17.78uJ per Token Vision-Language Model Accelerator with Token-Attention-Weight Redundancy Prediction",
+  "process": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nanometer High Performance Compact Plus (28HPC+) adaptation; original paper used Samsung 28 nanometer fully depleted silicon on insulator (28FDS).",
+  "scope": "One mapped four-core bank, one trained layer-19/head-0/query-5 anchor and six causal keys; functional simulation only.",
+  "simulator": "Cadence Xcelium 25.03",
+  "container": "cadence-ddi",
+  "mapped_candidate_sha256": "d713376460ebbce12b298e1f7d70775b01d9242ffe524d6847631be441bdeff5",
+  "source_reference_candidate_bank": 0,
+  "input_loading": "Public memory-load ports; each query/key dot has 64 signed 8-bit feature products.",
+  "positive": {
+    "native_exit_status": 0,
+    "worker_exit_status": 0,
+    "root_wait_exit_status": 0,
+    "native_wall_seconds": 26.91290232189931,
+    "public_loads": 72,
+    "commands": 6,
+    "observed_signed32_lanes": 192,
+    "full64_dot_values": [
+      353,
+      -1258,
+      -1220,
+      -537,
+      -890,
+      -441
+    ],
+    "two_phase_and_four_stored_core_rows_checked": true,
+    "stall_cycles": 256,
+    "external_four_role_live_observation": false
+  },
+  "deliberate_corruption": {
+    "query_feature": 19,
+    "original_value": 6,
+    "mutated_value": 7,
+    "mapped_first_valid_phase0_lane0": 75,
+    "reference_first_valid_phase0_lane0": 74,
+    "native_exit_status": 2,
+    "worker_exit_status": 0,
+    "root_wait_exit_status": 0,
+    "native_fatal_time_ns": 3254,
+    "native_wall_seconds": 25.372601964045316,
+    "no_output_retired_before_fatal": true,
+    "external_four_role_live_observation": true
+  },
+  "evidence": {
+    "fixture_sha256": "c1f05fb09ff632d1233a36fa7c39c07cf53da1aaefd7056c3c6bb1206ea38fe6",
+    "host_source_preparation_sha256": "b6bb12d625d0185ba30ada3d7664f7604a6df515eb7b3cb2a4525d4a85506ea3",
+    "host_source_review_sha256": "13491c65112cd7482f14746bb069f5bb4a353aa116a2a6f355c36342640411ef",
+    "actual_manifest_sha256": "2eb6c6ffb435ff24e4a9fb69ecd5a1ad542fcf4ded6a47ff746627d262ef6352",
+    "host_result_sha256": "4cc462fcf9536ef544268952aea6ae8c24e108d825a926221d8f0da2f1390d4f",
+    "host_mode_wait_receipt_sha256": "1fe1428f0f703142b26c95fdb457bfda68c59a0d1f3bb2b32995b3353b7ee685",
+    "checked_result_bindings": 148,
+    "independent_actual_review_sha256": "7649b06b2c6e24a8d1cde63b2130ef4158b0dd5be3d89204bc9f35842d830971"
+  },
+  "limits": {
+    "functional_clock_period_ns": 20,
+    "standard_cells_use_unit_delay": true,
+    "specify_timing_checks_enabled": false,
+    "full32head281query_execution_verified": false,
+    "mapped_score_conversion_verified": false,
+    "linked_probability_value_accumulation_verified": false,
+    "whole_chip_integration_verified": false,
+    "task_accuracy_verified": false,
+    "timing_closed": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false
+  },
+  "independent_actual_review_accepted": true,
+  "raw_artifacts_retained_locally": true
+}
