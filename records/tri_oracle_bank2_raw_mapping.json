@@ -1,0 +1,108 @@
+{
+  "state": "bank2_native_synthesis_raw_structure_independently_verified",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "technology_scope": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nanometer High Performance Compact Plus adaptation. Original Samsung silicon area, energy and timing are not reproduced by this structural result.",
+  "scope": "One distinct four-core bank with384 sign features and local merge-table addresses256 through383. Synthesis and raw structural verification only; whole-bank behavior and cold restoration are separate.",
+  "top": "tri_oracle_native_cluster2",
+  "parameters": {
+    "MERGE_FEATURES": 384,
+    "AGGREGATOR_MERGE_TABLE": 1,
+    "MERGE_TABLE_ENTRIES": 128,
+    "MERGE_TABLE_START": 256,
+    "LOCAL_TOKEN_SIZES": 1,
+    "LOCAL_TOKEN_MERGE": 1,
+    "CORE_STRIP_PREDICTOR": 1,
+    "CORE_HEAD_PREDICTOR": 1
+  },
+  "synthesis": {
+    "tool": "Cadence Genus25.10-p002_1",
+    "native_exit_status": 0,
+    "owned_worker_exit_status": 0,
+    "root_exit_status": 0,
+    "wall_seconds": 3463.2269011638127,
+    "library_corner": "ssg0p9v125c",
+    "library_views": 7,
+    "raw_database_checkpoints_fingerprinted": 4
+  },
+  "census": {
+    "root_port_groups": 41,
+    "root_port_bits": 6055,
+    "physical_leaves": 361305,
+    "standard_cell_leaves": 361181,
+    "used_physical_masters": 320,
+    "compiled_memory_macros": 124,
+    "compiled_memory_bytes": 81184,
+    "imported_cores": 4,
+    "leaf_name_master_entries_per_core": 75444,
+    "core_port_groups": 36,
+    "core_port_bits": 3222
+  },
+  "area": {
+    "source_liberty_sum_um2": "1296884.220800",
+    "native_reported_um2": "1296884.217",
+    "native_precision_qualified": false,
+    "scope": "Pre-placement cell-area sum, not die area or routed area."
+  },
+  "preplacement_timing": {
+    "clock_period_ns": "1.72414",
+    "worst_setup_slack_ps": "-32",
+    "timing_closed": false
+  },
+  "imported_core_connections": {
+    "complete_core_definitions_HDL_token_identical_to_accepted_bank1": 5,
+    "complete_named_pin_associations_per_shared_definition_prior_audited": 303696,
+    "prior_individually_proved_unreferenced_input_substitutions_bits": 2009,
+    "prior_individually_proved_dangling_zero_outputs": 41,
+    "preoptimization_required_actual_pin_census_bits_per_core": 3222,
+    "preoptimization_pin_census_verified": true,
+    "strict_HDL_token_identity_to_original_prototype": false,
+    "bank2_parent_boundary_behavior_equivalence_verified": false
+  },
+  "normalization": {
+    "raw_field_ports": 54,
+    "packed_root_ports": 41,
+    "root_port_bits": 6055,
+    "aliases": 15,
+    "exact_inverse_original_bytes": true,
+    "raw_netlist_sha256": "20aa7faa58a3503bd1b0ccdd44b273ba27f3d3b259054504b3506b48f40956e2",
+    "normalized_netlist_sha256": "0d3a115887cbbad43bded145e2b9e3819164a63a97a77b2d858d7d997a3746fd"
+  },
+  "verification": {
+    "independent_binding_count": 1443,
+    "independent_actual_review_sha256": "496e1b82521c982e3f78aec203b99d806f9705cd4743ec93850d72fe7e75ec40",
+    "host_manifest_sha256": "0c50ea08ccaa11d893573870f5b8e752c9fd35cabb1431f78815c693e37c8494",
+    "host_result_sha256": "e1b5e81ee15eacfe2d2326fc202bb54f46be722c7d34df051075d3a19578a404",
+    "host_capture_analyze_verify_actual_exits": [
+      0,
+      0,
+      0
+    ],
+    "raw_structural_readback_verified": true
+  },
+  "runtime_cleanup_scope": {
+    "actual_registered_births_terminal": 73,
+    "four_original_host_births_terminal": true,
+    "actual_owned_session_terminal_verified": true,
+    "generic_interrupted_unknown_quiescence_retry_robustness_verified": false,
+    "scope": "This run completed cleanly with its registered session terminal. The older mapping worker has an unprotected retry-wait branch for unknown quiescence; no occurrence of that failure is established in this run. Future mapping workers need the reviewed correction."
+  },
+  "unqualified_wiring_diagnostic_pins": 4169,
+  "limits": {
+    "mapped_functional_equivalence_verified": false,
+    "cold_reload_verified": false,
+    "whole_chip_integration_verified": false,
+    "task_accuracy_verified": false,
+    "timing_closed": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "paper300_hold_only": true
+  },
+  "private_evidence": {
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/bank2/mapping_actual_review_v5.json": "496e1b82521c982e3f78aec203b99d806f9705cd4743ec93850d72fe7e75ec40",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/structural_readback_bank2_v1/actual_artifacts_v2.json": "0c50ea08ccaa11d893573870f5b8e752c9fd35cabb1431f78815c693e37c8494",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/structural_readback_bank2_v1/result_v2.json": "e1b5e81ee15eacfe2d2326fc202bb54f46be722c7d34df051075d3a19578a404",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/structural_readback_bank2_v1/host_tool_wait_v2.json": "83ff6b6729cc8538ad65f21f178d40a00860a1c9ee8fc4d00e657a72fdc4f8b0",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/bank2/root_tool_wait_v5.json": "1d783166a69dbc8e04c69d411e0f2e683dea4e3aec6691c5cce0363d55d5fb93",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/bank2/core_token_identity_v1.json": "ae0e7a3734b6436292388b05084a2f2aa92b1818dc213c616c1beeecd99713c2"
+  }
+}
