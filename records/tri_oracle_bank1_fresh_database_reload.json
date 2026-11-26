@@ -1,0 +1,58 @@
+{
+  "schema": "tri_oracle_bank1_fresh_database_reload_result_v1",
+  "state": "fresh_saved_database_structural_reload_verified",
+  "target": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nm High Performance Compact Plus (28HPC+) adaptation of Tri-Oracle; different process from the paper silicon",
+  "scope": "One four-core bank, freshly restored with Genus read_db. Complete netlist connections, memory inventory, protected core boundaries and exported constraint intent match its accepted saved candidate.",
+  "tool": "Genus25.10-p002_1",
+  "container": "cadence-ddi",
+  "actual_native_root_worker_exit_status": [
+    0,
+    0,
+    0
+  ],
+  "native_wall_seconds": 39.38693862198852,
+  "independent_host_verification_wall_seconds": 63.231569638010114,
+  "canonical_connections": {
+    "module_definitions": 34,
+    "named_pin_associations": 549748,
+    "assignments": 169
+  },
+  "physical_inventory": {
+    "physical_leaves": 361132,
+    "standard_cell_leaves": 361008,
+    "used_physical_masters": 323,
+    "compiled_memory_macros": 124,
+    "compiled_memory_bytes": 81184
+  },
+  "imported_compute_cores": 4,
+  "physical_leaves_per_imported_core": 75444,
+  "complete_checked_core_boundary_bits": 12888,
+  "clock_constraint_ns": "1.72414",
+  "source_liberty_cell_and_macro_area_um2": "1296849.108800",
+  "native_printed_cell_and_macro_area_um2": "1296849.105",
+  "area_note": "The five memory-master values agree with a conditional binary32-to-six-decimal-to-binary64 formatting model. Raw weighted area rounds to the printed report. Internal tool precision and summation order remain unqualified; these are preplacement cell/macro areas.",
+  "unqualified_zero_load_hierarchical_pins": 4169,
+  "evidence_sha256": {
+    "independent_actual_review": "7d9e4349d3e3deba10800e08e11d10e9738a557d96086638530e1b8432dcd8af",
+    "host_preparation": "94ff465e0937a9189be86355085c4c54c91cdc516d3561bc4b447b568ab898d3",
+    "host_source_review": "3e86db71fd2c3b1ca638cd3e56c6b2837d330924d22f7eefc048650ba9f8ddca",
+    "host_actual_manifest": "5a3f22789416c1e23527b5ab768d9e4a6686c494736f7ee06f3697c68babe06f",
+    "host_actual_result": "d8ba910cb69e82d1d4ba734c60338db36068226ab298addb7f0b8c66d8a60d30",
+    "host_tool_wait": "06e8f66b5b1b2a35f49787bdad41f6fd5e48a25568cdda74fb22c65176786dae",
+    "independent_recomputation": "5c99278a0f5153a97c6f3b6fe21b143703b14c9b9ae539ccd612a14ffb341c05",
+    "native_raw_result": "72101d3ace179a424b6dbf2459c237704d52f815da9d6a66886e0158e64a9fb9",
+    "native_root_tool_wait": "ec91118c3ace2ec8ec2d59bc760fa1b68c1851484df1596aa9ab19441287b1e4",
+    "saved_database": "cee9c62936e7b9a837ec4416b819b963d74c1c6e2f0654fbcbe2659381c8da9e",
+    "readback_netlist": "a8fdfee150cca8d9b62a1d85baec9908937efb268885d507a424bae2a7027ed0",
+    "readback_constraints": "73949aeed589846a86cae506358318e385e61ac82dbc3fa065970a9b9314ab74",
+    "conditional_numeric_diagnostic": "cd9175a5e43bf20e9020c839966577b3d0506827952cf800b802c2321772fb20"
+  },
+  "bank1_database_structural_reload_verified": true,
+  "mapped_functional_equivalence_verified": false,
+  "whole_chip_integration_verified": false,
+  "task_accuracy_verified": false,
+  "native_area_precision_qualified": false,
+  "timing_closed": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
