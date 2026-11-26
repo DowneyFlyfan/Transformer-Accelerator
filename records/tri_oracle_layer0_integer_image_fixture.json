@@ -1,0 +1,78 @@
+{
+  "encoding": {
+    "activation_signed_bits": 8,
+    "epsilon": "1/100000",
+    "gain_signed_bits": 16,
+    "raw_signed_bits": 32,
+    "signs": "Sign of the full 48 bit signed product before activation rounding",
+    "unit_selection": "Minimal dyadic unit; nearest rounding with ties away from zero"
+  },
+  "features_per_row": 2048,
+  "fixture_actual_review_sha256": "524ac17d3152a195b8ff38a288ce3adefb27967a4ced34e7d4e03874ce998273",
+  "fixture_manifest_sha256": "21dbd0814c9c4682f1a1f236b0344d3981e41906109feb21a73d42d687f1ea20",
+  "fixture_payload_bytes": 16033466,
+  "fixture_payload_files": 13,
+  "full_model_accuracy_verified": false,
+  "image_id": "n54424",
+  "independent_numeric_protocol_sha256": "f7814bfce7f9595f182a04d198cfb9e8b7dc5fe7c803011536a0b02a3f65754b",
+  "independent_sign_attribution_sha256": "80ebee4abda355a204d7215e4aa24d82839732fdd0b6f0410445579e29c18f0f",
+  "integer_feature_lanes_independently_verified": 1179648,
+  "layer": 0,
+  "limitations": [
+    "All model assets, fixture payloads, logs and detailed evidence remain local in .cache.",
+    "The 167 floating-reference code differences and 1234 sign differences are measured and preserved; no floating-point bit-exactness or task-accuracy claim.",
+    "The wrong-address fault selects testbench arrays and nominal addresses; a production raw-memory producer is still required.",
+    "A wider gain representation requires separate arithmetic, hardware simulation and physical validation."
+  ],
+  "model_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "observed_quantization": {
+    "floating_reference_activation_code_differences": 167,
+    "floating_reference_activation_exponent_differences": 0,
+    "floating_reference_negative_definition": "Retained binary32 normalization value strictly less than zero.",
+    "floating_reference_normalized_sign_differences": 1234,
+    "gain_changed_values": 1651,
+    "gain_max_abs_error": "1/65536",
+    "raw_changed_values": 8114,
+    "raw_max_abs_error": "1/134217728",
+    "sign_mismatch_cause": "Seven nonzero trained gain coefficients round to zero in the signed16 encoding.",
+    "zeroed_gain_feature_indices": [
+      118,
+      463,
+      546,
+      834,
+      918,
+      1072,
+      1146
+    ]
+  },
+  "original_image_positions": [
+    5,
+    580
+  ],
+  "original_image_rows": 576,
+  "original_prompt_tokens": 616,
+  "paper300_gate": "hold-only; clock distribution and whole-chip routing remain disallowed",
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "question_id": "201030233",
+  "raw_full576_hardware_integration_verified": false,
+  "schema": "tri_oracle_authentic_layer0_integer_image_fixture_v1",
+  "scope": "Independently verified derived integer input fixture, plus a test-only wrong-row counterexample. Hardware frame integration remains unfinished.",
+  "timing_closed": false,
+  "trained_mapped_execution_verified": false,
+  "wrong_address_counterexample": {
+    "actual_native_exit_status": 2,
+    "actual_review_sha256": "06422fb7326b838b6c714727ef7472191c5f0f9b86a894c0988df2264053fd40",
+    "expected_functional_failure_verified": true,
+    "first_correct_activation_hex": "00010600f80200ff",
+    "first_correct_signs_hex": "99",
+    "first_injected_activation_hex": "0000000000000000",
+    "first_injected_signs_hex": "45",
+    "normalized_transfers": 1,
+    "production_raw_memory_bus_verified": false,
+    "replay_prefix_transfers": 1,
+    "simulation": "Xcelium25.03 in cadence-ddi",
+    "source": "Authenticated layer19 first-image row is capture ordinal5; testbench redirects both raw passes to text ordinal0 while retaining correct requested metadata.",
+    "statistics_transfers": 256
+  }
+}
