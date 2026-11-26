@@ -1,0 +1,88 @@
+{
+  "schema": "tri_oracle_bank4_checkpoint_optimization_v1",
+  "state": "completed_optimization_and_structural_readback_verified",
+  "summary": "A separate optimization-only Genus run continued from the verified mapped checkpoint, preserving four imported compute cores and all compiled memories.",
+  "native_tool": "Cadence Genus 25.10",
+  "container": "cadence-ddi",
+  "bank_index": 4,
+  "native_case": "bank4_mapped_checkpoint_opt_v12",
+  "native_wall_seconds": 218.22321820701472,
+  "native_exit_status": 0,
+  "host_capture_analyze_fresh_verify_exit_statuses": [
+    0,
+    0,
+    0
+  ],
+  "preserved_structure": {
+    "compute_cores": 4,
+    "physical_leaves_per_imported_core": 75444,
+    "root_constraint_bits_per_stage": 6055,
+    "core_boundary_pins_per_stage": 12888,
+    "compiled_memory_macros": 124,
+    "compiled_memory_bytes": 81104,
+    "imported_core_tokens_and_memory_owner_maps_unchanged": true
+  },
+  "physical_inventory": {
+    "before": {
+      "physical_leaves": 357157,
+      "standard_cell_leaves": 357033,
+      "used_physical_masters": 314
+    },
+    "after": {
+      "physical_leaves": 356517,
+      "standard_cell_leaves": 356393,
+      "used_physical_masters": 312
+    },
+    "net_reduction_in_parent_standard_cells": 640
+  },
+  "diagnostic_only": {
+    "preplacement_worst_setup_slack_ps": "-33",
+    "timing_closed": false,
+    "native_area_precision_qualified": false
+  },
+  "independent_review": {
+    "critical_findings": 0,
+    "important_findings": 0,
+    "unchanged_source_and_artifact_bindings": 2102
+  },
+  "original_mapping_attempt": {
+    "root_worker_native_exit_statuses": [
+      1,
+      1,
+      124
+    ],
+    "original_version10_mapping_succeeded": false,
+    "checkpoint_sha256": "1f2961f610b834e5bdb3a08249403a9714b26ba29be74ea28c13d6dc7c6e5c55"
+  },
+  "scope_limits": {
+    "parent_pre_post_optimization_token_equivalence_verified": false,
+    "mapped_functional_equivalence_verified": false,
+    "cold_reload_verified": false,
+    "whole_twenty_core_chip_integration_verified": false,
+    "full_model_accuracy_verified": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false
+  },
+  "evidence": {
+    "independent_actual_review": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/runtime_v12_v3/optimization_actual_review_v12.json",
+      "sha256": "83e8b4ff43a327e0d4bd02d4007c9f443ae265f890d7283f7ad4702439ce72a9"
+    },
+    "native_result": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/runtime_v12_v3/opt_raw_result_v12.json",
+      "sha256": "38186dbb2f9f06c2554fc7c984e35a3b3bea2fa9898e8f3f0610f53e07180bba"
+    },
+    "native_original_tool_wait": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/runtime_v12_v3/root_tool_wait_v12.json",
+      "sha256": "25c2ce82bd2cf4566538dc130872c344e0646797d5f08833f47f6fe3c6031f2e"
+    },
+    "host_readback_result": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/optimized_readback_bank4_v12_v1/result_v1.json",
+      "sha256": "ef6c6797cb5f9011d2e081adfe8a570e1f30d490eda694480691fd75059d83d4"
+    },
+    "host_original_tool_waits": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/optimized_readback_bank4_v12_v1/host_tool_wait_v1.json",
+      "sha256": "2d71903bb89db1230dc50bc7302bf885ac6ecd47c9c4fc8af44cff9ea664f89a"
+    }
+  }
+}
