@@ -1,0 +1,75 @@
+{
+  "schema": "tri_oracle_mapped_checkpoint_restoration_v1",
+  "state": "bank4_database_restoration_structure_verified",
+  "summary": "A mapped checkpoint from a synthesis job that timed out during optimization was opened and structurally verified in a separate Genus run.",
+  "native_tool": "Cadence Genus 25.10",
+  "container": "cadence-ddi",
+  "bank_index": 4,
+  "native_case": "bank4_mapped_checkpoint_restore_v11",
+  "native_wall_seconds": 41.959717045072466,
+  "original_mapping_attempt": {
+    "root_exit_status": 1,
+    "owned_worker_exit_status": 1,
+    "native_exit_status": 124,
+    "completed_optimization": false,
+    "checkpoint_sha256": "1f2961f610b834e5bdb3a08249403a9714b26ba29be74ea28c13d6dc7c6e5c55"
+  },
+  "restoration": {
+    "native_exit_status": 0,
+    "host_capture_analyze_fresh_verify_exit_statuses": [
+      0,
+      0,
+      0
+    ],
+    "preserved_compute_cores": 4,
+    "physical_leaves_per_imported_core": 75444,
+    "root_port_groups": 41,
+    "root_constraint_bits": 6055,
+    "core_boundary_pins_checked": 12888,
+    "physical_leaves": 357157,
+    "standard_cell_leaves": 357033,
+    "used_physical_masters": 314,
+    "compiled_memory_macros": 124,
+    "compiled_memory_bytes": 81104,
+    "imported_core_token_composition_and_actual_pin_graph_checked": true
+  },
+  "independent_review": {
+    "critical_findings": 0,
+    "important_findings": 0,
+    "unchanged_source_and_artifact_bindings": 1987
+  },
+  "scope_limits": {
+    "completed_mapping_run_verified": false,
+    "optimization_completion_verified": false,
+    "mapped_functional_equivalence_verified": false,
+    "post_optimization_cold_reload_verified": false,
+    "whole_twenty_core_chip_integration_verified": false,
+    "full_model_accuracy_verified": false,
+    "native_area_precision_qualified": false,
+    "timing_closed": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false
+  },
+  "evidence": {
+    "independent_actual_review": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/runtime_v11/restoration_actual_review_v11.json",
+      "sha256": "27f7e8d5013e27b390c1f8c776da3a7abeb310ba3f41bdb01a5369c938905ee6"
+    },
+    "native_restore_result": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/runtime_v11/restore_raw_result_v11.json",
+      "sha256": "e5ec21dc9a632d1c4515d98fa59f83a4e6c04352f50773e8f11611095b8968f9"
+    },
+    "native_original_tool_wait": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/runtime_v11/root_tool_wait_v11.json",
+      "sha256": "23c795453ebacbbaaa0c36541d496217ba5657c9cb051ddb863aaf0ad77d0341"
+    },
+    "host_readback_result": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/restored_readback_bank4_v11_v3/result_v1.json",
+      "sha256": "0a2272ef97b6343420dbd31114024cdc05a3cf1330a709033e8b470920463aca"
+    },
+    "host_original_tool_waits": {
+      "path": ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/restored_readback_bank4_v11_v3/host_tool_wait_v1.json",
+      "sha256": "763e2767820c2c7b9573336cae9c09f19867882ab7b34ad58b6eb7744b4ef93f"
+    }
+  }
+}
