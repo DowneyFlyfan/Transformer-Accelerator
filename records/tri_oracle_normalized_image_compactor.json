@@ -1,0 +1,73 @@
+{
+  "actual_root_mean_square_integration_verified": false,
+  "conditional_arithmetic": {
+    "counterexample_queries_unsatisfiable": 10,
+    "faulty_variants_with_counterexamples": 9,
+    "independent_review_sha256": "30953d2a44ad339f34792add80b7eed052b81a22e480bcf64c454298d97404c5",
+    "results_sha256": "1b94afbdf921e8fa7fcfefb419316db7d15ce360958747c3cc3398e6738ec6ea",
+    "scope": "Two-state configuration/address/descriptor arithmetic under explicit rank, word-index and saved-base capture assumptions. This does not prove controller reachability or whole-hardware equivalence.",
+    "source_sha256": "dbf94fe602aeb8d5530aa161aac756844d3641c7fbb2b8c6ae349bbf07860015"
+  },
+  "full_mapped_five_bank_verified": false,
+  "full_model_accuracy_verified": false,
+  "limitations": [
+    "Synthetic normalized inputs; actual raw root-mean-square normalization and trained full-model integration are not executed here.",
+    "This local merger/store/writer test does not instantiate the complete mapped twenty-array compute fabric.",
+    "Per-beat timing, staging counts and continuous stability rely on source assertions; no complete waveform is independently reconstructed. Legal row-request stalling is not deliberately exercised.",
+    "Public test and witness files are byte-exact copies of executed private sources; their public paths were not replayed. Vendor models, fixtures and detailed records remain private in .cache; clean-checkout replay is not established.",
+    "No task accuracy, timing closure, routed area, energy, paper performance or physical advancement is qualified."
+  ],
+  "observations": {
+    "complete_records_per_transcript": 45923,
+    "configuration_invocations": 17,
+    "independently_checked_transcripts": 2,
+    "native_build_elaboration_simulation_cleanup_seconds": 4.553494737949222,
+    "source_asserted_case_footers": 12,
+    "source_asserted_positive_staging_words": 295168,
+    "vendor_memory_instances_in_local_test": 23,
+    "vendor_memory_model_bytes_in_local_test": 15056
+  },
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "positive_counts": {
+    "external_512_bit_lines": 18496,
+    "hardware_row_requests": 1153,
+    "map_retirements": 1728,
+    "real_descriptor_readbacks": 578,
+    "serialized_64_bit_words": 147968,
+    "signed_exponent_codes": 512,
+    "survivor_rows": 578
+  },
+  "provenance_sha256": {
+    "independent_actual_protocol": "516b2e5593bd15e48abfa0294a340baa486c4b0e2dffca253aafa8bf6ffadf15",
+    "independent_actual_review": "f24431b624694f509090277d1b25e2e495f0067f4d31310b26c19741f3abea4c",
+    "independent_math_checker": "2e78fecc6f976a794841a32b5ef3820dde550f26c67e402eb15bd8cb369aaa40",
+    "independent_metadata_review": "2d0bfb8ac1fee00e465cdcf532d28adb98a40e4cbc18e80ac477e821f69f1cad",
+    "independent_payload_checker": "5327f227ec36df6d04e98a94905b09b48aff33457765d7c97ecf20e6ec1e3e79",
+    "mandatory_capture_supplement": "049a0a223dc8dd24a9f4c2de1a29b251d7776bf20e15ae7a25f4c59f7bb6d7f1",
+    "original_raw_result": "53158c8c4706f4c930ecf451338963c81f9bc6a9e78001fdbede6977b72608a7",
+    "original_root_tool_wait": "c3f1a98cd884b2f059148356051ee027d020a6c301966fd7a129b53efc1320ef",
+    "postseal": "7a5a0084da2d53854cf8ebf3f8f8373d97f4395c4fe577ee8229a65546e40dd3",
+    "readiness": "f186ae86f550967495d44b860738dffcbf14feb6b16137b1b624fc85f41e9886",
+    "source_preparation": "7053b7275c33a663bf5f8d00a22733e2f2a6e5748b07984f3fd644e6ef40a4f7",
+    "source_review": "aaa3e7b1d54333bb61df26b87e9ef2a418402c0123eaec6ecf99d9a56cf16f3d"
+  },
+  "schema": "tri_oracle_synthetic_normalized_image_compactor_verified_v1",
+  "scope": "Image-only compaction with synthetic normalized activation and sign inputs. The real five-range merger chooses all keep/alias decisions; test formulas check outputs and never supply a keep roster.",
+  "source_files": {
+    "verilog/tri_oracle_normalized_image_compactor.sv": "8d8cf239a7b7342228f053e61bf370daf131f5b881ae99eda8654c2cdb089ec6",
+    "verilog/tri_oracle_normalized_image_compactor_memory_witness.sv": "e33da0df8cba51b8989f368aa2f1ad904dd5155d7409f873a365404e15571e64",
+    "verilog/tri_oracle_normalized_image_compactor_tb.sv": "39a0e31c005cc8de4d2d4fc0f3adf86f3a70b6f506e59cc735b1fc477585e97b"
+  },
+  "synthetic_normalized_full_frame_compaction_verified": true,
+  "technology": "Taiwan Semiconductor Manufacturing Company 28-nanometer High Performance Compact Plus adaptation; not the paper\u2019s Samsung 28-nanometer fully depleted silicon-on-insulator silicon.",
+  "timing_verified": false,
+  "validation": "Both complete untouched transcripts passed the same frozen independent checker and had45923 identical records. All579 actual source/evidence bindings stayed unchanged. Separate standard error and its worker-bound capture receipt were authenticated. The earlier merged-console run remains unqualified.",
+  "verified_behavior": [
+    "One physical metadata-store lease spans logical row grants, survivor copies and descriptor handoff.",
+    "Three full passes over576 map positions: dense576-survivor output, merge to one survivor, then reuse the prior aliases with only one requested root.",
+    "Each survivor produces32 acknowledged512-bit external lines before its complete descriptor is acknowledged and published.",
+    "Real memory descriptor readbacks preserve original root, compact rank,32-bit tag and all signed nine-bit exponent codes.",
+    "Actual range-Handoff abort, retained offered output, external error, descriptor-response abort, nine invalid configurations and abort before physical acquisition are checked."
+  ]
+}
