@@ -1,0 +1,115 @@
+{
+  "state": "bank1_native_synthesis_raw_structure_independently_verified",
+  "paper_sha256": "6d6b998c459ade605e082d723374462e1d14b53d6a6b13063ca0f8d1180b1d9f",
+  "technology_scope": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nanometer High Performance Compact Plus adaptation. Original Samsung silicon area, energy and timing are not reproduced by this structural result.",
+  "scope": "One distinct four-core bank with 384 sign features and local merge-table addresses 128 through 255. This is synthesis and raw structural verification; cold restoration and whole-bank functional tests remain separate.",
+  "top": "tri_oracle_native_cluster1",
+  "parameters": {
+    "MERGE_FEATURES": 384,
+    "AGGREGATOR_MERGE_TABLE": 1,
+    "MERGE_TABLE_ENTRIES": 128,
+    "MERGE_TABLE_START": 128,
+    "LOCAL_TOKEN_SIZES": 1,
+    "LOCAL_TOKEN_MERGE": 1,
+    "CORE_STRIP_PREDICTOR": 1,
+    "CORE_HEAD_PREDICTOR": 1
+  },
+  "synthesis": {
+    "tool": "Cadence Genus 25.10-p002_1",
+    "native_exit_status": 0,
+    "owned_worker_exit_status": 0,
+    "root_exit_status": 0,
+    "wall_seconds": 3462.5572046639863,
+    "library_corner": "ssg0p9v125c",
+    "library_views": 7,
+    "raw_database_checkpoints_fingerprinted": 4
+  },
+  "census": {
+    "top": "tri_oracle_native_cluster1",
+    "root_port_groups": 41,
+    "root_port_bits": 6055,
+    "typed_request_bits": 47,
+    "typed_response_bits": 21,
+    "physical_leaves": 361132,
+    "standard_cell_leaves": 361008,
+    "used_physical_masters": 323,
+    "compiled_memory_macros": 124,
+    "compiled_memory_bytes": 81184,
+    "imported_cores": 4,
+    "leaf_name_master_entries_per_core": 75444,
+    "core_port_groups": 36,
+    "core_port_bits": 3222,
+    "source_liberty_views": 7
+  },
+  "area": {
+    "source_liberty_sum_um2": "1296849.108800",
+    "native_reported_um2": "1296849.105",
+    "native_precision_qualified": false,
+    "scope": "Pre-placement sum of cell areas, not die area or a routed area measurement."
+  },
+  "preplacement_timing": {
+    "clock_period_ns": "1.72414",
+    "worst_setup_slack_ps": "-32",
+    "timing_closed": false
+  },
+  "imported_core_connections": {
+    "complete_named_pin_associations_per_shared_definition": 303696,
+    "changed_hierarchical_input_associations": 6,
+    "substituted_input_bits_proved_unreferenced": 2009,
+    "new_zero_outputs_proved_to_reach_only_dangling_parent_wires": 41,
+    "remaining_active_internal_connection_assignment_or_width_differences": 0,
+    "strict_full_HDL_token_equality": false,
+    "whole_bank_boundary_behavior_equivalence_verified": false
+  },
+  "normalization": {
+    "raw_field_ports": 54,
+    "packed_root_ports": 41,
+    "root_port_bits": 6055,
+    "request_bits": 47,
+    "response_bits": 21,
+    "aliases": 15,
+    "exact_inverse_original_bytes": true,
+    "raw_netlist_sha256": "680814b7187386cf420be261c29eb4ffb7377b8c160b5cdcdd9b48ef79efbf48",
+    "normalized_netlist_sha256": "7e45b5e394d89307038cdb1db47bb6a05f2d5da23fedf75b706ca60fe1879dd4"
+  },
+  "verification": {
+    "independent_binding_count": 1430,
+    "independent_actual_review_sha256": "d780e98942243e632d737af28e1a436c455b166fd3b6a513e544730d3aad9e85",
+    "host_manifest_sha256": "b767bdc62da96a74c68344484ed1329fde327b2c02b935c76e5772b9ff4f7f37",
+    "host_result_sha256": "ea2613fa8225cf7dfd66033ab30912fb10f12cfa133c0b13837da8ee796f61d3",
+    "core_connection_audit_sha256": "2b21976ca379646f8cad72d2fcbc1246feee9d3b5de3ccaec3197418d0046f60",
+    "host_capture_analyze_verify_actual_exits": [
+      0,
+      0,
+      0
+    ],
+    "raw_structural_readback_verified": true
+  },
+  "unqualified_wiring_diagnostic_pins": 4169,
+  "limits": {
+    "mapped_functional_equivalence_verified": false,
+    "cold_reload_verified": false,
+    "whole_chip_integration_verified": false,
+    "task_accuracy_verified": false,
+    "timing_closed": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "paper300_hold_only": true
+  },
+  "private_evidence": {
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/bank1/mapping_actual_review_v3.json": "d780e98942243e632d737af28e1a436c455b166fd3b6a513e544730d3aad9e85",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/structural_readback_v1/bank1/actual_artifacts_v5.json": "b767bdc62da96a74c68344484ed1329fde327b2c02b935c76e5772b9ff4f7f37",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/structural_readback_v1/bank1/result_v5.json": "ea2613fa8225cf7dfd66033ab30912fb10f12cfa133c0b13837da8ee796f61d3",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/structural_readback_v1/bank1/host_tool_wait_v5.json": "0c6028c25c229b5173e38cdd17505822e732f0f52d9b1e5c0e95eba5c419750f",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/core_connection_audit_v1/audit_record_v1.json": "2b21976ca379646f8cad72d2fcbc1246feee9d3b5de3ccaec3197418d0046f60",
+    ".cache/late_clipping_20261121/frame_integration/cluster_bank_variants_mapping_v1/bank1/mapping_actual_runtime_limitation_v3.json": "e106401dc5902f51ba5367282cf00a912053f4d16a73a34f4a00ba0de975560b"
+  },
+  "runtime_cleanup_scope": {
+    "generic_cleanup_correctness_verified": false,
+    "all_descendants_terminal_at_original_return_verified": false,
+    "original_container_removed_before_independent_structural_recheck": true,
+    "orphan_occurrence_established_for_this_run": false,
+    "future_native_launch_requires_separately_reviewed_corrected_runtime": true,
+    "scope": "The inherited cleanup has a demonstrated leader-exit defect. This does not change the independently checked artifact snapshot; it prevents reusing that cleanup as a general termination guarantee."
+  }
+}

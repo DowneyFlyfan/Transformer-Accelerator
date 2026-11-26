@@ -18,7 +18,7 @@ Compile exported bundles with `+incdir+<project-root>`. Data, libraries and logs
 Run unit regressions in the existing container:
 
 ```sh
-docker exec -w "$PWD" tri-oracle-eda bash syn/run_tri_oracle_simulation.sh
+docker exec -w "$PWD" cadence-ddi bash syn/run_tri_oracle_simulation.sh
 ```
 
 All 28 unit simulations passed. The full regression currently exits at 12 unused-port lint warnings in the unchanged default compute fabric.
