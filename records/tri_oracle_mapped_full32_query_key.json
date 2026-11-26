@@ -1,0 +1,75 @@
+{
+  "schema": "tri_oracle_mapped_full32_query_key_result_v1",
+  "state": "all32_provided_layer19_selected_query_key_arithmetic_independently_verified",
+  "target": "Tri-Oracle adaptation using Taiwan Semiconductor Manufacturing Company 28 nanometer libraries",
+  "scope": "All 281 query rows of each of 32 logical heads from the frozen trained layer 19 fixture, replayed through one existing four-core mapped cluster. Both 32-feature phases and final 64-feature signed integer arithmetic are verified from actual public-port loads and every output lane. Query/key operands and selection masks are supplied externally.",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "container": "cadence-ddi",
+  "physical_compute_cores": 4,
+  "logical_heads": 32,
+  "query_rows": 8992,
+  "functional_test_clock_ns": 20,
+  "timing_annotated": false,
+  "memory_model_paths": {
+    "mapped_cluster": 125,
+    "source_reference_cluster": 125,
+    "total_observed": 250
+  },
+  "original_root_worker_native_exit_status": [
+    0,
+    0,
+    0
+  ],
+  "native_total_wall_seconds": 691.9647748759016,
+  "elapsed_time_scope": "Compilation, elaboration, simulation and cleanup total; buffered delivery observations do not establish exact phase runtimes or hardware throughput.",
+  "public_loads": 78800,
+  "commands": 61416,
+  "retired_words": 61416,
+  "retired_signed32_lanes": 1965312,
+  "useful_selected_64_feature_dots": 771159,
+  "testbench_cycles": 896452,
+  "deliberately_held_output_cycles": 1824,
+  "independent_output_sha256": "68641cb977921430cfba5e67e3af613a52a013534cea661c3e21fb9c9aa39b1f",
+  "actual_journals": {
+    "command": {
+      "bytes": 1965344,
+      "count": 61416,
+      "sha256": "59c92b0be9d4c53cf37b4c2e0012b828c381da1657cfa67e9cbb370f69b2e80d"
+    },
+    "load": {
+      "bytes": 42867232,
+      "count": 78800,
+      "sha256": "c3f2755d3f32140f04e4b9664c125d69eb61f01792a7b406c4aa5306b537a6a1"
+    },
+    "word": {
+      "bytes": 17687840,
+      "count": 61416,
+      "sha256": "266eb32b3413d70e68b75a37a70ccc98c2c19d650bc3610d0f1266f81f5461d2"
+    }
+  },
+  "verification": "The approved host reader reconstructs independent mapped/reference memory images and checks all three complete journals. A separate audit directly recomputes signed-byte products and compares every actual output with the original fixture and central processing unit integer archive; a paired wrong-output mutation is rejected.",
+  "evidence_sha256": {
+    "independent_actual_review": "8ee18c6b62a92220e394d8957f5a4a7d0cc227483b2b4279d41feb19c315dc0e",
+    "host_preparation": "938d0dc85fd51d0bf18f3d7a039d97e4b5c368671255b184e1c33810cc2e8bdc",
+    "host_source_review": "67543f4cd2a3cf736f4a766cc26cc886ab89bf307829e62592829115732fcff4",
+    "host_actual_manifest": "78d487bf6742862fa1522273d51f2d7e7b44621f39f2191aa06e42f869505822",
+    "host_actual_result": "0b73aa3ce278c4c30f84a154641ad6036ef3828d2214a104451829374b7995cf",
+    "host_tool_wait": "a25056e1ebf5de35bd688c2f8beed9d5e49249b93fb56db7613593b7eaa39220",
+    "independent_signed_byte_audit": "b3c22c0bb8b1a9e52777bb763cb9877ca5d0a986990c408282e226888a94f155",
+    "native_raw_result": "82ccfe311e731de4069271db3d9b5d194ebd5ee40e60f58e681cb4d67ece4b68",
+    "native_root_tool_wait": "c408421ad50a838f34753194dc85f9a47ef57998ffc7abbec29f560937363d8a",
+    "full_fixture": "539767250972d8ad1477489ad690a3dd413883a5e44beeab2dc6f2a5cbfcb5f0"
+  },
+  "all32_provided_layer19_selected_query_key_arithmetic_verified": true,
+  "hardware_selection_policy_verified": false,
+  "mapped_query_key_projection_verified": false,
+  "mapped_score_conversion_verified": false,
+  "linked_softmax_and_probability_value_accumulation_verified": false,
+  "mapped_scheduler_verified": false,
+  "whole_twenty_core_chip_integration_verified": false,
+  "full_model_execution_verified": false,
+  "task_accuracy_verified": false,
+  "timing_closed": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
