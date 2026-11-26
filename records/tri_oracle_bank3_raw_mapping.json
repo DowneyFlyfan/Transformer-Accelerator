@@ -1,0 +1,74 @@
+{
+  "schema": "tri_oracle_bank3_raw_mapping_result_v1",
+  "state": "independently_verified_raw_bank3_structure_not_functional_or_physical_closure",
+  "target": "Taiwan Semiconductor Manufacturing Company (TSMC) 28 nm High Performance Compact Plus (28HPC+) adaptation of Tri-Oracle",
+  "scope": "One four-core bank: complete imported-core definitions and actual hierarchy paths, required preoptimization boundary-bit presence, physical/memory inventory and exported constraint recipe. Parent-bank behavior and whole-chip operation remain unqualified.",
+  "tool": "Genus25.10-p002_1",
+  "container": "cadence-ddi",
+  "actual_native_worker_root_exit_status": [
+    0,
+    0,
+    0
+  ],
+  "native_wall_seconds": 3361.530713832937,
+  "bank": {
+    "index": 3,
+    "features": 384,
+    "origin_start": 384,
+    "origin_entries": 128,
+    "top": "tri_oracle_native_cluster3"
+  },
+  "physical_inventory": {
+    "physical_leaves": 361057,
+    "standard_cell_leaves": 360933,
+    "used_physical_masters": 321,
+    "compiled_memory_macros": 124,
+    "compiled_memory_bytes": 81184
+  },
+  "source_liberty_cell_and_macro_area_um2": "1296588.876800",
+  "native_printed_cell_and_macro_area_um2": "1296588.873",
+  "area_precision_qualified": false,
+  "clock_constraint_ns": "1.72414",
+  "preplacement_reported_worst_setup_slack_ps": "-33",
+  "imported_core_leaf_counts": {
+    "0": 75444,
+    "1": 75444,
+    "2": 75444,
+    "3": 75444
+  },
+  "complete_token_identical_imported_core_definitions": 5,
+  "actual_hierarchy_component_paths_verified": 4,
+  "required_preoptimization_boundary_bits": 12888,
+  "required_boundary_presence_is_parent_behavior_equivalence": false,
+  "unqualified_wiring_diagnostics": {
+    "elaboration_wiring.rpt": {
+      "diagnostic_zero_load_hierarchical_pins": 8036,
+      "hierarchical_pins_qualified_unused": 0,
+      "loaded_wiring_faults": 0
+    },
+    "mapped_wiring.rpt": {
+      "diagnostic_zero_load_hierarchical_pins": 4169,
+      "hierarchical_pins_qualified_unused": 0,
+      "loaded_wiring_faults": 0
+    }
+  },
+  "evidence_sha256": {
+    "independent_actual_review": "1582d17e01cc5bbfc6cb100c3c963adddf33efd1471755209b241ba8de9ae4be",
+    "native_raw_result": "98cba13f77ae044983f39106ce4945b9cc4f2c3a04131fba7653e304a2d4aeb1",
+    "native_root_tool_wait": "b0625e3089256a2e04a813a5f94c39c050f83ce08ed383eda02e604f51f8265c",
+    "host_preparation": "f2881e4149e9d8946f353ffdc3dd965290d59bbe1d7997c1caf98cc97f120f5b",
+    "host_source_review": "08c2e26f1155b057c5c7f8b84c7bf4be2b87084ea7522b46bdf749e46426a9de",
+    "host_actual_manifest": "c32f9ca666112eb4d7bc1da19d8f992f2ab4270e344cdc6231a11403e816a68b",
+    "host_actual_result": "51aa29fe6d15c1ce7da490c2da702ba0a7623a1d231d08a7316dc1e7ca38c787",
+    "host_tool_wait": "e231fa48f85c11999b04d0bb7de2fa329d3dbee73de79d14d1dd9ef17e60e989",
+    "raw_netlist": "a52dbae3cbdc4e388b05dba75c5ad8d71e56655f62524426190de21c2ec348f9",
+    "normalized_netlist": "9d87cc61dceefdeb3bdd0b1972742edbde1ddf479b178cc200236a756d92d09b",
+    "normalization_proof": "75f24bcd195cb587dfdc5c3b3bd79a802150468502632c78ab584c0e43b0cf50"
+  },
+  "mapped_functional_equivalence_verified": false,
+  "whole_chip_integration_verified": false,
+  "task_accuracy_verified": false,
+  "timing_closed": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}

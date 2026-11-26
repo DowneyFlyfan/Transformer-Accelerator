@@ -1,0 +1,94 @@
+{
+  "schema": "tri_oracle_mapped_head0_query_key_prototype_result_v1",
+  "state": "one_head_281_query_provided_operand_mapped_arithmetic_and_real_input_fault_verified",
+  "target": "Tri-Oracle adaptation: signed-eight-bit query-key (QK) arithmetic through one existing four-core mapped cluster",
+  "scope": "All 281 query rows for trained layer19/head0, using provided query/key operands and selection masks. Both accumulation phases and all32 lanes of every output word are checked from actual public-port memory loads. This does not verify the mapped scheduler or score conversion, linked softmax/value accumulation, all32heads, the whole20core design or model accuracy.",
+  "simulator": "Xcelium25.03-s001",
+  "container": "cadence-ddi",
+  "functional_test_clock_ns": 20,
+  "timing_annotated": false,
+  "physical_compute_cores": 4,
+  "memory_model_paths": {
+    "mapped_cluster": 125,
+    "source_reference_cluster": 125,
+    "total_observed": 250
+  },
+  "positive": {
+    "original_root_worker_native_exit_status": [
+      0,
+      0,
+      0
+    ],
+    "native_total_wall_seconds": 45.29661313514225,
+    "public_loads": 2572,
+    "commands": 1482,
+    "retired_words": 1482,
+    "retired_signed32_lanes": 47424,
+    "query_rows": 281,
+    "useful_selected_64_feature_dots": 15968,
+    "testbench_cycles": 22990,
+    "deliberately_held_output_cycles": 57,
+    "independent_output_sha256": "ae19fb85cd0aac52f66129139e4fba36bdf3ae6277637c96359c5f8c13c666cf",
+    "actual_journals": {
+      "command": {
+        "bytes": 47456,
+        "count": 1482,
+        "sha256": "782fd4648d1b0e21b8fa62c807a0defda4dd55954cdc9857382c1e2f3e5d0a76"
+      },
+      "load": {
+        "bytes": 1399200,
+        "count": 2572,
+        "sha256": "b5513127c1b88309896381828428a99dd60b96b12cd25a21fa6adb55322828b8"
+      },
+      "word": {
+        "bytes": 426848,
+        "count": 1482,
+        "sha256": "6bcf534cb88678890e94d08c5ec31e26b08e5c823758ca2826cdff418075e82a"
+      }
+    }
+  },
+  "negative": {
+    "original_root_worker_native_exit_status": [
+      1,
+      1,
+      2
+    ],
+    "native_total_wall_seconds": 27.27263650111854,
+    "original_worker_error_retained": "ValueError('Embedded reserved diagnostic')",
+    "known_source_echo_recovery_only": true,
+    "real_input_feature_index": 19,
+    "first_query": 5,
+    "first_tile": 0,
+    "first_phase": 0,
+    "fatal_time_ns": 93654,
+    "mapped_first_lane": 75,
+    "reference_first_lane": 74,
+    "retired_words": 0,
+    "actual_input_loads": 2332,
+    "source_packet": 2337,
+    "complete_mismatching_word_independently_reconstructed": true
+  },
+  "elapsed_time_scope": "Native total includes compilation, elaboration, simulation and cleanup. Buffered output-delivery intervals are not exact phase runtimes or hardware latency.",
+  "evidence_sha256": {
+    "independent_actual_review": "e1dad98b566847aedcc3f76ade1fe2757f7127b76ff3671c414cdeeebe26e533",
+    "host_preparation": "205a2e0938941320a4795d5a8c04e98df3f1c2a455aaa5a3b01a0765bddb4cbc",
+    "host_source_review": "45b183bdf51ab31c35664cbacb95a3c1edb3a6fb6bb9277f142e66a663217fc1",
+    "host_actual_manifest": "59b711018eb885f76aec4667f308f9abc48b94115d9f2d201cc0d6ae271706f0",
+    "host_actual_result": "1eeb6ad5e20e56f3c5fe9fa87db4e0dcd20361c4b2a8c45b0be7035294915a63",
+    "host_tool_wait": "0c22cd718fe2f8ec52787e93e3552945ba5886ddfbf833265ecf122795fa7329",
+    "positive_native_raw_result": "4bbf22cf77d25bd090f5cabf71e38d2a112a6360fda9a81ce77743f2714132c6",
+    "positive_native_root_tool_wait": "cdb4286f040dec70d03bb285ad65cb5035da8f333cf7d6c39dcb792e11c98c3f",
+    "negative_native_raw_result": "78ba734dc4c4f4cd4779a3c6ef85a6b02d08fc88ad89661e100a7bcee742ce02",
+    "negative_native_root_tool_wait": "1c77f0c80410e37516300f317de513515779fd51908b50676dbc3de30861a3bf"
+  },
+  "current_mapped_head0_QK_verified": true,
+  "current_mapped_full_trained_QK_verified": false,
+  "mapped_scheduler_verified": false,
+  "mapped_score_conversion_verified": false,
+  "linked_probability_value_accumulation_verified": false,
+  "whole_chip_integration_verified": false,
+  "task_accuracy_verified": false,
+  "timing_closed": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
