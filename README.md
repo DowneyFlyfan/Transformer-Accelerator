@@ -13,6 +13,8 @@ Verified with Cadence Xcelium:
 
 A host graphics processor replay matched all 17 feed-forward reference tensors for one saved ordinary token with complete trained layer-zero weights.
 
+All 88 trained attention matrices were exported into 44 bundles of signed 8-bit codes with separate weight scales. Trained attention execution remains pending.
+
 The tests model normalized and projected data in external memory. Complete model and token merging integration, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
 Compile exported bundles with `+incdir+<project-root>`. Data, libraries and logs stay in `.cache/`.
