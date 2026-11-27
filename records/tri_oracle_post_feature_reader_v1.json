@@ -1,0 +1,262 @@
+{
+  "archive": {
+    "carry_bits_after_lines": [
+      8,
+      16,
+      0,
+      8,
+      16,
+      0,
+      8,
+      16,
+      0,
+      8,
+      16,
+      0
+    ],
+    "feature_strips": 256,
+    "features_per_strip": 8,
+    "identity_exponent_header_present": false,
+    "interleaved_strip_bytes": [
+      "input-space outlier mask",
+      "full normalized sign",
+      "input-space outlier sign"
+    ],
+    "line_bytes": 64,
+    "maximum_payload_reservoir_bits": 528,
+    "predictor_sign_role": "Use pre-gamma input-space outlier sign with its mask. Full normalized sign is retained separately for merging/signatures.",
+    "read_requests": 12,
+    "row_bytes": 768,
+    "scalar_beat_bits": 64,
+    "scalar_beats_per_request": 8
+  },
+  "caller_obligations": [
+    "Supply tag, layer, epoch, root, dense ranks and signed9 exponent from the matching real descriptor context. The archive itself contains no identity or exponent header.",
+    "Archive admission must join the actual matching feature-store completion and all12 acknowledged writes, under retained real context ownership.",
+    "The existing current reader tests do not establish that these caller-side joins or the real predictor/compute integration exist."
+  ],
+  "case47_note": "Displayed counters are post-reset. The test asserts an actual accepted owned read before coupled reset and verifies quiet ownership afterwards.",
+  "case_count": 24,
+  "case_results": [
+    {
+      "case": 0,
+      "cfg": 1,
+      "requests": 12,
+      "responses": 96,
+      "strips": 256
+    },
+    {
+      "case": 1,
+      "cfg": 1,
+      "requests": 12,
+      "responses": 96,
+      "strips": 256
+    },
+    {
+      "case": 2,
+      "cfg": 1,
+      "requests": 12,
+      "responses": 96,
+      "strips": 256
+    },
+    {
+      "case": 3,
+      "cfg": 1,
+      "requests": 12,
+      "responses": 96,
+      "strips": 256
+    },
+    {
+      "case": 10,
+      "cfg": 1,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 11,
+      "cfg": 1,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 12,
+      "cfg": 1,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 13,
+      "cfg": 1,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 14,
+      "cfg": 1,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 15,
+      "cfg": 1,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 16,
+      "cfg": 1,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 20,
+      "cfg": 0,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 21,
+      "cfg": 0,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 30,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 8,
+      "strips": 0
+    },
+    {
+      "case": 31,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 3,
+      "strips": 0
+    },
+    {
+      "case": 32,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 9,
+      "strips": 0
+    },
+    {
+      "case": 40,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 8,
+      "strips": 0
+    },
+    {
+      "case": 41,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 8,
+      "strips": 1
+    },
+    {
+      "case": 42,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 8,
+      "strips": 1
+    },
+    {
+      "case": 43,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 44,
+      "cfg": 1,
+      "requests": 1,
+      "responses": 8,
+      "strips": 1
+    },
+    {
+      "case": 45,
+      "cfg": 0,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    },
+    {
+      "case": 46,
+      "cfg": 1,
+      "requests": 12,
+      "responses": 96,
+      "strips": 256
+    },
+    {
+      "case": 47,
+      "cfg": 0,
+      "requests": 0,
+      "responses": 0,
+      "strips": 0
+    }
+  ],
+  "compile_warnings_or_errors": false,
+  "independent_source_actual_review_sha256": "e1a33a443c9167b25b868d76e44420f85cbc5f4236f7076d6e8860865bce1238",
+  "independent_source_review_sha256": "6da95a768504434e0bef01bc972daf1893216ef27e5dd498332a288a5c3e7b6d",
+  "local_evidence_note": "Original tool logs, launch receipts, compiled private source copies, host geometry controls and independent reviews remain local in .cache.",
+  "native_elapsed_seconds": 1,
+  "notation": {
+    "ACK": "Acknowledgement: actual accepted memory response or completion handshake.",
+    "POST": "Post-attention normalization phase.",
+    "Xcelium": "Cadence commercial hardware simulator.",
+    "signed9": "Signed nine-bit two\u2019s-complement exponent."
+  },
+  "original_result_sha256": "2cf02086363cf851e7e624efa35199b1908c6664f7e6d59184582c722b017c74",
+  "original_test_first_behavioral_failure_sha256": "56a34bbaea33016f9feaf6862b4f2cae6658a45d3cab186d81ef3724b1f99c1c",
+  "qualification": {
+    "actual_archive_read": false,
+    "finite_synthetic_reader_unit": true,
+    "full_model_accuracy": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "predictor_connected": false,
+    "trained_hardware_compute": false
+  },
+  "run_interface": {
+    "all_cases_plusarg": "+FEATURE_READER_ALL",
+    "compile_sources": [
+      "verilog/tri_oracle_post_feature_reader_v1.sv",
+      "verilog/tri_oracle_post_feature_reader_v1_tb.sv"
+    ],
+    "single_case_plusarg": "+FEATURE_READER_CASE=N"
+  },
+  "schema": "tri_oracle_post_feature_reader_finite_unit_v1",
+  "scope": "Standalone reader of one committed post-attention feature archive row. The testbench provides an independent synthetic external-memory endpoint. No real normalizer archive, strip predictor, compute fabric or trained model is connected.",
+  "simulation_finish_ns": 37740,
+  "source_sha256": {
+    "verilog/tri_oracle_post_feature_reader_v1.sv": "6cf49e3b10fcb6de57c49463aa92233c058e2b354f08c772b5b0855139ed5666",
+    "verilog/tri_oracle_post_feature_reader_v1_tb.sv": "75a8f15e5f1ca4c44446c0c1a8d2acd576ca024d6bad5908d365ba5c36e2ef60"
+  },
+  "status": "24 finite synthetic Xcelium scenarios passed and independently reviewed after a genuine missing-read test-first failure.",
+  "tool": {
+    "container": "cadence-ddi",
+    "name": "Cadence Xcelium",
+    "top": "tri_oracle_post_feature_reader_tb",
+    "version": "25.03-s001"
+  },
+  "verified_behaviors": [
+    "All three byte channels and every cross-line tuple, signed9 exponent extrema, rank575 and legal inclusive64-bit maximum endpoint.",
+    "No output from a line until its entire eight-beat response is validated; invalid lines never expose partial features.",
+    "Held requests, output tuples and earlier completion statuses remain immutable through faults; known accepted work drains.",
+    "Unassociated responses never gain ownership through later request acceptance; quarantine remains until coupled reset.",
+    "Success needs256 actual strip acceptances,12 validated lines,96 accepted response beats and quiet ports.",
+    "Acknowledged error completion retains logical fault protection; no lease-release port or private reset exists."
+  ]
+}
