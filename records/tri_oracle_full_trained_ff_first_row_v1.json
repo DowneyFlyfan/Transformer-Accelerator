@@ -1,0 +1,86 @@
+{
+  "schema": "tri_oracle_full_trained_feedforward_first_row_result_v1",
+  "accepted_scope": "Two complete trained first-row RTL simulations of prediction plus feed-forward computation, using a prior actual normalization archive. Latest V5 testbench published byte-exact.",
+  "source_sha256": {
+    "verilog/tri_oracle_full_trained_ff_first_row_v1_tb.sv": "52a426886bd06e994e0acf57ec606d42c1483452587dc1c837a7f7e00398decf"
+  },
+  "source_closure": {
+    "project_RTL_files": 75,
+    "external_vendor_models": 6,
+    "top_testbench_files": 1,
+    "ordered_total": 82,
+    "project_dependencies_match_base_commit": "77d3414de0424d26afeaa80a9d19ad3d3a7678e0",
+    "vendor_libraries_and_payloads_published": false
+  },
+  "tool": "Xcelium25.03-s001 in the single cadence-ddi container",
+  "context": {
+    "layer": 0,
+    "normalization_role": "POST",
+    "phase": "ordinary",
+    "kept_rank": 0,
+    "original_root": 0,
+    "global_position": 5,
+    "kept_count": 264,
+    "activation_exponent": -6,
+    "outliers": 7,
+    "raw_output_exponent": -17,
+    "final_state": "BetweenRows with real nonfinal context and NextOwner retained"
+  },
+  "checked_outputs": {
+    "predictor_groups": 176,
+    "KEEP_packets": 71,
+    "intermediate_DATA_beats": 704,
+    "intermediate_acknowledgments": 71,
+    "intermediate_bytes": 5632,
+    "raw_packets": 13,
+    "raw_signed32_values": 2048,
+    "native_SRAM_models": 621,
+    "processing_element_arrays": 20,
+    "predictor_cores": 20
+  },
+  "runs": {
+    "V3": {
+      "native_exit_code": 0,
+      "native_elapsed_seconds": 5607,
+      "testbench_cycles": 15335517,
+      "simulation_nanoseconds": 153355210,
+      "source_sha256": "10b7f1a851c45805a670647bdfc976c336cc77dd2fdbf81022cc9e260f284005",
+      "original_receipt_sha256": "5d96c9b4176f74bd48b8772045c3e90b8235690b24a2a88cc399003439980c6f"
+    },
+    "V5": {
+      "native_exit_code": 0,
+      "native_elapsed_seconds": 2141,
+      "testbench_cycles": 7196022,
+      "simulation_nanoseconds": 71960260,
+      "source_sha256": "52a426886bd06e994e0acf57ec606d42c1483452587dc1c837a7f7e00398decf",
+      "original_receipt_sha256": "08470c6d6110be1c40614486e25dcec1c11093bdafbbc5d6c5388c75edd1b861"
+    }
+  },
+  "payload_sha256": {
+    "intermediate": "acad598906ab5d04394dcc8315269de14b7d3bf84341fbbb0b5f2c29a2280f83",
+    "raw_signed32": "53a6be99e04fe314196776b79f548f4a705d19f185bd2a85f0b7cc5c4d7d36cb",
+    "canonical_events_excluding_cycle_fields": "d4ecd6725ba775c612276e3adff2e1da3ea93a3227cb39bb3b4812653a82b163"
+  },
+  "evidence_sha256": {
+    "independent_actual_peer": "865950e7a508969518300bbd20fe1a56f0ec80dc4c7cd48fcb1d234476a29539",
+    "closed_V3_provenance": "c7d5f1f75ecaf8d09b403e477b3b2bfb840b0b4919358aa5c5baf17243903fdb",
+    "closed_V5_provenance": "14baebec3658f9b18b1687e226887cafd19995b29d280d9ec2031f6e93bc682e",
+    "trained_reference_actual_peer": "de12bf09cf284593dee8645754cbd5963d82f51251af6955f1265413aea190d1",
+    "V5_missing_handshake_actual_peer": "e2bae872bac2abda080e6e34b3fc324d9f20e8ab38315f6993b361e4b6fb7200",
+    "public_source_snapshot": "3403522d0e70d45ecfb2263074977f753e41234966ba82b5d21626118a7dd8bd"
+  },
+  "simulation_change": "V5 removes idle response cycles in the external testbench endpoint and guarantees first request/output stalls. Matching complete payloads; observed invocation wall ratio2.61887 is not chip performance.",
+  "limitations": [
+    "One FLOAT-derived prior C row; no continuous integer-attention/normalizer/parent execution or full264-row recurrence.",
+    "All71 KEEP packets are all-one for seven odd outliers; this row does not measure trained skip efficacy.",
+    "Census, per-core activity, held completion and retained ownership are guarded source assertions, not independent waveform reconstruction.",
+    "No complete read-request/response byte journal. Functional memory timing and the testbench endpoint do not qualify silicon latency, power or timing.",
+    "The old631-memory placed candidate is not joined to this621-memory source."
+  ],
+  "component_source_runtime_review_accepted": true,
+  "full_model_verified": false,
+  "accuracy_verified": false,
+  "mapped_physical_candidate_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}

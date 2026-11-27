@@ -1,0 +1,71 @@
+{
+  "schema": "tri_oracle_exact_C_normalizer_component_result_v1",
+  "accepted_scope": "Encoded normalization software verifier primitive; explicit CPU and CUDA paths. No model execution or physical qualification.",
+  "input_contract": {
+    "raw": "int32[M,N]",
+    "gain": "int32[N] or [M,N], carrying signed24",
+    "epsilon": "uint64[M]",
+    "gamma_exponent": "int8[M]",
+    "features": "8..4096, multiple of8"
+  },
+  "arithmetic": {
+    "wide_words": "five uint32 limbs",
+    "rounding": "exact nearest, ties away from zero",
+    "outliers": "raw^2*N*65536 > 9*D before gamma; strict comparison",
+    "normalized_negative": "raw*gain < 0, including code values rounded to zero",
+    "zero_product_row": "activation exponent zero; preserve pre-gamma outlier features"
+  },
+  "verification": {
+    "independent_CPU_seeded_rows": 243,
+    "CPU_limb_operations": 5600,
+    "CPU_midpoint_ratios": 3426,
+    "original_CUDA_methods": 7,
+    "original_CUDA_failures": 0,
+    "original_CUDA_errors": 0,
+    "original_CUDA_skips": 0,
+    "public_CPU_methods": 5,
+    "public_CUDA_methods": 7,
+    "public_failures": 0,
+    "public_errors": 0,
+    "public_skips": 0,
+    "prior_hardware_row_code_bytes": 2048,
+    "prior_hardware_feature_bytes": 768,
+    "physical_row_write_receipts": 44,
+    "input_origin": "One authentic FLOAT-derived layer0 POST row through prior Xcelium physical code/feature writes; not an integer-attention producer."
+  },
+  "build": {
+    "host": "RTX5070Ti SM120",
+    "CUDA_toolkit": "13.3.33",
+    "PyTorch": "2.11.0+cu130",
+    "bridge_standard": "C++17",
+    "CUDA_standard": "C++20",
+    "max_parallel_compilers": 2,
+    "build_seconds": 10.611918986076489,
+    "binary_sha256": "b5d31c304c33a891c3d3d3b970d93dedff04be5b07e6e65fe9a55ed997749e86",
+    "cache_policy": "Explicitly build and select a matching shared library under project .cache; no automatic compilation or CPU fallback."
+  },
+  "evidence_sha256": {
+    "CPU_actual_peer": "ba9509fde159fd1d4a747a065ea21cd1ba9ee9c1b2210e3d05c291c762f8345c",
+    "GPU_actual_peer": "50110116b7f6eac98f87d27bcd50a5eca0836b360690423d7ee4822227030535",
+    "original_GPU_tool_receipt": "78b1a44f0442c89ae1b514ff1b646e7ba142c36b610dc6f89b676e05bb119200",
+    "public_tool_receipt": "ed8f2f2c99d4b24b747067e8b76e3f79eb9b3f68eda3cf81bf2d5539febb1c7f",
+    "canonical_tests": "48380396d8feffec8bc8f95d84af37194e5e9d4213a1314b41fb943e98ff9dbd",
+    "public_source_actual_peer": "f18fc60e007b4ca18b2652d24db35fcf01ee98d5c76b459e2165884770a71eff"
+  },
+  "limitations": [
+    "Literal edge tests and one authentic encoded row; not exhaustive domain coverage.",
+    "GPU values are verified by frozen assertions and hashes; no independent GPU lane trace.",
+    "FLOAT encoding, phase dispatch, residual recurrence, all22 layers and task accuracy remain unqualified."
+  ],
+  "full_model_verified": false,
+  "accuracy_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "source_sha256": {
+    "syn/tri_oracle_exact_c_normalizer/cpu_fixedwords_v1.py": "e9e4a1eb776e4283d321ad89d81bc48d0c288c97f2ff4616fb57ca6cf643f29e",
+    "syn/tri_oracle_exact_c_normalizer/exact_normalizer_api_v1.py": "35b45a906d0f637fcd0f821e7b7056b8b2f0a4f87f2d3fe33b3664d618e4f5f4",
+    "syn/tri_oracle_exact_c_normalizer/exact_normalizer_bridge_v1.cpp": "792877e1b4618045c93f95cb0ed42206ec341912388356f6aade042b0e4c94aa",
+    "syn/tri_oracle_exact_c_normalizer/exact_normalizer_cuda_v2.cu": "9632f2a8fa676a47352aa6ae6aa5a7ce00001c0d1c25e095d95a61ecb10ae915"
+  },
+  "component_source_runtime_review_accepted": true
+}
