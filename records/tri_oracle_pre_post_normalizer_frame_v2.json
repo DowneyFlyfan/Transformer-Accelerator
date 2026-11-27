@@ -1,0 +1,168 @@
+{
+  "compile_note": "Compile either the healthy testbench or the fault testbench separately. Both intentionally use top tri_oracle_normalized_image_compactor_tb to preserve the exact tested memory-witness bindings. PRIVATE_VENDOR_MODEL entries require separately supplied licensed memory models and are not included.",
+  "evidence_note": "Original journals, raw fixture payloads, tool logs, private mutant sources and independently reviewed replay programs remain local under .cache. Hashes identify finite evidence, not a paper300 release certificate.",
+  "fault_cases": [
+    {
+      "expected_mutant_failure": "PHASE_FAULT_NOT_STICKY_OR_OWNED",
+      "green_native_seconds": 32,
+      "id": 0,
+      "observed": "Sticky POST fault; malformed offered response is quarantined until coupled reset. Known owned reads may drain. No fabricated POST completion.",
+      "private_mutant": "Disable unexpected-vector-response detection",
+      "trigger": "Unexpected vector response before POST writer ownership"
+    },
+    {
+      "expected_mutant_failure": "PHASE_FAULT_IRRETRACTABLE_DESCRIPTOR",
+      "green_native_seconds": 32,
+      "id": 1,
+      "observed": "Request remains offered, accepts once after backpressure release and receives one real response; known owned work drains. PRE abort remains isolated and no new POST completion is created.",
+      "private_mutant": "Drive retired PRE abort directly from global abort",
+      "trigger": "Abort while the genuine POST descriptor request is held under backpressure"
+    },
+    {
+      "expected_mutant_failure": "CHANGED_POST_DONE",
+      "green_native_seconds": 42,
+      "id": 2,
+      "observed": "Completion tuple remains stable through abort until its actual acknowledgement; sticky fault then requires coupled reset.",
+      "private_mutant": "Retract already offered POST completion on fault",
+      "trigger": "Abort while real POST completion is offered and awaiting acknowledgement"
+    }
+  ],
+  "fault_compile_substitution": {
+    "from": "verilog/tri_oracle_pre_post_normalizer_frame_v2_tb.sv",
+    "to": "verilog/tri_oracle_pre_post_normalizer_frame_v2_fault_tb.sv"
+  },
+  "healthy_compile_order": [
+    "verilog/native_shared_array/07_tri_oracle_cluster_token_sizes_with_layer_ports.sv",
+    "verilog/native_shared_array/08_tri_oracle_local_merge_fabric.sv",
+    "verilog/native_shared_array/28_tri_oracle_cumulative_token_merger423.sv",
+    "verilog/tri_oracle_normalized_row_stage.sv",
+    "verilog/tri_oracle_shared_metadata_store.sv",
+    "verilog/tri_oracle_external_write_mux.sv",
+    "verilog/tri_oracle_normalized_image_compactor.sv",
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.v",
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.v",
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.v",
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v",
+    "verilog/tri_oracle_pre_post_memory_witness_v1.sv",
+    "verilog/tri_oracle_fused_input_normalizer_wide_v1.sv",
+    "verilog/tri_oracle_fused_input_sign_normalizer_wide_v1.sv",
+    "verilog/tri_oracle_raw32_gamma24_reader_v1.sv",
+    "verilog/tri_oracle_memory_input_normalizer_wide_v1.sv",
+    "verilog/tri_oracle_raw32_frame_source_v1.sv",
+    "verilog/tri_oracle_raw32_frame_parent_client_v2.sv",
+    "verilog/tri_oracle_post_normalized_row_writer_v1.sv",
+    "verilog/tri_oracle_post_feature_store_v1.sv",
+    "verilog/tri_oracle_pre_post_normalizer_frame_v2.sv",
+    "verilog/tri_oracle_pre_post_normalizer_frame_v2_tb.sv"
+  ],
+  "healthy_observed": {
+    "POST_code_ACKs": 8448,
+    "POST_descriptor_ACKs": 264,
+    "POST_feature_ACKs": 3168,
+    "POST_strips": 67584,
+    "PRE_rows": 576,
+    "compile_warnings_or_errors": 0,
+    "exit_status": 0,
+    "feature_planes_checked": 3,
+    "journal_bytes": 183820641,
+    "journal_records": 4765358,
+    "journal_sha256": "7e8b7a8d86e9ffecea1f7166a270d5fb2d5509c2d8c5147f70d5207d98cbe42b",
+    "native_elapsed_seconds": 42,
+    "normalization_rows_checked": 840,
+    "normalized_code_lanes_checked": 1720320,
+    "retained_POST_rows": 264,
+    "signed_row_exponents_checked": 840,
+    "simulation_finish_ns": 132048300,
+    "token_size_sum": 576
+  },
+  "known_compute_bridge_issue": "Actual strict-three-sigma input-outlier masks differ from the idealized rounded-Q8 reference in 16 PRE lanes and eight retained POST lanes for this fixture. Existing rounded masks are not interchangeable; trained execution and full-model accuracy must be requalified for the actual code/feature domain.",
+  "local_evidence_sha256": {
+    "direct_numeric_replay": "debeb560ff57dfea9c6ef5aab2e0606877ee7af49a073849a8dfc0386ec7c097",
+    "encoded_domain_outlier_mask_diagnostic": "8bc5678192b75c810a9ed04f2a3ccb0ac4b341cfbc209b7f281ce73aec2a2285",
+    "fault_source_actual_review": "435742147bd5795373b85319ddf7e67694259a83d02ef1aa6b6c80f61a4d13b9",
+    "healthy_native_original": "59ddc320cbf07845c33116f7c682f7c039fa239832212e0dbc9b2fabea0361bf",
+    "healthy_source_actual_review": "13fd34a21c3743e8d240cfbc5b1817a8db1756e1d1fe1bb9d2ba213f725ecab6",
+    "healthy_transport_replay": "5a7123b9f72b3425976c38aad7a0ad5475dcf9e551ce51ed2ab8738130f3abbb",
+    "numeric_source_actual_review": "3861edfd2f18f13bfae9e0b8892e916c72d9e7436c2f38ede4787696696b412b"
+  },
+  "private_vendor_model_sha256": {
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.v": "ccf723afb843be99519a3cb5fe2cf8c5d46ebce84a62dd1246f0f7bf397237a7",
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.v": "35ea57a9268155751bd00d7087fd068fb1d5d9c575e2e52f61780c725a7acd54",
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+    "PRIVATE_VENDOR_MODEL/ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.v": "f23baa3b8e4b7e078a89899ff0e2194dd9022dc0dc7d6fbed71c8c98f21b5e41"
+  },
+  "qualification": {
+    "candidate_bound_mapped_execution": false,
+    "finite_fault_regressions": true,
+    "finite_shared_normalization_connection": true,
+    "full_model_accuracy": false,
+    "integer_attention_or_full_model_recurrence": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "trained_execution": false
+  },
+  "run_interface": {
+    "container": "cadence-ddi",
+    "fault_case_plusarg": "PHASE_FAULT_CASE=0, 1 or 2",
+    "flags": [
+      "-64bit",
+      "-sv",
+      "-nospecify",
+      "-notimingchecks",
+      "-sequdp_nba_delay",
+      "-xmerror",
+      "RECOME",
+      "+define+UNIT_DELAY",
+      "-timescale",
+      "1ns/1ps"
+    ],
+    "memory_models": "23 instances of four real vendor memory models; census assertions included.",
+    "plusargs": [
+      "PHASE_PRE_INPUT_ROOT",
+      "PHASE_POST_INPUT_ROOT",
+      "PHASE_JOURNAL"
+    ],
+    "simulator": "Cadence Xcelium 25.03-s001",
+    "top": "tri_oracle_normalized_image_compactor_tb"
+  },
+  "schema": "tri_oracle_pre_post_normalizer_finite_connection_v2",
+  "scope": "One layer-zero image fixture. A single real raw32/gamma24 normalizer is shared by PRE compaction and retained-root POST normalization. POST raw inputs are FLOAT-derived reference values, not outputs of an integer attention implementation.",
+  "source_sha256": {
+    "verilog/native_shared_array/07_tri_oracle_cluster_token_sizes_with_layer_ports.sv": "7672b35c7895bb37266598e4a1a78ac71c5102539af9172b426a2a888a1d9db9",
+    "verilog/native_shared_array/08_tri_oracle_local_merge_fabric.sv": "e7ee7995d125d078e0c3541d234f16c55c51a9a4b98fae7cd3e68dd3a04bdc33",
+    "verilog/native_shared_array/28_tri_oracle_cumulative_token_merger423.sv": "e354436cdf7948d899eebf8ec4bd432cee8fab0ff9f498fb5e4f882d8d233b8b",
+    "verilog/tri_oracle_external_write_mux.sv": "6cb488a2e7822d202cbf08a0d55b9c216dac0d453b3dcd8f4dd08e11b458bedf",
+    "verilog/tri_oracle_fused_input_normalizer_wide_v1.sv": "c77050304eb235a0dd13f5c7a20a94266531680f46576b5fe5356087c0e62bed",
+    "verilog/tri_oracle_fused_input_sign_normalizer_wide_v1.sv": "b65ec5a2e6cd9985549fb1b9bda1ff0cf15e1f9b431f34f6b7f51da008936ea4",
+    "verilog/tri_oracle_memory_input_normalizer_wide_v1.sv": "fb08f9e6cbc97e1f5456d9185d67f97473d6242acc865ccdc88db53b6b18db3f",
+    "verilog/tri_oracle_normalized_image_compactor.sv": "8d8cf239a7b7342228f053e61bf370daf131f5b881ae99eda8654c2cdb089ec6",
+    "verilog/tri_oracle_normalized_row_stage.sv": "46fcc683210982b8718ba06fd9794911a0887d656fe507fbb996b75d4531e9e9",
+    "verilog/tri_oracle_post_feature_store_v1.sv": "a97db52d361498d818f55e892e7aac725462d93731a5cbc1dbd385b24685d603",
+    "verilog/tri_oracle_post_normalized_row_writer_v1.sv": "a0291be8f8a7f1d0894c615a14ea60839ffa3c6d515f38c2b1d247685ee50223",
+    "verilog/tri_oracle_pre_post_memory_witness_v1.sv": "e33da0df8cba51b8989f368aa2f1ad904dd5155d7409f873a365404e15571e64",
+    "verilog/tri_oracle_pre_post_normalizer_frame_v2.sv": "da03d2926f6deeb4110f05ac10649f411bb53aecdb45e5a6362b32a200267812",
+    "verilog/tri_oracle_pre_post_normalizer_frame_v2_fault_tb.sv": "9819fdaf3e7959d6003c5e056a9a1714f2ca1cfd568167b3413a15bff01e3824",
+    "verilog/tri_oracle_pre_post_normalizer_frame_v2_tb.sv": "07385b14569ec37f33574b609bbe7b31b36cdc71e4d9bdd13db565d8a4e9a77f",
+    "verilog/tri_oracle_raw32_frame_parent_client_v2.sv": "db22d6ae990c3f01de1df57843fac6babd9f328810315d3adf4cb89275afb880",
+    "verilog/tri_oracle_raw32_frame_source_v1.sv": "fc2f2373e9ac5ad64d5d705ea9cdae01099e5c1f501cdcf31d4a1bf4fc0b285d",
+    "verilog/tri_oracle_raw32_gamma24_reader_v1.sv": "48f83fdde5970647fe0ecc14807c39e687a370423f94a7a4ecaabb3b45bec25a",
+    "verilog/tri_oracle_shared_metadata_store.sv": "eed73286ae1a674406d55f1a9cae5842fb3d28a6ed907ff0e60c3ca0f94426b4"
+  },
+  "status": "One genuine image PRE-to-POST Xcelium case and three real fault cases independently accepted; three private RTL mutants correctly rejected.",
+  "terminology": {
+    "ACK": "Acknowledgement: the actual memory response or completion handshake.",
+    "FLOAT": "Floating-point software reference input.",
+    "POST": "Post-attention normalization phase.",
+    "PRE": "Pre-attention normalization and image compaction phase.",
+    "Q8": "Fixed-point values with eight fractional bits.",
+    "RTL": "Register-transfer-level hardware description.",
+    "eA": "Signed activation scale exponent: one code unit represents2**eA.",
+    "raw32/gamma24": "Signed32-bit raw activation codes and signed24-bit learned normalization gain codes."
+  },
+  "verified_behaviors": [
+    "Real PRE576-to-retained264 compaction and descriptor-selected POST reads use one shared normalizer.",
+    "All observed code bytes, outlier/sign feature planes and signed row exponents match the frozen exact integer normalization reference.",
+    "Actual shared-write-mux request/data/response sequencing, descriptor readback, token-size preservation and PRE status isolation were checked.",
+    "POST retirement and held completion require real producer and memory responses; physical release/reuse was not exercised by the healthy case."
+  ]
+}
