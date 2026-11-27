@@ -1,0 +1,122 @@
+{
+  "caller_obligations": [
+    "Bind actual descriptor, row identity, checkpoint, policy and selected bundle; a revision string alone is not provenance proof.",
+    "This scalar per-tensor format is distinct from the older per-output-row quantization assets; do not mix weight signs or delta tables.",
+    "The helper accepts generic exponent bucket lists and positive positions; a hardware driver must enforce the adapter four-slot table and representable context/address bounds.",
+    "Returned keep is NOT predicted skip even when prune=False; unpruned hardware must use all-keep. This trained diagnostic explicitly used prune=True.",
+    "Diagnostic packed feature payload is plane-concatenated; the actual hardware archive remains three interleaved feature bytes per strip."
+  ],
+  "complete_trained_diagnostic": {
+    "GPU_peak_allocated_bytes": 253756928,
+    "GPU_peak_reserved_bytes": 373293056,
+    "actual_C_codes_requantized": false,
+    "actual_peer_pending": false,
+    "both_variants_every_trace_field_matched": true,
+    "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+    "deliberately_old_mask_effect": {
+      "differing_input_features": [
+        1948
+      ],
+      "effect": {
+        "down_input": 748,
+        "gate_margin": 5632,
+        "keep": 866,
+        "outlier_count_actual_C": 12,
+        "outlier_count_old_ideal_Q8": 11,
+        "raw": 2048,
+        "skip": 866,
+        "up_margin": 5632
+      },
+      "original_FLOAT_or_Torch_Q8_execution": false,
+      "predicate": "A*512**2 >= 1537**2*D, same encoded raw/epsilon"
+    },
+    "device": {
+      "cuda_version": "13.0",
+      "name": "NVIDIA GeForce RTX 5070 Ti",
+      "torch_version": "2.11.0+cu130",
+      "total_bytes": 16611278848
+    },
+    "dimensions": {
+      "H": 2048,
+      "K": 5632,
+      "M": 1,
+      "O": 2048
+    },
+    "elapsed_seconds": 17.110229276819155,
+    "full_model_forward_calls": 0,
+    "harness_sha256": "4368262758e7739004f8a43b21db18fdd86563ec731638d1594599900c9905bf",
+    "independent_scalar_feedforward_evaluations": 2,
+    "independent_source_actual_review_sha256": "f89ea122663abcfe60fc8163757f3de389a8580379fd51431632eaa865e41bf0",
+    "layer": 0,
+    "minimum_host_available_bytes": 24924082176,
+    "original_result_sha256": "91e1cffbd246520e05bec4fa3f99b986bbccead1d515ace60cfd68a0aafd03ef",
+    "original_wait_sha256": "114cdb154f533434beef8622ea10cb8060a35713d88ab48fc5748853c328f005",
+    "output_exponent": -19,
+    "scalar_weight_exponents": {
+      "down": -7,
+      "gate": -8,
+      "up": -9
+    },
+    "selected_row": {
+      "activation_exponent": -7,
+      "dense_rank": 13,
+      "global_position": 27,
+      "normalization_journal_sha256": "7e8b7a8d86e9ffecea1f7166a270d5fb2d5509c2d8c5147f70d5207d98cbe42b",
+      "original_root": 22,
+      "phase": "POST"
+    },
+    "selection_reason": "Numeric boundary coverage: one known strict-three-sigma-only outlier, not an accuracy sample.",
+    "trained_feedforward_evaluations": 2,
+    "weight_code_sha256": {
+      "down": "1d9b2fa3071914b44f0b78aacb936cafdbc8c4758e6f2d3d8cbbfade9043258b",
+      "gate": "5981f6a67363b6fed5f615f6d507d7fa915bda0088ce3fdae3c70748e3e9ae05",
+      "up": "7b99c9ea82ef7fd94555cfde6de626add6413096868cb7bd604662b5b6ed2087"
+    }
+  },
+  "local_evidence_note": "Original payloads, source-isolated controls, full trace files, harness, GPU/host logs and full checkpoint references remain in .cache; no model weights or tool logs are included in this record.",
+  "method": {
+    "arithmetic": "Existing ties-away saturated gate/up, sampled/interpolated SiLU, single signed8 down-input plane and complete down projection.",
+    "input": "Actual signed8 codes, signed9 activation exponent, pre-gamma outlier mask and pre-gamma outlier-negative bits; no activation re-quantization or old rounded-mask reconstruction.",
+    "output_unit": "eDown + down_shift - 8 - up_gain_bits, one scalar exponent per output row.",
+    "phase": "Ordinary prefill only; protected-first and decode phases are explicitly rejected.",
+    "prediction": "Signed outlier-to-weight sign margins; skip iff outlier_count>0 AND gate_margin<=0 AND up_margin==0. Thresholds are local choices; the paper does not disclose their exact numeric values.",
+    "weight_format": "Complete per-tensor signed8 gate/up/down weight matrices with scalar exponents; stored zero weight codes have positive sign."
+  },
+  "notation": {
+    "CPU": "Central processing unit, used for the independent scalar calculation.",
+    "FLOAT": "Floating-point reference, the source of the prior attention-residual fixture.",
+    "GPU": "Graphics processing unit, used for complete signed-integer matrix operations.",
+    "POST": "Post-attention normalization phase.",
+    "Q8": "Fixed-point encoding with eight fractional bits.",
+    "SiLU": "Sigmoid linear unit, the gate activation function."
+  },
+  "qualification": {
+    "all22_layers_or_recurrence": false,
+    "complete_trained_software_row_diagnostic": true,
+    "full_model_accuracy": false,
+    "hardware_feedforward_compute": false,
+    "independent_trained_actual_peer_accepted": true,
+    "mapped_execution": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "small_CPU_arithmetic_regressions": true
+  },
+  "run_synthetic_tests": ".venv/bin/python -B -m unittest discover -s syn -p test_tri_oracle_code_input_reference_v1.py -v",
+  "schema": "tri_oracle_actual_code_feedforward_reference_v1",
+  "scope": "Software code-input arithmetic boundary only. Inputs are actual Xcelium normalization transfers from a FLOAT-derived attention-residual fixture; no integer attention or hardware feed-forward computation was performed.",
+  "source_sha256": {
+    "syn/test_tri_oracle_code_input_reference_v1.py": "23ef511ae87037f1becefbbc74230af92f3cd853ae6b71404ad8f8b05c682609",
+    "syn/tri_oracle_code_input_reference_v1.py": "46a4b0840ff53cec2bd8717b845b2b9fb04ff1de7522aaacfe25ff5499565d80"
+  },
+  "status": "12 synthetic CPU regressions passed; one complete trained layer0 row and an explicitly different-mask control each matched an independent scalar implementation and passed independent source/actual review.",
+  "synthetic_verification": {
+    "diagram": "Visible PDF architecture and all operation/axis source cross-checks retained locally under .cache.",
+    "independent_exhaustive_signed16_SiLU_inputs": 65536,
+    "independent_private_source_mutants_rejected": 6,
+    "independent_source_actual_review_sha256": "310a5eafcf30c789375a08f24e474c58ea817a79dd8065ae62e85535d7186fbb",
+    "original_green_exit_status": 0,
+    "original_green_tests": 12,
+    "original_test_first_exit_status": 1,
+    "original_test_first_missing_module_failures": 12
+  }
+}
