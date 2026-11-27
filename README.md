@@ -11,11 +11,11 @@ Verified with Cadence Xcelium:
 
 [Native chain](records/tri_oracle_native_projection_attention_result.json) · [All-query result](records/tri_oracle_all_query_native_attention.json) · [Testbench](verilog/live_native_projection_attention_frame/tb.sv)
 
-One host graphics processor run connected normalization, trained feed-forward computation, an integer residual policy and the next normalization for a saved ordinary row. All 36 tensor outputs matched independent references.
+A host graphics processor run completed the first trained layer: token merging retained 304 of 616 rows, followed by attention, feed-forward computation, integer residual joins and the next normalization. Independent checks covered every merge decision and head classification, selected projection and attention queries, and their complete feed-forward/residual suffixes. All 82 serialized output files were retained and independently hash-checked.
 
-All 88 trained attention matrices have signed 8-bit exports in 44 bundles. Rotary coefficients and encoder inputs were verified for 616 positions. Trained attention execution remains pending.
+All 88 trained attention matrices have signed 8-bit exports in 44 bundles. Rotary coefficients and encoder inputs were verified for 616 positions.
 
-The tests model normalized and projected data in external memory. Complete model and token merging integration, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
+The hardware tests model normalized and projected data in external memory. All-layer integration, token generation, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
 Compile exported bundles with `+incdir+<project-root>`. Data, libraries and logs stay in `.cache/`.
 
