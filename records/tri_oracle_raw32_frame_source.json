@@ -1,0 +1,67 @@
+{
+  "schema": "tri_oracle_raw32_frame_source_finite_unit_v1",
+  "scope": "Finite simulation of the memory-backed frame-metadata and row-source producer. The integrated compactor, shared store and full-frame handoff are outside this test.",
+  "source_sha256": {
+    "verilog/tri_oracle_fused_input_normalizer_wide_v1.sv": "c77050304eb235a0dd13f5c7a20a94266531680f46576b5fe5356087c0e62bed",
+    "verilog/tri_oracle_fused_input_sign_normalizer_wide_v1.sv": "b65ec5a2e6cd9985549fb1b9bda1ff0cf15e1f9b431f34f6b7f51da008936ea4",
+    "verilog/tri_oracle_memory_input_normalizer_wide_v1.sv": "fb08f9e6cbc97e1f5456d9185d67f97473d6242acc865ccdc88db53b6b18db3f",
+    "verilog/tri_oracle_raw32_frame_source_v1.sv": "fc2f2373e9ac5ad64d5d705ea9cdae01099e5c1f501cdcf31d4a1bf4fc0b285d",
+    "verilog/tri_oracle_raw32_gamma24_reader_v1.sv": "48f83fdde5970647fe0ecc14807c39e687a370423f94a7a4ecaabb3b45bec25a",
+    "verilog/tri_oracle_raw32_frame_source_tb.sv": "57cca39fe33b3a033ef87563659839ddaeabe652e8401773357fca636b233ef1"
+  },
+  "implementation": {
+    "row_features": 2048,
+    "maximum_rows": 576,
+    "row_normalizers": 1,
+    "metadata_bits_per_row": 128,
+    "metadata_validation": "Checks root, dense rank, original position, layer, epoch, raw exponent, physical epsilon and reserved bits before configuring the row normalizer.",
+    "storage": "One metadata packet plus the existing strip reader and output skid; no raw-frame tensor buffer.",
+    "fault_handling": "Retains offered transfers under backpressure, drains owned reads, quarantines ambiguous responses and preserves frame fault status through retirement."
+  },
+  "simulation": {
+    "simulator": "Cadence Xcelium 25.03 (xrun)",
+    "container": "cadence-ddi",
+    "accepted_native_attempt": 1,
+    "native_exit_status": 0,
+    "native_guard_wall_seconds": 100.76746491598897,
+    "host_numerical_protocol_check_seconds": 521.8473204539623,
+    "episodes_passed": 19,
+    "healthy_consecutive_rows_without_reset": 576,
+    "checked_feature_values": 1179648,
+    "positive_output_strips": 147456,
+    "positive_read_requests": 590400,
+    "positive_read_responses": 2065536,
+    "complete_cycle_records": 8906963,
+    "coverage": "Consecutive healthy rows; metadata identity, exponent, epsilon and burst errors; unsolicited responses; held transfers, aborts, coupled resets and post-reset reuse.",
+    "test_data": "Authenticated layer0 image input, learned gains and row metadata remain in project .cache. The testbench requires +FRAME_SOURCE_INPUT_ROOT, +FRAME_SOURCE_JOURNAL and +FRAME_SOURCE_CATALOG_SHA; input fixtures and journal are not included in Git.",
+    "public_bench_byte_identical_to_compiled_source": true
+  },
+  "verification": {
+    "finite576_row_source_unit_verified": true,
+    "critical_findings": 0,
+    "important_findings": 0,
+    "source_preparation_sha256": "5f3a0233a2770c54262bbfeb83f05b9d6330b1e3b640e42e224c85bc9cac69f0",
+    "raw_result_sha256": "b78a2366c9c5b49fec9ab3b1f136e819e851d99816f3886704d85c099729fa75",
+    "original_full_stream_check_sha256": "4e9f8e97e4a2d5a977ae410276b3f84042246903fcf0af89e10ae6e94543a719",
+    "complete_journal_sha256": "50a17b2375e76666be8640064befa578cbe86c8eb79c8f82f36aa1d001d7c47a",
+    "complete_journal_bytes": 7364999637,
+    "complete_checker_sha256": "3099ddf530b5bf77522a0837472ecf917cfbe0aeb4d5dd43d536baec24d7a419",
+    "independent_actual_review_sha256": "db2da82b64e92fb65329a9f470bae2b5cd628172110663859d29e2dd692cd980",
+    "root_fresh_acceptance_sha256": "64b7c29e86a523b9f8b96a2f6637302d0e867dd72e5984de74e83e73d5f560ad",
+    "freshly_rechecked_source_and_small_artifact_bindings": 227,
+    "receipt_correction": "Original run receipt used descriptive text instead of the missing-state enum. A disclosed sibling corrected only that field and explanatory metadata; original tool results, command, sources and numerical results were preserved."
+  },
+  "limitations": {
+    "integrated_frame_parent_verified": false,
+    "full_frame_verified": false,
+    "full_model_verified": false,
+    "trained_mapped_execution_verified": false,
+    "accuracy_verified": false,
+    "timing_closed": false,
+    "power_verified": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "universal_behavior_verified": false,
+    "technology": "The project targets a Taiwan Semiconductor Manufacturing Company 28-nanometer adaptation. This component simulation makes no silicon area, timing or energy claim."
+  }
+}
