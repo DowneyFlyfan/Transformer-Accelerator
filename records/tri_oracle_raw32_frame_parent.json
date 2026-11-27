@@ -1,0 +1,67 @@
+{
+  "accuracy_verified": false,
+  "case": "raw32_frame_parent_integrated_five_episode_v1",
+  "clean_checkout_replay_verified": false,
+  "compiled_source_identity": "Published parent and testbench bytes equal the respective sources compiled in the qualified local run.",
+  "evidence": {
+    "host_original_wait_sha256": "ade3a5afa72a83d8e3b8eaf3b13b705083ac708590b5b1be6b5739320e5c78e1",
+    "host_result_sha256": "57ce774a765ccc80705cdac4a8f2d32614c41df440456f3fd3e1e2e541863827",
+    "independent_actual_postseal_sha256": "47102f83fd8b8e45eb3b95ab948e92e6468c0450622033a83e28c0f4bd419de2",
+    "independent_actual_review_sha256": "a6b7b6319d81f558e78e605ae5d290326a166c089eec03d6842bec356f9a52c1",
+    "journal_sha256": "fab6d497fd069179acbcedc4cd884bf8ec074c041fcccd9afd5eb8a37a503b27",
+    "native_result_sha256": "c62f28f2d014dad70dfc6c9352361ad3f7eb0e11838ac9b0eb0a2f8e6c6aa2a8",
+    "native_root_wait_sha256": "c5c94fe649c240e57bcf3a573b262ba7f7cb8e0e313e16504669b646c12babf0",
+    "source_manifest_sha256": "6d2f1072ff32d036a5f4b6551e3e87bf1bdc0d833f9f3d96f94e18a574b62feb",
+    "source_review_sha256": "d00013acf034f0bcd321df77b54d39ce316e475fc4bd1a41b263eb69dbaf511e"
+  },
+  "fault_scope": [
+    "Completion acknowledgement concurrent with abort and later child fault without republishing completion.",
+    "Abort before physical acquisition, held metadata request and held vector request; owned traffic drains before reset.",
+    "Physical ownership remains protected through held completion and handoff, with attempted memory clobbers and rereads."
+  ],
+  "finite_integrated_parent_verified": true,
+  "finite_observations": {
+    "completed_projected_frames": 1,
+    "cycle_records": 13479674,
+    "dense_successor_rows": 264,
+    "episodes": 5,
+    "fresh_compact_survivors": 264,
+    "fresh_descriptor_acknowledgements": 264,
+    "fresh_external_lines": 8448,
+    "fresh_layer0_rows": 576,
+    "genuine_static_random_access_memory_cell_instances": 23,
+    "journal_bytes": 25451995334,
+    "mathematical_fresh_features": 1179648,
+    "merger_ranges": 5,
+    "model_layer_steps": 0,
+    "shared_metadata_store_instances": 1
+  },
+  "full_model_verified": false,
+  "host_complete_stream_verification_seconds": 1619.1746268109418,
+  "limitations": [
+    "Build and verification durations are host wall times, not accelerator latency or performance.",
+    "Inputs, vendor models, journal, witness and numerical checker remain local; public-path rerun and clean-checkout replay are unverified.",
+    "Finite integer-interface correctness does not establish general floating-point equivalence or model accuracy.",
+    "No predictor rebuild, full model, trained mapped execution, timing, power, paper matching or physical advancement is qualified."
+  ],
+  "mapped_execution_verified": false,
+  "native_build_elaboration_simulation_cleanup_seconds": 341.8518268489279,
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "power_verified": false,
+  "predictor_rebuild_verified": false,
+  "public_path_replay_verified": false,
+  "schema": "tri_oracle_raw32_frame_parent_v1",
+  "scope": "Finite register transfer level integration of streamed signed 32-bit raw and signed 24-bit gain normalization, token merging, compact writes and shared-store ownership.",
+  "source_sha256": {
+    "verilog/tri_oracle_raw32_frame_parent_tb.sv": "a2bde0fbe63e3262776c3deac45ccadec650cd92c6178a1eb9b5eadc3c763fd5",
+    "verilog/tri_oracle_raw32_frame_parent_v1.sv": "e57ecd591578d0c0cd5ff664b772df80c344ad59be62d5a18d99ce741a8ce86d"
+  },
+  "state": "independently_verified_finite_integrated_parent",
+  "successor_scope": "Dense transport replay of actual retained roots using the same layer-0 operands; no layer-1 or other model execution.",
+  "threshold": {
+    "meaning": "Finite diagnostic threshold; no paper calibration claim.",
+    "minimum_sign_matches": 1536
+  },
+  "timing_verified": false
+}
