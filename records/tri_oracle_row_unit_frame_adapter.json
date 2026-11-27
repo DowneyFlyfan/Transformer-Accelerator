@@ -1,0 +1,39 @@
+{
+  "schema": "tri_oracle_finite_row_unit_frame_adapter_v1",
+  "source": "verilog/tri_oracle_row_unit_frame_adapter_v1.sv",
+  "source_sha256": "5acc4ecc5dae9130275013d80e2e7c700d827f067a239c1326b0c0c3b7fcf7f1",
+  "testbench": "verilog/tri_oracle_row_unit_frame_adapter_tb.sv",
+  "testbench_sha256": "31cdabd3057b699547c272cc61f4e42650f55028f1ba09d3d19f5ba1aed12a13",
+  "simulator": "Cadence Xcelium 25.03-s001",
+  "native_cases": 13,
+  "additional_fault_regressions": 2,
+  "all_three_original_native_runs_exit_zero": true,
+  "native_evidence_index_sha256": "88cfa5e13f86c7568186f183e568e0e03f48118b27673af4e3ba26cf80492430",
+  "independent_source_and_actual_review_sha256": "65274d54540b564725bdfd65720935b45097c47a7f6ab331e21145f27bdd4bd9",
+  "finite_adapter_unit_verified": true,
+  "behavior": [
+    "Reads the acknowledged descriptor through a NextOwner request/response interface; no activation exponent is supplied through configuration.",
+    "Joins original root, input rank, kept rank and tag, requires post-attention normalization and ordinary-prefill context, and derives checked shifts from signed exponents and immutable bucket/fallback policy.",
+    "Drives the existing row-frame configuration interface and retains a maximum down-output unit plus its matching scale-table address; the saturated legacy residual writer stays disabled.",
+    "Retains one logical frame lease across sequential kept ranks; final release requires successful completion acceptance and output drainage.",
+    "Preserves offered requests, configurations and completions through faults. Within an active or concurrently accepted context, unassociated responses quarantine their channel and prohibit a new completion until coupled reset."
+  ],
+  "regressions": [
+    "Both unassociated descriptor-response and unsolicited compute-terminal bugs failed in the original hardware simulation before the fix and passed afterward.",
+    "Cases cover bucket/fallback selection, negative gain, shift63 and overflow admission, output exponent374, wrong normalization role, mismatched tags, skipped ranks, early release and stalled offers."
+  ],
+  "limits": [
+    "These simulations use synthetic descriptor and compute endpoints. The real frame parent, normalization source, trained assets and compute arrays were not executed by this case.",
+    "Source bytes were compiled from identical private copies. No clean-checkout replay or synthesis is claimed.",
+    "Resource limits were set by the recorded launch commands; native kernel limits were not independently probed.",
+    "Per-channel units require actual matching table decrements. An asset identifier alone does not authenticate payloads."
+  ],
+  "real_parent_integration_verified": false,
+  "trained_backend_verified": false,
+  "all22_integer_execution_verified": false,
+  "full_model_verified": false,
+  "mapped_execution_verified": false,
+  "accuracy_verified": false,
+  "paper_matching": false,
+  "physical_advancement_allowed": false
+}
