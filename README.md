@@ -13,11 +13,11 @@ Verified with Cadence Xcelium:
 
 A host graphics processor run completed one 22-layer integer-state prefill through final normalization, retaining 278 of 616 rows. Independent checks covered all cumulative merge maps, 704 head classifications and 66 sampled attention/feed-forward/residual chains. All 1,595 output files were retained and independently hash-checked. The threshold of 1,536 matching signs out of 2,048, upper-before-left priority and preserving previous merge groups are local choices.
 
-Its final state drove the trained model head; the selected token’s embedding produced a verified next decoder input.
+That state generated “Yes” and end-of-sequence through a verified 22-layer decode pass, matching one reference answer.
 
 All 88 trained attention matrices have signed 8-bit exports in 44 bundles. Rotary coefficients and encoder inputs were verified for 616 positions.
 
-The hardware tests model normalized and projected data in external memory. Complete hardware integration, token generation, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
+The hardware tests model normalized and projected data in external memory. Complete hardware integration, longer decoding, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
 Compile exported bundles with `+incdir+<project-root>`. Data, libraries and logs stay in `.cache/`.
 
