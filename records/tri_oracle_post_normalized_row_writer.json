@@ -1,0 +1,73 @@
+{
+  "cases": [
+    {
+      "case": "writer_green_default_v1",
+      "original_exit_status": 0,
+      "original_result_sha256": "d36297682e5c1df9f1c985de2fb6278452d9c63908c74d8004b4b8deb7bdba20",
+      "plus_argument": null,
+      "simulation_time_ns": 5840
+    },
+    {
+      "case": "writer_green_unknown_v1",
+      "original_exit_status": 0,
+      "original_result_sha256": "328c23640bc3c1a8d732c4356fedcb10198f2eb996b216afb55f1f6172431e90",
+      "plus_argument": "+UNKNOWN_RESPONSE",
+      "simulation_time_ns": 166
+    },
+    {
+      "case": "writer_green_abort_v1",
+      "original_exit_status": 0,
+      "original_result_sha256": "c5a5b5afa01f99731f8d6d386513db9016a3fd34dab65bd87b57030ce98487b3",
+      "plus_argument": "+ABORT_HELD_LINE",
+      "simulation_time_ns": 1486
+    },
+    {
+      "case": "writer_green_lost_owner_v1",
+      "original_exit_status": 0,
+      "original_result_sha256": "cbaa8a0095f6f90757da7a52f85240d2f02c63d6ede73d1538eca54bbe3dd3f2",
+      "plus_argument": "+LOST_OWNER_HELD_LINE",
+      "simulation_time_ns": 1486
+    }
+  ],
+  "fault_cases": [
+    "unassociated vector response quarantines new completion until coupled reset",
+    "abort preserves an already offered vector and waits for its actual acknowledgement and source quiet",
+    "loss of metadata ownership preserves the offered vector and drains it without success"
+  ],
+  "healthy_row": {
+    "accepted_code_strips": 256,
+    "acknowledged_512bit_lines": 32,
+    "acknowledged_descriptor_writes": 1,
+    "atomically_accepted_feature_tuples": 256,
+    "code_bytes": 2048,
+    "feature_archival_verified": false,
+    "feature_fields": [
+      "input-space outlier mask",
+      "full normalized sign",
+      "input-space outlier sign"
+    ]
+  },
+  "independent_source_and_actual_review_sha256": "13e9b244bfe688059c7144dbfc586077afaea4eb5dc95f5a9f3a47126fdc21bf",
+  "qualification": {
+    "connected_normalization": false,
+    "full_model_accuracy": false,
+    "memory_accounting": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "trained_mapped_execution": false
+  },
+  "schema": "tri_oracle_post_normalized_row_writer_finite_unit_v1",
+  "scope": "Primitive with registered synthetic vector, descriptor and auxiliary peers. No normalizer, real metadata store, feature DMA, merge fabric, SRAM macro, compute array or trained model is exercised.",
+  "source_sha256": {
+    "verilog/tri_oracle_post_normalized_row_writer_tb.sv": "8e7acd4ff78e76bcd99db95bcd4636f39072cfad5e2c2bdf34a8e4dae46f7252",
+    "verilog/tri_oracle_post_normalized_row_writer_v1.sv": "a0291be8f8a7f1d0894c615a14ea60839ffa3c6d515f38c2b1d247685ee50223"
+  },
+  "status": "four finite synthetic Xcelium cases passed and independently reviewed",
+  "test_first_red_result_sha256": "221e11aa532503c4b42029a4bde1e19745135d549e2fc54c1132313cbab87d26",
+  "tool": {
+    "container": "cadence-ddi",
+    "name": "Cadence Xcelium",
+    "top": "tri_oracle_post_normalized_row_writer_tb",
+    "version": "25.03-s001"
+  }
+}
