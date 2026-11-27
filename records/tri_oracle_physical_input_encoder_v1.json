@@ -1,0 +1,81 @@
+{
+  "accepted_scope": "Exact binary32-bit CPU physical input encoding plus one authentic prefix through CPU/GPU normalization and the direct normalization RTL computational block.",
+  "accuracy_verified": false,
+  "all22_integer_execution_verified": false,
+  "evidence_sha256": {
+    "CPU_source_actual_peer": "d24e1e1cc3e87c840745227b8ce4f700792caa5d044808ae2760f62882ec59d2",
+    "RTL_source_actual_pair_peer": "9c00393a6ce961ef847d8f94fb3b290efdb11272f8011dcd7b6b03c30a87d070",
+    "omit_original_receipt": "1c9e97e0bdd5a86083944329a700d1639b004876732a0d80761e670e99a13f61",
+    "original_inert_legacy_RED": "cbd05247c9c20a469422de0ebf046a034248c05f6ed11795548d2462c507a703",
+    "original_inert_physical_RED": "9926be74701ee6db931993d36571789b8052d00c330186f1395ef85a99805c51",
+    "positive_original_receipt": "a892760bf0027a8f2ea3119b1c61dfc532723d2b2b15c5ea1ef0b0c8258e0e76",
+    "software_prefix_join_actual_peer": "c81d02a39a5e08ccd4bf5a9a2bd40819aac2e74b47c97fc0dff842fa4c39bad9",
+    "source_witness_manifest": "3c7768f3ac08cfcc34ec8211c60140c136bf9f10dc14de6aacfaa3d0ad70ba53"
+  },
+  "full_model_verified": false,
+  "hardware_prefix_frame_mapping_verified": false,
+  "input_contract": "Original unsigned32 binary32-bit lists: raw[M,N], gain[N] or[M,N], N8..4096 in octets. Fresh integer raw32/gain24, per-row raw/gamma exponents and unsigned64 epsilon. No framework, float arithmetic or oracle in encoder implementation.",
+  "limitations": [
+    "Original prefix state is FLOAT-derived. This is a serialized computational join, not live integer attention or residual recurrence.",
+    "This row has zero outlier bits; no outlier efficacy claim. All three feature planes are nevertheless compared.",
+    "Current physical input encoding is CPU-only; the normalization arithmetic also ran on the GPU. GPU input encoding remains unimplemented.",
+    "No complete prefix-frame transport,616-token hardware mapping, all22-layer coupled execution, task accuracy, chip timing/power or physical placement result."
+  ],
+  "native_runs": {
+    "omit_input_exit_code": 2,
+    "omit_input_only_fatal": "PREFIX_NORMALIZER_EXPECTED_COMPLETE_OUTPUT cfg=1 stats=0 replay=0 outputs=0",
+    "omit_input_simulation_nanoseconds": 5180,
+    "positive_exit_code": 0,
+    "positive_simulation_nanoseconds": 31000,
+    "positive_tool_wall_seconds": 0.380050783,
+    "positive_xrun_reported_whole_seconds": 0,
+    "resource_scope": "Launch prescribed4GiB address space/240CPU seconds/300wall seconds. Runs were too short to sample actual xmsim limits; empty probes are retained.",
+    "tool": "Xcelium25.03-s001, single cadence-ddi container"
+  },
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "physical_policy": "Explicit encode_physical_input_bits floors the raw unit at-32 then rounds original bits directly, ties away. Normalization role/layer/gain identity remain caller metadata. Gamma encoding is unchanged and never floored. Legacy encode_input_bits PRE remains minimal and rejects unsupported epsilon; POST retains its existing numeric floor policy.",
+  "prefix": {
+    "actual_encoder_gamma24_sha256": "d32e7cc800708b3a39f4e1385abf0432c4fa1667b29f13e3aacb95da5389a67f",
+    "actual_encoder_raw_sha256": "f06a52a54b050de246babdad9a75a868dfaff345a4894a15bdeef8a06f28dc2a",
+    "epsilon_q16": 12089258196146291747,
+    "gamma_exponent": -23,
+    "global_position": 0,
+    "layer": 0,
+    "legacy_epsilon_representable": false,
+    "legacy_minimal_raw_unit": -37,
+    "norm_role": "input_layernorm",
+    "observed_activation_exponent": -8,
+    "observed_outliers": 0,
+    "physical_raw_unit": -32,
+    "source_tokens": 616,
+    "token_ID": 1
+  },
+  "public_copy_byte_exact_to_tested_sources": true,
+  "schema": "tri_oracle_physical_input_encoder_and_prefix_C_v1",
+  "source_sha256": {
+    "syn/tri_oracle_exact_c_normalizer/input_encoder_v1.py": "2d7ed5d73a3547432141de8f3e2cc32279288974406d236daa563f6984010f17",
+    "verilog/tri_oracle_fused_input_normalizer_wide_v1.sv": "c77050304eb235a0dd13f5c7a20a94266531680f46576b5fe5356087c0e62bed",
+    "verilog/tri_oracle_fused_input_sign_normalizer_wide_v1.sv": "b65ec5a2e6cd9985549fb1b9bda1ff0cf15e1f9b431f34f6b7f51da008936ea4",
+    "verilog/tri_oracle_prefix_normalizer_tb_v1.sv": "5afebb73e463be78defbde2d544ed2de77d65ed3fd09f835f32231ec93520ba9"
+  },
+  "verification": {
+    "CPU_GPU_feature_bytes": 768,
+    "CPU_GPU_normalization_codes": 2048,
+    "RTL_normalization_codes": 2048,
+    "RTL_output_packets": 256,
+    "RTL_replay_packets": 256,
+    "RTL_stats_packets": 256,
+    "RTL_three_plane_feature_bytes": 768,
+    "errors": 0,
+    "failures": 0,
+    "independent_legacy_oracle_comparisons": 1574,
+    "original_genuine_inert_RED_failures": 2,
+    "output_stalls": 4,
+    "physical_prefix_gain_codes": 2048,
+    "physical_prefix_raw_codes": 2048,
+    "sampled_output_hold_edges": 4,
+    "skips": 0,
+    "unchanged_CPU_contract_methods": 24
+  }
+}
