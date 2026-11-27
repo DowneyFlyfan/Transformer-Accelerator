@@ -1,0 +1,45 @@
+{
+  "random_access_memory_inventory_separate": {
+    "macros": 631,
+    "vendor_parameter_bytes": 414928
+  },
+  "candidate_census_sha256": "8ad9f4cbf4be0365f5c56d6b0177ee18b7c943001ef1523fc8d4e851cce75d06",
+  "candidate_original_fingerprint": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+  "complete_memory_accounting_verified": false,
+  "evidence": {
+    "driver_sha256": "6399b6f0bd4e0809e0236d4cebda16559b37dd761720cab53a4c419503e5ed1a",
+    "helper_sha256": "195e312480df18591b31f65cad315822264c9db3e9279e61ec61f5199cd36c84",
+    "independent_actual_review_sha256": "d4c4a530143aa43e41bef9f1b90028b38fcb8924263af1bd3a2470ed0753e89d",
+    "original_tool_wait_sha256": "97485356eeb7a05d243ef8f177ade8516971488caea74358574284688a8a1506",
+    "postseal_sha256": "1cf3a478e147d1764c6c196b4f3371a4377e20abdb9cec9ecbd29e80426df6ed",
+    "result_sha256": "f983bd32d6dae8ded708b5ef918af2759c1ea17e9e138eae4911d07a353afccd"
+  },
+  "full_model_verified": false,
+  "function_verified": false,
+  "known_declared_state_bits": 865390,
+  "known_zero_instances": 3238391,
+  "limitations": [
+    "Declared state is separate from byte-addressable random-access memory capacity; no combined memory total is qualified.",
+    "Equivalence between the saved candidate and current register transfer level source, and architectural memory roles, remain unverified.",
+    "The original unsupported-portless-header failure is retained; this result uses the independently reviewed correction."
+  ],
+  "models": {
+    "Liberty_corners": 3,
+    "crosscheck": "Limited explicit primitive state-output comparison",
+    "functional_Verilog_source_applied": true
+  },
+  "original_host_wall_seconds": 37.81864809105173,
+  "paper_matching": false,
+  "partial_declared_capacity_verified": true,
+  "physical_advancement_allowed": false,
+  "role_or_usage_verified": false,
+  "schema": "tri_oracle_placed_declared_standard_state_inventory_v1",
+  "scope": "Partial declared standard-cell state capacity for the independently accepted placed export.",
+  "standard_cell_instances": 4103985,
+  "standard_cell_masters": 437,
+  "unresolved_state_instances": {
+    "CKLHQD1BWP12T40P140": 1,
+    "CKLNQD1BWP12T40P140": 203
+  },
+  "unresolved_state_reason": "Unsupported Liberty state tables; not filled from functional Verilog."
+}
