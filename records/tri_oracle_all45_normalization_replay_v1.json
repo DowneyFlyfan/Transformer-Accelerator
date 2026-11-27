@@ -1,0 +1,87 @@
+{
+  "accepted_scope": "CPU physical input encoding and GPU normalization of45 frozen FLOAT-baseline input matrices. Each role has616rows/2048features. Independent arithmetic checks cover135sampledrows; no output feeds the next saved input.",
+  "accuracy_verified": false,
+  "all22_integer_execution_verified": false,
+  "case": {
+    "decoder_input_norms": 22,
+    "decoder_post_attention_norms": 22,
+    "encoded_raw_lanes": 56770560,
+    "features_per_row": 2048,
+    "final_norms": 1,
+    "gamma_exponents": [
+      -25,
+      -24,
+      -23,
+      -22,
+      -21
+    ],
+    "roles": 45,
+    "rows_per_role": 616,
+    "trained_gain_vectors_matched": 45
+  },
+  "checkpoint_revision": "70f28eb22f0265a8a41858f6aebc1928cedd53eb",
+  "checks": {
+    "GPU_batches": 45,
+    "activation_exponents_checked_signed9": 27720,
+    "all_rows_error_codes_checked_zero": 27720,
+    "all_rows_independently_compared": false,
+    "compared_sample_fields": [
+      "codes",
+      "outlier_mask",
+      "normalized_negative",
+      "outlier_negative",
+      "activation_exponent"
+    ],
+    "independent_critical_findings": 0,
+    "independent_important_findings": 0,
+    "independent_math_lanes": 276480,
+    "independent_math_original_positions": [
+      0,
+      5,
+      615
+    ],
+    "independent_math_rows": 135,
+    "outlier_bits": 398242,
+    "retained_output_bytes_including_metadata": 79417485,
+    "retained_output_files": 225
+  },
+  "cleanup": {
+    "generated_temporary_bytes_deleted": 455271840,
+    "prior_failed_attempt_logs_and_receipts_retained": true,
+    "retained_source_proof_output_bindings_reverified": 274
+  },
+  "evidence_sha256": {
+    "actor_result": "965aee5a4fbdeca99a610d5e7f7627cb5b968772ffccdf957038be9af0da2d36",
+    "independent_actual_peer": "f69c0955bcc7bcbae19accebb7a57de1e0066a6acd5a523ee974baebc0e8ed5b",
+    "original_terminal_receipt": "8abc9769fe594de37bd8d363cd61e73dff893ce3b92e2d24c5958c0a90fc21b7",
+    "source_checkpoint": "69665a373e08e278331580dd4e93b0db971c88862ece0eaeafa87ca9d908373e",
+    "source_peer": "9d9a5140d2492f3959d83afdda21f13f2cfa835265ba8d6104806f9deb18b50c",
+    "temporary_cleanup": "750904d98cbf955bf7aa9db2e1dfc9656652a91ffb66ed4b35433bc1fb9e6434"
+  },
+  "full_model_verified": false,
+  "hardware_verified": false,
+  "input_profile_sha256": "b7c37bb6e29697445f8dcc4cfd1546823259d1d1b1b355a0202a216d2b4236b2",
+  "paper_matching": false,
+  "physical_advancement_allowed": false,
+  "runtime": {
+    "GPU_peak_allocated_bytes": 10136064,
+    "actor_wall_seconds": 4.437464294023812,
+    "central_processor_encoding_workers": 20,
+    "encoding_pool_wall_seconds": 2.0510371171403676,
+    "exit_code": 0,
+    "guard_wall_seconds": 5.250401647994295,
+    "location": "Project host; existing exact CUDA binary; no model invocation or extension compilation.",
+    "resource_stop_reason": null,
+    "sampled_peak_process_group_resident_bytes": 2210119680,
+    "summed_normalizer_stream_intervals_ms": 15.405792012810707,
+    "timing_scope": "Software replay only. The stream intervals, process wall time and encoder time describe different operations; these are not chip latency or power measurements."
+  },
+  "schema": "tri_oracle_all45_saved_input_normalization_replay_v1",
+  "source_sha256": {
+    "records/tri_oracle_all45_norm_gain_binding_v1.json": "ab7f2fd278289521cbf7e23e9b3cfed3066d35cfafee037e2adb634db49d9feb",
+    "syn/tri_oracle_exact_c_normalizer/exact_normalizer_api_v1.py": "35b45a906d0f637fcd0f821e7b7056b8b2f0a4f87f2d3fe33b3664d618e4f5f4",
+    "syn/tri_oracle_exact_c_normalizer/exact_normalizer_bridge_v1.cpp": "792877e1b4618045c93f95cb0ed42206ec341912388356f6aade042b0e4c94aa",
+    "syn/tri_oracle_exact_c_normalizer/exact_normalizer_cuda_v2.cu": "9632f2a8fa676a47352aa6ae6aa5a7ce00001c0d1c25e095d95a61ecb10ae915",
+    "syn/tri_oracle_exact_c_normalizer/input_encoder_v1.py": "2d7ed5d73a3547432141de8f3e2cc32279288974406d236daa563f6984010f17"
+  }
+}
