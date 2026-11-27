@@ -11,7 +11,7 @@ Verified with Cadence Xcelium:
 
 [Native chain](records/tri_oracle_native_projection_attention_result.json) · [All-query result](records/tri_oracle_all_query_native_attention.json) · [Testbench](verilog/live_native_projection_attention_frame/tb.sv)
 
-A host graphics processor replay matched all 17 feed-forward reference tensors for one saved ordinary token with complete trained layer-zero weights.
+One host graphics processor run connected normalization, trained feed-forward computation, an integer residual policy and the next normalization for a saved ordinary row. All 36 tensor outputs matched independent references.
 
 All 88 trained attention matrices were exported into 44 bundles of signed 8-bit codes with separate weight scales. Trained attention execution remains pending.
 
