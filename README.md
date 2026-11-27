@@ -11,6 +11,8 @@ Verified with Cadence Xcelium:
 
 [Native chain](records/tri_oracle_native_projection_attention_result.json) · [All-query result](records/tri_oracle_all_query_native_attention.json) · [Testbench](verilog/live_native_projection_attention_frame/tb.sv)
 
+A host graphics processor replay matched all 17 feed-forward reference tensors for one saved ordinary token with complete trained layer-zero weights.
+
 The tests model normalized and projected data in external memory. Complete model and token merging integration, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
 Compile exported bundles with `+incdir+<project-root>`. Data, libraries and logs stay in `.cache/`.
