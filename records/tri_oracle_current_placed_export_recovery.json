@@ -1,0 +1,117 @@
+{
+  "schema": "tri_oracle_current_placement_export_recovery_v1",
+  "scope": "Read-only restoration of the preserved placed candidate, distinct recovered netlist/layout exports, and finite structural memory-capacity inventory. This does not qualify the current wide-input implementation inside that candidate.",
+  "technology": "Taiwan Semiconductor Manufacturing Company 28-nanometer adaptation",
+  "tools": {
+    "container": "cadence-ddi",
+    "native": "Cadence Innovus25.10",
+    "native_exit_status": 0,
+    "native_guard_wall_seconds": 140.6121002829168,
+    "host_census_wall_seconds": 27.169884579023346,
+    "native_requested_processors": 18
+  },
+  "preservation": {
+    "original_database_tree_sha256": "bc46f421d89462f5c0703fde06f61f3f59c0699622f8f2fb5f121d282b801fb8",
+    "materialized_copy_content_tree_sha256": "9cf3f0f43c51ff90f901e33d62ac201c1934f63b9f31f8cbf3fd32b847eb1af8",
+    "original_and_copy_unchanged_before_after": true,
+    "historical_missing_exports_not_overwritten": true,
+    "new_exports": {
+      "recovered.def": {
+        "bytes": 961542541,
+        "sha256": "b04cd82ffdb0c1a42a82af92b14ccd94ce43093f0a4afaf5c47f81827ef8b8d8"
+      },
+      "recovered.v": {
+        "bytes": 781178059,
+        "sha256": "17cc71bc844943ccd609e7f82b2c2e7e5a136d3374f34b8af884bcab62525994"
+      }
+    },
+    "large_exports_libraries_logs_in_git": false
+  },
+  "structural_observations": {
+    "top": "tri_oracle_chip_credited_request",
+    "module_definitions": 1036,
+    "netlist_leaf_instances": 4104616,
+    "layout_components": 4104616,
+    "standard_cells": 4103985,
+    "memory_macros": 631,
+    "ram_path_and_master_match_to_native_inventory": true,
+    "netlist_and_layout_per_master_counts_match": true,
+    "physical_only_layout_excess": 0,
+    "native_queried_ports": 484,
+    "port_shapes_independently_verified": false,
+    "standard_cell_instance_bijection_or_electrical_connectivity_verified": false,
+    "compiled_memory_bytes_from_vendor_parameters": 414928,
+    "memory_by_master": {
+      "TS5N28HPCPSVTA16X80M2FW": {
+        "instances": 4,
+        "vendor_parameter_bytes_per_instance": 160,
+        "vendor_parameter_total_bytes": 640
+      },
+      "TS5N28HPCPSVTA24X128M2FW": {
+        "instances": 16,
+        "vendor_parameter_bytes_per_instance": 384,
+        "vendor_parameter_total_bytes": 6144
+      },
+      "TS5N28HPCPSVTA32X128M2FW": {
+        "instances": 369,
+        "vendor_parameter_bytes_per_instance": 512,
+        "vendor_parameter_total_bytes": 188928
+      },
+      "TS5N28HPCPSVTA512X64M4F": {
+        "instances": 41,
+        "vendor_parameter_bytes_per_instance": 4096,
+        "vendor_parameter_total_bytes": 167936
+      },
+      "TS5N28HPCPSVTA8X80M2FW": {
+        "instances": 1,
+        "vendor_parameter_bytes_per_instance": 80,
+        "vendor_parameter_total_bytes": 80
+      },
+      "TS6N28HPCPSVTA16X128M2F": {
+        "instances": 200,
+        "vendor_parameter_bytes_per_instance": 256,
+        "vendor_parameter_total_bytes": 51200
+      }
+    }
+  },
+  "verification": {
+    "finite_checkpoint_export_verified": true,
+    "finite_structural_census_verified": true,
+    "vendor_parameter_capacity_inventory_verified": true,
+    "critical_findings": 0,
+    "important_findings": 0,
+    "prepared_sources_rechecked": 117,
+    "native_artifacts_fully_hashed_before_after": 19,
+    "host_source_metadata_bindings_unchanged_before_after": 148,
+    "root_fresh_source_metadata_bindings": 164,
+    "source_preparation_sha256": "b3a1e8c4743cbfa6537edaf91641fc905debb00e939ee320a54310b0134f449b",
+    "native_raw_result_sha256": "5eccf6849cdb20f3af7a6a67aa80db5dec689bc2c4683596ea095f327bc63a22",
+    "host_census_result_sha256": "8ad9f4cbf4be0365f5c56d6b0177ee18b7c943001ef1523fc8d4e851cce75d06",
+    "independent_actual_review_sha256": "ff4bf70fbc8ddbde4413b7b493d85b39dc40b93bb06544783730377b8e9cb0f6",
+    "root_fresh_acceptance_sha256": "918de248db7ae6f5ebfe28bd5261c096fe5715bc1ebd3eba9dfaead296401c96",
+    "preserved_failed_host_review": "The first host review completed its census but failed its final temporary-environment check. Its exit-one record is retained. A reviewed wrapper correction passed a separate host replay; no native rerun or census-criterion change occurred."
+  },
+  "paper_memory_comparison": {
+    "405binary_KiB_bytes": 414720,
+    "405decimal_KB_bytes": 405000,
+    "capacity_matches_either_exact_candidate_convention": false,
+    "difference_bytes": 9928,
+    "difference_from_405binary_KiB_bytes": 208,
+    "paper_byte_convention_confirmed": false
+  },
+  "limitations": {
+    "candidate_bound_new_wide_source_integration_verified": false,
+    "architecture_verified": false,
+    "complete_memory_accounting_verified": false,
+    "function_verified": false,
+    "full_model_verified": false,
+    "trained_mapped_execution_verified": false,
+    "accuracy_verified": false,
+    "timing_closed": false,
+    "power_verified": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "capacity_scope": "Physical compiled-memory capacity only. Register state, memory roles, access behavior and full-model mapping still require separate proof.",
+    "physical_scope": "No clock distribution or routing was performed during this recovery."
+  }
+}
