@@ -1,0 +1,83 @@
+{
+  "case_count": 26,
+  "case_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    30,
+    31,
+    32,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "independent_source_and_actual_review_sha256": "1a273ac1f5c7ca7bd1bd11cba74e2c9a7557a63d01fbd90ec0a8556177635356",
+  "original_exit_status": 0,
+  "original_result_sha256": "c34aa11db4ec534e1f3fb305b974171fb8e71beaeacd30412fb88690de4f6ec6",
+  "packing": {
+    "bytes_per_row": 768,
+    "external_lines_per_row": 12,
+    "layout_scope": "Project interface encoding; not a claim that the paper discloses this external byte layout.",
+    "max_live_payload_bits": 528,
+    "payload_register_bits": 1024,
+    "scalar_beat_bits": 64,
+    "scalar_beats_per_line": 8,
+    "strip_bytes_low_to_high": [
+      "input-space outlier mask",
+      "full normalized sign",
+      "input-space outlier sign"
+    ],
+    "strip_count": 256
+  },
+  "qualification": {
+    "connected_normalization": false,
+    "full_frame_feature_archive": false,
+    "full_model_accuracy": false,
+    "paper_matching": false,
+    "physical_advancement_allowed": false,
+    "trained_execution": false
+  },
+  "schema": "tri_oracle_post_feature_store_finite_unit_v1",
+  "scope": "Synthetic feature packets and registered external-memory responses through the real shared write mux. No real normalizer, memory macro, whole-frame feature archive, compute array or trained model is exercised.",
+  "simulation_time_ns": 43930,
+  "simulator_compile_warning_or_error": false,
+  "source_sha256": {
+    "verilog/tri_oracle_external_write_mux.sv": "6cb488a2e7822d202cbf08a0d55b9c216dac0d453b3dcd8f4dd08e11b458bedf",
+    "verilog/tri_oracle_post_feature_store_tb.sv": "3154e5309a217f6d61eddad445b88d2825a32bee160ee0ee551be88647013889",
+    "verilog/tri_oracle_post_feature_store_v1.sv": "a97db52d361498d818f55e892e7aac725462d93731a5cbc1dbd385b24685d603"
+  },
+  "status": "26 finite synthetic Xcelium scenarios passed and independently reviewed",
+  "test_first_red_result_sha256": "8802cc4a9089fad13dbc83226c12c0f5cb7b79d2116e4d447d0f2dcfbaa33357",
+  "tool": {
+    "container": "cadence-ddi",
+    "name": "Cadence Xcelium",
+    "top": "tri_oracle_post_feature_store_tb",
+    "version": "25.03-s001"
+  },
+  "verified_behaviors": [
+    "exact byte packing across512-bit line boundaries through the actual external write mux",
+    "completion requires256accepted strips,12actual responses and producer quiet",
+    "three feature roles remain distinct; signed9 exponent and full tuple identities are checked",
+    "65-bit whole-allocation endpoints, nonoverlap and selected-row bounds; padded allocations allowed",
+    "malformed tuple faults before any first-line write",
+    "offered request/data/status survive faults; known owned work and retained upstream tuple drain",
+    "unassociated responses quarantine new completion until coupled reset"
+  ]
+}
