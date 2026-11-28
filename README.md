@@ -7,6 +7,7 @@ Verified with Cadence Xcelium:
 - Projection and attention checked all 575,488 context values across 281 queries and 32 heads, including causal token sizes and memory transactions.
 - One trained feed-forward row completed through residual storage and the next normalization stage on 20 compute arrays. All 176 prediction groups, 5,632 intermediate values, 2,048 outputs, 2,048 residual values and 2,048 normalized codes matched independent references. All 257 storage acknowledgments completed while the parent retained its 264-row frame.
 - All 88 separate protocol controls passed, including producer completion before consumer drain.
+- A layer-2 row verified 1,512 predicted skips. Observed gate and up matrix weight reads were 8,437,760 bytes each; the calculated, unexecuted all-KEEP reference is 11,534,336 bytes each.
 
 [Native testbench](verilog/tri_oracle_raw32_residual_commit_tb.sv) · [Protocol controls](verilog/tri_oracle_raw32_residual_protocol_tb.sv) · [Numerical checker](syn/check_tri_oracle_raw32_residual_native.py)
 
