@@ -10,6 +10,7 @@ Verified with Cadence Xcelium:
 - Shared-normalizer handoff retained the 264-row frame and memory lease. Separate component tests passed 88 protocol controls.
 - The [reset-retention variant](verilog/native_persistent_reset/primitive_retention_tb_v1.sv) preserved merge, sign and token-size state across compute resets in 20 arrays. [Compile separately](syn/tri_oracle_persistent_reset_sources.json).
 - The [batch adapter](verilog/retained_frame_ff/row_unit_batch_adapter_component_tb_v1.sv) passed 20 component scenarios: 16-token batches, an 8-token tail, stalls and faults. Its memory endpoints are mocked. [Compile separately](syn/tri_oracle_FF_batch_adapter_sources.json).
+- The [calibrated residual controller](verilog/retained_frame_ff/tri_oracle_raw32_residual_commit_frame_v4.sv) passed 20 [configuration tests](syn/run_tri_oracle_real_C_cfg_idle_component_v1.py): two first-row checks and 18 injected faults. Feed-forward data, memory and ownership use test models.
 
 [Native testbench](verilog/tri_oracle_raw32_residual_commit_tb.sv) · [Protocol controls](verilog/tri_oracle_raw32_residual_protocol_tb.sv) · [Numerical checker](syn/check_tri_oracle_raw32_residual_native.py)
 

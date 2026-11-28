@@ -1,0 +1,125 @@
+{
+  "schema": "tri_oracle_real_C_cfg_idle_component_sources_v1",
+  "tool": "Cadence Xcelium25.03 ordinary xrun",
+  "container": "cadence-ddi",
+  "container_image": "cadence-ddi:25.10.000-patched",
+  "ordered_common_sources": [
+    {
+      "path": "verilog/retained_frame_ff/raw32_residual_packages_v1.sv",
+      "sha256": "b4a0763f8a8d12bd8b596be2bd02a1b81bfde87c9e26d62184638365d7a3d976",
+      "bytes": 15697
+    },
+    {
+      "path": "verilog/retained_frame_ff/tri_oracle_FF_frame_types_v2.sv",
+      "sha256": "e1f87364ecc584fb58fc4e45781bbbcd6b9f7ee2877c824e9af538d3a20626bf",
+      "bytes": 1544
+    },
+    {
+      "path": "verilog/retained_frame_ff/tri_oracle_FF_registered_poison_v1.sv",
+      "sha256": "02e71b6666335da5b9ef62bbce1d12808987949a1b78250f6ae9bec01992ebc1",
+      "bytes": 1406
+    },
+    {
+      "path": "verilog/retained_frame_ff/calibrated_raw32_recode_math_v1.sv",
+      "sha256": "c62d479ed67e3e51b2f7ca140e2c0ac3095d9257b5faa3f12df3ea864ee558cd",
+      "bytes": 2057
+    },
+    {
+      "path": "verilog/tri_oracle_calibrated_raw32_lane_v1.sv",
+      "sha256": "da5c759f4ae14f825640567e89fe7c22310babf2b0d0bf62b199efb795061581",
+      "bytes": 3331
+    },
+    {
+      "path": "verilog/tri_oracle_fused_input_normalizer_wide_v1.sv",
+      "sha256": "c77050304eb235a0dd13f5c7a20a94266531680f46576b5fe5356087c0e62bed",
+      "bytes": 9988
+    },
+    {
+      "path": "verilog/tri_oracle_fused_input_sign_normalizer_wide_v1.sv",
+      "sha256": "b65ec5a2e6cd9985549fb1b9bda1ff0cf15e1f9b431f34f6b7f51da008936ea4",
+      "bytes": 1763
+    },
+    {
+      "path": "verilog/tri_oracle_raw32_gamma24_reader_v1.sv",
+      "sha256": "48f83fdde5970647fe0ecc14807c39e687a370423f94a7a4ecaabb3b45bec25a",
+      "bytes": 7818
+    },
+    {
+      "path": "verilog/tri_oracle_memory_input_normalizer_wide_v1.sv",
+      "sha256": "fb08f9e6cbc97e1f5456d9185d67f97473d6242acc865ccdc88db53b6b18db3f",
+      "bytes": 8902
+    },
+    {
+      "path": "verilog/tri_oracle_raw32_frame_source_v1.sv",
+      "sha256": "fc2f2373e9ac5ad64d5d705ea9cdae01099e5c1f501cdcf31d4a1bf4fc0b285d",
+      "bytes": 15498
+    },
+    {
+      "path": "verilog/retained_frame_ff/tri_oracle_raw32_residual_commit_frame_v4.sv",
+      "sha256": "4b023ce098f447366f198e796a7b9badfc316389f71e48e2ad252ea204afada5",
+      "bytes": 42598
+    }
+  ],
+  "case_groups": [
+    {
+      "case_ids": [
+        1,
+        2
+      ],
+      "top": "real_C_cfg_idle_boundary_tb_v3",
+      "source": {
+        "path": "verilog/retained_frame_ff/real_C_cfg_idle_boundary_tb_v3.sv",
+        "sha256": "7b47d6acfa987cdd625ff8f6cd4928ff9d47d8420a0af30969bd04a1e489038a",
+        "bytes": 37906
+      }
+    },
+    {
+      "case_ids": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "top": "real_C_cfg_idle_negative_tb_v1",
+      "source": {
+        "path": "verilog/retained_frame_ff/real_C_cfg_idle_negative_tb_v1.sv",
+        "sha256": "0baf0d6d21def5ab24e3833f66efdcd6055132a182c0ac7f1362b07eee4de10e",
+        "bytes": 44762
+      }
+    }
+  ],
+  "per_case_source_count": 12,
+  "unique_source_count": 13,
+  "native_argv_count": 20,
+  "ordinary_options": [
+    "-64bit",
+    "-sv"
+  ],
+  "runtime_payload_files": [],
+  "vendor_models_required": false,
+  "contains_run_results": false,
+  "compile_using_explicit_selected_list": true,
+  "compile_separately_from": [
+    "verilog/tri_oracle_raw32_residual_commit_v1.sv"
+  ],
+  "scope": "Real raw32 source component with264-row warmup, retained counter/configuration boundary, one corrected target row in healthy cases1/2, and18 injected consumer-link guard cases3..20. Feed-forward DOWN0 data, external memories and routing/owner endpoints are explicit synthetic fixtures.",
+  "limitations": [
+    "No physical20-array feed-forward fabric, trained matrix execution, attention/POST acknowledged origin or real store lease is instantiated.",
+    "Healthy target execution stops at1of264 with held rowDone; no full264target retirement/frame scheduling proof.",
+    "No whole-chip, mapped implementation, accuracy, performance, energy or paper-matching claim."
+  ]
+}
