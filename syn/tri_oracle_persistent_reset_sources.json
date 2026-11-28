@@ -1,0 +1,184 @@
+{
+  "schema": "tri_oracle_persistent_reset_primitive_sources_v1",
+  "top": "tri_oracle_persistent_reset_retention_tb_v1",
+  "scope": "Compile this fabric variant separately from the original fabric sources. Quiet compute reset preserves persistent merge/sign/Size state; global epoch reset invalidates it. No owned reset-X fault, real feed-forward FLUSH or whole-chip qualification.",
+  "compute_reset": "rst_n",
+  "persistent_epoch_reset": "persistent_rst_n",
+  "source_order": [
+    {
+      "slot": 0,
+      "sha256": "cac22ed5ac6347fb495886325cb5854a082ce2dc0edb572b295ff7761d62f2bf",
+      "kind": "project_source",
+      "path": "verilog/tri_oracle_wac_softmax_types.sv"
+    },
+    {
+      "slot": 1,
+      "sha256": "ccf723afb843be99519a3cb5fe2cf8c5d46ebce84a62dd1246f0f7bf397237a7",
+      "kind": "local_memory_model",
+      "basename": "ts5n28hpcpsvta16x80m2fw_130a_tt1v25c.v"
+    },
+    {
+      "slot": 2,
+      "sha256": "35ea57a9268155751bd00d7087fd068fb1d5d9c575e2e52f61780c725a7acd54",
+      "kind": "local_memory_model",
+      "basename": "ts5n28hpcpsvta24x128m2fw_130a_tt1v25c.v"
+    },
+    {
+      "slot": 3,
+      "sha256": "0b623ed1e151226aaca8bbe3c243a94d12b654ae5a5d7477ec181fa6f935dae1",
+      "kind": "local_memory_model",
+      "basename": "ts5n28hpcpsvta32x128m2fw_130a_tt1v25c.v"
+    },
+    {
+      "slot": 4,
+      "sha256": "76ecb4e15b3b132b073e4604ef05565524a5b80820e5396462ac91d44b098e1a",
+      "kind": "local_memory_model",
+      "basename": "ts5n28hpcpsvta512x64m4f_130a_tt1v25c.v"
+    },
+    {
+      "slot": 5,
+      "sha256": "f23baa3b8e4b7e078a89899ff0e2194dd9022dc0dc7d6fbed71c8c98f21b5e41",
+      "kind": "local_memory_model",
+      "basename": "ts5n28hpcpsvta8x80m2fw_130a_tt1v25c.v"
+    },
+    {
+      "slot": 6,
+      "sha256": "80450a3b83a12bf99c98cb6b47d56dcd41ac4895cb1f14257081a3cf31b5b450",
+      "kind": "local_memory_model",
+      "basename": "ts6n28hpcpsvta16x128m2f_130a_tt1v25c.v"
+    },
+    {
+      "slot": 7,
+      "sha256": "7672b35c7895bb37266598e4a1a78ac71c5102539af9172b426a2a888a1d9db9",
+      "kind": "project_source",
+      "path": "verilog/native_shared_array/07_tri_oracle_cluster_token_sizes_with_layer_ports.sv"
+    },
+    {
+      "slot": 8,
+      "sha256": "e7ee7995d125d078e0c3541d234f16c55c51a9a4b98fae7cd3e68dd3a04bdc33",
+      "kind": "project_source",
+      "path": "verilog/native_shared_array/08_tri_oracle_local_merge_fabric.sv"
+    },
+    {
+      "slot": 12,
+      "sha256": "4d5722451a8621972aac565787469d0817bc812bc9c24a0fc5fa2f85d6cdc46f",
+      "kind": "project_source",
+      "path": "verilog/tri_oracle_attention_head_classifier410.sv"
+    },
+    {
+      "slot": 27,
+      "sha256": "c207a2961efe5d6ff1499e230e7904dd0e5d9fabaae32932a8be581a6c5b6d77",
+      "kind": "project_source",
+      "path": "verilog/native_persistent_reset/27_tri_oracle_compute_fabric.sv"
+    },
+    {
+      "slot": 28,
+      "sha256": "e354436cdf7948d899eebf8ec4bd432cee8fab0ff9f498fb5e4f882d8d233b8b",
+      "kind": "project_source",
+      "path": "verilog/native_shared_array/28_tri_oracle_cumulative_token_merger423.sv"
+    },
+    {
+      "slot": 29,
+      "sha256": "011e6e804bd16a1351ff1b300a13bbd22ebfb92ecdbafb587e7d3210f5421cdf",
+      "kind": "project_source",
+      "path": "verilog/tri_oracle_pe_array.sv"
+    },
+    {
+      "slot": 30,
+      "sha256": "cd4759a2fc2b892849570ecf7bcf4a96d788b4687f26362bbbc34784426b3752",
+      "kind": "project_source",
+      "path": "verilog/native_shared_array/30_tri_oracle_wac_softmax.sv"
+    },
+    {
+      "slot": 36,
+      "sha256": "a8dc25ff591c9ea9f3dfae5b2825694051914a5e7a9a78c5378e3e1ce5e73036",
+      "kind": "project_source",
+      "path": "verilog/tri_oracle_cluster_return_owner.sv"
+    },
+    {
+      "slot": 37,
+      "sha256": "c872af5baed6e3cfe078860e096923d05d56110e482e8620bc864f965ad4bb65",
+      "kind": "project_source",
+      "path": "verilog/native_persistent_reset/37_cluster.sv"
+    },
+    {
+      "slot": 38,
+      "sha256": "9026597d3d6f623ba5fa0e9f7fb3324918151408da0299c7d5de9e202887e924",
+      "kind": "project_source",
+      "path": "verilog/native_shared_array/38_core.sv"
+    },
+    {
+      "slot": 39,
+      "sha256": "ea9f70a6a507c65379e0ad4df15e1170947c5065ed09a54903d6feff5e3d48f8",
+      "kind": "project_source",
+      "path": "verilog/tri_oracle_strip_predictor.sv"
+    },
+    {
+      "slot": 42,
+      "sha256": "fa41a46145258c9ac3014cbdb39e419de0aa0fe59e82d80661a31ab713858498",
+      "kind": "project_source",
+      "path": "verilog/native_persistent_reset/42_wrappers.sv"
+    },
+    {
+      "slot": 43,
+      "sha256": "2576e7af6ce0d3b6f14a1e4f97aebb4ae915e96abd504125512100b615b9d9d7",
+      "kind": "project_source",
+      "path": "verilog/native_persistent_reset/43_cluster_adapter.sv"
+    },
+    {
+      "slot": 44,
+      "sha256": "4099968eb5c3a4bbf4a5046647d743c81c442d82aa0fd48c76483ed9279311b3",
+      "kind": "project_source",
+      "path": "verilog/tri_oracle_wac_imem_owner.sv"
+    },
+    {
+      "slot": 45,
+      "sha256": "0986db9b51308973eb23ff274f07063182656dab8b763098c3b7062099a97fa0",
+      "kind": "project_source",
+      "path": "verilog/tri_oracle_wac_softmax_imem.sv"
+    },
+    {
+      "slot": 87,
+      "sha256": "cc0ad3cca5dddf1271fed2c1d95e8424b9f08ce4ee4ab316b082cc7690194950",
+      "kind": "project_source",
+      "path": "verilog/native_persistent_reset/primitive_retention_tb_v1.sv"
+    }
+  ],
+  "xrun_flags": [
+    "-64bit",
+    "-sv",
+    "-nospecify",
+    "-notimingchecks",
+    "-sequdp_nba_delay",
+    "-xmerror",
+    "RECOME",
+    "-mccodegen",
+    "-mcmaxcores",
+    "20",
+    "+define+UNIT_DELAY",
+    "+define+TRI_ORACLE_SRAM_CLUSTER_BIND_PUBLIC",
+    "-top",
+    "tri_oracle_persistent_reset_retention_tb_v1",
+    "-timescale",
+    "1ns/1ps"
+  ],
+  "expected_memory_macros": 621,
+  "expected_memory_roles": [
+    360,
+    40,
+    200,
+    16,
+    4,
+    1
+  ],
+  "expected_processing_arrays": 20,
+  "native_geometry_logical_bytes": 406224,
+  "proof_origin": {
+    "original_source_checkpoint_sha256": "0850586aef4f01b1d94333880ead17734544636485ec4b99ae65ca24dceee27b",
+    "original_testbench_sha256": "cc0ad3cca5dddf1271fed2c1d95e8424b9f08ce4ee4ab316b082cc7690194950",
+    "independent_actual_review_sha256": "6b9f2e521d456e5419dbbca78979cd6a2a485f5a17cb87a1968865272cb099e4",
+    "original_native_exit": 0,
+    "original_wall_seconds": 16.03332441393286
+  },
+  "paper_performance_verified": false
+}

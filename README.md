@@ -9,6 +9,7 @@ Verified with Cadence Xcelium:
 - All 88 separate protocol controls passed, including producer completion before consumer drain.
 - A layer-2 row verified 1,512 predicted skips. Observed gate and up matrix weight reads were 8,437,760 bytes each; the calculated, unexecuted all-KEEP reference is 11,534,336 bytes each.
 - Shared-normalizer handoff preserved the 264-row frame and physical memory lease. Controls passed for early requests, released ownership and an unknown lease signal.
+- The [reset-retention variant](verilog/native_persistent_reset/primitive_retention_tb_v1.sv) preserved merge/sign/token-size state across compute resets in 20 arrays; epoch reset invalidated it. [Compile separately](syn/tri_oracle_persistent_reset_sources.json).
 
 [Native testbench](verilog/tri_oracle_raw32_residual_commit_tb.sv) · [Protocol controls](verilog/tri_oracle_raw32_residual_protocol_tb.sv) · [Numerical checker](syn/check_tri_oracle_raw32_residual_native.py)
 
