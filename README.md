@@ -1,30 +1,17 @@
 # Tri-Oracle accelerator reproduction
 
-SystemVerilog reproduction of [Tri-Oracle](https://doi.org/10.1109/ISSCC49663.2026.11408987), targeting Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+.
+SystemVerilog reproduction of [Tri-Oracle](https://doi.org/10.1109/ISSCC49663.2026.11408987), adapting the design to Taiwan Semiconductor Manufacturing Company (TSMC) 28HPC+.
 
 Verified with Cadence Xcelium:
 
-- Native normalization checked all 575,488 values for 281 tokens.
-- Projection checked 719,360 dot products and 11,240 acknowledged query, key and value vectors.
-- Those generated vectors fed head prediction: all 473,760 trained scores matched. The predicted mask then drove attention on the same 20 compute arrays; all 2,048 context values for query 280 matched independent integer arithmetic.
-- A separate run restored those native vectors and verified all 575,488 context values across 281 query positions and 32 heads, including causal token sizes and memory transactions.
+- Projection and attention checked all 575,488 context values across 281 queries and 32 heads, including causal token sizes and memory transactions.
+- One trained feed-forward row completed through residual storage and the next normalization stage on 20 compute arrays. All 176 prediction groups, 5,632 intermediate values, 2,048 outputs, 2,048 residual values and 2,048 normalized codes matched independent references. All 257 storage acknowledgments completed while the parent retained its 264-row frame.
+- All 88 separate protocol controls passed, including producer completion before consumer drain.
 
-[Native chain](records/tri_oracle_native_projection_attention_result.json) · [All-query result](records/tri_oracle_all_query_native_attention.json) · [Testbench](verilog/live_native_projection_attention_frame/tb.sv)
+[Native testbench](verilog/tri_oracle_raw32_residual_commit_tb.sv) · [Protocol controls](verilog/tri_oracle_raw32_residual_protocol_tb.sv) · [Numerical checker](syn/check_tri_oracle_raw32_residual_native.py)
 
-A host graphics processor run completed one 22-layer integer-state prefill through final normalization, retaining 278 of 616 rows. Independent checks covered all cumulative merge maps, 704 head classifications and 66 sampled attention/feed-forward/residual chains. All 1,595 output files were retained and independently hash-checked. The threshold of 1,536 matching signs out of 2,048, upper-before-left priority and preserving previous merge groups are local choices.
+A host graphics-processor run completed one 22-layer integer-state prefill, retaining 278 of 616 rows. Independent checks covered cumulative merge maps, 704 head classifications and 66 sampled arithmetic chains. That state generated “Yes” and end-of-sequence through one verified decode pass, matching one reference answer. The merge threshold and tie-breaking policy are local choices.
 
-That state generated “Yes” and end-of-sequence through a verified 22-layer decode pass, matching one reference answer.
+The hardware tests replay prior normalized data. Continuous hardware integration, longer decoding, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
 
-All 88 trained attention matrices have signed 8-bit exports in 44 bundles. Rotary coefficients and encoder inputs were verified for 616 positions.
-
-The hardware tests model normalized and projected data in external memory. Complete hardware integration, longer decoding, task accuracy, current mapping and routed timing remain unfinished. Paper performance is unverified.
-
-Compile exported bundles with `+incdir+<project-root>`. Data, libraries and logs stay in `.cache/`.
-
-Run unit regressions in the existing container:
-
-```sh
-docker exec -w "$PWD" cadence-ddi bash syn/run_tri_oracle_simulation.sh
-```
-
-All 28 unit simulations passed. The full regression currently exits at 12 unused-port lint warnings in the unchanged default compute fabric.
+Data, memory libraries, build outputs, logs and verification records stay in `.cache/`. Memory models and trained weights must be supplied locally.
