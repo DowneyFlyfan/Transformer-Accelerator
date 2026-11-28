@@ -16,14 +16,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--work", type=Path, required=True, help="New run directory under .cache")
     parser.add_argument("--fixture", type=Path, required=True)
+    parser.add_argument("--late", type=Path, help="Additional 281-key trained query fixture")
     args = parser.parse_args()
     run = args.work.resolve()
     fixture = args.fixture.resolve(strict=True)
     if run.exists() or not run.is_relative_to(ROOT / ".cache"):
         raise SystemExit("Use a new run directory under the project cache")
-    reference = json.loads((fixture / "reference.json").read_text())
-    for name, expected in reference["artifact_sha256"].items():
-        assert hashlib.sha256((fixture / name).read_bytes()).hexdigest() == expected, name
+    def verify_fixture(directory):
+        reference = json.loads((directory / "reference.json").read_text())
+        for name, expected in reference["artifact_sha256"].items():
+            assert hashlib.sha256((directory / name).read_bytes()).hexdigest() == expected, name
+        return reference["artifact_sha256"]
+
+    fixture_digests = verify_fixture(fixture)
+    late = args.late.resolve(strict=True) if args.late else None
+    late_digests = verify_fixture(late) if late else None
 
     # Share the existing 20-core hierarchy, six memory models and compiler defines.
     # Stop before the all-query frame adds its own stimulus and top-level instance.
@@ -46,7 +53,11 @@ def main():
         env[key] = str(scratch)
     argv = ["/opt/cadence/bin/xrun", "-64bit", "-sv", "-notimingchecks", "-xmerror", "RECOME",
             "-incdir", str(ROOT), "-top", TOP, str(run/"sources.sv"), f"+TRAINED={fixture}"]
-    (run/"command.json").write_text(json.dumps(dict(argv=argv, sources=files, fixture_sha256=reference["artifact_sha256"]), indent=2)+"\n")
+    command = dict(argv=argv, sources=files, fixture_sha256=fixture_digests)
+    if late:
+        argv.append(f"+LATE={late}")
+        command["late_fixture_sha256"] = late_digests
+    (run/"command.json").write_text(json.dumps(command, indent=2)+"\n")
     start = time.monotonic()
     with (run / "console.log").open("x") as log:
         result = subprocess.run(argv, cwd=run, env=env, stdout=log, stderr=subprocess.STDOUT)
