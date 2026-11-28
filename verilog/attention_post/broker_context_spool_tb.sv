@@ -4,7 +4,7 @@
 // A real broker and compute fabric drive the context spool. Only the tensor
 // source and scratch port peers are behavioral. Score/probability/context
 // signals are never driven by the reference model.
-module tri_oracle_broker_context_spool_tb;
+module tri_oracle_broker_context_spool_tb #(parameter bit COMMITTED_INPUT = 0);
     localparam logic [63:0] SCRATCH = 64'h400, CODES = 64'h4000;
     localparam integer WORDS = 2304;
     localparam integer TRAINED = 0, BAD_V_UNIT = 1, NEGATIVE_UNITS = 2, ALIAS_UNITS = 3, LATE_QUERY = 4;
@@ -144,15 +144,66 @@ module tri_oracle_broker_context_spool_tb;
         return word_out;
     endfunction
 
-    assign tensor_req_ready = rst_n && !tensor_pending && !tensor_rsp_valid && cycles % 5 != 1;
+    logic cache_start = 0, cache_retire = 0;
+    logic cache_initialized, cache_committed, cache_retire_ready;
+
+    if (COMMITTED_INPUT) begin : real_cache
+        tri_oracle_trained_cache_broker_peer source (
+            .clk,.rst_n,.cancel,.row_done(done_valid && !done_error),
+            .start(cache_start),.retire_valid(cache_retire),.initialized(cache_initialized),
+            .committed(cache_committed),.retire_ready(cache_retire_ready),
+            .binding_tag(expected_tag),.binding_generation(32'h19000001),
+            .binding_layer(5'd19),.binding_epoch(expected_epoch),
+            .tensor_req_valid,.tensor_req_ready,.tensor_req_kind,.tensor_req_head,
+            .tensor_req_key,.tensor_req_query,.tensor_req_epoch,.tensor_req_tag,
+            .tensor_rsp_valid,.tensor_rsp_ready,.tensor_rsp_error,.tensor_rsp_kind,.tensor_rsp_head,
+            .tensor_rsp_key,.tensor_rsp_size,.tensor_rsp_query,.tensor_rsp_epoch,.tensor_rsp_tag,
+            .tensor_rsp_value_exponent,.tensor_rsp_data
+        );
+        assign injected = 0;
+        assign tensor_pending = 0;
+    end else begin : fixture_responder
+        assign tensor_req_ready = rst_n && !tensor_pending && !tensor_rsp_valid && cycles % 5 != 1;
+        always @(posedge clk) begin
+            if (!rst_n) begin
+                tensor_rsp_valid <= 0;
+                tensor_pending <= 0;
+                tensor_rsp_error <= 0;
+                injected <= 0;
+            end else begin
+                if (tensor_req_valid && tensor_req_ready) begin
+                    tensor_rsp_kind <= tensor_req_kind;
+                    tensor_rsp_head <= tensor_req_head;
+                    tensor_rsp_key <= tensor_req_key;
+                    tensor_rsp_query <= tensor_req_query;
+                    tensor_rsp_epoch <= tensor_req_epoch;
+                    tensor_rsp_tag <= tensor_req_tag;
+                    tensor_rsp_size <= scenario == LATE_QUERY && tensor_req_kind == 1 ?
+                                       late_sizes[tensor_req_key][9:0] : 10'd1;
+                    tensor_rsp_data <= tensor_word(int'(tensor_req_kind),int'(tensor_req_head),int'(tensor_req_key));
+                    tensor_rsp_value_exponent <= expected_units[9*tensor_req_head[4:3]+:9];
+                    if (scenario == BAD_V_UNIT && tensor_req_kind == 2 && !injected) begin
+                        tensor_rsp_value_exponent <= expected_units[9*tensor_req_head[4:3]+:9] ^ 9'h100;
+                        injected <= 1;
+                    end
+                    tensor_delay <= 1 + cycles % 3;
+                    tensor_pending <= 1;
+                end
+                if (tensor_pending) begin
+                    if (tensor_delay == 0) begin
+                        tensor_pending <= 0;
+                        tensor_rsp_valid <= 1;
+                    end else tensor_delay <= tensor_delay - 1;
+                end
+                if (tensor_rsp_valid && tensor_rsp_ready) tensor_rsp_valid <= 0;
+            end
+        end
+    end
+
     always @(posedge clk) begin : tensor_and_probability_observer
         integer probability_head;
         if (!rst_n) begin
             cycles <= 0;
-            tensor_rsp_valid <= 0;
-            tensor_pending <= 0;
-            tensor_rsp_error <= 0;
-            injected <= 0;
             probabilities <= 0;
             accepted_values <= 0;
             foreach (saw_value[h,k]) saw_value[h][k] <= 0;
@@ -201,30 +252,7 @@ module tri_oracle_broker_context_spool_tb;
                     saw_value[tensor_req_head][tensor_req_key] <= 1;
                     accepted_values <= accepted_values + 1;
                 end
-                tensor_rsp_kind <= tensor_req_kind;
-                tensor_rsp_head <= tensor_req_head;
-                tensor_rsp_key <= tensor_req_key;
-                tensor_rsp_query <= tensor_req_query;
-                tensor_rsp_epoch <= tensor_req_epoch;
-                tensor_rsp_tag <= tensor_req_tag;
-                tensor_rsp_size <= scenario == LATE_QUERY && tensor_req_kind == 1 ?
-                                   late_sizes[tensor_req_key][9:0] : 10'd1;
-                tensor_rsp_data <= tensor_word(int'(tensor_req_kind),int'(tensor_req_head),int'(tensor_req_key));
-                tensor_rsp_value_exponent <= expected_units[9*tensor_req_head[4:3]+:9];
-                if (scenario == BAD_V_UNIT && tensor_req_kind == 2 && !injected) begin
-                    tensor_rsp_value_exponent <= expected_units[9*tensor_req_head[4:3]+:9] ^ 9'h100;
-                    injected <= 1;
-                end
-                tensor_delay <= 1 + cycles % 3;
-                tensor_pending <= 1;
             end
-            if (tensor_pending) begin
-                if (tensor_delay == 0) begin
-                    tensor_pending <= 0;
-                    tensor_rsp_valid <= 1;
-                end else tensor_delay <= tensor_delay - 1;
-            end
-            if (tensor_rsp_valid && tensor_rsp_ready) tensor_rsp_valid <= 0;
         end
     end
 
@@ -386,6 +414,13 @@ module tri_oracle_broker_context_spool_tb;
         expected_units = cfg_value_exponents;
         expected_streaming = cfg_streaming;
         rst_n = 1;
+        if (COMMITTED_INPUT) begin
+            do @(negedge clk); while (cache_initialized !== 1'b1);
+            cache_start = 1;
+            @(negedge clk);
+            cache_start = 0;
+            do @(negedge clk); while (cache_committed !== 1'b1);
+        end
         @(negedge clk);
         cfg_valid = 1;
         do @(posedge clk); while (cfg_ready !== 1'b1);
@@ -417,6 +452,13 @@ module tri_oracle_broker_context_spool_tb;
         done_ready = 1;
         @(negedge clk);
         done_ready = 0;
+        if (COMMITTED_INPUT) begin
+            check(cache_committed && cache_retire_ready, "cache generation lost before row closure");
+            cache_retire = 1;
+            @(negedge clk);
+            cache_retire = 0;
+            check(!cache_committed, "committed cache generation did not retire");
+        end
         $display("BROKER_CONTEXT_CASE_PASS case=%0d keys=%0d value_requests=%0d probabilities=%0d output_bytes=%0d common_unit=%0d injected=%0d",
                  test_id, expected_keys, accepted_values, probabilities, output_words*8,
                  $signed(held_terminal[9:0]), injected);
@@ -428,14 +470,17 @@ module tri_oracle_broker_context_spool_tb;
         check(!late_only || late_enabled, "+LATE_ONLY requires +LATE=<fixture directory>");
         if (!late_only) begin
             if (!$value$plusargs("TRAINED=%s",trained_dir)) $fatal(1, "+TRAINED=<fixture directory> required");
-            $readmemh({trained_dir,"/trained32_q.hex"}, trained_q);
-            $readmemh({trained_dir,"/trained32_k.hex"}, trained_k);
-            $readmemh({trained_dir,"/trained32_v.hex"}, trained_v);
+            if (!COMMITTED_INPUT) begin
+                $readmemh({trained_dir,"/trained32_q.hex"}, trained_q);
+                $readmemh({trained_dir,"/trained32_k.hex"}, trained_k);
+                $readmemh({trained_dir,"/trained32_v.hex"}, trained_v);
+                foreach (trained_q[h]) check(!$isunknown(trained_q[h]), "missing trained query");
+                foreach (trained_k[k]) check(!$isunknown(trained_k[k]) && !$isunknown(trained_v[k]), "missing tensor vector");
+            end
             $readmemh({trained_dir,"/trained32_gold.hex"}, trained_gold);
             $readmemh({trained_dir,"/cfg.hex"}, trained_cfg);
             $readmemh({trained_dir,"/codes.hex"}, trained_codes);
-            foreach (trained_q[h]) check(!$isunknown(trained_q[h]) && !$isunknown(trained_gold[h]), "missing trained row");
-            foreach (trained_k[k]) check(!$isunknown(trained_k[k]) && !$isunknown(trained_v[k]), "missing tensor vector");
+            foreach (trained_gold[h]) check(!$isunknown(trained_gold[h]), "missing expected trained accumulator");
             foreach (trained_cfg[i]) check(!$isunknown(trained_cfg[i]), "missing trained configuration");
             foreach (trained_codes[i]) check(!$isunknown(trained_codes[i]), "missing expected context byte");
         end
@@ -457,19 +502,25 @@ module tri_oracle_broker_context_spool_tb;
             check($countones(late_cfg[0][31:0]) > 0 && $countones(late_cfg[0][31:0]) < 32,
                   "late fixture must exercise both streaming and retrieval heads");
         end
-        if (!late_only) begin
+        if (COMMITTED_INPUT) begin
+            check(!late_enabled && !late_only, "committed two-slot mode expects the rank-one trained fixture");
             run_case(TRAINED);
-            run_case(BAD_V_UNIT);
-            run_case(NEGATIVE_UNITS);
-            run_case(ALIAS_UNITS);
+            $display("JOINED_QKV_BROKER_SPOOL_PASS checked_codes=2048 raw_lanes=2048");
+        end else begin
+            if (!late_only) begin
+                run_case(TRAINED);
+                run_case(BAD_V_UNIT);
+                run_case(NEGATIVE_UNITS);
+                run_case(ALIAS_UNITS);
+            end
+            if (late_enabled) run_case(LATE_QUERY);
+            if (late_only)
+                $display("BROKER_CONTEXT_SPOOL_PASS cases=1 trained_rows=1 alias_rows=0 rejected=0 late_rows=1");
+            else if (late_enabled)
+                $display("BROKER_CONTEXT_SPOOL_PASS cases=5 trained_rows=2 alias_rows=2 rejected=1 late_rows=1");
+            else
+                $display("BROKER_CONTEXT_SPOOL_PASS cases=4 trained_rows=1 alias_rows=2 rejected=1");
         end
-        if (late_enabled) run_case(LATE_QUERY);
-        if (late_only)
-            $display("BROKER_CONTEXT_SPOOL_PASS cases=1 trained_rows=1 alias_rows=0 rejected=0 late_rows=1");
-        else if (late_enabled)
-            $display("BROKER_CONTEXT_SPOOL_PASS cases=5 trained_rows=2 alias_rows=2 rejected=1 late_rows=1");
-        else
-            $display("BROKER_CONTEXT_SPOOL_PASS cases=4 trained_rows=1 alias_rows=2 rejected=1");
         $finish;
     end
     initial begin
