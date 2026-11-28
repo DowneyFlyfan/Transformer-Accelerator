@@ -1,0 +1,41 @@
+{
+  "schema": "tri_oracle_FF_batch_adapter_component_sources_v1",
+  "tool": "Cadence Xcelium25.03 xrun",
+  "container": "cadence-ddi",
+  "top": "row_unit_batch_adapter_component_tb_v1",
+  "ordered_sources": [
+    {
+      "path": "verilog/retained_frame_ff/raw32_residual_packages_v1.sv",
+      "sha256": "b4a0763f8a8d12bd8b596be2bd02a1b81bfde87c9e26d62184638365d7a3d976",
+      "bytes": 15697
+    },
+    {
+      "path": "verilog/retained_frame_ff/tri_oracle_FF_frame_types_v2.sv",
+      "sha256": "e1f87364ecc584fb58fc4e45781bbbcd6b9f7ee2877c824e9af538d3a20626bf",
+      "bytes": 1544
+    },
+    {
+      "path": "verilog/retained_frame_ff/tri_oracle_row_unit_batch_adapter_v1.sv",
+      "sha256": "c6833414a5bd25eb0e3f41a8540ef794dbb70c55bddf2dae7dceec004a5960dd",
+      "bytes": 8376
+    },
+    {
+      "path": "verilog/retained_frame_ff/row_unit_batch_adapter_component_tb_v1.sv",
+      "sha256": "0501bf5d7d304878f36ecbc7fa5d853a7d8e80db2a5d28bb5d853d872b044b0b",
+      "bytes": 16611
+    }
+  ],
+  "options": [
+    "-64bit",
+    "-sv",
+    "-top",
+    "row_unit_batch_adapter_component_tb_v1",
+    "-timescale",
+    "1ns/1ps"
+  ],
+  "runtime_payload_files": [],
+  "memory_models_required": false,
+  "scope": "Descriptor/Size batch adapter component with explicitly mocked endpoints. No physical normalizer, full memory lease, full264-row native datapath or trained arithmetic is instantiated.",
+  "scenarios": 20,
+  "full_hardware_or_paper_matching_claim": false
+}
