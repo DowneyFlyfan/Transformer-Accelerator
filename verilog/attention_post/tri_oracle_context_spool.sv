@@ -45,7 +45,8 @@ module tri_oracle_context_spool (
     output logic [4:0] rd_length,
     input logic rd_rsp_valid, rd_last, rd_error,
     output logic rd_rsp_ready,
-    input logic [63:0] rd_data
+    input logic [63:0] rd_data,
+    output logic cfg_error
 );
     typedef enum logic [3:0] {Idle, Collect, WriteHeader, WriteData, WriteAck,
                               SelectUnit, ReadHeader, ReadData, DrainRead, Done} state_t;
@@ -82,11 +83,24 @@ module tri_oracle_context_spool (
     logic [64:0] spool_last, code_last;
     logic signed [9:0] cfg_min_difference, cfg_max_difference, difference;
     logic cfg_bad;
+    logic cfg_unknown, context_unknown, read_unknown;
+    // X and Z are simulator states. Keep the validity checks for real address,
+    // identity, duplicate-head and burst errors in both implementations.
+    always_comb begin
+        cfg_unknown = 0;
+        context_unknown = 0;
+        read_unknown = 0;
+        // synthesis translate_off
+        cfg_unknown = $isunknown({cfg_spool_base,cfg_code_base,cfg_tag,cfg_query,cfg_epoch,
+                                  cfg_weight_units,cfg_output_units});
+        context_unknown = $isunknown({context_head,context_unit,context_data});
+        read_unknown = $isunknown(rd_data);
+        // synthesis translate_on
+    end
     always_comb begin
         spool_last = {1'b0, cfg_spool_base} + 65'd8447;
         code_last = {1'b0, cfg_code_base} + 65'd2047;
-        cfg_bad = $isunknown({cfg_spool_base,cfg_code_base,cfg_tag,cfg_query,cfg_epoch,
-                              cfg_weight_units,cfg_output_units}) ||
+        cfg_bad = cfg_unknown ||
                   cfg_spool_base[5:0] != 0 || cfg_code_base[5:0] != 0 ||
                   spool_last[64] || code_last[64] ||
                   !(spool_last < {1'b0,cfg_code_base} || code_last < {1'b0,cfg_spool_base});
@@ -129,6 +143,7 @@ module tri_oracle_context_spool (
     end
 
     assign cfg_ready = rst_n && state == Idle;
+    assign cfg_error = cfg_bad;
     assign context_ready = rst_n && state == Collect && !broker_finished;
     assign broker_done_ready = rst_n && state != Idle && state != Done && !broker_finished;
     assign broker_error_fire = broker_done_ready && broker_done_valid && broker_done_error !== 1'b0;
@@ -214,7 +229,7 @@ module tri_oracle_context_spool (
                         state <= Done;
                     end else state <= SelectUnit;
                 end else if (context_valid && !failed && !broker_error_fire) begin
-                    if ($isunknown({context_head,context_unit,context_data}) ||
+                    if (context_unknown ||
                         context_tag !== done_tag || context_query !== done_query ||
                         context_epoch !== done_epoch || present[context_head]) failed <= 1;
                     else begin
@@ -284,7 +299,7 @@ module tri_oracle_context_spool (
                     state <= ReadData;
                 end
                 ReadData: if (rd_rsp_valid) begin
-                    if (rd_error !== 1'b0 || $isunknown(rd_data) ||
+                    if (rd_error !== 1'b0 || read_unknown ||
                         rd_last !== ({1'b0,beat} == rd_length - 5'd1) ||
                         (read_unit && (rd_data[63:9] != 0 ||
                          stored_transfer < -11'sd31 || stored_transfer > 11'sd31))) begin

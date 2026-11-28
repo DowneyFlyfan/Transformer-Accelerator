@@ -9,7 +9,7 @@ module tri_oracle_context_spool_tb;
     localparam integer MEMORY_BYTES = 65536;
     localparam logic [63:0] SPOOL_BASE = 64'h1000;
     localparam logic [63:0] CODE_BASE = 64'h8000;
-    logic clk, rst_n, cfg_valid, cfg_ready;
+    logic clk, rst_n, cfg_valid, cfg_ready, cfg_error;
     logic [31:0] cfg_tag;
     logic [15:0] cfg_query, cfg_epoch;
     logic [63:0] cfg_spool_base, cfg_code_base;
@@ -43,7 +43,10 @@ module tri_oracle_context_spool_tb;
     integer cycles, context_acks, broker_acks, write_requests, read_requests;
     integer scratch_ack_bytes, output_ack_bytes, output_requests;
     integer write_beats, read_beats;
+    integer terminal_context_edges, terminal_write_edges, late_ack_bytes;
+    integer drain_beats, drain_idle_cycles, drain_terminal_acks, read_fault_mode;
     logic case_begin, expected_error, injected;
+    logic fault_accepted, read_drain_started;
     logic write_active, ack_active, read_active, read_offer;
     logic [63:0] write_address, read_address;
     integer write_length, write_index, read_length, read_index;
@@ -85,6 +88,15 @@ module tri_oracle_context_spool_tb;
                 rd_data[8*byte_lane+:8] = memory[read_address + 8*read_index + byte_lane];
         rd_error = read_error_pending;
         rd_last = read_last_pending || read_index == read_length - 1;
+        // These are explicit external response faults.  The admitted request,
+        // committed scratch and all DUT state remain untouched.
+        if (read_active && read_fault_mode == 24 && read_index == 5) rd_error = 1;
+        if (read_active && read_fault_mode == 25) begin
+            if (read_index == read_length - 1) rd_last = 0;
+            if (read_index >= read_length) begin rd_last = 1; rd_data = 0; end
+        end
+        if (read_active && read_fault_mode == 26 && read_index == 5) rd_last = 1'bx;
+        if (read_active && read_fault_mode == 32 && read_index == 5) rd_data[31] = 1'bx;
     end
 
     // Exactly one accepted burst owns each response.  A response is first
@@ -99,6 +111,15 @@ module tri_oracle_context_spool_tb;
             read_requests <= 0;
             write_beats <= 0;
             read_beats <= 0;
+            terminal_context_edges <= 0;
+            terminal_write_edges <= 0;
+            late_ack_bytes <= 0;
+            drain_beats <= 0;
+            drain_idle_cycles <= 0;
+            drain_terminal_acks <= 0;
+            read_fault_mode <= 0;
+            fault_accepted <= 0;
+            read_drain_started <= 0;
             scratch_ack_bytes <= 0;
             output_ack_bytes <= 0;
             output_requests <= 0;
@@ -151,10 +172,26 @@ module tri_oracle_context_spool_tb;
             held_done_tuple <= {done_error,done_tag,done_query,done_epoch,done_unit};
             if (context_valid === 1'b1 && context_ready === 1'b1) context_acks <= context_acks + 1;
             if (broker_done_valid === 1'b1 && broker_done_ready === 1'b1) broker_acks <= broker_acks + 1;
+            if (broker_done_valid === 1'b1 && broker_done_ready === 1'b1) begin
+                if (context_valid === 1'b1 && context_ready === 1'b1)
+                    terminal_context_edges <= terminal_context_edges + 1;
+                if (wr_rsp_valid === 1'b1 && wr_rsp_ready === 1'b1)
+                    terminal_write_edges <= terminal_write_edges + 1;
+            end
+            if (read_drain_started) begin
+                require(rd_req_valid === 1'b0 && wr_req_valid === 1'b0,
+                        "fresh request after owned read fault");
+                if (read_active) begin
+                    require(done_valid === 1'b0 && rd_rsp_ready === 1'b1,
+                            "owned read tail not retained for draining");
+                    if (rd_rsp_valid === 1'b0) drain_idle_cycles <= drain_idle_cycles + 1;
+                end
+            end
 
             if (ack_active && ack_delay > 0) ack_delay <= ack_delay - 1;
             if (wr_rsp_valid === 1'b1 && wr_rsp_ready === 1'b1) begin
                 require(ack_active && !write_active, "unowned write response");
+                if (write_error_pending !== 1'b0) fault_accepted <= 1;
                 if (!write_error_pending) begin
                     for (integer b = 0; b < 8*write_length; b = b + 1) begin
                         address = int'(write_address) + b;
@@ -208,6 +245,22 @@ module tri_oracle_context_spool_tb;
                     write_error_pending <= 1;
                     injected <= 1;
                 end
+                if (!injected && (scenario == 22 || scenario == 23) &&
+                    is_code(wr_address) && wr_address + 8*wr_length == CODE_BASE + 2048) begin
+                    require(output_ack_bytes + 8*int'(wr_length) == 2048,
+                            "final output ACK fault did not reach complete output boundary");
+                    write_error_pending <= scenario == 22 ? 1'b1 : 1'bx;
+                    late_ack_bytes <= 8*int'(wr_length);
+                    injected <= 1;
+                end
+                if (!injected && (scenario == 30 || scenario == 31) &&
+                    wr_address >= SPOOL_BASE + 8192 && is_scratch(wr_address) &&
+                    scratch_ack_bytes + 8*int'(wr_length) == 8448) begin
+                    require(broker_acks == 1, "late scratch ACK fault preceded broker terminal");
+                    write_error_pending <= scenario == 30 ? 1'b1 : 1'bx;
+                    late_ack_bytes <= 8*int'(wr_length);
+                    injected <= 1;
+                end
             end
 
             if (read_active && read_delay > 0) read_delay <= read_delay - 1;
@@ -216,13 +269,30 @@ module tri_oracle_context_spool_tb;
             if (rd_rsp_valid === 1'b1 && rd_rsp_ready === 1'b1) begin
                 require(read_active, "unowned read response");
                 read_beats <= read_beats + 1;
-                if (rd_last) begin
+                if (read_drain_started) begin
+                    drain_beats <= drain_beats + 1;
+                    if (rd_last === 1'b1) drain_terminal_acks <= drain_terminal_acks + 1;
+                end
+                if ((read_fault_mode == 24 || read_fault_mode == 26 || read_fault_mode == 32) &&
+                    read_index == 5 || read_fault_mode == 25 && read_index == read_length - 1) begin
+                    require(done_valid === 1'b0 && rd_last !== 1'b1,
+                            "drain fault was not an accepted nonterminal response");
+                    injected <= 1;
+                    fault_accepted <= 1;
+                    read_drain_started <= 1;
+                end
+                if (read_fault_mode >= 27 && read_fault_mode <= 29) fault_accepted <= 1;
+                if (rd_last === 1'b1) begin
                     read_active <= 0;
                     read_offer <= 0;
                 end else begin
                     read_index <= read_index + 1;
                     read_offer <= 0;
-                    read_delay <= 1 + (read_index % 3);
+                    if (!read_drain_started &&
+                        ((read_fault_mode == 24 || read_fault_mode == 26 || read_fault_mode == 32) &&
+                         read_index == 5 || read_fault_mode == 25 && read_index == read_length - 1))
+                        read_delay <= 8;
+                    else read_delay <= 1 + (read_index % 3);
                 end
             end
             if (rd_req_valid === 1'b1 && rd_req_ready === 1'b1) begin
@@ -244,12 +314,28 @@ module tri_oracle_context_spool_tb;
                 read_delay <= 2;
                 read_error_pending <= 0;
                 read_last_pending <= 0;
+                read_fault_mode <= 0;
                 if (!injected && scenario == 9) begin
                     read_error_pending <= 1;
                     injected <= 1;
                 end
                 if (!injected && scenario == 10 && rd_length > 1) begin
                     read_last_pending <= 1;
+                    injected <= 1;
+                end
+                if (!injected && (scenario == 24 || scenario == 25 || scenario == 26 || scenario == 32) &&
+                    rd_length > 1) read_fault_mode <= scenario;
+                if (!injected && scenario >= 27 && scenario <= 29 &&
+                    rd_address >= SPOOL_BASE + 8192 && rd_length == 1) begin
+                    // Corrupt the external peer's persisted unit after its real
+                    // write ACK, before serving it.  This is not a DUT poke.
+                    if (scenario == 27) memory[int'(rd_address)+1][1] = 1'b1;
+                    if (scenario == 28) memory[int'(rd_address)][0] = 1'bx;
+                    if (scenario == 29) begin
+                        memory[int'(rd_address)] = 8'($signed(vectors[vector_base+5]) + 32);
+                        memory[int'(rd_address)+1] = {7'b0,1'(($signed(vectors[vector_base+5]) + 32) >>> 8)};
+                    end
+                    read_fault_mode <= scenario;
                     injected <= 1;
                 end
             end
@@ -285,16 +371,27 @@ module tri_oracle_context_spool_tb;
                 endcase
             end
             context_valid = 1;
+            if (ordinal == 31 && scenario inside {18, 19}) begin
+                while (context_ready !== 1'b1) @(negedge clk);
+                broker_done_error = scenario == 19;
+                broker_done_valid = 1;
+                require(broker_done_ready, "broker cannot accept simultaneous terminal");
+            end
             do @(posedge clk); while (context_ready !== 1'b1);
             @(negedge clk);
             context_valid = 0;
+            broker_done_valid = 0;
+            broker_done_error = 0;
         end
     endtask
 
     task automatic send_terminal;
         begin
             @(negedge clk);
-            broker_done_error = scenario == 6 ? 1'b1 : scenario == 17 ? 1'bx : 1'b0;
+            if (scenario inside {20, 21})
+                while (!(wr_rsp_valid && wr_rsp_ready && scratch_ack_bytes + 8*write_length == 8448))
+                    @(negedge clk);
+            broker_done_error = scenario inside {6, 21} ? 1'b1 : scenario == 17 ? 1'bx : 1'b0;
             broker_done_valid = 1;
             do @(posedge clk); while (broker_done_ready !== 1'b1);
             @(negedge clk);
@@ -349,6 +446,7 @@ module tri_oracle_context_spool_tb;
             if (scenario == 16) cfg_weight_units[287] = 1'bx;
             cfg_valid = 1;
             do @(posedge clk); while (cfg_ready !== 1'b1);
+            require(cfg_error === (scenario inside {11,12,13,16}), "configuration error preflight mismatch");
             @(negedge clk);
             cfg_valid = 0;
             if (scenario != 11 && scenario != 12 && scenario != 13 && scenario != 16) begin
@@ -359,7 +457,7 @@ module tri_oracle_context_spool_tb;
                     wait (scratch_ack_bytes == 8448);
                     repeat (5) @(posedge clk);
                 end
-                send_terminal();
+                if (!(scenario inside {18, 19})) send_terminal();
             end
             wait (done_valid === 1'b1);
             @(negedge clk);
@@ -381,8 +479,21 @@ module tri_oracle_context_spool_tb;
                 if (scenario == 11 || scenario == 12 || scenario == 13 || scenario == 16)
                     require(context_acks == 0 && broker_acks == 0 && write_requests == 0 && read_requests == 0,
                             "invalid configuration touched payload/broker");
-                if (scenario != 8) require(output_ack_bytes == 0, "failed job committed output payload");
+                if (scenario inside {22, 23})
+                    require(late_ack_bytes == 32 && output_ack_bytes == 2016 && output_requests == 64,
+                            "failed final output write has the wrong acknowledged prefix");
+                else require(output_ack_bytes == 0, "failed job committed output payload");
+                if (scenario inside {[22:32]})
+                    require(injected && fault_accepted, "declared memory fault was never accepted");
+                if (scenario inside {30, 31})
+                    require(late_ack_bytes == 8 && scratch_ack_bytes == 8440 && read_requests == 0,
+                            "final scratch acknowledgment fault did not suppress conversion");
+                if (scenario inside {24, 25, 26, 32})
+                    require(read_drain_started && drain_beats > 0 && drain_idle_cycles > 0 &&
+                            drain_terminal_acks == 1, "failed read did not drain through its final beat");
             end
+            if (scenario inside {18,19}) require(terminal_context_edges == 1, "missing simultaneous context and terminal");
+            if (scenario inside {20,21}) require(terminal_write_edges == 1, "missing simultaneous scratch ACK and terminal");
             repeat (5) begin
                 @(posedge clk);
                 #1ps;

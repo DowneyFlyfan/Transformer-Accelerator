@@ -82,7 +82,7 @@ def build_cases() -> list[dict]:
     cases: list[dict] = []
 
     def add(name: str, scenario: int = 0, data=None, units=None,
-            weights=None, outputs=None, numeric_error=False):
+            weights=None, outputs=None, numeric_error=False, success=False):
         index = len(cases)
         if data is None:
             boundary = [-(1 << 31), (1 << 31) - 1, -(1 << 24) - 1,
@@ -113,7 +113,7 @@ def build_cases() -> list[dict]:
         order = list(range(HEADS))
         rng.shuffle(order)
         cases.append(dict(id=index, name=name, scenario=scenario,
-                          expected_error=bool(scenario or numeric_error),
+                          expected_error=bool(scenario or numeric_error) and not success,
                           tag=0xC5000000 + index, query=0x8000 + index,
                           epoch=0xF000 + index, common=common, units=units,
                           weights=weights, outputs=outputs, order=order,
@@ -173,6 +173,25 @@ def build_cases() -> list[dict]:
         "unknown_context_data", "unknown_context_unit", "unknown_config_unit",
         "unknown_broker_error"], 1):
         add(name, scenario=scenario)
+    # Append only: the original thirty records retain every input and expected
+    # byte.  New timing cases use the same packed vector ABI and rational oracle.
+    for scenario, name in enumerate([
+        "same_edge_final_context_and_success_terminal",
+        "same_edge_final_context_and_error_terminal",
+        "same_edge_final_scratch_ack_and_success_terminal",
+        "same_edge_final_scratch_ack_and_error_terminal",
+        "final_output_ack_error",
+        "final_output_ack_unknown_error",
+        "middle_raw_read_error_then_drain",
+        "missing_final_read_last_then_drain",
+        "unknown_middle_read_last_then_drain",
+        "persisted_unit_nonzero_padding",
+        "persisted_unit_unknown_data",
+        "persisted_unit_transfer_out_of_range",
+        "final_scratch_ack_error_after_terminal",
+        "final_scratch_ack_unknown_error_after_terminal",
+        "middle_raw_read_unknown_data_then_drain"], 18):
+        add(name, scenario=scenario, success=scenario in (18, 20))
     return cases
 
 
